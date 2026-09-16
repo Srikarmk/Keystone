@@ -159,6 +159,8 @@ class NumericMention:
     """Labels the sentence points at — what the author says the evidence is."""
     cites: tuple[str, ...] = ()
     """Citation keys in the sentence: the claim may rest on another paper."""
+    kind: str = "result"
+    """The role the number plays: result, configuration, reference or structural."""
 
 
 @dataclass(frozen=True, slots=True)

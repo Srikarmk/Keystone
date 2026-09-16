@@ -345,6 +345,63 @@ def dossier(
     )
 
 
+@app.command("audit-density")
+def audit_density(
+    arxiv_ids: list[str],
+    cache: Path = typer.Option(Path("../../eval/corpus/cache"), help="e-print cache."),
+    floor: int = typer.Option(40, help="Minimum items of substance per paper."),
+) -> None:
+    """Measure how much the reader actually has to show, per paper.
+
+    "The app feels plain" is a judgement; this makes it a number. The audit that
+    prompted this existed as a throwaway script, which meant the only way to know
+    whether the app had anything to say was to look at it — so it lives here now.
+    """
+    rows = []
+    for arxiv_id in arxiv_ids:
+        try:
+            payload = build_dossier(arxiv_id, cache).to_dict()
+        except SourceUnavailable as exc:
+            typer.secho(f"{arxiv_id}: no source ({exc})", fg=typer.colors.YELLOW)
+            continue
+
+        items = {
+            "claims": len(payload["claims"]),
+            "numbers": len(payload["numbers"]),
+            "tables": len(payload["tables"]),
+            "equations": len(payload["equations"]),
+            "sections": len(payload["sections"]),
+            "findings": len(payload["findings"]),
+        }
+        rows.append((arxiv_id, items, sum(items.values())))
+
+    typer.echo(
+        f"{'paper':>14} {'claims':>7} {'numbers':>8} {'tables':>7} {'eqns':>6}"
+        f" {'sections':>9} {'findings':>9} {'total':>7}"
+    )
+    starved = []
+    for arxiv_id, items, total in rows:
+        typer.echo(
+            f"{arxiv_id:>14} {items['claims']:>7} {items['numbers']:>8} "
+            f"{items['tables']:>7} {items['equations']:>6} {items['sections']:>9} "
+            f"{items['findings']:>9} {total:>7}"
+        )
+        if total < floor:
+            starved.append(f"{arxiv_id} ({total})")
+
+    typer.echo("")
+    if starved:
+        typer.secho(
+            f"{len(starved)} paper(s) below the floor of {floor}: {', '.join(starved)}",
+            fg=typer.colors.RED,
+            bold=True,
+        )
+    else:
+        typer.secho(
+            f"every paper shows at least {floor} items of substance", fg=typer.colors.GREEN, bold=True
+        )
+
+
 @app.command()
 def render(pdf: Path, quote: str, out: Path = Path("anchor.png"), zoom: float = 2.0) -> None:
     """Draw a quote's highlight rects onto the page image, for eyeballing."""

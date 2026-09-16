@@ -129,6 +129,8 @@ class TexDocument:
     tables: list[TableSource] = field(default_factory=list)
     citations: list[Citation] = field(default_factory=list)
     bib_keys: list[str] = field(default_factory=list)
+    macros: dict[str, str] = field(default_factory=dict)
+    """The paper's own ``\\newcommand`` definitions, for rendering its notation."""
 
     @property
     def prose_chars(self) -> int:
@@ -142,19 +144,35 @@ class TexDocument:
 
     @classmethod
     def parse(cls, text: str) -> TexDocument:
-        body = strip_comments(text)
+        raw = strip_comments(text)
+        # Definitions are stripped only for reading equations and tables: a macro whose
+        # body contains an ``align`` block would otherwise be harvested as one of the
+        # paper's equations, and the reader shown "\\newcommand{\\ee}{" as mathematics.
+        #
+        # Deliberately *not* used as the document's own text. Definition stripping has
+        # to consume balanced arguments to work at all, so when it over-consumes it
+        # destroys prose — and every other consumer (sections, sentences, labels) reads
+        # ``text``. Keeping the blast radius to two callers is the difference between a
+        # cosmetic bug and a paper losing all of its sections.
+        body = strip_definitions(raw)
         return cls(
-            text=body,
+            text=raw,
             equations=extract_equations(body),
-            tables=extract_tables(body),
+            # Tables read the raw text. Definition stripping exists for equations —
+            # a macro body holding an ``align`` block gets harvested as one of the
+            # paper's own — and it cost a table on two of nine papers when applied
+            # here as well. Narrower is better: the guard inside extract_equations
+            # catches parameter markers regardless.
+            tables=extract_tables(raw),
             # Body only, with macros expanded: a preamble holds no citations, and a
             # claim reading "We propose , which improves on" has lost the very word
             # the citation is attached to. Equations and tables above are left
             # unexpanded on purpose — those must stay exactly as the author wrote them.
             citations=extract_citations(
-                expand_macros(document_body(body), user_macros(body))
+                expand_macros(document_body(body), user_macros(raw))
             ),
-            bib_keys=_BIBITEM.findall(body),
+            bib_keys=_BIBITEM.findall(raw),
+            macros=all_macro_definitions(raw),
         )
 
 
@@ -220,7 +238,14 @@ _MACRO_DEFINITION = re.compile(
 
 _DEFINITION_HEAD = re.compile(
     r"\\(?:newcommand|renewcommand|providecommand|DeclareMathOperator|newtheorem"
-    r"|declaretheorem)\*?\s*"
+    # \def and \newenvironment matter as much as \newcommand: a paper that wraps an
+    # align block in either leaves the block behind, and it gets harvested as one of
+    # the paper's equations.
+    # The lookahead is load-bearing: without it "def" matches inside \definecolor,
+    # \defaultfont and friends, and the argument reader then swallows the document
+    # text that follows. It cost two tables and fourteen sections before it was added.
+    r"|declaretheorem|def|newenvironment|renewenvironment|newcolumntype)"
+    r"(?![a-zA-Z])\*?\s*"
 )
 
 
@@ -289,6 +314,29 @@ def user_macros(text: str) -> dict[str, str]:
     return macros
 
 
+def all_macro_definitions(text: str) -> dict[str, str]:
+    """Every ``\\newcommand`` body, keyed by macro name, arguments and all.
+
+    Distinct from :func:`user_macros`, which keeps only the argument-less ones because
+    it substitutes them itself. This one is for handing to a renderer that understands
+    ``#1`` — a paper's equations are written in the paper's own notation, and without
+    its definitions half of them render as error text rather than mathematics.
+    """
+    macros: dict[str, str] = {}
+    for match in _MACRO_DEFINITION.finditer(strip_comments(text)):
+        cursor = match.end()
+        if cursor < len(text) and text[cursor] == "[":
+            close = text.find("]", cursor)
+            if close == -1:
+                continue
+            cursor = close + 1
+        group = _match_brace_group(text, cursor)
+        if group is None:
+            continue
+        macros[f"\\{match.group(1)}"] = group[0]
+    return macros
+
+
 def expand_macros(text: str, macros: dict[str, str], *, max_passes: int = 4) -> str:
     """Substitute argument-less user macros, including nested definitions."""
     if not macros:
@@ -344,9 +392,14 @@ def extract_equations(text: str) -> list[Equation]:
         # not a separate one; the outer environment already captured its body.
         if out and body.strip() and body.strip() in out[-1].latex:
             continue
+        latex = _LABEL.sub("", body).strip()
+        # A parameter marker only exists inside a definition, so its presence means
+        # this body is a macro's, not the document's.
+        if "#" in latex or len(latex) < 3:
+            continue
         out.append(
             Equation(
-                latex=_LABEL.sub("", body).strip(),
+                latex=latex,
                 environment=name,
                 labels=tuple(_LABEL.findall(body)),
                 ordinal=len(out),

@@ -1,4 +1,5 @@
 export type ClaimStatus =
+  | "configuration"
   | "exact"
   | "rounded"
   | "mismatch"
@@ -43,6 +44,53 @@ export interface Claim {
   evidenceAnchor: AnchorJson | null;
 }
 
+export interface TableCellData {
+  text: string;
+  value: string | null;
+  emphasised: boolean;
+  block: number;
+}
+
+export interface TableData {
+  name: string;
+  caption: string;
+  label: string;
+  numericCells: number;
+  supports: number;
+  rows: TableCellData[][];
+  anchor: AnchorJson | null;
+}
+
+export interface EquationData {
+  ordinal: number;
+  latex: string;
+  environment: string;
+  labels: string[];
+}
+
+export interface SectionData {
+  kind: string;
+  title: string;
+  chars: number;
+  numbers: number;
+  citations: number;
+}
+
+export type NumberKind = "result" | "configuration" | "reference" | "structural";
+
+/** One measurement from anywhere in the paper, traced the way a headline claim is. */
+export interface IndexedNumber {
+  value: string;
+  kind: NumberKind;
+  section: string;
+  sentence: string;
+  status: ClaimStatus | "configuration";
+  table: string | null;
+  row: string | null;
+  cell: string | null;
+  anchor: AnchorJson | null;
+}
+
 export interface Dossier {
   id: string;
   title: string;
@@ -63,7 +111,12 @@ export interface Dossier {
     rate: number;
   };
   claims: Claim[];
-  tables: { name: string; caption: string; numericCells: number; supports: number }[];
+  numbers: IndexedNumber[];
+  tables: TableData[];
+  equations: EquationData[];
+  /** The paper's own \newcommand definitions, for rendering its notation. */
+  macros: Record<string, string>;
+  sections: SectionData[];
   findings: {
     check_id: string;
     title: string;

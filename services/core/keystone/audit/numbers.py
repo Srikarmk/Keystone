@@ -53,6 +53,11 @@ _PERCENT = re.compile(r"\s*(?:%|percent\b|per\s+cent\b)", re.IGNORECASE)
 
 _ARXIV_ID = re.compile(r"\d{4}\.\d{4,5}")
 
+# A digit welded to a name is part of the name. "GPT-3" is a model, not the number
+# three; "ResNet-50" and "top-5" are the same. Left in, these dominate a paper's
+# number index — 144 of InstructGPT's 176 were artefacts of this kind.
+_IDENTIFIER_TAIL = re.compile(r"(?:[A-Za-z]|[A-Za-z0-9][-\u2010\u2011])$")
+
 # Units worth recognising in ML/CS papers. Deliberately short: a wrongly assigned unit
 # is worse than no unit, since the dimension check only fires on units it is sure of.
 #
@@ -185,6 +190,9 @@ def find_numbers(text: str, *, skip_years: bool = True) -> list[Number]:
         # An arXiv identifier has the shape of a decimal and none of the meaning.
         # Left in, a bibliography turns into dozens of unverifiable "claims".
         if _ARXIV_ID.fullmatch(mantissa):
+            continue
+
+        if _IDENTIFIER_TAIL.search(text[: match.start()]):
             continue
 
         if (

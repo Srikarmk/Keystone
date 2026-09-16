@@ -1,16 +1,25 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useCallback, useEffect, useState } from "react";
-
 import Link from "next/link";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-import type { Claim, Dossier, IndexEntry } from "@/lib/dossier";
+import type {
+  AnchorJson,
+  Claim,
+  Dossier,
+  IndexedNumber,
+  IndexEntry,
+} from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
+import { EquationView } from "@/components/EquationView";
 import { EvidenceMap } from "@/components/EvidenceMap";
 import { PaperView } from "@/components/PaperView";
+import { findCell, TableView } from "@/components/TableView";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
+
+type Tab = "claims" | "numbers" | "tables" | "equations" | "structure";
 
 export function Reader({ id }: { id: string }) {
   const [index, setIndex] = useState<IndexEntry[]>([]);
@@ -18,6 +27,8 @@ export function Reader({ id }: { id: string }) {
   const [dossier, setDossier] = useState<Dossier | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [showEvidence, setShowEvidence] = useState(false);
+  const [tab, setTab] = useState<Tab>("claims");
+  const [jump, setJump] = useState<AnchorJson | null>(null);
 
   useEffect(() => {
     fetch("/dossiers/index.json").then((r) => r.json()).then(setIndex).catch(() => {});
@@ -27,6 +38,7 @@ export function Reader({ id }: { id: string }) {
     setDossier(null);
     setSelected(null);
     setShowEvidence(false);
+    setJump(null);
     fetch(`/dossiers/${current}.json`)
       .then((r) => r.json())
       .then(setDossier)
@@ -35,23 +47,43 @@ export function Reader({ id }: { id: string }) {
 
   const claim = dossier && selected !== null ? dossier.claims[selected] : null;
 
-  // Selecting a claim shows where it is stated. The evidence sits on another page, so
-  // it is a second, deliberate step rather than a jump the reader did not ask for.
-  const highlight = claim
-    ? showEvidence
+  const highlight = useMemo(() => {
+    if (jump) return jump;
+    if (!claim) return null;
+    return showEvidence
       ? (claim.evidenceAnchor ?? claim.anchor)
-      : (claim.anchor ?? claim.evidenceAnchor)
-    : null;
+      : (claim.anchor ?? claim.evidenceAnchor);
+  }, [jump, claim, showEvidence]);
+
   const select = useCallback((i: number) => {
     setSelected(i);
     setShowEvidence(false);
+    setJump(null);
+    setTab("claims");
   }, []);
 
-  return (
-    <main className="mx-auto flex h-screen max-w-[1700px] flex-col px-5 pb-5 pt-5 lg:px-8">
-      <Masthead index={index} current={current} onSelect={setCurrent} />
+  const counts = dossier
+    ? {
+        claims: dossier.claims.length,
+        numbers: dossier.numbers.length,
+        tables: dossier.tables.length,
+        equations: dossier.equations.length,
+        structure: dossier.sections.length,
+      }
+    : { claims: 0, numbers: 0, tables: 0, equations: 0, structure: 0 };
 
-      <div className="mt-4 grid min-h-0 flex-1 gap-6 lg:grid-cols-[minmax(0,1fr)_27rem]">
+  return (
+    <main className="mx-auto flex h-screen max-w-[1800px] flex-col px-5 pb-5 pt-4 lg:px-8">
+      <Masthead
+        index={index}
+        current={current}
+        onSelect={(next) => {
+          setCurrent(next);
+          window.history.replaceState(null, "", `/paper/${next}`);
+        }}
+      />
+
+      <div className="mt-3 grid min-h-0 flex-1 gap-6 lg:grid-cols-[minmax(0,1fr)_30rem]">
         <section className="min-h-0">
           {dossier ? (
             <PaperView url={dossier.pdfUrl} highlight={highlight} />
@@ -64,14 +96,31 @@ export function Reader({ id }: { id: string }) {
 
         <aside className="rule-left flex min-h-0 flex-col lg:pl-7">
           {dossier ? (
-            <Panel
-              dossier={dossier}
-              selected={selected}
-              claim={claim}
-              showEvidence={showEvidence}
-              onSelect={select}
-              onToggleEvidence={() => setShowEvidence((v) => !v)}
-            />
+            <>
+              <Summary dossier={dossier} />
+              <Tabs tab={tab} counts={counts} onChange={setTab} />
+
+              <div className="min-h-0 flex-1 overflow-y-auto pr-1 pt-3">
+                {tab === "claims" ? (
+                  <ClaimsTab
+                    dossier={dossier}
+                    selected={selected}
+                    claim={claim}
+                    showEvidence={showEvidence}
+                    onSelect={select}
+                    onToggleEvidence={() => setShowEvidence((v) => !v)}
+                  />
+                ) : null}
+                {tab === "numbers" ? (
+                  <NumbersTab dossier={dossier} onJump={setJump} />
+                ) : null}
+                {tab === "tables" ? (
+                  <TablesTab dossier={dossier} onJump={setJump} />
+                ) : null}
+                {tab === "equations" ? <EquationsTab dossier={dossier} /> : null}
+                {tab === "structure" ? <StructureTab dossier={dossier} /> : null}
+              </div>
+            </>
           ) : null}
         </aside>
       </div>
@@ -89,25 +138,25 @@ function Masthead({
   onSelect: (id: string) => void;
 }) {
   return (
-    <header className="flex shrink-0 flex-wrap items-end justify-between gap-5 border-b border-paper-edge pb-4">
+    <header className="flex shrink-0 flex-wrap items-end justify-between gap-5 border-b border-paper-edge pb-3">
       <div className="flex items-baseline gap-4">
-        <Link href="/" className="pressed text-[1.75rem] leading-none tracking-[-0.02em] transition-colors hover:text-brass">
+        <Link
+          href="/"
+          className="pressed text-[1.5rem] leading-none tracking-[-0.02em] transition-colors hover:text-brass"
+        >
           Keystone
         </Link>
-        <p className="text-[0.85rem] italic text-ink-soft">
+        <p className="text-[0.82rem] italic text-ink-soft">
           Which claim is holding this paper up — and how much of it we could check.
         </p>
       </div>
 
-      <label className="flex items-center gap-3 text-[0.72rem] uppercase tracking-[0.14em] text-ink-faint">
+      <label className="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.14em] text-ink-faint">
         Paper
         <select
           value={current}
-          onChange={(e) => {
-            onSelect(e.target.value);
-            window.history.replaceState(null, "", `/paper/${e.target.value}`);
-          }}
-          className="max-w-[22rem] truncate border-b border-ink/25 bg-transparent pb-0.5 font-[family-name:var(--font-display)] text-[0.95rem] normal-case tracking-normal text-ink outline-none transition-colors hover:border-brass focus:border-brass"
+          onChange={(e) => onSelect(e.target.value)}
+          className="max-w-[22rem] truncate border-b border-ink/25 bg-transparent pb-0.5 font-[family-name:var(--font-display)] text-[0.92rem] normal-case tracking-normal text-ink outline-none transition-colors hover:border-brass focus:border-brass"
         >
           {index.map((p) => (
             <option key={p.id} value={p.id}>
@@ -120,7 +169,103 @@ function Masthead({
   );
 }
 
-function Panel({
+function Summary({ dossier }: { dossier: Dossier }) {
+  const { coverage, keystone } = dossier;
+  return (
+    <div className="shrink-0 pt-3">
+      {keystone ? (
+        <p className="text-[1rem] leading-snug">
+          <span className="text-brass">{keystone.table}</span> carries{" "}
+          <span className="numeral">{keystone.supported}</span> of{" "}
+          <span className="numeral">{coverage.claims}</span> headline numbers.
+        </p>
+      ) : (
+        <p className="text-[0.92rem] italic text-ink-soft">
+          {coverage.claims === 0
+            ? "This paper states no numeric claims up front — its evidence is below."
+            : "No single table carries this paper's headline numbers."}
+        </p>
+      )}
+
+      {coverage.claims > 0 ? (
+        <div className="mt-2 flex items-center gap-3">
+          <div className="flex flex-1 gap-[2px]">
+            {Array.from({ length: coverage.claims }, (_, i) => {
+              const verified = i < coverage.supported;
+              const declared = !verified && i < coverage.supported + coverage.declared;
+              return (
+                <motion.span
+                  key={i}
+                  initial={{ scaleY: 0.3, opacity: 0 }}
+                  animate={{ scaleY: 1, opacity: 1 }}
+                  transition={{ delay: 0.08 + i * 0.025, duration: 0.35, ease: EASE }}
+                  className="h-3 flex-1 origin-bottom rounded-[1px]"
+                  style={{
+                    background: verified
+                      ? "var(--color-supported)"
+                      : declared
+                        ? "var(--color-ink-faint)"
+                        : "transparent",
+                    border:
+                      verified || declared
+                        ? "1px solid transparent"
+                        : "1px dashed var(--color-missing)",
+                    opacity: declared ? 0.5 : 1,
+                  }}
+                />
+              );
+            })}
+          </div>
+          <span className="numeral shrink-0 text-[0.75rem] text-ink-soft">
+            {coverage.supported}/{coverage.claims} verified
+            {coverage.declared > 0 ? ` · ${coverage.declared} declared` : ""}
+          </span>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function Tabs({
+  tab,
+  counts,
+  onChange,
+}: {
+  tab: Tab;
+  counts: Record<Tab, number>;
+  onChange: (t: Tab) => void;
+}) {
+  const items: { key: Tab; label: string }[] = [
+    { key: "claims", label: "Claims" },
+    { key: "numbers", label: "Numbers" },
+    { key: "tables", label: "Tables" },
+    { key: "equations", label: "Equations" },
+    { key: "structure", label: "Structure" },
+  ];
+  return (
+    <nav className="mt-4 flex shrink-0 gap-4 overflow-x-auto border-b border-paper-edge">
+      {items.map((item) => (
+        <button
+          key={item.key}
+          type="button"
+          onClick={() => onChange(item.key)}
+          className="-mb-px shrink-0 whitespace-nowrap border-b-2 pb-2 text-[0.7rem] uppercase tracking-[0.1em] transition-colors"
+          style={{
+            borderBottomColor: tab === item.key ? "var(--color-brass)" : "transparent",
+            color: tab === item.key ? "var(--color-ink)" : "var(--color-ink-faint)",
+          }}
+        >
+          {item.label}
+          <span className="numeral ml-1.5 text-[0.7rem] text-ink-faint">
+            {counts[item.key]}
+          </span>
+        </button>
+      ))}
+    </nav>
+  );
+}
+
+function ClaimsTab({
   dossier,
   selected,
   claim,
@@ -135,94 +280,40 @@ function Panel({
   onSelect: (i: number) => void;
   onToggleEvidence: () => void;
 }) {
-  const { coverage, keystone } = dossier;
+  if (dossier.claims.length === 0) {
+    return (
+      <p className="text-[0.9rem] italic leading-relaxed text-ink-faint">
+        The abstract, introduction and conclusion state no numbers, so there is nothing
+        to trace. The Tables, Equations and Structure tabs hold what this paper does
+        put forward.
+      </p>
+    );
+  }
 
   return (
-    <div className="flex min-h-0 flex-col">
-      <div className="shrink-0 pb-1">
-        <EvidenceMap
-          claims={dossier.claims}
-          keystoneTable={keystone?.table ?? null}
-          selected={selected}
-          onSelect={onSelect}
-        />
-      </div>
+    <>
+      <EvidenceMap
+        claims={dossier.claims}
+        keystoneTable={dossier.keystone?.table ?? null}
+        selected={selected}
+        onSelect={onSelect}
+      />
 
-      <div className="shrink-0">
-        {keystone ? (
-          <p className="text-[1.05rem] leading-snug">
-            <span className="text-brass">{keystone.table}</span> carries{" "}
-            <span className="numeral">{keystone.supported}</span> of{" "}
-            <span className="numeral">{coverage.claims}</span> headline numbers.
-          </p>
-        ) : (
-          <p className="text-[0.95rem] italic text-ink-soft">
-            {coverage.claims === 0
-              ? "This paper states no numeric claims up front."
-              : "No single table carries this paper's headline numbers."}
-          </p>
-        )}
-
-        <div className="mt-3 flex items-center gap-3">
-          <div className="flex flex-1 gap-[2px]">
-            {Array.from({ length: coverage.claims }, (_, i) => {
-              // Verified, then declared, then nothing — read left to right, strongest
-              // evidence first, so the bar says at a glance how much is actually known.
-              const verified = i < coverage.supported;
-              const declared = !verified && i < coverage.supported + coverage.declared;
-              return (
-                <motion.span
-                  key={i}
-                  initial={{ scaleY: 0.3, opacity: 0 }}
-                  animate={{ scaleY: 1, opacity: 1 }}
-                  transition={{ delay: 0.1 + i * 0.03, duration: 0.4, ease: EASE }}
-                  className="h-4 flex-1 origin-bottom rounded-[1px]"
-                  style={{
-                    background: verified
-                      ? "var(--color-supported)"
-                      : declared
-                        ? "var(--color-ink-faint)"
-                        : "transparent",
-                    border: verified || declared
-                      ? "1px solid transparent"
-                      : "1px dashed var(--color-missing)",
-                    opacity: declared ? 0.5 : 1,
-                  }}
-                />
-              );
-            })}
-          </div>
-          <span className="numeral shrink-0 text-[0.78rem] text-ink-soft">
-            {coverage.supported}/{coverage.claims} verified
-            {coverage.declared > 0 ? ` · ${coverage.declared} declared` : ""}
-          </span>
-        </div>
-      </div>
-
-      <h2 className="mt-5 shrink-0 text-[0.68rem] uppercase tracking-[0.18em] text-ink-faint">
-        Headline numbers — click to find it in the paper
-      </h2>
-
-      <ul className="mt-2 min-h-0 flex-1 space-y-1 overflow-y-auto pr-1">
+      <ul className="mt-3 space-y-1">
         {dossier.claims.map((c, i) => (
-          <ClaimRow
-            key={i}
-            claim={c}
-            active={selected === i}
-            onSelect={() => onSelect(i)}
-            showEvidence={showEvidence}
-            onToggleEvidence={onToggleEvidence}
-          />
+          <ClaimRow key={i} claim={c} active={selected === i} onSelect={() => onSelect(i)} />
         ))}
-        {dossier.claims.length === 0 ? (
-          <li className="text-[0.9rem] italic text-ink-faint">
-            Nothing to trace — the abstract, introduction and conclusion state no numbers.
-          </li>
-        ) : null}
       </ul>
 
-      {claim ? <Detail claim={claim} showEvidence={showEvidence} onToggle={onToggleEvidence} /> : null}
-    </div>
+      {claim ? (
+        <Detail
+          claim={claim}
+          dossier={dossier}
+          showEvidence={showEvidence}
+          onToggle={onToggleEvidence}
+        />
+      ) : null}
+    </>
   );
 }
 
@@ -234,8 +325,6 @@ function ClaimRow({
   claim: Claim;
   active: boolean;
   onSelect: () => void;
-  showEvidence: boolean;
-  onToggleEvidence: () => void;
 }) {
   const supported = isSupported(claim.status);
   const declared = isDeclared(claim.status);
@@ -255,15 +344,17 @@ function ClaimRow({
         style={{ borderLeftColor: tone }}
       >
         <span
-          className="numeral shrink-0 text-[0.95rem]"
-          style={{ color: supported || declared ? "var(--color-ink)" : "var(--color-missing)" }}
+          className="numeral shrink-0 text-[0.92rem]"
+          style={{
+            color: supported || declared ? "var(--color-ink)" : "var(--color-missing)",
+          }}
         >
           {claim.value}
         </span>
-        <span className="min-w-0 flex-1 truncate text-[0.82rem] text-ink-soft">
+        <span className="min-w-0 flex-1 truncate text-[0.8rem] text-ink-soft">
           {claim.sentence}
         </span>
-        <span className="shrink-0 text-[0.7rem] uppercase tracking-[0.1em] text-ink-faint">
+        <span className="numeral shrink-0 text-[0.68rem] text-ink-faint">
           {claim.anchor ? `p${claim.anchor.page + 1}` : "—"}
         </span>
       </button>
@@ -273,15 +364,25 @@ function ClaimRow({
 
 function Detail({
   claim,
+  dossier,
   showEvidence,
   onToggle,
 }: {
   claim: Claim;
+  dossier: Dossier;
   showEvidence: boolean;
   onToggle: () => void;
 }) {
   const supported = isSupported(claim.status);
   const declared = isDeclared(claim.status);
+
+  // The table the claim rests on, shown here rather than named. This is the whole
+  // point: evidence produced, not referred to.
+  const table = claim.table
+    ? (dossier.tables.find((t) => t.name === claim.table) ?? null)
+    : null;
+  const focus = table ? findCell(table, claim.row, claim.cell) : null;
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -289,13 +390,13 @@ function Detail({
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25, ease: EASE }}
-        className="mt-4 shrink-0 border-t border-paper-edge pt-3"
+        className="mt-4 border-t border-paper-edge pt-3"
       >
-        <p className="quote-mark text-[0.88rem] leading-relaxed text-ink-soft">
+        <p className="quote-mark text-[0.86rem] leading-relaxed text-ink-soft">
           {claim.sentence}
         </p>
 
-        <div className="mt-2 flex items-center justify-between gap-3 text-[0.82rem]">
+        <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[0.8rem]">
           {supported ? (
             <span className="text-supported">
               Rests on {claim.table}
@@ -320,19 +421,261 @@ function Detail({
               onClick={onToggle}
               className="shrink-0 border-b border-dotted border-brass/60 italic text-brass transition-colors hover:text-ink"
             >
-              {showEvidence ? "back to the claim" : `show the evidence (p${claim.evidenceAnchor.page + 1})`}
+              {showEvidence
+                ? "back to the claim"
+                : `show in the PDF (p${claim.evidenceAnchor.page + 1})`}
             </button>
           ) : null}
         </div>
 
+        {table ? (
+          <div className="mt-3 rounded-[2px] border border-paper-edge bg-paper/70 p-2">
+            <p className="mb-1.5 text-[0.72rem] leading-snug text-ink-faint">
+              {table.name}
+              {table.caption ? ` — ${table.caption}` : ""}
+            </p>
+            <TableView table={table} focus={focus} compact />
+          </div>
+        ) : null}
+
         {!claim.anchor ? (
-          <p className="mt-2 text-[0.78rem] italic text-ink-faint">
+          <p className="mt-2 text-[0.76rem] italic text-ink-faint">
             This sentence could not be located in the PDF, so there is nothing to
-            highlight. The trace above still holds — it was made from the paper&rsquo;s
-            LaTeX source.
+            highlight. The trace above still holds — it was made from the LaTeX source.
           </p>
         ) : null}
       </motion.div>
     </AnimatePresence>
+  );
+}
+
+function NumbersTab({
+  dossier,
+  onJump,
+}: {
+  dossier: Dossier;
+  onJump: (a: AnchorJson | null) => void;
+}) {
+  const [filter, setFilter] = useState<"all" | "result" | "configuration" | "untraced">(
+    "all",
+  );
+
+  const shown = dossier.numbers.filter((n) => {
+    if (filter === "all") return true;
+    if (filter === "untraced") return n.status === "untraced";
+    return n.kind === filter;
+  });
+
+  if (dossier.numbers.length === 0) {
+    return (
+      <p className="text-[0.9rem] italic text-ink-faint">
+        No measurements were found in this paper&rsquo;s prose.
+      </p>
+    );
+  }
+
+  const options: { key: typeof filter; label: string }[] = [
+    { key: "all", label: "all" },
+    { key: "result", label: "results" },
+    { key: "configuration", label: "setup" },
+    { key: "untraced", label: "unevidenced" },
+  ];
+
+  return (
+    <>
+      <div className="mb-2 flex gap-3 text-[0.72rem]">
+        {options.map((option) => (
+          <button
+            key={option.key}
+            type="button"
+            onClick={() => setFilter(option.key)}
+            className="border-b transition-colors"
+            style={{
+              borderBottomColor:
+                filter === option.key ? "var(--color-brass)" : "transparent",
+              color:
+                filter === option.key ? "var(--color-ink)" : "var(--color-ink-faint)",
+            }}
+          >
+            {option.label}
+          </button>
+        ))}
+      </div>
+
+      <ul className="space-y-0.5">
+        {shown.map((number, i) => (
+          <NumberRow key={i} number={number} onJump={onJump} />
+        ))}
+      </ul>
+    </>
+  );
+}
+
+function NumberRow({
+  number,
+  onJump,
+}: {
+  number: IndexedNumber;
+  onJump: (a: AnchorJson | null) => void;
+}) {
+  const tone =
+    number.status === "configuration"
+      ? "var(--color-ink-faint)"
+      : isSupported(number.status as Claim["status"])
+        ? "var(--color-supported)"
+        : isDeclared(number.status as Claim["status"])
+          ? "var(--color-ink-faint)"
+          : "var(--color-missing)";
+
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={() => onJump(number.anchor)}
+        disabled={!number.anchor}
+        className="flex w-full items-baseline gap-2.5 rounded-[2px] border-l-2 px-2 py-1 text-left transition-colors hover:bg-paper-deep/40 disabled:cursor-default"
+        style={{ borderLeftColor: tone }}
+        title={number.sentence}
+      >
+        <span className="numeral w-24 shrink-0 truncate text-[0.82rem]">
+          {number.value}
+        </span>
+        <span className="w-16 shrink-0 text-[0.62rem] uppercase tracking-[0.08em] text-ink-faint">
+          {number.section.slice(0, 9)}
+        </span>
+        <span className="min-w-0 flex-1 truncate text-[0.76rem] text-ink-soft">
+          {number.table ?? number.sentence}
+        </span>
+        <span className="numeral shrink-0 text-[0.64rem] text-ink-faint">
+          {number.anchor ? `p${number.anchor.page + 1}` : "—"}
+        </span>
+      </button>
+    </li>
+  );
+}
+
+function TablesTab({
+  dossier,
+  onJump,
+}: {
+  dossier: Dossier;
+  onJump: (a: AnchorJson | null) => void;
+}) {
+  const [open, setOpen] = useState<number | null>(0);
+
+  if (dossier.tables.length === 0) {
+    return <p className="text-[0.9rem] italic text-ink-faint">No tables in this paper.</p>;
+  }
+
+  return (
+    <ul className="space-y-2">
+      {dossier.tables.map((table, i) => (
+        <li key={i} className="border-b border-paper-edge/60 pb-2">
+          <button
+            type="button"
+            onClick={() => setOpen(open === i ? null : i)}
+            className="flex w-full items-baseline gap-3 text-left"
+          >
+            <span
+              className="shrink-0 text-[0.86rem]"
+              style={{
+                color:
+                  table.supports > 0 ? "var(--color-brass)" : "var(--color-ink-soft)",
+              }}
+            >
+              {table.name}
+            </span>
+            <span className="min-w-0 flex-1 truncate text-[0.78rem] text-ink-soft">
+              {table.caption || "no caption recovered"}
+            </span>
+            <span className="numeral shrink-0 text-[0.68rem] text-ink-faint">
+              {table.numericCells > 0
+                ? `${table.numericCells} numeric`
+                : `${table.rows.length}×${table.rows[0]?.length ?? 0}`}
+              {table.supports > 0 ? ` · carries ${table.supports}` : ""}
+            </span>
+          </button>
+
+          {open === i ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="mt-2"
+            >
+              <TableView table={table} compact />
+              {table.anchor ? (
+                <button
+                  type="button"
+                  onClick={() => onJump(table.anchor)}
+                  className="mt-1.5 text-[0.74rem] italic text-brass transition-colors hover:text-ink"
+                >
+                  find it in the PDF (p{table.anchor.page + 1}) &rarr;
+                </button>
+              ) : null}
+            </motion.div>
+          ) : null}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function EquationsTab({ dossier }: { dossier: Dossier }) {
+  if (dossier.equations.length === 0) {
+    return (
+      <p className="text-[0.9rem] italic text-ink-faint">
+        No display equations in this paper&rsquo;s source.
+      </p>
+    );
+  }
+  return (
+    <ul className="space-y-4">
+      {dossier.equations.map((equation) => (
+        <li key={equation.ordinal} className="border-b border-paper-edge/60 pb-3">
+          <EquationView
+            latex={equation.latex}
+            label={equation.labels[0] ?? equation.environment}
+            macros={dossier.macros}
+          />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function StructureTab({ dossier }: { dossier: Dossier }) {
+  const max = Math.max(1, ...dossier.sections.map((s) => s.numbers));
+  return (
+    <ul className="space-y-0.5">
+      {dossier.sections.map((section, i) => (
+        <li
+          key={i}
+          className="flex items-baseline gap-3 border-b border-paper-edge/40 py-1.5"
+        >
+          <span className="w-20 shrink-0 text-[0.66rem] uppercase tracking-[0.1em] text-ink-faint">
+            {section.kind}
+          </span>
+          <span className="min-w-0 flex-1 truncate text-[0.86rem]">{section.title}</span>
+
+          {/* A bar per section, so the shape of where a paper puts its numbers is
+              visible at a glance rather than having to be read off a column. */}
+          <span className="hidden w-16 shrink-0 sm:block">
+            <span
+              className="block h-1.5 rounded-[1px]"
+              style={{
+                width: `${Math.max(3, (section.numbers / max) * 100)}%`,
+                background:
+                  section.numbers > 0 ? "var(--color-supported)" : "var(--color-paper-edge)",
+                opacity: 0.55,
+              }}
+            />
+          </span>
+          <span className="numeral w-24 shrink-0 text-right text-[0.68rem] text-ink-faint">
+            {section.numbers} nums · {section.citations} cites
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 }

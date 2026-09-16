@@ -62,6 +62,8 @@ TraceStatus = Literal[
     "citation",
     # Nothing at all points at anything.
     "untraced",
+    # Indexed but deliberately not traced: a hyperparameter is not a claim.
+    "configuration",
 ]
 
 _DECLARED: dict[str, TraceStatus] = {
@@ -167,6 +169,62 @@ class Coverage:
     @property
     def rate(self) -> float:
         return len(self.supported) / len(self.claims) if self.claims else 0.0
+
+
+# Words that turn a following number into a pointer rather than a measurement.
+# "Table 3" and "Section 4.2" are navigation, and counting them as unverified claims
+# buries the real coverage gap under cross-references.
+_POINTER = re.compile(
+    r"(?:table|tables|figure|figures|fig|section|sections|sec|equation|equations|eq"
+    r"|eqn|algorithm|appendix|appendices|theorem|lemma|footnote|line|step|chapter)"
+    r"\s*\.?\s*$",
+    re.IGNORECASE,
+)
+
+NumberKind = Literal["result", "configuration", "reference", "structural"]
+
+
+def classify_number(number: Number, sentence: str) -> NumberKind:
+    """What role a number plays in its sentence.
+
+    Indexing every number in a paper is only useful if they are separable. A results
+    table's accuracy, a batch size, and the "3" in "Table 3" are three different kinds
+    of thing, and showing them in one undifferentiated list is the same mistake as
+    showing none of them.
+    """
+    if _POINTER.search(sentence[: number.start]):
+        return "reference"
+    if number.unit in CONFIG_UNITS:
+        return "configuration"
+    if number.is_percent or number.decimals > 0 or number.unit is not None:
+        return "result"
+    return "structural"
+
+
+def all_mentions(sections: tuple[Section, ...]) -> tuple[NumericMention, ...]:
+    """Every number in the paper, wherever it appears, with its role and references.
+
+    The reader previously showed 28 of 1,554 numbers across nine papers — numeric
+    claims in three sections only — which is why four of those papers had nothing to
+    display at all.
+    """
+    from keystone.ingest.latex import source_sentences
+
+    out: list[NumericMention] = []
+    for section in sections:
+        for sentence in source_sentences(section.source or section.text):
+            for number in find_numbers(sentence.text):
+                out.append(
+                    NumericMention(
+                        number=number,
+                        sentence=sentence.text.strip(),
+                        section=section.kind,
+                        refs=sentence.refs,
+                        cites=sentence.cites,
+                        kind=classify_number(number, sentence.text),
+                    )
+                )
+    return tuple(out)
 
 
 def headline_mentions(sections: tuple[Section, ...]) -> tuple[NumericMention, ...]:
