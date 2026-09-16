@@ -295,6 +295,7 @@ def dossier(
     arxiv_ids: list[str],
     out: Path = typer.Option(Path("../../apps/web/public/dossiers"), help="Output directory."),
     cache: Path = typer.Option(Path("../../eval/corpus/cache"), help="e-print cache."),
+    pdfs: Path = typer.Option(Path("../../eval/corpus/pdf"), help="Local PDFs, for anchoring."),
     titles: str = typer.Option("", help="Optional id=Title pairs, comma separated."),
 ) -> None:
     """Build dossiers and write them as JSON for the reader."""
@@ -306,7 +307,12 @@ def dossier(
 
     for arxiv_id in arxiv_ids:
         try:
-            built = build_dossier(arxiv_id, cache, title=lookup.get(arxiv_id, ""))
+            built = build_dossier(
+                arxiv_id,
+                cache,
+                title=lookup.get(arxiv_id, ""),
+                pdf_path=pdfs / f"{arxiv_id}.pdf",
+            )
         except SourceUnavailable as exc:
             typer.secho(f"{arxiv_id}: no source ({exc})", fg=typer.colors.YELLOW)
             continue

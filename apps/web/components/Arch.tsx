@@ -25,6 +25,8 @@ export interface StoneDatum {
   kind: StoneKind;
   label: string;
   detail: string;
+  /** Index into the dossier's claims, so a stone can be selected like a list row. */
+  claimIndex: number;
 }
 
 const INNER_RADIUS = 1.72;
@@ -68,11 +70,12 @@ interface StoneProps {
   total: number;
   delay: number;
   collapsed: boolean;
+  active: boolean;
   onHover: (datum: StoneDatum | null) => void;
   onSelect: () => void;
 }
 
-function Stone({ datum, index, total, delay, collapsed, onHover, onSelect }: StoneProps) {
+function Stone({ datum, index, total, delay, collapsed, active, onHover, onSelect }: StoneProps) {
   const group = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
   const mountedAt = useRef<number | null>(null);
@@ -129,7 +132,7 @@ function Stone({ datum, index, total, delay, collapsed, onHover, onSelect }: Sto
     // directly from the eased clock value so the entry cannot lag; only the
     // interactive offsets below are damped.
     const entry = (1 - settled) * 1.45;
-    const lift = approach(node.userData.lift ?? 0, hovered ? 0.11 : 0, delta, 12);
+    const lift = approach(node.userData.lift ?? 0, hovered || active ? 0.11 : 0, delta, 12);
     node.userData.lift = lift;
     const out = entry + lift;
 
@@ -139,7 +142,7 @@ function Stone({ datum, index, total, delay, collapsed, onHover, onSelect }: Sto
     node.position.x = radial.x * out + fall.current * spread * 0.85;
     node.position.y = radial.y * out - fall.current * (1.15 + Math.abs(spread) * 0.35);
     node.rotation.z = fall.current * (spread * 1.15 + 0.25);
-    node.scale.setScalar(settled * (hovered ? 1.035 : 1));
+    node.scale.setScalar(settled * (hovered || active ? 1.04 : 1));
   });
 
   return (
@@ -173,8 +176,8 @@ function Stone({ datum, index, total, delay, collapsed, onHover, onSelect }: Sto
           // under this lighting, and costs nothing to draw.
           roughness={datum.kind === "keystone" ? 0.38 : 0.9}
           metalness={datum.kind === "keystone" ? 0.18 : 0.03}
-          emissive={datum.kind === "keystone" ? "#8a5f1d" : "#000000"}
-          emissiveIntensity={datum.kind === "keystone" ? 0.12 : 0}
+          emissive={active ? "#a97f3d" : datum.kind === "keystone" ? "#8a5f1d" : "#000000"}
+          emissiveIntensity={active ? 0.3 : datum.kind === "keystone" ? 0.12 : 0}
           transparent={missing}
           opacity={missing ? 0.14 : 1}
           flatShading={false}
@@ -227,18 +230,19 @@ function Drift() {
 export interface ArchProps {
   stones: StoneDatum[];
   collapsed: boolean;
+  selected: number | null;
   onHover: (datum: StoneDatum | null) => void;
-  onSelectKeystone: () => void;
+  onSelectStone: (claimIndex: number) => void;
 }
 
-export function Arch({ stones, collapsed, onHover, onSelectKeystone }: ArchProps) {
+export function Arch({ stones, collapsed, selected, onHover, onSelectStone }: ArchProps) {
   const total = Math.max(stones.length, 1);
 
   return (
     <Canvas
       shadows
       dpr={[1, 1.8]}
-      camera={{ position: [0, 0.35, 6.6], fov: 42 }}
+      camera={{ position: [0, 0.35, 7.2], fov: 42 }}
       gl={{ antialias: true, alpha: true }}
     >
       {/* Deliberately no post-processing. A warm key light and a soft fill read as
@@ -268,8 +272,11 @@ export function Arch({ stones, collapsed, onHover, onSelectKeystone }: ArchProps
             // arch is actually built in, and the reason it stands at all.
             delay={0.25 + (total / 2 - Math.abs(index - (total - 1) / 2)) * 0.075}
             collapsed={collapsed}
+            active={selected === datum.claimIndex}
             onHover={onHover}
-            onSelect={datum.kind === "keystone" ? onSelectKeystone : () => {}}
+            // Every stone selects its claim. A model of the argument that cannot be
+            // used to navigate the argument is decoration.
+            onSelect={() => onSelectStone(datum.claimIndex)}
           />
         ))}
         <Pier side={-1} />

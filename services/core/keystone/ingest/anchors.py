@@ -222,6 +222,43 @@ class DocIndex:
             return LocateResult(candidate, "fuzzy")
         return LocateResult(None, "not_found", near_miss=candidate)
 
+    def locate_on_page(self, text: str, page: int, *, min_chars: int = 2) -> Anchor | None:
+        """Find a short string on one page, but only if it occurs there exactly once.
+
+        The document-wide matcher refuses anything under sixteen skeleton characters,
+        because "28.4" appears all over a paper and a guess would be worse than a
+        refusal. Restricted to a single page and required to be unique on it, a short
+        value *is* locatable — which is what makes it possible to highlight the one
+        cell a claim rests on rather than only the table it sits in.
+        """
+        needle = skeletonize(text, drop_hyphens=True)
+        if len(needle) < min_chars:
+            return None
+
+        words = [w for w in self.doc.words if w.page == page and w.idx not in self.doc.furniture]
+        skeleton = _build_skeleton(tuple(words), drop_hyphens=True)
+        positions = _find_all(skeleton.text, needle)
+        if len(positions) != 1:
+            return None  # absent, or ambiguous — either way, do not guess
+
+        start = positions[0]
+        owners = skeleton.owner[start : start + len(needle)]
+        w_start, w_end = min(owners), max(owners)
+        span = self.doc.words[w_start : w_end + 1]
+        rects = tuple(rect for rect, _members in _rects_for(span))
+        return Anchor(
+            quote=text,
+            matched_text=" ".join(w.text for w in span),
+            word_start=w_start,
+            word_end=w_end,
+            rects=rects,
+            pages=(page,),
+            method="exact_loose",
+            score=100.0,
+            occurrences=1,
+            precision="approximate",
+        )
+
     def contains(self, text: str, *, drop_hyphens: bool = True) -> bool:
         """Whether text occurs in the document at all, ignoring layout and casing."""
         skeleton = self._loose if drop_hyphens else self._strict
