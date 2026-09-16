@@ -18,7 +18,12 @@ import re
 
 from keystone.audit.numbers import find_numbers
 from keystone.graph.models import Table, TableCell
-from keystone.ingest.latex import TableSource, _match_brace_group, strip_markup
+from keystone.ingest.latex import (
+    TableSource,
+    _CITE,
+    _match_brace_group,
+    strip_markup,
+)
 
 # Authors mark a winning result with any of these; several journals' templates define
 # their own wrapper, so a custom macro ending in "best" is included too.
@@ -62,6 +67,14 @@ def build_table(source: TableSource) -> Table:
                     column=c,
                     raw=plain,
                     number=cell_number(plain),
+                    cites=tuple(
+                        dict.fromkeys(
+                            key.strip()
+                            for group in _CITE.findall(text)
+                            for key in group.split(",")
+                            if key.strip()
+                        )
+                    ),
                     row_header=row_header,
                     column_header=column_headers.get(c, ""),
                     metric=metrics.get(c, ""),

@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 import keystone.audit.checks.tables  # noqa: F401  (registers the checks)
+from keystone.audit.numbers import find_numbers
 from keystone.audit.registry import run
 from keystone.audit.trace import (
     Coverage,
@@ -19,7 +20,8 @@ from keystone.audit.trace import (
 )
 from keystone.graph.models import Finding, Paper
 from keystone.ingest.anchors import Anchor, DocIndex
-from keystone.ingest.arxiv_source import load_project
+from keystone.audit.checks import cross_paper
+from keystone.ingest.arxiv_source import SourceUnavailable, load_project
 from keystone.ingest.bibliography import Reference, from_project
 from keystone.ingest.latex import label_kinds, source_sentences
 from keystone.ingest.pdf import Document
@@ -86,6 +88,7 @@ class Dossier:
     numbers: tuple = ()
     number_anchors: tuple = ()
     references: tuple = ()
+    baselines: tuple = ()
     macros: dict = None  # type: ignore[assignment]
     section_counts: tuple = ()
     table_anchors: dict[int, Anchor | None] = None  # type: ignore[assignment]
@@ -172,6 +175,7 @@ class Dossier:
             ],
             "macros": self.macros or {},
             "references": [reference.to_dict() for reference in self.references],
+            "baselines": [check.to_dict() for check in self.baselines],
             "equations": [
                 {
                     "ordinal": equation.ordinal,
@@ -195,8 +199,41 @@ class Dossier:
         }
 
 
+def source_numbers(arxiv_id: str, cache_dir: Path) -> set | None:
+    """Every number a cited paper states, for checking a baseline against it.
+
+    Tables and prose both, because a paper may only report a figure in the text. The
+    check asks whether a number appears *anywhere* in the cited work, so a partial
+    view of it would manufacture discrepancies.
+    """
+    try:
+        document, _project = load_project(arxiv_id, cache_dir)
+    except Exception:
+        # Deliberately broad. This reads a *different* paper over the network, and the
+        # contract is "None if it cannot be read" — a truncated download, a malformed
+        # tarball or an unparseable bibliography in someone else's submission must
+        # degrade that one baseline to "unavailable", never abort the analysis of the
+        # paper the reader actually asked about.
+        return None
+
+    values = {
+        cell.number.value
+        for table in build_tables(document.tables)
+        for cell in table.numeric_cells
+        if cell.number
+    }
+    for sentence in source_sentences(document.text):
+        for number in find_numbers(sentence.text):
+            values.add(number.value)
+    return values
+
+
 def build(
-    arxiv_id: str, cache_dir: Path, title: str = "", pdf_path: Path | None = None
+    arxiv_id: str,
+    cache_dir: Path,
+    title: str = "",
+    pdf_path: Path | None = None,
+    check_baselines: bool = False,
 ) -> Dossier:
     """Ingest a paper and produce everything the reader sees. No model in the loop."""
     document, project = load_project(arxiv_id, cache_dir)
@@ -268,6 +305,15 @@ def build(
             for table in tables
         }
 
+    baselines: list = []
+    if check_baselines:
+        baselines = cross_paper.verify(
+            paper.tables,
+            references,
+            lambda cited: source_numbers(cited, cache_dir),
+        )
+        findings = findings + tuple(cross_paper.findings(baselines))
+
     return Dossier(
         paper=paper,
         coverage=coverage,
@@ -279,6 +325,7 @@ def build(
         numbers=numbers,
         number_anchors=number_anchors,
         references=tuple(references),
+        baselines=tuple(baselines),
         macros=document.macros,
         section_counts=_section_counts(sections),
         table_anchors=table_anchors,
@@ -287,7 +334,6 @@ def build(
 
 def _section_counts(sections: tuple) -> tuple:
     """Per-section density, so the outline can show the shape of a paper's evidence."""
-    from keystone.audit.numbers import find_numbers
     from keystone.ingest.latex import source_sentences
 
     out = []

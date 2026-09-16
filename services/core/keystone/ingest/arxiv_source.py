@@ -12,6 +12,7 @@ reproducible: re-running an audit should not depend on the network.
 from __future__ import annotations
 
 import gzip
+import http.client
 import io
 import re
 import shutil
@@ -83,13 +84,27 @@ def fetch(arxiv_id: str, cache_dir: Path, *, timeout: float = 60.0) -> Path:
     request = urllib.request.Request(
         EPRINT_URL.format(arxiv_id=ident), headers={"User-Agent": USER_AGENT}
     )
-    try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            payload = response.read()
-    except urllib.error.HTTPError as exc:
-        if exc.code in (403, 404):
-            raise SourceUnavailable(f"no e-print source for {ident} (HTTP {exc.code})") from exc
-        raise
+
+    # Retried once. Multi-megabyte tarballs over a long-lived connection hit truncated
+    # reads often enough that a single attempt makes bulk ingestion unreliable, and a
+    # partial body would be cached as if it were the paper.
+    payload: bytes | None = None
+    for attempt in range(2):
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                payload = response.read()
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code in (403, 404):
+                raise SourceUnavailable(
+                    f"no e-print source for {ident} (HTTP {exc.code})"
+                ) from exc
+            raise
+        except (http.client.HTTPException, urllib.error.URLError, TimeoutError):
+            if attempt == 1:
+                raise
+    if payload is None:
+        raise SourceUnavailable(f"could not download the e-print for {ident}")
 
     if payload[:4] == b"%PDF":
         raise SourceUnavailable(f"{ident} is a PDF-only submission")

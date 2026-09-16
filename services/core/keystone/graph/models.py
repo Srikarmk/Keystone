@@ -104,6 +104,14 @@ class TableCell:
     A "best result" marker is a claim about the band it is in — prior work, or the
     authors' own rows — not about the whole column.
     """
+    cites: tuple[str, ...] = ()
+    """Citation keys in the cell's own source.
+
+    A comparison table's row label usually *is* a citation — "GNMT + RL
+    \\cite{wu2016google}" — which means the paper it refers to is known exactly rather
+    than inferred from the label text. That is what makes it possible to go and read
+    what the cited paper actually reported.
+    """
     is_emphasised: bool = False
     """Set when the source marked the cell bold or underlined.
 

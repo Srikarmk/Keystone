@@ -16,7 +16,11 @@ started; nothing is marked done on the strength of intent.
 | arXiv LaTeX source ingest | **Done** | 93.5% of source sentences anchor into the PDF (2666/2852) |
 | Typed tables from source | **Done** | emphasis, band structure, spanning headers, 9 papers parsed |
 | Number parsing with precision | **Done** | `Decimal` + written quantum; unit/percent/scale handling |
-| Deterministic check suite | **2 checks** | 0 findings on 9 unmodified papers; 11% recall on planted defects |
+| Deterministic check suite | **3 checks** | 0 findings on 9 unmodified papers; 11% recall on planted table defects |
+| Cross-paper baseline check | **Done** | 11 baseline figures confirmed against their source papers; catches a planted mis-copy; 0 false positives |
+| Citation index | **Done** | 427 references parsed offline from 9/9 papers; 144 carry an arXiv id |
+| Ask the paper | **Built, needs a key** | grounded on the paper's prose + traced numbers; streams; 1h cached prefix |
+| Dark mode | **Done** | follows system preference, no first-paint flash |
 | Planted-error harness | **Done** | `keystone planted-audit`, regression-tested |
 | Section segmentation | **Done** | abstract / intro / conclusion typed from LaTeX, bibliography excluded |
 | Claim tracing + coverage map | **Done** | 9 papers; 15/30 headline claims traced to a table cell |
@@ -144,8 +148,8 @@ Purpose: is the output trustworthy to someone who did not build it?
 
 ### Gate D — 1.0
 
-- [ ] Citation faithfulness (fetch the cited paper, check it says what is claimed)
-- [ ] Cross-paper baseline provenance
+- [ ] Citation faithfulness for *prose* claims (the table-baseline case is done)
+- [x] Cross-paper baseline provenance
 - [ ] Chat over the paper graph with the grounding contract enforced
 - [ ] Browser extension, MCP server
 - [ ] Author-side pre-submission flow
@@ -175,7 +179,7 @@ Purpose: is the output trustworthy to someone who did not build it?
 - [x] `table.aggregate_mismatch` — whole-label matched, premise-validated
 - [ ] `abstract_table_mismatch` — **next; fully deterministic, no credentials needed**
 - [ ] `arithmetic_rederivation` — deltas, "X% improvement", relative vs absolute
-- [ ] `cross_paper_baseline` — does B's reported baseline match A's own number
+- [x] `cross_paper_baseline` — does B's reported baseline match A's own number
 - [ ] `variance_vs_delta` — is the claimed gain inside the reported noise
 - [ ] `sample_accounting` — do n's add up across splits and ablations
 - [ ] `stat_consistency` (statcheck) — lower priority for ML, keep for cross-discipline

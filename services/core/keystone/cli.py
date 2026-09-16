@@ -297,6 +297,11 @@ def dossier(
     cache: Path = typer.Option(Path("../../eval/corpus/cache"), help="e-print cache."),
     pdfs: Path = typer.Option(Path("../../eval/corpus/pdf"), help="Local PDFs, for anchoring."),
     titles: str = typer.Option("", help="Optional id=Title pairs, comma separated."),
+    check_baselines: bool = typer.Option(
+        False,
+        "--cross-paper",
+        help="Check reported baselines against the papers they cite (downloads them).",
+    ),
 ) -> None:
     """Build dossiers and write them as JSON for the reader."""
     lookup = dict(
@@ -312,6 +317,7 @@ def dossier(
                 cache,
                 title=lookup.get(arxiv_id, ""),
                 pdf_path=pdfs / f"{arxiv_id}.pdf",
+                check_baselines=check_baselines,
             )
         except SourceUnavailable as exc:
             typer.secho(f"{arxiv_id}: no source ({exc})", fg=typer.colors.YELLOW)
@@ -344,9 +350,16 @@ def dossier(
             "keystone": payload["keystone"],
             "findings": len(payload["findings"]),
         })
+        baselines = payload.get("baselines", [])
+        confirmed = sum(1 for b in baselines if b["outcome"] == "confirmed")
         typer.echo(
             f"{arxiv_id}: {payload['coverage']['supported']}/{payload['coverage']['claims']} "
             f"claims supported, {len(payload['findings'])} finding(s)"
+            + (
+                f", {confirmed}/{len(baselines)} baselines confirmed"
+                if baselines
+                else ""
+            )
         )
 
     # Merge rather than replace: building one paper must not drop every other paper

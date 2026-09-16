@@ -10,6 +10,7 @@ import type {
   Dossier,
   IndexedNumber,
   IndexEntry,
+  BaselineCheck,
   Reference,
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
@@ -29,6 +30,7 @@ type Tab =
   | "tables"
   | "equations"
   | "references"
+  | "checked"
   | "structure";
 
 export function Reader({ id }: { id: string }) {
@@ -80,6 +82,7 @@ export function Reader({ id }: { id: string }) {
         tables: dossier.tables.length,
         equations: dossier.equations.length,
         references: dossier.references.length,
+        checked: dossier.baselines.length + dossier.findings.length,
         structure: dossier.sections.length,
       }
     : {
@@ -89,6 +92,7 @@ export function Reader({ id }: { id: string }) {
         tables: 0,
         equations: 0,
         references: 0,
+        checked: 0,
         structure: 0,
       };
 
@@ -146,6 +150,7 @@ export function Reader({ id }: { id: string }) {
                 ) : null}
                 {tab === "equations" ? <EquationsTab dossier={dossier} /> : null}
                 {tab === "references" ? <ReferencesTab dossier={dossier} /> : null}
+                {tab === "checked" ? <CheckedTab dossier={dossier} /> : null}
                 {tab === "structure" ? <StructureTab dossier={dossier} /> : null}
               </div>
             </>
@@ -273,6 +278,7 @@ function Tabs({
     { key: "tables", label: "Tables" },
     { key: "equations", label: "Equations" },
     { key: "references", label: "References" },
+    { key: "checked", label: "Checked" },
     { key: "structure", label: "Structure" },
   ];
   return (
@@ -737,6 +743,140 @@ function ReferenceRow({ reference }: { reference: Reference }) {
         ) : null}
       </p>
     </li>
+  );
+}
+
+function CheckedTab({ dossier }: { dossier: Dossier }) {
+  const { baselines, findings } = dossier;
+  const confirmed = baselines.filter((b) => b.outcome === "confirmed");
+  const missing = baselines.filter((b) => b.outcome === "not_found");
+  const unavailable = baselines.filter((b) => b.outcome === "unavailable");
+
+  return (
+    <div className="space-y-6">
+      <section>
+        <h3 className="text-[0.68rem] uppercase tracking-[0.16em] text-ink-faint">
+          Findings
+        </h3>
+        {findings.length === 0 ? (
+          <p className="mt-2 text-[0.85rem] leading-relaxed text-ink-soft">
+            No inconsistencies found. That is not a clean bill of health — it means the
+            checks below ran and found nothing, and what they covered is stated
+            underneath so you can judge how much that is worth.
+          </p>
+        ) : (
+          <ul className="mt-2 space-y-3">
+            {findings.map((finding, i) => (
+              <li key={i} className="border-l-2 border-missing pl-3">
+                <p className="text-[0.88rem] leading-snug text-ink">{finding.title}</p>
+                <p className="mt-1 text-[0.8rem] italic leading-relaxed text-ink-soft">
+                  {finding.explanation}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section>
+        <h3 className="text-[0.68rem] uppercase tracking-[0.16em] text-ink-faint">
+          Baselines checked against their source papers
+        </h3>
+
+        {baselines.length === 0 ? (
+          <p className="mt-2 text-[0.85rem] leading-relaxed text-ink-soft">
+            No figure in this paper&rsquo;s tables is attributed to a citation that could
+            be followed, so there was nothing to check across papers. This needs a
+            comparison table whose rows cite their source and a reference carrying an
+            arXiv identifier.
+          </p>
+        ) : (
+          <>
+            <p className="mt-2 text-[0.82rem] leading-relaxed text-ink-soft">
+              Every other check asks this paper about itself, which is why they stay
+              quiet on careful work. This one reads the cited paper and asks whether it
+              reports the figure attributed to it.
+            </p>
+
+            <dl className="mt-3 space-y-1.5 text-[0.85rem]">
+              <Row label="Confirmed in the cited paper" value={confirmed.length} tone="supported" />
+              {missing.length > 0 ? (
+                <Row label="Not found in the cited paper" value={missing.length} tone="missing" />
+              ) : null}
+              {unavailable.length > 0 ? (
+                <Row label="Cited paper could not be read" value={unavailable.length} />
+              ) : null}
+            </dl>
+
+            <ul className="mt-4 space-y-1.5">
+              {[...missing, ...confirmed, ...unavailable].map((check, i) => (
+                <BaselineRow key={i} check={check} />
+              ))}
+            </ul>
+          </>
+        )}
+      </section>
+    </div>
+  );
+}
+
+function BaselineRow({ check }: { check: BaselineCheck }) {
+  const tone =
+    check.outcome === "confirmed"
+      ? "var(--color-supported)"
+      : check.outcome === "not_found"
+        ? "var(--color-missing)"
+        : "var(--color-ink-faint)";
+  return (
+    <li className="flex items-baseline gap-2.5 border-l-2 pl-2.5" style={{ borderLeftColor: tone }}>
+      <span className="numeral w-14 shrink-0 text-[0.82rem]" style={{ color: tone }}>
+        {check.value}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-[0.8rem] text-ink-soft">
+          {check.row || check.table} &rarr; {check.citedTitle}
+        </span>
+        {check.note ? (
+          <span className="block text-[0.72rem] italic text-ink-faint">{check.note}</span>
+        ) : null}
+      </span>
+      {check.arxivId ? (
+        <a
+          href={`https://arxiv.org/abs/${check.arxivId}`}
+          target="_blank"
+          rel="noreferrer"
+          className="numeral shrink-0 text-[0.68rem] text-brass transition-colors hover:text-ink"
+        >
+          {check.arxivId}
+        </a>
+      ) : null}
+    </li>
+  );
+}
+
+function Row({
+  label,
+  value,
+  tone,
+}: {
+  label: string;
+  value: number;
+  tone?: "supported" | "missing";
+}) {
+  const colour =
+    tone === "supported"
+      ? "var(--color-supported)"
+      : tone === "missing"
+        ? "var(--color-missing)"
+        : "var(--color-ink-soft)";
+  return (
+    <div className="flex items-baseline justify-between gap-3">
+      <dt className="text-ink-soft">{label}</dt>
+      <span aria-hidden className="mx-1 flex-1 border-b border-dotted border-paper-edge" />
+      <dd className="numeral" style={{ color: colour }}>
+        {value}
+      </dd>
+    </div>
   );
 }
 

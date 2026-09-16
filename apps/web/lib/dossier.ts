@@ -103,6 +103,21 @@ export interface Reference {
   doi: string | null;
 }
 
+export type BaselineOutcome = "confirmed" | "not_found" | "unavailable";
+
+/** One figure a paper attributes to another paper, and whether that paper reports it. */
+export interface BaselineCheck {
+  table: string;
+  row: string;
+  column: string;
+  value: string;
+  citationKey: string;
+  arxivId: string | null;
+  citedTitle: string;
+  outcome: BaselineOutcome;
+  note: string;
+}
+
 export interface Dossier {
   id: string;
   title: string;
@@ -125,6 +140,7 @@ export interface Dossier {
   claims: Claim[];
   numbers: IndexedNumber[];
   references: Reference[];
+  baselines: BaselineCheck[];
   tables: TableData[];
   equations: EquationData[];
   /** The paper's own \newcommand definitions, for rendering its notation. */
