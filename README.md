@@ -2,6 +2,8 @@
 
 **Which claim is holding the paper up, and does it hold?**
 
+**Live:** https://keystone-seven-beta.vercel.app
+
 Not "chat with a PDF". Keystone parses a paper's *argument* — claims, evidence,
 assumptions, citations — runs deterministic verification over it, and makes every
 answer either locked to pixel coordinates or visibly marked as unsupported. The name
