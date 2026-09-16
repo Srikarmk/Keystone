@@ -28,6 +28,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${newsreader.variable} ${plexMono.variable}`}>
+      <head>
+        {/*
+          Runs before paint. Reading the stored theme in an effect instead means the
+          page renders light first and then flips, which is worse on a dark display
+          than having no dark mode at all.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('keystone-theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className="grain min-h-screen bg-paper text-ink antialiased">{children}</body>
     </html>
   );

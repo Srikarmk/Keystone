@@ -7,7 +7,14 @@ import { Reader } from "@/components/Reader";
 export function generateStaticParams() {
   const dir = join(process.cwd(), "public", "dossiers");
   return readdirSync(dir)
-    .filter((name) => name.endsWith(".json") && name !== "index.json")
+    .filter(
+      (name) =>
+        name.endsWith(".json") &&
+        name !== "index.json" &&
+        // The server-only prose files sit in the same directory; without this they
+        // each generate a junk route at /paper/<id>.context.
+        !name.endsWith(".context.json"),
+    )
     .map((name) => ({ id: name.replace(/\.json$/, "") }));
 }
 

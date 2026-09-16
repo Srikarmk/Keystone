@@ -7,6 +7,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import type { IndexEntry } from "@/lib/dossier";
 import type { StoneDatum } from "@/components/Arch";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Arch = dynamic(() => import("@/components/Arch").then((m) => m.Arch), {
   ssr: false,
@@ -56,12 +57,15 @@ export default function Home() {
     <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
       <header className="flex items-center justify-between border-b border-paper-edge py-5">
         <span className="pressed text-[1.4rem] leading-none">Keystone</span>
-        <a
-          href="https://github.com/Srikarmk/Keystone"
-          className="text-[0.8rem] italic text-ink-soft transition-colors hover:text-brass"
-        >
-          source
-        </a>
+        <span className="flex items-center gap-5">
+          <ThemeToggle />
+          <a
+            href="https://github.com/Srikarmk/Keystone"
+            className="text-[0.8rem] italic text-ink-soft transition-colors hover:text-brass"
+          >
+            source
+          </a>
+        </span>
       </header>
 
       <section className="grid items-center gap-8 pt-10 lg:grid-cols-[1fr_minmax(0,26rem)]">

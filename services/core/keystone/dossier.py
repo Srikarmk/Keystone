@@ -19,7 +19,8 @@ from keystone.audit.trace import (
 )
 from keystone.graph.models import Finding, Paper
 from keystone.ingest.anchors import Anchor, DocIndex
-from keystone.ingest.arxiv_source import load
+from keystone.ingest.arxiv_source import load_project
+from keystone.ingest.bibliography import Reference, from_project
 from keystone.ingest.latex import label_kinds, source_sentences
 from keystone.ingest.pdf import Document
 from keystone.ingest.sections import extract_sections
@@ -84,6 +85,7 @@ class Dossier:
     equations: tuple = ()
     numbers: tuple = ()
     number_anchors: tuple = ()
+    references: tuple = ()
     macros: dict = None  # type: ignore[assignment]
     section_counts: tuple = ()
     table_anchors: dict[int, Anchor | None] = None  # type: ignore[assignment]
@@ -169,6 +171,7 @@ class Dossier:
                 for table in self.paper.tables
             ],
             "macros": self.macros or {},
+            "references": [reference.to_dict() for reference in self.references],
             "equations": [
                 {
                     "ordinal": equation.ordinal,
@@ -196,7 +199,10 @@ def build(
     arxiv_id: str, cache_dir: Path, title: str = "", pdf_path: Path | None = None
 ) -> Dossier:
     """Ingest a paper and produce everything the reader sees. No model in the loop."""
-    document = load(arxiv_id, cache_dir)
+    document, project = load_project(arxiv_id, cache_dir)
+    references = from_project(
+        project.root, project.main.read_text(encoding="utf-8", errors="replace")
+    )
     sections = extract_sections(document.text)
     tables = build_tables(document.tables)
 
@@ -272,6 +278,7 @@ def build(
         equations=tuple(document.equations),
         numbers=numbers,
         number_anchors=number_anchors,
+        references=tuple(references),
         macros=document.macros,
         section_counts=_section_counts(sections),
         table_anchors=table_anchors,

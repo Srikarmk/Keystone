@@ -91,6 +91,18 @@ export interface IndexedNumber {
   anchor: AnchorJson | null;
 }
 
+export interface Reference {
+  key: string;
+  raw: string;
+  authors: string;
+  title: string;
+  venue: string;
+  year: number | null;
+  /** Present for references we could follow to check what they actually reported. */
+  arxivId: string | null;
+  doi: string | null;
+}
+
 export interface Dossier {
   id: string;
   title: string;
@@ -112,6 +124,7 @@ export interface Dossier {
   };
   claims: Claim[];
   numbers: IndexedNumber[];
+  references: Reference[];
   tables: TableData[];
   equations: EquationData[];
   /** The paper's own \newcommand definitions, for rendering its notation. */

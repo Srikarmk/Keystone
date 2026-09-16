@@ -27,9 +27,43 @@
   --font-mono: var(--font-plex-mono), "SF Mono", ui-monospace, monospace;
 }
 
+/*
+ * Dark mode inverts the material, not the metaphor: warm near-black stock and warm
+ * off-white ink, so it still reads as a printed page at night rather than as a
+ * terminal. Brass brightens, because the same pigment that reads as polished on
+ * paper reads as mud on black.
+ *
+ * The PDF pages themselves stay white. They are the document, and tinting them would
+ * misrepresent what the reader is being asked to check.
+ */
+.dark {
+  --color-paper: #171614;
+  --color-paper-deep: #201e1b;
+  --color-paper-edge: #322e28;
+  --color-ink: #ece7dc;
+  --color-ink-soft: #a8a094;
+  --color-ink-faint: #746e62;
+
+  --color-brass: #d3a660;
+  --color-brass-bright: #e6c188;
+
+  --color-supported: #8ba887;
+  --color-missing: #d18a66;
+}
+
 html {
   background: var(--color-paper);
   color: var(--color-ink);
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Grain reads as dust on a dark sheet, so it needs to be fainter. */
+.dark .grain::before {
+  opacity: 0.02;
 }
 
 body {
@@ -68,6 +102,12 @@ body {
 /* Letterpress: type pressed into the sheet rather than floating above it. */
 .pressed {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* Letterpress is light catching a depression; on dark stock the highlight becomes a
+   shadow, or the type looks embossed the wrong way round. */
+.dark .pressed {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 
 .quote-mark::before {

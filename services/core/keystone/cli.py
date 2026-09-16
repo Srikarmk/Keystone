@@ -319,6 +319,24 @@ def dossier(
 
         payload = built.to_dict()
         (out / f"{arxiv_id}.json").write_text(json.dumps(payload, indent=2))
+
+        # The paper's prose, written separately. Answering questions needs the text,
+        # but the reader does not — shipping it inside the dossier would double what
+        # every visitor downloads to serve a feature most of them will not open.
+        (out / f"{arxiv_id}.context.json").write_text(
+            json.dumps(
+                {
+                    "id": arxiv_id,
+                    "title": payload["title"],
+                    "sections": [
+                        {"kind": str(section.kind), "title": section.title, "text": section.text}
+                        for section in built.paper.sections
+                        if section.text.strip()
+                    ],
+                },
+                indent=2,
+            )
+        )
         index.append({
             "id": arxiv_id,
             "title": payload["title"] or arxiv_id,

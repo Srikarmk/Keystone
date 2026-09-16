@@ -10,16 +10,26 @@ import type {
   Dossier,
   IndexedNumber,
   IndexEntry,
+  Reference,
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
 import { EquationView } from "@/components/EquationView";
 import { EvidenceMap } from "@/components/EvidenceMap";
 import { PaperView } from "@/components/PaperView";
 import { findCell, TableView } from "@/components/TableView";
+import { AskTab } from "@/components/AskTab";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-type Tab = "claims" | "numbers" | "tables" | "equations" | "structure";
+type Tab =
+  | "ask"
+  | "claims"
+  | "numbers"
+  | "tables"
+  | "equations"
+  | "references"
+  | "structure";
 
 export function Reader({ id }: { id: string }) {
   const [index, setIndex] = useState<IndexEntry[]>([]);
@@ -64,13 +74,23 @@ export function Reader({ id }: { id: string }) {
 
   const counts = dossier
     ? {
+        ask: 0,
         claims: dossier.claims.length,
         numbers: dossier.numbers.length,
         tables: dossier.tables.length,
         equations: dossier.equations.length,
+        references: dossier.references.length,
         structure: dossier.sections.length,
       }
-    : { claims: 0, numbers: 0, tables: 0, equations: 0, structure: 0 };
+    : {
+        ask: 0,
+        claims: 0,
+        numbers: 0,
+        tables: 0,
+        equations: 0,
+        references: 0,
+        structure: 0,
+      };
 
   return (
     <main className="mx-auto flex h-screen max-w-[1800px] flex-col px-5 pb-5 pt-4 lg:px-8">
@@ -100,7 +120,14 @@ export function Reader({ id }: { id: string }) {
               <Summary dossier={dossier} />
               <Tabs tab={tab} counts={counts} onChange={setTab} />
 
-              <div className="min-h-0 flex-1 overflow-y-auto pr-1 pt-3">
+              <div
+                className={`min-h-0 flex-1 pr-1 pt-3 ${
+                  tab === "ask" ? "overflow-hidden" : "overflow-y-auto"
+                }`}
+              >
+                {tab === "ask" ? (
+                  <AskTab paperId={dossier.id} title={dossier.title || dossier.id} />
+                ) : null}
                 {tab === "claims" ? (
                   <ClaimsTab
                     dossier={dossier}
@@ -118,6 +145,7 @@ export function Reader({ id }: { id: string }) {
                   <TablesTab dossier={dossier} onJump={setJump} />
                 ) : null}
                 {tab === "equations" ? <EquationsTab dossier={dossier} /> : null}
+                {tab === "references" ? <ReferencesTab dossier={dossier} /> : null}
                 {tab === "structure" ? <StructureTab dossier={dossier} /> : null}
               </div>
             </>
@@ -151,6 +179,8 @@ function Masthead({
         </p>
       </div>
 
+      <span className="flex items-center gap-5">
+      <ThemeToggle />
       <label className="flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.14em] text-ink-faint">
         Paper
         <select
@@ -165,6 +195,7 @@ function Masthead({
           ))}
         </select>
       </label>
+      </span>
     </header>
   );
 }
@@ -236,10 +267,12 @@ function Tabs({
   onChange: (t: Tab) => void;
 }) {
   const items: { key: Tab; label: string }[] = [
+    { key: "ask", label: "Ask" },
     { key: "claims", label: "Claims" },
     { key: "numbers", label: "Numbers" },
     { key: "tables", label: "Tables" },
     { key: "equations", label: "Equations" },
+    { key: "references", label: "References" },
     { key: "structure", label: "Structure" },
   ];
   return (
@@ -256,9 +289,11 @@ function Tabs({
           }}
         >
           {item.label}
-          <span className="numeral ml-1.5 text-[0.7rem] text-ink-faint">
-            {counts[item.key]}
-          </span>
+          {counts[item.key] > 0 ? (
+            <span className="numeral ml-1.5 text-[0.7rem] text-ink-faint">
+              {counts[item.key]}
+            </span>
+          ) : null}
         </button>
       ))}
     </nav>
@@ -641,6 +676,67 @@ function EquationsTab({ dossier }: { dossier: Dossier }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+function ReferencesTab({ dossier }: { dossier: Dossier }) {
+  const [onlyCheckable, setOnlyCheckable] = useState(false);
+  const checkable = dossier.references.filter((r) => r.arxivId).length;
+  const shown = onlyCheckable
+    ? dossier.references.filter((r) => r.arxivId)
+    : dossier.references;
+
+  if (dossier.references.length === 0) {
+    return (
+      <p className="text-[0.9rem] italic text-ink-faint">
+        No bibliography could be recovered from this paper&rsquo;s source.
+      </p>
+    );
+  }
+
+  return (
+    <>
+      <p className="mb-2 text-[0.76rem] leading-relaxed text-ink-faint">
+        Read from the paper&rsquo;s own bibliography — no lookup service involved.{" "}
+        <button
+          type="button"
+          onClick={() => setOnlyCheckable((v) => !v)}
+          className="border-b border-dotted border-brass/60 italic text-brass transition-colors hover:text-ink"
+        >
+          {onlyCheckable ? "show all" : `${checkable} can be followed to arXiv`}
+        </button>
+      </p>
+
+      <ul className="space-y-2">
+        {shown.map((reference) => (
+          <ReferenceRow key={reference.key} reference={reference} />
+        ))}
+      </ul>
+    </>
+  );
+}
+
+function ReferenceRow({ reference }: { reference: Reference }) {
+  return (
+    <li className="border-b border-paper-edge/50 pb-2">
+      <p className="text-[0.84rem] leading-snug text-ink">
+        {reference.title || reference.raw.slice(0, 110)}
+      </p>
+      <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2 text-[0.75rem] text-ink-faint">
+        <span className="truncate">{reference.authors || "unknown authors"}</span>
+        {reference.year ? <span className="numeral">{reference.year}</span> : null}
+        {reference.arxivId ? (
+          <a
+            href={`https://arxiv.org/abs/${reference.arxivId}`}
+            target="_blank"
+            rel="noreferrer"
+            className="numeral text-brass transition-colors hover:text-ink"
+          >
+            arXiv:{reference.arxivId}
+          </a>
+        ) : null}
+      </p>
+    </li>
   );
 }
 

@@ -186,6 +186,21 @@ def _find_main(root: Path) -> Path | None:
 MIN_PROSE_CHARS = 1500
 
 
+def load_project(arxiv_id: str, cache_dir: Path) -> tuple[TexDocument, TexProject]:
+    """Parse a paper and keep its unpacked project.
+
+    The project is needed as well as the document because the bibliography usually
+    lives in a separate ``.bbl`` file rather than in the LaTeX itself.
+    """
+    document = load(arxiv_id, cache_dir)
+    ident = normalize_id(arxiv_id)
+    project = unpack(
+        fetch(ident, cache_dir / "eprints"),
+        cache_dir / "unpacked" / ident.replace("/", "_"),
+    )
+    return document, project
+
+
 def load(arxiv_id: str, cache_dir: Path) -> TexDocument:
     """Fetch, unpack and parse an arXiv paper's LaTeX source.
 
