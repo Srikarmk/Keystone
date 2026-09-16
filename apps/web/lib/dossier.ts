@@ -162,6 +162,18 @@ export interface IndexEntry {
   coverage: Dossier["coverage"];
   keystone: Dossier["keystone"];
   findings: number;
+  /**
+   * How much the paper has in it beyond its headline numbers. Four of nine papers
+   * state no numbers up front, and without this the library row for one of them says
+   * only "no numeric claims" — which reads as a failure rather than as a paper that
+   * argues in prose and still has 58 references and 10 tables to look at.
+   */
+  density?: {
+    numbers: number;
+    tables: number;
+    equations: number;
+    references: number;
+  };
 }
 
 /** Verified by arithmetic: the number was found where it should be. */

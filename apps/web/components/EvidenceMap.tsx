@@ -20,11 +20,23 @@ import { useMemo } from "react";
 import type { Claim } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
 
-const WIDTH = 420;
-const ROW = 30;
+/*
+ * The chart is laid out in its own coordinate space and scaled to whatever width the
+ * analysis column has. WIDTH therefore has to be close to the real rendered width or
+ * the scaling works against the design: at 420 in a 555px column the height cap won
+ * the aspect fit, so the whole map was drawn at 70% and floated in the middle of the
+ * pane with empty air down both sides.
+ */
+const WIDTH = 560;
 const PADDING = 16;
-const CLAIM_X = 96;
-const TABLE_X = WIDTH - 104;
+const CLAIM_X = 112;
+const TABLE_X = WIDTH - 124;
+
+/** Row pitch, tightened for papers with many claims so the map stays a map. */
+function rowPitch(rows: number): number {
+  if (rows <= 12) return 28;
+  return Math.max(15, Math.floor(400 / rows));
+}
 
 export interface EvidenceMapProps {
   claims: Claim[];
@@ -55,12 +67,13 @@ export function EvidenceMap({ claims, keystoneTable, selected, onSelect }: Evide
       }
     }
     const ordered = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([name]) => name);
-    const tableY = new Map(ordered.map((name, i) => [name, PADDING + i * ROW + ROW / 2]));
+    const row = rowPitch(Math.max(claims.length, ordered.length));
+    const tableY = new Map(ordered.map((name, i) => [name, PADDING + i * row + row / 2]));
 
     const nodes: Node[] = claims.map((claim, index) => ({
       claim,
       index,
-      y: PADDING + index * ROW + ROW / 2,
+      y: PADDING + index * row + row / 2,
       table: claim.table,
       tableY: isSupported(claim.status) && claim.table ? (tableY.get(claim.table) ?? null) : null,
       supported: isSupported(claim.status),
@@ -72,7 +85,7 @@ export function EvidenceMap({ claims, keystoneTable, selected, onSelect }: Evide
     return {
       nodes,
       tables: ordered.map((name) => ({ name, y: tableY.get(name)!, count: counts.get(name)! })),
-      height: PADDING * 2 + rows * ROW,
+      height: PADDING * 2 + rows * row,
     };
   }, [claims, keystoneTable]);
 
@@ -82,7 +95,6 @@ export function EvidenceMap({ claims, keystoneTable, selected, onSelect }: Evide
     <svg
       viewBox={`0 0 ${WIDTH} ${height}`}
       className="w-full"
-      style={{ maxHeight: 280 }}
       role="img"
       aria-label={`${claims.length} headline claims and the tables they rest on`}
     >
@@ -142,7 +154,7 @@ export function EvidenceMap({ claims, keystoneTable, selected, onSelect }: Evide
           <rect
             x={4}
             y={node.y - 11}
-            width={CLAIM_X - 12}
+            width={CLAIM_X - 14}
             height={22}
             rx={2}
             fill={selected === node.index ? "var(--color-paper-deep)" : "transparent"}
@@ -150,11 +162,11 @@ export function EvidenceMap({ claims, keystoneTable, selected, onSelect }: Evide
             strokeWidth={1}
           />
           <text
-            x={CLAIM_X - 16}
+            x={CLAIM_X - 18}
             y={node.y + 4}
             textAnchor="end"
             className="numeral"
-            fontSize="12"
+            fontSize="13"
             fill={
               node.supported
                 ? "var(--color-ink)"
@@ -163,8 +175,8 @@ export function EvidenceMap({ claims, keystoneTable, selected, onSelect }: Evide
                   : "var(--color-missing)"
             }
           >
-            {node.claim.value.length > 11
-              ? `${node.claim.value.slice(0, 10)}…`
+            {node.claim.value.length > 13
+              ? `${node.claim.value.slice(0, 12)}…`
               : node.claim.value}
           </text>
         </g>
@@ -183,11 +195,11 @@ export function EvidenceMap({ claims, keystoneTable, selected, onSelect }: Evide
           <text
             x={TABLE_X + 10}
             y={table.y + 4}
-            fontSize="11.5"
+            fontSize="12.5"
             fill={table.name === keystoneTable ? "var(--color-brass)" : "var(--color-ink-soft)"}
           >
             {table.name}
-            <tspan className="numeral" fill="var(--color-ink-faint)" fontSize="10">
+            <tspan className="numeral" fill="var(--color-ink-faint)" fontSize="11">
               {"  "}×{table.count}
             </tspan>
           </text>
@@ -232,8 +244,8 @@ function Ribbon({ node, active, dimmed }: { node: Node; active: boolean; dimmed:
         // completely; animating the offset to zero draws it. Avoids having to measure
         // each path, and avoids motion's pathLength, which normalises dasharray into
         // units this SVG does not declare and renders as 1px dots.
-        strokeDasharray: 480,
-        strokeDashoffset: 480,
+        strokeDasharray: 900,
+        strokeDashoffset: 900,
         animationDelay: `${0.1 + node.index * 0.06}s`,
         opacity: dimmed ? 0.2 : active ? 1 : 0.7,
         transition: "opacity 220ms ease, stroke-width 220ms ease",

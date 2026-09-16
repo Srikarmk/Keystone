@@ -39,12 +39,18 @@ interface PageState {
 export interface PaperViewProps {
   url: string;
   highlight: AnchorJson | null;
+  /**
+   * Layout scale. Papers are typeset with wide margins, so fitting a page to the pane
+   * leaves the text column small — zoom is the difference between the PDF being
+   * present and being readable.
+   */
+  zoom?: number;
   onPageCount?: (count: number) => void;
 }
 
 const RENDER_SCALE = 1.6; // canvas resolution multiplier, independent of layout width
 
-export function PaperView({ url, highlight, onPageCount }: PaperViewProps) {
+export function PaperView({ url, highlight, zoom = 1, onPageCount }: PaperViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [pages, setPages] = useState<PageState[]>([]);
   const [width, setWidth] = useState(720);
@@ -92,6 +98,12 @@ export function PaperView({ url, highlight, onPageCount }: PaperViewProps) {
       cancelled = true;
     };
   }, [url, onPageCount]);
+
+  // Zooming changes every page's canvas size, so the already-rendered set has to be
+  // dropped or the pages keep their old resolution and go soft.
+  useEffect(() => {
+    renderedRef.current = new Set();
+  }, [zoom]);
 
   useEffect(() => {
     const node = containerRef.current;
@@ -156,7 +168,7 @@ export function PaperView({ url, highlight, onPageCount }: PaperViewProps) {
       ) : null}
 
       {pages.map((page) => {
-        const layoutWidth = Math.max(240, width - 24);
+        const layoutWidth = Math.max(240, (width - 24) * zoom);
         const scale = layoutWidth / page.width;
         return (
           <PageCanvas

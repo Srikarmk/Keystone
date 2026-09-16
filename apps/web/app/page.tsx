@@ -186,12 +186,12 @@ export default function Home() {
                     {paper.keystone
                       ? `rests on ${paper.keystone.table}`
                       : paper.coverage.claims === 0
-                        ? "no numeric claims up front"
+                        ? describe(paper.density)
                         : "no single load-bearing table"}
                   </span>
                 </span>
 
-                <CoveragePips coverage={paper.coverage} />
+                <CoveragePips coverage={paper.coverage} density={paper.density} />
               </Link>
             </motion.li>
           ))}
@@ -216,9 +216,37 @@ export default function Home() {
   );
 }
 
-function CoveragePips({ coverage }: { coverage: IndexEntry["coverage"] }) {
+/**
+ * What a paper with no headline numbers has instead. An em dash in this row told the
+ * reader we found nothing; these counts tell them what is waiting inside.
+ */
+function describe(density: IndexEntry["density"]): string {
+  if (!density) return "argues in prose \u2014 no numbers up front";
+  const parts = [
+    density.numbers > 0 ? `${density.numbers} numbers` : null,
+    density.tables > 0 ? `${density.tables} tables` : null,
+    density.equations > 0 ? `${density.equations} equations` : null,
+    density.references > 0 ? `${density.references} references` : null,
+  ].filter(Boolean);
+  return parts.length > 0 ? `${parts.join(" \u00b7 ")} indexed` : "nothing to index";
+}
+
+function CoveragePips({
+  coverage,
+  density,
+}: {
+  coverage: IndexEntry["coverage"];
+  density: IndexEntry["density"];
+}) {
   if (coverage.claims === 0) {
-    return <span className="numeral shrink-0 text-[0.78rem] text-ink-faint">—</span>;
+    const total = density
+      ? density.numbers + density.tables + density.equations + density.references
+      : 0;
+    return (
+      <span className="numeral shrink-0 text-[0.78rem] text-ink-faint">
+        {total > 0 ? `${total} items` : "\u2014"}
+      </span>
+    );
   }
   return (
     <span className="flex shrink-0 items-center gap-2">

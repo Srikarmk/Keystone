@@ -349,6 +349,15 @@ def dossier(
             "coverage": payload["coverage"],
             "keystone": payload["keystone"],
             "findings": len(payload["findings"]),
+            # Four of nine papers state no numbers up front, and a library row that
+            # says only "no numeric claims" reads as a paper we failed on rather than
+            # a paper that argues in prose. These counts are what is actually in hand.
+            "density": {
+                "numbers": len(payload["numbers"]),
+                "tables": len(payload["tables"]),
+                "equations": len(payload["equations"]),
+                "references": len(payload["references"]),
+            },
         })
         baselines = payload.get("baselines", [])
         confirmed = sum(1 for b in baselines if b["outcome"] == "confirmed")

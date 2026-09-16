@@ -111,8 +111,8 @@ Purpose: does this earn a place in your own reading?
 - [ ] Persistence: Postgres + pgvector, docker-compose, schema for `PaperGraph`
 - [ ] `keystone ingest <arxiv-id>` produces a stored, queryable paper
 - [ ] Ingest an arbitrary arXiv id from the UI rather than a prebuilt set
-- [ ] Anchor the claims and cells to PDF pixels in the reader (the anchor layer
-      exists and is gated; it is simply not wired to the interface yet)
+- [x] Anchor the claims and cells to PDF pixels in the reader
+- [x] Reader laid out as a scrolling report rather than a tab bar (see below)
 - **Exit criterion:** you run it on a paper you are actually reading, unprompted, twice
   in one week.
 
@@ -120,9 +120,9 @@ Purpose: does this earn a place in your own reading?
 
 Purpose: is the output trustworthy to someone who did not build it?
 
-- [ ] Reader UI: PDF + highlight overlay + dossier panel
-- [ ] Click a finding → both sides highlight in the PDF
-- [ ] Coverage map rendered, not just computed
+- [x] Reader UI: PDF + highlight overlay + dossier panel
+- [x] Click a finding → both sides highlight in the PDF
+- [x] Coverage map rendered, not just computed
 - [ ] SSE progress so the dossier fills in live
 - [ ] Ingest from arXiv id *and* PDF upload
 - [ ] Graceful, explicit degradation when LaTeX source is unavailable (~1 in 10 papers)
@@ -274,6 +274,40 @@ Both animation paths are driven by the render clock rather than by summed frame 
 a throttled tab delivers far fewer frames than seconds, and a delta-summed animation
 then takes minutes of wall time to arrive.
 
+### The reader layout, rebuilt
+
+The first version put the analysis in eight tabs inside a 30 rem column. Measured at
+1440x900 that was not a rough edge, it was a broken interface:
+
+| | |
+|---|---|
+| Tab bar | clipped mid-word (`REFE...`) with a horizontal scrollbar |
+| Claim rows | **every one** ended in an ellipsis; not a single claim was readable |
+| Type scale | ~0.75 rem across the whole panel, no hierarchy, one weight |
+| Panes | PDF showed a narrow text column inside wide gutters; analysis crushed to 30 rem |
+
+What replaced it, and why:
+
+- **Collapsible sections, not tabs.** Eight tabs is eight things that do not fit. What
+  the parser produces is one report about one paper, and a report is something you
+  scroll with the parts you do not need folded away. `components/Section.tsx`.
+- **Ask is a mode, not a tab.** Asking a question is a different posture from reading
+  the audit, so it takes the whole column and says so.
+- **37 rem analysis column, two-line claim rows.** A claim you cannot read is not a
+  claim; the sentence now gets two lines before it clips.
+- **PDF zoom.** Papers are typeset with wide margins, so fitting a page to the pane left
+  the text column small. Four steps to 210%.
+- **The evidence map was drawn at 70% and floated.** Its coordinate space was 560 wide
+  against a 555 px column, but a `max-height` cap won the aspect fit, so the whole chart
+  shrank and sat in the middle of the pane with air down both sides.
+- **`suppressHydrationWarning` on `<html>`.** The pre-paint theme script adds `dark`
+  before React hydrates, so server and client necessarily disagree on that class list.
+  That is the intended behaviour; it was logging a hydration error on every page.
+- **Library rows for papers with no headline numbers** said only "no numeric claims up
+  front" next to an em dash, which read as a paper we had failed on. They now carry
+  their real density — ViT is 84 items, VGG 49 — from a new `density` field on the
+  index.
+
 ### Before it goes on a public URL
 
 - [ ] Mobile layout — the arch needs a smaller camera framing below ~640 px
@@ -286,9 +320,12 @@ then takes minutes of wall time to arrive.
 
 ## Immediate next three
 
-1. Commit the working tree.
-2. Wire the reader to the anchor layer, so clicking a claim highlights the pixels in
-   the PDF. The anchoring is built and gated at 99.94%; it is the single biggest gap
-   between what the system knows and what the interface shows.
-3. Persistence + `keystone ingest <id>` from the UI, so the demo is not a fixed set of
-   nine papers.
+1. `ANTHROPIC_API_KEY` as a Vercel project environment variable. Asking a paper a
+   question is built, streams, and caches the paper's prose for an hour — and currently
+   returns a 503 that says exactly what is missing. This is a one-command unblock:
+   `vercel env add ANTHROPIC_API_KEY production`, then redeploy.
+2. Ingest an arbitrary arXiv id from the UI, so the demo is not a fixed set of nine
+   papers. Vercel Python function; hobby-tier duration is the risk, so measure before
+   committing to it and cache so a paper is ingested once rather than once per visitor.
+3. Mobile layout. The reader is a two-pane desktop interface and below ~900 px it has
+   nothing to fall back to.

@@ -27,7 +27,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${plexMono.variable}`}>
+    // The pre-paint script below adds `dark` to this element, so the server HTML
+    // and the hydrating client necessarily disagree on its class list. That is the
+    // intended behaviour, not a mismatch worth warning about.
+    <html
+      lang="en"
+      className={`${newsreader.variable} ${plexMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/*
           Runs before paint. Reading the stored theme in an effect instead means the
