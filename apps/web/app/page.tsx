@@ -16,7 +16,16 @@ export default function Home() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    fetch("/dossiers/index.json").then((r) => r.json()).then(setIndex).catch(() => {});
+    fetch("/dossiers/index.json")
+      .then((r) => r.json())
+      .then((entries: IndexEntry[]) =>
+        setIndex(
+          [...entries].sort((a, b) =>
+            a.title.localeCompare(b.title, undefined, { sensitivity: "base" }),
+          ),
+        ),
+      )
+      .catch(() => {});
     fetch("/dossiers/lineage.json").then((r) => r.json()).then(setGraph).catch(() => {});
   }, []);
 

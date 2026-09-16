@@ -1,0 +1,4840 @@
+{
+  "id": "1901.02860",
+  "title": "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+  "keystone": {
+    "table": "Table 6",
+    "caption": "Ablation study on WikiText-103. For the first two blocks, we use a slightly smaller model (128M parameters). indicates that the corresponding row is reduced to the same setting as the Transformer network in , except that two auxiliary losses are not implemented in our experiments. \"PPL init\" refers to using the same length as training. \"PPL best\" indicates the perplexity obtained by using the optimal length. \"Attn Len\" is the shortest possible attention length during evaluation to achieve the corresponding result (PPL best). Increasing the attention length during evaluation improves performance only when our positional encoding is used. The \"Transformer-XL (151M)\" setting uses a standard parameter budget as previous work , where we observe a similar effect when increasing the attention length during evaluation.",
+    "supported": 1,
+    "share": 0.143,
+    "summary": "1 of the paper's headline numbers trace to Table 6"
+  },
+  "coverage": {
+    "claims": 7,
+    "supported": 6,
+    "declared": 0,
+    "unsupported": 1,
+    "mismatched": 0,
+    "rate": 0.857
+  },
+  "claims": [
+    {
+      "value": "80%",
+      "section": "abstract",
+      "sentence": "As a result, Transformer-XL learns dependency that is 80% longer than RNNs and 450% longer than vanilla Transformers, achieves better performance on both short and long sequences, and is up to 1,800+ times faster than vanilla Transformers during evaluation.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 171.7772216796875,
+            "y0": 377.31146240234375,
+            "x1": 273.25628662109375,
+            "y1": 387.2740783691406
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 389.2664489746094,
+            "x1": 273.2562561035156,
+            "y1": 399.22906494140625
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 401.221435546875,
+            "x1": 273.25628662109375,
+            "y1": 411.1840515136719
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 413.1764221191406,
+            "x1": 273.2563171386719,
+            "y1": 423.1390380859375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 425.1324157714844,
+            "x1": 273.2562255859375,
+            "y1": 435.09503173828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 437.08740234375,
+            "x1": 273.25628662109375,
+            "y1": 447.0500183105469
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 449.0423889160156,
+            "x1": 132.5046844482422,
+            "y1": 459.0050048828125
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "450%",
+      "section": "abstract",
+      "sentence": "As a result, Transformer-XL learns dependency that is 80% longer than RNNs and 450% longer than vanilla Transformers, achieves better performance on both short and long sequences, and is up to 1,800+ times faster than vanilla Transformers during evaluation.",
+      "status": "exact",
+      "table": "Table 6",
+      "caption": "Ablation study on WikiText-103. For the first two blocks, we use a slightly smaller model (128M parameters). indicates that the corresponding row is reduced to the same setting as the Transformer network in , except that two auxiliary losses are not implemented in our experiments. \"PPL init\" refers to using the same length as training. \"PPL best\" indicates the perplexity obtained by using the optimal length. \"Attn Len\" is the shortest possible attention length during evaluation to achieve the corresponding result (PPL best). Increasing the attention length during evaluation improves performance only when our positional encoding is used. The \"Transformer-XL (151M)\" setting uses a standard parameter budget as previous work , where we observe a similar effect when increasing the attention length during evaluation.",
+      "row": "",
+      "column": "Attn Len",
+      "cell": "450",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 171.7772216796875,
+            "y0": 377.31146240234375,
+            "x1": 273.25628662109375,
+            "y1": 387.2740783691406
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 389.2664489746094,
+            "x1": 273.2562561035156,
+            "y1": 399.22906494140625
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 401.221435546875,
+            "x1": 273.25628662109375,
+            "y1": 411.1840515136719
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 413.1764221191406,
+            "x1": 273.2563171386719,
+            "y1": 423.1390380859375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 425.1324157714844,
+            "x1": 273.2562255859375,
+            "y1": 435.09503173828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 437.08740234375,
+            "x1": 273.25628662109375,
+            "y1": 447.0500183105469
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 449.0423889160156,
+            "x1": 132.5046844482422,
+            "y1": 459.0050048828125
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0.99",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Comparison with state-of-the-art results on enwik8.",
+      "row": "Ours - 24L Transformer-XL",
+      "column": "bpc",
+      "cell": "0.99",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 266.5889892578125,
+            "y0": 358.99810791015625,
+            "x1": 282.28021240234375,
+            "y1": 367.9645080566406
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.08",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 3",
+      "caption": "Comparison with state-of-the-art results on text8.",
+      "row": "Ours - 24L Transformer-XL",
+      "column": "bpc 1.36",
+      "cell": "1.08",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 501.864013671875,
+            "y0": 147.50514221191406,
+            "x1": 517.5552368164062,
+            "y1": 156.47154235839844
+          }
+        ]
+      }
+    },
+    {
+      "value": "18.3",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "Comparison with state-of-the-art results on WikiText-103. indicates contemporary work.",
+      "row": "Ours - Transformer-XL Large",
+      "column": "PPL 48.7 45.2",
+      "cell": "18.3",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "21.8",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 4",
+      "caption": "Comparison with state-of-the-art results on One Billion Word. indicates contemporary work.",
+      "row": "Ours - Transformer-XL Large",
+      "column": "PPL",
+      "cell": "21.8",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "54.5",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "rounded",
+      "table": "Table 5",
+      "caption": "Comparison with state-of-the-art results on Penn Treebank. indicates using two-step finetuning.",
+      "row": "Ours - Transformer-XL",
+      "column": "PPL",
+      "cell": "54.52",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1901.02860",
+  "numbers": [
+    {
+      "value": "80%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "As a result, Transformer-XL learns dependency that is 80% longer than RNNs and 450% longer than vanilla Transformers, achieves better performance on both short and long sequences, and is up to 1,800+ times faster than vanilla Transformers during evaluation.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 171.7772216796875,
+            "y0": 377.31146240234375,
+            "x1": 273.25628662109375,
+            "y1": 387.2740783691406
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 389.2664489746094,
+            "x1": 273.2562561035156,
+            "y1": 399.22906494140625
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 401.221435546875,
+            "x1": 273.25628662109375,
+            "y1": 411.1840515136719
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 413.1764221191406,
+            "x1": 273.2563171386719,
+            "y1": 423.1390380859375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 425.1324157714844,
+            "x1": 273.2562255859375,
+            "y1": 435.09503173828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 437.08740234375,
+            "x1": 273.25628662109375,
+            "y1": 447.0500183105469
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 449.0423889160156,
+            "x1": 132.5046844482422,
+            "y1": 459.0050048828125
+          }
+        ]
+      }
+    },
+    {
+      "value": "450%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "As a result, Transformer-XL learns dependency that is 80% longer than RNNs and 450% longer than vanilla Transformers, achieves better performance on both short and long sequences, and is up to 1,800+ times faster than vanilla Transformers during evaluation.",
+      "status": "exact",
+      "table": "Table 6",
+      "row": "",
+      "cell": "450",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 171.7772216796875,
+            "y0": 377.31146240234375,
+            "x1": 273.25628662109375,
+            "y1": 387.2740783691406
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 389.2664489746094,
+            "x1": 273.2562561035156,
+            "y1": 399.22906494140625
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 401.221435546875,
+            "x1": 273.25628662109375,
+            "y1": 411.1840515136719
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 413.1764221191406,
+            "x1": 273.2563171386719,
+            "y1": 423.1390380859375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 425.1324157714844,
+            "x1": 273.2562255859375,
+            "y1": 435.09503173828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 437.08740234375,
+            "x1": 273.25628662109375,
+            "y1": 447.0500183105469
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 449.0423889160156,
+            "x1": 132.5046844482422,
+            "y1": 459.0050048828125
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.99",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "Ours - 24L Transformer-XL",
+      "cell": "0.99",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.08",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 3",
+      "row": "Ours - 24L Transformer-XL",
+      "cell": "1.08",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      }
+    },
+    {
+      "value": "18.3",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Ours - Transformer-XL Large",
+      "cell": "18.3",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      }
+    },
+    {
+      "value": "21.8",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "Ours - Transformer-XL Large",
+      "cell": "21.8",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      }
+    },
+    {
+      "value": "54.5",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Notably, we improve the state-of-the-art results of bpc/perplexity to 0.99 on enwiki8, 1.08 on text8, 18.3 on WikiText-103, 21.8 on One Billion Word, and 54.5 on Penn Treebank (without finetuning).",
+      "status": "rounded",
+      "table": "Table 5",
+      "row": "Ours - Transformer-XL",
+      "cell": "54.52",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.1970672607422,
+            "y0": 449.0423889160156,
+            "x1": 273.2562255859375,
+            "y1": 459.0050048828125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 460.99737548828125,
+            "x1": 273.2562561035156,
+            "y1": 470.9599914550781
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 472.9523620605469,
+            "x1": 273.2562255859375,
+            "y1": 482.91497802734375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 484.9073486328125,
+            "x1": 273.2562255859375,
+            "y1": 494.8699645996094
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 496.86334228515625,
+            "x1": 212.90284729003906,
+            "y1": 506.8259582519531
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "method",
+      "sentence": "[leftmargin=*,itemsep=0pt,parsep=0.5em,topsep=0pt,partopsep=0pt] The first change we make is to replace all appearances of the absolute positional embedding for computing key vectors in term and with its relative counterpart .",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "20.5",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "As shown in Table , Transformer-XL reduces the previous state-of-the-art (SoTA) perplexity from 20.5 to 18.3, which demonstrates the superiority of the Transformer-XL architecture.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "- Adaptive Input",
+      "cell": "20.5",
+      "anchor": null
+    },
+    {
+      "value": "18.3",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "As shown in Table , Transformer-XL reduces the previous state-of-the-art (SoTA) perplexity from 20.5 to 18.3, which demonstrates the superiority of the Transformer-XL architecture.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Ours - Transformer-XL Large",
+      "cell": "18.3",
+      "anchor": null
+    },
+    {
+      "value": "0.05",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Under the model size constraint, the 12-layer Transformer-XL achieves a new SoTA result, outperforming the 12-layer vanilla Transformer from by 0.05, while both Transformer variants have a large margin over conventional RNN-based models.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "17%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Notably, our 12-layer architecture achieves the same result as the 64-layer network from , using only 17% of the parameter budget.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "1.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "With the attention length 784 during training and 3,800 during evaluation, we obtained a new SoTA result and our method is the first to break through 1.0 on widely-studied character-level benchmarks.",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "Ours - 18L Transformer-XL",
+      "cell": "1.03",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 336.5777893066406,
+            "y0": 522.23876953125,
+            "x1": 525.545166015625,
+            "y1": 533.1478271484375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 535.7877197265625,
+            "x1": 525.5452270507812,
+            "y1": 546.69677734375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 549.3367919921875,
+            "x1": 525.5451049804688,
+            "y1": 560.245849609375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 562.88671875,
+            "x1": 525.545166015625,
+            "y1": 573.7957763671875
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 576.435791015625,
+            "x1": 387.3705139160156,
+            "y1": 587.3448486328125
+          }
+        ]
+      }
+    },
+    {
+      "value": "23.7",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Although Transformer-XL is mainly designed to better capture longer-term dependency, it dramatically improves the single-model SoTA from 23.7 to 21.8.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "- Adaptive Input",
+      "cell": "23.7",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 275.7274475097656,
+            "y0": 331.1957092285156,
+            "x1": 290.2692565917969,
+            "y1": 342.10479736328125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 344.7456970214844,
+            "x1": 290.26922607421875,
+            "y1": 355.65478515625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 358.2947082519531,
+            "x1": 290.2691650390625,
+            "y1": 369.20379638671875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 371.8437194824219,
+            "x1": 290.269287109375,
+            "y1": 382.7528076171875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 385.3927307128906,
+            "x1": 108.20729064941406,
+            "y1": 396.30181884765625
+          }
+        ]
+      }
+    },
+    {
+      "value": "21.8",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Although Transformer-XL is mainly designed to better capture longer-term dependency, it dramatically improves the single-model SoTA from 23.7 to 21.8.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "Ours - Transformer-XL Large",
+      "cell": "21.8",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 275.7274475097656,
+            "y0": 331.1957092285156,
+            "x1": 290.2692565917969,
+            "y1": 342.10479736328125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 344.7456970214844,
+            "x1": 290.26922607421875,
+            "y1": 355.65478515625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 358.2947082519531,
+            "x1": 290.2691650390625,
+            "y1": 369.20379638671875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 371.8437194824219,
+            "x1": 290.269287109375,
+            "y1": 382.7528076171875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 385.3927307128906,
+            "x1": 108.20729064941406,
+            "y1": 396.30181884765625
+          }
+        ]
+      }
+    },
+    {
+      "value": "80%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The RECL of Transformer-XL is 80% and 450% longer than recurrent networks and Transformer respectively.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 403.22711181640625,
+            "y0": 449.74468994140625,
+            "x1": 525.5399780273438,
+            "y1": 460.6537780761719
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 463.293701171875,
+            "x1": 525.5452880859375,
+            "y1": 474.2027893066406
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 476.84271240234375,
+            "x1": 467.63970947265625,
+            "y1": 487.7518005371094
+          }
+        ]
+      }
+    },
+    {
+      "value": "450%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The RECL of Transformer-XL is 80% and 450% longer than recurrent networks and Transformer respectively.",
+      "status": "exact",
+      "table": "Table 6",
+      "row": "",
+      "cell": "450",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 403.22711181640625,
+            "y0": 449.74468994140625,
+            "x1": 525.5399780273438,
+            "y1": 460.6537780761719
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 463.293701171875,
+            "x1": 525.5452880859375,
+            "y1": 474.2027893066406
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 476.84271240234375,
+            "x1": 467.63970947265625,
+            "y1": 487.7518005371094
+          }
+        ]
+      }
+    },
+    {
+      "value": "100M tokens",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "Transformer-XL is also able to generate relatively coherent long text articles with thousands of tokens (see Appendix ), trained on only 100M tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "3.6K tokens",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "It contains 103M training tokens from 28K articles, with an average length of 3.6K tokens per article, which allows testing the ability of long-term dependency modeling.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 120.90550994873047,
+            "y0": 510.7027282714844,
+            "x1": 290.26922607421875,
+            "y1": 521.61181640625
+          },
+          {
+            "x0": 72.0,
+            "y0": 524.2517700195312,
+            "x1": 290.2692565917969,
+            "y1": 535.1608276367188
+          },
+          {
+            "x0": 72.0,
+            "y0": 537.8017578125,
+            "x1": 290.26922607421875,
+            "y1": 548.7108154296875
+          },
+          {
+            "x0": 72.0,
+            "y0": 551.3507690429688,
+            "x1": 250.0910186767578,
+            "y1": 562.2598266601562
+          }
+        ]
+      }
+    },
+    {
+      "value": "151M parameters",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "In the standard setting with 151M parameters, the perplexity decreases as the attention length increases.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 428.3778076171875,
+            "y0": 200.98593139648438,
+            "x1": 525.5450439453125,
+            "y1": 211.89503479003906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 214.53494262695312,
+            "x1": 525.5451049804688,
+            "y1": 225.4440460205078
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 228.08493041992188,
+            "x1": 436.9523010253906,
+            "y1": 238.99403381347656
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.3B parameters",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We train a 20-layer Transformer-XL with 0.3B parameters for 400K steps.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "400K steps",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We train a 20-layer Transformer-XL with 0.3B parameters for 400K steps.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Comparison with state-of-the-art results on WikiText-103. indicates contemporary work.",
+      "label": "table:103",
+      "numericCells": 14,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "#Param",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "- LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48.7",
+            "value": "48.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- TCN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45.2",
+            "value": "45.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- GCNN-8",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44.9",
+            "value": "44.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- LSTM + Neural cache",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.8",
+            "value": "40.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- GCNN-14",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.2",
+            "value": "37.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- QRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "151M",
+            "value": "151000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.0",
+            "value": "33.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Hebbian + Cache",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.9",
+            "value": "29.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ours - Transformer-XL Standard",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "151M",
+            "value": "151000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.0",
+            "value": "24.0",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Adaptive Input",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "247M",
+            "value": "247000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20.5",
+            "value": "20.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ours - Transformer-XL Large",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "257M",
+            "value": "257000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "18.3",
+            "value": "18.3",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Comparison with state-of-the-art results on enwik8.",
+      "label": "table:enwik8",
+      "numericCells": 21,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "#Param",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "bpc",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "- LN HyperNetworks",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27M",
+            "value": "27000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.34",
+            "value": "1.34",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- LN HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "35M",
+            "value": "35000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- RHN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "46M",
+            "value": "46000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- FS-LSTM-4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "47M",
+            "value": "47000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.25",
+            "value": "1.25",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Large mLSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "46M",
+            "value": "46000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.24",
+            "value": "1.24",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- cmix v13",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.23",
+            "value": "1.23",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- 12L Transformer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44M",
+            "value": "44000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.11",
+            "value": "1.11",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ours - 12L Transformer-XL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41M",
+            "value": "41000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.06",
+            "value": "1.06",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- 64L Transformer",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "235M",
+            "value": "235000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.06",
+            "value": "1.06",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ours - 18L Transformer-XL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88M",
+            "value": "88000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.03",
+            "value": "1.03",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ours - 24L Transformer-XL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "277M",
+            "value": "277000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.99",
+            "value": "0.99",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 106.66000366210938,
+            "y0": 383.14599609375,
+            "x1": 290.2649841308594,
+            "y1": 392.1123962402344
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Comparison with state-of-the-art results on text8.",
+      "label": "table:text8",
+      "numericCells": 13,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "#Param",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "bpc",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "- BN-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.36",
+            "value": "1.36",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- LN HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "35M",
+            "value": "35000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.29",
+            "value": "1.29",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- RHN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45M",
+            "value": "45000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Large mLSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45M",
+            "value": "45000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- 12L Transformer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44M",
+            "value": "44000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.18",
+            "value": "1.18",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- 64L Transformer",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "235M",
+            "value": "235000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.13",
+            "value": "1.13",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ours - 24L Transformer-XL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "277M",
+            "value": "277000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.08",
+            "value": "1.08",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 345.6780090332031,
+            "y0": 171.65298461914062,
+            "x1": 522.3607177734375,
+            "y1": 180.619384765625
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Comparison with state-of-the-art results on One Billion Word. indicates contemporary work.",
+      "label": "table:lm1b",
+      "numericCells": 24,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "#Param",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "- Sparse Non-Negative",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33B",
+            "value": "33000000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "52.9",
+            "value": "52.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- RNN-1024 + 9 Gram",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20B",
+            "value": "20000000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51.3",
+            "value": "51.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- G-LSTM-2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.0",
+            "value": "36.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- GCNN-14 bottleneck",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.9",
+            "value": "31.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.8B",
+            "value": "1800000000.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.6",
+            "value": "30.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- LSTM + CNN Input",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.04B",
+            "value": "1040000000.00",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.0",
+            "value": "30.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Low-Budget MoE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5B",
+            "value": "5000000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.1",
+            "value": "34.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- High-Budget MoE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5B",
+            "value": "5000000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.0",
+            "value": "28.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Mesh Tensorflow",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.9B",
+            "value": "4900000000.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.0",
+            "value": "24.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Adaptive Input",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.46B",
+            "value": "460000000.00",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.1",
+            "value": "24.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Adaptive Input",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.0B",
+            "value": "1000000000.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.7",
+            "value": "23.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ours - Transformer-XL Base",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.46B",
+            "value": "460000000.00",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.5",
+            "value": "23.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ours - Transformer-XL Large",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.8B",
+            "value": "800000000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "21.8",
+            "value": "21.8",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Comparison with state-of-the-art results on Penn Treebank. indicates using two-step finetuning.",
+      "label": "table:ptb",
+      "numericCells": 22,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "#Param",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "- Tied Variational LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "73.2",
+            "value": "73.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Variational RHN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23M",
+            "value": "23000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.4",
+            "value": "65.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- NAS Cell",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25M",
+            "value": "25000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.0",
+            "value": "64.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- AWD-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58.8",
+            "value": "58.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Efficient NAS",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58.6",
+            "value": "58.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Differentiable NAS",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23M",
+            "value": "23000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56.1",
+            "value": "56.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- AWD-LSTM-MoS",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22M",
+            "value": "22000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "55.97",
+            "value": "55.97",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "- Dropout tuning",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "55.3",
+            "value": "55.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ours - Transformer-XL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "54.52",
+            "value": "54.52",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "- AWD-LSTM+Finetune",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "57.3",
+            "value": "57.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "- MoS+Finetune",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "22M",
+            "value": "22000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "54.44",
+            "value": "54.44",
+            "emphasised": true,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Ablation study on WikiText-103. For the first two blocks, we use a slightly smaller model (128M parameters). indicates that the corresponding row is reduced to the same setting as the Transformer network in , except that two auxiliary losses are not implemented in our experiments. \"PPL init\" refers to using the same length as training. \"PPL best\" indicates the perplexity obtained by using the optimal length. \"Attn Len\" is the shortest possible attention length during evaluation to achieve the corresponding result (PPL best). Increasing the attention length during evaluation improves performance only when our positional encoding is used. The \"Transformer-XL (151M)\" setting uses a standard parameter budget as previous work , where we observe a similar effect when increasing the attention length during evaluation.",
+      "label": "table:ablation",
+      "numericCells": 34,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Remark",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Recurrence",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Encoding",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Loss",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "PPL init",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "PPL best",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Attn Len",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Transformer-XL (128M)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.02",
+            "value": "27.02",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "26.77",
+            "value": "26.77",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "500",
+            "value": "500",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.94",
+            "value": "27.94",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.94",
+            "value": "27.94",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Half",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.69",
+            "value": "28.69",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.33",
+            "value": "28.33",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "460",
+            "value": "460",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.59",
+            "value": "29.59",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.02",
+            "value": "29.02",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "260",
+            "value": "260",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Half",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.10",
+            "value": "30.10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.10",
+            "value": "30.10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "120",
+            "value": "120",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "29.75",
+            "value": "29.75",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "29.75",
+            "value": "29.75",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "120",
+            "value": "120",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Half",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.50",
+            "value": "30.50",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.50",
+            "value": "30.50",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "120",
+            "value": "120",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Half",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.97",
+            "value": "30.97",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.97",
+            "value": "30.97",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "120",
+            "value": "120",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer (128M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Half",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.16",
+            "value": "31.16",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.16",
+            "value": "31.16",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "120",
+            "value": "120",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer-XL (151M)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "23.43",
+            "value": "23.43",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "23.09",
+            "value": "23.09",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "640",
+            "value": "640",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "23.16",
+            "value": "23.16",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "450",
+            "value": "450",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "23.35",
+            "value": "23.35",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Ablation study on One Billion Word, a dataset without long-term dependency.",
+      "label": "table:ablation2",
+      "numericCells": 3,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.2",
+            "value": "25.2",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "With encodings",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.7",
+            "value": "25.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Without recurrence",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.1",
+            "value": "27.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 106.46699523925781,
+            "y0": 390.89801025390625,
+            "x1": 290.2691345214844,
+            "y1": 399.8644104003906
+          },
+          {
+            "x0": 72.0,
+            "y0": 400.86102294921875,
+            "x1": 167.653564453125,
+            "y1": 409.8274230957031
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "Relative effective context length (RECL) comparison. See text for the definition of RECL and . The first three models and the last four models are compared as two model groups when we calculate RECL (RECL is computed on a model group rather than a single model). Each group has the same parameter budget.",
+      "label": "table:recl",
+      "numericCells": 21,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Transformer-XL 151M",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "900",
+            "value": "900",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "800",
+            "value": "800",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "700",
+            "value": "700",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "QRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "500",
+            "value": "500",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Transformer-XL 128M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "700",
+            "value": "700",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "600",
+            "value": "600",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "500",
+            "value": "500",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "- use encoding",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "- remove recurrence",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Slowdown in terms of running time during evaluation. Evaluation is based on per-token time on one GPU.",
+      "label": "table:speed",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Attn Len",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "How much is slower",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "3,800",
+            "value": "3800",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1,874x",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2,800",
+            "value": "2800",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1,409x",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "1,800",
+            "value": "1800",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "773x",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "800",
+            "value": "800",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "363x",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 343.1050109863281,
+            "y0": 400.8609924316406,
+            "x1": 525.5443725585938,
+            "y1": 409.827392578125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 410.8240051269531,
+            "x1": 510.2932434082031,
+            "y1": 419.7904052734375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 10",
+      "caption": "Ablation study on WikiText-103 with the same GPU memory constraints.",
+      "label": "table:memory",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Backprop Len",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Recurrence",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Encoding",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Loss",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "pplx best",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "pplx init",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Attn Len",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.77",
+            "value": "26.77",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "27.02",
+            "value": "27.02",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "500",
+            "value": "500",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Partial",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.33",
+            "value": "28.33",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.69",
+            "value": "28.69",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "460",
+            "value": "460",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "176",
+            "value": "176",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27.98",
+            "value": "27.98",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.43",
+            "value": "28.43",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "172",
+            "value": "172",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Partial",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.83",
+            "value": "28.83",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.83",
+            "value": "28.83",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "120",
+            "value": "120",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 186.93701171875,
+            "y0": 172.21902465820312,
+            "x1": 450.8092041015625,
+            "y1": 181.1854248046875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 11",
+      "caption": "Example 1 -- 500 tokens generated by XL using a snippet from the Wikitext-103 test set as initial context. The sample is randomly generated without any cherry picking. Original Wikipedia page: https://en.wikipedia.org/wiki/Clayton_Kershaw There are many interesting observations from this example: [leftmargin=*,itemsep=0em,topsep=0.4em,parsep=0.4em] Firstly, Kershaw never went to Royals in real life. Despite that, Transformer-XL stays on the fully imagined topic and keeps hallucinating the experience of Kershaw in Royals across the generated text. Secondly, notice that XL correctly tracks the chronological order from 2011 to 2012 and to the finally 2013 season in the section titles. In addition, notice that Transformer-XL accurately uses the the phrase \"another back injury\" in the 2013 season paragraph, since it has talked about one earlier injure in the 2012 season. This shows again Transformer-XL's ability of capturing long-term dependency.",
+      "label": "tab:gen-1",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Context:",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Kershaw started the 2010 season by posting a 3.07 ERA in April, but did so by walking 22 batters in 29 innings. On May 4, he had his worst start of his career against the Milwaukee Brewers at Dodger Stadium, throwing just 57 pitches in 11 / 3 innings, while retiring only four of the 13 batters he faced \u2014 including the pitcher. He was booed loudly upon being pulled from the game. Kershaw said after the game, \" I didn't give our team any kind of chance. It's just not a good feeling to let your teammates down, let everybody down. It stings, it hurts. I 've got to figure things out. \" Kershaw rebounded his next start by pitching an 8 inning two-hitter and out-dueling the then undefeated Ubaldo Jim\\'enez. He credited his control of the slider being the major turning point for him. Later in the season, he was suspended for five games after hitting Aaron Rowand of the Giants with a pitch in a game on July 20. The incident occurred after both teams were given a warning following Giants ace Tim Lincecum hitting Matt Kemp earlier in the game. He threw his first career complete game shutout on September 14, 2010 also against San Francisco and finished the season with a record of 13 \u2013 10 and a 2.91 ERA in 32 starts, pitching 2041 / 3 innings and recording 212 strikeouts. = = = = 2011 season: 1st Cy Young Award = = = = After finishing the 2010 season strong, the Dodgers named Kershaw as the Opening Day Starter for the 2011 season. On May 29, he pitched the second complete-game shutout of his career, striking out 10 while winning a two-hitter against the Florida Marlins, 8 \u2013 0; he also had two singles and an RBI, scoring twice in the game. He produced his third career shutout on June 20, a two-hit, 11-strikeout effort against the Detroit Tigers. Kershaw became the first Dodgers starter to strike out the side in the 9th inning since Sandy Koufax's perfect game. In his next start, on June 26, Kershaw pitched another complete game (against the Los Angeles Angels of Anaheim ). He became the first Dodger starter to have back-to-back complete game victories since Jeff Weaver in the 2005 season and the first Dodger to have double-digit strikeouts in consecutive starts since Chan-Ho Park in the 2000 season. He was awarded the National League Player of the Week award for the week of June 20 \u2013 26 as a result of those two starts. Midway through June, Kershaw had amassed 32 career victories",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "XL Generation:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Reference:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": ", tying him with Luis Castillo for the third best start total in the league and trailing only Johnny Bench and Eddie Mathews (37). The Dodgers signed Kershaw to a one-year deal on July 14, 2011, with a player option for 2012, in a deal worth just under $ 300,000. The Dodgers entered the 2011 season as the major league leaders, and Kershaw had the best record in the National League in saves (39), games started (78) and walks (120); he also had the lowest win / loss ratio in the league (1.87), and he had the worst on-base percentage (.349). He had the best ERA (2.00 ), most wins (16 ), or most shutouts (29) in his career (25), while leading the league in losses per nine innings pitched (4.01). Following the 2011 season, the Dodgers traded Kershaw to the Kansas City Royals on July 29 for pitcher Javier Torres. = = = Kansas City Royals = = = = = = = 2012 season = = = = During spring training, Kershaw played very well. He was selected to spring training as a relief pitcher for the Royals for the 2012 season. After an injury to closer Javier V\u00e1zquez, he was activated on April 29 to replace Matt Holliday in the Royals ' starting rotation. In his only start with the Royals, on August 6, 2012, Kershaw struck out five batters in seven innings pitched to help the Royals to their first victory in franchise history. On September 27, 2012, it appeared Kershaw was going to pitch a complete game shutout against the Detroit Tigers, but did not manage to do so since the Tigers won 3 \u2013 1. At the conclusion of the season, Kershaw was named Major League Baseball's Most Valuable Player, was chosen to the All-Star Game at Busch Stadium and was named to the All-Star Game as the starting pitcher at shortstop. The Royals announced on February 4, 2013 that Kershaw would spend 2013 as starting pitcher, though he was expected to miss the season as a result of a shoulder injury. = = = = 2013 season = = = = On May 17, 2013, Kershaw sustained another back injury and did not start in August and October 2013. He appeared in 22 starts, all starts, finishing with a strikeout-to-walk ratio of 1.50 and a 2.91 ERA. He also had the third most strikeouts in the league: 10. On May 20, 2013, he",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ", a 3.15 ERA and 593 career strikeouts in 568.2 innings. According to the Elias Sports Bureau, Kershaw was the first 23-year-old pitcher to have that many victories, an ERA that low and an average of more than one strikeout per inning since ERA became an official statistic in 1910. Kershaw was selected to the National League team for the 2011 Major League Baseball All-Star Game, his first All-Star selection. In the month of July, Kershaw was 4 \u2013 1 with a 2.02 ERA and NL-leading 45 strikeouts, earning him the National League Pitcher of the Month Award. On August 23, he struck out Matt Holliday of the St. Louis Cardinals for his 200th strikeout of the season and became the 10th Dodger pitcher to record back-to-back 200 strikeout seasons and the first since Chan-Ho Park did it in the 2001 season. Kershaw finished the 2011 season by leading the NL with 21 wins, 248 strikeouts and a 2.28 ERA, winning the NL pitching Triple Crown, the first Triple Crown winner since Jake Peavy of the 2007 San Diego Padres and the first Dodger since Sandy Koufax won it in the 1966 season. Justin Verlander of the Detroit Tigers won the American League Triple Crown the same season, marking the first major-league season since 1924 to feature Triple Crown-winning pitchers in both leagues. Kershaw's 21 wins were the most by a Dodger pitcher since Orel Hershiser won 23 during the 1988 season. His ERA was the lowest by a Dodger since Hershiser's 2.03 in the 1985 season, his strikeouts were the most by a Dodger since Koufax's 317 in 1966 and his 233 1 / 3 innings pitched were the most since Chan Ho Park pitched 234 in 2001. Since 1965 when Koufax did it, Peavy and Kershaw are only two pitchers in the National League have led the league in wins, strikeouts, ERA, and WHIP (walks plus hits per inning pitched). Kershaw also became just the second <unk> to have a 240-plus strikeouts in a season before the age of 24, joining Vida Blue. After the season, Kershaw was awarded the Warren Spahn Award as the best left-handed pitcher in 2011, the Players Choice Award for Most Outstanding National League pitcher, the Gold Glove Award as the top fielding pitcher in the NL and the Sporting News (TSN) National League Pitcher of the Year. He was additionally selected as the starting pitcher for the TSN NL All-Star Team. On November 17, he was honored with the National League Cy Young Award, making him the youngest Cy Young winner since Dwight Gooden",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 12",
+      "caption": "Example 2 -- 500 tokens generated by XL using a snippet from the Wikitext-103 test set as initial context. The sample is randomly generated without any cherry picking. Original Wikipedia page: https://en.wikipedia.org/wiki/The_Tale_of_Mrs._Tittlemouse. This example exhibit some additional interesting properties of Transformer-XL: [leftmargin=*,itemsep=0em,topsep=0.4em,parsep=0.4em] After finishing the last paragraph of the seed context, both the reference and generated text start a new topic (i.e., Wikipedia page), as marked by the single \"= title =\" line. This suggests the model has the ability of identifying the end of a topic / page, and randomly starting with a new topic. Even more interestingly, a newly-started page is on a book called \"The Tale of Mrs. Tittlemouse\". Transformer-XL manages to copy the same book title and some related information from the training set, but hallucinates novel content of the book. This demonstrates a degree of generalization instead of memorization. Please refer to the original book content at the Wikipedia page.",
+      "label": "tab:gen-2",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Context:",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "= = Distribution = = Species range across the Neotropics from Mexico in the north to Bolivia, Paraguay, and southern Brazil in the south. According to <unk> and coauthors, three species are found in Mexico, four in Central America, and 62 in South America. Three species are present in the Caribbean \u2014 two in Trinidad and Tobago, along the southern edge of the region, and one in Haiti. = = Habitat and ecology = = <unk> includes both large trees and small acaulescent palms which occupy a number of different ecological niches. Dense stands of some of the larger species are conspicuous elements on the landscape, while smaller species are found in both in the forest understorey and in savannas. Disturbance has been implicated in the formation of vegetation dominated by large <unk> species. In seasonally dry Amazonian forests the density of large adult A. <unk> palms was correlated with canopy openness; the species also dominates savannas formed by repeated forest fires in Trinidad and Tobago. <unk> speciosa forms pure stands in many parts of Brazil where natural forest vegetation has been cleared. Similarly, stands of A. <unk> in Bahia, Brazil (which are cultivated for <unk> fibre) are managed using fire \u2014 the seedlings survive cutting and burning, and are able to dominate burned forest patches. The fruit are dispersed by animals; fruit which are not dispersed frequently suffer seed predation by <unk> beetles. Certain species of <unk> have been mentioned as examples of \" anachronistic \" species which are adapted for dispersal by now-extinct Pleistocene megafauna. On <unk> Island, <unk>, in the Brazilian Amazon, <unk> <unk> fruit were consumed by tapirs, collared peccaries, deer and primates. Rodents, including agoutis, fed upon the fruit and, as the fruit availability declined, they fed on the seeds. Other dispersers of <unk> fruit include Crested <unk> which consume the fruit and disperse the seeds of A. <unk> in the Brazilian Pantanal. = = Uses = = <unk> species have a long history of human utilisation. <unk> <unk> <unk> seeds have been found in archaeological sites in Colombia dating back to 9000 BP. A variety of species remain important sources of edible oil, thatch, edible seeds and fibre. The leaves of <unk> <unk> and A. <unk> are used extensively for thatching. Several species are oil palms, with A. speciosa among the most important economically. Products extracted from A. speciosa were reported to support over 300,000 households in the Brazilian state of Maranh\u00e3o in 2005, and in 1985 it was estimated to support over 450,000 households throughout the Brazil. <unk> fibres, extracted from the leaf bases of A. <unk>, are commercially important, and generated about US $",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "XL Generation:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Reference:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "700,000 in 2013 on the black market. In 2004 the plant was reported to be responsible for a net profit of around US $ 3 million in Brazil. A 2012 study found A. speciosa to cause agricultural production at least 2 \u2013 3 times greater than those achieved without prior knowledge of land management. = The Tale of Mrs. Tittlemouse = The Tale of Mrs. Tittlemouse is a children's book written and illustrated by H. M. Potter. It was first published in February 1910 by Frederick Warne \\",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Co. and included illustrations by Frederick Warne. Mrs. Tittlemouse was intended to be a children's book, rather than a musical, and the tale describes her attempts to find her own home. Mrs. Tittlemouse is an average kitten and the tale follows a mischievous rabbit named Mr. Tittlemouse who tries to kill her in an attempt to get a ride on a horse. Potter later wrote of the rabbit and her attempts to kill her, \" If [ she ] were a fox, I should like to have been able to show her the way. \" Potter's work was inspired by The Tale of Little Black Sambo and her two nieces, Petunia and Petunia. It was the first book in the Potter family to be published in a hardback format, and was also the first book in the Peter Rabbit series. The tale was released on 13 November 1910 and was accompanied by a greeting card by Potter's brother-in-law, Frederick Warne. The tale was well received by critics and children, and sold over 600,000 copies in its first few years. In the first year of its publication, Potter's The Tale of Mrs. Tittlemouse won children's book awards in England, America and Australia. It was selected as a \" recommended reading \" by children in the US and Canada. = = Plot summary = = The tale opens with the pet rabbit Mrs. Tittlemouse wandering through a forest in a small litter of four. He is shot and badly injured by a deer after she attempts to escape. Mrs. Tittlemouse decides that she wants to find her own home, because she is eager to go on her own. She goes alone to the farm where she makes a little money by selling a few seeds and building a small cabin in the woods. She is approached by a wealthy hunter named Mr. Tittlemouse, who tries to kill her but Mrs. Tittlemouse kills him by stuffing a rope into his nose and killing him. She is rescued by Mr. Tittlemouse's wife Ruth, but Mrs. Tittlemouse then leaves the woodland with the baby. When she is spotted by",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20 million in annual income to Brazilian farmers in 1996. = The Heart of Ezra Greer = The Heart of Ezra Greer is a 1917 American silent drama film produced by the Thanhouser Company and directed by Emile <unk>. The film focuses on Ezra Greer, a successful middle-aged man who searches for his college age daughter, Mary. The wayward Mary was romanced and abandoned by Jack <unk>, later bearing his child. Once Ezra becomes broke he finds employment as the valet for Jack <unk>. After Jack's engagement to a cabaret girl, Mary becomes upset and leaves her child at Jack's home. Contrary to Jack's wishes, Ezra keeps the child and Jack ultimately reveals that the child is his own. Ezra convinces Jack to make things right and Ezra convinces the cabaret girl to leave Jack. After a carriage accident in which the baby is injured, Ezra and Jack rush to the hospital and find Mary as a nurse crying over the child. The film ends with the marriage of Jack and Mary. The film was released by Path\u00e9 on October 7, 1917. The film was the final release from Thanhouser and was deemed to be an average film by most reviewers. Criticism for the film hinged on far-fetched coincidences to drive the plot. The film is presumed lost. = = Plot = = The film follows Ezra Greer, a middle-aged man who has worked hard since his youth. He cares deeply for his motherless daughter, Mary, but was unable to attend the annual commencement at her co-educational college. He awaits for her to return from college, but Mary leaves with her romantic interest, Jack <unk>. On promise of marriage and wealth, Mary is romanced and gives birth to a fatherless child. Without word from his daughter, Ezra resigns from his job and attempts to seek her out and finds a poor motherless child, Marie. With Ezra's money exhausted he seeks employment and finds it as the valet of Jack. One day, Mary seeks an announcement of Jack's engagement to a cabaret girl known as \" The Baby Vamp \". Bitter over the prospect of her child's future, she leaves the child at Jack's home during his absence with a note. Jack orders Ezra to take the baby to an orphanage, but Marie begs Ezra to keep him. After continually seeing the child, Jack is overcome with remorse and explains to Ezra and seeks his advice. Not knowing he was making the case for his own daughter, Ezra convinces Jack to seek out Mary and forget the Baby Vamp. The Baby",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\figleft": "{\\em (Left)}",
+    "\\figcenter": "{\\em (Center)}",
+    "\\figright": "{\\em (Right)}",
+    "\\figtop": "{\\em (Top)}",
+    "\\figbottom": "{\\em (Bottom)}",
+    "\\captiona": "{\\em (a)}",
+    "\\captionb": "{\\em (b)}",
+    "\\captionc": "{\\em (c)}",
+    "\\captiond": "{\\em (d)}",
+    "\\newterm": "{\\bf #1}",
+    "\\train": "\\mathcal{D}",
+    "\\valid": "\\mathcal{D_{\\mathrm{valid}}}",
+    "\\test": "\\mathcal{D_{\\mathrm{test}}}",
+    "\\tens": "\\bm{\\mathsfit{#1}}",
+    "\\etens": "\\mathsfit{#1}",
+    "\\pdata": "p_{\\rm{data}}",
+    "\\ptrain": "\\hat{p}_{\\rm{data}}",
+    "\\Ptrain": "\\hat{P}_{\\rm{data}}",
+    "\\pmodel": "p_{\\rm{model}}",
+    "\\Pmodel": "P_{\\rm{model}}",
+    "\\ptildemodel": "\\tilde{p}_{\\rm{model}}",
+    "\\pencode": "p_{\\rm{encoder}}",
+    "\\pdecode": "p_{\\rm{decoder}}",
+    "\\precons": "p_{\\rm{reconstruct}}",
+    "\\laplace": "\\mathrm{Laplace}",
+    "\\E": "\\mathbb{E}",
+    "\\Ls": "\\mathcal{L}",
+    "\\R": "\\mathbb{R}",
+    "\\emp": "\\tilde{p}",
+    "\\lr": "\\alpha",
+    "\\reg": "\\lambda",
+    "\\rect": "\\mathrm{rectifier}",
+    "\\softmax": "\\mathrm{softmax}",
+    "\\sigmoid": "\\sigma",
+    "\\softplus": "\\zeta",
+    "\\KL": "D_{\\mathrm{KL}}",
+    "\\Var": "\\mathrm{Var}",
+    "\\standarderror": "\\mathrm{SE}",
+    "\\Cov": "\\mathrm{Cov}",
+    "\\normlzero": "L^0",
+    "\\normlone": "L^1",
+    "\\normltwo": "L^2",
+    "\\normlp": "L^p",
+    "\\normmax": "L^\\infty",
+    "\\parents": "Pa",
+    "\\rulesep": "\\unskip\\ \\vrule\\ ",
+    "\\cmark": "\\ding{51}",
+    "\\xmark": "\\ding{55}",
+    "\\red": "{\\color{red}#1}",
+    "\\blue": "{\\color{blue}#1}",
+    "\\green": "{\\color{green}#1}",
+    "\\brown": "{\\color{brown}#1}",
+    "\\cyan": "{\\color{cyan}#1}",
+    "\\purple": "{\\color{purple}#1}",
+    "\\orange": "{\\color{orange}#1}",
+    "\\magenta": "{\\color{magenta}#1}",
+    "\\BibTeX": "B\\textsc{ib}\\TeX",
+    "\\thefootnote": "\\arabic{footnote}"
+  },
+  "references": [
+    {
+      "key": "al2018character",
+      "raw": "Rami Al-Rfou, Dokook Choe, Noah Constant, Mandy Guo, and Llion Jones. 2018. Character-level language modeling with deeper self-attention. arXiv preprint arXiv:1808.04444",
+      "authors": "Rami Al-Rfou, Dokook Choe, Noah Constant, Mandy Guo, and Llion Jones. 2018",
+      "title": "Character-level language modeling with deeper self-attention",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1808.04444",
+      "doi": null
+    },
+    {
+      "key": "baevski2018adaptive",
+      "raw": "Alexei Baevski and Michael Auli. 2018. Adaptive input representations for neural language modeling. arXiv preprint arXiv:1809.10853",
+      "authors": "Alexei Baevski and Michael Auli. 2018",
+      "title": "Adaptive input representations for neural language modeling",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1809.10853",
+      "doi": null
+    },
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014. Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "bai2018empirical",
+      "raw": "Shaojie Bai, J Zico Kolter, and Vladlen Koltun. 2018. An empirical evaluation of generic convolutional and recurrent networks for sequence modeling. arXiv preprint arXiv:1803.01271",
+      "authors": "Shaojie Bai, J Zico Kolter, and Vladlen Koltun. 2018",
+      "title": "An empirical evaluation of generic convolutional and recurrent networks for sequence modeling",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1803.01271",
+      "doi": null
+    },
+    {
+      "key": "bengio2003neural",
+      "raw": "Yoshua Bengio, R\\'ejean Ducharme, Pascal Vincent, and Christian Jauvin. 2003. A neural probabilistic language model. Journal of machine learning research, 3(Feb):1137--1155",
+      "authors": "Yoshua Bengio, R\\'ejean Ducharme, Pascal Vincent, and Christian Jauvin. 2003",
+      "title": "A neural probabilistic language model",
+      "venue": "Journal of machine learning research, 3(Feb):1137--1155",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chelba2013one",
+      "raw": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson. 2013. One billion word benchmark for measuring progress in statistical language modeling. arXiv preprint arXiv:1312.3005",
+      "authors": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson. 2013",
+      "title": "One billion word benchmark for measuring progress in statistical language modeling",
+      "venue": "arXiv preprint",
+      "year": 2013,
+      "arxivId": "1312.3005",
+      "doi": null
+    },
+    {
+      "key": "chung2016hierarchical",
+      "raw": "Junyoung Chung, Sungjin Ahn, and Yoshua Bengio. 2016. Hierarchical multiscale recurrent neural networks. arXiv preprint arXiv:1609.01704",
+      "authors": "Junyoung Chung, Sungjin Ahn, and Yoshua Bengio. 2016",
+      "title": "Hierarchical multiscale recurrent neural networks",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.01704",
+      "doi": null
+    },
+    {
+      "key": "cooijmans2016recurrent",
+      "raw": "Tim Cooijmans, Nicolas Ballas, C\\'esar Laurent, Ca glar G\\\"ul cehre, and Aaron Courville. 2016. Recurrent batch normalization. arXiv preprint arXiv:1603.09025",
+      "authors": "Tim Cooijmans, Nicolas Ballas, C\\'esar Laurent, Ca glar G\\\"ul cehre, and Aaron Courville. 2016",
+      "title": "Recurrent batch normalization",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1603.09025",
+      "doi": null
+    },
+    {
+      "key": "dai2015semi",
+      "raw": "Andrew M Dai and Quoc V Le. 2015. Semi-supervised sequence learning. In Advances in neural information processing systems, pages 3079--3087",
+      "authors": "Andrew M Dai and Quoc V Le. 2015",
+      "title": "Semi-supervised sequence learning",
+      "venue": "In Advances in neural information processing systems, pages 3079--3087",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dauphin2016language",
+      "raw": "Yann N Dauphin, Angela Fan, Michael Auli, and David Grangier. 2016. Language modeling with gated convolutional networks. arXiv preprint arXiv:1612.08083",
+      "authors": "Yann N Dauphin, Angela Fan, Michael Auli, and David Grangier. 2016",
+      "title": "Language modeling with gated convolutional networks",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1612.08083",
+      "doi": null
+    },
+    {
+      "key": "devlin2018bert",
+      "raw": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018",
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1810.04805",
+      "doi": null
+    },
+    {
+      "key": "dieng2016topicrnn",
+      "raw": "Adji B Dieng, Chong Wang, Jianfeng Gao, and John Paisley. 2016. Topicrnn: A recurrent neural network with long-range semantic dependency. arXiv preprint arXiv:1611.01702",
+      "authors": "Adji B Dieng, Chong Wang, Jianfeng Gao, and John Paisley. 2016",
+      "title": "Topicrnn: A recurrent neural network with long-range semantic dependency",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1611.01702",
+      "doi": null
+    },
+    {
+      "key": "gal2016theoretically",
+      "raw": "Yarin Gal and Zoubin Ghahramani. 2016. A theoretically grounded application of dropout in recurrent neural networks. In Advances in neural information processing systems, pages 1019--1027",
+      "authors": "Yarin Gal and Zoubin Ghahramani. 2016",
+      "title": "A theoretically grounded application of dropout in recurrent neural networks",
+      "venue": "In Advances in neural information processing systems, pages 1019--1027",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "grave2016efficient",
+      "raw": "Edouard Grave, Armand Joulin, Moustapha Ciss\\'e, David Grangier, and Herv\\'e J\\'egou. 2016. Efficient softmax approximation for gpus. arXiv preprint arXiv:1609.04309",
+      "authors": "Edouard Grave, Armand Joulin, Moustapha Ciss\\'e, David Grangier, and Herv\\'e J\\'egou. 2016",
+      "title": "Efficient softmax approximation for gpus",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.04309",
+      "doi": null
+    },
+    {
+      "key": "grave2016improving",
+      "raw": "Edouard Grave, Armand Joulin, and Nicolas Usunier. 2016. Improving neural language models with a continuous cache. arXiv preprint arXiv:1612.04426",
+      "authors": "Edouard Grave, Armand Joulin, and Nicolas Usunier. 2016",
+      "title": "Improving neural language models with a continuous cache",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1612.04426",
+      "doi": null
+    },
+    {
+      "key": "graves2013generating",
+      "raw": "Alex Graves. 2013. Generating sequences with recurrent neural networks. arXiv preprint arXiv:1308.0850",
+      "authors": "Alex Graves. 2013",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "arXiv preprint",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "graves2014neural",
+      "raw": "Alex Graves, Greg Wayne, and Ivo Danihelka. 2014. Neural turing machines. arXiv preprint arXiv:1410.5401",
+      "authors": "Alex Graves, Greg Wayne, and Ivo Danihelka. 2014",
+      "title": "Neural turing machines",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1410.5401",
+      "doi": null
+    },
+    {
+      "key": "ha2016hypernetworks",
+      "raw": "David Ha, Andrew Dai, and Quoc V Le. 2016. Hypernetworks. arXiv preprint arXiv:1609.09106",
+      "authors": "David Ha, Andrew Dai, and Quoc V Le. 2016",
+      "title": "Hypernetworks",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.09106",
+      "doi": null
+    },
+    {
+      "key": "hochreiter2001gradient",
+      "raw": "Sepp Hochreiter, Yoshua Bengio, Paolo Frasconi, J\\\"urgen Schmidhuber, et al. 2001. Gradient flow in recurrent nets: the difficulty of learning long-term dependencies",
+      "authors": "Sepp Hochreiter, Yoshua Bengio, Paolo Frasconi, J\\\"urgen Schmidhuber, et al. 2001",
+      "title": "Gradient flow in recurrent nets: the difficulty of learning long-term dependencies",
+      "venue": "",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Sepp Hochreiter and J\\\"urgen Schmidhuber. 1997. Long short-term memory. Neural computation, 9(8):1735--1780",
+      "authors": "Sepp Hochreiter and J\\\"urgen Schmidhuber. 1997",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9(8):1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "huang2018improved",
+      "raw": "Cheng-Zhi Anna Huang, Ashish Vaswani, Jakob Uszkoreit, Noam Shazeer, Curtis Hawthorne, Andrew M Dai, Matthew D Hoffman, and Douglas Eck. 2018. An improved relative self-attention mechanism for transformer with application to music generation. arXiv preprint arXiv:1809.04281",
+      "authors": "Cheng-Zhi Anna Huang, Ashish Vaswani, Jakob Uszkoreit, Noam Shazeer, Curtis Hawthorne, Andrew M Dai, Matthew D Hoffman, and Douglas Eck. 2018",
+      "title": "An improved relative self-attention mechanism for transformer with application to music generation",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1809.04281",
+      "doi": null
+    },
+    {
+      "key": "inan2016tying",
+      "raw": "Hakan Inan, Khashayar Khosravi, and Richard Socher. 2016. Tying word vectors and word classifiers: A loss framework for language modeling. arXiv preprint arXiv:1611.01462",
+      "authors": "Hakan Inan, Khashayar Khosravi, and Richard Socher. 2016",
+      "title": "Tying word vectors and word classifiers: A loss framework for language modeling",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1611.01462",
+      "doi": null
+    },
+    {
+      "key": "ji2015document",
+      "raw": "Yangfeng Ji, Trevor Cohn, Lingpeng Kong, Chris Dyer, and Jacob Eisenstein. 2015. Document context language models. arXiv preprint arXiv:1511.03962",
+      "authors": "Yangfeng Ji, Trevor Cohn, Lingpeng Kong, Chris Dyer, and Jacob Eisenstein. 2015",
+      "title": "Document context language models",
+      "venue": "arXiv preprint",
+      "year": 2015,
+      "arxivId": "1511.03962",
+      "doi": null
+    },
+    {
+      "key": "jozefowicz2016exploring",
+      "raw": "Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu. 2016. Exploring the limits of language modeling. arXiv preprint arXiv:1602.02410",
+      "authors": "Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu. 2016",
+      "title": "Exploring the limits of language modeling",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1602.02410",
+      "doi": null
+    },
+    {
+      "key": "kalchbrenner2016neural",
+      "raw": "Nal Kalchbrenner, Lasse Espeholt, Karen Simonyan, Aaron van den Oord, Alex Graves, and Koray Kavukcuoglu. 2016. Neural machine translation in linear time. arXiv preprint arXiv:1610.10099",
+      "authors": "Nal Kalchbrenner, Lasse Espeholt, Karen Simonyan, Aaron van den Oord, Alex Graves, and Koray Kavukcuoglu. 2016",
+      "title": "Neural machine translation in linear time",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1610.10099",
+      "doi": null
+    },
+    {
+      "key": "kanai2018sigsoftmax",
+      "raw": "Sekitoshi Kanai, Yasuhiro Fujiwara, Yuki Yamanaka, and Shuichi Adachi. 2018. Sigsoftmax: Reanalysis of the softmax bottleneck. arXiv preprint arXiv:1805.10829",
+      "authors": "Sekitoshi Kanai, Yasuhiro Fujiwara, Yuki Yamanaka, and Shuichi Adachi. 2018",
+      "title": "Sigsoftmax: Reanalysis of the softmax bottleneck",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1805.10829",
+      "doi": null
+    },
+    {
+      "key": "ke2018sparse",
+      "raw": "Nan Rosemary Ke, Anirudh Goyal ALIAS PARTH GOYAL, Olexa Bilaniuk, Jonathan Binas, Michael C Mozer, Chris Pal, and Yoshua Bengio. 2018. Sparse attentive backtracking: Temporal credit assignment through reminding. In Advances in Neural Information Processing Systems, pages 7650--7661",
+      "authors": "Nan Rosemary Ke, Anirudh Goyal ALIAS PARTH GOYAL, Olexa Bilaniuk, Jonathan Binas, Michael C Mozer, Chris Pal, and Yoshua Bengio. 2018",
+      "title": "Sparse attentive backtracking: Temporal credit assignment through reminding",
+      "venue": "In Advances in Neural Information Processing Systems, pages 7650--7661",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "khandelwal2018sharp",
+      "raw": "Urvashi Khandelwal, He He, Peng Qi, and Dan Jurafsky. 2018. Sharp nearby, fuzzy far away: How neural language models use context. arXiv preprint arXiv:1805.04623",
+      "authors": "Urvashi Khandelwal, He He, Peng Qi, and Dan Jurafsky. 2018",
+      "title": "Sharp nearby, fuzzy far away: How neural language models use context",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1805.04623",
+      "doi": null
+    },
+    {
+      "key": "cmix",
+      "raw": "Bryon Knol. 2017. cmix v13. http://www.byronknoll.com/cmix.html",
+      "authors": "Bryon Knol. 2017",
+      "title": "cmix v13",
+      "venue": "",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "koutnik2014clockwork",
+      "raw": "Jan Koutnik, Klaus Greff, Faustino Gomez, and Juergen Schmidhuber. 2014. A clockwork rnn. arXiv preprint arXiv:1402.3511",
+      "authors": "Jan Koutnik, Klaus Greff, Faustino Gomez, and Juergen Schmidhuber. 2014",
+      "title": "A clockwork rnn",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1402.3511",
+      "doi": null
+    },
+    {
+      "key": "krause2016multiplicative",
+      "raw": "Ben Krause, Liang Lu, Iain Murray, and Steve Renals. 2016. Multiplicative lstm for sequence modelling. arXiv preprint arXiv:1609.07959",
+      "authors": "Ben Krause, Liang Lu, Iain Murray, and Steve Renals. 2016",
+      "title": "Multiplicative lstm for sequence modelling",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.07959",
+      "doi": null
+    },
+    {
+      "key": "kuchaiev2017factorization",
+      "raw": "Oleksii Kuchaiev and Boris Ginsburg. 2017. Factorization tricks for lstm networks. arXiv preprint arXiv:1703.10722",
+      "authors": "Oleksii Kuchaiev and Boris Ginsburg. 2017",
+      "title": "Factorization tricks for lstm networks",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1703.10722",
+      "doi": null
+    },
+    {
+      "key": "le2015simple",
+      "raw": "Quoc V Le, Navdeep Jaitly, and Geoffrey E Hinton. 2015. A simple way to initialize recurrent networks of rectified linear units. arXiv preprint arXiv:1504.00941",
+      "authors": "Quoc V Le, Navdeep Jaitly, and Geoffrey E Hinton. 2015",
+      "title": "A simple way to initialize recurrent networks of rectified linear units",
+      "venue": "arXiv preprint",
+      "year": 2015,
+      "arxivId": "1504.00941",
+      "doi": null
+    },
+    {
+      "key": "li2018independently",
+      "raw": "Shuai Li, Wanqing Li, Chris Cook, Ce Zhu, and Yanbo Gao. 2018. Independently recurrent neural network (indrnn): Building a longer and deeper rnn. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 5457--5466",
+      "authors": "Shuai Li, Wanqing Li, Chris Cook, Ce Zhu, and Yanbo Gao. 2018",
+      "title": "Independently recurrent neural network (indrnn): Building a longer and deeper rnn",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 5457--5466",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liu2018darts",
+      "raw": "Hanxiao Liu, Karen Simonyan, and Yiming Yang. 2018. Darts: Differentiable architecture search. arXiv preprint arXiv:1806.09055",
+      "authors": "Hanxiao Liu, Karen Simonyan, and Yiming Yang. 2018",
+      "title": "Darts: Differentiable architecture search",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1806.09055",
+      "doi": null
+    },
+    {
+      "key": "mahoney2011large",
+      "raw": "MultiMedia LLC. 2009. Large text compression benchmark",
+      "authors": "MultiMedia LLC. 2009",
+      "title": "Large text compression benchmark",
+      "venue": "",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "melis2018pushing",
+      "raw": "G\\'abor Melis, Charles Blundell, Tom\\'a s Ko cisk\\`y, Karl Moritz Hermann, Chris Dyer, and Phil Blunsom. 2018. Pushing the bounds of dropout. arXiv preprint arXiv:1805.09208",
+      "authors": "G\\'abor Melis, Charles Blundell, Tom\\'a s Ko cisk\\`y, Karl Moritz Hermann, Chris Dyer, and Phil Blunsom. 2018",
+      "title": "Pushing the bounds of dropout",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1805.09208",
+      "doi": null
+    },
+    {
+      "key": "merity2017regularizing",
+      "raw": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher. 2017. Regularizing and optimizing lstm language models. arXiv preprint arXiv:1708.02182",
+      "authors": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher. 2017",
+      "title": "Regularizing and optimizing lstm language models",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1708.02182",
+      "doi": null
+    },
+    {
+      "key": "merity2018analysis",
+      "raw": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher. 2018. An analysis of neural language modeling at multiple scales. arXiv preprint arXiv:1803.08240",
+      "authors": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher. 2018",
+      "title": "An analysis of neural language modeling at multiple scales",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1803.08240",
+      "doi": null
+    },
+    {
+      "key": "merity2016pointer",
+      "raw": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. 2016. Pointer sentinel mixture models. arXiv preprint arXiv:1609.07843",
+      "authors": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. 2016",
+      "title": "Pointer sentinel mixture models",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.07843",
+      "doi": null
+    },
+    {
+      "key": "mikolov2014learning",
+      "raw": "Tomas Mikolov, Armand Joulin, Sumit Chopra, Michael Mathieu, and Marc'Aurelio Ranzato. 2014. Learning longer memory in recurrent neural networks. arXiv preprint arXiv:1412.7753",
+      "authors": "Tomas Mikolov, Armand Joulin, Sumit Chopra, Michael Mathieu, and Marc'Aurelio Ranzato. 2014",
+      "title": "Learning longer memory in recurrent neural networks",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1412.7753",
+      "doi": null
+    },
+    {
+      "key": "mikolov2010recurrent",
+      "raw": "Tom\\'a s Mikolov, Martin Karafi\\'at, Luk\\'a s Burget, Jan Cernock\\`y, and Sanjeev Khudanpur. 2010. Recurrent neural network based language model. In Eleventh Annual Conference of the International Speech Communication Association",
+      "authors": "Tom\\'a s Mikolov, Martin Karafi\\'at, Luk\\'a s Burget, Jan Cernock\\`y, and Sanjeev Khudanpur. 2010",
+      "title": "Recurrent neural network based language model",
+      "venue": "In Eleventh Annual Conference of the International Speech Communication Association",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2012context",
+      "raw": "Tomas Mikolov and Geoffrey Zweig. 2012. Context dependent recurrent neural network language model. SLT, 12(234-239):8",
+      "authors": "Tomas Mikolov and Geoffrey Zweig. 2012",
+      "title": "Context dependent recurrent neural network language model",
+      "venue": "SLT, 12(234-239):8",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "morin2005hierarchical",
+      "raw": "Frederic Morin and Yoshua Bengio. 2005. Hierarchical probabilistic neural network language model. In Aistats, volume 5, pages 246--252. Citeseer",
+      "authors": "Frederic Morin and Yoshua Bengio. 2005",
+      "title": "Hierarchical probabilistic neural network language model",
+      "venue": "In Aistats, volume 5, pages 246--252. Citeseer",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mujika2017fast",
+      "raw": "Asier Mujika, Florian Meier, and Angelika Steger. 2017. Fast-slow recurrent neural networks. In Advances in Neural Information Processing Systems, pages 5915--5924",
+      "authors": "Asier Mujika, Florian Meier, and Angelika Steger. 2017",
+      "title": "Fast-slow recurrent neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pages 5915--5924",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pascanu2012understanding",
+      "raw": "Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. 2012. Understanding the exploding gradient problem. CoRR, abs/1211.5063",
+      "authors": "Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. 2012",
+      "title": "Understanding the exploding gradient problem",
+      "venue": "CoRR, abs/1211.5063",
+      "year": 2012,
+      "arxivId": "1211.5063",
+      "doi": null
+    },
+    {
+      "key": "peters2018deep",
+      "raw": "Matthew E Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. Deep contextualized word representations. arXiv preprint arXiv:1802.05365",
+      "authors": "Matthew E Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018",
+      "title": "Deep contextualized word representations",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1802.05365",
+      "doi": null
+    },
+    {
+      "key": "pham2018efficient",
+      "raw": "Hieu Pham, Melody Y Guan, Barret Zoph, Quoc V Le, and Jeff Dean. 2018. Efficient neural architecture search via parameter sharing. arXiv preprint arXiv:1802.03268",
+      "authors": "Hieu Pham, Melody Y Guan, Barret Zoph, Quoc V Le, and Jeff Dean. 2018",
+      "title": "Efficient neural architecture search via parameter sharing",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1802.03268",
+      "doi": null
+    },
+    {
+      "key": "press2016using",
+      "raw": "Ofir Press and Lior Wolf. 2016. Using the output embedding to improve language models. arXiv preprint arXiv:1608.05859",
+      "authors": "Ofir Press and Lior Wolf. 2016",
+      "title": "Using the output embedding to improve language models",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1608.05859",
+      "doi": null
+    },
+    {
+      "key": "radford2018improving",
+      "raw": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. Improving language understanding by generative pre-training. URL https://s3-us-west-2. amazonaws. com/openai-assets/research-covers/languageunsupervised/language understanding paper. pdf",
+      "authors": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018",
+      "title": "Improving language understanding by generative pre-training",
+      "venue": "URL amazonaws. com/openai-assets/research-covers/languageunsupervised/language understanding paper. pdf",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rae2018fast",
+      "raw": "Jack W Rae, Chris Dyer, Peter Dayan, and Timothy P Lillicrap. 2018. Fast parametric learning with activation memorization. arXiv preprint arXiv:1803.10049",
+      "authors": "Jack W Rae, Chris Dyer, Peter Dayan, and Timothy P Lillicrap. 2018",
+      "title": "Fast parametric learning with activation memorization",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1803.10049",
+      "doi": null
+    },
+    {
+      "key": "shaw2018self",
+      "raw": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani. 2018. Self-attention with relative position representations. arXiv preprint arXiv:1803.02155",
+      "authors": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani. 2018",
+      "title": "Self-attention with relative position representations",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1803.02155",
+      "doi": null
+    },
+    {
+      "key": "shazeer2018mesh",
+      "raw": "Noam Shazeer, Youlong Cheng, Niki Parmar, Dustin Tran, Ashish Vaswani, Penporn Koanantakool, Peter Hawkins, HyoukJoong Lee, Mingsheng Hong, Cliff Young, et al. 2018. Mesh-tensorflow: Deep learning for supercomputers. In Advances in Neural Information Processing Systems, pages 10434--10443",
+      "authors": "Noam Shazeer, Youlong Cheng, Niki Parmar, Dustin Tran, Ashish Vaswani, Penporn Koanantakool, Peter Hawkins, HyoukJoong Lee, Mingsheng Hong, Cliff Young, et al. 2018",
+      "title": "Mesh-tensorflow: Deep learning for supercomputers",
+      "venue": "In Advances in Neural Information Processing Systems, pages 10434--10443",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shazeer2017outrageously",
+      "raw": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean. 2017. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. arXiv preprint arXiv:1701.06538",
+      "authors": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean. 2017",
+      "title": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1701.06538",
+      "doi": null
+    },
+    {
+      "key": "shazeer2014skip",
+      "raw": "Noam Shazeer, Joris Pelemans, and Ciprian Chelba. 2014. Skip-gram language modeling using sparse non-negative matrix probability estimation. arXiv preprint arXiv:1412.1454",
+      "authors": "Noam Shazeer, Joris Pelemans, and Ciprian Chelba. 2014",
+      "title": "Skip-gram language modeling using sparse non-negative matrix probability estimation",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1412.1454",
+      "doi": null
+    },
+    {
+      "key": "trinh2018learning",
+      "raw": "Trieu H Trinh, Andrew M Dai, Thang Luong, and Quoc V Le. 2018. Learning longer-term dependencies in rnns with auxiliary losses. arXiv preprint arXiv:1803.00144",
+      "authors": "Trieu H Trinh, Andrew M Dai, Thang Luong, and Quoc V Le. 2018",
+      "title": "Learning longer-term dependencies in rnns with auxiliary losses",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1803.00144",
+      "doi": null
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in Neural Information Processing Systems, pages 5998--6008",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017",
+      "title": "Attention is all you need",
+      "venue": "In Advances in Neural Information Processing Systems, pages 5998--6008",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2015larger",
+      "raw": "Tian Wang and Kyunghyun Cho. 2015. Larger-context language modelling. arXiv preprint arXiv:1511.03729",
+      "authors": "Tian Wang and Kyunghyun Cho. 2015",
+      "title": "Larger-context language modelling",
+      "venue": "arXiv preprint",
+      "year": 2015,
+      "arxivId": "1511.03729",
+      "doi": null
+    },
+    {
+      "key": "wang2017topic",
+      "raw": "Wenlin Wang, Zhe Gan, Wenqi Wang, Dinghan Shen, Jiaji Huang, Wei Ping, Sanjeev Satheesh, and Lawrence Carin. 2017. Topic compositional neural language model. arXiv preprint arXiv:1712.09783",
+      "authors": "Wenlin Wang, Zhe Gan, Wenqi Wang, Dinghan Shen, Jiaji Huang, Wei Ping, Sanjeev Satheesh, and Lawrence Carin. 2017",
+      "title": "Topic compositional neural language model",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1712.09783",
+      "doi": null
+    },
+    {
+      "key": "weston2014memory",
+      "raw": "Jason Weston, Sumit Chopra, and Antoine Bordes. 2014. Memory networks. arXiv preprint arXiv:1410.3916",
+      "authors": "Jason Weston, Sumit Chopra, and Antoine Bordes. 2014",
+      "title": "Memory networks",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1410.3916",
+      "doi": null
+    },
+    {
+      "key": "wu2016multiplicative",
+      "raw": "Yuhuai Wu, Saizheng Zhang, Ying Zhang, Yoshua Bengio, and Ruslan R Salakhutdinov. 2016. On multiplicative integration with recurrent neural networks. In Advances in neural information processing systems, pages 2856--2864",
+      "authors": "Yuhuai Wu, Saizheng Zhang, Ying Zhang, Yoshua Bengio, and Ruslan R Salakhutdinov. 2016",
+      "title": "On multiplicative integration with recurrent neural networks",
+      "venue": "In Advances in neural information processing systems, pages 2856--2864",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yang2017breaking",
+      "raw": "Zhilin Yang, Zihang Dai, Ruslan Salakhutdinov, and William W Cohen. 2017. Breaking the softmax bottleneck: A high-rank rnn language model. arXiv preprint arXiv:1711.03953",
+      "authors": "Zhilin Yang, Zihang Dai, Ruslan Salakhutdinov, and William W Cohen. 2017",
+      "title": "Breaking the softmax bottleneck: A high-rank rnn language model",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1711.03953",
+      "doi": null
+    },
+    {
+      "key": "zaremba2014recurrent",
+      "raw": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals. 2014. Recurrent neural network regularization. arXiv preprint arXiv:1409.2329",
+      "authors": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals. 2014",
+      "title": "Recurrent neural network regularization",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    },
+    {
+      "key": "zilly2016recurrent",
+      "raw": "Julian Georg Zilly, Rupesh Kumar Srivastava, Jan Koutn\\' k, and J\\\"urgen Schmidhuber. 2016. Recurrent highway networks. arXiv preprint arXiv:1607.03474",
+      "authors": "Julian Georg Zilly, Rupesh Kumar Srivastava, Jan Koutn\\' k, and J\\\"urgen Schmidhuber. 2016",
+      "title": "Recurrent highway networks",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1607.03474",
+      "doi": null
+    },
+    {
+      "key": "zoph2016neural",
+      "raw": "Barret Zoph and Quoc V Le. 2016. Neural architecture search with reinforcement learning. arXiv preprint arXiv:1611.01578",
+      "authors": "Barret Zoph and Quoc V Le. 2016",
+      "title": "Neural architecture search with reinforcement learning",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1611.01578",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "&\\widetilde{\\rvh}_{\\tau+1}^{n-1} = \\left[ \\text{SG}(\\rvh_{\\tau}^{n-1}) \\circ \\rvh_{\\tau+1}^{n-1} \\right],\n\n\t\t\\\\\n\t&\\rvq_{\\tau+1}^{n}, \\rvk_{\\tau+1}^{n}, \\rvv_{\\tau+1}^{n} = \\rvh_{\\tau+1}^{n-1} \\rmW_q^\\top, \\widetilde{\\rvh}_{\\tau+1}^{n-1} \\rmW_k^\\top, \\widetilde{\\rvh}_{\\tau+1}^{n-1} \\rmW_v^\\top,\n\n\t\t\\\\\n\t&\\rvh_{\\tau+1}^{n} = \\text{Transformer-Layer}\\left(\\rvq_{\\tau+1}^{n}, \\rvk_{\\tau+1}^{n}, \\rvv_{\\tau+1}^{n}\\right).",
+      "environment": "align*",
+      "labels": [
+        "eqn:reuse"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\rvh_{\\tau+1} &= f(\\rvh_{\\tau}, \\rmE_{\\rvs_{\\tau+1}} + \\rmU_{1:L}) \\\\\n\t\\rvh_{\\tau} &= f(\\rvh_{\\tau-1}, \\rmE_{\\rvs_{\\tau}} + \\rmU_{1:L}),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\rmA_{i,j}^\\text{abs} \n\t&= \\underbrace{ \\rmE_{x_i}^\\top \\rmW_q^\\top \\rmW_k \\rmE_{x_j} }_{(a)}\n\t+ \\underbrace{\\rmE_{x_i}^\\top \\rmW_q^\\top \\rmW_k \\rmU_{j}}_{(b)} \\\\\n\t&+ \\underbrace{\\rmU_{i}^\\top \\rmW_q^\\top \\rmW_k \\rmE_{x_j}}_{(c)}\n\t+ \\underbrace{\\rmU_{i}^\\top \\rmW_q^\\top \\rmW_k \\rmU_{j}}_{(d)}. \\vspace{-0.5em}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\rmA_{i,j}^\\text{rel}\n\t&= \\underbrace{ \\rmE_{x_i}^\\top \\rmW_q^\\top \\rmW_{k,E} \\rmE_{x_j} }_{(a)}\n\t+ \\underbrace{\\rmE_{x_i}^\\top \\rmW_q^\\top \\rmW_{k,R} \\cyan{\\rmR_{i-j}} }_{(b)} \\\\\n\t&+ \\underbrace{\\red{u^\\top} \\rmW_{k,E} \\rmE_{x_j}}_{(c)}\n\t+ \\underbrace{\\red{v^\\top} \\rmW_{k,R} \\cyan{\\rmR_{i-j}}}_{(d)}.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\widetilde{\\rvh}_{\\tau}^{n-1}\n\t=&\\, \\left[ \\text{SG}(\\rvm_{\\tau}^{n-1}) \\circ \\rvh_{\\tau}^{n-1} \\right] \\\\\n\\rvq_{\\tau}^{n}, \\rvk_{\\tau}^{n}, \\rvv_{\\tau}^{n}\n\t=&\\, \\rvh_{\\tau}^{n-1} {\\rmW_q^{n}}^\\top, \\widetilde{\\rvh}_{\\tau}^{n-1} {\\rmW_{k,E}^{n}}^\\top, \\widetilde{\\rvh}_{\\tau}^{n-1} {\\rmW_v^{n}}^\\top \\\\\n\\rmA_{\\tau,i,j}^{n}\n\t=&\\, {\\rvq_{\\tau,i}^{n}}^\\top \\rvk_{\\tau,j}^{n} + {\\rvq_{\\tau,i}^{n}}^\\top \\rmW_{k,R}^{n} \\rmR_{i-j} \\\\&\\,+ u^\\top \\rvk_{\\tau,j} + v^\\top \\rmW_{k,R}^{n} \\rmR_{i-j} \\\\\n\\rva_{\\tau}^{n} =&\\, \\text{Masked-Softmax}(\\rmA_{\\tau}^{n}) \\rvv_{\\tau}^{n} \\\\\n\\rvo_{\\tau}^{n} =&\\, \\text{LayerNorm}(\\text{Linear}(\\rva_{\\tau}^{n}) + \\rvh_{\\tau}^{n-1}) \\\\\n\\rvh_{\\tau}^{n} =&\\, \\text{Positionwise-Feed-Forward}(\\rvo_{\\tau}^{n})",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\rmB &=\n\t\\begin{bmatrix}\n\tq_0^\\top \\rmW_{k,R} \\rmR_{M}   & \\cdots & q_0^\\top \\rmW_{k,R} \\rmR_{0} & 0 & \\cdots & 0 \\\\\n\tq_1^\\top \\rmW_{k,R} \\rmR_{M+1} & \\cdots & q_1^\\top \\rmW_{k,R} \\rmR_{1} & q_1^\\top \\rmW_{k,R} \\rmR_{0} & \\cdots & 0 \\\\\n\t\\vdots & \\vdots & \\vdots & \\vdots & \\ddots & \\vdots \\\\\n\tq_{L-1}^\\top \\rmW_{k,R} \\rmR_{M+L-1} & \\cdots & q_{L-1}^\\top \\rmW_{k,R} \\rmR_{M+L-1} & q_{L-1}^\\top \\rmW_{k,R} \\rmR_{L-1} & \\cdots & q_{L-1}^\\top \\rmW_{k,R} \\rmR_{0} \\\\\n\t\\end{bmatrix} \\\\\n\t&=\n\t\\begin{bmatrix}\n\tq_0^\\top \\rmQ_{L-1}   & \\cdots & q_0^\\top \\rmQ_{M+L-1} & 0                       & \\cdots & 0 \\\\\n\tq_1^\\top \\rmQ_{L-2}   & \\cdots & q_1^\\top \\rmQ_{M+L-2} & q_1^\\top \\rmQ_{M+L-1}   & \\cdots & 0 \\\\\n\t\\vdots                & \\vdots & \\ddots                & \\vdots                  & \\ddots & \\vdots \\\\\n\tq_{L-1}^\\top \\rmQ_{0} & \\cdots & q_{L-1}^\\top \\rmQ_{M} & q_{L-1}^\\top \\rmQ_{M+1} & \\cdots & q_{L-1}^\\top \\rmQ_{M+L-1} \\\\\n\t\\end{bmatrix}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\rmD &=\n\t\\begin{bmatrix}\n\tv^\\top \\rmQ_{L-1} & \\cdots & v^\\top \\rmQ_{M+L-1} & 0 & \\cdots & 0 \\\\\n\tv^\\top \\rmQ_{L-2} & \\cdots & v^\\top \\rmQ_{M+L-2} & v^\\top \\rmQ_{M+L-1} & \\cdots & 0 \\\\\n\t\\vdots            & \\vdots & \\ddots              & \\vdots              & \\ddots & \\vdots     \\\\\n\tv^\\top \\rmQ_{0}   & \\cdots & v^\\top \\rmQ_{M}     & v^\\top \\rmQ_{M+1}   & \\cdots & v^\\top \\rmQ_{M+L-1} \\\\\n\t\\end{bmatrix}.",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1188,
+      "numbers": 8,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3709,
+      "numbers": 2,
+      "citations": 12
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 1248,
+      "numbers": 0,
+      "citations": 13
+    },
+    {
+      "kind": "method",
+      "title": "Model",
+      "chars": 721,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Vanilla Transformer Language Models",
+      "chars": 2307,
+      "numbers": 0,
+      "citations": 5
+    },
+    {
+      "kind": "method",
+      "title": "Segment-Level Recurrence with State Reuse",
+      "chars": 3434,
+      "numbers": 1,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Relative Positional Encodings",
+      "chars": 5784,
+      "numbers": 4,
+      "citations": 7
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Main Results",
+      "chars": 6953,
+      "numbers": 24,
+      "citations": 11
+    },
+    {
+      "kind": "experiments",
+      "title": "Ablation Study",
+      "chars": 2328,
+      "numbers": 6,
+      "citations": 4
+    },
+    {
+      "kind": "experiments",
+      "title": "Relative Effective Context Length",
+      "chars": 1801,
+      "numbers": 3,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Generated Text",
+      "chars": 238,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation Speed",
+      "chars": 407,
+      "numbers": 1,
+      "citations": 1
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 349,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgments",
+      "chars": 325,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 0,
+      "compares": 4,
+      "background": 29,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "baevski2018adaptive",
+      "stance": "inherits",
+      "cue": "We adopted",
+      "sentence": "We adopted adaptive softmax and input representations .",
+      "section": "Main Results",
+      "sectionKind": "experiments",
+      "title": "Adaptive input representations for neural language modeling",
+      "authors": "Alexei Baevski and Michael Auli. 2018",
+      "year": 2018,
+      "arxivId": "1809.10853",
+      "inCorpus": false,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 177.8837432861328,
+            "y0": 578.4487915039062,
+            "x1": 290.26922607421875,
+            "y1": 589.3578491210938
+          },
+          {
+            "x0": 72.0,
+            "y0": 591.997802734375,
+            "x1": 204.4473876953125,
+            "y1": 602.9068603515625
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "al2018character",
+        "stance": "compares",
+        "cue": "outperforming",
+        "sentence": "Under the model size constraint, the 12-layer Transformer-XL achieves a new SoTA result, outperforming the 12-layer vanilla Transformer from by 0.05, while both Transformer variants have a large margin over conventional RNN-based models.",
+        "section": "Main Results",
+        "sectionKind": "experiments",
+        "title": "Character-level language modeling with deeper self-attention",
+        "authors": "Rami Al-Rfou, Dokook Choe, Noah Constant, Mandy Guo, and Llion Jones. 2018",
+        "year": 2018,
+        "arxivId": "1808.04444",
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 72.0,
+              "y0": 714.0447387695312,
+              "x1": 290.26922607421875,
+              "y1": 724.9537963867188
+            },
+            {
+              "x0": 72.0,
+              "y0": 727.59375,
+              "x1": 290.2692565917969,
+              "y1": 738.5028076171875
+            },
+            {
+              "x0": 72.0,
+              "y0": 741.1427612304688,
+              "x1": 290.2692565917969,
+              "y1": 752.0518188476562
+            }
+          ]
+        }
+      },
+      {
+        "key": "baevski2018adaptive",
+        "stance": "inherits",
+        "cue": "We adopted",
+        "sentence": "We adopted adaptive softmax and input representations .",
+        "section": "Main Results",
+        "sectionKind": "experiments",
+        "title": "Adaptive input representations for neural language modeling",
+        "authors": "Alexei Baevski and Michael Auli. 2018",
+        "year": 2018,
+        "arxivId": "1809.10853",
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 177.8837432861328,
+              "y0": 578.4487915039062,
+              "x1": 290.26922607421875,
+              "y1": 589.3578491210938
+            },
+            {
+              "x0": 72.0,
+              "y0": 591.997802734375,
+              "x1": 204.4473876953125,
+              "y1": 602.9068603515625
+            }
+          ]
+        }
+      },
+      {
+        "key": "chelba2013one",
+        "stance": "compares",
+        "cue": "state-of-the-art",
+        "sentence": "We apply Transformer-XL to a variety of datasets on both word-level and character-level language modeling to have a comparison with state-of-the-art systems, including WikiText-103 , enwik8 , text8 , One Billion Word , and Penn Treebank .",
+        "section": "Main Results",
+        "sectionKind": "experiments",
+        "title": "One billion word benchmark for measuring progress in statistical language modeling",
+        "authors": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson. 2013",
+        "year": 2013,
+        "arxivId": "1312.3005",
+        "inCorpus": true,
+        "anchor": null
+      },
+      {
+        "key": "grave2016efficient",
+        "stance": "inherits",
+        "cue": "We adopted",
+        "sentence": "We adopted adaptive softmax and input representations .",
+        "section": "Main Results",
+        "sectionKind": "experiments",
+        "title": "Efficient softmax approximation for gpus",
+        "authors": "Edouard Grave, Armand Joulin, Moustapha Ciss\\'e, David Grangier, and Herv\\'e J\\'egou. 2016",
+        "year": 2016,
+        "arxivId": "1609.04309",
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 177.8837432861328,
+              "y0": 578.4487915039062,
+              "x1": 290.26922607421875,
+              "y1": 589.3578491210938
+            },
+            {
+              "x0": 72.0,
+              "y0": 591.997802734375,
+              "x1": 204.4473876953125,
+              "y1": 602.9068603515625
+            }
+          ]
+        }
+      },
+      {
+        "key": "mahoney2011large",
+        "stance": "compares",
+        "cue": "state-of-the-art",
+        "sentence": "We apply Transformer-XL to a variety of datasets on both word-level and character-level language modeling to have a comparison with state-of-the-art systems, including WikiText-103 , enwik8 , text8 , One Billion Word , and Penn Treebank .",
+        "section": "Main Results",
+        "sectionKind": "experiments",
+        "title": "Large text compression benchmark",
+        "authors": "MultiMedia LLC. 2009",
+        "year": 2009,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "merity2016pointer",
+        "stance": "compares",
+        "cue": "state-of-the-art",
+        "sentence": "We apply Transformer-XL to a variety of datasets on both word-level and character-level language modeling to have a comparison with state-of-the-art systems, including WikiText-103 , enwik8 , text8 , One Billion Word , and Penn Treebank .",
+        "section": "Main Results",
+        "sectionKind": "experiments",
+        "title": "Pointer sentinel mixture models",
+        "authors": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. 2016",
+        "year": 2016,
+        "arxivId": "1609.07843",
+        "inCorpus": false,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [],
+  "assumptionTally": {
+    "total": 0,
+    "cited": 0,
+    "shown": 0,
+    "bare": 0
+  }
+}

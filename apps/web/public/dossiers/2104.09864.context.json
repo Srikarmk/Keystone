@@ -1,0 +1,186 @@
+{
+  "id": "2104.09864",
+  "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "text": "Position encoding recently has shown effective in the transformer architecture. It enables valuable supervision for dependency modeling between elements at different positions of the sequence. In this paper, we first investigate various methods to integrate positional information into the learning process of transformer-based language models. Then, we propose a novel method named Rotary Position Embedding(RoPE) to effectively leverage the positional information. Specifically, the proposed RoPE encodes the absolute position with a rotation matrix and meanwhile incorporates the explicit relative position dependency in self-attention formulation. Notably, RoPE enables valuable properties, including the flexibility of sequence length, decaying inter-token dependency with increasing relative distances, and the capability of equipping the linear self-attention with relative position encoding. Finally, we evaluate the enhanced transformer with rotary position embedding, also called RoFormer, on various long text classification benchmark datasets. Our experiments show that it consistently overcomes its alternatives. Furthermore, we provide a theoretical analysis to explain some experimental results. RoFormer is already integrated into Huggingface: https://huggingface.co/docs/transformers/model_doc/roformer."
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "text": "The sequential order of words is of great value to natural language understanding. Recurrent neural networks (RRNs) based models encode tokens' order by recursively computing a hidden state along the time dimension. Convolution neural networks (CNNs) based models (CNNs) were typically considered position-agnostic, but recent work has shown that the commonly used padding operation can implicitly learn position information. Recently, the pre-trained language models (PLMs), which were built upon the transformer , have achieved the state-of-the-art performance of various natural language processing (NLP) tasks, including context representation learning , machine translation , and language modeling , to name a few. Unlike, RRNs and CNNs-based models, PLMs utilize the self-attention mechanism to semantically capture the contextual representation of a given corpus. As a consequence, PLMs achieve a significant improvement in terms of parallelization over RNNs and improve the modeling ability of longer intra-token relations compared to CNNs . It is noteworthy that the self-attention architecture of the current PLMs has shown to be position-agnostic . Following this claim, various approaches have been proposed to encode the position information into the learning process. On one side, generated absolute position encoding through a pre-defined function was added to the contextual representations, while a trainable absolute position encoding . On the other side, the previous work focuses on relative position encoding, which typically encodes the relative position information into the attention mechanism. In addition to these approaches, the authors of have proposed to model the dependency of position encoding from the perspective of Neural ODE , and the authors of have proposed to model the position information in complex space. Despite the effectiveness of these approaches, they commonly add the position information to the context representation and thus render them unsuitable for the linear self-attention architecture. In this paper, we introduce a novel method, namely Rotary Position Embedding(RoPE), to leverage the positional information into the learning process of PLMS. Specifically, RoPE encodes the absolute position with a rotation matrix and meanwhile incorporates the explicit relative position dependency in self-attention formulation. Note that the proposed RoPE is prioritized over the existing methods through valuable properties, including the sequence length flexibility, decaying inter-token dependency with increasing relative distances, and the capability of equipping the linear self-attention with relative position encoding. Experimental results on various long text classification benchmark datasets show that the enhanced transformer with rotary position embedding, namely RoFormer, can give better performance compared to baseline alternatives and thus demonstrates the efficacy of the proposed RoPE. In brief, our contributions are three-folds as follows: We investigated the existing approaches to the relative position encoding and found that they are mostly built based on the idea of the decomposition of adding position encoding to the context representations. We introduce a novel method, namely Rotary Position Embedding(RoPE), to leverage the positional information into the learning process of PLMS. The key idea is to encode relative position by multiplying the context representations with a rotation matrix with a clear theoretical interpretation. We study the properties of RoPE and show that it decays with the relative distance increased, which is desired for natural language encoding. We kindly argue that previous relative position encoding-based approaches are not compatible with linear self-attention. We evaluate the proposed RoFormer on various long text benchmark datasets. Our experiments show that it consistently achieves better performance compared to its alternatives. Some experiments with pre-trained language models are available on GitHub: https://github.com/ZhuiyiTechnology/roformer. The remaining of the paper is organized as follows. We establish a formal description of the position encoding problem in self-attention architecture and revisit previous works in . We then describe the rotary position encoding (RoPE) and study its properties in . We report experiments in . Finally, we conclude this paper in ."
+    },
+    {
+      "kind": "related",
+      "title": "Preliminary",
+      "text": "Let be a sequence of input tokens with being the element. The corresponding word embedding of is denoted as , where is the d-dimensional word embedding vector of token without position information. The self-attention first incorporates position information to the word embeddings and transforms them into queries, keys, and value representations. _m &=f_q( _m, m) _n &=f_k( _n, n) _n &=f_v( _n, n), where and incorporate the and positions through and , respectively. The query and key values are then used to compute the attention weights, while the output is computed as the weighted sum over the value representation. a_m,n&= ( _m^ _n d) _j=1^N ( _m^ _j d) o_m&= _n=1^Na_m,n _n The existing approaches of transformer-based position encoding mainly focus on choosing a suitable function to form ."
+    },
+    {
+      "kind": "related",
+      "title": "Absolute position embedding",
+      "text": "A typical choice of is f_t:t q,k,v( _i,i):= _t:t q,k,v( _i+ _i), where is a d-dimensional vector depending of the position of token . Previous work introduced the use of a set of trainable vectors , where is the maximum sequence length. The authors of have proposed to generate using the sinusoidal function. _i,2t&= (k/10000^2t/d) _i,2t+1&= (k/10000^2t/d) in which is the element of the d-dimensional vector . In the next section, we show that our proposed RoPE is related to this intuition from the sinusoidal function perspective. However, instead of directly adding the position to the context representation, RoPE proposes to incorporate the relative position information by multiplying with the sinusoidal functions."
+    },
+    {
+      "kind": "related",
+      "title": "Relative position embedding",
+      "text": "The authors of applied different settings of as following: f_q( _m):= _q _m f_k( _n, n):= _k( _n+ ^k_r) f_v( _n, n):= _v( _n+ ^v_r) where are trainable relative position embeddings. Note that represents the relative distance between position and . They clipped the relative distance with the hypothesis that precise relative position information is not useful beyond a certain distance. Keeping the form of , the authors have proposed to decompose of as _m^ _n= _m^ _q^ _k _n+ _m^ _q^ _k _n+ _m^ _q^ _k _n+ _m^ _q^ _k _n, the key idea is to replace the absolute position embedding with its sinusoid-encoded relative counterpart , while the absolute position in the third and fourth term with two trainable vectors and independent of the query positions. Further, is distinguished for the content-based and location-based key vectors and , denoted as and , resulting in: _m^ _n= _m^ _q^ _k _n+ _m^ _q^ _k _m-n+ u^ _q^ _k _n+ v^ _q^ _k _m-n It is noteworthy that the position information in the value term is removed by setting . Later work followed these settings by only encoding the relative position information into the attention weights. However, the authors of reformed as: _m^ _n= _m^ _q^ _k _n + b_i,j where is a trainable bias. The authors of investigated the middle two terms of and found little correlations between absolute positions and words. The authors of proposed to model a pair of words or positions using different projection matrices. _m^ _n= _m^ _q^ _k _n + _m^ U_q^ U_k _n+b_i,j The authors of argued that the relative positions of two tokens could only be fully modeled using the middle two terms of . As a consequence, the absolute position embeddings and were simply replaced with the relative position embeddings : _m^ _n= _m^ _q^ _k _n+ _m^ _q^ _k _m-n+ _m-n^ _q^ _k _n A comparison of the four variants of the relative position embeddings has shown that the variant similar to is the most efficient among the other three. Generally speaking, all these approaches attempt to modify based on the decomposition of under the self-attention settings in , which was originally proposed in . They commonly introduced to directly add the position information to the context representations. Unlikely, our approach aims to derive the relative position encoding from under some constraints. Next, we show that the derived approach is more interpretable by incorporating relative position information with the rotation of context representations."
+    },
+    {
+      "kind": "method",
+      "title": "Proposed approach",
+      "text": "In this section, we discuss the proposed rotary position embedding (RoPE). We first formulate the relative position encoding problem in , we then derive the RoPE in and investigate its properties in ."
+    },
+    {
+      "kind": "method",
+      "title": "Formulation",
+      "text": "Transformer-based language modeling usually leverages the position information of individual tokens through a self-attention mechanism. As can be observed in , typically enables knowledge conveyance between tokens at different positions. In order to incorporate relative position information, we require the inner product of query and key to be formulated by a function , which takes only the word embeddings , , and their relative position as input variables. In other words, we hope that the inner product encodes position information only in the relative form: We start with . To incorporate position information with self-attention in , we first consider incorporating the position information in the query and key, respectively. Furthermore, we set the inner product of these two terms to a function explicitly depending on their relative distance. In other words, we hope the inner product only encodes relative position. f_q( _m, m),f_k( _n, n) =g( _m, _n,m-n). The ultimate goal is to find an equivalent encoding mechanism to solve the functions and to conform the aforementioned relation."
+    },
+    {
+      "kind": "method",
+      "title": "A 2D case",
+      "text": "We begin with a simple case with a dimension . Under these settings, we make use of the geometric property of vectors on a 2D plane and its complex form to prove (refer for more details) that a solution to our formulation is: f_q( _m, m) &= ( _q _m)e^im f_k( _n, n) &= ( _k _n)e^in g( _m, _n, m - n) &= Re[( _q _m)( _k _n)^*e^i(m - n) ] where is the real part of a complex number and represents the conjugate complex number of . is a preset non-zero constant. We can further write in a multiplication matrix: f_q, k( _m, m) = ( cc m & - m m & m ) ( cc W^(11)_q, k & W^(12)_q, k W^(21)_q, k & W^(22)_q, k ) ( cc x^(1)_m x^(2)_m ) where is expressed in the 2D coordinates. Similarly, can be viewed as a matrix and thus enables the solution of formulation in under the 2D case. Specifically, incorporating the relative position embedding is straightforward: simply rotate the affine-transformed word embedding vector by amount of angle multiples of its position index and thus interprets the intuition behind Rotary Position Embedding."
+    },
+    {
+      "kind": "method",
+      "title": "General form",
+      "text": "In order to generalize our results in 2D to any where is even, we divide the d-dimension space into sub-spaces and combine them in the merit of the linearity of the inner product, turning into: f_q, k( _m, m) = ^d_ , m _q, k _m where ^d_ ,m = m _1& - m _1&0&0& &0&0 m _1& m _1&0&0& &0&0 0&0& m _2& - m _2& &0&0 0&0& m _2& m _2& &0&0 & & & & & & 0&0&0&0& & m _d/2& - m _d/2 0&0&0&0& & m _d/2& m _d/2 is the rotary matrix with pre-defined parameters . A graphic illustration of RoPE is shown in . Applying our RoPE to self-attention in , we obtain: _m^ _n =( ^d_ , m _q _m)^ ( ^d_ , n _k _n) = ^ _qR^d_ , n-m _k _n where . Note that is an orthogonal matrix, which ensures stability during the process of encoding position information. In addition, due to the sparsity of , applying matrix multiplication directly as in is not computationally efficient; we provide another realization in theoretical explanation. In contrast to the additive nature of position embedding method adopted in the previous works, i.e., , our approach is multiplicative. Moreover, RoPE naturally incorporates relative position information through rotation matrix product instead of altering terms in the expanded formulation of additive position encoding when applied with self-attention. [hb] Implementation of Rotary Position Embedding(RoPE)."
+    },
+    {
+      "kind": "method",
+      "title": "Properties of RoPE",
+      "text": "Long-term decay: Following , we set . One can prove that this setting provides a long-term decay property (refer to for more details), which means the inner-product will decay when the relative position increase. This property coincides with the intuition that a pair of tokens with a long relative distance should have less connection. RoPE with linear attention: The self-attention can be rewritten in a more general form. Attention( Q, K, V)_m= _n=1^N sim( _m, _n) _n _n=1^N sim( _m, _n). The original self-attention chooses . Note that the original self-attention should compute the inner product of query and key for every pair of tokens, which has a quadratic complexity . Follow , the linear attentions reformulate as Attention( , , )_m= _n=1^N ( _m)^ ( _n) _n _n=1^N ( _m)^ ( _n), where are usually non-negative functions. The authors of have proposed and first computed the multiplication between keys and values using the associative property of matrix multiplication. A softmax function is used in to normalize queries and keys separately before the inner product, which is equivalent to and . For more details about linear attention, we encourage readers to refer to original papers. In this section, we focus on discussing incorporating RoPE with . Since RoPE injects position information by rotation, which keeps the norm of hidden representations unchanged, we can combine RoPE with linear attention by multiplying the rotation matrix with the outputs of the non-negative functions. Attention( Q, K, V)_m= _n=1^N ( ^d_ , m ( _m) )^ ( ^d_ , n ( _n) ) _n _n=1^N ( _m)^ ( _n). It is noteworthy that we keep the denominator unchanged to avoid the risk of dividing zero, and the summation in the numerator could contain negative terms. Although the weights for each value in are not strictly probabilistic normalized, we kindly argue that the computation can still model the importance of values."
+    },
+    {
+      "kind": "method",
+      "title": "Derivation of RoPE under 2D",
+      "text": "Under the case of , we consider two-word embedding vectors , corresponds to query and key and their position and , respectively. According to , their position-encoded counterparts are: _m &= f_q( _q, m), _n &= f_k( _k, n), where the subscripts of and indicate the encoded positions information. Assume that there exists a function that defines the inner product between vectors produced by : ^ _m _n = f_q( _m, m),f_k( _n, n) = g( _m, _n, n - m), we further require below initial condition to be satisfied: &= f_q( _q, 0), &= f_k( _k, 0), which can be read as the vectors with empty position information encoded. Given these settings, we attempt to find a solution of , . First, we take advantage of the geometric meaning of vector in 2D and its complex counter part, decompose functions in into: f_q( _q, m) &= R_q( _q, m)e^i _q( _q, m), f_k( _k, n) &= R_k( _k, n)e^i _k( _k, n), g( _q, _k, n - m) &= R_g( _q, _k, n - m)e^i _g( _q, _k, n - m), where , and , are the radical and angular components for and , respectively. Plug them into , we get the relation: R_q( _q, m)R_k( _k, n) &= R_g( _q, _k, n - m), _k( _k, n) - _q( _q, m) &= _g( _q, _k, n - m), with the corresponding initial condition as: &= \\| \\|e^i _q = R_q( _q, 0)e^i _q( _q, 0), & = \\| \\|e^i _k = R_k( _k, 0)e^i _k( _k, 0), where , and , are the radial and angular part of and on the 2D plane. Next, we set in and take into account initial conditions in : R_q( _q, m)R_k( _k, m) &= R_g( _q, _k, 0) = R_q( _q, 0)R_k( _k, 0) = \\| \\|\\| \\| , _k( _k, m) - _q( _q, m) &= _g( _q, _k, 0) = _k( _k, 0) - _q( _q, 0) = _k - _q . On one hand, from, a straightforward solution of could be formed from : R_q( _q, m) &= R_q( _q, 0) = \\| \\| R_k( _k, n) &= R_k( _k, 0) = \\| \\| R_g( _q, _k, n - m) &= R_g( _q, _k, 0) = \\| \\|\\| \\| which interprets the radial functions , and are independent from the position information. On the other hand, as can be noticed in , indicates that the angular functions does not dependent on query and key, we set them to and term is a function of position and is independent of word embedding , we denote it as , yielding: _f( _q, k, m) = (m) + _q,k, Further, by plugging to and consider the above equation, we can get: (m + 1) - (m) = _g( _q, _k, 1) + _q - _k, Since RHS is a constant irrelevant to , with continuous integer inputs produce an arithmetic progression: (m) = m + , where are constants and is non-zero. To summarize our solutions from : f_q( _q, m) &= \\| \\|e^i _q + m + = e^i(m + ), f_k( _k, n) &= \\| \\|e^i _k + n + = e^i(n + ). Note that we do not apply any constrains to and of , thus and are left to choose freely. To make our results comparable to , we define: = f_q( _m, 0) &= _q _n, = f_k( _n, 0) &= _k _n. Then, we simply set in of the final solution: f_q( _m, m) &= ( _q _m)e^im , f_k( _n, n) &= ( _k _n)e^in ."
+    },
+    {
+      "kind": "method",
+      "title": "Computational efficient realization of rotary matrix multiplication",
+      "text": "Taking the advantage of the sparsity of in , a more computational efficient realization of a multiplication of and is: ^d_ , m = x_1 x_2 x_3 x_4 x_d-1 x_d m _1 m _1 m _2 m _2 m _d/2 m _d/2 + -x_2 x_1 -x_4 x_3 -x_d x_d-1 m _1 m _1 m _2 m _2 m _d/2 m _d/2"
+    },
+    {
+      "kind": "method",
+      "title": "Long-term decay of RoPE",
+      "text": "We can group entries of vectors and in pairs, and the inner product of RoPE in can be written as a complex number multiplication. ( ^d_ , m _q _m)^ ( ^d_ , n _k _n) = Re _[2i:2i+1]^*e^i(m-n) _i ] where represents the to entries of . Denote and , and let and , we can rewrite the summation using Abel transformation _i=0^d/2-1 _[2i:2i+1] _[2i:2i+1]^*e^i(m-n) _i= _i=0^d/2-1h_i(S_i+1-S_i)=- _i=0^d/2-1S_i+1(h_i+1-h_i). Thus, _i=0^d/2-1 _[2i:2i+1] _[2i:2i+1]^*e^i(m-n) _i &= _i=0^d/2-1S_i+1(h_i+1-h_i) & _i=0^d/2-1 S_i+1 (h_i+1-h_i) & ( _i h_i+1-h_i ) _i=0^d/2-1 S_i+1 Note that the value of decay with the relative distance increases by setting , as shown in . Long-term decay of RoPE."
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments and Evaluation",
+      "text": "We evaluate the proposed RoFormer on various NLP tasks as follows. We validate the performance of the proposed solution on machine translation task . Then, we compare our RoPE implementation with BERT during the pre-training stage in . Based on the pre-trained model, in , we further carry out evaluations across different downstream tasks from GLUE benchmarks . In Addition, we conduct experiments using the proposed RoPE with the linear attention of PerFormer in . By the end, additional tests on Chinese data are included in . All the experiments were run on two cloud severs with 4 x V100 GPUs."
+    },
+    {
+      "kind": "experiments",
+      "title": "Machine Translation",
+      "text": "We first demonstrate the performance of RoFormer on sequence-to-sequence language translation tasks."
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Settings",
+      "text": "We choose the standard WMT 2014 English-German dataset , which consists of approximately 4.5 million sentence pairs. We compare to the transformer-based baseline alternative ."
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "text": "We carry out some modifications on self-attention layer of the baseline model to enable RoPE to its learning process. We replicate the setup for English-to-German translation with a vocabulary of 37k based on a joint source and target byte pair encoding(BPE) . During the evaluation, a single model is obtained by averaging the last 5 checkpoints. The result uses beam search with a beam size of 4 and length penalty 0.6. We implement the experiment in PyTorch in the fairseq toolkit (MIT License) . Our model is optimized with the Adam optimizer using , , learning rate is increased linearly from to and then decayed proportionally to the inverse square root of the step number. Label smoothing with 0.1 is also adopted. We report the BLEU score on the test set as the final metric."
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "text": "We train the baseline model and our RoFormer under the same settings and report the results in . As can be seen, our model gives better BLEU scores compared to the baseline Transformer. The proposed RoFormer gives better BLEU scores compared to its baseline alternative on the WMT 2014 English-to-German translation task . ll Model & BLEU Transformer-base & 27.3 RoFormer & 27.5"
+    },
+    {
+      "kind": "experiments",
+      "title": "Pre-training Language Modeling",
+      "text": "The second experiment is to validate the performance of our proposal in terms of learning contextual representations. To achieve this, we replace the original sinusoidal position encoding of BERT with our RoPE during the pre-training step."
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Settings",
+      "text": "We use the BookCorpus and the Wikipedia Corpus from Huggingface Datasets library (Apache License 2.0) for pre-training. The corpus is further split into train and validation sets at 8:2 ratio. We use the masked language-modeling (MLM) loss values of the training process as an evaluation metric. The well-known BERT is adopted as our baseline model. Note that we use bert-base-uncased in our experiments."
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "text": "For RoFormer, we replace the sinusoidal position encoding in the self-attention block of the baseline model with our proposed RoPE and realizes self-attention according to . We train both BERT and RoFormer with batch size 64 and maximum sequence length of 512 for 100k steps. AdamW is used as the optimizer with learning rate 1e-5."
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "text": "The MLM loss during pre-training is shown on the left plot of . Compare to the vanilla BERT, RoFormer experiences faster convergence. [hbt] Evaluation of RoPE in language modeling pre-training. Left: training loss for BERT and RoFormer. Right: training loss for PerFormer with and without RoPE."
+    },
+    {
+      "kind": "experiments",
+      "title": "Fine-tuning on GLUE tasks",
+      "text": "Consistent with the previous experiments, we fine-tune the weights of our pre-trained RoFormer across various GLUE tasks in order to evaluate its generalization ability on the downstream NLP tasks."
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Settings",
+      "text": "We look at several datasets from GLUE, i.e. MRPC , SST-2 , QNLI , STS-B , QQP and MNLI . We use F1-score for MRPC and QQP dataset, spearman correlation for STS-B, and accuracy for the remaining as the evaluation metrics."
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "text": "We use Huggingface Transformers library (Apache License 2.0) to fine-tune each of the aforementioned downstream tasks for 3 epochs, with a maximum sequence length of 512, batch size of 32 and learning rates 2,3,4,5e-5. Following , we report the best-averaged results on the validation set. [hbt] Comparing RoFormer and BERT by fine tuning on downstream GLEU tasks. lcccccc Model & MRPC & SST-2 & QNLI & STS-B & QQP & MNLI(m/mm) BERT & 88.9 & 93.5 & 90.5 & 85.8 & 71.2 & 84.6/83.4 RoFormer & 89.5& 90.7 & 88.0 & 87.0 & 86.4 & 80.2/79.8"
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "text": "The evaluation results of the fine-tuning tasks are reported in . As can be seen, RoFormer can significantly outperform BERT in three out of six datasets, and the improvements are considerable."
+    },
+    {
+      "kind": "experiments",
+      "title": "Performer with RoPE",
+      "text": "Performer introduces an alternative attention mechanism, linear attention, which is designed to avoid quadratic computation cost that scales with input sequence length. As discussed in , the proposed RoPE can be easily implemented in the PerFormer model to realize the relative position encoding while keeping its linearly scaled complexity in self-attention. We demonstrate its performance with the pre-training task of language modeling."
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "text": "We carry out tests on the Enwik8 dataset , which is from English Wikipedia that includes markup, special characters and text in other languages in addition to English text. We incorporate RoPE into the 12 layer char-based PerFormer with 768 dimensions and 12 heads . To better illustrate the efficacy of RoPE, we report the loss curves of the pre-training process with and without RoPE under the same settings, i.e., learning rate 1e-4, batch size 128 and a fixed maximum sequence length of 1024, etc."
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "text": "As shown on the right plot of , substituting RoPE into Performer leads to rapid convergence and lower loss under the same amount of training steps. These improvements, in addition to the linear complexity, make Performer more attractive."
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation on Chinese Data",
+      "text": "In addition to experiments on English data, we show additional results on Chinese data. To validate the performance of RoFormer on long texts, we conduct experiments on long documents whose length exceeds 512 characters."
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation",
+      "text": "In these experiments, we carried out some modifications on WoBERT by replacing the absolute position embedding with our proposed RoPE. As a cross-comparison with other pre-trained Transformer-based models in Chinese, i.e. BERT , WoBERT , and NEZHA , we tabulate their tokenization level and position embedding information in . [h] Cross-comparison between our RoFormer and other pre-trained models on Chinese data. 'abs' and 'rel' annotates absolute position embedding and relative position embedding, respectively. lcccc Model & BERT & WoBERT & NEZHA & RoFormer Tokenization level & char & word & char & word Position embedding & abs. & abs. & rel. & RoPE"
+    },
+    {
+      "kind": "experiments",
+      "title": "Pre-training",
+      "text": "We pre-train RoFormer on approximately 34GB of data collected from Chinese Wikipedia, news and forums. The pre-training is carried out in multiple stages with changing batch size and maximum input sequence length in order to adapt the model to various scenarios. As shown in , the accuracy of RoFormer elevates with an increasing upper bound of sequence length, which demonstrates the ability of RoFormer in dealing with long texts. We claim that this is the attribute to the excellent generalizability of the proposed RoPE. [hbt] Pre-training strategy of RoFormer on Chinese dataset. The training procedure is divided into various consecutive stages. In each stage, we train the model with a specific combination of maximum sequence length and batch size. lccccc Stage & Max seq length & Batch size & Training steps & Loss & Accuracy 1 & 512 & 256 & 200k & 1.73 & 65.0% 2 & 1536 & 256 & 12.5k & 1.61 & 66.8% 3 & 256 & 256 & 120k & 1.75 & 64.6% 4 & 128 & 512 & 80k & 1.83 & 63.4% 5 & 1536 & 256 & 10k & 1.58 & 67.4% 6 & 512 & 512 & 30k & 1.66 & 66.2%"
+    },
+    {
+      "kind": "experiments",
+      "title": "Downstream Tasks & Dataset",
+      "text": "We choose Chinese AI and Law 2019 Similar Case Matching (CAIL2019-SCM) dataset to illustrate the ability of RoFormer in dealing with long texts, i.e., semantic text matching. CAIL2019-SCM contains 8964 triplets of cases published by the Supreme People's Court of China. The input triplet, denoted as (A, B and C), are fact descriptions of three cases. The task is to predict whether the pair (A, B) is closer than (A, C) under a predefined similarity measure. Note that existing methods mostly cannot perform significantly on CAIL2019-SCM dataset due to the length of documents (i.e., mostly more than 512 characters). We split train, validation and test sets based on the well-known ratio 6:2:2."
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "text": "We apply the pre-trained RoFormer model to CAIL2019-SCM with different input lengths. The model is compared with the pre-trained BERT and WoBERT model on the same pre-training data, as shown in . With short text cut-offs, i.e., 512, the result from RoFormer is comparable to WoBERT and is slightly better than the BERT implementation. However, when increasing the maximum input text length to 1024, RoFormer outperforms WoBERT by an absolute improvement of 1.5%. [hbt] Experiment results on CAIL2019-SCM task. Numbers in the first column denote the maximum cut-off sequence length. The results are presented in terms of percent accuracy. lll Model & Validation & Test BERT-512 & 64.13% & 67.77% WoBERT-512 & 64.07% & 68.10% RoFormer-512 & 64.13% & 68.29% RoFormer-1024 & 66.07% & 69.79%"
+    },
+    {
+      "kind": "experiments",
+      "title": "Limitations of the work",
+      "text": "Although we provide theoretical groundings as well as promising experimental justifications, our method is limited by following facts: Despite the fact that we mathematically format the relative position relations as rotations under 2D sub-spaces, there lacks of thorough explanations on why it converges faster than baseline models that incorporates other position encoding strategies. Although we have proved that our model has favourable property of long-term decay for intern-token products, , which is similar to the existing position encoding mechanisms, our model shows superior performance on long texts than peer models, we have not come up with a faithful explanation. Our proposed RoFormer is built upon the Transformer-based infrastructure, which requires hardware resources for pre-training purpose."
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "text": "In this work, we proposed a new position embedding method that incorporates explicit relative position dependency in self-attention to enhance the performance of transformer architectures. Our theoretical analysis indicates that relative position can be naturally formulated using vector production in self-attention, with absolution position information being encoded through a rotation matrix. In addition, we mathematically illustrated the advantageous properties of the proposed method when applied to the Transformer. Finally, experiments on both English and Chinese benchmark datasets demonstrate that our method encourages faster convergence in pre-training. The experimental results also show that our proposed RoFormer can achieve better performance on long texts task."
+    }
+  ]
+}

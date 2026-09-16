@@ -1,0 +1,2218 @@
+{
+  "id": "2104.09864",
+  "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/2104.09864",
+  "numbers": [
+    {
+      "value": "4.5",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We choose the standard WMT 2014 English-German dataset , which consists of approximately 4.5 million sentence pairs.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.6",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The result uses beam search with a beam size of 4 and length penalty 0.6.",
+      "status": "rounded",
+      "table": "Table 4",
+      "row": "200k",
+      "cell": "65.0%",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 221.9076385498047,
+            "y0": 353.1242980957031,
+            "x1": 522.9324951171875,
+            "y1": 363.18603515625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Label smoothing with 0.1 is also adopted.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 353.8797302246094,
+            "y0": 385.8512878417969,
+            "x1": 523.5725708007812,
+            "y1": 395.91302490234375
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We use the BookCorpus and the Wikipedia Corpus from Huggingface Datasets library (Apache License 2.0) for pre-training.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "12.5k",
+      "cell": "2",
+      "anchor": null
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We use Huggingface Transformers library (Apache License 2.0) to fine-tune each of the aforementioned downstream tasks for 3 epochs, with a maximum sequence length of 512, batch size of 32 and learning rates 2,3,4,5e-5.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "12.5k",
+      "cell": "2",
+      "anchor": null
+    },
+    {
+      "value": "1.5%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "However, when increasing the maximum input text length to 1024, RoFormer outperforms WoBERT by an absolute improvement of 1.5%.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 192.2992401123047,
+            "x1": 540.0007934570312,
+            "y1": 202.3412322998047
+          },
+          {
+            "x0": 72.0,
+            "y0": 203.26844787597656,
+            "x1": 161.35452270507812,
+            "y1": 213.23104858398438
+          }
+        ]
+      }
+    },
+    {
+      "value": "3 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We use Huggingface Transformers library (Apache License 2.0) to fine-tune each of the aforementioned downstream tasks for 3 epochs, with a maximum sequence length of 512, batch size of 32 and learning rates 2,3,4,5e-5.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "12 layer",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We incorporate RoPE into the 12 layer char-based PerFormer with 768 dimensions and 12 heads .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "12 heads",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We incorporate RoPE into the 12 layer char-based PerFormer with 768 dimensions and 12 heads .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "34GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We pre-train RoFormer on approximately 34GB of data collected from Chinese Wikipedia, news and forums.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.53199768066406,
+            "y0": 462.80029296875,
+            "x1": 520.0762939453125,
+            "y1": 472.8620300292969
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "The proposed RoFormer gives better BLEU scores compared to its baseline alternative on the WMT 2014 English-to-German translation task .",
+      "label": "tb:mt",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Transformer-base",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.3",
+            "value": "27.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RoFormer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.5",
+            "value": "27.5",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Comparing RoFormer and BERT by fine tuning on downstream GLEU tasks.",
+      "label": "tb:glue-eval",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "QNLI",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "STS-B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MNLI(m/mm)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.9",
+            "value": "88.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.5",
+            "value": "93.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.5",
+            "value": "90.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.8",
+            "value": "85.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "71.2",
+            "value": "71.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.6/83.4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RoFormer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.5",
+            "value": "89.5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "90.7",
+            "value": "90.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.0",
+            "value": "88.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "87.0",
+            "value": "87.0",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "86.4",
+            "value": "86.4",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "80.2/79.8",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 169.831787109375,
+            "y0": 489.3724670410156,
+            "x1": 477.3872375488281,
+            "y1": 499.3350830078125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Cross-comparison between our RoFormer and other pre-trained models on Chinese data. 'abs' and 'rel' annotates absolute position embedding and relative position embedding, respectively.",
+      "label": "tb:roformer-tokpos-imp",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "WoBERT",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "NEZHA",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "RoFormer",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Tokenization level",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Position embedding",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "abs.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "abs.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "rel.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "RoPE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.90973663330078,
+            "y0": 351.0653076171875,
+            "x1": 541.6566772460938,
+            "y1": 361.1270446777344
+          },
+          {
+            "x0": 72.0,
+            "y0": 362.0494689941406,
+            "x1": 411.46551513671875,
+            "y1": 372.0120849609375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Pre-training strategy of RoFormer on Chinese dataset. The training procedure is divided into various consecutive stages. In each stage, we train the model with a specific combination of maximum sequence length and batch size.",
+      "label": "tb:roformer-pretrain",
+      "numericCells": 30,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Stage",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Max seq length",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Batch size",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Training steps",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Loss",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "200k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.73",
+            "value": "1.73",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.0%",
+            "value": "65.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1536",
+            "value": "1536",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12.5k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.61",
+            "value": "1.61",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.8%",
+            "value": "66.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "120k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.75",
+            "value": "1.75",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.6%",
+            "value": "64.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.83",
+            "value": "1.83",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.4%",
+            "value": "63.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1536",
+            "value": "1536",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.58",
+            "value": "1.58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.4%",
+            "value": "67.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.66",
+            "value": "1.66",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.2%",
+            "value": "66.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 105.53076934814453,
+            "y0": 527.4903564453125,
+            "x1": 539.9998779296875,
+            "y1": 537.3528442382812
+          },
+          {
+            "x0": 72.0,
+            "y0": 538.323486328125,
+            "x1": 527.201171875,
+            "y1": 548.2860717773438
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Experiment results on CAIL2019-SCM task. Numbers in the first column denote the maximum cut-off sequence length. The results are presented in terms of percent accuracy.",
+      "label": "tb:roformer-cail2019",
+      "numericCells": 8,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BERT-512",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.13%",
+            "value": "64.13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.77%",
+            "value": "67.77",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WoBERT-512",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.07%",
+            "value": "64.07",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.10%",
+            "value": "68.10",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RoFormer-512",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "64.13%",
+            "value": "64.13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.29%",
+            "value": "68.29",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RoFormer-1024",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "66.07%",
+            "value": "66.07",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "69.79%",
+            "value": "69.79",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 110.12313079833984,
+            "y0": 223.71731567382812,
+            "x1": 540.000244140625,
+            "y1": 233.779052734375
+          },
+          {
+            "x0": 72.0,
+            "y0": 234.7014923095703,
+            "x1": 357.8569030761719,
+            "y1": 244.66409301757812
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\headeright": "",
+    "\\undertitle": "",
+    "\\shorttitle": "RoFormer"
+  },
+  "references": [
+    {
+      "key": "Gehring:2017",
+      "raw": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N Dauphin. Convolutional sequence to sequence learning. In International Conference on Machine Learning, pages 1243--1252. PMLR, 2017",
+      "authors": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N Dauphin",
+      "title": "Convolutional sequence to sequence learning",
+      "venue": "In International Conference on Machine Learning, pages 1243--1252. PMLR, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Islam2020HowMP",
+      "raw": "Md. Amirul Islam, Sen Jia, and Neil D. B. Bruce. How much position information do convolutional neural networks encode? ArXiv, abs/2001.08248, 2020",
+      "authors": "Md. Amirul Islam, Sen Jia, and Neil D. B. Bruce",
+      "title": "How much position information do convolutional neural networks encode?",
+      "venue": "ArXiv, abs/2001.08248, 2020",
+      "year": 2020,
+      "arxivId": "2001.08248",
+      "doi": null
+    },
+    {
+      "key": "Vaswani:2017",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. Attention is all you need. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc., 2017. URL https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+      "title": "Attention is all you need",
+      "venue": "In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc., 2017 URL",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Devlin2019BERTPO",
+      "raw": "J. Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. In NAACL-HLT, 2019",
+      "authors": "J. Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova",
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "In NAACL-HLT, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Radford2019LanguageMA",
+      "raw": "A. Radford, Jeffrey Wu, R. Child, David Luan, Dario Amodei, and Ilya Sutskever. Language models are unsupervised multitask learners. 2019",
+      "authors": "A. Radford, Jeffrey Wu, R. Child, David Luan, Dario Amodei, and Ilya Sutskever",
+      "title": "Language models are unsupervised multitask learners",
+      "venue": "2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yun2020Are",
+      "raw": "Chulhee Yun, Srinadh Bhojanapalli, Ankit Singh Rawat, Sashank Reddi, and Sanjiv Kumar. Are transformers universal approximators of sequence-to-sequence functions? In International Conference on Learning Representations, 2020. URL https://openreview.net/forum?id=ByxRM0Ntvr",
+      "authors": "Chulhee Yun, Srinadh Bhojanapalli, Ankit Singh Rawat, Sashank Reddi, and Sanjiv Kumar",
+      "title": "Are transformers universal approximators of sequence-to-sequence functions?",
+      "venue": "In International Conference on Learning Representations, 2020 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lan2020ALBERT:2020",
+      "raw": "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. Albert: A lite bert for self-supervised learning of language representations. In International Conference on Learning Representations, 2020. URL https://openreview.net/forum?id=H1eA7AEtvS",
+      "authors": "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut",
+      "title": "Albert: A lite bert for self-supervised learning of language representations",
+      "venue": "In International Conference on Learning Representations, 2020 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "clark2020electra",
+      "raw": "Kevin Clark, Minh-Thang Luong, Quoc V. Le, and Christopher D. Manning. ELECTRA: Pre-training text encoders as discriminators rather than generators. In ICLR, 2020. URL https://openreview.net/pdf?id=r1xMH1BtvB",
+      "authors": "Kevin Clark, Minh-Thang Luong, Quoc V. Le, and Christopher D. Manning",
+      "title": "ELECTRA: Pre-training text encoders as discriminators rather than generators",
+      "venue": "In ICLR, 2020 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Radford2018ImprovingLU:2018",
+      "raw": "A. Radford and Karthik Narasimhan. Improving language understanding by generative pre-training. 2018",
+      "authors": "A. Radford and Karthik Narasimhan",
+      "title": "Improving language understanding by generative pre-training",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Parikh2016ADA",
+      "raw": "Ankur P. Parikh, Oscar T\\\"ackstr\\\"om, Dipanjan Das, and Jakob Uszkoreit. A decomposable attention model for natural language inference. In EMNLP, 2016",
+      "authors": "Ankur P. Parikh, Oscar T\\\"ackstr\\\"om, Dipanjan Das, and Jakob Uszkoreit",
+      "title": "A decomposable attention model for natural language inference",
+      "venue": "In EMNLP, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Shaw2018SelfAttentionWR",
+      "raw": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani. Self-attention with relative position representations. In NAACL-HLT, 2018",
+      "authors": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani",
+      "title": "Self-attention with relative position representations",
+      "venue": "In NAACL-HLT, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Huang2018MusicT",
+      "raw": "Cheng-Zhi Anna Huang, Ashish Vaswani, Jakob Uszkoreit, Noam Shazeer, I. Simon, C. Hawthorne, Andrew M. Dai, M. Hoffman, M. Dinculescu, and D. Eck. Music transformer. arXiv: Learning, 2018",
+      "authors": "Cheng-Zhi Anna Huang, Ashish Vaswani, Jakob Uszkoreit, Noam Shazeer, I. Simon, C. Hawthorne, Andrew M. Dai, M. Hoffman, M. Dinculescu, and D. Eck",
+      "title": "Music transformer",
+      "venue": "arXiv: Learning, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Dai2019TransformerXLAL",
+      "raw": "Zihang Dai, Z. Yang, Yiming Yang, J. Carbonell, Quoc V. Le, and R. Salakhutdinov. Transformer-xl: Attentive language models beyond a fixed-length context. In ACL, 2019",
+      "authors": "Zihang Dai, Z. Yang, Yiming Yang, J. Carbonell, Quoc V. Le, and R. Salakhutdinov",
+      "title": "Transformer-xl: Attentive language models beyond a fixed-length context",
+      "venue": "In ACL, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yang2019XLNetGA",
+      "raw": "Z. Yang, Zihang Dai, Yiming Yang, J. Carbonell, R. Salakhutdinov, and Quoc V. Le. Xlnet: Generalized autoregressive pretraining for language understanding. In NeurIPS, 2019",
+      "authors": "Z. Yang, Zihang Dai, Yiming Yang, J. Carbonell, R. Salakhutdinov, and Quoc V. Le",
+      "title": "Xlnet: Generalized autoregressive pretraining for language understanding",
+      "venue": "In NeurIPS, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Raffel2020ExploringTL",
+      "raw": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, W. Li, and Peter J. Liu. Exploring the limits of transfer learning with a unified text-to-text transformer. J. Mach. Learn. Res., 21: 0 140:1--140:67, 2020",
+      "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, W. Li, and Peter J. Liu",
+      "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+      "venue": "J. Mach. Learn. Res., 21: 0 140:1--140:67, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ke2020RethinkingPE",
+      "raw": "Guolin Ke, Di He, and T. Liu. Rethinking positional encoding in language pre-training. ArXiv, abs/2006.15595, 2020",
+      "authors": "Guolin Ke, Di He, and T. Liu",
+      "title": "Rethinking positional encoding in language pre-training",
+      "venue": "ArXiv, abs/2006.15595, 2020",
+      "year": 2020,
+      "arxivId": "2006.15595",
+      "doi": null
+    },
+    {
+      "key": "He2020DeBERTaDB",
+      "raw": "Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen. Deberta: Decoding-enhanced bert with disentangled attention. ArXiv, abs/2006.03654, 2020",
+      "authors": "Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen",
+      "title": "Deberta: Decoding-enhanced bert with disentangled attention",
+      "venue": "ArXiv, abs/2006.03654, 2020",
+      "year": 2020,
+      "arxivId": "2006.03654",
+      "doi": null
+    },
+    {
+      "key": "huang-etal-2020-improve",
+      "raw": "Zhiheng Huang, Davis Liang, Peng Xu, and Bing Xiang. Improve transformer models with better relative position embeddings. In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3327--3335, Online, November 2020. Association for Computational Linguistics. 10.18653/v1/2020.findings-emnlp.298. URL https://www.aclweb.org/anthology/2020.findings-emnlp.298",
+      "authors": "Zhiheng Huang, Davis Liang, Peng Xu, and Bing Xiang",
+      "title": "Improve transformer models with better relative position embeddings",
+      "venue": "In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 3327--3335, Online, November 2020. Association for Computational Linguistics 10.18653/v1/2020.findings-emnlp.298 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": "10.18653/v1/2020.findings-emnlp.298"
+    },
+    {
+      "key": "LiuYDH:2020",
+      "raw": "Xuanqing Liu, Hsiang-Fu Yu, Inderjit S. Dhillon, and Cho-Jui Hsieh. Learning to encode position for transformer with continuous dynamical model. In Proceedings of the 37th International Conference on Machine Learning, ICML 2020, 13-18 July 2020, Virtual Event, volume 119 of Proceedings of Machine Learning Research, pages 6327--6335. PMLR, 2020. URL http://proceedings.mlr.press/v119/liu20n.html",
+      "authors": "Xuanqing Liu, Hsiang-Fu Yu, Inderjit S. Dhillon, and Cho-Jui Hsieh",
+      "title": "Learning to encode position for transformer with continuous dynamical model",
+      "venue": "In Proceedings of the 37th International Conference on Machine Learning, ICML 2020, 13-18 July 2020, Virtual Event, volume 119 of Proceedings of Machine Learning Research, pages 6327--6335. PMLR, 2020 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ChenRBD:2018",
+      "raw": "Tian Qi Chen, Yulia Rubanova, Jesse Bettencourt, and David Duvenaud. Neural ordinary differential equations. In Samy Bengio, Hanna M. Wallach, Hugo Larochelle, Kristen Grauman, Nicol\\`o Cesa-Bianchi, and Roman Garnett, editors, Advances in Neural Information Processing Systems 31: Annual Conference on Neural Information Processing Systems 2018, NeurIPS 2018, December 3-8, 2018, Montr\\'eal, Canada, pages 6572--6583, 2018. URL https://proceedings.neurips.cc/paper/2018/hash/69386f6bb1dfed68692a24c8686939b9-Abstract.html",
+      "authors": "Tian Qi Chen, Yulia Rubanova, Jesse Bettencourt, and David Duvenaud",
+      "title": "Neural ordinary differential equations",
+      "venue": "In Samy Bengio, Hanna M. Wallach, Hugo Larochelle, Kristen Grauman, Nicol\\`o Cesa-Bianchi, and Roman Garnett, editors, Advances in Neural Information Processing Systems 31: Annual Conference on Neural Information Processing Systems 2018, NeurIPS 2018, December 3-8, 2018, Montr\\'eal, Canada, pages 6572--6583, 2018 URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Wang2020Encoding",
+      "raw": "Benyou Wang, Donghao Zhao, Christina Lioma, Qiuchi Li, Peng Zhang, and Jakob Grue Simonsen. Encoding word order in complex embeddings. In International Conference on Learning Representations, 2020. URL https://openreview.net/forum?id=Hke-WTVtwr",
+      "authors": "Benyou Wang, Donghao Zhao, Christina Lioma, Qiuchi Li, Peng Zhang, and Jakob Grue Simonsen",
+      "title": "Encoding word order in complex embeddings",
+      "venue": "In International Conference on Learning Representations, 2020 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "katharopoulos2020transformers",
+      "raw": "Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas, and Fran cois Fleuret. Transformers are rnns: Fast autoregressive transformers with linear attention. In International Conference on Machine Learning, pages 5156--5165. PMLR, 2020",
+      "authors": "Angelos Katharopoulos, Apoorv Vyas, Nikolaos Pappas, and Fran cois Fleuret",
+      "title": "Transformers are rnns: Fast autoregressive transformers with linear attention",
+      "venue": "In International Conference on Machine Learning, pages 5156--5165. PMLR, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shen2021efficient",
+      "raw": "Zhuoran Shen, Mingyuan Zhang, Haiyu Zhao, Shuai Yi, and Hongsheng Li. Efficient attention: Attention with linear complexities. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, pages 3531--3539, 2021",
+      "authors": "Zhuoran Shen, Mingyuan Zhang, Haiyu Zhao, Shuai Yi, and Hongsheng Li",
+      "title": "Efficient attention: Attention with linear complexities",
+      "venue": "In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, pages 3531--3539, 2021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "glue",
+      "raw": "Amapreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. Glue: A multi-task benchmark and analysis platform for natural language understanding. 04 2018",
+      "authors": "Amapreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman",
+      "title": "Glue: A multi-task benchmark and analysis platform for natural language understanding",
+      "venue": "04 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "performer",
+      "raw": "Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, A. Gane, Tam\\'as Sarl\\'os, Peter Hawkins, J. Davis, Afroz Mohiuddin, Lukasz Kaiser, David Belanger, Lucy J. Colwell, and Adrian Weller. Rethinking attention with performers. ArXiv, abs/2009.14794, 2020",
+      "authors": "Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, A. Gane, Tam\\'as Sarl\\'os, Peter Hawkins, J. Davis, Afroz Mohiuddin, Lukasz Kaiser, David Belanger, Lucy J. Colwell, and Adrian Weller",
+      "title": "Rethinking attention with performers",
+      "venue": "ArXiv, abs/2009.14794, 2020",
+      "year": 2020,
+      "arxivId": "2009.14794",
+      "doi": null
+    },
+    {
+      "key": "mtdataset",
+      "raw": "Ondrej Bojar, Christian Buck, Christian Federmann, Barry Haddow, Philipp Koehn, Johannes Leveling, Christof Monz, Pavel Pecina, Matt Post, Herve Saint-Amand, Radu Soricut, Lucia Specia, and Alevs Tamchyna. Findings of the 2014 workshop on statistical machine translation. pages 12--58, 06 2014. 10.3115/v1/W14-3302",
+      "authors": "Ondrej Bojar, Christian Buck, Christian Federmann, Barry Haddow, Philipp Koehn, Johannes Leveling, Christof Monz, Pavel Pecina, Matt Post, Herve Saint-Amand, Radu Soricut, Lucia Specia, and Alevs Tamchyna",
+      "title": "Findings of the 2014 workshop on statistical machine translation",
+      "venue": "pages 12--58, 06 2014 10.3115/v1/W14-3302",
+      "year": 2014,
+      "arxivId": null,
+      "doi": "10.3115/v1/W14-3302"
+    },
+    {
+      "key": "bpe",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. Neural machine translation of rare words with subword units. 08 2015",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "08 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fairseq",
+      "raw": "Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, and Michael Auli. fairseq: A fast, extensible toolkit for sequence modeling. pages 48--53, 01 2019. 10.18653/v1/N19-4009",
+      "authors": "Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, and Michael Auli",
+      "title": "fairseq: A fast, extensible toolkit for sequence modeling",
+      "venue": "pages 48--53, 01 2019 10.18653/v1/N19-4009",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/N19-4009"
+    },
+    {
+      "key": "bleu",
+      "raw": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei Jing Zhu. Bleu: a method for automatic evaluation of machine translation. 10 2002. 10.3115/1073083.1073135",
+      "authors": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei Jing Zhu",
+      "title": "Bleu: a method for automatic evaluation of machine translation",
+      "venue": "10 2002 10.3115/1073083.1073135",
+      "year": 2002,
+      "arxivId": null,
+      "doi": "10.3115/1073083.1073135"
+    },
+    {
+      "key": "moviebook",
+      "raw": "Yukun Zhu, Ryan Kiros, Richard Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In arXiv preprint arXiv:1506.06724, 2015",
+      "authors": "Yukun Zhu, Ryan Kiros, Richard Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler",
+      "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+      "venue": "In arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1506.06724",
+      "doi": null
+    },
+    {
+      "key": "wikidump",
+      "raw": "Wikimedia Foundation. Wikimedia downloads, https://dumps.wikimedia.org, 2021",
+      "authors": "Wikimedia Foundation",
+      "title": "Wikimedia downloads, 2021",
+      "venue": "",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "adamw",
+      "raw": "Ilya Loshchilov and Frank Hutter. Decoupled Weight Decay Regularization. arXiv e-prints, art. arXiv:1711.05101, November 2017",
+      "authors": "Ilya Loshchilov and Frank Hutter",
+      "title": "Decoupled Weight Decay Regularization",
+      "venue": "arXiv e-prints, art. November 2017",
+      "year": 2017,
+      "arxivId": "1711.05101",
+      "doi": null
+    },
+    {
+      "key": "mrpc",
+      "raw": "William B. Dolan and Chris Brockett. Automatically constructing a corpus of sentential paraphrases. In Proceedings of the Third International Workshop on Paraphrasing (IWP2005), 2005. URL https://www.aclweb.org/anthology/I05-5002",
+      "authors": "William B. Dolan and Chris Brockett",
+      "title": "Automatically constructing a corpus of sentential paraphrases",
+      "venue": "In Proceedings of the Third International Workshop on Paraphrasing (IWP2005), 2005 URL",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sst2",
+      "raw": "Richard Socher, A. Perelygin, J.Y. Wu, J. Chuang, C.D. Manning, A.Y. Ng, and C. Potts. Recursive deep models for semantic compositionality over a sentiment treebank. EMNLP, 1631: 0 1631--1642, 01 2013",
+      "authors": "Richard Socher, A. Perelygin, J.Y. Wu, J. Chuang, C.D. Manning, A.Y. Ng, and C. Potts",
+      "title": "Recursive deep models for semantic compositionality over a sentiment treebank",
+      "venue": "EMNLP, 1631: 0 1631--1642, 01 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "qnli",
+      "raw": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. Squad: 100,000+ questions for machine comprehension of text. pages 2383--2392, 01 2016. 10.18653/v1/D16-1264",
+      "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang",
+      "title": "Squad: 100,000+ questions for machine comprehension of text",
+      "venue": "pages 2383--2392, 01 2016 10.18653/v1/D16-1264",
+      "year": 2016,
+      "arxivId": null,
+      "doi": "10.18653/v1/D16-1264"
+    },
+    {
+      "key": "stsb",
+      "raw": "Hussein Al-Natsheh. Udl at semeval-2017 task 1: Semantic textual similarity estimation of english sentence pairs using regression model over pairwise features. 08 2017",
+      "authors": "Hussein Al-Natsheh",
+      "title": "Udl at semeval-2017 task 1: Semantic textual similarity estimation of english sentence pairs using regression model over pairwise features",
+      "venue": "08 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "qqp",
+      "raw": "Z. Chen, H. Zhang, and L. Zhang, X.and Zhao. Quora question pairs., 2018. URL https://www.kaggle.com/c/quora-question-pairs",
+      "authors": "Z. Chen, H. Zhang, and L. Zhang, X.and Zhao",
+      "title": "Quora question pairs., 2018",
+      "venue": "URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mnli",
+      "raw": "Adina Williams, Nikita Nangia, and Samuel Bowman. A broad-coverage challenge corpus for sentence understanding through inference. pages 1112--1122, 01 2018. 10.18653/v1/N18-1101",
+      "authors": "Adina Williams, Nikita Nangia, and Samuel Bowman",
+      "title": "A broad-coverage challenge corpus for sentence understanding through inference",
+      "venue": "pages 1112--1122, 01 2018 10.18653/v1/N18-1101",
+      "year": 2018,
+      "arxivId": null,
+      "doi": "10.18653/v1/N18-1101"
+    },
+    {
+      "key": "wolf-etal-2020-transformers",
+      "raw": "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, R\u00e9mi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander M. Rush. Transformers: State-of-the-art natural language processing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38--45, Online, October 2020. Association for Computational Linguistics. URL https://www.aclweb.org/anthology/2020.emnlp-demos.6",
+      "authors": "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, R\u00e9mi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander M. Rush",
+      "title": "Transformers: State-of-the-art natural language processing",
+      "venue": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 38--45, Online, October 2020. Association for Computational Linguistics URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "enwik8",
+      "raw": "Matt Mahoney. Large text compression benchmark, http://www.mattmahoney.net/dc/text.html, 2006",
+      "authors": "Matt Mahoney",
+      "title": "Large text compression benchmark, 2006",
+      "venue": "",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhuiyipretrainedmodels",
+      "raw": "Jianlin Su. Wobert: Word-based chinese bert model - zhuiyiai. Technical report, 2020. URL https://github.com/ZhuiyiTechnology/WoBERT",
+      "authors": "Jianlin Su",
+      "title": "Wobert: Word-based chinese bert model - zhuiyiai",
+      "venue": "Technical report, 2020 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nezha",
+      "raw": "Victor Junqiu Wei, Xiaozhe Ren, Xiaoguang Li, Wenyong Huang, Yi Liao, Yasheng Wang, Jiashu Lin, Xin Jiang, Xiao Chen, and Qun Liu. Nezha: Neural contextualized representation for chinese language understanding. 08 2019",
+      "authors": "Victor Junqiu Wei, Xiaozhe Ren, Xiaoguang Li, Wenyong Huang, Yi Liao, Yasheng Wang, Jiashu Lin, Xin Jiang, Xiao Chen, and Qun Liu",
+      "title": "Nezha: Neural contextualized representation for chinese language understanding",
+      "venue": "08 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cail2019scm",
+      "raw": "Chaojun Xiao, Haoxi Zhong, Zhipeng Guo, Cunchao Tu, Zhiyuan Liu, Maosong Sun, Tianyang Zhang, Xianpei Han, Zhen hu, Heng Wang, and Jianfeng Xu. Cail2019-scm: A dataset of similar case matching in legal domain. 11 2019",
+      "authors": "Chaojun Xiao, Haoxi Zhong, Zhipeng Guo, Cunchao Tu, Zhiyuan Liu, Maosong Sun, Tianyang Zhang, Xianpei Han, Zhen hu, Heng Wang, and Jianfeng Xu",
+      "title": "Cail2019-scm: A dataset of similar case matching in legal domain",
+      "venue": "11 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\begin{aligned}\n\t\t\\q_m &=f_q(\\x_m, m)\\\\\n\t\t\\k_n &=f_k(\\x_n, n)\\\\\n\t\t\\v_n &=f_v(\\x_n, n),\\\\\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:qkv"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\begin{aligned}\n\t\ta_{m,n}&=\\frac{\\exp(\\frac{\\q_m^{\\intercal}\\k_n}{\\sqrt{d}})}{\\sum_{j=1}^{N}\\exp(\\frac{\\q_m^{\\intercal}\\k_j}{\\sqrt{d}})}\\\\\n\t\t\\mathbf{o}_m&=\\sum_{n=1}^{N}a_{m,n}\\v_{n}\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:attn"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "f_{t:t\\in\\{q,k,v\\}}(\\x_i,i):=\\W_{t:t\\in\\{q,k,v\\}}(\\x_i+\\p_i),",
+      "environment": "equation",
+      "labels": [
+        "fn:adtv-posi"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\begin{cases}\n\t\t\\p_{i,2t}&=\\sin(k/10000^{2t/d})\\\\\n\t\t\\p_{i,2t+1}&=\\cos(k/10000^{2t/d})\n\t\\end{cases}",
+      "environment": "equation",
+      "labels": [
+        "fn:sins"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\begin{aligned}\n\t\tf_q(\\x_m):=\\W_{q}\\x_m\\\\\n\t\tf_k(\\x_n, n):=\\W_{k}(\\x_n+\\tilde{\\p}^k_r)\\\\\n\t\tf_v(\\x_n, n):=\\W_{v}(\\x_n+\\tilde{\\p}^v_r)\\\\\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:shaw"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\q_m^{\\intercal}\\k_n=\\x_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n+\\x_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\p_n+\\p_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n+\\p_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\p_n,",
+      "environment": "equation",
+      "labels": [
+        "fn:rela-posi1"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\q_m^{\\intercal}\\k_n=\\x_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n+\\x_m^{\\intercal}\\W_q^{\\intercal}\\widetilde{\\W}_k\\tilde{\\p}_{m-n}+\\mathbf{u}^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n+\\mathbf{v}^{\\intercal}\\W_q^{\\intercal}\\widetilde{\\W}_k\\tilde{\\p}_{m-n}",
+      "environment": "equation",
+      "labels": [
+        "fn:rela-posi2"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\q_m^{\\intercal}\\k_n=\\x_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n + b_{i,j}",
+      "environment": "equation",
+      "labels": [
+        "fn:rela-posi3"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\q_m^{\\intercal}\\k_n=\\x_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n +\\p_m^{\\intercal}\\mathbf{U}_q^{\\intercal}\\mathbf{U}_k\\p_n+b_{i,j}",
+      "environment": "equation",
+      "labels": [
+        "fn:rela-posi4"
+      ]
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\q_m^{\\intercal}\\k_n=\\x_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n+\\x_m^{\\intercal}\\W_q^{\\intercal}\\W_k\\tilde{\\p}_{m-n}+\\tilde{\\p}_{m-n}^{\\intercal}\\W_q^{\\intercal}\\W_k\\x_n",
+      "environment": "equation",
+      "labels": [
+        "fn:debeta"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\langle f_q(\\x_m, m),f_k(\\x_n, n)\\rangle=g(\\x_m,\\x_n,m-n).",
+      "environment": "equation",
+      "labels": [
+        "fn:formulation"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\begin{aligned}\n\t\tf_q(\\x_m, m) &= (\\W_q\\x_m)e^{im\\theta}\\\\\n\t\tf_k(\\x_n, n) &= (\\W_k\\x_n)e^{in\\theta}\\\\\n\t\t\n\t\tg(\\x_m, \\x_n, m - n) &= \\operatorname{Re}[(\\W_q\\x_m)(\\W_k\\x_n)^{*}e^{i(m - n)\\theta}]\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:res-2d"
+      ]
+    },
+    {
+      "ordinal": 12,
+      "latex": "f_{\\{q, k\\}}(\\x_m, m) = \\left(\n\t\\begin{array}{cc}\n\t\t\\cos{m\\theta}& -\\sin{m\\theta}  \\\\\n\t\t\\sin{m\\theta}&\\cos{m\\theta} \n\t\\end{array}\n\t\\right)\n\t\\left(\n\t\\begin{array}{cc}\n\t\tW^{(11)}_{\\{q, k\\}} & W^{(12)}_{\\{q, k\\}} \\\\\n\t\tW^{(21)}_{\\{q, k\\}} & W^{(22)}_{\\{q, k\\}}\n\t\\end{array}\n\t\\right)\n\t\\left(\n\t\\begin{array}{cc}\n\t\tx^{(1)}_m\\\\\n\t\tx^{(2)}_m\n\t\\end{array}\n\t\\right)",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "f_{\\{q, k\\}}(\\x_m, m) = \\R^d_{\\Theta, m}\\W_{\\{q, k\\}}\\x_m",
+      "environment": "equation",
+      "labels": [
+        "fn:rope-fqk"
+      ]
+    },
+    {
+      "ordinal": 14,
+      "latex": "\\R^d_{\\Theta,m} = \n\t\\begin{pmatrix}\n\t\t\\cos{m\\theta_1}& -\\sin{m\\theta_1}&0&0&\\cdots&0&0\\\\\n\t\t\\sin{m\\theta_1}&\\cos{m\\theta_1}&0&0&\\cdots&0&0 \\\\\n\t\t0&0&\\cos{m\\theta_2}& -\\sin{m\\theta_2}&\\cdots&0&0\\\\\n\t\t0&0&\\sin{m\\theta_2}&\\cos{m\\theta_2}&\\cdots&0&0 \\\\\n\t\t\\vdots&\\vdots&\\vdots&\\vdots&\\ddots&\\vdots&\\vdots\\\\\n\t\t0&0&0&0&\\cdots&\\cos{m\\theta_{d/2}}& -\\sin{m\\theta_{d/2}}\\\\\n\t\t0&0&0&0&\\cdots&\\sin{m\\theta_{d/2}}&\\cos{m\\theta_{d/2}}\n\t\\end{pmatrix}",
+      "environment": "equation",
+      "labels": [
+        "fn:rope-RMat"
+      ]
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\q_m^{\\intercal}\\k_n \n\t=(\\R^d_{\\Theta, m}\\W_q\\x_m)^\\intercal(\\R^d_{\\Theta, n}\\W_k\\x_n) =\\x^\\intercal\\W_qR^d_{\\Theta, n-m}\\W_k\\x_n",
+      "environment": "equation",
+      "labels": [
+        "fn:rope-qk"
+      ]
+    },
+    {
+      "ordinal": 16,
+      "latex": "\\operatorname{Attention}(\\mathbf{Q},\\mathbf{K},\\mathbf{V})_m=\\frac{\\sum_{n=1}^{N}\\operatorname{sim}(\\q_m,\\k_n)\\v_n}{\\sum_{n=1}^{N}\\operatorname{sim}(\\q_m, \\k_n)}.",
+      "environment": "equation",
+      "labels": [
+        "fn:atten-full"
+      ]
+    },
+    {
+      "ordinal": 17,
+      "latex": "\\operatorname{Attention}(\\Q,\\K,\\V)_m=\\frac{\\sum_{n=1}^{N}\\phi(\\q_m)^{\\intercal}\\varphi(\\k_n)\\v_n}{\\sum_{n=1}^{N}\\phi(\\q_m)^{\\intercal}\\varphi(\\k_n)},",
+      "environment": "equation",
+      "labels": [
+        "fn:linear-attention"
+      ]
+    },
+    {
+      "ordinal": 18,
+      "latex": "\\operatorname{Attention}(\\mathbf{Q},\\mathbf{K},\\mathbf{V})_m=\\frac{\\sum_{n=1}^{N}\\big(\\R^d_{\\Theta, m}\\phi(\\q_m)\\big)^{\\intercal}\\big(\\R^d_{\\Theta, n}\\varphi(\\k_n)\\big)\\v_n}{\\sum_{n=1}^{N}\\phi(\\q_m)^{\\intercal}\\varphi(\\k_n)}.",
+      "environment": "equation",
+      "labels": [
+        "fn:linear-rope"
+      ]
+    },
+    {
+      "ordinal": 19,
+      "latex": "\\begin{aligned}\n\t\t\\q_m &= f_q(\\x_q, m),  \\\\\n\t\t\\k_n &= f_k(\\x_k, n),\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-qk"
+      ]
+    },
+    {
+      "ordinal": 20,
+      "latex": "\\q^\\intercal_m\\k_n = \\langle f_q(\\x_m, m),f_k(\\x_n, n)\\rangle= g(\\x_m, \\x_n, n - m),",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-g"
+      ]
+    },
+    {
+      "ordinal": 21,
+      "latex": "\\begin{aligned}\n\t\t\\q &= f_q(\\x_q, 0), \\\\\n\t\t\\k &= f_k(\\x_k, 0), \n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-initCond1"
+      ]
+    },
+    {
+      "ordinal": 22,
+      "latex": "\\begin{aligned}\n\t\tf_q(\\x_q, m) &= R_q(\\x_q, m)e^{i\\Theta_q(\\x_q, m)}, \\\\\n\t\tf_k(\\x_k, n) &= R_k(\\x_k, n)e^{i\\Theta_k(\\x_k, n)}, \\\\\n\t\tg(\\x_q, \\x_k, n - m) &= R_g(\\x_q, \\x_k, n - m)e^{i\\Theta_g(\\x_q, \\x_k, n - m)},\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 23,
+      "latex": "\\begin{aligned}\n\t\tR_q(\\x_q, m)R_k(\\x_k, n) &= R_g(\\x_q, \\x_k, n - m), \\\\\n\t\t\\Theta_k(\\x_k, n) - \\Theta_q(\\x_q, m) &= \\Theta_g(\\x_q, \\x_k, n - m),\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-rtheta"
+      ]
+    },
+    {
+      "ordinal": 24,
+      "latex": "\\begin{aligned}\n\t\t\\q &= \\|\\q\\|e^{i\\theta_q} = R_q(\\x_q, 0)e^{i\\Theta_q(\\x_q, 0)},\\\\\n\t\t\\k & = \\|\\k\\|e^{i\\theta_k} = R_k(\\x_k, 0)e^{i\\Theta_k(\\x_k, 0)},\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-initCond2"
+      ]
+    },
+    {
+      "ordinal": 25,
+      "latex": "R_q(\\x_q, m)R_k(\\x_k, m) &= R_g(\\x_q, \\x_k, 0) = R_q(\\x_q, 0)R_k(\\x_k, 0)  = \\|\\q\\|\\|\\k\\| ,\\\\\n\t\t\\Theta_k(\\x_k, m) - \\Theta_q(\\x_q, m) &= \\Theta_g(\\x_q, \\x_k, 0) =\\Theta_k(\\x_k, 0) - \\Theta_q(\\x_q, 0) =  \\theta_k - \\theta_q .",
+      "environment": "align",
+      "labels": [
+        "fn:deri-solveR",
+        "fn:deri-solveTheta"
+      ]
+    },
+    {
+      "ordinal": 26,
+      "latex": "\\begin{aligned}\n\t\tR_q(\\x_q, m) &= R_q(\\x_q, 0) =  \\|\\q\\| \\\\\n\t\tR_k(\\x_k, n) &= R_k(\\x_k, 0) = \\|\\k\\|\\\\\n\t\tR_g(\\x_q, \\x_k, n - m) &= R_g(\\x_q, \\x_k, 0) =  \\|\\q\\|\\|\\k\\|\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-solR1"
+      ]
+    },
+    {
+      "ordinal": 27,
+      "latex": "\\Theta_f(\\x_{\\{q, k\\}}, m) = \\phi(m) + \\theta_{\\{q,k\\}},",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-solTheta1"
+      ]
+    },
+    {
+      "ordinal": 28,
+      "latex": "\\phi(m + 1) - \\phi(m) = \\Theta_g(\\x_q, \\x_k, 1) + \\theta_q - \\theta_k,",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-solTheta2"
+      ]
+    },
+    {
+      "ordinal": 29,
+      "latex": "\\phi(m) = m\\theta + \\gamma,",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-solTheta3"
+      ]
+    },
+    {
+      "ordinal": 30,
+      "latex": "\\begin{aligned}\n\t\tf_q(\\x_q, m) &= \\|\\q\\|e^{i\\theta_q + m\\theta + \\gamma} = \\q e^{i(m\\theta + \\gamma)}, \\\\\n\t\tf_k(\\x_k, n) &= \\|\\k\\|e^{i\\theta_k + n\\theta + \\gamma}= \\k e^{i(n\\theta + \\gamma)}.\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "fn:deri-solution1"
+      ]
+    },
+    {
+      "ordinal": 31,
+      "latex": "\\begin{aligned}\n\t\t\\q = f_q(\\x_m, 0) &= \\W_q\\x_n,\\\\\n\t\t\\k = f_k(\\x_n, 0) &= \\W_k\\x_n.\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 32,
+      "latex": "\\begin{aligned}\n\t\tf_q(\\x_m, m) &= (\\W_q\\x_m)e^{im\\theta},\\\\\n\t\tf_k(\\x_n, n) &= (\\W_k\\x_n)e^{in\\theta}.\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 33,
+      "latex": "\\R^d_{\\Theta, m}\\x = \n\t\\begin{pmatrix}\n\t\tx_1\\\\\n\t\tx_2\\\\\n\t\tx_3\\\\\n\t\tx_4\\\\\n\t\t\\vdots\\\\\n\t\tx_{d-1}\\\\\n\t\tx_d\n\t\\end{pmatrix}\n\t\\otimes\n\t\\begin{pmatrix}\n\t\t\\cos{m\\theta_1} \\\\\n\t\t\\cos{m\\theta_1} \\\\\n\t\t\\cos{m\\theta_2} \\\\\n\t\t\\cos{m\\theta_2} \\\\\n\t\t\\vdots \\\\\n\t\t\\cos{m\\theta_{d/2}} \\\\\n\t\t\\cos{m\\theta_{d/2}} \n\t\\end{pmatrix}\n\t+\n\t\\begin{pmatrix}\n\t\t-x_2\\\\\n\t\tx_1\\\\\n\t\t-x_4\\\\\n\t\tx_3\\\\\n\t\t\\vdots\\\\\n\t\t-x_d\\\\\n\t\tx_{d-1}\n\t\\end{pmatrix}\n\t\\otimes\n\t\\begin{pmatrix}\n\t\t\\sin{m\\theta_1}\\\\\n\t\t\\sin{m\\theta_1}\\\\\n\t\t\\sin{m\\theta_2}\\\\\n\t\t\\sin{m\\theta_2}\\\\\n\t\t\\vdots\\\\\n\t\t\\sin{m\\theta_{d/2}}\\\\\n\t\t\\sin{m\\theta_{d/2}}\n\t\\end{pmatrix}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 34,
+      "latex": "(\\R^d_{\\Theta, m}\\W_q\\x_m)^\\intercal(\\R^d_{\\Theta, n}\\W_k\\x_n) = \\operatorname{Re}\\bigg[\\sum_{i=0}^{d/2-1}\\q_{[2i:2i+1]}\\k_{[2i:2i+1]}^{*}e^{i(m-n)\\theta_{i}}\\bigg]",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 35,
+      "latex": "\\sum_{i=0}^{d/2-1}\\q_{[2i:2i+1]}\\k_{[2i:2i+1]}^{*}e^{i(m-n)\\theta_{i}}=\\sum_{i=0}^{d/2-1}h_i(S_{i+1}-S_{i})=-\\sum_{i=0}^{d/2-1}S_{i+1}(h_{i+1}-h_i).",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 36,
+      "latex": "\\begin{aligned}\n\t\t\\bigg\\vert\\sum_{i=0}^{d/2-1}\\q_{[2i:2i+1]}\\k_{[2i:2i+1]}^{*}e^{i(m-n)\\theta_{i}}\\bigg\\vert &= \\bigg\\vert\\sum_{i=0}^{d/2-1}S_{i+1}(h_{i+1}-h_i)\\bigg\\vert\\\\\n\t\t&\\leq \\sum_{i=0}^{d/2-1}\\vert S_{i+1}\\vert\\vert(h_{i+1}-{h_i})\\vert\\\\\n\t\t&\\leq \\big(\\max_i\\vert h_{i+1}-h_i\\vert\\big)\\sum_{i=0}^{d/2-1}\\vert S_{i+1}\\vert\n\t\\end{aligned}",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1320,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4400,
+      "numbers": 0,
+      "citations": 25
+    },
+    {
+      "kind": "related",
+      "title": "Background and Related Work",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Preliminary",
+      "chars": 797,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Absolute position embedding",
+      "chars": 722,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "related",
+      "title": "Relative position embedding",
+      "chars": 2463,
+      "numbers": 0,
+      "citations": 12
+    },
+    {
+      "kind": "method",
+      "title": "Proposed approach",
+      "chars": 200,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Formulation",
+      "chars": 1097,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Rotary position embedding",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "A 2D case",
+      "chars": 1032,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "General form",
+      "chars": 1318,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Properties of RoPE",
+      "chars": 1906,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Theoretical Explanation",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Derivation of RoPE under 2D",
+      "chars": 2809,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Computational efficient realization of rotary matrix multiplication",
+      "chars": 253,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Long-term decay of RoPE",
+      "chars": 683,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments and Evaluation",
+      "chars": 598,
+      "numbers": 1,
+      "citations": 3
+    },
+    {
+      "kind": "experiments",
+      "title": "Machine Translation",
+      "chars": 100,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Settings",
+      "chars": 175,
+      "numbers": 1,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "chars": 783,
+      "numbers": 5,
+      "citations": 4
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 378,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Pre-training Language Modeling",
+      "chars": 239,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Settings",
+      "chars": 404,
+      "numbers": 3,
+      "citations": 3
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "chars": 331,
+      "numbers": 4,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 294,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Fine-tuning on GLUE tasks",
+      "chars": 197,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Settings",
+      "chars": 220,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "chars": 534,
+      "numbers": 8,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 193,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Performer with RoPE",
+      "chars": 439,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "chars": 501,
+      "numbers": 6,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 237,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation on Chinese Data",
+      "chars": 220,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation",
+      "chars": 656,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "experiments",
+      "title": "Pre-training",
+      "chars": 1050,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Downstream Tasks & Dataset",
+      "chars": 696,
+      "numbers": 5,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 786,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Limitations of the work",
+      "chars": 812,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 778,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 6,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 37,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "Vaswani:2017",
+      "stance": "inherits",
+      "cue": "Following",
+      "sentence": "Long-term decay: Following , we set .",
+      "section": "Properties of RoPE",
+      "sectionKind": "method",
+      "title": "Attention is all you need",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+      "year": 2017,
+      "arxivId": "1706.03762",
+      "inCorpus": true,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 654.79833984375,
+            "x1": 146.44552612304688,
+            "y1": 664.6608276367188
+          },
+          {
+            "x0": 156.40699768066406,
+            "y0": 654.8883666992188,
+            "x1": 196.15357971191406,
+            "y1": 664.7508544921875
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Devlin2019BERTPO",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following , we report the best-averaged results on the validation set.",
+        "section": "Implementation details",
+        "sectionKind": "experiments",
+        "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+        "authors": "J. Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova",
+        "year": 2019,
+        "arxivId": "1810.04805",
+        "inCorpus": true,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 166.27609252929688,
+              "y0": 464.1224670410156,
+              "x1": 421.6075134277344,
+              "y1": 474.0850830078125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Vaswani:2017",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Long-term decay: Following , we set .",
+        "section": "Properties of RoPE",
+        "sectionKind": "method",
+        "title": "Attention is all you need",
+        "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+        "year": 2017,
+        "arxivId": "1706.03762",
+        "inCorpus": true,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 72.0,
+              "y0": 654.79833984375,
+              "x1": 146.44552612304688,
+              "y1": 664.6608276367188
+            },
+            {
+              "x0": 156.40699768066406,
+              "y0": 654.8883666992188,
+              "x1": 196.15357971191406,
+              "y1": 664.7508544921875
+            }
+          ]
+        }
+      },
+      {
+        "key": "bpe",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "We replicate the setup for English-to-German translation with a vocabulary of 37k based on a joint source and target byte pair encoding(BPE) .",
+        "section": "Implementation details",
+        "sectionKind": "experiments",
+        "title": "Neural machine translation of rare words with subword units",
+        "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 153.20118713378906,
+              "y0": 331.4497985839844,
+              "x1": 540.0025634765625,
+              "y1": 341.32232666015625
+            },
+            {
+              "x0": 72.0,
+              "y0": 342.2153015136719,
+              "x1": 281.48663330078125,
+              "y1": 352.27703857421875
+            }
+          ]
+        }
+      },
+      {
+        "key": "moviebook",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the BookCorpus and the Wikipedia Corpus from Huggingface Datasets library (Apache License 2.0) for pre-training.",
+        "section": "Experimental Settings",
+        "sectionKind": "experiments",
+        "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+        "authors": "Yukun Zhu, Ryan Kiros, Richard Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler",
+        "year": 2015,
+        "arxivId": "1506.06724",
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 428.66973876953125,
+              "y0": 550.1177368164062,
+              "x1": 539.9974975585938,
+              "y1": 560.1696166992188
+            },
+            {
+              "x0": 72.0,
+              "y0": 561.0765991210938,
+              "x1": 253.4449920654297,
+              "y1": 571.0640869140625
+            }
+          ]
+        }
+      },
+      {
+        "key": "wikidump",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the BookCorpus and the Wikipedia Corpus from Huggingface Datasets library (Apache License 2.0) for pre-training.",
+        "section": "Experimental Settings",
+        "sectionKind": "experiments",
+        "title": "Wikimedia downloads, 2021",
+        "authors": "Wikimedia Foundation",
+        "year": 2021,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 428.66973876953125,
+              "y0": 550.1177368164062,
+              "x1": 539.9974975585938,
+              "y1": 560.1696166992188
+            },
+            {
+              "x0": 72.0,
+              "y0": 561.0765991210938,
+              "x1": 253.4449920654297,
+              "y1": 571.0640869140625
+            }
+          ]
+        }
+      },
+      {
+        "key": "wolf-etal-2020-transformers",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use Huggingface Transformers library (Apache License 2.0) to fine-tune each of the aforementioned downstream tasks for 3 epochs, with a maximum sequence length of 512, batch size of 32 and learning rates 2,3,4,5e-5.",
+        "section": "Implementation details",
+        "sectionKind": "experiments",
+        "title": "Transformers: State-of-the-art natural language processing",
+        "authors": "Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, R\u00e9mi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger, Mariama Drame, Quentin Lhoest, and Alexander M. Rush",
+        "year": 2020,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 388.5186767578125,
+              "y0": 442.3794250488281,
+              "x1": 539.9970703125,
+              "y1": 452.24188232421875
+            },
+            {
+              "x0": 72.0,
+              "y0": 453.26556396484375,
+              "x1": 541.7421264648438,
+              "y1": 463.1581726074219
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "In this section, we focus on discussing incorporating RoPE with .",
+      "anchorText": "In this section, we focus on discussing incorporating RoPE with",
+      "kind": "simplifying",
+      "support": "shown",
+      "cue": "we focus on",
+      "section": "Properties of RoPE",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "fn:linear-attention"
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 331.6286315917969,
+            "y0": 240.47662353515625,
+            "x1": 539.9962158203125,
+            "y1": 250.41928100585938
+          },
+          {
+            "x0": 72.0,
+            "y0": 251.29531860351562,
+            "x1": 117.0373306274414,
+            "y1": 261.3570556640625
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 1,
+    "cited": 0,
+    "shown": 1,
+    "bare": 0
+  }
+}

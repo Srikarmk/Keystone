@@ -140,7 +140,8 @@ _POST: tuple[tuple[Stance, re.Pattern[str]], ...] = (
 #: being recorded as contested.
 _CLAUSE_BREAK = re.compile(
     r";|:|—|--|\.\s"
-    r"|,\s*(?:and|but|while|whereas|although|though|yet|so|because|since|which|who)\s"
+    r"|,\s*(?:and|but|while|whereas|although|though|yet|so|because|since"
+    r"|which|who|where|when|whose)\s"
     # Split *before* the pronoun, not after it. Consuming the "we" left "use the
     # optimiser of" with nothing for the INHERITS cue to match, so every
     # "Unlike X, we use Y" sentence came back as background.
@@ -173,6 +174,12 @@ _INTERVENING_VERB = re.compile(
 #: is dropped rather than inverted: the naive reading is provably wrong, but the
 #: inverse is a guess about negation scope, and this suite does not guess.
 _NEGATOR = re.compile(r"\b(?:not|n't|never|neither|nor|hardly|without)\b\s*$", re.I)
+
+#: Any sign that the sentence is about this paper rather than about the field.
+_ABOUT_US = re.compile(
+    r"\b(?:we|our|ours|us|ourselves|this\s+(?:paper|work|study|section|article))\b", re.I
+)
+
 
 #: When the clause already has a first-person subject, the sentence is about *this*
 #: paper, and a shortcoming named after the citation is this paper's own limitation
@@ -222,6 +229,26 @@ class CitationContext:
         }
 
 
+def _adopts_without_saying_who(stance: Stance, cue: str, sentence: str) -> bool:
+    """Whether an adoption cue is describing somebody else's practice.
+
+    Adopting something is a claim about *this* paper, so the sentence has to be about
+    this paper. Chinchilla writes "Following \\cite{kaplan2020} and the training setup
+    of GPT-3 \\cite{brown2020}, many of the recently trained large models have been
+    trained for approximately 300 billion tokens" — the subject is other people's
+    models, and reading it as Chinchilla adopting GPT-3's setup misattributes a survey
+    of the field to the paper making it.
+
+    Cues that are already first-person ("we follow", "we adopt") carry their own
+    subject and need no check. The cost is passive constructions — "the weights are
+    initialised as in \\cite{he2015}" is a real adoption this will miss — which is the
+    trade this suite makes everywhere: a missed edge over a wrong one.
+    """
+    if not stance.is_load_bearing or cue.lower().startswith("we "):
+        return False
+    return not _ABOUT_US.search(sentence)
+
+
 def classify(before: str, after: str) -> tuple[Stance, str]:
     """Decide what a citation's surroundings say about it.
 
@@ -238,6 +265,8 @@ def classify(before: str, after: str) -> tuple[Stance, str]:
                 clause[match.end() :]
             ):
                 continue
+            if _is_gerund(match.group(0), clause, match.end()):
+                continue
             return stance, match.group(0).strip()
 
     if not _FIRST_PERSON.search(clause):
@@ -247,6 +276,41 @@ def classify(before: str, after: str) -> tuple[Stance, str]:
                 return stance, match.group(0).strip(" \t'’")
 
     return Stance.BACKGROUND, ""
+
+
+#: Words that turn "following" into a noun rather than a cue. InstructGPT writes "a
+#: related line of work on instruction following for navigation", where "following" is
+#: the thing being studied, not the paper adopting anything. As a participle it is
+#: followed by what is being followed — a determiner, or the citation itself.
+_GERUND_AFTER = re.compile(r"^\s*(?:for|in|of|with|on|to|as|from|by)\b", re.I)
+
+
+def _is_gerund(cue: str, clause: str, end: int) -> bool:
+    """Whether a "following" is a noun in this position."""
+    return cue.lower() == "following" and bool(_GERUND_AFTER.match(clause[end:]))
+
+
+def _cue_already_taken(before: str, cue: str) -> bool:
+    """Whether an earlier citation is the one the contrastive cue is about.
+
+    A contrastive cue takes a single object; an adopting cue distributes over a list.
+    "We employ a residual connection \\cite{he} ... followed by layer normalization
+    \\cite{ba}" adopts both, and must keep doing so. But BERTScore writes "In contrast
+    to prior word embeddings \\cite{mikolov}, contextual embeddings, such as BERT
+    \\cite{devlin} and ELMo \\cite{peters}, can generate different vector
+    representations" — where the contrast is with the *first* citation and BERT and
+    ELMo are examples of the favoured side. Reading the cue as governing them recorded
+    BERTScore as disputing the two papers it is built on.
+
+    So a contrastive cue is spent on the nearest citation after it. If another citation
+    sits between the cue and this one, this one is not what is being argued with.
+    """
+    if not cue:
+        return False
+    at = before.lower().rfind(cue.lower())
+    if at < 0:
+        return False
+    return _CITE_SITE.search(before, at + len(cue)) is not None
 
 
 def _negated(clause: str, cue_start: int) -> bool:
@@ -289,6 +353,12 @@ def contexts(latex: str, sections: tuple[Section, ...]) -> list[CitationContext]
                 before = strip_markup(raw[: site.start()])
                 after = strip_markup(raw[site.end() :])
                 stance, cue = classify(before, after)
+                if stance is Stance.CONTESTS and _cue_already_taken(
+                    raw[: site.start()], cue
+                ):
+                    stance, cue = Stance.BACKGROUND, ""
+                if _adopts_without_saying_who(stance, cue, sentence):
+                    stance, cue = Stance.BACKGROUND, ""
                 for key in _keys(site.group("keys")):
                     out.append(
                         CitationContext(

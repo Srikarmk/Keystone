@@ -43,10 +43,11 @@ Three things are read straight out of the LaTeX, no model in the loop:
 3. **The graph.** Stanced citations resolve to real papers, and where the cited paper
    is in the library the edge is walkable in both directions. `lineage/graph.py`.
 
-**Measured, 9 papers:** 87 stanced citations of 386 total · 48 load-bearing
-dependencies · 13 disputes · 40 assumptions of which **30 bare** · **7 edges run
-between papers in the library** (VGG → ResNet → Transformer → BERT / ViT, with batch
-and layer normalisation feeding in) · 12/13 edges anchored to a page on the Transformer.
+**Measured, 42 papers:** 168 load-bearing dependencies · **175 bare
+assumptions** · **52 edges run between papers in the library**, each one
+carrying the sentence that placed it. The chain is the real one: VGG → ResNet →
+Transformer → BERT / ViT / LLaMA, with batch and layer normalisation feeding in, and
+Attention Is All You Need the most connected node at degree 14.
 
 What this makes possible that the audit could not: *"ResNet's central hypothesis — that
 residual mappings are easier to optimise than unreferenced ones — is stated once, in the
@@ -63,6 +64,77 @@ one of the most-cited papers in the field.
 - **The numeric analysis is kept, demoted.** Claims, numbers, tables, equations and the
   cross-paper baseline check all still work and are all still in the reader — below the
   lineage, where a detail belongs.
+
+---
+
+## Resolving a citation to a paper (2026-09-16)
+
+An edge exists when a cited work turns out to be a paper the library has ingested, and
+these papers cite each other's *conference* versions — so matching on arXiv identifiers
+alone found one edge in the whole library. Matching on titles finds the real lineage,
+and it is also the one place this system can produce a confidently wrong answer, so the
+rule took three attempts:
+
+1. **The paper's own title.** Broke on arXiv:1909.08593, whose LaTeX carries
+   `\icmltitle{Language Models are Unsupervised Multitask Learners}` — a stale ICML
+   template copied from GPT-2. Every citation of GPT-2 would have pointed at the RLHF
+   paper instead.
+2. **Attestation required** — a title only counts if some bibliography prints it
+   alongside that same arXiv identifier. Correct, and too strict: a reference can only
+   attest when it *already* carries an identifier, and those are exactly the references
+   that never needed a title match. Cost nine real edges.
+3. **Attested first, own title with a collision guard.** Independent evidence wins where
+   it exists; otherwise a paper resolves by its own title unless that name is already
+   claimed — by another paper's attestation, or by another library paper. Ambiguity
+   resolves to nothing, which is the answer the anchor layer gives too.
+
+### A contrastive cue takes one object; an adopting cue takes a list
+
+Reading the four cross-library disputes the graph produced found two of them false, and
+both the same shape. BERTScore writes:
+
+> "In contrast to prior word embeddings [cite], contextual embeddings, such as **BERT**
+> [cite] and **ELMo** [cite], can generate different vector representations..."
+
+The contrast is with the *first* citation. BERT and ELMo are examples of the favoured
+side, and they were inheriting a cue already spoken for — so Keystone recorded BERTScore
+as disputing the two papers it is built on.
+
+The rule now: a contrastive cue is spent on the nearest citation after it, so a later
+citation in the same clause gets nothing. Adopting cues are untouched and still
+distribute — "We employ a residual connection [cite] ... followed by layer
+normalization [cite]" adopts both, which is what the sentence says. This is the fourth
+instance of one pattern, and it is worth naming: **a cue read out of position does not
+produce a vague answer, it produces a confident opposite one.**
+
+### Reading the output found what the tests could not
+
+Both of the false disputes above, and two more in the dominant `inherits` category,
+were found by **reading a random sample of the sentences the system produced** — not by
+a test. The audit is worth running by hand after any change to the cue rules:
+
+| Sampled | Found wrong | Cause |
+|---|---|---|
+| 4 of 4 contests | 2 | contrastive cue reaching past its object |
+| 9 of 42 inherits | 1 | "instruction **following** for navigation" — a gerund, not a cue |
+| 10 of 41 inherits | 1 | *"Following [X], many recently trained models have..."* — a survey of the field, not an adoption |
+
+The third one produced a new rule: **an adoption is a claim about this paper, so the
+sentence has to be about this paper.** A cue that is already first-person ("we follow")
+carries its own subject; "Following", "As in" and "based on" do not, and now require a
+`we`/`our`/`this paper` somewhere in the sentence. It costs passive constructions —
+"the weights are initialised as in [cite]" is a real adoption this will miss — which is
+the trade made everywhere here: a missed edge over a wrong one.
+
+This is also the design's saving grace. Every row shows the sentence and the cue that
+placed it, so a wrong reading is visible rather than hidden behind a verdict.
+
+Two smaller ones fell out of the same work. A paper's name is often a macro
+(`\title{\bertscore: Evaluating...}`), and stripping it unexpanded left three titles
+beginning with a colon. And `display` seeded from the committed index *before* a fresh
+reading, so a title that was misread once survived every later rebuild.
+
+Six tests cover the rule directly, including the GPT-2 collision.
 
 ---
 
@@ -108,7 +180,8 @@ test. A gate whose population moves is not a gate.
 | Typed tables from source | **Done** | emphasis, band structure, spanning headers, 9 papers parsed |
 | Number parsing with precision | **Done** | `Decimal` + written quantum; unit/percent/scale handling |
 | Deterministic check suite | **1 check** | `table.aggregate_mismatch` only; 0 findings on 35 unmodified papers. `emphasis_not_best` retired — see below |
-| Library expansion | **Done** | `keystone expand` walks the library's own citations one hop out and ranks by how many papers take a stance on each |
+| Library expansion | **Done** | `keystone expand`; library grew 9 -> 42 papers, walkable edges 7 -> 52 |
+| Title resolution | **Done, guarded** | attested-first with a collision guard; a paper's own source is not evidence about itself |
 | Dark pages | **Done** | opt-in per paper, hue-rotated so figure colours survive; highlights switch to `screen` blending |
 | Reverse lineage | **Done** | "what stands on this" — the inbound edges, which only become useful as the corpus grows |
 | Citation stance (inherits/contests/…) | **Done, tested** | 87 stanced of 386 citations across 9 papers; 43 tests incl. negation, clause scope, first-person subject |
@@ -128,7 +201,7 @@ test. A gate whose population moves is not a gate.
 | Citation faithfulness | **Not started** | |
 | Auth, accounts, metering | **Not started** | |
 
-Test suite: **105 passing**, ~75s, no network, no API key.
+Test suite: **146 passing**, ~75s, no network, no API key.
 
 ---
 

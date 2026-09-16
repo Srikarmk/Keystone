@@ -1,0 +1,3058 @@
+{
+  "id": "1811.07871",
+  "title": "Scalable agent alignment via reward modeling: a research direction",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "Challenges when scaling reward modeling and the approaches we discuss to address them. The rightmost column lists which challenge each approach is meant to address.",
+    "supported": 1,
+    "share": 1.0,
+    "summary": "1 of the paper's headline numbers trace to Table 1"
+  },
+  "coverage": {
+    "claims": 1,
+    "supported": 1,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 1.0
+  },
+  "claims": [
+    {
+      "value": "100%",
+      "section": "introduction",
+      "sentence": "Moreover, while reaching 100% trust in our systems is impossible, it is also not necessary: we only need to aim for a level of trust at which we can confidently say that our new systems are more aligned than the current systems .",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "Challenges when scaling reward modeling and the approaches we discuss to address them. The rightmost column lists which challenge each approach is meant to address.",
+      "row": "Amount of feedback",
+      "column": "",
+      "cell": "1",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 149.93600463867188,
+            "y0": 205.2073516845703,
+            "x1": 505.741943359375,
+            "y1": 215.09494018554688
+          },
+          {
+            "x0": 107.69100189208984,
+            "y0": 216.0605010986328,
+            "x1": 423.1268615722656,
+            "y1": 226.02310180664062
+          }
+        ]
+      }
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1811.07871",
+  "numbers": [
+    {
+      "value": "100%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Moreover, while reaching 100% trust in our systems is impossible, it is also not necessary: we only need to aim for a level of trust at which we can confidently say that our new systems are more aligned than the current systems .",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Amount of feedback",
+      "cell": "1",
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Challenges when scaling reward modeling and the approaches we discuss to address them. The rightmost column lists which challenge each approach is meant to address.",
+      "label": "sec:challenges",
+      "numericCells": 5,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Challenges",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Amount of feedback",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Feedback distribution",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Reward hacking",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Unacceptable outcomes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Reward-result gap",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 149.93600463867188,
+            "y0": 205.2073516845703,
+            "x1": 505.741943359375,
+            "y1": 215.09494018554688
+          },
+          {
+            "x0": 107.69100189208984,
+            "y0": 216.0605010986328,
+            "x1": 423.1268615722656,
+            "y1": 226.02310180664062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Challenges when scaling reward modeling and the approaches we discuss to address them. The rightmost column lists which challenge each approach is meant to address.",
+      "label": "sec:challenges",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Approaches",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "online feedback",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1, 2, 3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "off-policy feedback",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3, 4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "leveraging existing data",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "hierarchical feedback",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "natural language",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1, 2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "model-based RL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3, 4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "side-constraints",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3, 4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "adversarial training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3, 4, 5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "uncertainty estimates",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1, 2, 5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "inductive bias",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1, 2, 5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 149.93600463867188,
+            "y0": 205.2073516845703,
+            "x1": 505.741943359375,
+            "y1": 215.09494018554688
+          },
+          {
+            "x0": 107.69100189208984,
+            "y0": 216.0605010986328,
+            "x1": 423.1268615722656,
+            "y1": 226.02310180664062
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\assumptionautorefname": "Assumption",
+    "\\sectionautorefname": "Section",
+    "\\subsectionautorefname": "Section",
+    "\\subsubsectionautorefname": "Section"
+  },
+  "references": [
+    {
+      "key": "abbeel2004apprenticeship",
+      "raw": "Pieter Abbeel and Andrew Ng. Apprenticeship learning via inverse reinforcement learning. In International Conference on Machine Learning, pp.\\ 1--8, 2004",
+      "authors": "Pieter Abbeel and Andrew Ng",
+      "title": "Apprenticeship learning via inverse reinforcement learning",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1--8, 2004",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "abel2017agent",
+      "raw": "David Abel, John Salvatier, Andreas Stuhlm\u00fcller, and Owain Evans. Agent-agnostic human-in-the-loop reinforcement learning. arXiv preprint arXiv:1701.04079, 2017",
+      "authors": "David Abel, John Salvatier, Andreas Stuhlm\u00fcller, and Owain Evans",
+      "title": "Agent-agnostic human-in-the-loop reinforcement learning",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1701.04079",
+      "doi": null
+    },
+    {
+      "key": "abramson1987expected",
+      "raw": "Bruce Abramson. The Expected-Outcome Model of Two-Player Games. PhD thesis, Columbia University, 1987",
+      "authors": "Bruce Abramson",
+      "title": "The Expected-Outcome Model of Two-Player Games",
+      "venue": "PhD thesis, Columbia University, 1987",
+      "year": 1987,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "achiam2017constrained",
+      "raw": "Joshua Achiam, David Held, Aviv Tamar, and Pieter Abbeel. Constrained policy optimization. In International Conference on Machine Learning, pp.\\ 22--31, 2017",
+      "authors": "Joshua Achiam, David Held, Aviv Tamar, and Pieter Abbeel",
+      "title": "Constrained policy optimization",
+      "venue": "In International Conference on Machine Learning, pp.\\ 22--31, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "akrour2012april",
+      "raw": "Riad Akrour, Marc Schoenauer, and Mich\u00e8le Sebag. APRIL: Active preference learning-based reinforcement learning. In Joint European Conference on Machine Learning and Knowledge Discovery in Databases, pp.\\ 116--131, 2012",
+      "authors": "Riad Akrour, Marc Schoenauer, and Mich\u00e8le Sebag",
+      "title": "APRIL: Active preference learning-based reinforcement learning",
+      "venue": "In Joint European Conference on Machine Learning and Knowledge Discovery in Databases, pp.\\ 116--131, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "akrour2014programming",
+      "raw": "Riad Akrour, Marc Schoenauer, Mich\\`ele Sebag, and Jean-Christophe Souplet. Programming by feedback. In International Conference on Machine Learning, pp.\\ 1503--1511, 2014",
+      "authors": "Riad Akrour, Marc Schoenauer, Mich\\`ele Sebag, and Jean-Christophe Souplet",
+      "title": "Programming by feedback",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1503--1511, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "amin2017repeated",
+      "raw": "Kareem Amin, Nan Jiang, and Satinder Singh. Repeated inverse reinforcement learning. In Advances in Neural Information Processing Systems, pp.\\ 1815--1824, 2017",
+      "authors": "Kareem Amin, Nan Jiang, and Satinder Singh",
+      "title": "Repeated inverse reinforcement learning",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 1815--1824, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "amodei2016concrete",
+      "raw": "Dario Amodei, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and Dan Man\u00e9. Concrete problems in AI safety. arXiv preprint arXiv:1606.06565, 2016",
+      "authors": "Dario Amodei, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and Dan Man\u00e9",
+      "title": "Concrete problems in AI safety",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.06565",
+      "doi": null
+    },
+    {
+      "key": "andreas2017translating",
+      "raw": "Jacob Andreas, Anca Dragan, and Dan Klein. Translating neuralese. In Association for Computational Linguistics, pp.\\ 232--242, 2017",
+      "authors": "Jacob Andreas, Anca Dragan, and Dan Klein",
+      "title": "Translating neuralese",
+      "venue": "In Association for Computational Linguistics, pp.\\ 232--242, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "andreas2018learning",
+      "raw": "Jacob Andreas, Dan Klein, and Sergey Levine. Learning with latent language. In Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pp.\\ 2166--2179, 2018",
+      "authors": "Jacob Andreas, Dan Klein, and Sergey Levine",
+      "title": "Learning with latent language",
+      "venue": "In Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pp.\\ 2166--2179, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "anonymous2019recurrent",
+      "raw": "Anonymous. Recurrent experience replay in distributed reinforcement learning. In International Conference on Learning Representations, 2019. URL https://openreview.net/forum?id=r1lyTjAqYX. Under review",
+      "authors": "Anonymous",
+      "title": "Recurrent experience replay in distributed reinforcement learning",
+      "venue": "In International Conference on Learning Representations, 2019 URL Under review",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "anonymous2019systematic",
+      "raw": "Anonymous. Systematic generalization: What is required and can it be learned? In International Conference on Learning Representations, 2019. URL https://openreview.net/forum?id=HkezXnA9YX. Under review",
+      "authors": "Anonymous",
+      "title": "Systematic generalization: What is required and can it be learned?",
+      "venue": "In International Conference on Learning Representations, 2019 URL Under review",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "uesato2018rigorous",
+      "raw": "Anonymous. Rigorous agent evaluation: An adversarial approach to uncover catastrophic failures. In International Conference on Learning Representations, 2019. URL https://openreview.net/forum?id=B1xhQhRcK7. Under review",
+      "authors": "Anonymous",
+      "title": "Rigorous agent evaluation: An adversarial approach to uncover catastrophic failures",
+      "venue": "In International Conference on Learning Representations, 2019 URL Under review",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "anthony2017thinking",
+      "raw": "Thomas Anthony, Zheng Tian, and David Barber. Thinking fast and slow with deep learning and tree search. In Advances in Neural Information Processing Systems, pp.\\ 5360--5370, 2017",
+      "authors": "Thomas Anthony, Zheng Tian, and David Barber",
+      "title": "Thinking fast and slow with deep learning and tree search",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 5360--5370, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Arbital2016",
+      "raw": "Arbital. Optimization daemons. https://arbital.com/p/daemons/, 2016",
+      "authors": "Arbital",
+      "title": "Optimization daemons",
+      "venue": "2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "argall2009survey",
+      "raw": "Brenna D Argall, Sonia Chernova, Manuela Veloso, and Brett Browning. A survey of robot learning from demonstration. Robotics and Autonomous Systems, 57 0 (5): 0 469--483, 2009",
+      "authors": "Brenna D Argall, Sonia Chernova, Manuela Veloso, and Brett Browning",
+      "title": "A survey of robot learning from demonstration",
+      "venue": "Robotics and Autonomous Systems, 57 0 (5): 0 469--483, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "armstrong2015motivated",
+      "raw": "Stuart Armstrong. Motivated value selection for artificial agents. In AAAI Workshop: AI and Ethics, 2015",
+      "authors": "Stuart Armstrong",
+      "title": "Motivated value selection for artificial agents",
+      "venue": "In AAAI Workshop: AI and Ethics, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "armstrong2017low",
+      "raw": "Stuart Armstrong and Benjamin Levinstein. Low impact artificial intelligences. arXiv preprint arXiv:1705.10720, 2017",
+      "authors": "Stuart Armstrong and Benjamin Levinstein",
+      "title": "Low impact artificial intelligences",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1705.10720",
+      "doi": null
+    },
+    {
+      "key": "armstrong2017impossibility",
+      "raw": "Stuart Armstrong and S\u00f6ren Mindermann. Occam's razor is insufficient to infer the preferences of irrational agents. In Advances in Neural Information Processing Systems, 2018",
+      "authors": "Stuart Armstrong and S\u00f6ren Mindermann",
+      "title": "Occam's razor is insufficient to infer the preferences of irrational agents",
+      "venue": "In Advances in Neural Information Processing Systems, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "arora2009computational",
+      "raw": "Sanjeev Arora and Boaz Barak. Computational Complexity: A Modern Approach. Cambridge University Press, 2009",
+      "authors": "Sanjeev Arora and Boaz Barak",
+      "title": "Computational Complexity: A Modern Approach",
+      "venue": "Cambridge University Press, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "arumugam2018deep",
+      "raw": "Dilip Arumugam, Jun Ki Lee, Sophie Saskin, and Michael L Littman. Deep reinforcement learning from policy-dependent human feedback. Technical report, Brown University, 2018",
+      "authors": "Dilip Arumugam, Jun Ki Lee, Sophie Saskin, and Michael L Littman",
+      "title": "Deep reinforcement learning from policy-dependent human feedback",
+      "venue": "Technical report, Brown University, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "asimov1942runaround",
+      "raw": "Isaac Asimov. Runaround. Astounding Science Fiction, 29 0 (1): 0 94--103, 1942",
+      "authors": "Isaac Asimov",
+      "title": "Runaround",
+      "venue": "Astounding Science Fiction, 29 0 (1): 0 94--103, 1942",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "athalye2018obfuscated",
+      "raw": "Anish Athalye, Nicholas Carlini, and David Wagner. Obfuscated gradients give a false sense of security: Circumventing defenses to adversarial examples. arXiv preprint arXiv:1802.00420, 2018",
+      "authors": "Anish Athalye, Nicholas Carlini, and David Wagner",
+      "title": "Obfuscated gradients give a false sense of security: Circumventing defenses to adversarial examples",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1802.00420",
+      "doi": null
+    },
+    {
+      "key": "aytar2018playing",
+      "raw": "Yusuf Aytar, Tobias Pfaff, David Budden, Tom Le Paine, Ziyu Wang, and Nando de Freitas. Playing hard exploration games by watching YouTube. In Advances in Neural Information Processing Systems, 2018",
+      "authors": "Yusuf Aytar, Tobias Pfaff, David Budden, Tom Le Paine, Ziyu Wang, and Nando de Freitas",
+      "title": "Playing hard exploration games by watching YouTube",
+      "venue": "In Advances in Neural Information Processing Systems, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "babcock2016agi",
+      "raw": "James Babcock, J\u00e1nos Kram\u00e1r, and Roman Yampolskiy. The AGI containment problem. In Artificial General Intelligence, pp.\\ 53--63, 2016",
+      "authors": "James Babcock, J\u00e1nos Kram\u00e1r, and Roman Yampolskiy",
+      "title": "The AGI containment problem",
+      "venue": "In Artificial General Intelligence, pp.\\ 53--63, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau2018learning",
+      "raw": "Dzmitry Bahdanau, Felix Hill, Jan Leike, Edward Hughes, Pushmeet Kohli, and Edward Grefenstette. Learning to follow language instructions with adversarial reward induction. arXiv preprint arXiv:1806.01946, 2018",
+      "authors": "Dzmitry Bahdanau, Felix Hill, Jan Leike, Edward Hughes, Pushmeet Kohli, and Edward Grefenstette",
+      "title": "Learning to follow language instructions with adversarial reward induction",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.01946",
+      "doi": null
+    },
+    {
+      "key": "barasz2014robust",
+      "raw": "Mihaly Barasz, Paul Christiano, Benja Fallenstein, Marcello Herreshoff, Patrick LaVictoire, and Eliezer Yudkowsky. Robust cooperation in the prisoner's dilemma: Program equilibrium via provability logic. arXiv preprint arXiv:1401.5577, 2014",
+      "authors": "Mihaly Barasz, Paul Christiano, Benja Fallenstein, Marcello Herreshoff, Patrick LaVictoire, and Eliezer Yudkowsky",
+      "title": "Robust cooperation in the prisoner's dilemma: Program equilibrium via provability logic",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1401.5577",
+      "doi": null
+    },
+    {
+      "key": "barratt2018note",
+      "raw": "Shane Barratt and Rishi Sharma. A note on the inception score. arXiv preprint arXiv:1801.01973, 2018",
+      "authors": "Shane Barratt and Rishi Sharma",
+      "title": "A note on the inception score",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1801.01973",
+      "doi": null
+    },
+    {
+      "key": "barth-maron2018distributional",
+      "raw": "Gabriel Barth-Maron, Matthew W Hoffman, David Budden, Will Dabney, Dan Horgan, Dhruva TB, Alistair Muldal, Nicolas Heess, and Timothy Lillicrap. Distributed distributional deterministic policy gradients. In International Conference on Learning Representations, 2018",
+      "authors": "Gabriel Barth-Maron, Matthew W Hoffman, David Budden, Will Dabney, Dan Horgan, Dhruva TB, Alistair Muldal, Nicolas Heess, and Timothy Lillicrap",
+      "title": "Distributed distributional deterministic policy gradients",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bastani2018verifiable",
+      "raw": "Osbert Bastani, Yewen Pu, and Armando Solar-Lezama. Verifiable reinforcement learning via policy extraction. arXiv preprint arXiv:1805.08328, 2018",
+      "authors": "Osbert Bastani, Yewen Pu, and Armando Solar-Lezama",
+      "title": "Verifiable reinforcement learning via policy extraction",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.08328",
+      "doi": null
+    },
+    {
+      "key": "battaglia2018relational",
+      "raw": "Peter W Battaglia, Jessica B Hamrick, Victor Bapst, Alvaro Sanchez-Gonzalez, Vinicius Zambaldi, Mateusz Malinowski, Andrea Tacchetti, David Raposo, Adam Santoro, Ryan Faulkner, Caglar Gulcehre, Francis Song, Andrew Ballard, Justin Gilmer, George Dahl, Ashish Vaswani, Kelsey Allen, Charles Nash, Victoria Langston, Chris Dyer, Nicolas Heess, Daan Wierstra, Pushmeet Kohli, Matt Botvinick, Oriol Vinyals, Yujia Li, and Razvan Pascanu. Relational inductive biases, deep learning, and graph networks. arXiv preprint arXiv:1806.01261, 2018",
+      "authors": "Peter W Battaglia, Jessica B Hamrick, Victor Bapst, Alvaro Sanchez-Gonzalez, Vinicius Zambaldi, Mateusz Malinowski, Andrea Tacchetti, David Raposo, Adam Santoro, Ryan Faulkner, Caglar Gulcehre, Francis Song, Andrew Ballard, Justin Gilmer, George Dahl, Ashish Vaswani, Kelsey Allen, Charles Nash, Victoria Langston, Chris Dyer, Nicolas Heess, Daan Wierstra, Pushmeet Kohli, Matt Botvinick, Oriol Vinyals, Yujia Li, and Razvan Pascanu",
+      "title": "Relational inductive biases, deep learning, and graph networks",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.01261",
+      "doi": null
+    },
+    {
+      "key": "baum2017social",
+      "raw": "Seth D Baum. Social choice ethics in artificial intelligence. AI \\& Society, pp.\\ 1--12, 2017",
+      "authors": "Seth D Baum",
+      "title": "Social choice ethics in artificial intelligence",
+      "venue": "AI \\& Society, pp.\\ 1--12, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2013representation",
+      "raw": "Yoshua Bengio, Aaron Courville, and Pascal Vincent. Representation learning: A review and new perspectives. IEEE Transactions on Pattern Analysis and Machine Intelligence, 35 0 (8): 0 1798--1828, 2013",
+      "authors": "Yoshua Bengio, Aaron Courville, and Pascal Vincent",
+      "title": "Representation learning: A review and new perspectives",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 35 0 (8): 0 1798--1828, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "blundell2015weight",
+      "raw": "Charles Blundell, Julien Cornebise, Koray Kavukcuoglu, and Daan Wierstra. Weight uncertainty in neural networks. In International Conference on International Conference on Machine Learning, pp.\\ 1613--1622, 2015",
+      "authors": "Charles Blundell, Julien Cornebise, Koray Kavukcuoglu, and Daan Wierstra",
+      "title": "Weight uncertainty in neural networks",
+      "venue": "In International Conference on International Conference on Machine Learning, pp.\\ 1613--1622, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bostrom2003ethical",
+      "raw": "Nick Bostrom. Ethical issues in advanced artificial intelligence. Science Fiction and Philosophy: From Time Travel to Superintelligence, pp.\\ 277--284, 2003",
+      "authors": "Nick Bostrom",
+      "title": "Ethical issues in advanced artificial intelligence",
+      "venue": "Science Fiction and Philosophy: From Time Travel to Superintelligence, pp.\\ 277--284, 2003",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bostrom2014superintelligence",
+      "raw": "Nick Bostrom. Superintelligence: Paths, Dangers, Strategies. Oxford University Press, 2014",
+      "authors": "Nick Bostrom",
+      "title": "Superintelligence: Paths, Dangers, Strategies",
+      "venue": "Oxford University Press, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "brown2018unrestricted",
+      "raw": "Tom B Brown, Nicholas Carlini, Chiyuan Zhang, Catherine Olsson, Paul Christiano, and Ian Goodfellow. Unrestricted adversarial examples. arXiv preprint arXiv:1809.08352, 2018",
+      "authors": "Tom B Brown, Nicholas Carlini, Chiyuan Zhang, Catherine Olsson, Paul Christiano, and Ian Goodfellow",
+      "title": "Unrestricted adversarial examples",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1809.08352",
+      "doi": null
+    },
+    {
+      "key": "cai2017making",
+      "raw": "Jonathon Cai, Richard Shin, and Dawn Song. Making neural programming architectures generalize via recursion. In International Conference on Learning Representations, 2017",
+      "authors": "Jonathon Cai, Richard Shin, and Dawn Song",
+      "title": "Making neural programming architectures generalize via recursion",
+      "venue": "In International Conference on Learning Representations, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "candela2009dataset",
+      "raw": "J Qui\u00f1onero Candela, Masashi Sugiyama, Anton Schwaighofer, and Neil D Lawrence. Dataset shift in machine learning, 2009",
+      "authors": "J Qui\u00f1onero Candela, Masashi Sugiyama, Anton Schwaighofer, and Neil D Lawrence",
+      "title": "Dataset shift in machine learning, 2009",
+      "venue": "",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "christiano2017directions",
+      "raw": "Paul Christiano. Directions and desiderata for AI alignment. https://ai-alignment.com/directions-and-desiderata-for-ai-control-b60fca0da8f4, 2017",
+      "authors": "Paul Christiano",
+      "title": "Directions and desiderata for AI alignment",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "christiano2017deep",
+      "raw": "Paul Christiano, Jan Leike, Tom Brown, Miljan Martic, Shane Legg, and Dario Amodei. Deep reinforcement learning from human preferences. In Advances in Neural Information Processing Systems, pp.\\ 4299--4307, 2017",
+      "authors": "Paul Christiano, Jan Leike, Tom Brown, Miljan Martic, Shane Legg, and Dario Amodei",
+      "title": "Deep reinforcement learning from human preferences",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 4299--4307, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "christiano2018supervising",
+      "raw": "Paul Christiano, Buck Shlegeris, and Dario Amodei. Supervising strong learners by amplifying weak experts. arXiv preprint arXiv:1810.08575, 2018",
+      "authors": "Paul Christiano, Buck Shlegeris, and Dario Amodei",
+      "title": "Supervising strong learners by amplifying weak experts",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1810.08575",
+      "doi": null
+    },
+    {
+      "key": "faulty-reward-functions",
+      "raw": "Jack Clark and Dario Amodei. Faulty reward functions in the wild. https://blog.openai.com/faulty-reward-functions/, 2016",
+      "authors": "Jack Clark and Dario Amodei",
+      "title": "Faulty reward functions in the wild",
+      "venue": "2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dayan1993feudal",
+      "raw": "Peter Dayan and Geoffrey Hinton. Feudal reinforcement learning. In Advances in Neural Information Processing Systems, pp.\\ 271--278, 1993",
+      "authors": "Peter Dayan and Geoffrey Hinton",
+      "title": "Feudal reinforcement learning",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 271--278, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "demski2018embedded",
+      "raw": "Abram Demski and Scott Garrabrant. Embedded agency. https://intelligence.org/embedded-agency/, 2018",
+      "authors": "Abram Demski and Scott Garrabrant",
+      "title": "Embedded agency",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dewey2011learning",
+      "raw": "Daniel Dewey. Learning what to value. In Artificial General Intelligence, pp.\\ 309--314, 2011",
+      "authors": "Daniel Dewey",
+      "title": "Learning what to value",
+      "venue": "In Artificial General Intelligence, pp.\\ 309--314, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "doshi2017towards",
+      "raw": "Finale Doshi-Velez and Been Kim. Towards a rigorous science of interpretable machine learning. arXiv preprint arXiv:1702.08608, 2017",
+      "authors": "Finale Doshi-Velez and Been Kim",
+      "title": "Towards a rigorous science of interpretable machine learning",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1702.08608",
+      "doi": null
+    },
+    {
+      "key": "dvijotham2018training",
+      "raw": "Krishnamurthy Dvijotham, Sven Gowal, Robert Stanforth, Relja Arandjelovic, Brendan O'Donoghue, Jonathan Uesato, and Pushmeet Kohli. Training verified learners with learned verifiers. arXiv preprint arXiv:1805.10265, 2018",
+      "authors": "Krishnamurthy Dvijotham, Sven Gowal, Robert Stanforth, Relja Arandjelovic, Brendan O'Donoghue, Jonathan Uesato, and Pushmeet Kohli",
+      "title": "Training verified learners with learned verifiers",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.10265",
+      "doi": null
+    },
+    {
+      "key": "dvijotham2018dual",
+      "raw": "Krishnamurthy Dvijotham, Robert Stanforth, Sven Gowal, Timothy Mann, and Pushmeet Kohli. A dual approach to scalable verification of deep networks. In Uncertainty in Artificial Intelligence, 2018",
+      "authors": "Krishnamurthy Dvijotham, Robert Stanforth, Sven Gowal, Timothy Mann, and Pushmeet Kohli",
+      "title": "A dual approach to scalable verification of deep networks",
+      "venue": "In Uncertainty in Artificial Intelligence, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dziugaite2017computing",
+      "raw": "Gintare Karolina Dziugaite and Daniel M Roy. Computing nonvacuous generalization bounds for deep (stochastic) neural networks with many more parameters than training data. In Uncertainty in Artificial Intelligence, 2017",
+      "authors": "Gintare Karolina Dziugaite and Daniel M Roy",
+      "title": "Computing nonvacuous generalization bounds for deep (stochastic) neural networks with many more parameters than training data",
+      "venue": "In Uncertainty in Artificial Intelligence, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "elasri2016score",
+      "raw": "Layla El Asri, Bilal Piot, Matthieu Geist, Romain Laroche, and Olivier Pietquin. Score-based inverse reinforcement learning. In International Conference on Autonomous Agents \\& Multiagent Systems, pp.\\ 457--465, 2016",
+      "authors": "Layla El Asri, Bilal Piot, Matthieu Geist, Romain Laroche, and Olivier Pietquin",
+      "title": "Score-based inverse reinforcement learning",
+      "venue": "In International Conference on Autonomous Agents \\& Multiagent Systems, pp.\\ 457--465, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "espeholt2018impala",
+      "raw": "Lasse Espeholt, Hubert Soyer, Remi Munos, Karen Simonyan, Volodymir Mnih, Tom Ward, Yotam Doron, Vlad Firoiu, Tim Harley, Iain Dunning, Shane Legg, and Koray Kavukcuoglu. IMPALA: Scalable distributed deep-RL with importance weighted actor-learner architectures. arXiv preprint arXiv:1802.01561, 2018",
+      "authors": "Lasse Espeholt, Hubert Soyer, Remi Munos, Karen Simonyan, Volodymir Mnih, Tom Ward, Yotam Doron, Vlad Firoiu, Tim Harley, Iain Dunning, Shane Legg, and Koray Kavukcuoglu",
+      "title": "IMPALA: Scalable distributed deep-RL with importance weighted actor-learner architectures",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1802.01561",
+      "doi": null
+    },
+    {
+      "key": "weld1994first",
+      "raw": "Oren Etzioni and Daniel Weld. The first law of robotics (a call to arms). In AAAI, pp.\\ 1042--1047, 1994",
+      "authors": "Oren Etzioni and Daniel Weld",
+      "title": "The first law of robotics (a call to arms)",
+      "venue": "In AAAI, pp.\\ 1042--1047, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "evans2016learning",
+      "raw": "Owain Evans, Andreas Stuhlm\u00fcller, and Noah D Goodman. Learning the preferences of ignorant, inconsistent agents. In AAAI, pp.\\ 323--329, 2016",
+      "authors": "Owain Evans, Andreas Stuhlm\u00fcller, and Noah D Goodman",
+      "title": "Learning the preferences of ignorant, inconsistent agents",
+      "venue": "In AAAI, pp.\\ 323--329, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "evans2018predicting",
+      "raw": "Owain Evans, Andreas Stuhlm\u00fcller, Chris Cundy, Ryan Carey, Zachary Kenton, Thomas McGrath, and Andrew Schreiber. Predicting human deliberative judgments with machine learning. Technical report, University of Oxford, 2018",
+      "authors": "Owain Evans, Andreas Stuhlm\u00fcller, Chris Cundy, Ryan Carey, Zachary Kenton, Thomas McGrath, and Andrew Schreiber",
+      "title": "Predicting human deliberative judgments with machine learning",
+      "venue": "Technical report, University of Oxford, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "everitt2018",
+      "raw": "Tom Everitt. Towards Safe Artificial General Intelligence. PhD thesis, Australian National University, 2018",
+      "authors": "Tom Everitt",
+      "title": "Towards Safe Artificial General Intelligence",
+      "venue": "PhD thesis, Australian National University, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "everitt2018alignment",
+      "raw": "Tom Everitt and Marcus Hutter. The alignment problem for Bayesian history-based reinforcement learners. Under submission, 2018",
+      "authors": "Tom Everitt and Marcus Hutter",
+      "title": "The alignment problem for Bayesian history-based reinforcement learners",
+      "venue": "Under submission, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "everitt2017reinforcement",
+      "raw": "Tom Everitt, Victoria Krakovna, Laurent Orseau, and Shane Legg. Reinforcement learning with a corrupted reward channel. In International Joint Conference on Artificial Intelligence, pp.\\ 4705--4713, 2017",
+      "authors": "Tom Everitt, Victoria Krakovna, Laurent Orseau, and Shane Legg",
+      "title": "Reinforcement learning with a corrupted reward channel",
+      "venue": "In International Joint Conference on Artificial Intelligence, pp.\\ 4705--4713, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "everitt2018agi",
+      "raw": "Tom Everitt, Gary Lea, and Marcus Hutter. AGI safety literature review. arXiv preprint arXiv:1805.01109, 2018",
+      "authors": "Tom Everitt, Gary Lea, and Marcus Hutter",
+      "title": "AGI safety literature review",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.01109",
+      "doi": null
+    },
+    {
+      "key": "finn2016guided",
+      "raw": "Chelsea Finn, Sergey Levine, and Pieter Abbeel. Guided cost learning: Deep inverse optimal control via policy optimization. In International Conference on Machine Learning, pp.\\ 49--58, 2016",
+      "authors": "Chelsea Finn, Sergey Levine, and Pieter Abbeel",
+      "title": "Guided cost learning: Deep inverse optimal control via policy optimization",
+      "venue": "In International Conference on Machine Learning, pp.\\ 49--58, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "furnkranz2012preference",
+      "raw": "Johannes F\u00fcrnkranz, Eyke H\u00fcllermeier, Weiwei Cheng, and Sang-Hyeun Park. Preference-based reinforcement learning: a formal framework and a policy iteration algorithm. Machine Learning, 89 0 (1-2): 0 123--156, 2012",
+      "authors": "Johannes F\u00fcrnkranz, Eyke H\u00fcllermeier, Weiwei Cheng, and Sang-Hyeun Park",
+      "title": "Preference-based reinforcement learning: a formal framework and a policy iteration algorithm",
+      "venue": "Machine Learning, 89 0 (1-2): 0 123--156, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gal2016dropout",
+      "raw": "Yarin Gal and Zoubin Ghahramani. Dropout as a Bayesian approximation: Representing model uncertainty in deep learning. In International Conference on Machine Learning, pp.\\ 1050--1059, 2016",
+      "authors": "Yarin Gal and Zoubin Ghahramani",
+      "title": "Dropout as a Bayesian approximation: Representing model uncertainty in deep learning",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1050--1059, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gal2017concrete",
+      "raw": "Yarin Gal, Jiri Hron, and Alex Kendall. Concrete dropout. In Advances in Neural Information Processing Systems, pp.\\ 3581--3590, 2017",
+      "authors": "Yarin Gal, Jiri Hron, and Alex Kendall",
+      "title": "Concrete dropout",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 3581--3590, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gal2017deep",
+      "raw": "Yarin Gal, Riashat Islam, and Zoubin Ghahramani. Deep Bayesian active learning with image data. In International Conference on Machine Learning, pp.\\ 1183--1192, 2017",
+      "authors": "Yarin Gal, Riashat Islam, and Zoubin Ghahramani",
+      "title": "Deep Bayesian active learning with image data",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1183--1192, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "garcia2015comprehensive",
+      "raw": "Javier Garc\u00eda and Fernando Fern\u00e1ndez. A comprehensive survey on safe reinforcement learning. Journal of Machine Learning Research, 16 0 (1): 0 1437--1480, 2015",
+      "authors": "Javier Garc\u00eda and Fernando Fern\u00e1ndez",
+      "title": "A comprehensive survey on safe reinforcement learning",
+      "venue": "Journal of Machine Learning Research, 16 0 (1): 0 1437--1480, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "garrabrant2018",
+      "raw": "Scott Garrabrant. Sources of intuitions and data on AGI. https://www.lesswrong.com/posts/BibDWWeo37pzuZCmL/sources-of-intuitions-and-data-on-agi, 2018",
+      "authors": "Scott Garrabrant",
+      "title": "Sources of intuitions and data on AGI",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "garrabrant2016logical",
+      "raw": "Scott Garrabrant, Tsvi Benson-Tilsen, Andrew Critch, Nate Soares, and Jessica Taylor. Logical induction. arXiv preprint arXiv:1609.03543, 2016",
+      "authors": "Scott Garrabrant, Tsvi Benson-Tilsen, Andrew Critch, Nate Soares, and Jessica Taylor",
+      "title": "Logical induction",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1609.03543",
+      "doi": null
+    },
+    {
+      "key": "gilmer2018motivating",
+      "raw": "Justin Gilmer, Ryan P Adams, Ian Goodfellow, David Andersen, and George E Dahl. Motivating the rules of the game for adversarial example research. arXiv preprint arXiv:1807.06732, 2018",
+      "authors": "Justin Gilmer, Ryan P Adams, Ian Goodfellow, David Andersen, and George E Dahl",
+      "title": "Motivating the rules of the game for adversarial example research",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1807.06732",
+      "doi": null
+    },
+    {
+      "key": "glorot2011deep",
+      "raw": "Xavier Glorot, Antoine Bordes, and Yoshua Bengio. Deep sparse rectifier neural networks. In Artificial Intelligence and Statistics, pp.\\ 315--323, 2011",
+      "authors": "Xavier Glorot, Antoine Bordes, and Yoshua Bengio",
+      "title": "Deep sparse rectifier neural networks",
+      "venue": "In Artificial Intelligence and Statistics, pp.\\ 315--323, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goodfellow2015",
+      "raw": "Ian Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and harnessing adversarial examples. In International Conference on Learning Representations, 2015. URL http://arxiv.org/abs/1412.6572",
+      "authors": "Ian Goodfellow, Jonathon Shlens, and Christian Szegedy",
+      "title": "Explaining and harnessing adversarial examples",
+      "venue": "In International Conference on Learning Representations, 2015 URL",
+      "year": 2015,
+      "arxivId": "1412.6572",
+      "doi": null
+    },
+    {
+      "key": "goodfellow2016deep",
+      "raw": "Ian Goodfellow, Yoshua Bengio, Aaron Courville, and Yoshua Bengio. Deep learning. MIT Press, 2016",
+      "authors": "Ian Goodfellow, Yoshua Bengio, Aaron Courville, and Yoshua Bengio",
+      "title": "Deep learning",
+      "venue": "MIT Press, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goodfellow2013maxout",
+      "raw": "Ian J Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, and Yoshua Bengio. Maxout networks. In International Conference on Machine Learning, 2013",
+      "authors": "Ian J Goodfellow, David Warde-Farley, Mehdi Mirza, Aaron Courville, and Yoshua Bengio",
+      "title": "Maxout networks",
+      "venue": "In International Conference on Machine Learning, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2011practical",
+      "raw": "Alex Graves. Practical variational inference for neural networks. In Advances in Neural Information Processing Systems, pp.\\ 2348--2356, 2011",
+      "authors": "Alex Graves",
+      "title": "Practical variational inference for neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2348--2356, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2016hybrid",
+      "raw": "Alex Graves, Greg Wayne, Malcolm Reynolds, Tim Harley, Ivo Danihelka, Agnieszka Grabska-Barwi\\'nska, Sergio G\\'omez Colmenarejo, Edward Grefenstette, Tiago Ramalho, John Agapiou, Adri\u00e0 Puigdom\u00e8nech Badia, Karl Moritz Hermann, Yori Zwols, Georg Ostrovski, Adam Cain, Helen King, Christopher Summerfield, Phil Blunsom, Koray Kavukcuoglu, and Demis Hassabis. Hybrid computing using a neural network with dynamic external memory. Nature, 538 0 (7626): 0 471, 2016",
+      "authors": "Alex Graves, Greg Wayne, Malcolm Reynolds, Tim Harley, Ivo Danihelka, Agnieszka Grabska-Barwi\\'nska, Sergio G\\'omez Colmenarejo, Edward Grefenstette, Tiago Ramalho, John Agapiou, Adri\u00e0 Puigdom\u00e8nech Badia, Karl Moritz Hermann, Yori Zwols, Georg Ostrovski, Adam Cain, Helen King, Christopher Summerfield, Phil Blunsom, Koray Kavukcuoglu, and Demis Hassabis",
+      "title": "Hybrid computing using a neural network with dynamic external memory",
+      "venue": "Nature, 538 0 (7626): 0 471, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "greydanus2018visualizing",
+      "raw": "Sam Greydanus, Anurag Koul, Jonathan Dodge, and Alan Fern. Visualizing and understanding Atari agents. In International Conference on Machine Learning, pp.\\ 1792--1801, 2018",
+      "authors": "Sam Greydanus, Anurag Koul, Jonathan Dodge, and Alan Fern",
+      "title": "Visualizing and understanding Atari agents",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1792--1801, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "griffith2013policy",
+      "raw": "Shane Griffith, Kaushik Subramanian, Jonathan Scholz, Charles L Isbell, and Andrea L Thomaz. Policy shaping: Integrating human feedback with reinforcement learning. In Advances in Neural Information Processing Systems, pp.\\ 2625--2633, 2013",
+      "authors": "Shane Griffith, Kaushik Subramanian, Jonathan Scholz, Charles L Isbell, and Andrea L Thomaz",
+      "title": "Policy shaping: Integrating human feedback with reinforcement learning",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2625--2633, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "guo2017calibration",
+      "raw": "Chuan Guo, Geoff Pleiss, Yu Sun, and Kilian Q Weinberger. On calibration of modern neural networks. In International Conference on Machine Learning, pp.\\ 1321--1330, 2017",
+      "authors": "Chuan Guo, Geoff Pleiss, Yu Sun, and Kilian Q Weinberger",
+      "title": "On calibration of modern neural networks",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1321--1330, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hadfield2016cooperative",
+      "raw": "Dylan Hadfield-Menell, Stuart Russell, Pieter Abbeel, and Anca Dragan. Cooperative inverse reinforcement learning. In Advances in Neural Information Processing Systems, pp.\\ 3909--3917, 2016",
+      "authors": "Dylan Hadfield-Menell, Stuart Russell, Pieter Abbeel, and Anca Dragan",
+      "title": "Cooperative inverse reinforcement learning",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 3909--3917, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hadfield2017off",
+      "raw": "Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel, and Stuart Russell. The off-switch game. In International Joint Conference on Artificial Intelligence, pp.\\ 220--227, 2017",
+      "authors": "Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel, and Stuart Russell",
+      "title": "The off-switch game",
+      "venue": "In International Joint Conference on Artificial Intelligence, pp.\\ 220--227, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hadfield2017inverse",
+      "raw": "Dylan Hadfield-Menell, Smitha Milli, Pieter Abbeel, Stuart Russell, and Anca Dragan. Inverse reward design. In Advances in Neural Information Processing Systems, pp.\\ 6765--6774, 2017",
+      "authors": "Dylan Hadfield-Menell, Smitha Milli, Pieter Abbeel, Stuart Russell, and Anca Dragan",
+      "title": "Inverse reward design",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 6765--6774, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hendrycks2016baseline",
+      "raw": "Dan Hendrycks and Kevin Gimpel. A baseline for detecting misclassified and out-of-distribution examples in neural networks. In International Conference on Learning Representations, 2017",
+      "authors": "Dan Hendrycks and Kevin Gimpel",
+      "title": "A baseline for detecting misclassified and out-of-distribution examples in neural networks",
+      "venue": "In International Conference on Learning Representations, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hernandez2015probabilistic",
+      "raw": "Jos\u00e9 Miguel Hern\u00e1ndez-Lobato and Ryan Adams. Probabilistic backpropagation for scalable learning of Bayesian neural networks. In International Conference on Machine Learning, pp.\\ 1861--1869, 2015",
+      "authors": "Jos\u00e9 Miguel Hern\u00e1ndez-Lobato and Ryan Adams",
+      "title": "Probabilistic backpropagation for scalable learning of Bayesian neural networks",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1861--1869, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hester2018deep",
+      "raw": "Todd Hester, Matej Vecerik, Olivier Pietquin, Marc Lanctot, Tom Schaul, Bilal Piot, Dan Horgan, John Quan, Andrew Sendonaris, Gabriel Dulac-Arnold, John Agapiou, Joel Z Leibo, and Audrunas Gruslys. Deep Q-learning from demonstrations. In AAAI, 2018",
+      "authors": "Todd Hester, Matej Vecerik, Olivier Pietquin, Marc Lanctot, Tom Schaul, Bilal Piot, Dan Horgan, John Quan, Andrew Sendonaris, Gabriel Dulac-Arnold, John Agapiou, Joel Z Leibo, and Audrunas Gruslys",
+      "title": "Deep Q-learning from demonstrations",
+      "venue": "In AAAI, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "heusel2017gans",
+      "raw": "Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, and Sepp Hochreiter. GANs trained by a two time-scale update rule converge to a local Nash equilibrium. In Advances in Neural Information Processing Systems, pp.\\ 6626--6637, 2017",
+      "authors": "Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, and Sepp Hochreiter",
+      "title": "GANs trained by a two time-scale update rule converge to a local Nash equilibrium",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 6626--6637, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ho2016generative",
+      "raw": "Jonathan Ho and Stefano Ermon. Generative adversarial imitation learning. In Advances in Neural Information Processing Systems, pp.\\ 4565--4573, 2016",
+      "authors": "Jonathan Ho and Stefano Ermon",
+      "title": "Generative adversarial imitation learning",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 4565--4573, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "horgan2018distributed",
+      "raw": "Dan Horgan, John Quan, David Budden, Gabriel Barth-Maron, Matteo Hessel, Hado Van Hasselt, and David Silver. Distributed prioritized experience replay. In International Conference on Learning Representaitons, 2018",
+      "authors": "Dan Horgan, John Quan, David Budden, Gabriel Barth-Maron, Matteo Hessel, Hado Van Hasselt, and David Silver",
+      "title": "Distributed prioritized experience replay",
+      "venue": "In International Conference on Learning Representaitons, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "huang2017adversarial",
+      "raw": "Sandy Huang, Nicolas Papernot, Ian Goodfellow, Yan Duan, and Pieter Abbeel. Adversarial attacks on neural network policies. arXiv preprint arXiv:1702.02284, 2017",
+      "authors": "Sandy Huang, Nicolas Papernot, Ian Goodfellow, Yan Duan, and Pieter Abbeel",
+      "title": "Adversarial attacks on neural network policies",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1702.02284",
+      "doi": null
+    },
+    {
+      "key": "hutter2005",
+      "raw": "Marcus Hutter. Universal artificial intelligence. Springer, 2005",
+      "authors": "Marcus Hutter",
+      "title": "Universal artificial intelligence",
+      "venue": "Springer, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ibarz2018",
+      "raw": "Borja Ibarz, Jan Leike, Tobias Pohlen, Geoffrey Irving, Shane Legg, and Dario Amodei. Reward learning from human preferences and demonstrations in Atari. In Advances in Neural Information Processing Systems, 2018",
+      "authors": "Borja Ibarz, Jan Leike, Tobias Pohlen, Geoffrey Irving, Shane Legg, and Dario Amodei",
+      "title": "Reward learning from human preferences and demonstrations in Atari",
+      "venue": "In Advances in Neural Information Processing Systems, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "irpan2018deep",
+      "raw": "Alex Irpan. Deep reinforcement learning doesn't work yet. https://www.alexirpan.com/2018/02/14/rl-hard.html, 2018",
+      "authors": "Alex Irpan",
+      "title": "Deep reinforcement learning doesn't work yet",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "irving2018ai",
+      "raw": "Geoffrey Irving, Paul Christiano, and Dario Amodei. AI safety via debate. arXiv preprint arXiv:1805.00899, 2018",
+      "authors": "Geoffrey Irving, Paul Christiano, and Dario Amodei",
+      "title": "AI safety via debate",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.00899",
+      "doi": null
+    },
+    {
+      "key": "jaderberg2018human",
+      "raw": "Max Jaderberg, Wojciech M Czarnecki, Iain Dunning, Luke Marris, Guy Lever, Antonio Garcia Castaneda, Charles Beattie, Neil C Rabinowitz, Ari S Morcos, Avraham Ruderman, Nicolas Sonnerat, Tim Green, Louise Deason, Joel Z Leibo, David Silver, Demis Hassabis, Koray Kavukcuoglu, and Thore Graepel. Human-level performance in first-person multiplayer games with population-based deep reinforcement learning. arXiv preprint arXiv:1807.01281, 2018",
+      "authors": "Max Jaderberg, Wojciech M Czarnecki, Iain Dunning, Luke Marris, Guy Lever, Antonio Garcia Castaneda, Charles Beattie, Neil C Rabinowitz, Ari S Morcos, Avraham Ruderman, Nicolas Sonnerat, Tim Green, Louise Deason, Joel Z Leibo, David Silver, Demis Hassabis, Koray Kavukcuoglu, and Thore Graepel",
+      "title": "Human-level performance in first-person multiplayer games with population-based deep reinforcement learning",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1807.01281",
+      "doi": null
+    },
+    {
+      "key": "karp1972reducibility",
+      "raw": "Richard Karp. Reducibility among combinatorial problems. In Complexity of Computer Computations, pp.\\ 85--103. Springer, 1972",
+      "authors": "Richard Karp",
+      "title": "Reducibility among combinatorial problems",
+      "venue": "In Complexity of Computer Computations, pp.\\ 85--103. Springer, 1972",
+      "year": 1972,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "katz2017reluplex",
+      "raw": "Guy Katz, Clark Barrett, David L Dill, Kyle Julian, and Mykel J Kochenderfer. Reluplex: An efficient SMT solver for verifying deep neural networks. In Computer Aided Verification, pp.\\ 97--117, 2017",
+      "authors": "Guy Katz, Clark Barrett, David L Dill, Kyle Julian, and Mykel J Kochenderfer",
+      "title": "Reluplex: An efficient SMT solver for verifying deep neural networks",
+      "venue": "In Computer Aided Verification, pp.\\ 97--117, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kendall2017uncertainties",
+      "raw": "Alex Kendall and Yarin Gal. What uncertainties do we need in Bayesian deep learning for computer vision? In Advances in Neural Information Processing Systems, pp.\\ 5574--5584, 2017",
+      "authors": "Alex Kendall and Yarin Gal",
+      "title": "What uncertainties do we need in Bayesian deep learning for computer vision?",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 5574--5584, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kim2017tcav",
+      "raw": "Been Kim, Justin Gilmer, Fernanda Viegas, Ulfar Erlingsson, and Martin Wattenberg. TCAV: Relative concept importance testing with linear concept activation vectors. arXiv preprint arXiv:1711.11279, 2017",
+      "authors": "Been Kim, Justin Gilmer, Fernanda Viegas, Ulfar Erlingsson, and Martin Wattenberg",
+      "title": "TCAV: Relative concept importance testing with linear concept activation vectors",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1711.11279",
+      "doi": null
+    },
+    {
+      "key": "kingma2015variational",
+      "raw": "Diederik P Kingma, Tim Salimans, and Max Welling. Variational dropout and the local reparameterization trick. In Advances in Neural Information Processing Systems, pp.\\ 2575--2583, 2015",
+      "authors": "Diederik P Kingma, Tim Salimans, and Max Welling",
+      "title": "Variational dropout and the local reparameterization trick",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2575--2583, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "knox2012learning",
+      "raw": "William Bradley Knox. Learning from human-generated reward. PhD thesis, University of Texas, 2012",
+      "authors": "William Bradley Knox",
+      "title": "Learning from human-generated reward",
+      "venue": "PhD thesis, University of Texas, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Knox09",
+      "raw": "William Bradley Knox and Peter Stone. Interactively shaping agents via human reinforcement: The TAMER framework. In International Conference on Knowledge Capture, pp.\\ 9--16, 2009",
+      "authors": "William Bradley Knox and Peter Stone",
+      "title": "Interactively shaping agents via human reinforcement: The TAMER framework",
+      "venue": "In International Conference on Knowledge Capture, pp.\\ 9--16, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kocsis2006bandit",
+      "raw": "Levente Kocsis and Csaba Szepesv\u00e1ri. Bandit based Monte-Carlo planning. In European Conference on Machine Learning, pp.\\ 282--293, 2006",
+      "authors": "Levente Kocsis and Csaba Szepesv\u00e1ri",
+      "title": "Bandit based Monte-Carlo planning",
+      "venue": "In European Conference on Machine Learning, pp.\\ 282--293, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krakovna2018measuring",
+      "raw": "Victoria Krakovna, Laurent Orseau, Miljan Martic, and Shane Legg. Measuring and avoiding side effects using relative reachability. arXiv preprint arXiv:1806.01186, 2018",
+      "authors": "Victoria Krakovna, Laurent Orseau, Miljan Martic, and Shane Legg",
+      "title": "Measuring and avoiding side effects using relative reachability",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.01186",
+      "doi": null
+    },
+    {
+      "key": "kreutzer2018reliability",
+      "raw": "Julia Kreutzer, Joshua Uyheng, and Stefan Riezler. Reliability and learnability of human bandit feedback for sequence-to-sequence reinforcement learning. arXiv preprint arXiv:1805.10627, 2018",
+      "authors": "Julia Kreutzer, Joshua Uyheng, and Stefan Riezler",
+      "title": "Reliability and learnability of human bandit feedback for sequence-to-sequence reinforcement learning",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.10627",
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. ImageNet classification with deep convolutional neural networks. In Advances in Neural Information Processing Systems, pp.\\ 1097--1105, 2012",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton",
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 1097--1105, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krueger2016active",
+      "raw": "David Krueger, Jan Leike, Owain Evans, and John Salvatier. Active reinforcement learning: Observing rewards at a cost. In Future of Interactive Learning Machines, NIPS Workshop, 2016",
+      "authors": "David Krueger, Jan Leike, Owain Evans, and John Salvatier",
+      "title": "Active reinforcement learning: Observing rewards at a cost",
+      "venue": "In Future of Interactive Learning Machines, NIPS Workshop, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kuleshov2018accurate",
+      "raw": "Volodymyr Kuleshov, Nathan Fenner, and Stefano Ermon. Accurate uncertainties for deep learning using calibrated regression. In International Conference on Machine Learning, pp.\\ 2801--2809, 2018",
+      "authors": "Volodymyr Kuleshov, Nathan Fenner, and Stefano Ermon",
+      "title": "Accurate uncertainties for deep learning using calibrated regression",
+      "venue": "In International Conference on Machine Learning, pp.\\ 2801--2809, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lage2018human",
+      "raw": "Isaac Lage, Andrew Slavin Ross, Been Kim, Samuel J Gershman, and Finale Doshi-Velez. Human-in-the-loop interpretability prior. arXiv preprint arXiv:1805.11571, 2018",
+      "authors": "Isaac Lage, Andrew Slavin Ross, Been Kim, Samuel J Gershman, and Finale Doshi-Velez",
+      "title": "Human-in-the-loop interpretability prior",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.11571",
+      "doi": null
+    },
+    {
+      "key": "lakshminarayanan2017simple",
+      "raw": "Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and scalable predictive uncertainty estimation using deep ensembles. In Advances in Neural Information Processing Systems, pp.\\ 6402--6413, 2017",
+      "authors": "Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell",
+      "title": "Simple and scalable predictive uncertainty estimation using deep ensembles",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 6402--6413, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lecun1990handwritten",
+      "raw": "Yann LeCun, Bernhard E Boser, John S Denker, Donnie Henderson, Richard E Howard, Wayne E Hubbard, and Lawrence D Jackel. Handwritten digit recognition with a back-propagation network. In Advances in Neural Information Processing Systems, pp.\\ 396--404, 1990",
+      "authors": "Yann LeCun, Bernhard E Boser, John S Denker, Donnie Henderson, Richard E Howard, Wayne E Hubbard, and Lawrence D Jackel",
+      "title": "Handwritten digit recognition with a back-propagation network",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 396--404, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lecun2015deep",
+      "raw": "Yann LeCun, Yoshua Bengio, and Geoffrey Hinton. Deep learning. Nature, 521 0 (7553): 0 436, 2015",
+      "authors": "Yann LeCun, Yoshua Bengio, and Geoffrey Hinton",
+      "title": "Deep learning",
+      "venue": "Nature, 521 0 (7553): 0 436, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "legg2007universal",
+      "raw": "Shane Legg and Marcus Hutter. Universal intelligence: A definition of machine intelligence. Minds and Machines, 17 0 (4): 0 391--444, 2007",
+      "authors": "Shane Legg and Marcus Hutter",
+      "title": "Universal intelligence: A definition of machine intelligence",
+      "venue": "Minds and Machines, 17 0 (4): 0 391--444, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lehman2018surprising",
+      "raw": "Joel Lehman, Jeff Clune, Dusan Misevic, Christoph Adami, Julie Beaulieu, Peter J Bentley, Samuel Bernard, Guillaume Belson, David M Bryson, Nick Cheney, Antoine Cully, Stephane Doncieux, Fred C Dyer, Kai Olav Ellefsen, Robert Feldt, Stephan Fischer, Stephanie Forrest, Antoine Fr\u00e9noy, Christian Gagn\u00e9, Leni Le Goff, Laura M Grabowski, Babak Hodjat, Frank Hutter, Laurent Keller, Carole Knibbe, Peter Krcah, Richard E Lenski, Hod Lipson, Robert MacCurdy, Carlos Maestre, Risto Miikkulainen, Sara Mitri, David E Moriarty, Jean-Baptiste Mouret, Anh Nguyen, Charles Ofria, Marc Parizeau, David Parsons, Robert T Pennock, William F Punch, Thomas S Ray, Marc Schoenauer, Eric Shulte, Karl Sims, Kenneth O Stanley, Fran\u00e7ois Taddei, Danesh Tarapore, Simon Thibault, Westley Weimer, Richard Watson, and Jason Yosinski. The surprising creativity of digital evolution: A collection of anecdotes from the evolutionary computation and artificial life research communities. arXiv preprint arXiv:1803.03453, 2018",
+      "authors": "Joel Lehman, Jeff Clune, Dusan Misevic, Christoph Adami, Julie Beaulieu, Peter J Bentley, Samuel Bernard, Guillaume Belson, David M Bryson, Nick Cheney, Antoine Cully, Stephane Doncieux, Fred C Dyer, Kai Olav Ellefsen, Robert Feldt, Stephan Fischer, Stephanie Forrest, Antoine Fr\u00e9noy, Christian Gagn\u00e9, Leni Le Goff, Laura M Grabowski, Babak Hodjat, Frank Hutter, Laurent Keller, Carole Knibbe, Peter Krcah, Richard E Lenski, Hod Lipson, Robert MacCurdy, Carlos Maestre, Risto Miikkulainen, Sara Mitri, David E Moriarty, Jean-Baptiste Mouret, Anh Nguyen, Charles Ofria, Marc Parizeau, David Parsons, Robert T Pennock, William F Punch, Thomas S Ray, Marc Schoenauer, Eric Shulte, Karl Sims, Kenneth O Stanley, Fran\u00e7ois Taddei, Danesh Tarapore, Simon Thibault, Westley Weimer, Richard Watson, and Jason Yosinski",
+      "title": "The surprising creativity of digital evolution: A collection of anecdotes from the evolutionary computation and artificial life research communities",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1803.03453",
+      "doi": null
+    },
+    {
+      "key": "leike2015bad",
+      "raw": "Jan Leike and Marcus Hutter. Bad universal priors and notions of optimality. In Conference on Learning Theory, pp.\\ 1244--1259, 2015",
+      "authors": "Jan Leike and Marcus Hutter",
+      "title": "Bad universal priors and notions of optimality",
+      "venue": "In Conference on Learning Theory, pp.\\ 1244--1259, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "leike2016formal",
+      "raw": "Jan Leike, Jessica Taylor, and Benya Fallenstein. A formal solution to the grain of truth problem. In Conference on Uncertainty in Artificial Intelligence, pp.\\ 427--436, 2016",
+      "authors": "Jan Leike, Jessica Taylor, and Benya Fallenstein",
+      "title": "A formal solution to the grain of truth problem",
+      "venue": "In Conference on Uncertainty in Artificial Intelligence, pp.\\ 427--436, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "leike2017ai",
+      "raw": "Jan Leike, Miljan Martic, Victoria Krakovna, Pedro A Ortega, Tom Everitt, Andrew Lefrancq, Laurent Orseau, and Shane Legg. AI safety gridworlds. arXiv preprint arXiv:1711.09883, 2017",
+      "authors": "Jan Leike, Miljan Martic, Victoria Krakovna, Pedro A Ortega, Tom Everitt, Andrew Lefrancq, Laurent Orseau, and Shane Legg",
+      "title": "AI safety gridworlds",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1711.09883",
+      "doi": null
+    },
+    {
+      "key": "lillicrap2015continuous",
+      "raw": "Timothy P Lillicrap, Jonathan J Hunt, Alexander Pritzel, Nicolas Heess, Tom Erez, Yuval Tassa, David Silver, and Daan Wierstra. Continuous control with deep reinforcement learning. arXiv preprint arXiv:1509.02971, 2015",
+      "authors": "Timothy P Lillicrap, Jonathan J Hunt, Alexander Pritzel, Nicolas Heess, Tom Erez, Yuval Tassa, David Silver, and Daan Wierstra",
+      "title": "Continuous control with deep reinforcement learning",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1509.02971",
+      "doi": null
+    },
+    {
+      "key": "macglashan2017interactive",
+      "raw": "James MacGlashan, Mark K Ho, Robert Loftin, Bei Peng, Guan Wang, David L Roberts, Matthew E Taylor, and Michael L Littman. Interactive learning from policy-dependent human feedback. In International Conference on Machine Learning, pp.\\ 2285--2294, 2017",
+      "authors": "James MacGlashan, Mark K Ho, Robert Loftin, Bei Peng, Guan Wang, David L Roberts, Matthew E Taylor, and Michael L Littman",
+      "title": "Interactive learning from policy-dependent human feedback",
+      "venue": "In International Conference on Machine Learning, pp.\\ 2285--2294, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "madry2017towards",
+      "raw": "Aleksander Madry, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, and Adrian Vladu. Towards deep learning models resistant to adversarial attacks. arXiv preprint arXiv:1706.06083, 2017",
+      "authors": "Aleksander Madry, Aleksandar Makelov, Ludwig Schmidt, Dimitris Tsipras, and Adrian Vladu",
+      "title": "Towards deep learning models resistant to adversarial attacks",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1706.06083",
+      "doi": null
+    },
+    {
+      "key": "marcus2018deep",
+      "raw": "Gary Marcus. Deep learning: A critical appraisal. arXiv preprint arXiv:1801.00631, 2018",
+      "authors": "Gary Marcus",
+      "title": "Deep learning: A critical appraisal",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1801.00631",
+      "doi": null
+    },
+    {
+      "key": "masterjun2014",
+      "raw": "Masterjun. SNES Super Mario World (USA) ``arbitrary code execution'' in 02:25.19. http://tasvideos.org/2513M.html, 2014",
+      "authors": "Masterjun",
+      "title": "SNES Super Mario World (USA) ``arbitrary code execution'' in 02:25.19",
+      "venue": "2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "metz2016",
+      "raw": "Cade Metz. In two moves, AlphaGo and Lee Sedol redefined the future. https://www.wired.com/2016/03/two-moves-alphago-lee-sedol-redefined-future/, 2016",
+      "authors": "Cade Metz",
+      "title": "In two moves, AlphaGo and Lee Sedol redefined the future",
+      "venue": "2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "milli2017should",
+      "raw": "Smitha Milli, Dylan Hadfield-Menell, Anca Dragan, and Stuart Russell. Should robots be obedient? In International Joint Conference on Artificial Intelligence, pp.\\ 4754--4760, 2017",
+      "authors": "Smitha Milli, Dylan Hadfield-Menell, Anca Dragan, and Stuart Russell",
+      "title": "Should robots be obedient?",
+      "venue": "In International Joint Conference on Artificial Intelligence, pp.\\ 4754--4760, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mnih2015human",
+      "raw": "Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei A Rusu, Joel Veness, Marc G Bellemare, Alex Graves, Martin Riedmiller, Andreas K Fidjeland, Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and Demis Hassabis. Human-level control through deep reinforcement learning. Nature, 518 0 (7540): 0 529, 2015",
+      "authors": "Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Andrei A Rusu, Joel Veness, Marc G Bellemare, Alex Graves, Martin Riedmiller, Andreas K Fidjeland, Georg Ostrovski, Stig Petersen, Charles Beattie, Amir Sadik, Ioannis Antonoglou, Helen King, Dharshan Kumaran, Daan Wierstra, Shane Legg, and Demis Hassabis",
+      "title": "Human-level control through deep reinforcement learning",
+      "venue": "Nature, 518 0 (7540): 0 529, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mnih2016asynchronous",
+      "raw": "Volodymyr Mnih, Adria Puigdomenech Badia, Mehdi Mirza, Alex Graves, Timothy Lillicrap, Tim Harley, David Silver, and Koray Kavukcuoglu. Asynchronous methods for deep reinforcement learning. In International Conference on Machine Learning, pp.\\ 1928--1937, 2016",
+      "authors": "Volodymyr Mnih, Adria Puigdomenech Badia, Mehdi Mirza, Alex Graves, Timothy Lillicrap, Tim Harley, David Silver, and Koray Kavukcuoglu",
+      "title": "Asynchronous methods for deep reinforcement learning",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1928--1937, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mulvaney2012red",
+      "raw": "Brendan Mulvaney. Red teams. Marine Corps Gazette, 96 0 (7): 0 63, 2012",
+      "authors": "Brendan Mulvaney",
+      "title": "Red teams",
+      "venue": "Marine Corps Gazette, 96 0 (7): 0 63, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nair2010rectified",
+      "raw": "Vinod Nair and Geoffrey E Hinton. Rectified linear units improve restricted Boltzmann machines. In International Conference on Machine Learning, pp.\\ 807--814, 2010",
+      "authors": "Vinod Nair and Geoffrey E Hinton",
+      "title": "Rectified linear units improve restricted Boltzmann machines",
+      "venue": "In International Conference on Machine Learning, pp.\\ 807--814, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ng2000algorithms",
+      "raw": "Andrew Ng and Stuart Russell. Algorithms for inverse reinforcement learning. In International Conference on Machine Learning, pp.\\ 663--670, 2000",
+      "authors": "Andrew Ng and Stuart Russell",
+      "title": "Algorithms for inverse reinforcement learning",
+      "venue": "In International Conference on Machine Learning, pp.\\ 663--670, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ng1999policy",
+      "raw": "Andrew Ng, Daishi Harada, and Stuart Russell. Policy invariance under reward transformations: Theory and application to reward shaping. In International Conference on Machine Learning, pp.\\ 278--287, 1999",
+      "authors": "Andrew Ng, Daishi Harada, and Stuart Russell",
+      "title": "Policy invariance under reward transformations: Theory and application to reward shaping",
+      "venue": "In International Conference on Machine Learning, pp.\\ 278--287, 1999",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "olah2018the",
+      "raw": "Chris Olah, Arvind Satyanarayan, Ian Johnson, Shan Carter, Ludwig Schubert, Katherine Ye, and Alexander Mordvintsev. The building blocks of interpretability. Distill, 2018. https://distill.pub/2018/building-blocks",
+      "authors": "Chris Olah, Arvind Satyanarayan, Ian Johnson, Shan Carter, Ludwig Schubert, Katherine Ye, and Alexander Mordvintsev",
+      "title": "The building blocks of interpretability",
+      "venue": "Distill, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "omohundro2008basic",
+      "raw": "Stephen Omohundro. The basic AI drives. In Artificial General Intelligence, pp.\\ 483--492, 2008",
+      "authors": "Stephen Omohundro",
+      "title": "The basic AI drives",
+      "venue": "In Artificial General Intelligence, pp.\\ 483--492, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "orseau2013asymptotic",
+      "raw": "Laurent Orseau. Asymptotic non-learnability of universal agents with computable horizon functions. Theoretical Computer Science, 473: 0 149--156, 2013",
+      "authors": "Laurent Orseau",
+      "title": "Asymptotic non-learnability of universal agents with computable horizon functions",
+      "venue": "Theoretical Computer Science, 473: 0 149--156, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "orseau2016safely",
+      "raw": "Laurent Orseau and Stuart Armstrong. Safely interruptible agents. In Conference on Uncertainty in Artificial Intelligence, pp.\\ 557--566, 2016",
+      "authors": "Laurent Orseau and Stuart Armstrong",
+      "title": "Safely interruptible agents",
+      "venue": "In Conference on Uncertainty in Artificial Intelligence, pp.\\ 557--566, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "orseau2012space",
+      "raw": "Laurent Orseau and Mark Ring. Space-time embedded intelligence. In Artificial General Intelligence, pp.\\ 209--218, 2012",
+      "authors": "Laurent Orseau and Mark Ring",
+      "title": "Space-time embedded intelligence",
+      "venue": "In Artificial General Intelligence, pp.\\ 209--218, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ortega2018building",
+      "raw": "Pedro A Ortega, Vishal Maini, and the DeepMind safety team. Building safe artificial intelligence: specification, robustness, and assurance. https://medium.com/@deepmindsafetyresearch/building-safe-artificial-intelligence-52f5f75058f1, 2018",
+      "authors": "Pedro A Ortega, Vishal Maini, and the DeepMind safety team",
+      "title": "Building safe artificial intelligence: specification, robustness, and assurance",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "papineni2002bleu",
+      "raw": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. BLEU: A method for automatic evaluation of machine translation. In Association for Computational Linguistics, pp.\\ 311--318, 2002",
+      "authors": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu",
+      "title": "BLEU: A method for automatic evaluation of machine translation",
+      "venue": "In Association for Computational Linguistics, pp.\\ 311--318, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "peter2014watching",
+      "raw": "Philip Peter. Watching all the movies ever made. http://www.justgeek.de/watching-all-the-movies-ever-made/, 2014",
+      "authors": "Philip Peter",
+      "title": "Watching all the movies ever made",
+      "venue": "2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pomerleau1991efficient",
+      "raw": "Dean A Pomerleau. Efficient training of artificial neural networks for autonomous navigation. Neural Computation, 3 0 (1): 0 88--97, 1991",
+      "authors": "Dean A Pomerleau",
+      "title": "Efficient training of artificial neural networks for autonomous navigation",
+      "venue": "Neural Computation, 3 0 (1): 0 88--97, 1991",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "prasad2018social",
+      "raw": "Mahendra Prasad. Social choice and the value alignment problem. In Artificial Intelligence Safety and Security, pp.\\ 291--314. Chapman and Hall/CRC, 2018",
+      "authors": "Mahendra Prasad",
+      "title": "Social choice and the value alignment problem",
+      "venue": "In Artificial Intelligence Safety and Security, pp.\\ 291--314. Chapman and Hall/CRC, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "riedl2016using",
+      "raw": "Mark O Riedl and Brent Harrison. Using stories to teach human values to artificial agents. In AAAI Workshop: AI, Ethics, and Society, 2016",
+      "authors": "Mark O Riedl and Brent Harrison",
+      "title": "Using stories to teach human values to artificial agents",
+      "venue": "In AAAI Workshop: AI, Ethics, and Society, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ring2011delusion",
+      "raw": "Mark Ring and Laurent Orseau. Delusion, survival, and intelligent agents. In Artificial General Intelligence, pp.\\ 11--20, 2011",
+      "authors": "Mark Ring and Laurent Orseau",
+      "title": "Delusion, survival, and intelligent agents",
+      "venue": "In Artificial General Intelligence, pp.\\ 11--20, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rumelhart1985learning",
+      "raw": "David E Rumelhart, Geoffrey E Hinton, and Ronald J Williams. Learning internal representations by error propagation. In Parallel distributed processing: Explorations in the Microstructure of Cognition, volume 1. MIT Press, 1986",
+      "authors": "David E Rumelhart, Geoffrey E Hinton, and Ronald J Williams",
+      "title": "Learning internal representations by error propagation",
+      "venue": "In Parallel distributed processing: Explorations in the Microstructure of Cognition, volume 1. MIT Press, 1986",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "russell1998learning",
+      "raw": "Stuart Russell. Learning agents for uncertain environments. In Conference on Computational Learning Theory, pp.\\ 101--103, 1998",
+      "authors": "Stuart Russell",
+      "title": "Learning agents for uncertain environments",
+      "venue": "In Conference on Computational Learning Theory, pp.\\ 101--103, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "russell2015research",
+      "raw": "Stuart Russell, Daniel Dewey, and Max Tegmark. Research priorities for robust and beneficial artificial intelligence. AI Magazine, 36 0 (4): 0 105--114, 2015",
+      "authors": "Stuart Russell, Daniel Dewey, and Max Tegmark",
+      "title": "Research priorities for robust and beneficial artificial intelligence",
+      "venue": "AI Magazine, 36 0 (4): 0 105--114, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "salimans2016improved",
+      "raw": "Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, and Xi Chen. Improved techniques for training GANs. In Advances in Neural Information Processing Systems, pp.\\ 2234--2242, 2016",
+      "authors": "Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, and Xi Chen",
+      "title": "Improved techniques for training GANs",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2234--2242, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "samuelson1938note",
+      "raw": "Paul A Samuelson. A note on the pure theory of consumer's behaviour. Economica, 5 0 (17): 0 61--71, 1938",
+      "authors": "Paul A Samuelson",
+      "title": "A note on the pure theory of consumer's behaviour",
+      "venue": "Economica, 5 0 (17): 0 61--71, 1938",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "saunders2018trial",
+      "raw": "William Saunders, Girish Sastry, Andreas Stuhlmueller, and Owain Evans. Trial without error: Towards safe reinforcement learning via human intervention. In International Conference on Autonomous Agents and MultiAgent Systems, pp.\\ 2067--2069, 2018",
+      "authors": "William Saunders, Girish Sastry, Andreas Stuhlmueller, and Owain Evans",
+      "title": "Trial without error: Towards safe reinforcement learning via human intervention",
+      "venue": "In International Conference on Autonomous Agents and MultiAgent Systems, pp.\\ 2067--2069, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schmidhuber2007godel",
+      "raw": "J\u00fcrgen Schmidhuber. G\u00f6del machines: Self-referential universal problem solvers making provably optimal self-improvements. In Artificial General Intelligence, 2007",
+      "authors": "J\u00fcrgen Schmidhuber",
+      "title": "G\u00f6del machines: Self-referential universal problem solvers making provably optimal self-improvements",
+      "venue": "In Artificial General Intelligence, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schulman2015trust",
+      "raw": "John Schulman, Sergey Levine, Pieter Abbeel, Michael Jordan, and Philipp Moritz. Trust region policy optimization. In International Conference on Machine Learning, pp.\\ 1889--1897, 2015",
+      "authors": "John Schulman, Sergey Levine, Pieter Abbeel, Michael Jordan, and Philipp Moritz",
+      "title": "Trust region policy optimization",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1889--1897, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schulman2017proximal",
+      "raw": "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347, 2017",
+      "authors": "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov",
+      "title": "Proximal policy optimization algorithms",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1707.06347",
+      "doi": null
+    },
+    {
+      "key": "schulze2018active",
+      "raw": "Sebastian Schulze and Owain Evans. Active reinforcement learning with monte-carlo tree search. arXiv preprint arXiv:1803.04926, 2018",
+      "authors": "Sebastian Schulze and Owain Evans",
+      "title": "Active reinforcement learning with monte-carlo tree search",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1803.04926",
+      "doi": null
+    },
+    {
+      "key": "settles2012active",
+      "raw": "Burr Settles. Active learning. Synthesis Lectures on Artificial Intelligence and Machine Learning, 6 0 (1): 0 1--114, 2012",
+      "authors": "Burr Settles",
+      "title": "Active learning",
+      "venue": "Synthesis Lectures on Artificial Intelligence and Machine Learning, 6 0 (1): 0 1--114, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shafaei2018does",
+      "raw": "Alireza Shafaei, Mark Schmidt, and James J Little. Does your model know the digit 6 is not a cat? a less biased evaluation of ``outlier'' detectors. arXiv preprint arXiv:1809.04729, 2018",
+      "authors": "Alireza Shafaei, Mark Schmidt, and James J Little",
+      "title": "Does your model know the digit 6 is not a cat? a less biased evaluation of ``outlier'' detectors",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1809.04729",
+      "doi": null
+    },
+    {
+      "key": "shalev2017formal",
+      "raw": "Shai Shalev-Shwartz, Shaked Shammah, and Amnon Shashua. On a formal model of safe and scalable self-driving cars. arXiv preprint arXiv:1708.06374, 2017",
+      "authors": "Shai Shalev-Shwartz, Shaked Shammah, and Amnon Shashua",
+      "title": "On a formal model of safe and scalable self-driving cars",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1708.06374",
+      "doi": null
+    },
+    {
+      "key": "silver2016mastering",
+      "raw": "David Silver, Aja Huang, Chris J Maddison, Arthur Guez, Laurent Sifre, George Van Den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda Panneershelvam, Marc Lanctot, Sander Dieleman, Dominik Grewe, John Nham, Nal Kalchbrenner, Ilya Sutskever, Timothy Lillicrap, Madeleine Leach, Koray Kavukcuoglu, Thore Graepel, and Demis Hassabis. Mastering the game of Go with deep neural networks and tree search. Nature, 529 0 (7587): 0 484, 2016",
+      "authors": "David Silver, Aja Huang, Chris J Maddison, Arthur Guez, Laurent Sifre, George Van Den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda Panneershelvam, Marc Lanctot, Sander Dieleman, Dominik Grewe, John Nham, Nal Kalchbrenner, Ilya Sutskever, Timothy Lillicrap, Madeleine Leach, Koray Kavukcuoglu, Thore Graepel, and Demis Hassabis",
+      "title": "Mastering the game of Go with deep neural networks and tree search",
+      "venue": "Nature, 529 0 (7587): 0 484, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "silver2017mastering",
+      "raw": "David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis Antonoglou, Aja Huang, Arthur Guez, Thomas Hubert, Lucas Baker, Matthew Lai, Adrian Bolton, Yutian Chen, Timothy Lillicrap, Fan Hui, Laurent Sifre, George van den Driessche, Graepel Thore, and Demis Hassabis. Mastering the game of Go without human knowledge. Nature, 550 0 (7676): 0 354, 2017",
+      "authors": "David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis Antonoglou, Aja Huang, Arthur Guez, Thomas Hubert, Lucas Baker, Matthew Lai, Adrian Bolton, Yutian Chen, Timothy Lillicrap, Fan Hui, Laurent Sifre, George van den Driessche, Graepel Thore, and Demis Hassabis",
+      "title": "Mastering the game of Go without human knowledge",
+      "venue": "Nature, 550 0 (7676): 0 354, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "soares2015value",
+      "raw": "Nate Soares. The value learning problem. Technical report, Machine Intelligence Research Institute, 2015",
+      "authors": "Nate Soares",
+      "title": "The value learning problem",
+      "venue": "Technical report, Machine Intelligence Research Institute, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "soares2017agent",
+      "raw": "Nate Soares and Benya Fallenstein. Agent foundations for aligning machine intelligence with human interests: a technical research agenda. In The Technological Singularity, pp.\\ 103--125. Springer, 2017",
+      "authors": "Nate Soares and Benya Fallenstein",
+      "title": "Agent foundations for aligning machine intelligence with human interests: a technical research agenda",
+      "venue": "In The Technological Singularity, pp.\\ 103--125. Springer, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "soares2015corrigibility",
+      "raw": "Nate Soares, Benja Fallenstein, Stuart Armstrong, and Eliezer Yudkowsky. Corrigibility. In AAAI Workshop on Artificial Intelligence and Ethics, 2015",
+      "authors": "Nate Soares, Benja Fallenstein, Stuart Armstrong, and Eliezer Yudkowsky",
+      "title": "Corrigibility",
+      "venue": "In AAAI Workshop on Artificial Intelligence and Ethics, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "stadelmann2018deep",
+      "raw": "Thilo Stadelmann, Mohammadreza Amirian, Ismail Arabaci, Marek Arnold, Gilbert Fran\u00e7ois Duivesteijn, Ismail Elezi, Melanie Geiger, Stefan L\u00f6rwald, Benjamin Bruno Meier, Katharina Rombach, and Lukas Tuggener. Deep learning in the wild. arXiv preprint arXiv:1807.04950, 2018",
+      "authors": "Thilo Stadelmann, Mohammadreza Amirian, Ismail Arabaci, Marek Arnold, Gilbert Fran\u00e7ois Duivesteijn, Ismail Elezi, Melanie Geiger, Stefan L\u00f6rwald, Benjamin Bruno Meier, Katharina Rombach, and Lukas Tuggener",
+      "title": "Deep learning in the wild",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1807.04950",
+      "doi": null
+    },
+    {
+      "key": "stadie2017third",
+      "raw": "Bradly C Stadie, Pieter Abbeel, and Ilya Sutskever. Third-person imitation learning. In International Conference on Learning Representations, 2017",
+      "authors": "Bradly C Stadie, Pieter Abbeel, and Ilya Sutskever",
+      "title": "Third-person imitation learning",
+      "venue": "In International Conference on Learning Representations, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "stuhlmueller2018factored",
+      "raw": "Andreas Stuhlm\u00fcller. Factored cognition. https://ought.org/projects/factored-cognition, 2018",
+      "authors": "Andreas Stuhlm\u00fcller",
+      "title": "Factored cognition",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutton1998",
+      "raw": "Richard Sutton and Andrew Barto. Reinforcement Learning: An Introduction. MIT press, 2nd edition, 2018",
+      "authors": "Richard Sutton and Andrew Barto",
+      "title": "Reinforcement Learning: An Introduction",
+      "venue": "MIT press, 2nd edition, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutton1999between",
+      "raw": "Richard Sutton, Doina Precup, and Satinder Singh. Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning. Artificial intelligence, 112 0 (1-2): 0 181--211, 1999",
+      "authors": "Richard Sutton, Doina Precup, and Satinder Singh",
+      "title": "Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning",
+      "venue": "Artificial intelligence, 112 0 (1-2): 0 181--211, 1999",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "szegedy2013intriguing",
+      "raw": "Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian Goodfellow, and Rob Fergus. Intriguing properties of neural networks. arXiv preprint arXiv:1312.6199, 2013",
+      "authors": "Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian Goodfellow, and Rob Fergus",
+      "title": "Intriguing properties of neural networks",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.6199",
+      "doi": null
+    },
+    {
+      "key": "taylor2016alignment",
+      "raw": "Jessica Taylor, Eliezer Yudkowsky, Patrick LaVictoire, and Andrew Critch. Alignment for advanced machine learning systems. Technical report, Machine Intelligence Research Institute, 2016",
+      "authors": "Jessica Taylor, Eliezer Yudkowsky, Patrick LaVictoire, and Andrew Critch",
+      "title": "Alignment for advanced machine learning systems",
+      "venue": "Technical report, Machine Intelligence Research Institute, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "thomaz2008teachable",
+      "raw": "Andrea L Thomaz and Cynthia Breazeal. Teachable robots: Understanding human teaching behavior to build more effective robot learners. Artificial Intelligence, 172 0 (6--7): 0 716--737, 2008",
+      "authors": "Andrea L Thomaz and Cynthia Breazeal",
+      "title": "Teachable robots: Understanding human teaching behavior to build more effective robot learners",
+      "venue": "Artificial Intelligence, 172 0 (6--7): 0 716--737, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tobin2017domain",
+      "raw": "Josh Tobin, Rachel Fong, Alex Ray, Jonas Schneider, Wojciech Zaremba, and Pieter Abbeel. Domain randomization for transferring deep neural networks from simulation to the real world. In Intelligent Robots and Systems, pp.\\ 23--30, 2017",
+      "authors": "Josh Tobin, Rachel Fong, Alex Ray, Jonas Schneider, Wojciech Zaremba, and Pieter Abbeel",
+      "title": "Domain randomization for transferring deep neural networks from simulation to the real world",
+      "venue": "In Intelligent Robots and Systems, pp.\\ 23--30, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "trask2018neural",
+      "raw": "Andrew Trask, Felix Hill, Scott Reed, Jack Rae, Chris Dyer, and Phil Blunsom. Neural arithmetic logic units. In Advances in Neural Information Processing Systems, 2018",
+      "authors": "Andrew Trask, Felix Hill, Scott Reed, Jack Rae, Chris Dyer, and Phil Blunsom",
+      "title": "Neural arithmetic logic units",
+      "venue": "In Advances in Neural Information Processing Systems, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tung2018reward",
+      "raw": "Hsiao-Yu Fish Tung, Adam W Harley, Liang-Kang Huang, and Katerina Fragkiadaki. Reward learning from narrated demonstrations. In Computer Vision and Pattern Recognition, pp.\\ 7004--7013, 2018",
+      "authors": "Hsiao-Yu Fish Tung, Adam W Harley, Liang-Kang Huang, and Katerina Fragkiadaki",
+      "title": "Reward learning from narrated demonstrations",
+      "venue": "In Computer Vision and Pattern Recognition, pp.\\ 7004--7013, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "uesato2018adversarial",
+      "raw": "Jonathan Uesato, Brendan O'Donoghue, Aaron van den Oord, and Pushmeet Kohli. Adversarial risk and the dangers of evaluating against weak attacks. In International Conference on Machine Learning, pp.\\ 5025--5034, 2018",
+      "authors": "Jonathan Uesato, Brendan O'Donoghue, Aaron van den Oord, and Pushmeet Kohli",
+      "title": "Adversarial risk and the dangers of evaluating against weak attacks",
+      "venue": "In International Conference on Machine Learning, pp.\\ 5025--5034, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "veness2017online",
+      "raw": "Joel Veness, Tor Lattimore, Avishkar Bhoopchand, Agnieszka Grabska-Barwinska, Christopher Mattern, and Peter Toth. Online learning with gated linear networks. arXiv preprint arXiv:1712.01897, 2017",
+      "authors": "Joel Veness, Tor Lattimore, Avishkar Bhoopchand, Agnieszka Grabska-Barwinska, Christopher Mattern, and Peter Toth",
+      "title": "Online learning with gated linear networks",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1712.01897",
+      "doi": null
+    },
+    {
+      "key": "vezhnevets2017feudal",
+      "raw": "Alexander Sasha Vezhnevets, Simon Osindero, Tom Schaul, Nicolas Heess, Max Jaderberg, David Silver, and Koray Kavukcuoglu. FeUdal Networks for hierarchical reinforcement learning. arXiv preprint arXiv:1703.01161, 2017",
+      "authors": "Alexander Sasha Vezhnevets, Simon Osindero, Tom Schaul, Nicolas Heess, Max Jaderberg, David Silver, and Koray Kavukcuoglu",
+      "title": "FeUdal Networks for hierarchical reinforcement learning",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1703.01161",
+      "doi": null
+    },
+    {
+      "key": "Warnell17",
+      "raw": "Garrett Warnell, Nicholas Waytowich, Vernon Lawhern, and Peter Stone. Deep TAMER: Interactive agent shaping in high-dimensional state spaces. arXiv preprint arXiv:1709.10163, 2017",
+      "authors": "Garrett Warnell, Nicholas Waytowich, Vernon Lawhern, and Peter Stone",
+      "title": "Deep TAMER: Interactive agent shaping in high-dimensional state spaces",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1709.10163",
+      "doi": null
+    },
+    {
+      "key": "watkins1992q",
+      "raw": "Christopher Watkins and Peter Dayan. Q-learning. Machine Learning, 8 0 (3-4): 0 279--292, 1992",
+      "authors": "Christopher Watkins and Peter Dayan",
+      "title": "Q-learning",
+      "venue": "Machine Learning, 8 0 (3-4): 0 279--292, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wiener1960some",
+      "raw": "Norbert Wiener. Some moral and technical consequences of automation. Science, 1960",
+      "authors": "Norbert Wiener",
+      "title": "Some moral and technical consequences of automation",
+      "venue": "Science, 1960",
+      "year": 1960,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams1992simple",
+      "raw": "Ronald Williams. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine Learning, 8 0 (3-4): 0 229--256, 1992",
+      "authors": "Ronald Williams",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "venue": "Machine Learning, 8 0 (3-4): 0 229--256, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Wirth2017",
+      "raw": "Christian Wirth, Riad Akrour, Gerhard Neumann, and Johannes F\u00fcrnkranz. A survey of preference-based reinforcement learning methods. Journal of Machine Learning Research, 18 0 (1): 0 4945--4990, 2017",
+      "authors": "Christian Wirth, Riad Akrour, Gerhard Neumann, and Johannes F\u00fcrnkranz",
+      "title": "A survey of preference-based reinforcement learning methods",
+      "venue": "Journal of Machine Learning Research, 18 0 (1): 0 4945--4990, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wong2018scaling",
+      "raw": "Eric Wong, Frank Schmidt, Jan Hendrik Metzen, and J Zico Kolter. Scaling provable adversarial defenses. In Advances in Neural Information Processing Systems, 2018",
+      "authors": "Eric Wong, Frank Schmidt, Jan Hendrik Metzen, and J Zico Kolter",
+      "title": "Scaling provable adversarial defenses",
+      "venue": "In Advances in Neural Information Processing Systems, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "xu2015empirical",
+      "raw": "Bing Xu, Naiyan Wang, Tianqi Chen, and Mu Li. Empirical evaluation of rectified activations in convolutional network. arXiv preprint arXiv:1505.00853, 2015",
+      "authors": "Bing Xu, Naiyan Wang, Tianqi Chen, and Mu Li",
+      "title": "Empirical evaluation of rectified activations in convolutional network",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1505.00853",
+      "doi": null
+    },
+    {
+      "key": "yampolskiy2012leakproofing",
+      "raw": "Roman Yampolskiy. Leakproofing the singularity: Artificial intelligence confinement problem. Journal of Consciousness Studies, 2012",
+      "authors": "Roman Yampolskiy",
+      "title": "Leakproofing the singularity: Artificial intelligence confinement problem",
+      "venue": "Journal of Consciousness Studies, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yeh2018bridging",
+      "raw": "Eric Yeh, Melinda Gervasio, Daniel Sanchez, Matthew Crossley, and Karen Myers. Bridging the gap: Converting human advice into imagined examples. Advances in Cognitive Systems, 6: 0 1--20, 2018",
+      "authors": "Eric Yeh, Melinda Gervasio, Daniel Sanchez, Matthew Crossley, and Karen Myers",
+      "title": "Bridging the gap: Converting human advice into imagined examples",
+      "venue": "Advances in Cognitive Systems, 6: 0 1--20, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yudkowsky2004coherent",
+      "raw": "Eliezer Yudkowsky. Coherent extrapolated volition. Technical report, Singularity Institute for Artificial Intelligence, 2004",
+      "authors": "Eliezer Yudkowsky",
+      "title": "Coherent extrapolated volition",
+      "venue": "Technical report, Singularity Institute for Artificial Intelligence, 2004",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zahavy2016graying",
+      "raw": "Tom Zahavy, Nir Ben-Zrihem, and Shie Mannor. Graying the black box: Understanding DQNs. In International Conference on Machine Learning, pp.\\ 1899--1908, 2016",
+      "authors": "Tom Zahavy, Nir Ben-Zrihem, and Shie Mannor",
+      "title": "Graying the black box: Understanding DQNs",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1899--1908, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhang2017understanding",
+      "raw": "Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals. Understanding deep learning requires rethinking generalization. In International Conference on Learning Representations, 2017",
+      "authors": "Chiyuan Zhang, Samy Bengio, Moritz Hardt, Benjamin Recht, and Oriol Vinyals",
+      "title": "Understanding deep learning requires rethinking generalization",
+      "venue": "In International Conference on Learning Representations, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhang2018study",
+      "raw": "Chiyuan Zhang, Oriol Vinyals, Remi Munos, and Samy Bengio. A study on overfitting in deep reinforcement learning. arXiv preprint arXiv:1804.06893, 2018",
+      "authors": "Chiyuan Zhang, Oriol Vinyals, Remi Munos, and Samy Bengio",
+      "title": "A study on overfitting in deep reinforcement learning",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1804.06893",
+      "doi": null
+    },
+    {
+      "key": "zhang2018minimax",
+      "raw": "Shun Zhang, Edmund H Durfee, and Satinder Singh. Minimax-regret querying on side effects for safe optimality in factored Markov decision processes. In International Joint Conference on Artificial Intelligence, pp.\\ 4867--4873, 2018",
+      "authors": "Shun Zhang, Edmund H Durfee, and Satinder Singh",
+      "title": "Minimax-regret querying on side effects for safe optimality in factored Markov decision processes",
+      "venue": "In International Joint Conference on Artificial Intelligence, pp.\\ 4867--4873, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 832,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 9510,
+      "numbers": 3,
+      "citations": 22
+    },
+    {
+      "kind": "method",
+      "title": "The agent alignment problem",
+      "chars": 1965,
+      "numbers": 0,
+      "citations": 25
+    },
+    {
+      "kind": "method",
+      "title": "Design specification problems",
+      "chars": 1441,
+      "numbers": 0,
+      "citations": 17
+    },
+    {
+      "kind": "method",
+      "title": "Difficulty of agent alignment",
+      "chars": 1713,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Scaling reward modeling",
+      "chars": 1774,
+      "numbers": 0,
+      "citations": 19
+    },
+    {
+      "kind": "method",
+      "title": "Reward modeling",
+      "chars": 5905,
+      "numbers": 0,
+      "citations": 11
+    },
+    {
+      "kind": "method",
+      "title": "Recursive reward modeling",
+      "chars": 9769,
+      "numbers": 1,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Challenges",
+      "chars": 2013,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Amount of feedback",
+      "chars": 1359,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Feedback distribution",
+      "chars": 1087,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Reward hacking",
+      "chars": 3433,
+      "numbers": 1,
+      "citations": 19
+    },
+    {
+      "kind": "method",
+      "title": "Unacceptable outcomes",
+      "chars": 1057,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Reward-result gap",
+      "chars": 1207,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Approaches",
+      "chars": 255,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Online feedback",
+      "chars": 982,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Off-policy feedback",
+      "chars": 1242,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Leveraging existing data",
+      "chars": 534,
+      "numbers": 2,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Hierarchical feedback",
+      "chars": 806,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Natural language",
+      "chars": 1821,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Model-based RL",
+      "chars": 1184,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Side-constraints",
+      "chars": 993,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Adversarial training",
+      "chars": 926,
+      "numbers": 0,
+      "citations": 8
+    },
+    {
+      "kind": "method",
+      "title": "Uncertainty estimates",
+      "chars": 1344,
+      "numbers": 0,
+      "citations": 16
+    },
+    {
+      "kind": "method",
+      "title": "Inductive bias",
+      "chars": 1339,
+      "numbers": 0,
+      "citations": 15
+    },
+    {
+      "kind": "method",
+      "title": "Establishing trust",
+      "chars": 6242,
+      "numbers": 0,
+      "citations": 20
+    },
+    {
+      "kind": "method",
+      "title": "Alternatives for agent alignment",
+      "chars": 531,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Imitation learning",
+      "chars": 1882,
+      "numbers": 0,
+      "citations": 7
+    },
+    {
+      "kind": "method",
+      "title": "Inverse reinforcement learning",
+      "chars": 1286,
+      "numbers": 2,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Cooperative inverse reinforcement learning",
+      "chars": 2618,
+      "numbers": 3,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Myopic reinforcement learning",
+      "chars": 1706,
+      "numbers": 0,
+      "citations": 7
+    },
+    {
+      "kind": "method",
+      "title": "Imitating expert reasoning",
+      "chars": 2889,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Debate",
+      "chars": 1486,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Other related work",
+      "chars": 2010,
+      "numbers": 0,
+      "citations": 12
+    },
+    {
+      "kind": "discussion",
+      "title": "Discussion",
+      "chars": 2920,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "discussion",
+      "title": "Acknowledgments",
+      "chars": 737,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 3,
+      "compares": 2,
+      "background": 180,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": [
+      {
+        "key": "garrabrant2018",
+        "stance": "contests",
+        "cue": "rather than",
+        "sentence": "For now, answers to these research questions should be understood more as intuition pumps for practical alignment questions rather than direct solutions themselves .",
+        "section": "Other related work",
+        "sectionKind": "method",
+        "title": "Sources of intuitions and data on AGI",
+        "authors": "Scott Garrabrant",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 20,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 157.51869201660156,
+              "y0": 243.44729614257812,
+              "x1": 503.9973449707031,
+              "y1": 253.509033203125
+            },
+            {
+              "x0": 108.0,
+              "y0": 254.4324493408203,
+              "x1": 423.5752868652344,
+              "y1": 264.3950500488281
+            }
+          ]
+        }
+      },
+      {
+        "key": "goodfellow2015",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike in most work on generating adversarial examples , the agent would not necessarily be free to synthesize any possible input to the reward model, but would need to find a way to realize adversarial observation sequences in its environment.",
+        "section": "Reward hacking",
+        "sectionKind": "method",
+        "title": "Explaining and harnessing adversarial examples",
+        "authors": "Ian Goodfellow, Jonathon Shlens, and Christian Szegedy",
+        "year": 2015,
+        "arxivId": "1412.6572",
+        "inCorpus": false,
+        "anchor": {
+          "page": 10,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 396.3696594238281,
+              "y0": 445.498046875,
+              "x1": 503.9966735839844,
+              "y1": 455.4954528808594
+            },
+            {
+              "x0": 108.0,
+              "y0": 456.3583068847656,
+              "x1": 503.9973449707031,
+              "y1": 466.4200439453125
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 467.34246826171875,
+              "x1": 378.1654968261719,
+              "y1": 477.3050842285156
+            }
+          ]
+        }
+      },
+      {
+        "key": "hester2018deep",
+        "stance": "compares",
+        "cue": "outperform",
+        "sentence": "Analogous to ass:evaluation, generalizing learned reward functions might be easier than generalizing behavior . Performance. It is generally difficult to outperform humans using imitation learning alone : even a perfect imitator can only perform as well as the source it is imitating; superhuman performance typically comes from executing human action sequences faster and more reliably by smoothing out inconsistencies in human behavior . Therefore imitation learning is unlikely to be competitive with other strategies to train agents in the longer term.",
+        "section": "Imitation learning",
+        "sectionKind": "method",
+        "title": "Deep Q-learning from demonstrations",
+        "authors": "Todd Hester, Matej Vecerik, Olivier Pietquin, Marc Lanctot, Tom Schaul, Bilal Piot, Dan Horgan, John Quan, Andrew Sendonaris, Gabriel Dulac-Arnold, John Agapiou, Joel Z Leibo, and Audrunas Gruslys",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 17,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 221.582275390625,
+              "y0": 190.6584014892578,
+              "x1": 503.99688720703125,
+              "y1": 200.5208740234375
+            },
+            {
+              "x0": 143.86599731445312,
+              "y0": 201.56739807128906,
+              "x1": 503.9970703125,
+              "y1": 211.42987060546875
+            },
+            {
+              "x0": 143.86599731445312,
+              "y0": 212.37127685546875,
+              "x1": 452.957763671875,
+              "y1": 222.3736572265625
+            }
+          ]
+        }
+      },
+      {
+        "key": "huang2017adversarial",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike in most work on generating adversarial examples , the agent would not necessarily be free to synthesize any possible input to the reward model, but would need to find a way to realize adversarial observation sequences in its environment.",
+        "section": "Reward hacking",
+        "sectionKind": "method",
+        "title": "Adversarial attacks on neural network policies",
+        "authors": "Sandy Huang, Nicolas Papernot, Ian Goodfellow, Yan Duan, and Pieter Abbeel",
+        "year": 2017,
+        "arxivId": "1702.02284",
+        "inCorpus": false,
+        "anchor": {
+          "page": 10,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 396.3696594238281,
+              "y0": 445.498046875,
+              "x1": 503.9966735839844,
+              "y1": 455.4954528808594
+            },
+            {
+              "x0": 108.0,
+              "y0": 456.3583068847656,
+              "x1": 503.9973449707031,
+              "y1": 466.4200439453125
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 467.34246826171875,
+              "x1": 378.1654968261719,
+              "y1": 477.3050842285156
+            }
+          ]
+        }
+      },
+      {
+        "key": "lakshminarayanan2017simple",
+        "stance": "compares",
+        "cue": "baseline",
+        "sentence": "So far model ensembles provide a very strong baseline .",
+        "section": "Uncertainty estimates",
+        "sectionKind": "method",
+        "title": "Simple and scalable predictive uncertainty estimation using deep ensembles",
+        "authors": "Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 14,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 315.51239013671875,
+              "y0": 275.4732971191406,
+              "x1": 503.9945373535156,
+              "y1": 285.5350341796875
+            },
+            {
+              "x0": 108.0,
+              "y0": 286.4396057128906,
+              "x1": 140.81068420410156,
+              "y1": 296.4270935058594
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We discuss the key challenges we expect to face when scaling reward modeling to complex and general domains, concrete approaches to mitigate these challenges, and ways to establish trust in the resulting agents.",
+      "anchorText": "We discuss the key challenges we expect to face when scaling reward modeling to complex and general domains, concrete approaches to mitigate these challenges, and ways to establish trust in the resulting agents.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Abstract",
+      "sectionKind": "abstract",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 300.8869934082031,
+            "y0": 341.2552795410156,
+            "x1": 468.1309814453125,
+            "y1": 351.3170166015625
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 352.2093200683594,
+            "x1": 468.1316223144531,
+            "y1": 362.2117004394531
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 363.2206115722656,
+            "x1": 468.134765625,
+            "y1": 373.0881042480469
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 374.0574645996094,
+            "x1": 171.81109619140625,
+            "y1": 384.02008056640625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "As we scale reward modeling to complex general domains, we expect to encounter a number of challenges ( sec:challenges).",
+      "anchorText": "As we scale reward modeling to complex general domains, we expect to encounter a number of challenges ( sec:challenges).",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [
+        "sec:challenges"
+      ],
+      "anchor": null
+    },
+    {
+      "sentence": "In other words, we assume that with enough model capacity and the right training algorithms we can extract the user's intentions from data.",
+      "anchorText": "In other words, we assume that with enough model capacity and the right training algorithms we can extract the user's intentions from data.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 443.44122314453125,
+            "y0": 256.3293151855469,
+            "x1": 505.2456970214844,
+            "y1": 266.39105224609375
+          },
+          {
+            "x0": 107.64099884033203,
+            "y0": 267.2392883300781,
+            "x1": 504.0041198730469,
+            "y1": 277.301025390625
+          },
+          {
+            "x0": 108.0,
+            "y0": 278.24615478515625,
+            "x1": 215.85169982910156,
+            "y1": 288.1788330078125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity of this analogy, let us assume that the user's evaluation is binary so that it can be captured by the predicate .",
+      "anchorText": "For simplicity of this analogy, let us assume that the user's evaluation is binary so that it can be captured by the predicate",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "let us assume",
+      "section": "Recursive reward modeling",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 175.99729919433594,
+            "y0": 233.69105529785156,
+            "x1": 503.99822998046875,
+            "y1": 243.7082977294922
+          },
+          {
+            "x0": 108.0,
+            "y0": 244.64149475097656,
+            "x1": 262.10150146484375,
+            "y1": 254.60409545898438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "This analogy to complexity theory, first introduced by , provides two important insights: It is widely believed that the complexity classes P and NP are not equal, which supports ass:evaluation that for a lot of relevant problems evaluation is easier than producing solutions. Basically every formal statement that mathematicians care about can be written as a first-order logic statement with a finite number of alternating quantifiers.",
+      "anchorText": ", provides two important insights: It is widely believed that the complexity classes P and NP are not equal, which supports ass:evaluation that for a lot of relevant problems evaluation is easier than producing solutions. Basically every formal statement that mathematicians care about can be written as a first-order logic statement with a finite number of alternating quantifiers.",
+      "kind": "conventional",
+      "support": "cited",
+      "cue": "It is widely believed",
+      "section": "Recursive reward modeling",
+      "sectionKind": "method",
+      "cites": [
+        "irving2018ai"
+      ],
+      "refs": [
+        "ass:evaluation"
+      ],
+      "anchor": null
+    },
+    {
+      "sentence": "Assuming a 10x overhead and 50 million to annotate.",
+      "anchorText": "Assuming a 10x overhead and \\",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Assuming a",
+      "section": "Leveraging existing data",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "This allows the agent to use off-policy reward estimates, estimated for actions it never actually takes, provided that the reward model is accurate off-policy ( ssec:off-policy-feedback).",
+      "anchorText": "This allows the agent to use off-policy reward estimates, estimated for actions it never actually takes, provided that the reward model is accurate off-policy ( ssec:off-policy-feedback).",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "provided that",
+      "section": "Model-based RL",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "ssec:off-policy-feedback"
+      ],
+      "anchor": null
+    },
+    {
+      "sentence": "While we believe it is currently the most promising one to explore, it is not guaranteed to succeed.",
+      "anchorText": "While we believe it is currently the most promising one to explore, it is not guaranteed to succeed.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Alternatives for agent alignment",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 192.71937561035156,
+            "y0": 556.334228515625,
+            "x1": 503.9972229003906,
+            "y1": 566.39599609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 567.2432861328125,
+            "x1": 202.352783203125,
+            "y1": 577.3050537109375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "If we assume the human is fully rational and the agent can design a sequence of tasks for the human, then the reward function can be identified .",
+      "anchorText": "If we assume the human is fully rational and the agent can design a sequence of tasks for the human, then the reward function can be identified",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "we assume",
+      "section": "Inverse reinforcement learning",
+      "sectionKind": "method",
+      "cites": [
+        "amin2017repeated"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 17,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 318.9202880859375,
+            "y0": 405.9783020019531,
+            "x1": 503.99822998046875,
+            "y1": 416.0400390625
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 416.8872985839844,
+            "x1": 504.0022277832031,
+            "y1": 426.94903564453125
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 427.7962951660156,
+            "x1": 182.2574920654297,
+            "y1": 437.8580322265625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity we can treat both and as natural language strings.",
+      "anchorText": "For simplicity we can treat both",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "For simplicity",
+      "section": "Imitating expert reasoning",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 18,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 264.54302978515625,
+            "y0": 652.495361328125,
+            "x1": 389.1136169433594,
+            "y1": 662.3578491210938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For example, by searching for inconsistencies in the expert's reasoning and resolving them. If we believe expert reasoning is aligned with the user, then we could hope that the resulting improved model is also aligned.",
+      "anchorText": "For example, by searching for inconsistencies in the expert's reasoning and resolving them. If we believe expert reasoning is aligned with the user, then we could hope that the resulting improved model is also aligned.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Imitating expert reasoning",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 19,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 385.9655456542969,
+            "y0": 198.20191955566406,
+            "x1": 504.1706237792969,
+            "y1": 208.10455322265625
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 209.06544494628906,
+            "x1": 385.55865478515625,
+            "y1": 219.02804565429688
+          },
+          {
+            "x0": 108.0,
+            "y0": 230.96339416503906,
+            "x1": 504.0015869140625,
+            "y1": 240.82586669921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 241.72128295898438,
+            "x1": 198.0238494873047,
+            "y1": 251.78302001953125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For now, agent alignment research is still in its early stages, but we believe that there is substantial reason for optimism.",
+      "anchorText": "For now, agent alignment research is still in its early stages, but we believe that there is substantial reason for optimism.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Discussion",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 20,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 354.8416442871094,
+            "y0": 679.6422729492188,
+            "x1": 503.9974365234375,
+            "y1": 689.7040405273438
+          },
+          {
+            "x0": 108.0,
+            "y0": 690.649169921875,
+            "x1": 434.4566955566406,
+            "y1": 700.5818481445312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "While we expect to face challenges when scaling reward modeling, these challenges are concrete technical problems that we can make progress on with targeted research.",
+      "anchorText": "While we expect to face challenges when scaling reward modeling, these challenges are concrete technical problems that we can make progress on with targeted research.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Discussion",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 20,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 437.5661926269531,
+            "y0": 690.649169921875,
+            "x1": 504.0042724609375,
+            "y1": 700.5818481445312
+          },
+          {
+            "x0": 108.0,
+            "y0": 701.524169921875,
+            "x1": 504.0025634765625,
+            "y1": 711.501708984375
+          },
+          {
+            "x0": 108.0,
+            "y0": 712.4444580078125,
+            "x1": 318.8086242675781,
+            "y1": 722.4070434570312
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 13,
+    "cited": 2,
+    "shown": 0,
+    "bare": 11
+  }
+}

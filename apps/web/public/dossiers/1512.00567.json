@@ -1,0 +1,1963 @@
+{
+  "id": "1512.00567",
+  "title": "Rethinking the Inception Architecture for Computer Vision",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1512.00567",
+  "numbers": [
+    {
+      "value": "2.78",
+      "kind": "result",
+      "section": "method",
+      "sentence": "For example, a convolution with filters over a grid with filters is 25/9 = 2.78 times more computationally expensive than a convolution with the same number of filters.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "1.5",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Since the convolution is aggregating, is typically slightly larger than one (around 1.5 in the case of GoogLeNet).",
+      "status": "exact",
+      "table": "Table 3",
+      "row": "GoogLeNet",
+      "cell": "1.5",
+      "anchor": null
+    },
+    {
+      "value": "0.1%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We have evaluated all the 50000 examples as well and the results were roughly 0.1% worse in top-5 error and around 0.2% in top-1 error.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 400.0795593261719,
+            "y0": 631.71337890625,
+            "x1": 545.1152954101562,
+            "y1": 641.6759643554688
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 643.6683959960938,
+            "x1": 545.1150512695312,
+            "y1": 653.6309814453125
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 655.6234130859375,
+            "x1": 483.39666748046875,
+            "y1": 665.5859985351562
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.2%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We have evaluated all the 50000 examples as well and the results were roughly 0.1% worse in top-5 error and around 0.2% in top-1 error.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 400.0795593261719,
+            "y0": 631.71337890625,
+            "x1": 545.1152954101562,
+            "y1": 641.6759643554688
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 643.6683959960938,
+            "x1": 545.1150512695312,
+            "y1": 653.6309814453125
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 655.6234130859375,
+            "x1": 483.39666748046875,
+            "y1": 665.5859985351562
+          }
+        ]
+      }
+    },
+    {
+      "value": "50000 examples",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We have evaluated all the 50000 examples as well and the results were roughly 0.1% worse in top-5 error and around 0.2% in top-1 error.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 400.0795593261719,
+            "y0": 631.71337890625,
+            "x1": 545.1152954101562,
+            "y1": 641.6759643554688
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 643.6683959960938,
+            "x1": 545.1150512695312,
+            "y1": 653.6309814453125
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 655.6234130859375,
+            "x1": 483.39666748046875,
+            "y1": 665.5859985351562
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "The outline of the proposed network architecture. The output size of each module is the input size of the next one. We are using variations of reduction technique depicted Figure to reduce the grid sizes between the Inception blocks whenever applicable. We have marked the convolution with -padding, which is used to maintain the grid size. -padding is also used inside those Inception modules that do not reduce the grid size. All other layers do not use padding. The various filter bank sizes are chosen to observe principle from Section .",
+      "label": "table:stem",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "type",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "patch size/strideor remarks",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "input size",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv padded",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "pool",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Inception",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "As in figure",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Inception",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "As in figure",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Inception",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "As in figure",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "pool",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "linear",
+            "value": null,
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "logits",
+            "value": null,
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 13
+          },
+          {
+            "text": "classifier",
+            "value": null,
+            "emphasised": false,
+            "block": 13
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Comparison of recognition performance when the size of the receptive field varies, but the computational cost is constant.",
+      "label": "lowrescmp",
+      "numericCells": 3,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Receptive Field Size",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-1 Accuracy (single frame)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "75.2%",
+            "value": "75.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "76.4%",
+            "value": "76.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "76.6%",
+            "value": "76.6",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 81.10884094238281,
+            "y0": 135.07595825195312,
+            "x1": 286.3586730957031,
+            "y1": 144.0423583984375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 146.03494262695312,
+            "x1": 279.21246337890625,
+            "y1": 155.0013427734375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Single crop experimental results comparing the cumulative effects on the various contributing factors. We compare our numbers with the best published single-crop inference for Ioffe at al . For the \"Inception-v2\" lines, the changes are cumulative and each subsequent line includes the new change in addition to the previous ones. The last line is referring to all the changes is what we refer to as \"Inception-v3\" below. Unfortunately, He et al reports the only 10-crop evaluation results, but not single crop results, which is reported in the Table below.",
+      "label": "results",
+      "numericCells": 22,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-1Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "CostBn Ops",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29%",
+            "value": "29",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.2%",
+            "value": "9.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.5",
+            "value": "1.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BN-GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.8%",
+            "value": "26.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.5",
+            "value": "1.5",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "BN-Inception",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.2%",
+            "value": "25.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.8",
+            "value": "7.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.0",
+            "value": "2.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Inception-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "23.4%",
+            "value": "23.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "3.8",
+            "value": "3.8",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Inception-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RMSProp",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "23.1%",
+            "value": "23.1",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "6.3",
+            "value": "6.3",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "3.8",
+            "value": "3.8",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Inception-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Label Smoothing",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "22.8%",
+            "value": "22.8",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "6.1",
+            "value": "6.1",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "3.8",
+            "value": "3.8",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Inception-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Factorized",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "21.6%",
+            "value": "21.6",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "5.8",
+            "value": "5.8",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "4.8",
+            "value": "4.8",
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "Inception-v2BN-auxiliary",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "21.2%",
+            "value": "21.2",
+            "emphasised": true,
+            "block": 8
+          },
+          {
+            "text": "5.6%",
+            "value": "5.6",
+            "emphasised": true,
+            "block": 8
+          },
+          {
+            "text": "4.8",
+            "value": "4.8",
+            "emphasised": false,
+            "block": 8
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Single-model, multi-crop experimental results comparing the cumulative effects on the various contributing factors. We compare our numbers with the best published single-model inference results on the ILSVRC 2012 classification benchmark.",
+      "label": "resultsmulticrop",
+      "numericCells": 20,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Crops Evaluated",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-1 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.15%",
+            "value": "9.15",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.89%",
+            "value": "7.89",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "VGG",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "24.4%",
+            "value": "24.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6.8%",
+            "value": "6.8",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "BN-Inception",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "22%",
+            "value": "22",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "5.82%",
+            "value": "5.82",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "PReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "24.27%",
+            "value": "24.27",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "7.38%",
+            "value": "7.38",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "PReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "21.59%",
+            "value": "21.59",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "5.71%",
+            "value": "5.71",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Inception-v3",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "19.47%",
+            "value": "19.47",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "4.48%",
+            "value": "4.48",
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "Inception-v3",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "18.77%",
+            "value": "18.77",
+            "emphasised": true,
+            "block": 8
+          },
+          {
+            "text": "4.2%",
+            "value": "4.2",
+            "emphasised": true,
+            "block": 8
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 342.38739013671875,
+            "y0": 470.9659729003906,
+            "x1": 545.108642578125,
+            "y1": 479.932373046875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 481.9249572753906,
+            "x1": 545.1085815429688,
+            "y1": 490.891357421875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 492.8839416503906,
+            "x1": 545.1087036132812,
+            "y1": 501.850341796875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 503.8429260253906,
+            "x1": 523.0335083007812,
+            "y1": 512.809326171875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Ensemble evaluation results comparing multi-model, multi-crop reported results. Our numbers are compared with the best published ensemble inference results on the ILSVRC 2012 classification benchmark. All results, but the top-5 ensemble result reported are on the validation set. The ensemble yielded top-5 error on the validation set.",
+      "label": "resultsensemble",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Models Evaluated",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Crops Evaluated",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-1 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "VGGNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.7%",
+            "value": "23.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.8%",
+            "value": "6.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.67%",
+            "value": "6.67",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "PReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "4.94%",
+            "value": "4.94",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "BN-Inception",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "20.1%",
+            "value": "20.1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "4.9%",
+            "value": "4.9",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Inception-v3",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "17.2%",
+            "value": "17.2",
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "3.58%",
+            "value": "3.58",
+            "emphasised": true,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {},
+  "references": [
+    {
+      "key": "tensorflow2015-whitepaper",
+      "raw": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng. TensorFlow: Large-scale machine learning on heterogeneous systems, 2015. Software available from tensorflow.org",
+      "authors": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng",
+      "title": "TensorFlow: Large-scale machine learning on heterogeneous systems, 2015",
+      "venue": "Software available from tensorflow.org",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chen2015compressing",
+      "raw": "W. Chen, J. T. Wilson, S. Tyree, K. Q. Weinberger, and Y. Chen. Compressing neural networks with the hashing trick. In Proceedings of The 32nd International Conference on Machine Learning, 2015",
+      "authors": "W. Chen, J. T. Wilson, S. Tyree, K. Q. Weinberger, and Y. Chen",
+      "title": "Compressing neural networks with the hashing trick",
+      "venue": "In Proceedings of The 32nd International Conference on Machine Learning, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dong2014learning",
+      "raw": "C. Dong, C. C. Loy, K. He, and X. Tang. Learning a deep convolutional network for image super-resolution. In Computer Vision--ECCV 2014, pages 184--199. Springer, 2014",
+      "authors": "C. Dong, C. C. Loy, K. He, and X. Tang",
+      "title": "Learning a deep convolutional network for image super-resolution",
+      "venue": "In Computer Vision--ECCV 2014, pages 184--199. Springer, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "erhan2014scalable",
+      "raw": "D. Erhan, C. Szegedy, A. Toshev, and D. Anguelov. Scalable object detection using deep neural networks. In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 2155--2162. IEEE, 2014",
+      "authors": "D. Erhan, C. Szegedy, A. Toshev, and D. Anguelov",
+      "title": "Scalable object detection using deep neural networks",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 2155--2162. IEEE, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "girshick2014rcnn",
+      "raw": "R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hierarchies for accurate object detection and semantic segmentation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014",
+      "authors": "R. Girshick, J. Donahue, T. Darrell, and J. Malik",
+      "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "he2015delving",
+      "raw": "K. He, X. Zhang, S. Ren, and J. Sun. Delving deep into rectifiers: Surpassing human-level performance on imagenet classification. arXiv preprint arXiv:1502.01852, 2015",
+      "authors": "K. He, X. Zhang, S. Ren, and J. Sun",
+      "title": "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1502.01852",
+      "doi": null
+    },
+    {
+      "key": "ioffe2015batch",
+      "raw": "S. Ioffe and C. Szegedy. Batch normalization: Accelerating deep network training by reducing internal covariate shift. In Proceedings of The 32nd International Conference on Machine Learning, pages 448--456, 2015",
+      "authors": "S. Ioffe and C. Szegedy",
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "venue": "In Proceedings of The 32nd International Conference on Machine Learning, pages 448--456, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "karpathy2014large",
+      "raw": "A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei. Large-scale video classification with convolutional neural networks. In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1725--1732. IEEE, 2014",
+      "authors": "A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei",
+      "title": "Large-scale video classification with convolutional neural networks",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1725--1732. IEEE, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "A. Krizhevsky, I. Sutskever, and G. E. Hinton. Imagenet classification with deep convolutional neural networks. In Advances in neural information processing systems, pages 1097--1105, 2012",
+      "authors": "A. Krizhevsky, I. Sutskever, and G. E. Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In Advances in neural information processing systems, pages 1097--1105, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lavin2015fast",
+      "raw": "A. Lavin. Fast algorithms for convolutional neural networks. arXiv preprint arXiv:1509.09308, 2015",
+      "authors": "A. Lavin",
+      "title": "Fast algorithms for convolutional neural networks",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1509.09308",
+      "doi": null
+    },
+    {
+      "key": "lee2014deeply",
+      "raw": "C.-Y. Lee, S. Xie, P. Gallagher, Z. Zhang, and Z. Tu. Deeply-supervised nets. arXiv preprint arXiv:1409.5185, 2014",
+      "authors": "C.-Y. Lee, S. Xie, P. Gallagher, Z. Zhang, and Z. Tu",
+      "title": "Deeply-supervised nets",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.5185",
+      "doi": null
+    },
+    {
+      "key": "long2015fully",
+      "raw": "J. Long, E. Shelhamer, and T. Darrell. Fully convolutional networks for semantic segmentation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 3431--3440, 2015",
+      "authors": "J. Long, E. Shelhamer, and T. Darrell",
+      "title": "Fully convolutional networks for semantic segmentation",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 3431--3440, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "movshovitz2015ontological",
+      "raw": "Y. Movshovitz-Attias, Q. Yu, M. C. Stumpe, V. Shet, S. Arnoud, and L. Yatziv. Ontological supervision for fine grained classification of street view storefronts. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1693--1702, 2015",
+      "authors": "Y. Movshovitz-Attias, Q. Yu, M. C. Stumpe, V. Shet, S. Arnoud, and L. Yatziv",
+      "title": "Ontological supervision for fine grained classification of street view storefronts",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1693--1702, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pascanu2012difficulty",
+      "raw": "R. Pascanu, T. Mikolov, and Y. Bengio. On the difficulty of training recurrent neural networks. arXiv preprint arXiv:1211.5063, 2012",
+      "authors": "R. Pascanu, T. Mikolov, and Y. Bengio",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "arXiv preprint 2012",
+      "year": 2012,
+      "arxivId": "1211.5063",
+      "doi": null
+    },
+    {
+      "key": "psichogios1993svd",
+      "raw": "D. C. Psichogios and L. H. Ungar. Svd-net: an algorithm that automatically selects network structure. IEEE transactions on neural networks/a publication of the IEEE Neural Networks Council, 5(3):513--515, 1993",
+      "authors": "D. C. Psichogios and L. H. Ungar",
+      "title": "Svd-net: an algorithm that automatically selects network structure",
+      "venue": "IEEE transactions on neural networks/a publication of the IEEE Neural Networks Council, 5(3):513--515, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "russakovsky2014imagenet",
+      "raw": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, et al. Imagenet large scale visual recognition challenge. 2014",
+      "authors": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, et al",
+      "title": "Imagenet large scale visual recognition challenge",
+      "venue": "2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schroff2015facenet",
+      "raw": "F. Schroff, D. Kalenichenko, and J. Philbin. Facenet: A unified embedding for face recognition and clustering. arXiv preprint arXiv:1503.03832, 2015",
+      "authors": "F. Schroff, D. Kalenichenko, and J. Philbin",
+      "title": "Facenet: A unified embedding for face recognition and clustering",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1503.03832",
+      "doi": null
+    },
+    {
+      "key": "simonyan2014very",
+      "raw": "K. Simonyan and A. Zisserman. Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556, 2014",
+      "authors": "K. Simonyan and A. Zisserman",
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.1556",
+      "doi": null
+    },
+    {
+      "key": "icml2013_sutskever13",
+      "raw": "I. Sutskever, J. Martens, G. Dahl, and G. Hinton. On the importance of initialization and momentum in deep learning. In Proceedings of the 30th International Conference on Machine Learning (ICML-13), volume 28, pages 1139--1147. JMLR Workshop and Conference Proceedings, May 2013",
+      "authors": "I. Sutskever, J. Martens, G. Dahl, and G. Hinton",
+      "title": "On the importance of initialization and momentum in deep learning",
+      "venue": "In Proceedings of the 30th International Conference on Machine Learning (ICML-13), volume 28, pages 1139--1147. JMLR Workshop and Conference Proceedings, May 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "szegedy2015going",
+      "raw": "C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, and A. Rabinovich. Going deeper with convolutions. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1--9, 2015",
+      "authors": "C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, and A. Rabinovich",
+      "title": "Going deeper with convolutions",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1--9, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rmsprop",
+      "raw": "T. Tieleman and G. Hinton. Divide the gradient by a running average of its recent magnitude. COURSERA: Neural Networks for Machine Learning, 4, 2012. Accessed: 2015-11-05",
+      "authors": "T. Tieleman and G. Hinton",
+      "title": "Divide the gradient by a running average of its recent magnitude",
+      "venue": "COURSERA: Neural Networks for Machine Learning, 4, 2012 Accessed: 2015-11-05",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "toshev2014deeppose",
+      "raw": "A. Toshev and C. Szegedy. Deeppose: Human pose estimation via deep neural networks. In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1653--1660. IEEE, 2014",
+      "authors": "A. Toshev and C. Szegedy",
+      "title": "Deeppose: Human pose estimation via deep neural networks",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1653--1660. IEEE, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2013learning",
+      "raw": "N. Wang and D.-Y. Yeung. Learning a deep compact image representation for visual tracking. In Advances in Neural Information Processing Systems, pages 809--817, 2013",
+      "authors": "N. Wang and D.-Y. Yeung",
+      "title": "Learning a deep compact image representation for visual tracking",
+      "venue": "In Advances in Neural Information Processing Systems, pages 809--817, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1161,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4121,
+      "numbers": 3,
+      "citations": 21
+    },
+    {
+      "kind": "method",
+      "title": "General Design Principles",
+      "chars": 2929,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Factorizing Convolutions with Large Filter Size",
+      "chars": 1222,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Factorization into smaller convolutions",
+      "chars": 3461,
+      "numbers": 4,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Spatial Factorization into Asymmetric Convolutions",
+      "chars": 2156,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Utility of Auxiliary Classifiers",
+      "chars": 1754,
+      "numbers": 0,
+      "citations": 5
+    },
+    {
+      "kind": "method",
+      "title": "Efficient Grid Size Reduction",
+      "chars": 2565,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Inception-v2",
+      "chars": 1348,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Model Regularization via Label Smoothing",
+      "chars": 4014,
+      "numbers": 4,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Training Methodology",
+      "chars": 593,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Performance on Lower Resolution Input",
+      "chars": 3066,
+      "numbers": 1,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Results and Comparisons",
+      "chars": 3270,
+      "numbers": 4,
+      "citations": 2
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 1759,
+      "numbers": 0,
+      "citations": 2
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 2,
+      "background": 21,
+      "traversable": 1
+    },
+    "foundation": null,
+    "edges": [
+      {
+        "key": "he2015delving",
+        "stance": "compares",
+        "cue": "outperforms",
+        "sentence": "Still our solution uses much less computation than the best published results based on denser networks: our model outperforms the results of He et al -- cutting the top- (top- ) error by ( ) relative, respectively -- while being six times cheaper computationally and using at least five times less parameters (estimated).",
+        "section": "Conclusions",
+        "sectionKind": "conclusion",
+        "title": "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification",
+        "authors": "K. He, X. Zhang, S. Ren, and J. Sun",
+        "year": 2015,
+        "arxivId": "1502.01852",
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 195.30691528320312,
+              "y0": 385.94830322265625,
+              "x1": 286.3651123046875,
+              "y1": 395.9109191894531
+            },
+            {
+              "x0": 50.11195373535156,
+              "y0": 397.9032897949219,
+              "x1": 286.36505126953125,
+              "y1": 407.86590576171875
+            },
+            {
+              "x0": 50.11195373535156,
+              "y0": 409.8582763671875,
+              "x1": 286.364990234375,
+              "y1": 419.8208923339844
+            },
+            {
+              "x0": 50.11195373535156,
+              "y0": 421.8132629394531,
+              "x1": 81.55390930175781,
+              "y1": 431.77587890625
+            }
+          ]
+        }
+      },
+      {
+        "key": "ioffe2015batch",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "This is achieved with relatively modest ( ) increase in computational cost compared to the network described in Ioffe et al .",
+        "section": "Conclusions",
+        "sectionKind": "conclusion",
+        "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+        "authors": "S. Ioffe and C. Szegedy",
+        "year": 2015,
+        "arxivId": "1502.03167",
+        "inCorpus": true,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 50.11195373535156,
+              "y0": 373.9923095703125,
+              "x1": 286.3603515625,
+              "y1": 383.9549255371094
+            },
+            {
+              "x0": 50.11195373535156,
+              "y0": 385.94830322265625,
+              "x1": 169.72296142578125,
+              "y1": 395.9109191894531
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios.",
+      "anchorText": "Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Abstract",
+      "sectionKind": "abstract",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 122.16151428222656,
+            "y0": 335.8999938964844,
+            "x1": 286.3650207519531,
+            "y1": 345.8625793457031
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 347.85498046875,
+            "x1": 286.36505126953125,
+            "y1": 357.81756591796875
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 359.8099670410156,
+            "x1": 286.364990234375,
+            "y1": 369.7725524902344
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 371.76495361328125,
+            "x1": 286.3650207519531,
+            "y1": 381.7275390625
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 383.720947265625,
+            "x1": 286.3651123046875,
+            "y1": 393.68353271484375
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 395.6759338378906,
+            "x1": 201.7825927734375,
+            "y1": 405.6385192871094
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We hypothesize that the reason for that is the strong correlation between adjacent unit results in much less loss of information during dimension reduction, if the outputs are used in a spatial aggregation context.",
+      "anchorText": "We hypothesize that the reason for that is the strong correlation between adjacent unit results in much less loss of information during dimension reduction, if the outputs are used in a spatial aggregation context.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "General Design Principles",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 386.3807373046875,
+            "y0": 242.2075958251953,
+            "x1": 545.1148071289062,
+            "y1": 252.17019653320312
+          },
+          {
+            "x0": 328.7869567871094,
+            "y0": 254.16261291503906,
+            "x1": 545.1146240234375,
+            "y1": 264.1252136230469
+          },
+          {
+            "x0": 328.7869567871094,
+            "y0": 266.11859130859375,
+            "x1": 545.1148071289062,
+            "y1": 276.0812072753906
+          },
+          {
+            "x0": 328.7869567871094,
+            "y0": 278.0735778808594,
+            "x1": 545.1148071289062,
+            "y1": 288.03619384765625
+          },
+          {
+            "x0": 328.7869567871094,
+            "y0": 290.028564453125,
+            "x1": 378.6895751953125,
+            "y1": 299.9911804199219
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "However, we have observed that the quality of the network is relatively stable to variations as long as the principles from Section are observed.",
+      "anchorText": "However, we have observed that the quality of the network is relatively stable to variations as long as the principles from Section",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Inception-v2",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "principles"
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 308.86199951171875,
+            "y0": 368.93035888671875,
+            "x1": 545.1151123046875,
+            "y1": 378.8929748535156
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 380.8853454589844,
+            "x1": 545.1148681640625,
+            "y1": 390.84796142578125
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 392.84033203125,
+            "x1": 361.3748474121094,
+            "y1": 402.8029479980469
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For brevity, let us omit the dependence of and on example .",
+      "anchorText": "For brevity, let us omit the dependence of",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "For brevity",
+      "section": "Model Regularization via Label Smoothing",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 383.5808410644531,
+            "y0": 571.804443359375,
+            "x1": 545.1144409179688,
+            "y1": 581.7670288085938
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 583.7594604492188,
+            "x1": 317.16082763671875,
+            "y1": 593.7220458984375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, this happens because the model becomes too confident about its predictions.",
+      "anchorText": "Intuitively, this happens because the model becomes too confident about its predictions.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Model Regularization via Label Smoothing",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 156.20370483398438,
+            "y0": 241.7794952392578,
+            "x1": 286.3650817871094,
+            "y1": 251.74209594726562
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 253.73451232910156,
+            "x1": 267.6154479980469,
+            "y1": 263.6971130371094
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 5,
+    "cited": 0,
+    "shown": 0,
+    "bare": 5
+  }
+}

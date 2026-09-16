@@ -723,7 +723,12 @@ def document_title(tex: str) -> str:
     full title is in the LaTeX, so it does not have to be typed by hand at all.
     """
     source = strip_comments(tex)
-    match = re.search(r"\\title\s*(?:\[[^\]]*\])?\s*\{", source)
+    # Conference classes replace \title with their own command, and two of the papers
+    # in the library have no \title at all — CLIP and the RLHF paper are both ICML
+    # submissions using \icmltitle.
+    match = re.search(
+        r"\\(?:title|icmltitle|inserttitle|papertitle)\s*(?:\[[^\]]*\])?\s*\{", source
+    )
     if match is None:
         return ""
     group = _match_brace_group(source, match.end() - 1)
@@ -732,7 +737,15 @@ def document_title(tex: str) -> str:
     # \thanks and \footnote inside a title carry author affiliations, which are not
     # part of the title and would defeat an exact match.
     body = re.sub(r"\\(?:thanks|footnote|footnotemark)\s*\{[^{}]*\}", "", group[0])
-    return re.sub(r"\s+", " ", strip_markup(body)).strip()
+    # Expanded before stripping, because a paper's own name is often a macro:
+    # \title{\bertscore: Evaluating Text Generation with BERT}. Stripping an
+    # unexpanded macro deletes the name and leaves a title starting with a colon.
+    body = expand_macros(body, user_macros(source))
+    plain = re.sub(r"\s+", " ", strip_markup(body)).strip()
+    # Macro expansion leaves a space where the macro's braces were, so "\llama:"
+    # becomes "LLaMA :". Harmless for matching, since folding drops punctuation, but
+    # it is a heading a reader sees.
+    return re.sub(r"\s+([:;,.!?])", r"\1", plain)
 
 
 def longest_anchorable_run(tex: str, *, min_chars: int = 24) -> str:

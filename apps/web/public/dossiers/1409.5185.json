@@ -1,0 +1,2162 @@
+{
+  "id": "1409.5185",
+  "title": "Deeply-Supervised Nets",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1409.5185",
+  "numbers": [
+    {
+      "value": "30%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Only the top 30% activations are shown in each of the feature maps.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 300.9854736328125,
+            "y0": 468.7823486328125,
+            "x1": 504.0032653808594,
+            "y1": 478.7449645996094
+          },
+          {
+            "x0": 108.0,
+            "y0": 479.7413330078125,
+            "x1": 176.33348083496094,
+            "y1": 489.7039489746094
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Network architecture for the proposed deeply-supervised nets (DSN).",
+      "label": "fig:architecture",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "(a) DSN illustration",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(b) functions",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 187.1123046875,
+            "y0": 264.48248291015625,
+            "x1": 464.23193359375,
+            "y1": 274.4450988769531
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Classification error on MNIST test. (a) shows test error of competing methods; (b) shows test error w.r.t. the training sample size. (c) training and testing error comparison.",
+      "label": "fig:mnist",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(a)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(b)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(c)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.46185302734375,
+            "y0": 502.94146728515625,
+            "x1": 504.003173828125,
+            "y1": 512.904052734375
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 513.9004516601562,
+            "x1": 432.5515441894531,
+            "y1": 523.863037109375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "MNIST classification result (without using data augmentation).",
+      "label": "",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Error(%)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.53",
+            "value": "0.53",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Stochastic Pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.47",
+            "value": "0.47",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.47",
+            "value": "0.47",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.45",
+            "value": "0.45",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.39",
+            "value": "0.39",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 197.5627899169922,
+            "y0": 81.97749328613281,
+            "x1": 449.65631103515625,
+            "y1": 91.94009399414062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "MNIST classification result (without using data augmentation).",
+      "label": "fig:visualization",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(a) by DSN (b) by CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 197.5627899169922,
+            "y0": 81.97749328613281,
+            "x1": 449.65631103515625,
+            "y1": 91.94009399414062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Method comparison on CIFAR-10 and CIFAR-100 test data.",
+      "label": "cifar100-table",
+      "numericCells": 13,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "CIFAR-10 classification error",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CIFAR-100 classification error",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[b]0.49 ll Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Error(%)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "No Data Augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Stochastic Pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.13",
+            "value": "15.13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.68",
+            "value": "11.68",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.41",
+            "value": "10.41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "9.78",
+            "value": "9.78",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "With Data Augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.38",
+            "value": "9.38",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DropConnect",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.32",
+            "value": "9.32",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "8.81",
+            "value": "8.81",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "8.22",
+            "value": "8.22",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "[b]0.49 ll Method",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "Error(%)",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Stochastic Pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "42.51",
+            "value": "42.51",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "38.57",
+            "value": "38.57",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Tree based Priors",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "36.85",
+            "value": "36.85",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "35.68",
+            "value": "35.68",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "34.57",
+            "value": "34.57",
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 203.1417999267578,
+            "y0": 652.680419921875,
+            "x1": 444.07720947265625,
+            "y1": 662.6430053710938
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 6",
+      "caption": "Method comparison on CIFAR-10 and CIFAR-100 test data.",
+      "label": "cifar100-table",
+      "numericCells": 8,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Error(%)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "No Data Augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Stochastic Pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.13",
+            "value": "15.13",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.68",
+            "value": "11.68",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.41",
+            "value": "10.41",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "9.78",
+            "value": "9.78",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "With Data Augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.38",
+            "value": "9.38",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "DropConnect",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.32",
+            "value": "9.32",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "8.81",
+            "value": "8.81",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "8.22",
+            "value": "8.22",
+            "emphasised": true,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 203.1417999267578,
+            "y0": 652.680419921875,
+            "x1": 444.07720947265625,
+            "y1": 662.6430053710938
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "Method comparison on CIFAR-10 and CIFAR-100 test data.",
+      "label": "cifar100-table",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Error(%)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Stochastic Pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "42.51",
+            "value": "42.51",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.57",
+            "value": "38.57",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Tree based Priors",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.85",
+            "value": "36.85",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "35.68",
+            "value": "35.68",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "34.57",
+            "value": "34.57",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 203.1417999267578,
+            "y0": 652.680419921875,
+            "x1": 444.07720947265625,
+            "y1": 662.6430053710938
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "SVHN classification error.",
+      "label": "svhn-table",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Error(%)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Stochastic Pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.80",
+            "value": "2.80",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Maxout Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.47",
+            "value": "2.47",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Network in Network",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.35",
+            "value": "2.35",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Dropconnect",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.94",
+            "value": "1.94",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "DSN (ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "1.92",
+            "value": "1.92",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 270.89678955078125,
+            "y0": 143.9184112548828,
+            "x1": 376.3210144042969,
+            "y1": 153.88101196289062
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}",
+    "\\cX": "{\\bf X}",
+    "\\cW": "{\\bf \\mathsf{W}}",
+    "\\cZ": "{\\bf Z}",
+    "\\cQ": "{\\bf Q}",
+    "\\sw": "{\\bf w}",
+    "\\ow": "{\\bf w}^{(out)}",
+    "\\cL": "\\mathcal{L}",
+    "\\sL": "\\ell",
+    "\\cg": "{\\bf g}",
+    "\\sg": "{\\bf \\hat{g}}",
+    "\\cE": "{\\mathbb{E}}",
+    "\\aP": "{\\mathcal{P}}",
+    "\\aQ": "{\\mathcal{Q}}",
+    "\\gp": "{\\bf gp}",
+    "\\gq": "{\\bf gq}",
+    "\\gf": "{\\bf gf}",
+    "\\cWs": "{\\bf \\mathsf{W}}^{\\star}",
+    "\\qed": "\\nobreak \\ifvmode \\relax \\else\n      \\ifdim\\lastskip<1.5em \\hskip-\\lastskip\n      \\hskip1.5em plus0em minus0.5em \\fi \\nobreak\n      \\vrule height0.75em width0.5em depth0.25em\\fi"
+  },
+  "references": [
+    {
+      "key": "pretrain",
+      "raw": "Y. Bengio, P. Lamblin, D. Popovici, H. Larochelle, U. D. Montr\u00e9al, and M. Qu\u00e9bec. Greedy layer-wise training of deep networks. In NIPS, 2007",
+      "authors": "Y. Bengio, P. Lamblin, D. Popovici, H. Larochelle, U. D. Montr\u00e9al, and M. Qu\u00e9bec",
+      "title": "Greedy layer-wise training of deep networks",
+      "venue": "In NIPS, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "theano",
+      "raw": "J. Bergstra, O. Breuleux, F. Bastien, P. Lamblin, R. Pascanu, G. Desjardins, J. Turian, D. Warde-Farley, and Y. Bengio. Theano: a CPU and GPU math expression compiler. In Proceedings of the Python for Scientific Computing Conference (SciPy), June 2010",
+      "authors": "J. Bergstra, O. Breuleux, F. Bastien, P. Lamblin, R. Pascanu, G. Desjardins, J. Turian, D. Warde-Farley, and Y. Bengio",
+      "title": "Theano: a CPU and GPU math expression compiler",
+      "venue": "In Proceedings of the Python for Scientific Computing Conference (SciPy), June 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bottou98",
+      "raw": "L. Bottou. Online algorithms and stochastic approximations. Cambridge University Press, 1998",
+      "authors": "L. Bottou",
+      "title": "Online algorithms and stochastic approximations",
+      "venue": "Cambridge University Press, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Dahl12",
+      "raw": "G. E. Dahl, D. Yu, L. Deng, and A. Acero. Context-dependent pre-trained deep neural networks for large-vocabulary speech recognition. IEEE Tran. on Audio, Speech, and Lang. Proc., 20(1):30--42, 2012",
+      "authors": "G. E. Dahl, D. Yu, L. Deng, and A. Acero",
+      "title": "Context-dependent pre-trained deep neural networks for large-vocabulary speech recognition",
+      "venue": "IEEE Tran. on Audio, Speech, and Lang. Proc., 20(1):30--42, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DeCAF",
+      "raw": "J. Donahue, Y. Jia, O. Vinyals, J. Hoffman, N. Zhang, E. Tzeng, and T. Darrell. Decaf: A deep convolutional activation feature for generic visual recognition. In arXiv, 2013",
+      "authors": "J. Donahue, Y. Jia, O. Vinyals, J. Hoffman, N. Zhang, E. Tzeng, and T. Darrell",
+      "title": "Decaf: A deep convolutional activation feature for generic visual recognition",
+      "venue": "In arXiv, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Eigen14",
+      "raw": "D. Eigen, J. Rolfe, R. Fergus, and Y. LeCun. Understanding deep architectures using a recursive convolutional network. In arXiv:1312.1847v2, 2014",
+      "authors": "D. Eigen, J. Rolfe, R. Fergus, and Y. LeCun",
+      "title": "Understanding deep architectures using a recursive convolutional network",
+      "venue": "In 2014",
+      "year": 2014,
+      "arxivId": "1312.1847",
+      "doi": null
+    },
+    {
+      "key": "Elman91",
+      "raw": "J. L. Elman. Distributed representations, simple recurrent networks, and grammatical. Machine Learning, 7:195--225, 1991",
+      "authors": "J. L. Elman",
+      "title": "Distributed representations, simple recurrent networks, and grammatical",
+      "venue": "Machine Learning, 7:195--225, 1991",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Glorot10",
+      "raw": "X. Glorot and Y. Bengio. Understanding the difficulty of training deep feedforward neural networks. In AISTAT, 2010",
+      "authors": "X. Glorot and Y. Bengio",
+      "title": "Understanding the difficulty of training deep feedforward neural networks",
+      "venue": "In AISTAT, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "maxout",
+      "raw": "I. J. Goodfellow, D. Warde-Farley, M. Mirza, A. C. Courville, and Y. Bengio. Maxout networks. In ICML, 2013",
+      "authors": "I. J. Goodfellow, D. Warde-Farley, M. Mirza, A. C. Courville, and Y. Bengio",
+      "title": "Maxout networks",
+      "venue": "In ICML, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton06",
+      "raw": "G. E. Hinton, S. Osindero, and Y. W. Teh. A fast learning algorithm for deep belief nets. Neural computation, 18:1527--1554, 2006",
+      "authors": "G. E. Hinton, S. Osindero, and Y. W. Teh",
+      "title": "A fast learning algorithm for deep belief nets",
+      "venue": "Neural computation, 18:1527--1554, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dropout",
+      "raw": "G. E. Hinton, N. Srivastava, A. Krizhevsky, I. Sutskever, and R. Salakhutdinov. Improving neural networks by preventing co-adaptation of feature detectors. In CoRR, abs/1207.0580, 2012",
+      "authors": "G. E. Hinton, N. Srivastava, A. Krizhevsky, I. Sutskever, and R. Salakhutdinov",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "venue": "In CoRR, abs/1207.0580, 2012",
+      "year": 2012,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "CNN",
+      "raw": "F. J. Huang and Y. LeCun. Large-scale learning with svm and convolutional for generic object categorization. In CVPR, 2006",
+      "authors": "F. J. Huang and Y. LeCun",
+      "title": "Large-scale learning with svm and convolutional for generic object categorization",
+      "venue": "In CVPR, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "objREC",
+      "raw": "K. Jarrett, K. Kavukcuoglu, M. Ranzato, and Y. LeCun. What is the best multi-stage architecture for object recognition? In ICCV, 2009",
+      "authors": "K. Jarrett, K. Kavukcuoglu, M. Ranzato, and Y. LeCun",
+      "title": "What is the best multi-stage architecture for object recognition?",
+      "venue": "In ICCV, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "caffe",
+      "raw": "Y. Jia. Caffe: An open source convolutional architecture for fast feature embedding. http://caffe.berkeleyvision.org/, 2013",
+      "authors": "Y. Jia",
+      "title": "Caffe: An open source convolutional architecture for fast feature embedding",
+      "venue": "2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "imagenet",
+      "raw": "A. Krizhevsky, I. Sutskever, and G. E. Hinton. Imagenet classification with deep convolutional neural networks. In NIPS, 2012",
+      "authors": "A. Krizhevsky, I. Sutskever, and G. E. Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In NIPS, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Le10",
+      "raw": "Q. Le, J. Ngiam, Z. Chen, D. Chia, P. W. Koh, and A. Ng. Tiled convolutional neural networks. In NIPS, 2010",
+      "authors": "Q. Le, J. Ngiam, Z. Chen, D. Chia, P. W. Koh, and A. Ng",
+      "title": "Tiled convolutional neural networks",
+      "venue": "In NIPS, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lecun98",
+      "raw": "Y. Lecun, L. Bottou, Y. Bengio, and P. Haffner. Gradient-based learning applied to document recognition. In Proceedings of the IEEE, 1998",
+      "authors": "Y. Lecun, L. Bottou, Y. Bengio, and P. Haffner",
+      "title": "Gradient-based learning applied to document recognition",
+      "venue": "In Proceedings of the IEEE, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lee09",
+      "raw": "H. Lee, R. Grosse, R. Ranganath, and A. Y. Ng. Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations. In ICML, 2009",
+      "authors": "H. Lee, R. Grosse, R. Ranganath, and A. Y. Ng",
+      "title": "Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations",
+      "venue": "In ICML, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dropcon",
+      "raw": "W. Li, M. Zeiler, S. Zhang, Y. LeCun, and R. Fergus. Regularization of neural networks using dropconnect. In ICML, 2013",
+      "authors": "W. Li, M. Zeiler, S. Zhang, Y. LeCun, and R. Fergus",
+      "title": "Regularization of neural networks using dropconnect",
+      "venue": "In ICML, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "NIN",
+      "raw": "M. Lin, Q. Chen, and S. Yan. Network in network. In ICLR, 2014",
+      "authors": "M. Lin, Q. Chen, and S. Yan",
+      "title": "Network in network",
+      "venue": "In ICLR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Loh13",
+      "raw": "P.-L. Loh and M. J. Wainwright. Regularized m-estimators with nonconvexity : statistical and algorithmic theory for local optima. In arXiv:1305.2436v1, 2013",
+      "authors": "P.-L. Loh and M. J. Wainwright",
+      "title": "Regularized m-estimators with nonconvexity : statistical and algorithmic theory for local optima",
+      "venue": "In 2013",
+      "year": 2013,
+      "arxivId": "1305.2436",
+      "doi": null
+    },
+    {
+      "key": "Pascanu14",
+      "raw": "R. Pascanu, T. Mikolov, and Y. Bengio. On the difficulty of training recurrent neural networks. In arXiv:1211.5063v2, 2014",
+      "authors": "R. Pascanu, T. Mikolov, and Y. Bengio",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "In 2014",
+      "year": 2014,
+      "arxivId": "1211.5063",
+      "doi": null
+    },
+    {
+      "key": "Rakhlin12",
+      "raw": "A. Rakhlin, O. Shamir, and K. Sridharan. Stochastic gradient descent for non-smooth optimization: Convergence results and optimal averaging schemes. In ICML, 2012",
+      "authors": "A. Rakhlin, O. Shamir, and K. Sridharan",
+      "title": "Stochastic gradient descent for non-smooth optimization: Convergence results and optimal averaging schemes",
+      "venue": "In ICML, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mulCOL",
+      "raw": "J. Schmidhuber. Multi-column deep neural networks for image classification. In CVPR, 2012",
+      "authors": "J. Schmidhuber",
+      "title": "Multi-column deep neural networks for image classification",
+      "venue": "In CVPR, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Shamir13",
+      "raw": "O. Shamir and T. Zhang. Stochastic gradient descent for non-smooth optimization: Convergence results and optimal averaging schemes. In ICML, 2013",
+      "authors": "O. Shamir and T. Zhang",
+      "title": "Stochastic gradient descent for non-smooth optimization: Convergence results and optimal averaging schemes",
+      "venue": "In ICML, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Snoek12",
+      "raw": "J. Snoek, R. P. Adams, and H. Larochelle. Nonparametric guidance of autoencoder representations using label information. J. of Machine Learning Research, 13:2567--2588, 2012",
+      "authors": "J. Snoek, R. P. Adams, and H. Larochelle",
+      "title": "Nonparametric guidance of autoencoder representations using label information",
+      "venue": "J. of Machine Learning Research, 13:2567--2588, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tree",
+      "raw": "N. Srivastava and R. Salakhutdinov. Discriminative transfer learning with tree-based priors. In NIPS, 2013",
+      "authors": "N. Srivastava and R. Salakhutdinov",
+      "title": "Discriminative transfer learning with tree-based priors",
+      "venue": "In NIPS, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Tang13",
+      "raw": "Y. Tang. Deep learning using linear support vector machines. In Workshop on Representational Learning, ICML, 2013",
+      "authors": "Y. Tang",
+      "title": "Deep learning using linear support vector machines",
+      "venue": "In Workshop on Representational Learning, ICML, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vapnik",
+      "raw": "V. N. Vapnik. The nature of statistical learning theory. In Springer, New York, 1995",
+      "authors": "V. N. Vapnik",
+      "title": "The nature of statistical learning theory",
+      "venue": "In Springer, New York, 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Weston12",
+      "raw": "J. Weston and F. Ratle. Deep learning via semi-supervised embedding. In ICML, 2008",
+      "authors": "J. Weston and F. Ratle",
+      "title": "Deep learning via semi-supervised embedding",
+      "venue": "In ICML, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zeiler13",
+      "raw": "M. Zeiler and R. Fergus. Visualizing and understanding convolutional networks. In arXiv 1311.2901, 2013",
+      "authors": "M. Zeiler and R. Fergus",
+      "title": "Visualizing and understanding convolutional networks",
+      "venue": "In arXiv 1311.2901, 2013",
+      "year": 2013,
+      "arxivId": "1311.2901",
+      "doi": null
+    },
+    {
+      "key": "SPool",
+      "raw": "M. D. Zeiler and R. Fergus. Stochastic pooling for regularization of deep convolutional neural networks. In ICLR, 2013",
+      "authors": "M. D. Zeiler and R. Fergus",
+      "title": "Stochastic pooling for regularization of deep convolutional neural networks",
+      "venue": "In ICLR, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "& & \\cZ^{(m)} = f(\\cQ^{(m)}), \\;\\; \tand \\quad \\cZ^{(0)}\\equiv \\cX, \\\\\n  & & \\cQ^{(m)} = \\cW^{(m)} * \\cZ^{(m-1)}.",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:Z",
+        "eq:Q"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "{\\lVert \\ow \\rVert^2 + \\cL(\\cW, \\ow) + \\sum_{m=1}^{M-1} \\alpha_m  [\\lVert \\sw^{(m)} \\rVert^2 + \\sL(\\cW, \\sw^{(m)}) - \\gamma]_+,}",
+      "environment": "equation",
+      "labels": [
+        "eq:total2"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "{\\cL(\\cW, \\sw^{(out)})  = \\sum_{y_k \\ne y} [1- <\\sw^{(out)},  \\phi(\\cZ^{(M)}, y) - \\phi(\\cZ^{(M)}, y_k)>]_{+}^2 }",
+      "environment": "equation",
+      "labels": [
+        "eq:layer"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "{\\sL(\\cW, \\sw^{(m)})  = \\sum_{y_k \\ne y} [1- <\\sw^{(m)}, \\phi(\\cZ^{(m)}, y) - \\phi(\\cZ^{(m)}, y_k)>]_{+}^2 }",
+      "environment": "equation",
+      "labels": [
+        "eq:closs"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\begin{split}\n& {\\scriptstyle \\frac{\\partial F}{\\partial \\sw^{(out)}} = 2\\sw^{(out)} - 2 \\sum_{y_k \\ne y} [\\phi(\\cZ^{(M)}, y) - \\phi(\\cZ^{(M)}, y_k)][1- <\\sw^{(out)},  \\phi(\\cZ^{(M)}, y) - \\phi(\\cZ^{(M)}, y_k)>]_{+}} \\\\\n& {\\scriptstyle \\frac{\\partial F}{\\partial \\sw^{(m)}}} = \\begin{cases} {\\scriptstyle \\alpha_m \\left\\{ 2\\sw^{(m)} - 2 \\sum_{y_k \\ne y} [\\phi(\\cZ^{(m)}, y) - \\phi(\\cZ^{(m)}, y_k)][1- <\\sw^{(m)},  \\phi(\\cZ^{(m)}, y) - \\phi(\\cZ^{(m)}, y_k)>]_{+} \\right\\} },\n\\quad \\text{otherwise} \\\\\n0, \\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad \\text{if} \\;\\; {\\scriptstyle \\lVert \\sw^{(m)} \\rVert^2+\\sL(\\cW, \\sw^{(m)}) \\le \\gamma}\n\\end{cases}\n\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "eq:grad"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "F(\\cW) \\equiv \\aP(\\cW) + \\aQ(\\cW),",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "F(\\cW') \\ge F(\\cW) + <\\cg, \\cW'-\\cW> + \\frac{\\lambda}{2} \\lVert \\cW'-\\cW \\rVert^2,",
+      "environment": "equation",
+      "labels": [
+        "eq:overall"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\cE[\\lVert \\cW_T - \\cW^{\\star} \\rVert^2] \\le \\frac{12G^2}{(\\lambda_1+\\lambda_2)^2 T}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\cE[\\lVert \\cW_T - \\cWs \\rVert^2] \\le e^{-2\\lambda (\\ln T + 0.578)} D + (T-1) e^{-2\\lambda \\ln(T-1)} G^2",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\cE[\\lVert \\cW_{t+1} - \\cWs \\rVert^2] &=& \\cE[\\lVert \\Pi_{\\mathcal{W}}(\\cW_{t} - \\eta_t \\hat{\\gf}_t) - \\cWs \\rVert^2] \\nonumber \\\\\n &\\le& \\cE[\\lVert \\cW_{t} - \\eta_t \\hat{\\gf}_t - \\cWs \\rVert^2] \\nonumber \\\\\n&=& \\cE[\\lVert \\cW_{t} - \\cWs \\rVert^2] - 2 \\eta_t \\cE[<\\gf_t, \\cW_t-\\cWs>] + \\eta_t \\cE[\\lVert \\hat{\\gf}_t \\rVert^2] \\nonumber \\\\\n&\\le& (1-2\\lambda/t) \\cE[\\lVert \\cW_{t} - \\cWs \\rVert^2] + G^2/t^2",
+      "environment": "eqnarray",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\cE[\\lVert \\cW_T - \\cWs \\rVert^2] &\\le& e^{-2\\lambda(\\frac{1}{1}+\\frac{1}{2}+,..,\\frac{1}{T})} D + \\sum_{t=1}^{T-1} \\frac{G^2}{t^2} e^{-2\\lambda(\\frac{1}{t}+\\frac{1}{t+1}+,..,\\frac{1}{T-1})} \\nonumber \\\\\n&=& e^{-2\\lambda (\\ln T + 0.578)} D + G^2 \\sum_{t=1}^{T-1} e^{-2 \\ln(t)- 2 \\lambda(\\ln(T-1)-2\\lambda \\ln(t)} \\nonumber \\\\\n&\\le& e^{-2\\lambda (\\ln T + 0.578)} D + (T-1) e^{-2\\lambda \\ln(T-1)} G^2 \\nonumber \\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad  \\square",
+      "environment": "eqnarray",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1107,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4138,
+      "numbers": 0,
+      "citations": 35
+    },
+    {
+      "kind": "method",
+      "title": "Deeply-Supervised Nets",
+      "chars": 412,
+      "numbers": 0,
+      "citations": 5
+    },
+    {
+      "kind": "method",
+      "title": "Motivation",
+      "chars": 2552,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Formulation",
+      "chars": 5217,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Stochastic Gradient Descent View",
+      "chars": 3656,
+      "numbers": 4,
+      "citations": 10
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 1920,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "experiments",
+      "title": "MNIST",
+      "chars": 1412,
+      "numbers": 9,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "CIFAR-10 and CIFAR-100",
+      "chars": 2602,
+      "numbers": 6,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Street View House Numbers",
+      "chars": 790,
+      "numbers": 3,
+      "citations": 2
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 316,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 276,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 5,
+      "extends": 0,
+      "contests": 1,
+      "compares": 0,
+      "background": 23,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "Rakhlin12",
+      "stance": "inherits",
+      "cue": "Based on",
+      "sentence": "If we use , then at time stamp Since , it can be directly seen that Based on lemma 1 in , this upper bound directly holds. Following the assumptions in lemma , but now we assume since and are not always readily available, then started from the convergence rate is bounded by Let , we have Thus, Therefore, with , With being small, we have Let be -strongly convex and be -strongly convex near optimal and denote and as the solution after iterations when applying SGD on and respectively.",
+      "section": "Stochastic Gradient Descent View",
+      "sectionKind": "method",
+      "title": "Stochastic gradient descent for non-smooth optimization: Convergence results and optimal averaging schemes",
+      "authors": "A. Rakhlin, O. Shamir, and K. Sridharan",
+      "year": 2012,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 491.0889587402344,
+            "y0": 247.9439697265625,
+            "x1": 504.00048828125,
+            "y1": 257.90655517578125
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 258.9029541015625,
+            "x1": 293.9718322753906,
+            "y1": 268.86553955078125
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "CNN",
+        "stance": "contests",
+        "cue": "instead of",
+        "sentence": "In , an SVM classifier is used for the output layer, instead of the standard softmax function in the CNN .",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Large-scale learning with svm and convolutional for generic object categorization",
+        "authors": "F. J. Huang and Y. LeCun",
+        "year": 2006,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 351.814697265625,
+              "y0": 488.09228515625,
+              "x1": 504.0032958984375,
+              "y1": 498.0549011230469
+            },
+            {
+              "x0": 108.0,
+              "y0": 499.05126953125,
+              "x1": 367.11724853515625,
+              "y1": 509.0138854980469
+            }
+          ]
+        }
+      },
+      {
+        "key": "NIN",
+        "stance": "inherits",
+        "cue": "we adopted",
+        "sentence": "For the network architecture setup, we adopted the mlpconv layer and global averaged pooling scheme introduced in .",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "title": "Network in network",
+        "authors": "M. Lin, Q. Chen, and S. Yan",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 269.1949157714844,
+              "y0": 223.1053009033203,
+              "x1": 504.0032653808594,
+              "y1": 233.06790161132812
+            },
+            {
+              "x0": 108.0,
+              "y0": 234.0633087158203,
+              "x1": 332.9056396484375,
+              "y1": 244.02590942382812
+            }
+          ]
+        }
+      },
+      {
+        "key": "Rakhlin12",
+        "stance": "inherits",
+        "cue": "Based on",
+        "sentence": "If we use , then at time stamp Since , it can be directly seen that Based on lemma 1 in , this upper bound directly holds. Following the assumptions in lemma , but now we assume since and are not always readily available, then started from the convergence rate is bounded by Let , we have Thus, Therefore, with , With being small, we have Let be -strongly convex and be -strongly convex near optimal and denote and as the solution after iterations when applying SGD on and respectively.",
+        "section": "Stochastic Gradient Descent View",
+        "sectionKind": "method",
+        "title": "Stochastic gradient descent for non-smooth optimization: Convergence results and optimal averaging schemes",
+        "authors": "A. Rakhlin, O. Shamir, and K. Sridharan",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 491.0889587402344,
+              "y0": 247.9439697265625,
+              "x1": 504.00048828125,
+              "y1": 257.90655517578125
+            },
+            {
+              "x0": 107.99996948242188,
+              "y0": 258.9029541015625,
+              "x1": 293.9718322753906,
+              "y1": 268.86553955078125
+            }
+          ]
+        }
+      },
+      {
+        "key": "caffe",
+        "stance": "inherits",
+        "cue": "built on top of",
+        "sentence": "Our system is built on top of widely used Caffe infrastructure .",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "title": "Caffe: An open source convolutional architecture for fast feature embedding",
+        "authors": "Y. Jia",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 402.6139221191406,
+              "y0": 212.1463165283203,
+              "x1": 504.0032653808594,
+              "y1": 222.10891723632812
+            },
+            {
+              "x0": 108.0,
+              "y0": 223.1053009033203,
+              "x1": 245.1950225830078,
+              "y1": 233.06790161132812
+            }
+          ]
+        }
+      },
+      {
+        "key": "imagenet",
+        "stance": "inherits",
+        "cue": "We follow",
+        "sentence": "We follow a common training protocol used by Krizhevsky et al. in all experiments.",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "title": "Imagenet classification with deep convolutional neural networks",
+        "authors": "A. Krizhevsky, I. Sutskever, and G. E. Hinton",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 208.084228515625,
+              "y0": 113.51643371582031,
+              "x1": 471.7342834472656,
+              "y1": 123.47903442382812
+            }
+          ]
+        }
+      },
+      {
+        "key": "maxout",
+        "stance": "inherits",
+        "cue": "We followed",
+        "sentence": "We followed to preprocess the dataset by Local Contrast Normalization (LCN).",
+        "section": "Street View House Numbers",
+        "sectionKind": "experiments",
+        "title": "Maxout networks",
+        "authors": "I. J. Goodfellow, D. Warde-Farley, M. Mirza, A. C. Courville, and Y. Bengio",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 160.6125030517578,
+              "y0": 232.45533752441406,
+              "x1": 427.141845703125,
+              "y1": 242.41793823242188
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We show an improvement of the convergence rate of the proposed method over standard ones, assuming local strong convexity of the optimization function (a very loose assumption but pointing to a promising direction).",
+      "anchorText": "We show an improvement of the convergence rate of the proposed method over standard ones, assuming local strong convexity of the optimization function (a very loose assumption but pointing to a promising direction).",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "assuming",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 322.7338562011719,
+            "y0": 394.4443359375,
+            "x1": 504.0032958984375,
+            "y1": 404.4069519042969
+          },
+          {
+            "x0": 108.0,
+            "y0": 405.4033203125,
+            "x1": 504.00311279296875,
+            "y1": 415.3659362792969
+          },
+          {
+            "x0": 108.0,
+            "y0": 416.361328125,
+            "x1": 397.38348388671875,
+            "y1": 426.3239440917969
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We expect to see more classification error reduction with careful engineering for DSN.",
+      "anchorText": "We expect to see more classification error reduction with careful engineering for DSN.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We expect",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 158.6797332763672,
+            "y0": 564.8052368164062,
+            "x1": 503.8438720703125,
+            "y1": 574.767822265625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We focus on building our infrastructure around supervised CNN style frameworks by introducing classifier, e.g. SVM model , to each layer.",
+      "anchorText": "We focus on building our infrastructure around supervised CNN style frameworks",
+      "kind": "simplifying",
+      "support": "cited",
+      "cue": "We focus on",
+      "section": "Deeply-Supervised Nets",
+      "sectionKind": "method",
+      "cites": [
+        "CNN",
+        "DeCAF",
+        "theano",
+        "vapnik"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 490.9721374511719,
+            "y0": 619.82421875,
+            "x1": 504.00323486328125,
+            "y1": 629.7868041992188
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.783203125,
+            "x1": 424.820556640625,
+            "y1": 640.7457885742188
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "This is a source of supervision that acts deep within the network at each layer; when our proxy for feature quality is good, we expect to much more rapidly approach the region of good features than would be the case if we had to rely on the gradual backpropagation from the output layer alone.",
+      "anchorText": "This is a source of supervision that acts deep within the network at each layer; when our proxy for feature quality is good, we expect to much more rapidly approach the region of good features than would be the case if we had to rely on the gradual backpropagation from the output layer alone.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Motivation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 165.5240478515625,
+            "y0": 150.02235412597656,
+            "x1": 504.0032043457031,
+            "y1": 159.98495483398438
+          },
+          {
+            "x0": 108.0,
+            "y0": 160.98133850097656,
+            "x1": 504.0031433105469,
+            "y1": 170.94393920898438
+          },
+          {
+            "x0": 108.0,
+            "y0": 171.94032287597656,
+            "x1": 504.0031433105469,
+            "y1": 181.90292358398438
+          },
+          {
+            "x0": 108.0,
+            "y0": 182.89930725097656,
+            "x1": 154.614990234375,
+            "y1": 192.86190795898438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We focus on the supervised learning case and let be our set of input training data where sample denotes the raw input data and is the corresponding groundtruth label for sample .",
+      "anchorText": "is the corresponding groundtruth label for sample",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We focus on",
+      "section": "Formulation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 455.166015625,
+            "y0": 398.399169921875,
+            "x1": 504.00262451171875,
+            "y1": 408.3617858886719
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 409.358154296875,
+            "x1": 260.6668701171875,
+            "y1": 419.3207702636719
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The above formulation can be understood intuitively: in addition to learning convolution kernels and weights, , as in the standard CNN model , enforcing a constraint at each hidden layer for directly making a good label prediction gives a strong push for having discriminative and sensible features at each individual layer.",
+      "anchorText": ", enforcing a constraint at each hidden layer for directly making a good label prediction gives a strong push for having discriminative and sensible features at each individual layer.",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "intuitively",
+      "section": "Formulation",
+      "sectionKind": "method",
+      "cites": [
+        "CNN"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.27102661132812,
+            "y0": 117.14540100097656,
+            "x1": 504.0032653808594,
+            "y1": 127.10800170898438
+          },
+          {
+            "x0": 108.0,
+            "y0": 128.10438537597656,
+            "x1": 504.00335693359375,
+            "y1": 138.06698608398438
+          },
+          {
+            "x0": 108.0,
+            "y0": 140.10340881347656,
+            "x1": 172.77684020996094,
+            "y1": 150.06600952148438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "( ), and are respectively the margin and squared hinge loss of the SVM classifier (L2SVM ) at the output layer (we omit the balance term in front of the hinge for notational simplicity); in eqn.",
+      "anchorText": "are respectively the margin and squared hinge loss of the SVM classifier (L2SVM",
+      "kind": "simplifying",
+      "support": "shown",
+      "cue": "we omit",
+      "section": "Formulation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "eq:total2"
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 344.72100830078125,
+            "y0": 140.10340881347656,
+            "x1": 504.00299072265625,
+            "y1": 150.06600952148438
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 151.06239318847656,
+            "x1": 280.16375732421875,
+            "y1": 161.02499389648438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Next, we provide more discussions to and try to understand intuitively about our formulation, eqn.",
+      "anchorText": "Next, we provide more discussions to and try to understand intuitively about our formulation, eqn.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "intuitively",
+      "section": "Formulation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00020599365234,
+            "y0": 583.990478515625,
+            "x1": 504.0032958984375,
+            "y1": 593.9530639648438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We focus on the convergence advantage of DSN, instead of the regularization to the generalization aspect.",
+      "anchorText": "We focus on the convergence advantage of DSN, instead of the regularization to the generalization aspect.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We focus on",
+      "section": "Stochastic Gradient Descent View",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00015258789062,
+            "y0": 680.3994750976562,
+            "x1": 504.0032653808594,
+            "y1": 690.362060546875
+          },
+          {
+            "x0": 108.00015258789062,
+            "y0": 691.3584594726562,
+            "x1": 135.38734436035156,
+            "y1": 701.321044921875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "If we use , then at time stamp Since , it can be directly seen that Based on lemma 1 in , this upper bound directly holds. Following the assumptions in lemma , but now we assume since and are not always readily available, then started from the convergence rate is bounded by Let , we have Thus, Therefore, with , With being small, we have Let be -strongly convex and be -strongly convex near optimal and denote and as the solution after iterations when applying SGD on and respectively.",
+      "anchorText": "are not always readily available, then started from",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "we assume",
+      "section": "Stochastic Gradient Descent View",
+      "sectionKind": "method",
+      "cites": [
+        "Rakhlin12"
+      ],
+      "refs": [
+        "lm:2"
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 491.0889587402344,
+            "y0": 247.9439697265625,
+            "x1": 504.00048828125,
+            "y1": 257.90655517578125
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 258.9029541015625,
+            "x1": 293.9718322753906,
+            "y1": 268.86553955078125
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 10,
+    "cited": 3,
+    "shown": 1,
+    "bare": 6
+  }
+}

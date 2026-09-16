@@ -26,6 +26,15 @@ _YEAR = re.compile(r"\b(19[5-9]\d|20[0-4]\d)\b")
 
 _NEWBLOCK = re.compile(r"\\newblock\s*")
 
+# Bare URLs, removed from the split fields but never from ``raw``.
+#
+# The cleaners strip the \url macro and leave its argument behind as text, so a style
+# that prints the link before the title produced titles like
+# "http://arxiv.org/abs/1904.09675 Bertscore: Evaluating text generation with BERT".
+# That is visible in the reader, and it is also what citations get matched against.
+# The identifier itself is already captured separately.
+_URL = re.compile(r"(?:https?://|www\.)\S+|\barxiv:\s*\d{4}\.\d{4,5}\S*", re.IGNORECASE)
+
 # Markup that survives into a reference's visible text if left alone.
 _CLEANERS = (
     (re.compile(r"\\(?:emph|textit|textbf|texttt|textsc|text|mbox|url|href)\s*\{"), ""),
@@ -95,6 +104,11 @@ def parse(text: str) -> list[Reference]:
     return references
 
 
+def _strip_urls(text: str) -> str:
+    """Drop bare links and identifiers from a field, then tidy what is left."""
+    return re.sub(r"\s+", " ", _URL.sub(" ", text)).strip(" ,.;:")
+
+
 def _build(key: str, body: str) -> Reference:
     raw = clean(body)
     arxiv = _ARXIV.search(body)
@@ -104,7 +118,8 @@ def _build(key: str, body: str) -> Reference:
     # Most styles separate author / title / venue with \newblock. Where they do not,
     # the split is unknowable from the text alone, so the fields stay empty and only
     # `raw` is offered.
-    blocks = [clean(part) for part in _NEWBLOCK.split(body) if clean(part)]
+    blocks = [_strip_urls(clean(part)) for part in _NEWBLOCK.split(body)]
+    blocks = [block for block in blocks if block]
     authors = title = venue = ""
     if len(blocks) >= 2:
         authors, title = blocks[0], blocks[1]

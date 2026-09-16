@@ -4411,7 +4411,7 @@
       "raw": "Jia, Y. Caffe: An open source convolutional architecture for fast feature embedding. http://caffe.berkeleyvision.org/, 2013",
       "authors": "Jia, Y",
       "title": "Caffe: An open source convolutional architecture for fast feature embedding",
-      "venue": "http://caffe.berkeleyvision.org/, 2013",
+      "venue": "2013",
       "year": 2013,
       "arxivId": null,
       "doi": null
@@ -4898,48 +4898,42 @@
   "findings": [],
   "lineage": {
     "tally": {
-      "inherits": 2,
+      "inherits": 0,
       "extends": 2,
       "contests": 0,
-      "compares": 0,
+      "compares": 2,
       "background": 13,
       "traversable": 0
     },
     "foundation": {
-      "key": "LeCun89",
-      "stance": "inherits",
-      "cue": "based on",
-      "sentence": "Namely, the training is carried out by optimising the multinomial logistic regression objective using mini-batch gradient descent (based on back-propagation ) with momentum.",
-      "section": "Training",
+      "key": "Ciresan11",
+      "stance": "extends",
+      "cue": "inspired by",
+      "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our ConvNet layer configurations are designed using the same principles, inspired by .",
+      "section": "ConvNet Configurations",
       "sectionKind": "method",
-      "title": "Backpropagation applied to handwritten zip code recognition",
-      "authors": "LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W., and Jackel, L. D",
-      "year": 1989,
+      "title": "Flexible, high performance convolutional neural networks for image classification",
+      "authors": "Ciresan, D. C., Meier, U., Masci, J., Gambardella, L. M., and Schmidhuber, J",
+      "year": 2011,
       "arxivId": null,
       "inCorpus": false,
       "anchor": {
-        "page": 3,
+        "page": 1,
         "pageWidth": 612.0,
         "pageHeight": 792.0,
         "precision": "tight",
         "rects": [
           {
-            "x0": 383.28057861328125,
-            "y0": 235.86883544921875,
-            "x1": 504.18194580078125,
-            "y1": 249.15899658203125
+            "x0": 108.00012969970703,
+            "y0": 162.66943359375,
+            "x1": 504.0777587890625,
+            "y1": 175.9595947265625
           },
           {
-            "x0": 108.00062561035156,
-            "y0": 246.9090576171875,
-            "x1": 504.1315002441406,
-            "y1": 260.19921875
-          },
-          {
-            "x0": 108.00062561035156,
-            "y0": 257.8289794921875,
-            "x1": 220.02178955078125,
-            "y1": 271.119140625
+            "x0": 108.0001220703125,
+            "y0": 173.58935546875,
+            "x1": 447.6612854003906,
+            "y1": 186.8795166015625
           }
         ]
       }
@@ -5013,75 +5007,56 @@
       },
       {
         "key": "LeCun89",
-        "stance": "inherits",
-        "cue": "based on",
-        "sentence": "Namely, the training is carried out by optimising the multinomial logistic regression objective using mini-batch gradient descent (based on back-propagation ) with momentum.",
-        "section": "Training",
-        "sectionKind": "method",
+        "stance": "compares",
+        "cue": "state-of-the-art",
+        "sentence": "It was demonstrated that the representation depth is beneficial for the classification accuracy, and that state-of-the-art performance on the ImageNet challenge dataset can be achieved using a conventional ConvNet architecture with substantially increased depth.",
+        "section": "Conclusion",
+        "sectionKind": "conclusion",
         "title": "Backpropagation applied to handwritten zip code recognition",
         "authors": "LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W., and Jackel, L. D",
         "year": 1989,
         "arxivId": null,
         "inCorpus": false,
         "anchor": {
-          "page": 3,
+          "page": 7,
           "pageWidth": 612.0,
           "pageHeight": 792.0,
           "precision": "tight",
           "rects": [
             {
-              "x0": 383.28057861328125,
-              "y0": 235.86883544921875,
-              "x1": 504.18194580078125,
-              "y1": 249.15899658203125
+              "x0": 219.60018920898438,
+              "y0": 598.9894409179688,
+              "x1": 504.1036682128906,
+              "y1": 612.2796020507812
             },
             {
-              "x0": 108.00062561035156,
-              "y0": 246.9090576171875,
-              "x1": 504.1315002441406,
-              "y1": 260.19921875
+              "x0": 108.00019836425781,
+              "y0": 610.0292358398438,
+              "x1": 504.0613708496094,
+              "y1": 623.3193969726562
             },
             {
-              "x0": 108.00062561035156,
-              "y0": 257.8289794921875,
-              "x1": 220.02178955078125,
-              "y1": 271.119140625
+              "x0": 108.00018310546875,
+              "y0": 620.9491577148438,
+              "x1": 325.0639953613281,
+              "y1": 634.2393188476562
             }
           ]
         }
       },
       {
         "key": "Szegedy14",
-        "stance": "inherits",
-        "cue": "as done by",
-        "sentence": "At the same time, using a large set of crops, as done by , can lead to improved accuracy, as it results in a finer sampling of the input image compared to the fully-convolutional net.",
-        "section": "Testing",
+        "stance": "compares",
+        "cue": "outperforming",
+        "sentence": "As will be shown in sec:class_SOA, our model is outperforming that of in terms of the single-network classification accuracy.",
+        "section": "Discussion",
         "sectionKind": "method",
         "title": "Going deeper with convolutions",
         "authors": "Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., Erhan, D., Vanhoucke, V., and Rabinovich, A",
         "year": 2014,
         "arxivId": "1409.4842",
         "inCorpus": false,
-        "anchor": {
-          "page": 4,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 107.99909973144531,
-              "y0": 331.1488037109375,
-              "x1": 504.3005065917969,
-              "y1": 344.43896484375
-            },
-            {
-              "x0": 107.99911499023438,
-              "y0": 342.1889953613281,
-              "x1": 225.32986450195312,
-              "y1": 355.4791564941406
-            }
-          ]
-        }
+        "anchor": null
       }
     ]
   },

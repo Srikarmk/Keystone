@@ -325,7 +325,12 @@ def dossier(
     # full title has to be known before any single dossier is built. Read from each
     # paper's own LaTeX rather than typed in: the display names in the library are
     # deliberately short and would never match a bibliography entry.
-    corpus_titles = _corpus_titles(arxiv_ids, cache, out)
+    existing = [
+        json.loads(path.read_text())
+        for path in sorted(out.glob("*.json"))
+        if _DOSSIER_FILE.match(path.name)
+    ]
+    corpus_titles, display_titles = _corpus_titles(arxiv_ids, cache, out, existing)
     failures: list[tuple[str, str]] = []
 
     for arxiv_id in arxiv_ids:
@@ -333,7 +338,7 @@ def dossier(
             built = build_dossier(
                 arxiv_id,
                 cache,
-                title=lookup.get(arxiv_id, "") or corpus_titles.get(arxiv_id, ""),
+                title=lookup.get(arxiv_id, "") or display_titles.get(arxiv_id, ""),
                 pdf_path=pdfs / f"{arxiv_id}.pdf",
                 check_baselines=check_baselines,
                 corpus_titles=corpus_titles,
@@ -376,7 +381,7 @@ def dossier(
             "title": payload["title"] or arxiv_id,
             # The paper's own title, kept so a later run that rebuilds only one paper
             # can still resolve citations against the rest of the library.
-            "fullTitle": corpus_titles.get(arxiv_id, payload["title"]),
+            "fullTitle": display_titles.get(arxiv_id, payload["title"]),
             "lineage": payload["lineage"]["tally"],
             "assumptions": payload["assumptionTally"],
             "coverage": payload["coverage"],
@@ -422,16 +427,138 @@ def dossier(
         typer.secho(f"  failed: {arxiv_id} {reason}", fg=typer.colors.RED)
 
 
-def _corpus_titles(arxiv_ids: list[str], cache: Path, out: Path) -> dict[str, str]:
-    """Full titles for every paper in the library, from each paper's own source."""
+def survey(
+    payloads: list[dict], have: set[str]
+) -> tuple[Counter[str], Counter[str], dict[str, str]]:
+    """What the library's own citations point at, outside the library.
+
+    Returns how many library papers cite each outside work, how many take a *stance*
+    on it, and the best title available for it.
+    """
+    cited: Counter[str] = Counter()
+    stanced: Counter[str] = Counter()
     titles: dict[str, str] = {}
 
+    for payload in payloads:
+        # Counted once per citing paper, not once per citation: a paper that mentions
+        # the same work eight times is one vote for ingesting it, not eight.
+        outside = {
+            reference["arxivId"]
+            for reference in payload.get("references", [])
+            if reference.get("arxivId") and reference["arxivId"] not in have
+        }
+        for ident in outside:
+            cited[ident] += 1
+        for reference in payload.get("references", []):
+            if reference.get("arxivId") in outside:
+                titles.setdefault(
+                    reference["arxivId"], reference.get("title") or reference["raw"][:80]
+                )
+        for edge in payload.get("lineage", {}).get("edges", []):
+            ident = edge.get("arxivId")
+            if ident and ident not in have:
+                stanced[ident] += 1
+                titles.setdefault(ident, edge.get("title", ""))
+
+    return cited, stanced, titles
+
+
+def rank_candidates(
+    cited: Counter[str],
+    stanced: Counter[str],
+    *,
+    stanced_only: bool = True,
+    extra: list[str] | None = None,
+) -> list[str]:
+    """Which papers to ingest next, best first.
+
+    A paper the library already takes a stance on arrives with an edge attached, so
+    those come first; among equals, the one more papers cite. ``extra`` is appended as
+    a hand-picked tail — hub papers that densify the graph once ingested but that the
+    current library happens not to stance yet.
+    """
+    pool = [i for i in cited if not stanced_only or stanced[i] > 0]
+    pool += [i for i in (extra or []) if i not in cited]
+    return sorted(
+        dict.fromkeys(pool), key=lambda i: (-stanced[i], -cited[i], i)
+    )
+
+
+def attested_titles(payloads: list[dict]) -> dict[str, Counter[str]]:
+    """Titles the library's own bibliographies print for each arXiv identifier.
+
+    Independent confirmation, and it is needed rather than merely nice. A paper's own
+    source can carry the *wrong* title: arXiv:1909.08593 is "Fine-Tuning Language
+    Models from Human Preferences", but its LaTeX says
+    ``\\icmltitle{Language Models are Unsupervised Multitask Learners}`` — a stale
+    conference template copied from GPT-2. Resolving citations on that would have made
+    every citation of GPT-2 point at the wrong paper, which is precisely the kind of
+    confident-and-wrong edge this suite exists not to produce.
+    """
+    attested: dict[str, Counter[str]] = {}
+    for payload in payloads:
+        for reference in payload.get("references", []):
+            ident = reference.get("arxivId")
+            title = (reference.get("title") or "").strip()
+            if ident and _plausible_title(title):
+                attested.setdefault(ident, Counter())[title] += 1
+    return attested
+
+
+def _plausible_title(title: str) -> bool:
+    """Whether a bibliography's title field is a title at all.
+
+    The field split is heuristic by design, so it sometimes hands back a URL, a page
+    range or a venue. Those must not become resolution keys.
+    """
+    if len(title) < 12:
+        return False
+    if title.lower().startswith(("http", "www.", "arxiv:", "doi:")):
+        return False
+    return sum(c.isalpha() for c in title) >= len(title) * 0.5
+
+
+def _corpus_titles(
+    arxiv_ids: list[str], cache: Path, out: Path, payloads: list[dict]
+) -> tuple[dict[str, str], dict[str, str]]:
+    """Titles for the library: one set to resolve citations with, one to display.
+
+    Resolution is two-tier, and the first version got this wrong in both directions.
+
+    **Attested wins.** Where some bibliography prints a title *alongside the same arXiv
+    identifier*, that is independent evidence and it is used. This is what protects
+    against a paper mis-stating its own title: arXiv:1909.08593 is "Fine-Tuning
+    Language Models from Human Preferences", but its LaTeX carries
+    ``\\icmltitle{Language Models are Unsupervised Multitask Learners}`` — a stale ICML
+    template copied from GPT-2. Resolving on that would point every citation of GPT-2
+    at the wrong paper.
+
+    **Otherwise the paper's own title, with a collision guard.** Requiring attestation
+    outright cost nine real edges, and for a reason that defeats the rule: a reference
+    can only attest if it already carries an arXiv identifier, and those are precisely
+    the references that never needed a title match. So an unattested paper resolves by
+    its own title unless that title is already claimed — by another paper's
+    attestation, or by another paper in the library. Ambiguity resolves to nothing,
+    which is the same answer the anchor layer gives.
+    """
+    from keystone.lineage.graph import fold
+
+    attested = attested_titles(payloads)
+    display: dict[str, str] = {}
+
+    # The library itself — papers that have been ingested. Attestation covers every
+    # *cited* work, five hundred of them, and letting those into the resolution map
+    # would mark them all as walkable: the reader would link to paper pages that do
+    # not exist, because `in_corpus` is read off these keys.
+    library: set[str] = set(arxiv_ids)
     index_path = out / "index.json"
     if index_path.exists():
         for entry in json.loads(index_path.read_text()):
+            library.add(entry["id"])
             if entry.get("fullTitle"):
-                titles[entry["id"]] = entry["fullTitle"]
+                display[entry["id"]] = entry["fullTitle"]
 
+    own: dict[str, str] = {}
     for arxiv_id in arxiv_ids:
         try:
             document, _project = load_project(arxiv_id, cache)
@@ -440,9 +567,62 @@ def _corpus_titles(arxiv_ids: list[str], cache: Path, out: Path) -> dict[str, st
             # which is a smaller loss than refusing to build the library at all.
             continue
         if found := document_title(document.text):
-            titles[arxiv_id] = found
+            own[arxiv_id] = found
 
-    return titles
+    resolve = resolve_titles(library, own, attested)
+    for ident in library:
+        # Attested first: it is the only independent evidence, and it is what the
+        # field prints. Then the paper's own reading, then whatever the index already
+        # had — last, because seeding from the index is how a title that was once
+        # misread survives every later rebuild.
+        mine, theirs = own.get(ident), resolve.get(ident)
+        # The paper's own capitalisation where the two agree on the words — "BERT:
+        # Pre-training of..." rather than the bibliography's "Bert: Pre-training of..."
+        # — and the attested wording where they disagree, since then the paper's own
+        # claim is the one under suspicion.
+        best = mine if mine and theirs and fold(mine) == fold(theirs) else theirs
+        display[ident] = best or mine or display.get(ident) or ident
+
+    return resolve, display
+
+
+def resolve_titles(
+    library: set[str],
+    own: dict[str, str],
+    attested: dict[str, Counter[str]],
+) -> dict[str, str]:
+    """One canonical title per library paper, for matching citations against.
+
+    Separated from the file reading because the rule is subtle enough to have been
+    wrong twice — once too strict, once too broad — and it is worth testing directly.
+    """
+    from keystone.lineage.graph import fold
+
+    # Every folded title any bibliography ties to an identifier, so a self-reported
+    # title can be checked against what the field says the name belongs to.
+    claimed: dict[str, set[str]] = {}
+    for ident, votes in attested.items():
+        for title in votes:
+            claimed.setdefault(fold(title), set()).add(ident)
+
+    resolve: dict[str, str] = {}
+    for ident in library:
+        votes = attested.get(ident)
+        if votes:
+            resolve[ident] = votes.most_common(1)[0][0]
+        elif ident in own:
+            owners = claimed.get(fold(own[ident]), set())
+            if not owners - {ident}:
+                resolve[ident] = own[ident]
+
+    # Two library papers claiming one name cannot both be right, and a wrong edge
+    # costs more than a missing one.
+    duplicates = Counter(fold(title) for title in resolve.values())
+    return {
+        ident: title
+        for ident, title in resolve.items()
+        if duplicates[fold(title)] == 1
+    }
 
 
 def _write_lineage_index(out: Path) -> int:
@@ -618,37 +798,18 @@ def expand(
         typer.secho(f"no dossiers in {dossiers}", fg=typer.colors.RED)
         raise typer.Exit(1)
 
-    cited: Counter[str] = Counter()
-    stanced: Counter[str] = Counter()
-    titles: dict[str, str] = {}
-
-    for path in sorted(dossiers.glob("*.json")):
-        if not _DOSSIER_FILE.match(path.name):
-            continue
-        payload = json.loads(path.read_text())
-        # Counted once per citing paper, not once per citation: a paper that mentions
-        # the same work eight times is one vote for ingesting it.
-        outside = {
-            reference["arxivId"]
-            for reference in payload["references"]
-            if reference.get("arxivId") and reference["arxivId"] not in have
-        }
-        for ident in outside:
-            cited[ident] += 1
-        for reference in payload["references"]:
-            if reference.get("arxivId") in outside:
-                titles.setdefault(
-                    reference["arxivId"], reference.get("title") or reference["raw"][:80]
-                )
-        for edge in payload["lineage"]["edges"]:
-            ident = edge.get("arxivId")
-            if ident and ident not in have:
-                stanced[ident] += 1
-                titles.setdefault(ident, edge["title"])
-
-    pool = [i for i in cited if not stanced_only or stanced[i] > 0]
-    pool += [i.strip() for i in also.split(",") if i.strip() and i.strip() not in cited]
-    ranked = sorted(dict.fromkeys(pool), key=lambda i: (-stanced[i], -cited[i], i))
+    payloads = [
+        json.loads(path.read_text())
+        for path in sorted(dossiers.glob("*.json"))
+        if _DOSSIER_FILE.match(path.name)
+    ]
+    cited, stanced, titles = survey(payloads, have)
+    ranked = rank_candidates(
+        cited,
+        stanced,
+        stanced_only=stanced_only,
+        extra=[i.strip() for i in also.split(",") if i.strip()],
+    )
 
     typer.echo(
         f"{len(have)} papers in the library; {len(cited)} arXiv-resolvable citations "
@@ -668,7 +829,10 @@ def expand(
 
     for ident in ranked[:limit]:
         try:
-            fetch(ident, cache)
+            # `cache / "eprints"`, not `cache`: that is where `load_project` looks, and
+            # writing them a level up meant every paper was downloaded twice — once
+            # here into a directory nothing reads, and again by the dossier build.
+            fetch(ident, cache / "eprints")
         except SourceUnavailable as exc:
             skipped.append((ident, str(exc)))
             typer.secho(f"skip  {ident}: {exc}", fg=typer.colors.YELLOW)

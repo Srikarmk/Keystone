@@ -82,16 +82,36 @@ function posted(id: string): number {
  * better axis and it is free: every dependency arrow then points backwards along it,
  * which is both true and immediately legible — you can see the field being built.
  */
+/**
+ * How many papers the picture can name at once.
+ *
+ * A node label is about 150px of a 940-unit viewBox, so past roughly this many the
+ * labels collide no matter how the rows are arranged. Fading the ones you are not
+ * hovering was tried first and is worse: at rest the hero becomes a field of
+ * anonymous dots.
+ */
+const LEGIBLE = 20;
+
 function layout(data: GraphData): { nodes: Placed[]; height: number; hidden: number } {
   // Only papers that take part in a relationship are drawn. A node with no edges
   // contributes nothing to a graph and costs a label slot, and once the library grew
   // past a dozen papers the unconnected ones were most of the picture. They are
   // counted underneath and listed in full further down the page.
-  const connected = new Set<string>();
+  const degree = new Map<string, number>();
   for (const edge of data.edges) {
-    connected.add(edge.from);
-    connected.add(edge.to);
+    degree.set(edge.from, (degree.get(edge.from) ?? 0) + 1);
+    degree.set(edge.to, (degree.get(edge.to) ?? 0) + 1);
   }
+
+  // Past what can be labelled, keep the best-connected papers rather than an
+  // arbitrary slice. Those are the load-bearing ones — the papers everything else
+  // leans on — which is exactly what the picture is for.
+  const connected = new Set(
+    [...degree.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, LEGIBLE)
+      .map(([id]) => id),
+  );
 
   const dated = data.nodes
     .filter((node) => connected.has(node.id))
@@ -100,23 +120,26 @@ function layout(data: GraphData): { nodes: Placed[]; height: number; hidden: num
 
   const rows = rowsFor(dated.length);
   const height = PAD_Y * 2 + (rows - 1) * ROW_HEIGHT;
-  const earliest = dated[0]?.at ?? 0;
-  const latest = dated[dated.length - 1]?.at ?? earliest + 1;
-  const span = Math.max(1, latest - earliest);
+  const last = Math.max(1, dated.length - 1);
 
-  // Rows cycle so that papers close together in time are never on the same line.
-  // Labels alternate above and below their node for the same reason.
-  const nodes = dated.map(({ node, at }, i) => ({
+  // Spaced by position in the ordering rather than by the actual date. Literal time
+  // piled 2014-2016 into the left third and left the right half nearly empty, because
+  // that is genuinely when this work happened — true, and unreadable. Rank keeps the
+  // claim ("every arrow points back at what it took") and spreads the labels.
+  //
+  // Rows cycle so papers adjacent in time are never on the same line, and labels
+  // alternate above and below their node for the same reason.
+  const nodes = dated.map(({ node }, i) => ({
     id: node.id,
     title: node.title,
     short: shorten(node.title),
-    x: PAD_X + ((at - earliest) / span) * (WIDTH - PAD_X * 2),
+    x: PAD_X + (i / last) * (WIDTH - PAD_X * 2),
     y: PAD_Y + (i % rows) * ROW_HEIGHT,
     above: i % 2 === 0,
     bare: node.bare,
   }));
 
-  return { nodes, height, hidden: data.nodes.length - dated.length };
+  return { nodes, height, hidden: degree.size - dated.length };
 }
 
 /**
@@ -149,6 +172,12 @@ export function LibraryGraph({ data }: { data: GraphData }) {
     [nodes],
   );
 
+  // Edges whose endpoints both survived the pruning, carrying their original index so
+  // hovering still identifies the right one in `data.edges`.
+  const edges = data.edges
+    .map((edge, index) => ({ edge, index }))
+    .filter(({ edge }) => byId.has(edge.from) && byId.has(edge.to));
+
   if (nodes.length === 0) return null;
   const shown = active === null ? null : data.edges[active];
 
@@ -158,7 +187,7 @@ export function LibraryGraph({ data }: { data: GraphData }) {
         viewBox={`0 0 ${WIDTH} ${height}`}
         className="w-full"
         role="img"
-        aria-label={`${nodes.length} papers and ${data.edges.length} relationships between them, read from their own prose`}
+        aria-label={`${nodes.length} papers and ${edges.length} relationships between them, read from their own prose`}
       >
         <defs>
           <marker
@@ -174,7 +203,7 @@ export function LibraryGraph({ data }: { data: GraphData }) {
           </marker>
         </defs>
 
-        {data.edges.map((edge, i) => {
+        {edges.map(({ edge, index: i }) => {
           const from = byId.get(edge.from);
           const to = byId.get(edge.to);
           if (!from || !to) return null;
@@ -245,7 +274,7 @@ export function LibraryGraph({ data }: { data: GraphData }) {
                   // Below 13px labels stop being readable, so past about twenty papers
                   // they are thinned rather than shrunk: the hovered edge's two ends
                   // stay named and the rest fade to their dots.
-                  opacity={nodes.length > 20 && shown !== null && !touched ? 0.25 : 1}
+                  opacity={shown !== null && !touched ? 0.35 : 1}
                   fontSize="13"
                   fill={touched ? "var(--color-brass)" : "var(--color-ink)"}
                   className="cursor-pointer"
@@ -293,14 +322,15 @@ export function LibraryGraph({ data }: { data: GraphData }) {
           </motion.div>
         ) : (
           <p className="text-[0.84rem] leading-relaxed text-ink-faint">
-            {data.edges.length} relationships run between papers in this library, drawn
-            along the time they were posted so every arrow points back at what it took.
+            {data.edges.length} relationships run between papers in this library, in
+            the order they were posted, so every arrow points back at what it took.
             Hover one to read the sentence that put it there.
             {hidden > 0 ? (
               <>
                 {" "}
-                <span className="numeral">{hidden}</span> more papers are in the library
-                with no relationship to another one yet.
+                Showing the <span className="numeral">{nodes.length}</span> best-connected
+                papers; <span className="numeral">{hidden}</span> more have relationships
+                too, and every paper is listed below.
               </>
             ) : null}
           </p>

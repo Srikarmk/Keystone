@@ -56,7 +56,18 @@ export function Reader({ id }: { id: string }) {
   const appIsDark = useIsDark();
 
   useEffect(() => {
-    fetch("/dossiers/index.json").then((r) => r.json()).then(setIndex).catch(() => {});
+    // Sorted by title, not by the order the library happened to be built in. At nine
+    // papers the difference was invisible; at forty-five an unsorted picker is a wall.
+    fetch("/dossiers/index.json")
+      .then((r) => r.json())
+      .then((entries: IndexEntry[]) =>
+        setIndex(
+          [...entries].sort((a, b) =>
+            a.title.localeCompare(b.title, undefined, { sensitivity: "base" }),
+          ),
+        ),
+      )
+      .catch(() => {});
     // The library graph, so this paper can also show who leans on *it*. Fetched once
     // rather than baked into each dossier: it changes whenever any paper is added.
     fetch("/dossiers/lineage.json").then((r) => r.json()).then(setGraph).catch(() => {});

@@ -24,9 +24,10 @@ Three things, all quoted rather than inferred:
   quoted next to what the paper offers in the same sentence: a citation, a pointer to
   its own evidence, or nothing at all.
 - **The graph.** Where a cited paper is also in the library the edge is walkable in
-  both directions, so a paper shows both what it stands on and who stands on it. The
-  chain reconstructed from the papers' own sentences: VGG → ResNet → Transformer →
-  BERT and ViT, with batch and layer normalisation feeding in.
+  both directions, so a paper shows both what it stands on and who stands on it. Across
+  42 papers that is **52 relationships**, each carrying the sentence that placed it, and
+  the chain is the real one: VGG → ResNet → Transformer → BERT / ViT / LLaMA, with batch
+  and layer normalisation feeding in.
 
 The library grows along its own citations. `keystone expand` reads every reference the
 library already resolves to arXiv, ranks them by how many papers take a stance on each,

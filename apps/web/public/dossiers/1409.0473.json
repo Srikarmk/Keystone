@@ -1,0 +1,1935 @@
+{
+  "id": "1409.0473",
+  "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1409.0473",
+  "numbers": [
+    {
+      "value": "5.5M",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "WMT '14 contains the following English-French parallel corpora: Europarl (61M words), news commentary (5.5M), UN (421M) and two crawled corpora of 90M and 272.5M words respectively, totaling 850M words.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99992370605469,
+            "y0": 625.4913330078125,
+            "x1": 504.0030822753906,
+            "y1": 635.4539184570312
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 636.4503173828125,
+            "x1": 504.0031433105469,
+            "y1": 646.4129028320312
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 647.4093017578125,
+            "x1": 193.22991943359375,
+            "y1": 657.3718872070312
+          }
+        ]
+      }
+    },
+    {
+      "value": "272.5M",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "WMT '14 contains the following English-French parallel corpora: Europarl (61M words), news commentary (5.5M), UN (421M) and two crawled corpora of 90M and 272.5M words respectively, totaling 850M words.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99992370605469,
+            "y0": 625.4913330078125,
+            "x1": 504.0030822753906,
+            "y1": 635.4539184570312
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 636.4503173828125,
+            "x1": 504.0031433105469,
+            "y1": 646.4129028320312
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 647.4093017578125,
+            "x1": 193.22991943359375,
+            "y1": 657.3718872070312
+          }
+        ]
+      }
+    },
+    {
+      "value": "5 days",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We trained each model for approximately 5 days.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 138.4756317138672,
+            "y0": 491.75323486328125,
+            "x1": 334.6690979003906,
+            "y1": 501.7158508300781
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "BLEU scores of the trained models computed on the test set. The second and third columns show respectively the scores on all the sentences and, on the sentences without any unknown word in themselves and in the reference translations. Note that RNNsearch-50 was trained much longer until the performance on the development set stopped improving. ( ) We disallowed the models to generate [UNK] tokens when only the sentences having no unknown words were evaluated (last column).",
+      "label": "tab:bleu",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "All",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "No UNK",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RNNencdec-30",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.93",
+            "value": "13.93",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.19",
+            "value": "24.19",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-30",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.50",
+            "value": "21.50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.44",
+            "value": "31.44",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNNencdec-50",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17.82",
+            "value": "17.82",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.71",
+            "value": "26.71",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-50",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.75",
+            "value": "26.75",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.16",
+            "value": "34.16",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-50",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.45",
+            "value": "28.45",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36.15",
+            "value": "36.15",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Moses",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "33.30",
+            "value": "33.30",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "35.63",
+            "value": "35.63",
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Learning statistics and relevant information. Each update corresponds to updating the parameters once using a single minibatch. One epoch is one pass through the training set. NLL is the average conditional log-probabilities of the sentences in either the training set or the development set. Note that the lengths of the sentences differ.",
+      "label": "tbl:stat",
+      "numericCells": 25,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Updates ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Epochs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Hours",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "GPU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Train NLL",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Dev. NLL",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RNNenc-30",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.46",
+            "value": "8.46",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.4",
+            "value": "6.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "109",
+            "value": "109",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "TITAN BLACK",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.1",
+            "value": "28.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "53.0",
+            "value": "53.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNNenc-50",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.00",
+            "value": "6.00",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.5",
+            "value": "4.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "108",
+            "value": "108",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Quadro K-6000",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44.0",
+            "value": "44.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43.6",
+            "value": "43.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-30",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.71",
+            "value": "4.71",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.6",
+            "value": "3.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "113",
+            "value": "113",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "TITAN BLACK",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.7",
+            "value": "26.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "47.2",
+            "value": "47.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-50",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.88",
+            "value": "2.88",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.2",
+            "value": "2.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "111",
+            "value": "111",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Quadro K-6000",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.7",
+            "value": "40.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "38.1",
+            "value": "38.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-50",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6.67",
+            "value": "6.67",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5.0",
+            "value": "5.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "252",
+            "value": "252",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Quadro K-6000",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36.7",
+            "value": "36.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "35.2",
+            "value": "35.2",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.2327117919922,
+            "y0": 161.3994903564453,
+            "x1": 504.0033264160156,
+            "y1": 171.36209106445312
+          },
+          {
+            "x0": 108.0,
+            "y0": 172.3584747314453,
+            "x1": 504.00335693359375,
+            "y1": 182.32107543945312
+          },
+          {
+            "x0": 108.0,
+            "y0": 183.3174591064453,
+            "x1": 504.003173828125,
+            "y1": 193.28005981445312
+          },
+          {
+            "x0": 108.0,
+            "y0": 194.2764434814453,
+            "x1": 299.8199157714844,
+            "y1": 204.23904418945312
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "The translations generated by RNNenc-50 and RNNsearch-50 from long source sentences (30 words or more) selected from the test set. For each source sentence, we also show the gold-standard translation. The translations by Google Translate were made on 27 August 2014.",
+      "label": "tab:translations",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Source",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "An admitting privilege is the right of a doctor to admit a patient to a hospital or a medical centre to carry out a diagnosis or a procedure, based on his status as a health care worker at a hospital.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Le privil\u00e8ge d'admission est le droit d'un m\\'edecin, en vertu de son statut de membre soignant d'un h\\^opital, d'admettre un patient dans un h\\^opital ou un centre m\\'edical afin d'y d\\'elivrer un diagnostic ou un traitement.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNNenc-50",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Un privil\u00e8ge d'admission est le droit d'un m\\'edecin de reconna\u00eetre un patient \u00e0 l'h\\^opital ou un centre m\\'edical d'un diagnostic ou de prendre un diagnostic en fonction de son \\'etat de sant\\'e.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-50",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Un privil\u00e8ge d'admission est le droit d'un m\\'edecin d'admettre un patient \u00e0 un h\\^opital ou un centre m\\'edical pour effectuer un diagnostic ou une proc\\'edure, selon son statut de travailleur des soins de sant\\'e \u00e0 l'h\\^opital.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Google Translate",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "Un privil\u00e8ge admettre est le droit d'un m\\'edecin d'admettre un patient dans un h\\^opital ou un centre m\\'edical pour effectuer un diagnostic ou une proc\\'edure, fond\\'ee sur sa situation en tant que travailleur de soins de sant\\'e dans un h\\^opital.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Source",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "This kind of experience is part of Disney's efforts to \"extend the lifetime of its series and build new relationships with audiences via digital platforms that are becoming ever more important,\" he added.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "Ce type d'exp\\'erience entre dans le cadre des efforts de Disney pour \"\\'etendre la dur\\'ee de vie de ses s\\'eries et construire de nouvelles relations avec son public gr\u00e2ce \u00e0 des plateformes num\\'eriques qui sont de plus en plus importantes\", a-t-il ajout\\'e.",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "RNNenc-50",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "Ce type d'exp\\'erience fait partie des initiatives du Disney pour \"prolonger la dur\\'ee de vie de ses nouvelles et de d\\'evelopper des liens avec les lecteurs num\\'eriques qui deviennent plus complexes.",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-50",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "Ce genre d'exp\\'erience fait partie des efforts de Disney pour \"prolonger la dur\\'ee de vie de ses s\\'eries et cr\\'eer de nouvelles relations avec des publics via des plateformes num\\'eriques de plus en plus importantes\", a-t-il ajout\\'e.",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          }
+        ],
+        [
+          {
+            "text": "Google Translate",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "Ce genre d'exp\\'erience fait partie des efforts de Disney \u00e0 \"\\'etendre la dur\\'ee de vie de sa s\\'erie et construire de nouvelles relations avec le public par le biais des plates-formes num\\'eriques qui deviennent de plus en plus important\", at-il ajout\\'e.",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          }
+        ],
+        [
+          {
+            "text": "Source",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "In a press conference on Thursday, Mr Blair stated that there was nothing in this video that might constitute a \"reasonable motive\" that could lead to criminal charges being brought against the mayor.",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          }
+        ],
+        [
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "En conf\\'erence de presse, jeudi, M. Blair a affirm\\'e qu'il n'y avait rien dans cette vid\\'eo qui puisse constituer des \"motifs raisonnables\" pouvant mener au d\\'ep\\^ot d'une accusation criminelle contre le maire.",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          }
+        ],
+        [
+          {
+            "text": "RNNenc-50",
+            "value": null,
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "Lors de la conf\\'erence de presse de jeudi, M. Blair a dit qu'il n'y avait rien dans cette vid\\'eo qui pourrait constituer une \"motivation raisonnable\" pouvant entra\u00eener des accusations criminelles port\\'ees contre le maire.",
+            "value": null,
+            "emphasised": false,
+            "block": 12
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-50",
+            "value": null,
+            "emphasised": false,
+            "block": 13
+          },
+          {
+            "text": "Lors d'une conf\\'erence de presse jeudi, M. Blair a d\\'eclar\\'e qu'il n'y avait rien dans cette vid\\'eo qui pourrait constituer un \"motif raisonnable\" qui pourrait conduire \u00e0 des accusations criminelles contre le maire.",
+            "value": null,
+            "emphasised": false,
+            "block": 13
+          }
+        ],
+        [
+          {
+            "text": "Google Translate",
+            "value": null,
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "Lors d'une conf\\'erence de presse jeudi, M. Blair a d\\'eclar\\'e qu'il n'y avait rien dans cette vido qui pourrait constituer un \"motif raisonnable\" qui pourrait mener \u00e0 des accusations criminelles portes contre le maire.",
+            "value": null,
+            "emphasised": false,
+            "block": 14
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.72589111328125,
+            "y0": 692.8224487304688,
+            "x1": 504.0032653808594,
+            "y1": 702.7850341796875
+          },
+          {
+            "x0": 108.0,
+            "y0": 703.7814331054688,
+            "x1": 504.0034484863281,
+            "y1": 713.7440185546875
+          },
+          {
+            "x0": 108.0,
+            "y0": 714.740478515625,
+            "x1": 466.2949523925781,
+            "y1": 724.7030639648438
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\obs": "\\text{obs}",
+    "\\mis": "\\text{mis}",
+    "\\qt": "\\left<#1\\right>",
+    "\\ql": "\\left[#1\\right]",
+    "\\hess": "\\mathbf{H}",
+    "\\jacob": "\\mathbf{J}",
+    "\\hl": "HL",
+    "\\cost": "\\mathcal{L}",
+    "\\lout": "\\mathbf{r}",
+    "\\louti": "r",
+    "\\outi": "y",
+    "\\out": "\\mathbf{y}",
+    "\\gauss": "\\mathbf{G_N}",
+    "\\eye": "\\mathbf{I}",
+    "\\softmax": "\\phi",
+    "\\targ": "\\mathbf{t}",
+    "\\metric": "\\mathbf{G}",
+    "\\sample": "\\mathbf{z}",
+    "\\bmx": "\\begin{bmatrix}",
+    "\\emx": "\\end{bmatrix}",
+    "\\qexp": "\\left<#1\\right>",
+    "\\vect": "\\mathbf{#1}",
+    "\\vects": "\\boldsymbol{#1}",
+    "\\matr": "\\mathbf{#1}",
+    "\\var": "\\operatorname{Var}",
+    "\\std": "\\operatorname{std}",
+    "\\cov": "\\operatorname{Cov}",
+    "\\diag": "\\operatorname{diag}",
+    "\\matrs": "\\boldsymbol{#1}",
+    "\\va": "\\vect{a}",
+    "\\vb": "\\vect{b}",
+    "\\vc": "\\vect{c}",
+    "\\vh": "\\vect{h}",
+    "\\vv": "\\vect{v}",
+    "\\vx": "\\vect{x}",
+    "\\vw": "\\vect{w}",
+    "\\vs": "\\vect{s}",
+    "\\vf": "\\vect{f}",
+    "\\vy": "\\vect{y}",
+    "\\vg": "\\vect{g}",
+    "\\vm": "\\vect{m}",
+    "\\vu": "\\vect{u}",
+    "\\vL": "\\vect{L}",
+    "\\mW": "\\matr{W}",
+    "\\mG": "\\matr{G}",
+    "\\mX": "\\matr{X}",
+    "\\mQ": "\\matr{Q}",
+    "\\mU": "\\matr{U}",
+    "\\mV": "\\matr{V}",
+    "\\mA": "\\matr{A}",
+    "\\mD": "\\matr{D}",
+    "\\mS": "\\matr{S}",
+    "\\mI": "\\matr{I}",
+    "\\td": "\\text{d}",
+    "\\vsig": "\\vects{\\sigma}",
+    "\\valpha": "\\vects{\\alpha}",
+    "\\vmu": "\\vects{\\mu}",
+    "\\vzero": "\\vect{0}",
+    "\\tf": "\\text{m}",
+    "\\tdf": "\\text{dm}",
+    "\\grad": "\\nabla",
+    "\\alert": "\\textcolor{red}{#1}",
+    "\\N": "\\mathcal{N}",
+    "\\LL": "\\mathcal{L}",
+    "\\HH": "\\mathcal{H}",
+    "\\RR": "\\mathbb{R}",
+    "\\II": "\\mathbb{I}",
+    "\\Scal": "\\mathcal{S}",
+    "\\sigmoid": "\\sigma",
+    "\\E": "\\mathbb{E}",
+    "\\enabla": "\\ensuremath{\n    \\overset{\\raisebox{-0.3ex}[0.5ex][0ex]{\n    \\ensuremath{\\scriptscriptstyle e}}}{\\nabla}}",
+    "\\enhnabla": "\\nabla_{\\hspace{-0.5mm}e}\\,",
+    "\\tred": "\\textcolor{red}{#1}",
+    "\\todo": "{\\Large\\textcolor{red}{#1}}",
+    "\\done": "{\\Large\\textcolor{green}{#1}}",
+    "\\dd": "\\ensuremath{\\mbox{d}#1}",
+    "\\newln": "\\\\&\\quad\\quad{}",
+    "\\Ax": "\\mathcal{A}_x",
+    "\\Ay": "\\mathcal{A}_y",
+    "\\ola": "\\overleftarrow",
+    "\\ora": "\\overrightarrow",
+    "\\ov": "\\overline",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "Axelrod2011",
+      "raw": "Axelrod, A., He, X., and Gao, J. (2011). Domain adaptation via pseudo in-domain data selection. In Proceedings of the ACL Conference on Empirical Methods in Natural Language Processing (EMNLP)\\/, pages 355--362. Association for Computational Linguistics",
+      "authors": "Axelrod, A., He, X., and Gao, J. (2011)",
+      "title": "Domain adaptation via pseudo in-domain data selection",
+      "venue": "In Proceedings of the ACL Conference on Empirical Methods in Natural Language Processing (EMNLP)\\/, pages 355--362. Association for Computational Linguistics",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bastien-Theano-2012",
+      "raw": "Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012). Theano: new features and speed improvements. Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop",
+      "authors": "Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012)",
+      "title": "Theano: new features and speed improvements",
+      "venue": "Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-trnn93",
+      "raw": "Bengio, Y., Simard, P., and Frasconi, P. (1994). Learning long-term dependencies with gradient descent is difficult. IEEE Transactions on Neural Networks\\/, 5(2), 157--166",
+      "authors": "Bengio, Y., Simard, P., and Frasconi, P. (1994)",
+      "title": "Learning long-term dependencies with gradient descent is difficult",
+      "venue": "IEEE Transactions on Neural Networks\\/, 5(2), 157--166",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio2003lm",
+      "raw": "Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003). A neural probabilistic language model. J. Mach. Learn. Res., 3, 1137--1155",
+      "authors": "Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003)",
+      "title": "A neural probabilistic language model",
+      "venue": "J. Mach. Learn. Res., 3, 1137--1155",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bergstra+al:2010-scipy",
+      "raw": "Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010). Theano: a CPU and GPU math expression compiler. In Proceedings of the Python for Scientific Computing Conference (SciPy)\\/. Oral Presentation",
+      "authors": "Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010)",
+      "title": "Theano: a CPU and GPU math expression compiler",
+      "venue": "In Proceedings of the Python for Scientific Computing Conference (SciPy)\\/ Oral Presentation",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Boulanger2013",
+      "raw": "Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2013). Audio chord recognition with recurrent neural networks. In ISMIR\\/",
+      "authors": "Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2013)",
+      "title": "Audio chord recognition with recurrent neural networks",
+      "venue": "In ISMIR\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cho2014",
+      "raw": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014a). Learning phrase representations using RNN encoder-decoder for statistical machine translation. In Proceedings of the Empiricial Methods in Natural Language Processing (EMNLP 2014)\\/. to appear",
+      "authors": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014a)",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "venue": "In Proceedings of the Empiricial Methods in Natural Language Processing (EMNLP 2014)\\/ to appear",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cho2014a",
+      "raw": "Cho, K., van Merri\\\"enboer, B., Bahdanau, D., and Bengio, Y. (2014b). On the properties of neural machine translation: Encoder--Decoder approaches. In Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation\\/. to appear",
+      "authors": "Cho, K., van Merri\\\"enboer, B., Bahdanau, D., and Bengio, Y. (2014b)",
+      "title": "On the properties of neural machine translation: Encoder--Decoder approaches",
+      "venue": "In Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation\\/ to appear",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Devlin2014",
+      "raw": "Devlin, J., Zbib, R., Huang, Z., Lamar, T., Schwartz, R., and Makhoul, J. (2014). Fast and robust neural network joint models for statistical machine translation. In Association for Computational Linguistics\\/",
+      "authors": "Devlin, J., Zbib, R., Huang, Z., Lamar, T., Schwartz, R., and Makhoul, J. (2014)",
+      "title": "Fast and robust neural network joint models for statistical machine translation",
+      "venue": "In Association for Computational Linguistics\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Forcada1997",
+      "raw": "Forcada, M. L. and \\ Neco, R. P. (1997). Recursive hetero-associative memories for translation. In J. Mira, R. Moreno-D\\'iaz, and J. Cabestany, editors, Biological and Artificial Computation: From Neuroscience to Technology\\/, volume 1240 of Lecture Notes in Computer Science\\/, pages 453--462. Springer Berlin Heidelberg",
+      "authors": "Forcada, M. L. and \\ Neco, R. P. (1997)",
+      "title": "Recursive hetero-associative memories for translation",
+      "venue": "In J. Mira, R. Moreno-D\\'iaz, and J. Cabestany, editors, Biological and Artificial Computation: From Neuroscience to Technology\\/, volume 1240 of Lecture Notes in Computer Science\\/, pages 453--462. Springer Berlin Heidelberg",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow2013",
+      "raw": "Goodfellow, I., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013). Maxout networks. In Proceedings of The 30th International Conference on Machine Learning\\/, pages 1319--1327",
+      "authors": "Goodfellow, I., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013)",
+      "title": "Maxout networks",
+      "venue": "In Proceedings of The 30th International Conference on Machine Learning\\/, pages 1319--1327",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2012",
+      "raw": "Graves, A. (2012). Sequence transduction with recurrent neural networks. In Proceedings of the 29th International Conference on Machine Learning (ICML 2012)\\/",
+      "authors": "Graves, A. (2012)",
+      "title": "Sequence transduction with recurrent neural networks",
+      "venue": "In Proceedings of the 29th International Conference on Machine Learning (ICML 2012)\\/",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2013",
+      "raw": "Graves, A. (2013). Generating sequences with recurrent neural networks. arXiv: 1308.0850 [cs.NE]\\/",
+      "authors": "Graves, A. (2013)",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "[cs.NE]\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2013asru",
+      "raw": "Graves, A., Jaitly, N., and Mohamed, A.-R. (2013). Hybrid speech recognition with deep bidirectional LSTM. In Automatic Speech Recognition and Understanding (ASRU), 2013 IEEE Workshop on\\/, pages 273--278",
+      "authors": "Graves, A., Jaitly, N., and Mohamed, A.-R. (2013)",
+      "title": "Hybrid speech recognition with deep bidirectional LSTM",
+      "venue": "In Automatic Speech Recognition and Understanding (ASRU), 2013 IEEE Workshop on\\/, pages 273--278",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hermann2014",
+      "raw": "Hermann, K. and Blunsom, P. (2014). Multilingual distributed representations without word alignment. In Proceedings of the Second International Conference on Learning Representations (ICLR 2014)\\/",
+      "authors": "Hermann, K. and Blunsom, P. (2014)",
+      "title": "Multilingual distributed representations without word alignment",
+      "venue": "In Proceedings of the Second International Conference on Learning Representations (ICLR 2014)\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter91",
+      "raw": "Hochreiter, S. (1991). Untersuchungen zu dynamischen neuronalen Netzen. Diploma thesis, Institut f\\\"ur Informatik, Lehrstuhl Prof. Brauer, Technische Universit\\\"at M\\\"unchen",
+      "authors": "Hochreiter, S. (1991)",
+      "title": "Untersuchungen zu dynamischen neuronalen Netzen. Diploma thesis, Institut f\\\"ur Informatik, Lehrstuhl Prof. Brauer, Technische Universit\\\"at M\\\"unchen",
+      "venue": "",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter+Schmidhuber-1997",
+      "raw": "Hochreiter, S. and Schmidhuber, J. (1997). Long short-term memory. Neural Computation\\/, 9(8), 1735--1780",
+      "authors": "Hochreiter, S. and Schmidhuber, J. (1997)",
+      "title": "Long short-term memory",
+      "venue": "Neural Computation\\/, 9(8), 1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kalchbrenner2013",
+      "raw": "Kalchbrenner, N. and Blunsom, P. (2013). Recurrent continuous translation models. In Proceedings of the ACL Conference on Empirical Methods in Natural Language Processing (EMNLP)\\/, pages 1700--1709. Association for Computational Linguistics",
+      "authors": "Kalchbrenner, N. and Blunsom, P. (2013)",
+      "title": "Recurrent continuous translation models",
+      "venue": "In Proceedings of the ACL Conference on Empirical Methods in Natural Language Processing (EMNLP)\\/, pages 1700--1709. Association for Computational Linguistics",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Koehn2010",
+      "raw": "Koehn, P. (2010). Statistical Machine Translation\\/. Cambridge University Press, New York, NY, USA",
+      "authors": "Koehn, P. (2010)",
+      "title": "Statistical Machine Translation\\/",
+      "venue": "Cambridge University Press, New York, NY, USA",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Koehn2003",
+      "raw": "Koehn, P., Och, F. J., and Marcu, D. (2003). Statistical phrase-based translation. In Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology - Volume 1\\/, NAACL '03, pages 48--54, Stroudsburg, PA, USA. Association for Computational Linguistics",
+      "authors": "Koehn, P., Och, F. J., and Marcu, D. (2003)",
+      "title": "Statistical phrase-based translation",
+      "venue": "In Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology - Volume 1\\/, NAACL '03, pages 48--54, Stroudsburg, PA, USA. Association for Computational Linguistics",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pascanu+al-ICML2013-small",
+      "raw": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013a). On the difficulty of training recurrent neural networks. In ICML'2013\\/",
+      "authors": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013a)",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "In ICML'2013\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pascanu2013",
+      "raw": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013b). On the difficulty of training recurrent neural networks. In Proceedings of the 30th International Conference on Machine Learning (ICML 2013)\\/",
+      "authors": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013b)",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "In Proceedings of the 30th International Conference on Machine Learning (ICML 2013)\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pascanu2014rec",
+      "raw": "Pascanu, R., Gulcehre, C., Cho, K., and Bengio, Y. (2014). How to construct deep recurrent neural networks. In Proceedings of the Second International Conference on Learning Representations (ICLR 2014)\\/",
+      "authors": "Pascanu, R., Gulcehre, C., Cho, K., and Bengio, Y. (2014)",
+      "title": "How to construct deep recurrent neural networks",
+      "venue": "In Proceedings of the Second International Conference on Learning Representations (ICLR 2014)\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pouget2014",
+      "raw": "Pouget-Abadie, J., Bahdanau, D., van Merri\\\"enboer, B., Cho, K., and Bengio, Y. (2014). Overcoming the curse of sentence length for neural machine translation using automatic segmentation. In Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation\\/. to appear",
+      "authors": "Pouget-Abadie, J., Bahdanau, D., van Merri\\\"enboer, B., Cho, K., and Bengio, Y. (2014)",
+      "title": "Overcoming the curse of sentence length for neural machine translation using automatic segmentation",
+      "venue": "In Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation\\/ to appear",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Schuster1997",
+      "raw": "Schuster, M. and Paliwal, K. K. (1997). Bidirectional recurrent neural networks. Signal Processing, IEEE Transactions on\\/, 45(11), 2673--2681",
+      "authors": "Schuster, M. and Paliwal, K. K. (1997)",
+      "title": "Bidirectional recurrent neural networks",
+      "venue": "Signal Processing, IEEE Transactions on\\/, 45(11), 2673--2681",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Schwenk2012",
+      "raw": "Schwenk, H. (2012). Continuous space translation models for phrase-based statistical machine translation. In M. Kay and C. Boitet, editors, Proceedings of the 24th International Conference on Computational Linguistics (COLIN)\\/, pages 1071--1080. Indian Institute of Technology Bombay",
+      "authors": "Schwenk, H. (2012)",
+      "title": "Continuous space translation models for phrase-based statistical machine translation",
+      "venue": "In M. Kay and C. Boitet, editors, Proceedings of the 24th International Conference on Computational Linguistics (COLIN)\\/, pages 1071--1080. Indian Institute of Technology Bombay",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Schwenk2006t",
+      "raw": "Schwenk, H., Dchelotte, D., and Gauvain, J.-L. (2006). Continuous space language models for statistical machine translation. In Proceedings of the COLING/ACL on Main conference poster sessions\\/, pages 723--730. Association for Computational Linguistics",
+      "authors": "Schwenk, H., Dchelotte, D., and Gauvain, J.-L. (2006)",
+      "title": "Continuous space language models for statistical machine translation",
+      "venue": "In Proceedings of the COLING/ACL on Main conference poster sessions\\/, pages 723--730. Association for Computational Linguistics",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever2014",
+      "raw": "Sutskever, I., Vinyals, O., and Le, Q. (2014). Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems (NIPS 2014)\\/",
+      "authors": "Sutskever, I., Vinyals, O., and Le, Q. (2014)",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in Neural Information Processing Systems (NIPS 2014)\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zeiler2012",
+      "raw": "Zeiler, M. D. (2012). ADADELTA: An adaptive learning rate method. arXiv: 1212.5701 [cs.LG]\\/",
+      "authors": "Zeiler, M. D. (2012)",
+      "title": "ADADELTA: An adaptive learning rate method",
+      "venue": "[cs.LG]\\/",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "h_t = f\\left( x_{t}, h_{t-1} \\right)",
+      "environment": "align",
+      "labels": [
+        "eq:forward_state"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "c = q\\left(\\left\\{ h_1, \\cdots, h_{T_x} \\right\\}\\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "p(\\vy) = \\prod_{t=1}^T p(y_t \\mid \\left\\{ y_1, \\cdots, y_{t-1} \\right\\}, c),",
+      "environment": "align",
+      "labels": [
+        "eq:decoder_prob"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "p(y_t \\mid \\left\\{ y_1, \\cdots, y_{t-1} \\right\\}, c) = g(y_{t-1}, s_{t}, c),",
+      "environment": "align",
+      "labels": [
+        "eq:output_rnn"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "p(y_{i}|y_1, \\ldots, y_{i-1}, \\vx) = g(y_{i-1}, s_{i}, c_i),",
+      "environment": "align",
+      "labels": [
+        "eq:generate_y"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "c_i = \\sum_{j=1}^{T_x} \\alpha_{ij} h_j.",
+      "environment": "align",
+      "labels": [
+        "eq:context_vector"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\alpha_{ij} = \\frac{\\exp\\left(e_{ij}\\right)}{\\sum_{k=1}^{T_x} \\exp\\left(e_{ik}\\right)},",
+      "environment": "align",
+      "labels": [
+        "eq:annotation_weight"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "s_i = f(s_{i-1}, y_{i-1}, c_i) = (1 - z_i) \\circ s_{i-1} + z_i \\circ \\tilde{s}_{i},",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\tilde{s}_{i} = \\tanh \\left( W e(y_{i - 1}) + U \\left[ r_i \\circ s_{i - 1} \\right] +\n    C c_i \\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "z_i &= \\sigma \\left( W_{z} e(y_{i - 1}) + U_{z} s_{i - 1} + C_{z} c_i\\right), \\\\\n    r_i &= \\sigma \\left( W_{r} e(y_{i - 1}) + U_{r} s_{i - 1} + C_{r} c_i\\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "a(s_{i-1}, h_j) = v_a^{\\top} \\tanh\\left( W_a s_{i-1} + U_a h_j \\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\ora{h}_i =& \n    \\begin{cases}\n        (1 - \\ora{z}_i) \\circ \\ora{h}_{i-1}  + \\ora{z}_i \\circ \\ora{\\underline{h}}_{i} &\\mbox{, if }i > 0 \\\\\n        0 &\\mbox{, if }i = 0\n    \\end{cases}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\ora{\\underline{h}}_i =& \\tanh \\left( \\ora{W} \\ov{E} x_i + \\ora{U}\\left[ \\ora{r}_i \\circ \\ora{h}_{i-1} \\right] \\right) \\\\\n    \\ora{z}_i =& \\sigma\\left( \\ora{W}_z \\ov{E} x_i + \\ora{U}_z \\ora{h}_{i-1} \\right) \\\\\n    \\ora{r}_i =& \\sigma\\left( \\ora{W}_r \\ov{E} x_i + \\ora{U}_r \\ora{h}_{i-1} \\right).",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "h_i = \\left[ \n        \\begin{array}{c}\n    \\ora{h}_i \\\\\n    \\ola{h}_i \n\\end{array}\n\\right]",
+      "environment": "align",
+      "labels": [
+        "eq:annotation"
+      ]
+    },
+    {
+      "ordinal": 14,
+      "latex": "s_i =& (1 - z_i) \\circ s_{i-1} + z_i \\circ \\tilde{s}_i,",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\tilde{s}_{i} =& \\tanh \\left( W E y_{i - 1} + U \\left[ r_i \\circ s_{i - 1} \\right] +\n    C c_i \\right) \\\\ \n    z_i =& \\sigma\\left( W_z E y_{i - 1} + U_z s_{i-1} \n    + C_z c_i \\right)\\\\\n    r_i =& \\sigma\\left( W_r E y_{i - 1} + U_r s_{i-1}\n    + C_r c_i \\right)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 16,
+      "latex": "c_i =& \\sum_{j=1}^{T_x} \\alpha_{ij} h_j,",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 17,
+      "latex": "\\alpha_{ij} =& \\frac{\\exp\\left(e_{ij}\\right)}{\\sum_{k=1}^{T_x}\n    \\exp\\left(e_{ik}\\right)}  \\\\\n    e_{ij} =& v_a^{\\top} \\tanh\\left( W_a s_{i-1} + U_a h_j \\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 18,
+      "latex": "p(y_{i}|s_i,y_{i-1},c_{i}) \\propto& \\exp\\left(y_{i}^{\\top} W_o t_{i}\\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 19,
+      "latex": "t_i =&  \\left[ \\max\\left\\{\\tilde{t}_{i, 2j-1}, \\tilde{t}_{i,2j}\\right\\}\n    \\right]_{j=1,\\ldots,l}^{\\top}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 20,
+      "latex": "\\tilde{t}_{i} =& U_o s_{i - 1} + V_o E y_{i-1} + C_o c_i.",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1153,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3128,
+      "numbers": 0,
+      "citations": 8
+    },
+    {
+      "kind": "related",
+      "title": "Background: Neural Machine Translation",
+      "chars": 1607,
+      "numbers": 0,
+      "citations": 9
+    },
+    {
+      "kind": "related",
+      "title": "RNN Encoder--Decoder",
+      "chars": 1414,
+      "numbers": 0,
+      "citations": 7
+    },
+    {
+      "kind": "method",
+      "title": "Learning to Align and Translate",
+      "chars": 258,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Decoder: General Description",
+      "chars": 2711,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Encoder: Bidirectional RNN for Annotating Sequences",
+      "chars": 1185,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiment Settings",
+      "chars": 546,
+      "numbers": 1,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Dataset",
+      "chars": 1585,
+      "numbers": 11,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Models",
+      "chars": 1265,
+      "numbers": 7,
+      "citations": 7
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Quantitative Results",
+      "chars": 2001,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Qualitative Analysis",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Alignment",
+      "chars": 2039,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "results",
+      "title": "Long Sentences",
+      "chars": 3187,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Learning to Align",
+      "chars": 1239,
+      "numbers": 2,
+      "citations": 2
+    },
+    {
+      "kind": "related",
+      "title": "Neural Networks for Machine Translation",
+      "chars": 1504,
+      "numbers": 0,
+      "citations": 5
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 2497,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 398,
+      "numbers": 0,
+      "citations": 2
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 9,
+      "extends": 0,
+      "contests": 1,
+      "compares": 0,
+      "background": 14,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "Cho2014",
+      "stance": "inherits",
+      "cue": "Following",
+      "sentence": "Following the procedure described in , we reduce the size of the combined corpus to have 348M words using the data selection method by . . We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder.",
+      "section": "Dataset",
+      "sectionKind": "experiments",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "authors": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014a)",
+      "year": 2014,
+      "arxivId": "1406.1078",
+      "inCorpus": true,
+      "anchor": null
+    },
+    "edges": [
+      {
+        "key": "Boulanger2013",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability . used this approach to generate translations from their neural machine translation model.",
+        "section": "Models",
+        "sectionKind": "experiments",
+        "title": "Audio chord recognition with recurrent neural networks",
+        "authors": "Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2013)",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.00003051757812,
+              "y0": 508.69024658203125,
+              "x1": 504.0033874511719,
+              "y1": 518.65283203125
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 519.6492309570312,
+              "x1": 199.79542541503906,
+              "y1": 529.61181640625
+            }
+          ]
+        }
+      },
+      {
+        "key": "Cho2014",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following the procedure described in , we reduce the size of the combined corpus to have 348M words using the data selection method by . . We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder.",
+        "section": "Dataset",
+        "sectionKind": "experiments",
+        "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+        "authors": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014a)",
+        "year": 2014,
+        "arxivId": "1406.1078",
+        "inCorpus": true,
+        "anchor": null
+      },
+      {
+        "key": "Cho2014a",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "We conjectured that the use of a fixed-length context vector is problematic for translating long sentences, based on a recent empirical study reported by and .",
+        "section": "Conclusion",
+        "sectionKind": "conclusion",
+        "title": "On the properties of neural machine translation: Encoder--Decoder approaches",
+        "authors": "Cho, K., van Merri\\\"enboer, B., Bahdanau, D., and Bengio, Y. (2014b)",
+        "year": null,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99996948242188,
+              "y0": 413.464111328125,
+              "x1": 504.003173828125,
+              "y1": 423.4267272949219
+            },
+            {
+              "x0": 107.99996948242188,
+              "y0": 424.423095703125,
+              "x1": 323.0625915527344,
+              "y1": 434.3857116699219
+            }
+          ]
+        }
+      },
+      {
+        "key": "Goodfellow2013",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In both cases, we use a multilayer network with a single maxout hidden layer to compute the conditional probability of each target word .",
+        "section": "Models",
+        "sectionKind": "experiments",
+        "title": "Maxout networks",
+        "authors": "Goodfellow, I., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013)",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 269.2721862792969,
+              "y0": 441.94024658203125,
+              "x1": 504.0008544921875,
+              "y1": 451.9028625488281
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 452.89923095703125,
+              "x1": 153.36968994140625,
+              "y1": 462.8618469238281
+            }
+          ]
+        }
+      },
+      {
+        "key": "Graves2012",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability . used this approach to generate translations from their neural machine translation model.",
+        "section": "Models",
+        "sectionKind": "experiments",
+        "title": "Sequence transduction with recurrent neural networks",
+        "authors": "Graves, A. (2012)",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.00003051757812,
+              "y0": 508.69024658203125,
+              "x1": 504.0033874511719,
+              "y1": 518.65283203125
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 519.6492309570312,
+              "x1": 199.79542541503906,
+              "y1": 529.61181640625
+            }
+          ]
+        }
+      },
+      {
+        "key": "Koehn2003",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike the traditional phrase-based translation system which consists of many small sub-components that are tuned separately, neural machine translation attempts to build and train a single, large neural network that reads a sentence and outputs a correct translation.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Statistical phrase-based translation",
+        "authors": "Koehn, P., Och, F. J., and Marcu, D. (2003)",
+        "year": 2003,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 408.091064453125,
+              "y0": 479.94415283203125,
+              "x1": 504.0009765625,
+              "y1": 489.9067687988281
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 490.90313720703125,
+              "x1": 504.00323486328125,
+              "y1": 500.8657531738281
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 501.86114501953125,
+              "x1": 464.0733337402344,
+              "y1": 511.8237609863281
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pascanu2014rec",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In both cases, we use a multilayer network with a single maxout hidden layer to compute the conditional probability of each target word .",
+        "section": "Models",
+        "sectionKind": "experiments",
+        "title": "How to construct deep recurrent neural networks",
+        "authors": "Pascanu, R., Gulcehre, C., Cho, K., and Bengio, Y. (2014)",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 269.2721862792969,
+              "y0": 441.94024658203125,
+              "x1": 504.0008544921875,
+              "y1": 451.9028625488281
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 452.89923095703125,
+              "x1": 153.36968994140625,
+              "y1": 462.8618469238281
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pouget2014",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "We conjectured that the use of a fixed-length context vector is problematic for translating long sentences, based on a recent empirical study reported by and .",
+        "section": "Conclusion",
+        "sectionKind": "conclusion",
+        "title": "Overcoming the curse of sentence length for neural machine translation using automatic segmentation",
+        "authors": "Pouget-Abadie, J., Bahdanau, D., van Merri\\\"enboer, B., Cho, K., and Bengio, Y. (2014)",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99996948242188,
+              "y0": 413.464111328125,
+              "x1": 504.003173828125,
+              "y1": 423.4267272949219
+            },
+            {
+              "x0": 107.99996948242188,
+              "y0": 424.423095703125,
+              "x1": 323.0625915527344,
+              "y1": 434.3857116699219
+            }
+          ]
+        }
+      },
+      {
+        "key": "Sutskever2014",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability . used this approach to generate translations from their neural machine translation model.",
+        "section": "Models",
+        "sectionKind": "experiments",
+        "title": "Sequence to sequence learning with neural networks",
+        "authors": "Sutskever, I., Vinyals, O., and Le, Q. (2014)",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.00003051757812,
+              "y0": 508.69024658203125,
+              "x1": 504.0033874511719,
+              "y1": 518.65283203125
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 519.6492309570312,
+              "x1": 199.79542541503906,
+              "y1": 529.61181640625
+            }
+          ]
+        }
+      },
+      {
+        "key": "Zeiler2012",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use a minibatch stochastic gradient descent (SGD) algorithm together with Adadelta to train each model.",
+        "section": "Models",
+        "sectionKind": "experiments",
+        "title": "ADADELTA: An adaptive learning rate method",
+        "authors": "Zeiler, M. D. (2012)",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.00003051757812,
+              "y0": 469.8352355957031,
+              "x1": 470.8677062988281,
+              "y1": 479.7978515625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder--decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.",
+      "anchorText": "In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder--decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we conjecture",
+      "section": "Abstract",
+      "sectionKind": "abstract",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 192.85116577148438,
+            "y0": 316.1273193359375,
+            "x1": 468.1375732421875,
+            "y1": 326.0899353027344
+          },
+          {
+            "x0": 143.8650360107422,
+            "y0": 327.0863037109375,
+            "x1": 468.1375427246094,
+            "y1": 337.0489196777344
+          },
+          {
+            "x0": 143.8650360107422,
+            "y0": 338.0452880859375,
+            "x1": 468.1375732421875,
+            "y1": 348.0079040527344
+          },
+          {
+            "x0": 143.8650360107422,
+            "y0": 349.0042724609375,
+            "x1": 468.13751220703125,
+            "y1": 358.9668884277344
+          },
+          {
+            "x0": 143.8650360107422,
+            "y0": 359.9632568359375,
+            "x1": 366.1704406738281,
+            "y1": 369.9258728027344
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, this implements a mechanism of attention in the decoder.",
+      "anchorText": "Intuitively, this implements a mechanism of attention in the decoder.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Decoder: General Description",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 461.041748046875,
+            "y0": 183.89540100097656,
+            "x1": 504.0003967285156,
+            "y1": 193.85800170898438
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 194.85438537597656,
+            "x1": 338.9729309082031,
+            "y1": 204.81698608398438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe the architecture proposed here is a promising step toward better machine translation and a better understanding of natural languages in general.",
+      "anchorText": "We believe the architecture proposed here is a promising step toward better machine translation and a better understanding of natural languages in general.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 203.84022521972656,
+            "y0": 672.4929809570312,
+            "x1": 504.0032958984375,
+            "y1": 682.45556640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 683.4509887695312,
+            "x1": 422.0310363769531,
+            "y1": 693.41357421875
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 0,
+    "shown": 0,
+    "bare": 3
+  }
+}

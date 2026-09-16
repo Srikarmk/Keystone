@@ -1,0 +1,831 @@
+{
+  "id": "1312.6114",
+  "title": "Auto-Encoding Variational Bayes",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1312.6114",
+  "numbers": [
+    {
+      "value": "0.01",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Stepsizes were adapted with Adagrad ; the Adagrad global stepsize parameters were chosen from 0.01, 0.02, 0.1 based on performance on the training set in the first few iterations.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.02",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Stepsizes were adapted with Adagrad ; the Adagrad global stepsize parameters were chosen from 0.01, 0.02, 0.1 based on performance on the training set in the first few iterations.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Stepsizes were adapted with Adagrad ; the Adagrad global stepsize parameters were chosen from 0.01, 0.02, 0.1 based on performance on the training set in the first few iterations.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}",
+    "\\bb": "\\mathbf{#1}",
+    "\\bbb": "\\bb{b}",
+    "\\bx": "\\bb{x}",
+    "\\bxi": "\\bx^{(i)}",
+    "\\bxl": "\\bx^{(l)}",
+    "\\bt": "\\bb{t}",
+    "\\by": "\\bb{y}",
+    "\\bv": "\\bb{v}",
+    "\\bw": "\\bb{w}",
+    "\\bc": "\\bb{c}",
+    "\\bd": "\\bb{d}",
+    "\\bg": "\\bb{g}",
+    "\\bh": "\\bb{h}",
+    "\\br": "\\bb{r}",
+    "\\bu": "\\bb{u}",
+    "\\byl": "\\by^{(l)}",
+    "\\bz": "\\bb{z}",
+    "\\bzi": "\\bz^{(i)}",
+    "\\bzl": "\\bz^{(l)}",
+    "\\bzil": "\\bz^{(i,l)}",
+    "\\bpa": "\\bb{pa}",
+    "\\bT": "\\boldsymbol{\\theta}",
+    "\\bTl": "\\boldsymbol{\\theta}^{(l)}",
+    "\\balpha": "\\boldsymbol{\\alpha}",
+    "\\bphi": "\\boldsymbol{\\phi}",
+    "\\beps": "\\boldsymbol{\\epsilon}",
+    "\\bepsl": "\\beps^{(l)}",
+    "\\bepsil": "\\beps^{(i,l)}",
+    "\\bzeta": "\\boldsymbol{\\zeta}",
+    "\\bzetal": "\\zeta^{(l)}",
+    "\\bsigma": "\\boldsymbol{\\sigma}",
+    "\\bmu": "\\boldsymbol{\\mu}",
+    "\\bzero": "\\bb{0}",
+    "\\bL": "\\bb{L}",
+    "\\bV": "\\bb{V}",
+    "\\bW": "\\bb{W}",
+    "\\bI": "\\bb{I}",
+    "\\bR": "\\bb{R}",
+    "\\bX": "\\bb{X}",
+    "\\bO": "\\bb{O}",
+    "\\btPa": "\\widetilde{\\bb{Pa}}",
+    "\\btpa": "\\widetilde{\\bb{pa}}",
+    "\\tz": "\\widetilde{z}",
+    "\\tZ": "\\widetilde{Z}",
+    "\\tf": "\\widetilde{f}",
+    "\\btZ": "\\widetilde{\\bb{Z}}",
+    "\\btz": "\\widetilde{\\bz}",
+    "\\btT": "\\widetilde{\\bT}",
+    "\\tPa": "\\widetilde{Pa}",
+    "\\pT": "p_{\\bT}",
+    "\\pTl": "p_{\\bT^{(l)}}",
+    "\\pA": "p_{\\balpha}",
+    "\\qT": "q_{\\bT}",
+    "\\qPhi": "q_{\\bphi}",
+    "\\fT": "f_{\\bT}",
+    "\\fPhi": "f_{\\bphi}",
+    "\\fTPhi": "f_{\\bT,\\bphi}",
+    "\\gT": "g_{\\bT}",
+    "\\gPhi": "g_{\\bphi}",
+    "\\hPhi": "h_{\\bphi}",
+    "\\Exp": "\\mathbb{E}_{#1}\\left[#2\\right]",
+    "\\Ed": "\\mathbb{E}_\\bd",
+    "\\eqnr": "\\addtocounter{equation}{1}\\tag{\\theequation}",
+    "\\LB": "\\mathcal{L}^{#1}(\\bT,\\bphi; #2)",
+    "\\LBT": "\\widetilde{\\mathcal{L}}^{#1}(\\bT,\\bphi; #2)",
+    "\\algorithmicforall": "\\textbf{for each}"
+  },
+  "references": [
+    {
+      "key": "bengio2013representation",
+      "raw": "Yoshua Bengio, Aaron Courville, and Pascal Vincent. Representation learning: A review and new perspectives. 2013",
+      "authors": "Yoshua Bengio, Aaron Courville, and Pascal Vincent",
+      "title": "Representation learning: A review and new perspectives",
+      "venue": "2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "blei2012variational",
+      "raw": "David M Blei, Michael I Jordan, and John W Paisley. Variational Bayesian inference with Stochastic Search. In Proceedings of the 29th International Conference on Machine Learning (ICML-12), pages 1367--1374, 2012",
+      "authors": "David M Blei, Michael I Jordan, and John W Paisley",
+      "title": "Variational Bayesian inference with Stochastic Search",
+      "venue": "In Proceedings of the 29th International Conference on Machine Learning (ICML-12), pages 1367--1374, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2013deep",
+      "raw": "Yoshua Bengio and \\'Eric Thibodeau-Laufer. Deep generative stochastic networks trainable by backprop. arXiv preprint arXiv:1306.1091, 2013",
+      "authors": "Yoshua Bengio and \\'Eric Thibodeau-Laufer",
+      "title": "Deep generative stochastic networks trainable by backprop",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1306.1091",
+      "doi": null
+    },
+    {
+      "key": "devroye1986sample",
+      "raw": "Luc Devroye. Sample-based non-uniform random variate generation. In Proceedings of the 18th conference on Winter simulation, pages 260--265. ACM, 1986",
+      "authors": "Luc Devroye",
+      "title": "Sample-based non-uniform random variate generation",
+      "venue": "In Proceedings of the 18th conference on Winter simulation, pages 260--265. ACM, 1986",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "duchi2010adaptive",
+      "raw": "John Duchi, Elad Hazan, and Yoram Singer. Adaptive subgradient methods for online learning and stochastic optimization. Journal of Machine Learning Research, 12:2121--2159, 2010",
+      "authors": "John Duchi, Elad Hazan, and Yoram Singer",
+      "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+      "venue": "Journal of Machine Learning Research, 12:2121--2159, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "duane1987hybrid",
+      "raw": "Simon Duane, Anthony D Kennedy, Brian J Pendleton, and Duncan Roweth. Hybrid monte carlo. Physics letters B, 195(2):216--222, 1987",
+      "authors": "Simon Duane, Anthony D Kennedy, Brian J Pendleton, and Duncan Roweth",
+      "title": "Hybrid monte carlo",
+      "venue": "Physics letters B, 195(2):216--222, 1987",
+      "year": 1987,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gregor2013deep",
+      "raw": "Karol Gregor, Andriy Mnih, and Daan Wierstra. Deep autoregressive networks. arXiv preprint arXiv:1310.8499, 2013",
+      "authors": "Karol Gregor, Andriy Mnih, and Daan Wierstra",
+      "title": "Deep autoregressive networks",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1310.8499",
+      "doi": null
+    },
+    {
+      "key": "hoffman2013stochastic",
+      "raw": "Matthew D Hoffman, David M Blei, Chong Wang, and John Paisley. Stochastic variational inference. The Journal of Machine Learning Research, 14(1):1303--1347, 2013",
+      "authors": "Matthew D Hoffman, David M Blei, Chong Wang, and John Paisley",
+      "title": "Stochastic variational inference",
+      "venue": "The Journal of Machine Learning Research, 14(1):1303--1347, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hinton1995wake",
+      "raw": "Geoffrey E Hinton, Peter Dayan, Brendan J Frey, and Radford M Neal. The\" wake-sleep\" algorithm for unsupervised neural networks. SCIENCE, pages 1158--1158, 1995",
+      "authors": "Geoffrey E Hinton, Peter Dayan, Brendan J Frey, and Radford M Neal",
+      "title": "The\" wake-sleep\" algorithm for unsupervised neural networks",
+      "venue": "SCIENCE, pages 1158--1158, 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "koray-psd-08",
+      "raw": "Koray Kavukcuoglu, Marc'Aurelio Ranzato, and Yann LeCun. Fast inference in sparse coding algorithms with applications to object recognition. Technical Report CBLL-TR-2008-12-01, Computational and Biological Learning Lab, Courant Institute, NYU, 2008",
+      "authors": "Koray Kavukcuoglu, Marc'Aurelio Ranzato, and Yann LeCun",
+      "title": "Fast inference in sparse coding algorithms with applications to object recognition",
+      "venue": "Technical Report CBLL-TR-2008-12-01, Computational and Biological Learning Lab, Courant Institute, NYU, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "linsker1989application",
+      "raw": "Ralph Linsker. An application of the principle of maximum information preservation to linear systems. Morgan Kaufmann Publishers Inc., 1989",
+      "authors": "Ralph Linsker",
+      "title": "An application of the principle of maximum information preservation to linear systems",
+      "venue": "Morgan Kaufmann Publishers Inc., 1989",
+      "year": 1989,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ranganath2013black",
+      "raw": "Rajesh Ranganath, Sean Gerrish, and David M Blei. Black Box Variational Inference. arXiv preprint arXiv:1401.0118, 2013",
+      "authors": "Rajesh Ranganath, Sean Gerrish, and David M Blei",
+      "title": "Black Box Variational Inference",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1401.0118",
+      "doi": null
+    },
+    {
+      "key": "rezende2014stochastic",
+      "raw": "Danilo Jimenez Rezende, Shakir Mohamed, and Daan Wierstra. Stochastic back-propagation and variational inference in deep latent gaussian models. arXiv preprint arXiv:1401.4082, 2014",
+      "authors": "Danilo Jimenez Rezende, Shakir Mohamed, and Daan Wierstra",
+      "title": "Stochastic back-propagation and variational inference in deep latent gaussian models",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1401.4082",
+      "doi": null
+    },
+    {
+      "key": "roweis1998algorithms",
+      "raw": "Sam Roweis. EM algorithms for PCA and SPCA. Advances in neural information processing systems, pages 626--632, 1998",
+      "authors": "Sam Roweis",
+      "title": "EM algorithms for PCA and SPCA",
+      "venue": "Advances in neural information processing systems, pages 626--632, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "salimans2013fixedform",
+      "raw": "Tim Salimans and David A Knowles. Fixed-form variational posterior approximation through stochastic linear regression. Bayesian Analysis, 8(4), 2013",
+      "authors": "Tim Salimans and David A Knowles",
+      "title": "Fixed-form variational posterior approximation through stochastic linear regression",
+      "venue": "Bayesian Analysis, 8(4), 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "salakhutdinov2010efficient",
+      "raw": "Ruslan Salakhutdinov and Hugo Larochelle. Efficient learning of deep boltzmann machines. In International Conference on Artificial Intelligence and Statistics, pages 693--700, 2010",
+      "authors": "Ruslan Salakhutdinov and Hugo Larochelle",
+      "title": "Efficient learning of deep boltzmann machines",
+      "venue": "In International Conference on Artificial Intelligence and Statistics, pages 693--700, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vincent2010stacked",
+      "raw": "Pascal Vincent, Hugo Larochelle, Isabelle Lajoie, Yoshua Bengio, and Pierre-Antoine Manzagol. Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion. The Journal of Machine Learning Research, 9999:3371--3408, 2010",
+      "authors": "Pascal Vincent, Hugo Larochelle, Isabelle Lajoie, Yoshua Bengio, and Pierre-Antoine Manzagol",
+      "title": "Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion",
+      "venue": "The Journal of Machine Learning Research, 9999:3371--3408, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\log \\pT(\\bxi) = D_{KL}(\\qPhi(\\bz|\\bxi)||\\pT(\\bz|\\bxi)) + \\LB{}{\\bxi}\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\log \\pT(\\bxi) \\geq \\LB{}{\\bxi}\n&= \\Exp{\\qPhi(\\bz|\\bx)}{- \\log \\qPhi(\\bz|\\bx) + \\log \\pT(\\bx,\\bz)}\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:lowerbound"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\LB{}{\\bxi} = - D_{KL}(\\qPhi(\\bz|\\bxi) || \\pT(\\bz)) + \\Exp{\\qPhi(\\bz|\\bxi)}{\\log \\pT(\\bxi | \\bz)}\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:lowerbound2"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\btz = \\gPhi(\\beps,\\bx) \\text{\\quad with \\quad} \\beps \\sim p(\\beps)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\Exp{\\qPhi(\\bz|\\bxi)}{f(\\bz)}\n= \\Exp{p(\\beps)}{f(\\gPhi(\\beps,\\bxi))}\n&\\simeq \\frac{1}{L} \\sum_{l=1}^L {f(\\gPhi(\\bepsl,\\bxi))}\n \\text{\\quad where \\quad} \\bepsl \\sim p(\\beps)",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\LBT{A}{\\bxi}\n&= \\frac{1}{L} \\sum_{l=1}^L \n\\log \\pT(\\bxi, \\bzil) - \\log \\qPhi(\\bzil|\\bxi) \\\\\n\\text{where \\quad} \\bzil &= \\gPhi(\\bepsil,\\bxi)\n\\text{\\quad and \\quad} \\bepsl \\sim p(\\beps)\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:fullestimator"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\LBT{B}{\\bxi}\n&= - D_{KL}(\\qPhi(\\bz|\\bxi) || \\pT(\\bz))\n+ \\frac{1}{L} \\sum_{l=1}^L (\\log \\pT(\\bxi|\\bzil)) \\\\\n\\text{where \\quad} \\bzil &= \\gPhi(\\bepsil,\\bxi)\n\\text{\\quad and \\quad} \\bepsl \\sim p(\\beps)\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:estimator2"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\LB{}{\\bX} \\simeq \\LBT{M}{\\bX^M} = \\frac{N}{M} \\sum_{i=1}^M \\LBT{}{\\bxi}\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:minibatchestimator"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\log \\qPhi(\\bz|\\bxi)\n&= \\log \\mathcal{N}(\\bz; \\bmu^{(i)}, \\bsigma^{2 (i)} \\bI)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\LB{}{\\bxi}\n&\\simeq \n\\frac{1}{2} \\sum_{j=1}^J \\left(1 + \\log ((\\sigma_j^{(i)})^2) - (\\mu_j^{(i)})^2 - (\\sigma_j^{(i)})^2 \\right)\n+ \\frac{1}{L} \\sum_{l=1}^L \\log \\pT(\\bxi|\\bzil) \\\\\n\\text{where\\quad}\n\\bzil &= \\bmu^{(i)} + \\bsigma^{(i)} \\odot \\beps^{(l)}\n\\text{\\quad and \\quad}\n\\bepsl \\sim \\mathcal{N}(0,\\bI)\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:gaussian_estimator"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\int \\qT(\\bz) \\log p(\\bz) \\,d\\bz\n&= \\int \\mathcal{N}(\\bz;\\bmu,\\bsigma^2) \\log \\mathcal{N}(\\bz;\\bzero,\\bI) \\,d\\bz \\\\\n&=  - \\frac{J}{2} \\log (2 \\pi) - \\frac{1}{2} \\sum_{j=1}^J (\\mu_j^2 + \\sigma_j^2)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\int \\qT(\\bz) \\log \\qT(\\bz) \\,d\\bz\n&= \\int \\mathcal{N}(\\bz;\\bmu,\\bsigma^2) \\log \\mathcal{N}(\\bz;\\bmu,\\bsigma^2) \\,d\\bz \\\\\n&= - \\frac{J}{2} \\log (2 \\pi) - \\frac{1}{2} \\sum_{j=1}^J ( 1 + \\log \\sigma^2_j )",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "- D_{KL}((\\qPhi(\\bz) || \\pT(\\bz)) &= \\int \\qT(\\bz) \\left(\\log \\pT(\\bz) - \\log \\qT(\\bz)\\right) \\,d\\bz \\\\\n&= \\frac{1}{2} \\sum_{j=1}^J \\left(1 + \\log ((\\sigma_j)^2) - (\\mu_j)^2 - (\\sigma_j)^2 \\right)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\log p(\\bx|\\bz)\n&= \\sum_{i=1}^D x_i \\log y_i + (1-x_i) \\cdot \\log(1-y_i) \\\\\n\\text{where\\,\\,\\,}\n\\by &= f_\\sigma(\\bW_2 \\tanh(\\bW_1 \\bz + \\bbb_1) + \\bbb_2)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 14,
+      "latex": "\\log p(\\bx|\\bz)\n&= \\log \\mathcal{N}(\\bx; \\bmu, \\bsigma^2 \\bI)\n\\\\\n\\text{where\\,\\,\\,}\n\\bmu &= \\bW_4 \\bh  +\\bbb_4 \\\\\n\\log \\bsigma^2 &= \\bW_5 \\bh + \\bbb_5 \\\\\n\\bh &= \\tanh(\\bW_3 \\bz + \\bbb_3)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\pT(\\bxi) \\simeq \\left( \\frac{1}{L} \\sum_{l=1}^L \\frac{q(\\bzl)}{\\pT(\\bz) \\pT(\\bxi|\\bzl)} \\right)^{-1} \\text{\\quad where \\quad} \\bzl \\sim \\pT(\\bz|\\bxi)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 16,
+      "latex": "\\frac{1}{\\pT(\\bxi)} \n&= \\frac{\\int q(\\bz) \\,d\\bz}{\\pT(\\bxi)}\n= \\frac{\\int q(\\bz) \\frac{\\pT(\\bxi, \\bz) }{\\pT(\\bxi, \\bz)} \\,d\\bz}{\\pT(\\bxi)} \\\\\n&= \\int \\frac{\\pT(\\bxi, \\bz)}{\\pT(\\bxi)} \\frac{q(\\bz)}{\\pT(\\bxi, \\bz)} \\,d\\bz \\\\\n&= \\int \\pT(\\bz|\\bxi) \\frac{q(\\bz)}{\\pT(\\bxi, \\bz)} \\,d\\bz \\\\\n&\\simeq \\frac{1}{L} \\sum_{l=1}^L \\frac{q(\\bzl)}{\\pT(\\bz) \\pT(\\bxi|\\bzl)} \\text{\\quad where \\quad} \\bzl \\sim \\pT(\\bz|\\bxi)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 17,
+      "latex": "\\log \\pA(\\bX) = D_{KL}(\\qPhi(\\bT)||\\pA(\\bT|\\bX)) + \\mathcal{L}(\\bphi;\\bX)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 18,
+      "latex": "\\mathcal{L}(\\bphi;\\bX) = \\int \\qPhi(\\bT) \\left( \\log \\pT(\\bX) + \\log \\pA(\\bT) - \\log \\qPhi(\\bT) \\right) \\,d\\bT\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:lowerbound1_ap"
+      ]
+    },
+    {
+      "ordinal": 19,
+      "latex": "\\log \\pT(\\bxi) = D_{KL}(\\qPhi(\\bz|\\bxi)||\\pT(\\bz|\\bxi)) + \\mathcal{L}(\\bT,\\bphi;\\bxi)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 20,
+      "latex": "\\mathcal{L}(\\bT,\\bphi;\\bxi)\n&= \\int \\qPhi(\\bz|\\bx) \\left(\\log \\pT(\\bxi | \\bz) + \\log \\pT(\\bz) - \\log \\qPhi(\\bz|\\bx)\\right) \\,d\\bz \n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:lowerbound2_ap"
+      ]
+    },
+    {
+      "ordinal": 21,
+      "latex": "\\btz = \\gPhi(\\beps,\\bx) \\text{\\quad with \\quad} \\beps \\sim p(\\beps)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 22,
+      "latex": "\\mathcal{L}(\\bT,\\bphi;\\bxi)\n&= \\int \\qPhi(\\bz|\\bx) \\left(\\log \\pT(\\bxi | \\bz) + \\log \\pT(\\bz) - \\log \\qPhi(\\bz|\\bx)\\right) \\,d\\bz \\\\\n&= \\int p(\\beps) \\left(\\log \\pT(\\bxi | \\bz) + \\log \\pT(\\bz) - \\log \\qPhi(\\bz|\\bx)\\right) \\bigg|_{\\bz=\\gPhi(\\beps,\\bxi)} \\,d\\beps\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:reparameterizedbound2_ap"
+      ]
+    },
+    {
+      "ordinal": 23,
+      "latex": "\\btT = \\hPhi(\\bzeta) \\text{\\quad with \\quad} \\bzeta \\sim p(\\bzeta)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 24,
+      "latex": "\\mathcal{L}(\\bphi;\\bX)\n&= \\int \\qPhi(\\bT) \\left( \\log \\pT(\\bX) + \\log \\pA(\\bT) - \\log \\qPhi(\\bT) \\right) \\,d\\bT \\\\\n&= \\int p(\\bzeta) \\left( \\log \\pT(\\bX) + \\log \\pA(\\bT) - \\log \\qPhi(\\bT) \\right) \\bigg|_{\\bT=\\hPhi(\\bzeta)} \\,d\\bzeta\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:reparameterizedbound1_ap"
+      ]
+    },
+    {
+      "ordinal": 25,
+      "latex": "\\fPhi(\\bx, \\bz, \\bT) = N \\cdot (\\log \\pT(\\bx | \\bz) + \\log \\pT(\\bz) - \\log \\qPhi(\\bz|\\bx)) + \\log \\pA(\\bT) - \\log \\qPhi(\\bT)",
+      "environment": "align",
+      "labels": [
+        "eq:f_ap"
+      ]
+    },
+    {
+      "ordinal": 26,
+      "latex": "\\mathcal{L}(\\bphi;\\bX)\n&\\simeq \\frac{1}{L} \\sum_{l=1}^L \\fPhi(\\bxl, \\gPhi(\\bepsl,\\bxl), \\hPhi(\\bzetal))\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:fullestimator_ap"
+      ]
+    },
+    {
+      "ordinal": 27,
+      "latex": "\\log \\qPhi(\\bT) &= \\log \\mathcal{N}(\\bT; \\bmu_{\\bT}, \\bsigma_{\\bT}^2 \\bI) \\\\\n\\log \\qPhi(\\bz|\\bx)\n&= \\log \\mathcal{N}(\\bz; \\bmu_{\\bz}, \\bsigma_{\\bz}^2 \\bI)\n\\eqnr",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 28,
+      "latex": "\\qPhi(\\bT) &\\text{\\quad as \\quad} \\btT = \\bmu_{\\bT} + \\bsigma_{\\bT} \\odot \\bzeta\n&\\text{\\quad where \\quad} \\bzeta \\sim \\mathcal{N}(\\bzero,\\bI) \\\\\n\\qPhi(\\bz|\\bx) &\\text{\\quad as \\quad} \\btz = \\bmu_{\\bz} + \\bsigma_{\\bz} \\odot \\beps\n&\\text{\\quad where \\quad} \\beps \\sim \\mathcal{N}(\\bzero,\\bI)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 29,
+      "latex": "\\mathcal{L}(\\bphi;\\bX)\n&\\simeq \n\\frac{1}{L} \\sum_{l=1}^L \nN \\cdot \\left( \\frac{1}{2} \\sum_{j=1}^J \\left(1 + \\log ((\\sigma_{\\bz,j}^{(l)})^2) - (\\mu_{\\bz,j}^{(l)})^2 - (\\sigma_{\\bz,j}^{(l)})^2 \\right)\n+ \\log \\pT(\\bxi\\bzi) \\right) \\\\\n&+ \\frac{1}{2} \\sum_{j=1}^J \\left(1 + \\log ((\\sigma_{\\bT,j}^{(l)})^2) - (\\mu_{\\bT,j}^{(l)})^2 - (\\sigma_{\\bT,j}^{(l)})^2 \\right)\n\\eqnr",
+      "environment": "align*",
+      "labels": [
+        "eq:gaussian_estimator_ap"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 952,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 1682,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Method",
+      "chars": 1281,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Problem scenario",
+      "chars": 3477,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "The variational bound",
+      "chars": 1024,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "The SGVB estimator and AEVB algorithm",
+      "chars": 3428,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "The reparameterization trick",
+      "chars": 1607,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "other",
+      "title": "Example: Variational Auto-Encoder",
+      "chars": 1852,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Related work",
+      "chars": 4573,
+      "numbers": 0,
+      "citations": 16
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 3656,
+      "numbers": 7,
+      "citations": 3
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 602,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Future work",
+      "chars": 559,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 16,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": [
+      {
+        "key": "duane1987hybrid",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "The AEVB and Wake-Sleep methods were compared to Monte Carlo EM (MCEM) with a Hybrid Monte Carlo (HMC) sampler; details are in the appendix.",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "title": "Hybrid monte carlo",
+        "authors": "Simon Duane, Anthony D Kennedy, Brian J Pendleton, and Duncan Roweth",
+        "year": 1987,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 457.757080078125,
+              "y0": 689.4293212890625,
+              "x1": 504.00347900390625,
+              "y1": 699.3919067382812
+            },
+            {
+              "x0": 108.0,
+              "y0": 700.3883056640625,
+              "x1": 504.003173828125,
+              "y1": 710.3508911132812
+            },
+            {
+              "x0": 108.0,
+              "y0": 711.3472900390625,
+              "x1": 137.32989501953125,
+              "y1": 721.3098754882812
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Note that our method can be applied to online, non-stationary settings, e.g. streaming data, but here we assume a fixed dataset for simplicity.",
+      "anchorText": "Note that our method can be applied to online, non-stationary settings, e.g. streaming data, but here we assume a fixed dataset for simplicity.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "Method",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 161.0806884765625,
+            "y0": 274.7073974609375,
+            "x1": 504.0031433105469,
+            "y1": 284.6700134277344
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 285.6663818359375,
+            "x1": 325.3141174316406,
+            "y1": 295.6289978027344
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We assume that the data are generated by some random process, involving an unobserved continuous random variable .",
+      "anchorText": "We assume that the data are generated by some random process, involving an unobserved continuous random variable",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Problem scenario",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 201.70648193359375,
+            "y0": 345.11041259765625,
+            "x1": 504.0015563964844,
+            "y1": 355.0730285644531
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 357.1094055175781,
+            "x1": 282.23577880859375,
+            "y1": 367.072021484375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We assume that the prior and likelihood come from parametric families of distributions and , and that their PDFs are differentiable almost everywhere w.r.t. both and .",
+      "anchorText": ", and that their PDFs are differentiable almost everywhere w.r.t. both",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Problem scenario",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 291.68701171875,
+            "y0": 391.02630615234375,
+            "x1": 503.9963073730469,
+            "y1": 400.9889221191406
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 401.98529052734375,
+            "x1": 196.65716552734375,
+            "y1": 411.9479064941406
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We assume an approximate posterior in the form , but please note that the technique can be applied to the case , i.e. where we do not condition on , as well.",
+      "anchorText": ", but please note that the technique can be applied to the case",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "The SGVB estimator and AEVB algorithm",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 368.1719970703125,
+            "y0": 493.60345458984375,
+            "x1": 503.99591064453125,
+            "y1": 503.5660705566406
+          },
+          {
+            "x0": 108.0,
+            "y0": 504.56243896484375,
+            "x1": 252.34815979003906,
+            "y1": 514.5250244140625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In our experiments we found that the number of samples per datapoint can be set to as long as the minibatch size was large enough, e.g. .",
+      "anchorText": "In our experiments we found that the number of samples",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "The SGVB estimator and AEVB algorithm",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 255.2533721923828,
+            "y0": 418.87152099609375,
+            "x1": 493.31951904296875,
+            "y1": 428.8341369628906
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "However, it is well known that this reconstruction criterion is in itself not sufficient for learning useful representations .",
+      "anchorText": "However, it is well known that this reconstruction criterion is in itself not sufficient for learning useful representations",
+      "kind": "conventional",
+      "support": "cited",
+      "cue": "it is well known",
+      "section": "Related work",
+      "sectionKind": "related",
+      "cites": [
+        "bengio2013representation"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 333.8438415527344,
+            "y0": 399.36114501953125,
+            "x1": 503.99493408203125,
+            "y1": 409.3237609863281
+          },
+          {
+            "x0": 108.0,
+            "y0": 410.32012939453125,
+            "x1": 421.4830627441406,
+            "y1": 420.2827453613281
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 6,
+    "cited": 1,
+    "shown": 0,
+    "bare": 5
+  }
+}

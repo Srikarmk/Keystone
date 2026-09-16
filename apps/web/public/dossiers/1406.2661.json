@@ -1,0 +1,1057 @@
+{
+  "id": "1406.2661",
+  "title": "Generative Adversarial Nets",
+  "keystone": null,
+  "coverage": {
+    "claims": 1,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 1,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [
+    {
+      "value": "0.4",
+      "section": "conclusion",
+      "sentence": "This framework admits many straightforward extensions: [noitemsep,leftmargin=0.4cm] A conditional generative model can be obtained by adding as input to both and . Learned approximate inference can be performed by training an auxiliary network to predict given .",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1406.2661",
+  "numbers": [
+    {
+      "value": "0.4",
+      "kind": "result",
+      "section": "conclusion",
+      "sentence": "This framework admits many straightforward extensions: [noitemsep,leftmargin=0.4cm] A conditional generative model can be obtained by adding as input to both and . Learned approximate inference can be performed by training an auxiliary network to predict given .",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Generative adversarial nets are trained by simultaneously updating the discriminative distribution ( , blue, dashed line) so that it discriminates between samples from the data generating distribution (black, dotted line) from those of the generative distribution (G) (green, solid line). The lower horizontal line is the domain from which is sampled, in this case uniformly. The horizontal line above is part of the domain of . The upward arrows show how the mapping imposes the non-uniform distribution on transformed samples. contracts in regions of high density and expands in regions of low density of . (a) Consider an adversarial pair near convergence: is similar to and is a partially accurate classifier. (b) In the inner loop of the algorithm is trained to discriminate samples from data, converging to . (c) After an update to , gradient of has guided to flow to regions that are more likely to be classified as data. (d) After several steps of training, if and have enough capacity, they will reach a point at which both cannot improve because . The discriminator is unable to differentiate between the two distributions, i.e. .",
+      "label": "fig:intuition",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "...",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(a)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(b)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(c)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(d)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Parzen window-based log-likelihood estimates. The reported numbers on MNIST are the mean log-likelihood of samples on test set, with the standard error of the mean computed across examples. On TFD, we computed the standard error across folds of the dataset, with a different chosen using the validation set of each fold. On TFD, was cross validated on each fold and mean log-likelihood on each fold were computed. For MNIST we compare against other models of the real-valued (rather than binary) version of dataset.",
+      "label": "table:parzen",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MNIST",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "TFD",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DBN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Stacked CAE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep GSN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Adversarial nets",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Parzen window-based log-likelihood estimates. The reported numbers on MNIST are the mean log-likelihood of samples on test set, with the standard error of the mean computed across examples. On TFD, we computed the standard error across folds of the dataset, with a different chosen using the validation set of each fold. On TFD, was cross validated on each fold and mean log-likelihood on each fold were computed. For MNIST we compare against other models of the real-valued (rather than binary) version of dataset.",
+      "label": "table:parzen",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "a)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "b)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "c)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "d)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Challenges in generative modeling: a summary of the difficulties encountered by different approaches to deep generative modeling for each of the major operations involving a model.",
+      "label": "table:comparison",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Deep directed graphical models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Deep undirected graphical models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Generative autoencoders",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Adversarial models Training",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Inference needed during training.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Inference needed during training. MCMC needed to approximate partition function gradient.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Enforced tradeoff between mixing and power of reconstruction generation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Synchronizing the discriminator with the generator. Helvetica. Inference",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Learned approximate inference",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Variational inference",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MCMC-based inference",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Learned approximate inference Sampling",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "No difficulties",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Requires Markov chain",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Requires Markov chain",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "No difficulties Evaluating",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Intractable, may be approximated with AIS",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Intractable, may be approximated with AIS",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Not explicitly represented, may be approximated with Parzen density estimation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Not explicitly represented, may be approximated with Parzen density estimation Model design",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Nearly all models incur extreme difficulty",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Careful design needed to ensure multiple properties",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Any differentiable function is theoretically permitted",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Any differentiable function is theoretically permitted",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.6479949951172,
+            "y0": 368.6390075683594,
+            "x1": 504.0028076171875,
+            "y1": 377.60540771484375
+          },
+          {
+            "x0": 108.0,
+            "y0": 378.60101318359375,
+            "x1": 395.72283935546875,
+            "y1": 387.5674133300781
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\theHalgorithm": "\\arabic{algorithm}",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "Bastien-Theano-2012",
+      "raw": "Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012). Theano: new features and speed improvements. Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop",
+      "authors": "Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012)",
+      "title": "Theano: new features and speed improvements",
+      "venue": "Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-2009-book",
+      "raw": "Bengio, Y. (2009). Learning deep architectures for AI\\/. Now Publishers",
+      "authors": "Bengio, Y. (2009)",
+      "title": "Learning deep architectures for AI\\/",
+      "venue": "Now Publishers",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-et-al-ICML2013",
+      "raw": "Bengio, Y., Mesnil, G., Dauphin, Y., and Rifai, S. (2013a). Better mixing via deep representations. In ICML'13\\/",
+      "authors": "Bengio, Y., Mesnil, G., Dauphin, Y., and Rifai, S. (2013a)",
+      "title": "Better mixing via deep representations",
+      "venue": "In ICML'13\\/",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-et-al-NIPS2013",
+      "raw": "Bengio, Y., Yao, L., Alain, G., and Vincent, P. (2013b). Generalized denoising auto-encoders as generative models. In NIPS26\\/. Nips Foundation",
+      "authors": "Bengio, Y., Yao, L., Alain, G., and Vincent, P. (2013b)",
+      "title": "Generalized denoising auto-encoders as generative models",
+      "venue": "In NIPS26\\/. Nips Foundation",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-et-al-ICML2014",
+      "raw": "Bengio, Y., Thibodeau-Laufer, E., and Yosinski, J. (2014a). Deep generative stochastic networks trainable by backprop. In ICML'14\\/",
+      "authors": "Bengio, Y., Thibodeau-Laufer, E., and Yosinski, J. (2014a)",
+      "title": "Deep generative stochastic networks trainable by backprop",
+      "venue": "In ICML'14\\/",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-et-al-ICML-2014",
+      "raw": "Bengio, Y., Thibodeau-Laufer, E., Alain, G., and Yosinski, J. (2014b). Deep generative stochastic networks trainable by backprop. In Proceedings of the 30th International Conference on Machine Learning (ICML'14)\\/",
+      "authors": "Bengio, Y., Thibodeau-Laufer, E., Alain, G., and Yosinski, J. (2014b)",
+      "title": "Deep generative stochastic networks trainable by backprop",
+      "venue": "In Proceedings of the 30th International Conference on Machine Learning (ICML'14)\\/",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bergstra+al:2010-scipy",
+      "raw": "Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010). Theano: a CPU and GPU math expression compiler. In Proceedings of the Python for Scientific Computing Conference (SciPy)\\/. Oral Presentation",
+      "authors": "Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010)",
+      "title": "Theano: a CPU and GPU math expression compiler",
+      "venue": "In Proceedings of the Python for Scientific Computing Conference (SciPy)\\/ Oral Presentation",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Breuleux+Bengio-2011",
+      "raw": "Breuleux, O., Bengio, Y., and Vincent, P. (2011). Quickly generating representative samples from an RBM-derived process. Neural Computation\\/, 23(8), 2053--2073",
+      "authors": "Breuleux, O., Bengio, Y., and Vincent, P. (2011)",
+      "title": "Quickly generating representative samples from an RBM-derived process",
+      "venue": "Neural Computation\\/, 23(8), 2053--2073",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Glorot+al-AI-2011-small",
+      "raw": "Glorot, X., Bordes, A., and Bengio, Y. (2011). Deep sparse rectifier neural networks. In AISTATS'2011\\/",
+      "authors": "Glorot, X., Bordes, A., and Bengio, Y. (2011)",
+      "title": "Deep sparse rectifier neural networks",
+      "venue": "In AISTATS'2011\\/",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow_maxout_2013",
+      "raw": "Goodfellow, I. J., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013a). Maxout networks. In ICML'2013\\/",
+      "authors": "Goodfellow, I. J., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013a)",
+      "title": "Maxout networks",
+      "venue": "In ICML'2013\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow-et-al-NIPS2013-small",
+      "raw": "Goodfellow, I. J., Mirza, M., Courville, A., and Bengio, Y. (2013b). Multi-prediction deep Boltzmann machines. In NIPS'2013\\/",
+      "authors": "Goodfellow, I. J., Mirza, M., Courville, A., and Bengio, Y. (2013b)",
+      "title": "Multi-prediction deep Boltzmann machines",
+      "venue": "In NIPS'2013\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pylearn2_arxiv_2013",
+      "raw": "Goodfellow, I. J., Warde-Farley, D., Lamblin, P., Dumoulin, V., Mirza, M., Pascanu, R., Bergstra, J., Bastien, F., and Bengio, Y. (2013c). Pylearn2: a machine learning research library. arXiv preprint arXiv:1308.4214\\/",
+      "authors": "Goodfellow, I. J., Warde-Farley, D., Lamblin, P., Dumoulin, V., Mirza, M., Pascanu, R., Bergstra, J., Bastien, F., and Bengio, Y. (2013c)",
+      "title": "Pylearn2: a machine learning research library",
+      "venue": "arXiv preprint",
+      "year": null,
+      "arxivId": "1308.4214",
+      "doi": null
+    },
+    {
+      "key": "Gutmann+Hyvarinen-2010-small",
+      "raw": "Gutmann, M. and Hyvarinen, A. (2010). Noise-contrastive estimation: A new estimation principle for unnormalized statistical models. In AISTATS'2010\\/",
+      "authors": "Gutmann, M. and Hyvarinen, A. (2010)",
+      "title": "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models",
+      "venue": "In AISTATS'2010\\/",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton-et-al-2012",
+      "raw": "Hinton, G., Deng, L., Dahl, G. E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T., and Kingsbury, B. (2012a). Deep neural networks for acoustic modeling in speech recognition. IEEE Signal Processing Magazine\\/, 29(6), 82--97",
+      "authors": "Hinton, G., Deng, L., Dahl, G. E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T., and Kingsbury, B. (2012a)",
+      "title": "Deep neural networks for acoustic modeling in speech recognition",
+      "venue": "IEEE Signal Processing Magazine\\/, 29(6), 82--97",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton95",
+      "raw": "Hinton, G. E., Dayan, P., Frey, B. J., and Neal, R. M. (1995). The wake-sleep algorithm for unsupervised neural networks. Science\\/, 268, 1558--1161",
+      "authors": "Hinton, G. E., Dayan, P., Frey, B. J., and Neal, R. M. (1995)",
+      "title": "The wake-sleep algorithm for unsupervised neural networks",
+      "venue": "Science\\/, 268, 1558--1161",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton06",
+      "raw": "Hinton, G. E., Osindero, S., and Teh, Y. (2006). A fast learning algorithm for deep belief nets. Neural Computation\\/, 18, 1527--1554",
+      "authors": "Hinton, G. E., Osindero, S., and Teh, Y. (2006)",
+      "title": "A fast learning algorithm for deep belief nets",
+      "venue": "Neural Computation\\/, 18, 1527--1554",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton-et-al-arxiv2012",
+      "raw": "Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2012b). Improving neural networks by preventing co-adaptation of feature detectors. Technical report, arXiv:1207.0580",
+      "authors": "Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2012b)",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "venue": "Technical report",
+      "year": null,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "Hyvarinen-2005-small",
+      "raw": "Hyv\\\"arinen, A. (2005). Estimation of non-normalized statistical models using score matching. J. Machine Learning Res., 6",
+      "authors": "Hyv\\\"arinen, A. (2005)",
+      "title": "Estimation of non-normalized statistical models using score matching",
+      "venue": "J. Machine Learning Res., 6",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Jarrett-ICCV2009",
+      "raw": "Jarrett, K., Kavukcuoglu, K., Ranzato, M., and LeCun, Y. (2009). What is the best multi-stage architecture for object recognition? In Proc. International Conference on Computer Vision (ICCV'09)\\/, pages 2146--2153. IEEE",
+      "authors": "Jarrett, K., Kavukcuoglu, K., Ranzato, M., and LeCun, Y. (2009)",
+      "title": "What is the best multi-stage architecture for object recognition?",
+      "venue": "In Proc. International Conference on Computer Vision (ICCV'09)\\/, pages 2146--2153. IEEE",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kingma+Welling-ICLR2014",
+      "raw": "Kingma, D. P. and Welling, M. (2014). Auto-encoding variational bayes. In Proceedings of the International Conference on Learning Representations (ICLR)\\/",
+      "authors": "Kingma, D. P. and Welling, M. (2014)",
+      "title": "Auto-encoding variational bayes",
+      "venue": "In Proceedings of the International Conference on Learning Representations (ICLR)\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "KrizhevskyHinton2009",
+      "raw": "Krizhevsky, A. and Hinton, G. (2009). Learning multiple layers of features from tiny images. Technical report, University of Toronto",
+      "authors": "Krizhevsky, A. and Hinton, G. (2009)",
+      "title": "Learning multiple layers of features from tiny images",
+      "venue": "Technical report, University of Toronto",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Krizhevsky-2012-small",
+      "raw": "Krizhevsky, A., Sutskever, I., and Hinton, G. (2012). ImageNet classification with deep convolutional neural networks. In NIPS'2012\\/",
+      "authors": "Krizhevsky, A., Sutskever, I., and Hinton, G. (2012)",
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "venue": "In NIPS'2012\\/",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "LeCun+98",
+      "raw": "LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE\\/, 86(11), 2278--2324",
+      "authors": "LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P. (1998)",
+      "title": "Gradient-based learning applied to document recognition",
+      "venue": "Proceedings of the IEEE\\/, 86(11), 2278--2324",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Rezende-et-al-arxiv2014",
+      "raw": "Rezende, D. J., Mohamed, S., and Wierstra, D. (2014). Stochastic backpropagation and approximate inference in deep generative models. Technical report, arXiv:1401.4082",
+      "authors": "Rezende, D. J., Mohamed, S., and Wierstra, D. (2014)",
+      "title": "Stochastic backpropagation and approximate inference in deep generative models",
+      "venue": "Technical report",
+      "year": 2014,
+      "arxivId": "1401.4082",
+      "doi": null
+    },
+    {
+      "key": "Rifai-icml2012",
+      "raw": "Rifai, S., Bengio, Y., Dauphin, Y., and Vincent, P. (2012). A generative process for sampling contractive auto-encoders. In ICML'12\\/",
+      "authors": "Rifai, S., Bengio, Y., Dauphin, Y., and Vincent, P. (2012)",
+      "title": "A generative process for sampling contractive auto-encoders",
+      "venue": "In ICML'12\\/",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Salakhutdinov+Hinton-2009-small",
+      "raw": "Salakhutdinov, R. and Hinton, G. E. (2009). Deep Boltzmann machines. In AISTATS'2009\\/, pages 448--455",
+      "authors": "Salakhutdinov, R. and Hinton, G. E. (2009)",
+      "title": "Deep Boltzmann machines",
+      "venue": "In AISTATS'2009\\/, pages 448--455",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Smolensky86",
+      "raw": "Smolensky, P. (1986). Information processing in dynamical systems: Foundations of harmony theory. In D. E. Rumelhart and J. L. McClelland, editors, Parallel Distributed Processing\\/, volume 1, chapter 6, pages 194--281. MIT Press, Cambridge",
+      "authors": "Smolensky, P. (1986)",
+      "title": "Information processing in dynamical systems: Foundations of harmony theory",
+      "venue": "In D. E. Rumelhart and J. L. McClelland, editors, Parallel Distributed Processing\\/, volume 1, chapter 6, pages 194--281. MIT Press, Cambridge",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Susskind2010",
+      "raw": "Susskind, J., Anderson, A., and Hinton, G. E. (2010). The Toronto face dataset. Technical Report UTML TR 2010-001, U. Toronto",
+      "authors": "Susskind, J., Anderson, A., and Hinton, G. E. (2010)",
+      "title": "The Toronto face dataset",
+      "venue": "Technical Report UTML TR 2010-001, U. Toronto",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Tieleman08",
+      "raw": "Tieleman, T. (2008). Training restricted Boltzmann machines using approximations to the likelihood gradient. In W. W. Cohen, A. McCallum, and S. T. Roweis, editors, ICML 2008\\/, pages 1064--1071. ACM",
+      "authors": "Tieleman, T. (2008)",
+      "title": "Training restricted Boltzmann machines using approximations to the likelihood gradient",
+      "venue": "In W. W. Cohen, A. McCallum, and S. T. Roweis, editors, ICML 2008\\/, pages 1064--1071. ACM",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "VincentPLarochelleH2008-small",
+      "raw": "Vincent, P., Larochelle, H., Bengio, Y., and Manzagol, P.-A. (2008). Extracting and composing robust features with denoising autoencoders. In ICML 2008\\/",
+      "authors": "Vincent, P., Larochelle, H., Bengio, Y., and Manzagol, P.-A. (2008)",
+      "title": "Extracting and composing robust features with denoising autoencoders",
+      "venue": "In ICML 2008\\/",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Younes1999",
+      "raw": "Younes, L. (1999). On the convergence of Markovian stochastic algorithms with rapidly decreasing ergodicity rates. Stochastics and Stochastic Reports\\/, 65(3), 177--228",
+      "authors": "Younes, L. (1999)",
+      "title": "On the convergence of Markovian stochastic algorithms with rapidly decreasing ergodicity rates",
+      "venue": "Stochastics and Stochastic Reports\\/, 65(3), 177--228",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\min_G \\max_D V(D, G) = \\mathbb{E}_{\\bm{x} \\sim p_{\\text{data}}(\\bm{x})}[\\log D(\\bm{x})] + \\mathbb{E}_{\\bm{z} \\sim p_{\\bm{z}}(\\bm{z})}[\\log (1 - D(G(\\bm{z})))].",
+      "environment": "equation",
+      "labels": [
+        "eq:minimaxgame-definition"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "D^*_G(\\bm{x}) = \\frac{p_\\text{data}(\\bm{x})}{p_\\text{data}(\\bm{x}) + p_g(\\bm{x})}",
+      "environment": "equation",
+      "labels": [
+        "eq:optimal-D"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "V(G, D) =& \\int_{\\bm{x}} p_\\text{data}(\\bm{x}) \\log(D(\\bm{x})) dx + \\int_z p_{\\bm{z}}(\\bm{z}) \\log(1 - D(g(\\bm{z}))) dz \\nonumber \\\\\n\n\t\t=& \\int_{\\bm{x}} p_\\text{data}(\\bm{x}) \\log(D(\\bm{x})) + p_g(\\bm{x}) \\log(1 - D(\\bm{x})) dx",
+      "environment": "align",
+      "labels": [
+        "eq:cost-for-D"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "C(G) =& \\max_D V(G,D) \\nonumber \\\\\n      =& \\mathbb{E}_{\\bm{x} \\sim p_\\text{data}}[\\log D^*_G(\\bm{x})] + \\mathbb{E}_{\\bm{z} \\sim p_{\\bm{z}}}[\\log (1 - D^*_G(G(\\bm{z})))] \\\\\n      =& \\mathbb{E}_{\\bm{x} \\sim p_\\text{data}}[\\log D^*_G(\\bm{x})] + \\mathbb{E}_{\\bm{x} \\sim p_g}[\\log (1 - D^*_G(\\bm{x}))] \\nonumber \\\\\n      =& \\mathbb{E}_{\\bm{x} \\sim p_\\text{data}}\\left[\\log \\frac{p_\\text{data}(\\bm{x})}{P_\\text{data}(\\bm{x}) + p_g(\\bm{x})}\\right] + \n         \\mathbb{E}_{\\bm{x} \\sim p_g}\\left[\\log \\frac{p_g(\\bm{x})}{p_\\text{data}(\\bm{x}) + p_g(\\bm{x})}\\right] \\nonumber",
+      "environment": "align",
+      "labels": [
+        "eq:G-criterion"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "C(G) = -\\log(4) + KL \\left(p_\\text{data} \\left \\| \\frac{p_\\text{data} + p_g}{2} \\right. \\right) + KL \\left(p_g \\left \\| \\frac{p_\\text{data} + p_g}{2} \\right. \\right)",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "C(G) = - \\log(4) + 2 \\cdot JSD \\left(p_\\text{data} \\left \\| p_g \\right. \\right)",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 954,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2233,
+      "numbers": 0,
+      "citations": 7
+    },
+    {
+      "kind": "related",
+      "title": "Related work",
+      "chars": 3124,
+      "numbers": 0,
+      "citations": 16
+    },
+    {
+      "kind": "method",
+      "title": "Adversarial nets",
+      "chars": 4075,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "results",
+      "title": "Theoretical Results",
+      "chars": 580,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Global Optimality of",
+      "chars": 1807,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Convergence of Algorithm",
+      "chars": 1152,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 4365,
+      "numbers": 0,
+      "citations": 11
+    },
+    {
+      "kind": "other",
+      "title": "Advantages and disadvantages",
+      "chars": 1453,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions and future work",
+      "chars": 1202,
+      "numbers": 1,
+      "citations": 2
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgments",
+      "chars": 743,
+      "numbers": 0,
+      "citations": 3
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 30,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": []
+  },
+  "assumptions": [
+    {
+      "sentence": "This results in being maintained near its optimal solution, so long as changes slowly enough.",
+      "anchorText": "being maintained near its optimal solution, so long as",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "so long as",
+      "section": "Adversarial nets",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 318.5989685058594,
+            "y0": 207.43836975097656,
+            "x1": 504.0028381347656,
+            "y1": 217.40097045898438
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 218.39735412597656,
+            "x1": 137.18043518066406,
+            "y1": 228.35995483398438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "While we make no claim that these samples are better than samples generated by existing methods, we believe that these samples are at least competitive with the better generative models in the literature and highlight the potential of the adversarial framework.",
+      "anchorText": "While we make no claim that these samples are better than samples generated by existing methods, we believe that these samples are at least competitive with the better generative models in the literature and highlight the potential of the adversarial framework.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Experiments",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 429.4132995605469,
+            "y0": 296.7274475097656,
+            "x1": 504.0032653808594,
+            "y1": 306.6900634765625
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 307.68646240234375,
+            "x1": 504.00341796875,
+            "y1": 317.6490783691406
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 318.64544677734375,
+            "x1": 504.0032958984375,
+            "y1": 328.6080627441406
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 329.60443115234375,
+            "x1": 262.7093200683594,
+            "y1": 339.5670471191406
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Another advantage of adversarial networks is that they can represent very sharp, even degenerate distributions, while methods based on Markov chains require that the distribution be somewhat blurry in order for the chains to be able to mix between modes.",
+      "anchorText": "Another advantage of adversarial networks is that they can represent very sharp, even degenerate distributions, while methods based on Markov chains require that the distribution be somewhat blurry in order for the chains to be able to mix between modes.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "require that",
+      "section": "Advantages and disadvantages",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 353.2692565917969,
+            "y0": 571.3673706054688,
+            "x1": 504.0032958984375,
+            "y1": 581.3299560546875
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 582.3263549804688,
+            "x1": 504.0032653808594,
+            "y1": 592.2889404296875
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 593.285400390625,
+            "x1": 504.0031433105469,
+            "y1": 603.2479858398438
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 604.244384765625,
+            "x1": 190.1814422607422,
+            "y1": 614.2069702148438
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 0,
+    "shown": 0,
+    "bare": 3
+  }
+}

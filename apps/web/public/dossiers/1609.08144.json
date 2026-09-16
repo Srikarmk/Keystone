@@ -1,0 +1,4671 @@
+{
+  "id": "1609.08144",
+  "title": "Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation",
+  "keystone": {
+    "table": "Table 3",
+    "caption": "WMT En Fr BLEU score with respect to different values of and . The model used here is trained using ML, then refined with RL. Compared to the results in Table , coverage penalty and length normalization appear to be less effective for models after RL-based model refinements. Results are obtained on the development set.",
+    "supported": 3,
+    "share": 0.375,
+    "summary": "3 of the paper's headline numbers trace to Table 3"
+  },
+  "coverage": {
+    "claims": 8,
+    "supported": 5,
+    "declared": 3,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.625
+  },
+  "claims": [
+    {
+      "value": "60%",
+      "section": "abstract",
+      "sentence": "Using a human side-by-side evaluation on a set of isolated simple sentences, it reduces translation errors by an average of 60% compared to Google's phrase-based production system.",
+      "status": "exact",
+      "table": "Table 3",
+      "caption": "WMT En Fr BLEU score with respect to different values of and . The model used here is trained using ML, then refined with RL. Compared to the results in Table , coverage penalty and length normalization appear to be less effective for models after RL-based model refinements. Results are obtained on the development set.",
+      "row": "BLEU",
+      "column": "",
+      "cell": "0.6",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 454.41204833984375,
+            "y0": 528.3300170898438,
+            "x1": 515.1322631835938,
+            "y1": 537.2739868164062
+          },
+          {
+            "x0": 96.90699768066406,
+            "y0": 539.3408813476562,
+            "x1": 515.110107421875,
+            "y1": 548.2171630859375
+          },
+          {
+            "x0": 96.90699768066406,
+            "y0": 550.2295532226562,
+            "x1": 339.2149658203125,
+            "y1": 559.1959838867188
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "38.95 BLEU",
+      "section": "introduction",
+      "sentence": "Specifically, on WMT'14 English-to-French, our single model scores 38.95 BLEU, an improvement of 7.5 BLEU from a single model without an external alignment model reported in and an improvement of 1.2 BLEU from a single model without an external alignment model reported in .",
+      "status": "exact",
+      "table": "Table 4",
+      "caption": "Single model results on WMT En Fr (newstest2014)",
+      "row": "WPM-32K",
+      "column": "BLEU",
+      "cell": "38.95",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": null
+    },
+    {
+      "value": "7.5 BLEU",
+      "section": "introduction",
+      "sentence": "Specifically, on WMT'14 English-to-French, our single model scores 38.95 BLEU, an improvement of 7.5 BLEU from a single model without an external alignment model reported in and an improvement of 1.2 BLEU from a single model without an external alignment model reported in .",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "luong2015addressing",
+      "anchor": null,
+      "evidenceAnchor": null
+    },
+    {
+      "value": "1.2 BLEU",
+      "section": "introduction",
+      "sentence": "Specifically, on WMT'14 English-to-French, our single model scores 38.95 BLEU, an improvement of 7.5 BLEU from a single model without an external alignment model reported in and an improvement of 1.2 BLEU from a single model without an external alignment model reported in .",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "luong2015addressing",
+      "anchor": null,
+      "evidenceAnchor": null
+    },
+    {
+      "value": "24.17 BLEU",
+      "section": "introduction",
+      "sentence": "Likewise on WMT'14 English-to-German, our single model scores 24.17 BLEU, which is 3.4 BLEU better than a previous competitive baseline .",
+      "status": "exact",
+      "table": "Table 5",
+      "caption": "Single model results on WMT En De (newstest2014)",
+      "row": "Mixed Word/Character",
+      "column": "BLEU",
+      "cell": "24.17",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": null
+    },
+    {
+      "value": "3.4 BLEU",
+      "section": "introduction",
+      "sentence": "Likewise on WMT'14 English-to-German, our single model scores 24.17 BLEU, which is 3.4 BLEU better than a previous competitive baseline .",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "buck2014n",
+      "anchor": null,
+      "evidenceAnchor": null
+    },
+    {
+      "value": "60%",
+      "section": "introduction",
+      "sentence": "Human evaluations show that GNMT has reduced translation errors by 60% compared to our previous phrase-based system on many pairs of languages: English French, English Spanish, and English Chinese.",
+      "status": "exact",
+      "table": "Table 3",
+      "caption": "WMT En Fr BLEU score with respect to different values of and . The model used here is trained using ML, then refined with RL. Compared to the results in Table , coverage penalty and length normalization appear to be less effective for models after RL-based model refinements. Results are obtained on the development set.",
+      "row": "BLEU",
+      "column": "",
+      "cell": "0.6",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": null
+    },
+    {
+      "value": "60%",
+      "section": "conclusion",
+      "sentence": "In particular, compared to the previous phrase-based production system, this GNMT system delivers roughly a 60% reduction in translation errors on several popular language pairs.",
+      "status": "exact",
+      "table": "Table 3",
+      "caption": "WMT En Fr BLEU score with respect to different values of and . The model used here is trained using ML, then refined with RL. Compared to the results in Table , coverage penalty and length normalization appear to be less effective for models after RL-based model refinements. Results are obtained on the development set.",
+      "row": "BLEU",
+      "column": "",
+      "cell": "0.6",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 19,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 437.05548095703125,
+            "y0": 251.43499755859375,
+            "x1": 540.2207641601562,
+            "y1": 261.38763427734375
+          },
+          {
+            "x0": 72.0,
+            "y0": 263.3049011230469,
+            "x1": 540.2276611328125,
+            "y1": 273.36663818359375
+          },
+          {
+            "x0": 72.0,
+            "y0": 275.33721923828125,
+            "x1": 299.7349548339844,
+            "y1": 285.2998352050781
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1609.08144",
+  "numbers": [
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Using a human side-by-side evaluation on a set of isolated simple sentences, it reduces translation errors by an average of 60% compared to Google's phrase-based production system.",
+      "status": "exact",
+      "table": "Table 3",
+      "row": "BLEU",
+      "cell": "0.6",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 454.41204833984375,
+            "y0": 528.3300170898438,
+            "x1": 515.1322631835938,
+            "y1": 537.2739868164062
+          },
+          {
+            "x0": 96.90699768066406,
+            "y0": 539.3408813476562,
+            "x1": 515.110107421875,
+            "y1": 548.2171630859375
+          },
+          {
+            "x0": 96.90699768066406,
+            "y0": 550.2295532226562,
+            "x1": 339.2149658203125,
+            "y1": 559.1959838867188
+          }
+        ]
+      }
+    },
+    {
+      "value": "38.95 BLEU",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Specifically, on WMT'14 English-to-French, our single model scores 38.95 BLEU, an improvement of 7.5 BLEU from a single model without an external alignment model reported in and an improvement of 1.2 BLEU from a single model without an external alignment model reported in .",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "WPM-32K",
+      "cell": "38.95",
+      "anchor": null
+    },
+    {
+      "value": "7.5 BLEU",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Specifically, on WMT'14 English-to-French, our single model scores 38.95 BLEU, an improvement of 7.5 BLEU from a single model without an external alignment model reported in and an improvement of 1.2 BLEU from a single model without an external alignment model reported in .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "1.2 BLEU",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Specifically, on WMT'14 English-to-French, our single model scores 38.95 BLEU, an improvement of 7.5 BLEU from a single model without an external alignment model reported in and an improvement of 1.2 BLEU from a single model without an external alignment model reported in .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "24.17 BLEU",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Likewise on WMT'14 English-to-German, our single model scores 24.17 BLEU, which is 3.4 BLEU better than a previous competitive baseline .",
+      "status": "exact",
+      "table": "Table 5",
+      "row": "Mixed Word/Character",
+      "cell": "24.17",
+      "anchor": null
+    },
+    {
+      "value": "3.4 BLEU",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Likewise on WMT'14 English-to-German, our single model scores 24.17 BLEU, which is 3.4 BLEU better than a previous competitive baseline .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Human evaluations show that GNMT has reduced translation errors by 60% compared to our previous phrase-based system on many pairs of languages: English French, English Spanish, and English Chinese.",
+      "status": "exact",
+      "table": "Table 3",
+      "row": "BLEU",
+      "cell": "0.6",
+      "anchor": null
+    },
+    {
+      "value": "0.5 BLEU",
+      "kind": "result",
+      "section": "related",
+      "sentence": "On WMT'14 English-to-French, this system achieved a 0.5 BLEU improvement compared to a state-of-the-art phrase-based system.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 380.33831787109375,
+            "y0": 98.06819152832031,
+            "x1": 540.0711059570312,
+            "y1": 108.07056427001953
+          },
+          {
+            "x0": 72.0,
+            "y0": 110.05424499511719,
+            "x1": 487.07177734375,
+            "y1": 120.01683807373047
+          }
+        ]
+      }
+    },
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "In that work, each additional layer reduced perplexity by nearly 10%.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 660.97021484375,
+            "x1": 373.51116943359375,
+            "y1": 670.8828735351562
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.0072",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Table shows that decoding using reduced precision arithmetics on the TPU suffers a very minimal loss of 0.0072 on log perplexity, and no loss on BLEU at all.",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "2.3",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Table also shows that decoding our model on CPU is actually 2.3 times faster than on GPU.",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "3.4",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Finally, Table shows that decoding on TPUs is 3.4 times faster than decoding on CPUs, demonstrating that quantized arithmetics is much faster on TPUs than both CPUs or GPUs.",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "30.3",
+      "kind": "result",
+      "section": "method",
+      "sentence": "As can be seen from the results, having some length normalization and coverage penalty improves BLEU score considerably (from 30.3 to 31.4).",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "",
+      "cell": "30.3",
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.1468963623047,
+            "y0": 372.0628967285156,
+            "x1": 540.5835571289062,
+            "y1": 382.1246337890625
+          },
+          {
+            "x0": 72.0,
+            "y0": 384.09521484375,
+            "x1": 312.1583557128906,
+            "y1": 394.0578308105469
+          }
+        ]
+      }
+    },
+    {
+      "value": "31.4",
+      "kind": "result",
+      "section": "method",
+      "sentence": "As can be seen from the results, having some length normalization and coverage penalty improves BLEU score considerably (from 30.3 to 31.4).",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "",
+      "cell": "31.4",
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.1468963623047,
+            "y0": 372.0628967285156,
+            "x1": 540.5835571289062,
+            "y1": 382.1246337890625
+          },
+          {
+            "x0": 72.0,
+            "y0": 384.09521484375,
+            "x1": 312.1583557128906,
+            "y1": 394.0578308105469
+          }
+        ]
+      }
+    },
+    {
+      "value": "-0.04",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We initialize all trainable parameters uniformly between [-0.04, 0.04].",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 86.94400024414062,
+            "y0": 595.5872802734375,
+            "x1": 389.1294250488281,
+            "y1": 605.5498657226562
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.04",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We initialize all trainable parameters uniformly between [-0.04, 0.04].",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 86.94400024414062,
+            "y0": 595.5872802734375,
+            "x1": 389.1294250488281,
+            "y1": 605.5498657226562
+          }
+        ]
+      }
+    },
+    {
+      "value": "38.95",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our best model, WPM-32K, achieves a BLEU score of 38.95.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "WPM-32K",
+      "cell": "38.95",
+      "anchor": {
+        "page": 15,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 86.94400024414062,
+            "y0": 383.480224609375,
+            "x1": 353.9914245605469,
+            "y1": 393.4428405761719
+          }
+        ]
+      }
+    },
+    {
+      "value": "39.37",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The maximum BLEU score of the 8 models is higher at 39.37.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 15,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 246.69557189941406,
+            "y0": 395.3771667480469,
+            "x1": 521.6522827148438,
+            "y1": 405.4142150878906
+          }
+        ]
+      }
+    },
+    {
+      "value": "2 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Thus it is more advantageous to use wordpiece or mixed word/character models, which provide a gain of more than 2 BLEU points on top of the word model and about 4 BLEU points on top of previously reported results in .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "4 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Thus it is more advantageous to use wordpiece or mixed word/character models, which provide a gain of more than 2 BLEU points on top of the word model and about 4 BLEU points on top of previously reported results in .",
+      "status": "rounded",
+      "table": "Table 9",
+      "row": "PBMT",
+      "cell": "3.87",
+      "anchor": null
+    },
+    {
+      "value": "24.61",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our best model, WPM-32K, achieves a BLEU score of 24.61, which is averaged over 8 runs.",
+      "status": "exact",
+      "table": "Table 5",
+      "row": "WPM-32K",
+      "cell": "24.61",
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.01747131347656,
+            "y0": 336.1023864746094,
+            "x1": 542.095703125,
+            "y1": 345.96484375
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.4 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "On En De, RL-refinement slightly hurts the test performance even though we observe about 0.4 BLEU points improvement on the development set.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "BLEU",
+      "cell": "0.4",
+      "anchor": null
+    },
+    {
+      "value": "41.16 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We ensemble 8 RL-refined models to obtain a state-of-the-art result of 41.16 BLEU points on the WMT En Fr dataset.",
+      "status": "exact",
+      "table": "Table 7",
+      "row": "RL-refined WPM-32K (8 models)",
+      "cell": "41.16",
+      "anchor": null
+    },
+    {
+      "value": "26.30 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We ensemble 8 RL-refined models to obtain a state-of-the-art result of 26.30 BLEU points on the WMT En De dataset.",
+      "status": "exact",
+      "table": "Table 8",
+      "row": "RL-refined WPM-32K (8 models)",
+      "cell": "26.30",
+      "anchor": null
+    },
+    {
+      "value": "0.81",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "This could be due to a combination of factors including: 1) the relatively small sample size for the experiment (only 500 examples for side-by-side), 2) the improvement in BLEU score by RL is relatively small after model ensembling (0.81), which may be at a scale that human side-by-side evaluations are insensitive to, and 3) the possible mismatch between BLEU as a metric and real translation quality as perceived by human raters.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 17,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 267.5210876464844,
+            "y0": 462.8369445800781,
+            "x1": 540.2123413085938,
+            "y1": 472.73455810546875
+          },
+          {
+            "x0": 72.0,
+            "y0": 474.7218322753906,
+            "x1": 540.2105102539062,
+            "y1": 484.7093200683594
+          },
+          {
+            "x0": 72.0,
+            "y0": 486.63043212890625,
+            "x1": 540.16748046875,
+            "y1": 496.6773681640625
+          },
+          {
+            "x0": 72.0,
+            "y0": 498.5738830566406,
+            "x1": 540.217529296875,
+            "y1": 508.6356201171875
+          },
+          {
+            "x0": 72.0,
+            "y0": 510.5298767089844,
+            "x1": 311.7486877441406,
+            "y1": 520.5916137695312
+          }
+        ]
+      }
+    },
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The results show that our model reduces translation errors by more than 60% compared to the PBMT model on these major pairs of languages.",
+      "status": "exact",
+      "table": "Table 3",
+      "row": "BLEU",
+      "cell": "0.6",
+      "anchor": null
+    },
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "conclusion",
+      "sentence": "In particular, compared to the previous phrase-based production system, this GNMT system delivers roughly a 60% reduction in translation errors on several popular language pairs.",
+      "status": "exact",
+      "table": "Table 3",
+      "row": "BLEU",
+      "cell": "0.6",
+      "anchor": {
+        "page": 19,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 437.05548095703125,
+            "y0": 251.43499755859375,
+            "x1": 540.2207641601562,
+            "y1": 261.38763427734375
+          },
+          {
+            "x0": 72.0,
+            "y0": 263.3049011230469,
+            "x1": 540.2276611328125,
+            "y1": 273.36663818359375
+          },
+          {
+            "x0": 72.0,
+            "y0": 275.33721923828125,
+            "x1": 299.7349548339844,
+            "y1": 285.2998352050781
+          }
+        ]
+      }
+    },
+    {
+      "value": "8 layers",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "Our LSTM RNNs have 8 layers, with residual connections between layers to encourage gradient flow .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "4 layers",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "In our experience with large-scale translation tasks, simple stacked LSTM layers work well up to 4 layers, barely with 6 layers, and very poorly beyond 8 layers.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 512.2011108398438,
+            "y0": 74.11190032958984,
+            "x1": 540.2173461914062,
+            "y1": 84.17362976074219
+          },
+          {
+            "x0": 72.0,
+            "y0": 86.07461547851562,
+            "x1": 540.587646484375,
+            "y1": 96.12648010253906
+          },
+          {
+            "x0": 71.64099884033203,
+            "y0": 98.09922790527344,
+            "x1": 276.4720153808594,
+            "y1": 108.06182098388672
+          }
+        ]
+      }
+    },
+    {
+      "value": "6 layers",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "In our experience with large-scale translation tasks, simple stacked LSTM layers work well up to 4 layers, barely with 6 layers, and very poorly beyond 8 layers.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 512.2011108398438,
+            "y0": 74.11190032958984,
+            "x1": 540.2173461914062,
+            "y1": 84.17362976074219
+          },
+          {
+            "x0": 72.0,
+            "y0": 86.07461547851562,
+            "x1": 540.587646484375,
+            "y1": 96.12648010253906
+          },
+          {
+            "x0": 71.64099884033203,
+            "y0": 98.09922790527344,
+            "x1": 276.4720153808594,
+            "y1": 108.06182098388672
+          }
+        ]
+      }
+    },
+    {
+      "value": "8 layers",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "In our experience with large-scale translation tasks, simple stacked LSTM layers work well up to 4 layers, barely with 6 layers, and very poorly beyond 8 layers.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 512.2011108398438,
+            "y0": 74.11190032958984,
+            "x1": 540.2173461914062,
+            "y1": 84.17362976074219
+          },
+          {
+            "x0": 72.0,
+            "y0": 86.07461547851562,
+            "x1": 540.587646484375,
+            "y1": 96.12648010253906
+          },
+          {
+            "x0": 71.64099884033203,
+            "y0": 98.09922790527344,
+            "x1": 276.4720153808594,
+            "y1": 108.06182098388672
+          }
+        ]
+      }
+    },
+    {
+      "value": "2 GPUs",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "This would effectively constrain us to make use of only 2 GPUs in parallel (one for the forward direction and one for the backward direction).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 268.9853210449219,
+            "y0": 710.6453857421875,
+            "x1": 540.2409057617188,
+            "y1": 720.5078125
+          },
+          {
+            "x0": 303.5090026855469,
+            "y0": 742.1142578125,
+            "x1": 308.49029541015625,
+            "y1": 752.0768432617188
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 tokens",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "For the GLEU score, we record all sub-sequences of 1, 2, 3 or 4 tokens in output and target sequence (n-grams).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 139.30332946777344,
+            "y0": 625.1766357421875,
+            "x1": 540.4816284179688,
+            "y1": 635.1541748046875
+          },
+          {
+            "x0": 72.0,
+            "y0": 637.0658569335938,
+            "x1": 160.71298217773438,
+            "y1": 647.1276245117188
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Each step in training is a mini-batch of 128 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 432.560546875,
+            "y0": 667.3963623046875,
+            "x1": 540.2113037109375,
+            "y1": 677.2587890625
+          },
+          {
+            "x0": 72.0,
+            "y0": 679.2732543945312,
+            "x1": 194.14144897460938,
+            "y1": 689.23583984375
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.2M steps",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For the WMT En Fr dataset, we begin to anneal the learning rate after 1.2M steps, after which we halve the learning rate every 200k steps for an additional 800k steps.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "6 days",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "On WMT En Fr, it takes around 6 days to train a basic model using 96 NVIDIA K80 GPUs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "3 days",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For WMT En Fr, it takes around 3 days to complete 400k steps.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "500 examples",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "This could be due to a combination of factors including: 1) the relatively small sample size for the experiment (only 500 examples for side-by-side), 2) the improvement in BLEU score by RL is relatively small after model ensembling (0.81), which may be at a scale that human side-by-side evaluations are insensitive to, and 3) the possible mismatch between BLEU as a metric and real translation quality as perceived by human raters.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 17,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 267.5210876464844,
+            "y0": 462.8369445800781,
+            "x1": 540.2123413085938,
+            "y1": 472.73455810546875
+          },
+          {
+            "x0": 72.0,
+            "y0": 474.7218322753906,
+            "x1": 540.2105102539062,
+            "y1": 484.7093200683594
+          },
+          {
+            "x0": 72.0,
+            "y0": 486.63043212890625,
+            "x1": 540.16748046875,
+            "y1": 496.6773681640625
+          },
+          {
+            "x0": 72.0,
+            "y0": 498.5738830566406,
+            "x1": 540.217529296875,
+            "y1": 508.6356201171875
+          },
+          {
+            "x0": 72.0,
+            "y0": 510.5298767089844,
+            "x1": 311.7486877441406,
+            "y1": 520.5916137695312
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Model inference on CPU, GPU and TPU. The model used here for comparison is trained with the ML objective only with quantization constraints. Results are obtained by decoding the WMT En Fr development set on CPU, GPU and TPU respectively.",
+      "label": "table:quantized_infer",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Log Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Decoding time (s)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CPU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.20",
+            "value": "31.20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.4553",
+            "value": "1.4553",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1322",
+            "value": "1322",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GPU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.20",
+            "value": "31.20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.4553",
+            "value": "1.4553",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3028",
+            "value": "3028",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "TPU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.21",
+            "value": "31.21",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.4626",
+            "value": "1.4626",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "384",
+            "value": "384",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "WMT'14 En Fr BLEU score with respect to different values of and . The model in this experiment trained using ML without RL refinement. A single WMT En Fr model achieves a BLEU score of 30.3 on the development set when the beam search scoring function is purely based on the sequence probability (i.e., both and are ). Slightly larger and values improve BLEU score by up to ( ), with a wide range of and values giving results very close to the best BLEU scores.",
+      "label": "table:decoder",
+      "numericCells": 48,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.2",
+            "value": "0.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4",
+            "value": "0.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.6",
+            "value": "0.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.8",
+            "value": "0.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.3",
+            "value": "30.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.7",
+            "value": "30.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.9",
+            "value": "30.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.1",
+            "value": "31.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.2",
+            "value": "31.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.1",
+            "value": "31.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.2",
+            "value": "0.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.3",
+            "value": "31.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "30.8",
+            "value": "30.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "30.3",
+            "value": "30.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.4",
+            "value": "0.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "31.1",
+            "value": "31.1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "30.5",
+            "value": "30.5",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "29.6",
+            "value": "29.6",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.6",
+            "value": "0.6",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "31.3",
+            "value": "31.3",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "30.9",
+            "value": "30.9",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "30.1",
+            "value": "30.1",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "28.9",
+            "value": "28.9",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.8",
+            "value": "0.8",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "31.2",
+            "value": "31.2",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "30.8",
+            "value": "30.8",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "29.8",
+            "value": "29.8",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "28.1",
+            "value": "28.1",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "31.3",
+            "value": "31.3",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "31.2",
+            "value": "31.2",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "30.6",
+            "value": "30.6",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "29.4",
+            "value": "29.4",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "27.2",
+            "value": "27.2",
+            "emphasised": false,
+            "block": 7
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "WMT En Fr BLEU score with respect to different values of and . The model used here is trained using ML, then refined with RL. Compared to the results in Table , coverage penalty and length normalization appear to be less effective for models after RL-based model refinements. Results are obtained on the development set.",
+      "label": "table:decoder_after_rl",
+      "numericCells": 48,
+      "supports": 3,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.2",
+            "value": "0.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4",
+            "value": "0.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.6",
+            "value": "0.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.8",
+            "value": "0.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.320",
+            "value": "0.320",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.2",
+            "value": "0.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.4",
+            "value": "0.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.316",
+            "value": "0.316",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.6",
+            "value": "0.6",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.319",
+            "value": "0.319",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.309",
+            "value": "0.309",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.8",
+            "value": "0.8",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.316",
+            "value": "0.316",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.302",
+            "value": "0.302",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.322",
+            "value": "0.322",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.321",
+            "value": "0.321",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.320",
+            "value": "0.320",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.313",
+            "value": "0.313",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.295",
+            "value": "0.295",
+            "emphasised": false,
+            "block": 7
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Single model results on WMT En Fr (newstest2014)",
+      "label": "table:wmt_en_fr",
+      "numericCells": 17,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CPU decoding time",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "per sentence (s)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.90",
+            "value": "37.90",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.2226",
+            "value": "0.2226",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Character",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.01",
+            "value": "38.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.0530",
+            "value": "1.0530",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WPM-8K",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.27",
+            "value": "38.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1919",
+            "value": "0.1919",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WPM-16K",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.60",
+            "value": "37.60",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1874",
+            "value": "0.1874",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WPM-32K",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.95",
+            "value": "38.95",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.2118",
+            "value": "0.2118",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Mixed Word/Character",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.39",
+            "value": "38.39",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.2774",
+            "value": "0.2774",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37.0",
+            "value": "37.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LSTM (6 layers)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.5",
+            "value": "31.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LSTM (6 layers + PosUnk)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33.1",
+            "value": "33.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att + PosUnk",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "39.2",
+            "value": "39.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Single model results on WMT En De (newstest2014)",
+      "label": "table:wmt_en_de",
+      "numericCells": 17,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CPU decoding time",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "per sentence (s)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.12",
+            "value": "23.12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.2972",
+            "value": "0.2972",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Character (512 nodes)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.62",
+            "value": "22.62",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.8011",
+            "value": "0.8011",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WPM-8K",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.50",
+            "value": "23.50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.2079",
+            "value": "0.2079",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WPM-16K",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.36",
+            "value": "24.36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1931",
+            "value": "0.1931",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WPM-32K",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.61",
+            "value": "24.61",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1882",
+            "value": "0.1882",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Mixed Word/Character",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.17",
+            "value": "24.17",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.3268",
+            "value": "0.3268",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20.7",
+            "value": "20.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RNNSearch",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.5",
+            "value": "16.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RNNSearch-LV",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.9",
+            "value": "16.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RNNSearch-LV",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.9",
+            "value": "16.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20.6",
+            "value": "20.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Single model test BLEU scores, averaged over 8 runs, on WMT En Fr and En De",
+      "label": "table:rl_wmt_en_fr",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Dataset",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Trained with log-likelihood",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Refined with RL",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "En Fr",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.95",
+            "value": "38.95",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "39.92",
+            "value": "39.92",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "En De",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24.67",
+            "value": "24.67",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24.60",
+            "value": "24.60",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Model ensemble results on WMT En Fr (newstest2014)",
+      "label": "table:ensemble-wmt_en_fr",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "WPM-32K (8 models)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.35",
+            "value": "40.35",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RL-refined WPM-32K (8 models)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.16",
+            "value": "41.16",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM (6 layers)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "35.6",
+            "value": "35.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "LSTM (6 layers + PosUnk)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37.5",
+            "value": "37.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att + PosUnk (8 models)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.4",
+            "value": "40.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "Model ensemble results on WMT En De (newstest2014). See Table for a comparison against non-ensemble models.",
+      "label": "table:ensemble-wmt_en_de",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "WPM-32K (8 models)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.20",
+            "value": "26.20",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RL-refined WPM-32K (8 models)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.30",
+            "value": "26.30",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Human side-by-side evaluation scores of WMT En Fr models.",
+      "label": "table:wmt_en_fr_sxs",
+      "numericCells": 7,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Side-by-side",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "averaged score",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.0",
+            "value": "37.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.87",
+            "value": "3.87",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NMT before RL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.35",
+            "value": "40.35",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.46",
+            "value": "4.46",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NMT after RL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.16",
+            "value": "41.16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.44",
+            "value": "4.44",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "4.82",
+            "value": "4.82",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 10",
+      "caption": "Mean of side-by-side scores on production data",
+      "label": "table:prod",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "GNMT",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Relative",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[0.5ex]",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Improvement",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[0.5ex] English Spanish",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.885",
+            "value": "4.885",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.428",
+            "value": "5.428",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.504",
+            "value": "5.504",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "87%",
+            "value": "87",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "English French",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.932",
+            "value": "4.932",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.295",
+            "value": "5.295",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.496",
+            "value": "5.496",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64%",
+            "value": "64",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "English Chinese",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.035",
+            "value": "4.035",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.594",
+            "value": "4.594",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.987",
+            "value": "4.987",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58%",
+            "value": "58",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Spanish English",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.872",
+            "value": "4.872",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.187",
+            "value": "5.187",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.372",
+            "value": "5.372",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63%",
+            "value": "63",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "French English",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.046",
+            "value": "5.046",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.343",
+            "value": "5.343",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.404",
+            "value": "5.404",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "83%",
+            "value": "83",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Chinese English",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.694",
+            "value": "3.694",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.263",
+            "value": "4.263",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.636",
+            "value": "4.636",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "60%",
+            "value": "60",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 18,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 225.61471557617188,
+            "y0": 81.05223083496094,
+            "x1": 431.06341552734375,
+            "y1": 91.01482391357422
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 11",
+      "caption": "Some example translations from PBMT , our GNMT system (the \"NMT before RL\", Table ), and Human. Source and target sentences (human translations) are from the public benchmark WMT En Fr (newstest2014) data set. The right-hand column shows the human ratings on a scale of 0 (complete nonsense) to 6 (perfect translation). We disagree with some of the human ratings, e.g., the translation \"Elle a \u00e9t\u00e9 rep\u00e9r\u00e9 trois jours plus tard par un promeneur de chien pi\u00e9g\u00e9 dans la carri\u00e8re\" contains grammatical mistakes and changes semantics, and is still scored 6. We present it to illustrate the potential problems of the scoring process.",
+      "label": "table:example_translations",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "2mm Source",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "\"The reason Boeing are doing this is to cram more seats in to make their plane more competitive with our products,\" said Kevin Keniston, head of passenger comfort at Europe's Airbus.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "\"La raison pour laquelle Boeing sont en train de faire, c'est de concentrer davantage de si\u00e8ges pour prendre leur avion plus comp\u00e9titive avec nos produits\", a d\u00e9clar\u00e9 Kevin M. Keniston, chef du confort des passagers de l'Airbus de l'Europe.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.0",
+            "value": "3.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GNMT",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "\"La raison pour laquelle Boeing fait cela est de cr\u00e9er plus de si\u00e8ges pour rendre son avion plus comp\u00e9titif avec nos produits\", a d\u00e9clar\u00e9 Kevin Keniston, chef du confort des passagers chez Airbus.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.0",
+            "value": "6.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "\"Boeing fait \u00e7a pour pouvoir caser plus de si\u00e8ges et rendre ses avions plus comp\u00e9titifs par rapports \u00e0 nos produits\", a d\u00e9clar\u00e9 Kevin Keniston, directeur de Confort Passager chez l'avionneur europ\u00e9en Airbus.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6.0",
+            "value": "6.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Source",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "When asked about this, an official of the American administration replied: \"The United States is not conducting electronic surveillance aimed at offices of the World Bank and IMF in Washington.\"",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "Interrog\u00e9 \u00e0 ce sujet, un responsable de l'administration am\u00e9ricaine a r\u00e9pondu : \"Les Etats-Unis n'est pas effectuer une surveillance \u00e9lectronique destin\u00e9 aux bureaux de la Banque mondiale et du FMI \u00e0 Washington\".",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "3.0",
+            "value": "3.0",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "GNMT",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "Interrog\u00e9 \u00e0 ce sujet, un fonctionnaire de l'administration am\u00e9ricaine a r\u00e9pondu: \"Les \u00c9tats-Unis n'effectuent pas de surveillance \u00e9lectronique \u00e0 l'intention des bureaux de la Banque mondiale et du FMI \u00e0 Washington\".",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "6.0",
+            "value": "6.0",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "Interrog\u00e9 sur le sujet, un responsable de l'administration am\u00e9ricaine a r\u00e9pondu: \"les Etats-Unis ne m\u00e8nent pas de surveillance \u00e9lectronique visant les si\u00e8ges de la Banque mondiale et du FMI \u00e0 Washington\".",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "6.0",
+            "value": "6.0",
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "Source",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "Martin told CNN that he asked Daley whether his then-boss knew about the potential shuffle.",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "Martin a d\u00e9clar\u00e9 \u00e0 CNN qu'il a demand\u00e9 Daley si son patron de l'\u00e9poque connaissaient le potentiel remaniement minist\u00e9riel.",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "2.0",
+            "value": "2.0",
+            "emphasised": false,
+            "block": 9
+          }
+        ],
+        [
+          {
+            "text": "GNMT",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "Martin a dit \u00e0 CNN qu'il avait demand\u00e9 \u00e0 Daley si son patron d'alors \u00e9tait au courant du remaniement potentiel.",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "6.0",
+            "value": "6.0",
+            "emphasised": false,
+            "block": 10
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "Martin a dit sur CNN qu'il avait demand\u00e9 \u00e0 Daley si son patron d'alors \u00e9tait au courant du remaniement \u00e9ventuel.",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "5.0",
+            "value": "5.0",
+            "emphasised": false,
+            "block": 11
+          }
+        ],
+        [
+          {
+            "text": "Source",
+            "value": null,
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "She was spotted three days later by a dog walker trapped in the quarry",
+            "value": null,
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 13
+          },
+          {
+            "text": "Elle a \u00e9t\u00e9 rep\u00e9r\u00e9 trois jours plus tard par un promeneur de chien pi\u00e9g\u00e9 dans la carri\u00e8re",
+            "value": null,
+            "emphasised": false,
+            "block": 13
+          },
+          {
+            "text": "6.0",
+            "value": "6.0",
+            "emphasised": false,
+            "block": 13
+          }
+        ],
+        [
+          {
+            "text": "GNMT",
+            "value": null,
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "Elle a \u00e9t\u00e9 rep\u00e9r\u00e9e trois jours plus tard par un tra\u00eeneau \u00e0 chiens pi\u00e9g\u00e9 dans la carri\u00e8re.",
+            "value": null,
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "2.0",
+            "value": "2.0",
+            "emphasised": false,
+            "block": 14
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "Elle a \u00e9t\u00e9 rep\u00e9r\u00e9e trois jours plus tard par une personne qui promenait son chien coinc\u00e9e dans la carri\u00e8re",
+            "value": null,
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "5.0",
+            "value": "5.0",
+            "emphasised": false,
+            "block": 15
+          }
+        ],
+        [
+          {
+            "text": "Source",
+            "value": null,
+            "emphasised": false,
+            "block": 16
+          },
+          {
+            "text": "Analysts believe the country is unlikely to slide back into full-blown conflict, but recent events have unnerved foreign investors and locals.",
+            "value": null,
+            "emphasised": false,
+            "block": 16
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "PBMT",
+            "value": null,
+            "emphasised": false,
+            "block": 17
+          },
+          {
+            "text": "Les analystes estiment que le pays a peu de chances de retomber dans un conflit total, mais les \u00e9v\u00e9nements r\u00e9cents ont inqui\u00e9t\u00e9 les investisseurs \u00e9trangers et locaux.",
+            "value": null,
+            "emphasised": false,
+            "block": 17
+          },
+          {
+            "text": "5.0",
+            "value": "5.0",
+            "emphasised": false,
+            "block": 17
+          }
+        ],
+        [
+          {
+            "text": "GNMT",
+            "value": null,
+            "emphasised": false,
+            "block": 18
+          },
+          {
+            "text": "Selon les analystes, il est peu probable que le pays retombe dans un conflit g\u00e9n\u00e9ralis\u00e9, mais les \u00e9v\u00e9nements r\u00e9cents ont attir\u00e9 des investisseurs \u00e9trangers et des habitants locaux.",
+            "value": null,
+            "emphasised": false,
+            "block": 18
+          },
+          {
+            "text": "2.0",
+            "value": "2.0",
+            "emphasised": false,
+            "block": 18
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 19
+          },
+          {
+            "text": "Les analystes pensent que le pays ne devrait pas retomber dans un conflit ouvert, mais les r\u00e9cents \u00e9v\u00e8nements ont \u00e9branl\u00e9 les investisseurs \u00e9trangers et la population locale.",
+            "value": null,
+            "emphasised": false,
+            "block": 19
+          },
+          {
+            "text": "5.0",
+            "value": "5.0",
+            "emphasised": false,
+            "block": 19
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\todo": "{\\color{red} TODO: {#1}}",
+    "\\citee": "\\cite{#1}",
+    "\\mohammad": "\\textcolor{blue}{(Mo: #1)}",
+    "\\dale": "\\textcolor{green}{(Dale: #1)}",
+    "\\samy": "\\textcolor{red}{(Samy: #1)}",
+    "\\comment": "",
+    "\\argmax": "\\underset{#1}{\\operatorname{argmax}}",
+    "\\argmin": "\\underset{#1}{\\operatorname{argmin}}",
+    "\\logsumexp": "\\mathrm lse",
+    "\\vec": "\\boldsymbol{\\mathbf{#1}}",
+    "\\reward": "r(#1, #2)",
+    "\\bleu": "\\mathrm{BLEU}(#1, #2)",
+    "\\simi": "\\mathrm{SIM}(#1, #2)",
+    "\\kl": "D_{\\mathrm{KL}}\\left(#1~\\Vert~#2\\right)",
+    "\\dv": "D_{#1}\\left(#2~\\Vert~#3\\right)",
+    "\\df": "\\dv{F}{#1}{#2}",
+    "\\dfs": "\\dv{F^*}{#1}{#2}",
+    "\\dfst": "\\dv{F^*_\\temp}{#1}{#2}",
+    "\\ent": "\\mathbb{H}\\left(#1\\right)",
+    "\\inner": "\\langle#1,#2\\rangle",
+    "\\trans": "{#1}^{\\ensuremath{\\mathsf{T}}}",
+    "\\smallfrac": "{\\textstyle \\frac{#1}{#2}}",
+    "\\tabref": "Table~\\ref{#1}",
+    "\\figref": "Figure~\\ref{#1}"
+  },
+  "references": [
+    {
+      "key": "tensorflow16",
+      "raw": "Abadi, M., Barham, P., Chen, J., Chen, Z., Davis, A., Dean, J., Devin, M., Ghemawat, S., Irving, G., Isard, M., Kudlur, M., Levenberg, J., Monga, R., Moore, S., Murray, D. G., Steiner, B., Tucker, P., Vasudevan, V., Warden, P., Wicke, M., Yu, Y., and Zheng, X. Tensorflow: A system for large-scale machine learning. Tech. rep., Google Brain, 2016. arXiv preprint",
+      "authors": "Abadi, M., Barham, P., Chen, J., Chen, Z., Davis, A., Dean, J., Devin, M., Ghemawat, S., Irving, G., Isard, M., Kudlur, M., Levenberg, J., Monga, R., Moore, S., Murray, D. G., Steiner, B., Tucker, P., Vasudevan, V., Warden, P., Wicke, M., Yu, Y., and Zheng, X",
+      "title": "Tensorflow: A system for large-scale machine learning",
+      "venue": "Tech. rep., Google Brain, 2016 arXiv preprint",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "BahdanauCB15",
+      "raw": "Bahdanau, D., Cho, K., and Bengio, Y. Neural machine translation by jointly learning to align and translate. In International Conference on Learning Representations\\/ (2015)",
+      "authors": "Bahdanau, D., Cho, K., and Bengio, Y",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "In International Conference on Learning Representations\\/ (2015)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Brown:1988:SAL:991635.991651",
+      "raw": "Brown, P., Cocke, J., Pietra, S. D., Pietra, V. D., Jelinek, F., Mercer, R., and Roossin, P. A statistical approach to language translation. In Proceedings of the 12th Conference on Computational Linguistics - Volume 1\\/ (Stroudsburg, PA, USA, 1988), COLING '88, Association for Computational Linguistics, pp. 71--76",
+      "authors": "Brown, P., Cocke, J., Pietra, S. D., Pietra, V. D., Jelinek, F., Mercer, R., and Roossin, P",
+      "title": "A statistical approach to language translation",
+      "venue": "In Proceedings of the 12th Conference on Computational Linguistics - Volume 1\\/ (Stroudsburg, PA, USA, 1988), COLING '88, Association for Computational Linguistics, pp. 71--76",
+      "year": 1988,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "brown1990statistical",
+      "raw": "Brown, P. F., Cocke, J., Pietra, S. A. D., Pietra, V. J. D., Jelinek, F., Lafferty, J. D., Mercer, R. L., and Roossin, P. S. A statistical approach to machine translation. Computational linguistics 16, 2 (1990), 79--85",
+      "authors": "Brown, P. F., Cocke, J., Pietra, S. A. D., Pietra, V. J. D., Jelinek, F., Lafferty, J. D., Mercer, R. L., and Roossin, P. S",
+      "title": "A statistical approach to machine translation",
+      "venue": "Computational linguistics 16, 2 (1990), 79--85",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Brown:1993:MSM:972470.972474",
+      "raw": "Brown, P. F., Pietra, V. J. D., Pietra, S. A. D., and Mercer, R. L. The mathematics of statistical machine translation: Parameter estimation. Comput. Linguist. 19, 2 (June 1993), 263--311",
+      "authors": "Brown, P. F., Pietra, V. J. D., Pietra, S. A. D., and Mercer, R. L",
+      "title": "The mathematics of statistical machine translation: Parameter estimation",
+      "venue": "Comput. Linguist. 19, 2 (June 1993), 263--311",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "buck2014n",
+      "raw": "Buck, C., Heafield, K., and Van Ooyen, B. N-gram counts and language models from the common crawl. In LREC\\/ (2014), vol. 2, Citeseer, p. 4",
+      "authors": "Buck, C., Heafield, K., and Van Ooyen, B",
+      "title": "N-gram counts and language models from the common crawl",
+      "venue": "In LREC\\/ (2014), vol. 2, Citeseer, p. 4",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ChoMGBSB14",
+      "raw": "Cho, K., van Merrienboer, B., G\\\"ul cehre, C., Bougares, F., Schwenk, H., and Bengio, Y. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In Conference on Empirical Methods in Natural Language Processing\\/ (2014)",
+      "authors": "Cho, K., van Merrienboer, B., G\\\"ul cehre, C., Bougares, F., Schwenk, H., and Bengio, Y",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "venue": "In Conference on Empirical Methods in Natural Language Processing\\/ (2014)",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chrisman1991learning",
+      "raw": "Chrisman, L. Learning recursive distributed representations for holistic computation. Connection Science 3, 4 (1991), 345--366",
+      "authors": "Chrisman, L",
+      "title": "Learning recursive distributed representations for holistic computation",
+      "venue": "Connection Science 3, 4 (1991), 345--366",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chung2016character",
+      "raw": "Chung, J., Cho, K., and Bengio, Y. A character-level decoder without explicit segmentation for neural machine translation. arXiv preprint arXiv:1603.06147\\/ (2016)",
+      "authors": "Chung, J., Cho, K., and Bengio, Y",
+      "title": "A character-level decoder without explicit segmentation for neural machine translation",
+      "venue": "arXiv preprint (2016)",
+      "year": 2016,
+      "arxivId": "1603.06147",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/ChungCB16",
+      "raw": "Chung, J., Cho, K., and Bengio, Y. A character-level decoder without explicit segmentation for neural machine translation. CoRR abs/1603.06147\\/ (2016)",
+      "authors": "Chung, J., Cho, K., and Bengio, Y",
+      "title": "A character-level decoder without explicit segmentation for neural machine translation",
+      "venue": "CoRR abs/1603.06147\\/ (2016)",
+      "year": 2016,
+      "arxivId": "1603.06147",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/Costa-JussaF16",
+      "raw": "Costa-Juss\\`a, M. R., and Fonollosa, J. A. R. Character-based neural machine translation. CoRR abs/1603.00810\\/ (2016)",
+      "authors": "Costa-Juss\\`a, M. R., and Fonollosa, J. A. R",
+      "title": "Character-based neural machine translation",
+      "venue": "CoRR abs/1603.00810\\/ (2016)",
+      "year": 2016,
+      "arxivId": "1603.00810",
+      "doi": null
+    },
+    {
+      "key": "downpoursgd",
+      "raw": "Dean, J., Corrado, G. S., Monga, R., Chen, K., Devin, M., Le, Q. V., Mao, M. Z., Ranzato, M., Senior, A., Tucker, P., Yang, K., and Ng, A. Y. Large scale distributed deep networks. In NIPS\\/ (2012)",
+      "authors": "Dean, J., Corrado, G. S., Monga, R., Chen, K., Devin, M., Le, Q. V., Mao, M. Z., Ranzato, M., Senior, A., Tucker, P., Yang, K., and Ng, A. Y",
+      "title": "Large scale distributed deep networks",
+      "venue": "In NIPS\\/ (2012)",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "devlin2014fast",
+      "raw": "Devlin, J., Zbib, R., Huang, Z., Lamar, T., Schwartz, R. M., and Makhoul, J. Fast and robust neural network joint models for statistical machine translation. In ACL (1)\\/ (2014), Citeseer, pp. 1370--1380",
+      "authors": "Devlin, J., Zbib, R., Huang, Z., Lamar, T., Schwartz, R. M., and Makhoul, J",
+      "title": "Fast and robust neural network joint models for statistical machine translation",
+      "venue": "In ACL (1)\\/ (2014), Citeseer, pp. 1370--1380",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dong2015multi",
+      "raw": "Dong, D., Wu, H., He, W., Yu, D., and Wang, H. Multi-task learning for multiple language translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics\\/ (2015), pp. 1723--1732",
+      "authors": "Dong, D., Wu, H., He, W., Yu, D., and Wang, H",
+      "title": "Multi-task learning for multiple language translation",
+      "venue": "In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics\\/ (2015), pp. 1723--1732",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "durrani2014edinburgh",
+      "raw": "Durrani, N., Haddow, B., Koehn, P., and Heafield, K. Edinburgh's phrase-based machine translation systems for WMT-14. In Proceedings of the Ninth Workshop on Statistical Machine Translation\\/ (2014), Association for Computational Linguistics Baltimore, MD, USA, pp. 97--104",
+      "authors": "Durrani, N., Haddow, B., Koehn, P., and Heafield, K",
+      "title": "Edinburgh's phrase-based machine translation systems for WMT-14",
+      "venue": "In Proceedings of the Ninth Workshop on Statistical Machine Translation\\/ (2014), Association for Computational Linguistics Baltimore, MD, USA, pp. 97--104",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Fahlman90thecascade-correlation",
+      "raw": "Fahlman, S. E., and Lebiere, C. The cascade-correlation learning architecture. In Advances in Neural Information Processing Systems 2\\/ (1990), Morgan Kaufmann, pp. 524--532",
+      "authors": "Fahlman, S. E., and Lebiere, C",
+      "title": "The cascade-correlation learning architecture",
+      "venue": "In Advances in Neural Information Processing Systems 2\\/ (1990), Morgan Kaufmann, pp. 524--532",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gers2000learning",
+      "raw": "Gers, F. A., Schmidhuber, J., and Cummins, F. Learning to forget: Continual prediction with LSTM. Neural computation 12, 10 (2000), 2451--2471",
+      "authors": "Gers, F. A., Schmidhuber, J., and Cummins, F",
+      "title": "Learning to forget: Continual prediction with LSTM",
+      "venue": "Neural computation 12, 10 (2000), 2451--2471",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/GulcehreANZB16",
+      "raw": "G\\\"ul cehre, C., Ahn, S., Nallapati, R., Zhou, B., and Bengio, Y. Pointing the unknown words. CoRR abs/1603.08148\\/ (2016)",
+      "authors": "G\\\"ul cehre, C., Ahn, S., Nallapati, R., Zhou, B., and Bengio, Y",
+      "title": "Pointing the unknown words",
+      "venue": "CoRR abs/1603.08148\\/ (2016)",
+      "year": 2016,
+      "arxivId": "1603.08148",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/GuptaAGN15",
+      "raw": "Gupta, S., Agrawal, A., Gopalakrishnan, K., and Narayanan, P. Deep learning with limited numerical precision. CoRR abs/1502.02551\\/ (2015)",
+      "authors": "Gupta, S., Agrawal, A., Gopalakrishnan, K., and Narayanan, P",
+      "title": "Deep learning with limited numerical precision",
+      "venue": "CoRR abs/1502.02551\\/ (2015)",
+      "year": 2015,
+      "arxivId": "1502.02551",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/HanMD15",
+      "raw": "Han, S., Mao, H., and Dally, W. J. Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding. CoRR abs/1510.00149\\/ (2015)",
+      "authors": "Han, S., Mao, H., and Dally, W. J",
+      "title": "Deep compression: Compressing deep neural network with pruning, trained quantization and huffman coding",
+      "venue": "CoRR abs/1510.00149\\/ (2015)",
+      "year": 2015,
+      "arxivId": "1510.00149",
+      "doi": null
+    },
+    {
+      "key": "he2015deep",
+      "raw": "He, K., Zhang, X., Ren, S., and Sun, J. Deep residual learning for image recognition. In IEEE Conference on Computer Vision and Pattern Recognition\\/ (2015)",
+      "authors": "He, K., Zhang, X., Ren, S., and Sun, J",
+      "title": "Deep residual learning for image recognition",
+      "venue": "In IEEE Conference on Computer Vision and Pattern Recognition\\/ (2015)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter01gradientflow",
+      "raw": "Hochreiter, S., Bengio, Y., Frasconi, P., and Schmidhuber, J. Gradient flow in recurrent nets: the difficulty of learning long-term dependencies, 2001",
+      "authors": "Hochreiter, S., Bengio, Y., Frasconi, P., and Schmidhuber, J",
+      "title": "Gradient flow in recurrent nets: the difficulty of learning long-term dependencies, 2001",
+      "venue": "",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Hochreiter, S., and Schmidhuber, J. Long short-term memory. Neural computation 9, 8 (1997), 1735--1780",
+      "authors": "Hochreiter, S., and Schmidhuber, J",
+      "title": "Long short-term memory",
+      "venue": "Neural computation 9, 8 (1997), 1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kalchbrenner2013recurrent",
+      "raw": "Kalchbrenner, N., and Blunsom, P. Recurrent continuous translation models. In Conference on Empirical Methods in Natural Language Processing\\/ (2013)",
+      "authors": "Kalchbrenner, N., and Blunsom, P",
+      "title": "Recurrent continuous translation models",
+      "venue": "In Conference on Empirical Methods in Natural Language Processing\\/ (2013)",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/KingmaB14",
+      "raw": "Kingma, D. P., and Ba, J. Adam: A method for stochastic optimization. CoRR abs/1412.6980\\/ (2014)",
+      "authors": "Kingma, D. P., and Ba, J",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "CoRR abs/1412.6980\\/ (2014)",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "koehn2003statistical",
+      "raw": "Koehn, P., Och, F. J., and Marcu, D. Statistical phrase-based translation. In Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics\\/ (2003)",
+      "authors": "Koehn, P., Och, F. J., and Marcu, D",
+      "title": "Statistical phrase-based translation",
+      "venue": "In Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics\\/ (2003)",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/LiL16",
+      "raw": "Li, F., and Liu, B. Ternary weight networks. CoRR abs/1605.04711\\/ (2016)",
+      "authors": "Li, F., and Liu, B",
+      "title": "Ternary weight networks",
+      "venue": "CoRR abs/1605.04711\\/ (2016)",
+      "year": 2016,
+      "arxivId": "1605.04711",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/LuongM16",
+      "raw": "Luong, M., and Manning, C. D. Achieving open vocabulary neural machine translation with hybrid word-character models. CoRR abs/1604.00788\\/ (2016)",
+      "authors": "Luong, M., and Manning, C. D",
+      "title": "Achieving open vocabulary neural machine translation with hybrid word-character models",
+      "venue": "CoRR abs/1604.00788\\/ (2016)",
+      "year": 2016,
+      "arxivId": "1604.00788",
+      "doi": null
+    },
+    {
+      "key": "luong2015multi",
+      "raw": "Luong, M.-T., Le, Q. V., Sutskever, I., Vinyals, O., and Kaiser, L. Multi-task sequence to sequence learning. In International Conference on Learning Representations\\/ (2015)",
+      "authors": "Luong, M.-T., Le, Q. V., Sutskever, I., Vinyals, O., and Kaiser, L",
+      "title": "Multi-task sequence to sequence learning",
+      "venue": "In International Conference on Learning Representations\\/ (2015)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "luong-pham-manning:2015:EMNLP",
+      "raw": "Luong, M.-T., Pham, H., and Manning, C. D. Effective approaches to attention-based neural machine translation. In Conference on Empirical Methods in Natural Language Processing\\/ (2015)",
+      "authors": "Luong, M.-T., Pham, H., and Manning, C. D",
+      "title": "Effective approaches to attention-based neural machine translation",
+      "venue": "In Conference on Empirical Methods in Natural Language Processing\\/ (2015)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "luong2015addressing",
+      "raw": "Luong, M.-T., Sutskever, I., Le, Q. V., Vinyals, O., and Zaremba, W. Addressing the rare word problem in neural machine translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing\\/ (2015)",
+      "authors": "Luong, M.-T., Sutskever, I., Le, Q. V., Vinyals, O., and Zaremba, W",
+      "title": "Addressing the rare word problem in neural machine translation",
+      "venue": "In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing\\/ (2015)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rml",
+      "raw": "Norouzi, M., Bengio, S., Chen, Z., Jaitly, N., Schuster, M., Wu, Y., and Schuurmans, D. Reward augmented maximum likelihood for neural structured prediction. In Neural Information Processing Systems\\/ (2016)",
+      "authors": "Norouzi, M., Bengio, S., Chen, Z., Jaitly, N., Schuster, M., Wu, Y., and Schuurmans, D",
+      "title": "Reward augmented maximum likelihood for neural structured prediction",
+      "venue": "In Neural Information Processing Systems\\/ (2016)",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1211-5063",
+      "raw": "Pascanu, R., Mikolov, T., and Bengio, Y. Understanding the exploding gradient problem. CoRR abs/1211.5063\\/ (2012)",
+      "authors": "Pascanu, R., Mikolov, T., and Bengio, Y",
+      "title": "Understanding the exploding gradient problem",
+      "venue": "CoRR abs/1211.5063\\/ (2012)",
+      "year": 2012,
+      "arxivId": "1211.5063",
+      "doi": null
+    },
+    {
+      "key": "RanzatoCAZ15",
+      "raw": "Ranzato, M., Chopra, S., Auli, M., and Zaremba, W. Sequence level training with recurrent neural networks. In International Conference on Learning Representations\\/ (2015)",
+      "authors": "Ranzato, M., Chopra, S., Auli, M., and Zaremba, W",
+      "title": "Sequence level training with recurrent neural networks",
+      "venue": "In International Conference on Learning Representations\\/ (2015)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wordpiece_schuster",
+      "raw": "Schuster, M., and Nakajima, K. Japanese and Korean voice search. 2012 IEEE International Conference on Acoustics, Speech and Signal Processing\\/ (2012)",
+      "authors": "Schuster, M., and Nakajima, K",
+      "title": "Japanese and Korean voice search",
+      "venue": "2012 IEEE International Conference on Acoustics, Speech and Signal Processing\\/ (2012)",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Schuster:1997:BRN:2198065.2205129",
+      "raw": "Schuster, M., and Paliwal, K. Bidirectional recurrent neural networks. IEEE Transactions on Signal Processing 45, 11 (Nov. 1997), 2673--2681",
+      "authors": "Schuster, M., and Paliwal, K",
+      "title": "Bidirectional recurrent neural networks",
+      "venue": "IEEE Transactions on Signal Processing 45, 11 (Nov. 1997), 2673--2681",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jean2015using",
+      "raw": "S\\'ebastien, J., Kyunghyun, C., Memisevic, R., and Bengio, Y. On using very large target vocabulary for neural machine translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing\\/ (2015)",
+      "authors": "S\\'ebastien, J., Kyunghyun, C., Memisevic, R., and Bengio, Y",
+      "title": "On using very large target vocabulary for neural machine translation",
+      "venue": "In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing\\/ (2015)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "SennrichHB15",
+      "raw": "Sennrich, R., Haddow, B., and Birch, A. Neural machine translation of rare words with subword units. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/ (2016)",
+      "authors": "Sennrich, R., Haddow, B., and Birch, A",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/ (2016)",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ShenCHHWSL15",
+      "raw": "Shen, S., Cheng, Y., He, Z., He, W., Wu, H., Sun, M., and Liu, Y. Minimum risk training for neural machine translation. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/ (2016)",
+      "authors": "Shen, S., Cheng, Y., He, Z., He, W., Wu, H., Sun, M., and Liu, Y",
+      "title": "Minimum risk training for neural machine translation",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/ (2016)",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/SrivastavaGS15",
+      "raw": "Srivastava, R. K., Greff, K., and Schmidhuber, J. Highway networks. CoRR abs/1505.00387\\/ (2015)",
+      "authors": "Srivastava, R. K., Greff, K., and Schmidhuber, J",
+      "title": "Highway networks",
+      "venue": "CoRR abs/1505.00387\\/ (2015)",
+      "year": 2015,
+      "arxivId": "1505.00387",
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Sutskever, I., Vinyals, O., and Le, Q. V. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems\\/ (2014), pp. 3104--3112",
+      "authors": "Sutskever, I., Vinyals, O., and Le, Q. V",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in Neural Information Processing Systems\\/ (2014), pp. 3104--3112",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "TuLLLL16",
+      "raw": "Tu, Z., Lu, Z., Liu, Y., Liu, X., and Li, H. Coverage-based neural machine translation. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/ (2016)",
+      "authors": "Tu, Z., Lu, Z., Liu, Y., Liu, X., and Li, H",
+      "title": "Coverage-based neural machine translation",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/ (2016)",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/WuLWHC15",
+      "raw": "Wu, J., Leng, C., Wang, Y., Hu, Q., and Cheng, J. Quantized convolutional neural networks for mobile devices. CoRR abs/1512.06473\\/ (2015)",
+      "authors": "Wu, J., Leng, C., Wang, Y., Hu, Q., and Cheng, J",
+      "title": "Quantized convolutional neural networks for mobile devices",
+      "venue": "CoRR abs/1512.06473\\/ (2015)",
+      "year": 2015,
+      "arxivId": "1512.06473",
+      "doi": null
+    },
+    {
+      "key": "lstm_dropout",
+      "raw": "Zaremba, W., Sutskever, I., and Vinyals, O. Recurrent neural network regularization, 2014",
+      "authors": "Zaremba, W., Sutskever, I., and Vinyals, O",
+      "title": "Recurrent neural network regularization, 2014",
+      "venue": "",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/ZhouCWLX16",
+      "raw": "Zhou, J., Cao, Y., Wang, X., Li, P., and Xu, W. Deep recurrent models with fast-forward connections for neural machine translation. CoRR abs/1606.04199\\/ (2016)",
+      "authors": "Zhou, J., Cao, Y., Wang, X., Li, P., and Xu, W",
+      "title": "Deep recurrent models with fast-forward connections for neural machine translation",
+      "venue": "CoRR abs/1606.04199\\/ (2016)",
+      "year": 2016,
+      "arxivId": "1606.04199",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\mathbf{x_1, x_2, ..., x_{M}} = EncoderRNN(x_1, x_2, x_3, ..., x_{M})",
+      "environment": "equation",
+      "labels": [
+        "eq-encoder"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\begin{split}\n\tP(Y | X) &= P(Y | \\mathbf{x_1, x_2, x_3, ..., x_{M}}) \\\\\n\t&= \\prod_{i=1}^{N}P(y_i | y_0, y_1, y_2, ..., y_{i-1}; \\mathbf{x_1, x_2, x_3, ..., x_{M}})\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "p_y_given_x"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "P(y_i|y_0, y_1, y_2, y_3, ...,\n        y_{i-1}; \\mathbf{x_1}, \\mathbf{x_2}, \\mathbf{x_3},...,\n        \\mathbf{x_{M}})",
+      "environment": "equation",
+      "labels": [
+        "eq-decoder"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\begin{split}\n\ts_t &= AttentionFunction(\\mathbf{y}_{i-1}, \\mathbf{x}_{t}) \\quad  \\forall t,   \\quad  1 \\leq t \\leq M \\\\\n\tp_t &= \\exp(s_t) / \\sum_{t=1}^{M}\\exp(s_t) \\quad  \\quad \\forall t, \\quad 1 \\leq t \\leq M \\\\\n\t\\mathbf{a}_i &= \\sum_{t=1}^{M} p_t . \\mathbf{x}_t\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "atten"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\begin{split}\n\t\\mathbf{c}_t^i,\\mathbf{m}_t^i &= \\LSTM_i(\\mathbf{c}_{t-1}^i, \\mathbf{m}_{t-1}^i, \\mathbf{x}_t^{i-1}; \\mathbf{W}^i) \\\\\n\t\\mathbf{x}_t^{i} & =  \\mathbf{m}_t^i \\\\\n\t\\mathbf{c}_t^{i+1},\\mathbf{m}_t^{i+1} &= \\LSTM_{i+1}(\\mathbf{c}_{t-1}^{i+1}, \\mathbf{m}_{t-1}^{i+1}, \\mathbf{x}_t^{i}; \\mathbf{W}^{i+1})\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "LSTM_stack"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\begin{split}\n\t\\mathbf{c}_t^i,\\mathbf{m}_t^i &= \\LSTM_i(\\mathbf{c}_{t-1}^i, \\mathbf{m}_{t-1}^i,\t\\mathbf{x}_t^{i-1}; \\mathbf{W}^i) \\\\\n\t\\mathbf{x}_t^{i} & =  \\mathbf{m}_t^i + \\mathbf{x}_t^{i-1} \\\\\n\t\\mathbf{c}_t^{i+1},\\mathbf{m}_t^{i+1} &= \\LSTM_{i+1}(\\mathbf{c}_{t-1}^{i+1}, \\mathbf{m}_{t-1}^{i+1}, \\mathbf{x}_t^{i}; \\mathbf{W}^{i+1})\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "LSTM_stack_residual"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\objml(\\btheta) = \\sum_{i=1}^N \\log \\modelp(Y^{*(i)} \\mid\n\tX^{(i)})~.",
+      "environment": "equation",
+      "labels": [
+        "eq:objml"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\objrl(\\btheta) = \\sum_{i=1}^N \\sum_{Y \\in \\calY}\n\t\\modelp(Y \\mid\n\tX^{(i)})~\\reward{Y}{Y^{*(i)}}.",
+      "environment": "equation",
+      "labels": [
+        "eq:objrl"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\objmixed(\\btheta) = \\alpha * \\objml(\\btheta) + \\objrl(\\btheta)",
+      "environment": "equation",
+      "labels": [
+        "eq:mixed"
+      ]
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\begin{split}\n\t\\mathbf{c'}_{t}^i,\\mathbf{m}_{t}^i &= \\LSTM_i(\\mathbf{c}_{t-1}^i, \\mathbf{m}_{t-1}^i, \\mathbf{x}_t^{i-1}; \\mathbf{W}^i) \\\\\n        \\mathbf{c}_{t}^i &= \\max(-\\delta, \\min(\\delta, \\mathbf{c'}_{t}^i)) \\\\\n        \\mathbf{x'}_t^{i} & =  \\mathbf{m}_t^i + \\mathbf{x}_t^{i-1} \\\\\n\t\t\\mathbf{x}_t^{i} & =  \\max(-\\delta, \\min(\\delta, \\mathbf{x'}_t^{i})) \\\\\n\t    \\mathbf{c'}_{t}^{i+1},\\mathbf{m}_{t}^{i+1} &= \\LSTM_{i+1}(\\mathbf{c}_{t-1}^{i+1}, \\mathbf{m}_{t-1}^{i+1}, \\mathbf{x}_t^{i}; \\mathbf{W}^{i+1}) \\\\\n        \\mathbf{c}_{t}^{i+1} &= \\max(-\\delta, \\min(\\delta, \\mathbf{c'}_{t}^{i+1}))\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "LSTM_stack_residual_quatized"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\begin{split}\n\t\n\t\t\\mathbf{W} &= [\\mathbf{W}_1, \\mathbf{W}_2,  \\mathbf{W}_3, \\mathbf{W}_4,  \\mathbf{W}_5,  \\mathbf{W}_6,  \\mathbf{W}_7, \\mathbf{W}_8] \\\\\n\t\t\\mathbf{i}_{t} &= \\text{sigmoid}(\\mathbf{W}_1 \\mathbf{x}_t + \\mathbf{W}_2 \\mathbf{m}_t)  \\\\\n\t\t\\mathbf{i'}_{t} &= \\tanh(\\mathbf{W}_3 \\mathbf{x}_t + \\mathbf{W}_4 \\mathbf{m}_t)  \\\\\n\t\t\\mathbf{f}_{t} &= \\text{sigmoid}(\\mathbf{W}_5 \\mathbf{x}_t + \\mathbf{W}_6 \\mathbf{m}_t)  \\\\\n\t\t\\mathbf{o}_{t} &= \\text{sigmoid}(\\mathbf{W}_7 \\mathbf{x}_t + \\mathbf{W}_8 \\mathbf{m}_t) \\\\\n\t\t\\mathbf{c}_{t} &= \\mathbf{c}_{t-1} \\odot \\mathbf{f}_{t} + \\mathbf{i'}_{t} \\odot \\mathbf{i}_{t} \\\\\n\t\t\\mathbf{m}_{t} &= \\mathbf{c}_{t} \\odot \\mathbf{o}_{t}\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "LSTM_internal"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\mathbf{W} &= [\\mathbf{W}_1, \\mathbf{W}_2,  \\mathbf{W}_3, \\mathbf{W}_4,  \\mathbf{W}_5,  \\mathbf{W}_6,  \\mathbf{W}_7, \\mathbf{W}_8] \\\\\n\t\t\\mathbf{i}_{t} &= \\text{sigmoid}(\\mathbf{W}_1 \\mathbf{x}_t + \\mathbf{W}_2 \\mathbf{m}_t)  \\\\\n\t\t\\mathbf{i'}_{t} &= \\tanh(\\mathbf{W}_3 \\mathbf{x}_t + \\mathbf{W}_4 \\mathbf{m}_t)  \\\\\n\t\t\\mathbf{f}_{t} &= \\text{sigmoid}(\\mathbf{W}_5 \\mathbf{x}_t + \\mathbf{W}_6 \\mathbf{m}_t)  \\\\\n\t\t\\mathbf{o}_{t} &= \\text{sigmoid}(\\mathbf{W}_7 \\mathbf{x}_t + \\mathbf{W}_8 \\mathbf{m}_t) \\\\\n\t\t\\mathbf{c}_{t} &= \\mathbf{c}_{t-1} \\odot \\mathbf{f}_{t} + \\mathbf{i'}_{t} \\odot \\mathbf{i}_{t} \\\\\n\t\t\\mathbf{m}_{t} &= \\mathbf{c}_{t} \\odot \\mathbf{o}_{t}",
+      "environment": "split",
+      "labels": [
+        "LSTM_internal"
+      ]
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\begin{split}\n\t\t\\mathbf{s}_i &= \\max(\\text{abs}(\\mathbf{W}[i,:])) \\\\\n\t\t\\mathbf{WQ}[i,j] &= \\text{round}(\\mathbf{W}[i, j] /\n\t\t\\mathbf{s}_i \\times 127.0)\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "weight_quantization"
+      ]
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\begin{split}\n\t\t\\mathbf{v_t} &= \\mathbf{W_s} * \\mathbf{y_t} \\\\\n\t\t\\mathbf{v_t'} &= \\max(-\\gamma, \\min(\\gamma, \\mathbf{v_t})) \\\\\n\t\t\\mathbf{p_t} &= softmax(\\mathbf{v_t'})\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "softmax_quantization"
+      ]
+    },
+    {
+      "ordinal": 14,
+      "latex": "\\begin{split}\n\ts(Y, X) &= \\log(P(Y | X)) / lp(Y) + cp(X;Y) \\\\\n\tlp(Y) &= \\frac{(5 + |Y|) ^ \\alpha}{(5 + 1) ^ \\alpha} \\\\\n\tcp(X;Y) &= \\beta * \\sum_{i=1}^{|X|}{\\log(\\min(\\sum_{j=1}^{|Y|}{p_{i, j}}, 1.0))},\n\t\\end{split}",
+      "environment": "equation",
+      "labels": [
+        "eq-decoder-scorer"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 2315,
+      "numbers": 4,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4844,
+      "numbers": 9,
+      "citations": 14
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2063,
+      "numbers": 2,
+      "citations": 21
+    },
+    {
+      "kind": "method",
+      "title": "Model Architecture",
+      "chars": 4514,
+      "numbers": 1,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Residual Connections",
+      "chars": 2126,
+      "numbers": 4,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Bi-directional Encoder for First Layer",
+      "chars": 1333,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Model Parallelism",
+      "chars": 1993,
+      "numbers": 3,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Segmentation Approaches",
+      "chars": 714,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Wordpiece Model",
+      "chars": 3352,
+      "numbers": 3,
+      "citations": 5
+    },
+    {
+      "kind": "method",
+      "title": "Mixed Word/Character Model",
+      "chars": 991,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Training Criteria",
+      "chars": 3288,
+      "numbers": 7,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Quantizable Model and Quantized Inference",
+      "chars": 8832,
+      "numbers": 21,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Decoder",
+      "chars": 5532,
+      "numbers": 8,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments and Results",
+      "chars": 1385,
+      "numbers": 6,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Datasets",
+      "chars": 623,
+      "numbers": 2,
+      "citations": 3
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation Metrics",
+      "chars": 1212,
+      "numbers": 6,
+      "citations": 3
+    },
+    {
+      "kind": "experiments",
+      "title": "Training Procedure",
+      "chars": 3295,
+      "numbers": 12,
+      "citations": 4
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation after Maximum Likelihood Training",
+      "chars": 4336,
+      "numbers": 19,
+      "citations": 4
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation of RL-refined Models",
+      "chars": 1285,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Model Ensemble and Human Evaluation",
+      "chars": 2449,
+      "numbers": 15,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Results on Production Data",
+      "chars": 3234,
+      "numbers": 9,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1521,
+      "numbers": 6,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 131,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 7,
+      "extends": 0,
+      "contests": 1,
+      "compares": 1,
+      "background": 35,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "hochreiter1997long",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "Similar to , we use a deep stacked Long Short Term Memory (LSTM) network for both the encoder RNN and the decoder RNN.",
+      "section": "Model Architecture",
+      "sectionKind": "method",
+      "title": "Long short-term memory",
+      "authors": "Hochreiter, S., and Schmidhuber, J",
+      "year": 1997,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 424.11810302734375,
+            "y0": 660.97021484375,
+            "x1": 540.0635986328125,
+            "y1": 670.8828735351562
+          },
+          {
+            "x0": 72.0,
+            "y0": 672.8862915039062,
+            "x1": 225.71295166015625,
+            "y1": 682.848876953125
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "DBLP:journals/corr/KingmaB14",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For the first stage of maximum likelihood training (that is, to optimize for objective function ), we use a combination of Adam and simple SGD learning algorithms provided by the TensorFlow runtime system.",
+        "section": "Training Procedure",
+        "sectionKind": "experiments",
+        "title": "Adam: A method for stochastic optimization",
+        "authors": "Kingma, D. P., and Ba, J",
+        "year": 2014,
+        "arxivId": "1412.6980",
+        "inCorpus": true,
+        "anchor": {
+          "page": 13,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 86.94400024414062,
+              "y0": 643.3298950195312,
+              "x1": 508.742431640625,
+              "y1": 653.3916625976562
+            }
+          ]
+        }
+      },
+      {
+        "key": "DBLP:journals/corr/ZhouCWLX16",
+        "stance": "contests",
+        "cue": "as opposed to",
+        "sentence": "We point out that our models are completely self-contained, as opposed to previous models reported in , which depend on some external alignment models to achieve their best results.",
+        "section": "Evaluation after Maximum Likelihood Training",
+        "sectionKind": "experiments",
+        "title": "Deep recurrent models with fast-forward connections for neural machine translation",
+        "authors": "Zhou, J., Cao, Y., Wang, X., Li, P., and Xu, W",
+        "year": 2016,
+        "arxivId": "1606.04199",
+        "inCorpus": false,
+        "anchor": {
+          "page": 15,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 526.1015625,
+              "y0": 395.3771667480469,
+              "x1": 540.16748046875,
+              "y1": 405.4142150878906
+            },
+            {
+              "x0": 72.0,
+              "y0": 407.3128967285156,
+              "x1": 519.4163818359375,
+              "y1": 417.3746337890625
+            }
+          ]
+        }
+      },
+      {
+        "key": "buck2014n",
+        "stance": "compares",
+        "cue": "better than",
+        "sentence": "Likewise on WMT'14 English-to-German, our single model scores 24.17 BLEU, which is 3.4 BLEU better than a previous competitive baseline .",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "N-gram counts and language models from the common crawl",
+        "authors": "Buck, C., Heafield, K., and Van Ooyen, B",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 488.4631652832031,
+              "y0": 456.6769104003906,
+              "x1": 540.0243530273438,
+              "y1": 466.7386474609375
+            },
+            {
+              "x0": 71.49199676513672,
+              "y0": 468.7873840332031,
+              "x1": 540.171875,
+              "y1": 478.64984130859375
+            },
+            {
+              "x0": 72.0,
+              "y0": 480.7266540527344,
+              "x1": 159.04261779785156,
+              "y1": 490.6092529296875
+            }
+          ]
+        }
+      },
+      {
+        "key": "hochreiter1997long",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Similar to , we use a deep stacked Long Short Term Memory (LSTM) network for both the encoder RNN and the decoder RNN.",
+        "section": "Model Architecture",
+        "sectionKind": "method",
+        "title": "Long short-term memory",
+        "authors": "Hochreiter, S., and Schmidhuber, J",
+        "year": 1997,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 424.11810302734375,
+              "y0": 660.97021484375,
+              "x1": 540.0635986328125,
+              "y1": 670.8828735351562
+            },
+            {
+              "x0": 72.0,
+              "y0": 672.8862915039062,
+              "x1": 225.71295166015625,
+              "y1": 682.848876953125
+            }
+          ]
+        }
+      },
+      {
+        "key": "jean2015using",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In both cases, we use newstest2014 as the test sets to compare against previous work .",
+        "section": "Datasets",
+        "sectionKind": "experiments",
+        "title": "On using very large target vocabulary for neural machine translation",
+        "authors": "S\\'ebastien, J., Kyunghyun, C., Memisevic, R., and Bengio, Y",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 13,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.1220703125,
+              "y0": 275.88714599609375,
+              "x1": 540.2328491210938,
+              "y1": 285.8447570800781
+            },
+            {
+              "x0": 72.0,
+              "y0": 287.7927551269531,
+              "x1": 208.49220275878906,
+              "y1": 297.81494140625
+            }
+          ]
+        }
+      },
+      {
+        "key": "lstm_dropout",
+        "stance": "inherits",
+        "cue": "we apply",
+        "sentence": "To prevent overfitting, we apply dropout during training with a scheme similar to .",
+        "section": "Training Procedure",
+        "sectionKind": "experiments",
+        "title": "Recurrent neural network regularization, 2014",
+        "authors": "Zaremba, W., Sutskever, I., and Vinyals, O",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 14,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 86.94400024414062,
+              "y0": 657.3058471679688,
+              "x1": 451.2364196777344,
+              "y1": 667.3676147460938
+            }
+          ]
+        }
+      },
+      {
+        "key": "luong2015addressing",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In both cases, we use newstest2014 as the test sets to compare against previous work .",
+        "section": "Datasets",
+        "sectionKind": "experiments",
+        "title": "Addressing the rare word problem in neural machine translation",
+        "authors": "Luong, M.-T., Sutskever, I., Le, Q. V., Vinyals, O., and Zaremba, W",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 13,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.1220703125,
+              "y0": 275.88714599609375,
+              "x1": 540.2328491210938,
+              "y1": 285.8447570800781
+            },
+            {
+              "x0": 72.0,
+              "y0": 287.7927551269531,
+              "x1": 208.49220275878906,
+              "y1": 297.81494140625
+            }
+          ]
+        }
+      },
+      {
+        "key": "sutskever2014sequence",
+        "stance": "inherits",
+        "cue": "we apply",
+        "sentence": "As is common wisdom in training RNN models, we apply gradient clipping (similar to ): all gradients are uniformly scaled down such that the norm of the modified gradients is no larger than a fixed constant, which is in our case.",
+        "section": "Training Procedure",
+        "sectionKind": "experiments",
+        "title": "Sequence to sequence learning with neural networks",
+        "authors": "Sutskever, I., Vinyals, O., and Le, Q. V",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 13,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 300.02056884765625,
+              "y0": 607.5694580078125,
+              "x1": 540.3748168945312,
+              "y1": 617.4971313476562
+            },
+            {
+              "x0": 72.0,
+              "y0": 619.5753784179688,
+              "x1": 407.42010498046875,
+              "y1": 629.4378662109375
+            }
+          ]
+        }
+      },
+      {
+        "key": "wordpiece_schuster",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "To effectively deal with rare words, we use sub-word units (also known as \"wordpieces\") for inputs and outputs in our system.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Japanese and Korean voice search",
+        "authors": "Schuster, M., and Nakajima, K",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 221.60104370117188,
+              "y0": 301.3722839355469,
+              "x1": 540.1909790039062,
+              "y1": 311.2899475097656
+            },
+            {
+              "x0": 70.58499908447266,
+              "y0": 313.3351135253906,
+              "x1": 130.0873260498047,
+              "y1": 323.2427673339844
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "For brevity, we drop all the superscripts .",
+      "anchorText": "For brevity, we drop all the superscripts",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "For brevity",
+      "section": "Quantizable Model and Quantized Inference",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 413.8754577636719,
+            "y0": 638.5208740234375,
+            "x1": 540.15673828125,
+            "y1": 648.5826416015625
+          },
+          {
+            "x0": 72.0,
+            "y0": 650.5532836914062,
+            "x1": 124.01473999023438,
+            "y1": 660.515869140625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "As is well-known, BLEU score does not fully capture the quality of a translation.",
+      "anchorText": "As is well-known, BLEU score does not fully capture the quality of a translation.",
+      "kind": "conventional",
+      "support": "bare",
+      "cue": "As is well-known",
+      "section": "Evaluation Metrics",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 86.94400024414062,
+            "y0": 417.8764343261719,
+            "x1": 435.4798889160156,
+            "y1": 427.7439270019531
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 0,
+    "shown": 0,
+    "bare": 2
+  }
+}
