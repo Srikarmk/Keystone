@@ -4,6 +4,10 @@ from __future__ import annotations
 
 import json
 import random
+import re
+import time
+import urllib.error
+import urllib.request
 from collections import Counter
 from pathlib import Path
 
@@ -322,6 +326,7 @@ def dossier(
     # paper's own LaTeX rather than typed in: the display names in the library are
     # deliberately short and would never match a bibliography entry.
     corpus_titles = _corpus_titles(arxiv_ids, cache, out)
+    failures: list[tuple[str, str]] = []
 
     for arxiv_id in arxiv_ids:
         try:
@@ -335,6 +340,15 @@ def dossier(
             )
         except SourceUnavailable as exc:
             typer.secho(f"{arxiv_id}: no source ({exc})", fg=typer.colors.YELLOW)
+            continue
+        except Exception as exc:  # noqa: BLE001
+            # Deliberately broad, and only at this level. Papers now arrive from the
+            # wild rather than from a hand-picked list, so a malformed tarball, an
+            # unusual class file or a PDF MuPDF will not open is a normal event. One
+            # of them must cost that paper, not the other forty and the twenty minutes
+            # of anchoring already done.
+            typer.secho(f"{arxiv_id}: failed ({exc!r})", fg=typer.colors.RED)
+            failures.append((arxiv_id, repr(exc)))
             continue
 
         payload = built.to_dict()
@@ -404,6 +418,8 @@ def dossier(
         f"{edges} edge(s) run between papers in the library",
         fg=typer.colors.GREEN,
     )
+    for arxiv_id, reason in failures:
+        typer.secho(f"  failed: {arxiv_id} {reason}", fg=typer.colors.RED)
 
 
 def _corpus_titles(arxiv_ids: list[str], cache: Path, out: Path) -> dict[str, str]:
@@ -419,7 +435,9 @@ def _corpus_titles(arxiv_ids: list[str], cache: Path, out: Path) -> dict[str, st
     for arxiv_id in arxiv_ids:
         try:
             document, _project = load_project(arxiv_id, cache)
-        except SourceUnavailable:
+        except Exception:  # noqa: BLE001
+            # A title that cannot be read costs this paper its cross-library edges,
+            # which is a smaller loss than refusing to build the library at all.
             continue
         if found := document_title(document.text):
             titles[arxiv_id] = found
@@ -554,6 +572,153 @@ def render(pdf: Path, quote: str, out: Path = Path("anchor.png"), zoom: float = 
         page.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom)).save(out)
 
     typer.echo(f"wrote {out} (page {page_no + 1}, {len(result.anchor.rects)} rects)")
+
+
+#: Papers already in the library, by filename. Library-level artefacts live in the
+#: same directory, so the shape of an arXiv identifier is the test.
+_DOSSIER_FILE = re.compile(r"^(?P<id>\d{4}\.\d{4,5})\.json$")
+
+#: arXiv asks for roughly one request every three seconds from bulk clients, and each
+#: paper here costs *two* requests — the e-print and the PDF. Budgeting three seconds
+#: per paper rather than per request is what produced sixteen spurious "no source"
+#: results on the first expansion run, so the delay covers both.
+POLITE_DELAY = 6.0
+
+
+@app.command()
+def expand(
+    dossiers: Path = typer.Option(Path("../../apps/web/public/dossiers"), help="Existing dossiers."),
+    cache: Path = typer.Option(Path("../../eval/corpus/cache"), help="e-print cache."),
+    pdfs: Path = typer.Option(Path("../../eval/corpus/pdf"), help="Where to put PDFs."),
+    limit: int = typer.Option(40, help="How many new papers to fetch."),
+    stanced_only: bool = typer.Option(
+        True,
+        help="Only papers the library takes a stance on, which guarantees each one an edge.",
+    ),
+    also: str = typer.Option("", help="Extra arXiv ids to include, comma separated."),
+    dry_run: bool = typer.Option(False, help="Rank the candidates and stop."),
+) -> None:
+    """Grow the library one hop out, along the citations it already has.
+
+    The graph's value is in *walkable* edges — both ends ingested — and those grow
+    superlinearly with the corpus, so which papers to add next is not an arbitrary
+    choice. The best candidates are the ones the library already says something about:
+    ingesting a paper that three library papers adopt from produces three edges before
+    that paper's own citations are even read.
+
+    Ranked by how many library papers take a stance on it, then by how many cite it at
+    all. Papers with no LaTeX source are skipped and reported, not retried.
+    """
+    have = {
+        match.group("id")
+        for path in dossiers.glob("*.json")
+        if (match := _DOSSIER_FILE.match(path.name))
+    }
+    if not have:
+        typer.secho(f"no dossiers in {dossiers}", fg=typer.colors.RED)
+        raise typer.Exit(1)
+
+    cited: Counter[str] = Counter()
+    stanced: Counter[str] = Counter()
+    titles: dict[str, str] = {}
+
+    for path in sorted(dossiers.glob("*.json")):
+        if not _DOSSIER_FILE.match(path.name):
+            continue
+        payload = json.loads(path.read_text())
+        # Counted once per citing paper, not once per citation: a paper that mentions
+        # the same work eight times is one vote for ingesting it.
+        outside = {
+            reference["arxivId"]
+            for reference in payload["references"]
+            if reference.get("arxivId") and reference["arxivId"] not in have
+        }
+        for ident in outside:
+            cited[ident] += 1
+        for reference in payload["references"]:
+            if reference.get("arxivId") in outside:
+                titles.setdefault(
+                    reference["arxivId"], reference.get("title") or reference["raw"][:80]
+                )
+        for edge in payload["lineage"]["edges"]:
+            ident = edge.get("arxivId")
+            if ident and ident not in have:
+                stanced[ident] += 1
+                titles.setdefault(ident, edge["title"])
+
+    pool = [i for i in cited if not stanced_only or stanced[i] > 0]
+    pool += [i.strip() for i in also.split(",") if i.strip() and i.strip() not in cited]
+    ranked = sorted(dict.fromkeys(pool), key=lambda i: (-stanced[i], -cited[i], i))
+
+    typer.echo(
+        f"{len(have)} papers in the library; {len(cited)} arXiv-resolvable citations "
+        f"outside it, {sum(1 for v in stanced.values() if v)} of them stanced"
+    )
+    for ident in ranked[:limit]:
+        typer.echo(
+            f"  {ident}  stanced={stanced[ident]} cited_by={cited[ident]}  "
+            f"{titles.get(ident, '')[:58]}"
+        )
+    if dry_run:
+        return
+
+    pdfs.mkdir(parents=True, exist_ok=True)
+    got: list[str] = []
+    skipped: list[tuple[str, str]] = []
+
+    for ident in ranked[:limit]:
+        try:
+            fetch(ident, cache)
+        except SourceUnavailable as exc:
+            skipped.append((ident, str(exc)))
+            typer.secho(f"skip  {ident}: {exc}", fg=typer.colors.YELLOW)
+            time.sleep(POLITE_DELAY)
+            continue
+        except Exception as exc:  # noqa: BLE001
+            # Deliberately broad. One unreachable paper out of fifty must not end the
+            # expansion; the contract is "report it and carry on".
+            skipped.append((ident, repr(exc)))
+            typer.secho(f"skip  {ident}: {exc}", fg=typer.colors.YELLOW)
+            time.sleep(POLITE_DELAY)
+            continue
+
+        if not _fetch_pdf(ident, pdfs):
+            skipped.append((ident, "PDF could not be downloaded"))
+            typer.secho(f"skip  {ident}: no PDF", fg=typer.colors.YELLOW)
+            time.sleep(POLITE_DELAY)
+            continue
+
+        got.append(ident)
+        typer.echo(f"have  {ident}")
+        time.sleep(POLITE_DELAY)
+
+    typer.secho(
+        f"\nfetched {len(got)}, skipped {len(skipped)}", fg=typer.colors.GREEN, bold=True
+    )
+    if got:
+        typer.echo("\nnow build them:\n  uv run keystone dossier " + " ".join(got))
+
+
+def _fetch_pdf(arxiv_id: str, into: Path) -> bool:
+    """Download a paper's PDF, which the anchor layer needs and the reader shows."""
+    target = into / f"{arxiv_id}.pdf"
+    if target.exists() and target.stat().st_size > 0:
+        return True
+    request = urllib.request.Request(
+        f"https://arxiv.org/pdf/{arxiv_id}",
+        headers={"User-Agent": "keystone/0.1 (+https://github.com/Srikarmk/Keystone)"},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            payload = response.read()
+    except Exception:  # noqa: BLE001
+        return False
+    if payload[:4] != b"%PDF":
+        return False
+    staging = target.with_suffix(".partial")
+    staging.write_bytes(payload)
+    staging.replace(target)
+    return True
 
 
 if __name__ == "__main__":

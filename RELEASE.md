@@ -66,6 +66,39 @@ one of the most-cited papers in the field.
 
 ---
 
+## What growing the corpus broke (2026-09-16)
+
+Expanding from 9 papers to 35 was the first real test the check suite had, and it
+failed it. `table.emphasis_not_best` went from **0 findings to 69**, and not one of
+them is verifiable as real:
+
+- **57 came from a single CLIP table** whose caption says outright that it highlights
+  "Scores within the 99.5% Clopper-Pearson confidence interval of each dataset's best
+  score" — statistical *ties*, not the single best. A new premise test reads that class
+  of caption and drops those tables, which removed 56 of the 69.
+- **The remaining 13 cannot be dismissed or confirmed without reading six papers.**
+  Several captions declare a best scoped to a group ("we bold the best task-specific
+  and task-agnostic metrics"); one bolds correlations in a column whose values straddle
+  zero. In every case the premise is a convention the check cannot establish.
+
+**So the check is retired** — not deleted. Its rule is sound: a cell that is neither
+the largest nor smallest of its group cannot be best under either polarity. Soundness
+was never the problem; the premise was, and on nine hand-picked papers it happened to
+hold. A check whose findings cannot be vouched for must not ship, because the suite's
+precision is the product's entire claim.
+
+Two tests now hold that decision in place rather than a comment: one asserts the
+arithmetic still catches planted defects, and one asserts that it *does* fire on
+unmodified papers. If a future premise fix makes the second test fail, the check has
+earned its place back and the test should be deleted with it.
+
+**The gate corpus is now named explicitly.** It was a directory glob, and the reader's
+library shares that directory — so `keystone expand` silently quadrupled what every
+gate measured and a regression threshold changed meaning without anyone touching a
+test. A gate whose population moves is not a gate.
+
+---
+
 ## Where we actually are
 
 | Area | Status | Evidence |
@@ -74,7 +107,10 @@ one of the most-cited papers in the field.
 | arXiv LaTeX source ingest | **Done** | 93.5% of source sentences anchor into the PDF (2666/2852) |
 | Typed tables from source | **Done** | emphasis, band structure, spanning headers, 9 papers parsed |
 | Number parsing with precision | **Done** | `Decimal` + written quantum; unit/percent/scale handling |
-| Deterministic check suite | **3 checks** | 0 findings on 9 unmodified papers; 11% recall on planted table defects |
+| Deterministic check suite | **1 check** | `table.aggregate_mismatch` only; 0 findings on 35 unmodified papers. `emphasis_not_best` retired — see below |
+| Library expansion | **Done** | `keystone expand` walks the library's own citations one hop out and ranks by how many papers take a stance on each |
+| Dark pages | **Done** | opt-in per paper, hue-rotated so figure colours survive; highlights switch to `screen` blending |
+| Reverse lineage | **Done** | "what stands on this" — the inbound edges, which only become useful as the corpus grows |
 | Citation stance (inherits/contests/…) | **Done, tested** | 87 stanced of 386 citations across 9 papers; 43 tests incl. negation, clause scope, first-person subject |
 | Assumption ledger | **Done, tested** | 40 assumptions, 30 bare; each quoted with what the sentence offers |
 | Lineage graph across the library | **Done** | 7 walkable edges from 9 papers, every one carrying its sentence |
@@ -92,7 +128,7 @@ one of the most-cited papers in the field.
 | Citation faithfulness | **Not started** | |
 | Auth, accounts, metering | **Not started** | |
 
-Test suite: **104 passing**, ~25s, no network, no API key.
+Test suite: **105 passing**, ~75s, no network, no API key.
 
 ---
 
@@ -380,14 +416,11 @@ What replaced it, and why:
 
 ## Immediate next three
 
-1. **Grow the library.** The graph has 7 walkable edges because it has 9 papers; the
-   density of *walkable* edges is superlinear in corpus size, and this is the single
-   highest-leverage thing left. Ingesting a paper's own citations one hop out would
-   turn a chain into a field.
-2. `ANTHROPIC_API_KEY` as a Vercel project environment variable. Asking a paper a
+1. `ANTHROPIC_API_KEY` as a Vercel project environment variable. Asking a paper a
    question is built, streams, and caches the paper's prose for an hour — and currently
    returns a 503 that says exactly what is missing. This is a one-command unblock:
    `vercel env add ANTHROPIC_API_KEY production`, then redeploy.
-3. Ingest an arbitrary arXiv id from the UI, so the demo is not a fixed set of nine
-   papers. Vercel Python function; hobby-tier duration is the risk, so measure before
-   committing to it and cache so a paper is ingested once rather than once per visitor.
+2. Ingest an arbitrary arXiv id from the UI, so the library is not a fixed set.
+   Vercel Python function; hobby-tier duration is the risk, so measure before
+   committing to it, and cache so a paper is ingested once rather than once per
+   visitor. `keystone expand` already does the hard part offline.

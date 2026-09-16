@@ -10,6 +10,7 @@ version of the check got it wrong on a real paper.
 from __future__ import annotations
 
 import keystone.audit.checks.tables  # noqa: F401  (registers the checks)
+from keystone.audit.checks.tables import emphasis_not_best
 from keystone.audit.registry import run
 from keystone.graph.models import Paper, Table, TableCell
 from keystone.ingest.tables import cell_number
@@ -36,8 +37,18 @@ def _table(rows: list[list[str]], *, bold: set[tuple[int, int]] = frozenset()) -
     return Table(ordinal=0, caption="Results", cells=tuple(cells))
 
 
+#: Checks that are exercised directly rather than through the registry. `run` only
+#: knows about registered checks, and `emphasis_not_best` is retired — sound
+#: arithmetic whose premise cannot be established on real papers. Its unit tests stay,
+#: because the distinction between "the rule is wrong" and "the premise is
+#: unestablishable" is the thing a future attempt needs to know.
+_UNREGISTERED = {"table.emphasis_not_best": emphasis_not_best}
+
+
 def _findings(table: Table, check_id: str) -> list:
     paper = Paper(id="test", tables=(table,))
+    if check_id in _UNREGISTERED:
+        return list(_UNREGISTERED[check_id](paper))
     return [f for f in run(paper) if f.check_id == check_id]
 
 

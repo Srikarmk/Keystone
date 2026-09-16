@@ -37,6 +37,33 @@ _BOLD_MEANS_BEST = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 
+# Captions that state a convention emphasis *other* than strict best, which
+# disqualifies the check outright.
+#
+# This is the premise the check was missing, and a four-fold corpus expansion found it
+# immediately: CLIP's Table 10 produced 57 findings, every one of them false, and the
+# caption explains why in its own words — "Scores within the 99.5% Clopper-Pearson
+# confidence interval of each dataset's best score are highlighted". The paper bolds
+# statistical *ties*, so a highlighted value that is not the single extreme of its
+# group is exactly what the convention calls for.
+#
+# Marking the authors' own method is the other common convention. Either way the
+# arithmetic the check performs is answering a question the table never asked.
+# `.` rather than `[^.]` for the gaps: excluding full stops to avoid crossing a
+# sentence boundary also excluded decimal points, and the caption that motivated the
+# whole pattern reads "within the 99.5% Clopper-Pearson confidence interval" — the
+# dot inside the number blocked the match. The cue phrases are specific enough that
+# spanning a sentence is the lesser risk.
+_OTHER_CONVENTION = re.compile(
+    r"within\s+(?:the\s+)?.{0,48}?(?:confidence\s+interval|standard\s+(?:deviation|error))"
+    r"|statistically\s+(?:indistinguishable|insignificant|tied|equivalent|similar)"
+    r"|not\s+(?:statistically\s+)?significantly\s+(?:different|worse|better)"
+    r"|(?:bold|boldface|underlin)\w*.{0,60}?(?:our|ours|proposed|this\s+work)\b"
+    r"|(?:our|ours|proposed).{0,60}?(?:is|are)\s+(?:shown\s+)?in\s+bold"
+    r"|(?:bold|boldface|underlin)\w*.{0,60}?\bties?\b",
+    re.IGNORECASE | re.DOTALL,
+)
+
 # Share of emphasis the winning interpretation may leave unexplained before the
 # interpretation itself is treated as wrong. One violation is always allowed, since a
 # single slip among otherwise consistent markers is the case the check exists for.
@@ -58,14 +85,31 @@ _AGGREGATE_LABEL = re.compile(
 _SUM_KINDS = {"total", "sum", "overall"}
 
 
-@check(
-    "table.emphasis_not_best",
-    "Highlighted value is not the best among the values it is compared against",
-    description=(
-        "A bolded or underlined cell that is neither the largest nor the smallest "
-        "value in its comparison group cannot be the best under any convention."
-    ),
-)
+# RETIRED — not registered, kept for its arithmetic and its unit tests.
+#
+# Growing the corpus from 9 papers to 35 was the test this check never had, and it
+# failed it: 69 findings, none of them verifiable as real.
+#
+#   * 57 came from one CLIP table whose caption says outright that it highlights
+#     "Scores within the 99.5% Clopper-Pearson confidence interval of each dataset's
+#     best score" — statistical ties, not the single best. `_declares_other_convention`
+#     now detects that class and drops those tables, which removed 56 of the 69.
+#   * The remaining 13 are spread over six papers and cannot be dismissed *or*
+#     confirmed without reading each one. Several captions declare a best scoped to a
+#     group ("we bold the best task-specific and task-agnostic metrics") or bold by
+#     absolute magnitude in a column whose values straddle zero. In each case the
+#     premise is a convention the check has no way to establish.
+#
+# The rule it applies is sound — a cell that is neither the largest nor the smallest
+# of its group cannot be best under either polarity — but soundness is not the
+# problem. The premise is, and on nine hand-picked papers it happened to hold. A check
+# whose findings cannot be vouched for must not ship: the suite's precision is the
+# product's entire claim, and one confident false finding on a correct table costs
+# more trust than every missed one costs coverage.
+#
+# Re-registering it needs the convention to be *stated* rather than inferred, and
+# stated conventions turn out to be group-scoped often enough that "declared" is not
+# sufficient either. That is a research problem, not a tuning problem.
 def emphasis_not_best(paper: Paper) -> Iterator[Finding]:
     """Bolding a result asserts it is the best; that assertion is checkable.
 
@@ -110,6 +154,12 @@ def _emphasis_findings(paper: Paper) -> Iterator[Finding]:
     readings: dict[str, list[tuple[Table, list, list]]] = {"column": [], "row": []}
 
     for table in paper.tables:
+        # Dropped before it can contribute anything, findings *or* evidence: a table
+        # that bolds statistical ties would drag the pooled premise down as well as
+        # producing violations of a rule it never claimed to follow.
+        if _declares_other_convention(table):
+            continue
+
         highlighted = [
             c for c in table.cells
             if c.is_emphasised and c.is_numeric and not _marks_identity(table, c)
@@ -158,6 +208,16 @@ def _emphasis_findings(paper: Paper) -> Iterator[Finding]:
                 yield _emphasis_finding(
                     table, cell, group, orientation, explained, evaluated, declared
                 )
+
+
+def _declares_other_convention(table: Table) -> bool:
+    """Whether the caption says emphasis means something other than strict best.
+
+    A disqualifier rather than a signal: where this fires, the check's whole premise
+    is contradicted by the paper itself, and inference must not be allowed to override
+    a stated convention.
+    """
+    return bool(table.caption and _OTHER_CONVENTION.search(table.caption))
 
 
 def _declares_emphasis_means_best(table: Table) -> bool:

@@ -17,6 +17,7 @@ import io
 import re
 import shutil
 import tarfile
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -28,6 +29,12 @@ EPRINT_URL = "https://arxiv.org/e-print/{arxiv_id}"
 
 # arXiv asks that automated clients identify themselves.
 USER_AGENT = "keystone/0.1 (research paper audit; +https://github.com/keystone)"
+
+#: Statuses worth asking again about. 406 is arXiv's answer when a client is asking
+#: too often; 429 and the 5xx range are the ordinary transient set.
+RETRY_CODES = frozenset({406, 408, 429, 500, 502, 503, 504})
+RETRIES = 4
+BACKOFF = 4.0
 
 # Guards against a decompression bomb in an untrusted archive.
 MAX_UNPACKED_BYTES = 256 * 1024 * 1024
@@ -82,14 +89,27 @@ def fetch(arxiv_id: str, cache_dir: Path, *, timeout: float = 60.0) -> Path:
         return cached
 
     request = urllib.request.Request(
-        EPRINT_URL.format(arxiv_id=ident), headers={"User-Agent": USER_AGENT}
+        EPRINT_URL.format(arxiv_id=ident),
+        # /e-print/ now redirects to /src/, which content-negotiates. urllib sends no
+        # Accept header of its own, so say so explicitly rather than depending on the
+        # server's default for a missing one.
+        headers={"User-Agent": USER_AGENT, "Accept": "*/*"},
     )
 
-    # Retried once. Multi-megabyte tarballs over a long-lived connection hit truncated
-    # reads often enough that a single attempt makes bulk ingestion unreliable, and a
-    # partial body would be cached as if it were the paper.
+    # Retried with backoff. Two distinct failures make a single attempt unreliable for
+    # bulk ingestion, and both are transient:
+    #
+    #   * truncated reads on multi-megabyte tarballs over a long-lived connection,
+    #   * HTTP 406 from arXiv when a client asks too often. Read literally that is
+    #     "this paper has no acceptable representation", which is wrong and permanent —
+    #     the same request succeeds moments later. Treating it as fatal cost 16 of 46
+    #     papers on the first expansion run.
+    #
+    # A partial body must never be cached as if it were the paper, so nothing is
+    # written until a whole response is in hand.
     payload: bytes | None = None
-    for attempt in range(2):
+    last: Exception | None = None
+    for attempt in range(RETRIES):
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 payload = response.read()
@@ -99,12 +119,19 @@ def fetch(arxiv_id: str, cache_dir: Path, *, timeout: float = 60.0) -> Path:
                 raise SourceUnavailable(
                     f"no e-print source for {ident} (HTTP {exc.code})"
                 ) from exc
-            raise
-        except (http.client.HTTPException, urllib.error.URLError, TimeoutError):
-            if attempt == 1:
+            if exc.code not in RETRY_CODES:
                 raise
+            last = exc
+        except (http.client.HTTPException, urllib.error.URLError, TimeoutError) as exc:
+            last = exc
+        if attempt < RETRIES - 1:
+            time.sleep(BACKOFF * (attempt + 1))
+
     if payload is None:
-        raise SourceUnavailable(f"could not download the e-print for {ident}")
+        raise SourceUnavailable(
+            f"could not download the e-print for {ident}"
+            + (f" ({last})" if last else "")
+        )
 
     if payload[:4] == b"%PDF":
         raise SourceUnavailable(f"{ident} is a PDF-only submission")

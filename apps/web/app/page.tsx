@@ -29,8 +29,30 @@ export default function Home() {
     return { stands, bare, papers: index.length };
   }, [index]);
 
-  const filtered = index.filter((p) =>
-    `${p.title} ${p.id}`.toLowerCase().includes(query.toLowerCase()),
+  // Search reaches into the analysis, not just the titles. With forty-odd papers the
+  // useful question is "which paper says something about layer normalisation", and the
+  // answer is in the sentences the lineage layer already extracted — so a match on an
+  // edge's quote counts as a match on the paper that wrote it.
+  const needle = query.trim().toLowerCase();
+  const matchedEdges = useMemo(() => {
+    if (needle.length < 3 || !graph) return [];
+    return graph.edges.filter((edge) =>
+      `${edge.sentence} ${edge.cue} ${edge.section}`.toLowerCase().includes(needle),
+    );
+  }, [needle, graph]);
+
+  const filtered = useMemo(() => {
+    if (!needle) return index;
+    const viaEdge = new Set(matchedEdges.flatMap((e) => [e.from, e.to]));
+    return index.filter(
+      (p) =>
+        `${p.title} ${p.id}`.toLowerCase().includes(needle) || viaEdge.has(p.id),
+    );
+  }, [index, needle, matchedEdges]);
+
+  const titleOf = useMemo(
+    () => Object.fromEntries((graph?.nodes ?? []).map((n) => [n.id, n.title])),
+    [graph],
   );
 
   return (
@@ -136,8 +158,8 @@ export default function Home() {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="filter…"
-            className="w-48 border-b border-ink/20 bg-transparent pb-1 text-[0.9rem] text-ink outline-none transition-colors placeholder:text-ink-faint/70 focus:border-brass"
+            placeholder="search titles and quoted sentences…"
+            className="w-72 border-b border-ink/20 bg-transparent pb-1 text-[0.9rem] text-ink outline-none transition-colors placeholder:text-ink-faint/70 focus:border-brass"
           />
         </div>
 
@@ -167,6 +189,33 @@ export default function Home() {
             </motion.li>
           ))}
         </ul>
+
+        {matchedEdges.length > 0 ? (
+          <div className="mt-7 border-t border-paper-edge pt-5">
+            <h3 className="text-[0.72rem] uppercase tracking-[0.18em] text-ink-faint">
+              {matchedEdges.length} quoted sentence
+              {matchedEdges.length === 1 ? "" : "s"} mention this
+            </h3>
+            <ul className="mt-3 space-y-3">
+              {matchedEdges.slice(0, 12).map((edge, i) => (
+                <li key={i} className="border-l-2 border-brass/60 pl-3.5">
+                  <p className="text-[0.84rem] text-ink-soft">
+                    <Link
+                      href={`/paper/${edge.from}`}
+                      className="text-ink transition-colors hover:text-brass"
+                    >
+                      {titleOf[edge.from] ?? edge.from}
+                    </Link>
+                    <span className="text-ink-faint"> &middot; {edge.section}</span>
+                  </p>
+                  <p className="mt-0.5 text-[0.86rem] italic leading-relaxed text-ink-soft">
+                    &ldquo;{edge.sentence}&rdquo;
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
 
         {filtered.length === 0 && index.length > 0 ? (
           <p className="mt-6 text-[0.92rem] italic text-ink-faint">

@@ -45,12 +45,36 @@ export interface PaperViewProps {
    * present and being readable.
    */
   zoom?: number;
+  /**
+   * Invert the page so it reads on a dark screen.
+   *
+   * Off by default even in dark mode, and reversible from the toolbar, because this
+   * is the one part of the interface that is *the document*. Inverting a photograph
+   * or a colour-coded plot changes what it shows, so the reader has to be able to see
+   * the paper as it was published.
+   */
+  dark?: boolean;
   onPageCount?: (count: number) => void;
 }
 
+/**
+ * Invert, then rotate hues back, which is what keeps a figure's colours recognisable:
+ * a plain invert turns every red curve cyan. The sepia and brightness trim match the
+ * warm near-black the rest of the interface uses, so the page reads as paper at night
+ * rather than as a terminal.
+ */
+const DARK_PAGE =
+  "invert(1) hue-rotate(180deg) sepia(0.08) saturate(1.08) brightness(0.9)";
+
 const RENDER_SCALE = 1.6; // canvas resolution multiplier, independent of layout width
 
-export function PaperView({ url, highlight, zoom = 1, onPageCount }: PaperViewProps) {
+export function PaperView({
+  url,
+  highlight,
+  zoom = 1,
+  dark = false,
+  onPageCount,
+}: PaperViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [pages, setPages] = useState<PageState[]>([]);
   const [width, setWidth] = useState(720);
@@ -177,6 +201,7 @@ export function PaperView({ url, highlight, zoom = 1, onPageCount }: PaperViewPr
             layoutWidth={layoutWidth}
             scale={scale}
             render={renderPage}
+            dark={dark}
             marks={
               highlight && highlight.page + 1 === page.number
                 ? highlight.rects.map((r) => ({ rect: r, kind: "claim" as const }))
@@ -194,12 +219,14 @@ function PageCanvas({
   layoutWidth,
   scale,
   render,
+  dark,
   marks,
 }: {
   page: PageState;
   layoutWidth: number;
   scale: number;
   render: (n: number, canvas: HTMLCanvasElement, width: number) => void;
+  dark: boolean;
   marks: { rect: AnchorRect; kind: "claim" | "evidence" }[];
 }) {
   const holder = useRef<HTMLDivElement>(null);
@@ -224,10 +251,20 @@ function PageCanvas({
     <div
       ref={holder}
       data-page={page.number}
-      className="relative mx-auto mb-3 bg-white shadow-[0_1px_10px_rgba(28,26,23,0.10)]"
-      style={{ width: layoutWidth, height: page.height * scale }}
+      className="relative mx-auto mb-3 shadow-[0_1px_10px_rgba(28,26,23,0.10)]"
+      style={{
+        width: layoutWidth,
+        height: page.height * scale,
+        // The holder is painted too, not just the canvas: an unrendered page would
+        // otherwise flash white on a dark screen while it rasterises.
+        background: dark ? "#181614" : "#ffffff",
+      }}
     >
-      <canvas ref={canvas} className="block h-full w-full" />
+      <canvas
+        ref={canvas}
+        className="block h-full w-full"
+        style={{ filter: dark ? DARK_PAGE : undefined }}
+      />
 
       {marks.map(({ rect, kind }, i) => (
         <span
@@ -241,9 +278,17 @@ function PageCanvas({
             height: Math.max(2, (rect.y1 - rect.y0) * scale),
             // Multiply keeps the text legible through the mark, the way a highlighter
             // works on paper. A flat overlay would grey the words it is pointing at.
-            mixBlendMode: "multiply",
-            background:
-              kind === "claim"
+            //
+            // Inverted, multiply is the wrong operator: an amber wash over a dark page
+            // darkens it towards black and the highlight disappears exactly where it
+            // is needed. Screen lightens instead, which is the same idea the other way
+            // up.
+            mixBlendMode: dark ? "screen" : "multiply",
+            background: dark
+              ? kind === "claim"
+                ? "rgba(120, 86, 34, 0.75)"
+                : "rgba(52, 70, 50, 0.7)"
+              : kind === "claim"
                 ? "rgba(224, 174, 92, 0.42)"
                 : "rgba(95, 122, 92, 0.30)",
             boxShadow:

@@ -16,8 +16,11 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+import { useIsDark } from "@/lib/theme";
+
 import type {
   AnchorJson,
+  LibraryGraph,
   BaselineCheck,
   Claim,
   Dossier,
@@ -28,7 +31,7 @@ import type {
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
 import { AskTab } from "@/components/AskTab";
 import { AssumptionList, AssumptionSummary } from "@/components/Assumptions";
-import { Foundation, LineageList } from "@/components/Lineage";
+import { Foundation, InboundList, LineageList } from "@/components/Lineage";
 import { EquationView } from "@/components/EquationView";
 import { EvidenceMap } from "@/components/EvidenceMap";
 import { PaperView } from "@/components/PaperView";
@@ -48,9 +51,15 @@ export function Reader({ id }: { id: string }) {
   const [asking, setAsking] = useState(false);
   const [jump, setJump] = useState<AnchorJson | null>(null);
   const [zoomStep, setZoomStep] = useState(0);
+  const [darkPage, setDarkPage] = useState(false);
+  const [graph, setGraph] = useState<LibraryGraph | null>(null);
+  const appIsDark = useIsDark();
 
   useEffect(() => {
     fetch("/dossiers/index.json").then((r) => r.json()).then(setIndex).catch(() => {});
+    // The library graph, so this paper can also show who leans on *it*. Fetched once
+    // rather than baked into each dossier: it changes whenever any paper is added.
+    fetch("/dossiers/lineage.json").then((r) => r.json()).then(setGraph).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -103,8 +112,15 @@ export function Reader({ id }: { id: string }) {
                 url={dossier.pdfUrl}
                 highlight={highlight}
                 zoom={ZOOMS[zoomStep]}
+                dark={darkPage}
               />
-              <Zoom step={zoomStep} onChange={setZoomStep} />
+              <PageTools
+                step={zoomStep}
+                onZoom={setZoomStep}
+                dark={darkPage}
+                onDark={() => setDarkPage((v) => !v)}
+                offerDark={appIsDark}
+              />
             </>
           ) : (
             <div className="flex h-full items-center justify-center text-[0.95rem] italic text-ink-faint">
@@ -130,6 +146,7 @@ export function Reader({ id }: { id: string }) {
               ) : (
                 <Report
                   dossier={dossier}
+                  graph={graph}
                   selected={selected}
                   claim={claim}
                   showEvidence={showEvidence}
@@ -146,12 +163,47 @@ export function Reader({ id }: { id: string }) {
   );
 }
 
-function Zoom({ step, onChange }: { step: number; onChange: (n: number) => void }) {
+function PageTools({
+  step,
+  onZoom,
+  dark,
+  onDark,
+  offerDark,
+}: {
+  step: number;
+  onZoom: (n: number) => void;
+  dark: boolean;
+  onDark: () => void;
+  offerDark: boolean;
+}) {
   return (
     <div className="absolute bottom-3 right-4 flex items-center gap-1.5 rounded-[2px] border border-paper-edge bg-paper/90 px-2 py-1 text-[0.8rem] backdrop-blur">
+      {/* Offered whenever the interface is dark, and only then: on a light screen a
+          white page is already the right answer and the control would be noise. */}
+      {offerDark || dark ? (
+        <>
+          <button
+            type="button"
+            onClick={onDark}
+            aria-pressed={dark}
+            title={
+              dark
+                ? "Show the page as published"
+                : "Invert the page (figures will invert too)"
+            }
+            className="px-1 transition-colors hover:text-brass"
+            style={{ color: dark ? "var(--color-brass)" : "var(--color-ink-soft)" }}
+          >
+            {dark ? "inverted" : "invert"}
+          </button>
+          <span aria-hidden className="text-ink-faint/40">
+            |
+          </span>
+        </>
+      ) : null}
       <button
         type="button"
-        onClick={() => onChange(Math.max(0, step - 1))}
+        onClick={() => onZoom(Math.max(0, step - 1))}
         disabled={step === 0}
         aria-label="Zoom out"
         className="px-1 text-ink-soft transition-colors hover:text-brass disabled:text-ink-faint/40"
@@ -163,7 +215,7 @@ function Zoom({ step, onChange }: { step: number; onChange: (n: number) => void 
       </span>
       <button
         type="button"
-        onClick={() => onChange(Math.min(ZOOMS.length - 1, step + 1))}
+        onClick={() => onZoom(Math.min(ZOOMS.length - 1, step + 1))}
         disabled={step === ZOOMS.length - 1}
         aria-label="Zoom in"
         className="px-1 text-ink-soft transition-colors hover:text-brass disabled:text-ink-faint/40"
@@ -285,6 +337,7 @@ function Stat({ n, label, tone }: { n: number; label: string; tone?: string }) {
 
 function Report({
   dossier,
+  graph,
   selected,
   claim,
   showEvidence,
@@ -293,6 +346,7 @@ function Report({
   onJump,
 }: {
   dossier: Dossier;
+  graph: LibraryGraph | null;
   selected: number | null;
   claim: Claim | null;
   showEvidence: boolean;
@@ -308,6 +362,10 @@ function Report({
   );
   const disputes = dossier.lineage.edges.filter((e) => e.stance === "contests");
   const rivals = dossier.lineage.edges.filter((e) => e.stance === "compares");
+  const inbound = (graph?.edges ?? []).filter((e) => e.to === dossier.id);
+  const titles = Object.fromEntries(
+    (graph?.nodes ?? []).map((n) => [n.id, n.title]),
+  );
 
   return (
     <div className="mt-6 min-h-0 flex-1 overflow-y-auto pr-3">
@@ -320,6 +378,19 @@ function Report({
         defaultOpen
       >
         <LineageList edges={stands} onJump={onJump} />
+      </Section>
+
+      <Section
+        title="What stands on this"
+        count={inbound.length}
+        subtitle={
+          inbound.length > 0
+            ? "other papers in the library that lean on it"
+            : undefined
+        }
+        defaultOpen={inbound.length > 0 && inbound.length <= 6}
+      >
+        <InboundList edges={inbound} titles={titles} />
       </Section>
 
       <Section

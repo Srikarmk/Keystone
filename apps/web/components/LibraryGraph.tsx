@@ -21,10 +21,22 @@ import { useMemo, useState } from "react";
 import type { LibraryGraph as GraphData, Stance } from "@/lib/dossier";
 
 const WIDTH = 940;
-const HEIGHT = 380;
 const PAD_X = 96;
 const PAD_Y = 52;
-const ROWS = 4;
+
+/**
+ * Rows, and therefore height, grow with the number of papers being drawn.
+ *
+ * Fixed at four rows the graph was fine for nine papers and illegible for forty:
+ * every extra paper went onto an existing line and labels piled on top of each
+ * other. Roughly four papers per row keeps the spacing about constant as the library
+ * grows, and the cap stops a very large library from becoming a tall ribbon.
+ */
+function rowsFor(count: number): number {
+  return Math.max(3, Math.min(9, Math.ceil(count / 4)));
+}
+
+const ROW_HEIGHT = 76;
 
 const TONE: Record<Stance, string> = {
   inherits: "var(--color-brass)",
@@ -70,26 +82,41 @@ function posted(id: string): number {
  * better axis and it is free: every dependency arrow then points backwards along it,
  * which is both true and immediately legible — you can see the field being built.
  */
-function layout(data: GraphData): Placed[] {
-  const dated = [...data.nodes]
+function layout(data: GraphData): { nodes: Placed[]; height: number; hidden: number } {
+  // Only papers that take part in a relationship are drawn. A node with no edges
+  // contributes nothing to a graph and costs a label slot, and once the library grew
+  // past a dozen papers the unconnected ones were most of the picture. They are
+  // counted underneath and listed in full further down the page.
+  const connected = new Set<string>();
+  for (const edge of data.edges) {
+    connected.add(edge.from);
+    connected.add(edge.to);
+  }
+
+  const dated = data.nodes
+    .filter((node) => connected.has(node.id))
     .map((node) => ({ node, at: posted(node.id) }))
     .sort((a, b) => a.at - b.at);
 
+  const rows = rowsFor(dated.length);
+  const height = PAD_Y * 2 + (rows - 1) * ROW_HEIGHT;
   const earliest = dated[0]?.at ?? 0;
   const latest = dated[dated.length - 1]?.at ?? earliest + 1;
   const span = Math.max(1, latest - earliest);
 
   // Rows cycle so that papers close together in time are never on the same line.
   // Labels alternate above and below their node for the same reason.
-  return dated.map(({ node, at }, i) => ({
+  const nodes = dated.map(({ node, at }, i) => ({
     id: node.id,
     title: node.title,
     short: shorten(node.title),
     x: PAD_X + ((at - earliest) / span) * (WIDTH - PAD_X * 2),
-    y: PAD_Y + ((i % ROWS) / (ROWS - 1)) * (HEIGHT - PAD_Y * 2),
+    y: PAD_Y + (i % rows) * ROW_HEIGHT,
     above: i % 2 === 0,
     bare: node.bare,
   }));
+
+  return { nodes, height, hidden: data.nodes.length - dated.length };
 }
 
 /**
@@ -115,7 +142,7 @@ function shorten(title: string): string {
 }
 
 export function LibraryGraph({ data }: { data: GraphData }) {
-  const nodes = useMemo(() => layout(data), [data]);
+  const { nodes, height, hidden } = useMemo(() => layout(data), [data]);
   const [active, setActive] = useState<number | null>(null);
   const byId = useMemo(
     () => new Map(nodes.map((node) => [node.id, node])),
@@ -128,7 +155,7 @@ export function LibraryGraph({ data }: { data: GraphData }) {
   return (
     <div>
       <svg
-        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+        viewBox={`0 0 ${WIDTH} ${height}`}
         className="w-full"
         role="img"
         aria-label={`${nodes.length} papers and ${data.edges.length} relationships between them, read from their own prose`}
@@ -215,6 +242,10 @@ export function LibraryGraph({ data }: { data: GraphData }) {
                   x={node.x}
                   y={node.y + (node.above ? -14 : 25)}
                   textAnchor="middle"
+                  // Below 13px labels stop being readable, so past about twenty papers
+                  // they are thinned rather than shrunk: the hovered edge's two ends
+                  // stay named and the rest fade to their dots.
+                  opacity={nodes.length > 20 && shown !== null && !touched ? 0.25 : 1}
                   fontSize="13"
                   fill={touched ? "var(--color-brass)" : "var(--color-ink)"}
                   className="cursor-pointer"
@@ -262,8 +293,16 @@ export function LibraryGraph({ data }: { data: GraphData }) {
           </motion.div>
         ) : (
           <p className="text-[0.84rem] leading-relaxed text-ink-faint">
-            {data.edges.length} of these relationships run between papers in this
-            library. Hover one to read the sentence that put it there.
+            {data.edges.length} relationships run between papers in this library, drawn
+            along the time they were posted so every arrow points back at what it took.
+            Hover one to read the sentence that put it there.
+            {hidden > 0 ? (
+              <>
+                {" "}
+                <span className="numeral">{hidden}</span> more papers are in the library
+                with no relationship to another one yet.
+              </>
+            ) : null}
           </p>
         )}
       </div>

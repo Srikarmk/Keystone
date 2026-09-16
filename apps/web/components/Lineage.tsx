@@ -16,7 +16,12 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 
-import type { AnchorJson, LineageEdge, Stance } from "@/lib/dossier";
+import type {
+  AnchorJson,
+  LibraryGraph,
+  LineageEdge,
+  Stance,
+} from "@/lib/dossier";
 import { isLoadBearing } from "@/lib/dossier";
 
 const TONE: Record<Stance, string> = {
@@ -145,6 +150,61 @@ function Cue({
       </span>
       {sentence.slice(at + cue.length)}&rdquo;
     </>
+  );
+}
+
+/**
+ * The other direction: papers in the library that lean on *this* one.
+ *
+ * Only possible once the library is big enough for a paper to have descendants in it,
+ * which is why growing the corpus mattered more than any single feature. It is also
+ * the question a reader actually has about a well-known paper — not "what did this
+ * take" but "who took it, and what did they say they were taking".
+ */
+export function InboundList({
+  edges,
+  titles,
+}: {
+  edges: LibraryGraph["edges"];
+  titles: Record<string, string>;
+}) {
+  if (edges.length === 0) {
+    return (
+      <p className="text-[0.86rem] leading-relaxed text-ink-faint">
+        No other paper in this library says anything about this one. That is a fact
+        about the library, not about the paper &mdash; it holds nine hundred papers
+        short of a field.
+      </p>
+    );
+  }
+  return (
+    <ul className="space-y-3">
+      {edges.map((edge, i) => {
+        const tone = TONE[edge.stance];
+        return (
+          <li key={i} className="border-l-2 pl-3.5" style={{ borderLeftColor: tone }}>
+            <div className="flex flex-wrap items-baseline gap-x-2.5">
+              <Link
+                href={`/paper/${edge.from}`}
+                className="min-w-0 flex-1 text-[0.95rem] leading-snug underline decoration-dotted decoration-1 underline-offset-2 transition-colors hover:text-brass"
+              >
+                {titles[edge.from] ?? edge.from}
+              </Link>
+              <span
+                className="shrink-0 text-[0.74rem] uppercase tracking-[0.1em]"
+                style={{ color: tone }}
+              >
+                {LABEL[edge.stance]} this
+              </span>
+            </div>
+            <p className="mt-1 text-[0.84rem] leading-relaxed text-ink-soft">
+              <Cue sentence={edge.sentence} cue={edge.cue} tone={tone} />
+            </p>
+            <p className="mt-1 text-[0.76rem] text-ink-faint">{edge.section}</p>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
