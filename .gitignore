@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.venv/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# Build output
+.next/
+out/
+dist/
+build/
+.vercel/
+
+# Test corpus and caches. These are fetched from arXiv by eval/fetch_corpus.sh
+# rather than committed: they are large, they are not ours to redistribute, and the
+# script reproduces them exactly.
+eval/corpus/pdf/
+eval/corpus/cache/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+*.tsbuildinfo
+next-env.d.ts
