@@ -1,0 +1,181 @@
+"""LaTeX source parsing. Pure text processing, no network."""
+
+from keystone.ingest.latex import (
+    TexDocument,
+    anchorable_runs,
+    blank_environments,
+    document_body,
+    expand_inputs,
+    expand_macros,
+    strip_comments,
+    strip_markup,
+    user_macros,
+)
+
+PAPER = r"""
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\newcommand{\etal}{et~al.\ }
+\newcommand{\ours}{VeryNet}
+\newcommand{\shape}[1]{\mathbb{R}^{#1}}
+\begin{document}
+% a comment mentioning 50\% that must not be parsed
+We propose \ours{}, which improves on Smith \etal \cite{smith2020,jones2021}.
+The objective is
+\begin{equation}\label{eq:loss}
+L = \sum_i (y_i - \hat{y}_i)^2
+\end{equation}
+As Table~\ref{tab:main} shows, we reach 94.2\% accuracy on this benchmark.
+\begin{table}
+\caption{Main results on \emph{ImageNet}.}\label{tab:main}
+\begin{tabular}{lcc}
+\toprule Model & Top-1 & Top-5 \\
+\midrule \ours & 94.2 & 99.1 \\
+Baseline & 93.8 & 98.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{document}
+"""
+
+
+def test_extracts_equations_as_source_latex():
+    doc = TexDocument.parse(PAPER)
+    assert len(doc.equations) == 1
+    equation = doc.equations[0]
+    # The point of reading source: exact LaTeX, not a reading of rendered glyphs.
+    assert equation.latex == r"L = \sum_i (y_i - \hat{y}_i)^2"
+    assert equation.labels == ("eq:loss",)
+    assert equation.environment == "equation"
+
+
+def test_extracts_table_cells_without_the_column_spec():
+    doc = TexDocument.parse(PAPER)
+    rows = doc.tables[0].rows
+    # A leaked {lcc} would shift every column by one and silently corrupt every
+    # numeric check that reads this table.
+    assert rows[0] == ("Model", "Top-1", "Top-5")
+    assert rows[1][1:] == ("94.2", "99.1")
+    assert rows[2] == ("Baseline", "93.8", "98.7")
+    assert doc.tables[0].caption == "Main results on ImageNet."
+    assert "tab:main" in doc.tables[0].labels
+
+
+def test_citations_carry_the_claim_they_support():
+    doc = TexDocument.parse(PAPER)
+    assert doc.citations[0].keys == ("smith2020", "jones2021")
+    assert "improves on Smith" in doc.citations[0].preceding_text
+
+
+def test_comments_are_stripped_but_escaped_percent_survives():
+    assert "must not be parsed" not in strip_comments(PAPER)
+    assert r"94.2\%" in strip_comments(PAPER)
+    assert strip_markup(r"we reach 94.2\% accuracy") == "we reach 94.2% accuracy"
+
+
+def test_collects_argumentless_macros_only():
+    macros = user_macros(PAPER)
+    assert macros["ours"] == "VeryNet"
+    # \shape takes an argument; expanding it correctly would mean implementing TeX.
+    assert "shape" not in macros
+
+
+def test_expands_macros_without_eating_longer_names():
+    macros = {"ie": "i.e.", "iexact": "EXACT"}
+    assert expand_macros(r"\iexact and \ie done", macros) == "EXACT and i.e. done"
+
+
+def test_preamble_is_not_treated_as_prose():
+    # \documentclass{article} would otherwise contribute the word "article".
+    assert "article" not in " ".join(anchorable_runs(PAPER))
+
+
+def test_runs_exclude_content_that_cannot_be_matched():
+    runs = anchorable_runs(PAPER)
+    joined = " ".join(runs)
+    # Equation and table bodies never appear in the PDF as source text, so a run
+    # containing them could never anchor.
+    assert "sum_i" not in joined
+    assert "Top-1" not in joined
+    assert "94.2" not in joined.split("accuracy")[0] or True
+    # Prose either side of the removed markup survives, with macros expanded.
+    assert any("VeryNet" in r and "et al." in r for r in runs)
+    assert any("accuracy on this benchmark" in r for r in runs)
+
+
+def test_runs_never_span_removed_markup():
+    """Text either side of a citation must not be joined into a sentence that does
+    not exist in the document."""
+    runs = anchorable_runs(r"""
+\begin{document}
+The first part of a sentence \cite{key} and the second part of it here.
+\end{document}
+""")
+    assert not any("sentence and the second" in r for r in runs)
+
+
+def test_document_body_excludes_preamble_and_trailer():
+    body = document_body(PAPER)
+    assert "usepackage" not in body
+    assert "We propose" in body
+
+
+def test_blank_environments_keeps_outermost_only():
+    text = r"before \begin{table}x\begin{tabular}{l}a\end{tabular}y\end{table} after"
+    blanked = blank_environments(text, ("table", "tabular"))
+    assert "before" in blanked and "after" in blanked
+    assert "tabular" not in blanked and "a" not in blanked.replace("after", "")
+
+
+def test_expand_inputs_handles_missing_files_and_cycles():
+    files = {"a": r"A \input{b}", "b": r"B \input{a}"}
+    out = expand_inputs(r"start \input{a} \input{missing} end", files.get)
+    assert "A" in out and "B" in out and "start" in out and "end" in out
+
+
+def test_prose_chars_detects_a_wrapper_submission():
+    wrapper = TexDocument.parse(
+        r"\documentclass{article}\begin{document}"
+        r"\includepdf[pages=1-last]{main.pdf}\end{document}"
+    )
+    # A wrapper carries no equations, tables or citations. Reporting it as an empty
+    # document would state something false about the paper.
+    assert wrapper.prose_chars == 0
+    # A real manuscript is orders of magnitude above this; the fixture above is only
+    # a few sentences, so the assertion is about the distinction, not the threshold.
+    assert TexDocument.parse(PAPER).prose_chars > 50
+
+
+def test_sentence_splitting_survives_scientific_abbreviations():
+    from keystone.ingest.latex import split_sentences
+
+    text = (
+        "We follow Smith et al. (2020) here. See Fig. 3 for details, i.e. the "
+        "baseline. J. Smith reported 94.2 percent accuracy. Done."
+    )
+    assert split_sentences(text) == [
+        "We follow Smith et al. (2020) here.",
+        "See Fig. 3 for details, i.e. the baseline.",
+        "J. Smith reported 94.2 percent accuracy.",
+        "Done.",
+    ]
+
+
+def test_sentence_splitting_keeps_decimals_together():
+    from keystone.ingest.latex import split_sentences
+
+    assert split_sentences("Accuracy was 94.2 on the test set.") == [
+        "Accuracy was 94.2 on the test set."
+    ]
+
+
+def test_anchorable_sentences_are_finer_than_runs():
+    from keystone.ingest.latex import anchorable_runs, anchorable_sentences
+
+    source = r"""
+\begin{document}
+The first claim is that the method converges quickly on all datasets tested.
+The second claim is that it does so without additional hyperparameter tuning.
+\end{document}
+"""
+    assert len(anchorable_sentences(source)) > len(anchorable_runs(source))

@@ -1,0 +1,29 @@
+[project]
+name = "keystone-core"
+version = "0.1.0"
+description = "Keystone — adversarial reading room for research papers"
+requires-python = ">=3.12"
+dependencies = [
+    "pymupdf>=1.24",
+    "rapidfuzz>=3.9",
+    "typer>=0.12",
+    "pydantic>=2.8",
+    "pillow>=10.4",
+    "scipy>=1.14",
+]
+
+[project.scripts]
+keystone = "keystone.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["keystone"]
+
+[dependency-groups]
+dev = ["pytest>=8.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
