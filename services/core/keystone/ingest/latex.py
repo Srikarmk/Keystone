@@ -95,6 +95,23 @@ class TableSource:
 
 
 @dataclass(frozen=True, slots=True)
+class SourceSentence:
+    """One sentence of prose, with what the author says it rests on.
+
+    The references matter as much as the text. A paper that writes "as shown in
+    Table~\\ref{tab:main}, we reach 94.2%" has *told* us where the evidence is; guessing
+    by searching every table for a matching number throws that away and can only ever
+    be less precise. It also tells us when the evidence is something no numeric check
+    can reach — a figure, a theorem, another paper — which is the difference between
+    "unverifiable" and "unsupported".
+    """
+
+    text: str  # markup stripped, matchable against the PDF
+    refs: tuple[str, ...]  # \ref / \eqref / \cref targets
+    cites: tuple[str, ...]  # \cite keys
+
+
+@dataclass(frozen=True, slots=True)
 class Citation:
     """One ``\\cite`` site: which keys, and the prose immediately before it."""
 
@@ -470,6 +487,74 @@ def extract_citations(text: str) -> list[Citation]:
 # Markup that renders as something the PDF text cannot be matched against: a citation
 # becomes "(Author, 2017)", a reference becomes "3.1", maths becomes glyphs. Text is
 # split at these points rather than through them.
+_REF = re.compile(r"\\(?:ref|eqref|autoref|cref|Cref|vref)\s*\{([^}]+)\}")
+
+# Environments whose \label names a piece of evidence of a particular kind.
+_LABEL_SCOPES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("table", ("table", "table*", "sidewaystable", "tabular", "tabularx")),
+    ("figure", ("figure", "figure*", "wrapfigure", "subfigure")),
+    ("equation", _MATH_ENVIRONMENTS),
+    ("theorem", ("theorem", "lemma", "corollary", "proposition", "definition",
+                 "conjecture", "claim", "assumption", "remark")),
+    ("algorithm", ("algorithm", "algorithm*", "algorithmic")),
+)
+
+
+def label_kinds(latex: str) -> dict[str, str]:
+    """Map each ``\\label`` to the kind of thing it names.
+
+    Resolved by which environment encloses the label, so a reference in the prose can
+    be classified without guessing from the label's own text — plenty of papers write
+    ``\\label{main}`` for a table and ``\\label{tab:x}`` for a figure.
+    """
+    text = strip_comments(latex)
+    kinds: dict[str, str] = {}
+
+    for kind, environments in _LABEL_SCOPES:
+        for _name, start, end, _body in _environment_spans(text, environments):
+            for match in _LABEL.finditer(text, start, end):
+                kinds.setdefault(match.group(1).strip(), kind)
+
+    # Anything left is a section or an unscoped label; the distinction does not matter
+    # downstream, only that it is not evidence of the kinds above.
+    for match in _LABEL.finditer(text):
+        kinds.setdefault(match.group(1).strip(), "section")
+    return kinds
+
+
+def source_sentences(latex: str, *, min_chars: int = 24) -> list[SourceSentence]:
+    """Sentences of body prose, each carrying its own references and citations.
+
+    Split on the *marked-up* text rather than on the stripped output, so that a
+    reference can be attributed to the sentence it actually appears in.
+    """
+    source = strip_comments(latex)
+    body = expand_macros(document_body(source), user_macros(source))
+    body = blank_environments(body, _OPAQUE_ENVIRONMENTS)
+
+    out: list[SourceSentence] = []
+    for block in re.split(r"\n\s*\n", body):
+        for raw in split_sentences(block):
+            text = strip_markup(raw)
+            if len(text) < min_chars:
+                continue
+            out.append(
+                SourceSentence(
+                    text=text,
+                    refs=tuple(dict.fromkeys(r.strip() for r in _REF.findall(raw))),
+                    cites=tuple(
+                        dict.fromkeys(
+                            key.strip()
+                            for group in _CITE.findall(raw)
+                            for key in group.split(",")
+                            if key.strip()
+                        )
+                    ),
+                )
+            )
+    return out
+
+
 _UNRECOVERABLE = re.compile(
     r"\\(?:cite|citep|citet|citealp|citealt|citeyear|autocite|ref|eqref|cref|Cref"
     r"|pageref|footnote|input|include)\b\s*(?:\[[^\]]*\])*\s*\{[^}]*\}"

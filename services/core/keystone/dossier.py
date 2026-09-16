@@ -13,6 +13,7 @@ from keystone.audit.trace import Coverage, headline_mentions, mismatch_findings,
 from keystone.graph.models import Finding, Paper
 from keystone.ingest.anchors import Anchor, DocIndex
 from keystone.ingest.arxiv_source import load
+from keystone.ingest.latex import label_kinds, source_sentences
 from keystone.ingest.pdf import Document
 from keystone.ingest.sections import extract_sections
 from keystone.ingest.tables import build_tables
@@ -69,6 +70,7 @@ class Dossier:
             "coverage": {
                 "claims": len(self.coverage.claims),
                 "supported": len(self.coverage.supported),
+                "declared": len(self.coverage.declared),
                 "unsupported": len(self.coverage.unsupported),
                 "mismatched": len(self.coverage.mismatched),
                 "rate": round(self.coverage.rate, 3),
@@ -84,6 +86,7 @@ class Dossier:
                     "row": t.cell.row_header if t.cell else None,
                     "column": t.cell.column_header if t.cell else None,
                     "cell": t.cell.raw if t.cell else None,
+                    "evidenceLabel": t.evidence_label,
                     "anchor": _anchor_json(claim_anchors[i], pages),
                     "evidenceAnchor": _anchor_json(evidence_anchors[i], pages),
                 }
@@ -122,7 +125,14 @@ def build(
         mentions=headline_mentions(sections),
         notes=document.text,
     )
-    coverage = trace_all(paper.mentions, paper.tables)
+    # Every sentence in the paper, so a headline number can be followed to wherever
+    # the body restates it and says what it rests on.
+    coverage = trace_all(
+        paper.mentions,
+        paper.tables,
+        label_kinds(document.text),
+        tuple(source_sentences(document.text)),
+    )
     findings = tuple(run(paper)) + tuple(mismatch_findings(coverage))
 
     claim_anchors: tuple[Anchor | None, ...] = ()

@@ -74,6 +74,7 @@ def extract_sections(latex: str) -> tuple[Section, ...]:
                 kind=SectionKind.ABSTRACT,
                 title="Abstract",
                 text=strip_markup(abstract.group("body")),
+                source=abstract.group("body"),
             )
         )
 
@@ -95,7 +96,12 @@ def extract_sections(latex: str) -> tuple[Section, ...]:
             kind = sections[-1].kind
 
         sections.append(
-            Section(kind=kind, title=plain_title, text=strip_markup(body[title_end:end]))
+            Section(
+                kind=kind,
+                title=plain_title,
+                text=strip_markup(body[title_end:end]),
+                source=body[title_end:end],
+            )
         )
 
     return tuple(sections)

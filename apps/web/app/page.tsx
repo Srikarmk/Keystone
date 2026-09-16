@@ -1,13 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
 
-import type { Claim, Dossier, IndexEntry } from "@/lib/dossier";
-import { isSupported } from "@/lib/dossier";
+import type { IndexEntry } from "@/lib/dossier";
 import type { StoneDatum } from "@/components/Arch";
-import { PaperView } from "@/components/PaperView";
 
 const Arch = dynamic(() => import("@/components/Arch").then((m) => m.Arch), {
   ssr: false,
@@ -15,329 +14,237 @@ const Arch = dynamic(() => import("@/components/Arch").then((m) => m.Arch), {
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-function arrangeStones(dossier: Dossier): StoneDatum[] {
-  const keystoneTable = dossier.keystone?.table ?? null;
-
-  const described: StoneDatum[] = dossier.claims.map((claim, index) => ({
-    kind: !isSupported(claim.status)
-      ? "missing"
-      : claim.table && claim.table === keystoneTable
-        ? "keystone"
-        : "supported",
-    label: claim.value,
-    detail:
-      claim.table && isSupported(claim.status)
-        ? `${claim.table} · ${claim.row ?? ""} ${claim.column ?? ""}`.trim()
-        : "no evidence found in any table",
-    claimIndex: index,
-  }));
-
-  // Apex outward: keystone claims at the crown, gaps at the springing points.
-  const centre = described.filter((s) => s.kind !== "missing");
-  const outer = described.filter((s) => s.kind === "missing");
-  const ordered: StoneDatum[] = [];
-  centre.forEach((s, i) => (i % 2 === 0 ? ordered.push(s) : ordered.unshift(s)));
-  outer.forEach((s, i) => (i % 2 === 0 ? ordered.push(s) : ordered.unshift(s)));
-  return ordered;
-}
-
-export default function Page() {
+export default function Home() {
   const [index, setIndex] = useState<IndexEntry[]>([]);
-  const [current, setCurrent] = useState("1706.03762");
-  const [dossier, setDossier] = useState<Dossier | null>(null);
-  const [selected, setSelected] = useState<number | null>(null);
-  const [showEvidence, setShowEvidence] = useState(false);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     fetch("/dossiers/index.json").then((r) => r.json()).then(setIndex).catch(() => {});
   }, []);
 
-  useEffect(() => {
-    setDossier(null);
-    setSelected(null);
-    setShowEvidence(false);
-    fetch(`/dossiers/${current}.json`)
-      .then((r) => r.json())
-      .then(setDossier)
-      .catch(() => setDossier(null));
-  }, [current]);
+  const totals = useMemo(() => {
+    const claims = index.reduce((n, p) => n + p.coverage.claims, 0);
+    const supported = index.reduce((n, p) => n + p.coverage.supported, 0);
+    return { claims, supported, papers: index.length };
+  }, [index]);
 
-  const stones = useMemo(() => (dossier ? arrangeStones(dossier) : []), [dossier]);
-  const claim = dossier && selected !== null ? dossier.claims[selected] : null;
+  // The hero arch is built from the library's real coverage, not from decoration:
+  // one stone per traced claim, one gap per claim nothing could be found for.
+  const stones = useMemo<StoneDatum[]>(() => {
+    if (!totals.claims) return [];
+    const scale = Math.min(1, 15 / totals.claims);
+    const solid = Math.max(1, Math.round(totals.supported * scale));
+    const hollow = Math.max(0, Math.round((totals.claims - totals.supported) * scale));
+    const ordered: StoneDatum[] = [];
+    const push = (kind: StoneDatum["kind"], n: number) => {
+      for (let i = 0; i < n; i += 1) {
+        const stone = { kind, label: "", detail: "", claimIndex: -1 };
+        ordered.length % 2 === 0 ? ordered.push(stone) : ordered.unshift(stone);
+      }
+    };
+    push("keystone", Math.max(1, Math.round(solid / 3)));
+    push("supported", solid - Math.max(1, Math.round(solid / 3)));
+    push("missing", hollow);
+    return ordered;
+  }, [totals]);
 
-  // Selecting a claim shows where it is stated. The evidence sits on another page, so
-  // it is a second, deliberate step rather than a jump the reader did not ask for.
-  const highlight = claim
-    ? showEvidence
-      ? (claim.evidenceAnchor ?? claim.anchor)
-      : (claim.anchor ?? claim.evidenceAnchor)
-    : null;
-  const select = useCallback((i: number) => {
-    setSelected(i);
-    setShowEvidence(false);
-  }, []);
+  const filtered = index.filter((p) =>
+    `${p.title} ${p.id}`.toLowerCase().includes(query.toLowerCase()),
+  );
 
   return (
-    <main className="mx-auto flex h-screen max-w-[1700px] flex-col px-5 pb-5 pt-5 lg:px-8">
-      <Masthead index={index} current={current} onSelect={setCurrent} />
+    <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
+      <header className="flex items-center justify-between border-b border-paper-edge py-5">
+        <span className="pressed text-[1.4rem] leading-none">Keystone</span>
+        <a
+          href="https://github.com/Srikarmk/Keystone"
+          className="text-[0.8rem] italic text-ink-soft transition-colors hover:text-brass"
+        >
+          source
+        </a>
+      </header>
 
-      <div className="mt-4 grid min-h-0 flex-1 gap-6 lg:grid-cols-[minmax(0,1fr)_27rem]">
-        <section className="min-h-0">
-          {dossier ? (
-            <PaperView url={dossier.pdfUrl} highlight={highlight} />
-          ) : (
-            <div className="flex h-full items-center justify-center text-[0.9rem] italic text-ink-faint">
-              Fetching the paper…
-            </div>
-          )}
-        </section>
+      <section className="grid items-center gap-8 pt-10 lg:grid-cols-[1fr_minmax(0,26rem)]">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: EASE }}
+        >
+          <h1 className="pressed max-w-xl text-[2.9rem] leading-[1.08] tracking-[-0.02em]">
+            Which claim is holding this paper up?
+          </h1>
 
-        <aside className="rule-left flex min-h-0 flex-col lg:pl-7">
-          {dossier ? (
-            <Panel
-              dossier={dossier}
+          <p className="mt-5 max-w-lg text-[1.05rem] leading-relaxed text-ink-soft">
+            Every paper makes a handful of numbers do the heavy lifting. Keystone finds
+            them, traces each one back to the table it rests on, and tells you plainly
+            which ones it could not find evidence for.
+          </p>
+
+          <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-ink-faint">
+            No summaries, no paraphrase. Every trace is arithmetic over the paper&rsquo;s own
+            LaTeX source, and every one of them lands on the pixels in the PDF so you can
+            check it yourself in a second.
+          </p>
+
+          <div className="mt-7 flex flex-wrap items-center gap-6">
+            <Link
+              href={`/paper/${index[0]?.id ?? "1706.03762"}`}
+              className="border-b border-brass pb-1 text-[1rem] text-brass transition-colors hover:text-ink"
+            >
+              Open a paper &rarr;
+            </Link>
+            {totals.claims > 0 ? (
+              <p className="numeral text-[0.82rem] text-ink-faint">
+                {totals.supported}/{totals.claims} headline numbers traced across{" "}
+                {totals.papers} papers
+              </p>
+            ) : null}
+          </div>
+        </motion.div>
+
+        <div className="h-[19rem] lg:h-[23rem]">
+          {stones.length > 0 ? (
+            <Arch
               stones={stones}
-              selected={selected}
-              claim={claim}
-              showEvidence={showEvidence}
-              onSelect={select}
-              onToggleEvidence={() => setShowEvidence((v) => !v)}
+              collapsed={false}
+              selected={null}
+              onHover={() => {}}
+              onSelectStone={() => {}}
             />
           ) : null}
-        </aside>
-      </div>
+        </div>
+      </section>
+
+      <section className="mt-16 grid gap-8 border-t border-paper-edge pt-10 sm:grid-cols-3">
+        {[
+          {
+            n: "i",
+            title: "Read the source, not the picture",
+            body: "Tables, equations and citation keys come from the paper's LaTeX, so a number is what the author wrote rather than a guess at a rendered glyph.",
+          },
+          {
+            n: "ii",
+            title: "Trace every headline number",
+            body: "Each figure in the abstract, introduction and conclusion is matched against every table cell — at the precision it was written to, so a rounded report is not a wrong one.",
+          },
+          {
+            n: "iii",
+            title: "Say what could not be checked",
+            body: "Coverage is stated out loud. Silence is not a clean bill of health, and a tool that never admits a gap is not worth trusting about the rest.",
+          },
+        ].map((step, i) => (
+          <motion.div
+            key={step.n}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ delay: i * 0.08, duration: 0.5, ease: EASE }}
+          >
+            <span className="numeral text-[0.72rem] uppercase tracking-[0.2em] text-brass">
+              {step.n}
+            </span>
+            <h2 className="mt-2 text-[1.12rem] leading-snug">{step.title}</h2>
+            <p className="mt-2 text-[0.92rem] leading-relaxed text-ink-soft">{step.body}</p>
+          </motion.div>
+        ))}
+      </section>
+
+      <section className="mt-16 border-t border-paper-edge pt-8">
+        <div className="flex flex-wrap items-baseline justify-between gap-4">
+          <h2 className="text-[0.72rem] uppercase tracking-[0.18em] text-ink-faint">
+            Analysed papers
+          </h2>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="filter…"
+            className="w-48 border-b border-ink/20 bg-transparent pb-1 text-[0.9rem] text-ink outline-none transition-colors placeholder:text-ink-faint/70 focus:border-brass"
+          />
+        </div>
+
+        <ul className="mt-6 grid gap-x-8 gap-y-1 sm:grid-cols-2">
+          {filtered.map((paper, i) => (
+            <motion.li
+              key={paper.id}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: Math.min(i, 8) * 0.04, duration: 0.4, ease: EASE }}
+            >
+              <Link
+                href={`/paper/${paper.id}`}
+                className="group flex items-baseline gap-4 border-b border-paper-edge/60 py-3 transition-colors hover:bg-paper-deep/40"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-[1rem] leading-snug transition-colors group-hover:text-brass">
+                    {paper.title}
+                  </span>
+                  <span className="mt-0.5 block text-[0.8rem] text-ink-faint">
+                    {paper.keystone
+                      ? `rests on ${paper.keystone.table}`
+                      : paper.coverage.claims === 0
+                        ? "no numeric claims up front"
+                        : "no single load-bearing table"}
+                  </span>
+                </span>
+
+                <CoveragePips coverage={paper.coverage} />
+              </Link>
+            </motion.li>
+          ))}
+        </ul>
+
+        {filtered.length === 0 && index.length > 0 ? (
+          <p className="mt-6 text-[0.92rem] italic text-ink-faint">
+            Nothing matches &ldquo;{query}&rdquo;.
+          </p>
+        ) : null}
+      </section>
+
+      <footer className="mt-20 border-t border-paper-edge pt-6 text-[0.82rem] leading-relaxed text-ink-faint">
+        <p className="max-w-2xl">
+          Keystone checks what a paper says against itself. It does not judge whether the
+          idea is good, and finding nothing is not a clean bill of health — the coverage
+          figure on each paper says how much could be checked at all. Analysis currently
+          covers arXiv papers that ship LaTeX source; roughly one in ten does not.
+        </p>
+      </footer>
     </main>
   );
 }
 
-function Masthead({
-  index,
-  current,
-  onSelect,
-}: {
-  index: IndexEntry[];
-  current: string;
-  onSelect: (id: string) => void;
-}) {
+function CoveragePips({ coverage }: { coverage: IndexEntry["coverage"] }) {
+  if (coverage.claims === 0) {
+    return <span className="numeral shrink-0 text-[0.78rem] text-ink-faint">—</span>;
+  }
   return (
-    <header className="flex shrink-0 flex-wrap items-end justify-between gap-5 border-b border-paper-edge pb-4">
-      <div className="flex items-baseline gap-4">
-        <h1 className="pressed text-[1.75rem] leading-none tracking-[-0.02em]">Keystone</h1>
-        <p className="text-[0.85rem] italic text-ink-soft">
-          Which claim is holding this paper up — and how much of it we could check.
-        </p>
-      </div>
-
-      <label className="flex items-center gap-3 text-[0.72rem] uppercase tracking-[0.14em] text-ink-faint">
-        Paper
-        <select
-          value={current}
-          onChange={(e) => onSelect(e.target.value)}
-          className="max-w-[22rem] truncate border-b border-ink/25 bg-transparent pb-0.5 font-[family-name:var(--font-display)] text-[0.95rem] normal-case tracking-normal text-ink outline-none transition-colors hover:border-brass focus:border-brass"
-        >
-          {index.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.title}
-            </option>
-          ))}
-        </select>
-      </label>
-    </header>
-  );
-}
-
-function Panel({
-  dossier,
-  stones,
-  selected,
-  claim,
-  showEvidence,
-  onSelect,
-  onToggleEvidence,
-}: {
-  dossier: Dossier;
-  stones: StoneDatum[];
-  selected: number | null;
-  claim: Claim | null;
-  showEvidence: boolean;
-  onSelect: (i: number) => void;
-  onToggleEvidence: () => void;
-}) {
-  const { coverage, keystone } = dossier;
-
-  return (
-    <div className="flex min-h-0 flex-col">
-      {stones.length > 0 ? (
-        <div className="h-40 shrink-0">
-          <Arch
-            stones={stones}
-            collapsed={false}
-            selected={selected}
-            onHover={() => {}}
-            onSelectStone={onSelect}
-          />
-        </div>
-      ) : null}
-
-      <div className="shrink-0">
-        {keystone ? (
-          <p className="text-[1.05rem] leading-snug">
-            <span className="text-brass">{keystone.table}</span> carries{" "}
-            <span className="numeral">{keystone.supported}</span> of{" "}
-            <span className="numeral">{coverage.claims}</span> headline numbers.
-          </p>
-        ) : (
-          <p className="text-[0.95rem] italic text-ink-soft">
-            {coverage.claims === 0
-              ? "This paper states no numeric claims up front."
-              : "No single table carries this paper's headline numbers."}
-          </p>
-        )}
-
-        <div className="mt-3 flex items-center gap-3">
-          <div className="flex flex-1 gap-[2px]">
-            {Array.from({ length: coverage.claims }, (_, i) => (
-              <motion.span
-                key={i}
-                initial={{ scaleY: 0.3, opacity: 0 }}
-                animate={{ scaleY: 1, opacity: 1 }}
-                transition={{ delay: 0.1 + i * 0.03, duration: 0.4, ease: EASE }}
-                className="h-4 flex-1 origin-bottom rounded-[1px]"
-                style={{
-                  background: i < coverage.supported ? "var(--color-supported)" : "transparent",
-                  border:
-                    i < coverage.supported
-                      ? "1px solid transparent"
-                      : "1px dashed var(--color-missing)",
-                }}
-              />
-            ))}
-          </div>
-          <span className="numeral shrink-0 text-[0.78rem] text-ink-soft">
-            {coverage.supported}/{coverage.claims} traced
-          </span>
-        </div>
-      </div>
-
-      <h2 className="mt-5 shrink-0 text-[0.68rem] uppercase tracking-[0.18em] text-ink-faint">
-        Headline numbers — click to find it in the paper
-      </h2>
-
-      <ul className="mt-2 min-h-0 flex-1 space-y-1 overflow-y-auto pr-1">
-        {dossier.claims.map((c, i) => (
-          <ClaimRow
-            key={i}
-            claim={c}
-            active={selected === i}
-            onSelect={() => onSelect(i)}
-            showEvidence={showEvidence}
-            onToggleEvidence={onToggleEvidence}
-          />
-        ))}
-        {dossier.claims.length === 0 ? (
-          <li className="text-[0.9rem] italic text-ink-faint">
-            Nothing to trace — the abstract, introduction and conclusion state no numbers.
-          </li>
-        ) : null}
-      </ul>
-
-      {claim ? <Detail claim={claim} showEvidence={showEvidence} onToggle={onToggleEvidence} /> : null}
-    </div>
-  );
-}
-
-function ClaimRow({
-  claim,
-  active,
-  onSelect,
-}: {
-  claim: Claim;
-  active: boolean;
-  onSelect: () => void;
-  showEvidence: boolean;
-  onToggleEvidence: () => void;
-}) {
-  const supported = isSupported(claim.status);
-  return (
-    <li>
-      <button
-        type="button"
-        onClick={onSelect}
-        className={`flex w-full items-baseline gap-3 rounded-[2px] border-l-2 px-2 py-1.5 text-left transition-colors ${
-          active ? "bg-paper-deep/70" : "hover:bg-paper-deep/40"
-        }`}
-        style={{ borderLeftColor: supported ? "var(--color-supported)" : "var(--color-missing)" }}
-      >
-        <span
-          className="numeral shrink-0 text-[0.95rem]"
-          style={{ color: supported ? "var(--color-ink)" : "var(--color-missing)" }}
-        >
-          {claim.value}
-        </span>
-        <span className="min-w-0 flex-1 truncate text-[0.82rem] text-ink-soft">
-          {claim.sentence}
-        </span>
-        <span className="shrink-0 text-[0.7rem] uppercase tracking-[0.1em] text-ink-faint">
-          {claim.anchor ? `p${claim.anchor.page + 1}` : "—"}
-        </span>
-      </button>
-    </li>
-  );
-}
-
-function Detail({
-  claim,
-  showEvidence,
-  onToggle,
-}: {
-  claim: Claim;
-  showEvidence: boolean;
-  onToggle: () => void;
-}) {
-  const supported = isSupported(claim.status);
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={claim.value + claim.sentence.slice(0, 20)}
-        initial={{ opacity: 0, y: 6 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25, ease: EASE }}
-        className="mt-4 shrink-0 border-t border-paper-edge pt-3"
-      >
-        <p className="quote-mark text-[0.88rem] leading-relaxed text-ink-soft">
-          {claim.sentence}
-        </p>
-
-        <div className="mt-2 flex items-center justify-between gap-3 text-[0.82rem]">
-          {supported ? (
-            <span className="text-supported">
-              Rests on {claim.table}
-              {claim.row ? ` · ${claim.row}` : ""}
-              {claim.cell ? ` = ${claim.cell}` : ""}
-            </span>
-          ) : (
-            <span className="italic text-missing">Not found in any table in this paper</span>
-          )}
-
-          {claim.evidenceAnchor ? (
-            <button
-              type="button"
-              onClick={onToggle}
-              className="shrink-0 border-b border-dotted border-brass/60 italic text-brass transition-colors hover:text-ink"
-            >
-              {showEvidence ? "back to the claim" : `show the evidence (p${claim.evidenceAnchor.page + 1})`}
-            </button>
-          ) : null}
-        </div>
-
-        {!claim.anchor ? (
-          <p className="mt-2 text-[0.78rem] italic text-ink-faint">
-            This sentence could not be located in the PDF, so there is nothing to
-            highlight. The trace above still holds — it was made from the paper&rsquo;s
-            LaTeX source.
-          </p>
-        ) : null}
-      </motion.div>
-    </AnimatePresence>
+    <span className="flex shrink-0 items-center gap-2">
+      <span className="flex gap-[2px]">
+        {Array.from({ length: Math.min(coverage.claims, 12) }, (_, i) => {
+          const verified = i < coverage.supported;
+          const declared =
+            !verified && i < coverage.supported + (coverage.declared ?? 0);
+          return (
+            <span
+              key={i}
+              className="h-3 w-[5px] rounded-[1px]"
+              style={{
+                background: verified
+                  ? "var(--color-supported)"
+                  : declared
+                    ? "var(--color-ink-faint)"
+                    : "transparent",
+                border: verified || declared
+                  ? "1px solid transparent"
+                  : "1px dashed var(--color-missing)",
+                opacity: declared ? 0.5 : 1,
+              }}
+            />
+          );
+        })}
+      </span>
+      <span className="numeral text-[0.78rem] text-ink-soft">
+        {coverage.supported}/{coverage.claims}
+      </span>
+    </span>
   );
 }

@@ -1,4 +1,14 @@
-export type ClaimStatus = "exact" | "rounded" | "mismatch" | "untraced";
+export type ClaimStatus =
+  | "exact"
+  | "rounded"
+  | "mismatch"
+  | "declared_table"
+  | "declared_figure"
+  | "declared_equation"
+  | "declared_theorem"
+  | "declared_algorithm"
+  | "citation"
+  | "untraced";
 
 export interface AnchorRect {
   x0: number;
@@ -25,6 +35,8 @@ export interface Claim {
   row: string | null;
   column: string | null;
   cell: string | null;
+  /** Which label the paper points at, when the evidence is declared rather than verified. */
+  evidenceLabel: string | null;
   /** Where the claim is stated in the PDF; null when it could not be located. */
   anchor: AnchorJson | null;
   /** Where its evidence sits — the cell if it is unambiguous, else the caption. */
@@ -45,6 +57,7 @@ export interface Dossier {
   coverage: {
     claims: number;
     supported: number;
+    declared: number;
     unsupported: number;
     mismatched: number;
     rate: number;
@@ -69,4 +82,26 @@ export interface IndexEntry {
   findings: number;
 }
 
-export const isSupported = (status: ClaimStatus) => status === "exact" || status === "rounded";
+/** Verified by arithmetic: the number was found where it should be. */
+export const isSupported = (status: ClaimStatus) =>
+  status === "exact" || status === "rounded";
+
+/**
+ * The paper names its evidence, but of a kind no arithmetic can confirm — a figure, a
+ * derivation, a theorem, another paper. Distinct from unsupported on purpose:
+ * "evidenced by Figure 4" and "we could find nothing" are different answers, and
+ * collapsing them made every theory and figure-driven result look unevidenced.
+ */
+export const isDeclared = (status: ClaimStatus) =>
+  status.startsWith("declared_") || status === "citation";
+
+const EVIDENCE_WORDS: Partial<Record<ClaimStatus, string>> = {
+  declared_table: "a table",
+  declared_figure: "a figure",
+  declared_equation: "a derivation",
+  declared_theorem: "a theorem",
+  declared_algorithm: "an algorithm",
+  citation: "another paper",
+};
+
+export const declaredAs = (status: ClaimStatus) => EVIDENCE_WORDS[status] ?? "evidence";

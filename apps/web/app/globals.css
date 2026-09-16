@@ -87,3 +87,24 @@ body {
 .settle {
   animation: settle 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+/* Ribbons draw themselves on, left to right, as the evidence map builds. */
+@keyframes draw-ribbon {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ribbon {
+  animation: draw-ribbon 0.62s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbon {
+    animation: none;
+    stroke-dashoffset: 0 !important;
+  }
+  .settle {
+    animation: none;
+  }
+}

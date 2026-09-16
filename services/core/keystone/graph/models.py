@@ -71,6 +71,13 @@ class Section:
     kind: SectionKind
     title: str
     text: str
+    """Prose with markup stripped — what can be matched against the PDF."""
+    source: str = ""
+    """The section's own LaTeX.
+
+    Kept because stripping is lossy in a way that matters: ``\\ref`` and ``\\cite``
+    say what a claim rests on, and they are gone from ``text`` by construction.
+    """
     anchor: Anchor | None = None
 
 
@@ -148,6 +155,10 @@ class NumericMention:
     sentence: str
     section: SectionKind
     anchor: Anchor | None = None
+    refs: tuple[str, ...] = ()
+    """Labels the sentence points at — what the author says the evidence is."""
+    cites: tuple[str, ...] = ()
+    """Citation keys in the sentence: the claim may rest on another paper."""
 
 
 @dataclass(frozen=True, slots=True)

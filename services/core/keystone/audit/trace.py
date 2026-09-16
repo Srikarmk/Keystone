@@ -43,7 +43,37 @@ from keystone.graph.models import (
     TableCell,
 )
 
-TraceStatus = Literal["exact", "rounded", "mismatch", "untraced"]
+TraceStatus = Literal[
+    # Verified: the number itself was found in a table cell.
+    "exact",
+    "rounded",
+    # Checkable and wrong: close to a cell the sentence is clearly about.
+    "mismatch",
+    # Declared but not numerically checkable. The author says where the evidence is,
+    # and it is a kind no arithmetic can confirm — a plot, a derivation, a theorem, or
+    # somebody else's paper. Reporting these as "unsupported" was the flaw in treating
+    # tables as the only evidence a paper can have: it made every theory paper and
+    # every figure-driven result look unevidenced.
+    "declared_table",
+    "declared_figure",
+    "declared_equation",
+    "declared_theorem",
+    "declared_algorithm",
+    "citation",
+    # Nothing at all points at anything.
+    "untraced",
+]
+
+_DECLARED: dict[str, TraceStatus] = {
+    "table": "declared_table",
+    "figure": "declared_figure",
+    "equation": "declared_equation",
+    "theorem": "declared_theorem",
+    "algorithm": "declared_algorithm",
+}
+
+#: Statuses where the paper points at evidence we cannot check by arithmetic.
+DECLARED_STATUSES = frozenset(_DECLARED.values()) | {"citation"}
 
 # A headline number this far from a cell, in a linked context, reads as the same
 # measurement recorded twice and updated once. Nearer than the lower bound and it is
@@ -78,10 +108,17 @@ class Trace:
     table: Table | None = None
     cell: TableCell | None = None
     context_score: int = 0
+    evidence_label: str | None = None
 
     @property
     def is_supported(self) -> bool:
+        """Verified by arithmetic — the number was found where it should be."""
         return self.status in ("exact", "rounded")
+
+    @property
+    def is_declared(self) -> bool:
+        """The author names the evidence, but it is not a number we can recompute."""
+        return self.status in DECLARED_STATUSES
 
 
 @dataclass(frozen=True, slots=True)
@@ -116,6 +153,10 @@ class Coverage:
         return tuple(t for t in self.claims if t.is_supported)
 
     @property
+    def declared(self) -> tuple[Trace, ...]:
+        return tuple(t for t in self.claims if t.is_declared)
+
+    @property
     def unsupported(self) -> tuple[Trace, ...]:
         return tuple(t for t in self.claims if t.status == "untraced")
 
@@ -130,23 +171,35 @@ class Coverage:
 
 def headline_mentions(sections: tuple[Section, ...]) -> tuple[NumericMention, ...]:
     """Every number stated in the sections where a paper makes its case."""
-    from keystone.ingest.latex import split_sentences
+    from keystone.ingest.latex import source_sentences
 
     out: list[NumericMention] = []
     for section in sections:
         if not section.kind.is_headline:
             continue
-        for sentence in split_sentences(section.text):
-            for number in find_numbers(sentence):
+        for sentence in source_sentences(section.source or section.text):
+            for number in find_numbers(sentence.text):
                 out.append(
-                    NumericMention(number=number, sentence=sentence.strip(), section=section.kind)
+                    NumericMention(
+                        number=number,
+                        sentence=sentence.text.strip(),
+                        section=section.kind,
+                        refs=sentence.refs,
+                        cites=sentence.cites,
+                    )
                 )
     return tuple(out)
 
 
-def trace_all(mentions: tuple[NumericMention, ...], tables: tuple[Table, ...]) -> Coverage:
-    """Tie each headline number to a table cell, or record that it could not be."""
-    traces = tuple(_trace_one(m, tables) for m in mentions)
+def trace_all(
+    mentions: tuple[NumericMention, ...],
+    tables: tuple[Table, ...],
+    label_kinds: dict[str, str] | None = None,
+    body_sentences: tuple = (),
+) -> Coverage:
+    """Tie each headline number to its evidence, of whatever kind that turns out to be."""
+    kinds = label_kinds or {}
+    traces = tuple(_trace_one(m, tables, kinds, body_sentences) for m in mentions)
     traces = _drop_accounted_mismatches(traces)
 
     counts = Counter(
@@ -225,7 +278,62 @@ def analyse(paper: Paper) -> Coverage:
 # ------------------------------------------------------------------ internals
 
 
-def _trace_one(mention: NumericMention, tables: tuple[Table, ...]) -> Trace:
+def _declared_trace(mention: NumericMention, kinds: dict[str, str]) -> Trace | None:
+    """Classify a claim by the evidence its own sentence points at.
+
+    Ordered by how specific the evidence is. A sentence naming a figure is resting on
+    that figure; one that only cites is resting on other work, which is a weaker but
+    real answer to "what holds this up".
+    """
+    for ref in mention.refs:
+        status = _DECLARED.get(kinds.get(ref, ""))
+        if status is not None:
+            return Trace(mention=mention, status=status, evidence_label=ref)
+    if mention.cites:
+        return Trace(mention=mention, status="citation", evidence_label=mention.cites[0])
+    return None
+
+
+def _restated_trace(
+    mention: NumericMention, kinds: dict[str, str], body_sentences: tuple
+) -> Trace | None:
+    """Follow the paper's own chain from a headline number to its evidence.
+
+    Abstracts do not cite. They are written to stand alone, so the ``\\ref`` that names
+    the evidence is almost never in the same sentence as the claim — it is in the
+    results section, where the number is stated again. Measured across nine papers,
+    classifying only on a claim's own sentence found declared evidence for none of
+    them, which is why tracing appeared to work for tables and nothing else.
+
+    So: find where the body restates the number, and read *that* sentence's references.
+    "The abstract's 88.5% is restated in the results beside Figure 4" is a real answer
+    to what a claim rests on, and it is the paper's own answer.
+    """
+    target = mention.number
+    for sentence in body_sentences:
+        if not (sentence.refs or sentence.cites):
+            continue
+        if not any(
+            _same_measurement(target, other) for other in find_numbers(sentence.text)
+        ):
+            continue
+        for ref in sentence.refs:
+            status = _DECLARED.get(kinds.get(ref, ""))
+            if status is not None:
+                return Trace(mention=mention, status=status, evidence_label=ref)
+        if sentence.cites:
+            return Trace(
+                mention=mention, status="citation", evidence_label=sentence.cites[0]
+            )
+    return None
+
+
+def _trace_one(
+    mention: NumericMention,
+    tables: tuple[Table, ...],
+    kinds: dict[str, str],
+    body_sentences: tuple = (),
+) -> Trace:
     exact: list[tuple[Table, TableCell]] = []
     rounded: list[tuple[Table, TableCell]] = []
     near: list[tuple[int, Decimal, Table, TableCell]] = []
@@ -277,7 +385,14 @@ def _trace_one(mention: NumericMention, tables: tuple[Table, ...]) -> Trace:
         return Trace(
             mention=mention, status="mismatch", table=table, cell=cell, context_score=score
         )
-    return Trace(mention=mention, status="untraced")
+
+    # Nothing verifiable. Before calling it unsupported, ask what the paper says it
+    # rests on: a figure or a theorem is evidence we cannot recompute, not evidence
+    # that is missing.
+    declared = _declared_trace(mention, kinds) or _restated_trace(
+        mention, kinds, body_sentences
+    )
+    return declared or Trace(mention=mention, status="untraced")
 
 
 def _same_measurement(stated: Number, found: Number) -> bool:
