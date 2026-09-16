@@ -1,6 +1,6 @@
 {
   "id": "2203.02155",
-  "title": "Training language models to follow instructions",
+  "title": "Training language models to follow instructions with human feedback",
   "keystone": {
     "table": "Table 1",
     "caption": "Distribution of use case categories from our API prompt dataset.",
@@ -11687,5 +11687,1070 @@
       "citations": 0
     }
   ],
-  "findings": []
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 11,
+      "extends": 0,
+      "contests": 0,
+      "compares": 8,
+      "background": 66,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "gehman2020realtoxicityprompts",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "On \"closed-domain\" tasks from our API prompt distribution, where the output should not contain information that is not present in the input (e.g. summarization and closed-domain QA), InstructGPT models make up information not present in the input about half as often as GPT-3 (a 21% vs. 41% hallucination rate, respectively). InstructGPT shows small improvements in toxicity over GPT-3, but not bias. To measure toxicity, we use the RealToxicityPrompts dataset and conduct both automatic and human evaluations.",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "title": "Realtoxicityprompts: Evaluating neural toxic degeneration in language models",
+      "authors": "Gehman, S., Gururangan, S., Sap, M., Choi, Y., and Smith, N. A. (2020)",
+      "year": 2009,
+      "arxivId": "2009.11462",
+      "inCorpus": false,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 140.48745727539062,
+            "y0": 546.5372314453125,
+            "x1": 503.99737548828125,
+            "y1": 556.5989990234375
+          },
+          {
+            "x0": 108.0,
+            "y0": 557.4462890625,
+            "x1": 505.2472839355469,
+            "y1": 567.508056640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 568.3562622070312,
+            "x1": 503.99749755859375,
+            "y1": 578.4180297851562
+          },
+          {
+            "x0": 108.0,
+            "y0": 579.3404541015625,
+            "x1": 291.32177734375,
+            "y1": 589.3030395507812
+          },
+          {
+            "x0": 108.0,
+            "y0": 602.16455078125,
+            "x1": 445.911376953125,
+            "y1": 612.1271362304688
+          },
+          {
+            "x0": 455.8739929199219,
+            "y0": 602.1802978515625,
+            "x1": 504.0005798339844,
+            "y1": 612.2420654296875
+          },
+          {
+            "x0": 108.0,
+            "y0": 613.1692504882812,
+            "x1": 301.69830322265625,
+            "y1": 623.1268920898438
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "abramson2020imitating",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "There is also a related line of work on instruction following for navigation, where models are trained to follow natural language instructions to navigate in a simulated environment . Evaluating the harms of language models. A goal of modifying the behavior of language models is to mitigate the harms of these models when they're deployed in the real world.",
+        "section": "Related work",
+        "sectionKind": "related",
+        "title": "Imitating interactive intelligence",
+        "authors": "Abramson, J., Ahuja, A., Barr, I., Brussee, A., Carnevale, F., Cassin, M., Chhaparia, R., Clark, S., Damoc, B., Dudzik, A., et al. (2020)",
+        "year": 2012,
+        "arxivId": "2012.05672",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.69100189208984,
+              "y0": 283.5327453613281,
+              "x1": 504.0036926269531,
+              "y1": 293.4303894042969
+            },
+            {
+              "x0": 108.0,
+              "y0": 294.4684143066406,
+              "x1": 411.80621337890625,
+              "y1": 304.33087158203125
+            }
+          ]
+        }
+      },
+      {
+        "key": "askell2021general",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "More practically, for the purpose of our language tasks, we use a framework similar to , who define models to be aligned if they are helpful, honest, and harmless.",
+        "section": "Evaluation",
+        "sectionKind": "experiments",
+        "title": "A general language assistant as a laboratory for alignment",
+        "authors": "Askell, A., Bai, Y., Chen, A., Drain, D., Ganguli, D., Henighan, T., Jones, A., Joseph, N., Mann, B., DasSarma, N., et al. (2021)",
+        "year": 2021,
+        "arxivId": "2112.00861",
+        "inCorpus": false,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 420.9969177246094,
+              "y0": 85.26377868652344,
+              "x1": 504.1672058105469,
+              "y1": 95.29586791992188
+            },
+            {
+              "x0": 108.0,
+              "y0": 96.15029907226562,
+              "x1": 372.8586730957031,
+              "y1": 106.21202850341797
+            }
+          ]
+        }
+      },
+      {
+        "key": "bahdanau2018learning",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "There is also a related line of work on instruction following for navigation, where models are trained to follow natural language instructions to navigate in a simulated environment . Evaluating the harms of language models. A goal of modifying the behavior of language models is to mitigate the harms of these models when they're deployed in the real world.",
+        "section": "Related work",
+        "sectionKind": "related",
+        "title": "Learning to understand goal specifications by modelling reward",
+        "authors": "Bahdanau, D., Hill, F., Leike, J., Hughes, E., Hosseini, A., Kohli, P., and Grefenstette, E. (2018)",
+        "year": 2018,
+        "arxivId": "1806.01946",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.69100189208984,
+              "y0": 283.5327453613281,
+              "x1": 504.0036926269531,
+              "y1": 293.4303894042969
+            },
+            {
+              "x0": 108.0,
+              "y0": 294.4684143066406,
+              "x1": 411.80621337890625,
+              "y1": 304.33087158203125
+            }
+          ]
+        }
+      },
+      {
+        "key": "brown2020language",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "From this work, we can draw lessons for alignment research more generally: The cost of increasing model alignment is modest relative to pretraining. The cost of collecting our data and the compute for training runs, including experimental runs is a fraction of what was spent to train GPT-3: training our 175B SFT model requires 4.9 petaflops/s-days and training our 175B PPO-ptx model requires 60 petaflops/s-days, compared to 3,640 petaflops/s-days for GPT-3 .",
+        "section": "Implications for alignment research",
+        "sectionKind": "discussion",
+        "title": "Language models are few-shot learners",
+        "authors": "Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., et al. (2020)",
+        "year": 2005,
+        "arxivId": "2005.14165",
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "christiano2018supervising",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Moreover, the alignment technique we use here, RLHF, is an important building block in several proposals to align superhuman systems .",
+        "section": "Implications for alignment research",
+        "sectionKind": "discussion",
+        "title": "Supervising strong learners by amplifying weak experts",
+        "authors": "Christiano, P., Shlegeris, B., and Amodei, D. (2018)",
+        "year": 2018,
+        "arxivId": "1810.08575",
+        "inCorpus": false,
+        "anchor": {
+          "page": 16,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 146.6448974609375,
+              "y0": 336.4412536621094,
+              "x1": 503.9964904785156,
+              "y1": 346.4634704589844
+            },
+            {
+              "x0": 108.0,
+              "y0": 347.3202819824219,
+              "x1": 299.4087219238281,
+              "y1": 357.38201904296875
+            }
+          ]
+        }
+      },
+      {
+        "key": "dua2019drop",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "InstructGPT does not significantly improve over GPT-3 on the Winogender and CrowSPairs datasets. We can minimize performance regressions on public NLP datasets by modifying our RLHF fine-tuning procedure. During RLHF fine-tuning, we observe performance regressions compared to GPT-3 on certain public NLP datasets, notably SQuAD , DROP , HellaSwag , and WMT 2015 French to English translation .",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Drop: A reading comprehension benchmark requiring discrete reasoning over paragraphs",
+        "authors": "Dua, D., Wang, Y., Dasigi, P., Stanovsky, G., Singh, S., and Gardner, M. (2019)",
+        "year": 2019,
+        "arxivId": "1903.00161",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 403.0724792480469,
+              "y0": 645.8924560546875,
+              "x1": 437.104736328125,
+              "y1": 655.8550415039062
+            },
+            {
+              "x0": 108.0,
+              "y0": 668.717529296875,
+              "x1": 504.3122863769531,
+              "y1": 678.6801147460938
+            },
+            {
+              "x0": 108.0,
+              "y0": 679.6265258789062,
+              "x1": 202.8240203857422,
+              "y1": 689.589111328125
+            },
+            {
+              "x0": 212.79100036621094,
+              "y0": 679.75537109375,
+              "x1": 503.9952087402344,
+              "y1": 689.6680297851562
+            },
+            {
+              "x0": 108.0,
+              "y0": 690.6986083984375,
+              "x1": 334.6040954589844,
+              "y1": 700.5661010742188
+            }
+          ]
+        }
+      },
+      {
+        "key": "gehman2020realtoxicityprompts",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "On \"closed-domain\" tasks from our API prompt distribution, where the output should not contain information that is not present in the input (e.g. summarization and closed-domain QA), InstructGPT models make up information not present in the input about half as often as GPT-3 (a 21% vs. 41% hallucination rate, respectively). InstructGPT shows small improvements in toxicity over GPT-3, but not bias. To measure toxicity, we use the RealToxicityPrompts dataset and conduct both automatic and human evaluations.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Realtoxicityprompts: Evaluating neural toxic degeneration in language models",
+        "authors": "Gehman, S., Gururangan, S., Sap, M., Choi, Y., and Smith, N. A. (2020)",
+        "year": 2009,
+        "arxivId": "2009.11462",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 140.48745727539062,
+              "y0": 546.5372314453125,
+              "x1": 503.99737548828125,
+              "y1": 556.5989990234375
+            },
+            {
+              "x0": 108.0,
+              "y0": 557.4462890625,
+              "x1": 505.2472839355469,
+              "y1": 567.508056640625
+            },
+            {
+              "x0": 108.0,
+              "y0": 568.3562622070312,
+              "x1": 503.99749755859375,
+              "y1": 578.4180297851562
+            },
+            {
+              "x0": 108.0,
+              "y0": 579.3404541015625,
+              "x1": 291.32177734375,
+              "y1": 589.3030395507812
+            },
+            {
+              "x0": 108.0,
+              "y0": 602.16455078125,
+              "x1": 445.911376953125,
+              "y1": 612.1271362304688
+            },
+            {
+              "x0": 455.8739929199219,
+              "y0": 602.1802978515625,
+              "x1": 504.0005798339844,
+              "y1": 612.2420654296875
+            },
+            {
+              "x0": 108.0,
+              "y0": 613.1692504882812,
+              "x1": 301.69830322265625,
+              "y1": 623.1268920898438
+            }
+          ]
+        }
+      },
+      {
+        "key": "irving2018ai",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Moreover, the alignment technique we use here, RLHF, is an important building block in several proposals to align superhuman systems .",
+        "section": "Implications for alignment research",
+        "sectionKind": "discussion",
+        "title": "AI safety via debate",
+        "authors": "Irving, G., Christiano, P., and Amodei, D. (2018)",
+        "year": 2018,
+        "arxivId": "1805.00899",
+        "inCorpus": false,
+        "anchor": {
+          "page": 16,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 146.6448974609375,
+              "y0": 336.4412536621094,
+              "x1": 503.9964904785156,
+              "y1": 346.4634704589844
+            },
+            {
+              "x0": 108.0,
+              "y0": 347.3202819824219,
+              "x1": 299.4087219238281,
+              "y1": 357.38201904296875
+            }
+          ]
+        }
+      },
+      {
+        "key": "leike2018scalable",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following , our aim is to train models that act in accordance with user intentions.",
+        "section": "Evaluation",
+        "sectionKind": "experiments",
+        "title": "Scalable agent alignment via reward modeling: a research direction",
+        "authors": "Leike, J., Krueger, D., Everitt, T., Martic, M., Maini, V., and Legg, S. (2018)",
+        "year": 2018,
+        "arxivId": "1811.07871",
+        "inCorpus": false,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.6709976196289,
+              "y0": 85.26377868652344,
+              "x1": 417.8854675292969,
+              "y1": 95.29586791992188
+            }
+          ]
+        }
+      },
+      {
+        "key": "lin2021truthfulqa",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following , we also give a helpful \"Instruction+QA\" prompt that instructs the model to respond with \"I have no comment\" when it is not certain of the correct answer.",
+        "section": "Results on public NLP datasets",
+        "sectionKind": "results",
+        "title": "Truthfulqa: Measuring how models mimic human falsehoods",
+        "authors": "Lin, S., Hilton, J., and Evans, O. (2021)",
+        "year": 2021,
+        "arxivId": "2109.07958",
+        "inCorpus": false,
+        "anchor": {
+          "page": 12,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 188.47105407714844,
+              "y0": 574.2335205078125,
+              "x1": 503.9997863769531,
+              "y1": 584.1260986328125
+            },
+            {
+              "x0": 108.0,
+              "y0": 585.0217895507812,
+              "x1": 437.01434326171875,
+              "y1": 595.0736694335938
+            }
+          ]
+        }
+      },
+      {
+        "key": "rajpurkar2018know",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "InstructGPT does not significantly improve over GPT-3 on the Winogender and CrowSPairs datasets. We can minimize performance regressions on public NLP datasets by modifying our RLHF fine-tuning procedure. During RLHF fine-tuning, we observe performance regressions compared to GPT-3 on certain public NLP datasets, notably SQuAD , DROP , HellaSwag , and WMT 2015 French to English translation .",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Know what you don't know: Unanswerable questions for squad",
+        "authors": "Rajpurkar, P., Jia, R., and Liang, P. (2018)",
+        "year": 2018,
+        "arxivId": "1806.03822",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 403.0724792480469,
+              "y0": 645.8924560546875,
+              "x1": 437.104736328125,
+              "y1": 655.8550415039062
+            },
+            {
+              "x0": 108.0,
+              "y0": 668.717529296875,
+              "x1": 504.3122863769531,
+              "y1": 678.6801147460938
+            },
+            {
+              "x0": 108.0,
+              "y0": 679.6265258789062,
+              "x1": 202.8240203857422,
+              "y1": 689.589111328125
+            },
+            {
+              "x0": 212.79100036621094,
+              "y0": 679.75537109375,
+              "x1": 503.9952087402344,
+              "y1": 689.6680297851562
+            },
+            {
+              "x0": 108.0,
+              "y0": 690.6986083984375,
+              "x1": 334.6040954589844,
+              "y1": 700.5661010742188
+            }
+          ]
+        }
+      },
+      {
+        "key": "sanh2021multitask",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "These RMs have an accuracy of 69.6 0.9% on predicting the preferences of labelers in the held-out group, a small decrease from their 72.4 0.4% accuracy on predicting the preferences of labelers in their training set. Public NLP datasets are not reflective of how our language models are used. In Figure , we also compare InstructGPT to our 175B GPT-3 baselines fine-tuned on the FLAN and T0 datasets (see Appendix for details).",
+        "section": "Results on the API distribution",
+        "sectionKind": "results",
+        "title": "Multitask prompted training enables zero-shot task generalization",
+        "authors": "Sanh, V., Webson, A., Raffel, C., Bach, S. H., Sutawika, L., Alyafeai, Z., Chaffin, A., Stiegler, A., Scao, T. L., Raja, A., et al. (2021)",
+        "year": 2021,
+        "arxivId": "2110.08207",
+        "inCorpus": false,
+        "anchor": {
+          "page": 11,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 249.7100067138672,
+              "y0": 633.6727905273438,
+              "x1": 504.1734313964844,
+              "y1": 643.68505859375
+            },
+            {
+              "x0": 108.0,
+              "y0": 644.6194458007812,
+              "x1": 155.0433807373047,
+              "y1": 654.58203125
+            },
+            {
+              "x0": 108.0,
+              "y0": 668.717529296875,
+              "x1": 431.55535888671875,
+              "y1": 678.6801147460938
+            },
+            {
+              "x0": 441.5159912109375,
+              "y0": 668.7332763671875,
+              "x1": 479.1758728027344,
+              "y1": 678.7950439453125
+            }
+          ]
+        }
+      },
+      {
+        "key": "schulman2017proximal",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Finally, we use this RM as a reward function and fine-tune our supervised learning baseline to maximize this reward using the PPO algorithm .",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Proximal policy optimization algorithms",
+        "authors": "Schulman, J., Wolski, F., Dhariwal, P., Radford, A., and Klimov, O. (2017)",
+        "year": 2017,
+        "arxivId": "1707.06347",
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 458.57379150390625,
+              "y0": 579.55029296875,
+              "x1": 503.99725341796875,
+              "y1": 589.612060546875
+            },
+            {
+              "x0": 108.0,
+              "y0": 590.459228515625,
+              "x1": 503.9974365234375,
+              "y1": 600.52099609375
+            },
+            {
+              "x0": 108.0,
+              "y0": 601.469970703125,
+              "x1": 235.2122344970703,
+              "y1": 611.3976440429688
+            }
+          ]
+        }
+      },
+      {
+        "key": "stiennon2020learning",
+        "stance": "inherits",
+        "cue": "As in",
+        "sentence": "As in , we collaborate closely with labelers over the course of the project.",
+        "section": "Human data collection",
+        "sectionKind": "experiments",
+        "title": "Learning to summarize from human feedback",
+        "authors": "Stiennon, N., Ouyang, L., Wu, J., Ziegler, D. M., Lowe, R., Voss, C., Radford, A., Amodei, D., and Christiano, P. (2020)",
+        "year": 2009,
+        "arxivId": "2009.01325",
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 191.46795654296875,
+              "y0": 112.6021499633789,
+              "x1": 487.81524658203125,
+              "y1": 122.5796890258789
+            }
+          ]
+        }
+      },
+      {
+        "key": "wei2021finetuned",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "These RMs have an accuracy of 69.6 0.9% on predicting the preferences of labelers in the held-out group, a small decrease from their 72.4 0.4% accuracy on predicting the preferences of labelers in their training set. Public NLP datasets are not reflective of how our language models are used. In Figure , we also compare InstructGPT to our 175B GPT-3 baselines fine-tuned on the FLAN and T0 datasets (see Appendix for details).",
+        "section": "Results on the API distribution",
+        "sectionKind": "results",
+        "title": "Finetuned language models are zero-shot learners",
+        "authors": "Wei, J., Bosma, M., Zhao, V. Y., Guu, K., Yu, A. W., Lester, B., Du, N., Dai, A. M., and Le, Q. V. (2021)",
+        "year": 2021,
+        "arxivId": "2109.01652",
+        "inCorpus": false,
+        "anchor": {
+          "page": 11,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 249.7100067138672,
+              "y0": 633.6727905273438,
+              "x1": 504.1734313964844,
+              "y1": 643.68505859375
+            },
+            {
+              "x0": 108.0,
+              "y0": 644.6194458007812,
+              "x1": 155.0433807373047,
+              "y1": 654.58203125
+            },
+            {
+              "x0": 108.0,
+              "y0": 668.717529296875,
+              "x1": 431.55535888671875,
+              "y1": 678.6801147460938
+            },
+            {
+              "x0": 441.5159912109375,
+              "y0": 668.7332763671875,
+              "x1": 479.1758728027344,
+              "y1": 678.7950439453125
+            }
+          ]
+        }
+      },
+      {
+        "key": "wu2021recursively",
+        "stance": "compares",
+        "cue": "Compared to",
+        "sentence": "Compared to earlier work that collects human preference data on the task of summarization , our inputs span a much broader range of tasks, and can occasionally include controversial and sensitive topics.",
+        "section": "Human data collection",
+        "sectionKind": "experiments",
+        "title": "Recursively summarizing books with human feedback",
+        "authors": "Wu, J., Ouyang, L., Ziegler, D. M., Stiennon, N., Lowe, R., Leike, J., and Christiano, P. (2021)",
+        "year": 2021,
+        "arxivId": "2109.10862",
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 173.73472595214844,
+              "y0": 630.61279296875,
+              "x1": 503.9976806640625,
+              "y1": 640.5604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 641.5863647460938,
+              "x1": 239.65879821777344,
+              "y1": 651.4488525390625
+            }
+          ]
+        }
+      },
+      {
+        "key": "zellers2019hellaswag",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "InstructGPT does not significantly improve over GPT-3 on the Winogender and CrowSPairs datasets. We can minimize performance regressions on public NLP datasets by modifying our RLHF fine-tuning procedure. During RLHF fine-tuning, we observe performance regressions compared to GPT-3 on certain public NLP datasets, notably SQuAD , DROP , HellaSwag , and WMT 2015 French to English translation .",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "Hellaswag: Can a machine really finish your sentence?",
+        "authors": "Zellers, R., Holtzman, A., Bisk, Y., Farhadi, A., and Choi, Y. (2019)",
+        "year": 2019,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 403.0724792480469,
+              "y0": 645.8924560546875,
+              "x1": 437.104736328125,
+              "y1": 655.8550415039062
+            },
+            {
+              "x0": 108.0,
+              "y0": 668.717529296875,
+              "x1": 504.3122863769531,
+              "y1": 678.6801147460938
+            },
+            {
+              "x0": 108.0,
+              "y0": 679.6265258789062,
+              "x1": 202.8240203857422,
+              "y1": 689.589111328125
+            },
+            {
+              "x0": 212.79100036621094,
+              "y0": 679.75537109375,
+              "x1": 503.9952087402344,
+              "y1": 689.6680297851562
+            },
+            {
+              "x0": 108.0,
+              "y0": 690.6986083984375,
+              "x1": 334.6040954589844,
+              "y1": 700.5661010742188
+            }
+          ]
+        }
+      },
+      {
+        "key": "zhao2021evaluation",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "There is also a related line of work on instruction following for navigation, where models are trained to follow natural language instructions to navigate in a simulated environment . Evaluating the harms of language models. A goal of modifying the behavior of language models is to mitigate the harms of these models when they're deployed in the real world.",
+        "section": "Related work",
+        "sectionKind": "related",
+        "title": "On the evaluation of vision-and-language navigation instructions",
+        "authors": "Zhao, M., Anderson, P., Jain, V., Wang, S., Ku, A., Baldridge, J., and Ie, E. (2021)",
+        "year": 2021,
+        "arxivId": "2101.10504",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.69100189208984,
+              "y0": 283.5327453613281,
+              "x1": 504.0036926269531,
+              "y1": 293.4303894042969
+            },
+            {
+              "x0": 108.0,
+              "y0": 294.4684143066406,
+              "x1": 411.80621337890625,
+              "y1": 304.33087158203125
+            }
+          ]
+        }
+      },
+      {
+        "key": "ziegler2019fine",
+        "stance": "compares",
+        "cue": "Compared to",
+        "sentence": "Compared to earlier work that collects human preference data on the task of summarization , our inputs span a much broader range of tasks, and can occasionally include controversial and sensitive topics.",
+        "section": "Human data collection",
+        "sectionKind": "experiments",
+        "title": "Fine-tuning language models from human preferences",
+        "authors": "Ziegler, D. M., Stiennon, N., Wu, J., Brown, T. B., Radford, A., Amodei, D., Christiano, P., and Irving, G. (2019)",
+        "year": 2019,
+        "arxivId": "1909.08593",
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 173.73472595214844,
+              "y0": 630.61279296875,
+              "x1": 503.9976806640625,
+              "y1": 640.5604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 641.5863647460938,
+              "x1": 239.65879821777344,
+              "y1": 651.4488525390625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We focus on fine-tuning approaches to aligning language models.",
+      "anchorText": "We focus on fine-tuning approaches to aligning language models.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We focus on",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 481.4813232421875,
+            "x1": 365.1265563964844,
+            "y1": 491.3940124511719
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe our InstructGPT model outperforms FLAN and T0 for two reasons.",
+      "anchorText": "We believe our InstructGPT model outperforms FLAN and T0 for two reasons.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Results on the API distribution",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 112.53829956054688,
+            "x1": 429.6324768066406,
+            "y1": 122.60002899169922
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We suspect that behavior (2) emerges partly because we instruct labelers to reward epistemic humility; thus, they may tend to reward outputs that hedge, and this gets picked up by our reward model.",
+      "anchorText": "We suspect that behavior (2) emerges partly because we instruct labelers to reward epistemic humility; thus, they may tend to reward outputs that hedge, and this gets picked up by our reward model.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We suspect",
+      "section": "Qualitative results",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 331.4909362792969,
+            "y0": 74.45295715332031,
+            "x1": 504.3446044921875,
+            "y1": 84.35559844970703
+          },
+          {
+            "x0": 108.0,
+            "y0": 85.36955261230469,
+            "x1": 503.999755859375,
+            "y1": 95.26216888427734
+          },
+          {
+            "x0": 108.0,
+            "y0": 96.3014144897461,
+            "x1": 308.86138916015625,
+            "y1": 106.16388702392578
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We suspect that behavior (1) occurs because there are few prompts in the training set that assume false premises, and our models don't generalize well to these examples.",
+      "anchorText": "We suspect that behavior (1) occurs because there are few prompts in the training set that assume false premises, and our models don't generalize well to these examples.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We suspect",
+      "section": "Qualitative results",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 311.8196716308594,
+            "y0": 96.3014144897461,
+            "x1": 504.0015869140625,
+            "y1": 106.16388702392578
+          },
+          {
+            "x0": 108.0,
+            "y0": 107.15338897705078,
+            "x1": 503.99609375,
+            "y1": 117.09104919433594
+          },
+          {
+            "x0": 108.0,
+            "y0": 118.01707458496094,
+            "x1": 181.65744018554688,
+            "y1": 128.0144805908203
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe both these behaviors could be dramatically reduced with adversarial data collection .",
+      "anchorText": "We believe both these behaviors could be dramatically reduced with adversarial data collection",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "We believe",
+      "section": "Qualitative results",
+      "sectionKind": "results",
+      "cites": [
+        "dinan2019build"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 184.74740600585938,
+            "y0": 118.01707458496094,
+            "x1": 503.9963684082031,
+            "y1": 128.0144805908203
+          },
+          {
+            "x0": 108.0,
+            "y0": 128.9524688720703,
+            "x1": 166.38084411621094,
+            "y1": 138.91506958007812
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe that this feedback loop is essential to refine our alignment techniques, and it forces us to keep pace with progress in machine learning.",
+      "anchorText": "We believe that this feedback loop is essential to refine our alignment techniques, and it forces us to keep pace with progress in machine learning.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Implications for alignment research",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.85125732421875,
+            "y0": 314.7444152832031,
+            "x1": 504.0014953613281,
+            "y1": 324.60687255859375
+          },
+          {
+            "x0": 108.0,
+            "y0": 325.5510559082031,
+            "x1": 503.9964904785156,
+            "y1": 335.5484619140625
+          },
+          {
+            "x0": 108.0,
+            "y0": 336.4412536621094,
+            "x1": 143.55975341796875,
+            "y1": 346.4634704589844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "As discussed in detail in , there are subtle differences between aligning to instructions, intentions, revealed preferences, ideal preferences, interests, and values. advocate for a principle-based approach to alignment: in other words, for identifying \"fair principles for alignment that receive reflective endorsement despite widespread variation in people's moral beliefs.\u201d In our paper we align to the inferred user intention for simplicity, but more research is required in this area.",
+      "anchorText": "advocate for a principle-based approach to alignment: in other words, for identifying \"fair principles for alignment that receive reflective endorsement despite widespread variation in people's moral beliefs.\u201d In our paper we align to the inferred user intention for simplicity, but more research is required in this area.",
+      "kind": "simplifying",
+      "support": "cited",
+      "cue": "for simplicity",
+      "section": "Open questions",
+      "sectionKind": "discussion",
+      "cites": [
+        "gabriel2020artificial"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 19,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 455.3778381347656,
+            "y0": 216.317138671875,
+            "x1": 504.16998291015625,
+            "y1": 226.22479248046875
+          },
+          {
+            "x0": 108.0,
+            "y0": 227.26039123535156,
+            "x1": 504.0014953613281,
+            "y1": 237.12286376953125
+          },
+          {
+            "x0": 108.0,
+            "y0": 238.01828002929688,
+            "x1": 504.1701965332031,
+            "y1": 248.08001708984375
+          },
+          {
+            "x0": 108.0,
+            "y0": 249.02516174316406,
+            "x1": 505.7470397949219,
+            "y1": 258.95782470703125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We expect that as model scaling continues, greater care has to be taken to ensure that they are aligned with human intentions .",
+      "anchorText": "We expect that as model scaling continues, greater care has to be taken to ensure that they are aligned with human intentions",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "We expect",
+      "section": "Broader impacts",
+      "sectionKind": "discussion",
+      "cites": [
+        "bostrom2014superintelligence"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 19,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 378.76690673828125,
+            "y0": 445.1734313964844,
+            "x1": 504.00140380859375,
+            "y1": 455.035888671875
+          },
+          {
+            "x0": 108.0,
+            "y0": 456.0824279785156,
+            "x1": 463.6496276855469,
+            "y1": 465.94488525390625
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 8,
+    "cited": 3,
+    "shown": 0,
+    "bare": 5
+  }
 }

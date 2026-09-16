@@ -27,6 +27,8 @@ import type {
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
 import { AskTab } from "@/components/AskTab";
+import { AssumptionList, AssumptionSummary } from "@/components/Assumptions";
+import { Foundation, LineageList } from "@/components/Lineage";
 import { EquationView } from "@/components/EquationView";
 import { EvidenceMap } from "@/components/EvidenceMap";
 import { PaperView } from "@/components/PaperView";
@@ -118,6 +120,7 @@ export function Reader({ id }: { id: string }) {
                 dossier={dossier}
                 asking={asking}
                 onToggleAsk={() => setAsking((v) => !v)}
+                onJump={setJump}
               />
 
               {asking ? (
@@ -212,32 +215,22 @@ function Summary({
   dossier,
   asking,
   onToggleAsk,
+  onJump,
 }: {
   dossier: Dossier;
   asking: boolean;
   onToggleAsk: () => void;
+  onJump: (a: AnchorJson | null) => void;
 }) {
-  const { coverage, keystone } = dossier;
+  const { lineage, assumptionTally } = dossier;
+  const stands = lineage.tally.inherits + lineage.tally.extends;
   return (
     <div className="shrink-0 pt-5">
       <div className="flex items-start justify-between gap-6">
         <div className="min-w-0">
-          {keystone ? (
-            <p className="text-[1.3rem] leading-snug">
-              <span className="text-brass">{keystone.table}</span> carries{" "}
-              <span className="numeral">{keystone.supported}</span> of{" "}
-              <span className="numeral">{coverage.claims}</span> headline numbers.
-            </p>
-          ) : (
-            <p className="text-[1.15rem] italic leading-snug text-ink-soft">
-              {coverage.claims === 0
-                ? "No numeric claims up front — the evidence is below."
-                : "No single table carries this paper’s headline numbers."}
-            </p>
-          )}
-          <p className="mt-1.5 text-[0.84rem] leading-relaxed text-ink-faint">
-            Read from the LaTeX source. Nothing here was summarised or inferred.
-          </p>
+          {/* The keystone, in the sense the name was always reaching for: not a table
+              of numbers but the piece this paper would collapse without. */}
+          <Foundation edge={lineage.foundation} onJump={onJump} />
         </div>
 
         <button
@@ -253,42 +246,40 @@ function Summary({
         </button>
       </div>
 
-      {coverage.claims > 0 ? (
-        <div className="mt-4 flex items-center gap-4">
-          <div className="flex flex-1 gap-[3px]">
-            {Array.from({ length: coverage.claims }, (_, i) => {
-              const verified = i < coverage.supported;
-              const declared = !verified && i < coverage.supported + coverage.declared;
-              return (
-                <motion.span
-                  key={i}
-                  initial={{ scaleY: 0.3, opacity: 0 }}
-                  animate={{ scaleY: 1, opacity: 1 }}
-                  transition={{ delay: 0.08 + i * 0.025, duration: 0.35, ease: EASE }}
-                  className="h-2.5 flex-1 origin-bottom rounded-[1px]"
-                  style={{
-                    background: verified
-                      ? "var(--color-supported)"
-                      : declared
-                        ? "var(--color-ink-faint)"
-                        : "transparent",
-                    border:
-                      verified || declared
-                        ? "1px solid transparent"
-                        : "1px dashed var(--color-missing)",
-                    opacity: declared ? 0.5 : 1,
-                  }}
-                />
-              );
-            })}
-          </div>
-          <span className="numeral shrink-0 text-[0.84rem] text-ink-soft">
-            {coverage.supported}/{coverage.claims} verified
-            {coverage.declared > 0 ? ` · ${coverage.declared} declared` : ""}
+      <div className="mt-4 flex flex-wrap items-baseline gap-x-6 gap-y-1.5 border-t border-paper-edge pt-3">
+        <Stat n={stands} label="works it stands on" tone="var(--color-brass)" />
+        {lineage.tally.contests > 0 ? (
+          <Stat
+            n={lineage.tally.contests}
+            label="it argues with"
+            tone="var(--color-missing)"
+          />
+        ) : null}
+        {assumptionTally.total > 0 ? (
+          <span className="flex items-baseline gap-2.5">
+            <Stat n={assumptionTally.total} label="assumptions" />
+            <AssumptionSummary tally={assumptionTally} />
           </span>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
     </div>
+  );
+}
+
+function Stat({ n, label, tone }: { n: number; label: string; tone?: string }) {
+  return (
+    <span className="flex items-baseline gap-1.5">
+      <motion.span
+        initial={{ opacity: 0, y: 4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: EASE }}
+        className="numeral text-[1.1rem]"
+        style={{ color: tone ?? "var(--color-ink)" }}
+      >
+        {n}
+      </motion.span>
+      <span className="text-[0.82rem] text-ink-soft">{label}</span>
+    </span>
   );
 }
 
@@ -312,15 +303,63 @@ function Report({
   const confirmed = dossier.baselines.filter((b) => b.outcome === "confirmed").length;
   const notFound = dossier.baselines.filter((b) => b.outcome === "not_found").length;
 
+  const stands = [...dossier.lineage.edges].filter(
+    (e) => e.stance === "inherits" || e.stance === "extends",
+  );
+  const disputes = dossier.lineage.edges.filter((e) => e.stance === "contests");
+  const rivals = dossier.lineage.edges.filter((e) => e.stance === "compares");
+
   return (
     <div className="mt-6 min-h-0 flex-1 overflow-y-auto pr-3">
+      {/* Lineage first. What a paper inherits and argues with is always there and
+          always specific; its arithmetic, on a careful paper, is always fine. */}
+      <Section
+        title="What it stands on"
+        count={stands.length}
+        subtitle="method and setup taken from other work"
+        defaultOpen
+      >
+        <LineageList edges={stands} onJump={onJump} />
+      </Section>
+
+      <Section
+        title="What it argues with"
+        count={disputes.length}
+        subtitle={
+          disputes.length > 0 ? "where it says prior work is wrong" : undefined
+        }
+        defaultOpen={disputes.length > 0 && disputes.length <= 4}
+      >
+        <LineageList edges={disputes} onJump={onJump} />
+      </Section>
+
+      <Section
+        title="What it takes on faith"
+        count={dossier.assumptions.length}
+        subtitle={
+          dossier.assumptionTally.bare > 0
+            ? `${dossier.assumptionTally.bare} stated with nothing offered`
+            : undefined
+        }
+        defaultOpen={dossier.assumptionTally.bare > 0}
+      >
+        <AssumptionList assumptions={dossier.assumptions} onJump={onJump} />
+      </Section>
+
+      <Section
+        title="What it measures against"
+        count={rivals.length}
+        subtitle="baselines it puts itself beside"
+      >
+        <LineageList edges={rivals} onJump={onJump} />
+      </Section>
+
       <Section
         title="Headline claims"
         count={dossier.claims.length}
         subtitle={
-          dossier.claims.length > 0 ? "click one to find it in the paper" : undefined
+          dossier.claims.length > 0 ? "traced to the table that carries them" : undefined
         }
-        defaultOpen={dossier.claims.length > 0}
       >
         <EvidenceMap
           claims={dossier.claims}
@@ -352,7 +391,6 @@ function Report({
         title="Every number in the paper"
         count={dossier.numbers.length}
         subtitle="measurements and setup"
-        defaultOpen={dossier.claims.length === 0}
       >
         <Numbers dossier={dossier} onJump={onJump} />
       </Section>
@@ -414,7 +452,12 @@ function Report({
         <Structure dossier={dossier} />
       </Section>
 
-      <div className="h-10" />
+      <p className="py-7 text-[0.82rem] leading-relaxed text-ink-faint">
+        Every line above is quoted from this paper&rsquo;s own LaTeX source, with the
+        words that placed it shown alongside. Nothing was summarised, and no model was
+        in the loop. {dossier.lineage.tally.background} further citations say nothing
+        the prose makes checkable, so nothing is claimed about them.
+      </p>
     </div>
   );
 }

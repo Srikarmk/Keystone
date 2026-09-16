@@ -3,8 +3,66 @@
 Working document. Every claim of status here is either measured or marked as not
 started; nothing is marked done on the strength of intent.
 
-**Last updated:** 2026-09-15
-**Current stage:** pre-alpha — reader shipped and runnable; no persistence, no credentials configured
+**Last updated:** 2026-09-16
+**Current stage:** pre-alpha — pivoted from auditing numbers to reading lineage; reader
+and library graph shipped; no persistence, no credentials configured
+
+---
+
+## The pivot (2026-09-16)
+
+**The numeric audit was structurally a dead end, and shipping it proved it.**
+
+A paper's arithmetic can only be reported as an *absence* of errors, and careful papers
+have none. Across nine foundational papers the check suite produced **zero findings** —
+correctly. Its best possible output was a blank page. No amount of extra checks fixes
+that, because the thing being measured is usually fine.
+
+What replaced it asks a question that has a real answer on a correct paper: **what does
+this paper stand on, what does it argue with, and what does it take on faith?**
+
+| | Numeric audit | Lineage |
+|---|---|---|
+| Output on a good paper | nothing | 48 dependencies, 13 disputes, 40 assumptions |
+| Evidence shown | arithmetic | the paper's own sentence, with the cue that placed it |
+| Failure mode | silence indistinguishable from a bug | a reading you can disagree with, quoted |
+| Cross-paper | one check, needs a comparison table | the whole model |
+
+Three things are read straight out of the LaTeX, no model in the loop:
+
+1. **Stance per citation.** A citation is not a neutral pointer. "Following
+   `\cite{ba2016layer}` we normalise each layer" and "Unlike `\cite{ba2016layer}`, we
+   normalise across the batch" are opposite statements about the same paper, and the
+   difference is *written down*. `lineage/stance.py` classifies each citation site as
+   inherits / extends / contests / compares / background from cue phrases, and reports
+   the cue verbatim so the reading is arguable.
+2. **Assumptions.** Authors announce them, because the genre requires it — "we
+   hypothesize", "for simplicity", "it is well known that". Each is quoted with what
+   the paper offers in the same sentence: a citation, a pointer to its own evidence, or
+   nothing. `lineage/assumptions.py`.
+3. **The graph.** Stanced citations resolve to real papers, and where the cited paper
+   is in the library the edge is walkable in both directions. `lineage/graph.py`.
+
+**Measured, 9 papers:** 87 stanced citations of 386 total · 48 load-bearing
+dependencies · 13 disputes · 40 assumptions of which **30 bare** · **7 edges run
+between papers in the library** (VGG → ResNet → Transformer → BERT / ViT, with batch
+and layer normalisation feeding in) · 12/13 edges anchored to a page on the Transformer.
+
+What this makes possible that the audit could not: *"ResNet's central hypothesis — that
+residual mappings are easier to optimise than unreferenced ones — is stated once, in the
+introduction, with nothing offered for it."* True, quoted, anchored to page 2, and about
+one of the most-cited papers in the field.
+
+### What the pivot cost
+
+- **The 3D arch is gone.** It encoded numeric coverage, which no longer exists, so it
+  could not survive the pivot. `components/Arch.tsx` and the three.js dependencies are
+  removed. The hero is now the library graph — SVG, for the reason the reader already
+  learned: this thing's job is to be hovered, and canvas picking against a drifting
+  camera loses the raycast.
+- **The numeric analysis is kept, demoted.** Claims, numbers, tables, equations and the
+  cross-paper baseline check all still work and are all still in the reader — below the
+  lineage, where a detail belongs.
 
 ---
 
@@ -17,6 +75,9 @@ started; nothing is marked done on the strength of intent.
 | Typed tables from source | **Done** | emphasis, band structure, spanning headers, 9 papers parsed |
 | Number parsing with precision | **Done** | `Decimal` + written quantum; unit/percent/scale handling |
 | Deterministic check suite | **3 checks** | 0 findings on 9 unmodified papers; 11% recall on planted table defects |
+| Citation stance (inherits/contests/…) | **Done, tested** | 87 stanced of 386 citations across 9 papers; 43 tests incl. negation, clause scope, first-person subject |
+| Assumption ledger | **Done, tested** | 40 assumptions, 30 bare; each quoted with what the sentence offers |
+| Lineage graph across the library | **Done** | 7 walkable edges from 9 papers, every one carrying its sentence |
 | Cross-paper baseline check | **Done** | 11 baseline figures confirmed against their source papers; catches a planted mis-copy; 0 false positives |
 | Citation index | **Done** | 427 references parsed offline from 9/9 papers; 144 carry an arXiv id |
 | Ask the paper | **Built, needs a key** | grounded on the paper's prose + traced numbers; streams; 1h cached prefix |
@@ -25,14 +86,13 @@ started; nothing is marked done on the strength of intent.
 | Section segmentation | **Done** | abstract / intro / conclusion typed from LaTeX, bibliography excluded |
 | Claim tracing + coverage map | **Done** | 9 papers; 15/30 headline claims traced to a table cell |
 | Keystone (load-bearing table) | **Done** | computed deterministically; no model involved |
-| Reader UI | **Done, runnable** | Next.js, builds static, 149 kB first load |
+| Reader UI | **Done, runnable** | Next.js, builds static, 151 kB first load |
 | Persistence (Postgres, pgvector) | **Not started** | `infra/` is empty |
 | Prose *claim* extraction (beyond numbers) | **Not started** | needs credentials |
 | Citation faithfulness | **Not started** | |
 | Auth, accounts, metering | **Not started** | |
-| Anything committed to git | **No** | 53 tests pass, nothing is in a commit |
 
-Test suite: **53 passing**, ~26s, no network, no API key.
+Test suite: **104 passing**, ~25s, no network, no API key.
 
 ---
 
@@ -320,12 +380,14 @@ What replaced it, and why:
 
 ## Immediate next three
 
-1. `ANTHROPIC_API_KEY` as a Vercel project environment variable. Asking a paper a
+1. **Grow the library.** The graph has 7 walkable edges because it has 9 papers; the
+   density of *walkable* edges is superlinear in corpus size, and this is the single
+   highest-leverage thing left. Ingesting a paper's own citations one hop out would
+   turn a chain into a field.
+2. `ANTHROPIC_API_KEY` as a Vercel project environment variable. Asking a paper a
    question is built, streams, and caches the paper's prose for an hour — and currently
    returns a 503 that says exactly what is missing. This is a one-command unblock:
    `vercel env add ANTHROPIC_API_KEY production`, then redeploy.
-2. Ingest an arbitrary arXiv id from the UI, so the demo is not a fixed set of nine
+3. Ingest an arbitrary arXiv id from the UI, so the demo is not a fixed set of nine
    papers. Vercel Python function; hobby-tier duration is the risk, so measure before
    committing to it and cache so a paper is ingested once rather than once per visitor.
-3. Mobile layout. The reader is a two-pane desktop interface and below ~900 px it has
-   nothing to fall back to.

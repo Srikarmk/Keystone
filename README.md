@@ -1,14 +1,43 @@
 # Keystone
 
-**Which claim is holding the paper up, and does it hold?**
+**What is this paper standing on?**
 
 **Live:** https://keystone-seven-beta.vercel.app
 
-Not "chat with a PDF". Keystone parses a paper's *argument* — claims, evidence,
-assumptions, citations — runs deterministic verification over it, and makes every
-answer either locked to pixel coordinates or visibly marked as unsupported. The name
-is the thesis: a keystone is the one stone that holds an arch together, and the
-product's job is to find which claim that is and test whether it bears the load.
+No paper stands by itself. Each one adopts a method from somebody, argues with somebody
+else, and takes a handful of things on faith without flagging them. Keystone reads all
+three out of the paper's own LaTeX — not a summary, not a retrieval index, no model in
+the loop — and pins each one to the pixels on the page where the paper says it.
+
+The name is the thesis, and it took a pivot to earn it. A keystone is the one stone an
+arch collapses without, and for almost every paper that stone belongs to somebody else.
+
+Three things, all quoted rather than inferred:
+
+- **What it stands on.** A citation is not a neutral pointer. "Following
+  `\cite{ba2016layer}` we normalise each layer" and "Unlike `\cite{ba2016layer}`, we
+  normalise across the batch" are opposite statements about the same paper, and the
+  difference is written down. Every citation site is classified from its cue phrase,
+  and the cue is shown, so the reading is something you can disagree with.
+- **What it takes on faith.** Authors announce their assumptions because the genre
+  requires it — "we hypothesize", "for simplicity", "it is well known that". Each is
+  quoted next to what the paper offers in the same sentence: a citation, a pointer to
+  its own evidence, or nothing at all.
+- **The graph.** Where a cited paper is also in the library the edge is walkable in
+  both directions. Nine foundational papers produce seven such edges: VGG → ResNet →
+  Transformer → BERT and ViT, with batch and layer normalisation feeding in. The whole
+  chain reconstructed from the papers' own sentences.
+
+> ResNet's central hypothesis — that residual mappings are easier to optimise than
+> unreferenced ones — is stated once, in the introduction, with nothing offered for it.
+> Page 2.
+
+**Why not audit the arithmetic?** That was the first version, and it shipped. A paper's
+numbers can only be reported as an *absence* of errors, and careful papers have none:
+across nine foundational papers the check suite correctly produced zero findings, so
+its best possible output was a blank page. The numeric analysis is still here — claims
+traced to table cells, every number indexed, baselines checked against the papers they
+cite — but below the lineage, where a detail belongs. See `RELEASE.md` for the pivot.
 
 Full design and roadmap: `~/.claude/plans/rosy-humming-avalanche.md`.
 

@@ -63,32 +63,32 @@
       "text": "Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence. To this end, we add \"positional encodings\" to the input embeddings at the bottoms of the encoder and decoder stacks. The positional encodings have the same dimension as the embeddings, so that the two can be summed. There are many choices of positional encodings, learned and fixed . In this work, we use sine and cosine functions of different frequencies: PE_(pos,2i) = sin(pos / 10000^2i/d_model) PE_(pos,2i+1) = cos(pos / 10000^2i/d_model) where is the position and is the dimension. That is, each dimension of the positional encoding corresponds to a sinusoid. The wavelengths form a geometric progression from to . We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset , can be represented as a linear function of . We also experimented with using learned positional embeddings instead, and found that the two versions produced nearly identical results (see Table row (E)). We chose the sinusoidal version because it may allow the model to extrapolate to sequence lengths longer than the ones encountered during training."
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Why Self-Attention",
       "text": "In this section we compare various aspects of self-attention layers to the recurrent and convolutional layers commonly used for mapping one variable-length sequence of symbol representations to another sequence of equal length , with , such as a hidden layer in a typical sequence transduction encoder or decoder. Motivating our use of self-attention we consider three desiderata. One is the total computational complexity per layer. Another is the amount of computation that can be parallelized, as measured by the minimum number of sequential operations required. The third is the path length between long-range dependencies in the network. Learning long-range dependencies is a key challenge in many sequence transduction tasks. One key factor affecting the ability to learn such dependencies is the length of the paths forward and backward signals have to traverse in the network. The shorter these paths between any combination of positions in the input and output sequences, the easier it is to learn long-range dependencies . Hence we also compare the maximum path length between any two input and output positions in networks composed of the different layer types. [t] Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. is the sequence length, is the representation dimension, is the kernel size of convolutions and the size of the neighborhood in restricted self-attention. lccc Layer Type & Complexity per Layer & Sequential & Maximum Path Length & & Operations & Self-Attention & & & Recurrent & & & Convolutional & & & Self-Attention (restricted)& & & As noted in Table , a self-attention layer connects all positions with a constant number of sequentially executed operations, whereas a recurrent layer requires sequential operations. In terms of computational complexity, self-attention layers are faster than recurrent layers when the sequence length is smaller than the representation dimensionality , which is most often the case with sentence representations used by state-of-the-art models in machine translations, such as word-piece and byte-pair representations. To improve computational performance for tasks involving very long sequences, self-attention could be restricted to considering only a neighborhood of size in the input sequence centered around the respective output position. This would increase the maximum path length to . We plan to investigate this approach further in future work. A single convolutional layer with kernel width does not connect all pairs of input and output positions. Doing so requires a stack of convolutional layers in the case of contiguous kernels, or in the case of dilated convolutions , increasing the length of the longest paths between any two positions in the network. Convolutional layers are generally more expensive than recurrent layers, by a factor of . Separable convolutions , however, decrease the complexity considerably, to . Even with , however, the complexity of a separable convolution is equal to the combination of a self-attention layer and a point-wise feed-forward layer, the approach we take in our model. As side benefit, self-attention could yield more interpretable models. We inspect attention distributions from our models and present and discuss examples in the appendix. Not only do individual attention heads clearly learn to perform different tasks, many appear to exhibit behavior related to the syntactic and semantic structure of the sentences."
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Training",
       "text": "This section describes the training regime for our models."
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Training Data and Batching",
       "text": "We trained on the standard WMT 2014 English-German dataset consisting of about 4.5 million sentence pairs. Sentences were encoded using byte-pair encoding , which has a shared source-target vocabulary of about 37000 tokens. For English-French, we used the significantly larger WMT 2014 English-French dataset consisting of 36M sentences and split tokens into a 32000 word-piece vocabulary . Sentence pairs were batched together by approximate sequence length. Each training batch contained a set of sentence pairs containing approximately 25000 source tokens and 25000 target tokens."
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Hardware and Schedule",
       "text": "We trained our models on one machine with 8 NVIDIA P100 GPUs. For our base models using the hyperparameters described throughout the paper, each training step took about 0.4 seconds. We trained the base models for a total of 100,000 steps or 12 hours. For our big models,(described on the bottom line of table ), step time was 1.0 seconds. The big models were trained for 300,000 steps (3.5 days)."
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Optimizer",
       "text": "We used the Adam optimizer with , and . We varied the learning rate over the course of training, according to the formula: lrate = d_model^-0.5 (step_num^-0.5, step_num warmup_steps^-1.5) This corresponds to increasing the learning rate linearly for the first training steps, and decreasing it thereafter proportionally to the inverse square root of the step number. We used ."
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Regularization",
       "text": "We employ three types of regularization during training: Residual Dropout We apply dropout to the output of each sub-layer, before it is added to the sub-layer input and normalized. In addition, we apply dropout to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks. For the base model, we use a rate of . Label Smoothing During training, we employed label smoothing of value . This hurts perplexity, as the model learns to be more unsure, but improves accuracy and BLEU score."
     },

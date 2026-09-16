@@ -713,6 +713,49 @@ def anchorable_runs(tex: str, *, min_chars: int = 24) -> list[str]:
     return runs
 
 
+def document_title(tex: str) -> str:
+    """The paper's own title, from its own source.
+
+    Needed because matching a cited work to an ingested paper is done on titles, and
+    the display names the library carries are deliberately short — "Very Deep
+    Convolutional Networks" will never fold-match a bibliography entry reading "Very
+    deep convolutional networks for large-scale image recognition". The authoritative
+    full title is in the LaTeX, so it does not have to be typed by hand at all.
+    """
+    source = strip_comments(tex)
+    match = re.search(r"\\title\s*(?:\[[^\]]*\])?\s*\{", source)
+    if match is None:
+        return ""
+    group = _match_brace_group(source, match.end() - 1)
+    if group is None:
+        return ""
+    # \thanks and \footnote inside a title carry author affiliations, which are not
+    # part of the title and would defeat an exact match.
+    body = re.sub(r"\\(?:thanks|footnote|footnotemark)\s*\{[^{}]*\}", "", group[0])
+    return re.sub(r"\s+", " ", strip_markup(body)).strip()
+
+
+def longest_anchorable_run(tex: str, *, min_chars: int = 24) -> str:
+    """The longest stretch of one sentence that should appear verbatim in the PDF.
+
+    ``anchorable_runs`` does this for a whole document; this does it for a single
+    sentence, which is what is needed to put a *sentence-level* fact on the page.
+
+    The problem it solves is easy to miss. "We employ a residual connection
+    \\cite{he2016resnet} around each of the two sub-layers" renders as "We employ a
+    residual connection [11] around each of the two sub-layers", so the stripped
+    sentence has a hole exactly where the PDF has a number, and an exact match fails
+    on a sentence that is plainly present. Splitting at the citation and keeping the
+    longest side matches character for character.
+
+    Returns "" when no run is long enough to be located unambiguously, which is the
+    honest answer: a sentence that is mostly citations has no prose to anchor to.
+    """
+    runs = [strip_markup(piece) for piece in _UNRECOVERABLE.split(tex) if piece]
+    longest = max(runs, key=len, default="")
+    return longest if len(longest) >= min_chars else ""
+
+
 # Tokens that end in a period without ending a sentence. Without these, "Smith et al.
 # (2020) showed" splits into two fragments and neither matches the PDF.
 _ABBREVIATIONS = frozenset("""

@@ -118,6 +118,82 @@ export interface BaselineCheck {
   note: string;
 }
 
+/** What a paper does with a work it cites. Read off the prose, not inferred. */
+export type Stance = "inherits" | "extends" | "contests" | "compares" | "background";
+
+export interface LineageEdge {
+  key: string;
+  stance: Stance;
+  /** The exact words in the paper that decided the stance. */
+  cue: string;
+  sentence: string;
+  section: string;
+  sectionKind: string;
+  title: string;
+  authors: string;
+  year: number | null;
+  arxivId: string | null;
+  /** Whether the cited paper is in the library, so the edge can be walked. */
+  inCorpus: boolean;
+  anchor: AnchorJson | null;
+}
+
+export interface LineageTally {
+  inherits: number;
+  extends: number;
+  contests: number;
+  compares: number;
+  background: number;
+  traversable: number;
+}
+
+/** What sort of thing the paper is taking for granted. */
+export type AssumptionKind =
+  | "stated"
+  | "simplifying"
+  | "conventional"
+  | "conjectural"
+  | "conditional";
+
+/**
+ * What the paper offers for it, in the same sentence. Named for what is observable:
+ * a citation in the sentence is a citation in the sentence, and whether it actually
+ * establishes the assumption is a judgement the reader makes, not one we claim.
+ */
+export type AssumptionSupport = "cited" | "shown" | "bare";
+
+export interface Assumption {
+  sentence: string;
+  anchorText: string;
+  kind: AssumptionKind;
+  support: AssumptionSupport;
+  cue: string;
+  section: string;
+  sectionKind: string;
+  cites: string[];
+  refs: string[];
+  anchor: AnchorJson | null;
+}
+
+export interface LibraryGraph {
+  nodes: {
+    id: string;
+    title: string;
+    inherits: number;
+    contests: number;
+    bare: number;
+  }[];
+  edges: {
+    from: string;
+    to: string;
+    stance: Stance;
+    cue: string;
+    sentence: string;
+    section: string;
+    anchor: AnchorJson | null;
+  }[];
+}
+
 export interface Dossier {
   id: string;
   title: string;
@@ -146,6 +222,14 @@ export interface Dossier {
   /** The paper's own \newcommand definitions, for rendering its notation. */
   macros: Record<string, string>;
   sections: SectionData[];
+  lineage: {
+    tally: LineageTally;
+    /** The one work this paper would not stand without. */
+    foundation: LineageEdge | null;
+    edges: LineageEdge[];
+  };
+  assumptions: Assumption[];
+  assumptionTally: { total: number; cited: number; shown: number; bare: number };
   findings: {
     check_id: string;
     title: string;
@@ -174,7 +258,23 @@ export interface IndexEntry {
     equations: number;
     references: number;
   };
+  /** The paper's own full title, used to resolve citations across the library. */
+  fullTitle?: string;
+  lineage?: LineageTally;
+  assumptions?: { total: number; cited: number; shown: number; bare: number };
 }
+
+/** Inheriting a method makes the cited paper's correctness a precondition of yours. */
+export const isLoadBearing = (stance: Stance) =>
+  stance === "inherits" || stance === "extends";
+
+export const STANCE_VERB: Record<Stance, string> = {
+  inherits: "adopts",
+  extends: "builds on",
+  contests: "argues with",
+  compares: "measures against",
+  background: "mentions",
+};
 
 /** Verified by arithmetic: the number was found where it should be. */
 export const isSupported = (status: ClaimStatus) =>

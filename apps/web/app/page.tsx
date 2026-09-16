@@ -1,53 +1,33 @@
 "use client";
 
 import { motion } from "motion/react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
-import type { IndexEntry } from "@/lib/dossier";
-import type { StoneDatum } from "@/components/Arch";
+import type { IndexEntry, LibraryGraph as GraphData } from "@/lib/dossier";
+import { LibraryGraph } from "@/components/LibraryGraph";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
-const Arch = dynamic(() => import("@/components/Arch").then((m) => m.Arch), {
-  ssr: false,
-});
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Home() {
   const [index, setIndex] = useState<IndexEntry[]>([]);
+  const [graph, setGraph] = useState<GraphData | null>(null);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     fetch("/dossiers/index.json").then((r) => r.json()).then(setIndex).catch(() => {});
+    fetch("/dossiers/lineage.json").then((r) => r.json()).then(setGraph).catch(() => {});
   }, []);
 
   const totals = useMemo(() => {
-    const claims = index.reduce((n, p) => n + p.coverage.claims, 0);
-    const supported = index.reduce((n, p) => n + p.coverage.supported, 0);
-    return { claims, supported, papers: index.length };
+    const stands = index.reduce(
+      (n, p) => n + (p.lineage?.inherits ?? 0) + (p.lineage?.extends ?? 0),
+      0,
+    );
+    const bare = index.reduce((n, p) => n + (p.assumptions?.bare ?? 0), 0);
+    return { stands, bare, papers: index.length };
   }, [index]);
-
-  // The hero arch is built from the library's real coverage, not from decoration:
-  // one stone per traced claim, one gap per claim nothing could be found for.
-  const stones = useMemo<StoneDatum[]>(() => {
-    if (!totals.claims) return [];
-    const scale = Math.min(1, 15 / totals.claims);
-    const solid = Math.max(1, Math.round(totals.supported * scale));
-    const hollow = Math.max(0, Math.round((totals.claims - totals.supported) * scale));
-    const ordered: StoneDatum[] = [];
-    const push = (kind: StoneDatum["kind"], n: number) => {
-      for (let i = 0; i < n; i += 1) {
-        const stone = { kind, label: "", detail: "", claimIndex: -1 };
-        ordered.length % 2 === 0 ? ordered.push(stone) : ordered.unshift(stone);
-      }
-    };
-    push("keystone", Math.max(1, Math.round(solid / 3)));
-    push("supported", solid - Math.max(1, Math.round(solid / 3)));
-    push("missing", hollow);
-    return ordered;
-  }, [totals]);
 
   const filtered = index.filter((p) =>
     `${p.title} ${p.id}`.toLowerCase().includes(query.toLowerCase()),
@@ -68,26 +48,27 @@ export default function Home() {
         </span>
       </header>
 
-      <section className="grid items-center gap-8 pt-10 lg:grid-cols-[1fr_minmax(0,26rem)]">
+      <section className="pt-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE }}
+          className="max-w-3xl"
         >
-          <h1 className="pressed max-w-xl text-[2.9rem] leading-[1.08] tracking-[-0.02em]">
-            Which claim is holding this paper up?
+          <h1 className="pressed text-[2.9rem] leading-[1.08] tracking-[-0.02em]">
+            What is this paper standing on?
           </h1>
 
-          <p className="mt-5 max-w-lg text-[1.05rem] leading-relaxed text-ink-soft">
-            Every paper makes a handful of numbers do the heavy lifting. Keystone finds
-            them, traces each one back to the table it rests on, and tells you plainly
-            which ones it could not find evidence for.
+          <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft">
+            No paper stands by itself. Each one adopts a method from somebody, argues
+            with somebody else, and takes a handful of things on faith without saying
+            so. Keystone reads all three out of the paper&rsquo;s own sentences.
           </p>
 
-          <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-ink-faint">
-            No summaries, no paraphrase. Every trace is arithmetic over the paper&rsquo;s own
-            LaTeX source, and every one of them lands on the pixels in the PDF so you can
-            check it yourself in a second.
+          <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-ink-faint">
+            Not a summary and not a guess. Every relationship below is quoted from the
+            LaTeX, shown with the words that placed it, and pinned to the pixels on the
+            page where the paper admits it.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-6">
@@ -97,25 +78,19 @@ export default function Home() {
             >
               Open a paper &rarr;
             </Link>
-            {totals.claims > 0 ? (
+            {totals.papers > 0 ? (
               <p className="numeral text-[0.82rem] text-ink-faint">
-                {totals.supported}/{totals.claims} headline numbers traced across{" "}
+                {totals.stands} dependencies and {totals.bare} bare assumptions across{" "}
                 {totals.papers} papers
               </p>
             ) : null}
           </div>
         </motion.div>
 
-        <div className="h-[19rem] lg:h-[23rem]">
-          {stones.length > 0 ? (
-            <Arch
-              stones={stones}
-              collapsed={false}
-              selected={null}
-              onHover={() => {}}
-              onSelectStone={() => {}}
-            />
-          ) : null}
+        {/* The library, drawn as what it is: a chain of papers leaning on each other.
+            Every edge came out of a sentence, and hovering one shows the sentence. */}
+        <div className="mt-9">
+          {graph ? <LibraryGraph data={graph} /> : <div className="h-[22rem]" />}
         </div>
       </section>
 
@@ -123,18 +98,18 @@ export default function Home() {
         {[
           {
             n: "i",
-            title: "Read the source, not the picture",
-            body: "Tables, equations and citation keys come from the paper's LaTeX, so a number is what the author wrote rather than a guess at a rendered glyph.",
+            title: "A citation is not a neutral pointer",
+            body: "\u201cFollowing Ba et al. we normalise each layer\u201d and \u201cunlike Ba et al., we normalise across the batch\u201d are opposite statements about the same paper. The difference is written down, so it does not have to be inferred.",
           },
           {
             n: "ii",
-            title: "Trace every headline number",
-            body: "Each figure in the abstract, introduction and conclusion is matched against every table cell — at the precision it was written to, so a rounded report is not a wrong one.",
+            title: "Assumptions are announced, then forgotten",
+            body: "\u201cWe hypothesize\u201d, \u201cfor simplicity\u201d, \u201cit is well known that\u201d. Each one is quoted verbatim next to what the paper offers for it in the same sentence \u2014 a citation, its own evidence, or nothing at all.",
           },
           {
             n: "iii",
-            title: "Say what could not be checked",
-            body: "Coverage is stated out loud. Silence is not a clean bill of health, and a tool that never admits a gap is not worth trusting about the rest.",
+            title: "Every line is checkable in a second",
+            body: "The words that placed a reading are shown beside it, and a click puts you on the page where the paper says it. A reading you cannot argue with is just an assertion in a nicer font.",
           },
         ].map((step, i) => (
           <motion.div
@@ -183,15 +158,11 @@ export default function Home() {
                     {paper.title}
                   </span>
                   <span className="mt-0.5 block text-[0.8rem] text-ink-faint">
-                    {paper.keystone
-                      ? `rests on ${paper.keystone.table}`
-                      : paper.coverage.claims === 0
-                        ? describe(paper.density)
-                        : "no single load-bearing table"}
+                    {describe(paper)}
                   </span>
                 </span>
 
-                <CoveragePips coverage={paper.coverage} density={paper.density} />
+                <LineagePips paper={paper} />
               </Link>
             </motion.li>
           ))}
@@ -206,77 +177,68 @@ export default function Home() {
 
       <footer className="mt-20 border-t border-paper-edge pt-6 text-[0.82rem] leading-relaxed text-ink-faint">
         <p className="max-w-2xl">
-          Keystone checks what a paper says against itself. It does not judge whether the
-          idea is good, and finding nothing is not a clean bill of health — the coverage
-          figure on each paper says how much could be checked at all. Analysis currently
-          covers arXiv papers that ship LaTeX source; roughly one in ten does not.
+          Keystone reports what a paper says about other papers and about its own
+          assumptions, in the paper&rsquo;s own words. It does not judge whether the
+          idea is good, and a citation it says nothing about is one where the prose
+          made nothing checkable &mdash; not one that does not matter. Analysis covers
+          arXiv papers that ship LaTeX source; roughly one in ten does not.
         </p>
       </footer>
     </main>
   );
 }
 
-/**
- * What a paper with no headline numbers has instead. An em dash in this row told the
- * reader we found nothing; these counts tell them what is waiting inside.
- */
-function describe(density: IndexEntry["density"]): string {
-  if (!density) return "argues in prose \u2014 no numbers up front";
+/** A one-line account of what the paper leans on, for the library row. */
+function describe(paper: IndexEntry): string {
+  const stands = (paper.lineage?.inherits ?? 0) + (paper.lineage?.extends ?? 0);
   const parts = [
-    density.numbers > 0 ? `${density.numbers} numbers` : null,
-    density.tables > 0 ? `${density.tables} tables` : null,
-    density.equations > 0 ? `${density.equations} equations` : null,
-    density.references > 0 ? `${density.references} references` : null,
+    stands > 0 ? `stands on ${stands}` : null,
+    paper.lineage?.contests ? `argues with ${paper.lineage.contests}` : null,
+    paper.assumptions?.bare ? `${paper.assumptions.bare} bare assumptions` : null,
   ].filter(Boolean);
-  return parts.length > 0 ? `${parts.join(" \u00b7 ")} indexed` : "nothing to index";
+  if (parts.length > 0) return parts.join(" \u00b7 ");
+  const density = paper.density;
+  if (!density) return "argues in prose";
+  return `${density.tables} tables \u00b7 ${density.references} references indexed`;
 }
 
-function CoveragePips({
-  coverage,
-  density,
-}: {
-  coverage: IndexEntry["coverage"];
-  density: IndexEntry["density"];
-}) {
-  if (coverage.claims === 0) {
-    const total = density
-      ? density.numbers + density.tables + density.equations + density.references
-      : 0;
-    return (
-      <span className="numeral shrink-0 text-[0.78rem] text-ink-faint">
-        {total > 0 ? `${total} items` : "\u2014"}
-      </span>
-    );
-  }
+/**
+ * Three marks per paper: what it takes, what it disputes, what it assumes without
+ * support. The coverage pips this replaced counted numbers, and four of nine papers
+ * state none, so a third of the library rendered as an em dash.
+ */
+function LineagePips({ paper }: { paper: IndexEntry }) {
+  const stands = (paper.lineage?.inherits ?? 0) + (paper.lineage?.extends ?? 0);
+  const marks: { n: number; tone: string; title: string }[] = [
+    { n: stands, tone: "var(--color-brass)", title: `stands on ${stands} works` },
+    {
+      n: paper.lineage?.contests ?? 0,
+      tone: "var(--color-missing)",
+      title: `argues with ${paper.lineage?.contests ?? 0} works`,
+    },
+    {
+      n: paper.assumptions?.bare ?? 0,
+      tone: "var(--color-ink-faint)",
+      title: `${paper.assumptions?.bare ?? 0} assumptions with nothing offered`,
+    },
+  ];
+
   return (
-    <span className="flex shrink-0 items-center gap-2">
-      <span className="flex gap-[2px]">
-        {Array.from({ length: Math.min(coverage.claims, 12) }, (_, i) => {
-          const verified = i < coverage.supported;
-          const declared =
-            !verified && i < coverage.supported + (coverage.declared ?? 0);
-          return (
-            <span
-              key={i}
-              className="h-3 w-[5px] rounded-[1px]"
-              style={{
-                background: verified
-                  ? "var(--color-supported)"
-                  : declared
-                    ? "var(--color-ink-faint)"
-                    : "transparent",
-                border: verified || declared
-                  ? "1px solid transparent"
-                  : "1px dashed var(--color-missing)",
-                opacity: declared ? 0.5 : 1,
-              }}
-            />
-          );
-        })}
-      </span>
-      <span className="numeral text-[0.78rem] text-ink-soft">
-        {coverage.supported}/{coverage.claims}
-      </span>
+    <span className="flex shrink-0 items-center gap-2.5">
+      {marks.map((mark, i) => (
+        <span key={i} className="flex items-center gap-1" title={mark.title}>
+          <span
+            className="h-1.5 w-1.5 rounded-full"
+            style={{ background: mark.tone, opacity: mark.n > 0 ? 1 : 0.25 }}
+          />
+          <span
+            className="numeral text-[0.78rem]"
+            style={{ color: mark.n > 0 ? "var(--color-ink-soft)" : "var(--color-ink-faint)" }}
+          >
+            {mark.n}
+          </span>
+        </span>
+      ))}
     </span>
   );
 }

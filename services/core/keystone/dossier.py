@@ -27,6 +27,8 @@ from keystone.ingest.latex import label_kinds, source_sentences
 from keystone.ingest.pdf import Document
 from keystone.ingest.sections import extract_sections
 from keystone.ingest.tables import build_tables
+from keystone.lineage import assumptions as assumption_layer
+from keystone.lineage import graph as lineage_layer
 
 
 def _anchor_json(anchor: Anchor | None, pages: dict[int, tuple[float, float]]) -> dict | None:
@@ -92,6 +94,9 @@ class Dossier:
     macros: dict = None  # type: ignore[assignment]
     section_counts: tuple = ()
     table_anchors: dict[int, Anchor | None] = None  # type: ignore[assignment]
+    lineage: lineage_layer.Lineage | None = None
+    assumptions: tuple = ()
+    assumption_anchors: tuple = ()
 
     def to_dict(self) -> dict[str, Any]:
         keystone = self.coverage.keystone
@@ -102,6 +107,7 @@ class Dossier:
         # silently drop every number rather than yielding them unanchored.
         number_anchors = self.number_anchors or ((None,) * len(self.numbers))
         evidence_anchors = self.evidence_anchors or ((None,) * len(self.coverage.claims))
+        assumption_anchors = self.assumption_anchors or ((None,) * len(self.assumptions))
         return {
             "id": self.paper.id,
             "title": self.paper.title,
@@ -196,6 +202,31 @@ class Dossier:
                 for section, counts in self.section_counts
             ],
             "findings": [f.to_dict() for f in self.findings],
+            # What this paper says about the papers it cites, and what it takes on
+            # faith. The numeric audit could only ever report an absence of errors;
+            # these say something true about a correct paper.
+            "lineage": {
+                "tally": self.lineage.tally() if self.lineage else {},
+                "foundation": (
+                    self.lineage.foundation.to_dict(lambda a: _anchor_json(a, pages))
+                    if self.lineage and self.lineage.foundation
+                    else None
+                ),
+                "edges": [
+                    edge.to_dict(lambda a: _anchor_json(a, pages))
+                    for edge in (self.lineage.edges if self.lineage else ())
+                ],
+            },
+            "assumptions": [
+                {
+                    **assumption.to_dict(),
+                    "anchor": _anchor_json(anchor, pages),
+                }
+                for assumption, anchor in zip(
+                    self.assumptions, assumption_anchors, strict=True
+                )
+            ],
+            "assumptionTally": assumption_layer.tally(list(self.assumptions)),
         }
 
 
@@ -234,6 +265,7 @@ def build(
     title: str = "",
     pdf_path: Path | None = None,
     check_baselines: bool = False,
+    corpus_titles: dict[str, str] | None = None,
 ) -> Dossier:
     """Ingest a paper and produce everything the reader sees. No model in the loop."""
     document, project = load_project(arxiv_id, cache_dir)
@@ -277,7 +309,11 @@ def build(
     )
     findings = tuple(run(paper)) + tuple(mismatch_findings(coverage))
 
+    assumptions = tuple(assumption_layer.extract(document.text, sections, kinds))
+
     claim_anchors: tuple[Anchor | None, ...] = ()
+    assumption_anchors: tuple[Anchor | None, ...] = ()
+    index: DocIndex | None = None
     evidence_anchors: tuple[Anchor | None, ...] = ()
     table_anchors: dict[int, Anchor | None] = {}
     number_anchors: tuple = ()
@@ -304,6 +340,22 @@ def build(
             table.ordinal: index.locate(table.caption).anchor if table.caption else None
             for table in tables
         }
+        assumption_anchors = tuple(
+            index.locate(a.anchor_text).anchor if a.anchor_text else None
+            for a in assumptions
+        )
+
+    # Built after the PDF is open so the citing sentences can be anchored, but it does
+    # not require one: without a PDF the edges are still correct, they just cannot be
+    # pointed at on a page.
+    lineage = lineage_layer.build(
+        document.text,
+        sections,
+        references,
+        index=index,
+        corpus=frozenset(corpus_titles or {}),
+        corpus_titles=corpus_titles,
+    )
 
     baselines: list = []
     if check_baselines:
@@ -329,6 +381,9 @@ def build(
         macros=document.macros,
         section_counts=_section_counts(sections),
         table_anchors=table_anchors,
+        lineage=lineage,
+        assumptions=assumptions,
+        assumption_anchors=assumption_anchors,
     )
 
 

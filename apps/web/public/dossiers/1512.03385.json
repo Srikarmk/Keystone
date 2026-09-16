@@ -236,7 +236,7 @@
     {
       "value": "3.6",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "Our 34-layer baseline has 3.6 billion FLOPs (multiply-adds), which is only 18% of VGG-19 (19.6 billion FLOPs).",
       "status": "exact",
       "table": "Table 2",
@@ -272,7 +272,7 @@
     {
       "value": "18%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "Our 34-layer baseline has 3.6 billion FLOPs (multiply-adds), which is only 18% of VGG-19 (19.6 billion FLOPs).",
       "status": "declared_table",
       "table": null,
@@ -308,7 +308,7 @@
     {
       "value": "19.6",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "Our 34-layer baseline has 3.6 billion FLOPs (multiply-adds), which is only 18% of VGG-19 (19.6 billion FLOPs).",
       "status": "untraced",
       "table": null,
@@ -344,7 +344,7 @@
     {
       "value": "0.1",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "The learning rate starts from 0.1 and is divided by 10 when the error plateaus, and the models are trained for up to iterations.",
       "status": "declared_figure",
       "table": null,
@@ -355,7 +355,7 @@
     {
       "value": "0.0001",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "We use a weight decay of 0.0001 and a momentum of 0.9.",
       "status": "citation",
       "table": null,
@@ -385,7 +385,7 @@
     {
       "value": "0.9",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "We use a weight decay of 0.0001 and a momentum of 0.9.",
       "status": "citation",
       "table": null,
@@ -5894,35 +5894,35 @@
       "citations": 26
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Deep Residual Learning",
       "chars": 0,
       "numbers": 0,
       "citations": 0
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Residual Learning",
       "chars": 1886,
       "numbers": 0,
       "citations": 1
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Identity Mapping by Shortcuts",
       "chars": 2320,
       "numbers": 0,
       "citations": 1
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Network Architectures",
       "chars": 2882,
       "numbers": 12,
       "citations": 2
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Implementation",
       "chars": 992,
       "numbers": 8,
@@ -5957,5 +5957,496 @@
       "citations": 4
     }
   ],
-  "findings": []
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 5,
+      "extends": 1,
+      "contests": 0,
+      "compares": 2,
+      "background": 40,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "Ioffe2015",
+      "stance": "inherits",
+      "cue": "We adopt",
+      "sentence": "We adopt batch normalization (BN) right after each convolution and before activation, following .",
+      "section": "Implementation",
+      "sectionKind": "method",
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "authors": "S. Ioffe and C. Szegedy",
+      "year": 2015,
+      "arxivId": "1502.03167",
+      "inCorpus": true,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 412.9013366699219,
+            "y0": 326.6595458984375,
+            "x1": 545.114990234375,
+            "y1": 336.6221618652344
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 338.6145324707031,
+            "x1": 419.755615234375,
+            "y1": 348.5771484375
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Everingham2010",
+        "stance": "compares",
+        "cue": "baseline",
+        "sentence": "Table and show the object detection baseline results on PASCAL VOC 2007 and 2012 and COCO .",
+        "section": "Object Detection on PASCAL and MS COCO",
+        "sectionKind": "experiments",
+        "title": "The Pascal Visual Object Classes (VOC) Challenge",
+        "authors": "M. Everingham, L. Van Gool, C. K. Williams, J. Winn, and A. Zisserman",
+        "year": 2010,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 466.7491760253906,
+              "y0": 535.9763793945312,
+              "x1": 545.114990234375,
+              "y1": 545.93896484375
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 547.931396484375,
+              "x1": 545.1151733398438,
+              "y1": 557.8939819335938
+            }
+          ]
+        }
+      },
+      {
+        "key": "He2015",
+        "stance": "inherits",
+        "cue": "as in",
+        "sentence": "We initialize the weights as in and train all plain/residual nets from scratch.",
+        "section": "Implementation",
+        "sectionKind": "method",
+        "title": "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification",
+        "authors": "K. He, X. Zhang, S. Ren, and J. Sun",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 349.5093688964844,
+              "y0": 350.56951904296875,
+              "x1": 528.4674072265625,
+              "y1": 360.5321350097656
+            }
+          ]
+        }
+      },
+      {
+        "key": "Ioffe2015",
+        "stance": "inherits",
+        "cue": "We adopt",
+        "sentence": "We adopt batch normalization (BN) right after each convolution and before activation, following .",
+        "section": "Implementation",
+        "sectionKind": "method",
+        "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+        "authors": "S. Ioffe and C. Szegedy",
+        "year": 2015,
+        "arxivId": "1502.03167",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 412.9013366699219,
+              "y0": 326.6595458984375,
+              "x1": 545.114990234375,
+              "y1": 336.6221618652344
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 338.6145324707031,
+              "x1": 419.755615234375,
+              "y1": 348.5771484375
+            }
+          ]
+        }
+      },
+      {
+        "key": "Krizhevsky2012",
+        "stance": "inherits",
+        "cue": "we adopt",
+        "sentence": "In testing, for comparison studies we adopt the standard 10-crop testing .",
+        "section": "Implementation",
+        "sectionKind": "method",
+        "title": "Imagenet classification with deep convolutional neural networks",
+        "authors": "A. Krizhevsky, I. Sutskever, and G. Hinton",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 320.8169860839844,
+              "y0": 422.3004455566406,
+              "x1": 545.1148681640625,
+              "y1": 432.2630615234375
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 434.2564392089844,
+              "x1": 369.82305908203125,
+              "y1": 444.21905517578125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Lee2014",
+        "stance": "inherits",
+        "cue": "We follow",
+        "sentence": "We follow the simple data augmentation in for training: 4 pixels are padded on each side, and a 32 32 crop is randomly sampled from the padded image or its horizontal flip.",
+        "section": "CIFAR-10 and Analysis",
+        "sectionKind": "experiments",
+        "title": "Deeply-supervised nets",
+        "authors": "C.-Y. Lee, S. Xie, P. Gallagher, Z. Zhang, and Z. Tu",
+        "year": 2014,
+        "arxivId": "1409.5185",
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 335.16326904296875,
+              "y0": 425.060302734375,
+              "x1": 545.1133422851562,
+              "y1": 435.0229187011719
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 437.01629638671875,
+              "x1": 420.7020568847656,
+              "y1": 446.9789123535156
+            }
+          ]
+        }
+      },
+      {
+        "key": "Lin2014",
+        "stance": "compares",
+        "cue": "baseline",
+        "sentence": "Table and show the object detection baseline results on PASCAL VOC 2007 and 2012 and COCO .",
+        "section": "Object Detection on PASCAL and MS COCO",
+        "sectionKind": "experiments",
+        "title": "Microsoft COCO: Common objects in context",
+        "authors": "T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Doll\\'ar, and C. L. Zitnick",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 466.7491760253906,
+              "y0": 535.9763793945312,
+              "x1": 545.114990234375,
+              "y1": 545.93896484375
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 547.931396484375,
+              "x1": 545.1151733398438,
+              "y1": 557.8939819335938
+            }
+          ]
+        }
+      },
+      {
+        "key": "Ren2015",
+        "stance": "inherits",
+        "cue": "We adopt",
+        "sentence": "We adopt Faster R-CNN as the detection method.",
+        "section": "Object Detection on PASCAL and MS COCO",
+        "sectionKind": "experiments",
+        "title": "Faster R-CNN: Towards real-time object detection with region proposal networks",
+        "authors": "S. Ren, K. He, R. Girshick, and J. Sun",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 507.8439636230469,
+              "y0": 559.8873291015625,
+              "x1": 545.1140747070312,
+              "y1": 569.8499145507812
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 571.8423461914062,
+              "x1": 370.5404357910156,
+              "y1": 581.804931640625
+            }
+          ]
+        }
+      },
+      {
+        "key": "Simonyan2015",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "To provide instances for discussion, we describe two models for ImageNet as follows. Network. Our plain baselines (Fig. , middle) are mainly inspired by the philosophy of VGG nets (Fig. , left).",
+        "section": "Network Architectures",
+        "sectionKind": "method",
+        "title": "Very deep convolutional networks for large-scale image recognition",
+        "authors": "K. Simonyan and A. Zisserman",
+        "year": 2015,
+        "arxivId": "1409.1556",
+        "inCorpus": true,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We hypothesize that it is easier to optimize the residual mapping than to optimize the original, unreferenced mapping.",
+      "anchorText": "We hypothesize that it is easier to optimize the residual mapping than to optimize the original, unreferenced mapping.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 198.91644287109375,
+            "y0": 291.19354248046875,
+            "x1": 286.3581237792969,
+            "y1": 301.1561584472656
+          },
+          {
+            "x0": 50.1119384765625,
+            "y0": 303.1485290527344,
+            "x1": 286.3649597167969,
+            "y1": 313.11114501953125
+          },
+          {
+            "x0": 50.1119384765625,
+            "y0": 315.1045227050781,
+            "x1": 195.17730712890625,
+            "y1": 325.067138671875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "This strong evidence shows that the residual learning principle is generic, and we expect that it is applicable in other vision and non-vision problems.",
+      "anchorText": "This strong evidence shows that the residual learning principle is generic, and we expect that it is applicable in other vision and non-vision problems.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 418.2312927246094,
+            "y0": 146.13844299316406,
+            "x1": 545.1148681640625,
+            "y1": 156.10104370117188
+          },
+          {
+            "x0": 308.8619384765625,
+            "y0": 158.0934600830078,
+            "x1": 545.1149291992188,
+            "y1": 168.05606079101562
+          },
+          {
+            "x0": 308.8619384765625,
+            "y0": 170.04847717285156,
+            "x1": 531.0775756835938,
+            "y1": 180.01107788085938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "See ., then it is equivalent to hypothesize that they can asymptotically approximate the residual functions, , (assuming that the input and output are of the same dimensions).",
+      "anchorText": "., then it is equivalent to hypothesize that they can asymptotically approximate the residual functions, ,",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "assuming that",
+      "section": "Residual Learning",
+      "sectionKind": "method",
+      "cites": [
+        "Montufar2014"
+      ],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "We also note that although the above notations are about fully-connected layers for simplicity, they are applicable to convolutional layers.",
+      "anchorText": "We also note that although the above notations are about fully-connected layers for simplicity, they are applicable to convolutional layers.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "for simplicity",
+      "section": "Identity Mapping by Shortcuts",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8167724609375,
+            "y0": 395.14556884765625,
+            "x1": 545.1146240234375,
+            "y1": 405.1081848144531
+          },
+          {
+            "x0": 308.8617858886719,
+            "y0": 407.1005554199219,
+            "x1": 545.11474609375,
+            "y1": 417.06317138671875
+          },
+          {
+            "x0": 308.8617858886719,
+            "y0": 419.0555419921875,
+            "x1": 392.4379577636719,
+            "y1": 429.0181579589844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We conjecture that the deep plain nets may have exponentially low convergence rates, which impact the reducing of the training error .",
+      "anchorText": "We conjecture that the deep plain nets may have exponentially low convergence rates, which impact the reducing of the training error",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We conjecture",
+      "section": "ImageNet Classification",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 308.8620300292969,
+            "y0": 445.3624572753906,
+            "x1": 434.9416809082031,
+            "y1": 455.3250732421875
+          },
+          {
+            "x0": 114.36083221435547,
+            "y0": 691.4894409179688,
+            "x1": 286.3651428222656,
+            "y1": 701.4520263671875
+          },
+          {
+            "x0": 50.112030029296875,
+            "y0": 703.4444580078125,
+            "x1": 286.3651123046875,
+            "y1": 713.4070434570312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "C is marginally better than B, and we attribute this to the extra parameters introduced by many (thirteen) projection shortcuts.",
+      "anchorText": "C is marginally better than B, and we attribute this to the extra parameters introduced by many (thirteen) projection shortcuts.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we attribute this to",
+      "section": "ImageNet Classification",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 441.215087890625,
+            "y0": 325.7974548339844,
+            "x1": 545.1151123046875,
+            "y1": 335.76007080078125
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 337.75244140625,
+            "x1": 545.114990234375,
+            "y1": 347.7150573730469
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 349.7074279785156,
+            "x1": 468.8313293457031,
+            "y1": 359.6700439453125
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 6,
+    "cited": 1,
+    "shown": 0,
+    "bare": 5
+  }
 }

@@ -9,6 +9,7 @@ the section a sentence sits in has to be known before anything else can be said.
 from __future__ import annotations
 
 import re
+from dataclasses import replace
 
 from keystone.graph.models import Section, SectionKind
 from keystone.ingest.latex import (
@@ -104,7 +105,55 @@ def extract_sections(latex: str) -> tuple[Section, ...]:
             )
         )
 
-    return tuple(sections)
+    return _infer_method(tuple(sections))
+
+
+#: Sections that mark the end of a paper's own exposition. Everything unclassified
+#: before the first of these, and after the framing sections, is the method.
+_AFTER_METHOD = frozenset({
+    SectionKind.EXPERIMENTS,
+    SectionKind.RESULTS,
+    SectionKind.DISCUSSION,
+    SectionKind.LIMITATIONS,
+    SectionKind.CONCLUSION,
+    SectionKind.APPENDIX,
+})
+
+_BEFORE_METHOD = frozenset({
+    SectionKind.ABSTRACT,
+    SectionKind.INTRODUCTION,
+    SectionKind.RELATED,
+})
+
+
+def _infer_method(sections: tuple[Section, ...]) -> tuple[Section, ...]:
+    """Type the method section by where it sits when its title does not say.
+
+    Papers name this section after the thing it introduces — "Deep Residual
+    Learning", "Layer Normalization", "BERT" — none of which matches a keyword, so it
+    fell through to OTHER. That cost more than a label: where a paper admits a
+    dependency decides what the dependency is, and an inheritance stated in the method
+    is a design decision where the same one in the experiments is a protocol detail.
+
+    Position settles it. An unclassified section that comes after the framing and
+    before the first experiment is the method, in the order every ML paper uses.
+    """
+    first_after = next(
+        (i for i, s in enumerate(sections) if s.kind in _AFTER_METHOD), len(sections)
+    )
+    last_before = max(
+        (i for i, s in enumerate(sections[:first_after]) if s.kind in _BEFORE_METHOD),
+        default=-1,
+    )
+    if last_before < 0:
+        return sections
+
+    return tuple(
+        replace(section, kind=SectionKind.METHOD)
+        if last_before < i < first_after and section.kind is SectionKind.OTHER
+        else section
+        for i, section in enumerate(sections)
+    )
 
 
 def sentences_in(latex: str, section: Section) -> list[str]:

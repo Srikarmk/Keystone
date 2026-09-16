@@ -1,6 +1,6 @@
 {
   "id": "1502.03167",
-  "title": "Batch Normalization",
+  "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
   "keystone": {
     "table": "Table 7",
     "caption": "Batch-Normalized Inception comparison with previous state of the art on the provided validation set comprising 50000 images. *BN-Inception ensemble has reached 4.82% top-5 error on the 100000 images of the test set of the ImageNet as reported by the test server.",
@@ -2828,42 +2828,42 @@
       "citations": 8
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Towards Reducing Internal Covariate Shift",
       "chars": 3988,
       "numbers": 0,
       "citations": 7
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Normalization via Mini-Batch Statistics",
       "chars": 5069,
       "numbers": 4,
       "citations": 1
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Training and Inference with Batch-Normalized Networks",
       "chars": 1867,
       "numbers": 2,
       "citations": 1
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Batch-Normalized Convolutional Networks",
       "chars": 1983,
       "numbers": 0,
       "citations": 1
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Batch Normalization enables higher learning rates",
       "chars": 2030,
       "numbers": 2,
       "citations": 1
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Batch Normalization regularizes the model",
       "chars": 464,
       "numbers": 0,
@@ -2919,5 +2919,410 @@
       "citations": 3
     }
   ],
-  "findings": []
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 1,
+      "compares": 0,
+      "background": 21,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "imagenet",
+      "stance": "inherits",
+      "cue": "We applied",
+      "sentence": "We applied Batch Normalization to a new variant of the Inception network , trained on the ImageNet classification task .",
+      "section": "ImageNet classification",
+      "sectionKind": "experiments",
+      "title": "ImageNet Large Scale Visual Recognition Challenge, 2014",
+      "authors": "Russakovsky, Olga, Deng, Jia, Su, Hao, Krause, Jonathan, Satheesh, Sanjeev, Ma, Sean, Huang, Zhiheng, Karpathy, Andrej, Khosla, Aditya, Bernstein, Michael, Berg, Alexander C., and Fei-Fei, Li",
+      "year": 2014,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99990844726562,
+            "y0": 577.9895629882812,
+            "x1": 301.06256103515625,
+            "y1": 591.2797241210938
+          },
+          {
+            "x0": 71.99990844726562,
+            "y0": 589.9895629882812,
+            "x1": 145.9812469482422,
+            "y1": 603.2797241210938
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "dropout",
+        "stance": "contests",
+        "cue": "Whereas",
+        "sentence": "Whereas Dropout is typically used to reduce overfitting, in a batch-normalized network we found that it can be either removed or reduced in strength.",
+        "section": "Batch Normalization regularizes the model",
+        "sectionKind": "method",
+        "title": "Dropout: A simple way to prevent neural networks from overfitting",
+        "authors": "Srivastava, Nitish, Hinton, Geoffrey, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 408.9602355957031,
+              "y0": 561.1895141601562,
+              "x1": 540.1983642578125,
+              "y1": 574.4796752929688
+            },
+            {
+              "x0": 311.04010009765625,
+              "y0": 573.1895141601562,
+              "x1": 540.0613403320312,
+              "y1": 586.4796752929688
+            },
+            {
+              "x0": 311.04010009765625,
+              "y0": 585.1895141601562,
+              "x1": 474.9307861328125,
+              "y1": 598.4796752929688
+            }
+          ]
+        }
+      },
+      {
+        "key": "imagenet",
+        "stance": "inherits",
+        "cue": "We applied",
+        "sentence": "We applied Batch Normalization to a new variant of the Inception network , trained on the ImageNet classification task .",
+        "section": "ImageNet classification",
+        "sectionKind": "experiments",
+        "title": "ImageNet Large Scale Visual Recognition Challenge, 2014",
+        "authors": "Russakovsky, Olga, Deng, Jia, Su, Hao, Krause, Jonathan, Satheesh, Sanjeev, Ma, Sean, Huang, Zhiheng, Karpathy, Andrej, Khosla, Aditya, Bernstein, Michael, Berg, Alexander C., and Fei-Fei, Li",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 71.99990844726562,
+              "y0": 577.9895629882812,
+              "x1": 301.06256103515625,
+              "y1": 591.2797241210938
+            },
+            {
+              "x0": 71.99990844726562,
+              "y0": 589.9895629882812,
+              "x1": 145.9812469482422,
+              "y1": 603.2797241210938
+            }
+          ]
+        }
+      },
+      {
+        "key": "inception",
+        "stance": "inherits",
+        "cue": "We applied",
+        "sentence": "We applied Batch Normalization to a new variant of the Inception network , trained on the ImageNet classification task .",
+        "section": "ImageNet classification",
+        "sectionKind": "experiments",
+        "title": "Going deeper with convolutions",
+        "authors": "Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet, Pierre, Reed, Scott, Anguelov, Dragomir, Erhan, Dumitru, Vanhoucke, Vincent, and Rabinovich, Andrew",
+        "year": 2014,
+        "arxivId": "1409.4842",
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 71.99990844726562,
+              "y0": 577.9895629882812,
+              "x1": 301.06256103515625,
+              "y1": 591.2797241210938
+            },
+            {
+              "x0": 71.99990844726562,
+              "y0": 589.9895629882812,
+              "x1": 145.9812469482422,
+              "y1": 603.2797241210938
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "By fixing the distribution of the layer inputs as the training progresses, we expect to improve the training speed.",
+      "anchorText": "as the training progresses, we expect to improve the training speed.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Towards Reducing Internal Covariate Shift",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 483.23956298828125,
+            "y0": 128.82952880859375,
+            "x1": 540.1808471679688,
+            "y1": 142.11968994140625
+          },
+          {
+            "x0": 311.03955078125,
+            "y0": 140.70965576171875,
+            "x1": 515.8507080078125,
+            "y1": 153.99981689453125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Since the normalization is applied to each activation independently, let us focus on a particular activation and omit for clarity.",
+      "anchorText": "Since the normalization is applied to each activation independently, let us focus on a particular activation",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "for clarity",
+      "section": "Normalization via Mini-Batch Statistics",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 468.36077880859375,
+            "y0": 316.6293029785156,
+            "x1": 540.198486328125,
+            "y1": 329.9194641113281
+          },
+          {
+            "x0": 311.0396423339844,
+            "y0": 328.5093994140625,
+            "x1": 540.0353393554688,
+            "y1": 341.799560546875
+          },
+          {
+            "x0": 311.0396423339844,
+            "y0": 340.5093994140625,
+            "x1": 432.90106201171875,
+            "y1": 353.799560546875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The distributions of values of any has the expected value of and the variance of , as long as the elements of each mini-batch are sampled from the same distribution, and if we neglect .",
+      "anchorText": ", as long as the elements of each mini-batch are sampled from the same distribution, and if we neglect",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Normalization via Mini-Batch Statistics",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 156.480712890625,
+            "y0": 143.10931396484375,
+            "x1": 301.0218811035156,
+            "y1": 156.39947509765625
+          },
+          {
+            "x0": 72.00065612792969,
+            "y0": 154.98944091796875,
+            "x1": 301.14141845703125,
+            "y1": 168.27960205078125
+          },
+          {
+            "x0": 72.00065612792969,
+            "y0": 166.98944091796875,
+            "x1": 128.170166015625,
+            "y1": 180.27960205078125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "These sub-network inputs all have fixed means and variances, and although the joint distribution of these normalized can change over the course of training, we expect that the introduction of normalized inputs accelerates the training of the sub-network and, consequently, the network as a whole.",
+      "anchorText": "can change over the course of training, we expect that the introduction of normalized inputs accelerates the training of the sub-network and, consequently, the network as a whole.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Normalization via Mini-Batch Statistics",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 256.4403991699219,
+            "y0": 251.949462890625,
+            "x1": 301.1836242675781,
+            "y1": 265.2396240234375
+          },
+          {
+            "x0": 72.00039672851562,
+            "y0": 263.949462890625,
+            "x1": 301.27850341796875,
+            "y1": 277.2396240234375
+          },
+          {
+            "x0": 72.00039672851562,
+            "y0": 275.949462890625,
+            "x1": 301.0640563964844,
+            "y1": 289.2396240234375
+          },
+          {
+            "x0": 72.00039672851562,
+            "y0": 287.8295593261719,
+            "x1": 294.8106384277344,
+            "y1": 301.1197204589844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Here, we focus on transforms that consist of an affine transformation followed by an element-wise nonlinearity: z = g(W u+ b) where and are learned parameters of the model, and is the nonlinearity such as sigmoid or ReLU.",
+      "anchorText": "Here, we focus on transforms that consist of an affine transformation followed by an element-wise nonlinearity:",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Batch-Normalized Convolutional Networks",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 415.19970703125,
+            "y0": 709.5092163085938,
+            "x1": 540.2752075195312,
+            "y1": 722.7993774414062
+          },
+          {
+            "x0": 303.4801330566406,
+            "y0": 739.3893432617188,
+            "x1": 308.4614562988281,
+            "y1": 752.6795043945312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "If we assume that and are Gaussian and uncorrelated, and that is a linear transformation for the given model parameters, then both and have unit covariances, and .",
+      "anchorText": "is a linear transformation for the given model parameters, then both",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "Batch Normalization enables higher learning rates",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 464.8797912597656,
+            "y0": 296.8291931152344,
+            "x1": 540.1974487304688,
+            "y1": 310.1193542480469
+          },
+          {
+            "x0": 311.039794921875,
+            "y0": 308.8291931152344,
+            "x1": 508.26165771484375,
+            "y1": 322.1193542480469
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Finally, we believe that further theoretical analysis of the algorithm would allow still more improvements and applications.",
+      "anchorText": "Finally, we believe that further theoretical analysis of the algorithm would allow still more improvements and applications.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 431.3996276855469,
+            "y0": 447.7899475097656,
+            "x1": 540.0775146484375,
+            "y1": 461.0801086425781
+          },
+          {
+            "x0": 311.0395812988281,
+            "y0": 459.7899475097656,
+            "x1": 539.88916015625,
+            "y1": 473.0801086425781
+          },
+          {
+            "x0": 311.03955078125,
+            "y0": 471.7899475097656,
+            "x1": 460.8903503417969,
+            "y1": 485.0801086425781
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 7,
+    "cited": 0,
+    "shown": 0,
+    "bare": 7
+  }
 }

@@ -1,6 +1,6 @@
 {
   "id": "1810.04805",
-  "title": "BERT: Pre-training of Deep Bidirectional Transformers",
+  "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
   "keystone": {
     "table": "Table 4",
     "caption": "Ablation over the pre-training tasks using the architecture. \"No NSP\" is trained without the next sentence prediction task. \"LTR & No NSP\" is trained as a left-to-right LM without the next sentence prediction, like OpenAI GPT. \"+ BiLSTM\" adds a randomly initialized BiLSTM on top of the \"LTR + No NSP\" model during fine-tuning.",
@@ -1225,7 +1225,7 @@
     {
       "value": "15%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "In all of our experiments, we mask 15% of all WordPiece tokens in each sequence at random.",
       "status": "untraced",
       "table": null,
@@ -1261,7 +1261,7 @@
     {
       "value": "15%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "The training data generator chooses 15% of the token positions at random for prediction.",
       "status": "untraced",
       "table": null,
@@ -1297,7 +1297,7 @@
     {
       "value": "80%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "If the -th token is chosen, we replace the -th token with (1) the token 80% of the time (2) a random token 10% of the time (3) the unchanged -th token 10% of the time.",
       "status": "untraced",
       "table": null,
@@ -1308,7 +1308,7 @@
     {
       "value": "10%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "If the -th token is chosen, we replace the -th token with (1) the token 80% of the time (2) a random token 10% of the time (3) the unchanged -th token 10% of the time.",
       "status": "untraced",
       "table": null,
@@ -1319,7 +1319,7 @@
     {
       "value": "10%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "If the -th token is chosen, we replace the -th token with (1) the token 80% of the time (2) a random token 10% of the time (3) the unchanged -th token 10% of the time.",
       "status": "untraced",
       "table": null,
@@ -1330,7 +1330,7 @@
     {
       "value": "50%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "Specifically, when choosing the sentences A and B for each pre-training example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext).",
       "status": "untraced",
       "table": null,
@@ -1384,7 +1384,7 @@
     {
       "value": "50%",
       "kind": "result",
-      "section": "other",
+      "section": "method",
       "sentence": "Specifically, when choosing the sentences A and B for each pre-training example, 50% of the time B is the actual next sentence that follows A (labeled as IsNext), and 50% of the time it is a random sentence from the corpus (labeled as NotNext).",
       "status": "untraced",
       "table": null,
@@ -1790,7 +1790,7 @@
     {
       "value": "1 hour",
       "kind": "configuration",
-      "section": "other",
+      "section": "method",
       "sentence": "All of the results in the paper can be replicated in at most 1 hour on a single Cloud TPU, or a few hours on a GPU, starting from the exact same pre-trained model. We describe the task-specific details in the corresponding subsections of Section .",
       "status": "configuration",
       "table": null,
@@ -5050,21 +5050,21 @@
       "citations": 4
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "BERT",
       "chars": 3334,
       "numbers": 9,
       "citations": 2
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Pre-training BERT",
       "chars": 3646,
       "numbers": 14,
       "citations": 8
     },
     {
-      "kind": "other",
+      "kind": "method",
       "title": "Fine-tuning BERT",
       "chars": 4835,
       "numbers": 10,
@@ -5141,5 +5141,907 @@
       "citations": 0
     }
   ],
-  "findings": []
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 1,
+      "contests": 4,
+      "compares": 6,
+      "background": 32,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "vaswani-etal:2017:_atten",
+      "stance": "inherits",
+      "cue": "based on",
+      "sentence": "There is minimal difference between the pre-trained architecture and the final downstream architecture. Model Architecture BERT's model architecture is a multi-layer bidirectional Transformer encoder based on the original implementation described in and released in the tensor2tensor library. Because the use of Transformers has become common and our implementation is almost identical to the original, we will omit an exhaustive background description of the model architecture and refer readers to as well as excellent guides such as \"The Annotated Transformer.\" In this work, we denote the number of layers (i.e., Transformer blocks) as , the hidden size as , and the number of self-attention heads as . We primarily report results on two model sizes: BERT (L=12, H=768, A=12, Total Parameters=110M) and BERT (L=24, H=1024, A=16, Total Parameters=340M).",
+      "section": "BERT",
+      "sectionKind": "method",
+      "title": "Attention is all you need",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017",
+      "year": 2017,
+      "arxivId": "1706.03762",
+      "inCorpus": true,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 340.6307373046875,
+            "x1": 525.5450439453125,
+            "y1": 351.5398254394531
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 354.17974853515625,
+            "x1": 493.625,
+            "y1": 365.0888366699219
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 377.2501525878906,
+            "x1": 402.19598388671875,
+            "y1": 388.1592712402344
+          },
+          {
+            "x0": 413.10400390625,
+            "y0": 377.3497619628906,
+            "x1": 525.5440673828125,
+            "y1": 388.25885009765625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 390.8997497558594,
+            "x1": 525.5449829101562,
+            "y1": 401.808837890625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 404.4487609863281,
+            "x1": 525.5451049804688,
+            "y1": 415.35784912109375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 417.9977722167969,
+            "x1": 351.50146484375,
+            "y1": 428.9068603515625
+          },
+          {
+            "x0": 225.26197814941406,
+            "y0": 754.6927490234375,
+            "x1": 290.269287109375,
+            "y1": 765.601806640625
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "chelba-etal:2013:_one",
+        "stance": "contests",
+        "cue": "rather than",
+        "sentence": "It is critical to use a document-level corpus rather than a shuffled sentence-level corpus such as the Billion Word Benchmark in order to extract long contiguous sequences.",
+        "section": "Pre-training BERT",
+        "sectionKind": "method",
+        "title": "One billion word benchmark for measuring progress in statistical language modeling",
+        "authors": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson. 2013",
+        "year": 2013,
+        "arxivId": "1312.3005",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 246.4801788330078,
+              "y0": 401.5137634277344,
+              "x1": 290.26922607421875,
+              "y1": 412.4228515625
+            },
+            {
+              "x0": 72.00000762939453,
+              "y0": 415.0627746582031,
+              "x1": 290.2692565917969,
+              "y1": 425.97186279296875
+            },
+            {
+              "x0": 72.00000762939453,
+              "y0": 428.6117858886719,
+              "x1": 290.2692565917969,
+              "y1": 439.5208740234375
+            },
+            {
+              "x0": 72.00000762939453,
+              "y0": 442.1607971191406,
+              "x1": 149.1055450439453,
+              "y1": 453.06988525390625
+            }
+          ]
+        }
+      },
+      {
+        "key": "peters-etal:2018:_deep",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike recent language representation models , BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.",
+        "section": "Abstract",
+        "sectionKind": "abstract",
+        "title": "Deep contextualized word representations",
+        "authors": "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 136.77859497070312,
+              "y0": 305.59552001953125,
+              "x1": 273.2561950683594,
+              "y1": 315.5581359863281
+            },
+            {
+              "x0": 89.00794982910156,
+              "y0": 317.550537109375,
+              "x1": 273.2563171386719,
+              "y1": 327.5131530761719
+            },
+            {
+              "x0": 89.00794982910156,
+              "y0": 329.5055236816406,
+              "x1": 273.2561950683594,
+              "y1": 339.4681396484375
+            },
+            {
+              "x0": 89.00794982910156,
+              "y0": 341.4615173339844,
+              "x1": 231.8118896484375,
+              "y1": 351.42413330078125
+            }
+          ]
+        }
+      },
+      {
+        "key": "radford-etal:2018",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike recent language representation models , BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.",
+        "section": "Abstract",
+        "sectionKind": "abstract",
+        "title": "Improving language understanding with unsupervised learning",
+        "authors": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 136.77859497070312,
+              "y0": 305.59552001953125,
+              "x1": 273.2561950683594,
+              "y1": 315.5581359863281
+            },
+            {
+              "x0": 89.00794982910156,
+              "y0": 317.550537109375,
+              "x1": 273.2563171386719,
+              "y1": 327.5131530761719
+            },
+            {
+              "x0": 89.00794982910156,
+              "y0": 329.5055236816406,
+              "x1": 273.2561950683594,
+              "y1": 339.4681396484375
+            },
+            {
+              "x0": 89.00794982910156,
+              "y0": 341.4615173339844,
+              "x1": 231.8118896484375,
+              "y1": 351.42413330078125
+            }
+          ]
+        }
+      },
+      {
+        "key": "rajpurkar-etal:2016:_squad",
+        "stance": "compares",
+        "cue": "state of the art",
+        "sentence": "When integrating contextual word embeddings with existing task-specific architectures, ELMo advances the state of the art for several major NLP benchmarks including question answering , sentiment analysis , and named entity recognition . proposed learning contextual representations through a task to predict a single word from both left and right context using LSTMs.",
+        "section": "Unsupervised Feature-based Approaches",
+        "sectionKind": "related",
+        "title": "Squad: 100,000+ questions for machine comprehension of text",
+        "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.2760009765625,
+              "y0": 311.0610046386719,
+              "x1": 525.545166015625,
+              "y1": 321.9700927734375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 324.6100158691406,
+              "x1": 525.5451049804688,
+              "y1": 335.51910400390625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 338.1590270996094,
+              "x1": 525.5451049804688,
+              "y1": 349.068115234375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 351.7090148925781,
+              "x1": 359.98876953125,
+              "y1": 362.61810302734375
+            }
+          ]
+        }
+      },
+      {
+        "key": "slqa",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "The results compared to prior leaderboard entries and top published work are shown in Table , excluding systems that use BERT as one of their components.",
+        "section": "SQuAD v2.0",
+        "sectionKind": "experiments",
+        "title": "Multi-granularity hierarchical attention fusion networks for reading comprehension and question answering",
+        "authors": "Wei Wang, Ming Yan, and Chen Wu. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 318.18505859375,
+              "y0": 324.0477600097656,
+              "x1": 525.5451049804688,
+              "y1": 334.95684814453125
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 337.5977478027344,
+              "x1": 439.6798400878906,
+              "y1": 348.5068359375
+            }
+          ]
+        }
+      },
+      {
+        "key": "socher-etal:2013:_recur",
+        "stance": "compares",
+        "cue": "state of the art",
+        "sentence": "When integrating contextual word embeddings with existing task-specific architectures, ELMo advances the state of the art for several major NLP benchmarks including question answering , sentiment analysis , and named entity recognition . proposed learning contextual representations through a task to predict a single word from both left and right context using LSTMs.",
+        "section": "Unsupervised Feature-based Approaches",
+        "sectionKind": "related",
+        "title": "Recursive deep models for semantic compositionality over a sentiment treebank",
+        "authors": "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D Manning, Andrew Ng, and Christopher Potts. 2013",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.2760009765625,
+              "y0": 311.0610046386719,
+              "x1": 525.545166015625,
+              "y1": 321.9700927734375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 324.6100158691406,
+              "x1": 525.5451049804688,
+              "y1": 335.51910400390625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 338.1590270996094,
+              "x1": 525.5451049804688,
+              "y1": 349.068115234375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 351.7090148925781,
+              "x1": 359.98876953125,
+              "y1": 362.61810302734375
+            }
+          ]
+        }
+      },
+      {
+        "key": "taylor:1953:_cloze",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "BERT alleviates the previously mentioned unidirectionality constraint by using a \"masked language model\" (MLM) pre-training objective, inspired by the Cloze task .",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "title": "\u201cCloze procedure\u201d: A new tool for measuring readability",
+        "authors": "Wilson L Taylor. 1953",
+        "year": 1953,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.27593994140625,
+              "y0": 673.3976440429688,
+              "x1": 525.5450439453125,
+              "y1": 684.3067016601562
+            },
+            {
+              "x0": 307.27593994140625,
+              "y0": 686.9466552734375,
+              "x1": 525.5450439453125,
+              "y1": 697.855712890625
+            },
+            {
+              "x0": 307.27593994140625,
+              "y0": 700.4956665039062,
+              "x1": 525.5449829101562,
+              "y1": 711.4047241210938
+            },
+            {
+              "x0": 307.27593994140625,
+              "y0": 714.044677734375,
+              "x1": 423.1741943359375,
+              "y1": 724.9537353515625
+            }
+          ]
+        }
+      },
+      {
+        "key": "tjong-de:2003",
+        "stance": "compares",
+        "cue": "we compare",
+        "sentence": "In this section, we compare the two approaches by applying BERT to the CoNLL-2003 Named Entity Recognition (NER) task .",
+        "section": "Feature-based Approach with BERT",
+        "sectionKind": "results",
+        "title": "Introduction to the conll-2003 shared task: Language-independent named entity recognition",
+        "authors": "Erik F Tjong Kim Sang and Fien De Meulder. 2003",
+        "year": 2003,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.90899658203125,
+              "y0": 475.9779052734375,
+              "x1": 290.2691345214844,
+              "y1": 486.8869934082031
+            },
+            {
+              "x0": 72.0,
+              "y0": 489.52691650390625,
+              "x1": 290.269287109375,
+              "y1": 500.4360046386719
+            },
+            {
+              "x0": 72.0,
+              "y0": 503.075927734375,
+              "x1": 209.0074005126953,
+              "y1": 513.9850463867188
+            }
+          ]
+        }
+      },
+      {
+        "key": "unet",
+        "stance": "compares",
+        "cue": "compared to",
+        "sentence": "The results compared to prior leaderboard entries and top published work are shown in Table , excluding systems that use BERT as one of their components.",
+        "section": "SQuAD v2.0",
+        "sectionKind": "experiments",
+        "title": "U-net: Machine reading comprehension with unanswerable questions",
+        "authors": "Fu Sun, Linyang Li, Xipeng Qiu, and Yang Liu. 2018",
+        "year": 2018,
+        "arxivId": "1810.06638",
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 318.18505859375,
+              "y0": 324.0477600097656,
+              "x1": 525.5451049804688,
+              "y1": 334.95684814453125
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 337.5977478027344,
+              "x1": 439.6798400878906,
+              "y1": 348.5068359375
+            }
+          ]
+        }
+      },
+      {
+        "key": "vaswani-etal:2017:_atten",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "There is minimal difference between the pre-trained architecture and the final downstream architecture. Model Architecture BERT's model architecture is a multi-layer bidirectional Transformer encoder based on the original implementation described in and released in the tensor2tensor library. Because the use of Transformers has become common and our implementation is almost identical to the original, we will omit an exhaustive background description of the model architecture and refer readers to as well as excellent guides such as \"The Annotated Transformer.\" In this work, we denote the number of layers (i.e., Transformer blocks) as , the hidden size as , and the number of self-attention heads as . We primarily report results on two model sizes: BERT (L=12, H=768, A=12, Total Parameters=110M) and BERT (L=24, H=1024, A=16, Total Parameters=340M).",
+        "section": "BERT",
+        "sectionKind": "method",
+        "title": "Attention is all you need",
+        "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017",
+        "year": 2017,
+        "arxivId": "1706.03762",
+        "inCorpus": true,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.2760009765625,
+              "y0": 340.6307373046875,
+              "x1": 525.5450439453125,
+              "y1": 351.5398254394531
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 354.17974853515625,
+              "x1": 493.625,
+              "y1": 365.0888366699219
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 377.2501525878906,
+              "x1": 402.19598388671875,
+              "y1": 388.1592712402344
+            },
+            {
+              "x0": 413.10400390625,
+              "y0": 377.3497619628906,
+              "x1": 525.5440673828125,
+              "y1": 388.25885009765625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 390.8997497558594,
+              "x1": 525.5449829101562,
+              "y1": 401.808837890625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 404.4487609863281,
+              "x1": 525.5451049804688,
+              "y1": 415.35784912109375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 417.9977722167969,
+              "x1": 351.50146484375,
+              "y1": 428.9068603515625
+            },
+            {
+              "x0": 225.26197814941406,
+              "y0": 754.6927490234375,
+              "x1": 290.269287109375,
+              "y1": 765.601806640625
+            }
+          ]
+        }
+      },
+      {
+        "key": "vincent:2008",
+        "stance": "contests",
+        "cue": "In contrast to",
+        "sentence": "In contrast to denoising auto-encoders , we only predict the masked words rather than reconstructing the entire input.",
+        "section": "Pre-training BERT",
+        "sectionKind": "method",
+        "title": "Extracting and composing robust features with denoising autoencoders",
+        "authors": "Pascal Vincent, Hugo Larochelle, Yoshua Bengio, and Pierre-Antoine Manzagol. 2008",
+        "year": 2008,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 482.10504150390625,
+              "y0": 214.53475952148438,
+              "x1": 525.5450439453125,
+              "y1": 225.44386291503906
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 228.08474731445312,
+              "x1": 525.545166015625,
+              "y1": 238.9938507080078
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 241.63375854492188,
+              "x1": 416.96685791015625,
+              "y1": 252.54286193847656
+            }
+          ]
+        }
+      },
+      {
+        "key": "wang-etal:2018:_glue",
+        "stance": "compares",
+        "cue": "state-of-the-art",
+        "sentence": "At least partly due to this advantage, OpenAI GPT achieved previously state-of-the-art results on many sentence-level tasks from the GLUE benchmark .",
+        "section": "Unsupervised Fine-tuning Approaches",
+        "sectionKind": "related",
+        "title": "Glue: A multi-task benchmark and analysis platform for natural language understanding",
+        "authors": "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 466.7015380859375,
+              "y0": 714.0450439453125,
+              "x1": 525.5452270507812,
+              "y1": 724.9541015625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 727.5940551757812,
+              "x1": 525.545166015625,
+              "y1": 738.5031127929688
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 741.14306640625,
+              "x1": 490.9306335449219,
+              "y1": 752.0521240234375
+            }
+          ]
+        }
+      },
+      {
+        "key": "wu-etal:2016:_googl",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use WordPiece embeddings with a 30,000 token vocabulary.",
+        "section": "BERT",
+        "sectionKind": "method",
+        "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+        "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. 2016",
+        "year": 2016,
+        "arxivId": "1609.08144",
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 101.36731719970703,
+              "y0": 215.06674194335938,
+              "x1": 245.4546661376953,
+              "y1": 225.97584533691406
+            }
+          ]
+        }
+      },
+      {
+        "key": "zhu:2015",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For the pre-training corpus we use the BooksCorpus (800M words) and English Wikipedia (2,500M words).",
+        "section": "Pre-training BERT",
+        "sectionKind": "method",
+        "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+        "authors": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 159.1418914794922,
+              "y0": 347.3167419433594,
+              "x1": 290.269287109375,
+              "y1": 358.225830078125
+            },
+            {
+              "x0": 72.00000762939453,
+              "y0": 360.8657531738281,
+              "x1": 235.54922485351562,
+              "y1": 371.77484130859375
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "This step is presented in the left part of Figure . Task #1: Masked LM Intuitively, it is reasonable to believe that a deep bidirectional model is strictly more powerful than either a left-to-right model or the shallow concatenation of a left-to-right and a right-to-left model.",
+      "anchorText": ". Task #1: Masked LM Intuitively, it is reasonable to believe that a deep bidirectional model is strictly more powerful than either a left-to-right model or the shallow concatenation of a left-to-right and a right-to-left model.",
+      "kind": "conjectural",
+      "support": "shown",
+      "cue": "Intuitively",
+      "section": "Pre-training BERT",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "fig:bert_overall"
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 233.79287719726562,
+            "y0": 569.9899291992188,
+            "x1": 241.97470092773438,
+            "y1": 580.8989868164062
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 592.6453247070312,
+            "x1": 175.62551879882812,
+            "y1": 603.5543823242188
+          },
+          {
+            "x0": 186.53298950195312,
+            "y0": 592.7449340820312,
+            "x1": 290.2676086425781,
+            "y1": 603.6539916992188
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 606.2939453125,
+            "x1": 290.269287109375,
+            "y1": 617.2030029296875
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 619.8428955078125,
+            "x1": 290.2692565917969,
+            "y1": 630.751953125
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 633.3919067382812,
+            "x1": 290.2691955566406,
+            "y1": 644.3009643554688
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 646.94091796875,
+            "x1": 215.6728515625,
+            "y1": 657.8499755859375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For SQuAD it is intuitively clear that a LTR model will perform poorly at token predictions, since the token-level hidden states have no right-side context.",
+      "anchorText": "For SQuAD it is intuitively clear that a LTR model will perform poorly at token predictions, since the token-level hidden states have no right-side context.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "intuitively",
+      "section": "Effect of Pre-training Tasks",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.90899658203125,
+            "y0": 673.3978881835938,
+            "x1": 290.2691650390625,
+            "y1": 684.3069458007812
+          },
+          {
+            "x0": 72.0,
+            "y0": 686.9468994140625,
+            "x1": 290.2692565917969,
+            "y1": 697.85595703125
+          },
+          {
+            "x0": 72.0,
+            "y0": 700.495849609375,
+            "x1": 290.2692565917969,
+            "y1": 711.4049072265625
+          },
+          {
+            "x0": 72.0,
+            "y0": 714.0448608398438,
+            "x1": 128.67279052734375,
+            "y1": 724.9539184570312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "However, we believe that this is the first work to demonstrate convincingly that scaling to extreme model sizes also leads to large improvements on very small scale tasks, provided that the model has been sufficiently pre-trained. presented mixed results on the downstream task impact of increasing the pre-trained bi-LM size from two to four layers and mentioned in passing that increasing hidden dimension size from 200 to 600 helped, but increasing further to 1,000 did not bring further improvements.",
+      "anchorText": "However, we believe that this is the first work to demonstrate convincingly that scaling to extreme model sizes also leads to large improvements on very small scale tasks, provided that the model has been sufficiently pre-trained.",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "we believe",
+      "section": "Effect of Model Size",
+      "sectionKind": "results",
+      "cites": [
+        "peters2018dissecting",
+        "melamud2016context2vec"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 405.81787109375,
+            "y0": 686.9471435546875,
+            "x1": 525.5450439453125,
+            "y1": 697.856201171875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 700.49609375,
+            "x1": 525.5452270507812,
+            "y1": 711.4051513671875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 714.0451049804688,
+            "x1": 525.5451049804688,
+            "y1": 724.9541625976562
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 727.5941162109375,
+            "x1": 525.545166015625,
+            "y1": 738.503173828125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 741.1431274414062,
+            "x1": 525.5452880859375,
+            "y1": 752.0521850585938
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 754.693115234375,
+            "x1": 390.1850280761719,
+            "y1": 765.6021728515625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Both of these prior works used a feature-based approach --- we hypothesize that when the model is fine-tuned directly on the downstream tasks and uses only a very small number of randomly initialized additional parameters, the task-specific models can benefit from the larger, more expressive pre-trained representations even when downstream task data is very small.",
+      "anchorText": "Both of these prior works used a feature-based approach --- we hypothesize that when the model is fine-tuned directly on the downstream tasks and uses only a very small number of randomly initialized additional parameters, the task-specific models can benefit from the larger, more expressive pre-trained representations even when downstream task data is very small.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we hypothesize",
+      "section": "Effect of Model Size",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 106.50548553466797,
+            "y0": 146.78872680664062,
+            "x1": 290.2691650390625,
+            "y1": 157.6978302001953
+          },
+          {
+            "x0": 72.0,
+            "y0": 160.33871459960938,
+            "x1": 290.2691955566406,
+            "y1": 171.24781799316406
+          },
+          {
+            "x0": 72.0,
+            "y0": 173.88772583007812,
+            "x1": 290.26922607421875,
+            "y1": 184.7968292236328
+          },
+          {
+            "x0": 72.0,
+            "y0": 187.43673706054688,
+            "x1": 290.26922607421875,
+            "y1": 198.34584045410156
+          },
+          {
+            "x0": 72.0,
+            "y0": 200.98574829101562,
+            "x1": 290.2692565917969,
+            "y1": 211.8948516845703
+          },
+          {
+            "x0": 72.0,
+            "y0": 214.53475952148438,
+            "x1": 290.26922607421875,
+            "y1": 225.44386291503906
+          },
+          {
+            "x0": 72.0,
+            "y0": 228.08474731445312,
+            "x1": 290.2693176269531,
+            "y1": 238.9938507080078
+          },
+          {
+            "x0": 72.0,
+            "y0": 241.63375854492188,
+            "x1": 227.3019561767578,
+            "y1": 252.54286193847656
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 1,
+    "shown": 1,
+    "bare": 2
+  }
 }

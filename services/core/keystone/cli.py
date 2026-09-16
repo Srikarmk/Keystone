@@ -11,10 +11,17 @@ import pymupdf
 import typer
 
 from keystone.ingest import Document, DocIndex, roundtrip
-from keystone.ingest.arxiv_source import SourceUnavailable, fetch, load, unpack
+from keystone.ingest.arxiv_source import (
+    SourceUnavailable,
+    fetch,
+    load,
+    load_project,
+    unpack,
+)
 from keystone.ingest.latex import (
     anchorable_runs,
     anchorable_sentences,
+    document_title,
     expand_inputs,
 )
 from keystone.ingest.assemble import paper_from_arxiv
@@ -310,14 +317,21 @@ def dossier(
     out.mkdir(parents=True, exist_ok=True)
     index = []
 
+    # Resolving a cited work to an ingested paper is done on titles, so every paper's
+    # full title has to be known before any single dossier is built. Read from each
+    # paper's own LaTeX rather than typed in: the display names in the library are
+    # deliberately short and would never match a bibliography entry.
+    corpus_titles = _corpus_titles(arxiv_ids, cache, out)
+
     for arxiv_id in arxiv_ids:
         try:
             built = build_dossier(
                 arxiv_id,
                 cache,
-                title=lookup.get(arxiv_id, ""),
+                title=lookup.get(arxiv_id, "") or corpus_titles.get(arxiv_id, ""),
                 pdf_path=pdfs / f"{arxiv_id}.pdf",
                 check_baselines=check_baselines,
+                corpus_titles=corpus_titles,
             )
         except SourceUnavailable as exc:
             typer.secho(f"{arxiv_id}: no source ({exc})", fg=typer.colors.YELLOW)
@@ -346,6 +360,11 @@ def dossier(
         index.append({
             "id": arxiv_id,
             "title": payload["title"] or arxiv_id,
+            # The paper's own title, kept so a later run that rebuilds only one paper
+            # can still resolve citations against the rest of the library.
+            "fullTitle": corpus_titles.get(arxiv_id, payload["title"]),
+            "lineage": payload["lineage"]["tally"],
+            "assumptions": payload["assumptionTally"],
             "coverage": payload["coverage"],
             "keystone": payload["keystone"],
             "findings": len(payload["findings"]),
@@ -378,11 +397,82 @@ def dossier(
     merged = {entry["id"]: entry for entry in existing}
     merged.update({entry["id"]: entry for entry in index})
     index_path.write_text(json.dumps(list(merged.values()), indent=2))
+    edges = _write_lineage_index(out)
 
     typer.secho(
-        f"wrote {len(index)} dossier(s); index now lists {len(merged)}",
+        f"wrote {len(index)} dossier(s); index now lists {len(merged)}; "
+        f"{edges} edge(s) run between papers in the library",
         fg=typer.colors.GREEN,
     )
+
+
+def _corpus_titles(arxiv_ids: list[str], cache: Path, out: Path) -> dict[str, str]:
+    """Full titles for every paper in the library, from each paper's own source."""
+    titles: dict[str, str] = {}
+
+    index_path = out / "index.json"
+    if index_path.exists():
+        for entry in json.loads(index_path.read_text()):
+            if entry.get("fullTitle"):
+                titles[entry["id"]] = entry["fullTitle"]
+
+    for arxiv_id in arxiv_ids:
+        try:
+            document, _project = load_project(arxiv_id, cache)
+        except SourceUnavailable:
+            continue
+        if found := document_title(document.text):
+            titles[arxiv_id] = found
+
+    return titles
+
+
+def _write_lineage_index(out: Path) -> int:
+    """The library as a graph: papers as nodes, what they say about each other as edges.
+
+    Derived from the dossiers on disk rather than from this run, so rebuilding one
+    paper does not shrink the graph to that paper's edges.
+    """
+    nodes: list[dict] = []
+    edges: list[dict] = []
+    titles: dict[str, str] = {}
+
+    files = sorted(
+        path for path in out.glob("*.json")
+        if path.name not in {"index.json", "lineage.json"}
+        and not path.name.endswith(".context.json")
+    )
+    payloads = [json.loads(path.read_text()) for path in files]
+    for payload in payloads:
+        titles[payload["id"]] = payload["title"] or payload["id"]
+
+    for payload in payloads:
+        tally = payload.get("lineage", {}).get("tally", {})
+        nodes.append({
+            "id": payload["id"],
+            "title": titles[payload["id"]],
+            "inherits": tally.get("inherits", 0),
+            "contests": tally.get("contests", 0),
+            "bare": payload.get("assumptionTally", {}).get("bare", 0),
+        })
+        for edge in payload.get("lineage", {}).get("edges", []):
+            target = edge.get("arxivId")
+            if not edge.get("inCorpus") or target not in titles or target == payload["id"]:
+                continue
+            edges.append({
+                "from": payload["id"],
+                "to": target,
+                "stance": edge["stance"],
+                "cue": edge["cue"],
+                "sentence": edge["sentence"],
+                "section": edge["section"],
+                "anchor": edge.get("anchor"),
+            })
+
+    (out / "lineage.json").write_text(
+        json.dumps({"nodes": nodes, "edges": edges}, indent=2)
+    )
+    return len(edges)
 
 
 @app.command("audit-density")

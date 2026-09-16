@@ -1,0 +1,276 @@
+{
+  "nodes": [
+    {
+      "id": "1409.1556",
+      "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "inherits": 2,
+      "contests": 0,
+      "bare": 2
+    },
+    {
+      "id": "1502.03167",
+      "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+      "inherits": 2,
+      "contests": 1,
+      "bare": 7
+    },
+    {
+      "id": "1512.03385",
+      "title": "Deep Residual Learning for Image Recognition",
+      "inherits": 5,
+      "contests": 0,
+      "bare": 5
+    },
+    {
+      "id": "1607.06450",
+      "title": "Layer Normalization",
+      "inherits": 5,
+      "contests": 1,
+      "bare": 3
+    },
+    {
+      "id": "1706.03762",
+      "title": "Attention Is All You Need",
+      "inherits": 6,
+      "contests": 2,
+      "bare": 2
+    },
+    {
+      "id": "1810.00826",
+      "title": "How Powerful are Graph Neural Networks?",
+      "inherits": 4,
+      "contests": 0,
+      "bare": 2
+    },
+    {
+      "id": "1810.04805",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "inherits": 3,
+      "contests": 4,
+      "bare": 2
+    },
+    {
+      "id": "2010.11929",
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+      "inherits": 3,
+      "contests": 0,
+      "bare": 2
+    },
+    {
+      "id": "2203.02155",
+      "title": "Training language models to follow instructions with human feedback",
+      "inherits": 11,
+      "contests": 0,
+      "bare": 5
+    }
+  ],
+  "edges": [
+    {
+      "from": "1512.03385",
+      "to": "1502.03167",
+      "stance": "inherits",
+      "cue": "We adopt",
+      "sentence": "We adopt batch normalization (BN) right after each convolution and before activation, following .",
+      "section": "Implementation",
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 412.9013366699219,
+            "y0": 326.6595458984375,
+            "x1": 545.114990234375,
+            "y1": 336.6221618652344
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 338.6145324707031,
+            "x1": 419.755615234375,
+            "y1": 348.5771484375
+          }
+        ]
+      }
+    },
+    {
+      "from": "1512.03385",
+      "to": "1409.1556",
+      "stance": "extends",
+      "cue": "inspired by",
+      "sentence": "To provide instances for discussion, we describe two models for ImageNet as follows. Network. Our plain baselines (Fig. , middle) are mainly inspired by the philosophy of VGG nets (Fig. , left).",
+      "section": "Network Architectures",
+      "anchor": null
+    },
+    {
+      "from": "1706.03762",
+      "to": "1512.03385",
+      "stance": "inherits",
+      "cue": "We employ",
+      "sentence": "We employ a residual connection around each of the two sub-layers, followed by layer normalization .",
+      "section": "Encoder and Decoder Stacks",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 443.9277648925781,
+            "y0": 524.8182373046875,
+            "x1": 504.00189208984375,
+            "y1": 534.8602294921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 535.7122802734375,
+            "x1": 321.57171630859375,
+            "y1": 545.7740478515625
+          }
+        ]
+      }
+    },
+    {
+      "from": "1706.03762",
+      "to": "1607.06450",
+      "stance": "inherits",
+      "cue": "We employ",
+      "sentence": "We employ a residual connection around each of the two sub-layers, followed by layer normalization .",
+      "section": "Encoder and Decoder Stacks",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 443.9277648925781,
+            "y0": 524.8182373046875,
+            "x1": 504.00189208984375,
+            "y1": 534.8602294921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 535.7122802734375,
+            "x1": 321.57171630859375,
+            "y1": 545.7740478515625
+          }
+        ]
+      }
+    },
+    {
+      "from": "1810.04805",
+      "to": "1706.03762",
+      "stance": "inherits",
+      "cue": "based on",
+      "sentence": "There is minimal difference between the pre-trained architecture and the final downstream architecture. Model Architecture BERT's model architecture is a multi-layer bidirectional Transformer encoder based on the original implementation described in and released in the tensor2tensor library. Because the use of Transformers has become common and our implementation is almost identical to the original, we will omit an exhaustive background description of the model architecture and refer readers to as well as excellent guides such as \"The Annotated Transformer.\" In this work, we denote the number of layers (i.e., Transformer blocks) as , the hidden size as , and the number of self-attention heads as . We primarily report results on two model sizes: BERT (L=12, H=768, A=12, Total Parameters=110M) and BERT (L=24, H=1024, A=16, Total Parameters=340M).",
+      "section": "BERT",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 340.6307373046875,
+            "x1": 525.5450439453125,
+            "y1": 351.5398254394531
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 354.17974853515625,
+            "x1": 493.625,
+            "y1": 365.0888366699219
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 377.2501525878906,
+            "x1": 402.19598388671875,
+            "y1": 388.1592712402344
+          },
+          {
+            "x0": 413.10400390625,
+            "y0": 377.3497619628906,
+            "x1": 525.5440673828125,
+            "y1": 388.25885009765625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 390.8997497558594,
+            "x1": 525.5449829101562,
+            "y1": 401.808837890625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 404.4487609863281,
+            "x1": 525.5451049804688,
+            "y1": 415.35784912109375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 417.9977722167969,
+            "x1": 351.50146484375,
+            "y1": 428.9068603515625
+          },
+          {
+            "x0": 225.26197814941406,
+            "y0": 754.6927490234375,
+            "x1": 290.269287109375,
+            "y1": 765.601806640625
+          }
+        ]
+      }
+    },
+    {
+      "from": "2010.11929",
+      "to": "1512.03385",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "For the baseline CNNs, we use ResNet , but replace the Batch Normalization layers with Group Normalization , and used standardized convolutions .",
+      "section": "Setup",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 311.2072448730469,
+            "y0": 295.5982971191406,
+            "x1": 504.00335693359375,
+            "y1": 305.5609130859375
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 306.55731201171875,
+            "x1": 119.61641693115234,
+            "y1": 316.5199279785156
+          }
+        ]
+      }
+    },
+    {
+      "from": "2010.11929",
+      "to": "1706.03762",
+      "stance": "inherits",
+      "cue": "we follow",
+      "sentence": "In model design we follow the original Transformer as closely as possible.",
+      "section": "Method",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 396.50543212890625,
+            "x1": 319.25689697265625,
+            "y1": 406.4680480957031
+          }
+        ]
+      }
+    }
+  ]
+}
