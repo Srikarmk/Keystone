@@ -1,0 +1,356 @@
+{
+  "id": "2203.02155",
+  "title": "Training language models to follow instructions",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "Distribution of use case categories from our API prompt dataset.",
+    "supported": 2,
+    "share": 0.222,
+    "summary": "2 of the paper's headline numbers trace to Table 1"
+  },
+  "coverage": {
+    "claims": 9,
+    "supported": 5,
+    "unsupported": 4,
+    "mismatched": 0,
+    "rate": 0.556
+  },
+  "claims": [
+    {
+      "value": "1.3B",
+      "section": "introduction",
+      "sentence": "We train three model sizes (1.3B, 6B, and 175B parameters), and all of our models use the GPT-3 architecture.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null
+    },
+    {
+      "value": "3%",
+      "section": "introduction",
+      "sentence": "Outputs from our 175B InstructGPT are preferred to 175B GPT-3 outputs 85 3% of the time, and preferred 71 4% of the time to few-shot 175B GPT-3.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Distribution of use case categories from our API prompt dataset.",
+      "row": "Classification",
+      "column": "(%)",
+      "cell": "3.5%"
+    },
+    {
+      "value": "4%",
+      "section": "introduction",
+      "sentence": "Outputs from our 175B InstructGPT are preferred to 175B GPT-3 outputs 85 3% of the time, and preferred 71 4% of the time to few-shot 175B GPT-3.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Distribution of use case categories from our API prompt dataset.",
+      "row": "Summarization",
+      "column": "(%)",
+      "cell": "4.2%"
+    },
+    {
+      "value": "21%",
+      "section": "introduction",
+      "sentence": "On \"closed-domain\" tasks from our API prompt distribution, where the output should not contain information that is not present in the input (e.g. summarization and closed-domain QA), InstructGPT models make up information not present in the input about half as often as GPT-3 (a 21% vs. 41% hallucination rate, respectively).",
+      "status": "rounded",
+      "table": "Table 7",
+      "caption": "Dataset annotations",
+      "row": "Contains other explicit constraints",
+      "column": "valid",
+      "cell": "20.7%"
+    },
+    {
+      "value": "41%",
+      "section": "introduction",
+      "sentence": "On \"closed-domain\" tasks from our API prompt distribution, where the output should not contain information that is not present in the input (e.g. summarization and closed-domain QA), InstructGPT models make up information not present in the input about half as often as GPT-3 (a 21% vs. 41% hallucination rate, respectively).",
+      "status": "exact",
+      "table": "Table 9",
+      "caption": "Prompt lengths by dataset",
+      "row": "valid",
+      "column": "25%",
+      "cell": "41"
+    },
+    {
+      "value": "25%",
+      "section": "introduction",
+      "sentence": "InstructGPT models generate about 25% fewer toxic outputs than GPT-3 when prompted to be respectful.",
+      "status": "rounded",
+      "table": "Table 30",
+      "caption": "Automatic evaluations",
+      "row": "biased",
+      "column": "6b",
+      "cell": "0.252"
+    },
+    {
+      "value": "73.4",
+      "section": "introduction",
+      "sentence": "On our API prompt distribution, our FLAN and T0 models perform slightly worse than our SFT baseline, and labelers significantly prefer InstructGPT to these models (InstructGPT has a 73.4 winrate vs. our baseline, compared to 26.8 and 29.8 for our version of T0 and FLAN, respectively).",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null
+    },
+    {
+      "value": "26.8",
+      "section": "introduction",
+      "sentence": "On our API prompt distribution, our FLAN and T0 models perform slightly worse than our SFT baseline, and labelers significantly prefer InstructGPT to these models (InstructGPT has a 73.4 winrate vs. our baseline, compared to 26.8 and 29.8 for our version of T0 and FLAN, respectively).",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null
+    },
+    {
+      "value": "29.8",
+      "section": "introduction",
+      "sentence": "On our API prompt distribution, our FLAN and T0 models perform slightly worse than our SFT baseline, and labelers significantly prefer InstructGPT to these models (InstructGPT has a 73.4 winrate vs. our baseline, compared to 26.8 and 29.8 for our version of T0 and FLAN, respectively).",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Distribution of use case categories from our API prompt dataset.",
+      "numericCells": 10,
+      "supports": 2
+    },
+    {
+      "name": "Table 2",
+      "caption": "Distribution of use case categories from our API prompt dataset.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 3",
+      "caption": "Labeler-collected metadata on the API distribution.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 4",
+      "caption": "Comparing human evaluations and automatic evaluations (Perspective API scores) on RealToxicityPrompts. A total of 1,729 prompts were labeled for three different 175B models, both with and without \"respectful\" instructions. The automatic evaluations shown here are calculated over the same set of prompts as the human evaluations, and thus differ slightly from the full set of evaluations recorded in Table in Appendix .",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 5",
+      "caption": "Examples of generalization in the 175B PPO-ptx model (InstructGPT 175B) compared to GPT-3 175B with no additional prefixing. Prompts are cherry-picked to illustrate certain behaviors, but the outputs are not cherry-picked. (1) InstructGPT can follow instructions in other languages, though it sometimes generates outputs in English. GPT-3 requires more careful prompting, similarly to in English. (2) InstructGPT can summarize and answer questions about code more reliably than GPT-3 (though its answer here isn't quite correct). For the code QA example, GPT-3 does answer the question about 50% of the time.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 6",
+      "caption": "Dataset sizes, in terms of number of prompts.",
+      "numericCells": 10,
+      "supports": 0
+    },
+    {
+      "name": "Table 7",
+      "caption": "Dataset annotations",
+      "numericCells": 39,
+      "supports": 1
+    },
+    {
+      "name": "Table 8",
+      "caption": "Average prompts per customer",
+      "numericCells": 7,
+      "supports": 0
+    },
+    {
+      "name": "Table 9",
+      "caption": "Prompt lengths by dataset",
+      "numericCells": 59,
+      "supports": 1
+    },
+    {
+      "name": "Table 10",
+      "caption": "Prompt lengths by category",
+      "numericCells": 83,
+      "supports": 0
+    },
+    {
+      "name": "Table 11",
+      "caption": "Prompt and demonstration lengths",
+      "numericCells": 35,
+      "supports": 0
+    },
+    {
+      "name": "Table 12",
+      "caption": "Excerpt from the instructions given to labelers for final evaluations of model outputs on our prompt distribution. We provide full instructions https://docs.google.com/document/u/1/d/1MJCqDNjzD04UbcnVZ-LmeXJ04-TKEICDAepXyMCBUb8/here.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 13",
+      "caption": "Excerpt from the instructions given to labelers for final evaluations of model outputs on our prompt distribution. We provide full instructions https://docs.google.com/document/u/1/d/1MJCqDNjzD04UbcnVZ-LmeXJ04-TKEICDAepXyMCBUb8/here.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 14",
+      "caption": "Labeler demographic data",
+      "numericCells": 32,
+      "supports": 0
+    },
+    {
+      "name": "Table 15",
+      "caption": "Labeler satisfaction survey",
+      "numericCells": 25,
+      "supports": 0
+    },
+    {
+      "name": "Table 16",
+      "caption": "Winogender: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 17",
+      "caption": "Winogender: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 18",
+      "caption": "Winogender: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 19",
+      "caption": "CrowS-Pairs: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 20",
+      "caption": "RealToxicityPrompts: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 21",
+      "caption": "TruthfulQA: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 22",
+      "caption": "DROP: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 23",
+      "caption": "QuAC: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 24",
+      "caption": "Squadv2: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 25",
+      "caption": "Hellaswag: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 26",
+      "caption": "RTE: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 27",
+      "caption": "SST: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 28",
+      "caption": "WSC: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 29",
+      "caption": "WMT Fr En 15: prompting, examples, and dataset features.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 30",
+      "caption": "Automatic evaluations",
+      "numericCells": 396,
+      "supports": 1
+    },
+    {
+      "name": "Table 31",
+      "caption": "Model samples on a prompt cherry-picked to show instruction following behavior in other languages, along with random samples from the GPT-3 175B and InstructGPT 175B models. This is the same French example as the top of Figure , but contains the full InstructGPT sample.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 32",
+      "caption": "Model samples on a prompt cherry-picked to show instruction following behavior in other languages, along with random samples from the GPT-3 175B and InstructGPT 175B models. This is the same French example as the top of Figure , but contains the full InstructGPT sample.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 33",
+      "caption": "Model samples on a prompt cherry-picked to show instruction following behavior in other languages, along with random samples from the GPT-3 175B and InstructGPT 175B models. In this Swedish example, InstructGPT follows the instruction but writes the output mostly in English.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 34",
+      "caption": "Model samples on a prompt cherry-picked to show instruction following on potentially harmful prompts, along with random samples from the GPT-3 175B and InstructGPT 175B models.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 35",
+      "caption": "Model samples on a prompt cherry-picked to show ability to follow instructions to describe code, along with random samples from the GPT-3 175B and InstructGPT 175B models.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 36",
+      "caption": "Labeler-written prompt from our dataset, along with the human-written demonstration, and completions from GPT-3 175B and InstructGPT175B. Prompt is lightly cherry-picked (5 selected from 15 to show a diverse range of tasks), and the completions are not cherry-picked.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 37",
+      "caption": "Labeler-written prompt from our dataset, along with the human-written demonstration, and completions from GPT-3 175B and InstructGPT175B. Prompt is lightly cherry-picked (5 selected from 15 to show a diverse range of tasks), and the completions are not cherry-picked.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 38",
+      "caption": "Labeler-written prompt from our dataset, along with the human-written demonstration, and completions from GPT-3 175B and InstructGPT175B. Prompt is lightly cherry-picked (5 selected from 15 to show a diverse range of tasks), and the completions are not cherry-picked.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 39",
+      "caption": "Labeler-written prompt from our dataset, along with the human-written demonstration, and completions from GPT-3 175B and InstructGPT175B. Prompt is lightly cherry-picked (5 selected from 15 to show a diverse range of tasks), and the completions are not cherry-picked.",
+      "numericCells": 0,
+      "supports": 0
+    }
+  ],
+  "findings": []
+}

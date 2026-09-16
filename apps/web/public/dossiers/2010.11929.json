@@ -1,0 +1,76 @@
+{
+  "id": "2010.11929",
+  "title": "An Image is Worth 16x16 Words",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Model overview. We split an image into fixed-size patches, linearly embed each of them, add position embeddings, and feed the resulting sequence of vectors to a standard Transformer encoder. In order to perform classification, we use the standard approach of adding an extra learnable \"classification token\" to the sequence. The illustration of the Transformer encoder was inspired by .",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 2",
+      "caption": "Details of model variants.",
+      "numericCells": 15,
+      "supports": 0
+    },
+    {
+      "name": "Table 3",
+      "caption": "Comparison with state of the art on popular image classification benchmarks. We report mean and standard deviation of the accuracies, averaged over three fine-tuning runs. models pre-trained on the JFT-300M dataset outperform ResNet-based baselines on all datasets, while taking substantially less computational resources to pre-train. pre-trained on the smaller public ImageNet-21k dataset performs well too. Slightly improved result reported in .",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 4",
+      "caption": "Hyperparameters for training. All models are trained with a batch size of 4096 and learning rate warmup of 10k steps. For we found it beneficial to additionally apply gradient clipping at global norm 1. Training resolution is 224.",
+      "numericCells": 36,
+      "supports": 0
+    },
+    {
+      "name": "Table 5",
+      "caption": "Hyperparameters for fine-tuning. All models are fine-tuned with cosine learning rate decay, a batch size of 512, no weight decay, and grad clipping at global norm 1. If not mentioned otherwise, fine-tuning resolution is 384.",
+      "numericCells": 3,
+      "supports": 0
+    },
+    {
+      "name": "Table 6",
+      "caption": "Top1 accuracy (in %) of on various datasets when pre-trained on , ImageNet-21k or JFT300M. These values correspond to Figure in the main text. Models are fine-tuned at 384 resolution. Note that the ImageNet results are computed without additional techniques (Polyak averaging and 512 resolution images) used to achieve results in Table .",
+      "numericCells": 84,
+      "supports": 0
+    },
+    {
+      "name": "Table 7",
+      "caption": "Detailed results of model scaling experiments. These correspond to Figure in the main paper. We show transfer accuracy on several datasets, as well as the pre-training compute (in exaFLOPs).",
+      "numericCells": 144,
+      "supports": 0
+    },
+    {
+      "name": "Table 8",
+      "caption": "Fine-tuning ResNet models pre-trained with Adam and SGD.",
+      "numericCells": 0,
+      "supports": 0
+    },
+    {
+      "name": "Table 9",
+      "caption": "Results of the ablation study on positional embeddings with -B/16 model evaluated on 5-shot linear.",
+      "numericCells": 8,
+      "supports": 0
+    },
+    {
+      "name": "Table 10",
+      "caption": "Breakdown of VTAB-1k performance across tasks.",
+      "numericCells": 60,
+      "supports": 0
+    }
+  ],
+  "findings": []
+}
