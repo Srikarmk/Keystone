@@ -10,6 +10,7 @@ import type {
   IndexEntry,
   LibraryGraph as GraphData,
 } from "@/lib/dossier";
+import { AccountMenu } from "@/components/AccountMenu";
 import { LibraryGraph } from "@/components/LibraryGraph";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -88,6 +89,7 @@ export default function Home() {
         <span className="pressed text-[1.4rem] leading-none">Keystone</span>
         <span className="flex items-center gap-5">
           <ThemeToggle />
+          <AccountMenu />
           <a
             href="https://github.com/Srikarmk/Keystone"
             className="text-[0.8rem] italic text-ink-soft transition-colors hover:text-brass"

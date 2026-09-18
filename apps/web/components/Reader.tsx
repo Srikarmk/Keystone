@@ -31,6 +31,7 @@ import type {
   Reference,
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
+import { record } from "@/lib/history";
 import { AskTab } from "@/components/AskTab";
 import { AssumptionList, AssumptionSummary } from "@/components/Assumptions";
 import { Foundation, InboundList, LineageList } from "@/components/Lineage";
@@ -39,6 +40,7 @@ import { EvidenceMap } from "@/components/EvidenceMap";
 import { PaperView } from "@/components/PaperView";
 import { Section } from "@/components/Section";
 import { findCell, TableView } from "@/components/TableView";
+import { AccountMenu } from "@/components/AccountMenu";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -85,7 +87,12 @@ export function Reader({ id }: { id: string }) {
     setAsking(false);
     fetch(`/dossiers/${current}.json`)
       .then((r) => r.json())
-      .then(setDossier)
+      .then((loaded: Dossier) => {
+        setDossier(loaded);
+        // Noted after the dossier arrives, so a mistyped id or a paper that failed to
+        // build never lands in the reading list. Local storage only — see lib/history.
+        record(loaded.id, loaded.title);
+      })
       .catch(() => setDossier(null));
   }, [current]);
 
@@ -262,6 +269,7 @@ function Masthead({
 
       <span className="flex items-center gap-7">
         <ThemeToggle />
+        <AccountMenu />
         <select
           value={current}
           onChange={(e) => onSelect(e.target.value)}
