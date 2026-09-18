@@ -1589,16 +1589,16 @@
     "tally": {
       "inherits": 5,
       "extends": 0,
-      "contests": 1,
+      "contests": 0,
       "compares": 0,
-      "background": 23,
+      "background": 24,
       "traversable": 0
     },
     "foundation": {
       "key": "Rakhlin12",
       "stance": "inherits",
       "cue": "Based on",
-      "sentence": "If we use , then at time stamp Since , it can be directly seen that Based on lemma 1 in , this upper bound directly holds. Following the assumptions in lemma , but now we assume since and are not always readily available, then started from the convergence rate is bounded by Let , we have Thus, Therefore, with , With being small, we have Let be -strongly convex and be -strongly convex near optimal and denote and as the solution after iterations when applying SGD on and respectively.",
+      "sentence": "If we use \u03b7_t=1/(\u03bb_1+\u03bb_2)t, then at time stamp T Since F(\ud835\uddb6) = \ud835\udcab(\ud835\uddb6) + \ud835\udcac(\ud835\uddb6), it can be directly seen that F(\ud835\uddb6') \u2265 F(\ud835\uddb6) + < gp+ gq, \ud835\uddb6'-\ud835\uddb6> + \u03bb_1+\u03bb_2/2\u2016\ud835\uddb6'-\ud835\uddb6\u2016^2. Based on lemma 1 in [Rakhlin et al. 2012], this upper bound directly holds. \u25a1 Following the assumptions in lemma [ref], but now we assume \u03b7_t=1/t since \u03bb_1 and \u03bb_2 are not always readily available, then started from \u2016\ud835\uddb6_1-\ud835\uddb6^\u22c6\u2016^2 \u2264 D the convergence rate is bounded by Let \u03bb = \u03bb_1 + \u03bb_2, we have F(\ud835\uddb6^\u22c6)- F(\ud835\uddb6_t) \u2265 < gf_t, \ud835\uddb6^\u22c6 - \ud835\uddb6_t> + \u03bb/2\u2016\ud835\uddb6^\u22c6 - \ud835\uddb6_t \u2016^2, and F(\ud835\uddb6^\u22c6) - F(\ud835\uddb6_t) \u2265\u03bb/2\u2016\ud835\uddb6_t- \ud835\uddb6^\u22c6\u2016^2. Thus, < gf_t, \ud835\uddb6_t - \ud835\uddb6^\u22c6> \u2265\u03bb\u2016\ud835\uddb6_t- \ud835\uddb6^\u22c6\u2016^2 Therefore, with \u03b7_t=1/t, With 2\u03bb/t being small, we have 1-2\u03bb/t \u2248 e^-2\u03bb/t. Let \ud835\udcab(\ud835\uddb6) be \u03bb_1-strongly convex and \ud835\udcac(\ud835\uddb6) be \u03bb_2-strongly convex near optimal \ud835\uddb6^\u22c6 and denote \ud835\uddb6_T^(F) and \ud835\uddb6_T^(\ud835\udcab) as the solution after T iterations when applying SGD on F(\ud835\uddb6) and \ud835\udcab(\ud835\uddb6) respectively.",
       "section": "Stochastic Gradient Descent View",
       "sectionKind": "method",
       "ordinal": 44,
@@ -1630,44 +1630,10 @@
     },
     "edges": [
       {
-        "key": "CNN",
-        "stance": "contests",
-        "cue": "instead of",
-        "sentence": "In , an SVM classifier is used for the output layer, instead of the standard softmax function in the CNN .",
-        "section": "Introduction",
-        "sectionKind": "introduction",
-        "ordinal": 26,
-        "title": "Large-scale learning with svm and convolutional for generic object categorization",
-        "authors": "F. J. Huang and Y. LeCun",
-        "year": 2006,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 1,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 351.814697265625,
-              "y0": 488.09228515625,
-              "x1": 504.0032958984375,
-              "y1": 498.0549011230469
-            },
-            {
-              "x0": 108.0,
-              "y0": 499.05126953125,
-              "x1": 367.11724853515625,
-              "y1": 509.0138854980469
-            }
-          ]
-        }
-      },
-      {
         "key": "NIN",
         "stance": "inherits",
         "cue": "we adopted",
-        "sentence": "For the network architecture setup, we adopted the mlpconv layer and global averaged pooling scheme introduced in .",
+        "sentence": "For the network architecture setup, we adopted the mlpconv layer and global averaged pooling scheme introduced in [Lin et al. 2014].",
         "section": "Experiments",
         "sectionKind": "experiments",
         "ordinal": 49,
@@ -1701,7 +1667,7 @@
         "key": "Rakhlin12",
         "stance": "inherits",
         "cue": "Based on",
-        "sentence": "If we use , then at time stamp Since , it can be directly seen that Based on lemma 1 in , this upper bound directly holds. Following the assumptions in lemma , but now we assume since and are not always readily available, then started from the convergence rate is bounded by Let , we have Thus, Therefore, with , With being small, we have Let be -strongly convex and be -strongly convex near optimal and denote and as the solution after iterations when applying SGD on and respectively.",
+        "sentence": "If we use \u03b7_t=1/(\u03bb_1+\u03bb_2)t, then at time stamp T Since F(\ud835\uddb6) = \ud835\udcab(\ud835\uddb6) + \ud835\udcac(\ud835\uddb6), it can be directly seen that F(\ud835\uddb6') \u2265 F(\ud835\uddb6) + < gp+ gq, \ud835\uddb6'-\ud835\uddb6> + \u03bb_1+\u03bb_2/2\u2016\ud835\uddb6'-\ud835\uddb6\u2016^2. Based on lemma 1 in [Rakhlin et al. 2012], this upper bound directly holds. \u25a1 Following the assumptions in lemma [ref], but now we assume \u03b7_t=1/t since \u03bb_1 and \u03bb_2 are not always readily available, then started from \u2016\ud835\uddb6_1-\ud835\uddb6^\u22c6\u2016^2 \u2264 D the convergence rate is bounded by Let \u03bb = \u03bb_1 + \u03bb_2, we have F(\ud835\uddb6^\u22c6)- F(\ud835\uddb6_t) \u2265 < gf_t, \ud835\uddb6^\u22c6 - \ud835\uddb6_t> + \u03bb/2\u2016\ud835\uddb6^\u22c6 - \ud835\uddb6_t \u2016^2, and F(\ud835\uddb6^\u22c6) - F(\ud835\uddb6_t) \u2265\u03bb/2\u2016\ud835\uddb6_t- \ud835\uddb6^\u22c6\u2016^2. Thus, < gf_t, \ud835\uddb6_t - \ud835\uddb6^\u22c6> \u2265\u03bb\u2016\ud835\uddb6_t- \ud835\uddb6^\u22c6\u2016^2 Therefore, with \u03b7_t=1/t, With 2\u03bb/t being small, we have 1-2\u03bb/t \u2248 e^-2\u03bb/t. Let \ud835\udcab(\ud835\uddb6) be \u03bb_1-strongly convex and \ud835\udcac(\ud835\uddb6) be \u03bb_2-strongly convex near optimal \ud835\uddb6^\u22c6 and denote \ud835\uddb6_T^(F) and \ud835\uddb6_T^(\ud835\udcab) as the solution after T iterations when applying SGD on F(\ud835\uddb6) and \ud835\udcab(\ud835\uddb6) respectively.",
         "section": "Stochastic Gradient Descent View",
         "sectionKind": "method",
         "ordinal": 44,
@@ -1735,7 +1701,7 @@
         "key": "caffe",
         "stance": "inherits",
         "cue": "built on top of",
-        "sentence": "Our system is built on top of widely used Caffe infrastructure .",
+        "sentence": "Our system is built on top of widely used Caffe infrastructure [Jia 2013].",
         "section": "Experiments",
         "sectionKind": "experiments",
         "ordinal": 48,
@@ -1769,7 +1735,7 @@
         "key": "imagenet",
         "stance": "inherits",
         "cue": "We follow",
-        "sentence": "We follow a common training protocol used by Krizhevsky et al. in all experiments.",
+        "sentence": "We follow a common training protocol used by Krizhevsky et al. [Krizhevsky et al. 2012] in all experiments.",
         "section": "Experiments",
         "sectionKind": "experiments",
         "ordinal": 45,
@@ -1797,7 +1763,7 @@
         "key": "maxout",
         "stance": "inherits",
         "cue": "We followed",
-        "sentence": "We followed to preprocess the dataset by Local Contrast Normalization (LCN).",
+        "sentence": "We followed [Goodfellow et al. 2013] to preprocess the dataset by Local Contrast Normalization (LCN).",
         "section": "Street View House Numbers",
         "sectionKind": "experiments",
         "ordinal": 53,
@@ -1887,7 +1853,7 @@
       }
     },
     {
-      "sentence": "We focus on building our infrastructure around supervised CNN style frameworks by introducing classifier, e.g. SVM model , to each layer.",
+      "sentence": "We focus on building our infrastructure around supervised CNN style frameworks [Huang et al. 2006; Donahue et al. 2013; Bergstra et al. 2010] by introducing classifier, e.g. SVM model [Vapnik 1995], to each layer.",
       "anchorText": "We focus on building our infrastructure around supervised CNN style frameworks",
       "kind": "simplifying",
       "support": "cited",
@@ -1966,7 +1932,7 @@
       }
     },
     {
-      "sentence": "We focus on the supervised learning case and let be our set of input training data where sample denotes the raw input data and is the corresponding groundtruth label for sample .",
+      "sentence": "We focus on the supervised learning case and let S={( X_i, y_i),i=1..N} be our set of input training data where sample X_i \u2208 R^n denotes the raw input data and y_i \u2208{1,..,K} is the corresponding groundtruth label for sample X_i.",
       "anchorText": "is the corresponding groundtruth label for sample",
       "kind": "simplifying",
       "support": "bare",
@@ -1997,7 +1963,7 @@
       }
     },
     {
-      "sentence": "The above formulation can be understood intuitively: in addition to learning convolution kernels and weights, , as in the standard CNN model , enforcing a constraint at each hidden layer for directly making a good label prediction gives a strong push for having discriminative and sensible features at each individual layer.",
+      "sentence": "The above formulation can be understood intuitively: in addition to learning convolution kernels and weights, \ud835\uddb6^\u22c6, as in the standard CNN model [Huang et al. 2006], enforcing a constraint at each hidden layer for directly making a good label prediction gives a strong push for having discriminative and sensible features at each individual layer.",
       "anchorText": ", enforcing a constraint at each hidden layer for directly making a good label prediction gives a strong push for having discriminative and sensible features at each individual layer.",
       "kind": "conjectural",
       "support": "cited",
@@ -2036,7 +2002,7 @@
       }
     },
     {
-      "sentence": "( ), and are respectively the margin and squared hinge loss of the SVM classifier (L2SVM ) at the output layer (we omit the balance term in front of the hinge for notational simplicity); in eqn.",
+      "sentence": "([ref]), \u2016 w^(out)\u2016^2 and \u2112(\ud835\uddb6, w^(out)) are respectively the margin and squared hinge loss of the SVM classifier (L2SVM [It makes negligible difference between L1SVM and L2SVM.]) at the output layer (we omit the balance term C in front of the hinge for notational simplicity); in eqn.",
       "anchorText": "are respectively the margin and squared hinge loss of the SVM classifier (L2SVM",
       "kind": "simplifying",
       "support": "shown",
@@ -2125,7 +2091,7 @@
       }
     },
     {
-      "sentence": "If we use , then at time stamp Since , it can be directly seen that Based on lemma 1 in , this upper bound directly holds. Following the assumptions in lemma , but now we assume since and are not always readily available, then started from the convergence rate is bounded by Let , we have Thus, Therefore, with , With being small, we have Let be -strongly convex and be -strongly convex near optimal and denote and as the solution after iterations when applying SGD on and respectively.",
+      "sentence": "If we use \u03b7_t=1/(\u03bb_1+\u03bb_2)t, then at time stamp T Since F(\ud835\uddb6) = \ud835\udcab(\ud835\uddb6) + \ud835\udcac(\ud835\uddb6), it can be directly seen that F(\ud835\uddb6') \u2265 F(\ud835\uddb6) + < gp+ gq, \ud835\uddb6'-\ud835\uddb6> + \u03bb_1+\u03bb_2/2\u2016\ud835\uddb6'-\ud835\uddb6\u2016^2. Based on lemma 1 in [Rakhlin et al. 2012], this upper bound directly holds. \u25a1 Following the assumptions in lemma [ref], but now we assume \u03b7_t=1/t since \u03bb_1 and \u03bb_2 are not always readily available, then started from \u2016\ud835\uddb6_1-\ud835\uddb6^\u22c6\u2016^2 \u2264 D the convergence rate is bounded by Let \u03bb = \u03bb_1 + \u03bb_2, we have F(\ud835\uddb6^\u22c6)- F(\ud835\uddb6_t) \u2265 < gf_t, \ud835\uddb6^\u22c6 - \ud835\uddb6_t> + \u03bb/2\u2016\ud835\uddb6^\u22c6 - \ud835\uddb6_t \u2016^2, and F(\ud835\uddb6^\u22c6) - F(\ud835\uddb6_t) \u2265\u03bb/2\u2016\ud835\uddb6_t- \ud835\uddb6^\u22c6\u2016^2. Thus, < gf_t, \ud835\uddb6_t - \ud835\uddb6^\u22c6> \u2265\u03bb\u2016\ud835\uddb6_t- \ud835\uddb6^\u22c6\u2016^2 Therefore, with \u03b7_t=1/t, With 2\u03bb/t being small, we have 1-2\u03bb/t \u2248 e^-2\u03bb/t. Let \ud835\udcab(\ud835\uddb6) be \u03bb_1-strongly convex and \ud835\udcac(\ud835\uddb6) be \u03bb_2-strongly convex near optimal \ud835\uddb6^\u22c6 and denote \ud835\uddb6_T^(F) and \ud835\uddb6_T^(\ud835\udcab) as the solution after T iterations when applying SGD on F(\ud835\uddb6) and \ud835\udcab(\ud835\uddb6) respectively.",
       "anchorText": "are not always readily available, then started from",
       "kind": "stated",
       "support": "cited",
@@ -2165,5 +2131,10 @@
     "cited": 3,
     "shown": 1,
     "bare": 6
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
   }
 }

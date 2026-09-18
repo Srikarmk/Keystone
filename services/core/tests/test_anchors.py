@@ -214,3 +214,51 @@ def test_rects_carry_their_own_text(corpus):
     joined = skeletonize(" ".join(r.text for r in anchor.rects), drop_hyphens=True)
     for word in doc.words[anchor.word_start : anchor.word_end + 1]:
         assert skeletonize(word.text, drop_hyphens=True) in joined
+
+
+# ------------------------------------------------- narrowing to a verifiable span
+
+
+@requires_corpus
+def test_locate_longest_narrows_to_a_span_the_page_contains(corpus) -> None:
+    """A claim's sentence reaches the anchor layer already stripped of its citations.
+
+    "We employ a residual connection \\cite{he} around each of the two sub-layers"
+    renders with "[11]" in the middle, so the stripped sentence matches nothing. By
+    the time a claim gets here the hole is a single space and cannot be split at, so
+    the longest verifiable prefix or suffix is anchored instead.
+    """
+    path, _doc, index = next(
+        entry for entry in corpus if entry[0].stem == "1706.03762"
+    )
+    quote = (
+        "We employ a residual connection around each of the two sub-layers, "
+        "followed by layer normalization ."
+    )
+    assert index.locate(quote).anchor is None
+    result = index.locate_longest(quote)
+    assert result.anchor is not None
+    assert result.reason == "exact_strict"
+
+
+@requires_corpus
+def test_locate_longest_still_refuses_text_that_is_not_there(corpus) -> None:
+    """Narrowing must not become a way to anchor something the paper never said."""
+    _path, _doc, index = corpus[0]
+    assert index.locate_longest(
+        "This sentence was fabricated and appears in no paper anywhere at all."
+    ).anchor is None
+
+
+@requires_corpus
+def test_locate_longest_refuses_a_fragment_too_small_to_mean_anything(corpus) -> None:
+    """Half a claim highlighted in the wrong place is worse than no highlight."""
+    _path, _doc, index = corpus[0]
+    # A real opening followed by a long invention: the verifiable part is a small
+    # share of the whole, so no anchor should be offered.
+    result = index.locate_longest(
+        "In this work we "
+        + "consider an entirely invented continuation that the paper does not contain "
+        + "and which goes on for a considerable distance beyond any real text."
+    )
+    assert result.anchor is None

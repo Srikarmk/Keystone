@@ -27,11 +27,13 @@ from enum import StrEnum
 from keystone.graph.models import Section, SectionKind
 from keystone.ingest.latex import (
     blank_environments,
+    document_title,
     document_body,
     expand_macros,
     longest_anchorable_run,
     split_sentences,
     strip_comments,
+    readable_prose,
     strip_markup,
     user_macros,
 )
@@ -103,7 +105,16 @@ _PRE: tuple[tuple[Stance, re.Pattern[str]], ...] = (
         r"|reuse|reused|take|took|borrow|borrowed|keep|retain)"
         r"|identical\s+to|the\s+same\s+as|taken\s+from|borrowed\s+from"
         r"|based\s+on|built\s+(?:up)?on\s+top\s+of|implementation\s+of"
-        r"|standard\s+(?:practice|setup|recipe)"
+        r"|standard\s+(?:practice|setup|recipe|approach|method|algorithm"
+        r"|implementation|technique|procedure|architecture|benchmark)"
+        # Bare participials. These were all first-person-only ("we use", "we employ"),
+        # which cost 280 of ACL-ARC's 364 `Uses` instances: an NLP paper writes
+        # "employ Collins head rules (Collins 1999)" or "using an auxiliary
+        # distribution (Neal & Hinton 1998)", where the "we" sits back across a clause
+        # break and the cue arrives on its own. The premise check still applies, so the
+        # sentence has to be about this paper for any of these to count.
+        r"|using|employing|adopting|applying|re-?implement(?:ing|ed)?"
+        r"|(?:as\s+)?implemented\s+(?:in|by|using)"
         # A dataset is adopted as much as a method is, and the sample showed these
         # phrasings missed entirely.
         r"|we\s+(?:look\s+at|evaluate\s+on|train\s+on|test\s+on|report\s+on))\b",
@@ -194,8 +205,124 @@ _NEGATOR = re.compile(r"\b(?:not|n't|never|neither|nor|hardly|without)\b\s*$", r
 
 #: Any sign that the sentence is about this paper rather than about the field.
 _ABOUT_US = re.compile(
-    r"\b(?:we|our|ours|us|ourselves|this\s+(?:paper|work|study|section|article))\b", re.I
+    r"\b(?:we|our|ours|us|ourselves"
+    r"|this\s+(?:paper|work|study|section|article)"
+    r"|the\s+(?:present|proposed)\s+(?:paper|work|study|method|approach|model))\b",
+    re.I,
 )
+
+#: A paper's own name, taken from the part of its title before the colon.
+#:
+#: Naming your system instead of saying "we" is the house style of the field's
+#: abstracts, and the premise check could not see it: BERT writes "Unlike recent
+#: language representation models \cite{peters2018,radford2018}, BERT is designed to
+#: pre-train deep bidirectional representations", which is the paper contrasting itself
+#: with ELMo and GPT in as many words. With only pronouns to go on that reads as a
+#: remark about the field and the two edges BERT is best known for disappear.
+#:
+#: Only the pre-colon fragment, and only when it looks like a name: "BERT:", "ELMo:",
+#: "BERTScore:", "LLaMA:". A title with no colon yields nothing rather than a guess,
+#: which is why this helps BERT and not ResNet — "Deep Residual Learning for Image
+#: Recognition" never names the model at all. Those papers say "our" instead.
+#: Up to three capitalised words before a colon. Three rather than one because the
+#: name is often a phrase — "Batch Normalization: Accelerating Deep Network Training" —
+#: and taking only "Batch" would treat every sentence mentioning a batch as a sentence
+#: about this paper, which is how a premise check stops checking anything.
+_SELF_NAME = re.compile(
+    r"^\s*([A-Z][A-Za-z0-9.+-]{1,19}(?:\s+[A-Z][A-Za-z0-9.+-]{1,19}){0,2})\s*:"
+)
+
+#: A paper naming its own contribution. Most of the field's best-known papers have no
+#: colon in the title — "Attention Is All You Need", "Training Compute-Optimal Large
+#: Language Models" — and say the name once, in the abstract, then use it throughout:
+#: "We propose a new simple network architecture, the Transformer". Without it the
+#: Transformer paper loses "In contrast to RNN sequence-to-sequence models, the
+#: Transformer outperforms the BerkeleyParser", which is as clear a comparison as the
+#: paper makes.
+_INTRODUCES = re.compile(
+    # The flag is scoped to the verb: an abstract opens with "We propose", so the
+    # phrase has to match either case, while the name must stay case-sensitive or
+    # every lowercase word after it would qualify.
+    r"(?i:\bwe\s+(?:propose|present|introduce|call|name|term|train|release)\b)"
+    # No "." in the name: with it, "the Transformer. The Transformer achieves" matched
+    # as one twenty-eight character name, because the class let the name eat the
+    # sentence boundary and the multi-word arm then ran on into the next sentence.
+    r"[^.]{0,70}?\b(?P<name>[A-Z][A-Za-z0-9+-]{2,19}"
+    r"(?:\s+[A-Z][A-Za-z0-9+-]{2,19}){0,2})\b"
+)
+
+#: Capitalised words that follow an introducing verb without being a name. Cheap guard;
+#: the mention count below does most of the work.
+_NOT_A_NAME = frozenset({
+    "the", "we", "our", "this", "these", "a", "an", "in", "it", "its", "for", "with",
+    "and", "new", "on", "to", "of", "two", "three", "table", "figure", "section",
+    "english", "german", "french", "chinese", "imagenet", "wikipedia", "internet",
+})
+
+#: The field's own vocabulary, which no paper gets to claim as its name. "We present a
+#: massive exploration of NMT architectures" and "we train GNNs" both name the subject
+#: matter, and reading either as the paper's name would loosen the premise check on
+#: exactly the papers that discuss them on every page.
+#:
+#: Only consulted for names read out of the abstract. A name in the title is the
+#: paper's by construction, which is how GLUE keeps its own acronym.
+_A_FIELD_TERM = frozenset({
+    "mt", "smt", "nmt", "nlp", "nlu", "nlg", "asr", "ocr", "ir", "qa",
+    "ai", "ml", "rl", "rlhf", "sgd", "adam", "em", "map", "mle", "kl",
+    "cnn", "cnns", "rnn", "rnns", "gnn", "gnns", "mlp", "mlps", "lstm", "lstms",
+    "gru", "grus", "gan", "gans", "vae", "vaes", "llm", "llms", "lm", "lms",
+    "bleu", "rouge", "meteor", "wer", "auc", "gpu", "gpus", "tpu", "tpus",
+    "sota", "iid", "relu", "pca", "svm", "svms", "knn", "hmm", "crf", "api",
+    # Datasets and benchmarks. A paper trains *on* these; it is not named after them.
+    # "AI safety via debate" writes "we train ... MNIST", and reading MNIST as the
+    # paper's own name makes every sentence about the dataset self-referential.
+    "mnist", "cifar", "cifar-10", "cifar-100", "imagenet", "coco", "squad", "wmt",
+    "wikitext", "penn", "treebank", "conll", "semeval", "librispeech", "celeba",
+    "openwebtext", "bookcorpus", "commoncrawl", "c4", "pile", "svhn", "stl-10",
+})
+
+#: An acronym worn as a plural is a category of thing, not one model: "GNNs", "CNNs".
+_PLURAL_ACRONYM = re.compile(r"^[A-Z]{2,}s$")
+
+#: How often a candidate has to appear before it is treated as the paper's own name.
+#: A paper's model is named on nearly every page; an ordinary capitalised noun that
+#: happened to follow "we propose" is not.
+MIN_MENTIONS = 8
+
+#: Where a paper names itself: the abstract and the introduction, not the related work.
+INTRO_CHARS = 8000
+
+
+def self_name(title: str, body: str = "") -> str:
+    """What this paper calls itself.
+
+    Two sources, title first. "BERT: Pre-training of..." says it outright; "Attention Is
+    All You Need" does not, and has to be read out of "we propose ... the Transformer".
+
+    Both are held to the same standard, which is that an ordinary word must not get
+    through: treating "Attention" as the paper's own name would make every sentence
+    mentioning attention a sentence about this paper, and the premise check would stop
+    checking anything. The title route wants the shape of a coined name — two capitals,
+    as in BERT, LLaMA, BERTScore. The abstract route wants the word used like a name,
+    which means used constantly: at least :data:`MIN_MENTIONS` times in the paper, and
+    not one of the field's own words (:data:`_A_FIELD_TERM`).
+    """
+    match = _SELF_NAME.match(title or "")
+    if match is not None:
+        name = match.group(1)
+        if sum(1 for character in name if character.isupper()) >= 2:
+            return name
+
+    for found in _INTRODUCES.finditer(body[:INTRO_CHARS]):
+        candidate = found.group("name")
+        if candidate.lower() in _NOT_A_NAME or candidate.lower() in _A_FIELD_TERM:
+            continue
+        if _PLURAL_ACRONYM.match(candidate):
+            continue
+        mentions = len(re.findall(rf"\b{re.escape(candidate)}\b", body))
+        if mentions >= MIN_MENTIONS:
+            return candidate
+    return ""
 
 
 #: When the clause already has a first-person subject, the sentence is about *this*
@@ -219,7 +346,13 @@ class CitationContext:
 
     key: str
     sentence: str
-    """Markup stripped — what the reader is shown."""
+    """Markup stripped: the exact text the cue rules read.
+
+    This is the site's identity as well as its input, which is why it is kept separate
+    from what a reader sees. The label file keys on it, so a change to how a citation
+    *renders* must not change it — otherwise every labelled row silently stops matching
+    and `stance-refresh` leaves stale predictions behind under a fresh headline.
+    """
     anchor_text: str
     """The part of the sentence that can be matched against the PDF verbatim.
 
@@ -233,6 +366,13 @@ class CitationContext:
     stance: Stance
     cue: str
     """The exact words that decided the stance. Empty for ``BACKGROUND``."""
+    shown: str = ""
+    """The same sentence rendered for a reader, with citations named and maths set.
+
+    Kept apart from :attr:`sentence` because they answer different questions. A reader
+    needs "we chose the baseline of Mikolov et al. 2011"; the rules and the label file
+    need the exact string they were measured on, forever.
+    """
     ordinal: int = 0
     """Where this citation sits in the paper, counting sites in document order.
 
@@ -257,24 +397,51 @@ class CitationContext:
         }
 
 
-def _adopts_without_saying_who(stance: Stance, cue: str, sentence: str) -> bool:
-    """Whether an adoption cue is describing somebody else's practice.
+def _about_us(sentence: str, name: str) -> bool:
+    """Whether a sentence is about this paper — by pronoun, or by its own name."""
+    if _ABOUT_US.search(sentence):
+        return True
+    return bool(name) and re.search(rf"\b{re.escape(name)}\b", sentence) is not None
 
-    Adopting something is a claim about *this* paper, so the sentence has to be about
-    this paper. Chinchilla writes "Following \\cite{kaplan2020} and the training setup
-    of GPT-3 \\cite{brown2020}, many of the recently trained large models have been
+
+def _without_saying_who(
+    stance: Stance, cue: str, sentence: str, leading: bool, name: str = ""
+) -> bool:
+    """Whether a cue describes a relation this paper is not a party to.
+
+    Every stance is a relation *between this paper and the cited work*: adopting a
+    method, arguing with a claim, measuring against a baseline. So a cue in front of
+    the citation means what it appears to mean only if the sentence is about this
+    paper. Chinchilla writes "Following \\cite{kaplan2020} and the training setup of
+    GPT-3 \\cite{brown2020}, many of the recently trained large models have been
     trained for approximately 300 billion tokens" — the subject is other people's
     models, and reading it as Chinchilla adopting GPT-3's setup misattributes a survey
     of the field to the paper making it.
 
-    Cues that are already first-person ("we follow", "we adopt") carry their own
-    subject and need no check. The cost is passive constructions — "the weights are
-    initialised as in \\cite{he2015}" is a real adoption this will miss — which is the
-    trade this suite makes everywhere: a missed edge over a wrong one.
+    Adoption cues were held to this from the start. Comparative ones were not, and
+    scoring against SciCite showed the cost: 136 of 223 `result` readings were wrong,
+    and they look like "women are disproportionately more frequently affected compared
+    to men [12]", "15 of 50 SspA orthologs contain either Asp or Glu at position 92
+    instead of Tyr [12]", "whereas PCV-2 has been associated with postweaning
+    multisystemic wasting syndrome [12]". Every one compares two things in the subject
+    matter; not one compares anything to the citing paper. A cue read without checking
+    its premise yields a confident opposite rather than a vague answer, which is the
+    lesson the table checks learned first.
+
+    ``leading`` says the cue came from :data:`_PRE`. :data:`_POST` cues are exempt,
+    because they describe the cited work itself — "\\cite{x} does not account for
+    long-range dependencies" is a property of x whoever is writing. Cues that are
+    already first-person ("we compare", "we adopt") carry their own subject.
+
+    The cost is passive constructions: "the weights are initialised as in
+    \\cite{he2015}" is a real adoption this misses. That is the trade this suite makes
+    everywhere — a missed edge over a wrong one.
     """
-    if not stance.is_load_bearing or cue.lower().startswith("we "):
+    if stance is Stance.BACKGROUND or not leading:
         return False
-    return not _ABOUT_US.search(sentence)
+    if cue.lower().startswith("we "):
+        return False
+    return not _about_us(sentence, name)
 
 
 def classify(before: str, after: str) -> tuple[Stance, str]:
@@ -282,6 +449,17 @@ def classify(before: str, after: str) -> tuple[Stance, str]:
 
     ``before`` and ``after`` are the stripped prose on either side of the citation
     inside its own sentence. Returns the stance and the exact cue that decided it.
+    """
+    stance, cue, _leading = _decide(before, after)
+    return stance, cue
+
+
+def _decide(before: str, after: str) -> tuple[Stance, str, bool]:
+    """:func:`classify`, plus which table the cue came from.
+
+    The guards need to know which: a cue in front of the citation asserts something
+    about this paper, and a cue behind it asserts something about the cited work. Only
+    the first kind has a premise to check.
     """
     clause = _governing_clause(before)
 
@@ -296,15 +474,15 @@ def classify(before: str, after: str) -> tuple[Stance, str]:
                 continue
             if _is_gerund(match.group(0), clause, match.end()):
                 continue
-            return stance, match.group(0).strip()
+            return stance, match.group(0).strip(), True
 
     if not _FIRST_PERSON.search(clause):
         for stance, pattern in _POST:
             match = pattern.search(after[:WINDOW])
             if match:
-                return stance, match.group(0).strip(" \t'’")
+                return stance, match.group(0).strip(" \t'’"), False
 
-    return Stance.BACKGROUND, ""
+    return Stance.BACKGROUND, "", False
 
 
 #: Words that turn "following" into a noun rather than a cue. InstructGPT writes "a
@@ -319,7 +497,7 @@ def _is_gerund(cue: str, clause: str, end: int) -> bool:
     return cue.lower() == "following" and bool(_GERUND_AFTER.match(clause[end:]))
 
 
-def _cue_already_taken(before: str, cue: str) -> bool:
+def _cue_already_taken(before: str, cue: str, sites: re.Pattern[str] = None) -> bool:
     """Whether an earlier citation is the one the contrastive cue is about.
 
     A contrastive cue takes a single object; an adopting cue distributes over a list.
@@ -339,7 +517,40 @@ def _cue_already_taken(before: str, cue: str) -> bool:
     at = before.lower().rfind(cue.lower())
     if at < 0:
         return False
-    return _CITE_SITE.search(before, at + len(cue)) is not None
+    return (sites or _CITE_SITE).search(before, at + len(cue)) is not None
+
+
+def read(
+    before: str,
+    after: str,
+    sentence: str,
+    *,
+    marked_before: str | None = None,
+    sites: re.Pattern[str] | None = None,
+    name: str = "",
+) -> tuple[Stance, str]:
+    """The complete reading of one citation site: cue tables, then every guard.
+
+    Everything that decides a stance lives here rather than in the caller, because two
+    callers now exist. :func:`contexts` reads a paper's LaTeX, and the external
+    evaluation reads SciCite and ACL-ARC excerpts, which are plain text with the
+    citation marked. If the guards lived in the LaTeX path only, the measured number
+    would describe a classifier that never shipped.
+
+    ``marked_before`` is the text before the site with its citation markers still in
+    it, and ``sites`` is what a marker looks like there — `\\cite{...}` in LaTeX,
+    "[12]" or "@@CITATION" in a corpus excerpt. One guard needs them: a contrastive cue
+    is spent on the nearest citation after it, which cannot be checked without knowing
+    where the other citations are.
+    """
+    stance, cue, leading = _decide(before, after)
+    if stance is Stance.CONTESTS and _cue_already_taken(
+        before if marked_before is None else marked_before, cue, sites
+    ):
+        stance, cue = Stance.BACKGROUND, ""
+    if _without_saying_who(stance, cue, sentence, leading, name):
+        stance, cue = Stance.BACKGROUND, ""
+    return stance, cue
 
 
 def _negated(clause: str, cue_start: int) -> bool:
@@ -356,15 +567,33 @@ def _governing_clause(before: str) -> str:
     return tail
 
 
-def contexts(latex: str, sections: tuple[Section, ...]) -> list[CitationContext]:
+def contexts(
+    latex: str,
+    sections: tuple[Section, ...],
+    cites: dict[str, str] | None = None,
+) -> list[CitationContext]:
     """Every citation site in the paper, with what the paper says about it.
 
     Sections are walked rather than the whole document so each site knows where it
     sits. Where a paper says something matters: a contested citation in related work
     is positioning, and the same citation in the method is a design decision.
+
+    ``cites`` maps a citation key to how it should read in a quotation. It affects only
+    the sentence the reader is shown, never what the classifier sees: stance is decided
+    on the stripped text either way, so rendering cannot move a reading. Without it,
+    "As baselines we chose to use \\cite{mikolov}, and Interpolated KN 5-gram LMs"
+    reaches the reader as "we chose to use , and Interpolated KN 5-gram LMs" — a
+    sentence the paper does not contain, quoted as if it did.
     """
     out: list[CitationContext] = []
     ordinal = 0
+    # Macros expanded first: Chinchilla's source says "We introduce \\chinchilla" and
+    # FLAN's says "we call \\flan", so stripping markup without expanding leaves a hole
+    # exactly where the paper names itself.
+    name = self_name(
+        document_title(latex),
+        strip_markup(expand_macros(strip_comments(latex), user_macros(latex))),
+    )
     for section in sections:
         source = section.source or ""
         if not source.strip():
@@ -378,23 +607,22 @@ def contexts(latex: str, sections: tuple[Section, ...]) -> list[CitationContext]
             sentence = strip_markup(raw)
             if len(sentence) < 24:
                 continue
+            shown = readable_prose(raw, cites)
             anchor_text = longest_anchorable_run(raw)
             for site in _CITE_SITE.finditer(raw):
                 ordinal += 1
                 before = strip_markup(raw[: site.start()])
                 after = strip_markup(raw[site.end() :])
-                stance, cue = classify(before, after)
-                if stance is Stance.CONTESTS and _cue_already_taken(
-                    raw[: site.start()], cue
-                ):
-                    stance, cue = Stance.BACKGROUND, ""
-                if _adopts_without_saying_who(stance, cue, sentence):
-                    stance, cue = Stance.BACKGROUND, ""
+                stance, cue = read(
+                    before, after, sentence,
+                    marked_before=raw[: site.start()], name=name,
+                )
                 for key in _keys(site.group("keys")):
                     out.append(
                         CitationContext(
                             key=key,
                             sentence=sentence,
+                            shown=shown,
                             anchor_text=anchor_text,
                             section=section.title,
                             section_kind=section.kind,

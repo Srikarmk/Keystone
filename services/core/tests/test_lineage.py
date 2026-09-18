@@ -292,3 +292,44 @@ We repeat the ablation of \cite{ioffe2015} on a second dataset.
     edge = next(e for e in lineage.edges if e.key == "ioffe2015")
     assert edge.section_kind is SectionKind.METHOD
     assert edge.ordinal == 1
+
+
+def test_an_assumption_quote_keeps_its_maths_readable() -> None:
+    """Batch Normalization's assumption was displayed with holes in it.
+
+    "If we assume that $x$ and $u$ are Gaussian and uncorrelated" was shown to the
+    reader as "If we assume that and are Gaussian and uncorrelated".
+    """
+    latex = r"""
+\section{Method}
+If we assume that $x$ and $u$ are Gaussian and uncorrelated, and that $W$ is a linear
+transformation for the given parameters, then both quantities coincide exactly.
+"""
+    got = A.extract(latex, extract_sections(latex), {})
+    assert len(got) == 1
+    assert got[0].sentence.startswith(
+        "If we assume that x and u are Gaussian and uncorrelated, and that W is a"
+    )
+    # The anchor text is the exact source prose, not the rendered version.
+    assert "x and u" not in got[0].anchor_text
+
+
+def test_an_assumption_resting_on_another_paper_names_it() -> None:
+    latex = r"""
+\section{Method}
+We assume the whitening step behaves as reported by \cite{ioffe2015} for every one of
+the datasets that we evaluate on in this work.
+"""
+    got = A.extract(latex, extract_sections(latex), {},
+                    {"ioffe2015": "Ioffe et al. 2015"})
+    assert "[Ioffe et al. 2015]" in got[0].sentence
+
+
+def test_a_number_in_maths_mode_survives_into_the_quote() -> None:
+    latex = r"""
+\section{Method}
+We assume the activation has expected value $0$ and variance $1$ across the whole of
+the training distribution, which holds by construction here.
+"""
+    got = A.extract(latex, extract_sections(latex), {})
+    assert "expected value 0 and variance 1" in got[0].sentence

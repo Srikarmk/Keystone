@@ -427,6 +427,13 @@ def dossier(
     for arxiv_id, reason in failures:
         typer.secho(f"  failed: {arxiv_id} {reason}", fg=typer.colors.RED)
 
+    # Exit non-zero when nothing was written. A build that failed every paper and
+    # returned 0 is how two full rebuilds were reported as finished while the site kept
+    # serving the previous run's dossiers: the shell had passed all forty-six ids as a
+    # single argument, every one failed, and the exit code said the work was done.
+    if failures and not index:
+        raise typer.Exit(1)
+
 
 def survey(
     payloads: list[dict], have: set[str]
@@ -960,33 +967,50 @@ def stance_refresh(
         raise typer.Exit(1)
 
     wanted = {row.paper for row in rows}
-    fresh: dict[tuple[str, str, str], str] = {}
+    # Keyed on the sentence as well as the paper and citation key, because a paper
+    # cites the same work in several places and `stance-sample` buckets by predicted
+    # stance — so the labelled site is not necessarily the first one for that key, and
+    # keying on the pair alone re-measures a different sentence and calls it a change.
+    # `CitationContext.sentence` is the stripped text the rules read and is deliberately
+    # stable against changes to how a citation renders for a reader.
+    fresh: dict[tuple[str, str, str], tuple[str, str]] = {}
     for arxiv_id in sorted(wanted):
         try:
             document, _project = load_project(arxiv_id, cache)
         except Exception:  # noqa: BLE001
             continue
         for context in contexts(document.text, extract_sections(document.text)):
-            fresh[(arxiv_id, context.key, context.sentence)] = str(context.stance)
+            fresh[(arxiv_id, context.key, context.sentence)] = (
+                str(context.stance), context.cue,
+            )
 
     updated = missing = 0
     out = []
     for row in rows:
-        key = (row.paper, row.key, row.sentence)
-        if key not in fresh:
+        found = fresh.get((row.paper, row.key, row.sentence))
+        if found is None:
             missing += 1
             out.append(row)
             continue
-        if fresh[key] != row.predicted:
+        stance, cue = found
+        if stance != row.predicted:
             updated += 1
-        out.append(replace(row, predicted=fresh[key]))
+        out.append(replace(row, predicted=stance, cue=cue))
 
     SL.write(labels, out)
     typer.secho(
-        f"refreshed {len(out)} rows; {updated} predictions changed"
-        + (f"; {missing} sentence(s) no longer found" if missing else ""),
-        fg=typer.colors.GREEN,
+        f"refreshed {len(out)} rows; {updated} predictions changed", fg=typer.colors.GREEN
     )
+    if missing:
+        # Loud and non-zero. These rows kept a prediction from an older version of the
+        # rules, so any figure computed over them is part measurement and part memory.
+        typer.secho(
+            f"{missing} of {len(out)} labelled sites were not found in the sources; "
+            f"their predictions are stale and stance-eval will report them as if fresh",
+            fg=typer.colors.RED,
+            bold=True,
+        )
+        raise typer.Exit(1)
 
 
 @app.command("stance-eval")
@@ -995,6 +1019,10 @@ def stance_eval(
     out: Path = typer.Option(
         Path("../../apps/web/public/dossiers/accuracy.json"),
         help="Where to write the numbers for the site to read.",
+    ),
+    corpora: Path | None = typer.Option(
+        None,
+        help="Directory holding scicite/ and acl-arc/, to score against as well.",
     ),
 ) -> None:
     """Precision and recall of the cue rules on the hand-labelled sample.
@@ -1026,10 +1054,22 @@ def stance_eval(
         rec = "    -  " if c.recall is None else f"{c.recall:6.0%} "
         typer.echo(f"{stance:12} {c.support:5} {c.predicted:5} {prec:>7} {rec:>7}")
 
+    lo, hi = result.interval
     typer.echo()
-    typer.echo(f"cue rules          {result.accuracy:6.0%}")
-    typer.echo(f"bag-of-words NB    {result.baseline_accuracy:6.0%}   (leave-one-out, cue words removed)")
+    typer.echo(f"{'':18} {'acc':>6}  {'95% CI':>12}  {'macro-F1':>9}")
+    typer.echo(
+        f"cue rules          {result.accuracy:6.0%}  [{lo:4.0%},{hi:4.0%}]  "
+        f"{result.macro_f1:8.0%}"
+    )
+    typer.echo(
+        f"bag-of-words NB    {result.baseline_accuracy:6.0%}  {'':12}  "
+        f"{result.baseline_macro_f1:8.0%}   (leave-one-out, cue words removed)"
+    )
     typer.echo(f"majority class     {result.majority_accuracy:6.0%}")
+    typer.echo(
+        "\nmacro-F1 is the metric published citation-intent work reports; accuracy "
+        "flatters\nany system that predicts the majority `background` class well."
+    )
 
     # Reported apart, because the first sixty rows are what the cue rules were fixed
     # against and their score stopped estimating anything the moment that happened.
@@ -1046,13 +1086,22 @@ def stance_eval(
         for (gold, predicted), n in result.confusions.most_common():
             typer.echo(f"  {gold} -> {predicted}: {n}")
 
+    external = _external_report(corpora) if corpora else []
+
     # Written for the reader to display. The site claims these readings are checkable,
     # so how often they are right belongs on the site rather than in a terminal — and
     # generating it here is what stops the published number drifting from the labels.
     held = [row for row in done if row.split == "heldout"]
+    held_hits = sum(1 for r in held if r.predicted == r.gold)
+    held_lo, held_hi = SL.wilson(held_hits, len(held)) if held else (0.0, 0.0)
     payload = {
         "labelled": result.rows,
         "heldOut": len(held),
+        # The interval, not just the point. At 30 rows the point estimate alone
+        # invites a claim the sample cannot support.
+        "heldOutInterval": [round(held_lo, 3), round(held_hi, 3)],
+        "macroF1": round(result.macro_f1, 3),
+        "baselineMacroF1": round(result.baseline_macro_f1, 3),
         "heldOutAccuracy": (
             round(sum(1 for r in held if r.predicted == r.gold) / len(held), 3)
             if held else None
@@ -1060,6 +1109,10 @@ def stance_eval(
         "accuracy": round(result.accuracy, 3),
         "baselineAccuracy": round(result.baseline_accuracy, 3),
         "majorityAccuracy": round(result.majority_accuracy, 3),
+        # Somebody else's labels, on citations from papers outside the library. The
+        # figures above describe rules measured on the corpus they were written
+        # against; these are the only ones that describe how they travel.
+        "external": [item.to_dict() for item in external],
         "classes": {
             stance: {
                 "gold": c.support,
@@ -1078,3 +1131,63 @@ def stance_eval(
 
 if __name__ == "__main__":
     app()
+
+
+def _external_report(corpora: Path) -> list:
+    """Score the shipped classifier against SciCite and ACL-ARC, and print it.
+
+    Kept out of the repository because the corpora are not mine to redistribute, so
+    this is a no-op until they are fetched — see eval/corpora/README.md. The numbers it
+    produces are the honest ones: every accuracy figure this project published before
+    it came from ninety citations I labelled myself, drawn from the same forty-one
+    papers the cue tables were written against.
+    """
+    from keystone.eval.external import evaluate
+
+    results = evaluate(corpora)
+    if not results:
+        typer.secho(
+            f"no corpora under {corpora} (expected scicite/ and acl-arc/)",
+            fg=typer.colors.YELLOW,
+        )
+        return []
+
+    typer.echo()
+    typer.secho("against public labels", fg=typer.colors.GREEN, bold=True)
+    typer.echo(
+        f"{'corpus':10} {'n':>6} {'read':>6} {'right':>6} {'95% CI':>13} {'macro-F1':>9}"
+    )
+    for item in results:
+        lo, hi = item.spoken_interval
+        typer.echo(
+            f"{item.corpus:10} {item.instances:6} {item.coverage:6.1%} "
+            f"{item.spoken_precision:6.1%} [{lo:5.0%},{hi:5.0%}] {item.macro_f1:9.3f}"
+        )
+    typer.echo(
+        "\n`read` is the share of citations a stance was reported for, `right` how "
+        "often\nthose were correct. macro-F1 blends the two and so punishes silence as "
+        "hard as\nerror, which measures a benchmark entry rather than a tool built to "
+        "decline."
+    )
+    for item in results:
+        typer.echo(f"\n{item.corpus}")
+        for label in item.labels:
+            score = item.classes[label]
+            if score.support == 0:
+                continue
+            precision = "   -  " if score.precision is None else f"{score.precision:6.2f}"
+            typer.echo(
+                f"  {label:20} support {score.support:5}  said {score.predicted:5}"
+                f"  P {precision}  R {score.recall:5.2f}"
+            )
+        if item.unreachable:
+            typer.echo(
+                f"  no class maps to {', '.join(item.unreachable)}, so macro-F1 here "
+                f"cannot exceed {item.ceiling:.3f}"
+            )
+    typer.echo(
+        "\nPublished reference points: ACL-ARC 6-class macro-F1 — cue phrases (Teufel\n"
+        "2000) 0.273, random forest (Jurgens 2018) 0.530, Falcon-7B 0.733. SciCite\n"
+        "3-class macro-F1 — neural state of the art 0.84-0.889."
+    )
+    return results

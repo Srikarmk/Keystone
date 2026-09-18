@@ -25,6 +25,7 @@ import type {
   BaselineCheck,
   Claim,
   Dossier,
+  External as ExternalScore,
   IndexedNumber,
   IndexEntry,
   Reference,
@@ -371,6 +372,13 @@ function Report({
   onToggleEvidence: () => void;
   onJump: (a: AnchorJson | null) => void;
 }) {
+  // The broadest external corpus, which is the only honest place to state an error
+  // rate. The ninety hand labels were drawn from these same forty-one papers, so
+  // their agreement measures the rules' consistency, not whether they travel.
+  const external = (accuracy?.external ?? []).reduce<ExternalScore | null>(
+    (best, item) => (best && best.instances >= item.instances ? best : item),
+    null,
+  );
   const confirmed = dossier.baselines.filter((b) => b.outcome === "confirmed").length;
   const notFound = dossier.baselines.filter((b) => b.outcome === "not_found").length;
 
@@ -550,23 +558,33 @@ function Report({
         {/* How often these readings are right, stated here rather than left implicit.
             A tool whose claim is that its findings are checkable should publish its
             own error rate first. */}
-        {accuracy && accuracy.heldOutAccuracy !== null ? (
+        {external ? (
           <p className="mt-2.5">
-            Measured on{" "}
-            <span className="numeral">{accuracy.labelled}</span> citations labelled by
-            hand:{" "}
-            <span className="numeral text-ink-soft">
-              {Math.round(accuracy.heldOutAccuracy * 100)}%
-            </span>{" "}
-            of readings correct on the{" "}
-            <span className="numeral">{accuracy.heldOut}</span> drawn after the rules
-            were last changed, against{" "}
+            Scored against{" "}
             <span className="numeral">
-              {Math.round(accuracy.baselineAccuracy * 100)}%
+              {external.instances.toLocaleString()}
             </span>{" "}
-            for a bag-of-words classifier over the same sentences. So roughly one
-            reading in five is still wrong &mdash; which is why the sentence is always
-            shown.
+            citations labelled by other people in {external.corpus}, from papers
+            outside this library. A stance was reported for{" "}
+            <span className="numeral text-ink-soft">
+              {Math.round(external.coverage * 100)}%
+            </span>{" "}
+            of them, and{" "}
+            <span className="numeral text-ink-soft">
+              {Math.round(external.spokenPrecision * 100)}%
+            </span>{" "}
+            of those were right &mdash;{" "}
+            <span className="numeral">
+              {Math.round(external.spokenInterval[0] * 100)}&ndash;
+              {Math.round(external.spokenInterval[1] * 100)}%
+            </span>{" "}
+            with 95% confidence. The other{" "}
+            <span className="numeral">
+              {Math.round((1 - external.coverage) * 100)}%
+            </span>{" "}
+            carry no cue phrase this can read, and nothing is shown for them. So
+            roughly one reading in five is wrong, and which one is not knowable &mdash;
+            which is why the sentence is always shown.
           </p>
         ) : null}
       </div>

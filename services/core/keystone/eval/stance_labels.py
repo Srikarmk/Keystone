@@ -171,12 +171,52 @@ class ClassScore:
         return None if self.support == 0 else self.hits / self.support
 
 
+def wilson(hits: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    """A 95% interval on a proportion, by the Wilson score method.
+
+    Reported because the point estimate on its own invites a claim the sample cannot
+    support. At 80% on 30 rows the interval runs from about 60% to 88% — wide enough
+    that "competitive with a trained classifier" and "barely beats bag-of-words" are
+    both inside it. Wilson rather than the normal approximation because the normal one
+    misbehaves at small n and near the ends, which is exactly this situation.
+    """
+    if n == 0:
+        return (0.0, 0.0)
+    p = hits / n
+    denominator = 1 + z**2 / n
+    centre = (p + z**2 / (2 * n)) / denominator
+    spread = z / denominator * math.sqrt(p * (1 - p) / n + z**2 / (4 * n**2))
+    return (max(0.0, centre - spread), min(1.0, centre + spread))
+
+
+def macro_f1(classes: dict[str, ClassScore]) -> float:
+    """Unweighted mean F1 over the classes that occur.
+
+    The field reports macro-F1 for citation-intent work, not accuracy, because
+    `background` is half of every corpus and accuracy flatters anything that predicts
+    it well. Reported here so the number is comparable to published work at all.
+    """
+    scores = []
+    for c in classes.values():
+        if c.support == 0 and c.predicted == 0:
+            continue
+        precision, recall = c.precision or 0.0, c.recall or 0.0
+        scores.append(
+            0.0 if precision + recall == 0
+            else 2 * precision * recall / (precision + recall)
+        )
+    return sum(scores) / len(scores) if scores else 0.0
+
+
 @dataclass
 class Report:
     rows: int
     classes: dict[str, ClassScore] = field(default_factory=dict)
     accuracy: float = 0.0
+    interval: tuple[float, float] = (0.0, 0.0)
+    macro_f1: float = 0.0
     baseline_accuracy: float = 0.0
+    baseline_macro_f1: float = 0.0
     majority_accuracy: float = 0.0
     confusions: Counter = field(default_factory=Counter)
 
@@ -205,7 +245,10 @@ def report(rows: list[Row]) -> Report:
         return out
 
     out.classes = score(labelled)
-    out.accuracy = sum(1 for r in labelled if r.predicted == r.gold) / len(labelled)
+    hits = sum(1 for r in labelled if r.predicted == r.gold)
+    out.accuracy = hits / len(labelled)
+    out.interval = wilson(hits, len(labelled))
+    out.macro_f1 = macro_f1(out.classes)
 
     golds = [r.gold for r in labelled]
     majority = Counter(golds).most_common(1)[0][0]
@@ -216,6 +259,7 @@ def report(rows: list[Row]) -> Report:
         sum(1 for guess, row in zip(baseline, labelled, strict=True) if guess == row.gold)
         / len(labelled)
     )
+    out.baseline_macro_f1 = macro_f1(score(labelled, baseline))
 
     for row in labelled:
         if row.predicted != row.gold:

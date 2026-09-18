@@ -274,7 +274,26 @@
       "table": null,
       "row": null,
       "cell": null,
-      "anchor": null
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 482.0755615234375,
+            "y0": 327.38720703125,
+            "x1": 504.0032043457031,
+            "y1": 337.3498229980469
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 338.34619140625,
+            "x1": 282.1860656738281,
+            "y1": 348.3088073730469
+          }
+        ]
+      }
     },
     {
       "value": "0.80",
@@ -6771,18 +6790,18 @@
   "findings": [],
   "lineage": {
     "tally": {
-      "inherits": 3,
+      "inherits": 5,
       "extends": 1,
       "contests": 0,
       "compares": 0,
-      "background": 47,
+      "background": 45,
       "traversable": 0
     },
     "foundation": {
       "key": "matthews1975comparison",
       "stance": "inherits",
       "cue": "we use",
-      "sentence": "Following the authors, we use Matthews correlation coefficient as the evaluation metric, which evaluates performance on unbalanced binary classification and ranges from -1 to 1, with 0 being the performance of uninformed guessing.",
+      "sentence": "Following the authors, we use Matthews correlation coefficient [Matthews 1975] as the evaluation metric, which evaluates performance on unbalanced binary classification and ranges from -1 to 1, with 0 being the performance of uninformed guessing.",
       "section": "Single-Sentence Tasks",
       "sectionKind": "method",
       "ordinal": 21,
@@ -6820,10 +6839,74 @@
     },
     "edges": [
       {
+        "key": "DBLP:conf/emnlp/ConneauKSBB17",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "To allow for fair comparisons with the multi-task analogs, we do not tune parameter or training settings for each task, so these single-task models do not generally represent the state of the art for each task. Sentence Representation Models Finally, we evaluate the following trained sentence-to-vector encoder models using our benchmark: average bag-of-words using GloVe embeddings (CBoW), Skip-Thought [Kiros et al. 2015], InferSent [Conneau et al. 2017], DisSent [Nie et al. 2017], and GenSen [Subramanian et al. 2018].",
+        "section": "Baselines",
+        "sectionKind": "method",
+        "ordinal": 50,
+        "title": "Supervised learning of universal sentence representations from natural language inference data",
+        "authors": "Alexis Conneau, Douwe Kiela, Holger Schwenk, Lo\\\" c Barrault, and Antoine Bordes",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 157.4842529296875,
+              "y0": 594.657470703125,
+              "x1": 504.0032958984375,
+              "y1": 604.6200561523438
+            },
+            {
+              "x0": 108.0,
+              "y0": 605.616455078125,
+              "x1": 504.00323486328125,
+              "y1": 615.5790405273438
+            },
+            {
+              "x0": 108.0,
+              "y0": 616.575439453125,
+              "x1": 174.39076232910156,
+              "y1": 626.5380249023438
+            },
+            {
+              "x0": 108.0,
+              "y0": 647.0665283203125,
+              "x1": 247.81517028808594,
+              "y1": 657.0291137695312
+            },
+            {
+              "x0": 257.77301025390625,
+              "y0": 647.157470703125,
+              "x1": 503.99847412109375,
+              "y1": 657.1200561523438
+            },
+            {
+              "x0": 108.00001525878906,
+              "y0": 658.116455078125,
+              "x1": 504.0032043457031,
+              "y1": 668.0790405273438
+            },
+            {
+              "x0": 108.00001525878906,
+              "y0": 669.075439453125,
+              "x1": 163.35218811035156,
+              "y1": 679.0380249023438
+            }
+          ]
+        }
+      },
+      {
         "key": "gorodkin2004Rk",
         "stance": "inherits",
         "cue": "we use",
-        "sentence": "The resulting labels are 42% entailment, 35% neutral, and 23% contradiction. Evaluation Since the class distribution in the diagnostic set is not balanced, we use , a three-class generalization of the Matthews correlation coefficient, for evaluation.",
+        "sentence": "The resulting labels are 42% entailment, 35% neutral, and 23% contradiction. Evaluation Since the class distribution in the diagnostic set is not balanced, we use R_3 [Gorodkin 2004], a three-class generalization of the Matthews correlation coefficient, for evaluation.",
         "section": "Diagnostic Dataset",
         "sectionKind": "method",
         "ordinal": 38,
@@ -6869,7 +6952,7 @@
         "key": "kiros2015skip",
         "stance": "inherits",
         "cue": "following",
-        "sentence": "To allow for fair comparisons with the multi-task analogs, we do not tune parameter or training settings for each task, so these single-task models do not generally represent the state of the art for each task. Sentence Representation Models Finally, we evaluate the following trained sentence-to-vector encoder models using our benchmark: average bag-of-words using GloVe embeddings (CBoW), Skip-Thought , InferSent , DisSent , and GenSen .",
+        "sentence": "To allow for fair comparisons with the multi-task analogs, we do not tune parameter or training settings for each task, so these single-task models do not generally represent the state of the art for each task. Sentence Representation Models Finally, we evaluate the following trained sentence-to-vector encoder models using our benchmark: average bag-of-words using GloVe embeddings (CBoW), Skip-Thought [Kiros et al. 2015], InferSent [Conneau et al. 2017], DisSent [Nie et al. 2017], and GenSen [Subramanian et al. 2018].",
         "section": "Baselines",
         "sectionKind": "method",
         "ordinal": 49,
@@ -6933,7 +7016,7 @@
         "key": "matthews1975comparison",
         "stance": "inherits",
         "cue": "we use",
-        "sentence": "Following the authors, we use Matthews correlation coefficient as the evaluation metric, which evaluates performance on unbalanced binary classification and ranges from -1 to 1, with 0 being the performance of uninformed guessing.",
+        "sentence": "Following the authors, we use Matthews correlation coefficient [Matthews 1975] as the evaluation metric, which evaluates performance on unbalanced binary classification and ranges from -1 to 1, with 0 being the performance of uninformed guessing.",
         "section": "Single-Sentence Tasks",
         "sectionKind": "method",
         "ordinal": 21,
@@ -6970,10 +7053,74 @@
         }
       },
       {
+        "key": "nie2017dissent",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "To allow for fair comparisons with the multi-task analogs, we do not tune parameter or training settings for each task, so these single-task models do not generally represent the state of the art for each task. Sentence Representation Models Finally, we evaluate the following trained sentence-to-vector encoder models using our benchmark: average bag-of-words using GloVe embeddings (CBoW), Skip-Thought [Kiros et al. 2015], InferSent [Conneau et al. 2017], DisSent [Nie et al. 2017], and GenSen [Subramanian et al. 2018].",
+        "section": "Baselines",
+        "sectionKind": "method",
+        "ordinal": 51,
+        "title": "Dissent: Sentence representation learning from explicit discourse relations",
+        "authors": "Allen Nie, Erin D Bennett, and Noah D Goodman",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 157.4842529296875,
+              "y0": 594.657470703125,
+              "x1": 504.0032958984375,
+              "y1": 604.6200561523438
+            },
+            {
+              "x0": 108.0,
+              "y0": 605.616455078125,
+              "x1": 504.00323486328125,
+              "y1": 615.5790405273438
+            },
+            {
+              "x0": 108.0,
+              "y0": 616.575439453125,
+              "x1": 174.39076232910156,
+              "y1": 626.5380249023438
+            },
+            {
+              "x0": 108.0,
+              "y0": 647.0665283203125,
+              "x1": 247.81517028808594,
+              "y1": 657.0291137695312
+            },
+            {
+              "x0": 257.77301025390625,
+              "y0": 647.157470703125,
+              "x1": 503.99847412109375,
+              "y1": 657.1200561523438
+            },
+            {
+              "x0": 108.00001525878906,
+              "y0": 658.116455078125,
+              "x1": 504.0032043457031,
+              "y1": 668.0790405273438
+            },
+            {
+              "x0": 108.00001525878906,
+              "y0": 669.075439453125,
+              "x1": 163.35218811035156,
+              "y1": 679.0380249023438
+            }
+          ]
+        }
+      },
+      {
         "key": "seo2016bidirectional",
         "stance": "extends",
         "cue": "inspired by",
-        "sentence": "We also consider a variant of our model which for sentence pair tasks uses an attention mechanism inspired by between all pairs of words, followed by a second BiLSTM with max pooling.",
+        "sentence": "We also consider a variant of our model which for sentence pair tasks uses an attention mechanism inspired by [Seo et al. 2017] between all pairs of words, followed by a second BiLSTM with max pooling.",
         "section": "Baselines",
         "sectionKind": "method",
         "ordinal": 45,
@@ -7191,5 +7338,10 @@
     "cited": 0,
     "shown": 0,
     "bare": 5
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 34,
+    "rate": 0.85
   }
 }

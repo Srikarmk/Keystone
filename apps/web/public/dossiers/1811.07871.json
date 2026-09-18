@@ -28,7 +28,26 @@
       "column": "",
       "cell": "1",
       "evidenceLabel": null,
-      "anchor": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 340.21331787109375,
+            "y0": 712.3692626953125,
+            "x1": 504.0021057128906,
+            "y1": 722.4310302734375
+          },
+          {
+            "x0": 303.5090026855469,
+            "y0": 742.3324584960938,
+            "x1": 308.49029541015625,
+            "y1": 752.2950439453125
+          }
+        ]
+      },
       "evidenceAnchor": {
         "page": 9,
         "pageWidth": 612.0,
@@ -62,7 +81,26 @@
       "table": "Table 1",
       "row": "Amount of feedback",
       "cell": "1",
-      "anchor": null
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 340.21331787109375,
+            "y0": 712.3692626953125,
+            "x1": 504.0021057128906,
+            "y1": 722.4310302734375
+          },
+          {
+            "x0": 303.5090026855469,
+            "y0": 742.3324584960938,
+            "x1": 308.49029541015625,
+            "y1": 752.2950439453125
+          }
+        ]
+      }
     }
   ],
   "tables": [
@@ -2480,202 +2518,43 @@
   "findings": [],
   "lineage": {
     "tally": {
-      "inherits": 0,
+      "inherits": 1,
       "extends": 0,
-      "contests": 3,
-      "compares": 2,
-      "background": 180,
+      "contests": 0,
+      "compares": 0,
+      "background": 184,
       "traversable": 0
     },
-    "foundation": null,
+    "foundation": {
+      "key": "andreas2018learning",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "If we can learn to translate natural language utterances into the rigid format required for the data set the reward model is trained on, this would allow users to give feedback much more efficiently. * Natural language has the potential to achieve better generalization if the latent space is represented using language [Andreas et al. 2018] and possibly generalize in a way that is more predictable to humans.",
+      "section": "Natural language",
+      "sectionKind": "method",
+      "ordinal": 99,
+      "title": "Learning with latent language",
+      "authors": "Jacob Andreas, Dan Klein, and Sergey Levine",
+      "year": 2018,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": null
+    },
     "edges": [
       {
-        "key": "garrabrant2018",
-        "stance": "contests",
-        "cue": "rather than",
-        "sentence": "For now, answers to these research questions should be understood more as intuition pumps for practical alignment questions rather than direct solutions themselves .",
-        "section": "Other related work",
+        "key": "andreas2018learning",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "If we can learn to translate natural language utterances into the rigid format required for the data set the reward model is trained on, this would allow users to give feedback much more efficiently. * Natural language has the potential to achieve better generalization if the latent space is represented using language [Andreas et al. 2018] and possibly generalize in a way that is more predictable to humans.",
+        "section": "Natural language",
         "sectionKind": "method",
-        "ordinal": 183,
-        "title": "Sources of intuitions and data on AGI",
-        "authors": "Scott Garrabrant",
+        "ordinal": 99,
+        "title": "Learning with latent language",
+        "authors": "Jacob Andreas, Dan Klein, and Sergey Levine",
         "year": 2018,
         "arxivId": null,
         "inCorpus": false,
-        "anchor": {
-          "page": 20,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 157.51869201660156,
-              "y0": 243.44729614257812,
-              "x1": 503.9973449707031,
-              "y1": 253.509033203125
-            },
-            {
-              "x0": 108.0,
-              "y0": 254.4324493408203,
-              "x1": 423.5752868652344,
-              "y1": 264.3950500488281
-            }
-          ]
-        }
-      },
-      {
-        "key": "goodfellow2015",
-        "stance": "contests",
-        "cue": "Unlike",
-        "sentence": "Unlike in most work on generating adversarial examples , the agent would not necessarily be free to synthesize any possible input to the reward model, but would need to find a way to realize adversarial observation sequences in its environment.",
-        "section": "Reward hacking",
-        "sectionKind": "method",
-        "ordinal": 74,
-        "title": "Explaining and harnessing adversarial examples",
-        "authors": "Ian Goodfellow, Jonathon Shlens, and Christian Szegedy",
-        "year": 2015,
-        "arxivId": "1412.6572",
-        "inCorpus": false,
-        "anchor": {
-          "page": 10,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 396.3696594238281,
-              "y0": 445.498046875,
-              "x1": 503.9966735839844,
-              "y1": 455.4954528808594
-            },
-            {
-              "x0": 108.0,
-              "y0": 456.3583068847656,
-              "x1": 503.9973449707031,
-              "y1": 466.4200439453125
-            },
-            {
-              "x0": 107.64099884033203,
-              "y0": 467.34246826171875,
-              "x1": 378.1654968261719,
-              "y1": 477.3050842285156
-            }
-          ]
-        }
-      },
-      {
-        "key": "hester2018deep",
-        "stance": "compares",
-        "cue": "outperform",
-        "sentence": "Analogous to ass:evaluation, generalizing learned reward functions might be easier than generalizing behavior . Performance. It is generally difficult to outperform humans using imitation learning alone : even a perfect imitator can only perform as well as the source it is imitating; superhuman performance typically comes from executing human action sequences faster and more reliably by smoothing out inconsistencies in human behavior . Therefore imitation learning is unlikely to be competitive with other strategies to train agents in the longer term.",
-        "section": "Imitation learning",
-        "sectionKind": "method",
-        "ordinal": 158,
-        "title": "Deep Q-learning from demonstrations",
-        "authors": "Todd Hester, Matej Vecerik, Olivier Pietquin, Marc Lanctot, Tom Schaul, Bilal Piot, Dan Horgan, John Quan, Andrew Sendonaris, Gabriel Dulac-Arnold, John Agapiou, Joel Z Leibo, and Audrunas Gruslys",
-        "year": 2018,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 17,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 221.582275390625,
-              "y0": 190.6584014892578,
-              "x1": 503.99688720703125,
-              "y1": 200.5208740234375
-            },
-            {
-              "x0": 143.86599731445312,
-              "y0": 201.56739807128906,
-              "x1": 503.9970703125,
-              "y1": 211.42987060546875
-            },
-            {
-              "x0": 143.86599731445312,
-              "y0": 212.37127685546875,
-              "x1": 452.957763671875,
-              "y1": 222.3736572265625
-            }
-          ]
-        }
-      },
-      {
-        "key": "huang2017adversarial",
-        "stance": "contests",
-        "cue": "Unlike",
-        "sentence": "Unlike in most work on generating adversarial examples , the agent would not necessarily be free to synthesize any possible input to the reward model, but would need to find a way to realize adversarial observation sequences in its environment.",
-        "section": "Reward hacking",
-        "sectionKind": "method",
-        "ordinal": 74,
-        "title": "Adversarial attacks on neural network policies",
-        "authors": "Sandy Huang, Nicolas Papernot, Ian Goodfellow, Yan Duan, and Pieter Abbeel",
-        "year": 2017,
-        "arxivId": "1702.02284",
-        "inCorpus": false,
-        "anchor": {
-          "page": 10,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 396.3696594238281,
-              "y0": 445.498046875,
-              "x1": 503.9966735839844,
-              "y1": 455.4954528808594
-            },
-            {
-              "x0": 108.0,
-              "y0": 456.3583068847656,
-              "x1": 503.9973449707031,
-              "y1": 466.4200439453125
-            },
-            {
-              "x0": 107.64099884033203,
-              "y0": 467.34246826171875,
-              "x1": 378.1654968261719,
-              "y1": 477.3050842285156
-            }
-          ]
-        }
-      },
-      {
-        "key": "lakshminarayanan2017simple",
-        "stance": "compares",
-        "cue": "baseline",
-        "sentence": "So far model ensembles provide a very strong baseline .",
-        "section": "Uncertainty estimates",
-        "sectionKind": "method",
-        "ordinal": 121,
-        "title": "Simple and scalable predictive uncertainty estimation using deep ensembles",
-        "authors": "Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell",
-        "year": 2017,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 14,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 315.51239013671875,
-              "y0": 275.4732971191406,
-              "x1": 503.9945373535156,
-              "y1": 285.5350341796875
-            },
-            {
-              "x0": 108.0,
-              "y0": 286.4396057128906,
-              "x1": 140.81068420410156,
-              "y1": 296.4270935058594
-            }
-          ]
-        }
+        "anchor": null
       }
     ]
   },
@@ -2724,7 +2603,7 @@
       }
     },
     {
-      "sentence": "As we scale reward modeling to complex general domains, we expect to encounter a number of challenges ( sec:challenges).",
+      "sentence": "As we scale reward modeling to complex general domains, we expect to encounter a number of challenges ([ref]).",
       "anchorText": "As we scale reward modeling to complex general domains, we expect to encounter a number of challenges ( sec:challenges).",
       "kind": "conjectural",
       "support": "bare",
@@ -2775,7 +2654,7 @@
       }
     },
     {
-      "sentence": "For simplicity of this analogy, let us assume that the user's evaluation is binary so that it can be captured by the predicate .",
+      "sentence": "For simplicity of this analogy, let us assume that the user's evaluation is binary so that it can be captured by the predicate \u03c6.",
       "anchorText": "For simplicity of this analogy, let us assume that the user's evaluation is binary so that it can be captured by the predicate",
       "kind": "stated",
       "support": "bare",
@@ -2806,7 +2685,7 @@
       }
     },
     {
-      "sentence": "This analogy to complexity theory, first introduced by , provides two important insights: It is widely believed that the complexity classes P and NP are not equal, which supports ass:evaluation that for a lot of relevant problems evaluation is easier than producing solutions. Basically every formal statement that mathematicians care about can be written as a first-order logic statement with a finite number of alternating quantifiers.",
+      "sentence": "This analogy to complexity theory, first introduced by [Irving et al. 2018], provides two important insights: * It is widely believed that the complexity classes P and NP are not equal, which supports [ref] that for a lot of relevant problems evaluation is easier than producing solutions. * Basically every formal statement that mathematicians care about can be written as a first-order logic statement with a finite number of alternating quantifiers.",
       "anchorText": ", provides two important insights: It is widely believed that the complexity classes P and NP are not equal, which supports ass:evaluation that for a lot of relevant problems evaluation is easier than producing solutions. Basically every formal statement that mathematicians care about can be written as a first-order logic statement with a finite number of alternating quantifiers.",
       "kind": "conventional",
       "support": "cited",
@@ -2822,7 +2701,7 @@
       "anchor": null
     },
     {
-      "sentence": "Assuming a 10x overhead and 50 million to annotate.",
+      "sentence": "Assuming a 10x overhead and $10 per hour, this data would cost ca. $50 million to annotate.",
       "anchorText": "Assuming a 10x overhead and \\",
       "kind": "stated",
       "support": "bare",
@@ -2834,7 +2713,7 @@
       "anchor": null
     },
     {
-      "sentence": "This allows the agent to use off-policy reward estimates, estimated for actions it never actually takes, provided that the reward model is accurate off-policy ( ssec:off-policy-feedback).",
+      "sentence": "This allows the agent to use off-policy reward estimates, estimated for actions it never actually takes, provided that the reward model is accurate off-policy ([ref]).",
       "anchorText": "This allows the agent to use off-policy reward estimates, estimated for actions it never actually takes, provided that the reward model is accurate off-policy ( ssec:off-policy-feedback).",
       "kind": "conditional",
       "support": "bare",
@@ -2879,7 +2758,7 @@
       }
     },
     {
-      "sentence": "If we assume the human is fully rational and the agent can design a sequence of tasks for the human, then the reward function can be identified .",
+      "sentence": "If we assume the human is fully rational and the agent can design a sequence of tasks for the human, then the reward function can be identified [Amin et al. 2017].",
       "anchorText": "If we assume the human is fully rational and the agent can design a sequence of tasks for the human, then the reward function can be identified",
       "kind": "stated",
       "support": "cited",
@@ -2918,7 +2797,7 @@
       }
     },
     {
-      "sentence": "For simplicity we can treat both and as natural language strings.",
+      "sentence": "For simplicity we can treat both Q and A as natural language strings.",
       "anchorText": "For simplicity we can treat both",
       "kind": "simplifying",
       "support": "bare",
@@ -3059,5 +2938,10 @@
     "cited": 2,
     "shown": 0,
     "bare": 11
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 36,
+    "rate": 0.9
   }
 }

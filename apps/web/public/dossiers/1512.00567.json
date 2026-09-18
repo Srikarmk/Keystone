@@ -33,7 +33,32 @@
       "table": "Table 3",
       "row": "GoogLeNet",
       "cell": "1.5",
-      "anchor": null
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 538.4669799804688,
+            "y0": 318.495361328125,
+            "x1": 545.1119995117188,
+            "y1": 328.4579772949219
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 330.45135498046875,
+            "x1": 545.114990234375,
+            "y1": 340.4139709472656
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 342.4063415527344,
+            "x1": 373.867919921875,
+            "y1": 352.36895751953125
+          }
+        ]
+      }
     },
     {
       "value": "0.1%",
@@ -1658,55 +1683,43 @@
   "findings": [],
   "lineage": {
     "tally": {
-      "inherits": 1,
+      "inherits": 2,
       "extends": 0,
       "contests": 0,
-      "compares": 1,
+      "compares": 0,
       "background": 21,
-      "traversable": 1
+      "traversable": 0
     },
     "foundation": {
-      "key": "he2015delving",
+      "key": "rmsprop",
       "stance": "inherits",
-      "cue": "based on",
-      "sentence": "Still our solution uses much less computation than the best published results based on denser networks: our model outperforms the results of He et al -- cutting the top- (top- ) error by ( ) relative, respectively -- while being six times cheaper computationally and using at least five times less parameters (estimated).",
-      "section": "Conclusions",
-      "sectionKind": "conclusion",
-      "ordinal": 38,
-      "title": "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification",
-      "authors": "K. He, X. Zhang, S. Ren, and J. Sun",
+      "cue": "using",
+      "sentence": "Our earlier experiments used momentum [Sutskever et al. 2013] with a decay of 0.9, while our best models were achieved using RMSProp [Tieleman et al. 2015] with decay of 0.9 and \u03f5=1.0.",
+      "section": "Training Methodology",
+      "sectionKind": "method",
+      "ordinal": 31,
+      "title": "Divide the gradient by a running average of its recent magnitude",
+      "authors": "T. Tieleman and G. Hinton",
       "year": 2015,
-      "arxivId": "1502.01852",
+      "arxivId": null,
       "inCorpus": false,
       "anchor": {
-        "page": 8,
+        "page": 6,
         "pageWidth": 612.0,
         "pageHeight": 792.0,
         "precision": "tight",
         "rects": [
           {
-            "x0": 195.30691528320312,
-            "y0": 385.94830322265625,
-            "x1": 286.3651123046875,
-            "y1": 395.9109191894531
+            "x0": 488.8368225097656,
+            "y0": 311.2175598144531,
+            "x1": 545.1134033203125,
+            "y1": 321.18017578125
           },
           {
-            "x0": 50.11195373535156,
-            "y0": 397.9032897949219,
-            "x1": 286.36505126953125,
-            "y1": 407.86590576171875
-          },
-          {
-            "x0": 50.11195373535156,
-            "y0": 409.8582763671875,
-            "x1": 286.364990234375,
-            "y1": 419.8208923339844
-          },
-          {
-            "x0": 50.11195373535156,
-            "y0": 421.8132629394531,
-            "x1": 81.55390930175781,
-            "y1": 431.77587890625
+            "x0": 308.86181640625,
+            "y0": 323.17254638671875,
+            "x1": 487.3616943359375,
+            "y1": 333.1351623535156
           }
         ]
       }
@@ -1716,7 +1729,7 @@
         "key": "he2015delving",
         "stance": "inherits",
         "cue": "based on",
-        "sentence": "Still our solution uses much less computation than the best published results based on denser networks: our model outperforms the results of He et al -- cutting the top- (top- ) error by ( ) relative, respectively -- while being six times cheaper computationally and using at least five times less parameters (estimated).",
+        "sentence": "Still our solution uses much less computation than the best published results based on denser networks: our model outperforms the results of He et al [He et al. 2015] \u2013 cutting the top-5 (top-1) error by 25% (14%) relative, respectively \u2013 while being six times cheaper computationally and using at least five times less parameters (estimated).",
         "section": "Conclusions",
         "sectionKind": "conclusion",
         "ordinal": 38,
@@ -1759,35 +1772,35 @@
         }
       },
       {
-        "key": "ioffe2015batch",
-        "stance": "compares",
-        "cue": "compared to",
-        "sentence": "This is achieved with relatively modest ( ) increase in computational cost compared to the network described in Ioffe et al .",
-        "section": "Conclusions",
-        "sectionKind": "conclusion",
-        "ordinal": 37,
-        "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
-        "authors": "S. Ioffe and C. Szegedy",
+        "key": "rmsprop",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Our earlier experiments used momentum [Sutskever et al. 2013] with a decay of 0.9, while our best models were achieved using RMSProp [Tieleman et al. 2015] with decay of 0.9 and \u03f5=1.0.",
+        "section": "Training Methodology",
+        "sectionKind": "method",
+        "ordinal": 31,
+        "title": "Divide the gradient by a running average of its recent magnitude",
+        "authors": "T. Tieleman and G. Hinton",
         "year": 2015,
-        "arxivId": "1502.03167",
-        "inCorpus": true,
+        "arxivId": null,
+        "inCorpus": false,
         "anchor": {
-          "page": 8,
+          "page": 6,
           "pageWidth": 612.0,
           "pageHeight": 792.0,
           "precision": "tight",
           "rects": [
             {
-              "x0": 50.11195373535156,
-              "y0": 373.9923095703125,
-              "x1": 286.3603515625,
-              "y1": 383.9549255371094
+              "x0": 488.8368225097656,
+              "y0": 311.2175598144531,
+              "x1": 545.1134033203125,
+              "y1": 321.18017578125
             },
             {
-              "x0": 50.11195373535156,
-              "y0": 385.94830322265625,
-              "x1": 169.72296142578125,
-              "y1": 395.9109191894531
+              "x0": 308.86181640625,
+              "y0": 323.17254638671875,
+              "x1": 487.3616943359375,
+              "y1": 333.1351623535156
             }
           ]
         }
@@ -1900,7 +1913,7 @@
       }
     },
     {
-      "sentence": "However, we have observed that the quality of the network is relatively stable to variations as long as the principles from Section are observed.",
+      "sentence": "However, we have observed that the quality of the network is relatively stable to variations as long as the principles from Section [ref] are observed.",
       "anchorText": "However, we have observed that the quality of the network is relatively stable to variations as long as the principles from Section",
       "kind": "conditional",
       "support": "bare",
@@ -1939,7 +1952,7 @@
       }
     },
     {
-      "sentence": "For brevity, let us omit the dependence of and on example .",
+      "sentence": "For brevity, let us omit the dependence of p and q on example x.",
       "anchorText": "For brevity, let us omit the dependence of",
       "kind": "simplifying",
       "support": "bare",
@@ -2006,5 +2019,10 @@
     "cited": 0,
     "shown": 0,
     "bare": 5
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
   }
 }

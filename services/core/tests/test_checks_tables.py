@@ -221,9 +221,9 @@ def test_tolerates_rounding_in_the_parts():
 )
 def test_a_cell_whose_maths_is_just_a_number_is_read(raw: str, expected: str) -> None:
     from keystone.ingest.latex import strip_markup
-    from keystone.ingest.tables import _unwrap_numeric_math
+    from keystone.ingest.latex import unwrap_numeric_math
 
-    assert strip_markup(_unwrap_numeric_math(raw)).strip() == expected
+    assert strip_markup(unwrap_numeric_math(raw)).strip() == expected
 
 
 def test_a_maths_mode_column_survives_into_cells() -> None:

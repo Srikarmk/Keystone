@@ -19,6 +19,7 @@ from keystone.audit.trace import (
     trace_all,
 )
 from keystone.graph.models import Finding, Paper
+from keystone.ingest.alignment import Alignment, measure as measure_alignment
 from keystone.ingest.anchors import Anchor, DocIndex
 from keystone.audit.checks import cross_paper
 from keystone.ingest.arxiv_source import SourceUnavailable, load_project
@@ -97,6 +98,7 @@ class Dossier:
     lineage: lineage_layer.Lineage | None = None
     assumptions: tuple = ()
     assumption_anchors: tuple = ()
+    alignment: Alignment | None = None
 
     def to_dict(self) -> dict[str, Any]:
         keystone = self.coverage.keystone
@@ -227,7 +229,33 @@ class Dossier:
                 )
             ],
             "assumptionTally": assumption_layer.tally(list(self.assumptions)),
+            # How much of the source was findable in the PDF. Published because it is
+            # the number that decides whether anything else here can be trusted.
+            "alignment": self.alignment.to_dict() if self.alignment else None,
         }
+
+
+def _cite_names(references: list) -> dict[str, str]:
+    """How each citation key should read inside a quotation.
+
+    "Ba et al. 2016" rather than a bare marker, so an assumption that rests on another
+    paper names it where the reader can see it. Falls back to nothing for an entry
+    whose author line could not be split, and the caller shows a neutral marker — a
+    guessed attribution in a quotation would be worse than an anonymous one.
+    """
+    names: dict[str, str] = {}
+    for reference in references:
+        surname = ""
+        if reference.authors:
+            first = reference.authors.split(",")[0].split(" and ")[0].strip()
+            parts = [word for word in first.split() if len(word) > 1 and word[0].isupper()]
+            surname = parts[-1] if parts else ""
+        if not surname:
+            continue
+        many = " and " in reference.authors or reference.authors.count(",") > 1
+        year = f" {reference.year}" if reference.year else ""
+        names[reference.key] = f"{surname}{' et al.' if many else ''}{year}"
+    return names
 
 
 def source_numbers(arxiv_id: str, cache_dir: Path) -> set | None:
@@ -309,7 +337,9 @@ def build(
     )
     findings = tuple(run(paper)) + tuple(mismatch_findings(coverage))
 
-    assumptions = tuple(assumption_layer.extract(document.text, sections, kinds))
+    assumptions = tuple(
+        assumption_layer.extract(document.text, sections, kinds, _cite_names(references))
+    )
 
     claim_anchors: tuple[Anchor | None, ...] = ()
     assumption_anchors: tuple[Anchor | None, ...] = ()
@@ -319,12 +349,28 @@ def build(
     number_anchors: tuple = ()
     page_sizes: dict[int, tuple[float, float]] = {}
 
+    alignment: Alignment | None = None
     if pdf_path is not None and pdf_path.exists():
         pdf = Document.open(pdf_path)
         index = DocIndex(pdf)
+
+        # Before anything is extracted: are these two files the same paper? An e-print
+        # archive can contain a different document from the PDF it is filed under, and
+        # every quote and every anchor downstream assumes they match.
+        alignment = measure_alignment(document.text, index)
+        if alignment.mismatched:
+            raise SourceUnavailable(
+                f"{arxiv_id}: the LaTeX source does not match the PDF "
+                f"({alignment.located}/{alignment.sampled} sampled sentences found on "
+                f"the page); refusing to publish extractions from a different document"
+            )
+
         page_sizes = {p.number: (p.width, p.height) for p in pdf.pages}
+        # `locate_longest`, not `locate`: a claim's sentence arrives here already
+        # stripped of its citations, so the exact text often cannot appear in the PDF
+        # and 37% of claims had no anchor at all. The winning span is still verified.
         claim_anchors = tuple(
-            index.locate(t.mention.sentence).anchor for t in coverage.claims
+            index.locate_longest(t.mention.sentence).anchor for t in coverage.claims
         )
         evidence_anchors = tuple(_evidence_anchor(index, t) for t in coverage.claims)
         # Sentences repeat, so locate each one once rather than once per number in it.
@@ -332,7 +378,7 @@ def build(
         for trace in numbers:
             sentence = trace.mention.sentence
             if sentence not in located:
-                located[sentence] = index.locate(sentence).anchor
+                located[sentence] = index.locate_longest(sentence).anchor
         number_anchors = tuple(located[t.mention.sentence] for t in numbers)
         # Tables are located by their caption, which is long enough to match reliably
         # and puts the reader at the right place on the page.
@@ -355,6 +401,7 @@ def build(
         index=index,
         corpus=frozenset(corpus_titles or {}),
         corpus_titles=corpus_titles,
+        cites=_cite_names(references),
     )
 
     baselines: list = []
@@ -384,6 +431,7 @@ def build(
         lineage=lineage,
         assumptions=assumptions,
         assumption_anchors=assumption_anchors,
+        alignment=alignment,
     )
 
 

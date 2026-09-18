@@ -135,7 +135,11 @@ BERT \cite{devlin2019} and ELMo \cite{peters2018}, can generate different vector
 representations for the same word in different sentences depending on the context.
 """
     found = {c.key: c.stance for c in contexts(latex, extract_sections(latex))}
-    assert found["mikolov2013"] is Stance.CONTESTS
+    # Mikolov is background, not contested. The sentence contrasts two *kinds* of
+    # embedding and BERTScore is not a party to the contrast — it is laying out the
+    # distinction its metric relies on. Scoring against SciCite showed how much of that
+    # shape there is in real prose, and how confidently it used to be misread.
+    assert found["mikolov2013"] is Stance.BACKGROUND
     assert found["devlin2019"] is Stance.BACKGROUND
     assert found["peters2018"] is Stance.BACKGROUND
 
@@ -153,8 +157,14 @@ followed by layer normalization \cite{ba2016} in every block of the network.
 
 
 def test_one_citation_command_with_two_keys_shares_its_cue() -> None:
-    """BERT's abstract contests ELMo and GPT in a single \\cite."""
+    """BERT's abstract contests ELMo and GPT in a single \\cite.
+
+    Also the case for reading a paper's own name as first person: the sentence never
+    says "we", it says "BERT", and the premise check has to recognise that the paper is
+    talking about itself or the two edges BERT is best known for do not exist.
+    """
     latex = r"""
+\title{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}
 \section{Abstract}
 Unlike recent language representation models \cite{peters2018,radford2018}, BERT is
 designed to pre-train deep bidirectional representations from unlabeled text.
@@ -233,3 +243,161 @@ def test_an_adoption_that_does_say_who_is_kept(sentence: str) -> None:
     latex = f"\\section{{Method}}\n{sentence}\n"
     found = [c.stance for c in contexts(latex, extract_sections(latex))]
     assert found and all(s is Stance.INHERITS for s in found)
+
+
+# ------------------------------------------------- the sentence the reader is shown
+
+
+def test_a_citation_never_vanishes_from_a_quoted_sentence() -> None:
+    """A dropped citation leaves a sentence the paper does not contain.
+
+    Stripping markup deletes `\\cite{...}` outright, so "As baselines we chose to use
+    \\cite{mikolov2011}, and Interpolated KN 5-gram LMs" reached the reader as "we
+    chose to use , and Interpolated KN 5-gram LMs" — quoted verbatim, with a hole where
+    the attribution was. 120 of 498 published quotes read like that before this.
+    """
+    latex = (
+        "\\section{Experiments}\n"
+        "As baselines we chose to use \\cite{mikolov2011}, and Interpolated KN "
+        "5-gram LMs, as they are the most prevalent.\n"
+    )
+    names = {"mikolov2011": "Mikolov et al. 2011"}
+    site = contexts(latex, extract_sections(latex), names)[0]
+    assert "Mikolov et al. 2011" in site.shown
+    assert " ," not in site.shown
+    # `sentence` is the site's identity and the rules' input, so it stays stripped
+    # however the quote is rendered. The label file keys on it.
+    assert "Mikolov" not in site.sentence
+
+
+def test_an_unnamed_citation_becomes_a_marker_rather_than_a_hole() -> None:
+    """Better anonymous than absent: the reader can see that a work was cited."""
+    latex = (
+        "\\section{Experiments}\n"
+        "Following the procedure described in \\cite{unknown}, we reduce the size of "
+        "the combined corpus to 348M words.\n"
+    )
+    shown = contexts(latex, extract_sections(latex), {})[0].shown
+    assert "[ref]" in shown
+    assert " ," not in shown
+
+
+def test_rendering_cannot_move_a_reading() -> None:
+    """Stance is decided on the stripped text, so names in the quote are inert.
+
+    Worth holding explicitly: the cue tables were tuned against stripped sentences and
+    the 90 hand labels were drawn from them. If resolving a citation could introduce a
+    cue word — "Contrary" in a title, say — the display layer would silently retune the
+    classifier.
+    """
+    latex = (
+        "\\section{Method}\n"
+        "We adopt the residual connections of \\cite{he2016} in every block of the "
+        "network we train.\n"
+    )
+    plain = contexts(latex, extract_sections(latex))[0]
+    named = contexts(
+        latex, extract_sections(latex),
+        {"he2016": "Contrary to Unlike He et al. 2016"},
+    )[0]
+    assert plain.stance is named.stance is Stance.INHERITS
+    assert plain.cue == named.cue
+
+
+# ------------------------------------------------- a stance needs two parties
+
+
+def test_a_comparison_between_two_things_in_the_world_is_not_a_stance() -> None:
+    r"""The defect SciCite exposed: 136 of 223 `result` readings were wrong.
+
+    "women are disproportionately more frequently affected compared to men \cite{x}"
+    compares two populations. "compared to" is a real cue and it is really there, but
+    the citing paper is not on either side of the comparison, so there is no stance to
+    report — only a source for the whole claim.
+    """
+    latex = (
+        "\\section{Discussion}\n"
+        "Symptoms appear earlier and women are disproportionately more frequently "
+        "affected compared to men \\cite{ruhl2018}.\n"
+    )
+    found = {c.key: c.stance for c in contexts(latex, extract_sections(latex))}
+    assert found["ruhl2018"] is Stance.BACKGROUND
+
+
+def test_a_paper_comparing_itself_is_still_a_stance() -> None:
+    """The same cue, with this paper on one side of it, must survive the check."""
+    latex = (
+        "\\section{Results}\n"
+        "Our model reaches 28.4 BLEU, compared to the previous best ensemble "
+        "\\cite{wu2016}.\n"
+    )
+    found = {c.key: c.stance for c in contexts(latex, extract_sections(latex))}
+    assert found["wu2016"] is Stance.COMPARES
+
+
+def test_a_paper_that_names_itself_counts_as_saying_who() -> None:
+    """Papers with a coined name use it where other papers write "we"."""
+    latex = (
+        "\\title{LLaMA: Open and Efficient Foundation Language Models}\n"
+        "\\section{Introduction}\n"
+        "Unlike Chinchilla \\cite{hoffmann2022}, LLaMA is trained only on publicly "
+        "available data.\n"
+    )
+    found = {c.key: c.stance for c in contexts(latex, extract_sections(latex))}
+    assert found["hoffmann2022"] is Stance.CONTESTS
+
+
+def test_a_title_word_that_is_not_a_name_is_not_taken_for_one() -> None:
+    """"Attention: ..." must not make every sentence about attention self-referential."""
+    from keystone.lineage.stance import self_name
+
+    assert self_name("Attention: a survey of the literature") == ""
+    assert self_name("Deep Residual Learning for Image Recognition") == ""
+    assert self_name("BERT: Pre-training of Deep Bidirectional Transformers") == "BERT"
+
+
+def test_a_papers_own_name_is_read_from_the_abstract_when_the_title_omits_it() -> None:
+    """Most of the field's best-known papers have no colon in the title.
+
+    "Attention Is All You Need" never names the Transformer, and without the name the
+    paper loses "In contrast to RNN sequence-to-sequence models, the Transformer
+    outperforms the BerkeleyParser" — as clear a comparison as it makes anywhere.
+    """
+    from keystone.lineage.stance import self_name
+
+    body = (
+        "We propose a new simple network architecture, the Transformer. "
+        + "The Transformer achieves better BLEU. " * 9
+    )
+    assert self_name("Attention Is All You Need", body) == "Transformer"
+
+
+def test_the_fields_own_vocabulary_is_not_taken_for_a_papers_name() -> None:
+    """A false name loosens the premise check on the papers that discuss it most.
+
+    "We train GNNs on nine benchmarks" names the subject matter. Reading GNNs as the
+    paper's own name would make every sentence about graph networks read as a sentence
+    about this paper, which is worse than having no name at all.
+    """
+    from keystone.lineage.stance import self_name
+
+    for term in ("GNNs", "NMT", "CNNs", "LSTM"):
+        body = f"We train {term} on nine benchmarks. " + f"The {term} results. " * 9
+        assert self_name("How Powerful are Graph Neural Networks?", body) == ""
+
+
+def test_a_multi_word_name_is_kept_whole() -> None:
+    """"Batch Normalization" is the name; "Batch" is a word the paper uses constantly."""
+    from keystone.lineage.stance import self_name
+
+    assert (
+        self_name("Batch Normalization: Accelerating Deep Network Training", "")
+        == "Batch Normalization"
+    )
+
+
+def test_a_candidate_mentioned_once_is_not_a_name() -> None:
+    """A model's name is on every page; a capitalised noun after "we propose" is not."""
+    from keystone.lineage.stance import self_name
+
+    assert self_name("Some Paper", "We propose a method for Image Recognition.") == ""

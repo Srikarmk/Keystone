@@ -22,7 +22,26 @@
       "table": null,
       "row": null,
       "cell": null,
-      "anchor": null
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 241.6814422607422,
+            "y0": 301.6288757324219,
+            "x1": 504.1829528808594,
+            "y1": 314.9190368652344
+          },
+          {
+            "x0": 108.00132751464844,
+            "y0": 312.6686706542969,
+            "x1": 178.39898681640625,
+            "y1": 325.9588317871094
+          }
+        ]
+      }
     },
     {
       "value": "11 layers",
@@ -33,7 +52,32 @@
       "table": null,
       "row": null,
       "cell": null,
-      "anchor": null
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 255.42913818359375,
+            "x1": 504.1909484863281,
+            "y1": 268.71929931640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 266.46893310546875,
+            "x1": 504.0617980957031,
+            "y1": 279.75909423828125
+          },
+          {
+            "x0": 108.0,
+            "y0": 277.38922119140625,
+            "x1": 163.6632843017578,
+            "y1": 290.67938232421875
+          }
+        ]
+      }
     },
     {
       "value": "19 layers",
@@ -44,7 +88,32 @@
       "table": null,
       "row": null,
       "cell": null,
-      "anchor": null
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 255.42913818359375,
+            "x1": 504.1909484863281,
+            "y1": 268.71929931640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 266.46893310546875,
+            "x1": 504.0617980957031,
+            "y1": 279.75909423828125
+          },
+          {
+            "x0": 108.0,
+            "y0": 277.38922119140625,
+            "x1": 163.6632843017578,
+            "y1": 290.67938232421875
+          }
+        ]
+      }
     }
   ],
   "tables": [
@@ -4652,8 +4721,8 @@
       "citationKey": "Russakovsky14",
       "arxivId": "1409.0575",
       "citedTitle": "ImageNet large scale visual recognition challenge",
-      "outcome": "unavailable",
-      "note": "the cited paper's source could not be read"
+      "outcome": "confirmed",
+      "note": ""
     },
     {
       "table": "Table 7",
@@ -4663,8 +4732,8 @@
       "citationKey": "Russakovsky14",
       "arxivId": "1409.0575",
       "citedTitle": "ImageNet large scale visual recognition challenge",
-      "outcome": "unavailable",
-      "note": "the cited paper's source could not be read"
+      "outcome": "not_found",
+      "note": "this figure appears nowhere in the paper it is attributed to"
     },
     {
       "table": "Table 7",
@@ -4898,6 +4967,30 @@
   "findings": [
     {
       "check_id": "cross_paper.baseline_not_in_source",
+      "title": "Table 7 attributes 12.5 to ImageNet large scale visual recognition challenge, which does not report it",
+      "severity": "medium",
+      "confidence": "likely",
+      "explanation": "Table 7 reports 12.5 for 'Clarifai (1 net)', attributed to Russakovsky14. That figure does not appear anywhere in arXiv:1409.0575 \u2014 not in its tables and not in its prose. It may have been recomputed, taken from a different split, or mis-copied.",
+      "arithmetic": {
+        "reported": "12.5",
+        "citation": "Russakovsky14",
+        "arxivId": "1409.0575"
+      },
+      "evidence": [
+        {
+          "description": "Table 7, row 'Clarifai (1 net)', column top-5 test error (%)",
+          "quote": "12.5",
+          "anchor": null
+        },
+        {
+          "description": "cited as arXiv:1409.0575",
+          "quote": "ImageNet large scale visual recognition challenge",
+          "anchor": null
+        }
+      ]
+    },
+    {
+      "check_id": "cross_paper.baseline_not_in_source",
       "title": "Table 10 attributes 26.7 to Going deeper with convolutions, which does not report it",
       "severity": "medium",
       "confidence": "likely",
@@ -4923,43 +5016,49 @@
   ],
   "lineage": {
     "tally": {
-      "inherits": 0,
+      "inherits": 1,
       "extends": 2,
       "contests": 0,
       "compares": 1,
-      "background": 14,
-      "traversable": 0
+      "background": 13,
+      "traversable": 1
     },
     "foundation": {
-      "key": "Ciresan11",
-      "stance": "extends",
-      "cue": "inspired by",
-      "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our ConvNet layer configurations are designed using the same principles, inspired by .",
-      "section": "ConvNet Configurations",
+      "key": "Glorot10",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "It is worth noting that after the paper submission we found that it is possible to initialise the weights without pre-training by using the random initialisation procedure of [Glorot et al. 2010].",
+      "section": "Training",
       "sectionKind": "method",
-      "ordinal": 10,
-      "title": "Flexible, high performance convolutional neural networks for image classification",
-      "authors": "Ciresan, D. C., Meier, U., Masci, J., Gambardella, L. M., and Schmidhuber, J",
-      "year": 2011,
+      "ordinal": 27,
+      "title": "Understanding the difficulty of training deep feedforward neural networks",
+      "authors": "Glorot, X. and Bengio, Y",
+      "year": 2010,
       "arxivId": null,
       "inCorpus": false,
       "anchor": {
-        "page": 1,
+        "page": 3,
         "pageWidth": 612.0,
         "pageHeight": 792.0,
         "precision": "tight",
         "rects": [
           {
-            "x0": 108.00012969970703,
-            "y0": 162.66943359375,
-            "x1": 504.0777587890625,
-            "y1": 175.9595947265625
+            "x0": 417.60162353515625,
+            "y0": 439.14837646484375,
+            "x1": 504.0110778808594,
+            "y1": 452.43853759765625
           },
           {
-            "x0": 108.0001220703125,
-            "y0": 173.58935546875,
-            "x1": 447.6612854003906,
-            "y1": 186.8795166015625
+            "x0": 108.00119018554688,
+            "y0": 450.06866455078125,
+            "x1": 504.3025817871094,
+            "y1": 463.35882568359375
+          },
+          {
+            "x0": 108.00119018554688,
+            "y0": 461.10845947265625,
+            "x1": 295.1590881347656,
+            "y1": 474.39862060546875
           }
         ]
       }
@@ -4969,7 +5068,7 @@
         "key": "Ciresan11",
         "stance": "extends",
         "cue": "inspired by",
-        "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our ConvNet layer configurations are designed using the same principles, inspired by .",
+        "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our layer configurations are designed using the same principles, inspired by [Ciresan et al. 2011; Krizhevsky et al. 2012].",
         "section": "ConvNet Configurations",
         "sectionKind": "method",
         "ordinal": 10,
@@ -5000,10 +5099,50 @@
         }
       },
       {
+        "key": "Glorot10",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "It is worth noting that after the paper submission we found that it is possible to initialise the weights without pre-training by using the random initialisation procedure of [Glorot et al. 2010].",
+        "section": "Training",
+        "sectionKind": "method",
+        "ordinal": 27,
+        "title": "Understanding the difficulty of training deep feedforward neural networks",
+        "authors": "Glorot, X. and Bengio, Y",
+        "year": 2010,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 417.60162353515625,
+              "y0": 439.14837646484375,
+              "x1": 504.0110778808594,
+              "y1": 452.43853759765625
+            },
+            {
+              "x0": 108.00119018554688,
+              "y0": 450.06866455078125,
+              "x1": 504.3025817871094,
+              "y1": 463.35882568359375
+            },
+            {
+              "x0": 108.00119018554688,
+              "y0": 461.10845947265625,
+              "x1": 295.1590881347656,
+              "y1": 474.39862060546875
+            }
+          ]
+        }
+      },
+      {
         "key": "Krizhevsky12",
         "stance": "extends",
         "cue": "inspired by",
-        "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our ConvNet layer configurations are designed using the same principles, inspired by .",
+        "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our layer configurations are designed using the same principles, inspired by [Ciresan et al. 2011; Krizhevsky et al. 2012].",
         "section": "ConvNet Configurations",
         "sectionKind": "method",
         "ordinal": 10,
@@ -5037,7 +5176,7 @@
         "key": "Szegedy14",
         "stance": "compares",
         "cue": "outperforming",
-        "sentence": "As will be shown in sec:class_SOA, our model is outperforming that of in terms of the single-network classification accuracy.",
+        "sentence": "As will be shown in sec:class_SOA, our model is outperforming that of [Szegedy et al. 2014] in terms of the single-network classification accuracy.",
         "section": "Discussion",
         "sectionKind": "method",
         "ordinal": 23,
@@ -5045,14 +5184,14 @@
         "authors": "Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., Erhan, D., Vanhoucke, V., and Rabinovich, A",
         "year": 2014,
         "arxivId": "1409.4842",
-        "inCorpus": false,
+        "inCorpus": true,
         "anchor": null
       }
     ]
   },
   "assumptions": [
     {
-      "sentence": "Second, we decrease the number of parameters: assuming that both the input and the output of a three-layer convolution stack has channels, the stack is parametrised by weights; at the same time, a single conv. layer would require parameters, i.e. more.",
+      "sentence": "Second, we decrease the number of parameters: assuming that both the input and the output of a three-layer 3 \u00d7 3 convolution stack has C channels, the stack is parametrised by 3 ( 3^2 C^2) = 27 C^2 weights; at the same time, a single 7\u00d7 7 conv. layer would require 7^2 C^2=49 C^2 parameters, i.e.81% more.",
       "anchorText": "Second, we decrease the number of parameters: assuming that both the input and the output of a three-layer",
       "kind": "stated",
       "support": "bare",
@@ -5083,7 +5222,7 @@
       }
     },
     {
-      "sentence": "We conjecture that in spite of the larger number of parameters and the greater depth of our nets compared to , the nets required less epochs to converge due to (a) implicit regularisation imposed by greater depth and smaller conv. filter sizes; (b) pre-initialisation of certain layers.",
+      "sentence": "We conjecture that in spite of the larger number of parameters and the greater depth of our nets compared to [Krizhevsky et al. 2012], the nets required less epochs to converge due to (a) implicit regularisation imposed by greater depth and smaller conv. filter sizes; (b) pre-initialisation of certain layers.",
       "anchorText": ", the nets required less epochs to converge due to (a) implicit regularisation imposed by greater depth and smaller conv. filter sizes; (b) pre-initialisation of certain layers.",
       "kind": "conjectural",
       "support": "cited",
@@ -5122,7 +5261,7 @@
       }
     },
     {
-      "sentence": "While we believe that in practice the increased computation time of multiple crops does not justify the potential gains in accuracy, for reference we also evaluate our networks using crops per scale ( regular grid with flips), for a total of crops over scales, which is comparable to crops over scales used by .",
+      "sentence": "While we believe that in practice the increased computation time of multiple crops does not justify the potential gains in accuracy, for reference we also evaluate our networks using 50 crops per scale (5 \u00d7 5 regular grid with 2 flips), for a total of 150 crops over 3 scales, which is comparable to 144 crops over 4 scales used by [Szegedy et al. 2014].",
       "anchorText": "While we believe that in practice the increased computation time of multiple crops does not justify the potential gains in accuracy, for reference we also evaluate our networks using",
       "kind": "conjectural",
       "support": "cited",
@@ -5191,5 +5330,10 @@
     "cited": 2,
     "shown": 0,
     "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 36,
+    "rate": 0.9
   }
 }

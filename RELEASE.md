@@ -67,6 +67,57 @@ one of the most-cited papers in the field.
 
 ---
 
+## Platform audit (2026-09-17)
+
+An audit across all 42 papers of what the reader actually shows and how much of it is
+anchored. Three defects, in descending severity.
+
+### A published paper was the wrong paper
+
+arXiv:1909.08593 is *Fine-Tuning Language Models from Human Preferences*. Its e-print
+archive contains **GPT-2's paper** — a template the authors reused without replacing
+the body. Nothing crashed, and the dossier published seven citation stances quoting
+sentences like *"On the WMT-14 English-French test set, GPT-2 gets 5 BLEU"* under the
+wrong paper's name.
+
+The tell was in the audit before the cause was: **0 of 7** of that paper's edges
+anchored, against 91% across the library. Everything Keystone shows assumes the source
+and the PDF are the same document, and that assumption had never been checked.
+
+`ingest/alignment.py` now checks it before anything is extracted: a random sample of
+40 source sentences is located in the PDF, and below 25% the build refuses with
+`SourceUnavailable` rather than publishing. The gate is decisive rather than marginal —
+across the corpus the lowest *passing* paper locates **78%** of its sample and the
+mismatched one located **0%**, a 53-point gap. The rate is published in each dossier,
+because it is the number that decides whether anything else there can be trusted.
+
+Sampled rather than taken from the front, deliberately: a paper's first page is its
+title and authors, which is exactly the part that survives a template reuse.
+
+### Claims anchored at 63% where everything else was at 91%
+
+A lineage edge keeps its LaTeX, so it can be split at the citation *before* stripping
+and anchored on the longest clean run. A claim's sentence arrives already stripped, so
+the citation is a single space by then and there is nothing to split at — 37% of claims
+had no anchor and no "show on page" at all.
+
+`DocIndex.locate_longest` narrows to the longest prefix or suffix the page actually
+contains, found by bisection on the cheap membership test and then verified through the
+ordinary `locate`. It only ever narrows, and refuses below 40% of the sentence, so a
+highlight is never offered on a fragment that misrepresents where the claim is.
+
+### Quotations with holes in them
+
+Twelve assumption quotes were displayed with their inline maths deleted. Batch
+Normalization's read *"If we assume that and are Gaussian and uncorrelated, and that is
+a linear transformation"*. `strip_markup` removes `$...$` because rendered maths cannot
+be reconstructed from source — correct for text that has to appear verbatim on a page,
+wrong for text a human reads. `readable_prose` keeps maths that is only a number and
+turns the rest into an ellipsis, so the sentence reads correctly and is honest about
+what was elided. Anchoring still uses the exact text.
+
+---
+
 ## Auditing the pitch's claims against the demo (2026-09-17)
 
 Every claim on the submitted pitch slide was checked against what a visitor actually
@@ -112,8 +163,71 @@ between it and the citation took the suite to 87% overall.
 
 **The site now publishes its own error rate.** A tool whose claim is that its readings
 are checkable should say how often they are wrong, so the home page and every paper's
-report state the held-out figure and the baseline, read from a file
-`stance-eval` writes so the published number cannot drift from the labels.
+report state the figure and its interval, read from a file `stance-eval` writes so the
+published number cannot drift from the labels.
+
+---
+
+## Scored against somebody else's labels
+
+Everything above was measured on ninety citations drawn from the same forty-one papers
+the cue rules were written against. That is a closed loop, and a closed loop cannot say
+whether rules generalise. Two public corpora can: **SciCite** (11,014 contexts, Cohan
+et al. 2019) and **ACL-ARC** (1,941, Jurgens et al. 2018), neither of which contributed
+a cue phrase. All three splits of each are scored — Keystone has nothing to train on,
+and ACL-ARC's test split is 139 rows, the same unfalsifiable size this exercise exists
+to escape.
+
+| | citations | read | of those, right | macro-F1 |
+|---|---|---|---|---|
+| SciCite | 11,014 | 4.0% | **80.0%** [76–84%] | 0.325 |
+| ACL-ARC | 1,941 | 8.3% | **68.9%** [61–76%] | 0.204 |
+
+Published reference points on ACL-ARC: cue phrases (Teufel 2000) 0.273, random forest
+(Jurgens 2018) 0.530, Falcon-7B 0.733. On SciCite, neural state of the art is
+0.84–0.889. **Keystone's macro-F1 is below the 2000-era cue-phrase floor on ACL-ARC**,
+and that is the honest result. It is also the wrong metric for this tool: macro-F1
+punishes silence exactly as hard as error, and silence is the design. The pair that
+describes it is coverage and precision-when-it-speaks, so the site quotes that pair and
+reports the macro-F1 next to it rather than instead of it.
+
+The 80% on 11,014 citations from papers outside the library is the same 80% the ninety
+hand labels gave — the part of the closed loop that survived contact with other
+people's data. The coverage is the part that did not.
+
+**Three real defects, found by scoring rather than by reading.**
+
+1. **136 of 223 `result` readings were wrong**, and they looked like "women are
+   disproportionately more frequently affected compared to men [12]" and "15 of 50 SspA
+   orthologs contain either Asp or Glu at position 92 instead of Tyr [12]" — comparisons
+   between two things in the subject matter, with the citing paper on neither side.
+   Adoption cues had always had to prove the sentence was about this paper; comparative
+   ones had not. Now every cue in front of a citation does. `result` precision 0.39 →
+   0.49, ACL-ARC's `CompareOrContrast` 0.56 → 0.78, and on the hand labels `compares`
+   went from 73% precision to 100%.
+2. **280 of 364 `Uses` instances were missed** because every adoption cue demanded a
+   first-person subject in the same clause, and NLP papers write "employ Collins head
+   rules (Collins 1999)". Bare participials now count, subject to the same premise
+   check. `Uses` recall 0.22 → 0.28.
+3. **A paper's own name counts as saying who.** BERT writes "Unlike recent language
+   representation models (Peters 2018; Radford 2018), BERT is designed to..." and the
+   premise check saw no first person, which cost BERT the two edges it is best known
+   for. The name comes from the title where there is one ("BERT:", "LLaMA:") and
+   otherwise from the abstract's own introduction of it — "we propose a new simple
+   network architecture, the Transformer" — held to a mention count and a blocklist of
+   the field's own vocabulary, because reading "GNNs" or "MNIST" as a paper's name
+   loosens the check on exactly the papers that discuss them most. Twenty of the
+   forty-one papers name themselves; none of the twenty is wrong.
+
+**And one bug the same work exposed in the harness itself.** `stance-refresh` keyed its
+lookup on the rendered sentence, so improving how a citation reads for a reader made
+every labelled row stop matching — and a row that does not match keeps its old
+prediction. The first run after that reported 59% accuracy where the true figure was
+83%, all of the difference being sites re-measured at the wrong sentence. The identity
+of a labelled site is now the stripped text the rules actually read, held apart from
+the display text, and a row that fails to match is a loud non-zero exit rather than a
+line of output. A stale prediction reported as a fresh measurement is the exact failure
+that command exists to prevent.
 
 ### The number on the slide moved: 52 -> 46
 

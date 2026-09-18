@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import type {
   Accuracy,
+  External as ExternalScore,
   IndexEntry,
   LibraryGraph as GraphData,
 } from "@/lib/dossier";
@@ -43,6 +44,17 @@ export default function Home() {
     const bare = index.reduce((n, p) => n + (p.assumptions?.bare ?? 0), 0);
     return { stands, bare, papers: index.length };
   }, [index]);
+
+  // The broadest public corpus the rules were scored against, preferred over the
+  // hand-labelled sample because that sample came from these same papers.
+  const external = useMemo(
+    () =>
+      (accuracy?.external ?? []).reduce<ExternalScore | null>(
+        (best, item) => (best && best.instances >= item.instances ? best : item),
+        null,
+      ),
+    [accuracy],
+  );
 
   // Search reaches into the analysis, not just the titles. With forty-odd papers the
   // useful question is "which paper says something about layer normalisation", and the
@@ -108,23 +120,34 @@ export default function Home() {
             page where the paper admits it.
           </p>
 
-          {/* The error rate, up front. Reading a cue out of position produces a
-              confident opposite rather than a vague answer, so the rate at which that
-              happens is the first thing a reader is owed. */}
-          {accuracy && accuracy.heldOutAccuracy !== null ? (
+          {/* The error rate, up front, and measured on somebody else's labels.
+              Reading a cue out of position produces a confident opposite rather than a
+              vague answer, so the rate at which that happens is the first thing a
+              reader is owed — and a rate measured on the same papers the rules were
+              written against is not a rate, it is a restatement. */}
+          {external ? (
             <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-ink-faint">
-              And it is wrong sometimes:{" "}
-              <span className="numeral text-ink-soft">
-                {Math.round(accuracy.heldOutAccuracy * 100)}%
-              </span>{" "}
-              of readings were correct on{" "}
-              <span className="numeral">{accuracy.heldOut}</span> citations labelled by
-              hand after the rules were last changed, against{" "}
+              It is also often silent, and sometimes wrong. Scored against{" "}
               <span className="numeral">
-                {Math.round(accuracy.baselineAccuracy * 100)}%
+                {external.instances.toLocaleString()}
               </span>{" "}
-              for a bag-of-words classifier over the same sentences. Every row shows
-              its sentence so you can see which kind you are looking at.
+              citations labelled by other people in {external.corpus} &mdash; papers
+              from outside this library &mdash; it reported a stance for{" "}
+              <span className="numeral text-ink-soft">
+                {Math.round(external.coverage * 100)}%
+              </span>{" "}
+              of them and got{" "}
+              <span className="numeral text-ink-soft">
+                {Math.round(external.spokenPrecision * 100)}%
+              </span>{" "}
+              of those right,{" "}
+              <span className="numeral">
+                {Math.round(external.spokenInterval[0] * 100)}&ndash;
+                {Math.round(external.spokenInterval[1] * 100)}%
+              </span>{" "}
+              at 95% confidence. The rest carry no cue phrase, so nothing is claimed
+              about them. Every row shows the sentence and the words that placed it, so
+              a wrong reading is visible rather than load-bearing.
             </p>
           ) : null}
 

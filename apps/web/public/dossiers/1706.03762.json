@@ -419,7 +419,26 @@
       "table": null,
       "row": null,
       "cell": null,
-      "anchor": null
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 378.356201171875,
+            "y0": 384.5552978515625,
+            "x1": 505.654541015625,
+            "y1": 394.6170349121094
+          },
+          {
+            "x0": 108.0,
+            "y0": 395.56976318359375,
+            "x1": 269.2889099121094,
+            "y1": 405.492431640625
+          }
+        ]
+      }
     },
     {
       "value": "0.4 seconds",
@@ -520,7 +539,26 @@
       "table": null,
       "row": null,
       "cell": null,
-      "anchor": null
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 359.7674865722656,
+            "y0": 508.7524108886719,
+            "x1": 504.0014953613281,
+            "y1": 518.6148681640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 519.51025390625,
+            "x1": 187.88233947753906,
+            "y1": 529.572021484375
+          }
+        ]
+      }
     },
     {
       "value": "300,000 steps",
@@ -4237,18 +4275,18 @@
   "findings": [],
   "lineage": {
     "tally": {
-      "inherits": 6,
+      "inherits": 7,
       "extends": 0,
       "contests": 1,
-      "compares": 1,
+      "compares": 0,
       "background": 27,
-      "traversable": 5
+      "traversable": 4
     },
     "foundation": {
       "key": "he2016deep",
       "stance": "inherits",
       "cue": "We employ",
-      "sentence": "We employ a residual connection around each of the two sub-layers, followed by layer normalization .",
+      "sentence": "We employ a residual connection [He et al. 2016] around each of the two sub-layers, followed by layer normalization [Ba et al. 2016].",
       "section": "Encoder and Decoder Stacks",
       "sectionKind": "method",
       "ordinal": 19,
@@ -4280,44 +4318,10 @@
     },
     "edges": [
       {
-        "key": "DBLP:journals/corr/BritzGLL17",
-        "stance": "compares",
-        "cue": "outperforms",
-        "sentence": "While for small values of the two mechanisms perform similarly, additive attention outperforms dot product attention without scaling for larger values of .",
-        "section": "Scaled Dot-Product Attention",
-        "sectionKind": "method",
-        "ordinal": 22,
-        "title": "Massive exploration of neural machine translation architectures",
-        "authors": "Denny Britz, Anna Goldie, Minh-Thang Luong, and Quoc V. Le",
-        "year": 2017,
-        "arxivId": "1703.03906",
-        "inCorpus": true,
-        "anchor": {
-          "page": 3,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 224.13400268554688,
-              "y0": 572.6907958984375,
-              "x1": 503.9989929199219,
-              "y1": 582.6832885742188
-            },
-            {
-              "x0": 108.0,
-              "y0": 583.6035766601562,
-              "x1": 333.8901062011719,
-              "y1": 593.591064453125
-            }
-          ]
-        }
-      },
-      {
         "key": "DBLP:journals/corr/SzegedyVISW15",
         "stance": "inherits",
         "cue": "we employed",
-        "sentence": "For the base model, we use a rate of . Label Smoothing During training, we employed label smoothing of value .",
+        "sentence": "For the base model, we use a rate of P_drop=0.1. Label Smoothing During training, we employed label smoothing of value \u03f5_ls=0.1 [Szegedy et al. 2015].",
         "section": "Regularization",
         "sectionKind": "method",
         "ordinal": 36,
@@ -4354,10 +4358,44 @@
         }
       },
       {
+        "key": "JonasFaceNet2017",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We also experimented with using learned positional embeddings [Gehring et al. 2017] instead, and found that the two versions produced nearly identical results (see Table [ref] row (E)).",
+        "section": "Positional Encoding",
+        "sectionKind": "method",
+        "ordinal": 26,
+        "title": "Convolutional sequence to sequence learning",
+        "authors": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N. Dauphin",
+        "year": 2017,
+        "arxivId": "1705.03122",
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 381.093994140625,
+              "y0": 437.5426940917969,
+              "x1": 503.9956970214844,
+              "y1": 447.51025390625
+            },
+            {
+              "x0": 107.7509994506836,
+              "y0": 448.3802795410156,
+              "x1": 321.9222717285156,
+              "y1": 458.4420166015625
+            }
+          ]
+        }
+      },
+      {
         "key": "KVparse15",
         "stance": "contests",
         "cue": "In contrast to",
-        "sentence": "In contrast to RNN sequence-to-sequence models , the Transformer outperforms the BerkeleyParser even when training only on the WSJ training set of 40K sentences.",
+        "sentence": "In contrast to RNN sequence-to-sequence models [Kaiser et al. 2015], the Transformer outperforms the BerkeleyParser [Petrov et al. 2006] even when training only on the WSJ training set of 40K sentences.",
         "section": "English Constituency Parsing",
         "sectionKind": "results",
         "ordinal": 44,
@@ -4385,7 +4423,7 @@
         "key": "he2016deep",
         "stance": "inherits",
         "cue": "We employ",
-        "sentence": "We employ a residual connection around each of the two sub-layers, followed by layer normalization .",
+        "sentence": "We employ a residual connection [He et al. 2016] around each of the two sub-layers, followed by layer normalization [Ba et al. 2016].",
         "section": "Encoder and Decoder Stacks",
         "sectionKind": "method",
         "ordinal": 19,
@@ -4419,7 +4457,7 @@
         "key": "kingma2014adam",
         "stance": "inherits",
         "cue": "We used",
-        "sentence": "We used the Adam optimizer with , and .",
+        "sentence": "We used the Adam optimizer [Kingma et al. 2015] with \u03b2_1=0.9, \u03b2_2=0.98 and \u03f5=10^-9.",
         "section": "Optimizer",
         "sectionKind": "method",
         "ordinal": 34,
@@ -4447,7 +4485,7 @@
         "key": "layernorm2016",
         "stance": "inherits",
         "cue": "We employ",
-        "sentence": "We employ a residual connection around each of the two sub-layers, followed by layer normalization .",
+        "sentence": "We employ a residual connection [He et al. 2016] around each of the two sub-layers, followed by layer normalization [Ba et al. 2016].",
         "section": "Encoder and Decoder Stacks",
         "sectionKind": "method",
         "ordinal": 20,
@@ -4481,7 +4519,7 @@
         "key": "srivastava2014dropout",
         "stance": "inherits",
         "cue": "We employ",
-        "sentence": "We employ three types of regularization during training: Residual Dropout We apply dropout to the output of each sub-layer, before it is added to the sub-layer input and normalized.",
+        "sentence": "We employ three types of regularization during training: Residual Dropout We apply dropout [Srivastava et al. 2014] to the output of each sub-layer, before it is added to the sub-layer input and normalized.",
         "section": "Regularization",
         "sectionKind": "method",
         "ordinal": 35,
@@ -4496,7 +4534,7 @@
         "key": "wu2016google",
         "stance": "inherits",
         "cue": "We used",
-        "sentence": "We used beam search with a beam size of and length penalty .",
+        "sentence": "We used beam search with a beam size of 4 and length penalty \u03b1=0.6 [Wu et al. 2016].",
         "section": "Machine Translation",
         "sectionKind": "results",
         "ordinal": 37,
@@ -4530,7 +4568,7 @@
   },
   "assumptions": [
     {
-      "sentence": "We suspect that for large values of , the dot products grow large in magnitude, pushing the softmax function into regions where it has extremely small gradients To illustrate why the dot products get large, assume that the components of and are independent random variables with mean and variance .",
+      "sentence": "We suspect that for large values of d_k, the dot products grow large in magnitude, pushing the softmax function into regions where it has extremely small gradients [To illustrate why the dot products get large, assume that the components of q and k are independent random variables with mean 0 and variance 1.]",
       "anchorText": ", the dot products grow large in magnitude, pushing the softmax function into regions where it has extremely small gradients To illustrate why the dot products get large, assume that the components of",
       "kind": "conjectural",
       "support": "bare",
@@ -4542,7 +4580,7 @@
       "anchor": null
     },
     {
-      "sentence": "We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset , can be represented as a linear function of .",
+      "sentence": "We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset k, PE_pos+k can be represented as a linear function of PE_pos.",
       "anchorText": "We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset",
       "kind": "stated",
       "support": "bare",
@@ -4584,5 +4622,10 @@
     "cited": 0,
     "shown": 0,
     "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
   }
 }

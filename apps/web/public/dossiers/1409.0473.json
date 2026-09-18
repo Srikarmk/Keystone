@@ -1478,9 +1478,9 @@
   "findings": [],
   "lineage": {
     "tally": {
-      "inherits": 9,
+      "inherits": 10,
       "extends": 0,
-      "contests": 1,
+      "contests": 0,
       "compares": 0,
       "background": 14,
       "traversable": 1
@@ -1489,7 +1489,7 @@
       "key": "Cho2014",
       "stance": "inherits",
       "cue": "Following",
-      "sentence": "Following the procedure described in , we reduce the size of the combined corpus to have 348M words using the data selection method by . . We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder.",
+      "sentence": "Following the procedure described in [Cho et al. 2014], we reduce the size of the combined corpus to have 348M words using the data selection method by [Axelrod et al. 2011].[ Available online at <http://www-lium.univ-lemans.fr/ schwenk/cslm_joint_paper/>. ] We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder.",
       "section": "Dataset",
       "sectionKind": "experiments",
       "ordinal": 22,
@@ -1502,10 +1502,25 @@
     },
     "edges": [
       {
+        "key": "Axelrod2011",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Following the procedure described in [Cho et al. 2014], we reduce the size of the combined corpus to have 348M words using the data selection method by [Axelrod et al. 2011].[ Available online at <http://www-lium.univ-lemans.fr/ schwenk/cslm_joint_paper/>. ] We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder.",
+        "section": "Dataset",
+        "sectionKind": "experiments",
+        "ordinal": 23,
+        "title": "Domain adaptation via pseudo in-domain data selection",
+        "authors": "Axelrod, A., He, X., and Gao, J. (2011)",
+        "year": 2011,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
         "key": "Boulanger2013",
         "stance": "inherits",
         "cue": "we use",
-        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability . used this approach to generate translations from their neural machine translation model.",
+        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability [Graves 2012; Boulanger-Lewandowski et al. 2013]. [Sutskever et al. 2014] used this approach to generate translations from their neural machine translation model.",
         "section": "Models",
         "sectionKind": "experiments",
         "ordinal": 28,
@@ -1539,7 +1554,7 @@
         "key": "Cho2014",
         "stance": "inherits",
         "cue": "Following",
-        "sentence": "Following the procedure described in , we reduce the size of the combined corpus to have 348M words using the data selection method by . . We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder.",
+        "sentence": "Following the procedure described in [Cho et al. 2014], we reduce the size of the combined corpus to have 348M words using the data selection method by [Axelrod et al. 2011].[ Available online at <http://www-lium.univ-lemans.fr/ schwenk/cslm_joint_paper/>. ] We do not use any monolingual data other than the mentioned parallel corpora, although it may be possible to use a much larger monolingual corpus to pretrain an encoder.",
         "section": "Dataset",
         "sectionKind": "experiments",
         "ordinal": 22,
@@ -1554,7 +1569,7 @@
         "key": "Cho2014a",
         "stance": "inherits",
         "cue": "based on",
-        "sentence": "We conjectured that the use of a fixed-length context vector is problematic for translating long sentences, based on a recent empirical study reported by and .",
+        "sentence": "We conjectured that the use of a fixed-length context vector is problematic for translating long sentences, based on a recent empirical study reported by [Cho et al.] and [Pouget-Abadie et al. 2014].",
         "section": "Conclusion",
         "sectionKind": "conclusion",
         "ordinal": 38,
@@ -1588,7 +1603,7 @@
         "key": "Goodfellow2013",
         "stance": "inherits",
         "cue": "we use",
-        "sentence": "In both cases, we use a multilayer network with a single maxout hidden layer to compute the conditional probability of each target word .",
+        "sentence": "In both cases, we use a multilayer network with a single maxout [Goodfellow et al. 2013] hidden layer to compute the conditional probability of each target word [Pascanu et al. 2014].",
         "section": "Models",
         "sectionKind": "experiments",
         "ordinal": 25,
@@ -1622,7 +1637,7 @@
         "key": "Graves2012",
         "stance": "inherits",
         "cue": "we use",
-        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability . used this approach to generate translations from their neural machine translation model.",
+        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability [Graves 2012; Boulanger-Lewandowski et al. 2013]. [Sutskever et al. 2014] used this approach to generate translations from their neural machine translation model.",
         "section": "Models",
         "sectionKind": "experiments",
         "ordinal": 28,
@@ -1653,50 +1668,10 @@
         }
       },
       {
-        "key": "Koehn2003",
-        "stance": "contests",
-        "cue": "Unlike",
-        "sentence": "Unlike the traditional phrase-based translation system which consists of many small sub-components that are tuned separately, neural machine translation attempts to build and train a single, large neural network that reads a sentence and outputs a correct translation.",
-        "section": "Introduction",
-        "sectionKind": "introduction",
-        "ordinal": 4,
-        "title": "Statistical phrase-based translation",
-        "authors": "Koehn, P., Och, F. J., and Marcu, D. (2003)",
-        "year": 2003,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 0,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 408.091064453125,
-              "y0": 479.94415283203125,
-              "x1": 504.0009765625,
-              "y1": 489.9067687988281
-            },
-            {
-              "x0": 108.00003051757812,
-              "y0": 490.90313720703125,
-              "x1": 504.00323486328125,
-              "y1": 500.8657531738281
-            },
-            {
-              "x0": 108.00003051757812,
-              "y0": 501.86114501953125,
-              "x1": 464.0733337402344,
-              "y1": 511.8237609863281
-            }
-          ]
-        }
-      },
-      {
         "key": "Pascanu2014rec",
         "stance": "inherits",
         "cue": "we use",
-        "sentence": "In both cases, we use a multilayer network with a single maxout hidden layer to compute the conditional probability of each target word .",
+        "sentence": "In both cases, we use a multilayer network with a single maxout [Goodfellow et al. 2013] hidden layer to compute the conditional probability of each target word [Pascanu et al. 2014].",
         "section": "Models",
         "sectionKind": "experiments",
         "ordinal": 26,
@@ -1730,7 +1705,7 @@
         "key": "Pouget2014",
         "stance": "inherits",
         "cue": "based on",
-        "sentence": "We conjectured that the use of a fixed-length context vector is problematic for translating long sentences, based on a recent empirical study reported by and .",
+        "sentence": "We conjectured that the use of a fixed-length context vector is problematic for translating long sentences, based on a recent empirical study reported by [Cho et al.] and [Pouget-Abadie et al. 2014].",
         "section": "Conclusion",
         "sectionKind": "conclusion",
         "ordinal": 39,
@@ -1764,7 +1739,7 @@
         "key": "Sutskever2014",
         "stance": "inherits",
         "cue": "we use",
-        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability . used this approach to generate translations from their neural machine translation model.",
+        "sentence": "Once a model is trained, we use a beam search to find a translation that approximately maximizes the conditional probability [Graves 2012; Boulanger-Lewandowski et al. 2013]. [Sutskever et al. 2014] used this approach to generate translations from their neural machine translation model.",
         "section": "Models",
         "sectionKind": "experiments",
         "ordinal": 29,
@@ -1798,7 +1773,7 @@
         "key": "Zeiler2012",
         "stance": "inherits",
         "cue": "We use",
-        "sentence": "We use a minibatch stochastic gradient descent (SGD) algorithm together with Adadelta to train each model.",
+        "sentence": "We use a minibatch stochastic gradient descent (SGD) algorithm together with Adadelta [Zeiler 2012] to train each model.",
         "section": "Models",
         "sectionKind": "experiments",
         "ordinal": 27,
@@ -1826,7 +1801,7 @@
   },
   "assumptions": [
     {
-      "sentence": "In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder--decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.",
+      "sentence": "In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder\u2013decoder architecture, and propose to extend this by allowing a model to automatically for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.",
       "anchorText": "In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder--decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly.",
       "kind": "conjectural",
       "support": "bare",
@@ -1942,5 +1917,10 @@
     "cited": 0,
     "shown": 0,
     "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
   }
 }

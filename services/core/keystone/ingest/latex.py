@@ -713,6 +713,77 @@ def anchorable_runs(tex: str, *, min_chars: int = 24) -> list[str]:
     return runs
 
 
+_INLINE_MATH = re.compile(r"\$([^$]+)\$")
+#: Stands in for an elision while markup is stripped, since strip_markup would eat
+#: any punctuation-based marker. Letters only, and vanishingly unlikely in prose.
+_ELISION_MARK = "zzelisionzz"
+
+#: A citation command with its keys captured, for the reader-facing form only.
+_CITE_KEYS = re.compile(
+    r"\\(?:cite|citep|citet|citealp|citealt|citeyear|autocite)"
+    r"\s*(?:\[[^\]]*\])*\s*\{(?P<keys>[^}]*)\}"
+)
+_JUST_A_NUMBER = re.compile(r"^[\s]*[-+\u2212]?[\s]*\d[\d,.\s]*(?:\\%|%)?[\s]*$")
+
+
+def unwrap_numeric_math(text: str) -> str:
+    """Replace ``$7.89\\%$`` with ``7.89\\%``, leaving real maths alone."""
+    return _INLINE_MATH.sub(
+        lambda m: m.group(1) if _JUST_A_NUMBER.match(m.group(1)) else m.group(0), text
+    )
+
+
+def readable_prose(tex: str, cites: dict[str, str] | None = None) -> str:
+    """Source prose rendered for a *reader* rather than for matching against a PDF.
+
+    `strip_markup` deletes inline maths and citations, because neither can be
+    reconstructed well enough to appear verbatim on a page. For text a human reads
+    that is the wrong trade: it left Batch Normalization's assumption as "If we assume
+    that and are Gaussian and uncorrelated" and another paper's as "first introduced
+    by, provides".
+
+    A hand-rolled elision marker was the first attempt and it was worse than the tool
+    that already exists. `pylatexenc` flattens maths to Unicode rather than removing
+    it, so the same sentence comes back as "If we assume that x and u are Gaussian and
+    uncorrelated, and that W is a linear transformation" — what the author actually
+    wrote. Fractions and sums survive legibly, and an unknown macro degrades to its
+    argument instead of raising.
+
+    Citations are resolved *before* pylatexenc sees the text rather than by overriding
+    its macro database: overriding meant declaring the argument shapes again, getting
+    one wrong, and silently dropping every citation — the exact bug being fixed. A
+    substitution needs no agreement about argument parsing to be correct.
+
+    Never used for anchoring; that still goes through the exact text.
+    """
+    from pylatexenc.latex2text import LatexNodes2Text
+
+    def name_for(match: re.Match[str]) -> str:
+        known = [
+            (cites or {}).get(key.strip(), "")
+            for key in match.group("keys").split(",")
+        ]
+        shown = [name for name in known if name]
+        # Never empty: a hole mid-clause is how this went wrong the first time.
+        return f"[{'; '.join(shown)}]" if shown else "[ref]"
+
+    resolved = _CITE_KEYS.sub(name_for, tex)
+
+    try:
+        plain = LatexNodes2Text(math_mode="text", keep_comments=False).latex_to_text(
+            resolved
+        )
+    except Exception:  # noqa: BLE001
+        # Deliberately broad. This runs over arbitrary author-written LaTeX from the
+        # wild, and a sentence that will not render should cost its own formatting,
+        # not the paper's assumption.
+        plain = strip_markup(resolved)
+
+    plain = plain.replace("\xa0", " ").replace("<ref>", "[ref]").replace("<cit.>", "[ref]")
+    return re.sub(r"\s+([,.;:)])", r"\1", re.sub(r"\s+", " ", plain)).strip()
+
+
+
 def document_title(tex: str) -> str:
     """The paper's own title, from its own source.
 

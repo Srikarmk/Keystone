@@ -1,0 +1,3724 @@
+{
+  "id": "1409.4842",
+  "title": "Going deeper with convolutions",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1409.4842",
+  "numbers": [
+    {
+      "value": "0.6%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "It was found that a move from fully connected layers to average pooling improved the top-1 accuracy by about 0.6%, however the use of dropout remained essential even after removing the fully connected layers.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 280.7514343261719,
+            "y0": 534.9683227539062,
+            "x1": 504.0031433105469,
+            "y1": 544.930908203125
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 545.9273681640625,
+            "x1": 504.0031433105469,
+            "y1": 555.8899536132812
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 556.8863525390625,
+            "x1": 332.1086730957031,
+            "y1": 566.8489379882812
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.3",
+      "kind": "result",
+      "section": "method",
+      "sentence": "During training, their loss gets added to the total loss of the network with a discount weight (the losses of the auxiliary classifiers were weighted by 0.3).",
+      "status": "rounded",
+      "table": "Table 5",
+      "row": "Trimps-Soushen",
+      "cell": "31.6%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 261.21478271484375,
+            "y0": 650.5343627929688,
+            "x1": 504.0031433105469,
+            "y1": 660.4969482421875
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 661.4933471679688,
+            "x1": 488.4914855957031,
+            "y1": 671.4559326171875
+          }
+        ]
+      }
+    },
+    {
+      "value": "70%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The exact structure of the extra network on the side, including the auxiliary classifier, is as follows: An average pooling layer with filter size and stride , resulting in an output for the (4a), and for the (4d) stage. A convolution with 128 filters for dimension reduction and rectified linear activation. A fully connected layer with 1024 units and rectified linear activation. A dropout layer with 70% ratio of dropped outputs. A linear layer with softmax loss as the classifier (predicting the same 1000 classes as the main classifier, but removed at inference time).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.9",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Our training used asynchronous stochastic gradient descent with 0.9 momentum , fixed learning rate schedule (decreasing the learning rate by 4% every 8 epochs).",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 355.5805358886719,
+            "y0": 258.5213623046875,
+            "x1": 504.00323486328125,
+            "y1": 268.4839782714844
+          },
+          {
+            "x0": 108.0,
+            "y0": 269.4803466796875,
+            "x1": 303.5159912109375,
+            "y1": 279.4429626464844
+          }
+        ]
+      }
+    },
+    {
+      "value": "4%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Our training used asynchronous stochastic gradient descent with 0.9 momentum , fixed learning rate schedule (decreasing the learning rate by 4% every 8 epochs).",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 355.5805358886719,
+            "y0": 258.5213623046875,
+            "x1": 504.00323486328125,
+            "y1": 268.4839782714844
+          },
+          {
+            "x0": 108.0,
+            "y0": 269.4803466796875,
+            "x1": 303.5159912109375,
+            "y1": 279.4429626464844
+          }
+        ]
+      }
+    },
+    {
+      "value": "8%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Still, one prescription that was verified to work very well after the competition includes sampling of various sized patches of the image whose size is distributed evenly between 8% and 100% of the image area and whose aspect ratio is chosen randomly between and .",
+      "status": "rounded",
+      "table": "Table 3",
+      "row": "",
+      "cell": "7.89%",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 352.1702880859375,
+            "x1": 504.00323486328125,
+            "y1": 362.1329040527344
+          },
+          {
+            "x0": 108.0,
+            "y0": 363.1282958984375,
+            "x1": 504.00341796875,
+            "y1": 373.0909118652344
+          },
+          {
+            "x0": 108.0,
+            "y0": 374.0872802734375,
+            "x1": 356.34771728515625,
+            "y1": 384.0498962402344
+          }
+        ]
+      }
+    },
+    {
+      "value": "100%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Still, one prescription that was verified to work very well after the competition includes sampling of various sized patches of the image whose size is distributed evenly between 8% and 100% of the image area and whose aspect ratio is chosen randomly between and .",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "convolution",
+      "cell": "1",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 352.1702880859375,
+            "x1": 504.00323486328125,
+            "y1": 362.1329040527344
+          },
+          {
+            "x0": 108.0,
+            "y0": 363.1282958984375,
+            "x1": 504.00341796875,
+            "y1": 373.0909118652344
+          },
+          {
+            "x0": 108.0,
+            "y0": 374.0872802734375,
+            "x1": 356.34771728515625,
+            "y1": 384.0498962402344
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.2",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "There are about 1.2 million images for training, 50,000 for validation and 100,000 images for testing.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 317.4835510253906,
+            "y0": 492.78521728515625,
+            "x1": 504.00323486328125,
+            "y1": 502.7478332519531
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 503.74420166015625,
+            "x1": 325.8719787597656,
+            "y1": 513.706787109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "6.67%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our final submission in the challenge obtains a top-5 error of 6.67% on both the validation and testing data, ranking the first among other participants.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GoogLeNet",
+      "cell": "6.67%",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99993896484375,
+            "y0": 543.8814086914062,
+            "x1": 504.0030822753906,
+            "y1": 553.843994140625
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 554.8403930664062,
+            "x1": 325.40374755859375,
+            "y1": 564.802978515625
+          }
+        ]
+      }
+    },
+    {
+      "value": "56.5%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "This is a 56.5% relative reduction compared to the SuperVision approach in 2012, and about 40% relative reduction compared to the previous year's best approach (Clarifai), both of which used external data for training the classifiers.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 328.47222900390625,
+            "y0": 554.8403930664062,
+            "x1": 504.003173828125,
+            "y1": 564.802978515625
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 565.7993774414062,
+            "x1": 504.0031433105469,
+            "y1": 575.761962890625
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 576.7584228515625,
+            "x1": 482.5537109375,
+            "y1": 586.7210083007812
+          }
+        ]
+      }
+    },
+    {
+      "value": "40%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "This is a 56.5% relative reduction compared to the SuperVision approach in 2012, and about 40% relative reduction compared to the previous year's best approach (Clarifai), both of which used external data for training the classifiers.",
+      "status": "rounded",
+      "table": "Table 4",
+      "row": "Deep Insight",
+      "cell": "40.5%",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 328.47222900390625,
+            "y0": 554.8403930664062,
+            "x1": 504.003173828125,
+            "y1": 564.802978515625
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 565.7993774414062,
+            "x1": 504.0031433105469,
+            "y1": 575.761962890625
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 576.7584228515625,
+            "x1": 482.5537109375,
+            "y1": 586.7210083007812
+          }
+        ]
+      }
+    },
+    {
+      "value": "50%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Detected objects count as correct if they match the class of the groundtruth and their bounding boxes overlap by at least 50% (using the Jaccard index).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 179.36207580566406,
+            "y0": 700.388427734375,
+            "x1": 504.0032043457031,
+            "y1": 710.3510131835938
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 711.347412109375,
+            "x1": 389.24395751953125,
+            "y1": 721.3099975585938
+          }
+        ]
+      }
+    },
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We added back 200 region proposals coming from multi-box resulting, in total, in about 60% of the proposals used by , while increasing the coverage from 92% to 93%.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "92%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We added back 200 region proposals coming from multi-box resulting, in total, in about 60% of the proposals used by , while increasing the coverage from 92% to 93%.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "93%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We added back 200 region proposals coming from multi-box resulting, in total, in about 60% of the proposals used by , while increasing the coverage from 92% to 93%.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "1%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The overall effect of cutting the number of proposals with increased coverage is a 1% improvement of the mean average precision for the single model case.",
+      "status": "exact",
+      "table": "Table 3",
+      "row": "base",
+      "cell": "1",
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 379.56048583984375,
+            "y0": 438.785400390625,
+            "x1": 504.0031433105469,
+            "y1": 448.7480163574219
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 449.744384765625,
+            "x1": 504.00335693359375,
+            "y1": 459.7070007324219
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 460.703369140625,
+            "x1": 210.17645263671875,
+            "y1": 470.6659851074219
+          }
+        ]
+      }
+    },
+    {
+      "value": "40%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Finally, we use an ensemble of 6 ConvNets when classifying each region which improves results from 40% to 43.9% accuracy.",
+      "status": "rounded",
+      "table": "Table 4",
+      "row": "Deep Insight",
+      "cell": "40.5%",
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.3246307373047,
+            "y0": 460.703369140625,
+            "x1": 504.00341796875,
+            "y1": 470.6659851074219
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 471.662353515625,
+            "x1": 322.59442138671875,
+            "y1": 481.6249694824219
+          }
+        ]
+      }
+    },
+    {
+      "value": "43.9%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Finally, we use an ensemble of 6 ConvNets when classifying each region which improves results from 40% to 43.9% accuracy.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "GoogLeNet",
+      "cell": "43.9%",
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.3246307373047,
+            "y0": 460.703369140625,
+            "x1": 504.00341796875,
+            "y1": 470.6659851074219
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 471.662353515625,
+            "x1": 322.59442138671875,
+            "y1": 481.6249694824219
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.3",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The top performing model is by Deep Insight and surprisingly only improves by 0.3 points with an ensemble of 3 models while the GoogLeNet obtains significantly stronger results with the ensemble.",
+      "status": "rounded",
+      "table": "Table 5",
+      "row": "Trimps-Soushen",
+      "cell": "31.6%",
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 349.2344055175781,
+            "y0": 604.1653442382812,
+            "x1": 504.0033264160156,
+            "y1": 614.1279296875
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 615.1243286132812,
+            "x1": 504.00335693359375,
+            "y1": 625.0869140625
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 626.0833129882812,
+            "x1": 379.1819763183594,
+            "y1": 636.0458984375
+          }
+        ]
+      }
+    },
+    {
+      "value": "22 layers",
+      "kind": "configuration",
+      "section": "abstract",
+      "sentence": "One particular incarnation used in our submission for ILSVRC\u201914 is called GoogLeNet, a 22 layers deep network, the quality of which is assessed in the context of classification and detection.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 461.49346923828125,
+            "y0": 435.1092529296875,
+            "x1": 468.1385192871094,
+            "y1": 445.0718688964844
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 446.0682373046875,
+            "x1": 468.13861083984375,
+            "y1": 456.0308532714844
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 457.0262451171875,
+            "x1": 311.3970642089844,
+            "y1": 466.9888610839844
+          }
+        ]
+      }
+    },
+    {
+      "value": "22 layers",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "The network is 22 layers deep when counting only layers with parameters (or 27 layers if we also count pooling).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 250.4352264404297,
+            "y0": 469.21441650390625,
+            "x1": 504.0031433105469,
+            "y1": 479.1770324707031
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 480.17340087890625,
+            "x1": 306.8135986328125,
+            "y1": 490.1360168457031
+          }
+        ]
+      }
+    },
+    {
+      "value": "27 layers",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "The network is 22 layers deep when counting only layers with parameters (or 27 layers if we also count pooling).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 250.4352264404297,
+            "y0": 469.21441650390625,
+            "x1": 504.0031433105469,
+            "y1": 479.1770324707031
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 480.17340087890625,
+            "x1": 306.8135986328125,
+            "y1": 490.1360168457031
+          }
+        ]
+      }
+    },
+    {
+      "value": "8 epochs",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Our training used asynchronous stochastic gradient descent with 0.9 momentum , fixed learning rate schedule (decreasing the learning rate by 4% every 8 epochs).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 355.5805358886719,
+            "y0": 258.5213623046875,
+            "x1": 504.00323486328125,
+            "y1": 268.4839782714844
+          },
+          {
+            "x0": 108.0,
+            "y0": 269.4803466796875,
+            "x1": 303.5159912109375,
+            "y1": 279.4429626464844
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "GoogLeNet incarnation of the Inception architecture",
+      "label": "googlenet",
+      "numericCells": 99,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "type",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "patch size/stride",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "outputsize",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "depth",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "reduce",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "reduce",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "poolproj",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "params",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "ops",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "convolution",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.7K",
+            "value": "2700.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34M",
+            "value": "34000000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "max pool",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "convolution",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "192",
+            "value": "192",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "112K",
+            "value": "112000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "360M",
+            "value": "360000000",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "max pool",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "inception (3a)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "96",
+            "value": "96",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "159K",
+            "value": "159000",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "128M",
+            "value": "128000000",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "inception (3b)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "192",
+            "value": "192",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "96",
+            "value": "96",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "380K",
+            "value": "380000",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "304M",
+            "value": "304000000",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "max pool",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "inception (4a)",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "192",
+            "value": "192",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "96",
+            "value": "96",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "208",
+            "value": "208",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "364K",
+            "value": "364000",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "73M",
+            "value": "73000000",
+            "emphasised": false,
+            "block": 8
+          }
+        ],
+        [
+          {
+            "text": "inception (4b)",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "160",
+            "value": "160",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "112",
+            "value": "112",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "224",
+            "value": "224",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "24",
+            "value": "24",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "437K",
+            "value": "437000",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "88M",
+            "value": "88000000",
+            "emphasised": false,
+            "block": 9
+          }
+        ],
+        [
+          {
+            "text": "inception (4c)",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "24",
+            "value": "24",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "463K",
+            "value": "463000",
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "100M",
+            "value": "100000000",
+            "emphasised": false,
+            "block": 10
+          }
+        ],
+        [
+          {
+            "text": "inception (4d)",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "112",
+            "value": "112",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "288",
+            "value": "288",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "580K",
+            "value": "580000",
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "119M",
+            "value": "119000000",
+            "emphasised": false,
+            "block": 11
+          }
+        ],
+        [
+          {
+            "text": "inception (4e)",
+            "value": null,
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "160",
+            "value": "160",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "320",
+            "value": "320",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "840K",
+            "value": "840000",
+            "emphasised": false,
+            "block": 12
+          },
+          {
+            "text": "170M",
+            "value": "170000000",
+            "emphasised": false,
+            "block": 12
+          }
+        ],
+        [
+          {
+            "text": "max pool",
+            "value": null,
+            "emphasised": false,
+            "block": 13
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 13
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "inception (5a)",
+            "value": null,
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "160",
+            "value": "160",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "320",
+            "value": "320",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "1072K",
+            "value": "1072000",
+            "emphasised": false,
+            "block": 14
+          },
+          {
+            "text": "54M",
+            "value": "54000000",
+            "emphasised": false,
+            "block": 14
+          }
+        ],
+        [
+          {
+            "text": "inception (5b)",
+            "value": null,
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "384",
+            "value": "384",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "192",
+            "value": "192",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "384",
+            "value": "384",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "1388K",
+            "value": "1388000",
+            "emphasised": false,
+            "block": 15
+          },
+          {
+            "text": "71M",
+            "value": "71000000",
+            "emphasised": false,
+            "block": 15
+          }
+        ],
+        [
+          {
+            "text": "avg pool",
+            "value": null,
+            "emphasised": false,
+            "block": 16
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 16
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "dropout (40%)",
+            "value": null,
+            "emphasised": false,
+            "block": 17
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 17
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "linear",
+            "value": null,
+            "emphasised": false,
+            "block": 18
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 18
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1000K",
+            "value": "1000000",
+            "emphasised": false,
+            "block": 18
+          },
+          {
+            "text": "1M",
+            "value": "1000000",
+            "emphasised": false,
+            "block": 18
+          }
+        ],
+        [
+          {
+            "text": "softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 19
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 19
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 227.6032257080078,
+            "y0": 302.5169677734375,
+            "x1": 416.0948181152344,
+            "y1": 311.4833679199219
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Classification performance",
+      "label": "classfinal",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Team",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Year",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Place",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Error (top-5)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Uses external data",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "SuperVision",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2012",
+            "value": "2012",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1st",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.4%",
+            "value": "16.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SuperVision",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2012",
+            "value": "2012",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1st",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.3%",
+            "value": "15.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Imagenet 22k",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Clarifai",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2013",
+            "value": "2013",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1st",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.7%",
+            "value": "11.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Clarifai",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2013",
+            "value": "2013",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1st",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "11.2%",
+            "value": "11.2",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "Imagenet 22k",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MSRA",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "2014",
+            "value": "2014",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "3rd",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "7.35%",
+            "value": "7.35",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "VGG",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "2014",
+            "value": "2014",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "2nd",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "7.32%",
+            "value": "7.32",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "2014",
+            "value": "2014",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "1st",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "6.67%",
+            "value": "6.67",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 273.6632080078125,
+            "y0": 220.31600952148438,
+            "x1": 370.03399658203125,
+            "y1": 229.28240966796875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "GoogLeNet classification performance break down",
+      "label": "classbreakdown",
+      "numericCells": 29,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Number of models",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Number of Crops",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Cost",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5 error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "compared to base",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.07%",
+            "value": "10.07",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "base",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.15%",
+            "value": "9.15",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-0.92%",
+            "value": "-0.92",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.89%",
+            "value": "7.89",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-2.18%",
+            "value": "-2.18",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "8.09%",
+            "value": "8.09",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-1.98%",
+            "value": "-1.98",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "70",
+            "value": "70",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "7.62%",
+            "value": "7.62",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "-2.45%",
+            "value": "-2.45",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "1008",
+            "value": "1008",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "6.67%",
+            "value": "6.67",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-3.45%",
+            "value": "-3.45",
+            "emphasised": false,
+            "block": 6
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 230.3292236328125,
+            "y0": 362.05499267578125,
+            "x1": 413.3692626953125,
+            "y1": 371.0213928222656
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Detection performance",
+      "label": "detfinal",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Team",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Year",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Place",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "mAP",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "external data",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "ensemble",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "approach",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "UvA-Euvision",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2013",
+            "value": "2013",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1st",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.6%",
+            "value": "22.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Fisher vectors",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep Insight",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2014",
+            "value": "2014",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3rd",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.5%",
+            "value": "40.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "ImageNet 1k",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "CUHK DeepID-Net",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2014",
+            "value": "2014",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2nd",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "40.7%",
+            "value": "40.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "ImageNet 1k",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2014",
+            "value": "2014",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1st",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "43.9%",
+            "value": "43.9",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "ImageNet 1k",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 280.64422607421875,
+            "y0": 171.10098266601562,
+            "x1": 363.05438232421875,
+            "y1": 180.0673828125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Single model performance for detection",
+      "label": "detsinglemodel",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Team",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "mAP",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Contextual model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Bounding box regression",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Trimps-Soushen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.6%",
+            "value": "31.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Berkeley Vision",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.5%",
+            "value": "34.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "UvA-Euvision",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "35.4%",
+            "value": "35.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "CUHK DeepID-Net2",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "37.7%",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "?",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "38.02%",
+            "value": "38.02",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Deep Insight",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "40.2%",
+            "value": "40.2",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 250.38223266601562,
+            "y0": 313.38299560546875,
+            "x1": 393.31561279296875,
+            "y1": 322.3493957519531
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\arraystretch": "#1",
+    "\\ra": "\\renewcommand{\\arraystretch}{#1}"
+  },
+  "references": [
+    {
+      "key": "knowyourmeme",
+      "raw": "Know your meme: We need to go deeper. http://knowyourmeme.com/memes/we-need-to-go-deeper. Accessed: 2014-09-15",
+      "authors": "Know your meme: We need to go deeper",
+      "title": "Accessed: 2014-09-15",
+      "venue": "",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "arora2013bounds",
+      "raw": "Sanjeev Arora, Aditya Bhaskara, Rong Ge, and Tengyu Ma. Provable bounds for learning some deep representations. CoRR, abs/1310.6343, 2013",
+      "authors": "Sanjeev Arora, Aditya Bhaskara, Rong Ge, and Tengyu Ma",
+      "title": "Provable bounds for learning some deep representations",
+      "venue": "CoRR, abs/1310.6343, 2013",
+      "year": 2013,
+      "arxivId": "1310.6343",
+      "doi": null
+    },
+    {
+      "key": "catalyurek2010sparse",
+      "raw": "\\\"Umit V. Cataly\\\"urek, Cevdet Aykanat, and Bora U car. On two-dimensional sparse matrix partitioning: Models, methods, and a recipe. SIAM J. Sci. Comput., 32(2):656--683, February 2010",
+      "authors": "\\\"Umit V. Cataly\\\"urek, Cevdet Aykanat, and Bora U car",
+      "title": "On two-dimensional sparse matrix partitioning: Models, methods, and a recipe",
+      "venue": "SIAM J. Sci. Comput., 32(2):656--683, February 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dean2012large",
+      "raw": "Jeffrey Dean, Greg Corrado, Rajat Monga, Kai Chen, Matthieu Devin, Mark Mao, Marc'aurelio Ranzato, Andrew Senior, Paul Tucker, Ke Yang, Quoc V. Le, and Andrew Y. Ng. Large scale distributed deep networks. In P. Bartlett, F.c.n. Pereira, C.j.c. Burges, L. Bottou, and K.q. Weinberger, editors, Advances in Neural Information Processing Systems 25, pages 1232--1240. 2012",
+      "authors": "Jeffrey Dean, Greg Corrado, Rajat Monga, Kai Chen, Matthieu Devin, Mark Mao, Marc'aurelio Ranzato, Andrew Senior, Paul Tucker, Ke Yang, Quoc V. Le, and Andrew Y. Ng",
+      "title": "Large scale distributed deep networks",
+      "venue": "In P. Bartlett, F.c.n. Pereira, C.j.c. Burges, L. Bottou, and K.q. Weinberger, editors, Advances in Neural Information Processing Systems 25, pages 1232--1240. 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "erhan2014scalable",
+      "raw": "Dumitru Erhan, Christian Szegedy, Alexander Toshev, and Dragomir Anguelov. Scalable object detection using deep neural networks. In Computer Vision and Pattern Recognition, 2014. CVPR 2014. IEEE Conference on, 2014",
+      "authors": "Dumitru Erhan, Christian Szegedy, Alexander Toshev, and Dragomir Anguelov",
+      "title": "Scalable object detection using deep neural networks",
+      "venue": "In Computer Vision and Pattern Recognition, 2014. CVPR 2014. IEEE Conference on, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "girshick2014rich",
+      "raw": "Ross B. Girshick, Jeff Donahue, Trevor Darrell, and Jitendra Malik. Rich feature hierarchies for accurate object detection and semantic segmentation. In Computer Vision and Pattern Recognition, 2014. CVPR 2014. IEEE Conference on, 2014",
+      "authors": "Ross B. Girshick, Jeff Donahue, Trevor Darrell, and Jitendra Malik",
+      "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+      "venue": "In Computer Vision and Pattern Recognition, 2014. CVPR 2014. IEEE Conference on, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hinton2012dropout",
+      "raw": "Geoffrey E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. Improving neural networks by preventing co-adaptation of feature detectors. CoRR, abs/1207.0580, 2012",
+      "authors": "Geoffrey E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "venue": "CoRR, abs/1207.0580, 2012",
+      "year": 2012,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "howard2013improvements",
+      "raw": "Andrew G. Howard. Some improvements on deep convolutional neural network based image classification. CoRR, abs/1312.5402, 2013",
+      "authors": "Andrew G. Howard",
+      "title": "Some improvements on deep convolutional neural network based image classification",
+      "venue": "CoRR, abs/1312.5402, 2013",
+      "year": 2013,
+      "arxivId": "1312.5402",
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoff Hinton. Imagenet classification with deep convolutional neural networks. In Advances in Neural Information Processing Systems 25, pages 1106--1114, 2012",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoff Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In Advances in Neural Information Processing Systems 25, pages 1106--1114, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lecun1989backprop",
+      "raw": "Y. LeCun, B. Boser, J. S. Denker, D. Henderson, R. E. Howard, W. Hubbard, and L. D. Jackel. Backpropagation applied to handwritten zip code recognition. Neural Comput., 1(4):541--551, December 1989",
+      "authors": "Y. LeCun, B. Boser, J. S. Denker, D. Henderson, R. E. Howard, W. Hubbard, and L. D. Jackel",
+      "title": "Backpropagation applied to handwritten zip code recognition",
+      "venue": "Neural Comput., 1(4):541--551, December 1989",
+      "year": 1989,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lecun1998gradient",
+      "raw": "Yann LeCun, L\\'eon Bottou, Yoshua Bengio, and Patrick Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11):2278--2324, 1998",
+      "authors": "Yann LeCun, L\\'eon Bottou, Yoshua Bengio, and Patrick Haffner",
+      "title": "Gradient-based learning applied to document recognition",
+      "venue": "Proceedings of the IEEE, 86(11):2278--2324, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2013nin",
+      "raw": "Min Lin, Qiang Chen, and Shuicheng Yan. Network in network. CoRR, abs/1312.4400, 2013",
+      "authors": "Min Lin, Qiang Chen, and Shuicheng Yan",
+      "title": "Network in network",
+      "venue": "CoRR, abs/1312.4400, 2013",
+      "year": 2013,
+      "arxivId": "1312.4400",
+      "doi": null
+    },
+    {
+      "key": "polyak1992",
+      "raw": "B. T. Polyak and A. B. Juditsky. Acceleration of stochastic approximation by averaging. SIAM J. Control Optim., 30(4):838--855, July 1992",
+      "authors": "B. T. Polyak and A. B. Juditsky",
+      "title": "Acceleration of stochastic approximation by averaging",
+      "venue": "SIAM J. Control Optim., 30(4):838--855, July 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sermanet2013overfeat",
+      "raw": "Pierre Sermanet, David Eigen, Xiang Zhang, Micha\\\"el Mathieu, Rob Fergus, and Yann LeCun. Overfeat: Integrated recognition, localization and detection using convolutional networks. CoRR, abs/1312.6229, 2013",
+      "authors": "Pierre Sermanet, David Eigen, Xiang Zhang, Micha\\\"el Mathieu, Rob Fergus, and Yann LeCun",
+      "title": "Overfeat: Integrated recognition, localization and detection using convolutional networks",
+      "venue": "CoRR, abs/1312.6229, 2013",
+      "year": 2013,
+      "arxivId": "1312.6229",
+      "doi": null
+    },
+    {
+      "key": "serre2007robust",
+      "raw": "Thomas Serre, Lior Wolf, Stanley M. Bileschi, Maximilian Riesenhuber, and Tomaso Poggio. Robust object recognition with cortex-like mechanisms. IEEE Trans. Pattern Anal. Mach. Intell., 29(3):411--426, 2007",
+      "authors": "Thomas Serre, Lior Wolf, Stanley M. Bileschi, Maximilian Riesenhuber, and Tomaso Poggio",
+      "title": "Robust object recognition with cortex-like mechanisms",
+      "venue": "IEEE Trans. Pattern Anal. Mach. Intell., 29(3):411--426, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "song2014scaling",
+      "raw": "Fengguang Song and Jack Dongarra. Scaling up matrix computations on shared-memory manycore systems with 1000 cpu cores. In Proceedings of the 28th ACM International Conference on Supercomputing, ICS '14, pages 333--342, New York, NY, USA, 2014. ACM",
+      "authors": "Fengguang Song and Jack Dongarra",
+      "title": "Scaling up matrix computations on shared-memory manycore systems with 1000 cpu cores",
+      "venue": "In Proceedings of the 28th ACM International Conference on Supercomputing, ICS '14, pages 333--342, New York, NY, USA, 2014. ACM",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2013momentum",
+      "raw": "Ilya Sutskever, James Martens, George E. Dahl, and Geoffrey E. Hinton. On the importance of initialization and momentum in deep learning. In Proceedings of the 30th International Conference on Machine Learning, ICML 2013, Atlanta, GA, USA, 16-21 June 2013, volume 28 of JMLR Proceedings, pages 1139--1147. JMLR.org, 2013",
+      "authors": "Ilya Sutskever, James Martens, George E. Dahl, and Geoffrey E. Hinton",
+      "title": "On the importance of initialization and momentum in deep learning",
+      "venue": "In Proceedings of the 30th International Conference on Machine Learning, ICML 2013, Atlanta, GA, USA, 16-21 June 2013, volume 28 of JMLR Proceedings, pages 1139--1147. JMLR.org, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "szegedy2013deep",
+      "raw": "Christian Szegedy, Alexander Toshev, and Dumitru Erhan. Deep neural networks for object detection. In Christopher J. C. Burges, L\\'eon Bottou, Zoubin Ghahramani, and Kilian Q. Weinberger, editors, Advances in Neural Information Processing Systems 26: 27th Annual Conference on Neural Information Processing Systems 2013. Proceedings of a meeting held December 5-8, 2013, Lake Tahoe, Nevada, United States., pages 2553--2561, 2013",
+      "authors": "Christian Szegedy, Alexander Toshev, and Dumitru Erhan",
+      "title": "Deep neural networks for object detection",
+      "venue": "In Christopher J. C. Burges, L\\'eon Bottou, Zoubin Ghahramani, and Kilian Q. Weinberger, editors, Advances in Neural Information Processing Systems 26: 27th Annual Conference on Neural Information Processing Systems 2013. Proceedings of a meeting held December 5-8, 2013, Lake Tahoe, Nevada, United States., pages 2553--2561, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "toshev2013deep",
+      "raw": "Alexander Toshev and Christian Szegedy. Deeppose: Human pose estimation via deep neural networks. CoRR, abs/1312.4659, 2013",
+      "authors": "Alexander Toshev and Christian Szegedy",
+      "title": "Deeppose: Human pose estimation via deep neural networks",
+      "venue": "CoRR, abs/1312.4659, 2013",
+      "year": 2013,
+      "arxivId": "1312.4659",
+      "doi": null
+    },
+    {
+      "key": "sande2011search",
+      "raw": "Koen E. A. van de Sande, Jasper R. R. Uijlings, Theo Gevers, and Arnold W. M. Smeulders. Segmentation as selective search for object recognition. In Proceedings of the 2011 International Conference on Computer Vision, ICCV '11, pages 1879--1886, Washington, DC, USA, 2011. IEEE Computer Society",
+      "authors": "Koen E. A. van de Sande, Jasper R. R. Uijlings, Theo Gevers, and Arnold W. M. Smeulders",
+      "title": "Segmentation as selective search for object recognition",
+      "venue": "In Proceedings of the 2011 International Conference on Computer Vision, ICCV '11, pages 1879--1886, Washington, DC, USA, 2011. IEEE Computer Society",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zeiler2014visualizing",
+      "raw": "Matthew D. Zeiler and Rob Fergus. Visualizing and understanding convolutional networks. In David J. Fleet, Tom\\'as Pajdla, Bernt Schiele, and Tinne Tuytelaars, editors, Computer Vision - ECCV 2014 - 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part I, volume 8689 of Lecture Notes in Computer Science, pages 818--833. Springer, 2014",
+      "authors": "Matthew D. Zeiler and Rob Fergus",
+      "title": "Visualizing and understanding convolutional networks",
+      "venue": "In David J. Fleet, Tom\\'as Pajdla, Bernt Schiele, and Tinne Tuytelaars, editors, Computer Vision - ECCV 2014 - 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part I, volume 8689 of Lecture Notes in Computer Science, pages 818--833. Springer, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 844,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2516,
+      "numbers": 0,
+      "citations": 7
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2879,
+      "numbers": 2,
+      "citations": 19
+    },
+    {
+      "kind": "method",
+      "title": "Motivation and High Level Considerations",
+      "chars": 6300,
+      "numbers": 1,
+      "citations": 10
+    },
+    {
+      "kind": "method",
+      "title": "Architectural Details",
+      "chars": 5738,
+      "numbers": 1,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "GoogLeNet",
+      "chars": 5199,
+      "numbers": 16,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Training Methodology",
+      "chars": 1761,
+      "numbers": 5,
+      "citations": 5
+    },
+    {
+      "kind": "experiments",
+      "title": "ILSVRC 2014 Classification Challenge Setup and Results",
+      "chars": 4227,
+      "numbers": 15,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "ILSVRC 2014 Detection Challenge Setup and Results",
+      "chars": 3192,
+      "numbers": 12,
+      "citations": 5
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 953,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 445,
+      "numbers": 0,
+      "citations": 2
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 1,
+      "compares": 0,
+      "background": 17,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "lin2013nin",
+      "stance": "inherits",
+      "cue": "based on",
+      "sentence": "Despite being a highly speculative undertaking, only after two iterations on the exact choice of topology, we could already see modest gains against the reference architecture based on [Lin et al. 2013].",
+      "section": "Motivation and High Level Considerations",
+      "sectionKind": "method",
+      "ordinal": 29,
+      "title": "Network in network",
+      "authors": "Min Lin, Qiang Chen, and Shuicheng Yan",
+      "year": 2013,
+      "arxivId": "1312.4400",
+      "inCorpus": false,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.14154052734375,
+            "y0": 177.9173126220703,
+            "x1": 504.0030517578125,
+            "y1": 187.87991333007812
+          },
+          {
+            "x0": 108.0,
+            "y0": 188.8762969970703,
+            "x1": 504.0032653808594,
+            "y1": 198.83889770507812
+          },
+          {
+            "x0": 108.0,
+            "y0": 199.8352813720703,
+            "x1": 162.98358154296875,
+            "y1": 209.79788208007812
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "dean2012large",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Our networks were trained using the DistBelief [Dean et al. 2012] distributed machine learning system using modest amount of model and data-parallelism.",
+        "section": "Training Methodology",
+        "sectionKind": "method",
+        "ordinal": 37,
+        "title": "Large scale distributed deep networks",
+        "authors": "Jeffrey Dean, Greg Corrado, Rajat Monga, Kai Chen, Matthieu Devin, Mark Mao, Marc'aurelio Ranzato, Andrew Senior, Paul Tucker, Ke Yang, Quoc V. Le, and Andrew Y. Ng",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 312.7214660644531,
+              "y0": 214.68544006347656,
+              "x1": 504.0032653808594,
+              "y1": 224.64804077148438
+            },
+            {
+              "x0": 108.0,
+              "y0": 225.64442443847656,
+              "x1": 279.51611328125,
+              "y1": 235.60702514648438
+            }
+          ]
+        }
+      },
+      {
+        "key": "krizhevsky2012imagenet",
+        "stance": "inherits",
+        "cue": "we adopted",
+        "sentence": "These models were trained with the same initialization (even with the same initial weights, mainly because of an oversight) and learning rate policies, and they only differ in sampling methodologies and the random order in which they see input images. * During testing, we adopted a more aggressive cropping approach than that of Krizhevsky et al. [Krizhevsky et al. 2012].",
+        "section": "ILSVRC 2014 Classification Challenge Setup and Results",
+        "sectionKind": "experiments",
+        "ordinal": 42,
+        "title": "Imagenet classification with deep convolutional neural networks",
+        "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoff Hinton",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "lin2013nin",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "Despite being a highly speculative undertaking, only after two iterations on the exact choice of topology, we could already see modest gains against the reference architecture based on [Lin et al. 2013].",
+        "section": "Motivation and High Level Considerations",
+        "sectionKind": "method",
+        "ordinal": 29,
+        "title": "Network in network",
+        "authors": "Min Lin, Qiang Chen, and Shuicheng Yan",
+        "year": 2013,
+        "arxivId": "1312.4400",
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 214.14154052734375,
+              "y0": 177.9173126220703,
+              "x1": 504.0030517578125,
+              "y1": 187.87991333007812
+            },
+            {
+              "x0": 108.0,
+              "y0": 188.8762969970703,
+              "x1": 504.0032653808594,
+              "y1": 198.83889770507812
+            },
+            {
+              "x0": 108.0,
+              "y0": 199.8352813720703,
+              "x1": 162.98358154296875,
+              "y1": 209.79788208007812
+            }
+          ]
+        }
+      },
+      {
+        "key": "serre2007robust",
+        "stance": "contests",
+        "cue": "contrary to",
+        "sentence": "However, contrary to the fixed 2-layer deep model of [Serre et al. 2007], all filters in the Inception model are learned.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 18,
+        "title": "Robust object recognition with cortex-like mechanisms",
+        "authors": "Thomas Serre, Lior Wolf, Stanley M. Bileschi, Maximilian Riesenhuber, and Tomaso Poggio",
+        "year": 2007,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 382.15081787109375,
+              "y0": 353.4742431640625,
+              "x1": 504.00335693359375,
+              "y1": 363.4368591308594
+            },
+            {
+              "x0": 108.0,
+              "y0": 364.4332275390625,
+              "x1": 197.364501953125,
+              "y1": 374.3958435058594
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Note that assuming translation invariance means that our network will be built from convolutional building blocks.",
+      "anchorText": "Note that assuming translation invariance means that our network will be built from convolutional building blocks.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "assuming",
+      "section": "Architectural Details",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 188.40814208984375,
+            "y0": 414.4600830078125,
+            "x1": 504.003173828125,
+            "y1": 424.4226989746094
+          },
+          {
+            "x0": 108.0,
+            "y0": 425.4190673828125,
+            "x1": 253.4738311767578,
+            "y1": 435.3816833496094
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We assume that each unit from the earlier layer corresponds to some region of the input image and these units are grouped into filter banks.",
+      "anchorText": "We assume that each unit from the earlier layer corresponds to some region of the input image and these units are grouped into filter banks.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Architectural Details",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 490.97222900390625,
+            "y0": 458.2960205078125,
+            "x1": 504.0033264160156,
+            "y1": 468.2586364746094
+          },
+          {
+            "x0": 108.0,
+            "y0": 469.2550048828125,
+            "x1": 504.0033264160156,
+            "y1": 479.2176208496094
+          },
+          {
+            "x0": 108.0,
+            "y0": 480.2139892578125,
+            "x1": 246.00192260742188,
+            "y1": 490.1766052246094
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We omit the details of that network, since our experiments have shown that the influence of the exact architectural parameters is relatively minor.",
+      "anchorText": "We omit the details of that network, since our experiments have shown that the influence of the exact architectural parameters is relatively minor.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We omit",
+      "section": "GoogLeNet",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 0,
+    "shown": 0,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 36,
+    "rate": 0.9
+  }
+}

@@ -1,5 +1,7 @@
 """LaTeX source parsing. Pure text processing, no network."""
 
+import pytest
+
 from keystone.ingest.latex import (
     TexDocument,
     anchorable_runs,
@@ -179,3 +181,61 @@ The second claim is that it does so without additional hyperparameter tuning.
 \end{document}
 """
     assert len(anchorable_sentences(source)) > len(anchorable_runs(source))
+
+
+# --------------------------------------------------------- prose for a reader
+
+
+@pytest.mark.parametrize(
+    ("tex", "expected"),
+    [
+        # The bug: deleting inline maths left "the expected value of and the variance
+        # of". Rendering it recovers the sentence the author wrote.
+        (r"If we assume that $x$ and $u$ are Gaussian, both coincide.",
+         "If we assume that x and u are Gaussian, both coincide."),
+        (r"The value of any $\hat{x}$ has expected value $0$ and variance $1$.",
+         "The value of any x̂ has expected value 0 and variance 1."),
+        # Structure survives legibly rather than becoming soup.
+        (r"We minimise $\frac{1}{N}\sum_{i=1}^{N} \ell(x_i)$ over the batch.",
+         "We minimise 1/N∑_i=1^Nℓ(x_i) over the batch."),
+        # A deleted citation left "first introduced by, provides".
+        (r"This analogy, first introduced by \cite{unknown}, provides a frame.",
+         "This analogy, first introduced by [ref], provides a frame."),
+        # An unknown macro degrades to its argument instead of raising.
+        (r"A broken \undefinedmacro{arg} must not crash.",
+         "A broken arg must not crash."),
+    ],
+)
+def test_readable_prose_renders_what_stripping_deleted(tex: str, expected: str) -> None:
+    from keystone.ingest.latex import readable_prose
+
+    assert readable_prose(tex) == expected
+
+
+def test_a_known_citation_is_named_in_the_quote() -> None:
+    """An assumption resting on another paper should say which one."""
+    from keystone.ingest.latex import readable_prose
+
+    got = readable_prose(
+        r"We follow the protocol of \cite{ba2016} throughout.",
+        {"ba2016": "Ba et al. 2016"},
+    )
+    assert got == "We follow the protocol of [Ba et al. 2016] throughout."
+
+
+def test_an_unknown_citation_still_leaves_a_marker() -> None:
+    """Never a hole: a gap mid-clause is the bug this function exists to fix."""
+    from keystone.ingest.latex import readable_prose
+
+    got = readable_prose(r"first introduced by \cite{nosuchkey}, which provides")
+    assert "[ref]" in got
+    assert "by, which" not in got
+
+
+def test_readable_prose_is_never_used_for_anchoring() -> None:
+    """Rendered maths would never appear as source text on a page."""
+    from keystone.ingest.latex import longest_anchorable_run, readable_prose
+
+    tex = r"We set the rate to $\alpha$ and cite \cite{he} for the residual block."
+    assert "[ref]" in readable_prose(tex)
+    assert "[ref]" not in longest_anchorable_run(tex)

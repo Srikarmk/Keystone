@@ -187,6 +187,12 @@ export interface Accuracy {
   heldOut: number;
   /** Accuracy on rows drawn *after* the rules were last changed. The honest figure. */
   heldOutAccuracy: number | null;
+  /** 95% Wilson interval on that figure. Thirty rows cannot pin it down further. */
+  heldOutInterval: [number, number];
+  /** The metric published citation-intent work reports; accuracy flatters the
+   * majority class, which is over half of every corpus in that literature. */
+  macroF1: number;
+  baselineMacroF1: number;
   accuracy: number;
   baselineAccuracy: number;
   majorityAccuracy: number;
@@ -194,6 +200,32 @@ export interface Accuracy {
     string,
     { gold: number; predicted: number; precision: number | null; recall: number | null }
   >;
+  /** The same rules against labels written by other people, on papers outside the
+   * library. Everything above describes rules measured on the corpus they were
+   * written against; this is the only part that says how far they travel. */
+  external?: External[];
+}
+
+/**
+ * The cue rules scored against a public citation-intent corpus.
+ *
+ * `coverage` and `spokenPrecision` are the pair the site quotes. `macroF1` is what
+ * published work reports, and it is included because leaving it out would be the
+ * convenient choice: it punishes silence exactly as hard as error, and Keystone is
+ * built to be silent, so the figure is low and says so.
+ */
+export interface External {
+  corpus: string;
+  instances: number;
+  /** Share of citations a stance was reported for at all. */
+  coverage: number;
+  /** How often those were right. Excludes the silent class by construction. */
+  spokenPrecision: number;
+  spokenInterval: [number, number];
+  macroF1: number;
+  /** The best macro-F1 reachable here: ACL-ARC has two classes Keystone cannot say. */
+  macroF1Ceiling: number;
+  unreachable: string[];
 }
 
 export interface LibraryGraph {

@@ -163,6 +163,7 @@ def build(
     index: DocIndex | None = None,
     corpus: frozenset[str] = frozenset(),
     corpus_titles: dict[str, str] | None = None,
+    cites: dict[str, str] | None = None,
 ) -> Lineage:
     """Resolve every stanced citation to a paper, and locate where it is said.
 
@@ -176,7 +177,7 @@ def build(
     """
     by_key = {reference.key: reference for reference in references}
     titles = {fold(t): i for i, t in (corpus_titles or {}).items() if fold(t)}
-    best = strongest(contexts(latex, sections))
+    best = strongest(contexts(latex, sections, cites))
 
     edges: list[Edge] = []
     background = 0
@@ -206,7 +207,7 @@ def build(
                 key=key,
                 stance=context.stance,
                 cue=context.cue,
-                sentence=context.sentence,
+                sentence=context.shown or context.sentence,
                 section=context.section,
                 section_kind=context.section_kind,
                 ordinal=context.ordinal,

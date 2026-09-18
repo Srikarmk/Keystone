@@ -38,14 +38,34 @@ already attached rather than as an isolated node.
 > unreferenced ones — is stated once, in the introduction, with nothing offered for it.
 > Page 2.
 
-**And it is wrong sometimes.** A cue read out of position produces a confident opposite
-rather than a vague answer, so the error rate is published rather than implied: on 30
-citation sites labelled by hand *after* the rules were last changed, **80%** of readings
-were correct, against **64%** for a bag-of-words classifier over the same sentences and
-32% for the majority class. The labels are in `eval/labels/stance.jsonl` and the numbers
-come from `keystone stance-eval`, which writes them straight into the site so the
-published figure cannot drift from the file. Roughly one reading in five is still wrong,
-which is why every row shows the sentence and the cue it keyed on.
+**And it is often silent, and sometimes wrong.** A cue read out of position produces a
+confident opposite rather than a vague answer, so the error rate is published rather
+than implied — and measured on somebody else's labels, because a rate measured on the
+same papers the rules were written against is not a rate, it is a restatement.
+
+Scored against **SciCite** (11,014 citation contexts, Cohan et al. 2019) and
+**ACL-ARC** (1,941, Jurgens et al. 2018), neither of which contributed a single cue
+phrase:
+
+| | citations | read | of those, right |
+|---|---|---|---|
+| SciCite | 11,014 | 4.0% | **80.0%** [76–84%] |
+| ACL-ARC | 1,941 | 8.3% | **68.9%** [61–76%] |
+
+Both numbers matter. Keystone is built to refuse: no cue phrase written down, no stance
+reported, nothing shown. On a broad corpus that means it declines most citations —
+"using CMet cardiac metric software [12]" is a real adoption whose only evidence is
+knowing what CMet is. Its **macro-F1 is 0.325 and 0.204**, below the 0.273 a cue-phrase
+system from 2000 scores on ACL-ARC and far below the 0.84–0.889 of trained neural
+classifiers, because macro-F1 punishes silence exactly as hard as error. That figure is
+published too; leaving it out would be the convenient choice.
+
+On 90 citations from this library labelled by hand, accuracy is 87% [78–92%] and
+macro-F1 0.84, against 0.59 for a bag-of-words classifier over the same sentences. That
+sample says the rules are self-consistent, not that they travel — see
+`eval/corpora/README.md`, which also records the three real defects scoring against
+public labels found and fixed. Roughly one reading in five is wrong either way, which
+is why every row shows the sentence and the cue it keyed on.
 
 **Why not audit the arithmetic?** That was the first version, and it shipped. A paper's
 numbers can only be reported as an *absence* of errors, and careful papers have none:

@@ -31,6 +31,7 @@ from keystone.ingest.latex import (
     blank_environments,
     expand_macros,
     longest_anchorable_run,
+    readable_prose,
     split_sentences,
     strip_comments,
     strip_markup,
@@ -221,8 +222,14 @@ def extract(
     latex: str,
     sections: tuple[Section, ...],
     label_kinds: dict[str, str],
+    cites: dict[str, str] | None = None,
 ) -> list[Assumption]:
-    """Every assumption the paper states, with what it offers for each."""
+    """Every assumption the paper states, with what it offers for each.
+
+    ``cites`` maps a citation key to how it should read in a quotation — "Ba et al.
+    2016" rather than a bare marker — so an assumption that leans on another paper
+    names it in the sentence the reader is shown.
+    """
     out: list[Assumption] = []
     seen: set[str] = set()
 
@@ -246,7 +253,9 @@ def extract(
 
             out.append(
                 Assumption(
-                    sentence=sentence,
+                    # Shown to a reader, so elided maths becomes an ellipsis rather
+                    # than a hole. The anchor still uses the exact text.
+                    sentence=readable_prose(raw, cites),
                     anchor_text=longest_anchorable_run(raw),
                     kind=kind,
                     support=support_for(raw, label_kinds),

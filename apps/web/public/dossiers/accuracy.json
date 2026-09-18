@@ -1,16 +1,125 @@
 {
   "labelled": 90,
   "heldOut": 30,
+  "heldOutInterval": [
+    0.627,
+    0.905
+  ],
+  "macroF1": 0.839,
+  "baselineMacroF1": 0.594,
   "heldOutAccuracy": 0.8,
   "accuracy": 0.867,
   "baselineAccuracy": 0.644,
   "majorityAccuracy": 0.322,
+  "external": [
+    {
+      "corpus": "SciCite",
+      "instances": 11014,
+      "skipped": 6,
+      "accuracy": 0.6073,
+      "accuracyInterval": [
+        0.5982,
+        0.6164
+      ],
+      "macroF1": 0.3251,
+      "macroF1Ceiling": 1.0,
+      "spoken": 441,
+      "coverage": 0.04,
+      "spokenPrecision": 0.8005,
+      "spokenInterval": [
+        0.7606,
+        0.8351
+      ],
+      "unreachable": [],
+      "classes": {
+        "background": {
+          "support": 6375,
+          "predicted": 10573,
+          "precision": 0.5993,
+          "recall": 0.9939
+        },
+        "method": {
+          "support": 3154,
+          "predicted": 364,
+          "precision": 0.8654,
+          "recall": 0.0999
+        },
+        "result": {
+          "support": 1485,
+          "predicted": 77,
+          "precision": 0.4935,
+          "recall": 0.0256
+        }
+      }
+    },
+    {
+      "corpus": "ACL-ARC",
+      "instances": 1941,
+      "skipped": 0,
+      "accuracy": 0.5683,
+      "accuracyInterval": [
+        0.5461,
+        0.5901
+      ],
+      "macroF1": 0.2042,
+      "macroF1Ceiling": 0.6667,
+      "spoken": 161,
+      "coverage": 0.0829,
+      "spokenPrecision": 0.6894,
+      "spokenInterval": [
+        0.6142,
+        0.7558
+      ],
+      "unreachable": [
+        "Motivation",
+        "Future"
+      ],
+      "classes": {
+        "Background": {
+          "support": 997,
+          "predicted": 1780,
+          "precision": 0.5573,
+          "recall": 0.995
+        },
+        "Uses": {
+          "support": 364,
+          "predicted": 137,
+          "precision": 0.7372,
+          "recall": 0.2775
+        },
+        "CompareOrContrast": {
+          "support": 351,
+          "predicted": 9,
+          "precision": 0.7778,
+          "recall": 0.0199
+        },
+        "Extends": {
+          "support": 72,
+          "predicted": 15,
+          "precision": 0.2,
+          "recall": 0.0417
+        },
+        "Motivation": {
+          "support": 88,
+          "predicted": 0,
+          "precision": null,
+          "recall": 0.0
+        },
+        "Future": {
+          "support": 69,
+          "predicted": 0,
+          "precision": null,
+          "recall": 0.0
+        }
+      }
+    }
+  ],
   "classes": {
     "inherits": {
       "gold": 22,
-      "predicted": 20,
-      "precision": 0.9,
-      "recall": 0.818
+      "predicted": 21,
+      "precision": 0.905,
+      "recall": 0.864
     },
     "extends": {
       "gold": 18,
@@ -20,21 +129,21 @@
     },
     "contests": {
       "gold": 11,
-      "predicted": 16,
-      "precision": 0.688,
-      "recall": 1.0
+      "predicted": 9,
+      "precision": 0.778,
+      "recall": 0.636
     },
     "compares": {
       "gold": 10,
-      "predicted": 11,
-      "precision": 0.727,
-      "recall": 0.8
+      "predicted": 6,
+      "precision": 1.0,
+      "recall": 0.6
     },
     "background": {
       "gold": 29,
-      "predicted": 25,
-      "precision": 0.92,
-      "recall": 0.793
+      "predicted": 36,
+      "precision": 0.778,
+      "recall": 0.966
     }
   }
 }

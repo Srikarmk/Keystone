@@ -259,6 +259,52 @@ class DocIndex:
             precision="approximate",
         )
 
+    def locate_longest(
+        self, quote: str, *, min_chars: int = 24, min_share: float = 0.4
+    ) -> LocateResult:
+        """Locate the longest contiguous part of ``quote`` the document contains.
+
+        For sentences whose exact text cannot appear in the PDF because something
+        unrecoverable sits inside them. A claim's sentence reaches this layer already
+        stripped of its citations, so the hole is a single space by then and there is
+        no way to split at it — where a lineage edge keeps its LaTeX and can be split
+        before stripping. Anchoring 37% of claims was the cost of that difference.
+
+        Only ever *narrows* the quote, and the winning span still goes through
+        ``locate``, so the precision contract is unchanged: this trades a shorter
+        highlight for a verified one, never a guessed one. Refuses below ``min_share``
+        of the sentence, since a highlight on a fragment misrepresents where the claim
+        is.
+        """
+        exact = self.locate(quote)
+        if exact.anchor is not None:
+            return exact
+
+        words = quote.split()
+        if len(words) < 4:
+            return exact
+
+        # Longest prefix and longest suffix the document contains, each found by
+        # bisection on `contains` — cheap membership, rather than the full locate.
+        def longest(build) -> str:
+            low, high, best = 1, len(words), ""
+            while low <= high:
+                mid = (low + high) // 2
+                candidate = build(mid)
+                if self.contains(candidate):
+                    best, low = candidate, mid + 1
+                else:
+                    high = mid - 1
+            return best
+
+        prefix = longest(lambda n: " ".join(words[:n]))
+        suffix = longest(lambda n: " ".join(words[-n:]))
+        best = max((prefix, suffix), key=len)
+
+        if len(best) < min_chars or len(best) < len(quote) * min_share:
+            return exact
+        return self.locate(best)
+
     def contains(self, text: str, *, drop_hyphens: bool = True) -> bool:
         """Whether text occurs in the document at all, ignoring layout and casing."""
         skeleton = self._loose if drop_hyphens else self._strict
