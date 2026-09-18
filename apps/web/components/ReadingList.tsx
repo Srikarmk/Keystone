@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { clear, summary, visits, type Visit } from "@/lib/history";
+import { forget, summary, sync, visits, type Visit } from "@/lib/history";
 
 /**
  * The papers this browser has opened.
@@ -14,9 +14,21 @@ import { clear, summary, visits, type Visit } from "@/lib/history";
  */
 export function ReadingList() {
   const [list, setList] = useState<Visit[] | null>(null);
+  const [syncing, setSyncing] = useState(false);
 
   useEffect(() => {
+    let live = true;
+    // Local first so the list is on screen immediately, then reconciled with the
+    // account. A reader who is signed out never notices the second step happened.
     setList(visits());
+    sync().then((result) => {
+      if (!live) return;
+      setList(result.visits);
+      setSyncing(result.syncing);
+    });
+    return () => {
+      live = false;
+    };
   }, []);
 
   if (list === null) return <div className="mt-12 h-40" />;
@@ -30,21 +42,20 @@ export function ReadingList() {
         {list.length > 0 ? (
           <button
             type="button"
-            onClick={() => {
-              clear();
+            onClick={async () => {
               setList([]);
+              await forget();
             }}
             className="text-[0.8rem] italic text-ink-faint transition-colors hover:text-brass"
           >
-            forget all of it
+            {syncing ? "forget it everywhere" : "forget all of it"}
           </button>
         ) : null}
       </div>
 
       {list.length === 0 ? (
         <p className="mt-3 max-w-2xl text-[0.92rem] leading-relaxed text-ink-soft">
-          Nothing yet. Open a paper and it appears here &mdash; in this browser only,
-          whether or not you are signed in.{" "}
+          Nothing yet. Open a paper and it appears here.{" "}
           <Link href="/" className="text-brass transition-colors hover:text-ink">
             Start with the library
           </Link>
@@ -52,7 +63,12 @@ export function ReadingList() {
         </p>
       ) : (
         <>
-          <p className="numeral mt-2 text-[0.82rem] text-ink-faint">
+          <p className="mt-2 text-[0.82rem] text-ink-faint">
+            {syncing
+              ? "Synced to your account, so this list follows you between machines."
+              : "Kept in this browser only."}
+          </p>
+          <p className="numeral mt-1 text-[0.82rem] text-ink-faint">
             {counted.papers} paper{counted.papers === 1 ? "" : "s"}, opened{" "}
             {counted.opens} time{counted.opens === 1 ? "" : "s"}
             {counted.since

@@ -31,11 +31,11 @@ export default async function SignIn() {
           You do not need an account
         </h1>
         <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-soft">
-          Every paper, every citation reading and every assumption is open to anyone.
-          Signing in carries a name and a face, so the reading list on your profile has
-          somebody&rsquo;s name on it. It does not unlock anything, and it does not move
-          your reading between machines &mdash; that would need a server keeping it, and
-          there is not one.
+          Every paper, every citation reading and every assumption is open to anyone,
+          and nothing here is behind this page. Signing in does one thing: your reading
+          list follows you between machines instead of living in one browser. The cost
+          is that it then lives on a server too &mdash; the papers you opened, filed
+          under a hash of your account id, deletable from your profile in one click.
         </p>
 
         {providers.length > 0 ? (
@@ -79,9 +79,9 @@ export default async function SignIn() {
             Continue as guest &rarr;
           </Link>
           <p className="mt-3 text-[0.82rem] leading-relaxed text-ink-faint">
-            Your reading list is kept in this browser either way. As a guest it is kept
-            only there, which makes it useless on another machine and impossible for
-            anyone else to read.
+            The whole library reads the same either way. A guest&rsquo;s reading list
+            stays in this browser, which makes it useless on another machine and
+            impossible for anyone else to read.
           </p>
         </div>
 

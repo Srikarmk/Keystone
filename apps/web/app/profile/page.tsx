@@ -106,10 +106,22 @@ export default async function Profile() {
         <ReadingList />
 
         <p className="mt-12 max-w-2xl border-t border-paper-edge pt-6 text-[0.82rem] leading-relaxed text-ink-faint">
-          Signing in carries a name and a face and nothing else. There is no server
-          keeping reading histories, so this list does not follow you to another
-          machine, and no part of it is sent anywhere &mdash; which is also why nobody,
-          including me, can read it.
+          {user ? (
+            <>
+              Signed in, this list is kept on a server so it follows you between
+              machines. What is stored is the arXiv id, title, date and count of each
+              paper you opened, filed under a hash of your provider account id
+              &mdash; not your name and not your address, so a row on its own does not
+              say whose it is. &ldquo;Forget it everywhere&rdquo; above deletes it
+              here and there, immediately and for good.
+            </>
+          ) : (
+            <>
+              As a guest nothing is stored anywhere but this browser, so the list
+              cannot follow you to another machine and nobody, including me, can read
+              it. Signing in trades that for a list that syncs.
+            </>
+          )}
         </p>
       </section>
     </main>

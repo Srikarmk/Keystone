@@ -1,11 +1,14 @@
 /*
- * What you have read, kept on your own machine.
+ * What you have read.
  *
- * This is the only thing a Keystone account would carry, so it is worth being precise
- * about where it lives: in this browser's local storage and nowhere else. No request
- * sends it anywhere, signed in or not, because there is no server keeping reading
- * histories. That makes it useless across machines and perfectly private, and a guest
- * gets exactly the same feature a signed-in visitor does.
+ * Local storage is the home of it, always. A guest's list never leaves the browser,
+ * and a signed-in reader's is *also* kept here — the server copy is a mirror so the
+ * list survives moving between machines, not the source of truth. Written that way so
+ * the page works offline, works signed out, and works when the store is down, all
+ * without a branch in the component that renders it.
+ *
+ * The sync is one round trip: send what this browser has, get back the union of that
+ * and what the account already had. See app/api/history/route.ts.
  */
 
 const KEY = "keystone-reading";
@@ -79,6 +82,79 @@ export function clear(): void {
   } catch {
     /* nothing to do */
   }
+}
+
+function replace(visits: Visit[]): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(KEY, JSON.stringify(visits.slice(0, LIMIT)));
+  } catch {
+    /* storage full or blocked */
+  }
+}
+
+export interface Synced {
+  visits: Visit[];
+  /** True only when a signed-in account and a configured store both exist. */
+  syncing: boolean;
+}
+
+/**
+ * Reconcile this browser's list with the account's, if there is one.
+ *
+ * Returns the local list unchanged on every failure path — signed out, no store
+ * configured, network down, malformed reply. The caller renders what it gets back and
+ * does not need to know which of those happened, because in all of them the honest
+ * answer is "here is what this browser knows".
+ */
+export async function sync(): Promise<Synced> {
+  const local = visits();
+  if (typeof window === "undefined") return { visits: local, syncing: false };
+  try {
+    const response = await fetch("/api/history", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ visits: local }),
+    });
+    if (!response.ok) return { visits: local, syncing: false };
+    const body = (await response.json()) as { syncing?: unknown; visits?: unknown };
+    if (!body.syncing || !Array.isArray(body.visits)) {
+      return { visits: local, syncing: false };
+    }
+    const merged = visitsFrom(body.visits);
+    replace(merged);
+    return { visits: merged, syncing: true };
+  } catch {
+    return { visits: local, syncing: false };
+  }
+}
+
+/** Forget everything, here and on the account. */
+export async function forget(): Promise<void> {
+  clear();
+  try {
+    await fetch("/api/history", { method: "DELETE" });
+  } catch {
+    /* the local copy is gone either way */
+  }
+}
+
+function visitsFrom(raw: unknown[]): Visit[] {
+  return raw
+    .flatMap((entry) => {
+      if (typeof entry !== "object" || entry === null) return [];
+      const { id, title, at, count } = entry as Record<string, unknown>;
+      if (typeof id !== "string" || !id) return [];
+      return [
+        {
+          id,
+          title: typeof title === "string" ? title : id,
+          at: typeof at === "number" && Number.isFinite(at) ? at : 0,
+          count: typeof count === "number" && Number.isFinite(count) ? count : 1,
+        },
+      ];
+    })
+    .sort((a, b) => b.at - a.at);
 }
 
 /** A short, honest summary for the profile page. */

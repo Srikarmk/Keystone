@@ -1,0 +1,4378 @@
+{
+  "id": "1906.08237",
+  "title": "XLNet: Generalized Autoregressive Pretraining for Language Understanding",
+  "keystone": null,
+  "coverage": {
+    "claims": 2,
+    "supported": 0,
+    "declared": 2,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [
+    {
+      "value": "0.2",
+      "section": "introduction",
+      "sentence": "Faced with the pros and cons of existing language pretraining objectives, in this work, we propose XLNet, a generalized autoregressive method that leverages the best of both AR language modeling and AE while avoiding their limitations. [leftmargin=*,topsep=0em,itemsep=0em,parsep=0.2em] Firstly, instead of using a fixed forward or backward factorization order as in conventional AR models, XLNet maximizes the expected log likelihood of a sequence w.r.t. all possible permutations of the factorization order.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "dai2019transformer",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 167.10304260253906,
+            "x1": 503.997802734375,
+            "y1": 177.1400909423828
+          },
+          {
+            "x0": 107.64099884033203,
+            "y0": 178.038330078125,
+            "x1": 504.000244140625,
+            "y1": 188.04071044921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 188.9774932861328,
+            "x1": 268.1089782714844,
+            "y1": 198.94009399414062
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0.2",
+      "section": "introduction",
+      "sentence": "In addition to a novel pretraining objective, XLNet improves architectural designs for pretraining. [leftmargin=*,topsep=0em,itemsep=0em,parsep=0.2em] Inspired by the latest advancements in AR language modeling, XLNet integrates the segment recurrence mechanism and relative encoding scheme of Transformer-XL into pretraining, which empirically improves the performance especially for tasks involving a longer text sequence. Naively applying a Transformer(-XL) architecture to permutation-based language modeling does not work because the factorization order is arbitrary and the target is ambiguous.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "dai2019transformer",
+      "anchor": null,
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1906.08237",
+  "numbers": [
+    {
+      "value": "0.2",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Faced with the pros and cons of existing language pretraining objectives, in this work, we propose XLNet, a generalized autoregressive method that leverages the best of both AR language modeling and AE while avoiding their limitations. [leftmargin=*,topsep=0em,itemsep=0em,parsep=0.2em] Firstly, instead of using a fixed forward or backward factorization order as in conventional AR models, XLNet maximizes the expected log likelihood of a sequence w.r.t. all possible permutations of the factorization order.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 167.10304260253906,
+            "x1": 503.997802734375,
+            "y1": 177.1400909423828
+          },
+          {
+            "x0": 107.64099884033203,
+            "y0": 178.038330078125,
+            "x1": 504.000244140625,
+            "y1": 188.04071044921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 188.9774932861328,
+            "x1": 268.1089782714844,
+            "y1": 198.94009399414062
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.2",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "In addition to a novel pretraining objective, XLNet improves architectural designs for pretraining. [leftmargin=*,topsep=0em,itemsep=0em,parsep=0.2em] Inspired by the latest advancements in AR language modeling, XLNet integrates the segment recurrence mechanism and relative encoding scheme of Transformer-XL into pretraining, which empirically improves the performance especially for tasks involving a longer text sequence. Naively applying a Transformer(-XL) architecture to permutation-based language modeling does not work because the factorization order is arbitrary and the target is ambiguous.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "15%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Specifically, for a text sequence , BERT first constructs a corrupted version by randomly setting a portion (e.g. 15%) of tokens in to a special symbol .",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "2.78B",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "After tokenization with SentencePiece , we obtain 2.78B, 1.09B, 4.75B, 4.30B, and 19.97B subword pieces for Wikipedia, BooksCorpus, Giga5, ClueWeb, and Common Crawl respectively, which are 32.89B in total.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 470.9361267089844,
+            "y0": 608.7947998046875,
+            "x1": 503.9996337890625,
+            "y1": 618.742431640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 619.7455444335938,
+            "x1": 505.2471618652344,
+            "y1": 629.6381225585938
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.6014404296875,
+            "x1": 388.52679443359375,
+            "y1": 640.5640258789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.09B",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "After tokenization with SentencePiece , we obtain 2.78B, 1.09B, 4.75B, 4.30B, and 19.97B subword pieces for Wikipedia, BooksCorpus, Giga5, ClueWeb, and Common Crawl respectively, which are 32.89B in total.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 470.9361267089844,
+            "y0": 608.7947998046875,
+            "x1": 503.9996337890625,
+            "y1": 618.742431640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 619.7455444335938,
+            "x1": 505.2471618652344,
+            "y1": 629.6381225585938
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.6014404296875,
+            "x1": 388.52679443359375,
+            "y1": 640.5640258789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "4.75B",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "After tokenization with SentencePiece , we obtain 2.78B, 1.09B, 4.75B, 4.30B, and 19.97B subword pieces for Wikipedia, BooksCorpus, Giga5, ClueWeb, and Common Crawl respectively, which are 32.89B in total.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 470.9361267089844,
+            "y0": 608.7947998046875,
+            "x1": 503.9996337890625,
+            "y1": 618.742431640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 619.7455444335938,
+            "x1": 505.2471618652344,
+            "y1": 629.6381225585938
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.6014404296875,
+            "x1": 388.52679443359375,
+            "y1": 640.5640258789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "4.30B",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "After tokenization with SentencePiece , we obtain 2.78B, 1.09B, 4.75B, 4.30B, and 19.97B subword pieces for Wikipedia, BooksCorpus, Giga5, ClueWeb, and Common Crawl respectively, which are 32.89B in total.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 470.9361267089844,
+            "y0": 608.7947998046875,
+            "x1": 503.9996337890625,
+            "y1": 618.742431640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 619.7455444335938,
+            "x1": 505.2471618652344,
+            "y1": 629.6381225585938
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.6014404296875,
+            "x1": 388.52679443359375,
+            "y1": 640.5640258789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "19.97B",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "After tokenization with SentencePiece , we obtain 2.78B, 1.09B, 4.75B, 4.30B, and 19.97B subword pieces for Wikipedia, BooksCorpus, Giga5, ClueWeb, and Common Crawl respectively, which are 32.89B in total.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 470.9361267089844,
+            "y0": 608.7947998046875,
+            "x1": 503.9996337890625,
+            "y1": 618.742431640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 619.7455444335938,
+            "x1": 505.2471618652344,
+            "y1": 629.6381225585938
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.6014404296875,
+            "x1": 388.52679443359375,
+            "y1": 640.5640258789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "32.89B",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "After tokenization with SentencePiece , we obtain 2.78B, 1.09B, 4.75B, 4.30B, and 19.97B subword pieces for Wikipedia, BooksCorpus, Giga5, ClueWeb, and Common Crawl respectively, which are 32.89B in total.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 470.9361267089844,
+            "y0": 608.7947998046875,
+            "x1": 503.9996337890625,
+            "y1": 618.742431640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 619.7455444335938,
+            "x1": 505.2471618652344,
+            "y1": 629.6381225585938
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.6014404296875,
+            "x1": 388.52679443359375,
+            "y1": 640.5640258789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "13GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Following BERT , we use the BooksCorpus and English Wikipedia as part of our pretraining data, which have 13GB plain text combined.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.9189147949219,
+            "y0": 565.222412109375,
+            "x1": 504.0001525878906,
+            "y1": 575.0848999023438
+          },
+          {
+            "x0": 108.0,
+            "y0": 575.980224609375,
+            "x1": 295.9942932128906,
+            "y1": 586.0419921875
+          }
+        ]
+      }
+    },
+    {
+      "value": "16GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "In addition, we include Giga5 (16GB text) , ClueWeb 2012-B (extended from ), and Common Crawl for pretraining.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "19GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We use heuristics to aggressively filter out short or low-quality articles for ClueWeb 2012-B and Common Crawl, which results in 19GB and 110GB text respectively.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 432.7021484375,
+            "y0": 586.8902587890625,
+            "x1": 503.9977722167969,
+            "y1": 596.9520263671875
+          },
+          {
+            "x0": 108.0,
+            "y0": 597.7992553710938,
+            "x1": 505.2473449707031,
+            "y1": 607.8610229492188
+          },
+          {
+            "x0": 107.64099884033203,
+            "y0": 608.80615234375,
+            "x1": 313.35247802734375,
+            "y1": 618.7388305664062
+          }
+        ]
+      }
+    },
+    {
+      "value": "110GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We use heuristics to aggressively filter out short or low-quality articles for ClueWeb 2012-B and Common Crawl, which results in 19GB and 110GB text respectively.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 432.7021484375,
+            "y0": 586.8902587890625,
+            "x1": 503.9977722167969,
+            "y1": 596.9520263671875
+          },
+          {
+            "x0": 108.0,
+            "y0": 597.7992553710938,
+            "x1": 505.2473449707031,
+            "y1": 607.8610229492188
+          },
+          {
+            "x0": 107.64099884033203,
+            "y0": 608.80615234375,
+            "x1": 313.35247802734375,
+            "y1": 618.7388305664062
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 TPU",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Specifically, we train on 512 TPU v3 chips for 500K steps with an Adam weight decay optimizer, linear learning rate decay, and a batch size of 8192, which takes about 5.5 days.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 139.93869018554688,
+            "y0": 701.4602661132812,
+            "x1": 504.3531188964844,
+            "y1": 711.5220336914062
+          },
+          {
+            "x0": 108.0,
+            "y0": 712.3692626953125,
+            "x1": 476.02191162109375,
+            "y1": 722.4310302734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "500K steps",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Specifically, we train on 512 TPU v3 chips for 500K steps with an Adam weight decay optimizer, linear learning rate decay, and a batch size of 8192, which takes about 5.5 days.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 139.93869018554688,
+            "y0": 701.4602661132812,
+            "x1": 504.3531188964844,
+            "y1": 711.5220336914062
+          },
+          {
+            "x0": 108.0,
+            "y0": 712.3692626953125,
+            "x1": 476.02191162109375,
+            "y1": 722.4310302734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "5.5 days",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Specifically, we train on 512 TPU v3 chips for 500K steps with an Adam weight decay optimizer, linear learning rate decay, and a batch size of 8192, which takes about 5.5 days.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 139.93869018554688,
+            "y0": 701.4602661132812,
+            "x1": 504.3531188964844,
+            "y1": 711.5220336914062
+          },
+          {
+            "x0": 108.0,
+            "y0": 712.3692626953125,
+            "x1": 476.02191162109375,
+            "y1": 722.4310302734375
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Fair comparison with BERT. All models are trained using the same data and hyperparameters as in BERT. We use the best of 3 BERT variants for comparison; i.e., the original BERT, BERT with whole word masking, and BERT without next sentence prediction.",
+      "label": "tab:fair",
+      "numericCells": 18,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD1.1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SQuAD2.0",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "QNLI",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "RTE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CoLA",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "STS-B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BERT-Large (Best of 3)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.7/92.8",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "82.8/85.5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.1",
+            "value": "75.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "87.3",
+            "value": "87.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.0",
+            "value": "93.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.4",
+            "value": "91.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.0",
+            "value": "74.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.0",
+            "value": "94.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.7",
+            "value": "88.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.7",
+            "value": "63.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "XLNet-Large-wikibooks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.2/94.0",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "85.1/87.8",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "77.4",
+            "value": "77.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.4",
+            "value": "88.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "93.9",
+            "value": "93.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.8",
+            "value": "91.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "81.2",
+            "value": "81.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "94.4",
+            "value": "94.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.0",
+            "value": "90.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "65.2",
+            "value": "65.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.1",
+            "value": "91.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.5760040283203,
+            "y0": 305.43731689453125,
+            "x1": 504.00018310546875,
+            "y1": 314.492919921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 315.40032958984375,
+            "x1": 504.0008850097656,
+            "y1": 324.4559326171875
+          },
+          {
+            "x0": 108.0,
+            "y0": 325.42999267578125,
+            "x1": 301.5845642089844,
+            "y1": 334.3963928222656
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Comparison with state-of-the-art results on the test set of RACE, a reading comprehension task, and on ClueWeb09-B, a document ranking task. indicates using ensembles. indicates our implementations. \"Middle\" and \"High\" in RACE are two subsets representing middle and high school difficulty levels. All BERT, RoBERTa, and XLNet results are obtained with a 24-layer architecture with similar model sizes (aka BERT-Large).",
+      "label": "tab:race",
+      "numericCells": 25,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Accuracy",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Middle",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "High",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "NDCG@20",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "ERR@20",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "GPT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "59.0",
+            "value": "59.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62.9",
+            "value": "62.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "57.4",
+            "value": "57.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "DRMM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.3",
+            "value": "24.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.8",
+            "value": "13.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72.0",
+            "value": "72.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.6",
+            "value": "76.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.1",
+            "value": "70.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "KNRM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.9",
+            "value": "26.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.9",
+            "value": "14.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BERT+DCMN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.1",
+            "value": "74.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "79.5",
+            "value": "79.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "71.8",
+            "value": "71.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Conv",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.7",
+            "value": "28.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.1",
+            "value": "18.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RoBERTa",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "83.2",
+            "value": "83.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.5",
+            "value": "86.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.8",
+            "value": "81.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.53",
+            "value": "30.53",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.67",
+            "value": "18.67",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "85.4",
+            "value": "85.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "88.6",
+            "value": "88.6",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "84.0",
+            "value": "84.0",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.10",
+            "value": "31.10",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "20.28",
+            "value": "20.28",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Results on SQuAD, a reading comprehension dataset. marks our runs with the official code. indicates ensembles. : We are not able to obtain the test results of our latest model on SQuAD1.1 from the organizers after submitting our result for more than one month, and thus report the results of an older version for the SQuAD1.1 test set.",
+      "label": "tab:sota-squad",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "SQuAD2.0",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD1.1",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Dev set results (single model)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "78.98",
+            "value": "78.98",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.77",
+            "value": "81.77",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.1",
+            "value": "84.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.9",
+            "value": "90.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RoBERTa",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.5",
+            "value": "86.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.4",
+            "value": "89.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "RoBERTa",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.9",
+            "value": "88.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.6",
+            "value": "94.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "87.9",
+            "value": "87.9",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "90.6",
+            "value": "90.6",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.7",
+            "value": "89.7",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "95.1",
+            "value": "95.1",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Test set results on leaderboard (single model, as of Dec 14, 2019)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "80.005",
+            "value": "80.005",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "83.061",
+            "value": "83.061",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "85.083",
+            "value": "85.083",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.835",
+            "value": "91.835",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RoBERTa",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "86.820",
+            "value": "86.820",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.795",
+            "value": "89.795",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "87.433",
+            "value": "87.433",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "93.294",
+            "value": "93.294",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "87.926",
+            "value": "87.926",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "90.689",
+            "value": "90.689",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.898",
+            "value": "89.898",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "95.080",
+            "value": "95.080",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Comparison with state-of-the-art error rates on the test sets of several text classification datasets. All BERT and XLNet results are obtained with a 24-layer architecture with similar model sizes (aka BERT-Large).",
+      "label": "tab:txtcls",
+      "numericCells": 33,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "IMDB",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Yelp-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Yelp-5",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "DBpedia",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "AG",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Amazon-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Amazon-5",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.90",
+            "value": "2.90",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32.39",
+            "value": "32.39",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.84",
+            "value": "0.84",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.57",
+            "value": "6.57",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.79",
+            "value": "3.79",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.24",
+            "value": "36.24",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "DPCNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.64",
+            "value": "2.64",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.58",
+            "value": "30.58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.88",
+            "value": "0.88",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.87",
+            "value": "6.87",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.32",
+            "value": "3.32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.81",
+            "value": "34.81",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Mixed VAT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.32",
+            "value": "4.32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.70",
+            "value": "0.70",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.95",
+            "value": "4.95",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ULMFiT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.6",
+            "value": "4.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.16",
+            "value": "2.16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.98",
+            "value": "29.98",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.80",
+            "value": "0.80",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.01",
+            "value": "5.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.51",
+            "value": "4.51",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.89",
+            "value": "1.89",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.32",
+            "value": "29.32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.64",
+            "value": "0.64",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.63",
+            "value": "2.63",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.17",
+            "value": "34.17",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.20",
+            "value": "3.20",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.37",
+            "value": "1.37",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "27.05",
+            "value": "27.05",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "0.60",
+            "value": "0.60",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "4.45",
+            "value": "4.45",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2.11",
+            "value": "2.11",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "31.67",
+            "value": "31.67",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.0240020751953,
+            "y0": 326.8787841796875,
+            "x1": 503.9969482421875,
+            "y1": 335.8586120605469
+          },
+          {
+            "x0": 108.0,
+            "y0": 336.8690185546875,
+            "x1": 504.00189208984375,
+            "y1": 345.8129577636719
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Results on GLUE. indicates using ensembles, and denotes single-task results in a multi-task row. All dev results are the median of 10 runs. The upper section shows direct comparison on dev data and the lower section shows comparison with state-of-the-art results on the public leaderboard.",
+      "label": "tab:sota-glue",
+      "numericCells": 46,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "QNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "RTE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "CoLA",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "STS-B",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "WNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Single-task single models on dev",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.6/-",
+            "value": "86.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.3",
+            "value": "91.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.4",
+            "value": "70.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.2",
+            "value": "93.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.0",
+            "value": "88.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "60.6",
+            "value": "60.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.0",
+            "value": "90.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RoBERTa",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.2/90.2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.7",
+            "value": "94.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.2",
+            "value": "92.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.6",
+            "value": "86.6",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "96.4",
+            "value": "96.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.9",
+            "value": "90.9",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "68.0",
+            "value": "68.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.4",
+            "value": "92.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.8/90.8",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "94.9",
+            "value": "94.9",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "85.9",
+            "value": "85.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "97.0",
+            "value": "97.0",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "90.8",
+            "value": "90.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.0",
+            "value": "69.0",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "92.5",
+            "value": "92.5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Multi-task ensembles on test (from leaderboard as of Oct 28, 2019)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MT-DNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "87.9/87.4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.0",
+            "value": "96.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.9",
+            "value": "89.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "86.3",
+            "value": "86.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.5",
+            "value": "96.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.7",
+            "value": "92.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.4",
+            "value": "68.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.1",
+            "value": "91.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RoBERTa",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.8/90.2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "98.9",
+            "value": "98.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.2",
+            "value": "88.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.7",
+            "value": "96.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67.8",
+            "value": "67.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.2",
+            "value": "92.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.9/90.9",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "99.0",
+            "value": "99.0",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "90.4",
+            "value": "90.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "88.5",
+            "value": "88.5",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "97.1",
+            "value": "97.1",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "92.9",
+            "value": "92.9",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "70.2",
+            "value": "70.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "93.0",
+            "value": "93.0",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "92.5",
+            "value": "92.5",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "The results of BERT on RACE are taken from . We run BERT on the other datasets using the official implementation and the same hyperparameter search space as XLNet. is a hyperparameter to control the optimization difficulty (see Section ).",
+      "label": "tab:ablation",
+      "numericCells": 40,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "#",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD2.0",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "m/mm",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BERT-Base",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.3",
+            "value": "64.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.30",
+            "value": "76.30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "73.66",
+            "value": "73.66",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.34/84.65",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.78",
+            "value": "92.78",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "DAE + Transformer-XL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.03",
+            "value": "65.03",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "79.56",
+            "value": "79.56",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.80",
+            "value": "76.80",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.88/84.45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.60",
+            "value": "92.60",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "XLNet-Base ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.05",
+            "value": "66.05",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.33",
+            "value": "81.33",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "78.46",
+            "value": "78.46",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "85.84/85.43",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "92.66",
+            "value": "92.66",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "XLNet-Base ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.66",
+            "value": "66.66",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.98",
+            "value": "80.98",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "78.18",
+            "value": "78.18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.63/85.12",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.35",
+            "value": "93.35",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "- memory",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.55",
+            "value": "65.55",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.15",
+            "value": "80.15",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.27",
+            "value": "77.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.32/85.05",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.78",
+            "value": "92.78",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "- span-based pred",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.95",
+            "value": "65.95",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.61",
+            "value": "80.61",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.91",
+            "value": "77.91",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.49/85.02",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.12",
+            "value": "93.12",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "- bidirectional data",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.34",
+            "value": "66.34",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.65",
+            "value": "80.65",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.87",
+            "value": "77.87",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.31/84.99",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.66",
+            "value": "92.66",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "+ next-sent pred",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.76",
+            "value": "66.76",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "79.83",
+            "value": "79.83",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.94",
+            "value": "76.94",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.32/85.09",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.89",
+            "value": "92.89",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Hyperparameters for pretraining.",
+      "label": "tab:hp-pretrain",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Hparam",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Value",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Number of layers",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24",
+            "value": "24",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Hidden size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1024",
+            "value": "1024",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Number of attention heads",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Attention head size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "FFN inner hidden size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4096",
+            "value": "4096",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Hidden Dropout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GeLU Dropout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Attention dropout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Partial prediction",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Max sequence length",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Batch size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8192",
+            "value": "8192",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Learning rate",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4e-4",
+            "value": "0.0004",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Number of steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "500K",
+            "value": "500000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Warmup steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40,000",
+            "value": "40000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Learning rate decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "linear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Adam epsilon",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-6",
+            "value": "0.000001",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Weight decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.01",
+            "value": "0.01",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 264.3219909667969,
+            "y0": 612.0599365234375,
+            "x1": 382.5887756347656,
+            "y1": 621.0263671875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "Hyperparameters for finetuning.",
+      "label": "tab:hp-finetune",
+      "numericCells": 27,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Hparam",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Yelp-5",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Dropout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Attention dropout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Max sequence length",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Batch size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Learning rate",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2e-5",
+            "value": "0.00002",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3e-5",
+            "value": "0.00003",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2e-5",
+            "value": "0.00002",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-5",
+            "value": "0.00001",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Number of steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12K",
+            "value": "12000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8K",
+            "value": "8000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10K",
+            "value": "10000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10K",
+            "value": "10000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Learning rate decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "linear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Weight decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.01",
+            "value": "0.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Adam epsilon",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-6",
+            "value": "0.000001",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-6",
+            "value": "0.000001",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-6",
+            "value": "0.000001",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-6",
+            "value": "0.000001",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Layer-wise lr decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.75",
+            "value": "0.75",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 265.80999755859375,
+            "y0": 193.52297973632812,
+            "x1": 381.0999450683594,
+            "y1": 202.4893798828125
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\rulesep": "\\unskip\\ \\vrule\\ ",
+    "\\todo": "\\textcolor{red}{TODO: #1}",
+    "\\mb": "\\boldsymbol{\\mathbf{#1}}",
+    "\\mc": "\\mathcal{#1}",
+    "\\mf": "\\mathfrak{#1}",
+    "\\ms": "\\mathscr{#1}",
+    "\\mbb": "\\mathbb{#1}",
+    "\\dom": "\\mathrm{dom}",
+    "\\diff": "\\mathrm{d}",
+    "\\liff": "\\ratio\\Leftrightarrow",
+    "\\set": "\\left\\{ {#1} \\right\\}",
+    "\\setgiven": "\\left\\{{#1} \\;\\middle|\\; {#2} \\right\\}",
+    "\\seq": "\\left[ {#1} \\right]",
+    "\\tuple": "\\left( {#1} \\right)",
+    "\\idx": "\\llbracket {#1} \\rrbracket",
+    "\\tr": "\\mathrm{tr}\\left( {#1} \\right)",
+    "\\abs": "\\left| {#1} \\right|",
+    "\\norm": "\\left\\| {#1} \\right\\|",
+    "\\diag": "\\mathrm{diag}\\left({#1}\\right)",
+    "\\expon": "e^{ {#1} }",
+    "\\expo": "\\exp \\left( {#1} \\right)",
+    "\\inner": "\\left\\langle {#1}, {#2} \\right\\rangle",
+    "\\divg": "{#1}\\left({#2} \\;\\middle\\|\\; {#3}\\right)",
+    "\\EXP": "\\exp\\left({#1}\\right)",
+    "\\KL": "\\mathrm{KL}\\left({#1} \\| {#2} \\right)",
+    "\\CE": "\\mathrm{CE}\\left({#1} \\| {#2} \\right)",
+    "\\mx": "\\begin{matrix}#1\\end{matrix}",
+    "\\pmx": "\\begin{pmatrix}#1\\end{pmatrix}",
+    "\\bmx": "\\begin{bmatrix}#1\\end{bmatrix}",
+    "\\smx": "\\begin{smallmatrix}#1\\end{smallmatrix}",
+    "\\spmx": "\\left(\\begin{smallmatrix}#1\\end{smallmatrix}\\right)",
+    "\\sbmx": "\\left[\\begin{smallmatrix}#1\\end{smallmatrix}\\right]",
+    "\\C": "\\mbb{C}",
+    "\\R": "\\mbb{R}",
+    "\\cmark": "\\ding{51}",
+    "\\xmark": "\\ding{55}",
+    "\\mask": "\\texttt{\\small [MASK]}",
+    "\\cls": "\\texttt{\\small [CLS]}",
+    "\\sep": "\\texttt{\\small [SEP]}",
+    "\\unk": "\\texttt{unk}",
+    "\\eos": "\\texttt{\\small eos}",
+    "\\bos": "\\texttt{\\small bos}",
+    "\\red": "{\\color{red}#1}",
+    "\\blue": "{\\color{blue}#1}",
+    "\\green": "{\\color{green}#1}",
+    "\\brown": "{\\color{brown}#1}",
+    "\\cyan": "{\\color{cyan}#1}",
+    "\\purple": "{\\color{purple}#1}",
+    "\\orange": "{\\color{orange}#1}",
+    "\\magenta": "{\\color{magenta}#1}",
+    "\\tens": "\\bm{\\mathsfit{#1}}",
+    "\\etens": "\\mathsfit{#1}",
+    "\\thefootnote": "\\arabic{footnote}"
+  },
+  "references": [
+    {
+      "key": "al2018character",
+      "raw": "Rami Al-Rfou, Dokook Choe, Noah Constant, Mandy Guo, and Llion Jones. Character-level language modeling with deeper self-attention. arXiv preprint arXiv:1808.04444, 2018",
+      "authors": "Rami Al-Rfou, Dokook Choe, Noah Constant, Mandy Guo, and Llion Jones",
+      "title": "Character-level language modeling with deeper self-attention",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1808.04444",
+      "doi": null
+    },
+    {
+      "key": "anonymous2018bam",
+      "raw": "Anonymous. Bam! born-again multi-task networks for natural language understanding. anonymous preprint under review, 2018",
+      "authors": "Anonymous",
+      "title": "Bam! born-again multi-task networks for natural language understanding",
+      "venue": "anonymous preprint under review, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "baevski2018adaptive",
+      "raw": "Alexei Baevski and Michael Auli. Adaptive input representations for neural language modeling. arXiv preprint arXiv:1809.10853, 2018",
+      "authors": "Alexei Baevski and Michael Auli",
+      "title": "Adaptive input representations for neural language modeling",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1809.10853",
+      "doi": null
+    },
+    {
+      "key": "bengio2000modeling",
+      "raw": "Yoshua Bengio and Samy Bengio. Modeling high-dimensional discrete data with multi-layer neural networks. In Advances in Neural Information Processing Systems, pages 400--406, 2000",
+      "authors": "Yoshua Bengio and Samy Bengio",
+      "title": "Modeling high-dimensional discrete data with multi-layer neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pages 400--406, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "callan2009clueweb09",
+      "raw": "Jamie Callan, Mark Hoy, Changkuk Yoo, and Le Zhao. Clueweb09 data set, 2009",
+      "authors": "Jamie Callan, Mark Hoy, Changkuk Yoo, and Le Zhao",
+      "title": "Clueweb09 data set, 2009",
+      "venue": "",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "crawlcommon",
+      "raw": "Common Crawl. Common crawl. URl: http://http://commoncrawl. org, 2019",
+      "authors": "Common Crawl",
+      "title": "Common crawl",
+      "venue": "URl: org, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dai2015semi",
+      "raw": "Andrew M Dai and Quoc V Le. Semi-supervised sequence learning. In Advances in neural information processing systems, pages 3079--3087, 2015",
+      "authors": "Andrew M Dai and Quoc V Le",
+      "title": "Semi-supervised sequence learning",
+      "venue": "In Advances in neural information processing systems, pages 3079--3087, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dai2018convolutional",
+      "raw": "Zhuyun Dai, Chenyan Xiong, Jamie Callan, and Zhiyuan Liu. Convolutional neural networks for soft-matching n-grams in ad-hoc search. In Proceedings of the eleventh ACM international conference on web search and data mining, pages 126--134. ACM, 2018",
+      "authors": "Zhuyun Dai, Chenyan Xiong, Jamie Callan, and Zhiyuan Liu",
+      "title": "Convolutional neural networks for soft-matching n-grams in ad-hoc search",
+      "venue": "In Proceedings of the eleventh ACM international conference on web search and data mining, pages 126--134. ACM, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dai2019transformer",
+      "raw": "Zihang Dai, Zhilin Yang, Yiming Yang, William W Cohen, Jaime Carbonell, Quoc V Le, and Ruslan Salakhutdinov. Transformer-xl: Attentive language models beyond a fixed-length context. arXiv preprint arXiv:1901.02860, 2019",
+      "authors": "Zihang Dai, Zhilin Yang, Yiming Yang, William W Cohen, Jaime Carbonell, Quoc V Le, and Ruslan Salakhutdinov",
+      "title": "Transformer-xl: Attentive language models beyond a fixed-length context",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1901.02860",
+      "doi": null
+    },
+    {
+      "key": "devlin2018bert",
+      "raw": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805, 2018",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova",
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1810.04805",
+      "doi": null
+    },
+    {
+      "key": "fedus2018maskgan",
+      "raw": "William Fedus, Ian Goodfellow, and Andrew M Dai. Maskgan: better text generation via filling in the\\_. arXiv preprint arXiv:1801.07736, 2018",
+      "authors": "William Fedus, Ian Goodfellow, and Andrew M Dai",
+      "title": "Maskgan: better text generation via filling in the\\_",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1801.07736",
+      "doi": null
+    },
+    {
+      "key": "germain2015made",
+      "raw": "Mathieu Germain, Karol Gregor, Iain Murray, and Hugo Larochelle. Made: Masked autoencoder for distribution estimation. In International Conference on Machine Learning, pages 881--889, 2015",
+      "authors": "Mathieu Germain, Karol Gregor, Iain Murray, and Hugo Larochelle",
+      "title": "Made: Masked autoencoder for distribution estimation",
+      "venue": "In International Conference on Machine Learning, pages 881--889, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "guo2016deep",
+      "raw": "Jiafeng Guo, Yixing Fan, Qingyao Ai, and W Bruce Croft. A deep relevance matching model for ad-hoc retrieval. In Proceedings of the 25th ACM International on Conference on Information and Knowledge Management, pages 55--64. ACM, 2016",
+      "authors": "Jiafeng Guo, Yixing Fan, Qingyao Ai, and W Bruce Croft",
+      "title": "A deep relevance matching model for ad-hoc retrieval",
+      "venue": "In Proceedings of the 25th ACM International on Conference on Information and Knowledge Management, pages 55--64. ACM, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "howard2018universal",
+      "raw": "Jeremy Howard and Sebastian Ruder. Universal language model fine-tuning for text classification. arXiv preprint arXiv:1801.06146, 2018",
+      "authors": "Jeremy Howard and Sebastian Ruder",
+      "title": "Universal language model fine-tuning for text classification",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1801.06146",
+      "doi": null
+    },
+    {
+      "key": "johnson2017deep",
+      "raw": "Rie Johnson and Tong Zhang. Deep pyramid convolutional neural networks for text categorization. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 562--570, 2017",
+      "authors": "Rie Johnson and Tong Zhang",
+      "title": "Deep pyramid convolutional neural networks for text categorization",
+      "venue": "In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 562--570, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kocijan2019surprisingly",
+      "raw": "Vid Kocijan, Ana-Maria Cretu, Oana-Maria Camburu, Yordan Yordanov, and Thomas Lukasiewicz. A surprisingly robust trick for winograd schema challenge. arXiv preprint arXiv:1905.06290, 2019",
+      "authors": "Vid Kocijan, Ana-Maria Cretu, Oana-Maria Camburu, Yordan Yordanov, and Thomas Lukasiewicz",
+      "title": "A surprisingly robust trick for winograd schema challenge",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1905.06290",
+      "doi": null
+    },
+    {
+      "key": "kudo2018sentencepiece",
+      "raw": "Taku Kudo and John Richardson. Sentencepiece: A simple and language independent subword tokenizer and detokenizer for neural text processing. arXiv preprint arXiv:1808.06226, 2018",
+      "authors": "Taku Kudo and John Richardson",
+      "title": "Sentencepiece: A simple and language independent subword tokenizer and detokenizer for neural text processing",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1808.06226",
+      "doi": null
+    },
+    {
+      "key": "lai2017large",
+      "raw": "Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy. Race: Large-scale reading comprehension dataset from examinations. arXiv preprint arXiv:1704.04683, 2017",
+      "authors": "Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy",
+      "title": "Race: Large-scale reading comprehension dataset from examinations",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1704.04683",
+      "doi": null
+    },
+    {
+      "key": "lan2019albert",
+      "raw": "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. Albert: A lite bert for self-supervised learning of language representations. arXiv preprint arXiv:1909.11942, 2019",
+      "authors": "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut",
+      "title": "Albert: A lite bert for self-supervised learning of language representations",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1909.11942",
+      "doi": null
+    },
+    {
+      "key": "liu2019multi",
+      "raw": "Xiaodong Liu, Pengcheng He, Weizhu Chen, and Jianfeng Gao. Multi-task deep neural networks for natural language understanding. arXiv preprint arXiv:1901.11504, 2019",
+      "authors": "Xiaodong Liu, Pengcheng He, Weizhu Chen, and Jianfeng Gao",
+      "title": "Multi-task deep neural networks for natural language understanding",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1901.11504",
+      "doi": null
+    },
+    {
+      "key": "liu2019roberta",
+      "raw": "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692, 2019",
+      "authors": "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov",
+      "title": "Roberta: A robustly optimized bert pretraining approach",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1907.11692",
+      "doi": null
+    },
+    {
+      "key": "mccann2017learned",
+      "raw": "Bryan McCann, James Bradbury, Caiming Xiong, and Richard Socher. Learned in translation: Contextualized word vectors. In Advances in Neural Information Processing Systems, pages 6294--6305, 2017",
+      "authors": "Bryan McCann, James Bradbury, Caiming Xiong, and Richard Socher",
+      "title": "Learned in translation: Contextualized word vectors",
+      "venue": "In Advances in Neural Information Processing Systems, pages 6294--6305, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "miyato2016adversarial",
+      "raw": "Takeru Miyato, Andrew M Dai, and Ian Goodfellow. Adversarial training methods for semi-supervised text classification. arXiv preprint arXiv:1605.07725, 2016",
+      "authors": "Takeru Miyato, Andrew M Dai, and Ian Goodfellow",
+      "title": "Adversarial training methods for semi-supervised text classification",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1605.07725",
+      "doi": null
+    },
+    {
+      "key": "oord2016pixel",
+      "raw": "Aaron van den Oord, Nal Kalchbrenner, and Koray Kavukcuoglu. Pixel recurrent neural networks. arXiv preprint arXiv:1601.06759, 2016",
+      "authors": "Aaron van den Oord, Nal Kalchbrenner, and Koray Kavukcuoglu",
+      "title": "Pixel recurrent neural networks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1601.06759",
+      "doi": null
+    },
+    {
+      "key": "pan2019improving",
+      "raw": "Xiaoman Pan, Kai Sun, Dian Yu, Heng Ji, and Dong Yu. Improving question answering with external knowledge. arXiv preprint arXiv:1902.00993, 2019",
+      "authors": "Xiaoman Pan, Kai Sun, Dian Yu, Heng Ji, and Dong Yu",
+      "title": "Improving question answering with external knowledge",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1902.00993",
+      "doi": null
+    },
+    {
+      "key": "parker2011english",
+      "raw": "Robert Parker, David Graff, Junbo Kong, Ke Chen, and Kazuaki Maeda. English gigaword fifth edition, linguistic data consortium. Technical report, Technical Report. Linguistic Data Consortium, Philadelphia, Tech. Rep., 2011",
+      "authors": "Robert Parker, David Graff, Junbo Kong, Ke Chen, and Kazuaki Maeda",
+      "title": "English gigaword fifth edition, linguistic data consortium",
+      "venue": "Technical report, Technical Report. Linguistic Data Consortium, Philadelphia, Tech. Rep., 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "peters2018deep",
+      "raw": "Matthew E Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. Deep contextualized word representations. arXiv preprint arXiv:1802.05365, 2018",
+      "authors": "Matthew E Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer",
+      "title": "Deep contextualized word representations",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1802.05365",
+      "doi": null
+    },
+    {
+      "key": "radford2018improving",
+      "raw": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. Improving language understanding by generative pre-training. URL https://s3-us-west-2. amazonaws. com/openai-assets/research-covers/languageunsupervised/language understanding paper. pdf, 2018",
+      "authors": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever",
+      "title": "Improving language understanding by generative pre-training",
+      "venue": "URL amazonaws. com/openai-assets/research-covers/languageunsupervised/language understanding paper. pdf, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rajpurkar2018know",
+      "raw": "Pranav Rajpurkar, Robin Jia, and Percy Liang. Know what you don't know: Unanswerable questions for squad. arXiv preprint arXiv:1806.03822, 2018",
+      "authors": "Pranav Rajpurkar, Robin Jia, and Percy Liang",
+      "title": "Know what you don't know: Unanswerable questions for squad",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.03822",
+      "doi": null
+    },
+    {
+      "key": "rajpurkar2016squad",
+      "raw": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. Squad: 100,000+ questions for machine comprehension of text. arXiv preprint arXiv:1606.05250, 2016",
+      "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang",
+      "title": "Squad: 100,000+ questions for machine comprehension of text",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.05250",
+      "doi": null
+    },
+    {
+      "key": "sachan2018revisiting",
+      "raw": "Devendra Singh Sachan, Manzil Zaheer, and Ruslan Salakhutdinov. Revisiting lstm networks for semi-supervised text classification via mixed objective function. 2018",
+      "authors": "Devendra Singh Sachan, Manzil Zaheer, and Ruslan Salakhutdinov",
+      "title": "Revisiting lstm networks for semi-supervised text classification via mixed objective function",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "uria2016neural",
+      "raw": "Benigno Uria, Marc-Alexandre C\\^ot\\'e, Karol Gregor, Iain Murray, and Hugo Larochelle. Neural autoregressive distribution estimation. The Journal of Machine Learning Research, 17(1):7184--7220, 2016",
+      "authors": "Benigno Uria, Marc-Alexandre C\\^ot\\'e, Karol Gregor, Iain Murray, and Hugo Larochelle",
+      "title": "Neural autoregressive distribution estimation",
+      "venue": "The Journal of Machine Learning Research, 17(1):7184--7220, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in neural information processing systems, pages 5998--6008, 2017",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+      "title": "Attention is all you need",
+      "venue": "In Advances in neural information processing systems, pages 5998--6008, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2019glue",
+      "raw": "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. GLUE: A multi-task benchmark and analysis platform for natural language understanding. 2019. In the Proceedings of ICLR",
+      "authors": "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman",
+      "title": "GLUE: A multi-task benchmark and analysis platform for natural language understanding",
+      "venue": "2019 In the Proceedings of ICLR",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "uda2019",
+      "raw": "Qizhe Xie, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le. Unsupervised data augmentation. arXiv preprint arXiv:1904.12848, 2019",
+      "authors": "Qizhe Xie, Zihang Dai, Eduard Hovy, Minh-Thang Luong, and Quoc V. Le",
+      "title": "Unsupervised data augmentation",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1904.12848",
+      "doi": null
+    },
+    {
+      "key": "xiong2017end",
+      "raw": "Chenyan Xiong, Zhuyun Dai, Jamie Callan, Zhiyuan Liu, and Russell Power. End-to-end neural ad-hoc ranking with kernel pooling. In Proceedings of the 40th International ACM SIGIR conference on research and development in information retrieval, pages 55--64. ACM, 2017",
+      "authors": "Chenyan Xiong, Zhuyun Dai, Jamie Callan, Zhiyuan Liu, and Russell Power",
+      "title": "End-to-end neural ad-hoc ranking with kernel pooling",
+      "venue": "In Proceedings of the 40th International ACM SIGIR conference on research and development in information retrieval, pages 55--64. ACM, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yang2017breaking",
+      "raw": "Zhilin Yang, Zihang Dai, Ruslan Salakhutdinov, and William W Cohen. Breaking the softmax bottleneck: A high-rank rnn language model. arXiv preprint arXiv:1711.03953, 2017",
+      "authors": "Zhilin Yang, Zihang Dai, Ruslan Salakhutdinov, and William W Cohen",
+      "title": "Breaking the softmax bottleneck: A high-rank rnn language model",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1711.03953",
+      "doi": null
+    },
+    {
+      "key": "zhang2019dual",
+      "raw": "Shuailiang Zhang, Hai Zhao, Yuwei Wu, Zhuosheng Zhang, Xi Zhou, and Xiang Zhou. Dual co-matching network for multi-choice reading comprehension. arXiv preprint arXiv:1901.09381, 2019",
+      "authors": "Shuailiang Zhang, Hai Zhao, Yuwei Wu, Zhuosheng Zhang, Xi Zhou, and Xiang Zhou",
+      "title": "Dual co-matching network for multi-choice reading comprehension",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1901.09381",
+      "doi": null
+    },
+    {
+      "key": "zhang2015character",
+      "raw": "Xiang Zhang, Junbo Zhao, and Yann LeCun. Character-level convolutional networks for text classification. In Advances in neural information processing systems, pages 649--657, 2015",
+      "authors": "Xiang Zhang, Junbo Zhao, and Yann LeCun",
+      "title": "Character-level convolutional networks for text classification",
+      "venue": "In Advances in neural information processing systems, pages 649--657, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhu2015aligning",
+      "raw": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In Proceedings of the IEEE international conference on computer vision, pages 19--27, 2015",
+      "authors": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler",
+      "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+      "venue": "In Proceedings of the IEEE international conference on computer vision, pages 19--27, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\max_{\\theta}\\quad \\log p_\\theta(\\rvx) \n\t= \\sum_{t=1}^{T} \\log p_\\theta(x_t \\mid \\rvx_{<t}) \n\t= \\sum_{t=1}^{T} \\log \\frac{ \\expo{ h_\\theta(\\rvx_{1:t-1})^\\top e(x_t) } }{\\sum_{x'} \\expo{ h_\\theta(\\rvx_{1:t-1})^\\top e(x') } },",
+      "environment": "equation",
+      "labels": [
+        "eqn:ar"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\max_{\\theta}\\quad \\log p_\\theta(\\bar{\\rvx} \\mid \\hat{\\rvx}) \n\\approx \\sum_{t=1}^{T} m_t \\log p_\\theta(x_t \\mid \\hat{\\rvx}) \n= \\sum_{t=1}^{T} m_t \\log \\frac{ \\expo{ H_\\theta(\\hat{\\rvx})_t^\\top e(x_t) } }{\\sum_{x'} \\expo{ H_\\theta(\\hat{\\rvx})_t^\\top e(x') } },",
+      "environment": "equation",
+      "labels": [
+        "eqn:ae"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\max_{\\theta}\\quad \\mbb{E}_{\\rvz \\sim \\mc{Z}_T} \\sbr{ \\sum_{t=1}^{T} \\log p_\\theta(x_{z_t} \\mid \\rvx_{\\rvz_{<t}}) }.",
+      "environment": "equation",
+      "labels": [
+        "eqn:plm"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "p_\\theta(X_{z_t} = x \\mid \\rvx_{z_{<t}})\n= \\frac{\\expo{ e(x)^\\top g_\\theta(\\rvx_{\\rvz_{<t}}, z_t) }}{\\sum_{x'} \\expo{ e(x')^\\top g_\\theta(\\rvx_{\\rvz_{<t}}, z_t) }},",
+      "environment": "equation",
+      "labels": [
+        "eqn:tgt-aware"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\small\n\tg_{z_t}^{(m)} &\\leftarrow \\text{Attention}(\n\t\t\\text{Q} = g_{z_t}^{(m-1)}, \\text{KV}= \\rvh_{\\magenta{\\rvz_{<t}}}^{(m-1)}; \\theta),\n\t&& (\\text{query stream: use $z_t$ but cannot see $x_{z_t}$}) \\\\\n\th_{z_t}^{(m)} &\\leftarrow \\text{Attention}(\n\t\t\\text{Q} = h_{z_t}^{(m-1)}, \\text{KV}= \\rvh_{\\magenta{\\rvz_{\\leq t}}}^{(m-1)}; \\theta), \n\t&& (\\text{content stream: use both $z_t$ and $x_{z_t}$}).",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\max_{\\theta}\\quad \\mbb{E}_{\\rvz \\sim \\mc{Z}_T} \\sbr[\\Big]{ \\log p_\\theta(\\rvx_{\\rvz_{> c}} \\mid \\rvx_{\\rvz_{\\leq c}}) }\n= \\mbb{E}_{\\rvz \\sim \\mc{Z}_T} \\sbr{ \\sum_{t=c + 1}^{\\abs{\\rvz}} \\log p_\\theta(x_{z_t} \\mid \\rvx_{\\rvz_{<t}}) }.",
+      "environment": "equation",
+      "labels": [
+        "eqn:partial-plm"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\underbrace{ p_\\theta( X_{i} = x \\mid \\rvx_{{\\rvz}_{<t}}) }_{ z_t^{(1)} = i,\\; \\rvz_{<t}^{(1)} = \\rvz_{<t} } \n= \n\\underbrace{ p_\\theta( X_{j} = x \\mid \\rvx_{{\\rvz}_{<t}}) }_{ z_t^{(1)} = j,\\; \\rvz_{<t}^{(2)} = \\rvz_{<t} } \n= \\frac\n{\\expo{e(x)^\\top h(\\rvx_{{\\rvz}_{<t}})}}\n{\\sum_{x'} \\expo{e(x')^\\top h(\\rvx_{{\\rvz}_{<t}})}}.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\intertext{Initial represetation:}\n\\forall t = 1, \\dots, T: \\quad h_t &= e(x_t) \\quad\\text{and}\\quad g_t = w \\\\\n\\intertext{Cached layer-$m$ content represetation (memory) from previous segment: $\\tilde{\\rvh}^{(m)}$}\n\\intertext{For the Transformer-XL layer $m = 1, \\cdots, M$, attention with relative positional encoding and position-wise feed-forward are consecutively employed to update the represetntations:} \n\\forall t = 1, \\dots, T: \\quad \n\\hat{h}_{z_t}^{(m)} &= \\text{LayerNorm}\\rbr{ h_{z_t}^{(m-1)} + \n\t\\text{RelAttn} \\rbr{ \n\t\th_{z_t}^{(m-1)}, \n\t\t\\sbr{\\tilde{\\rvh}^{(m-1)}, \\rvh_{\\rvz_{\\leq t}}^{(m-1)}} } } \\\\\nh_{z_t}^{(m)} &= \\text{LayerNorm}\\rbr{ \\hat{h}_{z_t}^{(m)} + \n\t\\text{PosFF} \\rbr{  \\hat{h}_{z_t}^{(m)} } } \\\\\n\\hat{g}_{z_t}^{(m)} &= \\text{LayerNorm}\\rbr{ g_{z_t}^{(m-1)} + \n\t\\text{RelAttn}\\rbr{ \n\t\tg_{z_t}^{(m-1)}, \n\t\t\\sbr{\\tilde{\\rvh}^{(m-1)}, \\rvh_{\\rvz_{< t}}^{(m-1)}} } } \\\\\ng_{z_t}^{(m)} &= \\text{LayerNorm}\\rbr{ \\hat{g}_{z_t}^{(m)} + \n\t\\text{PosFF} \\rbr{  \\hat{g}_{z_t}^{(m)} } } \\\\\n\\intertext{Target-aware prediction distribution:}\np_\\theta(X_{z_t} = x \\mid \\rvx_{z_{<t}})\n\t&= \\frac{\\expo{ e(x)^\\top g_{z_t}^{(M)} }}{\\sum_{x'} \\expo{ e(x')^\\top g_{z_t}^{(M)} }},",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1013,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 5549,
+      "numbers": 6,
+      "citations": 15
+    },
+    {
+      "kind": "method",
+      "title": "Proposed Method",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Background",
+      "chars": 2186,
+      "numbers": 3,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Objective: Permutation Language Modeling",
+      "chars": 2193,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Architecture: Two-Stream Self-Attention for Target-Aware Representations",
+      "chars": 4214,
+      "numbers": 4,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Incorporating Ideas from Transformer-XL",
+      "chars": 1633,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Modeling Multiple Segments",
+      "chars": 2078,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Discussion",
+      "chars": 1312,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Pretraining and Implementation",
+      "chars": 2128,
+      "numbers": 16,
+      "citations": 7
+    },
+    {
+      "kind": "experiments",
+      "title": "Fair Comparison with BERT",
+      "chars": 1035,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Comparison with RoBERTa: Scaling Up",
+      "chars": 4288,
+      "numbers": 7,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Ablation Study",
+      "chars": 2788,
+      "numbers": 15,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 425,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgments",
+      "chars": 655,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 15,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "devlin2018bert",
+      "stance": "inherits",
+      "cue": "we follow",
+      "sentence": "Although we follow the two-segment data format, XLNet-Large does not use the objective of next sentence prediction [Devlin et al. 2018] as it does not show consistent improvement in our ablation study (see Section [ref]). Relative Segment Encodings Architecturally, different from BERT that adds an absolute segment embedding to the word embedding at each position, we extend the idea of relative encodings from Transformer-XL to also encode the segments.",
+      "section": "Modeling Multiple Segments",
+      "sectionKind": "method",
+      "ordinal": 13,
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova",
+      "year": 2018,
+      "arxivId": "1810.04805",
+      "inCorpus": true,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 481.29852294921875,
+            "y0": 85.31648254394531,
+            "x1": 499.5599670410156,
+            "y1": 95.27908325195312
+          },
+          {
+            "x0": 108.0,
+            "y0": 101.68561553955078,
+            "x1": 503.99658203125,
+            "y1": 111.67308807373047
+          },
+          {
+            "x0": 108.0,
+            "y0": 112.55702209472656,
+            "x1": 503.9979553222656,
+            "y1": 122.59406280517578
+          },
+          {
+            "x0": 107.69100189208984,
+            "y0": 123.44729614257812,
+            "x1": 293.38873291015625,
+            "y1": 133.509033203125
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "devlin2018bert",
+        "stance": "inherits",
+        "cue": "we follow",
+        "sentence": "Although we follow the two-segment data format, XLNet-Large does not use the objective of next sentence prediction [Devlin et al. 2018] as it does not show consistent improvement in our ablation study (see Section [ref]). Relative Segment Encodings Architecturally, different from BERT that adds an absolute segment embedding to the word embedding at each position, we extend the idea of relative encodings from Transformer-XL to also encode the segments.",
+        "section": "Modeling Multiple Segments",
+        "sectionKind": "method",
+        "ordinal": 13,
+        "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+        "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova",
+        "year": 2018,
+        "arxivId": "1810.04805",
+        "inCorpus": true,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 481.29852294921875,
+              "y0": 85.31648254394531,
+              "x1": 499.5599670410156,
+              "y1": 95.27908325195312
+            },
+            {
+              "x0": 108.0,
+              "y0": 101.68561553955078,
+              "x1": 503.99658203125,
+              "y1": 111.67308807373047
+            },
+            {
+              "x0": 108.0,
+              "y0": 112.55702209472656,
+              "x1": 503.9979553222656,
+              "y1": 122.59406280517578
+            },
+            {
+              "x0": 107.69100189208984,
+              "y0": 123.44729614257812,
+              "x1": 293.38873291015625,
+              "y1": 133.509033203125
+            }
+          ]
+        }
+      },
+      {
+        "key": "zhu2015aligning",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Following BERT [Devlin et al. 2018], we use the BooksCorpus [Zhu et al. 2015] and English Wikipedia as part of our pretraining data, which have 13GB plain text combined.",
+        "section": "Pretraining and Implementation",
+        "sectionKind": "experiments",
+        "ordinal": 16,
+        "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+        "authors": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 315.9189147949219,
+              "y0": 565.222412109375,
+              "x1": 504.0001525878906,
+              "y1": 575.0848999023438
+            },
+            {
+              "x0": 108.0,
+              "y0": 575.980224609375,
+              "x1": 295.9942932128906,
+              "y1": 586.0419921875
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Intuitively, if model parameters are shared across all factorization orders, in expectation, the model will learn to gather information from all positions on both sides.",
+      "anchorText": "Intuitively, if model parameters are shared across all factorization orders, in expectation, the model will learn to gather information from all positions on both sides.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Objective: Permutation Language Modeling",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 220.9521942138672,
+            "y0": 464.7744140625,
+            "x1": 505.241455078125,
+            "y1": 474.6368713378906
+          },
+          {
+            "x0": 108.0,
+            "y0": 475.6074523925781,
+            "x1": 466.4343566894531,
+            "y1": 485.570068359375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For each self-attention layer m = 1, \u2026, M, the two streams of representations are schematically[To avoid clutter, we omit the implementation details including multi-head attention, residual connection, layer normalization and position-wise feed-forward as used in Transformer(-XL).]",
+      "anchorText": ", the two streams of representations are schematically To avoid clutter, we omit the implementation details including multi-head attention, residual connection, layer normalization and position-wise feed-forward as used in Transformer(-XL).",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we omit",
+      "section": "Architecture: Two-Stream Self-Attention for Target-Aware Representations",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "Without loss of generality, suppose we have two segments taken from a long sequence; i.e., = _1:T and = \ud835\udc2c_T+1:2T.",
+      "anchorText": "Without loss of generality, suppose we have two segments taken from a long sequence",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "Without loss of generality",
+      "section": "Incorporating Ideas from Transformer-XL",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 231.36854553222656,
+            "y0": 444.18560791015625,
+            "x1": 503.99505615234375,
+            "y1": 454.0531005859375
+          },
+          {
+            "x0": 108.0,
+            "y0": 454.9472961425781,
+            "x1": 173.625244140625,
+            "y1": 465.009033203125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Also suppose that XLNet samples the factorization order [is, a, city, New, York].",
+      "anchorText": "Also suppose that XLNet samples the factorization order [is, a, city, New, York].",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "suppose that",
+      "section": "Discussion",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 224.36521911621094,
+            "y0": 382.185302734375,
+            "x1": 505.2491149902344,
+            "y1": 392.2470397949219
+          },
+          {
+            "x0": 108.0,
+            "y0": 393.1694641113281,
+            "x1": 156.07949829101562,
+            "y1": 403.132080078125
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 0,
+    "shown": 0,
+    "bare": 4
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2019-06-19"
+  }
+}

@@ -63,6 +63,29 @@ export function availableProviders(): ("github" | "google")[] {
  * Asking "is anyone signed in?" on an unconfigured deployment has an obvious answer,
  * so it is answered here instead of being raised.
  */
+/**
+ * The key a signed-in reader's history is filed under.
+ *
+ * A hash of the provider's account id rather than the id itself, and never the email.
+ * The store then holds no value that identifies anybody on its own: with the database
+ * in hand and no session, a row is an opaque hex string and a list of paper ids. That
+ * is worth the one line it costs, because a reading list is a record of what somebody
+ * was curious about, which is a more revealing thing than it first looks.
+ */
+export async function historyKey(): Promise<string | null> {
+  const user = await currentUser();
+  const raw = (user as { key?: string } | null)?.key;
+  if (!raw) return null;
+  const digest = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(`keystone:${raw}`),
+  );
+  return [...new Uint8Array(digest)]
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("")
+    .slice(0, 32);
+}
+
 export async function currentUser() {
   if (availableProviders().length === 0) return null;
   try {
@@ -88,8 +111,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     async session({ session, token }) {
       if (session.user) {
-        (session.user as { provider?: string }).provider =
+        const extended = session.user as { provider?: string; key?: string };
+        extended.provider =
           typeof token.provider === "string" ? token.provider : undefined;
+        // A stable, opaque handle for the reading history, derived from the
+        // provider's own account id. Kept off the session's visible fields on
+        // purpose — see `historyKey`.
+        extended.key = typeof token.sub === "string" ? token.sub : undefined;
       }
       return session;
     },

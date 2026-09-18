@@ -31,7 +31,7 @@ import type {
   Reference,
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
-import { record } from "@/lib/history";
+import { record, sync } from "@/lib/history";
 import { AskTab } from "@/components/AskTab";
 import { AssumptionList, AssumptionSummary } from "@/components/Assumptions";
 import { Foundation, InboundList, LineageList } from "@/components/Lineage";
@@ -90,8 +90,11 @@ export function Reader({ id }: { id: string }) {
       .then((loaded: Dossier) => {
         setDossier(loaded);
         // Noted after the dossier arrives, so a mistyped id or a paper that failed to
-        // build never lands in the reading list. Local storage only — see lib/history.
+        // build never lands in the reading list. Local first, then pushed to the
+        // account if there is one — not awaited, because a reader waiting on a
+        // bookkeeping request to read a paper would be the wrong trade.
         record(loaded.id, loaded.title);
+        void sync();
       })
       .catch(() => setDossier(null));
   }, [current]);
