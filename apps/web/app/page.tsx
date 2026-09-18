@@ -10,6 +10,7 @@ import type {
   IndexEntry,
   LibraryGraph as GraphData,
 } from "@/lib/dossier";
+import { categoryLabel, categoryOf } from "@/lib/dossier";
 import { AccountMenu } from "@/components/AccountMenu";
 import { LibraryGraph } from "@/components/LibraryGraph";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -21,6 +22,7 @@ export default function Home() {
   const [graph, setGraph] = useState<GraphData | null>(null);
   const [accuracy, setAccuracy] = useState<Accuracy | null>(null);
   const [query, setQuery] = useState("");
+  const [category, setCategory] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/dossiers/index.json")
@@ -77,6 +79,28 @@ export default function Home() {
         `${p.title} ${p.id}`.toLowerCase().includes(needle) || viaEdge.has(p.id),
     );
   }, [index, needle, matchedEdges]);
+
+  // Grouped by arXiv's own primary category, biggest group first. Not a taxonomy I
+  // invented: the library's whole claim is that what it shows came from the paper, and
+  // a heading reading "Computer Vision" over a paper arXiv files under cs.CL would be
+  // the first thing on the page that did not.
+  const groups = useMemo(() => {
+    const by = new Map<string, { code: string; label: string; papers: IndexEntry[] }>();
+    for (const paper of filtered) {
+      const code = categoryOf(paper);
+      const group = by.get(code) ?? { code, label: categoryLabel(paper), papers: [] };
+      group.papers.push(paper);
+      by.set(code, group);
+    }
+    return [...by.values()].sort(
+      (a, b) => b.papers.length - a.papers.length || a.label.localeCompare(b.label),
+    );
+  }, [filtered]);
+
+  const shown = useMemo(
+    () => (category ? groups.filter((g) => g.code === category) : groups),
+    [groups, category],
+  );
 
   const titleOf = useMemo(
     () => Object.fromEntries((graph?.nodes ?? []).map((n) => [n.id, n.title])),
@@ -223,32 +247,85 @@ export default function Home() {
           />
         </div>
 
-        <ul className="mt-6 grid gap-x-8 gap-y-1 sm:grid-cols-2">
-          {filtered.map((paper, i) => (
-            <motion.li
-              key={paper.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: Math.min(i, 8) * 0.04, duration: 0.4, ease: EASE }}
+        {/* Filters rather than tabs: the default is the whole library, because a
+            reader who does not already know the field cannot pick a category first. */}
+        {groups.length > 1 ? (
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <button
+              type="button"
+              onClick={() => setCategory(null)}
+              className={`text-[0.82rem] transition-colors ${
+                category === null
+                  ? "border-b border-brass pb-0.5 text-brass"
+                  : "text-ink-faint hover:text-ink"
+              }`}
             >
-              <Link
-                href={`/paper/${paper.id}`}
-                className="group flex items-baseline gap-4 border-b border-paper-edge/60 py-3 transition-colors hover:bg-paper-deep/40"
+              everything{" "}
+              <span className="numeral">{filtered.length}</span>
+            </button>
+            {groups.map((group) => (
+              <button
+                key={group.code}
+                type="button"
+                onClick={() =>
+                  setCategory(category === group.code ? null : group.code)
+                }
+                title={group.code}
+                className={`text-[0.82rem] transition-colors ${
+                  category === group.code
+                    ? "border-b border-brass pb-0.5 text-brass"
+                    : "text-ink-faint hover:text-ink"
+                }`}
               >
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-[1rem] leading-snug transition-colors group-hover:text-brass">
-                    {paper.title}
-                  </span>
-                  <span className="mt-0.5 block text-[0.8rem] text-ink-faint">
-                    {describe(paper)}
-                  </span>
-                </span>
+                {group.label}{" "}
+                <span className="numeral">{group.papers.length}</span>
+              </button>
+            ))}
+          </div>
+        ) : null}
 
-                <LineagePips paper={paper} />
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
+        {shown.map((group) => (
+          <div key={group.code} className="mt-7">
+            {/* The code is shown next to the name so the grouping is checkable: a
+                reader can put cs.CL into arxiv.org and see the same paper there. */}
+            <h3 className="flex items-baseline gap-2.5 border-b border-paper-edge pb-1.5">
+              <span className="text-[0.95rem]">{group.label}</span>
+              <span className="numeral text-[0.72rem] text-ink-faint">
+                {group.code} · {group.papers.length}
+              </span>
+            </h3>
+            <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2">
+              {group.papers.map((paper, i) => (
+                <motion.li
+                  key={paper.id}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: Math.min(i, 8) * 0.04,
+                    duration: 0.4,
+                    ease: EASE,
+                  }}
+                >
+                  <Link
+                    href={`/paper/${paper.id}`}
+                    className="group flex items-baseline gap-4 border-b border-paper-edge/60 py-3 transition-colors hover:bg-paper-deep/40"
+                  >
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-[1rem] leading-snug transition-colors group-hover:text-brass">
+                        {paper.title}
+                      </span>
+                      <span className="mt-0.5 block text-[0.8rem] text-ink-faint">
+                        {describe(paper)}
+                      </span>
+                    </span>
+
+                    <LineagePips paper={paper} />
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
         {matchedEdges.length > 0 ? (
           <div className="mt-7 border-t border-paper-edge pt-5">

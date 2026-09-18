@@ -323,6 +323,18 @@ function Summary({
       </div>
 
       <div className="mt-4 flex flex-wrap items-baseline gap-x-6 gap-y-1.5 border-t border-paper-edge pt-3">
+        {/* arXiv's own filing, shown with its code so it can be checked against the
+            abstract page rather than taken on trust like everything else here. */}
+        {dossier.arxiv?.primary ? (
+          <a
+            href={`https://arxiv.org/abs/${dossier.id}`}
+            className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
+            title={`arXiv primary category ${dossier.arxiv.primary}`}
+          >
+            {dossier.arxiv.primaryName}{" "}
+            <span className="numeral">{dossier.arxiv.primary}</span>
+          </a>
+        ) : null}
         <Stat n={stands} label="works it stands on" tone="var(--color-brass)" />
         {lineage.tally.contests > 0 ? (
           <Stat

@@ -251,6 +251,8 @@ export interface Dossier {
   id: string;
   title: string;
   pdfUrl: string;
+  /** What arXiv files this paper under. Absent for papers whose metadata failed. */
+  arxiv?: ArxivRecord | null;
   keystone: {
     table: string;
     caption: string;
@@ -315,6 +317,36 @@ export interface IndexEntry {
   fullTitle?: string;
   lineage?: LineageTally;
   assumptions?: { total: number; cited: number; shown: number; bare: number };
+  arxiv?: ArxivRecord | null;
+}
+
+/**
+ * What arXiv says a paper is, as opposed to what this project infers about it.
+ *
+ * The library groups by `primary`, and the reason it is fetched rather than derived
+ * is the same reason every quote is verbatim: "the authors filed this under cs.CL" is
+ * checkable on the abstract page, and "this looks like an NLP paper" is my opinion.
+ */
+export interface ArxivRecord {
+  /** Primary category code, e.g. "cs.CL". */
+  primary: string;
+  /** arXiv's own name for it, not an abbreviation of mine. */
+  primaryName: string;
+  /** Every category, primary first — most papers are cross-listed. */
+  categories: string[];
+  /** ISO date of version 1. */
+  published: string;
+}
+
+/** Papers with no fetched record, grouped under one honest heading. */
+export const UNCATEGORISED = "uncategorised";
+
+export function categoryOf(paper: IndexEntry): string {
+  return paper.arxiv?.primary || UNCATEGORISED;
+}
+
+export function categoryLabel(paper: IndexEntry): string {
+  return paper.arxiv?.primaryName || "Not yet categorised";
 }
 
 /** Inheriting a method makes the cited paper's correctness a precondition of yours. */

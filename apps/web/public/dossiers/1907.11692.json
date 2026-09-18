@@ -1,0 +1,6109 @@
+{
+  "id": "1907.11692",
+  "title": "RoBERTa: A Robustly Optimized BERT Pretraining Approach",
+  "keystone": {
+    "table": "Table 5",
+    "caption": "Results on GLUE. All results are based on a 24-layer architecture. and results are from devlin2018bert and yang2019xlnet, respectively. results on the development set are a median over five runs. results on the test set are ensembles of single-task models. For RTE, STS and MRPC we finetune starting from the MNLI model instead of the baseline pretrained model. Averages are obtained from the GLUE leaderboard.",
+    "supported": 1,
+    "share": 0.5,
+    "summary": "1 of the paper's headline numbers trace to Table 5"
+  },
+  "coverage": {
+    "claims": 2,
+    "supported": 2,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 1.0
+  },
+  "claims": [
+    {
+      "value": "88.5",
+      "section": "introduction",
+      "sentence": "When trained for longer over additional data, our model achieves a score of 88.5 on the public GLUE leaderboard, matching the 88.4 reported by yang2019xlnet.",
+      "status": "exact",
+      "table": "Table 5",
+      "caption": "Results on GLUE. All results are based on a 24-layer architecture. and results are from devlin2018bert and yang2019xlnet, respectively. results on the development set are a median over five runs. results on the test set are ensembles of single-task models. For RTE, STS and MRPC we finetune starting from the MNLI model instead of the baseline pretrained model. Averages are obtained from the GLUE leaderboard.",
+      "row": "90.8/90.2",
+      "column": "Avg",
+      "cell": "88.5",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.3202209472656,
+            "y0": 535.17333984375,
+            "x1": 525.3931884765625,
+            "y1": 546.0824584960938
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 548.733154296875,
+            "x1": 525.2845458984375,
+            "y1": 559.6422729492188
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 562.29296875,
+            "x1": 525.2950439453125,
+            "y1": 573.2020874023438
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 575.7327880859375,
+            "x1": 318.1748046875,
+            "y1": 586.6419067382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "88.4",
+      "section": "introduction",
+      "sentence": "When trained for longer over additional data, our model achieves a score of 88.5 on the public GLUE leaderboard, matching the 88.4 reported by yang2019xlnet.",
+      "status": "exact",
+      "table": "Table 4",
+      "caption": "Development set results for as we pretrain over more data (16GB 160GB of text) and pretrain for longer (100K 300K 500K steps). Each row accumulates improvements from the rows above. matches the architecture and training objective of . Results for and are from devlin2018bert and yang2019xlnet, respectively. Complete results on all GLUE tasks can be found in the Appendix.",
+      "row": "with Books + Wiki",
+      "column": "MNLI-m",
+      "cell": "88.4",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.3202209472656,
+            "y0": 535.17333984375,
+            "x1": 525.3931884765625,
+            "y1": 546.0824584960938
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 548.733154296875,
+            "x1": 525.2845458984375,
+            "y1": 559.6422729492188
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 562.29296875,
+            "x1": 525.2950439453125,
+            "y1": 573.2020874023438
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 575.7327880859375,
+            "x1": 318.1748046875,
+            "y1": 586.6419067382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1907.11692",
+  "numbers": [
+    {
+      "value": "88.5",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "When trained for longer over additional data, our model achieves a score of 88.5 on the public GLUE leaderboard, matching the 88.4 reported by yang2019xlnet.",
+      "status": "exact",
+      "table": "Table 5",
+      "row": "90.8/90.2",
+      "cell": "88.5",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.3202209472656,
+            "y0": 535.17333984375,
+            "x1": 525.3931884765625,
+            "y1": 546.0824584960938
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 548.733154296875,
+            "x1": 525.2845458984375,
+            "y1": 559.6422729492188
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 562.29296875,
+            "x1": 525.2950439453125,
+            "y1": 573.2020874023438
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 575.7327880859375,
+            "x1": 318.1748046875,
+            "y1": 586.6419067382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "88.4",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "When trained for longer over additional data, our model achieves a score of 88.5 on the public GLUE leaderboard, matching the 88.4 reported by yang2019xlnet.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "with Books + Wiki",
+      "cell": "88.4",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.3202209472656,
+            "y0": 535.17333984375,
+            "x1": 525.3931884765625,
+            "y1": 546.0824584960938
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 548.733154296875,
+            "x1": 525.2845458984375,
+            "y1": 559.6422729492188
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 562.29296875,
+            "x1": 525.2950439453125,
+            "y1": 573.2020874023438
+          },
+          {
+            "x0": 307.3202209472656,
+            "y0": 575.7327880859375,
+            "x1": 318.1748046875,
+            "y1": 586.6419067382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "15%",
+      "kind": "result",
+      "section": "related",
+      "sentence": "BERT uniformly selects 15% of the input tokens for possible replacement.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 242.28125,
+            "y0": 714.09619140625,
+            "x1": 290.07415771484375,
+            "y1": 725.0053100585938
+          },
+          {
+            "x0": 72.00077819824219,
+            "y0": 727.6563720703125,
+            "x1": 290.0733642578125,
+            "y1": 738.5654907226562
+          },
+          {
+            "x0": 72.00077819824219,
+            "y0": 741.216552734375,
+            "x1": 144.208251953125,
+            "y1": 752.1256713867188
+          }
+        ]
+      }
+    },
+    {
+      "value": "80%",
+      "kind": "result",
+      "section": "related",
+      "sentence": "Of the selected tokens, 80% are replaced with , 10% are left unchanged, and 10% are replaced by a randomly selected vocabulary token.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.3206787109375,
+            "y0": 65.61676788330078,
+            "x1": 525.3933715820312,
+            "y1": 76.52586364746094
+          },
+          {
+            "x0": 307.3206787109375,
+            "y0": 79.17694854736328,
+            "x1": 374.008056640625,
+            "y1": 90.08604431152344
+          },
+          {
+            "x0": 135.36058044433594,
+            "y0": 754.7767333984375,
+            "x1": 289.7679748535156,
+            "y1": 765.6858520507812
+          }
+        ]
+      }
+    },
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "related",
+      "sentence": "Of the selected tokens, 80% are replaced with , 10% are left unchanged, and 10% are replaced by a randomly selected vocabulary token.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.3206787109375,
+            "y0": 65.61676788330078,
+            "x1": 525.3933715820312,
+            "y1": 76.52586364746094
+          },
+          {
+            "x0": 307.3206787109375,
+            "y0": 79.17694854736328,
+            "x1": 374.008056640625,
+            "y1": 90.08604431152344
+          },
+          {
+            "x0": 135.36058044433594,
+            "y0": 754.7767333984375,
+            "x1": 289.7679748535156,
+            "y1": 765.6858520507812
+          }
+        ]
+      }
+    },
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "related",
+      "sentence": "Of the selected tokens, 80% are replaced with , 10% are left unchanged, and 10% are replaced by a randomly selected vocabulary token.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.3206787109375,
+            "y0": 65.61676788330078,
+            "x1": 525.3933715820312,
+            "y1": 76.52586364746094
+          },
+          {
+            "x0": 307.3206787109375,
+            "y0": 79.17694854736328,
+            "x1": 374.008056640625,
+            "y1": 90.08604431152344
+          },
+          {
+            "x0": 135.36058044433594,
+            "y0": 754.7767333984375,
+            "x1": 289.7679748535156,
+            "y1": 765.6858520507812
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "related",
+      "sentence": "BERT trains with a dropout of 0.1 on all layers and attention weights, and a GELU activation function .",
+      "status": "exact",
+      "table": "Table 9",
+      "row": "Dropout",
+      "cell": "0.1",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 468.71966552734375,
+            "y0": 452.97625732421875,
+            "x1": 525.4035034179688,
+            "y1": 463.8853759765625
+          },
+          {
+            "x0": 307.3197326660156,
+            "y0": 466.5364685058594,
+            "x1": 525.5131225585938,
+            "y1": 477.4455871582031
+          },
+          {
+            "x0": 307.3197326660156,
+            "y0": 480.0966796875,
+            "x1": 525.3922729492188,
+            "y1": 491.00579833984375
+          },
+          {
+            "x0": 307.3197326660156,
+            "y0": 493.6568908691406,
+            "x1": 324.17425537109375,
+            "y1": 504.5660095214844
+          }
+        ]
+      }
+    },
+    {
+      "value": "90%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Unlike devlin2018bert, we do not randomly inject short sequences, and we do not train with a reduced sequence length for the first 90% of updates.",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "+ pretrain longer",
+      "cell": "90.0",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 228.1201629638672,
+            "y0": 201.0958251953125,
+            "x1": 290.1927490234375,
+            "y1": 212.0049285888672
+          },
+          {
+            "x0": 72.0,
+            "y0": 214.6556396484375,
+            "x1": 290.0937194824219,
+            "y1": 225.5647430419922
+          },
+          {
+            "x0": 72.0,
+            "y0": 228.2158203125,
+            "x1": 290.1925964355469,
+            "y1": 239.1249237060547
+          },
+          {
+            "x0": 72.0,
+            "y0": 241.7760009765625,
+            "x1": 107.72730255126953,
+            "y1": 252.6851043701172
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.1",
+      "kind": "result",
+      "section": "results",
+      "sentence": "The NSP loss was hypothesized to be an important factor in training the original BERT model. devlin2018bert observe that removing NSP hurts performance, with significant performance degradation on QNLI, MNLI, and SQuAD 1.1.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 399.3598937988281,
+            "y0": 569.8558349609375,
+            "x1": 525.6650390625,
+            "y1": 580.7649536132812
+          },
+          {
+            "x0": 307.3200988769531,
+            "y0": 583.416015625,
+            "x1": 525.163818359375,
+            "y1": 594.3251342773438
+          },
+          {
+            "x0": 307.3200988769531,
+            "y0": 596.975830078125,
+            "x1": 525.447265625,
+            "y1": 607.8849487304688
+          }
+        ]
+      }
+    },
+    {
+      "value": "6%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We consider a limited hyperparameter sweep for each task, with batch sizes and learning rates , with a linear warmup for the first 6% of steps followed by a linear decay to 0. We finetune for 10 epochs and perform early stopping based on each task's evaluation metric on the dev set.",
+      "status": "exact",
+      "table": "Table 10",
+      "row": "Warmup ratio",
+      "cell": "0.06",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 462.4787902832031,
+            "y0": 493.89678955078125,
+            "x1": 525.5220336914062,
+            "y1": 504.805908203125
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 507.45660400390625,
+            "x1": 525.5342407226562,
+            "y1": 518.36572265625
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 521.016845703125,
+            "x1": 525.414306640625,
+            "y1": 531.9259643554688
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 534.5770263671875,
+            "x1": 525.3925170898438,
+            "y1": 545.4861450195312
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 548.13720703125,
+            "x1": 429.0865783691406,
+            "y1": 559.0463256835938
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.4",
+      "kind": "result",
+      "section": "other",
+      "sentence": "On the SQuAD v2.0 development set, RoBERTa sets a new state-of-the-art, improving over XLNet by 0.4 points (EM) and 0.6 points (F1).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 260.6399841308594,
+            "y0": 469.41583251953125,
+            "x1": 290.2036437988281,
+            "y1": 480.324951171875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 482.9760437011719,
+            "x1": 290.3238220214844,
+            "y1": 493.8851623535156
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 496.5362548828125,
+            "x1": 290.2146911621094,
+            "y1": 507.44537353515625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 510.096435546875,
+            "x1": 213.44728088378906,
+            "y1": 521.0055541992188
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.6",
+      "kind": "result",
+      "section": "other",
+      "sentence": "On the SQuAD v2.0 development set, RoBERTa sets a new state-of-the-art, improving over XLNet by 0.4 points (EM) and 0.6 points (F1).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 260.6399841308594,
+            "y0": 469.41583251953125,
+            "x1": 290.2036437988281,
+            "y1": 480.324951171875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 482.9760437011719,
+            "x1": 290.3238220214844,
+            "y1": 493.8851623535156
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 496.5362548828125,
+            "x1": 290.2146911621094,
+            "y1": 507.44537353515625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 510.096435546875,
+            "x1": 213.44728088378906,
+            "y1": 521.0055541992188
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We also submit RoBERTa to the public SQuAD 2.0 leaderboard and evaluate its performance relative to other systems.",
+      "status": "exact",
+      "table": "Table 10",
+      "row": "Max Epochs",
+      "cell": "2",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.91988372802734,
+            "y0": 523.776123046875,
+            "x1": 290.3563232421875,
+            "y1": 534.6852416992188
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 537.3363647460938,
+            "x1": 290.19317626953125,
+            "y1": 548.2454833984375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 550.8966064453125,
+            "x1": 173.00747680664062,
+            "y1": 561.8057250976562
+          }
+        ]
+      }
+    },
+    {
+      "value": "10,000 steps",
+      "kind": "configuration",
+      "section": "related",
+      "sentence": "The learning rate is warmed up over the first 10,000 steps to a peak value of 1e-4, and then linearly decayed.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 376.0794372558594,
+            "y0": 425.8558349609375,
+            "x1": 525.533935546875,
+            "y1": 436.76495361328125
+          },
+          {
+            "x0": 307.3197326660156,
+            "y0": 439.4160461425781,
+            "x1": 525.5131225585938,
+            "y1": 450.3251647949219
+          },
+          {
+            "x0": 307.3197326660156,
+            "y0": 452.97625732421875,
+            "x1": 457.28680419921875,
+            "y1": 463.8853759765625
+          }
+        ]
+      }
+    },
+    {
+      "value": "16GB",
+      "kind": "configuration",
+      "section": "related",
+      "sentence": "BERT is trained on a combination of BookCorpus plus English Wikipedia, which totals 16GB of uncompressed text. use the same dataset but report having only 13GB of text after data cleaning.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 389.76019287109375,
+            "y0": 736.3308715820312,
+            "x1": 525.5230712890625,
+            "y1": 745.2972412109375
+          },
+          {
+            "x0": 307.3199157714844,
+            "y0": 746.2910766601562,
+            "x1": 441.68170166015625,
+            "y1": 755.2574462890625
+          }
+        ]
+      }
+    },
+    {
+      "value": "13GB",
+      "kind": "configuration",
+      "section": "related",
+      "sentence": "BERT is trained on a combination of BookCorpus plus English Wikipedia, which totals 16GB of uncompressed text. use the same dataset but report having only 13GB of text after data cleaning.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 389.76019287109375,
+            "y0": 736.3308715820312,
+            "x1": 525.5230712890625,
+            "y1": 745.2972412109375
+          },
+          {
+            "x0": 307.3199157714844,
+            "y0": 746.2910766601562,
+            "x1": 441.68170166015625,
+            "y1": 755.2574462890625
+          }
+        ]
+      }
+    },
+    {
+      "value": "32GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We train with mixed precision floating point arithmetic on DGX-1 machines, each with 8 32GB Nvidia V100 GPUs interconnected by Infiniband .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.9198989868164,
+            "y0": 255.2161865234375,
+            "x1": 290.0729675292969,
+            "y1": 266.12530517578125
+          },
+          {
+            "x0": 72.0,
+            "y0": 268.7760009765625,
+            "x1": 277.134765625,
+            "y1": 279.68511962890625
+          }
+        ]
+      }
+    },
+    {
+      "value": "160GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We consider five English-language corpora of varying sizes and domains, totaling over 160GB of uncompressed text.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.9198989868164,
+            "y0": 511.536865234375,
+            "x1": 290.19293212890625,
+            "y1": 522.4459838867188
+          },
+          {
+            "x0": 72.0,
+            "y0": 525.0970458984375,
+            "x1": 290.1163635253906,
+            "y1": 536.0061645507812
+          },
+          {
+            "x0": 72.0,
+            "y0": 538.6572875976562,
+            "x1": 169.4074249267578,
+            "y1": 549.56640625
+          }
+        ]
+      }
+    },
+    {
+      "value": "16GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "(16GB). CC-News, which we collected from the English portion of the CommonCrawl News dataset .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "76GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "(76GB after filtering). to collect and extract CC-News. CC-News is similar to the RealNews dataset described in zellers2019neuralfakenews. OpenWebText , an open-source recreation of the WebText corpus described in radford2019language.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "38GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "(38GB). Stories, a dataset introduced in trinh2018simple containing a subset of CommonCrawl data filtered to match the story-like style of Winograd schemas.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 351.71990966796875,
+            "y0": 125.85584259033203,
+            "x1": 525.5130615234375,
+            "y1": 136.7649383544922
+          },
+          {
+            "x0": 317.7602233886719,
+            "y0": 139.2960205078125,
+            "x1": 525.5127563476562,
+            "y1": 150.2051239013672
+          },
+          {
+            "x0": 317.7602233886719,
+            "y0": 152.8558349609375,
+            "x1": 403.04736328125,
+            "y1": 163.7649383544922
+          }
+        ]
+      }
+    },
+    {
+      "value": "110M params",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "We keep the model architecture fixed. Specifically, we begin by training BERT models with the same configuration as BERT ( , , , 110M params).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "40 epochs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "To avoid using the same mask for each training instance in every epoch, training data was duplicated 10 times so that each sequence is masked in 10 different ways over the 40 epochs of training.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.64028930664062,
+            "y0": 581.13623046875,
+            "x1": 290.1937255859375,
+            "y1": 592.0453491210938
+          },
+          {
+            "x0": 72.0,
+            "y0": 594.6964111328125,
+            "x1": 290.08392333984375,
+            "y1": 605.6055297851562
+          },
+          {
+            "x0": 72.0,
+            "y0": 608.2566528320312,
+            "x1": 290.20343017578125,
+            "y1": 619.165771484375
+          },
+          {
+            "x0": 72.0,
+            "y0": 621.8168334960938,
+            "x1": 290.19342041015625,
+            "y1": 632.7259521484375
+          },
+          {
+            "x0": 72.0,
+            "y0": 635.3770141601562,
+            "x1": 108.32730102539062,
+            "y1": 646.2861328125
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Each input has a pair of segments, which can each contain multiple natural sentences, but the total combined length must be less than 512 tokens. sentence-pair+nsp: Each input contains a pair of natural sentences, either sampled from a contiguous portion of one document or from separate documents.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.68009948730469,
+            "y0": 306.81597900390625,
+            "x1": 290.32440185546875,
+            "y1": 317.72509765625
+          },
+          {
+            "x0": 82.43978881835938,
+            "y0": 320.37579345703125,
+            "x1": 290.1269836425781,
+            "y1": 331.284912109375
+          },
+          {
+            "x0": 82.43977355957031,
+            "y0": 333.9360046386719,
+            "x1": 290.1270446777344,
+            "y1": 344.8451232910156
+          },
+          {
+            "x0": 82.43977355957031,
+            "y0": 347.4962158203125,
+            "x1": 170.84722900390625,
+            "y1": 358.40533447265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Since these inputs are significantly shorter than 512 tokens, we increase the batch size so that the total number of tokens remains similar to segment-pair+nsp.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 175.31988525390625,
+            "y0": 347.4962158203125,
+            "x1": 290.1920166015625,
+            "y1": 358.40533447265625
+          },
+          {
+            "x0": 82.43977355957031,
+            "y0": 361.0564270019531,
+            "x1": 289.9631042480469,
+            "y1": 371.9655456542969
+          },
+          {
+            "x0": 82.43977355957031,
+            "y0": 374.61663818359375,
+            "x1": 289.96429443359375,
+            "y1": 385.5257568359375
+          },
+          {
+            "x0": 82.43977355957031,
+            "y0": 388.1768493652344,
+            "x1": 257.84674072265625,
+            "y1": 399.0859680175781
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "We retain the NSP loss. full-sentences: Each input is packed with full sentences sampled contiguously from one or more documents, such that the total length is at most 512 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.67977905273438,
+            "y0": 419.2569580078125,
+            "x1": 290.2151794433594,
+            "y1": 430.16607666015625
+          },
+          {
+            "x0": 82.439453125,
+            "y0": 432.8171691894531,
+            "x1": 290.2030029296875,
+            "y1": 443.7262878417969
+          },
+          {
+            "x0": 82.439453125,
+            "y0": 446.37738037109375,
+            "x1": 290.20306396484375,
+            "y1": 457.2864990234375
+          },
+          {
+            "x0": 82.439453125,
+            "y0": 459.9375915527344,
+            "x1": 166.88706970214844,
+            "y1": 470.8467102050781
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Inputs sampled near the end of a document may be shorter than 512 tokens, so we dynamically increase the batch size in these cases to achieve a similar number of total tokens as full-sentences.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 263.03997802734375,
+            "y0": 558.697509765625,
+            "x1": 290.0836486816406,
+            "y1": 569.6066284179688
+          },
+          {
+            "x0": 82.44001770019531,
+            "y0": 572.25732421875,
+            "x1": 290.2032470703125,
+            "y1": 583.1664428710938
+          },
+          {
+            "x0": 82.44001770019531,
+            "y0": 585.817138671875,
+            "x1": 290.1929931640625,
+            "y1": 596.7262573242188
+          },
+          {
+            "x0": 82.44001770019531,
+            "y0": 599.376953125,
+            "x1": 290.08441162109375,
+            "y1": 610.2860717773438
+          },
+          {
+            "x0": 82.44001770019531,
+            "y0": 612.936767578125,
+            "x1": 289.5929260253906,
+            "y1": 623.8458862304688
+          },
+          {
+            "x0": 82.68020629882812,
+            "y0": 626.4969482421875,
+            "x1": 138.80787658691406,
+            "y1": 637.4060668945312
+          }
+        ]
+      }
+    },
+    {
+      "value": "1M steps",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "devlin2018bert originally trained BERT for 1M steps with a batch size of 256 sequences.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 102.9603500366211,
+            "y0": 249.21458435058594,
+            "x1": 303.09063720703125,
+            "y1": 259.1772155761719
+          }
+        ]
+      }
+    },
+    {
+      "value": "125K steps",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "This is equivalent in computational cost, via gradient accumulation, to training for 125K steps with a batch size of 2K sequences, or for 31K steps with a batch size of 8K.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 385.0798645019531,
+            "y0": 700.4158325195312,
+            "x1": 525.2730102539062,
+            "y1": 711.324951171875
+          },
+          {
+            "x0": 307.3199768066406,
+            "y0": 713.9755859375,
+            "x1": 525.2947387695312,
+            "y1": 724.8847045898438
+          },
+          {
+            "x0": 307.3199768066406,
+            "y0": 727.535400390625,
+            "x1": 525.0877075195312,
+            "y1": 738.4445190429688
+          },
+          {
+            "x0": 307.3199768066406,
+            "y0": 741.09521484375,
+            "x1": 484.1681213378906,
+            "y1": 752.0043334960938
+          }
+        ]
+      }
+    },
+    {
+      "value": "31K steps",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "This is equivalent in computational cost, via gradient accumulation, to training for 125K steps with a batch size of 2K sequences, or for 31K steps with a batch size of 8K.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 385.0798645019531,
+            "y0": 700.4158325195312,
+            "x1": 525.2730102539062,
+            "y1": 711.324951171875
+          },
+          {
+            "x0": 307.3199768066406,
+            "y0": 713.9755859375,
+            "x1": 525.2947387695312,
+            "y1": 724.8847045898438
+          },
+          {
+            "x0": 307.3199768066406,
+            "y0": 727.535400390625,
+            "x1": 525.0877075195312,
+            "y1": 738.4445190429688
+          },
+          {
+            "x0": 307.3199768066406,
+            "y0": 741.09521484375,
+            "x1": 484.1681213378906,
+            "y1": 752.0043334960938
+          }
+        ]
+      }
+    },
+    {
+      "value": "355M parameters",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "To help disentangle the importance of these factors from other modeling choices (e.g., the pretraining objective), we begin by training RoBERTa following the BERT architecture ( , , , 355M parameters).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 318.2398986816406,
+            "y0": 673.535888671875,
+            "x1": 525.3926391601562,
+            "y1": 684.4450073242188
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 686.9757080078125,
+            "x1": 525.3932495117188,
+            "y1": 697.8848266601562
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 700.535888671875,
+            "x1": 525.764404296875,
+            "y1": 711.4450073242188
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 714.0961303710938,
+            "x1": 421.6153564453125,
+            "y1": 725.0052490234375
+          }
+        ]
+      }
+    },
+    {
+      "value": "100K steps",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We pretrain for 100K steps over a comparable BookCorpus plus Wikipedia dataset as was used in devlin2018bert.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 511.32000732421875,
+            "y0": 727.6558837890625,
+            "x1": 525.6437377929688,
+            "y1": 738.5650024414062
+          },
+          {
+            "x0": 307.3200378417969,
+            "y0": 741.2161254882812,
+            "x1": 525.2732543945312,
+            "y1": 752.125244140625
+          },
+          {
+            "x0": 307.56048583984375,
+            "y0": 754.77587890625,
+            "x1": 525.5349731445312,
+            "y1": 765.6849975585938
+          }
+        ]
+      }
+    },
+    {
+      "value": "160GB",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "In total, we pretrain over 160GB of text.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 511.2960205078125,
+            "x1": 252.44764709472656,
+            "y1": 522.2051391601562
+          }
+        ]
+      }
+    },
+    {
+      "value": "500K steps",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "Specifically we consider RoBERTa trained for 500K steps over all five of the datasets introduced in Section .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "10 epochs",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We consider a limited hyperparameter sweep for each task, with batch sizes and learning rates , with a linear warmup for the first 6% of steps followed by a linear decay to 0. We finetune for 10 epochs and perform early stopping based on each task's evaluation metric on the dev set.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 462.4787902832031,
+            "y0": 493.89678955078125,
+            "x1": 525.5220336914062,
+            "y1": 504.805908203125
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 507.45660400390625,
+            "x1": 525.5342407226562,
+            "y1": 518.36572265625
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 521.016845703125,
+            "x1": 525.414306640625,
+            "y1": 531.9259643554688
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 534.5770263671875,
+            "x1": 525.3925170898438,
+            "y1": 545.4861450195312
+          },
+          {
+            "x0": 307.31951904296875,
+            "y0": 548.13720703125,
+            "x1": 429.0865783691406,
+            "y1": 559.0463256835938
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We truncate question-answer pairs that are longer than 128 tokens and, if needed, the passage so that the total length is at most 512 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 511.32037353515625,
+            "y0": 272.8553466796875,
+            "x1": 525.6441040039062,
+            "y1": 283.76446533203125
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 286.4151611328125,
+            "x1": 525.4140625,
+            "y1": 297.32427978515625
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 299.85498046875,
+            "x1": 525.4031982421875,
+            "y1": 310.76409912109375
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 313.4151611328125,
+            "x1": 453.8078308105469,
+            "y1": 324.32427978515625
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We truncate question-answer pairs that are longer than 128 tokens and, if needed, the passage so that the total length is at most 512 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 511.32037353515625,
+            "y0": 272.8553466796875,
+            "x1": 525.6441040039062,
+            "y1": 283.76446533203125
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 286.4151611328125,
+            "x1": 525.4140625,
+            "y1": 297.32427978515625
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 299.85498046875,
+            "x1": 525.4031982421875,
+            "y1": 310.76409912109375
+          },
+          {
+            "x0": 307.32000732421875,
+            "y0": 313.4151611328125,
+            "x1": 453.8078308105469,
+            "y1": 324.32427978515625
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Comparison between static and dynamic masking for . We report F1 for SQuAD and accuracy for MNLI-m and SST-2. Reported results are medians over 5 random initializations (seeds). Reference results are from yang2019xlnet.",
+      "label": "tab:static_vs_dynamic_masking",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Masking",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD 2.0",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MNLI-m",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "reference",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.3",
+            "value": "76.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.3",
+            "value": "84.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.8",
+            "value": "92.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Our reimplementation:",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "static",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "78.3",
+            "value": "78.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "84.3",
+            "value": "84.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.5",
+            "value": "92.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "dynamic",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "78.7",
+            "value": "78.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "84.0",
+            "value": "84.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.9",
+            "value": "92.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Development set results for base models pretrained over BookCorpus and Wikipedia. All models are trained for 1M steps with a batch size of 256 sequences. We report F1 for SQuAD and accuracy for MNLI-m, SST-2 and RACE. Reported results are medians over five random initializations (seeds). Results for and are from yang2019xlnet.",
+      "label": "tab:base_apples_to_apples",
+      "numericCells": 23,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD 1.1/2.0",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MNLI-m",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Our reimplementation (with NSP loss):",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "segment-pair",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.4/78.7",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.0",
+            "value": "84.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.9",
+            "value": "92.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.2",
+            "value": "64.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "sentence-pair",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.7/76.2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "82.9",
+            "value": "82.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.1",
+            "value": "92.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.0",
+            "value": "63.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Our reimplementation (without NSP loss):",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "full-sentences",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.4/79.1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "84.7",
+            "value": "84.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.5",
+            "value": "92.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "64.8",
+            "value": "64.8",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "doc-sentences",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.6/79.7",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "84.7",
+            "value": "84.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.7",
+            "value": "92.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "65.6",
+            "value": "65.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "88.5/76.3",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "84.3",
+            "value": "84.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "92.8",
+            "value": "92.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "64.3",
+            "value": "64.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(K = 7)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "--/81.3",
+            "value": "81.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "85.8",
+            "value": "85.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "92.7",
+            "value": "92.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "66.1",
+            "value": "66.1",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(K = 6)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "--/81.0",
+            "value": "81.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "85.6",
+            "value": "85.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "93.4",
+            "value": "93.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "66.7",
+            "value": "66.7",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Perplexity on held-out training data (ppl) and development set accuracy for base models trained over BookCorpus and Wikipedia with varying batch sizes (bsz). We tune the learning rate (lr) for each setting. Models make the same number of passes over the data (epochs) and have the same computational cost.",
+      "label": "tab:large_batches",
+      "numericCells": 18,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "bsz",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "steps",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "lr",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "ppl",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MNLI-m",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1M",
+            "value": "1000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-4",
+            "value": "0.0001",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.99",
+            "value": "3.99",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.7",
+            "value": "84.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.7",
+            "value": "92.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2K",
+            "value": "2000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "125K",
+            "value": "125000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7e-4",
+            "value": "0.0007",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.68",
+            "value": "3.68",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "85.2",
+            "value": "85.2",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "92.9",
+            "value": "92.9",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "8K",
+            "value": "8000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31K",
+            "value": "31000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-3",
+            "value": "0.001",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.77",
+            "value": "3.77",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.6",
+            "value": "84.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.8",
+            "value": "92.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.11991882324219,
+            "y0": 146.0145721435547,
+            "x1": 290.34014892578125,
+            "y1": 155.97720336914062
+          },
+          {
+            "x0": 71.99981689453125,
+            "y0": 158.0145721435547,
+            "x1": 290.47735595703125,
+            "y1": 167.97720336914062
+          },
+          {
+            "x0": 72.23966217041016,
+            "y0": 169.8946990966797,
+            "x1": 290.3399658203125,
+            "y1": 179.85733032226562
+          },
+          {
+            "x0": 72.00042724609375,
+            "y0": 181.8946990966797,
+            "x1": 290.2377624511719,
+            "y1": 191.85733032226562
+          },
+          {
+            "x0": 72.0003662109375,
+            "y0": 193.77439880371094,
+            "x1": 290.26373291015625,
+            "y1": 203.73703002929688
+          },
+          {
+            "x0": 72.0003662109375,
+            "y0": 205.77439880371094,
+            "x1": 281.3703308105469,
+            "y1": 215.73703002929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Development set results for as we pretrain over more data (16GB 160GB of text) and pretrain for longer (100K 300K 500K steps). Each row accumulates improvements from the rows above. matches the architecture and training objective of . Results for and are from devlin2018bert and yang2019xlnet, respectively. Complete results on all GLUE tasks can be found in the Appendix.",
+      "label": "tab:ablation",
+      "numericCells": 35,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "data",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "bsz",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "steps",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MNLI-m",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST-2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(v1.1/2.0)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "with Books + Wiki",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16GB",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8K",
+            "value": "8000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100K",
+            "value": "100000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.6/87.3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95.3",
+            "value": "95.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ additional data ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "160GB",
+            "value": "160",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8K",
+            "value": "8000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100K",
+            "value": "100000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.0/87.7",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.3",
+            "value": "89.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95.6",
+            "value": "95.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ pretrain longer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "160GB",
+            "value": "160",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8K",
+            "value": "8000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "300K",
+            "value": "300000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.4/88.7",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.0",
+            "value": "90.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "96.1",
+            "value": "96.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ pretrain even longer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "160GB",
+            "value": "160",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8K",
+            "value": "8000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "500K",
+            "value": "500000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.6/89.4",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "96.4",
+            "value": "96.4",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "with Books + Wiki",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13GB",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1M",
+            "value": "1000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.9/81.8",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "86.6",
+            "value": "86.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "93.7",
+            "value": "93.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "with Books + Wiki",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13GB",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1M",
+            "value": "1000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "94.0/87.8",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.4",
+            "value": "88.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "94.4",
+            "value": "94.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ additional data",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "126GB",
+            "value": "126",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2K",
+            "value": "2000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "500K",
+            "value": "500000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "94.5/88.8",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.8",
+            "value": "89.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "95.6",
+            "value": "95.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Results on GLUE. All results are based on a 24-layer architecture. and results are from devlin2018bert and yang2019xlnet, respectively. results on the development set are a median over five runs. results on the test set are ensembles of single-task models. For RTE, STS and MRPC we finetune starting from the MNLI model instead of the baseline pretrained model. Averages are obtained from the GLUE leaderboard.",
+      "label": "tab:roberta_glue",
+      "numericCells": 60,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "QNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "RTE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "CoLA",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "STS",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "WNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Avg",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Single-task single models on dev",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "86.6/-",
+            "value": "86.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.3",
+            "value": "91.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.4",
+            "value": "70.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.2",
+            "value": "93.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.0",
+            "value": "88.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "60.6",
+            "value": "60.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.0",
+            "value": "90.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "89.8/-",
+            "value": "89.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.9",
+            "value": "93.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.8",
+            "value": "91.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "83.8",
+            "value": "83.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95.6",
+            "value": "95.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.2",
+            "value": "89.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.6",
+            "value": "63.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.8",
+            "value": "91.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "90.2/90.2",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "94.7",
+            "value": "94.7",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "92.2",
+            "value": "92.2",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "86.6",
+            "value": "86.6",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "96.4",
+            "value": "96.4",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "90.9",
+            "value": "90.9",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "68.0",
+            "value": "68.0",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "92.4",
+            "value": "92.4",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "91.3",
+            "value": "91.3",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ensembles on test (from leaderboard as of July 25, 2019)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ALICE",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.2/87.9",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "95.7",
+            "value": "95.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.7",
+            "value": "90.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "83.5",
+            "value": "83.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "95.2",
+            "value": "95.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.6",
+            "value": "92.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.6",
+            "value": "68.6",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "91.1",
+            "value": "91.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "80.8",
+            "value": "80.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "86.3",
+            "value": "86.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MT-DNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "87.9/87.4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.0",
+            "value": "96.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.9",
+            "value": "89.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "86.3",
+            "value": "86.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.5",
+            "value": "96.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.7",
+            "value": "92.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.4",
+            "value": "68.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.1",
+            "value": "91.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "87.6",
+            "value": "87.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "XLNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.2/89.8",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "98.6",
+            "value": "98.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.3",
+            "value": "90.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "86.3",
+            "value": "86.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.8",
+            "value": "96.8",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "93.0",
+            "value": "93.0",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "67.8",
+            "value": "67.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.6",
+            "value": "91.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.4",
+            "value": "90.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "88.4",
+            "value": "88.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "90.8/90.2",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "98.9",
+            "value": "98.9",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.2",
+            "value": "88.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "96.7",
+            "value": "96.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67.8",
+            "value": "67.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.2",
+            "value": "92.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.5",
+            "value": "88.5",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Results on SQuAD. indicates results that depend on additional external training data. uses only the provided SQuAD data in both dev and test settings. BERT and XLNet results are from devlin2018bert and yang2019xlnet, respectively.",
+      "label": "tab:roberta_squad",
+      "numericCells": 18,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD 1.1",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SQuAD 2.0",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Single models on dev, w/o data augmentation",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "84.1",
+            "value": "84.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.9",
+            "value": "90.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "79.0",
+            "value": "79.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.8",
+            "value": "81.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "94.5",
+            "value": "94.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.1",
+            "value": "86.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.8",
+            "value": "88.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "88.9",
+            "value": "88.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.6",
+            "value": "94.6",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "86.5",
+            "value": "86.5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "89.4",
+            "value": "89.4",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Single models on test (as of July 25, 2019)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "86.3",
+            "value": "86.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.1",
+            "value": "89.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "86.8",
+            "value": "86.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.8",
+            "value": "89.8",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "XLNet + SG-Net Verifier",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "87.0",
+            "value": "87.0",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "89.9",
+            "value": "89.9",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Results on the RACE test set. BERT and XLNet results are from yang2019xlnet.",
+      "label": "tab:roberta_race",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Accuracy",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Middle",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "High",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Single models on test (as of July 25, 2019)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "72.0",
+            "value": "72.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.6",
+            "value": "76.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.1",
+            "value": "70.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "81.7",
+            "value": "81.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.4",
+            "value": "85.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.2",
+            "value": "80.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "83.2",
+            "value": "83.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "86.5",
+            "value": "86.5",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "81.3",
+            "value": "81.3",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "Development set results on GLUE tasks for various configurations of .",
+      "label": "tab:roberta_all_large_glue",
+      "numericCells": 40,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "QNLI",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "RTE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SST",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "CoLA",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "STS",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ all data + 500k steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "87.6",
+            "value": "87.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.8",
+            "value": "92.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.9",
+            "value": "91.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "78.7",
+            "value": "78.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.8",
+            "value": "94.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.6",
+            "value": "63.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.2",
+            "value": "91.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "with Books + Wiki",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "93.9",
+            "value": "93.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.9",
+            "value": "91.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "84.5",
+            "value": "84.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "95.3",
+            "value": "95.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "66.3",
+            "value": "66.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.6",
+            "value": "91.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ additional data ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.3",
+            "value": "89.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "94.0",
+            "value": "94.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.0",
+            "value": "92.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "82.7",
+            "value": "82.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "95.6",
+            "value": "95.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.4",
+            "value": "91.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "66.1",
+            "value": "66.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.2",
+            "value": "92.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ pretrain longer 300k",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.0",
+            "value": "90.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "94.5",
+            "value": "94.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.2",
+            "value": "92.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "83.3",
+            "value": "83.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.1",
+            "value": "96.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.1",
+            "value": "91.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67.4",
+            "value": "67.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ pretrain longer 500k",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "94.7",
+            "value": "94.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "92.2",
+            "value": "92.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "86.6",
+            "value": "86.6",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "96.4",
+            "value": "96.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "90.9",
+            "value": "90.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.0",
+            "value": "68.0",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "92.4",
+            "value": "92.4",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Hyperparameters for pretraining and .",
+      "label": "tab:pretraining_hyperparams",
+      "numericCells": 26,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Hyperparam",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Number of Layers",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24",
+            "value": "24",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Hidden size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1024",
+            "value": "1024",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "768",
+            "value": "768",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "FFN inner hidden size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4096",
+            "value": "4096",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3072",
+            "value": "3072",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Attention heads",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Attention head size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Dropout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Attention Dropout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Warmup Steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Peak Learning Rate",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4e-4",
+            "value": "0.0004",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6e-4",
+            "value": "0.0006",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Batch Size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Weight Decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.01",
+            "value": "0.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.01",
+            "value": "0.01",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Max Steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "500k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "500k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Learning Rate Decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Linear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Linear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Adam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-6",
+            "value": "0.000001",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-6",
+            "value": "0.000001",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Adam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.9",
+            "value": "0.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.9",
+            "value": "0.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Adam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.98",
+            "value": "0.98",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.98",
+            "value": "0.98",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Gradient Clipping",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 10",
+      "caption": "Hyperparameters for finetuning on RACE, SQuAD and GLUE.",
+      "label": "tab:roberta_glue_finetune_hyperparams",
+      "numericCells": 13,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Hyperparam",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "GLUE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Learning Rate",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-5",
+            "value": "0.00001",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.5e-5",
+            "value": "0.000015",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1e-5, 2e-5, 3e-5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Batch Size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16, 32",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Weight Decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.01",
+            "value": "0.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Max Epochs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Learning Rate Decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Linear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Linear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Linear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Warmup ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.06",
+            "value": "0.06",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.06",
+            "value": "0.06",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.06",
+            "value": "0.06",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\round": "\\num[round-mode=places,round-precision=1]{#1}",
+    "\\cdashlinelr": "\n  \\noalign{\\vskip\\aboverulesep\n           \\global\\let\\@dashdrawstore\\adl@draw\n           \\global\\let\\adl@draw\\adl@drawiv}\n  \\cdashline{#1}\n  \\noalign{\\global\\let\\adl@draw\\@dashdrawstore\n           \\vskip\\belowrulesep}",
+    "\\ourmodel": "RoBERTa",
+    "\\ourmodelbase": "RoBERTa$_{\\textsc{base}}$",
+    "\\ourmodellarge": "RoBERTa$_{\\textsc{large}}$",
+    "\\bertbase": "BERT$_{\\textsc{base}}$",
+    "\\bertlarge": "BERT$_{\\textsc{large}}$",
+    "\\xlnetbase": "XLNet$_{\\textsc{base}}$",
+    "\\xlnetlarge": "XLNet$_{\\textsc{large}}$",
+    "\\omer": "\\textcolor{blue}{[Omer: #1]}",
+    "\\danqi": "\\textcolor{magenta}{[Danqi: #1]}",
+    "\\mandar": "\\textcolor{red}{[Mandar: #1]}",
+    "\\ves": "\\textcolor{green}{[Ves: #1]}",
+    "\\myle": "\\textcolor{cyan}{[Myle: #1]}",
+    "\\yinhan": "\\textcolor{purple}{[Yinhan: #1]}",
+    "\\jingfei": "\\textcolor{yellow}{[Jingfei: #1]}",
+    "\\luke": "\\textcolor{orange}{[Luke: #1]}",
+    "\\naman": "\\textcolor{brown}{[Naman: #1]}"
+  },
+  "references": [
+    {
+      "key": "agirre2007semantic",
+      "raw": "Eneko Agirre, Llu'is M`arquez, and Richard Wicentowski, editors. 2007. Proceedings of the Fourth International Workshop on Semantic Evaluations (SemEval-2007)",
+      "authors": "Eneko Agirre, Llu'is M`arquez, and Richard Wicentowski, editors. 2007",
+      "title": "Proceedings of the Fourth International Workshop on Semantic Evaluations (SemEval-2007)",
+      "venue": "",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "baevski2019cloze",
+      "raw": "Alexei Baevski, Sergey Edunov, Yinhan Liu, Luke Zettlemoyer, and Michael Auli. 2019. Cloze-driven pretraining of self-attention networks. arXiv preprint arXiv:1903.07785",
+      "authors": "Alexei Baevski, Sergey Edunov, Yinhan Liu, Luke Zettlemoyer, and Michael Auli. 2019",
+      "title": "Cloze-driven pretraining of self-attention networks",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1903.07785",
+      "doi": null
+    },
+    {
+      "key": "bar2006second",
+      "raw": "Roy Bar-Haim, Ido Dagan, Bill Dolan, Lisa Ferro, Danilo Giampiccolo, Bernardo Magnini, and Idan Szpektor. 2006. The second PASCAL recognising textual entailment challenge. In Proceedings of the second PASCAL challenges workshop on recognising textual entailment",
+      "authors": "Roy Bar-Haim, Ido Dagan, Bill Dolan, Lisa Ferro, Danilo Giampiccolo, Bernardo Magnini, and Idan Szpektor. 2006",
+      "title": "The second PASCAL recognising textual entailment challenge",
+      "venue": "In Proceedings of the second PASCAL challenges workshop on recognising textual entailment",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bentivogli2009fifth",
+      "raw": "Luisa Bentivogli, Ido Dagan, Hoa Trang Dang, Danilo Giampiccolo, and Bernardo Magnini. 2009. The fifth PASCAL recognizing textual entailment challenge",
+      "authors": "Luisa Bentivogli, Ido Dagan, Hoa Trang Dang, Danilo Giampiccolo, and Bernardo Magnini. 2009",
+      "title": "The fifth PASCAL recognizing textual entailment challenge",
+      "venue": "",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bowman2015large",
+      "raw": "Samuel R Bowman, Gabor Angeli, Christopher Potts, and Christopher D Manning. 2015. A large annotated corpus for learning natural language inference. In Empirical Methods in Natural Language Processing (EMNLP)",
+      "authors": "Samuel R Bowman, Gabor Angeli, Christopher Potts, and Christopher D Manning. 2015",
+      "title": "A large annotated corpus for learning natural language inference",
+      "venue": "In Empirical Methods in Natural Language Processing (EMNLP)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chan2019kermit",
+      "raw": "William Chan, Nikita Kitaev, Kelvin Guu, Mitchell Stern, and Jakob Uszkoreit. 2019. KERMIT: Generative insertion-based modeling for sequences. arXiv preprint arXiv:1906.01604",
+      "authors": "William Chan, Nikita Kitaev, Kelvin Guu, Mitchell Stern, and Jakob Uszkoreit. 2019",
+      "title": "KERMIT: Generative insertion-based modeling for sequences",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1906.01604",
+      "doi": null
+    },
+    {
+      "key": "dagan2006pascal",
+      "raw": "Ido Dagan, Oren Glickman, and Bernardo Magnini. 2006. The PASCAL recognising textual entailment challenge. In Machine learning challenges. evaluating predictive uncertainty, visual object classification, and recognising tectual entailment",
+      "authors": "Ido Dagan, Oren Glickman, and Bernardo Magnini. 2006",
+      "title": "The PASCAL recognising textual entailment challenge",
+      "venue": "In Machine learning challenges. evaluating predictive uncertainty, visual object classification, and recognising tectual entailment",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dai2015semi",
+      "raw": "Andrew M Dai and Quoc V Le. 2015. Semi-supervised sequence learning. In Advances in Neural Information Processing Systems (NIPS)",
+      "authors": "Andrew M Dai and Quoc V Le. 2015",
+      "title": "Semi-supervised sequence learning",
+      "venue": "In Advances in Neural Information Processing Systems (NIPS)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "devlin2018bert",
+      "raw": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In North American Association for Computational Linguistics (NAACL)",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019",
+      "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "In North American Association for Computational Linguistics (NAACL)",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dolan2005automatically",
+      "raw": "William B Dolan and Chris Brockett. 2005. Automatically constructing a corpus of sentential paraphrases. In Proceedings of the International Workshop on Paraphrasing",
+      "authors": "William B Dolan and Chris Brockett. 2005",
+      "title": "Automatically constructing a corpus of sentential paraphrases",
+      "venue": "In Proceedings of the International Workshop on Paraphrasing",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dong2019unified",
+      "raw": "Li Dong, Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, and Hsiao-Wuen Hon. 2019. Unified language model pre-training for natural language understanding and generation. arXiv preprint arXiv:1905.03197",
+      "authors": "Li Dong, Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, and Hsiao-Wuen Hon. 2019",
+      "title": "Unified language model pre-training for natural language understanding and generation",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1905.03197",
+      "doi": null
+    },
+    {
+      "key": "giampiccolo2007third",
+      "raw": "Danilo Giampiccolo, Bernardo Magnini, Ido Dagan, and Bill Dolan. 2007. The third PASCAL recognizing textual entailment challenge. In Proceedings of the ACL-PASCAL workshop on textual entailment and paraphrasing",
+      "authors": "Danilo Giampiccolo, Bernardo Magnini, Ido Dagan, and Bill Dolan. 2007",
+      "title": "The third PASCAL recognizing textual entailment challenge",
+      "venue": "In Proceedings of the ACL-PASCAL workshop on textual entailment and paraphrasing",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gokaslan2019openwebtext",
+      "raw": "Aaron Gokaslan and Vanya Cohen. 2019. Openwebtext corpus. http://web.archive.org/save/http://Skylion007.github.io/OpenWebTextCorpus",
+      "authors": "Aaron Gokaslan and Vanya Cohen. 2019",
+      "title": "Openwebtext corpus",
+      "venue": "",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hamborg2017newsplease",
+      "raw": "Felix Hamborg, Norman Meuschke, Corinna Breitinger, and Bela Gipp. 2017. news-please: A generic news crawler and extractor. In Proceedings of the 15th International Symposium of Information Science",
+      "authors": "Felix Hamborg, Norman Meuschke, Corinna Breitinger, and Bela Gipp. 2017",
+      "title": "news-please: A generic news crawler and extractor",
+      "venue": "In Proceedings of the 15th International Symposium of Information Science",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hendrycks2016gelu",
+      "raw": "Dan Hendrycks and Kevin Gimpel. 2016. Gaussian error linear units (gelus). arXiv preprint arXiv:1606.08415",
+      "authors": "Dan Hendrycks and Kevin Gimpel. 2016",
+      "title": "Gaussian error linear units (gelus)",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1606.08415",
+      "doi": null
+    },
+    {
+      "key": "spacy2",
+      "raw": "Matthew Honnibal and Ines Montani. 2017. spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing. To appear",
+      "authors": "Matthew Honnibal and Ines Montani. 2017",
+      "title": "spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing",
+      "venue": "To appear",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "howard2018universal",
+      "raw": "Jeremy Howard and Sebastian Ruder. 2018. Universal language model fine-tuning for text classification. arXiv preprint arXiv:1801.06146",
+      "authors": "Jeremy Howard and Sebastian Ruder. 2018",
+      "title": "Universal language model fine-tuning for text classification",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1801.06146",
+      "doi": null
+    },
+    {
+      "key": "iyer2016quora",
+      "raw": "Shankar Iyer, Nikhil Dandekar, and Korn\u00e9l Csernai. 2016. First quora dataset release: Question pairs. https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs",
+      "authors": "Shankar Iyer, Nikhil Dandekar, and Korn\u00e9l Csernai. 2016",
+      "title": "First quora dataset release: Question pairs",
+      "venue": "",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "joshi2019spanbert",
+      "raw": "Mandar Joshi, Danqi Chen, Yinhan Liu, Daniel S. Weld, Luke Zettlemoyer, and Omer Levy. 2019. SpanBERT: Improving pre-training by representing and predicting spans. arXiv preprint arXiv:1907.10529",
+      "authors": "Mandar Joshi, Danqi Chen, Yinhan Liu, Daniel S. Weld, Luke Zettlemoyer, and Omer Levy. 2019",
+      "title": "SpanBERT: Improving pre-training by representing and predicting spans",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1907.10529",
+      "doi": null
+    },
+    {
+      "key": "kingma2014adam",
+      "raw": "Diederik Kingma and Jimmy Ba. 2015. Adam: A method for stochastic optimization. In International Conference on Learning Representations (ICLR)",
+      "authors": "Diederik Kingma and Jimmy Ba. 2015",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "In International Conference on Learning Representations (ICLR)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kocijan2019surprisingly",
+      "raw": "Vid Kocijan, Ana-Maria Cretu, Oana-Maria Camburu, Yordan Yordanov, and Thomas Lukasiewicz. 2019. A surprisingly robust trick for winograd schema challenge. arXiv preprint arXiv:1905.06290",
+      "authors": "Vid Kocijan, Ana-Maria Cretu, Oana-Maria Camburu, Yordan Yordanov, and Thomas Lukasiewicz. 2019",
+      "title": "A surprisingly robust trick for winograd schema challenge",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1905.06290",
+      "doi": null
+    },
+    {
+      "key": "lai2017large",
+      "raw": "Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy. 2017. Race: Large-scale reading comprehension dataset from examinations. arXiv preprint arXiv:1704.04683",
+      "authors": "Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy. 2017",
+      "title": "Race: Large-scale reading comprehension dataset from examinations",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1704.04683",
+      "doi": null
+    },
+    {
+      "key": "lample2019cross",
+      "raw": "Guillaume Lample and Alexis Conneau. 2019. Cross-lingual language model pretraining. arXiv preprint arXiv:1901.07291",
+      "authors": "Guillaume Lample and Alexis Conneau. 2019",
+      "title": "Cross-lingual language model pretraining",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1901.07291",
+      "doi": null
+    },
+    {
+      "key": "levesque2011winograd",
+      "raw": "Hector J Levesque, Ernest Davis, and Leora Morgenstern. 2011. The Winograd schema challenge. In AAAI Spring Symposium: Logical Formalizations of Commonsense Reasoning",
+      "authors": "Hector J Levesque, Ernest Davis, and Leora Morgenstern. 2011",
+      "title": "The Winograd schema challenge",
+      "venue": "In AAAI Spring Symposium: Logical Formalizations of Commonsense Reasoning",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liu2019improving",
+      "raw": "Xiaodong Liu, Pengcheng He, Weizhu Chen, and Jianfeng Gao. 2019. Improving multi-task deep neural networks via knowledge distillation for natural language understanding. arXiv preprint arXiv:1904.09482",
+      "authors": "Xiaodong Liu, Pengcheng He, Weizhu Chen, and Jianfeng Gao. 2019",
+      "title": "Improving multi-task deep neural networks via knowledge distillation for natural language understanding",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1904.09482",
+      "doi": null
+    },
+    {
+      "key": "liu2019mtdnn",
+      "raw": "Xiaodong Liu, Pengcheng He, Weizhu Chen, and Jianfeng Gao. 2019. Multi-task deep neural networks for natural language understanding. arXiv preprint arXiv:1901.11504",
+      "authors": "Xiaodong Liu, Pengcheng He, Weizhu Chen, and Jianfeng Gao. 2019",
+      "title": "Multi-task deep neural networks for natural language understanding",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1901.11504",
+      "doi": null
+    },
+    {
+      "key": "mccann2017learned",
+      "raw": "Bryan McCann, James Bradbury, Caiming Xiong, and Richard Socher. 2017. Learned in translation: Contextualized word vectors. In Advances in Neural Information Processing Systems (NIPS), pages 6297--6308",
+      "authors": "Bryan McCann, James Bradbury, Caiming Xiong, and Richard Socher. 2017",
+      "title": "Learned in translation: Contextualized word vectors",
+      "venue": "In Advances in Neural Information Processing Systems (NIPS), pages 6297--6308",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "micikevicius2018mixed",
+      "raw": "Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory Diamos, Erich Elsen, David Garcia, Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh Venkatesh, and Hao Wu. 2018. Mixed precision training. In International Conference on Learning Representations",
+      "authors": "Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory Diamos, Erich Elsen, David Garcia, Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh Venkatesh, and Hao Wu. 2018",
+      "title": "Mixed precision training",
+      "venue": "In International Conference on Learning Representations",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nagel2016ccnews",
+      "raw": "Sebastian Nagel. 2016. Cc-news. http://web.archive.org/save/http://commoncrawl.org/2016/10/news-dataset-available",
+      "authors": "Sebastian Nagel. 2016",
+      "title": "Cc-news",
+      "venue": "",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ott2019fairseq",
+      "raw": "Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, and Michael Auli. 2019. fairseq: A fast, extensible toolkit for sequence modeling. In North American Association for Computational Linguistics (NAACL): System Demonstrations",
+      "authors": "Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, and Michael Auli. 2019",
+      "title": "fairseq: A fast, extensible toolkit for sequence modeling",
+      "venue": "In North American Association for Computational Linguistics (NAACL): System Demonstrations",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ott2018scaling",
+      "raw": "Myle Ott, Sergey Edunov, David Grangier, and Michael Auli. 2018. Scaling neural machine translation. In Proceedings of the Third Conference on Machine Translation (WMT)",
+      "authors": "Myle Ott, Sergey Edunov, David Grangier, and Michael Auli. 2018",
+      "title": "Scaling neural machine translation",
+      "venue": "In Proceedings of the Third Conference on Machine Translation (WMT)",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "paszke2017automatic",
+      "raw": "Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer. 2017. Automatic differentiation in PyTorch. In NIPS Autodiff Workshop",
+      "authors": "Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer. 2017",
+      "title": "Automatic differentiation in PyTorch",
+      "venue": "In NIPS Autodiff Workshop",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "peters2018deep",
+      "raw": "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. Deep contextualized word representations. In North American Association for Computational Linguistics (NAACL)",
+      "authors": "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018",
+      "title": "Deep contextualized word representations",
+      "venue": "In North American Association for Computational Linguistics (NAACL)",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2018gpt",
+      "raw": "Alec Radford, Karthik Narasimhan, Time Salimans, and Ilya Sutskever. 2018. Improving language understanding with unsupervised learning. Technical report, OpenAI",
+      "authors": "Alec Radford, Karthik Narasimhan, Time Salimans, and Ilya Sutskever. 2018",
+      "title": "Improving language understanding with unsupervised learning",
+      "venue": "Technical report, OpenAI",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2019language",
+      "raw": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. Language models are unsupervised multitask learners. Technical report, OpenAI",
+      "authors": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019",
+      "title": "Language models are unsupervised multitask learners",
+      "venue": "Technical report, OpenAI",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rajpurkar2018know",
+      "raw": "Pranav Rajpurkar, Robin Jia, and Percy Liang. 2018. Know what you don't know: Unanswerable questions for squad. In Association for Computational Linguistics (ACL)",
+      "authors": "Pranav Rajpurkar, Robin Jia, and Percy Liang. 2018",
+      "title": "Know what you don't know: Unanswerable questions for squad",
+      "venue": "In Association for Computational Linguistics (ACL)",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rajpurkar2016squad",
+      "raw": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016. SQuAD: 100,000+ questions for machine comprehension of text. In Empirical Methods in Natural Language Processing (EMNLP)",
+      "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016",
+      "title": "SQuAD: 100,000+ questions for machine comprehension of text",
+      "venue": "In Empirical Methods in Natural Language Processing (EMNLP)",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sennrich2016neural",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016. Neural machine translation of rare words with subword units. In Association for Computational Linguistics (ACL), pages 1715--1725",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "In Association for Computational Linguistics (ACL), pages 1715--1725",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "socher2013recursive",
+      "raw": "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D Manning, Andrew Ng, and Christopher Potts. 2013. Recursive deep models for semantic compositionality over a sentiment treebank. In Empirical Methods in Natural Language Processing (EMNLP)",
+      "authors": "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D Manning, Andrew Ng, and Christopher Potts. 2013",
+      "title": "Recursive deep models for semantic compositionality over a sentiment treebank",
+      "venue": "In Empirical Methods in Natural Language Processing (EMNLP)",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "song2019mass",
+      "raw": "Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, and Tie-Yan Liu. 2019. MASS: Masked sequence to sequence pre-training for language generation. In International Conference on Machine Learning (ICML)",
+      "authors": "Kaitao Song, Xu Tan, Tao Qin, Jianfeng Lu, and Tie-Yan Liu. 2019",
+      "title": "MASS: Masked sequence to sequence pre-training for language generation",
+      "venue": "In International Conference on Machine Learning (ICML)",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sun2019ernie",
+      "raw": "Yu Stephanie Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Xuyi Chen, Han Zhang, Xinlun Tian, Danxiang Zhu, Hao Tian, and Hua Wu. 2019. ERNIE: Enhanced representation through knowledge integration. arXiv preprint arXiv:1904.09223",
+      "authors": "Yu Stephanie Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Xuyi Chen, Han Zhang, Xinlun Tian, Danxiang Zhu, Hao Tian, and Hua Wu. 2019",
+      "title": "ERNIE: Enhanced representation through knowledge integration",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1904.09223",
+      "doi": null
+    },
+    {
+      "key": "trinh2018simple",
+      "raw": "Trieu H Trinh and Quoc V Le. 2018. A simple method for commonsense reasoning. arXiv preprint arXiv:1806.02847",
+      "authors": "Trieu H Trinh and Quoc V Le. 2018",
+      "title": "A simple method for commonsense reasoning",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1806.02847",
+      "doi": null
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in neural information processing systems",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017",
+      "title": "Attention is all you need",
+      "venue": "In Advances in neural information processing systems",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2019superglue",
+      "raw": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019. SuperGLUE: A stickier benchmark for general-purpose language understanding systems. arXiv preprint 1905.00537",
+      "authors": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019",
+      "title": "SuperGLUE: A stickier benchmark for general-purpose language understanding systems",
+      "venue": "arXiv preprint 1905.00537",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2019glue",
+      "raw": "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019. GLUE: A multi-task benchmark and analysis platform for natural language understanding. In International Conference on Learning Representations (ICLR)",
+      "authors": "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019",
+      "title": "GLUE: A multi-task benchmark and analysis platform for natural language understanding",
+      "venue": "In International Conference on Learning Representations (ICLR)",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "warstadt2018neural",
+      "raw": "Alex Warstadt, Amanpreet Singh, and Samuel R. Bowman. 2018. Neural network acceptability judgments. arXiv preprint 1805.12471",
+      "authors": "Alex Warstadt, Amanpreet Singh, and Samuel R. Bowman. 2018",
+      "title": "Neural network acceptability judgments",
+      "venue": "arXiv preprint 1805.12471",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams2018broad",
+      "raw": "Adina Williams, Nikita Nangia, and Samuel Bowman. 2018. A broad-coverage challenge corpus for sentence understanding through inference. In North American Association for Computational Linguistics (NAACL)",
+      "authors": "Adina Williams, Nikita Nangia, and Samuel Bowman. 2018",
+      "title": "A broad-coverage challenge corpus for sentence understanding through inference",
+      "venue": "In North American Association for Computational Linguistics (NAACL)",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yang2019xlnet",
+      "raw": "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, and Quoc V Le. 2019. Xlnet: Generalized autoregressive pretraining for language understanding. arXiv preprint arXiv:1906.08237",
+      "authors": "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, and Quoc V Le. 2019",
+      "title": "Xlnet: Generalized autoregressive pretraining for language understanding",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1906.08237",
+      "doi": null
+    },
+    {
+      "key": "you2019reducing",
+      "raw": "Yang You, Jing Li, Jonathan Hseu, Xiaodan Song, James Demmel, and Cho-Jui Hsieh. 2019. Reducing bert pre-training time from 3 days to 76 minutes. arXiv preprint arXiv:1904.00962",
+      "authors": "Yang You, Jing Li, Jonathan Hseu, Xiaodan Song, James Demmel, and Cho-Jui Hsieh. 2019",
+      "title": "Reducing bert pre-training time from 3 days to 76 minutes",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1904.00962",
+      "doi": null
+    },
+    {
+      "key": "zellers2019neuralfakenews",
+      "raw": "Rowan Zellers, Ari Holtzman, Hannah Rashkin, Yonatan Bisk, Ali Farhadi, Franziska Roesner, and Yejin Choi. 2019. Defending against neural fake news. arXiv preprint arXiv:1905.12616",
+      "authors": "Rowan Zellers, Ari Holtzman, Hannah Rashkin, Yonatan Bisk, Ali Farhadi, Franziska Roesner, and Yejin Choi. 2019",
+      "title": "Defending against neural fake news",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1905.12616",
+      "doi": null
+    },
+    {
+      "key": "moviebook",
+      "raw": "Yukun Zhu, Ryan Kiros, Richard Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. In arXiv preprint arXiv:1506.06724",
+      "authors": "Yukun Zhu, Ryan Kiros, Richard Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015",
+      "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+      "venue": "In arXiv preprint",
+      "year": 2015,
+      "arxivId": "1506.06724",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 837,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2424,
+      "numbers": 11,
+      "citations": 8
+    },
+    {
+      "kind": "related",
+      "title": "Background",
+      "chars": 169,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "related",
+      "title": "Setup",
+      "chars": 476,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Architecture",
+      "chars": 198,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "related",
+      "title": "Training Objectives",
+      "chars": 1328,
+      "numbers": 4,
+      "citations": 1
+    },
+    {
+      "kind": "related",
+      "title": "Optimization",
+      "chars": 399,
+      "numbers": 3,
+      "citations": 2
+    },
+    {
+      "kind": "related",
+      "title": "Data",
+      "chars": 269,
+      "numbers": 2,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Setup",
+      "chars": 86,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation",
+      "chars": 854,
+      "numbers": 3,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Data",
+      "chars": 1450,
+      "numbers": 6,
+      "citations": 7
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation",
+      "chars": 2615,
+      "numbers": 3,
+      "citations": 18
+    },
+    {
+      "kind": "results",
+      "title": "Training Procedure Analysis",
+      "chars": 249,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Static vs. Dynamic Masking",
+      "chars": 1512,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Model Input Format and Next Sentence Prediction",
+      "chars": 4103,
+      "numbers": 6,
+      "citations": 4
+    },
+    {
+      "kind": "results",
+      "title": "Training with large batches",
+      "chars": 1782,
+      "numbers": 8,
+      "citations": 3
+    },
+    {
+      "kind": "results",
+      "title": "Text Encoding",
+      "chars": 1708,
+      "numbers": 6,
+      "citations": 2
+    },
+    {
+      "kind": "other",
+      "title": "RoBERTa",
+      "chars": 4717,
+      "numbers": 14,
+      "citations": 2
+    },
+    {
+      "kind": "other",
+      "title": "GLUE Results",
+      "chars": 3547,
+      "numbers": 8,
+      "citations": 6
+    },
+    {
+      "kind": "other",
+      "title": "SQuAD Results",
+      "chars": 1927,
+      "numbers": 3,
+      "citations": 4
+    },
+    {
+      "kind": "other",
+      "title": "RACE Results",
+      "chars": 1003,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 748,
+      "numbers": 0,
+      "citations": 18
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 882,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 8,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 40,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "paszke2017automatic",
+      "stance": "inherits",
+      "cue": "implemented in",
+      "sentence": "We release our model, pretraining and fine-tuning code implemented in PyTorch [Paszke et al. 2017].",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "ordinal": 9,
+      "title": "Automatic differentiation in PyTorch",
+      "authors": "Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer. 2017",
+      "year": 2017,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 225.11997985839844,
+            "y0": 160.416748046875,
+            "x1": 290.1929626464844,
+            "y1": 171.3258514404297
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 173.9769287109375,
+            "x1": 290.19256591796875,
+            "y1": 184.8860321044922
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 187.537109375,
+            "x1": 154.73471069335938,
+            "y1": 198.4462127685547
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "devlin2018bert",
+        "stance": "inherits",
+        "cue": "we adopt",
+        "sentence": "For SQuAD V1.1 we adopt the same span prediction method as BERT [Devlin et al. 2019].",
+        "section": "Evaluation",
+        "sectionKind": "experiments",
+        "ordinal": 35,
+        "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+        "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019",
+        "year": 2019,
+        "arxivId": "1810.04805",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.9198989868164,
+              "y0": 92.85572052001953,
+              "x1": 290.1933288574219,
+              "y1": 103.76481628417969
+            },
+            {
+              "x0": 72.0,
+              "y0": 106.41590118408203,
+              "x1": 179.22573852539062,
+              "y1": 117.32499694824219
+            }
+          ]
+        }
+      },
+      {
+        "key": "moviebook",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the following text corpora: * BookCorpus [Zhu et al. 2015] plus English Wikipedia.",
+        "section": "Data",
+        "sectionKind": "experiments",
+        "ordinal": 19,
+        "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+        "authors": "Yukun Zhu, Ryan Kiros, Richard Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. 2015",
+        "year": 2015,
+        "arxivId": "1506.06724",
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "ott2019fairseq",
+        "stance": "inherits",
+        "cue": "reimplement",
+        "sentence": "We reimplement BERT in fairseq [Ott et al. 2019].",
+        "section": "Implementation",
+        "sectionKind": "experiments",
+        "ordinal": 16,
+        "title": "fairseq: A fast, extensible toolkit for sequence modeling",
+        "authors": "Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, and Michael Auli. 2019",
+        "year": 2019,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.32000732421875,
+              "y0": 701.6159057617188,
+              "x1": 474.78155517578125,
+              "y1": 712.5250244140625
+            }
+          ]
+        }
+      },
+      {
+        "key": "paszke2017automatic",
+        "stance": "inherits",
+        "cue": "implemented in",
+        "sentence": "We release our model, pretraining and fine-tuning code implemented in PyTorch [Paszke et al. 2017].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 9,
+        "title": "Automatic differentiation in PyTorch",
+        "authors": "Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer. 2017",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 225.11997985839844,
+              "y0": 160.416748046875,
+              "x1": 290.1929626464844,
+              "y1": 171.3258514404297
+            },
+            {
+              "x0": 72.00004577636719,
+              "y0": 173.9769287109375,
+              "x1": 290.19256591796875,
+              "y1": 184.8860321044922
+            },
+            {
+              "x0": 72.00004577636719,
+              "y0": 187.537109375,
+              "x1": 154.73471069335938,
+              "y1": 198.4462127685547
+            }
+          ]
+        }
+      },
+      {
+        "key": "rajpurkar2016squad",
+        "stance": "inherits",
+        "cue": "We evaluate on",
+        "sentence": "We evaluate on two versions of SQuAD: V1.1 and V2.0 [Rajpurkar et al. 2016; Rajpurkar et al. 2018].",
+        "section": "Evaluation",
+        "sectionKind": "experiments",
+        "ordinal": 34,
+        "title": "SQuAD: 100,000+ questions for machine comprehension of text",
+        "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.32000732421875,
+              "y0": 584.9752807617188,
+              "x1": 525.5350341796875,
+              "y1": 595.8843994140625
+            },
+            {
+              "x0": 307.32000732421875,
+              "y0": 598.5350341796875,
+              "x1": 348.174560546875,
+              "y1": 609.4441528320312
+            }
+          ]
+        }
+      },
+      {
+        "key": "rajpurkar2018know",
+        "stance": "inherits",
+        "cue": "We evaluate on",
+        "sentence": "We evaluate on two versions of SQuAD: V1.1 and V2.0 [Rajpurkar et al. 2016; Rajpurkar et al. 2018].",
+        "section": "Evaluation",
+        "sectionKind": "experiments",
+        "ordinal": 34,
+        "title": "Know what you don't know: Unanswerable questions for squad",
+        "authors": "Pranav Rajpurkar, Robin Jia, and Percy Liang. 2018",
+        "year": 2018,
+        "arxivId": "1806.03822",
+        "inCorpus": true,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.32000732421875,
+              "y0": 584.9752807617188,
+              "x1": 525.5350341796875,
+              "y1": 595.8843994140625
+            },
+            {
+              "x0": 307.32000732421875,
+              "y0": 598.5350341796875,
+              "x1": 348.174560546875,
+              "y1": 609.4441528320312
+            }
+          ]
+        }
+      },
+      {
+        "key": "spacy2",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For a given input sentence, we use spaCy [Honnibal et al. 2017] to extract additional candidate noun phrases from the sentence and finetune our model so that it assigns higher scores to positive referent phrases than for any of the generated negative candidate phrases.",
+        "section": "GLUE Results",
+        "sectionKind": "other",
+        "ordinal": 49,
+        "title": "spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing",
+        "authors": "Matthew Honnibal and Ines Montani. 2017",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 281.7598876953125,
+              "y0": 625.6558227539062,
+              "x1": 290.21441650390625,
+              "y1": 636.56494140625
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 639.2160034179688,
+              "x1": 290.2033386230469,
+              "y1": 650.1251220703125
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 652.7758178710938,
+              "x1": 289.9632263183594,
+              "y1": 663.6849365234375
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 666.3356323242188,
+              "x1": 290.1933288574219,
+              "y1": 677.2447509765625
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 679.8953857421875,
+              "x1": 290.0077819824219,
+              "y1": 690.8045043945312
+            }
+          ]
+        }
+      },
+      {
+        "key": "wang2019superglue",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Instead we use the reformatted WNLI data from SuperGLUE [Wang et al. 2019], which indicates the span of the query pronoun and referent.",
+        "section": "GLUE Results",
+        "sectionKind": "other",
+        "ordinal": 48,
+        "title": "SuperGLUE: A stickier benchmark for general-purpose language understanding systems",
+        "authors": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019",
+        "year": 2019,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 165.1199951171875,
+              "y0": 571.5358276367188,
+              "x1": 290.20367431640625,
+              "y1": 582.4449462890625
+            },
+            {
+              "x0": 72.00000762939453,
+              "y0": 585.0960083007812,
+              "x1": 247.40774536132812,
+              "y1": 596.005126953125
+            }
+          ]
+        }
+      },
+      {
+        "key": "yang2019xlnet",
+        "stance": "compares",
+        "cue": "competitive with",
+        "sentence": "Overall, we re-establish that BERT's masked language model training objective is competitive with other recently proposed training objectives such as perturbed autoregressive language modeling [Yang et al. 2019].[It is possible that these other methods could also improve with more tuning.]",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 8,
+        "title": "Xlnet: Generalized autoregressive pretraining for language understanding",
+        "authors": "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, and Quoc V Le. 2019",
+        "year": 2019,
+        "arxivId": "1906.08237",
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.0,
+          "pageHeight": 842.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.31982421875,
+              "y0": 629.9754028320312,
+              "x1": 525.392578125,
+              "y1": 640.884521484375
+            },
+            {
+              "x0": 307.31982421875,
+              "y0": 643.5352172851562,
+              "x1": 525.2838745117188,
+              "y1": 654.4443359375
+            },
+            {
+              "x0": 307.31982421875,
+              "y0": 657.094970703125,
+              "x1": 525.2835083007812,
+              "y1": 668.0040893554688
+            },
+            {
+              "x0": 307.31982421875,
+              "y0": 670.65478515625,
+              "x1": 525.3933715820312,
+              "y1": 681.5639038085938
+            },
+            {
+              "x0": 307.31982421875,
+              "y0": 684.214599609375,
+              "x1": 321.17437744140625,
+              "y1": 695.1237182617188
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "For our study, we focus on gathering as much data as possible for experimentation, allowing us to match the overall quality and quantity of data as appropriate for each comparison.",
+      "anchorText": "For our study, we focus on gathering as much data as possible for experimentation, allowing us to match the overall quality and quantity of data as appropriate for each comparison.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Data",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 151.6797332763672,
+            "y0": 443.7358093261719,
+            "x1": 290.19256591796875,
+            "y1": 454.6449279785156
+          },
+          {
+            "x0": 72.0,
+            "y0": 457.2960205078125,
+            "x1": 289.9522705078125,
+            "y1": 468.20513916015625
+          },
+          {
+            "x0": 72.0,
+            "y0": 470.8562316894531,
+            "x1": 290.2154846191406,
+            "y1": 481.7653503417969
+          },
+          {
+            "x0": 72.0,
+            "y0": 484.41644287109375,
+            "x1": 290.0726623535156,
+            "y1": 495.3255615234375
+          },
+          {
+            "x0": 72.0,
+            "y0": 497.9766540527344,
+            "x1": 89.72728729248047,
+            "y1": 508.8857727050781
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We find that using individual sentences hurts performance on downstream tasks, which we hypothesize is because the model is not able to learn long-range dependencies.",
+      "anchorText": "We find that using individual sentences hurts performance on downstream tasks, which we hypothesize is because the model is not able to learn long-range dependencies.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we hypothesize",
+      "section": "Model Input Format and Next Sentence Prediction",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.84042358398438,
+            "y0": 714.09619140625,
+            "x1": 290.31280517578125,
+            "y1": 725.0053100585938
+          },
+          {
+            "x0": 72.00018310546875,
+            "y0": 727.528076171875,
+            "x1": 290.1278076171875,
+            "y1": 738.4371337890625
+          },
+          {
+            "x0": 72.00018310546875,
+            "y0": 741.2161865234375,
+            "x1": 290.19317626953125,
+            "y1": 752.1253051757812
+          },
+          {
+            "x0": 72.00018310546875,
+            "y0": 754.7760009765625,
+            "x1": 266.247802734375,
+            "y1": 765.6851196289062
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Nevertheless, we believe the advantages of a universal encoding scheme outweighs the minor degredation in performance and use this encoding in the remainder of our experiments.",
+      "anchorText": "Nevertheless, we believe the advantages of a universal encoding scheme outweighs the minor degredation in performance and use this encoding in the remainder of our experiments.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Text Encoding",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 504.0002746582031,
+            "y0": 256.1756591796875,
+            "x1": 525.5130615234375,
+            "y1": 267.08477783203125
+          },
+          {
+            "x0": 307.3200988769531,
+            "y0": 269.73583984375,
+            "x1": 525.27392578125,
+            "y1": 280.64495849609375
+          },
+          {
+            "x0": 307.3200988769531,
+            "y0": 283.1756591796875,
+            "x1": 525.3928833007812,
+            "y1": 294.08477783203125
+          },
+          {
+            "x0": 307.3200988769531,
+            "y0": 296.73583984375,
+            "x1": 525.5348510742188,
+            "y1": 307.64495849609375
+          },
+          {
+            "x0": 307.3200988769531,
+            "y0": 310.2960205078125,
+            "x1": 462.56781005859375,
+            "y1": 321.20513916015625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We expect future work may further improve these results by incorporating more sophisticated multi-task finetuning procedures.",
+      "anchorText": "We expect future work may further improve these results by incorporating more sophisticated multi-task finetuning procedures.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We expect",
+      "section": "GLUE Results",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.0,
+        "pageHeight": 842.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 384.600341796875,
+            "y0": 557.9754028320312,
+            "x1": 525.3930053710938,
+            "y1": 568.884521484375
+          },
+          {
+            "x0": 307.3201904296875,
+            "y0": 571.53564453125,
+            "x1": 525.5238037109375,
+            "y1": 582.4447631835938
+          },
+          {
+            "x0": 307.3201904296875,
+            "y0": 585.0958251953125,
+            "x1": 511.0470886230469,
+            "y1": 596.0049438476562
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 0,
+    "shown": 0,
+    "bare": 4
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 34,
+    "rate": 0.85
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2019-07-26"
+  }
+}

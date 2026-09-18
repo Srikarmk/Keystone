@@ -1,0 +1,2799 @@
+{
+  "id": "1606.04199",
+  "title": "Deep Recurrent Models with Fast-Forward Connections for Neural Machine Translation",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1606.04199",
+  "numbers": [
+    {
+      "value": "56.8%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "There are such sentences (56.8%).",
+      "status": "exact",
+      "table": "Table 9",
+      "row": "Deep-Att",
+      "cell": "56.8",
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "English-to-French task: BLEU scores of single neural models. We also list the conventional SMT system for comparison.",
+      "label": "tab:Results-BLEU-Single",
+      "numericCells": 22,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Data",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Voc",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Enc-Dec (Luong,2015)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.5",
+            "value": "31.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SMT (Durrani,2014)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37.0",
+            "value": "37.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep-ED (Ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36.3",
+            "value": "36.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att (Ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch (Bahdanau,2014)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "12M",
+            "value": "12000000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "30K",
+            "value": "30000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "28.5",
+            "value": "28.5",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-LV (Jean,2015)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "12M",
+            "value": "12000000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "500K",
+            "value": "500000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "32.7",
+            "value": "32.7",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "SMT (Schwenk,2014)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "12M",
+            "value": "12000000",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "33.3",
+            "value": "33.3",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att (Ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "12M",
+            "value": "12000000",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "30K",
+            "value": "30000",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "35.9",
+            "value": "35.9",
+            "emphasised": false,
+            "block": 6
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 110.81429290771484,
+            "y0": 555.9144287109375,
+            "x1": 298.7985534667969,
+            "y1": 565.8770141601562
+          },
+          {
+            "x0": 72.0,
+            "y0": 567.8694458007812,
+            "x1": 298.7986145019531,
+            "y1": 577.83203125
+          },
+          {
+            "x0": 72.0,
+            "y0": 579.824462890625,
+            "x1": 135.08316040039062,
+            "y1": 589.7870483398438
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "The effect of F-F. We list the BLEU scores of Deep-Att with and without F-F. Because of the parameter exploding problem, we can not list the model performance of larger depth without F-F. For and , F-F connections only contribute to the representation at interface part (see Eq. ).",
+      "label": "tab:Results-BLEU-SingleCheck",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F-F",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "No",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.2",
+            "value": "31.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32.3",
+            "value": "32.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "No",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33.3",
+            "value": "33.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.7",
+            "value": "34.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "BLEU scores with different LSTM layer width in Deep-Att. After using two times larger LSTM layer width of , we can only obtain BLEU score of . It is still behind the corresponding Deep-Att with F-F.",
+      "label": "tab:Results-BLEU-SizeCheck",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F-F",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "width",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "No",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.3",
+            "value": "33.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "No",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1024",
+            "value": "1024",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.8",
+            "value": "33.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.7",
+            "value": "34.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "The effect of the interleaved bi-directional encoder. We list the BLEU scores of our largest Deep-Att and Deep-ED models. The encoder term Bi denotes that the interleaved bi-directional encoder is used. Uni denotes a model where all LSTM layers work in forward direction.",
+      "label": "tab:Results-BLEU-BiCheck",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Encoder",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Bi",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Uni",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.2",
+            "value": "36.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-ED",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Bi",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.3",
+            "value": "36.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep-ED",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Uni",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.9",
+            "value": "34.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 112.50792694091797,
+            "y0": 305.0804443359375,
+            "x1": 298.798583984375,
+            "y1": 315.0430603027344
+          },
+          {
+            "x0": 72.0,
+            "y0": 317.0354309082031,
+            "x1": 298.798583984375,
+            "y1": 326.998046875
+          },
+          {
+            "x0": 72.0,
+            "y0": 328.99041748046875,
+            "x1": 298.798583984375,
+            "y1": 338.9530334472656
+          },
+          {
+            "x0": 72.0,
+            "y0": 340.9454040527344,
+            "x1": 298.7986145019531,
+            "y1": 350.90802001953125
+          },
+          {
+            "x0": 72.0,
+            "y0": 352.900390625,
+            "x1": 298.7984924316406,
+            "y1": 362.8630065917969
+          },
+          {
+            "x0": 72.0,
+            "y0": 364.8553771972656,
+            "x1": 109.90767669677734,
+            "y1": 374.8179931640625
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "BLEU score of Deep-Att with different model depth. With and , F-F connections only contribute to the representation at interface part\u00a3\u00ac where is included (see Eq. ).",
+      "label": "tab:Results-BLEU-SingleDepthCheck",
+      "numericCells": 20,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F-F",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Col",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32.3",
+            "value": "32.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.7",
+            "value": "34.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.0",
+            "value": "36.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.6",
+            "value": "36.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Comparison of encoders with different number of columns and LSTM layer width.",
+      "label": "tab:Results-BLEU-SingleColCheck",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F-F",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Col",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "width",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.6",
+            "value": "36.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1024",
+            "value": "1024",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.7",
+            "value": "36.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 352.2235107421875,
+            "y0": 310.4794616699219,
+            "x1": 539.99853515625,
+            "y1": 320.44207763671875
+          },
+          {
+            "x0": 313.20001220703125,
+            "y0": 322.4344482421875,
+            "x1": 453.7723083496094,
+            "y1": 332.3970642089844
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "English-to-German task: BLEU scores of single neural models. We also list the conventional SMT system for comparison.",
+      "label": "tab:Results-BLEU-SingleGerman",
+      "numericCells": 11,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Data",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Voc",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch (Jean,2015)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.5M",
+            "value": "4500000.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50K",
+            "value": "50000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.5",
+            "value": "16.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNNsearch-LV (Jean,2015)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.5M",
+            "value": "4500000.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "500K",
+            "value": "500000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.9",
+            "value": "16.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SMT (Buck,2014)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.5M",
+            "value": "4500000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20.7",
+            "value": "20.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att (Ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "4.5M",
+            "value": "4500000.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "160K",
+            "value": "160000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "20.6",
+            "value": "20.6",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 350.4900207519531,
+            "y0": 668.1074829101562,
+            "x1": 539.9984741210938,
+            "y1": 678.070068359375
+          },
+          {
+            "x0": 313.20001220703125,
+            "y0": 680.0634765625,
+            "x1": 539.9985961914062,
+            "y1": 690.0260620117188
+          },
+          {
+            "x0": 313.20001220703125,
+            "y0": 692.0184326171875,
+            "x1": 376.2831726074219,
+            "y1": 701.9810180664062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "BLEU scores of different models. The first two blocks are our results of two single models and models with post processing. In the last block we list two baselines of the best conventional SMT system and NMT system.",
+      "label": "tab:Results-BLEU-Post",
+      "numericCells": 20,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Data",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Voc",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-ED",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Single",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.3",
+            "value": "36.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Single",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Single+PosUnk",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "39.2",
+            "value": "39.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Ensemble",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "38.9",
+            "value": "38.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Ensemble+PosUnk",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.4",
+            "value": "40.4",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "SMT",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Durrani, 2014",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "37.0",
+            "value": "37.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Enc-Dec",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Ensemble+PosUnk",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "80K",
+            "value": "80000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "37.5",
+            "value": "37.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 117.01102447509766,
+            "y0": 438.2314453125,
+            "x1": 298.7986145019531,
+            "y1": 448.1940612792969
+          },
+          {
+            "x0": 72.0,
+            "y0": 450.1864318847656,
+            "x1": 298.798583984375,
+            "y1": 460.1490478515625
+          },
+          {
+            "x0": 72.0,
+            "y0": 462.14141845703125,
+            "x1": 298.79852294921875,
+            "y1": 472.1040344238281
+          },
+          {
+            "x0": 72.0,
+            "y0": 474.0964050292969,
+            "x1": 298.7985534667969,
+            "y1": 484.05902099609375
+          },
+          {
+            "x0": 72.0,
+            "y0": 486.0523986816406,
+            "x1": 102.16674041748047,
+            "y1": 496.0150146484375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 9",
+      "caption": "BLEU scores of the subset of the test set without considering unknown words.",
+      "label": "tab:Results-BLEU-SubsetWOunk",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test set",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ratio(%)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ensemble",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.9",
+            "value": "38.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SMT(Durrani)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.0",
+            "value": "37.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Subset",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "56.8",
+            "value": "56.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.3",
+            "value": "40.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ensemble",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Subset",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "56.8",
+            "value": "56.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41.4",
+            "value": "41.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "SMT(Durrani)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Subset",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "56.8",
+            "value": "56.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37.5",
+            "value": "37.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.2103042602539,
+            "y0": 167.4774932861328,
+            "x1": 298.7985534667969,
+            "y1": 177.44009399414062
+          },
+          {
+            "x0": 72.0,
+            "y0": 179.43348693847656,
+            "x1": 187.03807067871094,
+            "y1": 189.39608764648438
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\@BIBLABEL": "\\@emptybiblabel",
+    "\\@emptybiblabel": "",
+    "\\change": ""
+  },
+  "references": [
+    {
+      "key": "Bahdanau-Bengio-ICLR2015",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015. Neural machine translation by jointly learning to align and translate. In Proceedings of International Conference on Learning Representations",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "2015",
+      "venue": "Neural machine translation by jointly learning to align and translate In Proceedings of International Conference on Learning Representations",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-Frasconi-Trans1994",
+      "raw": "Yoshua Bengio, Patrice Simard, and Paolo Frasconi. 1994. Learning long-term dependencies with gradient descent is difficult. IEEE Transactions on Neural Networks, 5(2):157--166",
+      "authors": "Yoshua Bengio, Patrice Simard, and Paolo Frasconi",
+      "title": "1994",
+      "venue": "Learning long-term dependencies with gradient descent is difficult IEEE Transactions on Neural Networks, 5(2):157--166",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-ARXIV2012",
+      "raw": "Yoshua Bengio, 2012. Practical Recommendations for Gradient-Based Training of Deep Architectures, pages 437--478. Springer Berlin Heidelberg, Berlin, Heidelberg",
+      "authors": "Yoshua Bengio, 2012",
+      "title": "Practical Recommendations for Gradient-Based Training of Deep Architectures, pages 437--478",
+      "venue": "Springer Berlin Heidelberg, Berlin, Heidelberg",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Buck-Ooyen-2014",
+      "raw": "Christian Buck, Kenneth Heafield, and Bas van Ooyen. 2014. N-gram counts and language models from the common crawl. In Proceedings of the Language Resources and Evaluation Conference",
+      "authors": "Christian Buck, Kenneth Heafield, and Bas van Ooyen",
+      "title": "2014",
+      "venue": "N-gram counts and language models from the common crawl In Proceedings of the Language Resources and Evaluation Conference",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cho-Bengio-EMNLP2014",
+      "raw": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014. Learning phrase representations using rnn encoder-decoder for statistical machine translation. In Proceedings of the Empiricial Methods in Natural Language Processing",
+      "authors": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio",
+      "title": "2014",
+      "venue": "Learning phrase representations using rnn encoder-decoder for statistical machine translation In Proceedings of the Empiricial Methods in Natural Language Processing",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Durrani-Heafield-WMT2014",
+      "raw": "Nadir Durrani, Barry Haddow, Philipp Koehn, and Kenneth Heafield. 2014. Edinburgh's phrase-based machine translation systems for WMT-14. In Proceedings of the Ninth Workshop on Statistical Machine Translation",
+      "authors": "Nadir Durrani, Barry Haddow, Philipp Koehn, and Kenneth Heafield",
+      "title": "2014",
+      "venue": "Edinburgh's phrase-based machine translation systems for WMT-14 In Proceedings of the Ninth Workshop on Statistical Machine Translation",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Forcada-Neco-1997",
+      "raw": "Mikel L. Forcada and Ram\\'on P. \\ Neco. 1997. Recursive hetero-associative memories for translation. In Biological and Artificial Computation: From Neuroscience to Technology, Berlin, Heidelberg. Springer Berlin Heidelberg",
+      "authors": "Mikel L. Forcada and Ram\\'on P. \\ Neco",
+      "title": "1997",
+      "venue": "Recursive hetero-associative memories for translation In Biological and Artificial Computation: From Neuroscience to Technology, Berlin, Heidelberg. Springer Berlin Heidelberg",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves-Schmidhuber-TPAMI2009",
+      "raw": "Alex Graves, Marcus Liwicki, Santiago Fernandez, Roman Bertolami, Horst Bunke, and J\\\"urgen Schmid\\-huber. 2009. A novel connectionist system for unconstrained handwriting recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence, 31(5):855--868",
+      "authors": "Alex Graves, Marcus Liwicki, Santiago Fernandez, Roman Bertolami, Horst Bunke, and J\\\"urgen Schmid\\-huber",
+      "title": "2009",
+      "venue": "A novel connectionist system for unconstrained handwriting recognition IEEE Transactions on Pattern Analysis and Machine Intelligence, 31(5):855--868",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "He-Sun-ARXIV2015",
+      "raw": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. 2016. Deep residual learning for image recognition. In IEEE Conference on Computer Vision and Pattern Recognition",
+      "authors": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun",
+      "title": "2016",
+      "venue": "Deep residual learning for image recognition In IEEE Conference on Computer Vision and Pattern Recognition",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hermann-Blunsom-Arxiv2015",
+      "raw": "Karl Moritz Hermann, Tom\\'a s Ko cisk\\'y, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015. Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems",
+      "authors": "Karl Moritz Hermann, Tom\\'a s Ko cisk\\'y, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom",
+      "title": "2015",
+      "venue": "Teaching machines to read and comprehend In Advances in Neural Information Processing Systems",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton-Salakhutdinov-Arxiv2012",
+      "raw": "Geoffrey E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. 2012. Improving neural networks by preventing co-adaptation of feature detectors. arXiv:1207.0580",
+      "authors": "Geoffrey E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov",
+      "title": "2012",
+      "venue": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "year": 2012,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "Hochreiter-Schmidhuber-NC1997",
+      "raw": "Sepp Hochreiter and J\\\"urgen Schmid\\-huber. 1997. Long short-term memory. Neural Computation, 9(8):1735--1780",
+      "authors": "Sepp Hochreiter and J\\\"urgen Schmid\\-huber",
+      "title": "1997",
+      "venue": "Long short-term memory Neural Computation, 9(8):1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Jean-Bengio-ACL2015",
+      "raw": "S\\'ebastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio. 2015. On using very large target vocabulary for neural machine translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing",
+      "authors": "S\\'ebastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio",
+      "title": "2015",
+      "venue": "On using very large target vocabulary for neural machine translation In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kalchbrenner-Blunsom-EMNLP2013",
+      "raw": "Nal Kalchbrenner and Phil Blunsom. 2013. Recurrent continuous translation models. In Proceedings of the Empirical Methods in Natural Language Processing",
+      "authors": "Nal Kalchbrenner and Phil Blunsom",
+      "title": "2013",
+      "venue": "Recurrent continuous translation models In Proceedings of the Empirical Methods in Natural Language Processing",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kalchbrenner-Graves-Arxiv2015",
+      "raw": "Nal Kalchbrenner, Ivo Danihelka, and Alex Graves. 2016. Grid long short-term memory. In Proceedings of International Conference on Learning Representations",
+      "authors": "Nal Kalchbrenner, Ivo Danihelka, and Alex Graves",
+      "title": "2016",
+      "venue": "Grid long short-term memory In Proceedings of International Conference on Learning Representations",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kingma-Ba-ICLR2015",
+      "raw": "Diederik P. Kingma and Jimmy Lei Ba. 2015. Adam: A method for stochastic optimization. In Proceedings of International Conference on Learning Representations",
+      "authors": "Diederik P. Kingma and Jimmy Lei Ba",
+      "title": "2015",
+      "venue": "Adam: A method for stochastic optimization In Proceedings of International Conference on Learning Representations",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Koehn-Marcu-NAACL2003",
+      "raw": "P. Koehn, F. J. Och, and D. Marcu. 2003. Statistical phrase-based translation. In Proceedings of the North American Chapter of the Association for Computational Linguistics on Human Language Technology",
+      "authors": "P. Koehn, F. J. Och, and D. Marcu",
+      "title": "2003",
+      "venue": "Statistical phrase-based translation In Proceedings of the North American Chapter of the Association for Computational Linguistics on Human Language Technology",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lecun-Haffner-IEEE1998",
+      "raw": "Yann LeCun, L\\'eon Bottou, Yoshua Bengio, and Patrick Haffner. 1998. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11):2278--2324",
+      "authors": "Yann LeCun, L\\'eon Bottou, Yoshua Bengio, and Patrick Haffner",
+      "title": "1998",
+      "venue": "Gradient-based learning applied to document recognition Proceedings of the IEEE, 86(11):2278--2324",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Liang-Klein-NAACL06",
+      "raw": "Percy Liang, Ben Taskar, and Dan Klein. 2006. Alignment by agreement. In Proceedings of the North American Chapter of the Association of Computational Linguistics on Human Language Technology",
+      "authors": "Percy Liang, Ben Taskar, and Dan Klein",
+      "title": "2006",
+      "venue": "Alignment by agreement In Proceedings of the North American Chapter of the Association of Computational Linguistics on Human Language Technology",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Luong-Zaremba-ACL2015",
+      "raw": "Thang Luong, Ilya Sutskever, Quoc Le, Oriol Vinyals, and Wojciech Zaremba. 2015. Addressing the rare word problem in neural machine translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing",
+      "authors": "Thang Luong, Ilya Sutskever, Quoc Le, Oriol Vinyals, and Wojciech Zaremba",
+      "title": "2015",
+      "venue": "Addressing the rare word problem in neural machine translation In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mao-Yuille-ICLR2015",
+      "raw": "Junhua Mao, Wei Xu, Yi Yang, Jiang Wang, Zhiheng Huang, and Alan L. Yuille. 2015. Deep captioning with multimodal recurrent neural networks (m-RNN). In Proceedings of International Conference on Learning Representations",
+      "authors": "Junhua Mao, Wei Xu, Yi Yang, Jiang Wang, Zhiheng Huang, and Alan L. Yuille",
+      "title": "2015",
+      "venue": "Deep captioning with multimodal recurrent neural networks (m-RNN) In Proceedings of International Conference on Learning Representations",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Schwenk-2014",
+      "raw": "Holger Schwenk. 2014. http:$//$www-lium.univ-lemans.fr$/$$ $schwenk$/$cslm\\_joint\\_paper [online; accessed 03-september-2014]. University Le Mans",
+      "authors": "Holger Schwenk",
+      "title": "2014",
+      "venue": "http:$//$www-lium.univ-lemans.fr$/$$ $schwenk$/$cslm\\_joint\\_paper [online; accessed 03-september-2014] University Le Mans",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Srivastava-Schmidhuber-Arxiv2015",
+      "raw": "Rupesh Kumar Srivastava, Klaus Greff, and J\\\"urgen Schmidhuber. 2015. Highway networks. In Proceedings of the 32nd International Conference on Machine Learning, Deep Learning Workshop",
+      "authors": "Rupesh Kumar Srivastava, Klaus Greff, and J\\\"urgen Schmidhuber",
+      "title": "2015",
+      "venue": "Highway networks In Proceedings of the 32nd International Conference on Machine Learning, Deep Learning Workshop",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever-Le-NIPS2014",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc Le. 2014. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc Le",
+      "title": "2014",
+      "venue": "Sequence to sequence learning with neural networks In Advances in Neural Information Processing Systems",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Szegedy-Rabinovich-CVPR2015",
+      "raw": "Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich. 2015. Going deeper with convolutions. In IEEE Conference on Computer Vision and Pattern Recognition",
+      "authors": "Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich",
+      "title": "2015",
+      "venue": "Going deeper with convolutions In IEEE Conference on Computer Vision and Pattern Recognition",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Tieleman-Hinton-Lecture2012",
+      "raw": "Tijmen Tieleman and Geoffrey Hinton. 2012. Lecture 6.5-rmsprop: Divide the gradient by a running average of its recent magnitude. COURSERA: Neural Networks for Machine Learning, 4",
+      "authors": "Tijmen Tieleman and Geoffrey Hinton",
+      "title": "2012",
+      "venue": "Lecture 6.5-rmsprop: Divide the gradient by a running average of its recent magnitude COURSERA: Neural Networks for Machine Learning, 4",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Vinyals-Le-ICML2015",
+      "raw": "Oriol Vinyals and Quoc Le. 2015. A neural conversational model. In Proceedings of the 32nd International Conference on Machine Learning, Deep Learning Workshop",
+      "authors": "Oriol Vinyals and Quoc Le",
+      "title": "2015",
+      "venue": "A neural conversational model In Proceedings of the 32nd International Conference on Machine Learning, Deep Learning Workshop",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yao-Dyer-ARXIV2015",
+      "raw": "Kaisheng Yao, Trevor Cohn, Katerina Vylomova, Kevin Duh, and Chris Dyer. 2015. Depth-gated LSTM. arXiv:1508.03790",
+      "authors": "Kaisheng Yao, Trevor Cohn, Katerina Vylomova, Kevin Duh, and Chris Dyer",
+      "title": "2015",
+      "venue": "Depth-gated LSTM",
+      "year": 2015,
+      "arxivId": "1508.03790",
+      "doi": null
+    },
+    {
+      "key": "Yu-Zhou-ARXIV2015",
+      "raw": "Yang Yu, Wei Zhang, Chung-Wei Hang, Bing Xiang, and Bowen Zhou. 2015. Empirical study on deep learning models for QA. arXiv:1510.07526",
+      "authors": "Yang Yu, Wei Zhang, Chung-Wei Hang, Bing Xiang, and Bowen Zhou",
+      "title": "2015",
+      "venue": "Empirical study on deep learning models for QA",
+      "year": 2015,
+      "arxivId": "1510.07526",
+      "doi": null
+    },
+    {
+      "key": "Zeiler-ARXIV2012",
+      "raw": "Matthew D. Zeiler. 2012. ADADELTA: An adaptive learning rate method. arXiv:1212.5701",
+      "authors": "Matthew D. Zeiler",
+      "title": "2012",
+      "venue": "ADADELTA: An adaptive learning rate method",
+      "year": 2012,
+      "arxivId": "1212.5701",
+      "doi": null
+    },
+    {
+      "key": "Zhou-Xu-ACL2015",
+      "raw": "Jie Zhou and Wei Xu. 2015. End-to-end learning of semantic role labeling using recurrent neural networks. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing",
+      "authors": "Jie Zhou and Wei Xu",
+      "title": "2015",
+      "venue": "End-to-end learning of semantic role labeling using recurrent neural networks In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "p (\\boldsymbol{y}\\mid\\boldsymbol{x};\\boldsymbol{\\theta}) = \\prod_{j=1}^{m+1}\n  p(y_j\\mid\\boldsymbol{y}_{0:j-1},\\boldsymbol{x};\\boldsymbol{\\theta})",
+      "environment": "equation",
+      "labels": [
+        "eqn:NMT-Model-Likelihood"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "h_t &=& \\sigma(W_{f}x_{t}+W_{r}h_{t-1}) \\nonumber \\\\\n      &=& \\mathrm{RNN}~(W_f x_t, h_{t-1}) \\nonumber \\\\\n      &=& \\mathrm{RNN}~(f_t, h_{t-1}) ,",
+      "environment": "eqnarray",
+      "labels": [
+        "eqn:NMT-Model-Recurrent"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "f^k_t &=& W_{f}^k \\cdot [f^{k-1}_t, h^{k-1}_t],  ~~~k>1 \\nonumber\\\\\nf^k_t &=& W_{f}^k x_t ~~~~~~~~~~~~~~~~~~~~~~~~k=1 \\nonumber\\\\\nh^k_t &=& \\mathrm{RNN}^k~(f^k_t, h^k_{t+(-1)^k})",
+      "environment": "eqnarray",
+      "labels": [
+        "eqn:NMT-Model-LSTM"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "[z, z_\\rho, z_\\phi, z_\\pi] &=& f_t + W_r h_{t-1} \\nonumber\\\\\n s_t &=& \\sigma_i(z) \\circ \\sigma_g(z_\\rho + s_{t-1} \\circ \\theta_\\rho)+ \\nonumber\\\\\n  && \\sigma_g(z_\\phi + s_{t-1} \\circ \\theta_\\phi) \\circ s_{t-1} \\nonumber\\\\\n h_t &=& \\sigma_o(s_t) \\circ \\sigma_g(z_\\pi + s_t \\circ \\theta_\\pi)",
+      "environment": "eqnarray",
+      "labels": [
+        "eqn:LSTM-short"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "f^k_t &= W_f^k\\cdot [f^{k-1}_t, h^{k-1}_t], \\;\\;  k>1 \\nonumber\\\\\n\nf^k_t &= W_f^k x_t, \\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\; k=1 \\nonumber\\\\\n(h^k_t, s^k_t) &= \\mathrm{LSTM}^k\\left(f^k_t, h^k_{t+(-1)^k}, s^k_{t+(-1)^k}\\right)",
+      "environment": "align",
+      "labels": [
+        "eqn:NMT-Model-LSTM-Stack"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "f^k_t = W_f^k\\cdot [\\mathrm{Half}(f^{k-1}_t), \\mathrm{Dr}(h^{k-1}_t)], \\;\\;  k>1",
+      "environment": "equation",
+      "labels": [
+        "eqn:NMT-Model-LSTM-Stack-Mod"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\small\n\n&\\textrm{Deep-ED:}~~~e_t  \\nonumber\\\\\n&~~~[h_m^{n_e, a_1}, \\mathrm{Max}(h_t^{n_e, a_2}), \\mathrm{Max}(f_t^{n_e, a_1}), \\mathrm{Max}(f_t^{n_e, a_2})] \\nonumber\\\\\n&\\textrm{Deep-Att:} ~~~e_t \\nonumber\\\\\n&~~~ [h_t^{n_e, a_1}, h_t^{n_e, a_2}, f_t^{n_e, a_1}, f_t^{n_e, a_2}]",
+      "environment": "align",
+      "labels": [
+        "eqn:lstm-rep"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\small\n\n&\\textrm{Deep-ED:} ~~~c_t=e_t, ~~~ \\mathrm{(const)} \\nonumber\\\\\n&\\textrm{Deep-Att:}~~~ c_t=\\sum_{t'=1}^m \\alpha_{t,t'}  W_p e_{t'} ~~~~~~~~~~",
+      "environment": "align",
+      "labels": [
+        "eqn:lstm-rep2"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\alpha_{t,t'}=\\frac{\\exp(a(W_p e_{t'}, h_{t-1}^{1,dec}))}{\\sum_{t''}\\exp(a(W_p e_{t''}, h_{t-1}^{1,dec}))}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "x_t=[c_t, y_{t-1}]",
+      "environment": "equation",
+      "labels": [
+        "eqn:lstm-context"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\hat{y}_t = \\mathrm{arg}~\\max_{y}~\\mathrm{P}(y|\\boldsymbol{\\hat{y}}_{0:t-1}, \\boldsymbol{x}; \\boldsymbol{\\theta})",
+      "environment": "equation",
+      "labels": [
+        "eqn:NMT-Model-gen"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "latex": "v \\leftarrow v - l\\cdot(g+r\\cdot v)",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1329,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3621,
+      "numbers": 3,
+      "citations": 22
+    },
+    {
+      "kind": "method",
+      "title": "Neural Machine Translation",
+      "chars": 3421,
+      "numbers": 0,
+      "citations": 8
+    },
+    {
+      "kind": "method",
+      "title": "Deep Topology",
+      "chars": 380,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Network",
+      "chars": 8336,
+      "numbers": 4,
+      "citations": 7
+    },
+    {
+      "kind": "method",
+      "title": "Training technique",
+      "chars": 1322,
+      "numbers": 0,
+      "citations": 5
+    },
+    {
+      "kind": "method",
+      "title": "Generation",
+      "chars": 476,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 318,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Data sets",
+      "chars": 1211,
+      "numbers": 1,
+      "citations": 6
+    },
+    {
+      "kind": "experiments",
+      "title": "Model settings",
+      "chars": 805,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Optimization",
+      "chars": 1633,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 218,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "experiments",
+      "title": "Single models",
+      "chars": 7972,
+      "numbers": 1,
+      "citations": 11
+    },
+    {
+      "kind": "experiments",
+      "title": "Post processing",
+      "chars": 1893,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "experiments",
+      "title": "Analysis",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Length",
+      "chars": 933,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Unknown words",
+      "chars": 1434,
+      "numbers": 1,
+      "citations": 2
+    },
+    {
+      "kind": "experiments",
+      "title": "Over-fitting",
+      "chars": 1031,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1872,
+      "numbers": 1,
+      "citations": 4
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 2,
+      "compares": 1,
+      "background": 26,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": [
+      {
+        "key": "Graves-Schmidhuber-TPAMI2009",
+        "stance": "contests",
+        "cue": "instead of",
+        "sentence": "If we fix the direction term to -1, all layers work in the forward direction. LSTM layer: In our experiments, instead of an RNN, a specific type of recurrent layer called LSTM [Hochreiter et al. 1997; Graves et al. 2009] is used.",
+        "section": "Network",
+        "sectionKind": "method",
+        "ordinal": 24,
+        "title": "2009",
+        "authors": "Alex Graves, Marcus Liwicki, Santiago Fernandez, Roman Bertolami, Horst Bunke, and J\\\"urgen Schmid\\-huber",
+        "year": 2009,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "Hochreiter-Schmidhuber-NC1997",
+        "stance": "contests",
+        "cue": "instead of",
+        "sentence": "If we fix the direction term to -1, all layers work in the forward direction. LSTM layer: In our experiments, instead of an RNN, a specific type of recurrent layer called LSTM [Hochreiter et al. 1997; Graves et al. 2009] is used.",
+        "section": "Network",
+        "sectionKind": "method",
+        "ordinal": 24,
+        "title": "1997",
+        "authors": "Sepp Hochreiter and J\\\"urgen Schmid\\-huber",
+        "year": 1997,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "Luong-Zaremba-ACL2015",
+        "stance": "compares",
+        "cue": "outperforming",
+        "sentence": "With our deep attention model, the BLEU score can be improved to 37.7 outperforming the shallow model which has six layers [Luong et al. 2015] by 6.2 BLEU points.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 15,
+        "title": "2015",
+        "authors": "Thang Luong, Ilya Sutskever, Quoc Le, Oriol Vinyals, and Wojciech Zaremba",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 219.0873565673828,
+              "y0": 467.8408508300781,
+              "x1": 298.80010986328125,
+              "y1": 478.74993896484375
+            },
+            {
+              "x0": 71.99999237060547,
+              "y0": 481.3908386230469,
+              "x1": 298.80023193359375,
+              "y1": 492.2999267578125
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We focus on improving the single model performance by increasing the model depth.",
+      "anchorText": "We focus on improving the single model performance by increasing the model depth.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We focus on",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 10.940000534057617,
+            "y0": 220.01995849609375,
+            "x1": 37.619998931884766,
+            "y1": 560.0
+          },
+          {
+            "x0": 324.1090393066406,
+            "y0": 711.7264404296875,
+            "x1": 540.0001220703125,
+            "y1": 722.635498046875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Because machine translation is a difficult problem, we believe more complex encoding and decoding architecture is needed for modeling the relationship between the source sequence and the target sequence.",
+      "anchorText": "Because machine translation is a difficult problem, we believe more complex encoding and decoding architecture is needed for modeling the relationship between the source sequence and the target sequence.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Neural Machine Translation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 350.7054748535156,
+            "y0": 630.4310302734375,
+            "x1": 540.0,
+            "y1": 641.340087890625
+          },
+          {
+            "x0": 313.1999816894531,
+            "y0": 643.9810180664062,
+            "x1": 540.0,
+            "y1": 654.8900756835938
+          },
+          {
+            "x0": 313.1999816894531,
+            "y0": 657.530029296875,
+            "x1": 539.9999389648438,
+            "y1": 668.4390869140625
+          },
+          {
+            "x0": 313.1999816894531,
+            "y0": 671.0789794921875,
+            "x1": 540.0000610351562,
+            "y1": 681.988037109375
+          },
+          {
+            "x0": 313.1999816894531,
+            "y0": 684.6279907226562,
+            "x1": 372.57818603515625,
+            "y1": 695.5370483398438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In this work, we focus on enhancing the complexity of the encoding/decoding architecture by increasing the model depth.",
+      "anchorText": "In this work, we focus on enhancing the complexity of the encoding/decoding architecture by increasing the model depth.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Neural Machine Translation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 377.8145446777344,
+            "y0": 684.6279907226562,
+            "x1": 540.0001220703125,
+            "y1": 695.5370483398438
+          },
+          {
+            "x0": 313.1999816894531,
+            "y0": 698.177001953125,
+            "x1": 540.0,
+            "y1": 709.0860595703125
+          },
+          {
+            "x0": 313.1999816894531,
+            "y0": 711.7269897460938,
+            "x1": 467.1163330078125,
+            "y1": 722.6360473632812
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We will start with the basic RNN model for the sake of clarity. Recurrent layer: When an input sequence {x_1,\u2026,x_m} is given to a recurrent layer, the output h_t at each time step t can be computed as (see Fig. [ref] (a)) where the bias parameter is not included for simplicity.",
+      "anchorText": "We will start with the basic RNN model for the sake of clarity. layer: When an input sequence",
+      "kind": "simplifying",
+      "support": "shown",
+      "cue": "for simplicity",
+      "section": "Network",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "fig:NMT-Model-RNN-FF"
+      ],
+      "anchor": null
+    },
+    {
+      "sentence": "We attribute this to the complementary information provided by the double encoding column. English-to-German: We also validate our deep topology on the English-to-German task.",
+      "anchorText": "We attribute this to the complementary information provided by the double encoding column. English-to-German: We also validate our deep topology on the English-to-German task.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We attribute this to",
+      "section": "Single models",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "We believe we can benefit from deeper models, with new designs of topologies and training techniques, which remain as our future work.",
+      "anchorText": "We believe we can benefit from deeper models, with new designs of topologies and training techniques, which remain as our future work.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 181.05828857421875,
+            "y0": 183.60269165039062,
+            "x1": 298.8002014160156,
+            "y1": 194.5117950439453
+          },
+          {
+            "x0": 72.0,
+            "y0": 197.15170288085938,
+            "x1": 298.8002014160156,
+            "y1": 208.06080627441406
+          },
+          {
+            "x0": 72.0,
+            "y0": 210.70169067382812,
+            "x1": 298.8001403808594,
+            "y1": 221.6107940673828
+          },
+          {
+            "x0": 72.0,
+            "y0": 224.25070190429688,
+            "x1": 97.03638458251953,
+            "y1": 235.15980529785156
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 6,
+    "cited": 0,
+    "shown": 1,
+    "bare": 5
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2016-06-14"
+  }
+}

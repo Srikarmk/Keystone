@@ -30,6 +30,7 @@ from keystone.ingest.latex import (
     expand_inputs,
 )
 from keystone.ingest.assemble import paper_from_arxiv
+from keystone.ingest.metadata import resolve as resolve_metadata
 from keystone.ingest.sampling import sample_spans, spans_with_line_hyphens
 import keystone.audit.checks.tables  # noqa: F401  (registers the checks)
 from keystone.audit.registry import run
@@ -334,6 +335,11 @@ def dossier(
     corpus_titles, display_titles = _corpus_titles(arxiv_ids, cache, out, existing)
     failures: list[tuple[str, str]] = []
 
+    # One metadata request for the whole run, cached across runs. Categories come
+    # from arXiv rather than from reading the titles, so a group the library shows is
+    # a fact about the submission and not an opinion about the paper.
+    catalogue = resolve_metadata(list(arxiv_ids), cache.parent / "metadata.json")
+
     for arxiv_id in arxiv_ids:
         try:
             built = build_dossier(
@@ -358,6 +364,11 @@ def dossier(
             continue
 
         payload = built.to_dict()
+        # arXiv's own primary category, not one inferred from the title. A library
+        # that groups papers has to say where the grouping came from, and "the authors
+        # filed it under cs.CL" is checkable on the abstract page.
+        record = catalogue.get(arxiv_id)
+        payload["arxiv"] = record.to_dict() if record else None
         (out / f"{arxiv_id}.json").write_text(json.dumps(payload, indent=2))
 
         # The paper's prose, written separately. Answering questions needs the text,
@@ -388,6 +399,7 @@ def dossier(
             "coverage": payload["coverage"],
             "keystone": payload["keystone"],
             "findings": len(payload["findings"]),
+            "arxiv": payload["arxiv"],
             # Four of nine papers state no numbers up front, and a library row that
             # says only "no numeric claims" reads as a paper we failed on rather than
             # a paper that argues in prose. These counts are what is actually in hand.
@@ -710,6 +722,7 @@ def audit_density(
             "equations": len(payload["equations"]),
             "sections": len(payload["sections"]),
             "findings": len(payload["findings"]),
+            "arxiv": payload["arxiv"],
         }
         rows.append((arxiv_id, items, sum(items.values())))
 

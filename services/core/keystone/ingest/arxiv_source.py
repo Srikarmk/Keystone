@@ -33,8 +33,12 @@ USER_AGENT = "keystone/0.1 (research paper audit; +https://github.com/keystone)"
 #: Statuses worth asking again about. 406 is arXiv's answer when a client is asking
 #: too often; 429 and the 5xx range are the ordinary transient set.
 RETRY_CODES = frozenset({406, 408, 429, 500, 502, 503, 504})
-RETRIES = 4
-BACKOFF = 4.0
+RETRIES = 6
+#: Exponential, not linear. Under a bulk expansion arXiv throttles hard enough that a
+#: truncated read repeats through four attempts four seconds apart — measured, on a
+#: run that lost three papers with recoverable source that way. Doubling reaches two
+#: minutes of patience by the last attempt, which is cheap next to losing the paper.
+BACKOFF = 3.0
 
 # Guards against a decompression bomb in an untrusted archive.
 MAX_UNPACKED_BYTES = 256 * 1024 * 1024
@@ -115,7 +119,12 @@ def fetch(arxiv_id: str, cache_dir: Path, *, timeout: float = 60.0) -> Path:
                 payload = response.read()
             break
         except urllib.error.HTTPError as exc:
-            if exc.code in (403, 404):
+            # 301 among the permanent ones: arXiv answers a few identifiers with a
+            # redirect back to themselves, which urllib reports as an infinite loop.
+            # It means the same thing as a 404 — there is no e-print at this id — and
+            # letting it escape as a raw HTTPError made a routine absence look like a
+            # crash in the expansion log.
+            if exc.code in (301, 403, 404):
                 raise SourceUnavailable(
                     f"no e-print source for {ident} (HTTP {exc.code})"
                 ) from exc
@@ -125,7 +134,7 @@ def fetch(arxiv_id: str, cache_dir: Path, *, timeout: float = 60.0) -> Path:
         except (http.client.HTTPException, urllib.error.URLError, TimeoutError) as exc:
             last = exc
         if attempt < RETRIES - 1:
-            time.sleep(BACKOFF * (attempt + 1))
+            time.sleep(BACKOFF * (2**attempt))
 
     if payload is None:
         raise SourceUnavailable(

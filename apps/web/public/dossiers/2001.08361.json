@@ -1,0 +1,2487 @@
+{
+  "id": "2001.08361",
+  "title": "Scaling Laws for Neural Language Models",
+  "keystone": null,
+  "coverage": {
+    "claims": 1,
+    "supported": 0,
+    "declared": 1,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [
+    {
+      "value": "0.5",
+      "section": "introduction",
+      "sentence": "The test loss of a Transformer trained to autoregressively model language can be predicted using a power-law when performance is limited by only either the number of non-embedding parameters , the dataset size , or the optimally allocated compute budget (see Figure ): 0.5em For models with a limited number of parameters, trained to convergence on sufficiently large datasets:",
+      "status": "declared_figure",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "fig:BasicPowerLaws",
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 535.1764526367188,
+            "x1": 521.9981689453125,
+            "y1": 545.1390380859375
+          },
+          {
+            "x0": 90.0,
+            "y0": 546.08544921875,
+            "x1": 431.6473388671875,
+            "y1": 556.0480346679688
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/2001.08361",
+  "numbers": [
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "The test loss of a Transformer trained to autoregressively model language can be predicted using a power-law when performance is limited by only either the number of non-embedding parameters , the dataset size , or the optimally allocated compute budget (see Figure ): 0.5em For models with a limited number of parameters, trained to convergence on sufficiently large datasets:",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 535.1764526367188,
+            "x1": 521.9981689453125,
+            "y1": 545.1390380859375
+          },
+          {
+            "x0": 90.0,
+            "y0": 546.08544921875,
+            "x1": 431.6473388671875,
+            "y1": 556.0480346679688
+          }
+        ]
+      }
+    },
+    {
+      "value": "20.3M",
+      "kind": "result",
+      "section": "related",
+      "sentence": "In total, the dataset consists of 20.3M documents containing 96 GB of text and words (as defined by wc).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 152.8340606689453,
+            "y0": 518.9154052734375,
+            "x1": 470.4316101074219,
+            "y1": 528.8779907226562
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.5",
+      "kind": "result",
+      "section": "results",
+      "sentence": "To characterize language model scaling we train a wide variety of models, varying a number of factors including: Model size (ranging in size from 768 to 1.5 billion non-embedding parameters) Dataset size (ranging from 22 million to 23 billion tokens) Shape (including depth, width, attention heads, and feed-forward dimension) Context length (1024 for most runs, though we also experiment with shorter contexts) Batch size ( for most runs, but we also vary it to measure the critical batch size)",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We regularize all our models with 10% dropout, and by tracking test loss and stopping once it is no longer decreasing.",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "[0.5ex] Value",
+      "cell": "0.103",
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.00003814697266,
+            "y0": 501.429443359375,
+            "x1": 521.9981079101562,
+            "y1": 511.3920593261719
+          },
+          {
+            "x0": 90.00003814697266,
+            "y0": 512.3394775390625,
+            "x1": 135.0907440185547,
+            "y1": 522.3020629882812
+          }
+        ]
+      }
+    },
+    {
+      "value": "7.7",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "So that compute-efficient training uses 7.7x fewer parameter updates, 2.7x more parameters, and 65% less compute to reach the same loss.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 292.29644775390625,
+            "x1": 521.9981689453125,
+            "y1": 302.2590637207031
+          },
+          {
+            "x0": 90.0,
+            "y0": 303.2054443359375,
+            "x1": 216.7242889404297,
+            "y1": 313.1680603027344
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.7",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "So that compute-efficient training uses 7.7x fewer parameter updates, 2.7x more parameters, and 65% less compute to reach the same loss.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 292.29644775390625,
+            "x1": 521.9981689453125,
+            "y1": 302.2590637207031
+          },
+          {
+            "x0": 90.0,
+            "y0": 303.2054443359375,
+            "x1": 216.7242889404297,
+            "y1": 313.1680603027344
+          }
+        ]
+      }
+    },
+    {
+      "value": "65%",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "So that compute-efficient training uses 7.7x fewer parameter updates, 2.7x more parameters, and 65% less compute to reach the same loss.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 292.29644775390625,
+            "x1": 521.9981689453125,
+            "y1": 302.2590637207031
+          },
+          {
+            "x0": 90.0,
+            "y0": 303.2054443359375,
+            "x1": 216.7242889404297,
+            "y1": 313.1680603027344
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.6",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "The result is shown in Figure X. Models between 0.6x and 2.2x the optimal size can be used with only a 20% increase in compute budget.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 475.43743896484375,
+            "x1": 521.998046875,
+            "y1": 485.4000549316406
+          },
+          {
+            "x0": 90.0,
+            "y0": 486.346435546875,
+            "x1": 222.48265075683594,
+            "y1": 496.3090515136719
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.2",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "The result is shown in Figure X. Models between 0.6x and 2.2x the optimal size can be used with only a 20% increase in compute budget.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 475.43743896484375,
+            "x1": 521.998046875,
+            "y1": 485.4000549316406
+          },
+          {
+            "x0": 90.0,
+            "y0": 486.346435546875,
+            "x1": 222.48265075683594,
+            "y1": 496.3090515136719
+          }
+        ]
+      }
+    },
+    {
+      "value": "20%",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "The result is shown in Figure X. Models between 0.6x and 2.2x the optimal size can be used with only a 20% increase in compute budget.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 475.43743896484375,
+            "x1": 521.998046875,
+            "y1": 485.4000549316406
+          },
+          {
+            "x0": 90.0,
+            "y0": 486.346435546875,
+            "x1": 222.48265075683594,
+            "y1": 496.3090515136719
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.2",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "A 2.2x larger model requires 45% fewer steps at a cost of 20% more training compute.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.00003051757812,
+            "y0": 561.5394897460938,
+            "x1": 429.6449890136719,
+            "y1": 571.5020751953125
+          }
+        ]
+      }
+    },
+    {
+      "value": "45%",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "A 2.2x larger model requires 45% fewer steps at a cost of 20% more training compute.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.00003051757812,
+            "y0": 561.5394897460938,
+            "x1": 429.6449890136719,
+            "y1": 571.5020751953125
+          }
+        ]
+      }
+    },
+    {
+      "value": "20%",
+      "kind": "result",
+      "section": "appendix",
+      "sentence": "A 2.2x larger model requires 45% fewer steps at a cost of 20% more training compute.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 21,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.00003051757812,
+            "y0": 561.5394897460938,
+            "x1": 429.6449890136719,
+            "y1": 571.5020751953125
+          }
+        ]
+      }
+    },
+    {
+      "value": "1B parameters",
+      "kind": "configuration",
+      "section": "related",
+      "sentence": "Due to memory constraints, our largest models (more than 1B parameters) were trained with Adafactor .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 283.17010498046875,
+            "y0": 374.41943359375,
+            "x1": 522.0034790039062,
+            "y1": 384.3820495605469
+          },
+          {
+            "x0": 89.99993896484375,
+            "y0": 385.32843017578125,
+            "x1": 268.4998779296875,
+            "y1": 395.2910461425781
+          }
+        ]
+      }
+    },
+    {
+      "value": "96 GB",
+      "kind": "configuration",
+      "section": "related",
+      "sentence": "In total, the dataset consists of 20.3M documents containing 96 GB of text and words (as defined by wc).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 152.8340606689453,
+            "y0": 518.9154052734375,
+            "x1": 470.4316101074219,
+            "y1": 528.8779907226562
+          }
+        ]
+      }
+    },
+    {
+      "value": "40 parameter",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "With such a small dataset, an epoch consists of only 40 parameter updates.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 219.2317657470703,
+            "y0": 618.075439453125,
+            "x1": 521.9951171875,
+            "y1": 628.0380249023438
+          }
+        ]
+      }
+    },
+    {
+      "value": "1 layer",
+      "kind": "configuration",
+      "section": "appendix",
+      "sentence": "For , we do not include small models with only 1 layer in the fit, as the transition from 1 to 2 layers causes a noticable lump in the data.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 25,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 106.82897186279297,
+            "y0": 624.7314453125,
+            "x1": 521.9960327148438,
+            "y1": 634.6940307617188
+          },
+          {
+            "x0": 89.99996185302734,
+            "y0": 635.6405029296875,
+            "x1": 231.28953552246094,
+            "y1": 645.6030883789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "2 layers",
+      "kind": "configuration",
+      "section": "appendix",
+      "sentence": "For , we do not include small models with only 1 layer in the fit, as the transition from 1 to 2 layers causes a noticable lump in the data.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 25,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 106.82897186279297,
+            "y0": 624.7314453125,
+            "x1": 521.9960327148438,
+            "y1": 634.6940307617188
+          },
+          {
+            "x0": 89.99996185302734,
+            "y0": 635.6405029296875,
+            "x1": 231.28953552246094,
+            "y1": 645.6030883789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "1 layer",
+      "kind": "configuration",
+      "section": "appendix",
+      "sentence": "For we also do not include very small models with only 1 layer in the fit, and we exclude the largest models that have not trained fully to convergence.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 25,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 276.6259460449219,
+            "y0": 635.6405029296875,
+            "x1": 522.0046997070312,
+            "y1": 645.6030883789062
+          },
+          {
+            "x0": 89.99993896484375,
+            "y0": 646.5494384765625,
+            "x1": 429.2562255859375,
+            "y1": 656.5120239257812
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Parameter counts and compute (forward pass) estimates for a Transformer model. Sub-leading terms such as nonlinearities, biases, and layer normalization are omitted.",
+      "label": "tab:TableTransformerParamsFLOPs",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Operation",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Parameters",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "FLOPs per Token Embed",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Attention: QKV",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Attention: Mask",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Attention: Project",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Feedforward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "De-embed",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Total (Non-Embedding)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 131.93699645996094,
+            "y0": 221.32044982910156,
+            "x1": 522.0026245117188,
+            "y1": 231.28305053710938
+          },
+          {
+            "x0": 90.0,
+            "y0": 232.2294464111328,
+            "x1": 379.4234619140625,
+            "y1": 242.19204711914062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Fits to",
+      "label": "",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Parameter",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[0.5ex] Value",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.076",
+            "value": "0.076",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.103",
+            "value": "0.103",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Fits to",
+      "label": "",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Parameter",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[0.5ex] Value",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.077",
+            "value": "0.077",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.76",
+            "value": "0.76",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "",
+      "label": "",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Parameters",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Data",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Compute",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Batch Size",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Equation",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Fixed",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Early Stop",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Fixed",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Optimal",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Fixed",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(naive)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Early Stop",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Fixed",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "steps",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "",
+      "label": "",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Power Law",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Scale (tokenization-dependent)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "params (non-embed)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tokens",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "PF-days",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "PF-days",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tokens",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "steps",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "",
+      "label": "",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Compute-Efficient Value",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Power Law",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Scale",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "params",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tokens (lower bound)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "steps (1 epoch)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tokens",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\arraystretch": "1.1",
+    "\\be": "\\begin{equation}",
+    "\\ee": "\\end{equation}",
+    "\\CB": "{\\cal B}",
+    "\\blue": "\\color{blue}"
+  },
+  "references": [
+    {
+      "key": "altmann2012origin",
+      "raw": "Eduardo G Altmann, Giampaolo Cristadoro, and Mirko Degli Esposti. On the origin of long-range correlations in texts. Proceedings of the National Academy of Sciences, 109(29):11582--11587, 2012",
+      "authors": "Eduardo G Altmann, Giampaolo Cristadoro, and Mirko Degli Esposti",
+      "title": "On the origin of long-range correlations in texts",
+      "venue": "Proceedings of the National Academy of Sciences, 109(29):11582--11587, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "1710.03667",
+      "raw": "Madhu S. Advani and Andrew M. Saxe. High-dimensional dynamics of generalization error in neural networks. arXiv, 2017, 1710.03667http://arxiv.org/abs/1710.03667",
+      "authors": "Madhu S. Advani and Andrew M. Saxe",
+      "title": "High-dimensional dynamics of generalization error in neural networks",
+      "venue": "arXiv, 2017, 1710.03667",
+      "year": 2017,
+      "arxivId": "1710.03667",
+      "doi": null
+    },
+    {
+      "key": "banko2001scaling",
+      "raw": "Michele Banko and Eric Brill. Scaling to very very large corpora for natural language disambiguation. In Proceedings of the 39th annual meeting on association for computational linguistics, pages 26--33. Association for Computational Linguistics, 2001",
+      "authors": "Michele Banko and Eric Brill",
+      "title": "Scaling to very very large corpora for natural language disambiguation",
+      "venue": "In Proceedings of the 39th annual meeting on association for computational linguistics, pages 26--33. Association for Computational Linguistics, 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "1812.11118",
+      "raw": "Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal. Reconciling modern machine learning and the bias-variance trade-off. arXiv, 2018, 1812.11118http://arxiv.org/abs/1812.11118",
+      "authors": "Mikhail Belkin, Daniel Hsu, Siyuan Ma, and Soumik Mandal",
+      "title": "Reconciling modern machine learning and the bias-variance trade-off",
+      "venue": "arXiv, 2018, 1812.11118",
+      "year": 2018,
+      "arxivId": "1812.11118",
+      "doi": null
+    },
+    {
+      "key": "biau2012analysis",
+      "raw": "G\\ A Srard Biau. Analysis of a random forests model. Journal of Machine Learning Research, 13(Apr):1063--1095, 2012",
+      "authors": "G\\ A Srard Biau",
+      "title": "Analysis of a random forests model",
+      "venue": "Journal of Machine Learning Research, 13(Apr):1063--1095, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1904-10509",
+      "raw": "Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever. Generating long sequences with sparse transformers. CoRR, abs/1904.10509, 2019, 1904.10509http://arxiv.org/abs/1904.10509. ://arxiv.org/abs/1904.10509",
+      "authors": "Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever",
+      "title": "Generating long sequences with sparse transformers",
+      "venue": "CoRR, abs/1904.10509, 2019, 1904.10509 //arxiv.org/abs/1904.10509",
+      "year": 2019,
+      "arxivId": "1904.10509",
+      "doi": null
+    },
+    {
+      "key": "1810.04805",
+      "raw": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding, 2018, arXiv:1810.04805http://arxiv.org/abs/arXiv:1810.04805",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova",
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding, 2018",
+      "venue": "",
+      "year": 2018,
+      "arxivId": "1810.04805",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1807-03819",
+      "raw": "Mostafa Dehghani, Stephan Gouws, Oriol Vinyals, Jakob Uszkoreit, and Lukasz Kaiser. Universal transformers. CoRR, abs/1807.03819, 2018, 1807.03819http://arxiv.org/abs/1807.03819. ://arxiv.org/abs/1807.03819",
+      "authors": "Mostafa Dehghani, Stephan Gouws, Oriol Vinyals, Jakob Uszkoreit, and Lukasz Kaiser",
+      "title": "Universal transformers",
+      "venue": "CoRR, abs/1807.03819, 2018, 1807.03819 //arxiv.org/abs/1807.03819",
+      "year": 2018,
+      "arxivId": "1807.03819",
+      "doi": null
+    },
+    {
+      "key": "ebeling1994entropy",
+      "raw": "Werner Ebeling and Thorsten P\\\"oschel. Entropy and long-range correlations in literary english. EPL (Europhysics Letters), 26(4):241, 1994",
+      "authors": "Werner Ebeling and Thorsten P\\\"oschel",
+      "title": "Entropy and long-range correlations in literary english",
+      "venue": "EPL (Europhysics Letters), 26(4):241, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "commoncrawl",
+      "raw": "The Common Crawl Foundation. Common crawl. ://commoncrawl.org",
+      "authors": "The Common Crawl Foundation",
+      "title": "Common crawl",
+      "venue": "//commoncrawl.org",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "unpublished-grd",
+      "raw": "Guy Gur-Ari, Daniel A. Roberts, and Ethan Dyer. Gradient descent happens in a tiny subspace. 2018, arXiv:1812.04754http://arxiv.org/abs/arXiv:1812.04754",
+      "authors": "Guy Gur-Ari, Daniel A. Roberts, and Ethan Dyer",
+      "title": "Gradient descent happens in a tiny subspace",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": "1812.04754",
+      "doi": null
+    },
+    {
+      "key": "1901.01608",
+      "raw": "Mario Geiger, Arthur Jacot, Stefano Spigler, Franck Gabriel, Levent Sagun, St\\'ephane d'Ascoli, Giulio Biroli, Cl\\'ement Hongler, and Matthieu Wyart. Scaling description of generalization with number of parameters in deep learning. arXiv, 2019, 1901.01608http://arxiv.org/abs/1901.01608",
+      "authors": "Mario Geiger, Arthur Jacot, Stefano Spigler, Franck Gabriel, Levent Sagun, St\\'ephane d'Ascoli, Giulio Biroli, Cl\\'ement Hongler, and Matthieu Wyart",
+      "title": "Scaling description of generalization with number of parameters in deep learning",
+      "venue": "arXiv, 2019, 1901.01608",
+      "year": 2019,
+      "arxivId": "1901.01608",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1901-10159",
+      "raw": "Behrooz Ghorbani, Shankar Krishnan, and Ying Xiao. An investigation into neural net optimization via hessian eigenvalue density. CoRR, abs/1901.10159, 2019, 1901.10159http://arxiv.org/abs/1901.10159. ://arxiv.org/abs/1901.10159",
+      "authors": "Behrooz Ghorbani, Shankar Krishnan, and Ying Xiao",
+      "title": "An investigation into neural net optimization via hessian eigenvalue density",
+      "venue": "CoRR, abs/1901.10159, 2019, 1901.10159 //arxiv.org/abs/1901.10159",
+      "year": 2019,
+      "arxivId": "1901.10159",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/cs-CL-0108005",
+      "raw": "Joshua Goodman. A bit of progress in language modeling. CoRR, cs.CL/0108005, 2001. ://arxiv.org/abs/cs.CL/0108005",
+      "authors": "Joshua Goodman",
+      "title": "A bit of progress in language modeling",
+      "venue": "CoRR, cs.CL/0108005, 2001 //arxiv.org/abs/cs.CL/0108005",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gray2017gpu",
+      "raw": "Scott Gray, Alec Radford, and Diederik P Kingma. Gpu kernels for block-sparse weights. openai.com, 2017",
+      "authors": "Scott Gray, Alec Radford, and Diederik P Kingma",
+      "title": "Gpu kernels for block-sparse weights",
+      "venue": "openai.com, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hestness:2019:BHA:3293883.3295710",
+      "raw": "Joel Hestness, Newsha Ardalani, and Gregory Diamos. Beyond human-level accuracy: Computational challenges in deep learning. In Proceedings of the 24th Symposium on Principles and Practice of Parallel Programming, PPoPP '19, pages 1--14, New York, NY, USA, 2019. ACM. 10.1145/3293883.3295710",
+      "authors": "Joel Hestness, Newsha Ardalani, and Gregory Diamos",
+      "title": "Beyond human-level accuracy: Computational challenges in deep learning",
+      "venue": "In Proceedings of the 24th Symposium on Principles and Practice of Parallel Programming, PPoPP '19, pages 1--14, New York, NY, USA, 2019. ACM 10.1145/3293883.3295710",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.1145/3293883.3295710"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1811-06965",
+      "raw": "Yanping Huang, Yonglong Cheng, Dehao Chen, HyoukJoong Lee, Jiquan Ngiam, Quoc V. Le, and Zhifeng Chen. Gpipe: Efficient training of giant neural networks using pipeline parallelism. CoRR, abs/1811.06965, 2018, 1811.06965http://arxiv.org/abs/1811.06965. ://arxiv.org/abs/1811.06965",
+      "authors": "Yanping Huang, Yonglong Cheng, Dehao Chen, HyoukJoong Lee, Jiquan Ngiam, Quoc V. Le, and Zhifeng Chen",
+      "title": "Gpipe: Efficient training of giant neural networks using pipeline parallelism",
+      "venue": "CoRR, abs/1811.06965, 2018, 1811.06965 //arxiv.org/abs/1811.06965",
+      "year": 2018,
+      "arxivId": "1811.06965",
+      "doi": null
+    },
+    {
+      "key": "1712.00409",
+      "raw": "Joel Hestness, Sharan Narang, Newsha Ardalani, Gregory Diamos, Heewoo Jun, Hassan Kianinejad, Md. Mostofa Ali Patwary, Yang Yang, and Yanqi Zhou. Deep learning scaling is predictable, empirically, 2017, 1712.00409http://arxiv.org/abs/1712.00409",
+      "authors": "Joel Hestness, Sharan Narang, Newsha Ardalani, Gregory Diamos, Heewoo Jun, Hassan Kianinejad, Md. Mostofa Ali Patwary, Yang Yang, and Yanqi Zhou",
+      "title": "Deep learning scaling is predictable, empirically, 2017, 1712.00409",
+      "venue": "",
+      "year": 2017,
+      "arxivId": "1712.00409",
+      "doi": null
+    },
+    {
+      "key": "jacot2018neural",
+      "raw": "Arthur Jacot, Franck Gabriel, and Cl\\'ement Hongler. Neural tangent kernel: Convergence and generalization in neural networks. In Advances in neural information processing systems, pages 8571--8580, 2018",
+      "authors": "Arthur Jacot, Franck Gabriel, and Cl\\'ement Hongler",
+      "title": "Neural tangent kernel: Convergence and generalization in neural networks",
+      "venue": "In Advances in neural information processing systems, pages 8571--8580, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kingma2014adam",
+      "raw": "Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization, 2014, 1412.6980http://arxiv.org/abs/1412.6980",
+      "authors": "Diederik P. Kingma and Jimmy Ba",
+      "title": "Adam: A method for stochastic optimization, 2014, 1412.6980",
+      "venue": "",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "1906.06669",
+      "raw": "Aran Komatsuzaki. One epoch is all you need, 2019, arXiv:1906.06669http://arxiv.org/abs/arXiv:1906.06669",
+      "authors": "Aran Komatsuzaki",
+      "title": "One epoch is all you need, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1906.06669",
+      "doi": null
+    },
+    {
+      "key": "Krizhevsky:2012:ICD:2999134.2999257",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton. Imagenet classification with deep convolutional neural networks. In Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 1, NIPS'12, pages 1097--1105, USA, 2012. Curran Associates Inc. ://dl.acm.org/citation.cfm?id=2999134.2999257",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 1, NIPS'12, pages 1097--1105, USA, 2012. Curran Associates Inc //dl.acm.org/citation.cfm?id=2999134.2999257",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lan2019albert",
+      "raw": "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. Albert: A lite bert for self-supervised learning of language representations, 2019, 1909.11942http://arxiv.org/abs/1909.11942",
+      "authors": "Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut",
+      "title": "Albert: A lite bert for self-supervised learning of language representations, 2019, 1909.11942",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1909.11942",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1907-11692",
+      "raw": "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized BERT pretraining approach. CoRR, abs/1907.11692, 2019, 1907.11692http://arxiv.org/abs/1907.11692. ://arxiv.org/abs/1907.11692",
+      "authors": "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov",
+      "title": "Roberta: A robustly optimized BERT pretraining approach",
+      "venue": "CoRR, abs/1907.11692, 2019, 1907.11692 //arxiv.org/abs/1907.11692",
+      "year": 2019,
+      "arxivId": "1907.11692",
+      "doi": null
+    },
+    {
+      "key": "liu2018generating",
+      "raw": "Peter J. Liu, Mohammad Saleh, Etienne Pot, Ben Goodrich, Ryan Sepassi, Lukasz Kaiser, and Noam Shazeer. Generating wikipedia by summarizing long sequences. arXiv:1801.10198 [cs], 2018, 1801.10198http://arxiv.org/abs/1801.10198. ://arxiv.org/abs/1801.10198",
+      "authors": "Peter J. Liu, Mohammad Saleh, Etienne Pot, Ben Goodrich, Ryan Sepassi, Lukasz Kaiser, and Noam Shazeer",
+      "title": "Generating wikipedia by summarizing long sequences",
+      "venue": "[cs], 2018, 1801.10198 //arxiv.org/abs/1801.10198",
+      "year": 2018,
+      "arxivId": "1801.10198",
+      "doi": null
+    },
+    {
+      "key": "lin2016criticality",
+      "raw": "Henry W Lin and Max Tegmark. Criticality in formal languages and statistical physics. arXiv preprint arXiv:1606.06737, 2016",
+      "authors": "Henry W Lin and Max Tegmark",
+      "title": "Criticality in formal languages and statistical physics",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.06737",
+      "doi": null
+    },
+    {
+      "key": "1902.06720",
+      "raw": "Jaehoon Lee, Lechao Xiao, Samuel S. Schoenholz, Yasaman Bahri, Roman Novak, Jascha Sohl-Dickstein, and Jeffrey Pennington. Wide neural networks of any depth evolve as linear models under gradient descent, 2019, arXiv:1902.06720http://arxiv.org/abs/arXiv:1902.06720",
+      "authors": "Jaehoon Lee, Lechao Xiao, Samuel S. Schoenholz, Yasaman Bahri, Roman Novak, Jascha Sohl-Dickstein, and Jeffrey Pennington",
+      "title": "Wide neural networks of any depth evolve as linear models under gradient descent, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1902.06720",
+      "doi": null
+    },
+    {
+      "key": "1812.06162",
+      "raw": "Sam McCandlish, Jared Kaplan, Dario Amodei, and OpenAI Dota Team. An empirical model of large-batch training, 2018, arXiv:1812.06162http://arxiv.org/abs/arXiv:1812.06162",
+      "authors": "Sam McCandlish, Jared Kaplan, Dario Amodei, and OpenAI Dota Team",
+      "title": "An empirical model of large-batch training, 2018",
+      "venue": "",
+      "year": 2018,
+      "arxivId": "1812.06162",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1811-07062",
+      "raw": "Vardan Papyan. The full spectrum of deep net hessians at scale: Dynamics with sample size. CoRR, abs/1811.07062, 2018, 1811.07062http://arxiv.org/abs/1811.07062. ://arxiv.org/abs/1811.07062",
+      "authors": "Vardan Papyan",
+      "title": "The full spectrum of deep net hessians at scale: Dynamics with sample size",
+      "venue": "CoRR, abs/1811.07062, 2018, 1811.07062 //arxiv.org/abs/1811.07062",
+      "year": 2018,
+      "arxivId": "1811.07062",
+      "doi": null
+    },
+    {
+      "key": "radford2018improving",
+      "raw": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. Improving language understanding by generative pre-training. URL https://s3-us-west-2. amazonaws. com/openai-assets/research-covers/languageunsupervised/language understanding paper. pdf, 2018",
+      "authors": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever",
+      "title": "Improving language understanding by generative pre-training",
+      "venue": "URL amazonaws. com/openai-assets/research-covers/languageunsupervised/language understanding paper. pdf, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rosenfeld2019constructive",
+      "raw": "Jonathan S. Rosenfeld, Amir Rosenfeld, Yonatan Belinkov, and Nir Shavit. A constructive prediction of the generalization error across scales, 2019, 1909.12673http://arxiv.org/abs/1909.12673",
+      "authors": "Jonathan S. Rosenfeld, Amir Rosenfeld, Yonatan Belinkov, and Nir Shavit",
+      "title": "A constructive prediction of the generalization error across scales, 2019, 1909.12673",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1909.12673",
+      "doi": null
+    },
+    {
+      "key": "1909.12673",
+      "raw": "Jonathan S. Rosenfeld, Amir Rosenfeld, Yonatan Belinkov, and Nir Shavit. A constructive prediction of the generalization error across scales, 2019, arXiv:1909.12673http://arxiv.org/abs/arXiv:1909.12673",
+      "authors": "Jonathan S. Rosenfeld, Amir Rosenfeld, Yonatan Belinkov, and Nir Shavit",
+      "title": "A constructive prediction of the generalization error across scales, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1909.12673",
+      "doi": null
+    },
+    {
+      "key": "1910.10683",
+      "raw": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. Exploring the limits of transfer learning with a unified text-to-text transformer, 2019, arXiv:1910.10683http://arxiv.org/abs/arXiv:1910.10683",
+      "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu",
+      "title": "Exploring the limits of transfer learning with a unified text-to-text transformer, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1910.10683",
+      "doi": null
+    },
+    {
+      "key": "radford2019language",
+      "raw": "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language models are unsupervised multitask learners. openai.com, 2019",
+      "authors": "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever",
+      "title": "Language models are unsupervised multitask learners",
+      "venue": "openai.com, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shazeer2018meshtensorflow",
+      "raw": "Noam Shazeer, Youlong Cheng, Niki Parmar, Dustin Tran, Ashish Vaswani, Penporn Koanantakool, Peter Hawkins, HyoukJoong Lee, Mingsheng Hong, Cliff Young, Ryan Sepassi, and Blake Hechtman. Mesh-tensorflow: Deep learning for supercomputers, 2018, 1811.02084http://arxiv.org/abs/1811.02084",
+      "authors": "Noam Shazeer, Youlong Cheng, Niki Parmar, Dustin Tran, Ashish Vaswani, Penporn Koanantakool, Peter Hawkins, HyoukJoong Lee, Mingsheng Hong, Cliff Young, Ryan Sepassi, and Blake Hechtman",
+      "title": "Mesh-tensorflow: Deep learning for supercomputers, 2018, 1811.02084",
+      "venue": "",
+      "year": 2018,
+      "arxivId": "1811.02084",
+      "doi": null
+    },
+    {
+      "key": "BPE",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. Neural machine translation of rare words with subword units. CoRR, 2015, 1508.07909http://arxiv.org/abs/1508.07909",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "CoRR, 2015, 1508.07909",
+      "year": 2015,
+      "arxivId": "1508.07909",
+      "doi": null
+    },
+    {
+      "key": "1811.03600",
+      "raw": "Christopher J. Shallue, Jaehoon Lee, Joe Antognini, Jascha Sohl-Dickstein, Roy Frostig, and George E. Dahl. Measuring the effects of data parallelism on neural network training, 2018, arXiv:1811.03600http://arxiv.org/abs/arXiv:1811.03600",
+      "authors": "Christopher J. Shallue, Jaehoon Lee, Joe Antognini, Jascha Sohl-Dickstein, Roy Frostig, and George E. Dahl",
+      "title": "Measuring the effects of data parallelism on neural network training, 2018",
+      "venue": "",
+      "year": 2018,
+      "arxivId": "1811.03600",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1804-04235",
+      "raw": "Noam Shazeer and Mitchell Stern. Adafactor: Adaptive learning rates with sublinear memory cost. CoRR, abs/1804.04235, 2018, 1804.04235http://arxiv.org/abs/1804.04235. ://arxiv.org/abs/1804.04235",
+      "authors": "Noam Shazeer and Mitchell Stern",
+      "title": "Adafactor: Adaptive learning rates with sublinear memory cost",
+      "venue": "CoRR, abs/1804.04235, 2018, 1804.04235 //arxiv.org/abs/1804.04235",
+      "year": 2018,
+      "arxivId": "1804.04235",
+      "doi": null
+    },
+    {
+      "key": "thurner2018introduction",
+      "raw": "Stefan Thurner, Rudolf Hanel, and Peter Klimek. Introduction to the theory of complex systems. Oxford University Press, 2018",
+      "authors": "Stefan Thurner, Rudolf Hanel, and Peter Klimek",
+      "title": "Introduction to the theory of complex systems",
+      "venue": "Oxford University Press, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1905-11946",
+      "raw": "Mingxing Tan and Quoc V. Le. Efficientnet: Rethinking model scaling for convolutional neural networks. CoRR, abs/1905.11946, 2019, 1905.11946http://arxiv.org/abs/1905.11946. ://arxiv.org/abs/1905.11946",
+      "authors": "Mingxing Tan and Quoc V. Le",
+      "title": "Efficientnet: Rethinking model scaling for convolutional neural networks",
+      "venue": "CoRR, abs/1905.11946, 2019, 1905.11946 //arxiv.org/abs/1905.11946",
+      "year": 2019,
+      "arxivId": "1905.11946",
+      "doi": null
+    },
+    {
+      "key": "OriginalTransformer",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. Attention is all you need. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, Advances in Neural Information Processing Systems 30, pages 5998--6008. Curran Associates, Inc., 2017. ://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+      "title": "Attention is all you need",
+      "venue": "In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, editors, Advances in Neural Information Processing Systems 30, pages 5998--6008. Curran Associates, Inc., 2017 //papers.nips.cc/paper/7181-attention-is-all-you-need.pdf",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ResNetsEnsemblesShallow",
+      "raw": "Andreas Veit, Michael Wilber, and Serge Belongie. Residual networks behave like ensembles of relatively shallow networks, 2016, arXiv:1605.06431http://arxiv.org/abs/arXiv:1605.06431",
+      "authors": "Andreas Veit, Michael Wilber, and Serge Belongie",
+      "title": "Residual networks behave like ensembles of relatively shallow networks, 2016",
+      "venue": "",
+      "year": 2016,
+      "arxivId": "1605.06431",
+      "doi": null
+    },
+    {
+      "key": "wasserman2006all",
+      "raw": "Larry Wasserman. All of nonparametric statistics. Springer Science \\& Business Media, 2006",
+      "authors": "Larry Wasserman",
+      "title": "All of nonparametric statistics",
+      "venue": "Springer Science \\& Business Media, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2019superglue",
+      "raw": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. Superglue: A stickier benchmark for general-purpose language understanding systems, 2019, 1905.00537http://arxiv.org/abs/1905.00537",
+      "authors": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman",
+      "title": "Superglue: A stickier benchmark for general-purpose language understanding systems, 2019, 1905.00537",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1905.00537",
+      "doi": null
+    },
+    {
+      "key": "Wang_2017",
+      "raw": "Yu-Xiong Wang, Deva Ramanan, and Martial Hebert. Growing a brain: Fine-tuning by increasing model capacity. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Jul 2017. 10.1109/cvpr.2017.323",
+      "authors": "Yu-Xiong Wang, Deva Ramanan, and Martial Hebert",
+      "title": "Growing a brain: Fine-tuning by increasing model capacity",
+      "venue": "2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Jul 2017 10.1109/cvpr.2017.323",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.1109/cvpr.2017.323"
+    },
+    {
+      "key": "wen2019autogrow",
+      "raw": "Wei Wen, Feng Yan, and Hai Li. Autogrow: Automatic layer growing in deep convolutional networks, 2019, 1906.02909http://arxiv.org/abs/1906.02909",
+      "authors": "Wei Wen, Feng Yan, and Hai Li",
+      "title": "Autogrow: Automatic layer growing in deep convolutional networks, 2019, 1906.02909",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1906.02909",
+      "doi": null
+    },
+    {
+      "key": "1906.08237",
+      "raw": "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, and Quoc V. Le. Xlnet: Generalized autoregressive pretraining for language understanding, 2019, arXiv:1906.08237http://arxiv.org/abs/arXiv:1906.08237",
+      "authors": "Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, and Quoc V. Le",
+      "title": "Xlnet: Generalized autoregressive pretraining for language understanding, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": "1906.08237",
+      "doi": null
+    },
+    {
+      "key": "Zagoruyko_2016",
+      "raw": "Sergey Zagoruyko and Nikos Komodakis. Wide residual networks. Procedings of the British Machine Vision Conference 2016, 2016. 10.5244/c.30.87",
+      "authors": "Sergey Zagoruyko and Nikos Komodakis",
+      "title": "Wide residual networks",
+      "venue": "Procedings of the British Machine Vision Conference 2016, 2016 10.5244/c.30.87",
+      "year": 2016,
+      "arxivId": null,
+      "doi": "10.5244/c.30.87"
+    },
+    {
+      "key": "Zhu_2015",
+      "raw": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler. Aligning books and movies: Towards story-like visual explanations by watching movies and reading books. 2015 IEEE International Conference on Computer Vision (ICCV), Dec 2015. 10.1109/iccv.2015.11",
+      "authors": "Yukun Zhu, Ryan Kiros, Rich Zemel, Ruslan Salakhutdinov, Raquel Urtasun, Antonio Torralba, and Sanja Fidler",
+      "title": "Aligning books and movies: Towards story-like visual explanations by watching movies and reading books",
+      "venue": "2015 IEEE International Conference on Computer Vision (ICCV), Dec 2015 10.1109/iccv.2015.11",
+      "year": 2015,
+      "arxivId": null,
+      "doi": "10.1109/iccv.2015.11"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1907-04164",
+      "raw": "Guodong Zhang, Lala Li, Zachary Nado, James Martens, Sushant Sachdeva, George E. Dahl, Christopher J. Shallue, and Roger B. Grosse. Which algorithmic choices matter at which batch sizes? insights from a noisy quadratic model. CoRR, abs/1907.04164, 2019, 1907.04164http://arxiv.org/abs/1907.04164. ://arxiv.org/abs/1907.04164",
+      "authors": "Guodong Zhang, Lala Li, Zachary Nado, James Martens, Sushant Sachdeva, George E. Dahl, Christopher J. Shallue, and Roger B. Grosse",
+      "title": "Which algorithmic choices matter at which batch sizes? insights from a noisy quadratic model",
+      "venue": "CoRR, abs/1907.04164, 2019, 1907.04164 //arxiv.org/abs/1907.04164",
+      "year": 2019,
+      "arxivId": "1907.04164",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "B_{\\rm crit}\\left(L\\right)=\\frac{B_{\\ast}}{L^{1/\\alpha_{B}}},\\qquad B_{\\ast} \\sim 2\\cdot 10^8 \\text{ tokens},\\ \\ \\alpha_{B} \\sim 0.21",
+      "environment": "equation",
+      "labels": [
+        "eq:critical-batch-size"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "N & \\approx  2d_{{\\rm model}}n_{{\\rm layer}}\\left(2d_{{\\rm attn}}+d_{{\\rm ff}}\\right) & \\nonumber \\\\\n& = 12 n_{\\rm layer} d_{{\\rm model}}^2 \\quad \\text{ with the standard } \\quad d_{\\rm attn} = d_{\\rm ff}/4 = d_{{\\rm model}} &",
+      "environment": "align",
+      "labels": [
+        "eq:ModelSizeDefinition"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "L\\left(N,S\\right)=\\left(\\frac{N_{c}}{N}\\right)^{\\alpha_{N}}+\\left(\\frac{S_{c}}{S}\\right)^{\\alpha_{S}}.",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "B\\left(L\\right)=\\frac{B_{\\ast}}{L^{1/\\alpha_{B}}}.",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "L\\left(N,C\\right)=\\left(\\frac{N_{c}}{N}\\right)^{\\alpha_{N}}+\\left(6B_{\\ast}S_{c}\\frac{N}{L^{1/\\alpha_{B}}C}\\right)^{\\alpha_{S}}.",
+      "environment": "equation",
+      "labels": [
+        "eq:loss-params-compute"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "0 & =\\frac{\\partial L}{\\partial N}\\big|_{C}\\nonumber \\\\\n & =-\\frac{\\alpha_{N}}{N}\\left(\\frac{N_{c}}{N}\\right)^{\\alpha_{N}}+\\frac{\\alpha_{S}}{N}\\left(6B_{\\ast}S_{c}\\frac{N}{L^{1/\\alpha_{B}}C}\\right)^{\\alpha_{S}}\\left(1-5\\frac{N}{L}\\cancel{\\frac{\\partial L}{\\partial N}\\big|_{C}}\\right)\\nonumber \\\\\n\\implies\\frac{\\alpha_{N}}{\\alpha_{S}}\\left(\\frac{N_{c}}{N}\\right)^{\\alpha_{N}} & =\\left(6B_{\\ast}S_{c}\\frac{N}{L^{1/\\alpha_{B}}C}\\right)^{\\alpha_{S}}",
+      "environment": "align",
+      "labels": [
+        "eq:compute-optimality"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "L\\left(N_{{\\rm eff}}\\left(C\\right),C\\right)=\\left(1+\\frac{\\alpha_{N}}{\\alpha_{S}}\\right)L\\left(N_{{\\rm eff}},\\infty\\right),",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "L\\left(C\\right) & =\\left(\\frac{C_{c}}{C}\\right)^{\\alpha_{C}}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\alpha_{C} & =1/\\left(1/\\alpha_{S}+1/\\alpha_{B}+1/\\alpha_{N}\\right)\\approx0.052\\\\\nC_{c} & =6N_{c}B_{\\ast}S_{c}\\left(1+\\frac{\\alpha_{N}}{\\alpha_{S}}\\right)^{1/\\alpha_{S}+1/\\alpha_{N}}\\left(\\frac{\\alpha_{S}}{\\alpha_{N}}\\right)^{1/\\alpha_{S}}.",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\frac{N\\left(C\\right)}{N_{c}}=\\left(\\frac{C}{C_{c}}\\right)^{\\alpha_{C}/\\alpha_{N}}\\left(1+\\frac{\\alpha_{N}}{\\alpha_{S}}\\right)^{1/\\alpha_{N}}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "S\\left(C\\right) & =\\frac{C_{c}}{6N_{c}B_{\\ast}}\\left(1+\\frac{\\alpha_{N}}{\\alpha_{S}}\\right)^{-1/\\alpha_{N}}\\left(\\frac{C}{C_{c}}\\right)^{\\alpha_{C}/\\alpha_{S}}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "L\\left(N,C\\right)=\\left(1+f\\right)L\\left(N,\\infty\\right).",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\frac{N_{f}}{N_{f^{\\prime}}} & =\\left(\\frac{1+f}{1+f^{\\prime}}\\right)^{1/\\alpha_{N}}\\approx2.7\\\\\n\\frac{S_{f}}{S_{f^{\\prime}}} & =\\left(\\frac{1+\\frac{1}{f}}{1+\\frac{1}{f^{\\prime}}}\\right)^{1/\\alpha_{S}}\\approx0.13\\\\\n\\frac{C_{f}}{C_{f^{\\prime}}} & =\\frac{N_{f}}{N_{f^{\\prime}}}\\frac{S_{f}}{S_{f^{\\prime}}}\\approx0.35",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\mathrm{LR}(N) \\approx 0.003239 + -0.0001395  \\log(N)",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 803,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 1491,
+      "numbers": 0,
+      "citations": 9
+    },
+    {
+      "kind": "introduction",
+      "title": "Summary",
+      "chars": 3954,
+      "numbers": 3,
+      "citations": 1
+    },
+    {
+      "kind": "introduction",
+      "title": "Summary of Scaling Laws",
+      "chars": 4074,
+      "numbers": 1,
+      "citations": 3
+    },
+    {
+      "kind": "introduction",
+      "title": "Notation",
+      "chars": 1268,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "related",
+      "title": "Background and Methods",
+      "chars": 526,
+      "numbers": 1,
+      "citations": 6
+    },
+    {
+      "kind": "related",
+      "title": "Parameter and Compute Scaling of Transformers",
+      "chars": 1932,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Training Procedures",
+      "chars": 565,
+      "numbers": 2,
+      "citations": 2
+    },
+    {
+      "kind": "related",
+      "title": "Datasets",
+      "chars": 911,
+      "numbers": 4,
+      "citations": 4
+    },
+    {
+      "kind": "results",
+      "title": "Empirical Results and Basic Power Laws",
+      "chars": 621,
+      "numbers": 5,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Approximate Transformer Shape and Hyperparameter Independence",
+      "chars": 1053,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "results",
+      "title": "Performance with Non-Embedding Parameter Count",
+      "chars": 1365,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "results",
+      "title": "Comparing to LSTMs and Universal Transformers",
+      "chars": 780,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "results",
+      "title": "Generalization Among Data Distributions",
+      "chars": 1025,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "results",
+      "title": "Performance with Dataset Size and Compute",
+      "chars": 1399,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Charting the Infinite Data Limit and Overfitting",
+      "chars": 448,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Proposed Equation",
+      "chars": 2510,
+      "numbers": 2,
+      "citations": 1
+    },
+    {
+      "kind": "other",
+      "title": "Results",
+      "chars": 2161,
+      "numbers": 4,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Scaling Laws with Model Size and Training Time",
+      "chars": 607,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Adjustment for Training at",
+      "chars": 2109,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Results for and Performance with Model Size and Compute",
+      "chars": 1745,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Lower Bound on Early Stopping Step",
+      "chars": 1455,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Optimal Allocation of the Compute Budget",
+      "chars": 372,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Optimal Performance and Allocations",
+      "chars": 1885,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Predictions from",
+      "chars": 754,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Contradictions and a Conjecture",
+      "chars": 4250,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2881,
+      "numbers": 0,
+      "citations": 24
+    },
+    {
+      "kind": "discussion",
+      "title": "Discussion",
+      "chars": 3194,
+      "numbers": 0,
+      "citations": 7
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 236,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Summary of Power Laws",
+      "chars": 656,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Empirical Model of Compute-Efficient Frontier",
+      "chars": 164,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Defining Equations",
+      "chars": 735,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "appendix",
+      "title": "Efficient Training",
+      "chars": 664,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Comparison to Inefficient",
+      "chars": 732,
+      "numbers": 3,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Suboptimal Model Sizes",
+      "chars": 1131,
+      "numbers": 6,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Caveats",
+      "chars": 2098,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "appendix",
+      "title": "Supplemental Figures",
+      "chars": 809,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Early Stopping and Test vs Train",
+      "chars": 229,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Universal Transformers",
+      "chars": 292,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "appendix",
+      "title": "Batch Size",
+      "chars": 295,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Sample Efficiency vs Model Size",
+      "chars": 863,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Context Dependence",
+      "chars": 2235,
+      "numbers": 0,
+      "citations": 3
+    },
+    {
+      "kind": "appendix",
+      "title": "Learning Rate Schedules and Error Analysis",
+      "chars": 1220,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Fit Details and Power Law Quality",
+      "chars": 1146,
+      "numbers": 4,
+      "citations": 0
+    },
+    {
+      "kind": "appendix",
+      "title": "Generalization and Architecture",
+      "chars": 217,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 48,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "BPE",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We train language models on WebText2, an extended version of the WebText [Radford et al. 2019] dataset, tokenized using byte-pair encoding [Sennrich et al. 2015] with a vocabulary size n_ vocab = 50257.",
+      "section": "Background and Methods",
+      "sectionKind": "related",
+      "ordinal": 11,
+      "title": "Neural machine translation of rare words with subword units",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+      "year": 2015,
+      "arxivId": "1508.07909",
+      "inCorpus": false,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.0,
+            "y0": 437.0943603515625,
+            "x1": 399.5278015136719,
+            "y1": 447.0569763183594
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "BPE",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We train language models on WebText2, an extended version of the WebText [Radford et al. 2019] dataset, tokenized using byte-pair encoding [Sennrich et al. 2015] with a vocabulary size n_ vocab = 50257.",
+        "section": "Background and Methods",
+        "sectionKind": "related",
+        "ordinal": 11,
+        "title": "Neural machine translation of rare words with subword units",
+        "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+        "year": 2015,
+        "arxivId": "1508.07909",
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 90.0,
+              "y0": 437.0943603515625,
+              "x1": 399.5278015136719,
+              "y1": 447.0569763183594
+            }
+          ]
+        }
+      },
+      {
+        "key": "DBLP:journals/corr/abs-1807-03819",
+        "stance": "compares",
+        "cue": "We compare",
+        "sentence": "We compare the performance of standard Transformers to recurrent Transformers [Dehghani et al. 2018] in Figure [ref].",
+        "section": "Universal Transformers",
+        "sectionKind": "appendix",
+        "ordinal": 55,
+        "title": "Universal transformers",
+        "authors": "Mostafa Dehghani, Stephan Gouws, Oriol Vinyals, Jakob Uszkoreit, and Lukasz Kaiser",
+        "year": 2018,
+        "arxivId": "1807.03819",
+        "inCorpus": false,
+        "anchor": {
+          "page": 22,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 89.99992370605469,
+              "y0": 635.7254028320312,
+              "x1": 419.0745544433594,
+              "y1": 645.68798828125
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "(Section [ref]) Universality of overfitting: Performance improves predictably as long as we scale up N and D in tandem, but enters a regime of diminishing returns if either N or D is held fixed while the other increases.",
+      "anchorText": ") Universality of overfitting: Performance improves predictably as long as we scale up",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Summary",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [
+        "sec:Empirical"
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 339.2243957519531,
+            "y0": 373.8744201660156,
+            "x1": 347.5232238769531,
+            "y1": 383.8370361328125
+          },
+          {
+            "x0": 89.99999237060547,
+            "y0": 396.57147216796875,
+            "x1": 202.13902282714844,
+            "y1": 406.5340576171875
+          },
+          {
+            "x0": 212.09698486328125,
+            "y0": 396.66241455078125,
+            "x1": 438.87548828125,
+            "y1": 406.6250305175781
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We expect that larger language models will perform better and be more sample efficient than current models.",
+      "anchorText": "We expect that larger language models will perform better and be more sample efficient than current models.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We expect",
+      "section": "Summary",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 343.9764709472656,
+            "y0": 701.5353393554688,
+            "x1": 521.9981079101562,
+            "y1": 711.4979248046875
+          },
+          {
+            "x0": 89.99986267089844,
+            "y0": 712.4443359375,
+            "x1": 348.7185974121094,
+            "y1": 722.4069213867188
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We conjecture that this functional form may also parameterize the trained log-likelihood for other generative modeling tasks.",
+      "anchorText": "We conjecture that this functional form may also parameterize the trained log-likelihood for other generative modeling tasks.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We conjecture",
+      "section": "Summary of Scaling Laws",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 254.77145385742188,
+            "y0": 480.84649658203125,
+            "x1": 521.9981689453125,
+            "y1": 490.8091125488281
+          },
+          {
+            "x0": 90.0,
+            "y0": 491.7554931640625,
+            "x1": 322.208251953125,
+            "y1": 501.7181091308594
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Since we stop training early when the test loss ceases to improve and optimize all models in the same way, we expect that larger models should always perform better than smaller models.",
+      "anchorText": "Since we stop training early when the test loss ceases to improve and optimize all models in the same way, we expect that larger models should always perform better than smaller models.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Proposed Equation",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 90.00003051757812,
+            "y0": 274.8564453125,
+            "x1": 521.9982299804688,
+            "y1": 284.8190612792969
+          },
+          {
+            "x0": 90.00003051757812,
+            "y0": 285.76544189453125,
+            "x1": 393.3711242675781,
+            "y1": 295.7280578613281
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "This expectation should hold for any smooth loss function, since we expect to be able to expand the loss about the D \u2192\u221e limit.",
+      "anchorText": "This expectation should hold for any smooth loss function, since we expect to be able to expand the loss about the",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Proposed Equation",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 282.4734802246094,
+            "y0": 356.6994323730469,
+            "x1": 522.0042114257812,
+            "y1": 366.66204833984375
+          },
+          {
+            "x0": 90.00007629394531,
+            "y0": 367.6084289550781,
+            "x1": 308.9480895996094,
+            "y1": 377.571044921875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We have chosen this parameterization for B_ crit(L) because as the loss approaches its minimum value L_ min, the gradient noise scale is expected to diverge, and we expect B_ crit to track this noise scale.",
+      "anchorText": ", the gradient noise scale is expected to diverge, and we expect",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Adjustment for Training at",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 499.031005859375,
+            "y0": 379.7359619140625,
+            "x1": 521.9996948242188,
+            "y1": 390.5395812988281
+          },
+          {
+            "x0": 90.00003051757812,
+            "y0": 390.87548828125,
+            "x1": 345.4112548828125,
+            "y1": 400.8381042480469
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Though the fits are imperfect, we believe they are quite compelling given the simplicity of Equation ([ref]).",
+      "anchorText": "Though the fits are imperfect, we believe they are quite compelling given the simplicity of Equation",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Results for and Performance with Model Size and Compute",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "eq:FundamentalLikelihioodvsModelandSteps2"
+      ],
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.4347229003906,
+            "y0": 345.56646728515625,
+            "x1": 521.9982299804688,
+            "y1": 355.5290832519531
+          },
+          {
+            "x0": 90.0,
+            "y0": 356.4754638671875,
+            "x1": 321.89935302734375,
+            "y1": 366.4380798339844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "This implies that our scaling laws must break down before this point, but we conjecture that the intersection point has a deeper meaning: it provides an estimate of the point at which Transformer language models reach maximal performance.",
+      "anchorText": "This implies that our scaling laws must break down before this point, but we conjecture that the intersection point has a deeper meaning: it provides an estimate of the point at which Transformer language models reach maximal performance.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we conjecture",
+      "section": "Contradictions and a Conjecture",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 131.71337890625,
+            "y0": 360.3104248046875,
+            "x1": 521.9981079101562,
+            "y1": 370.2730407714844
+          },
+          {
+            "x0": 89.99998474121094,
+            "y0": 371.21942138671875,
+            "x1": 521.9981079101562,
+            "y1": 381.1820373535156
+          },
+          {
+            "x0": 89.99998474121094,
+            "y0": 382.12841796875,
+            "x1": 235.52369689941406,
+            "y1": 392.0910339355469
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "According to Figure [ref], we expect that when we are bottlenecked by the dataset size (ie by overfitting), the loss should scale as L(D) \u221d D^-0.095.",
+      "anchorText": ", we expect that when we are bottlenecked by the dataset size (ie by overfitting), the loss should scale as",
+      "kind": "conjectural",
+      "support": "shown",
+      "cue": "we expect",
+      "section": "Contradictions and a Conjecture",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [
+        "fig:BasicPowerLaws"
+      ],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 174.96102905273438,
+            "y0": 592.6224365234375,
+            "x1": 521.9981079101562,
+            "y1": 602.5850219726562
+          },
+          {
+            "x0": 90.0,
+            "y0": 603.5314331054688,
+            "x1": 166.6223907470703,
+            "y1": 613.4940185546875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We conclude that the choice of learning rate schedule is mostly irrelevant, as long as the total summed learning rate is sufficiently large, and the schedule includes a warmup period and a final decay to near-vanishing learning rate.",
+      "anchorText": "We conclude that the choice of learning rate schedule is mostly irrelevant, as long as the total summed learning rate is sufficiently large, and the schedule includes a warmup period and a final decay to near-vanishing learning rate.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Learning Rate Schedules and Error Analysis",
+      "sectionKind": "appendix",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 24,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 361.7099914550781,
+            "y0": 690.6264038085938,
+            "x1": 521.9982299804688,
+            "y1": 700.5889892578125
+          },
+          {
+            "x0": 90.00003051757812,
+            "y0": 701.535400390625,
+            "x1": 521.9983520507812,
+            "y1": 711.4979858398438
+          },
+          {
+            "x0": 90.00003051757812,
+            "y0": 712.4443969726562,
+            "x1": 443.35345458984375,
+            "y1": 722.406982421875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "To implement this, the following rule of thumb was used for most runs: We expect that this formula could be improved.",
+      "anchorText": "To implement this, the following rule of thumb was used for most runs: We expect that this formula could be improved.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We expect",
+      "section": "Learning Rate Schedules and Error Analysis",
+      "sectionKind": "appendix",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 11,
+    "cited": 0,
+    "shown": 1,
+    "bare": 10
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2020-01-23"
+  }
+}
