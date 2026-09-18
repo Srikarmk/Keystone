@@ -108,6 +108,7 @@ def test_strongest_keeps_the_most_specific_mention() -> None:
             section_kind=SectionKind.METHOD,
             stance=stance,
             cue="",
+            ordinal=1,
         )
 
     best = strongest([

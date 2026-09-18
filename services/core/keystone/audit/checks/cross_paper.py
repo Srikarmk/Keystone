@@ -24,8 +24,7 @@ from dataclasses import dataclass
 from decimal import Decimal
 from typing import Literal
 
-from keystone.audit.numbers import Number
-from keystone.audit.trace import _same_measurement
+from keystone.audit.numbers import Number, rounds_to
 from keystone.graph.models import Confidence, Evidence, Finding, Severity, Table
 from keystone.ingest.bibliography import Reference
 
@@ -131,13 +130,7 @@ def verify(
                     )
                     continue
 
-                present = any(
-                    _same_measurement(cell.number, Number(
-                        value=value, raw=str(value), start=0, end=0,
-                        decimals=cell.number.decimals, quantum=cell.number.quantum,
-                    ))
-                    for value in source
-                )
+                present = any(_confirms(value, cell.number) for value in source)
                 checks.append(
                     _check(
                         table, label, cell, key, reference,
@@ -148,6 +141,21 @@ def verify(
                 )
 
     return checks
+
+
+def _confirms(value: Decimal, reported: Number) -> bool:
+    """Whether the cited paper's value agrees with the figure attributed to it.
+
+    At the *reported* precision, not exactly. A paper tabulating someone else's result
+    rounds it: VGG writes GoogLeNet's 6.67% as 6.7, and demanding equality reported
+    that as a figure GoogLeNet "does not report". Writing 6.7 is a claim that the true
+    value lies within 0.05 of it, which 6.67 satisfies.
+
+    Both scales are tried because a percent sign often lives in the column header
+    rather than the cell, so the cited paper's 0.0667 and this paper's 6.7 are one
+    measurement written twice.
+    """
+    return rounds_to(value, reported) or rounds_to(value / 100, reported)
 
 
 def _check(table, label, cell, key, reference, outcome, note) -> BaselineCheck:

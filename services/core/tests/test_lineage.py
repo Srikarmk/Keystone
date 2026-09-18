@@ -232,3 +232,63 @@ We evaluate on ImageNet and report top-one error.
     assert kinds["Deep Residual Learning"] is SectionKind.METHOD
     assert kinds["Introduction"] is SectionKind.INTRODUCTION
     assert kinds["Experiments"] is SectionKind.EXPERIMENTS
+
+
+def test_foundation_breaks_a_tie_by_first_mention() -> None:
+    """The Transformer's headline was decided by alphabetical order of citation key.
+
+    Four of its adoptions sit in the method section, all anchored and all in the
+    library, so every other test came out level and "stands on" landed on Inception —
+    cited once, for label smoothing. A paper describes what its architecture is built
+    from before it reaches training details, so first mention is the discriminator.
+    """
+    latex = r"""
+\section{Introduction}
+Deeper networks are harder to train than shallow ones of comparable width.
+\section{Our Architecture}
+We employ a residual connection \cite{he2016resnet} around each of the two
+sub-layers, followed by layer normalization \cite{ba2016layer}.
+\subsection{Regularization}
+During training we employed label smoothing \cite{szegedy2015rethinking} of value 0.1.
+\section{Experiments}
+We evaluate on WMT and report BLEU.
+"""
+    references = [
+        Reference(key="he2016resnet", raw="K. He", title="Deep Residual Learning",
+                  year=2016, arxiv_id="1512.03385"),
+        Reference(key="ba2016layer", raw="J. Ba", title="Layer Normalization",
+                  year=2016, arxiv_id="1607.06450"),
+        Reference(key="szegedy2015rethinking", raw="C. Szegedy",
+                  title="Rethinking the Inception Architecture", year=2015,
+                  arxiv_id="1512.00567"),
+    ]
+    corpus = {
+        "1512.03385": "Deep Residual Learning",
+        "1607.06450": "Layer Normalization",
+        "1512.00567": "Rethinking the Inception Architecture",
+    }
+    lineage = G.build(latex, extract_sections(latex), references,
+                      corpus=frozenset(corpus), corpus_titles=corpus)
+
+    # All three are method-section adoptions in the library, so only position separates
+    # them — and the residual connection is named first.
+    assert {e.section_kind for e in lineage.edges} == {SectionKind.METHOD}
+    foundation = lineage.foundation
+    assert foundation is not None
+    assert foundation.key == "he2016resnet", foundation.title
+
+
+def test_the_strongest_mention_keeps_the_earliest_position() -> None:
+    """A work cited in the method and again in the appendix is placed at the first."""
+    latex = r"""
+\section{Our Method}
+We adopt batch normalization \cite{ioffe2015} after every convolution.
+\section{Appendix}
+We repeat the ablation of \cite{ioffe2015} on a second dataset.
+"""
+    lineage = G.build(latex, extract_sections(latex), [
+        Reference(key="ioffe2015", raw="S. Ioffe", title="Batch Normalization"),
+    ])
+    edge = next(e for e in lineage.edges if e.key == "ioffe2015")
+    assert edge.section_kind is SectionKind.METHOD
+    assert edge.ordinal == 1

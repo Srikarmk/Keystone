@@ -2545,21 +2545,22 @@
       "inherits": 5,
       "extends": 0,
       "contests": 1,
-      "compares": 3,
-      "background": 14,
+      "compares": 0,
+      "background": 17,
       "traversable": 3
     },
     "foundation": {
-      "key": "Cho:2014",
+      "key": "Wu:2016",
       "stance": "inherits",
       "cue": "We use",
-      "sentence": "We use 512-unit GRU cells for both the encoder and decoder and apply Dropout of 0.2 at the input of each cell.",
-      "section": "Baseline Model",
+      "sentence": "We use a batch size of 128 and decode using beam search with a beam width of 10 and the length normalization penalty of 0.6 described in .",
+      "section": "Training Setup and Software",
       "sectionKind": "experiments",
-      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
-      "authors": "Kyunghyun Cho, Bart van Merrienboer, Caglar G\\\"ul cehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014",
-      "year": 2014,
-      "arxivId": "1406.1078",
+      "ordinal": 9,
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser, Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens, George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith, Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes, and Jeffrey Dean. 2016",
+      "year": 2016,
+      "arxivId": "1609.08144",
       "inCorpus": true,
       "anchor": {
         "page": 2,
@@ -2568,16 +2569,28 @@
         "precision": "tight",
         "rects": [
           {
-            "x0": 307.2760009765625,
-            "y0": 537.5127563476562,
-            "x1": 525.5452270507812,
-            "y1": 548.4218139648438
+            "x0": 246.8292694091797,
+            "y0": 576.6277465820312,
+            "x1": 290.269287109375,
+            "y1": 587.5368041992188
           },
           {
-            "x0": 307.2760009765625,
-            "y0": 551.061767578125,
-            "x1": 483.2396240234375,
-            "y1": 561.9708251953125
+            "x0": 72.0,
+            "y0": 590.1767578125,
+            "x1": 290.26922607421875,
+            "y1": 601.0858154296875
+          },
+          {
+            "x0": 72.0,
+            "y0": 603.7257080078125,
+            "x1": 290.2691345214844,
+            "y1": 614.634765625
+          },
+          {
+            "x0": 72.0,
+            "y0": 617.2757568359375,
+            "x1": 209.6292266845703,
+            "y1": 628.184814453125
           }
         ]
       }
@@ -2590,6 +2603,7 @@
         "sentence": "Our models are based on an encoder-decoder architecture with attention mechanism , as shown in figure .",
         "section": "Neural Machine Translation",
         "sectionKind": "related",
+        "ordinal": 6,
         "title": "Neural machine translation by jointly learning to align and translate",
         "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015",
         "year": 2015,
@@ -2623,6 +2637,7 @@
         "sentence": "We use 512-unit GRU cells for both the encoder and decoder and apply Dropout of 0.2 at the input of each cell.",
         "section": "Baseline Model",
         "sectionKind": "experiments",
+        "ordinal": 11,
         "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
         "authors": "Kyunghyun Cho, Bart van Merrienboer, Caglar G\\\"ul cehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014",
         "year": 2014,
@@ -2650,45 +2665,13 @@
         }
       },
       {
-        "key": "Chung:2016",
-        "stance": "compares",
-        "cue": "state of the art",
-        "sentence": "While some work has achieved state of the art results using deep networks, others have achieved similar results with far shallower ones.",
-        "section": "Encoder and Decoder Depth",
-        "sectionKind": "discussion",
-        "title": "A character-level decoder without explicit segmentation for neural machine translation",
-        "authors": "Junyoung Chung, Kyunghyun Cho, and Yoshua Bengio. 2016",
-        "year": 2016,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 4,
-          "pageWidth": 595.2760009765625,
-          "pageHeight": 841.8900146484375,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 130.767333984375,
-              "y0": 79.04367065429688,
-              "x1": 290.2692565917969,
-              "y1": 89.95277404785156
-            },
-            {
-              "x0": 72.0,
-              "y0": 92.59268188476562,
-              "x1": 201.13104248046875,
-              "y1": 103.50178527832031
-            }
-          ]
-        }
-      },
-      {
         "key": "Huang:2016",
         "stance": "contests",
         "cue": "differs from",
         "sentence": "In this variant, we add skip connections from each layer to all other layers: Our implementation differs from in that we use an addition instead of a concatenation operation in order to keep the state size constant.",
         "section": "Encoder and Decoder Depth",
         "sectionKind": "discussion",
+        "ordinal": 22,
         "title": "Densely connected convolutional networks",
         "authors": "Gao Huang, Zhuang Liu, and Kilian Q. Weinberger. 2016",
         "year": 2016,
@@ -2697,45 +2680,13 @@
         "anchor": null
       },
       {
-        "key": "Jean:2014",
-        "stance": "compares",
-        "cue": "state of the art",
-        "sentence": "While some work has achieved state of the art results using deep networks, others have achieved similar results with far shallower ones.",
-        "section": "Encoder and Decoder Depth",
-        "sectionKind": "discussion",
-        "title": "On using very large target vocabulary for neural machine translation",
-        "authors": "S\\'ebastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio. 2015",
-        "year": 2015,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 4,
-          "pageWidth": 595.2760009765625,
-          "pageHeight": 841.8900146484375,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 130.767333984375,
-              "y0": 79.04367065429688,
-              "x1": 290.2692565917969,
-              "y1": 89.95277404785156
-            },
-            {
-              "x0": 72.0,
-              "y0": 92.59268188476562,
-              "x1": 201.13104248046875,
-              "y1": 103.50178527832031
-            }
-          ]
-        }
-      },
-      {
         "key": "Luong:2015",
         "stance": "inherits",
         "cue": "based on",
         "sentence": "Our models are based on an encoder-decoder architecture with attention mechanism , as shown in figure .",
         "section": "Neural Machine Translation",
         "sectionKind": "related",
+        "ordinal": 6,
         "title": "Effective approaches to attention-based neural machine translation",
         "authors": "Minh-Thang Luong, Hieu Pham, and Christopher D. Manning. 2015",
         "year": 2015,
@@ -2763,45 +2714,13 @@
         }
       },
       {
-        "key": "Sennrich:2015",
-        "stance": "compares",
-        "cue": "state of the art",
-        "sentence": "While some work has achieved state of the art results using deep networks, others have achieved similar results with far shallower ones.",
-        "section": "Encoder and Decoder Depth",
-        "sectionKind": "discussion",
-        "title": "Neural machine translation of rare words with subword units",
-        "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016",
-        "year": 2016,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 4,
-          "pageWidth": 595.2760009765625,
-          "pageHeight": 841.8900146484375,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 130.767333984375,
-              "y0": 79.04367065429688,
-              "x1": 290.2692565917969,
-              "y1": 89.95277404785156
-            },
-            {
-              "x0": 72.0,
-              "y0": 92.59268188476562,
-              "x1": 201.13104248046875,
-              "y1": 103.50178527832031
-            }
-          ]
-        }
-      },
-      {
         "key": "Tensorflow:2016",
         "stance": "inherits",
         "cue": "following",
         "sentence": "All of the following experiments are run using our own software framework based on TensorFlow .",
         "section": "Training Setup and Software",
         "sectionKind": "experiments",
+        "ordinal": 8,
         "title": "TensorFlow: A system for large-scale machine learning",
         "authors": "Martin Abadi, Paul Barham, Jianmin Chen, Zhifeng Chen, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Geoffrey Irving, Michael Isard, Manjunath Kudlur, Josh Levenberg, Rajat Monga, Sherry Moore, Derek G. Murray, Benoit Steiner, Paul Tucker, Vijay Vasudevan, Pete Warden, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. 2016",
         "year": 2016,
@@ -2841,6 +2760,7 @@
         "sentence": "We use a batch size of 128 and decode using beam search with a beam width of 10 and the length normalization penalty of 0.6 described in .",
         "section": "Training Setup and Software",
         "sectionKind": "experiments",
+        "ordinal": 9,
         "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
         "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V. Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, Jeff Klingner, Apurva Shah, Melvin Johnson, Xiaobing Liu, Lukasz Kaiser, Stephan Gouws, Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens, George Kurian, Nishant Patil, Wei Wang, Cliff Young, Jason Smith, Jason Riesa, Alex Rudnick, Oriol Vinyals, Greg Corrado, Macduff Hughes, and Jeffrey Dean. 2016",
         "year": 2016,

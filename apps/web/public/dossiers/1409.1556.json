@@ -4586,8 +4586,8 @@
       "citationKey": "Szegedy14",
       "arxivId": "1409.4842",
       "citedTitle": "Going deeper with convolutions",
-      "outcome": "unavailable",
-      "note": "the cited paper's source could not be read"
+      "outcome": "confirmed",
+      "note": ""
     },
     {
       "table": "Table 7",
@@ -4597,8 +4597,8 @@
       "citationKey": "Szegedy14",
       "arxivId": "1409.4842",
       "citedTitle": "Going deeper with convolutions",
-      "outcome": "unavailable",
-      "note": "the cited paper's source could not be read"
+      "outcome": "confirmed",
+      "note": ""
     },
     {
       "table": "Table 7",
@@ -4740,8 +4740,8 @@
       "citationKey": "Szegedy14",
       "arxivId": "1409.4842",
       "citedTitle": "Going deeper with convolutions",
-      "outcome": "unavailable",
-      "note": "the cited paper's source could not be read"
+      "outcome": "not_found",
+      "note": "this figure appears nowhere in the paper it is attributed to"
     },
     {
       "table": "Table 11",
@@ -4895,14 +4895,39 @@
       "citations": 0
     }
   ],
-  "findings": [],
+  "findings": [
+    {
+      "check_id": "cross_paper.baseline_not_in_source",
+      "title": "Table 10 attributes 26.7 to Going deeper with convolutions, which does not report it",
+      "severity": "medium",
+      "confidence": "likely",
+      "explanation": "Table 10 reports 26.7 for 'GoogLeNet', attributed to Szegedy14. That figure does not appear anywhere in arXiv:1409.4842 \u2014 not in its tables and not in its prose. It may have been recomputed, taken from a different split, or mis-copied.",
+      "arithmetic": {
+        "reported": "26.7",
+        "citation": "Szegedy14",
+        "arxivId": "1409.4842"
+      },
+      "evidence": [
+        {
+          "description": "Table 10, row 'GoogLeNet', column top-5 test error (%)",
+          "quote": "26.7",
+          "anchor": null
+        },
+        {
+          "description": "cited as arXiv:1409.4842",
+          "quote": "Going deeper with convolutions",
+          "anchor": null
+        }
+      ]
+    }
+  ],
   "lineage": {
     "tally": {
       "inherits": 0,
       "extends": 2,
       "contests": 0,
-      "compares": 2,
-      "background": 13,
+      "compares": 1,
+      "background": 14,
       "traversable": 0
     },
     "foundation": {
@@ -4912,6 +4937,7 @@
       "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our ConvNet layer configurations are designed using the same principles, inspired by .",
       "section": "ConvNet Configurations",
       "sectionKind": "method",
+      "ordinal": 10,
       "title": "Flexible, high performance convolutional neural networks for image classification",
       "authors": "Ciresan, D. C., Meier, U., Masci, J., Gambardella, L. M., and Schmidhuber, J",
       "year": 2011,
@@ -4946,6 +4972,7 @@
         "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our ConvNet layer configurations are designed using the same principles, inspired by .",
         "section": "ConvNet Configurations",
         "sectionKind": "method",
+        "ordinal": 10,
         "title": "Flexible, high performance convolutional neural networks for image classification",
         "authors": "Ciresan, D. C., Meier, U., Masci, J., Gambardella, L. M., and Schmidhuber, J",
         "year": 2011,
@@ -4979,6 +5006,7 @@
         "sentence": "To measure the improvement brought by the increased ConvNet depth in a fair setting, all our ConvNet layer configurations are designed using the same principles, inspired by .",
         "section": "ConvNet Configurations",
         "sectionKind": "method",
+        "ordinal": 10,
         "title": "ImageNet classification with deep convolutional neural networks",
         "authors": "Krizhevsky, A., Sutskever, I., and Hinton, G. E",
         "year": 2012,
@@ -5006,51 +5034,13 @@
         }
       },
       {
-        "key": "LeCun89",
-        "stance": "compares",
-        "cue": "state-of-the-art",
-        "sentence": "It was demonstrated that the representation depth is beneficial for the classification accuracy, and that state-of-the-art performance on the ImageNet challenge dataset can be achieved using a conventional ConvNet architecture with substantially increased depth.",
-        "section": "Conclusion",
-        "sectionKind": "conclusion",
-        "title": "Backpropagation applied to handwritten zip code recognition",
-        "authors": "LeCun, Y., Boser, B., Denker, J. S., Henderson, D., Howard, R. E., Hubbard, W., and Jackel, L. D",
-        "year": 1989,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 7,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 219.60018920898438,
-              "y0": 598.9894409179688,
-              "x1": 504.1036682128906,
-              "y1": 612.2796020507812
-            },
-            {
-              "x0": 108.00019836425781,
-              "y0": 610.0292358398438,
-              "x1": 504.0613708496094,
-              "y1": 623.3193969726562
-            },
-            {
-              "x0": 108.00018310546875,
-              "y0": 620.9491577148438,
-              "x1": 325.0639953613281,
-              "y1": 634.2393188476562
-            }
-          ]
-        }
-      },
-      {
         "key": "Szegedy14",
         "stance": "compares",
         "cue": "outperforming",
         "sentence": "As will be shown in sec:class_SOA, our model is outperforming that of in terms of the single-network classification accuracy.",
         "section": "Discussion",
         "sectionKind": "method",
+        "ordinal": 23,
         "title": "Going deeper with convolutions",
         "authors": "Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., Erhan, D., Vanhoucke, V., and Rabinovich, A",
         "year": 2014,

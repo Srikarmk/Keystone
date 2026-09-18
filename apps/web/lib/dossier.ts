@@ -175,6 +175,27 @@ export interface Assumption {
   anchor: AnchorJson | null;
 }
 
+/**
+ * How often the cue readings are right, measured on a hand-labelled sample.
+ *
+ * Written by `keystone stance-eval` from the labels themselves, so the number on the
+ * site cannot drift from the file it came from. The site's whole claim is that these
+ * readings are checkable; how often they are correct belongs on the site.
+ */
+export interface Accuracy {
+  labelled: number;
+  heldOut: number;
+  /** Accuracy on rows drawn *after* the rules were last changed. The honest figure. */
+  heldOutAccuracy: number | null;
+  accuracy: number;
+  baselineAccuracy: number;
+  majorityAccuracy: number;
+  classes: Record<
+    string,
+    { gold: number; predicted: number; precision: number | null; recall: number | null }
+  >;
+}
+
 export interface LibraryGraph {
   nodes: {
     id: string;

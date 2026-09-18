@@ -399,7 +399,7 @@
       "name": "Table 1",
       "caption": "Carbon emissions information for T0 and T5.",
       "label": "",
-      "numericCells": 6,
+      "numericCells": 9,
       "supports": 0,
       "rows": [
         [
@@ -472,10 +472,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "0.9",
+            "value": "0.9",
             "emphasised": false,
-            "block": 0
+            "block": 1
           }
         ],
         [
@@ -510,10 +510,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "8.9",
+            "value": "8.9",
             "emphasised": false,
-            "block": 0
+            "block": 1
           }
         ],
         [
@@ -548,10 +548,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "46.7",
+            "value": "46.7",
             "emphasised": false,
-            "block": 0
+            "block": 1
           }
         ]
       ],
@@ -7214,48 +7214,49 @@
   "findings": [],
   "lineage": {
     "tally": {
-      "inherits": 5,
+      "inherits": 8,
       "extends": 0,
-      "contests": 3,
+      "contests": 0,
       "compares": 1,
       "background": 26,
       "traversable": 1
     },
     "foundation": {
-      "key": "gpt3",
+      "key": "khashabi-etal-2020-unifiedqa",
       "stance": "inherits",
-      "cue": "we follow",
-      "sentence": "For tasks that involve choosing the correct completion from several options (e.g. multiple choice question answering), we follow and use rank classification to evaluate our model: we compute the log-likelihood of each of the target options under the fine-tuned model and select the option with the highest log-likelihood as the prediction.",
-      "section": "Experimental Setup",
-      "sectionKind": "experiments",
-      "title": "Language models are few-shot learners",
-      "authors": "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei",
+      "cue": "based on",
+      "sentence": "Noting that grouping by task is an imperfect heuristic, we err on the side of organizing our task taxonomy according to the task format as opposed to required skill based on conventions in the literature .",
+      "section": "Measuring Generalization to Held-Out Tasks",
+      "sectionKind": "method",
+      "ordinal": 28,
+      "title": "UNIFIEDQA: Crossing format boundaries with a single QA system",
+      "authors": "Daniel Khashabi, Sewon Min, Tushar Khot, Ashish Sabharwal, Oyvind Tafjord, Peter Clark, and Hannaneh Hajishirzi",
       "year": 2020,
-      "arxivId": "2005.14165",
-      "inCorpus": true,
+      "arxivId": null,
+      "inCorpus": false,
       "anchor": {
-        "page": 5,
+        "page": 2,
         "pageWidth": 612.0,
         "pageHeight": 792.0,
         "precision": "tight",
         "rects": [
           {
-            "x0": 328.033935546875,
-            "y0": 540.6914672851562,
-            "x1": 504.0024108886719,
-            "y1": 552.6964111328125
+            "x0": 108.00003051757812,
+            "y0": 698.7381591796875,
+            "x1": 504.0033264160156,
+            "y1": 710.7431030273438
           },
           {
             "x0": 108.00003051757812,
-            "y0": 551.6504516601562,
-            "x1": 504.00323486328125,
-            "y1": 563.6553955078125
+            "y0": 709.6972045898438,
+            "x1": 504.0032653808594,
+            "y1": 721.7021484375
           },
           {
             "x0": 108.00003051757812,
-            "y0": 562.6084594726562,
-            "x1": 373.9813232421875,
-            "y1": 574.6134033203125
+            "y0": 720.6561889648438,
+            "x1": 143.9650115966797,
+            "y1": 732.6611328125
           }
         ]
       }
@@ -7268,6 +7269,7 @@
         "sentence": "We also show that the model improves over a large baseline language model on 13 out of 14 tasks in the BIG-bench benchmark .",
         "section": "Introduction",
         "sectionKind": "introduction",
+        "ordinal": 12,
         "title": "Beyond the imitation game: Measuring and extrapolating the capabilities of language models",
         "authors": "BIG-bench collaboration",
         "year": 2021,
@@ -7301,6 +7303,7 @@
         "sentence": "Following this conjecture, we reevaluate these two datasets without instructions as done by and and find that it improves performance on HellaSwag from a median of 33.65% to 57.93%, matching the performance of FLAN.",
         "section": "Discussion",
         "sectionKind": "discussion",
+        "ordinal": 53,
         "title": "Finetuned language models are zero-shot learners, 2021",
         "authors": "Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, Nan Du, Andrew M. Dai, and Quoc V. Le",
         "year": 2021,
@@ -7334,6 +7337,7 @@
         "sentence": "For tasks that involve choosing the correct completion from several options (e.g. multiple choice question answering), we follow and use rank classification to evaluate our model: we compute the log-likelihood of each of the target options under the fine-tuned model and select the option with the highest log-likelihood as the prediction.",
         "section": "Experimental Setup",
         "sectionKind": "experiments",
+        "ordinal": 41,
         "title": "Language models are few-shot learners",
         "authors": "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei",
         "year": 2020,
@@ -7368,11 +7372,12 @@
       },
       {
         "key": "khashabi-etal-2020-unifiedqa",
-        "stance": "contests",
-        "cue": "as opposed to",
+        "stance": "inherits",
+        "cue": "based on",
         "sentence": "Noting that grouping by task is an imperfect heuristic, we err on the side of organizing our task taxonomy according to the task format as opposed to required skill based on conventions in the literature .",
         "section": "Measuring Generalization to Held-Out Tasks",
         "sectionKind": "method",
+        "ordinal": 28,
         "title": "UNIFIEDQA: Crossing format boundaries with a single QA system",
         "authors": "Daniel Khashabi, Sewon Min, Tushar Khot, Ashish Sabharwal, Oyvind Tafjord, Peter Clark, and Hannaneh Hajishirzi",
         "year": 2020,
@@ -7412,6 +7417,7 @@
         "sentence": "Therefore, we use 's LM-adapted T5 model (referred to as T5+LM), produced by training T5 on 100B additional tokens from C4 on a standard language modeling objective. Training Our main model, T0, is trained on the multitask mixture detailed in Section and tab:all-datasets.",
         "section": "Experimental Setup",
         "sectionKind": "experiments",
+        "ordinal": 35,
         "title": "The power of scale for parameter-efficient prompt tuning",
         "authors": "Brian Lester, Rami Al-Rfou, and Noah Constant",
         "year": 2021,
@@ -7457,6 +7463,7 @@
         "sentence": "We use a batch size of 1024 sequences (corresponding to total input tokens per batch) and the Adafactor optimizer .",
         "section": "Experimental Setup",
         "sectionKind": "experiments",
+        "ordinal": 40,
         "title": "Adafactor: Adaptive learning rates with sublinear memory cost",
         "authors": "Noam Shazeer and Mitchell Stern",
         "year": 2018,
@@ -7490,6 +7497,7 @@
         "sentence": "Following , we use packing to combine multiple training examples into a single sequence to reach the maximum sequence length.",
         "section": "Experimental Setup",
         "sectionKind": "experiments",
+        "ordinal": 39,
         "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
         "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu",
         "year": 2020,
@@ -7518,11 +7526,12 @@
       },
       {
         "key": "vu-etal-2020-exploring",
-        "stance": "contests",
-        "cue": "as opposed to",
+        "stance": "inherits",
+        "cue": "based on",
         "sentence": "Noting that grouping by task is an imperfect heuristic, we err on the side of organizing our task taxonomy according to the task format as opposed to required skill based on conventions in the literature .",
         "section": "Measuring Generalization to Held-Out Tasks",
         "sectionKind": "method",
+        "ordinal": 28,
         "title": "Exploring and predicting transferability across NLP tasks",
         "authors": "Tu Vu, Tong Wang, Tsendsuren Munkhdalai, Alessandro Sordoni, Adam Trischler, Andrew Mattarella-Micke, Subhransu Maji, and Mohit Iyyer",
         "year": 2020,
@@ -7557,11 +7566,12 @@
       },
       {
         "key": "ye2021crossfit",
-        "stance": "contests",
-        "cue": "as opposed to",
+        "stance": "inherits",
+        "cue": "based on",
         "sentence": "Noting that grouping by task is an imperfect heuristic, we err on the side of organizing our task taxonomy according to the task format as opposed to required skill based on conventions in the literature .",
         "section": "Measuring Generalization to Held-Out Tasks",
         "sectionKind": "method",
+        "ordinal": 28,
         "title": "Crossfit: A few-shot learning challenge for cross-task generalization in nlp",
         "authors": "Qinyuan Ye, Bill Yuchen Lin, and Xiang Ren",
         "year": 2021,

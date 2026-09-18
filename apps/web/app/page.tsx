@@ -4,7 +4,11 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
-import type { IndexEntry, LibraryGraph as GraphData } from "@/lib/dossier";
+import type {
+  Accuracy,
+  IndexEntry,
+  LibraryGraph as GraphData,
+} from "@/lib/dossier";
 import { LibraryGraph } from "@/components/LibraryGraph";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -13,6 +17,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export default function Home() {
   const [index, setIndex] = useState<IndexEntry[]>([]);
   const [graph, setGraph] = useState<GraphData | null>(null);
+  const [accuracy, setAccuracy] = useState<Accuracy | null>(null);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -27,6 +32,7 @@ export default function Home() {
       )
       .catch(() => {});
     fetch("/dossiers/lineage.json").then((r) => r.json()).then(setGraph).catch(() => {});
+    fetch("/dossiers/accuracy.json").then((r) => r.json()).then(setAccuracy).catch(() => {});
   }, []);
 
   const totals = useMemo(() => {
@@ -101,6 +107,26 @@ export default function Home() {
             LaTeX, shown with the words that placed it, and pinned to the pixels on the
             page where the paper admits it.
           </p>
+
+          {/* The error rate, up front. Reading a cue out of position produces a
+              confident opposite rather than a vague answer, so the rate at which that
+              happens is the first thing a reader is owed. */}
+          {accuracy && accuracy.heldOutAccuracy !== null ? (
+            <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-ink-faint">
+              And it is wrong sometimes:{" "}
+              <span className="numeral text-ink-soft">
+                {Math.round(accuracy.heldOutAccuracy * 100)}%
+              </span>{" "}
+              of readings were correct on{" "}
+              <span className="numeral">{accuracy.heldOut}</span> citations labelled by
+              hand after the rules were last changed, against{" "}
+              <span className="numeral">
+                {Math.round(accuracy.baselineAccuracy * 100)}%
+              </span>{" "}
+              for a bag-of-words classifier over the same sentences. Every row shows
+              its sentence so you can see which kind you are looking at.
+            </p>
+          ) : null}
 
           <div className="mt-7 flex flex-wrap items-center gap-6">
             <Link

@@ -20019,7 +20019,7 @@
       "name": "Table 12",
       "caption": "CLIP performs similarly when trained on only YFCC100M. Comparing a ResNet-50 trained on only YFCC100M with a same sized subset of WIT shows similar average performance and number of wins on zero shot and linear classifier evals. However, large differences in dataset specific performance occur. We include performance on the 3 datasets where YFCC does best and worst compared to WIT according to a linear probe in order to highlight this as well as aggregate performance across all linear and zero-shot evals and the canonical ImageNet dataset.",
       "label": "dataset_ablation_table",
-      "numericCells": 53,
+      "numericCells": 54,
       "supports": 1,
       "rows": [
         [
@@ -20394,10 +20394,10 @@
             "block": 2
           },
           {
-            "text": "",
-            "value": null,
+            "text": "+1.2",
+            "value": "1.2",
             "emphasised": false,
-            "block": 0
+            "block": 2
           },
           {
             "text": "31.3",
@@ -26683,8 +26683,8 @@
       "inherits": 7,
       "extends": 3,
       "contests": 0,
-      "compares": 7,
-      "background": 155,
+      "compares": 3,
+      "background": 159,
       "traversable": 2
     },
     "foundation": {
@@ -26694,6 +26694,7 @@
       "sentence": "For the first, we use ResNet-50 as the base architecture for the image encoder due to its widespread adoption and proven performance.",
       "section": "Choosing and Scaling a Model",
       "sectionKind": "method",
+      "ordinal": 44,
       "title": "Deep residual learning for image recognition",
       "authors": "He, K., Zhang, X., Ren, S., and Sun, J",
       "year": 2016,
@@ -26728,6 +26729,7 @@
         "sentence": "In this section, we provide preliminary analysis of some of the biases in CLIP, using bias probes inspired by those outlined in and .",
         "section": "Bias",
         "sectionKind": "limitations",
+        "ordinal": 134,
         "title": "Fairface: Face attribute dataset for balanced race, gender, and age, 2019",
         "authors": "K\u00e4rkk\u00e4inen, K. and Joo, J",
         "year": 2019,
@@ -26767,6 +26769,7 @@
         "sentence": "This performance is not competitive when compared to production level models such as Google's Celebrity Recognition .",
         "section": "Surveillance",
         "sectionKind": "limitations",
+        "ordinal": 156,
         "title": "Google cloud api: Celebrity recognition",
         "authors": "Google",
         "year": null,
@@ -26806,6 +26809,7 @@
         "sentence": "In this section, we provide preliminary analysis of some of the biases in CLIP, using bias probes inspired by those outlined in and .",
         "section": "Bias",
         "sectionKind": "limitations",
+        "ordinal": 133,
         "title": "Gender shades: Intersectional accuracy disparities in commercial gender classification",
         "authors": "Buolamwini, J. and Gebru, T",
         "year": 2018,
@@ -26845,6 +26849,7 @@
         "sentence": "For the first, we use ResNet-50 as the base architecture for the image encoder due to its widespread adoption and proven performance.",
         "section": "Choosing and Scaling a Model",
         "sectionKind": "method",
+        "ordinal": 44,
         "title": "Deep residual learning for image recognition",
         "authors": "He, K., Zhang, X., Ren, S., and Sun, J",
         "year": 2016,
@@ -26878,6 +26883,7 @@
         "sentence": "We use the Adam optimizer with decoupled weight decay regularization applied to all weights that are not gains or biases, and decay the learning rate using a cosine schedule .",
         "section": "Training",
         "sectionKind": "method",
+        "ordinal": 55,
         "title": "Adam: A method for stochastic optimization",
         "authors": "Kingma, D. P. and Ba, J",
         "year": 2014,
@@ -26911,57 +26917,13 @@
         }
       },
       {
-        "key": "kolesnikov2019large",
-        "stance": "compares",
-        "cue": "state of the art",
-        "sentence": "When fine-tuned to ImageNet these pre-trained models increased accuracy by over 5% and improved the overall state of the art at the time. and have also demonstrated large gains on a broader set of transfer benchmarks by pre-training models to predict the classes of the noisily labeled JFT-300M dataset.",
-        "section": "Introduction and Motivating Work",
-        "sectionKind": "introduction",
-        "title": "Large scale learning of general visual representations for transfer",
-        "authors": "Kolesnikov, A., Beyer, L., Zhai, X., Puigcerver, J., Yung, J., Gelly, S., and Houlsby, N",
-        "year": 2019,
-        "arxivId": "1912.11370",
-        "inCorpus": false,
-        "anchor": {
-          "page": 1,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 271.1142272949219,
-              "y0": 615.2769775390625,
-              "x1": 289.4358215332031,
-              "y1": 625.2046508789062
-            },
-            {
-              "x0": 55.439998626708984,
-              "y0": 627.1302490234375,
-              "x1": 289.60980224609375,
-              "y1": 637.1920166015625
-            },
-            {
-              "x0": 55.439998626708984,
-              "y0": 639.22119140625,
-              "x1": 289.4423828125,
-              "y1": 649.103759765625
-            },
-            {
-              "x0": 55.439998626708984,
-              "y0": 651.116455078125,
-              "x1": 205.3372344970703,
-              "y1": 661.0790405273438
-            }
-          ]
-        }
-      },
-      {
         "key": "kornblith2019better",
         "stance": "compares",
         "cue": "outperforms",
         "sentence": "This increases flexibility, and prior work has convincingly demonstrated that fine-tuning outperforms linear classification on most image classification datasets .",
         "section": "Representation Learning",
         "sectionKind": "experiments",
+        "ordinal": 79,
         "title": "Do better imagenet models transfer better?",
         "authors": "Kornblith, S., Shlens, J., and Le, Q. V",
         "year": 2019,
@@ -27007,6 +26969,7 @@
         "sentence": "In Figure we visualize how prompt engineering and ensembling change the performance of a set of CLIP models compared to the contextless baseline approach of directly embedding the class name as done in .",
         "section": "Prompt Engineering and Ensembling",
         "sectionKind": "experiments",
+        "ordinal": 75,
         "title": "Learning visual n-grams from web data",
         "authors": "Li, A., Jabri, A., Joulin, A., and van der Maaten, L",
         "year": 2017,
@@ -27052,6 +27015,7 @@
         "sentence": "We use the Adam optimizer with decoupled weight decay regularization applied to all weights that are not gains or biases, and decay the learning rate using a cosine schedule .",
         "section": "Training",
         "sectionKind": "method",
+        "ordinal": 56,
         "title": "Decoupled weight decay regularization",
         "authors": "Loshchilov, I. and Hutter, F",
         "year": 2017,
@@ -27085,45 +27049,13 @@
         }
       },
       {
-        "key": "mahajan2018exploring",
-        "stance": "compares",
-        "cue": "State-of-the-art",
-        "sentence": "State-of-the-art computer vision systems use very large amounts of compute. required 19 GPU years to train their ResNeXt101-32x48d and required 33 TPUv3 core-years to train their Noisy Student EfficientNet-L2.",
-        "section": "Selecting an Efficient Pre-Training Method",
-        "sectionKind": "method",
-        "title": "Exploring the limits of weakly supervised pretraining",
-        "authors": "Mahajan, D., Girshick, R., Ramanathan, V., He, K., Paluri, M., Li, Y., Bharambe, A., and van der Maaten, L",
-        "year": 2018,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 3,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 55.439998626708984,
-              "y0": 149.04330444335938,
-              "x1": 289.4370422363281,
-              "y1": 159.10504150390625
-            },
-            {
-              "x0": 55.439998626708984,
-              "y0": 160.99929809570312,
-              "x1": 142.6896514892578,
-              "y1": 171.06103515625
-            }
-          ]
-        }
-      },
-      {
         "key": "oh2011large",
         "stance": "inherits",
         "cue": "We used",
         "sentence": "We used the VIRAT dataset and data captured by , which both consist of real world outdoor scenes with non-actors.",
         "section": "Surveillance",
         "sectionKind": "limitations",
+        "ordinal": 152,
         "title": "A large-scale benchmark dataset for event recognition in surveillance video",
         "authors": "Oh, S., Hoogs, A., Perera, A., Cuntoor, N., Chen, C.-C., Lee, J. T., Mukherjee, S., Aggarwal, J., Lee, H., Davis, L., et al",
         "year": 2011,
@@ -27157,6 +27089,7 @@
         "sentence": "While previous computer vision research has often scaled models by increasing the width or depth in isolation, for the ResNet image encoders we adapt the approach of which found that allocating additional compute across all of width, depth, and resolution outperforms only allocating it to only one dimension of the model.",
         "section": "Choosing and Scaling a Model",
         "sectionKind": "method",
+        "ordinal": 53,
         "title": "Efficientnet: Rethinking model scaling for convolutional neural networks",
         "authors": "Tan, M. and Le, Q. V",
         "year": 2019,
@@ -27196,26 +27129,13 @@
         }
       },
       {
-        "key": "tian2020rethinking",
-        "stance": "compares",
-        "cue": "state-of-the-art",
-        "sentence": "To our knowledge, using a linear classifier on top of the features of a high-quality pre-trained model is near state-of-the-art for few shot learning , which suggests that there is a gap between the best few-shot machine learning methods and human few-shot learning.",
-        "section": "Comparison to Human Performance",
-        "sectionKind": "results",
-        "title": "Rethinking few-shot image classification: a good embedding is all you need?",
-        "authors": "Tian, Y., Wang, Y., Krishnan, D., Tenenbaum, J. B., and Isola, P",
-        "year": 2020,
-        "arxivId": "2003.11539",
-        "inCorpus": false,
-        "anchor": null
-      },
-      {
         "key": "varadarajan2009topic",
         "stance": "inherits",
         "cue": "We used",
         "sentence": "We used the VIRAT dataset and data captured by , which both consist of real world outdoor scenes with non-actors.",
         "section": "Surveillance",
         "sectionKind": "limitations",
+        "ordinal": 153,
         "title": "Topic models for scene analysis and abnormality detection",
         "authors": "Varadarajan, J. and Odobez, J.-M",
         "year": 2009,
@@ -27243,45 +27163,13 @@
         }
       },
       {
-        "key": "xie2020self",
-        "stance": "compares",
-        "cue": "state of the art",
-        "sentence": "This is well below the 88.4% accuracy of the current state of the art .",
-        "section": "Introduction and Motivating Work",
-        "sectionKind": "introduction",
-        "title": "Self-training with noisy student improves imagenet classification",
-        "authors": "Xie, Q., Luong, M.-T., Hovy, E., and Le, Q. V",
-        "year": 2020,
-        "arxivId": null,
-        "inCorpus": false,
-        "anchor": {
-          "page": 1,
-          "pageWidth": 612.0,
-          "pageHeight": 792.0,
-          "precision": "tight",
-          "rects": [
-            {
-              "x0": 200.49717712402344,
-              "y0": 495.64202880859375,
-              "x1": 289.4427185058594,
-              "y1": 505.6790466308594
-            },
-            {
-              "x0": 55.439998626708984,
-              "y0": 507.5792541503906,
-              "x1": 243.23106384277344,
-              "y1": 517.6409912109375
-            }
-          ]
-        }
-      },
-      {
         "key": "zhai2019large",
         "stance": "compares",
         "cue": "outperforms",
         "sentence": "This increases flexibility, and prior work has convincingly demonstrated that fine-tuning outperforms linear classification on most image classification datasets .",
         "section": "Representation Learning",
         "sectionKind": "experiments",
+        "ordinal": 79,
         "title": "A large-scale study of representation learning with the visual task adaptation benchmark",
         "authors": "Zhai, X., Puigcerver, J., Kolesnikov, A., Ruyssen, P., Riquelme, C., Lucic, M., Djolonga, J., Pinto, A. S., Neumann, M., Dosovitskiy, A., et al",
         "year": 2019,
@@ -27327,6 +27215,7 @@
         "sentence": "Due to the large size of our pre-training dataset, over-fitting is not a major concern and the details of training CLIP are simplified compared to the implementation of .",
         "section": "Selecting an Efficient Pre-Training Method",
         "sectionKind": "method",
+        "ordinal": 40,
         "title": "Contrastive learning of medical visual representations from paired images and text",
         "authors": "Zhang, Y., Jiang, H., Miura, Y., Manning, C. D., and Langlotz, C. P",
         "year": 2020,

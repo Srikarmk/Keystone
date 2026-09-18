@@ -19,6 +19,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useIsDark } from "@/lib/theme";
 
 import type {
+  Accuracy,
   AnchorJson,
   LibraryGraph,
   BaselineCheck,
@@ -53,6 +54,7 @@ export function Reader({ id }: { id: string }) {
   const [zoomStep, setZoomStep] = useState(0);
   const [darkPage, setDarkPage] = useState(false);
   const [graph, setGraph] = useState<LibraryGraph | null>(null);
+  const [accuracy, setAccuracy] = useState<Accuracy | null>(null);
   const appIsDark = useIsDark();
 
   useEffect(() => {
@@ -71,6 +73,7 @@ export function Reader({ id }: { id: string }) {
     // The library graph, so this paper can also show who leans on *it*. Fetched once
     // rather than baked into each dossier: it changes whenever any paper is added.
     fetch("/dossiers/lineage.json").then((r) => r.json()).then(setGraph).catch(() => {});
+    fetch("/dossiers/accuracy.json").then((r) => r.json()).then(setAccuracy).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -158,6 +161,7 @@ export function Reader({ id }: { id: string }) {
                 <Report
                   dossier={dossier}
                   graph={graph}
+                  accuracy={accuracy}
                   selected={selected}
                   claim={claim}
                   showEvidence={showEvidence}
@@ -349,6 +353,7 @@ function Stat({ n, label, tone }: { n: number; label: string; tone?: string }) {
 function Report({
   dossier,
   graph,
+  accuracy,
   selected,
   claim,
   showEvidence,
@@ -358,6 +363,7 @@ function Report({
 }: {
   dossier: Dossier;
   graph: LibraryGraph | null;
+  accuracy: Accuracy | null;
   selected: number | null;
   claim: Claim | null;
   showEvidence: boolean;
@@ -534,12 +540,36 @@ function Report({
         <Structure dossier={dossier} />
       </Section>
 
-      <p className="py-7 text-[0.82rem] leading-relaxed text-ink-faint">
-        Every line above is quoted from this paper&rsquo;s own LaTeX source, with the
-        words that placed it shown alongside. Nothing was summarised, and no model was
-        in the loop. {dossier.lineage.tally.background} further citations say nothing
-        the prose makes checkable, so nothing is claimed about them.
-      </p>
+      <div className="py-7 text-[0.82rem] leading-relaxed text-ink-faint">
+        <p>
+          Every line above is quoted from this paper&rsquo;s own LaTeX source, with the
+          words that placed it shown alongside. Nothing was summarised, and no model
+          was in the loop. {dossier.lineage.tally.background} further citations say
+          nothing the prose makes checkable, so nothing is claimed about them.
+        </p>
+        {/* How often these readings are right, stated here rather than left implicit.
+            A tool whose claim is that its findings are checkable should publish its
+            own error rate first. */}
+        {accuracy && accuracy.heldOutAccuracy !== null ? (
+          <p className="mt-2.5">
+            Measured on{" "}
+            <span className="numeral">{accuracy.labelled}</span> citations labelled by
+            hand:{" "}
+            <span className="numeral text-ink-soft">
+              {Math.round(accuracy.heldOutAccuracy * 100)}%
+            </span>{" "}
+            of readings correct on the{" "}
+            <span className="numeral">{accuracy.heldOut}</span> drawn after the rules
+            were last changed, against{" "}
+            <span className="numeral">
+              {Math.round(accuracy.baselineAccuracy * 100)}%
+            </span>{" "}
+            for a bag-of-words classifier over the same sentences. So roughly one
+            reading in five is still wrong &mdash; which is why the sentence is always
+            shown.
+          </p>
+        ) : null}
+      </div>
     </div>
   );
 }

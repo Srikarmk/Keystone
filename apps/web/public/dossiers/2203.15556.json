@@ -151,10 +151,10 @@
       "kind": "result",
       "section": "method",
       "sentence": "A 280 billion Gopher -like model is the optimal model to train given a compute budget of approximately FLOPs and should be trained on 6.8 trillion tokens.",
-      "status": "untraced",
-      "table": null,
-      "row": null,
-      "cell": null,
+      "status": "mismatch",
+      "table": "Table 3",
+      "row": "175 Billion",
+      "cell": "6.7",
       "anchor": null
     },
     {
@@ -1316,7 +1316,7 @@
       "name": "Table 3",
       "caption": "Estimated optimal training FLOPs and training tokens for various model sizes. For various model sizes, we show the projections from Approach 1 of how many FLOPs and training tokens would be needed to train compute-optimal models. The estimates for Approach 2 & 3 are similar (shown in app:estimated_flops_and_tokens_2_and3)",
       "label": "tab:compute",
-      "numericCells": 9,
+      "numericCells": 15,
       "supports": 0,
       "rows": [
         [
@@ -1437,10 +1437,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "1",
+            "value": "1",
             "emphasised": false,
-            "block": 0
+            "block": 1
           },
           {
             "text": "1.5 Trillion",
@@ -1463,10 +1463,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "6.7",
+            "value": "6.7",
             "emphasised": false,
-            "block": 0
+            "block": 1
           },
           {
             "text": "3.7 Trillion",
@@ -1489,10 +1489,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "17.2",
+            "value": "17.2",
             "emphasised": false,
-            "block": 0
+            "block": 1
           },
           {
             "text": "5.9 Trillion",
@@ -1515,10 +1515,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "59.5",
+            "value": "59.5",
             "emphasised": false,
-            "block": 0
+            "block": 1
           },
           {
             "text": "11.0 Trillion",
@@ -1541,10 +1541,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "221.3",
+            "value": "221.3",
             "emphasised": false,
-            "block": 0
+            "block": 1
           },
           {
             "text": "21.2 Trillion",
@@ -1567,10 +1567,10 @@
             "block": 1
           },
           {
-            "text": "",
-            "value": null,
+            "text": "22515.9",
+            "value": "22515.9",
             "emphasised": false,
-            "block": 0
+            "block": 1
           },
           {
             "text": "216.2 Trillion",
@@ -7926,8 +7926,8 @@
       "inherits": 4,
       "extends": 0,
       "contests": 2,
-      "compares": 2,
-      "background": 47,
+      "compares": 3,
+      "background": 46,
       "traversable": 1
     },
     "foundation": {
@@ -7937,6 +7937,7 @@
       "sentence": "We assume a power-law relationship between compute and model size as done in , though future work may want to include potential curvature in this relationship for large model sizes.",
       "section": "Estimating the optimal parameter/training tokens allocation",
       "sectionKind": "method",
+      "ordinal": 30,
       "title": "Unified scaling laws for routed language models, 2022",
       "authors": "A. Clark, D. d. l. Casas, A. Guy, A. Mensch, M. Paganini, J. Hoffmann, B. Damoc, B. Hechtman, T. Cai, S. Borgeaud, G. v. d. Driessche, E. Rutherford, T. Hennigan, M. Johnson, K. Millican, A. Cassirer, C. Jones, E. Buchatskaya, D. Budden, L. Sifre, S. Osindero, O. Vinyals, J. Rae, E. Elsen, K. Kavukcuoglu, and K. Simonyan",
       "year": 2022,
@@ -7971,6 +7972,7 @@
         "sentence": "We assume a power-law relationship between compute and model size as done in , though future work may want to include potential curvature in this relationship for large model sizes.",
         "section": "Estimating the optimal parameter/training tokens allocation",
         "sectionKind": "method",
+        "ordinal": 30,
         "title": "Unified scaling laws for routed language models, 2022",
         "authors": "A. Clark, D. d. l. Casas, A. Guy, A. Mensch, M. Paganini, J. Hoffmann, B. Damoc, B. Hechtman, T. Cai, S. Borgeaud, G. v. d. Driessche, E. Rutherford, T. Hennigan, M. Johnson, K. Millican, A. Cassirer, C. Jones, E. Buchatskaya, D. Budden, L. Sifre, S. Osindero, O. Vinyals, J. Rae, E. Elsen, K. Kavukcuoglu, and K. Simonyan",
         "year": 2022,
@@ -7998,12 +8000,28 @@
         }
       },
       {
+        "key": "forecast_blog",
+        "stance": "compares",
+        "cue": "outperforms",
+        "sentence": "Remarkably, Chinchilla even outperforms the expert forecast for June 2023 of 63.4% accuracy (see tab:mmlu) .",
+        "section": "MMLU",
+        "sectionKind": "method",
+        "ordinal": 55,
+        "title": "Updates and lessons from AI forecasting, 2021",
+        "authors": "J. Steinhardt",
+        "year": 2021,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
         "key": "jurassic",
         "stance": "compares",
         "cue": "Compared to",
         "sentence": "Compared to Jurassic-1 (178B) , Chinchilla is more performant on all but two subsets-- dm_mathematics and ubuntu_irc-- see tab:pile_nums for a raw bits-per-byte comparison.",
         "section": "Language modelling",
         "sectionKind": "method",
+        "ordinal": 50,
         "title": "Jurassic-1: Technical details and evaluation",
         "authors": "O. Lieber, O. Sharir, B. Lenz, and Y. Shoham",
         "year": 2021,
@@ -8018,6 +8036,7 @@
         "sentence": "Our work differs from in several important ways.",
         "section": "Related Work",
         "sectionKind": "related",
+        "ordinal": 16,
         "title": "Scaling laws for neural language models",
         "authors": "J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess, R. Child, S. Gray, A. Radford, J. Wu, and D. Amodei",
         "year": 2020,
@@ -8045,6 +8064,7 @@
         "sentence": "The full set of hyperparameters used to train Chinchilla are given in tab:arch. Chinchilla uses the same model architecture and training setup as Gopher with the exception of the differences listed below. We train Chinchilla on MassiveText (the same dataset as Gopher ) but use a slightly different subset distribution (shown in tab:data_makeup) to account for the increased number of training tokens. We use AdamW for Chinchilla rather than Adam as this improves the language modelling loss and the downstream task performance after finetuning. We train Chinchilla with a slightly modified SentencePiece tokenizer that does not apply NFKC normalisation.",
         "section": "Model and training details",
         "sectionKind": "method",
+        "ordinal": 39,
         "title": "Adam: A method for stochastic optimization",
         "authors": "D. P. Kingma and J. Ba",
         "year": 2014,
@@ -8059,6 +8079,7 @@
         "sentence": "In this work, we focus on model size and the number of training steps, and we rely on existing work and provided experimental heuristics to determine the other necessary hyperparameters. investigates how to choose a variety of these parameters for training an autoregressive transformer, including the learning rate and batch size. finds only a weak dependence between optimal batch size and model size. suggest that using larger batch-sizes than those we use is possible. investigates the optimal depth-to-width ratio for a variety of standard model sizes.",
         "section": "Related Work",
         "sectionKind": "related",
+        "ordinal": 23,
         "title": "The depth-to-width interplay in self-attention",
         "authors": "Y. Levine, N. Wies, O. Sharir, H. Bata, and A. Shashua",
         "year": 2020,
@@ -8098,6 +8119,7 @@
         "sentence": "The full set of hyperparameters used to train Chinchilla are given in tab:arch. Chinchilla uses the same model architecture and training setup as Gopher with the exception of the differences listed below. We train Chinchilla on MassiveText (the same dataset as Gopher ) but use a slightly different subset distribution (shown in tab:data_makeup) to account for the increased number of training tokens. We use AdamW for Chinchilla rather than Adam as this improves the language modelling loss and the downstream task performance after finetuning. We train Chinchilla with a slightly modified SentencePiece tokenizer that does not apply NFKC normalisation.",
         "section": "Model and training details",
         "sectionKind": "method",
+        "ordinal": 38,
         "title": "Decoupled weight decay regularization",
         "authors": "I. Loshchilov and F. Hutter",
         "year": 2019,
@@ -8112,6 +8134,7 @@
         "sentence": "Chinchilla significantly outperforms Gopher on all evaluation subsets of The Pile , as shown in fig:pile.",
         "section": "Language modelling",
         "sectionKind": "method",
+        "ordinal": 49,
         "title": "The Pile: An 800GB dataset of diverse text for language modeling",
         "authors": "L. Gao, S. Biderman, S. Black, L. Golding, T. Hoppe, C. Foster, J. Phang, H. He, A. Thite, N. Nabeshima, S. Presser, and C. Leahy",
         "year": 2020,
@@ -8135,16 +8158,30 @@
       {
         "key": "rae2021gopher",
         "stance": "inherits",
-        "cue": "We follow",
-        "sentence": "We follow the same setup as in (described further in appendix-winogender).",
-        "section": "Gender bias and toxicity",
+        "cue": "We evaluate on",
+        "sentence": "We evaluate on a large subset of the tasks presented in , shown in tab:task_summary.",
+        "section": "Results",
         "sectionKind": "method",
+        "ordinal": 47,
         "title": "Scaling language models: Methods, analysis \\& insights from training Gopher",
         "authors": "J. Rae, S. Borgeaud, T. Cai, K. Millican, J. Hoffmann, F. Song, J. Aslanides, S. Henderson, R. Ring, S. Young, E. Rutherford, T. Hennigan, J. Menick, A. Cassirer, R. Powell, G. van den Driessche, L. A. Hendricks, M. Rauh, P.-S. Huang, A. Glaese, J. Welbl, S. Dathathri, S. Huang, J. Uesato, J. Mellor, I. Higgins, A. Creswell, N. McAleese, A. Wu, E. Elsen, S. Jayakumar, E. Buchatskaya, D. Budden, E. Sutherland, K. Simonyan, M. Paganini, L. Sifre, L. Martens, X. L. Li, A. Kuncoro, A. Nematzadeh, E. Gribovskaya, D. Donato, A. Lazaridou, A. Mensch, J.-B. Lespiau, M. Tsimpoukelli, N. Grigorev, D. Fritz, T. Sottiaux, M. Pajarskas, T. Pohlen, Z. Gong, D. Toyama, C. de Masson d\u2019Autume, Y. Li, T. Terzi, I. Babuschkin, A. Clark, D. de Las Casas, A. Guy, J. Bradbury, M. Johnson, L. Weidinger, I. Gabriel, W. Isaac, E. Lockhart, S. Osindero, L. Rimell, C. Dyer, O. Vinyals, K. Ayoub, J. Stanway, L. Bennett, D. Hassabis, K. Kavukcuoglu, and G. Irving",
         "year": 2021,
         "arxivId": "2112.11446",
         "inCorpus": false,
-        "anchor": null
+        "anchor": {
+          "page": 9,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 61.86000061035156,
+              "y0": 300.65570068359375,
+              "x1": 333.62164306640625,
+              "y1": 311.5648193359375
+            }
+          ]
+        }
       }
     ]
   },

@@ -25,7 +25,7 @@ Three things, all quoted rather than inferred:
   its own evidence, or nothing at all.
 - **The graph.** Where a cited paper is also in the library the edge is walkable in
   both directions, so a paper shows both what it stands on and who stands on it. Across
-  42 papers that is **52 relationships**, each carrying the sentence that placed it, and
+  42 papers that is **46 relationships**, each carrying the sentence that placed it, and
   the chain is the real one: VGG → ResNet → Transformer → BERT / ViT / LLaMA, with batch
   and layer normalisation feeding in.
 
@@ -37,6 +37,15 @@ already attached rather than as an isolated node.
 > ResNet's central hypothesis — that residual mappings are easier to optimise than
 > unreferenced ones — is stated once, in the introduction, with nothing offered for it.
 > Page 2.
+
+**And it is wrong sometimes.** A cue read out of position produces a confident opposite
+rather than a vague answer, so the error rate is published rather than implied: on 30
+citation sites labelled by hand *after* the rules were last changed, **80%** of readings
+were correct, against **64%** for a bag-of-words classifier over the same sentences and
+32% for the majority class. The labels are in `eval/labels/stance.jsonl` and the numbers
+come from `keystone stance-eval`, which writes them straight into the site so the
+published figure cannot drift from the file. Roughly one reading in five is still wrong,
+which is why every row shows the sentence and the cue it keyed on.
 
 **Why not audit the arithmetic?** That was the first version, and it shipped. A paper's
 numbers can only be reported as an *absence* of errors, and careful papers have none:

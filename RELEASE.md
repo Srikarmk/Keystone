@@ -67,6 +67,83 @@ one of the most-cited papers in the field.
 
 ---
 
+## Auditing the pitch's claims against the demo (2026-09-17)
+
+Every claim on the submitted pitch slide was checked against what a visitor actually
+sees. Three held, three needed work, and one number moved.
+
+**Held.** The slide's headline row — *"In contrast to prior embeddings [A], BERT
+[B] … ARGUES WITH [A] · not [B]"* — is live and correct: BERTScore's dispute resolves
+to GloVe and word2vec, and BERT is not in that list. The Transformer's page shows
+*"We employ a residual connection … followed by layer normalization"* as an adoption
+of Layer Normalization, anchored to page 3. Both are the examples the slide names.
+
+**The "stands on" headline was arbitrary.** Four of the Transformer's adoptions sit in
+its method section, all anchored and all in the library, so every tiebreak came out
+level and `min()` returned whichever citation key sorted first: *Rethinking the
+Inception Architecture*, cited once for label smoothing. Order of first mention now
+breaks the tie, on the principle that a paper describes what its architecture is built
+from before it reaches training details. Every headline in the library changed for the
+better — Transformer → ResNet, BERT / ViT / LLaMA → Transformer, ResNet → Batch
+Normalization, BERTScore → BERT.
+
+**The measurement the pitch promises now exists.** `keystone stance-sample`,
+`stance-refresh` and `stance-eval`, with 90 citation sites labelled by hand in
+`eval/labels/stance.jsonl`:
+
+| | rows | accuracy |
+|---|---|---|
+| Cue rules, **held out** | 30 | **80%** |
+| Cue rules, tuned on | 60 | 90% |
+| Bag-of-words naive Bayes, leave-one-out, cue words stripped | 90 | 64% |
+| Majority class | 90 | 32% |
+
+The two splits are reported separately because the first sixty found a bad cue and the
+rules were fixed against them, which is exactly when a number stops estimating
+anything. Per class, on all 90: `extends` 100% precision, `background` 92%, `inherits`
+90%, `compares` 73%, `contests` 69%.
+
+The first run scored **72%** overall with `compares` at **25% precision**, and one cue
+was responsible for 8 of the 17 errors: `state of the art`. "LSTMs have been firmly
+established as state of the art approaches" describes the field's status quo, it does
+not measure this paper against anything. Removing it, treating a colon as part of a
+clause rather than a break, and refusing a contrastive cue that has an adoption cue
+between it and the citation took the suite to 87% overall.
+
+**The site now publishes its own error rate.** A tool whose claim is that its readings
+are checkable should say how often they are wrong, so the home page and every paper's
+report state the held-out figure and the baseline, read from a file
+`stance-eval` writes so the published number cannot drift from the labels.
+
+### The number on the slide moved: 52 -> 46
+
+Six of the 52 walkable edges were `state of the art` false positives. Removing that cue
+removed them, so the library now shows **46**. The slide's 52 was an over-count, and
+correcting it was the right call: keeping known-false edges to protect a figure would
+invert the product's entire argument.
+
+### A false finding from a parsing gap
+
+Restoring the cross-paper baseline check surfaced three findings on VGG — "Table 7
+attributes 7.9 to *Going deeper with convolutions*, which does not report it". GoogLeNet
+reports **7.89%**. Two separate defects had to combine to produce that:
+
+* **Maths-mode cells were being dropped.** `strip_markup` deletes `$...$` because
+  rendered maths cannot be reconstructed from source — right for prose, wrong for a
+  table cell, where the common case is a number someone typeset in maths mode.
+  GoogLeNet writes its entire top-5 error column as `$7.89\%$`, so every value in it
+  vanished. Cells whose maths is *just a number* are now unwrapped; anything with
+  structure is still stripped.
+* **The comparison demanded exact equality.** A paper tabulating someone else's result
+  rounds it, so VGG's 6.7 never matched GoogLeNet's 6.67. It now compares at the
+  reported precision using `rounds_to`, which was already in the codebase for exactly
+  this reason and simply was not being used here.
+
+A false finding produced by a parsing gap is the worst output this system can emit, and
+it was only caught by following one implausible number back to its source.
+
+---
+
 ## Resolving a citation to a paper (2026-09-16)
 
 An edge exists when a cited work turns out to be a paper the library has ingested, and
@@ -201,7 +278,7 @@ test. A gate whose population moves is not a gate.
 | Citation faithfulness | **Not started** | |
 | Auth, accounts, metering | **Not started** | |
 
-Test suite: **146 passing**, ~75s, no network, no API key.
+Test suite: **158 passing**, ~27s, no network, no API key.
 
 ---
 

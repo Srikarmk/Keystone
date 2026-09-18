@@ -9,6 +9,7 @@ import time
 import urllib.error
 import urllib.request
 from collections import Counter
+from dataclasses import replace
 from pathlib import Path
 
 import pymupdf
@@ -635,10 +636,12 @@ def _write_lineage_index(out: Path) -> int:
     edges: list[dict] = []
     titles: dict[str, str] = {}
 
+    # Matched on the shape of an arXiv identifier rather than by excluding known
+    # names. The exclusion list was already one file behind — `accuracy.json` landed
+    # in this directory and was read as a paper — which is the same mistake that once
+    # built a junk /paper/lineage route.
     files = sorted(
-        path for path in out.glob("*.json")
-        if path.name not in {"index.json", "lineage.json"}
-        and not path.name.endswith(".context.json")
+        path for path in out.glob("*.json") if _DOSSIER_FILE.match(path.name)
     )
     payloads = [json.loads(path.read_text()) for path in files]
     for payload in payloads:
@@ -883,6 +886,194 @@ def _fetch_pdf(arxiv_id: str, into: Path) -> bool:
     staging.write_bytes(payload)
     staging.replace(target)
     return True
+
+
+@app.command("stance-sample")
+def stance_sample(
+    labels: Path = typer.Option(Path("../../eval/labels/stance.jsonl"), help="Label file."),
+    cache: Path = typer.Option(Path("../../eval/corpus/cache"), help="e-print cache."),
+    dossiers: Path = typer.Option(Path("../../apps/web/public/dossiers"), help="Library."),
+    per_stance: int = typer.Option(12, help="Rows to draw per predicted stance."),
+    seed: int = typer.Option(7, help="Sampling seed, so the draw is reproducible."),
+) -> None:
+    """Draw a sample of citation sites to label by hand, stratified by prediction.
+
+    Appends to the label file, skipping anything already in it, so the sample can be
+    grown over time without relabelling. Rows arrive with ``gold: null``; filling that
+    in is the labelling.
+    """
+    from keystone.eval import stance_labels as SL
+    from keystone.ingest.sections import extract_sections
+    from keystone.lineage.stance import contexts
+
+    existing = SL.load(labels)
+    ids = [
+        match.group("id")
+        for path in sorted(dossiers.glob("*.json"))
+        if (match := _DOSSIER_FILE.match(path.name))
+    ]
+
+    pool: list[SL.Row] = []
+    for arxiv_id in ids:
+        try:
+            document, _project = load_project(arxiv_id, cache)
+        except Exception:  # noqa: BLE001
+            continue
+        for context in contexts(document.text, extract_sections(document.text)):
+            pool.append(SL.Row(
+                paper=arxiv_id,
+                key=context.key,
+                predicted=str(context.stance),
+                sentence=context.sentence,
+                cue=context.cue,
+                section=context.section,
+            ))
+
+    drawn = SL.sample(pool, per_stance=per_stance, seed=seed, existing=existing)
+    SL.write(labels, existing + drawn)
+    typer.secho(
+        f"pool {len(pool)} sites; added {len(drawn)} unlabelled rows; "
+        f"{len(existing)} already present -> {labels}",
+        fg=typer.colors.GREEN,
+    )
+
+
+@app.command("stance-refresh")
+def stance_refresh(
+    labels: Path = typer.Option(Path("../../eval/labels/stance.jsonl"), help="Label file."),
+    cache: Path = typer.Option(Path("../../eval/corpus/cache"), help="e-print cache."),
+    dossiers: Path = typer.Option(Path("../../apps/web/public/dossiers"), help="Library."),
+) -> None:
+    """Re-run the rules over the labelled sample and update what they predicted.
+
+    The gold labels are permanent; the predictions are not. Every change to the cue
+    rules has to be re-measured against the same sample, and hand-relabelling to do
+    that would be both wasteful and a good way to talk yourself into a better number.
+    """
+    from keystone.eval import stance_labels as SL
+    from keystone.ingest.sections import extract_sections
+    from keystone.lineage.stance import contexts
+
+    rows = SL.load(labels)
+    if not rows:
+        typer.secho(f"no rows in {labels}", fg=typer.colors.YELLOW)
+        raise typer.Exit(1)
+
+    wanted = {row.paper for row in rows}
+    fresh: dict[tuple[str, str, str], str] = {}
+    for arxiv_id in sorted(wanted):
+        try:
+            document, _project = load_project(arxiv_id, cache)
+        except Exception:  # noqa: BLE001
+            continue
+        for context in contexts(document.text, extract_sections(document.text)):
+            fresh[(arxiv_id, context.key, context.sentence)] = str(context.stance)
+
+    updated = missing = 0
+    out = []
+    for row in rows:
+        key = (row.paper, row.key, row.sentence)
+        if key not in fresh:
+            missing += 1
+            out.append(row)
+            continue
+        if fresh[key] != row.predicted:
+            updated += 1
+        out.append(replace(row, predicted=fresh[key]))
+
+    SL.write(labels, out)
+    typer.secho(
+        f"refreshed {len(out)} rows; {updated} predictions changed"
+        + (f"; {missing} sentence(s) no longer found" if missing else ""),
+        fg=typer.colors.GREEN,
+    )
+
+
+@app.command("stance-eval")
+def stance_eval(
+    labels: Path = typer.Option(Path("../../eval/labels/stance.jsonl"), help="Label file."),
+    out: Path = typer.Option(
+        Path("../../apps/web/public/dossiers/accuracy.json"),
+        help="Where to write the numbers for the site to read.",
+    ),
+) -> None:
+    """Precision and recall of the cue rules on the hand-labelled sample.
+
+    Reported per class with its support, because the sample is stratified and a single
+    headline accuracy over it would not mean anything about the corpus.
+    """
+    from keystone.eval import stance_labels as SL
+
+    rows = SL.load(labels)
+    done = [row for row in rows if row.labelled]
+    if not done:
+        typer.secho(
+            f"no labelled rows in {labels}; run stance-sample, then fill in `gold`",
+            fg=typer.colors.YELLOW,
+        )
+        raise typer.Exit(1)
+
+    result = SL.report(done)
+    typer.secho(
+        f"{result.rows} labelled of {len(rows)} sampled", fg=typer.colors.GREEN, bold=True
+    )
+    typer.echo(f"{'stance':12} {'gold':>5} {'pred':>5} {'prec':>7} {'recall':>7}")
+    for stance in SL.STANCES:
+        c = result.classes[stance]
+        if c.support == 0 and c.predicted == 0:
+            continue
+        prec = "    -  " if c.precision is None else f"{c.precision:6.0%} "
+        rec = "    -  " if c.recall is None else f"{c.recall:6.0%} "
+        typer.echo(f"{stance:12} {c.support:5} {c.predicted:5} {prec:>7} {rec:>7}")
+
+    typer.echo()
+    typer.echo(f"cue rules          {result.accuracy:6.0%}")
+    typer.echo(f"bag-of-words NB    {result.baseline_accuracy:6.0%}   (leave-one-out, cue words removed)")
+    typer.echo(f"majority class     {result.majority_accuracy:6.0%}")
+
+    # Reported apart, because the first sixty rows are what the cue rules were fixed
+    # against and their score stopped estimating anything the moment that happened.
+    for split in ("tuned", "heldout"):
+        rows_in = [row for row in done if row.split == split]
+        if not rows_in:
+            continue
+        agree = sum(1 for row in rows_in if row.predicted == row.gold)
+        label = "tuned on" if split == "tuned" else "held out"
+        typer.echo(f"  {label:9} {len(rows_in):3} rows   {agree / len(rows_in):6.0%}")
+
+    if result.confusions:
+        typer.echo("\nerrors (gold -> predicted):")
+        for (gold, predicted), n in result.confusions.most_common():
+            typer.echo(f"  {gold} -> {predicted}: {n}")
+
+    # Written for the reader to display. The site claims these readings are checkable,
+    # so how often they are right belongs on the site rather than in a terminal — and
+    # generating it here is what stops the published number drifting from the labels.
+    held = [row for row in done if row.split == "heldout"]
+    payload = {
+        "labelled": result.rows,
+        "heldOut": len(held),
+        "heldOutAccuracy": (
+            round(sum(1 for r in held if r.predicted == r.gold) / len(held), 3)
+            if held else None
+        ),
+        "accuracy": round(result.accuracy, 3),
+        "baselineAccuracy": round(result.baseline_accuracy, 3),
+        "majorityAccuracy": round(result.majority_accuracy, 3),
+        "classes": {
+            stance: {
+                "gold": c.support,
+                "predicted": c.predicted,
+                "precision": None if c.precision is None else round(c.precision, 3),
+                "recall": None if c.recall is None else round(c.recall, 3),
+            }
+            for stance, c in result.classes.items()
+            if c.support or c.predicted
+        },
+    }
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(payload, indent=2))
+    typer.secho(f"\nwrote {out}", fg=typer.colors.GREEN)
 
 
 if __name__ == "__main__":

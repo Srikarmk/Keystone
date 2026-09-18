@@ -337,3 +337,19 @@ def test_resolution_never_covers_papers_outside_the_library() -> None:
         },
     )
     assert set(resolved) == {"1607.06450"}
+
+
+def test_lineage_index_ignores_any_non_paper_file(tmp_path: Path) -> None:
+    """Matched on the identifier's shape, not against a list of known names.
+
+    The exclusion list was already one file behind: `accuracy.json` was added to the
+    dossier directory and the next build read it as a paper and crashed.
+    """
+    (tmp_path / "1706.03762.json").write_text(json.dumps(_dossier("1706.03762")))
+    (tmp_path / "accuracy.json").write_text(json.dumps({"labelled": 90}))
+    (tmp_path / "index.json").write_text(json.dumps([{"id": "1706.03762"}]))
+    (tmp_path / "some-notes.json").write_text(json.dumps({"anything": True}))
+
+    _write_lineage_index(tmp_path)
+    graph = json.loads((tmp_path / "lineage.json").read_text())
+    assert [n["id"] for n in graph["nodes"]] == ["1706.03762"]

@@ -40,6 +40,7 @@ class Edge:
     sentence: str
     section: str
     section_kind: SectionKind
+    ordinal: int
 
     title: str
     authors: str
@@ -63,6 +64,7 @@ class Edge:
             "sentence": self.sentence,
             "section": self.section,
             "sectionKind": str(self.section_kind),
+            "ordinal": self.ordinal,
             "title": self.title,
             "authors": self.authors,
             "year": self.year,
@@ -122,6 +124,10 @@ class Lineage:
                 0 if e.stance is Stance.INHERITS else 1,
                 0 if e.in_corpus else 1,
                 0 if e.anchor else 1,
+                # Order of first mention, last. Without it the Transformer's four
+                # equally load-bearing method-section adoptions tied on every test
+                # above and the headline fell to alphabetical order of citation key.
+                e.ordinal,
             ),
         )
 
@@ -203,6 +209,7 @@ def build(
                 sentence=context.sentence,
                 section=context.section,
                 section_kind=context.section_kind,
+                ordinal=context.ordinal,
                 title=_title(reference),
                 authors=reference.authors if reference else "",
                 year=reference.year if reference else None,

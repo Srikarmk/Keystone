@@ -40,6 +40,32 @@ _MULTIROW = re.compile(r"\\multirow\*?\b")
 _CELL_DECORATION = re.compile(r"[\s()\[\]{}±+*†‡§¶^,~$\\/|·-]")
 
 
+#: Inline maths in a table cell, and whether its content is simply a number.
+#:
+#: `strip_markup` deletes `$...$` because rendered maths cannot be reconstructed from
+#: source — right for prose, wrong for a table cell, where the overwhelmingly common
+#: case is a number someone typeset in maths mode. GoogLeNet writes its whole top-5
+#: error column as `$7.89\%$`, so every value in it was dropped, and a paper citing
+#: those figures was then reported as attributing numbers the source "does not
+#: report". A false finding from a parsing gap is the worst output this system can
+#: produce, so a cell whose maths is just a number is unwrapped instead.
+#:
+#: Anything with structure — a fraction, a superscript, a macro, a symbol — is left
+#: alone and still stripped, because for those the rendered form really is unknowable.
+_INLINE_MATH = re.compile(r"\$([^$]+)\$")
+_JUST_A_NUMBER = re.compile(
+    r"^[\s]*[-+\u2212]?[\s]*\d[\d,.\s]*(?:\\%|%)?[\s]*$"
+)
+
+
+def _unwrap_numeric_math(text: str) -> str:
+    """Replace ``$7.89\\%$`` with ``7.89\\%``, leaving real maths untouched."""
+    return _INLINE_MATH.sub(
+        lambda m: m.group(1) if _JUST_A_NUMBER.match(m.group(1)) else m.group(0),
+        text,
+    )
+
+
 def build_table(source: TableSource) -> Table:
     """Convert one parsed tabular into positioned, typed cells."""
     grid = [_expand_row(row) for row in source.rows]
@@ -58,7 +84,7 @@ def build_table(source: TableSource) -> Table:
     for r, row in enumerate(grid):
         row_header = _row_header(row)
         for c, (text, emphasised) in enumerate(row):
-            plain = strip_markup(text).strip()
+            plain = strip_markup(_unwrap_numeric_math(text)).strip()
             if not plain:
                 continue
             cells.append(
@@ -193,7 +219,7 @@ def _count_header_rows(grid: list[list[tuple[str, bool]]]) -> int:
     """
     count = 0
     for row in grid[:3]:
-        values = [strip_markup(text).strip() for text, _ in row]
+        values = [strip_markup(_unwrap_numeric_math(text)).strip() for text, _ in row]
         numeric = sum(1 for v in values if v and cell_number(v) is not None)
         filled = sum(1 for v in values if v)
         if filled and numeric / filled > 0.4:
@@ -207,7 +233,7 @@ def _column_headers(grid: list[list[tuple[str, bool]]], header_rows: int) -> dic
     headers: dict[int, list[str]] = {}
     for row in grid[:header_rows]:
         for index, (text, _) in enumerate(row):
-            plain = strip_markup(text).strip()
+            plain = strip_markup(_unwrap_numeric_math(text)).strip()
             if plain:
                 headers.setdefault(index, []).append(plain)
     return {index: " ".join(parts) for index, parts in headers.items()}
@@ -219,15 +245,15 @@ def _leaf_headers(grid: list[list[tuple[str, bool]]], header_rows: int) -> dict[
         return {}
     leaf = grid[header_rows - 1]
     return {
-        index: strip_markup(text).strip()
+        index: strip_markup(_unwrap_numeric_math(text)).strip()
         for index, (text, _) in enumerate(leaf)
-        if strip_markup(text).strip()
+        if strip_markup(_unwrap_numeric_math(text)).strip()
     }
 
 
 def _row_header(row: list[tuple[str, bool]]) -> str:
     for text, _ in row:
-        plain = strip_markup(text).strip()
+        plain = strip_markup(_unwrap_numeric_math(text)).strip()
         if plain and cell_number(plain) is None:
             return plain
     return ""

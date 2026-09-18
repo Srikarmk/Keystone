@@ -9,6 +9,8 @@ version of the check got it wrong on a real paper.
 
 from __future__ import annotations
 
+import pytest
+
 import keystone.audit.checks.tables  # noqa: F401  (registers the checks)
 from keystone.audit.checks.tables import emphasis_not_best
 from keystone.audit.registry import run
@@ -195,3 +197,52 @@ def test_tolerates_rounding_in_the_parts():
         ["Total", "100.0"],  # parts sum to 99.9; each is rounded to one decimal
     ]
     assert not _findings(_table(rows), "table.aggregate_mismatch")
+
+
+# --------------------------------------------------- numbers typeset in maths mode
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        # GoogLeNet writes its whole top-5 error column this way, and every value in
+        # it was dropped — which then made a paper citing those figures look like it
+        # had invented them.
+        (r"$7.89\%$", "7.89%"),
+        (r"$10.07\%$", "10.07%"),
+        (r"$-0.92\%$", "-0.92%"),
+        (r"$26.7$", "26.7"),
+        (r"$1,024$", "1,024"),
+        # Real maths stays unknowable from source and is still stripped.
+        (r"$\frac{a}{b}$", ""),
+        (r"$x^2$", ""),
+        (r"$3 \times 10^{-4}$", ""),
+    ],
+)
+def test_a_cell_whose_maths_is_just_a_number_is_read(raw: str, expected: str) -> None:
+    from keystone.ingest.latex import strip_markup
+    from keystone.ingest.tables import _unwrap_numeric_math
+
+    assert strip_markup(_unwrap_numeric_math(raw)).strip() == expected
+
+
+def test_a_maths_mode_column_survives_into_cells() -> None:
+    """The whole column was absent from the parsed table, not merely unparsed."""
+    from keystone.ingest.latex import extract_tables
+    from keystone.ingest.tables import build_tables
+
+    latex = r"""
+\begin{table}
+\caption{Classification performance break down}
+\begin{tabular}{llll}
+Models & Crops & Top-5 error & vs base \\
+\hline
+1 & 1 & $10.07\%$ & base \\
+1 & 144 & $7.89\%$ & $-2.18\%$ \\
+7 & 144 & $6.67\%$ & $-3.45\%$ \\
+\end{tabular}
+\end{table}
+"""
+    table = build_tables(extract_tables(latex))[0]
+    values = {str(c.number.value) for c in table.numeric_cells}
+    assert {"10.07", "7.89", "6.67"} <= values

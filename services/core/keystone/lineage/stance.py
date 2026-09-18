@@ -103,12 +103,19 @@ _PRE: tuple[tuple[Stance, re.Pattern[str]], ...] = (
         r"|reuse|reused|take|took|borrow|borrowed|keep|retain)"
         r"|identical\s+to|the\s+same\s+as|taken\s+from|borrowed\s+from"
         r"|based\s+on|built\s+(?:up)?on\s+top\s+of|implementation\s+of"
-        r"|standard\s+(?:practice|setup|recipe))\b", re.I)),
+        r"|standard\s+(?:practice|setup|recipe)"
+        # A dataset is adopted as much as a method is, and the sample showed these
+        # phrasings missed entirely.
+        r"|we\s+(?:look\s+at|evaluate\s+on|train\s+on|test\s+on|report\s+on))\b",
+        re.I)),
     (Stance.COMPARES, re.compile(
         r"\b(?:compared?\s+(?:to|with|against)|we\s+compare|in\s+comparison\s+(?:to|with)"
         r"|outperform\w*|out-?score\w*|baselines?|versus|vs\.?"
-        r"|better\s+than|worse\s+than|on\s+par\s+with|competitive\s+with"
-        r"|state[- ]of[- ]the[- ]art)\b", re.I)),
+        r"|better\s+than|worse\s+than|on\s+par\s+with|competitive\s+with)\b", re.I)),
+    # No "state of the art" here. Hand-labelling 60 citation sites found that cue
+    # alone responsible for 8 of 17 errors, and always the same way: "LSTMs have been
+    # firmly established as state of the art approaches" describes the field's status
+    # quo, it does not measure this paper against anything.
 )
 
 #: Cues that appear *after* the citation, where the cited work is the grammatical
@@ -139,7 +146,9 @@ _POST: tuple[tuple[Stance, re.Pattern[str]], ...] = (
 #: optimiser of \\cite{x}", the comma-plus-"we" is the boundary that saves Kingma from
 #: being recorded as contested.
 _CLAUSE_BREAK = re.compile(
-    r";|:|—|--|\.\s"
+    # No colon: it introduces an elaboration the preceding cue still governs,
+    # and "We compare with eight metrics: Bleu [cite], ..." lost its cue to it.
+    r";|—|--|\.\s"
     r"|,\s*(?:and|but|while|whereas|although|though|yet|so|because|since"
     r"|which|who|where|when|whose)\s"
     # Split *before* the pronoun, not after it. Consuming the "we" left "use the
@@ -156,6 +165,14 @@ _CLAUSE_BREAK = re.compile(
 #: the moment a verb intervenes.
 _CONTRASTIVE = re.compile(
     r"\b(?:rather\s+than|instead\s+of|as\s+opposed\s+to|in\s+lieu\s+of)\b", re.I
+)
+
+#: An adoption cue between a contrastive conjunction and the citation reassigns the
+#: citation to the adoption: "...as opposed to required skill based on conventions in
+#: the literature [cite]" follows that convention rather than disputing it.
+_ADOPTION_BETWEEN = re.compile(
+    r"\b(?:based\s+on|following|as\s+in|taken\s+from|borrowed\s+from"
+    r"|described\s+in|proposed\s+(?:in|by))\b", re.I
 )
 
 #: A verb between the cue and the citation means the contrast is between two actions.
@@ -216,6 +233,16 @@ class CitationContext:
     stance: Stance
     cue: str
     """The exact words that decided the stance. Empty for ``BACKGROUND``."""
+    ordinal: int = 0
+    """Where this citation sits in the paper, counting sites in document order.
+
+    Needed to break a tie between equally load-bearing dependencies. The Transformer
+    adopts four works in its method section, all anchored and all in the library, so
+    every other test came out level and the single "stands on" headline fell to
+    whichever citation key sorted first — Inception, cited for label smoothing.
+    Order of first mention is the honest discriminator: a paper describes what its
+    architecture is built from before it gets to training details.
+    """
 
     def to_dict(self) -> dict:
         return {
@@ -226,6 +253,7 @@ class CitationContext:
             "sectionKind": str(self.section_kind),
             "stance": str(self.stance),
             "cue": self.cue,
+            "ordinal": self.ordinal,
         }
 
 
@@ -261,8 +289,9 @@ def classify(before: str, after: str) -> tuple[Stance, str]:
         for match in pattern.finditer(clause):
             if _negated(clause, match.start()):
                 continue
-            if _CONTRASTIVE.fullmatch(match.group(0)) and _INTERVENING_VERB.search(
-                clause[match.end() :]
+            if _CONTRASTIVE.fullmatch(match.group(0)) and (
+                _INTERVENING_VERB.search(clause[match.end() :])
+                or _ADOPTION_BETWEEN.search(clause[match.end() :])
             ):
                 continue
             if _is_gerund(match.group(0), clause, match.end()):
@@ -335,6 +364,7 @@ def contexts(latex: str, sections: tuple[Section, ...]) -> list[CitationContext]
     is positioning, and the same citation in the method is a design decision.
     """
     out: list[CitationContext] = []
+    ordinal = 0
     for section in sections:
         source = section.source or ""
         if not source.strip():
@@ -350,6 +380,7 @@ def contexts(latex: str, sections: tuple[Section, ...]) -> list[CitationContext]
                 continue
             anchor_text = longest_anchorable_run(raw)
             for site in _CITE_SITE.finditer(raw):
+                ordinal += 1
                 before = strip_markup(raw[: site.start()])
                 after = strip_markup(raw[site.end() :])
                 stance, cue = classify(before, after)
@@ -369,6 +400,7 @@ def contexts(latex: str, sections: tuple[Section, ...]) -> list[CitationContext]
                             section_kind=section.kind,
                             stance=stance,
                             cue=cue,
+                            ordinal=ordinal,
                         )
                     )
     return out
@@ -395,6 +427,14 @@ def strongest(contexts: list[CitationContext]) -> dict[str, CitationContext]:
     best: dict[str, CitationContext] = {}
     for context in contexts:
         current = best.get(context.key)
-        if current is None or rank[context.stance] < rank[current.stance]:
+        if current is None:
+            best[context.key] = context
+            continue
+        # A more specific stance always wins; among equals keep the earliest mention,
+        # so a work's recorded position is where the paper first commits to it.
+        if (rank[context.stance], context.ordinal) < (
+            rank[current.stance],
+            current.ordinal,
+        ):
             best[context.key] = context
     return best
