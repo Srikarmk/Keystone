@@ -18,7 +18,7 @@ interface Body {
   messages?: { role: "user" | "assistant"; content: string }[];
 }
 
-const MODEL = "claude-opus-5";
+const MODEL = "claude-sonnet-5";
 
 export async function POST(request: Request) {
   if (!process.env.ANTHROPIC_API_KEY) {
