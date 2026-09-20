@@ -141,6 +141,35 @@ _CUES: tuple[tuple[Kind, re.Pattern[str]], ...] = (
 #: the stance classifier fell into with "we did not depart from".
 _NEGATOR = re.compile(r"\b(?:not|n't|never|neither|nor)\b\s*$", re.I)
 
+#: "as long as" takes a quantity as often as it takes a condition, and the two mean
+#: opposite things. BioScope's abstracts have "retained the virus in the latent state
+#: for as long as 45 days", which is a duration; reading it as a precondition invents
+#: an assumption the paper never made.
+_QUANTITY_AFTER = re.compile(
+    r"^\s*(?:\d|a\s+few\b|several\b|many\b|one\b|two\b|three\b|four\b|five\b"
+    r"|ten\b|dozens?\b|hundreds?\b|thousands?\b|half\b|most\b)",
+    re.I,
+)
+
+#: A self-reference check was tried here and measured worse, which is worth recording
+#: so it is not tried again. The stance rules gained a lot from requiring a comparative
+#: cue to prove the citing paper was a party to the comparison, and the same idea looks
+#: obvious for preconditions: "Productive infection of T cells with HIV-1 typically
+#: requires that the T cells be stimulated" is a fact about immunology, not something
+#: the authors take on faith, and it has no "we" in it.
+#:
+#: Measured, it dropped 13 of the library's 23 conditional assumptions to remove one
+#: false positive. The reason is that a paper states its preconditions *about its
+#: subject matter*, not about itself — Batch Normalization writes "the distributions of
+#: values of any x has the expected value of 0 and the variance of 1, as long as the
+#: elements of each mini-batch are sampled from the same distribution", which is its
+#: central assumption and mentions nobody. Debate writes "Debate only works if this
+#: revealed context cannot be a lie". Both would have gone.
+#:
+#: So the trade is one wrong row in nineteen against thirteen right ones, and it is not
+#: close. Telling the two apart needs to know that T-cell stimulation is a fact of the
+#: world, which is not something a cue phrase can establish.
+
 #: Reference targets that constitute the paper showing its work. A `\ref` to a section
 #: is navigation, not evidence, so it does not count as support.
 _EVIDENCE_KINDS = frozenset({"table", "figure", "equation", "theorem", "lemma",
@@ -203,8 +232,11 @@ def identify(raw: str, label_kinds: dict[str, str]) -> tuple[Kind, str] | None:
         for match in pattern.finditer(text):
             if _NEGATOR.search(text[max(0, match.start() - 20) : match.start()]):
                 continue
+            if kind is Kind.CONDITIONAL and _QUANTITY_AFTER.match(text[match.end() :]):
+                continue
             return kind, match.group(0).strip()
     return None
+
 
 
 def support_for(raw: str, label_kinds: dict[str, str]) -> Support:

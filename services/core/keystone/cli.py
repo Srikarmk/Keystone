@@ -1204,3 +1204,62 @@ def _external_report(corpora: Path) -> list:
         "3-class macro-F1 — neural state of the art 0.84-0.889."
     )
     return results
+
+
+@app.command("assumption-eval")
+def assumption_eval(
+    corpora: Path = typer.Option(
+        Path("../../eval/corpora/bioscope"),
+        help="Directory holding BioScope's full_papers.xml and abstracts.xml.",
+    ),
+) -> None:
+    """Score the assumption cues against BioScope's speculation annotations.
+
+    A *related* task, not the same one, and the output says so. BioScope marks every
+    sentence whose claim is hedged; Keystone looks for the narrower case of a paper
+    announcing something it takes as given. Recall against BioScope is therefore low
+    by construction and is not a defect — the figure that describes the detector is
+    precision on the sentences it does flag.
+    """
+    from keystone.eval.hedging import evaluate
+
+    reports = evaluate(corpora)
+    if not reports:
+        typer.secho(
+            f"no BioScope files under {corpora} — see eval/corpora/README.md",
+            fg=typer.colors.YELLOW,
+        )
+        raise typer.Exit(1)
+
+    typer.secho("assumption cues against BioScope", fg=typer.colors.GREEN, bold=True)
+    typer.echo(
+        f"{'corpus':22} {'sentences':>9} {'flagged':>8} {'right':>7} {'95% CI':>13}"
+    )
+    for report in reports:
+        low, high = report.precision_interval
+        typer.echo(
+            f"{report.corpus:22} {report.sentences:9} "
+            f"{report.flagged:8} {report.precision:7.1%} [{low:5.0%},{high:5.0%}]"
+        )
+
+    for report in reports:
+        typer.echo(f"\n{report.corpus}")
+        typer.echo(
+            f"  BioScope marks {report.gold} of {report.sentences} sentences as "
+            f"speculative; Keystone flagged {report.flagged} "
+            f"({report.coverage:.1%}), of which {report.agreed} overlap."
+        )
+        if report.kinds:
+            typer.echo(
+                "  kinds flagged: "
+                + ", ".join(f"{k} {n}" for k, n in sorted(report.kinds.items()))
+            )
+        for _sid, cue, text in report.unshared[:6]:
+            typer.echo(f"    only Keystone [{cue}]: {text[:110]}")
+
+    typer.echo(
+        "\nRecall is low on purpose. BioScope annotates hedging — \"these results may\n"
+        "indicate a role for X\" — and Keystone annotates assumptions the paper takes\n"
+        "on and moves past, which is a subset. CoNLL-2010's ~85% F1 figures are for\n"
+        "the hedging task and are not a bar this is trying to clear."
+    )

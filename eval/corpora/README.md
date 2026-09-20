@@ -12,13 +12,15 @@ numbers live in `apps/web/public/dossiers/accuracy.json`, which is. Fetch them o
 mkdir -p eval/corpora && cd eval/corpora
 curl -LO https://s3-us-west-2.amazonaws.com/ai2-s2-research/scicite/scicite.tar.gz
 curl -LO https://s3-us-west-2.amazonaws.com/ai2-s2-research/scicite/acl-arc.tar.gz
-tar xzf scicite.tar.gz && tar xzf acl-arc.tar.gz
+curl -L -o bioscope.zip https://rgai.inf.u-szeged.hu/sites/rgai.inf.u-szeged.hu/files/bioscope.zip
+tar xzf scicite.tar.gz && tar xzf acl-arc.tar.gz && unzip -q bioscope.zip -d bioscope
 ```
 
 Then, from `services/core`:
 
 ```bash
 uv run keystone stance-eval --corpora ../../eval/corpora
+uv run keystone assumption-eval
 ```
 
 ## What is in them
@@ -101,3 +103,54 @@ just producing a number:
 
 None of the three moved the ninety hand labels, which held at 87% accuracy and 0.86
 macro-F1 throughout.
+
+---
+
+# The assumption layer, against BioScope
+
+The stance rules were the closed loop that got measured. The assumption layer was in
+the same one, so **BioScope** (Vincze et al. 2008) gets pointed at it: 2,566 sentences
+of biomedical full papers and 11,858 abstracts, every speculation cue marked by hand.
+It is the corpus behind CoNLL-2010, whose Task 1 is sentence-level hedge detection.
+
+| | sentences | flagged | of those, right |
+|---|---|---|---|
+| BioScope full papers | 2,566 | 19 (0.7%) | **68.4%** [46–85%] |
+| BioScope abstracts | 11,858 | 36 (0.3%) | **86.1%** [71–94%] |
+
+**These are not comparable to CoNLL-2010's ~85% F1, and quoting them as if they were
+would be dishonest.** BioScope marks every sentence whose claim is qualified — "these
+results may indicate a role for X" is hedging and is annotated. Keystone looks for the
+narrower case of a paper announcing something it is *taking as given* and moving past.
+Hedged reporting of a finding is not that. Recall against BioScope is 2.5% and 1.5%,
+and that is the design showing up in the measurement rather than a defect.
+
+What the comparison is genuinely for is the disagreements, and they earned their keep.
+
+**One real defect, now fixed.** "as long as" takes a quantity as readily as a
+condition, and the two mean opposite things: *"retained the virus in the latent state
+for as long as 45 days"* is a duration, and reading it as a precondition invents an
+assumption the paper never made. Guarded, and abstracts precision went 83.8% → 86.1%.
+
+**One fix that looked obvious and measured worse.** The stance rules gained a lot from
+requiring a comparative cue to prove the citing paper was a party to the comparison,
+and BioScope has a clean case for the same idea on preconditions: *"Productive
+infection of T cells with HIV-1 typically requires that the T cells be stimulated"* is
+a fact about immunology with no "we" anywhere in it. Applying the check dropped **13 of
+the library's 23 conditional assumptions to remove that one false positive**, because a
+paper states its preconditions *about its subject matter*, not about itself — Batch
+Normalization's is *"the distributions of values of any x has the expected value of 0
+and the variance of 1, as long as the elements of each mini-batch are sampled from the
+same distribution"*, and AI safety via debate's is *"Debate only works if this revealed
+context cannot be a lie"*. Both mention nobody. The check is not in the code, and
+`tests/test_hedging.py` holds those two sentences so it does not get added back.
+
+**The remaining ten disagreements are not errors.** "We hypothesize that a mutation of
+the hGR glucocorticoid-binding domain is the cause", "It is generally accepted that
+Bcl-2 exerts its antiapoptotic effects", "Several steps are omitted for simplicity" —
+all assumptions, none of them speculation under BioScope's scheme. So 68.4% and 86.1%
+understate the detector against its own task; they are the floor, not the estimate.
+
+Because of that mismatch, **no number from this is published on the site.** The
+assumption panel shows counts and quotes and claims no accuracy, which is the honest
+state until the actual task has labels of its own.
