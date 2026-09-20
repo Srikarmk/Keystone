@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 from decimal import Decimal
 from pathlib import Path
 from typing import Any
@@ -24,7 +24,12 @@ from keystone.ingest.anchors import Anchor, DocIndex
 from keystone.audit.checks import cross_paper
 from keystone.ingest.arxiv_source import SourceUnavailable, load_project
 from keystone.ingest.bibliography import Reference, from_project
-from keystone.ingest.latex import label_kinds, source_sentences
+from keystone.ingest.latex import (
+    anchorable_sentences,
+    code_repository,
+    label_kinds,
+    source_sentences,
+)
 from keystone.ingest.pdf import Document
 from keystone.ingest.sections import extract_sections
 from keystone.ingest.tables import build_tables
@@ -94,6 +99,8 @@ class Dossier:
     baselines: tuple = ()
     macros: dict = None  # type: ignore[assignment]
     section_counts: tuple = ()
+    section_anchors: dict = field(default_factory=dict)
+    code_url: str = ""
     table_anchors: dict[int, Anchor | None] = None  # type: ignore[assignment]
     lineage: lineage_layer.Lineage | None = None
     assumptions: tuple = ()
@@ -120,6 +127,7 @@ class Dossier:
                 "share": round(keystone.share, 3),
                 "summary": keystone.summary,
             },
+            "codeUrl": self.code_url,
             "coverage": {
                 "claims": len(self.coverage.claims),
                 "supported": len(self.coverage.supported),
@@ -200,6 +208,11 @@ class Dossier:
                     "chars": len(section.text),
                     "numbers": counts.get("numbers", 0),
                     "citations": counts.get("citations", 0),
+                    # Where the section starts on the page, so the outline can put
+                    # the reader there. Anchored on its opening prose rather than on
+                    # the heading: a heading is three words and matches in a dozen
+                    # places, and the running header repeats it on every page.
+                    "anchor": _anchor_json(self.section_anchors.get(section.title), pages),
                 }
                 for section, counts in self.section_counts
             ],
@@ -427,6 +440,8 @@ def build(
         baselines=tuple(baselines),
         macros=document.macros,
         section_counts=_section_counts(sections),
+        section_anchors=_section_anchors(sections, index),
+        code_url=code_repository(document.text),
         table_anchors=table_anchors,
         lineage=lineage,
         assumptions=assumptions,
@@ -481,3 +496,25 @@ def _evidence_anchor(index: DocIndex, trace) -> Anchor | None:
                 return located
 
     return caption.anchor
+
+
+def _section_anchors(sections: tuple, index) -> dict:
+    """Where each section begins on the page.
+
+    Anchored on the section's opening prose, not on its heading. A heading is two or
+    three words, it matches in the table of contents and in the running header on
+    every page after it, and `DocIndex` refuses an ambiguous match anyway — so
+    anchoring on headings produced almost nothing. The first real sentence of the
+    body is long, unique, and sits within a line of the heading, which is close
+    enough to put a reader in the right place.
+    """
+    if index is None:
+        return {}
+    out: dict = {}
+    for section in sections:
+        for sentence in anchorable_sentences(section.source or "")[:3]:
+            anchor = index.locate(sentence).anchor
+            if anchor is not None:
+                out[section.title] = anchor
+                break
+    return out

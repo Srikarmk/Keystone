@@ -12,6 +12,8 @@ import json
 from collections import Counter
 from pathlib import Path
 
+import pytest
+
 from keystone.cli import (
     _write_lineage_index,
     attested_titles,
@@ -353,3 +355,58 @@ def test_lineage_index_ignores_any_non_paper_file(tmp_path: Path) -> None:
     _write_lineage_index(tmp_path)
     graph = json.loads((tmp_path / "lineage.json").read_text())
     assert [n["id"] for n in graph["nodes"]] == ["1706.03762"]
+
+
+# ------------------------------------------------- titles carry bibliographic debris
+
+
+def test_a_title_keeps_its_words_and_loses_its_tail() -> None:
+    """A bibliography's title field is split heuristically and often over-reaches.
+
+    arXiv:1706.03741 was attested across the library as "Deep reinforcement learning
+    from human preferences, 2017, 1706.03741". Long enough, alphabetic, not a URL —
+    so it passed every plausibility check and became the paper's display title, at
+    which point it stopped matching the clean title other papers print and both of
+    its inbound edges disappeared. A missing arrow, with nothing in the log.
+    """
+    from keystone.cli import clean_title
+
+    assert (
+        clean_title("Deep reinforcement learning from human preferences, 2017, 1706.03741")
+        == "Deep reinforcement learning from human preferences"
+    )
+
+
+@pytest.mark.parametrize(
+    "raw,want",
+    [
+        ("Layer normalization, 2016", "Layer normalization"),
+        (
+            "BERT: pre-training of deep bidirectional transformers, "
+            "arXiv preprint arXiv:1810.04805",
+            "BERT: pre-training of deep bidirectional transformers",
+        ),
+        ("Language models are few-shot learners, 2020a", "Language models are few-shot learners"),
+        ("Going deeper with convolutions, In press", "Going deeper with convolutions"),
+    ],
+)
+def test_the_usual_tails_come_off(raw: str, want: str) -> None:
+    from keystone.cli import clean_title
+
+    assert clean_title(raw) == want
+
+
+@pytest.mark.parametrize(
+    "title",
+    [
+        "Attention is all you need",
+        "Deep residual learning for image recognition",
+        # A year inside the title is part of it, not a tail.
+        "One billion word benchmark for measuring progress in 2013 statistical models",
+    ],
+)
+def test_a_clean_title_is_left_alone(title: str) -> None:
+    """The trim must never eat a word the title actually has."""
+    from keystone.cli import clean_title
+
+    assert clean_title(title) == title

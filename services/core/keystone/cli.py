@@ -524,10 +524,43 @@ def attested_titles(payloads: list[dict]) -> dict[str, Counter[str]]:
     for payload in payloads:
         for reference in payload.get("references", []):
             ident = reference.get("arxivId")
-            title = (reference.get("title") or "").strip()
+            title = clean_title(reference.get("title") or "")
             if ident and _plausible_title(title):
                 attested.setdefault(ident, Counter())[title] += 1
     return attested
+
+
+#: Tails a bibliography's title field picks up when the field split guesses wrong: a
+#: year, an arXiv identifier, a preprint marker, or several in a row.
+_TITLE_TAIL = re.compile(
+    r"(?:\s*[,.;]\s*)(?:"
+    r"(?:arxiv\s*(?:preprint)?\s*)?(?:arxiv:)?\d{4}\.\d{4,5}(?:v\d+)?"
+    r"|(?:19|20)\d{2}[a-z]?"
+    r"|arxiv(?:\s+preprint)?"
+    r"|preprint"
+    r"|in\s+press"
+    r")\s*$",
+    re.I,
+)
+
+
+def clean_title(title: str) -> str:
+    """A title with the bibliography's trailing debris taken off.
+
+    Trimmed rather than rejected, because the front of the string is usually the real
+    title and throwing it away costs edges. arXiv:1706.03741 came through as "Deep
+    reinforcement learning from human preferences, 2017, 1706.03741" and stopped
+    matching the same paper's clean title elsewhere in the library, which silently
+    cost it both of its inbound edges — the failure shows up as a missing arrow, not
+    as an error.
+    """
+    cleaned = title.strip()
+    for _ in range(4):  # "..., 2017, 1706.03741" needs two passes; four is slack
+        trimmed = _TITLE_TAIL.sub("", cleaned).strip()
+        if trimmed == cleaned:
+            break
+        cleaned = trimmed
+    return cleaned.strip(" ,.;")
 
 
 def _plausible_title(title: str) -> bool:

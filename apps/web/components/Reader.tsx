@@ -27,6 +27,7 @@ import type {
   Dossier,
   External as ExternalScore,
   IndexedNumber,
+  SectionData,
   IndexEntry,
   Reference,
 } from "@/lib/dossier";
@@ -42,6 +43,7 @@ import { PaperView } from "@/components/PaperView";
 import { Section } from "@/components/Section";
 import { findCell, TableView } from "@/components/TableView";
 import { AccountMenu } from "@/components/AccountMenu";
+import { Outline } from "@/components/Outline";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -58,6 +60,7 @@ export function Reader({ id }: { id: string }) {
   const [zoomStep, setZoomStep] = useState(0);
   const [darkPage, setDarkPage] = useState(false);
   const [graph, setGraph] = useState<LibraryGraph | null>(null);
+  const [pageCount, setPageCount] = useState(0);
   const [accuracy, setAccuracy] = useState<Accuracy | null>(null);
   const appIsDark = useIsDark();
   // The page pane is only as tall as the window when the panes sit side by side.
@@ -201,6 +204,7 @@ export function Reader({ id }: { id: string }) {
                 zoom={ZOOMS[zoomStep]}
                 dark={darkPage}
                 fitPage={sideBySide}
+                onPageCount={setPageCount}
               />
               <PageTools
                 step={zoomStep}
@@ -208,6 +212,9 @@ export function Reader({ id }: { id: string }) {
                 dark={darkPage}
                 onDark={() => setDarkPage((v) => !v)}
                 offerDark={appIsDark}
+                sections={dossier.sections}
+                onJump={setJump}
+                pages={pageCount}
               />
             </>
           ) : (
@@ -258,15 +265,31 @@ function PageTools({
   dark,
   onDark,
   offerDark,
+  sections,
+  onJump,
+  pages,
 }: {
   step: number;
   onZoom: (n: number) => void;
   dark: boolean;
   onDark: () => void;
   offerDark: boolean;
+  sections: SectionData[];
+  onJump: (a: AnchorJson | null) => void;
+  pages: number;
 }) {
   return (
     <div className="absolute bottom-3 right-2 flex max-w-[calc(100%-1rem)] items-center gap-1.5 rounded-[2px] border border-paper-edge bg-paper/90 px-2 py-1 text-[0.8rem] backdrop-blur sm:right-4">
+      <Outline sections={sections} onJump={onJump} />
+      {pages > 0 ? (
+        <>
+          <span aria-hidden className="text-ink-faint/40">|</span>
+          <span className="numeral px-1 text-ink-faint" title="Pages">
+            {pages}pp
+          </span>
+        </>
+      ) : null}
+      <span aria-hidden className="text-ink-faint/40">|</span>
       {/* Offered whenever the interface is dark, and only then: on a light screen a
           white page is already the right answer and the control would be noise. */}
       {offerDark || dark ? (
@@ -373,6 +396,7 @@ function Summary({
           {/* The keystone, in the sense the name was always reaching for: not a table
               of numbers but the piece this paper would collapse without. */}
           <Foundation edge={lineage.foundation} onJump={onJump} />
+          <Authors names={dossier.arxiv?.authors ?? []} published={dossier.arxiv?.published} />
         </div>
 
         <button
@@ -399,6 +423,20 @@ function Summary({
           >
             {dossier.arxiv.primaryName}{" "}
             <span className="numeral">{dossier.arxiv.primary}</span>
+          </a>
+        ) : null}
+        {/* The repository only when the paper names one in its own text. Nothing is
+            inferred from the authors or the title: a guessed URL sends a reader to
+            somebody else's code, which is worse than sending them nowhere. */}
+        {dossier.codeUrl ? (
+          <a
+            href={dossier.codeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
+            title={dossier.codeUrl}
+          >
+            code &#8599;
           </a>
         ) : null}
         <Stat n={stands} label="works it stands on" tone="var(--color-brass)" />
@@ -1143,5 +1181,32 @@ function Structure({ dossier }: { dossier: Dossier }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+
+/**
+ * Who wrote it, and when.
+ *
+ * Absent until now, which is a strange omission in a paper reader — the interface
+ * could tell you what a paper argues with before it could tell you whose paper it
+ * was. Trimmed after a few names because the point is recognition, not a credit
+ * roll, and CLIP has twelve.
+ */
+function Authors({ names, published }: { names: string[]; published?: string }) {
+  const SHOWN = 4;
+  if (names.length === 0 && !published) return null;
+  const front = names.slice(0, SHOWN);
+  const rest = names.length - front.length;
+  const year = published?.slice(0, 4);
+
+  return (
+    <p className="mt-1.5 text-[0.82rem] leading-relaxed text-ink-faint">
+      {front.join(", ")}
+      {rest > 0 ? (
+        <span title={names.join(", ")}> and {rest} more</span>
+      ) : null}
+      {year ? <span className="numeral">{names.length ? " · " : ""}{year}</span> : null}
+    </p>
   );
 }

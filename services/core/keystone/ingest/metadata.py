@@ -91,6 +91,12 @@ class Metadata:
     """Every category, primary first. A paper is usually cross-listed."""
     published: str
     """ISO date of version 1, so the library can be read in order."""
+    authors: tuple[str, ...] = ()
+    """Who wrote it, in the order arXiv lists them.
+
+    From the same request the category came from, and previously thrown away — which
+    left a reader unable to answer "whose paper is this?" anywhere in the interface.
+    """
 
     def to_dict(self) -> dict:
         return {
@@ -98,6 +104,7 @@ class Metadata:
             "primaryName": category_name(self.primary),
             "categories": list(self.categories),
             "published": self.published,
+            "authors": list(self.authors),
         }
 
 
@@ -125,6 +132,11 @@ def _parse(xml: str) -> dict[str, Metadata]:
             primary=primary,
             categories=tuple([primary, *others]) if primary else tuple(others),
             published=(entry.findtext("atom:published", "", _NS) or "")[:10],
+            authors=tuple(
+                name.strip()
+                for node in entry.findall("atom:author", _NS)
+                if (name := node.findtext("atom:name", "", _NS) or "").strip()
+            ),
         )
     return out
 
@@ -168,6 +180,7 @@ def load_cache(path: Path) -> dict[str, Metadata]:
             primary=str(record.get("primary", "")),
             categories=tuple(record.get("categories", []) or []),
             published=str(record.get("published", "")),
+            authors=tuple(record.get("authors", []) or []),
         )
     return out
 
@@ -181,6 +194,7 @@ def save_cache(path: Path, records: dict[str, Metadata]) -> None:
                     "primary": record.primary,
                     "categories": list(record.categories),
                     "published": record.published,
+                    "authors": list(record.authors),
                 }
                 for ident, record in sorted(records.items())
             },

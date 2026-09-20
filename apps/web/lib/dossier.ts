@@ -74,6 +74,8 @@ export interface SectionData {
   chars: number;
   numbers: number;
   citations: number;
+  /** Where the section begins on the page, so the outline can go there. */
+  anchor?: AnchorJson | null;
 }
 
 export type NumberKind = "result" | "configuration" | "reference" | "structural";
@@ -253,6 +255,8 @@ export interface Dossier {
   pdfUrl: string;
   /** What arXiv files this paper under. Absent for papers whose metadata failed. */
   arxiv?: ArxivRecord | null;
+  /** The repository the paper itself names, if it names one. Never inferred. */
+  codeUrl?: string;
   keystone: {
     table: string;
     caption: string;
@@ -336,6 +340,8 @@ export interface ArxivRecord {
   categories: string[];
   /** ISO date of version 1. */
   published: string;
+  /** Who wrote it, in arXiv's order. */
+  authors?: string[];
 }
 
 /** Papers with no fetched record, grouped under one honest heading. */

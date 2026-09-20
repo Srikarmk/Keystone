@@ -900,3 +900,41 @@ def anchorable_sentences(tex: str, *, min_chars: int = 24) -> list[str]:
             if len(sentence) >= min_chars:
                 out.append(sentence)
     return out
+
+
+#: A repository URL as papers actually write them: bare, in a footnote, inside \url{},
+#: and very often with the sentence's full stop swallowed into the link.
+_REPO = re.compile(
+    r"(?:https?://)?(?:www\.)?(github\.com|gitlab\.com|huggingface\.co)/"
+    # `}` and `]` matter more than they look: the commonest way a paper writes this
+    # is \url{https://github.com/owner/name}, and without them the closing brace made
+    # the whole match fail rather than just trimming the name.
+    r"([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+?)(?=[.,;:)}\]\s]|$)",
+    re.I,
+)
+
+#: Paths under a host that name a service rather than somebody's code.
+_NOT_A_REPO = frozenset({"features", "about", "pricing", "docs", "blog", "orgs", "topics"})
+
+
+def code_repository(text: str) -> str:
+    """The repository a paper says its code is in, if it says.
+
+    Papers announce this once, usually in a footnote on the first page, and a reader
+    who wants it should not have to hunt. Reported only when the paper writes it down
+    — nothing is inferred from the authors or the title, because a guessed repository
+    URL is worse than none.
+
+    The earliest mention wins: the first-page footnote is the paper's own code, and a
+    repository named twenty pages later is generally somebody else's.
+    """
+    for match in _REPO.finditer(text):
+        host, owner, name = match.group(1).lower(), match.group(2), match.group(3)
+        # Two URLs printed side by side arrive from the PDF with nothing between
+        # them, so a name can swallow the next link whole — GLUE's repository came
+        # out as "GLUE-baselineshttps". Cut at the join.
+        name = re.split(r"https?", name)[0].rstrip(".-")
+        if owner.lower() in _NOT_A_REPO or not name:
+            continue
+        return f"https://{host}/{owner}/{name}"
+    return ""
