@@ -14,7 +14,7 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { useIsDark, useIsWide } from "@/lib/theme";
 
@@ -59,12 +59,27 @@ export function Reader({ id }: { id: string }) {
   const [jump, setJump] = useState<AnchorJson | null>(null);
   const [zoomStep, setZoomStep] = useState(0);
   const [darkPage, setDarkPage] = useState(false);
+  //: Whether the reader has said what they want for the page specifically. Until they
+  //: do, the page follows the interface; after, it stays where they put it.
+  const chosePage = useRef(false);
   const [graph, setGraph] = useState<LibraryGraph | null>(null);
   const [pageCount, setPageCount] = useState(0);
   const [accuracy, setAccuracy] = useState<Accuracy | null>(null);
   const appIsDark = useIsDark();
   // The page pane is only as tall as the window when the panes sit side by side.
   const sideBySide = useIsWide();
+
+  // A dark interface with a white page in it is a torch in a dark room, so the page
+  // now follows the theme by default instead of waiting to be asked.
+  //
+  // It was the other way round on purpose, and the reason still holds: this pane is
+  // *the document*, and inverting it changes what a photograph or a colour-coded plot
+  // shows. That is a real cost and it is why the toggle stays — but it is a cost on
+  // some figures, against every page being uncomfortable to read, and the second is
+  // the common case. A reader who flips it keeps their choice for the session.
+  useEffect(() => {
+    if (!chosePage.current) setDarkPage(appIsDark);
+  }, [appIsDark]);
 
   useEffect(() => {
     // Sorted by title, not by the order the library happened to be built in. At nine
@@ -210,7 +225,10 @@ export function Reader({ id }: { id: string }) {
                 step={zoomStep}
                 onZoom={setZoomStep}
                 dark={darkPage}
-                onDark={() => setDarkPage((v) => !v)}
+                onDark={() => {
+                  chosePage.current = true;
+                  setDarkPage((v) => !v);
+                }}
                 offerDark={appIsDark}
                 sections={dossier.sections}
                 onJump={setJump}
