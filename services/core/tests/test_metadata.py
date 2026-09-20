@@ -89,9 +89,14 @@ def test_a_known_code_reads_as_arxivs_own_name() -> None:
 
 
 def test_an_unknown_code_is_shown_as_itself_rather_than_guessed() -> None:
-    """Better a bare "cs.GT" than a heading I made up for it."""
-    assert category_name("cs.GT") == "cs.GT"
-    assert "cs.GT" not in CATEGORY_NAMES
+    """Better a bare "astro-ph.CO" than a heading I made up for it.
+
+    Deliberately a code from a field this library will never reach: an example picked
+    from nearby computer science gets added to the map the first time a paper needs
+    it, and the test then passes for the wrong reason.
+    """
+    assert category_name("astro-ph.CO") == "astro-ph.CO"
+    assert "astro-ph.CO" not in CATEGORY_NAMES
 
 
 def test_every_name_differs_from_its_code() -> None:

@@ -1,6 +1,13 @@
 {
   "nodes": [
     {
+      "id": "1207.0580",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "inherits": 0,
+      "contests": 0,
+      "bare": 0
+    },
+    {
       "id": "1301.3781",
       "title": "Efficient Estimation of Word Representations in Vector Space",
       "inherits": 7,
@@ -97,6 +104,13 @@
       "inherits": 3,
       "contests": 2,
       "bare": 2
+    },
+    {
+      "id": "1605.02688",
+      "title": "Theano: A Python framework for fast computation of mathematical expressions",
+      "inherits": 2,
+      "contests": 0,
+      "bare": 3
     },
     {
       "id": "1606.04199",
@@ -302,6 +316,20 @@
       "bare": 13
     },
     {
+      "id": "2104.08691",
+      "title": "The Power of Scale for Parameter-Efficient Prompt Tuning",
+      "inherits": 3,
+      "contests": 0,
+      "bare": 3
+    },
+    {
+      "id": "2104.08773",
+      "title": "Natural Instructions: Benchmarking generalization to new tasks from natural language instructions",
+      "inherits": 4,
+      "contests": 1,
+      "bare": 3
+    },
+    {
       "id": "2104.09864",
       "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
       "inherits": 7,
@@ -373,6 +401,34 @@
     }
   ],
   "edges": [
+    {
+      "from": "1406.2661",
+      "to": "1207.0580",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "In this case, we can train both models using only the highly successful backpropagation and dropout algorithms [Hinton et al.] and sample from the generative model using only forward propagation.",
+      "section": "Introduction",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 402.5567321777344,
+            "y0": 117.14540100097656,
+            "x1": 503.99591064453125,
+            "y1": 127.10800170898438
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 128.10438537597656,
+            "x1": 465.2985534667969,
+            "y1": 138.06698608398438
+          }
+        ]
+      }
+    },
     {
       "from": "1409.0473",
       "to": "1406.1078",
@@ -533,6 +589,28 @@
     {
       "from": "1607.06450",
       "to": "1603.09025",
+      "stance": "inherits",
+      "cue": "We follow",
+      "sentence": "We follow the same experimental protocol as [Cooijmans et al. 2016] and modify their public code to incorporate layer normalization [<https://github.com/cooijmanstim/Attentive_reader/tree/bn>] which uses Theano [Team et al. 2016].",
+      "section": "Teaching machines to read and comprehend",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99998474121094,
+            "y0": 504.1622009277344,
+            "x1": 364.1582336425781,
+            "y1": 514.1248168945312
+          }
+        ]
+      }
+    },
+    {
+      "from": "1607.06450",
+      "to": "1605.02688",
       "stance": "inherits",
       "cue": "We follow",
       "sentence": "We follow the same experimental protocol as [Cooijmans et al. 2016] and modify their public code to incorporate layer normalization [<https://github.com/cooijmanstim/Attentive_reader/tree/bn>] which uses Theano [Team et al. 2016].",
@@ -1422,6 +1500,46 @@
       }
     },
     {
+      "from": "2104.08773",
+      "to": "2005.14165",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We build models using pre-trained LMs with encoder-decoder architectures BART [Lewis et al. 2019] for fine-tuning and GPT3 [Brown et al. 2020] for few-shot experiments. Encoding instructions and instances. For every problem setup, we map a given instruction I_t and an input instance x into a textual format and decode an output y and obtain enc(I_t, x).",
+      "section": "Models",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 334.3202209472656,
+            "y0": 380.07568359375,
+            "x1": 446.28021240234375,
+            "y1": 390.9847717285156
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 403.91107177734375,
+            "x1": 481.63665771484375,
+            "y1": 414.8201904296875
+          },
+          {
+            "x0": 492.54400634765625,
+            "y0": 403.9283447265625,
+            "x1": 526.2151489257812,
+            "y1": 414.9460144042969
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 417.4773254394531,
+            "x1": 513.1427001953125,
+            "y1": 428.4949951171875
+          }
+        ]
+      }
+    },
+    {
       "from": "2104.09864",
       "to": "1810.04805",
       "stance": "inherits",
@@ -1569,6 +1687,76 @@
     },
     {
       "from": "2109.01652",
+      "to": "2104.08691",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "Performance shown is the average on the SuperGLUE dev set. As we've seen that instruction tuning improves the ability of a model to respond to instructions, it follows that, if FLAN is indeed more amenable to performing NLP tasks, then it should also achieve better performance when performing inference using soft prompts, represented by prepended continuous variables optimized via prompt tuning [Li et al. 2021; Lester et al. 2021].",
+      "section": "Instruction Tuning Facilitates Prompt Tuning",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 389.8982849121094,
+            "x1": 363.3572082519531,
+            "y1": 399.96002197265625
+          },
+          {
+            "x0": 108.0,
+            "y0": 400.8572998046875,
+            "x1": 363.35723876953125,
+            "y1": 410.9190368652344
+          },
+          {
+            "x0": 108.0,
+            "y0": 411.8162841796875,
+            "x1": 363.35723876953125,
+            "y1": 421.8780212402344
+          },
+          {
+            "x0": 108.0,
+            "y0": 422.9264221191406,
+            "x1": 363.36041259765625,
+            "y1": 432.78887939453125
+          },
+          {
+            "x0": 108.0,
+            "y0": 433.7342834472656,
+            "x1": 363.3572998046875,
+            "y1": 443.7960205078125
+          },
+          {
+            "x0": 108.0,
+            "y0": 444.69329833984375,
+            "x1": 226.39576721191406,
+            "y1": 454.7550354003906
+          },
+          {
+            "x0": 477.721923828125,
+            "y0": 551.11083984375,
+            "x1": 505.6526794433594,
+            "y1": 561.0584716796875
+          },
+          {
+            "x0": 373.3190002441406,
+            "y0": 561.9832763671875,
+            "x1": 504.0004577636719,
+            "y1": 572.0450439453125
+          },
+          {
+            "x0": 373.3190002441406,
+            "y0": 573.0174560546875,
+            "x1": 470.46435546875,
+            "y1": 582.9800415039062
+          }
+        ]
+      }
+    },
+    {
+      "from": "2109.01652",
       "to": "2201.08239",
       "stance": "inherits",
       "cue": "we use",
@@ -1625,6 +1813,86 @@
             "y0": 562.6084594726562,
             "x1": 373.9813232421875,
             "y1": 574.6134033203125
+          }
+        ]
+      }
+    },
+    {
+      "from": "2110.08207",
+      "to": "2104.08691",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "Therefore, we use [Lester et al. 2021]'s LM-adapted T5 model (referred to as T5+LM), produced by training T5 on 100B additional tokens from C4 on a standard language modeling objective. Training Our main model, T0, is trained on the multitask mixture detailed in Section [ref] and [ref].",
+      "section": "Experimental Setup",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 189.70333862304688,
+            "y0": 154.3494873046875,
+            "x1": 503.9998474121094,
+            "y1": 166.3544158935547
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 165.3084716796875,
+            "x1": 437.6225280761719,
+            "y1": 177.3134002685547
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 189.75181579589844,
+            "x1": 144.91143798828125,
+            "y1": 202.71316528320312
+          },
+          {
+            "x0": 154.8740234375,
+            "y0": 190.1104736328125,
+            "x1": 447.55316162109375,
+            "y1": 202.1154022216797
+          }
+        ]
+      }
+    },
+    {
+      "from": "2110.08207",
+      "to": "2104.08773",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "More generally, [Schick et al. 2021] and [Brown et al. 2020] popularized using prompts as a generic method for all NLP tasks. [Mishra et al. 2021] further extend this approach to a multitask setup, training on prompts for 61 narrowly defined tasks (e.g., question generation, incorrect answer generation) adapted from 9 datasets' crowdsourcing instructions, whereas we train on and measure generalization across 62 datasets and 12 tasks as traditionally defined in the NLP literature ([ref]).",
+      "section": "Related Work",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 334.7089538574219,
+            "y0": 387.6893310546875,
+            "x1": 504.0033264160156,
+            "y1": 399.69427490234375
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 398.6483154296875,
+            "x1": 504.0032958984375,
+            "y1": 410.65325927734375
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 409.6072998046875,
+            "x1": 504.0033264160156,
+            "y1": 421.61224365234375
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 420.5662841796875,
+            "x1": 504.0033264160156,
+            "y1": 432.57122802734375
           }
         ]
       }

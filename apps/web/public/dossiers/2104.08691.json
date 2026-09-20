@@ -1,0 +1,5082 @@
+{
+  "id": "2104.08691",
+  "title": "The Power of Scale for Parameter-Efficient Prompt Tuning",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/2104.08691",
+  "numbers": [
+    {
+      "value": ".1",
+      "kind": "result",
+      "section": "method",
+      "sentence": "In particular, a T5 model pre-trained exclusively on span corruption, such as T5.1.1, has never seen truly natural input text (free of sentinel tokens), nor has it ever been asked to predict truly natural targets.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "SQuAD",
+      "cell": "0.1",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 328.9529113769531,
+            "y0": 422.25732421875,
+            "x1": 526.2173461914062,
+            "y1": 433.2749938964844
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 435.9718322753906,
+            "x1": 524.60009765625,
+            "y1": 446.7712707519531
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 449.3553466796875,
+            "x1": 526.2173461914062,
+            "y1": 460.3730163574219
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 462.9043273925781,
+            "x1": 524.79296875,
+            "y1": 473.9219970703125
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 476.4533386230469,
+            "x1": 372.4494934082031,
+            "y1": 487.47100830078125
+          }
+        ]
+      }
+    },
+    {
+      "value": ".1",
+      "kind": "result",
+      "section": "results",
+      "sentence": "We leverage the public T5.1.1 checkpoints, which include improvements over the original T5. d_ff$, and (3) the use of GeGLU over ReLU activations.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "SQuAD",
+      "cell": "0.1",
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 101.99906921386719,
+            "y0": 283.77154541015625,
+            "x1": 290.500244140625,
+            "y1": 294.68609619140625
+          },
+          {
+            "x0": 70.4729995727539,
+            "y0": 297.39947509765625,
+            "x1": 289.21905517578125,
+            "y1": 308.2099609375
+          }
+        ]
+      }
+    },
+    {
+      "value": ".1",
+      "kind": "result",
+      "section": "results",
+      "sentence": "To compare our method with standard model tuning, we tune the public T5.1.1 checkpoints on SuperGLUE using the default hyperparameters specified in the T5 library (learning rate , and Adafactor optimizer with pre-training parameter states restored).",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "SQuAD",
+      "cell": "0.1",
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 305.8039855957031,
+            "y0": 249.3583221435547,
+            "x1": 526.2241821289062,
+            "y1": 260.3759765625
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 262.9073181152344,
+            "x1": 524.4147338867188,
+            "y1": 273.92498779296875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 276.4563293457031,
+            "x1": 524.4146118164062,
+            "y1": 287.4739990234375
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 290.0053405761719,
+            "x1": 493.6700744628906,
+            "y1": 301.02301025390625
+          }
+        ]
+      }
+    },
+    {
+      "value": ".1",
+      "kind": "result",
+      "section": "results",
+      "sentence": "Since we use T5.1.1 throughout, this setup is unavailable, as the pre-training phase is fully self-supervised.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "SQuAD",
+      "cell": "0.1",
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 475.255859375,
+            "y0": 663.642333984375,
+            "x1": 524.4141845703125,
+            "y1": 672.6979370117188
+          },
+          {
+            "x0": 305.864013671875,
+            "y0": 673.7403564453125,
+            "x1": 524.4071044921875,
+            "y1": 682.6166381835938
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 683.59765625,
+            "x1": 413.7982482910156,
+            "y1": 692.61328125
+          }
+        ]
+      }
+    },
+    {
+      "value": "0%",
+      "kind": "result",
+      "section": "results",
+      "sentence": "On inspection, we find that for many tasks, these mid-sized models never learn to output a legal class label and thus score 0%.",
+      "status": "exact",
+      "table": "Table 14",
+      "row": "Training",
+      "cell": "0.0",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 149.46910095214844,
+            "y0": 627.1763305664062,
+            "x1": 289.3168029785156,
+            "y1": 638.1939697265625
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 640.81591796875,
+            "x1": 289.1341552734375,
+            "y1": 651.714111328125
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 654.2743530273438,
+            "x1": 267.90789794921875,
+            "y1": 665.2919921875
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.1",
+      "kind": "result",
+      "section": "results",
+      "sentence": "We have released T5 1.1 checkpoints adapted using the LM objective for K steps for all model sizes.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 317.0509948730469,
+            "y0": 449.4503173828125,
+            "x1": 524.4078369140625,
+            "y1": 460.4679870605469
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 463.16583251953125,
+            "x1": 418.2684020996094,
+            "y1": 473.96527099609375
+          }
+        ]
+      }
+    },
+    {
+      "value": "100%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "For example, we see lexically similar clusters such as Technology / technology / Technologies / technological / technologies , as well as more diverse but still strongly related clusters such as entirely / completely / totally / altogether / 100% .",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "COPA",
+      "cell": "100.0",
+      "anchor": null
+    },
+    {
+      "value": "100K steps",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "As such, we experiment with various lengths of adaptation up to 100K steps.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 157.50303649902344,
+            "y0": 195.83836364746094,
+            "x1": 289.1387634277344,
+            "y1": 206.85601806640625
+          },
+          {
+            "x0": 70.59300231933594,
+            "y0": 209.46969604492188,
+            "x1": 275.7604064941406,
+            "y1": 220.37879943847656
+          }
+        ]
+      }
+    },
+    {
+      "value": "100K steps",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Our \"default\" configuration, plotted with a green ` ' ( figures/green-x.png) throughout, uses an LM-adapted version of T5 trained for an additional 100K steps, initializes using class labels (see Section ), and uses a prompt length of tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "",
+      "label": "",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "#1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "F1 mean and stddev for models trained on SQuAD and evaluated on out-of-domain datasets from the MRQA 2019 shared task. Prompt tuning tends to give stronger zero-shot performance than model tuning, especially on datasets with large domain shifts like TextbookQA.",
+      "label": "tab:domain-squad",
+      "numericCells": 7,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Dataset",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Domain",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Prompt",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Wiki",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.9 0.2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "94.8 0.1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1",
+            "value": "0.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "TextbookQA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Book",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "54.3 3.7",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "66.8 2.9",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "+12.5",
+            "value": "12.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "BioASQ",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Bio",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "77.9 0.4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "79.1 0.3",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "+1.2",
+            "value": "1.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Exam",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "59.8 0.6",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "60.7 0.5",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "+0.9",
+            "value": "0.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RE",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Wiki",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.4 0.1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "88.8 0.2",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "+0.4",
+            "value": "0.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DuoRC",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Movie",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.9 0.7",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "67.7 1.1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.2",
+            "value": "1.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DROP",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Wiki",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.9 1.7",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "67.1 1.9",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.8",
+            "value": "1.8",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 345.7431945800781,
+            "y0": 163.57948303222656,
+            "x1": 524.4124145507812,
+            "y1": 173.54208374023438
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 175.5345001220703,
+            "x1": 524.4125366210938,
+            "y1": 185.49710083007812
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 187.49049377441406,
+            "x1": 524.4124755859375,
+            "y1": 197.45309448242188
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 199.4455108642578,
+            "x1": 526.0663452148438,
+            "y1": 209.40811157226562
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 211.40052795410156,
+            "x1": 524.4125366210938,
+            "y1": 221.36312866210938
+          },
+          {
+            "x0": 305.8330078125,
+            "y0": 223.3555450439453,
+            "x1": 360.0494384765625,
+            "y1": 233.31814575195312
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Mean and stddev of zero-shot domain transfer between two paraphrase detection tasks.",
+      "label": "tab:domain-paraphrase",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Train",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Eval",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Tuning",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Accuracy",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "73.1 0.9",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.2 2.1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Prompt",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.3 0.1",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "84.3 0.3",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "74.9 1.3",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "70.9 1.2",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Prompt",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "75.4 0.8",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "69.7 0.3",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 105.79470825195312,
+            "y0": 140.6294708251953,
+            "x1": 289.30572509765625,
+            "y1": 150.59207153320312
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 152.58546447753906,
+            "x1": 230.95504760742188,
+            "y1": 162.54806518554688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Performance of a five-prompt ensemble built from a single frozen T5-XXL model exceeds both the average and the best among the five prompts.",
+      "label": "tab:ensemble",
+      "numericCells": 18,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Dataset",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Metric",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Average",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Best",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Ensemble",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BoolQ",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.1",
+            "value": "91.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.3",
+            "value": "91.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.7",
+            "value": "91.7",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "CB",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc./F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "99.3 / 99.0",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.00 / 100.00",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0 / 100.0",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "COPA",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "98.8",
+            "value": "98.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MultiRC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "EM/F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.7 / 88.7",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.3 / 89.0",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.1 / 89.4",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ReCoRD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "EM/F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.7 / 93.4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.9 / 93.5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.2 / 93.9",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RTE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.6",
+            "value": "92.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "93.5",
+            "value": "93.5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "93.5",
+            "value": "93.5",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WiC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.2",
+            "value": "76.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.6",
+            "value": "76.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.4",
+            "value": "77.4",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WSC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95.8",
+            "value": "95.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "96.2",
+            "value": "96.2",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "96.2",
+            "value": "96.2",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SuperGLUE (dev)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "90.5",
+            "value": "90.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.0",
+            "value": "91.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "91.3",
+            "value": "91.3",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 342.9038391113281,
+            "y0": 180.83851623535156,
+            "x1": 524.4124145507812,
+            "y1": 190.80111694335938
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 192.7935333251953,
+            "x1": 524.41259765625,
+            "y1": 202.75613403320312
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 204.74855041503906,
+            "x1": 485.797607421875,
+            "y1": 214.71115112304688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Number of parameters used for various prompt lengths and T5 model sizes. Trainable parameters is the number of parameters in the prompt itself, while total parameters includes the prompt plus the original T5 parameters. The T5 parameters are frozen and shared across all tasks, and include the SentencePiece lookup table parameters. The final column is the percentage of total parameters that are trainable.",
+      "label": "tab:prompt-parameter-counts",
+      "numericCells": 62,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "T5 Size",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Prompt Length",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Trainable Parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Total Parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Percent Trainable",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Small",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00067%",
+            "value": "0.00067",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00333%",
+            "value": "0.00333",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.01330%",
+            "value": "0.01330",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50",
+            "value": "50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.03325%",
+            "value": "0.03325",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.06648%",
+            "value": "0.06648",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "150",
+            "value": "150",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.09969%",
+            "value": "0.09969",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Base",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "768",
+            "value": "768",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00031%",
+            "value": "0.00031",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00155%",
+            "value": "0.00155",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00620%",
+            "value": "0.00620",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50",
+            "value": "50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.01551%",
+            "value": "0.01551",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.03101%",
+            "value": "0.03101",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "150",
+            "value": "150",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.04651%",
+            "value": "0.04651",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Large",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00013%",
+            "value": "0.00013",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00065%",
+            "value": "0.00065",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00262%",
+            "value": "0.00262",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50",
+            "value": "50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00654%",
+            "value": "0.00654",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.01907%",
+            "value": "0.01907",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "150",
+            "value": "150",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.01961%",
+            "value": "0.01961",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "XL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00007%",
+            "value": "0.00007",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00036%",
+            "value": "0.00036",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00143%",
+            "value": "0.00143",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50",
+            "value": "50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00359%",
+            "value": "0.00359",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00718%",
+            "value": "0.00718",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "150",
+            "value": "150",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.01078%",
+            "value": "0.01078",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "XXL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00004%",
+            "value": "0.00004",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00018%",
+            "value": "0.00018",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00074%",
+            "value": "0.00074",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50",
+            "value": "50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00184%",
+            "value": "0.00184",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00368%",
+            "value": "0.00368",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "150",
+            "value": "150",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.00552%",
+            "value": "0.00552",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 13,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.18199920654297,
+            "y0": 403.0834655761719,
+            "x1": 524.4130859375,
+            "y1": 413.04608154296875
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 415.0384521484375,
+            "x1": 524.4132690429688,
+            "y1": 425.0010681152344
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 426.99444580078125,
+            "x1": 524.413330078125,
+            "y1": 436.9570617675781
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 438.9494323730469,
+            "x1": 406.784912109375,
+            "y1": 448.91204833984375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 6",
+      "caption": "Mean and standard deviation of the runtime until convergence for the BoolQ dataset and various prompt lengths and model sizes. Convergence is defined as reaching a performance within % of the mean value for that model configuration. A few configurations have been omitted because their runtimes were artificially extended due to preemption.",
+      "label": "tab:runtime",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Prompt Length",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "T5 Size",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Time",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Large",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3:17 02:10",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "XL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3:37 02:11",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "XXL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21:23 01:54",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "XL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "49:08 18:53",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "XXL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "53:03 16:25",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "50",
+            "value": "50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Small",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "09:05 05:07",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Base",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "55:01 27:48",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Large",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1:14:16 13:12",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "XL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2:30:10 25:40",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "XXL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3:13:13 23:08",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Small",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16:25 01:15",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Base",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29:57 00:18",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Large",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1:23:36 10:21",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "XL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3:35:00 54:42",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "XXL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3:51:15 45:53",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Search space for each hyperparameter considered. Parameter Scaling refers to the Adafactor setting where an update is scaled by the norm of the parameter it will be applied to. Warmup Steps is the number of steps before a linearly increasing learning rate reaches the Learning Rate value, starting from zero. Decay Factor is the reduction in Learning Rate size that occurs every \"Steps per Decay\" steps.",
+      "label": "tab:hyperparam-bounds",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Hyperparameter",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Search Space",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Learning Rate",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.001--0.5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Parameter Scaling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "True, False",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Batch Size",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Number of Steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Warmup Steps",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Decay Factor",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Steps per Decay",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 106.40243530273438,
+            "y0": 174.84950256347656,
+            "x1": 290.79022216796875,
+            "y1": 184.81210327148438
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 186.8054962158203,
+            "x1": 289.1366271972656,
+            "y1": 196.76809692382812
+          },
+          {
+            "x0": 70.50699615478516,
+            "y0": 198.76051330566406,
+            "x1": 289.3056945800781,
+            "y1": 208.72311401367188
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 210.7155303955078,
+            "x1": 289.1365661621094,
+            "y1": 220.67813110351562
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 222.67054748535156,
+            "x1": 289.1366271972656,
+            "y1": 232.63314819335938
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 234.6255645751953,
+            "x1": 290.7904357910156,
+            "y1": 244.58816528320312
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 246.58058166503906,
+            "x1": 289.1365661621094,
+            "y1": 256.5431823730469
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 258.53656005859375,
+            "x1": 193.5753631591797,
+            "y1": 268.4991760253906
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "Sizes for training, validation, and testing splits of each dataset used. Following T5, our casting of WSC as a text generation problems means we can only train on examples where the supplied referent is correct. This means our training dataset is smaller than the normal WSC training dataset, which has examples.",
+      "label": "tab:dataset-size",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Dataset",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Testing",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BoolQ",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CB",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "250",
+            "value": "250",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56",
+            "value": "56",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "250",
+            "value": "250",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "COPA",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "500",
+            "value": "500",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MultiRC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ReCoRD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RTE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "277",
+            "value": "277",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "WiC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "638",
+            "value": "638",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "WSC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "104",
+            "value": "104",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "146",
+            "value": "146",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MRPC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "408",
+            "value": "408",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "QQP",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "TextbookQA",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RACE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BioASQ",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "674",
+            "value": "674",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "DuoRC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "DROP",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Label distribution for the BoolQ dataset.",
+      "label": "tab:boolq-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "False",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "True",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62.3",
+            "value": "62.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.8",
+            "value": "37.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62.2",
+            "value": "62.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 116.75279235839844,
+            "y0": 616.1294555664062,
+            "x1": 278.1568603515625,
+            "y1": 626.092041015625
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 10",
+      "caption": "Label distribution for the CB dataset.",
+      "label": "tab:cb-label-dist",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "contradiction",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "entailment",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "47.6",
+            "value": "47.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "46.0",
+            "value": "46.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.4",
+            "value": "6.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50.0",
+            "value": "50.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.1",
+            "value": "41.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.9",
+            "value": "8.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 123.39279174804688,
+            "y0": 684.7854614257812,
+            "x1": 271.5167236328125,
+            "y1": 694.748046875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 11",
+      "caption": "Label distribution for the COPA dataset.",
+      "label": "tab:copa-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "choice1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "choice2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48.8",
+            "value": "48.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51.2",
+            "value": "51.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "55.0",
+            "value": "55.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45.0",
+            "value": "45.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 119.70208740234375,
+            "y0": 758.9754638671875,
+            "x1": 280.1895751953125,
+            "y1": 768.9380493164062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 12",
+      "caption": "Label distribution for the MultiRC dataset.",
+      "label": "tab:multirc-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "False",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "True",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "55.9",
+            "value": "55.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44.1",
+            "value": "44.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "57.2",
+            "value": "57.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "42.8",
+            "value": "42.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 350.0860900878906,
+            "y0": 139.9784698486328,
+            "x1": 520.3567504882812,
+            "y1": 149.94107055664062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 13",
+      "caption": "Label distribution for the WiC dataset.",
+      "label": "tab:wic-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "False",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "True",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50.0",
+            "value": "50.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50.0",
+            "value": "50.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50.0",
+            "value": "50.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50.0",
+            "value": "50.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 358.5940856933594,
+            "y0": 244.05250549316406,
+            "x1": 511.84869384765625,
+            "y1": 254.01510620117188
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 14",
+      "caption": "Label distribution for the WSC dataset. Following T5, we cast the WSC dataset to a free-form text generation task where the model generates the referent to the highlighted span instead predicting if the supplied entity is the correct referent of the highlighted span. Thus, we only use training data where the supplied referent is correct making our training label distribution focused entirely on True.",
+      "label": "tab:wsc-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "False",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "True",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0",
+            "value": "0.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.5",
+            "value": "63.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.5",
+            "value": "36.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 347.137939453125,
+            "y0": 348.1254577636719,
+            "x1": 526.066162109375,
+            "y1": 358.08807373046875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 360.0814514160156,
+            "x1": 524.4126586914062,
+            "y1": 370.0440673828125
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 372.03643798828125,
+            "x1": 524.4124755859375,
+            "y1": 381.9990539550781
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 383.9914245605469,
+            "x1": 526.0662841796875,
+            "y1": 393.95404052734375
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 395.9464111328125,
+            "x1": 524.4124755859375,
+            "y1": 405.9090270996094
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 407.9013977050781,
+            "x1": 526.0664672851562,
+            "y1": 417.864013671875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 419.8573913574219,
+            "x1": 526.0662841796875,
+            "y1": 429.82000732421875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 431.8123779296875,
+            "x1": 448.0086669921875,
+            "y1": 441.7749938964844
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 15",
+      "caption": "Label distribution for the RTE dataset.",
+      "label": "tab:rte-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "entailment",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "not_entailment",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51.2",
+            "value": "51.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "49.8",
+            "value": "49.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "52.7",
+            "value": "52.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "47.3",
+            "value": "47.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 358.694091796875,
+            "y0": 535.885498046875,
+            "x1": 511.7494812011719,
+            "y1": 545.8480834960938
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 16",
+      "caption": "Label distribution for the MRPC dataset.",
+      "label": "tab:mrpc-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "equivalent",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "not_equivalent",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.4",
+            "value": "67.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32.6",
+            "value": "32.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.4",
+            "value": "68.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.6",
+            "value": "31.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 353.9610900878906,
+            "y0": 639.95947265625,
+            "x1": 516.48095703125,
+            "y1": 649.9220581054688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 17",
+      "caption": "Label distribution for the QQP dataset.",
+      "label": "tab:qqp-label-dist",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Split",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "duplicate",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "not_duplicate",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.9",
+            "value": "36.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.1",
+            "value": "63.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.8",
+            "value": "36.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.2",
+            "value": "63.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 357.84210205078125,
+            "y0": 744.032470703125,
+            "x1": 512.60107421875,
+            "y1": 753.9950561523438
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\thesubfigure": "(\\alph{subfigure})",
+    "\\STAB": "\\begin{tabular}{@{}c@{}}#1\\end{tabular}",
+    "\\comment": "",
+    "\\inlinegraphics": "\n    \\raisebox{0.0\\baselineskip}{\n        \\includegraphics[\n        height=\\baselineskip,\n        width=\\baselineskip,\n        keepaspectratio,\n        ]{#1}\n    }\n",
+    "\\thefootnote": "\\arabic{footnote}"
+  },
+  "references": [
+    {
+      "key": "bar2006second",
+      "raw": "Roy Bar-Haim, Ido Dagan, Bill Dolan, Lisa Ferro, Danilo Giampiccolo, Bernardo Magnini, and Idan Szpektor. 2006. The second PASCAL recognising textual entailment challenge. In Proceedings of the second PASCAL challenges workshop on recognising textual entailment, volume 6, pages 6--4. Venice",
+      "authors": "Roy Bar-Haim, Ido Dagan, Bill Dolan, Lisa Ferro, Danilo Giampiccolo, Bernardo Magnini, and Idan Szpektor. 2006",
+      "title": "The second PASCAL recognising textual entailment challenge",
+      "venue": "In Proceedings of the second PASCAL challenges workshop on recognising textual entailment, volume 6, pages 6--4. Venice",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bentivogli2009fifth",
+      "raw": "Luisa Bentivogli, Peter Clark, Ido Dagan, and Danilo Giampiccolo. 2009. The fifth PASCAL recognizing textual entailment challenge. In TAC",
+      "authors": "Luisa Bentivogli, Peter Clark, Ido Dagan, and Danilo Giampiccolo. 2009",
+      "title": "The fifth PASCAL recognizing textual entailment challenge",
+      "venue": "In TAC",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jax2018github",
+      "raw": "James Bradbury, Roy Frostig, Peter Hawkins, Matthew James Johnson, Chris Leary, Dougal Maclaurin, George Necula, Adam Paszke, Jake VanderPlas, Skye Wanderman-Milne, and Qiao Zhang. 2018. http://github.com/google/jax JAX: composable transformations of Python+NumPy programs",
+      "authors": "James Bradbury, Roy Frostig, Peter Hawkins, Matthew James Johnson, Chris Leary, Dougal Maclaurin, George Necula, Adam Paszke, Jake VanderPlas, Skye Wanderman-Milne, and Qiao Zhang. 2018",
+      "title": "JAX: composable transformations of Python+NumPy programs",
+      "venue": "",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "brown_2020_gpt3",
+      "raw": "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020. https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf Language models are few-shot learners. In Advances in Neural Information Processing Systems, volume 33, pages 1877--1901. Curran Associates, Inc",
+      "authors": "Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens Winter, Chris Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei. 2020",
+      "title": "Language models are few-shot learners",
+      "venue": "In Advances in Neural Information Processing Systems, volume 33, pages 1877--1901. Curran Associates, Inc",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "clark-etal-2019-boolq",
+      "raw": "Christopher Clark, Kenton Lee, Ming-Wei Chang, Tom Kwiatkowski, Michael Collins, and Kristina Toutanova. 2019. https://doi.org/10.18653/v1/N19-1300 BoolQ: Exploring the surprising difficulty of natural yes/no questions. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2924--2936, Minneapolis, Minnesota. Association for Computational Linguistics",
+      "authors": "Christopher Clark, Kenton Lee, Ming-Wei Chang, Tom Kwiatkowski, Michael Collins, and Kristina Toutanova. 2019",
+      "title": "BoolQ: Exploring the surprising difficulty of natural yes/no questions",
+      "venue": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2924--2936, Minneapolis, Minnesota. Association for Computational Linguistics",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/N19-1300"
+    },
+    {
+      "key": "dagan2005pascal",
+      "raw": "Ido Dagan, Oren Glickman, and Bernardo Magnini. 2005. The PASCAL recognising textual entailment challenge. In Machine Learning Challenges Workshop, pages 177--190. Springer",
+      "authors": "Ido Dagan, Oren Glickman, and Bernardo Magnini. 2005",
+      "title": "The PASCAL recognising textual entailment challenge",
+      "venue": "In Machine Learning Challenges Workshop, pages 177--190. Springer",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "de-marneff_simons_tonhauser_2019",
+      "raw": "Marie-Catherine De Marneff, Mandy Simons, and Judith Tonhauser. 2019. The CommitmentBank: Investigating projection in naturally occurring discourse. Proceedings of Sinn und Bedeutung 23",
+      "authors": "Marie-Catherine De Marneff, Mandy Simons, and Judith Tonhauser. 2019",
+      "title": "The CommitmentBank: Investigating projection in naturally occurring discourse",
+      "venue": "Proceedings of Sinn und Bedeutung 23",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "devlin-etal-2019-bert",
+      "raw": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. https://doi.org/10.18653/v1/N19-1423 BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171--4186, Minneapolis, Minnesota. Association for Computational Linguistics",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019",
+      "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171--4186, Minneapolis, Minnesota. Association for Computational Linguistics",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/N19-1423"
+    },
+    {
+      "key": "dolan2005automatically",
+      "raw": "William B Dolan and Chris Brockett. 2005. Automatically constructing a corpus of sentential paraphrases. In Proceedings of the Third International Workshop on Paraphrasing (IWP2005)",
+      "authors": "William B Dolan and Chris Brockett. 2005",
+      "title": "Automatically constructing a corpus of sentential paraphrases",
+      "venue": "In Proceedings of the Third International Workshop on Paraphrasing (IWP2005)",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dua-etal-2019-drop",
+      "raw": "Dheeru Dua, Yizhong Wang, Pradeep Dasigi, Gabriel Stanovsky, Sameer Singh, and Matt Gardner. 2019. https://doi.org/10.18653/v1/N19-1246 DROP: A reading comprehension benchmark requiring discrete reasoning over paragraphs. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2368--2378, Minneapolis, Minnesota. Association for Computational Linguistics",
+      "authors": "Dheeru Dua, Yizhong Wang, Pradeep Dasigi, Gabriel Stanovsky, Sameer Singh, and Matt Gardner. 2019",
+      "title": "DROP: A reading comprehension benchmark requiring discrete reasoning over paragraphs",
+      "venue": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2368--2378, Minneapolis, Minnesota. Association for Computational Linguistics",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/N19-1246"
+    },
+    {
+      "key": "fisch2019mrqa",
+      "raw": "Adam Fisch, Alon Talmor, Robin Jia, Minjoon Seo, Eunsol Choi, and Danqi Chen. 2019. MRQA 2019 shared task: Evaluating generalization in reading comprehension. In Proceedings of 2nd Machine Reading for Reading Comprehension (MRQA) Workshop at EMNLP",
+      "authors": "Adam Fisch, Alon Talmor, Robin Jia, Minjoon Seo, Eunsol Choi, and Danqi Chen. 2019",
+      "title": "MRQA 2019 shared task: Evaluating generalization in reading comprehension",
+      "venue": "In Proceedings of 2nd Machine Reading for Reading Comprehension (MRQA) Workshop at EMNLP",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "giampiccolo2007third",
+      "raw": "Danilo Giampiccolo, Bernardo Magnini, Ido Dagan, and Bill Dolan. 2007. The third PASCAL recognizing textual entailment challenge. In Proceedings of the ACL-PASCAL workshop on textual entailment and paraphrasing, pages 1--9. Association for Computational Linguistics",
+      "authors": "Danilo Giampiccolo, Bernardo Magnini, Ido Dagan, and Bill Dolan. 2007",
+      "title": "The third PASCAL recognizing textual entailment challenge",
+      "venue": "In Proceedings of the ACL-PASCAL workshop on textual entailment and paraphrasing, pages 1--9. Association for Computational Linguistics",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hambardzumyan_2021_warp",
+      "raw": "Karen Hambardzumyan, Hrant Khachatrian, and Jonathan May. 2021. https://doi.org/10.18653/v1/2021.acl-long.381 WARP: Word-level Adversarial ReProgramming. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4921--4933, Online. Association for Computational Linguistics",
+      "authors": "Karen Hambardzumyan, Hrant Khachatrian, and Jonathan May. 2021",
+      "title": "WARP: Word-level Adversarial ReProgramming",
+      "venue": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4921--4933, Online. Association for Computational Linguistics",
+      "year": 2021,
+      "arxivId": null,
+      "doi": "10.18653/v1/2021.acl-long.381"
+    },
+    {
+      "key": "hansen_1990_ensembles",
+      "raw": "L. K. Hansen and P. Salamon. 1990. https://doi.org/10.1109/34.58871 Neural network ensembles. IEEE Transactions on Pattern Analysis and Machine Intelligence, 12(10):993--1001",
+      "authors": "L. K. Hansen and P. Salamon. 1990",
+      "title": "Neural network ensembles",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 12(10):993--1001",
+      "year": 1990,
+      "arxivId": null,
+      "doi": "10.1109/34.58871"
+    },
+    {
+      "key": "flax2020github",
+      "raw": "Jonathan Heek, Anselm Levskaya, Avital Oliver, Marvin Ritter, Bertrand Rondepierre, Andreas Steiner, and Marc van Zee. 2020. http://github.com/google/flax Flax: A neural network library and ecosystem for JAX",
+      "authors": "Jonathan Heek, Anselm Levskaya, Avital Oliver, Marvin Ritter, Bertrand Rondepierre, Andreas Steiner, and Marc van Zee. 2020",
+      "title": "Flax: A neural network library and ecosystem for JAX",
+      "venue": "",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "houlsby_2019_adapters",
+      "raw": "Neil Houlsby, Andrei Giurgiu, Stanislaw Jastrzebski, Bruna Morrone, Quentin De Laroussilhe, Andrea Gesmundo, Mona Attariyan, and Sylvain Gelly. 2019. http://proceedings.mlr.press/v97/houlsby19a.html Parameter-efficient transfer learning for NLP. In Proceedings of the 36th International Conference on Machine Learning, volume 97 of Proceedings of Machine Learning Research, pages 2790--2799. PMLR",
+      "authors": "Neil Houlsby, Andrei Giurgiu, Stanislaw Jastrzebski, Bruna Morrone, Quentin De Laroussilhe, Andrea Gesmundo, Mona Attariyan, and Sylvain Gelly. 2019",
+      "title": "Parameter-efficient transfer learning for NLP",
+      "venue": "In Proceedings of the 36th International Conference on Machine Learning, volume 97 of Proceedings of Machine Learning Research, pages 2790--2799. PMLR",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "howard-ruder-2018-universal",
+      "raw": "Jeremy Howard and Sebastian Ruder. 2018. https://doi.org/10.18653/v1/P18-1031 Universal language model fine-tuning for text classification. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 328--339, Melbourne, Australia. Association for Computational Linguistics",
+      "authors": "Jeremy Howard and Sebastian Ruder. 2018",
+      "title": "Universal language model fine-tuning for text classification",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 328--339, Melbourne, Australia. Association for Computational Linguistics",
+      "year": 2018,
+      "arxivId": null,
+      "doi": "10.18653/v1/P18-1031"
+    },
+    {
+      "key": "WinNT",
+      "raw": "Shankar Iyer, Nikhil Dandekar, and Kornel Csernai. 2017. https://data.quora.com/First-Quora-Dataset-Release-Question-Pairs First Quora dataset release: Question pairs",
+      "authors": "Shankar Iyer, Nikhil Dandekar, and Kornel Csernai. 2017",
+      "title": "First Quora dataset release: Question pairs",
+      "venue": "",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jiang-etal-2020-know",
+      "raw": "Zhengbao Jiang, Frank F. Xu, Jun Araki, and Graham Neubig. 2020. https://doi.org/10.1162/tacl_a_00324 How can we know what language models know? Transactions of the Association for Computational Linguistics, 8:423--438",
+      "authors": "Zhengbao Jiang, Frank F. Xu, Jun Araki, and Graham Neubig. 2020",
+      "title": "How can we know what language models know?",
+      "venue": "Transactions of the Association for Computational Linguistics, 8:423--438",
+      "year": 2020,
+      "arxivId": null,
+      "doi": "10.1162/tacl_a_00324"
+    },
+    {
+      "key": "8100054",
+      "raw": "A. Kembhavi, M. Seo, D. Schwenk, J. Choi, A. Farhadi, and H. Hajishirzi. 2017. https://doi.org/10.1109/CVPR.2017.571 Are you smarter than a sixth grader? textbook question answering for multimodal machine comprehension. In 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 5376--5384",
+      "authors": "A. Kembhavi, M. Seo, D. Schwenk, J. Choi, A. Farhadi, and H. Hajishirzi. 2017",
+      "title": "Are you smarter than a sixth grader? textbook question answering for multimodal machine comprehension",
+      "venue": "In 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 5376--5384",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.1109/CVPR.2017.571"
+    },
+    {
+      "key": "MultiRC2018",
+      "raw": "Daniel Khashabi, Snigdha Chaturvedi, Michael Roth, Shyam Upadhyay, and Dan Roth. 2018. Looking beyond the surface: A challenge set for reading comprehension over multiple sentences. In Proceedings of North American Chapter of the Association for Computational Linguistics (NAACL)",
+      "authors": "Daniel Khashabi, Snigdha Chaturvedi, Michael Roth, Shyam Upadhyay, and Dan Roth. 2018",
+      "title": "Looking beyond the surface: A challenge set for reading comprehension over multiple sentences",
+      "venue": "In Proceedings of North American Chapter of the Association for Computational Linguistics (NAACL)",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kocijan-etal-2019-surprisingly",
+      "raw": "Vid Kocijan, Ana-Maria Cretu, Oana-Maria Camburu, Yordan Yordanov, and Thomas Lukasiewicz. 2019. https://doi.org/10.18653/v1/P19-1478 A surprisingly robust trick for the Winograd schema challenge. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 4837--4842, Florence, Italy. Association for Computational Linguistics",
+      "authors": "Vid Kocijan, Ana-Maria Cretu, Oana-Maria Camburu, Yordan Yordanov, and Thomas Lukasiewicz. 2019",
+      "title": "A surprisingly robust trick for the Winograd schema challenge",
+      "venue": "In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 4837--4842, Florence, Italy. Association for Computational Linguistics",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/P19-1478"
+    },
+    {
+      "key": "kudo2018sentencepiece",
+      "raw": "Taku Kudo and John Richardson. 2018. https://doi.org/10.18653/v1/D18-2012 SentencePiece: A simple and language independent subword tokenizer and detokenizer for neural text processing. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 66--71, Brussels, Belgium. Association for Computational Linguistics",
+      "authors": "Taku Kudo and John Richardson. 2018",
+      "title": "SentencePiece: A simple and language independent subword tokenizer and detokenizer for neural text processing",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 66--71, Brussels, Belgium. Association for Computational Linguistics",
+      "year": 2018,
+      "arxivId": null,
+      "doi": "10.18653/v1/D18-2012"
+    },
+    {
+      "key": "lai-etal-2017-race",
+      "raw": "Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy. 2017. https://doi.org/10.18653/v1/D17-1082 RACE: Large-scale ReAding comprehension dataset from examinations. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 785--794, Copenhagen, Denmark. Association for Computational Linguistics",
+      "authors": "Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy. 2017",
+      "title": "RACE: Large-scale ReAding comprehension dataset from examinations",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 785--794, Copenhagen, Denmark. Association for Computational Linguistics",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.18653/v1/D17-1082"
+    },
+    {
+      "key": "lakshminarayanan_2017_deep_ensembles",
+      "raw": "Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. 2017. https://proceedings.neurips.cc/paper/2017/file/9ef2ed4b7fd2c810847ffa5fa85bce38-Paper.pdf Simple and scalable predictive uncertainty estimation using deep ensembles. In Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc",
+      "authors": "Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. 2017",
+      "title": "Simple and scalable predictive uncertainty estimation using deep ensembles",
+      "venue": "In Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "levesque2012winograd",
+      "raw": "Hector Levesque, Ernest Davis, and Leora Morgenstern. 2012. The Winograd schema challenge. In Thirteenth International Conference on the Principles of Knowledge Representation and Reasoning",
+      "authors": "Hector Levesque, Ernest Davis, and Leora Morgenstern. 2012",
+      "title": "The Winograd schema challenge",
+      "venue": "In Thirteenth International Conference on the Principles of Knowledge Representation and Reasoning",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "levy-etal-2017-zero",
+      "raw": "Omer Levy, Minjoon Seo, Eunsol Choi, and Luke Zettlemoyer. 2017. https://doi.org/10.18653/v1/K17-1034 Zero-shot relation extraction via reading comprehension. In Proceedings of the 21st Conference on Computational Natural Language Learning (CoNLL 2017), pages 333--342, Vancouver, Canada. Association for Computational Linguistics",
+      "authors": "Omer Levy, Minjoon Seo, Eunsol Choi, and Luke Zettlemoyer. 2017",
+      "title": "Zero-shot relation extraction via reading comprehension",
+      "venue": "In Proceedings of the 21st Conference on Computational Natural Language Learning (CoNLL 2017), pages 333--342, Vancouver, Canada. Association for Computational Linguistics",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.18653/v1/K17-1034"
+    },
+    {
+      "key": "lewis-etal-2020-bart",
+      "raw": "Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2020. https://doi.org/10.18653/v1/2020.acl-main.703 BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7871--7880, Online. Association for Computational Linguistics",
+      "authors": "Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2020",
+      "title": "BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension",
+      "venue": "In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 7871--7880, Online. Association for Computational Linguistics",
+      "year": 2020,
+      "arxivId": null,
+      "doi": "10.18653/v1/2020.acl-main.703"
+    },
+    {
+      "key": "li_2021_prefix_tuning",
+      "raw": "Xiang Lisa Li and Percy Liang. 2021. https://doi.org/10.18653/v1/2021.acl-long.353 Prefix-tuning: Optimizing continuous prompts for generation. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4582--4597, Online. Association for Computational Linguistics",
+      "authors": "Xiang Lisa Li and Percy Liang. 2021",
+      "title": "Prefix-tuning: Optimizing continuous prompts for generation",
+      "venue": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4582--4597, Online. Association for Computational Linguistics",
+      "year": 2021,
+      "arxivId": null,
+      "doi": "10.18653/v1/2021.acl-long.353"
+    },
+    {
+      "key": "liu2021gpt",
+      "raw": "Xiao Liu, Yanan Zheng, Zhengxiao Du, Ming Ding, Yujie Qian, Zhilin Yang, and Jie Tang. 2021. http://arxiv.org/abs/2103.10385 GPT understands, too. CoRR, abs/2103.10385",
+      "authors": "Xiao Liu, Yanan Zheng, Zhengxiao Du, Ming Ding, Yujie Qian, Zhilin Yang, and Jie Tang. 2021",
+      "title": "GPT understands, too",
+      "venue": "CoRR, abs/2103.10385",
+      "year": 2021,
+      "arxivId": "2103.10385",
+      "doi": null
+    },
+    {
+      "key": "logeswaranFewshotSequenceLearning2020",
+      "raw": "Lajanugen Logeswaran, Ann Lee, Myle Ott, Honglak Lee, Marc'Aurelio Ranzato, and Arthur Szlam. 2020. http://arxiv.org/abs/2012.09543 Few-shot sequence learning with transformers. CoRR, abs/2012.09543",
+      "authors": "Lajanugen Logeswaran, Ann Lee, Myle Ott, Honglak Lee, Marc'Aurelio Ranzato, and Arthur Szlam. 2020",
+      "title": "Few-shot sequence learning with transformers",
+      "venue": "CoRR, abs/2012.09543",
+      "year": 2012,
+      "arxivId": "2012.09543",
+      "doi": null
+    },
+    {
+      "key": "Nair2010RectifiedLU",
+      "raw": "Vinod Nair and Geoffrey E. Hinton. 2010. Rectified linear units improve restricted Boltzmann machines. In Proceedings of the 27th International Conference on International Conference on Machine Learning, ICML'10, page 807\u2013814, Madison, WI, USA. Omnipress",
+      "authors": "Vinod Nair and Geoffrey E. Hinton. 2010",
+      "title": "Rectified linear units improve restricted Boltzmann machines",
+      "venue": "In Proceedings of the 27th International Conference on International Conference on Machine Learning, ICML'10, page 807\u2013814, Madison, WI, USA. Omnipress",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "peters-etal-2018-deep",
+      "raw": "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. https://doi.org/10.18653/v1/N18-1202 Deep contextualized word representations. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2227--2237, New Orleans, Louisiana. Association for Computational Linguistics",
+      "authors": "Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018",
+      "title": "Deep contextualized word representations",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2227--2237, New Orleans, Louisiana. Association for Computational Linguistics",
+      "year": 2018,
+      "arxivId": null,
+      "doi": "10.18653/v1/N18-1202"
+    },
+    {
+      "key": "pfeiffer-etal-2020-mad",
+      "raw": "Jonas Pfeiffer, Ivan Vuli\\'c, Iryna Gurevych, and Sebastian Ruder. 2020. https://doi.org/10.18653/v1/2020.emnlp-main.617 MAD-X: An Adapter-Based Framework for Multi-Task Cross-Lingual Transfer. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 7654--7673, Online. Association for Computational Linguistics",
+      "authors": "Jonas Pfeiffer, Ivan Vuli\\'c, Iryna Gurevych, and Sebastian Ruder. 2020",
+      "title": "MAD-X: An Adapter-Based Framework for Multi-Task Cross-Lingual Transfer",
+      "venue": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 7654--7673, Online. Association for Computational Linguistics",
+      "year": 2020,
+      "arxivId": null,
+      "doi": "10.18653/v1/2020.emnlp-main.617"
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1808-09121",
+      "raw": "Mohammad Taher Pilehvar and Jose Camacho-Collados. 2018. http://arxiv.org/abs/1808.09121 WiC: 10,000 example pairs for evaluating context-sensitive representations. CoRR, abs/1808.09121",
+      "authors": "Mohammad Taher Pilehvar and Jose Camacho-Collados. 2018",
+      "title": "WiC: 10,000 example pairs for evaluating context-sensitive representations",
+      "venue": "CoRR, abs/1808.09121",
+      "year": 2018,
+      "arxivId": "1808.09121",
+      "doi": null
+    },
+    {
+      "key": "qinLearningHowAsk2021",
+      "raw": "Guanghui Qin and Jason Eisner. 2021. https://doi.org/10.18653/v1/2021.naacl-main.410 Learning how to ask: Querying LMs with mixtures of soft prompts. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 5203--5212, Online. Association for Computational Linguistics",
+      "authors": "Guanghui Qin and Jason Eisner. 2021",
+      "title": "Learning how to ask: Querying LMs with mixtures of soft prompts",
+      "venue": "In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 5203--5212, Online. Association for Computational Linguistics",
+      "year": 2021,
+      "arxivId": null,
+      "doi": "10.18653/v1/2021.naacl-main.410"
+    },
+    {
+      "key": "gpt",
+      "raw": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018. https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf Improving language understanding by generative pre-training",
+      "authors": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. 2018",
+      "title": "Improving language understanding by generative pre-training",
+      "venue": "",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2019language",
+      "raw": "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019. https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf Language models are unsupervised multitask learners. OpenAI Blog",
+      "authors": "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019",
+      "title": "Language models are unsupervised multitask learners",
+      "venue": "OpenAI Blog",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "raffel_2020_t5",
+      "raw": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020. http://jmlr.org/papers/v21/20-074.html Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of Machine Learning Research, 21(140):1--67",
+      "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020",
+      "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+      "venue": "Journal of Machine Learning Research, 21(140):1--67",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rajpurkar-etal-2016-squad",
+      "raw": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016. https://doi.org/10.18653/v1/D16-1264 SQuAD: 100,000+ questions for machine comprehension of text. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 2383--2392, Austin, Texas. Association for Computational Linguistics",
+      "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016",
+      "title": "SQuAD: 100,000+ questions for machine comprehension of text",
+      "venue": "In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 2383--2392, Austin, Texas. Association for Computational Linguistics",
+      "year": 2016,
+      "arxivId": null,
+      "doi": "10.18653/v1/D16-1264"
+    },
+    {
+      "key": "rebuffi_2017_adapters",
+      "raw": "Sylvestre-Alvise Rebuffi, Hakan Bilen, and Andrea Vedaldi. 2017. https://proceedings.neurips.cc/paper/2017/file/e7b24b112a44fdd9ee93bdf998c6ca0e-Paper.pdf Learning multiple visual domains with residual adapters. In Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc",
+      "authors": "Sylvestre-Alvise Rebuffi, Hakan Bilen, and Andrea Vedaldi. 2017",
+      "title": "Learning multiple visual domains with residual adapters",
+      "venue": "In Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "roemmele2011choice",
+      "raw": "Melissa Roemmele, Cosmin Adrian Bejan, and Andrew S Gordon. 2011. Choice of plausible alternatives: An evaluation of commonsense causal reasoning. In 2011 AAAI Spring Symposium Series",
+      "authors": "Melissa Roemmele, Cosmin Adrian Bejan, and Andrew S Gordon. 2011",
+      "title": "Choice of plausible alternatives: An evaluation of commonsense causal reasoning",
+      "venue": "In 2011 AAAI Spring Symposium Series",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "saha-etal-2018-duorc",
+      "raw": "Amrita Saha, Rahul Aralikatte, Mitesh M. Khapra, and Karthik Sankaranarayanan. 2018. https://doi.org/10.18653/v1/P18-1156 DuoRC: Towards complex language understanding with paraphrased reading comprehension. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1683--1693, Melbourne, Australia. Association for Computational Linguistics",
+      "authors": "Amrita Saha, Rahul Aralikatte, Mitesh M. Khapra, and Karthik Sankaranarayanan. 2018",
+      "title": "DuoRC: Towards complex language understanding with paraphrased reading comprehension",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1683--1693, Melbourne, Australia. Association for Computational Linguistics",
+      "year": 2018,
+      "arxivId": null,
+      "doi": "10.18653/v1/P18-1156"
+    },
+    {
+      "key": "schick-schutze-2021-exploiting",
+      "raw": "Timo Schick and Hinrich Sch\\\"utze. 2021. https://aclanthology.org/2021.eacl-main.20 Exploiting cloze-questions for few-shot text classification and natural language inference. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 255--269, Online. Association for Computational Linguistics",
+      "authors": "Timo Schick and Hinrich Sch\\\"utze. 2021",
+      "title": "Exploiting cloze-questions for few-shot text classification and natural language inference",
+      "venue": "In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pages 255--269, Online. Association for Computational Linguistics",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shazeer2020glu",
+      "raw": "Noam Shazeer. 2020. http://arxiv.org/abs/2002.05202 GLU variants improve transformer. CoRR, abs/2002.05202",
+      "authors": "Noam Shazeer. 2020",
+      "title": "GLU variants improve transformer",
+      "venue": "CoRR, abs/2002.05202",
+      "year": 2002,
+      "arxivId": "2002.05202",
+      "doi": null
+    },
+    {
+      "key": "pmlr-v80-shazeer18a",
+      "raw": "Noam Shazeer and Mitchell Stern. 2018. http://proceedings.mlr.press/v80/shazeer18a.html Adafactor: Adaptive learning rates with sublinear memory cost. In Proceedings of the 35th International Conference on Machine Learning, volume 80 of Proceedings of Machine Learning Research, pages 4596--4604. PMLR",
+      "authors": "Noam Shazeer and Mitchell Stern. 2018",
+      "title": "Adafactor: Adaptive learning rates with sublinear memory cost",
+      "venue": "In Proceedings of the 35th International Conference on Machine Learning, volume 80 of Proceedings of Machine Learning Research, pages 4596--4604. PMLR",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shin-etal-2020-autoprompt",
+      "raw": "Taylor Shin, Yasaman Razeghi, Robert L. Logan IV, Eric Wallace, and Sameer Singh. 2020. https://doi.org/10.18653/v1/2020.emnlp-main.346 AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4222--4235, Online. Association for Computational Linguistics",
+      "authors": "Taylor Shin, Yasaman Razeghi, Robert L. Logan IV, Eric Wallace, and Sameer Singh. 2020",
+      "title": "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts",
+      "venue": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4222--4235, Online. Association for Computational Linguistics",
+      "year": 2020,
+      "arxivId": null,
+      "doi": "10.18653/v1/2020.emnlp-main.346"
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017. https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf Attention is all you need. In Advances in Neural Information Processing Systems, volume 30, pages 5998--6008",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017",
+      "title": "Attention is all you need",
+      "venue": "In Advances in Neural Information Processing Systems, volume 30, pages 5998--6008",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2019superglue",
+      "raw": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2019. https://proceedings.neurips.cc/paper/2019/file/4496bf24afe7fab6f046bf4923da8de6-Paper.pdf SuperGLUE: A stickier benchmark for general-purpose language understanding systems. In Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc",
+      "authors": "Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. 2019",
+      "title": "SuperGLUE: A stickier benchmark for general-purpose language understanding systems",
+      "venue": "In Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2019glue",
+      "raw": "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019. GLUE: A multi-task benchmark and analysis platform for natural language understanding. In the Proceedings of ICLR",
+      "authors": "Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel R. Bowman. 2019",
+      "title": "GLUE: A multi-task benchmark and analysis platform for natural language understanding",
+      "venue": "In the Proceedings of ICLR",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Waskom2021",
+      "raw": "Michael L. Waskom. 2021. https://doi.org/10.21105/joss.03021 seaborn: statistical data visualization. Journal of Open Source Software, 6(60):3021",
+      "authors": "Michael L. Waskom. 2021",
+      "title": "seaborn: statistical data visualization",
+      "venue": "Journal of Open Source Software, 6(60):3021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": "10.21105/joss.03021"
+    },
+    {
+      "key": "zhang2018record",
+      "raw": "Sheng Zhang, Xiaodong Liu, Jingjing Liu, Jianfeng Gao, Kevin Duh, and Benjamin Van Durme. 2018. http://arxiv.org/abs/1810.12885 ReCoRD: Bridging the gap between human and machine commonsense reading comprehension. CoRR, abs/1810.12885",
+      "authors": "Sheng Zhang, Xiaodong Liu, Jingjing Liu, Jianfeng Gao, Kevin Duh, and Benjamin Van Durme. 2018",
+      "title": "ReCoRD: Bridging the gap between human and machine commonsense reading comprehension",
+      "venue": "CoRR, abs/1810.12885",
+      "year": 2018,
+      "arxivId": "1810.12885",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1214,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 5168,
+      "numbers": 5,
+      "citations": 11
+    },
+    {
+      "kind": "method",
+      "title": "Prompt Tuning",
+      "chars": 2018,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Design Decisions",
+      "chars": 1105,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Unlearning Span Corruption",
+      "chars": 3692,
+      "numbers": 5,
+      "citations": 2
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 343,
+      "numbers": 4,
+      "citations": 19
+    },
+    {
+      "kind": "results",
+      "title": "Closing the Gap",
+      "chars": 431,
+      "numbers": 7,
+      "citations": 3
+    },
+    {
+      "kind": "results",
+      "title": "Ablation Study",
+      "chars": 4216,
+      "numbers": 2,
+      "citations": 3
+    },
+    {
+      "kind": "results",
+      "title": "Comparison to Similar Approaches",
+      "chars": 4566,
+      "numbers": 0,
+      "citations": 12
+    },
+    {
+      "kind": "other",
+      "title": "Resilience to Domain Shift",
+      "chars": 3336,
+      "numbers": 0,
+      "citations": 10
+    },
+    {
+      "kind": "other",
+      "title": "Prompt Ensembling",
+      "chars": 1999,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "other",
+      "title": "Interpretability",
+      "chars": 2704,
+      "numbers": 1,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1022,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 259,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 2,
+      "contests": 0,
+      "compares": 0,
+      "background": 46,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "raffel_2020_t5",
+      "stance": "inherits",
+      "cue": "Following",
+      "sentence": "Following the \u201ctext-to-text\u201d approach of T5 [Raffel et al. 2020], we cast all tasks as text generation.",
+      "section": "Prompt Tuning",
+      "sectionKind": "method",
+      "ordinal": 13,
+      "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+      "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020",
+      "year": 2020,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 306.1419982910156,
+            "y0": 546.0468139648438,
+            "x1": 491.8967590332031,
+            "y1": 556.8462524414062
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "fisch2019mrqa",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For question answering, we use the MRQA 2019 shared task on generalization [Fisch et al. 2019].",
+        "section": "Resilience to Domain Shift",
+        "sectionKind": "other",
+        "ordinal": 52,
+        "title": "MRQA 2019 shared task: Evaluating generalization in reading comprehension",
+        "authors": "Adam Fisch, Alon Talmor, Robin Jia, Minjoon Seo, Eunsol Choi, and Danqi Chen. 2019",
+        "year": 2019,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 105.90013122558594,
+              "y0": 268.46685791015625,
+              "x1": 289.52728271484375,
+              "y1": 279.26629638671875
+            },
+            {
+              "x0": 70.86599731445312,
+              "y0": 281.8503112792969,
+              "x1": 229.5633544921875,
+              "y1": 292.86798095703125
+            }
+          ]
+        }
+      },
+      {
+        "key": "lewis-etal-2020-bart",
+        "stance": "extends",
+        "cue": "builds on",
+        "sentence": "Their work builds on GPT-2 [Radford et al. 2019] and BART [Lewis et al. 2020], while ours focuses on T5 and examines changes in performance and robustness to design choices as model size increases.",
+        "section": "Comparison to Similar Approaches",
+        "sectionKind": "results",
+        "ordinal": 43,
+        "title": "BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension",
+        "authors": "Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2020",
+        "year": 2020,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 202.0328826904297,
+              "y0": 195.57781982421875,
+              "x1": 290.94927978515625,
+              "y1": 206.3772735595703
+            },
+            {
+              "x0": 70.86599731445312,
+              "y0": 209.10595703125,
+              "x1": 289.138671875,
+              "y1": 219.93292236328125
+            },
+            {
+              "x0": 70.86599731445312,
+              "y0": 222.55966186523438,
+              "x1": 290.9474182128906,
+              "y1": 233.51229858398438
+            },
+            {
+              "x0": 70.86599731445312,
+              "y0": 236.18829345703125,
+              "x1": 104.7114028930664,
+              "y1": 247.0372314453125
+            }
+          ]
+        }
+      },
+      {
+        "key": "radford2019language",
+        "stance": "extends",
+        "cue": "builds on",
+        "sentence": "Their work builds on GPT-2 [Radford et al. 2019] and BART [Lewis et al. 2020], while ours focuses on T5 and examines changes in performance and robustness to design choices as model size increases.",
+        "section": "Comparison to Similar Approaches",
+        "sectionKind": "results",
+        "ordinal": 42,
+        "title": "Language models are unsupervised multitask learners",
+        "authors": "Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 2019",
+        "year": 2019,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 202.0328826904297,
+              "y0": 195.57781982421875,
+              "x1": 290.94927978515625,
+              "y1": 206.3772735595703
+            },
+            {
+              "x0": 70.86599731445312,
+              "y0": 209.10595703125,
+              "x1": 289.138671875,
+              "y1": 219.93292236328125
+            },
+            {
+              "x0": 70.86599731445312,
+              "y0": 222.55966186523438,
+              "x1": 290.9474182128906,
+              "y1": 233.51229858398438
+            },
+            {
+              "x0": 70.86599731445312,
+              "y0": 236.18829345703125,
+              "x1": 104.7114028930664,
+              "y1": 247.0372314453125
+            }
+          ]
+        }
+      },
+      {
+        "key": "raffel_2020_t5",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following the \u201ctext-to-text\u201d approach of T5 [Raffel et al. 2020], we cast all tasks as text generation.",
+        "section": "Prompt Tuning",
+        "sectionKind": "method",
+        "ordinal": 13,
+        "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+        "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2020",
+        "year": 2020,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 306.1419982910156,
+              "y0": 546.0468139648438,
+              "x1": 491.8967590332031,
+              "y1": 556.8462524414062
+            }
+          ]
+        }
+      },
+      {
+        "key": "rajpurkar-etal-2016-squad",
+        "stance": "inherits",
+        "cue": "we train on",
+        "sentence": "For our experiments, we train on SQuAD [Rajpurkar et al. 2016] and evaluate on each of the out-of-domain datasets.[We select checkpoints based on SQuAD validation F1.]",
+        "section": "Resilience to Domain Shift",
+        "sectionKind": "other",
+        "ordinal": 53,
+        "title": "SQuAD: 100,000+ questions for machine comprehension of text",
+        "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "While [Raffel et al. 2020] find this architecture and pre-training objective more effective than traditional language modeling, we hypothesize that this setup is not a good fit for producing a frozen model that can be readily controlled through prompt tuning.",
+      "anchorText": "find this architecture and pre-training objective more effective than traditional language modeling, we hypothesize that this setup is not a good fit for producing a frozen model that can be readily controlled through prompt tuning.",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "we hypothesize",
+      "section": "Unlearning Span Corruption",
+      "sectionKind": "method",
+      "cites": [
+        "raffel_2020_t5"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 433.4476013183594,
+            "y0": 354.5318298339844,
+            "x1": 524.4100952148438,
+            "y1": 365.5224609375
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 368.225830078125,
+            "x1": 526.225341796875,
+            "y1": 379.0252685546875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 381.75396728515625,
+            "x1": 524.4149169921875,
+            "y1": 392.5809326171875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 395.3238220214844,
+            "x1": 524.4078979492188,
+            "y1": 406.1232604980469
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 408.75665283203125,
+            "x1": 526.2238159179688,
+            "y1": 419.70928955078125
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 422.25732421875,
+            "x1": 323.14447021484375,
+            "y1": 433.2749938964844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "While this \u201cunnatural\u201d tendency to output sentinels is easy to overcome through fine-tuning, we suspect that it would be much harder to override through a prompt alone, as the decoder priors cannot be adjusted.",
+      "anchorText": "While this \"unnatural\" tendency to output sentinels is easy to overcome through fine-tuning, we suspect that it would be much harder to override through a prompt alone, as the decoder priors cannot be adjusted.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we suspect",
+      "section": "Unlearning Span Corruption",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 447.1551513671875,
+            "y0": 503.71783447265625,
+            "x1": 526.22509765625,
+            "y1": 514.5172729492188
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 517.1013793945312,
+            "x1": 526.21728515625,
+            "y1": 528.1190185546875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 530.8032836914062,
+            "x1": 524.4109497070312,
+            "y1": 541.6192626953125
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 544.3648681640625,
+            "x1": 525.7763061523438,
+            "y1": 555.164306640625
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 557.8316650390625,
+            "x1": 483.37109375,
+            "y1": 568.74072265625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We translate each SuperGLUE dataset into a text-to-text format following [Raffel et al. 2020], except that we omit the task names prepended to inputs indicating which SuperGLUE task an example belongs to.",
+      "anchorText": ", except that we omit the task names prepended to inputs indicating which SuperGLUE task an example belongs to.",
+      "kind": "simplifying",
+      "support": "cited",
+      "cue": "we omit",
+      "section": "Results",
+      "sectionKind": "results",
+      "cites": [
+        "raffel_2020_t5"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 155.6022186279297,
+            "y0": 596.766845703125,
+            "x1": 289.13177490234375,
+            "y1": 607.5662841796875
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 610.1513671875,
+            "x1": 289.1387939453125,
+            "y1": 621.1690063476562
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 623.78271484375,
+            "x1": 248.85885620117188,
+            "y1": 634.6917724609375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, models pre-trained to read and write sentinel tokens are hard to apply directly to tasks of reading and writing text without sentinels.",
+      "anchorText": "Intuitively, models pre-trained to read and write sentinel tokens are hard to apply directly to tasks of reading and writing text without sentinels.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Ablation Study",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 206.06251525878906,
+            "y0": 300.6413269042969,
+            "x1": 289.1387939453125,
+            "y1": 311.65899658203125
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 314.1913146972656,
+            "x1": 289.13885498046875,
+            "y1": 325.208984375
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 327.802001953125,
+            "x1": 290.9501953125,
+            "y1": 338.73834228515625
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 341.2893371582031,
+            "x1": 185.56600952148438,
+            "y1": 352.3070068359375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Looking forward, we believe that factoring out task-defining parameters as distinct from general language-modeling parameters is an exciting step that opens up many avenues for new research.",
+      "anchorText": "Looking forward, we believe that factoring out task-defining parameters as distinct from general language-modeling parameters is an exciting step that opens up many avenues for new research.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 306.1419982910156,
+            "y0": 457.475341796875,
+            "x1": 524.4147338867188,
+            "y1": 468.4930114746094
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 471.0243225097656,
+            "x1": 524.4146728515625,
+            "y1": 482.0419921875
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 484.6061706542969,
+            "x1": 524.4141235351562,
+            "y1": 495.5805358886719
+          },
+          {
+            "x0": 306.1419982910156,
+            "y0": 498.2046813964844,
+            "x1": 506.4765930175781,
+            "y1": 509.11376953125
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 5,
+    "cited": 2,
+    "shown": 0,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2021-04-18"
+  }
+}

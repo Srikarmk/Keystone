@@ -117,7 +117,7 @@ export function Reader({ id }: { id: string }) {
   }, []);
 
   return (
-    <main className="mx-auto flex h-screen max-w-[1880px] flex-col px-6 pb-4 pt-4 lg:px-10">
+    <main className="mx-auto flex min-h-screen max-w-[1880px] flex-col px-5 pb-4 pt-4 sm:px-6 lg:h-screen lg:px-10">
       <Masthead
         index={index}
         current={current}
@@ -128,9 +128,14 @@ export function Reader({ id }: { id: string }) {
       />
 
       {/* Both panes were starved before: a narrow text column inside wide grey
-          gutters on one side, eight clipped tabs on the other. */}
-      <div className="mt-4 grid min-h-0 flex-1 gap-9 lg:grid-cols-[minmax(0,1fr)_37rem]">
-        <section className="relative min-h-0">
+          gutters on one side, eight clipped tabs on the other.
+
+          Below `lg` they stack and the page scrolls as one, because side-by-side on a
+          phone gives each pane half of 375px and neither is readable. The page then
+          keeps a fixed slice of the viewport so the report starts visible underneath
+          it rather than a screen and a half down. */}
+      <div className="mt-4 grid gap-7 lg:min-h-0 lg:flex-1 lg:gap-9 lg:grid-cols-[minmax(0,1fr)_37rem]">
+        <section className="relative h-[58vh] lg:h-auto lg:min-h-0">
           {dossier ? (
             <>
               <PaperView
@@ -154,7 +159,7 @@ export function Reader({ id }: { id: string }) {
           )}
         </section>
 
-        <aside className="rule-left flex min-h-0 flex-col lg:pl-9">
+        <aside className="flex flex-col lg:rule-left lg:min-h-0 lg:pl-9">
           {dossier ? (
             <>
               <Summary
@@ -203,7 +208,7 @@ function PageTools({
   offerDark: boolean;
 }) {
   return (
-    <div className="absolute bottom-3 right-4 flex items-center gap-1.5 rounded-[2px] border border-paper-edge bg-paper/90 px-2 py-1 text-[0.8rem] backdrop-blur">
+    <div className="absolute bottom-3 right-2 flex max-w-[calc(100%-1rem)] items-center gap-1.5 rounded-[2px] border border-paper-edge bg-paper/90 px-2 py-1 text-[0.8rem] backdrop-blur sm:right-4">
       {/* Offered whenever the interface is dark, and only then: on a light screen a
           white page is already the right answer and the control would be noise. */}
       {offerDark || dark ? (
@@ -270,14 +275,14 @@ function Masthead({
         Keystone
       </Link>
 
-      <span className="flex items-center gap-7">
+      <span className="flex min-w-0 flex-1 items-center justify-end gap-4 sm:gap-7">
         <ThemeToggle />
         <AccountMenu />
         <select
           value={current}
           onChange={(e) => onSelect(e.target.value)}
           aria-label="Paper"
-          className="max-w-[28rem] truncate border-b border-ink/25 bg-transparent pb-0.5 font-[family-name:var(--font-display)] text-[1rem] text-ink outline-none transition-colors hover:border-brass focus:border-brass"
+          className="w-full max-w-[28rem] truncate border-b border-ink/25 bg-transparent pb-0.5 font-[family-name:var(--font-display)] text-[0.95rem] text-ink outline-none transition-colors hover:border-brass focus:border-brass sm:text-[1rem]"
         >
           {index.map((p) => (
             <option key={p.id} value={p.id}>
@@ -305,8 +310,8 @@ function Summary({
   const stands = lineage.tally.inherits + lineage.tally.extends;
   return (
     <div className="shrink-0 pt-5">
-      <div className="flex items-start justify-between gap-6">
-        <div className="min-w-0">
+      <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
+        <div className="min-w-0 flex-1 basis-full sm:basis-auto">
           {/* The keystone, in the sense the name was always reaching for: not a table
               of numbers but the piece this paper would collapse without. */}
           <Foundation edge={lineage.foundation} onJump={onJump} />
@@ -416,7 +421,7 @@ function Report({
   );
 
   return (
-    <div className="mt-6 min-h-0 flex-1 overflow-y-auto pr-3">
+    <div className="mt-6 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:pr-3">
       {/* Lineage first. What a paper inherits and argues with is always there and
           always specific; its arithmetic, on a careful paper, is always fine. */}
       <Section

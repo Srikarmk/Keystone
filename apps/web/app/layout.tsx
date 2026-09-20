@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 
@@ -19,10 +19,40 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const SITE = "https://keystone-seven-beta.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Keystone — what is this paper resting on?",
+  metadataBase: new URL(SITE),
+  title: {
+    default: "Keystone — what is this paper standing on?",
+    // Every paper page gets its own title, so a browserful of tabs is readable and
+    // a shared link says which paper it is before the page loads.
+    template: "%s — Keystone",
+  },
   description:
-    "Trace a paper's headline numbers back to the evidence that supports them.",
+    "What a paper adopts, what it argues with, and what it takes on faith — read " +
+    "out of its own LaTeX and pinned to the page that says it.",
+  openGraph: {
+    type: "website",
+    siteName: "Keystone",
+    url: SITE,
+    title: "Keystone — what is this paper standing on?",
+    description:
+      "What a paper adopts, what it argues with, and what it takes on faith — read " +
+      "out of its own LaTeX and pinned to the page that says it.",
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+// Both themes declared, so the browser chrome matches the page instead of framing a
+// dark reader in a white bar.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f1ea" },
+    { media: "(prefers-color-scheme: dark)", color: "#14120f" },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
