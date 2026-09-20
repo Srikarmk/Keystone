@@ -181,8 +181,15 @@ export function Reader({ id }: { id: string }) {
           Below `lg` they stack and the page scrolls as one, because side-by-side on a
           phone gives each pane half of 375px and neither is readable. The page then
           keeps a fixed slice of the viewport so the report starts visible underneath
-          it rather than a screen and a half down. */}
-      <div className="mt-4 grid gap-7 lg:min-h-0 lg:flex-1 lg:gap-9 lg:grid-cols-[minmax(0,1fr)_37rem]">
+          it rather than a screen and a half down.
+
+          The page column is capped rather than elastic. Left to take whatever was
+          going it reached 948px on a 1680px screen, which is not a page any more —
+          it is a wall, and it made the report beside it look like a sidebar. Capped,
+          the pair centres and the margins absorb the rest. The cap only binds on a
+          wide screen; below about 1300px there was never any spare width, so narrow
+          desktops are unchanged. */}
+      <div className="mt-4 grid gap-7 lg:min-h-0 lg:flex-1 lg:justify-center lg:gap-9 lg:grid-cols-[minmax(0,42rem)_37rem]">
         <section className="relative h-[58vh] lg:h-auto lg:min-h-0">
           {dossier ? (
             <>
