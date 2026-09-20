@@ -60,7 +60,12 @@ export function Outline({
       </button>
 
       {open ? (
-        <div className="absolute bottom-[calc(100%+0.5rem)] right-0 max-h-[60vh] w-[19rem] overflow-y-auto border border-paper-edge bg-paper/95 py-1.5 shadow-lg backdrop-blur">
+        /* Anchored left, not right. The button is the leftmost item in a toolbar
+           that already sits at the pane's right edge, so aligning the panel's right
+           edge to it threw the whole thing off the left side of the pane and left a
+           column of page numbers with every title clipped away. Capped to the
+           viewport so a narrow pane cannot repeat the trick in the other direction. */
+        <div className="absolute bottom-[calc(100%+0.5rem)] left-0 max-h-[60vh] w-[19rem] max-w-[calc(100vw-2.5rem)] overflow-y-auto border border-paper-edge bg-paper/95 py-1.5 shadow-lg backdrop-blur">
           {reachable.map((section, i) => (
             <button
               key={`${section.title}-${i}`}
