@@ -28,3 +28,25 @@ export function useIsDark(): boolean {
 
   return dark;
 }
+
+/**
+ * Whether the two-pane layout is in force.
+ *
+ * Matches the `lg` breakpoint the reader's grid uses, because the two need to agree:
+ * side by side, the page pane is as tall as the window and a whole page should fit in
+ * it; stacked, the pane is a fixed slice of a phone screen and the page should fill
+ * the width and be scrolled, exactly as a phone reader expects.
+ */
+export function useIsWide(): boolean {
+  const [wide, setWide] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 1024px)");
+    const update = () => setWide(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  return wide;
+}

@@ -16,7 +16,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { useIsDark } from "@/lib/theme";
+import { useIsDark, useIsWide } from "@/lib/theme";
 
 import type {
   Accuracy,
@@ -60,6 +60,8 @@ export function Reader({ id }: { id: string }) {
   const [graph, setGraph] = useState<LibraryGraph | null>(null);
   const [accuracy, setAccuracy] = useState<Accuracy | null>(null);
   const appIsDark = useIsDark();
+  // The page pane is only as tall as the window when the panes sit side by side.
+  const sideBySide = useIsWide();
 
   useEffect(() => {
     // Sorted by title, not by the order the library happened to be built in. At nine
@@ -198,6 +200,7 @@ export function Reader({ id }: { id: string }) {
                 highlight={highlight}
                 zoom={ZOOMS[zoomStep]}
                 dark={darkPage}
+                fitPage={sideBySide}
               />
               <PageTools
                 step={zoomStep}

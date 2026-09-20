@@ -54,6 +54,14 @@ export interface PaperViewProps {
    * the paper as it was published.
    */
   dark?: boolean;
+  /**
+   * Fit the whole page rather than the pane's width.
+   *
+   * True only in the side-by-side layout, where the pane is as tall as the window.
+   * Stacked on a phone the pane is a fixed slice of the screen and the page should
+   * fill the width and be scrolled.
+   */
+  fitPage?: boolean;
   onPageCount?: (count: number) => void;
 }
 
@@ -74,10 +82,12 @@ export function PaperView({
   zoom = 1,
   dark = false,
   onPageCount,
+  fitPage = false,
 }: PaperViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [pages, setPages] = useState<PageState[]>([]);
   const [width, setWidth] = useState(720);
+  const [height, setHeight] = useState(900);
   const [error, setError] = useState<string | null>(null);
   const docRef = useRef<any>(null);
   const renderedRef = useRef(new Set<number>());
@@ -132,9 +142,13 @@ export function PaperView({
   useEffect(() => {
     const node = containerRef.current;
     if (!node) return;
-    const observer = new ResizeObserver(([entry]) => setWidth(entry.contentRect.width));
+    const observer = new ResizeObserver(([entry]) => {
+      setWidth(entry.contentRect.width);
+      setHeight(entry.contentRect.height);
+    });
     observer.observe(node);
     setWidth(node.clientWidth);
+    setHeight(node.clientHeight);
     return () => observer.disconnect();
   }, []);
 
@@ -192,7 +206,20 @@ export function PaperView({
       ) : null}
 
       {pages.map((page) => {
-        const layoutWidth = Math.max(240, (width - 24) * zoom);
+        // Side by side, fit the whole page. Stacked, fit the width.
+        //
+        // Fitting to width alone made a page 948px across and 1227 tall inside a pane
+        // 911 tall, so the reader saw a wide slab of paper and had to scroll to learn
+        // it was a page at all. Bounding by height as well fixes that — but only
+        // where the pane is as tall as the window. On a phone the pane is a fixed
+        // slice of the screen, and the same rule shrank the page to 352px inside a
+        // 443px pane to satisfy a height nobody was asking it to respect.
+        const fitWidth = width - 24;
+        const fitHeight = (height - 16) * (page.width / page.height);
+        const layoutWidth = Math.max(
+          240,
+          (fitPage ? Math.min(fitWidth, fitHeight) : fitWidth) * zoom,
+        );
         const scale = layoutWidth / page.width;
         return (
           <PageCanvas
