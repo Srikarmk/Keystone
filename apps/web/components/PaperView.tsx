@@ -67,12 +67,21 @@ export interface PaperViewProps {
 
 /**
  * Invert, then rotate hues back, which is what keeps a figure's colours recognisable:
- * a plain invert turns every red curve cyan. The sepia and brightness trim match the
- * warm near-black the rest of the interface uses, so the page reads as paper at night
- * rather than as a terminal.
+ * a plain invert turns every red curve cyan, and a reader comparing two lines on a
+ * plot would be reading the wrong ones.
+ *
+ * `contrast` below 1 is what stops the page being pitch black. Inverting white gives
+ * exactly zero, and no amount of `brightness` lifts that — multiplying zero gives
+ * zero. Contrast pulls both ends toward the middle instead: at 0.75 the page settles
+ * at 0.5 × (1 − 0.75) ≈ 0.125, about #202020, which is the dark theme's own
+ * `paper-deep`; the text lands at 0.875, near its `ink`. So the page reads as one
+ * more surface in the interface rather than as a hole cut in it.
+ *
+ * The sepia and saturate are a warm trim, because every other surface here is warm
+ * and a neutral grey page beside them looks like a rendering bug.
  */
 const DARK_PAGE =
-  "invert(1) hue-rotate(180deg) sepia(0.08) saturate(1.08) brightness(0.9)";
+  "invert(1) hue-rotate(180deg) contrast(0.75) sepia(0.06) saturate(1.06)";
 
 const RENDER_SCALE = 1.6; // canvas resolution multiplier, independent of layout width
 
