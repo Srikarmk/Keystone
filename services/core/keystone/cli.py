@@ -400,6 +400,11 @@ def dossier(
             "keystone": payload["keystone"],
             "findings": len(payload["findings"]),
             "arxiv": payload["arxiv"],
+            # The single most load-bearing dependency, by title. Carried in the index
+            # so the paper's social card can name it: that card renders in a
+            # serverless function where the dossier files are not on disk, and an
+            # index the bundler can see is the only data it can be sure of.
+            "foundation": (payload["lineage"].get("foundation") or {}).get("title", ""),
             # Four of nine papers state no numbers up front, and a library row that
             # says only "no numeric claims" reads as a paper we failed on rather than
             # a paper that argues in prose. These counts are what is actually in hand.
@@ -723,6 +728,11 @@ def audit_density(
             "sections": len(payload["sections"]),
             "findings": len(payload["findings"]),
             "arxiv": payload["arxiv"],
+            # The single most load-bearing dependency, by title. Carried in the index
+            # so the paper's social card can name it: that card renders in a
+            # serverless function where the dossier files are not on disk, and an
+            # index the bundler can see is the only data it can be sure of.
+            "foundation": (payload["lineage"].get("foundation") or {}).get("title", ""),
         }
         rows.append((arxiv_id, items, sum(items.values())))
 

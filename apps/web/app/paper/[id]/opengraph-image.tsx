@@ -1,8 +1,6 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
-
 import { ImageResponse } from "next/og";
 
+import index from "@/public/dossiers/index.json";
 import { OG, fontOption, serif } from "@/lib/og";
 
 /*
@@ -28,33 +26,38 @@ interface Built {
   quote: string;
 }
 
+/**
+ * Imported, not read from disk.
+ *
+ * This card renders in a serverless function, where `public/` is not on the
+ * filesystem — the first version used `readFileSync` and shipped a card reading
+ * "1810.04805 · 0 works it stands on" to anyone who pasted a link. An import the
+ * bundler can see is the only data a dynamic route can rely on. The site's own card
+ * gets away with `readFileSync` because it is generated once at build.
+ */
+interface Entry {
+  id: string;
+  title?: string;
+  arxiv?: { primaryName?: string } | null;
+  lineage?: { inherits?: number; extends?: number; contests?: number };
+  assumptions?: { bare?: number };
+  foundation?: string;
+}
+
+const BY_ID = new Map((index as Entry[]).map((entry) => [entry.id, entry]));
+
 function read(id: string): Built | null {
-  try {
-    const raw = readFileSync(
-      join(process.cwd(), "public", "dossiers", `${id}.json`),
-      "utf8",
-    );
-    const d = JSON.parse(raw) as {
-      title?: string;
-      arxiv?: { primaryName?: string } | null;
-      lineage?: {
-        tally?: { inherits?: number; extends?: number; contests?: number };
-        foundation?: { title?: string } | null;
-      };
-      assumptionTally?: { bare?: number };
-    };
-    const tally = d.lineage?.tally ?? {};
-    return {
-      title: d.title ?? id,
-      category: d.arxiv?.primaryName ?? "",
-      stands: (tally.inherits ?? 0) + (tally.extends ?? 0),
-      argues: tally.contests ?? 0,
-      bare: d.assumptionTally?.bare ?? 0,
-      quote: d.lineage?.foundation?.title ?? "",
-    };
-  } catch {
-    return null;
-  }
+  const entry = BY_ID.get(id);
+  if (!entry) return null;
+  const tally = entry.lineage ?? {};
+  return {
+    title: entry.title ?? id,
+    category: entry.arxiv?.primaryName ?? "",
+    stands: (tally.inherits ?? 0) + (tally.extends ?? 0),
+    argues: tally.contests ?? 0,
+    bare: entry.assumptions?.bare ?? 0,
+    quote: entry.foundation ?? "",
+  };
 }
 
 function Figure({ n, label, tone }: { n: number; label: string; tone: string }) {
