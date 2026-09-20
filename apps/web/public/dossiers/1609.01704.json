@@ -1,0 +1,2104 @@
+{
+  "id": "1609.01704",
+  "title": "Hierarchical Multiscale Recurrent Neural Networks",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1609.01704",
+  "numbers": [
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Finally, the binary boundary state is obtained by: z^ _t = f_ bound( z^ _t). For the binarization function , we can either use a deterministic step function: z^ _t 1 & if z^ _t > 0.5 0 & otherwise, or sample from a Bernoulli distribution .",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "BPC on the Penn Treebank test set (left) and Hutter Prize Wikipedia test set (right). ( ) This model is a variant of the HM-LSTM that does not discretize the boundary detector states. ( ) These models are implemented by the authors to evaluate the performance using layer normalization with the additional output module. ( ) This method uses test error signals for predicting the next characters, which makes it not comparable to other methods that do not.",
+      "label": "tab:ptb_wiki_bpc",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "0.8pt Penn Treebank",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BPC",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Norm-stabilized RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.48",
+            "value": "1.48",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CW-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.46",
+            "value": "1.46",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "HF-MRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.41",
+            "value": "1.41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MI-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.39",
+            "value": "1.39",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ME -gram",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.37",
+            "value": "1.37",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BatchNorm LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Zoneout RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "HyperNetworks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HyperNetworks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.23",
+            "value": "1.23",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm CW-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.40",
+            "value": "1.40",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.29",
+            "value": "1.29",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Sampling",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Soft",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Step Fn.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.25",
+            "value": "1.25",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Step Fn. \\",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Slope Annealing",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.24",
+            "value": "1.24",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "0.8pt",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "BPC on the Penn Treebank test set (left) and Hutter Prize Wikipedia test set (right). ( ) This model is a variant of the HM-LSTM that does not discretize the boundary detector states. ( ) These models are implemented by the authors to evaluate the performance using layer normalization with the additional output module. ( ) This method uses test error signals for predicting the next characters, which makes it not comparable to other methods that do not.",
+      "label": "tab:ptb_wiki_bpc",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "0.8pt Hutter Prize Wikipedia",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "BPC",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Stacked LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.67",
+            "value": "1.67",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.60",
+            "value": "1.60",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "GF-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.58",
+            "value": "1.58",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Grid-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.47",
+            "value": "1.47",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MI-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.44",
+            "value": "1.44",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Recurrent Memory Array Structures",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.40",
+            "value": "1.40",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "SF-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.37",
+            "value": "1.37",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "HyperNetworks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.35",
+            "value": "1.35",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HyperNetworks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.34",
+            "value": "1.34",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Recurrent Highway Networks",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.39",
+            "value": "1.39",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.34",
+            "value": "1.34",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "PAQ8hp12",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "decomp8",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1.28",
+            "value": "1.28",
+            "emphasised": true,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "0.8pt",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "BPC on the Text8 test set.",
+      "label": "tab:Text8_bpc",
+      "numericCells": 8,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "0.8pt Text8",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "BPC",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "td-LSTM",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.63",
+            "value": "1.63",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "HF-MRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.54",
+            "value": "1.54",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MI-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.52",
+            "value": "1.52",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Skipping-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.48",
+            "value": "1.48",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MI-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.44",
+            "value": "1.44",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "BatchNorm LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.36",
+            "value": "1.36",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "LayerNorm HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.29",
+            "value": "1.29",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "0.8pt",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 271.8487854003906,
+            "y0": 180.1824493408203,
+            "x1": 375.06134033203125,
+            "y1": 190.14505004882812
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Average log-likelihood per sequence on the IAM-OnDB test set.",
+      "label": "tab:iamondb_nll",
+      "numericCells": 3,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "0.8pt IAM-OnDB",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Average Log-Likelihood",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Standard LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1081",
+            "value": "1081",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "HM-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1137",
+            "value": "1137",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "HM-LSTM \\",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Slope Annealing",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1167",
+            "value": "1167",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "0.8pt",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 195.15179443359375,
+            "y0": 129.97145080566406,
+            "x1": 451.7584533691406,
+            "y1": 139.93405151367188
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\cmt": "\\textcolor{blue}{#1}",
+    "\\smla": "{\\scalebox{0.6}{{({$#1$})}}}",
+    "\\sml": "{\\scalebox{0.6}{{{$#1$}}}}",
+    "\\dotw": "{\\dot{w}}",
+    "\\barw": "{\\bar{w}}",
+    "\\dotx": "{\\dot{x}}",
+    "\\eda": "{\\end{align}}",
+    "\\fix": "\\marginpar{FIX}"
+  },
+  "references": [
+    {
+      "key": "ba2016layer",
+      "raw": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton. Layer normalization. arXiv preprint arXiv:1607.06450, 2016",
+      "authors": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton",
+      "title": "Layer normalization",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1607.06450",
+      "doi": null
+    },
+    {
+      "key": "bahdanau2016end",
+      "raw": "Dzmitry Bahdanau, Jan Chorowski, Dmitriy Serdyuk, Yoshua Bengio, et al. End-to-end attention-based large vocabulary speech recognition. In 2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp.\\ 4945--4949. IEEE, 2016",
+      "authors": "Dzmitry Bahdanau, Jan Chorowski, Dmitriy Serdyuk, Yoshua Bengio, et al",
+      "title": "End-to-end attention-based large vocabulary speech recognition",
+      "venue": "In 2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp.\\ 4945--4949. IEEE, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2009learning",
+      "raw": "Yoshua Bengio. Learning deep architectures for ai. Foundations and trends in Machine Learning, 2 0 (1): 0 1--127, 2009",
+      "authors": "Yoshua Bengio",
+      "title": "Learning deep architectures for ai",
+      "venue": "Foundations and trends in Machine Learning, 2 0 (1): 0 1--127, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2013estimating",
+      "raw": "Yoshua Bengio, Nicholas L\\'eonard, and Aaron Courville. Estimating or propagating gradients through stochastic neurons for conditional computation. arXiv preprint arXiv:1308.3432, 2013",
+      "authors": "Yoshua Bengio, Nicholas L\\'eonard, and Aaron Courville",
+      "title": "Estimating or propagating gradients through stochastic neurons for conditional computation",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1308.3432",
+      "doi": null
+    },
+    {
+      "key": "chan2016listen",
+      "raw": "William Chan, Navdeep Jaitly, Quoc Le, and Oriol Vinyals. Listen, attend and spell: A neural network for large vocabulary conversational speech recognition. In 2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp.\\ 4960--4964. IEEE, 2016",
+      "authors": "William Chan, Navdeep Jaitly, Quoc Le, and Oriol Vinyals",
+      "title": "Listen, attend and spell: A neural network for large vocabulary conversational speech recognition",
+      "venue": "In 2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp.\\ 4960--4964. IEEE, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cho-et-al-EMNLP2014",
+      "raw": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In Proceedings of the Empiricial Methods in Natural Language Processing (EMNLP 2014), October 2014",
+      "authors": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "venue": "In Proceedings of the Empiricial Methods in Natural Language Processing (EMNLP 2014), October 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chung2015gated",
+      "raw": "Junyoung Chung, Caglar Gulcehre, Kyunghyun Cho, and Yoshua Bengio. Gated feedback recurrent neural networks. In Proceedings of the 32nd International Conference on Machine Learning (ICML), 2015",
+      "authors": "Junyoung Chung, Caglar Gulcehre, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "Gated feedback recurrent neural networks",
+      "venue": "In Proceedings of the 32nd International Conference on Machine Learning (ICML), 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chung2016character",
+      "raw": "Junyoung Chung, Kyunghyun Cho, and Yoshua Bengio. A character-level decoder without explicit segmentation for neural machine translation. Association for Computational Linguistics (ACL), 2016",
+      "authors": "Junyoung Chung, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "A character-level decoder without explicit segmentation for neural machine translation",
+      "venue": "Association for Computational Linguistics (ACL), 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cooijmans2016recurrent",
+      "raw": "Tim Cooijmans, Nicolas Ballas, C\\'esar Laurent, and Aaron Courville. Recurrent batch normalization. arXiv preprint arXiv:1603.09025, 2016",
+      "authors": "Tim Cooijmans, Nicolas Ballas, C\\'esar Laurent, and Aaron Courville",
+      "title": "Recurrent batch normalization",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1603.09025",
+      "doi": null
+    },
+    {
+      "key": "courbariaux2016binarized",
+      "raw": "Matthieu Courbariaux, Itay Hubara, Daniel Soudry, Ran El-Yaniv, and Yoshua Bengio. Binarized neural networks: Training deep neural networks with weights and activations constrained to+ 1 or-1. arXiv preprint arXiv:1602.02830, 2016",
+      "authors": "Matthieu Courbariaux, Itay Hubara, Daniel Soudry, Ran El-Yaniv, and Yoshua Bengio",
+      "title": "Binarized neural networks: Training deep neural networks with weights and activations constrained to+ 1 or-1",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1602.02830",
+      "doi": null
+    },
+    {
+      "key": "el1995hierarchical",
+      "raw": "Salah El Hihi and Yoshua Bengio. Hierarchical recurrent neural networks for long-term dependencies. In Advances in Neural Information Processing Systems, pp.\\ 493--499. Citeseer, 1995",
+      "authors": "Salah El Hihi and Yoshua Bengio",
+      "title": "Hierarchical recurrent neural networks for long-term dependencies",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 493--499. Citeseer, 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fernandez2007sequence",
+      "raw": "Santiago Fern\\'andez, Alex Graves, and J\\\"urgen Schmidhuber. Sequence labelling in structured domains with hierarchical recurrent neural networks. In Proceedings of the 20th international joint conference on Artifical intelligence, pp.\\ 774--779. Morgan Kaufmann Publishers Inc., 2007",
+      "authors": "Santiago Fern\\'andez, Alex Graves, and J\\\"urgen Schmidhuber",
+      "title": "Sequence labelling in structured domains with hierarchical recurrent neural networks",
+      "venue": "In Proceedings of the 20th international joint conference on Artifical intelligence, pp.\\ 774--779. Morgan Kaufmann Publishers Inc., 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2013generating",
+      "raw": "Alex Graves. Generating sequences with recurrent neural networks. arXiv preprint arXiv:1308.0850, 2013",
+      "authors": "Alex Graves",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "ha2016hypernetworks",
+      "raw": "David Ha, Andrew Dai, and Quoc V Le. Hypernetworks. arXiv preprint arXiv:1609.09106, 2016",
+      "authors": "David Ha, Andrew Dai, and Quoc V Le",
+      "title": "Hypernetworks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1609.09106",
+      "doi": null
+    },
+    {
+      "key": "hinton2012coursera",
+      "raw": "G. Hinton. Neural networks for machine learning. Coursera, video lectures, 2012",
+      "authors": "G. Hinton",
+      "title": "Neural networks for machine learning",
+      "venue": "Coursera, video lectures, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Sepp Hochreiter and J\\\"urgen Schmidhuber. Long short-term memory. Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "authors": "Sepp Hochreiter and J\\\"urgen Schmidhuber",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hoffman2013one",
+      "raw": "Judy Hoffman, Eric Tzeng, Jeff Donahue, Yangqing Jia, Kate Saenko, and Trevor Darrell. One-shot adaptation of supervised deep convolutional models. arXiv preprint arXiv:1312.6204, 2013",
+      "authors": "Judy Hoffman, Eric Tzeng, Jeff Donahue, Yangqing Jia, Kate Saenko, and Trevor Darrell",
+      "title": "One-shot adaptation of supervised deep convolutional models",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.6204",
+      "doi": null
+    },
+    {
+      "key": "huang2016deep",
+      "raw": "Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, and Kilian Weinberger. Deep networks with stochastic depth. arXiv preprint arXiv:1603.09382, 2016",
+      "authors": "Gao Huang, Yu Sun, Zhuang Liu, Daniel Sedra, and Kilian Weinberger",
+      "title": "Deep networks with stochastic depth",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1603.09382",
+      "doi": null
+    },
+    {
+      "key": "Hutter2012",
+      "raw": "Marcus Hutter. The human knowledge compression contest. 2012. URL http://prize.hutter1.net/",
+      "authors": "Marcus Hutter",
+      "title": "The human knowledge compression contest",
+      "venue": "2012 URL",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kalchbrenner2015grid",
+      "raw": "Nal Kalchbrenner, Ivo Danihelka, and Alex Graves. Grid long short-term memory. arXiv preprint arXiv:1507.01526, 2015",
+      "authors": "Nal Kalchbrenner, Ivo Danihelka, and Alex Graves",
+      "title": "Grid long short-term memory",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1507.01526",
+      "doi": null
+    },
+    {
+      "key": "kim2014convolutional",
+      "raw": "Yoon Kim. Convolutional neural networks for sentence classification. arXiv preprint arXiv:1408.5882, 2014",
+      "authors": "Yoon Kim",
+      "title": "Convolutional neural networks for sentence classification",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1408.5882",
+      "doi": null
+    },
+    {
+      "key": "kim2015character",
+      "raw": "Yoon Kim, Yacine Jernite, David Sontag, and Alexander M Rush. Character-aware neural language models. arXiv preprint arXiv:1508.06615, 2015",
+      "authors": "Yoon Kim, Yacine Jernite, David Sontag, and Alexander M Rush",
+      "title": "Character-aware neural language models",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1508.06615",
+      "doi": null
+    },
+    {
+      "key": "kingma2014adam",
+      "raw": "Diederik P Kingma and Jimmy Ba. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980, 2014",
+      "authors": "Diederik P Kingma and Jimmy Ba",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "kingma2013auto",
+      "raw": "Diederik P Kingma and Max Welling. Auto-encoding variational bayes. arXiv preprint arXiv:1312.6114, 2013",
+      "authors": "Diederik P Kingma and Max Welling",
+      "title": "Auto-encoding variational bayes",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.6114",
+      "doi": null
+    },
+    {
+      "key": "kong2015segmental",
+      "raw": "Lingpeng Kong, Chris Dyer, and Noah A Smith. Segmental recurrent neural networks. arXiv preprint arXiv:1511.06018, 2015",
+      "authors": "Lingpeng Kong, Chris Dyer, and Noah A Smith",
+      "title": "Segmental recurrent neural networks",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.06018",
+      "doi": null
+    },
+    {
+      "key": "koutnik2014clockwork",
+      "raw": "Jan Koutn\\' k, Klaus Greff, Faustino Gomez, and J\\\"urgen Schmidhuber. A clockwork rnn. In Proceedings of the 31st International Conference on Machine Learning (ICML 2014), 2014",
+      "authors": "Jan Koutn\\' k, Klaus Greff, Faustino Gomez, and J\\\"urgen Schmidhuber",
+      "title": "A clockwork rnn",
+      "venue": "In Proceedings of the 31st International Conference on Machine Learning (ICML 2014), 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton. Imagenet classification with deep convolutional neural networks. In Advances in Neural Information Processing Systems, pp.\\ 1097--1105, 2012",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 1097--1105, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krueger2015regularizing",
+      "raw": "David Krueger and Roland Memisevic. Regularizing rnns by stabilizing activations. arXiv preprint arXiv:1511.08400, 2015",
+      "authors": "David Krueger and Roland Memisevic",
+      "title": "Regularizing rnns by stabilizing activations",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.08400",
+      "doi": null
+    },
+    {
+      "key": "krueger2016zoneout",
+      "raw": "David Krueger, Tegan Maharaj, J\\'anos Kram\\'ar, Mohammad Pezeshki, Nicolas Ballas, Nan Rosemary Ke, Anirudh Goyal, Yoshua Bengio, Hugo Larochelle, Aaron Courville, et al. Zoneout: Regularizing rnns by randomly preserving hidden activations. arXiv preprint arXiv:1606.01305, 2016",
+      "authors": "David Krueger, Tegan Maharaj, J\\'anos Kram\\'ar, Mohammad Pezeshki, Nicolas Ballas, Nan Rosemary Ke, Anirudh Goyal, Yoshua Bengio, Hugo Larochelle, Aaron Courville, et al",
+      "title": "Zoneout: Regularizing rnns by randomly preserving hidden activations",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.01305",
+      "doi": null
+    },
+    {
+      "key": "lecun2015deep",
+      "raw": "Yann LeCun, Yoshua Bengio, and Geoffrey Hinton. Deep learning. Nature, 521 0 (7553): 0 436--444, 2015",
+      "authors": "Yann LeCun, Yoshua Bengio, and Geoffrey Hinton",
+      "title": "Deep learning",
+      "venue": "Nature, 521 0 (7553): 0 436--444, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin1996learning",
+      "raw": "Tsungnan Lin, Bill G Horne, Peter Tino, and C Lee Giles. Learning long-term dependencies in narx recurrent neural networks. IEEE Transactions on Neural Networks, 7 0 (6): 0 1329--1338, 1996",
+      "authors": "Tsungnan Lin, Bill G Horne, Peter Tino, and C Lee Giles",
+      "title": "Learning long-term dependencies in narx recurrent neural networks",
+      "venue": "IEEE Transactions on Neural Networks, 7 0 (6): 0 1329--1338, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ling2015character",
+      "raw": "Wang Ling, Isabel Trancoso, Chris Dyer, and Alan W Black. Character-based neural machine translation. arXiv preprint arXiv:1511.04586, 2015",
+      "authors": "Wang Ling, Isabel Trancoso, Chris Dyer, and Alan W Black",
+      "title": "Character-based neural machine translation",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.04586",
+      "doi": null
+    },
+    {
+      "key": "liwicki2005iam",
+      "raw": "Marcus Liwicki and Horst Bunke. Iam-ondb-an on-line english sentence database acquired from handwritten text on a whiteboard. In Eighth International Conference on Document Analysis and Recognition (ICDAR'05), pp.\\ 956--961. IEEE, 2005",
+      "authors": "Marcus Liwicki and Horst Bunke",
+      "title": "Iam-ondb-an on-line english sentence database acquired from handwritten text on a whiteboard",
+      "venue": "In Eighth International Conference on Document Analysis and Recognition (ICDAR'05), pp.\\ 956--961. IEEE, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mahoney2005adaptive",
+      "raw": "Matthew V Mahoney. Adaptive weighing of context models for lossless data compression. 2005",
+      "authors": "Matthew V Mahoney",
+      "title": "Adaptive weighing of context models for lossless data compression",
+      "venue": "2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mahoney2009large",
+      "raw": "Matthew V Mahoney. Large text compression benchmark. URL: http://www. mattmahoney. net/text/text. html, 2009",
+      "authors": "Matthew V Mahoney",
+      "title": "Large text compression benchmark",
+      "venue": "URL: mattmahoney. net/text/text. html, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "marcus1993building",
+      "raw": "Mitchell P Marcus, Mary Ann Marcinkiewicz, and Beatrice Santorini. Building a large annotated corpus of english: The penn treebank. Computational linguistics, 19 0 (2): 0 313--330, 1993",
+      "authors": "Mitchell P Marcus, Mary Ann Marcinkiewicz, and Beatrice Santorini",
+      "title": "Building a large annotated corpus of english: The penn treebank",
+      "venue": "Computational linguistics, 19 0 (2): 0 313--330, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2010recurrent",
+      "raw": "Tomas Mikolov, Martin Karafi\\'at, Lukas Burget, Jan Cernock\\`y, and Sanjeev Khudanpur. Recurrent neural network based language model. In INTERSPEECH, volume 2, pp.\\ 3, 2010",
+      "authors": "Tomas Mikolov, Martin Karafi\\'at, Lukas Burget, Jan Cernock\\`y, and Sanjeev Khudanpur",
+      "title": "Recurrent neural network based language model",
+      "venue": "In INTERSPEECH, volume 2, pp.\\ 3, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2012subword",
+      "raw": "Tomas Mikolov, Ilya Sutskever, Anoop Deoras, Hai-Son Le, Stefan Kombrink, and J Cernocky. Subword language modeling with neural networks. Preprint, 2012. URL http://www.fit.vutbr.cz/ imikolov/rnnlm/char.pdf",
+      "authors": "Tomas Mikolov, Ilya Sutskever, Anoop Deoras, Hai-Son Le, Stefan Kombrink, and J Cernocky",
+      "title": "Subword language modeling with neural networks",
+      "venue": "Preprint, 2012 URL imikolov/rnnlm/char.pdf",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mnih2014neural",
+      "raw": "Andriy Mnih and Karol Gregor. Neural variational inference and learning in belief networks. In Proceedings of the 31st International Conference on Machine Learning (ICML-14), pp.\\ 1791--1799, 2014",
+      "authors": "Andriy Mnih and Karol Gregor",
+      "title": "Neural variational inference and learning in belief networks",
+      "venue": "In Proceedings of the 31st International Conference on Machine Learning (ICML-14), pp.\\ 1791--1799, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mozer1993induction",
+      "raw": "Michael C Mozer. Induction of multiscale temporal structure. Advances in neural information processing systems, pp.\\ 275--275, 1993",
+      "authors": "Michael C Mozer",
+      "title": "Induction of multiscale temporal structure",
+      "venue": "Advances in neural information processing systems, pp.\\ 275--275, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nair2010rectified",
+      "raw": "Vinod Nair and Geoffrey E Hinton. Rectified linear units improve restricted boltzmann machines. In Proceedings of the 27th International Conference on Machine Learning (ICML-10), pp.\\ 807--814, 2010",
+      "authors": "Vinod Nair and Geoffrey E Hinton",
+      "title": "Rectified linear units improve restricted boltzmann machines",
+      "venue": "In Proceedings of the 27th International Conference on Machine Learning (ICML-10), pp.\\ 807--814, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pachitariu2013regularization",
+      "raw": "Marius Pachitariu and Maneesh Sahani. Regularization and nonlinearities for neural language models: when are they needed? arXiv preprint arXiv:1301.5650, 2013",
+      "authors": "Marius Pachitariu and Maneesh Sahani",
+      "title": "Regularization and nonlinearities for neural language models: when are they needed?",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1301.5650",
+      "doi": null
+    },
+    {
+      "key": "pascanu2012difficulty",
+      "raw": "Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. On the difficulty of training recurrent neural networks. arXiv preprint arXiv:1211.5063, 2012",
+      "authors": "Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "arXiv preprint 2012",
+      "year": 2012,
+      "arxivId": "1211.5063",
+      "doi": null
+    },
+    {
+      "key": "rocki2016recurrent",
+      "raw": "Kamil M Rocki. Recurrent memory array structures. arXiv preprint arXiv:1607.03085, 2016",
+      "authors": "Kamil M Rocki",
+      "title": "Recurrent memory array structures",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1607.03085",
+      "doi": null
+    },
+    {
+      "key": "rocki2016surprisal",
+      "raw": "Kamil M Rocki. Surprisal-driven feedback in recurrent networks. arXiv preprint arXiv:1608.06027, 2016",
+      "authors": "Kamil M Rocki",
+      "title": "Surprisal-driven feedback in recurrent networks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1608.06027",
+      "doi": null
+    },
+    {
+      "key": "schmidhuber1991neural",
+      "raw": "J\\\"urgen Schmidhuber. Neural sequence chunkers. 1991",
+      "authors": "J\\\"urgen Schmidhuber",
+      "title": "Neural sequence chunkers",
+      "venue": "1991",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schmidhuber1992learning",
+      "raw": "J\\\"urgen Schmidhuber. Learning complex, extended sequences using the principle of history compression. Neural Computation, 4 0 (2): 0 234--242, 1992",
+      "authors": "J\\\"urgen Schmidhuber",
+      "title": "Learning complex, extended sequences using the principle of history compression",
+      "venue": "Neural Computation, 4 0 (2): 0 234--242, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schmidhuber2015deep",
+      "raw": "J\\\"urgen Schmidhuber. Deep learning in neural networks: An overview. Neural Networks, 61: 0 85--117, 2015",
+      "authors": "J\\\"urgen Schmidhuber",
+      "title": "Deep learning in neural networks: An overview",
+      "venue": "Neural Networks, 61: 0 85--117, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sordoni2015hierarchical",
+      "raw": "Alessandro Sordoni, Yoshua Bengio, Hossein Vahabi, Christina Lioma, Jakob Grue Simonsen, and Jian-Yun Nie. A hierarchical recurrent encoder-decoder for generative context-aware query suggestion. In Proceedings of the 24th ACM International on Conference on Information and Knowledge Management, pp.\\ 553--562. ACM, 2015",
+      "authors": "Alessandro Sordoni, Yoshua Bengio, Hossein Vahabi, Christina Lioma, Jakob Grue Simonsen, and Jian-Yun Nie",
+      "title": "A hierarchical recurrent encoder-decoder for generative context-aware query suggestion",
+      "venue": "In Proceedings of the 24th ACM International on Conference on Information and Knowledge Management, pp.\\ 553--562. ACM, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "srivastava2014dropout",
+      "raw": "Nitish Srivastava, Geoffrey E Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. Dropout: a simple way to prevent neural networks from overfitting. Journal of Machine Learning Research, 15 0 (1): 0 1929--1958, 2014",
+      "authors": "Nitish Srivastava, Geoffrey E Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov",
+      "title": "Dropout: a simple way to prevent neural networks from overfitting",
+      "venue": "Journal of Machine Learning Research, 15 0 (1): 0 1929--1958, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2011generating",
+      "raw": "Ilya Sutskever, James Martens, and Geoffrey E Hinton. Generating text with recurrent neural networks. In Proceedings of the 28th International Conference on Machine Learning (ICML'11), pp.\\ 1017--1024, 2011",
+      "authors": "Ilya Sutskever, James Martens, and Geoffrey E Hinton",
+      "title": "Generating text with recurrent neural networks",
+      "venue": "In Proceedings of the 28th International Conference on Machine Learning (ICML'11), pp.\\ 1017--1024, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pp.\\ 3104--3112, 2014",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 3104--3112, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "team2016theano",
+      "raw": "The Theano Development Team, Rami Al-Rfou, Guillaume Alain, Amjad Almahairi, Christof Angermueller, Dzmitry Bahdanau, Nicolas Ballas, Fr\\'ed\\'eric Bastien, Justin Bayer, Anatoly Belikov, et al. Theano: A python framework for fast computation of mathematical expressions. arXiv preprint arXiv:1605.02688, 2016",
+      "authors": "The Theano Development Team, Rami Al-Rfou, Guillaume Alain, Amjad Almahairi, Christof Angermueller, Dzmitry Bahdanau, Nicolas Ballas, Fr\\'ed\\'eric Bastien, Justin Bayer, Anatoly Belikov, et al",
+      "title": "Theano: A python framework for fast computation of mathematical expressions",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1605.02688",
+      "doi": null
+    },
+    {
+      "key": "vezhnevets2016strategic",
+      "raw": "Alexander Vezhnevets, Volodymyr Mnih, John Agapiou, Simon Osindero, Alex Graves, Oriol Vinyals, Koray Kavukcuoglu, et al. Strategic attentive writer for learning macro-actions. arXiv preprint arXiv:1606.04695, 2016",
+      "authors": "Alexander Vezhnevets, Volodymyr Mnih, John Agapiou, Simon Osindero, Alex Graves, Oriol Vinyals, Koray Kavukcuoglu, et al",
+      "title": "Strategic attentive writer for learning macro-actions",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.04695",
+      "doi": null
+    },
+    {
+      "key": "vinyals2015show",
+      "raw": "Oriol Vinyals, Alexander Toshev, Samy Bengio, and Dumitru Erhan. Show and tell: A neural image caption generator. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp.\\ 3156--3164, 2015",
+      "authors": "Oriol Vinyals, Alexander Toshev, Samy Bengio, and Dumitru Erhan",
+      "title": "Show and tell: A neural image caption generator",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp.\\ 3156--3164, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams1992simple",
+      "raw": "Ronald J Williams. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine learning, 8 0 (3-4): 0 229--256, 1992",
+      "authors": "Ronald J Williams",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "venue": "Machine learning, 8 0 (3-4): 0 229--256, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wu2016multiplicative",
+      "raw": "Yuhuai Wu, Saizheng Zhang, Ying Zhang, Yoshua Bengio, and Ruslan Salakhutdinov. On multiplicative integration with recurrent neural networks. arXiv preprint arXiv:1606.06630, 2016",
+      "authors": "Yuhuai Wu, Saizheng Zhang, Ying Zhang, Yoshua Bengio, and Ruslan Salakhutdinov",
+      "title": "On multiplicative integration with recurrent neural networks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.06630",
+      "doi": null
+    },
+    {
+      "key": "zhang2016architectural",
+      "raw": "Saizheng Zhang, Yuhuai Wu, Tong Che, Zhouhan Lin, Roland Memisevic, Ruslan Salakhutdinov, and Yoshua Bengio. Architectural complexity measures of recurrent neural networks. arXiv preprint arXiv:1602.08210, 2016",
+      "authors": "Saizheng Zhang, Yuhuai Wu, Tong Che, Zhouhan Lin, Roland Memisevic, Ruslan Salakhutdinov, and Yoshua Bengio",
+      "title": "Architectural complexity measures of recurrent neural networks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1602.08210",
+      "doi": null
+    },
+    {
+      "key": "zilly2016recurrent",
+      "raw": "Julian Georg Zilly, Rupesh Kumar Srivastava, Jan Koutn\\' k, and J\\\"urgen Schmidhuber. Recurrent highway networks. arXiv preprint arXiv:1607.03474, 2016",
+      "authors": "Julian Georg Zilly, Rupesh Kumar Srivastava, Jan Koutn\\' k, and J\\\"urgen Schmidhuber",
+      "title": "Recurrent highway networks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1607.03474",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 967,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 6012,
+      "numbers": 0,
+      "citations": 33
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 4865,
+      "numbers": 2,
+      "citations": 20
+    },
+    {
+      "kind": "method",
+      "title": "Hierarchical Multiscale Recurrent Neural Networks",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Motivation",
+      "chars": 2872,
+      "numbers": 3,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "The Proposed Model",
+      "chars": 3437,
+      "numbers": 22,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Computing Gradient of Boundary Detector",
+      "chars": 1540,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 495,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Character-Level Language Modelling",
+      "chars": 9878,
+      "numbers": 10,
+      "citations": 13
+    },
+    {
+      "kind": "experiments",
+      "title": "Handwriting Sequence Generation",
+      "chars": 2052,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1040,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 596,
+      "numbers": 0,
+      "citations": 1
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 1,
+      "contests": 0,
+      "compares": 0,
+      "background": 44,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "kingma2014adam",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We train the model using Adam [Kingma et al. 2014] with an initial learning rate of 0.002.",
+      "section": "Character-Level Language Modelling",
+      "sectionKind": "experiments",
+      "ordinal": 43,
+      "title": "Adam: A method for stochastic optimization",
+      "authors": "Diederik P Kingma and Jimmy Ba",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "inCorpus": true,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 150.38082885742188,
+            "y0": 267.2642822265625,
+            "x1": 270.7922058105469,
+            "y1": 277.3062438964844
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "graves2013generating",
+        "stance": "inherits",
+        "cue": "We follow",
+        "sentence": "We follow the data splits used in [Graves 2013] where the first 90M characters are used to train the model, the next 5M characters for validation, and the remainders for the test set.",
+        "section": "Character-Level Language Modelling",
+        "sectionKind": "experiments",
+        "ordinal": 49,
+        "title": "Generating sequences with recurrent neural networks",
+        "authors": "Alex Graves",
+        "year": 2013,
+        "arxivId": "1308.0850",
+        "inCorpus": true,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 135.70156860351562,
+              "y0": 550.46435546875,
+              "x1": 505.2444152832031,
+              "y1": 560.3268432617188
+            },
+            {
+              "x0": 108.0,
+              "y0": 561.2722778320312,
+              "x1": 251.78005981445312,
+              "y1": 571.3340454101562
+            }
+          ]
+        }
+      },
+      {
+        "key": "kingma2014adam",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We train the model using Adam [Kingma et al. 2014] with an initial learning rate of 0.002.",
+        "section": "Character-Level Language Modelling",
+        "sectionKind": "experiments",
+        "ordinal": 43,
+        "title": "Adam: A method for stochastic optimization",
+        "authors": "Diederik P Kingma and Jimmy Ba",
+        "year": 2014,
+        "arxivId": "1412.6980",
+        "inCorpus": true,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 150.38082885742188,
+              "y0": 267.2642822265625,
+              "x1": 270.7922058105469,
+              "y1": 277.3062438964844
+            }
+          ]
+        }
+      },
+      {
+        "key": "liwicki2005iam",
+        "stance": "extends",
+        "cue": "We extend",
+        "sentence": "We extend the evaluation of the HM-LSTM to a real-valued sequence modelling task using IAM-OnDB [Liwicki et al. 2005] dataset.",
+        "section": "Handwriting Sequence Generation",
+        "sectionKind": "experiments",
+        "ordinal": 52,
+        "title": "Iam-ondb-an on-line english sentence database acquired from handwritten text on a whiteboard",
+        "authors": "Marcus Liwicki and Horst Bunke",
+        "year": 2005,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 317.00030517578125,
+              "x1": 505.6532897949219,
+              "y1": 327.0620422363281
+            },
+            {
+              "x0": 108.0,
+              "y0": 327.95928955078125,
+              "x1": 134.53260803222656,
+              "y1": 338.0210266113281
+            }
+          ]
+        }
+      },
+      {
+        "key": "mikolov2012subword",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "Finally, the probability distribution for the next target character is computed by the softmax function, \ud835\ude9c\ud835\ude98\ud835\ude8f\ud835\ude9d\ud835\ude96\ud835\ude8a\ud835\udea1(x_j)=e^x_j/\u2211^K_k=1 e^x_k, where each output class is a character. Penn Treebank We process the Penn Treebank dataset [Marcus et al. 1993] by following the procedure introduced in [Mikolov et al. 2012].",
+        "section": "Character-Level Language Modelling",
+        "sectionKind": "experiments",
+        "ordinal": 42,
+        "title": "Subword language modeling with neural networks",
+        "authors": "Tomas Mikolov, Ilya Sutskever, Anoop Deoras, Hai-Son Le, Stefan Kombrink, and J Cernocky",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 365.2258605957031,
+              "y0": 695.69482421875,
+              "x1": 503.9959411621094,
+              "y1": 705.6424560546875
+            },
+            {
+              "x0": 108.0,
+              "y0": 708.1292724609375,
+              "x1": 373.80364990234375,
+              "y1": 718.1910400390625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We hypothesize that this property mitigates the vanishing gradient problem more efficiently while also being computationally more efficient.",
+      "anchorText": "We hypothesize that this property mitigates the vanishing gradient problem more efficiently while also being computationally more efficient.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "Related Work",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.5459747314453,
+            "y0": 182.87686157226562,
+            "x1": 504.3451232910156,
+            "y1": 192.86929321289062
+          },
+          {
+            "x0": 107.64099884033203,
+            "y0": 193.8574981689453,
+            "x1": 300.536865234375,
+            "y1": 203.82009887695312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We conjecture the reason that the model works in this way is due to the FLUSH operation that poses an implicit constraint on the frequency of boundary detection, because it contains both a reward (feeding fresh information to upper layers) and a penalty (erasing accumulated information).",
+      "anchorText": "We conjecture the reason that the model works in this way is due to the FLUSH operation that poses an implicit constraint on the frequency of boundary detection, because it contains both a reward (feeding fresh information to upper layers) and a penalty (erasing accumulated information).",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We conjecture",
+      "section": "Character-Level Language Modelling",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 490.695556640625,
+            "y0": 533.4832763671875,
+            "x1": 503.9974060058594,
+            "y1": 543.5450439453125
+          },
+          {
+            "x0": 108.0,
+            "y0": 544.5174560546875,
+            "x1": 504.0033264160156,
+            "y1": 554.4800415039062
+          },
+          {
+            "x0": 108.0,
+            "y0": 555.5523681640625,
+            "x1": 504.0016174316406,
+            "y1": 565.4148559570312
+          },
+          {
+            "x0": 108.0,
+            "y0": 566.4846801757812,
+            "x1": 436.8970642089844,
+            "y1": 576.38232421875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "To understand the update mechanism more intuitively, in Figure [ref], we also depict the heatmap of the \u2113^2-norm of the hidden states along with the states of the boundary detectors.",
+      "anchorText": "-norm of the hidden states along with the states of the boundary detectors.",
+      "kind": "conjectural",
+      "support": "shown",
+      "cue": "intuitively",
+      "section": "Character-Level Language Modelling",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [
+        "fig:ptb_hidden"
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 605.2554931640625,
+            "x1": 413.74462890625,
+            "y1": 615.2628784179688
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "As we expect, we can see that there is no change in the norm value within segments due to the COPY operation.",
+      "anchorText": "As we expect, we can see that there is no change in the norm value within segments due to the COPY operation.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Character-Level Language Modelling",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 416.85076904296875,
+            "y0": 605.2554931640625,
+            "x1": 504.0037536621094,
+            "y1": 615.2628784179688
+          },
+          {
+            "x0": 108.0,
+            "y0": 616.2598266601562,
+            "x1": 465.0215759277344,
+            "y1": 626.2074584960938
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 0,
+    "shown": 1,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 36,
+    "rate": 0.9
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2016-09-06"
+  }
+}

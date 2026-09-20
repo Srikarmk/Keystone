@@ -1,0 +1,2946 @@
+{
+  "id": "1308.0850",
+  "title": "Generating Sequences With Recurrent Neural Networks",
+  "keystone": null,
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1308.0850",
+  "numbers": [
+    {
+      "value": "4.3M",
+      "kind": "result",
+      "section": "method",
+      "sentence": "For the character-level network the input and output layers were size 49, giving approximately 4.3M weights in total, while the word-level network had 10,000 inputs and outputs and around 54M weights.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 344.3773498535156,
+            "y0": 312.739990234375,
+            "x1": 477.51751708984375,
+            "y1": 322.70257568359375
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 324.69598388671875,
+            "x1": 477.537353515625,
+            "y1": 334.6585693359375
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 336.6509704589844,
+            "x1": 477.5575866699219,
+            "y1": 346.6135559082031
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 348.60595703125,
+            "x1": 191.5311737060547,
+            "y1": 358.56854248046875
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.0001",
+      "kind": "result",
+      "section": "method",
+      "sentence": "All networks were trained with stochastic gradient descent, using a learn rate of 0.0001 and a momentum of 0.99.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 422.43450927734375,
+            "y0": 384.4709167480469,
+            "x1": 477.497802734375,
+            "y1": 394.4335021972656
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 396.4269104003906,
+            "x1": 477.5074462890625,
+            "y1": 406.3894958496094
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 408.38189697265625,
+            "x1": 217.9021453857422,
+            "y1": 418.344482421875
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.99",
+      "kind": "result",
+      "section": "method",
+      "sentence": "All networks were trained with stochastic gradient descent, using a learn rate of 0.0001 and a momentum of 0.99.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 422.43450927734375,
+            "y0": 384.4709167480469,
+            "x1": 477.497802734375,
+            "y1": 394.4335021972656
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 396.4269104003906,
+            "x1": 477.5074462890625,
+            "y1": 406.3894958496094
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 408.38189697265625,
+            "x1": 217.9021453857422,
+            "y1": 418.344482421875
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.075",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Since both networks overfit the training data, we also experiment with two types of regularisation: weight noise with a std. deviation of 0.075 applied to the network weights at the start of each training sequence, and adaptive weight noise , where the variance of the noise is learned along with the weights using a Minimum description Length (or equivalently, variational inference) loss function.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "5.6",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The results are presented with two equivalent metrics: bits-per-character (BPC), which is the average value of over the whole test set; and perplexity which is two to the power of the average number of bits per word (the average word length on the test set is about 5.6 characters, so perplexity ).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "141.8",
+      "kind": "result",
+      "section": "method",
+      "sentence": "For example, he records a perplexity of 141 for a 5-gram with Keyser-Ney smoothing, 141.8 for a word level feedforward neural network, 131.1 for the state-of-the-art compression algorithm PAQ8 and 123.2 for a dynamically evaluated word-level RNN.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 170.81893920898438,
+            "y0": 430.0437927246094,
+            "x1": 477.4975891113281,
+            "y1": 440.0063781738281
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 441.998779296875,
+            "x1": 477.5274353027344,
+            "y1": 451.96136474609375
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 453.9537658691406,
+            "x1": 477.5075378417969,
+            "y1": 463.9163513183594
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 465.90875244140625,
+            "x1": 233.96189880371094,
+            "y1": 475.871337890625
+          }
+        ]
+      }
+    },
+    {
+      "value": "131.1",
+      "kind": "result",
+      "section": "method",
+      "sentence": "For example, he records a perplexity of 141 for a 5-gram with Keyser-Ney smoothing, 141.8 for a word level feedforward neural network, 131.1 for the state-of-the-art compression algorithm PAQ8 and 123.2 for a dynamically evaluated word-level RNN.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 170.81893920898438,
+            "y0": 430.0437927246094,
+            "x1": 477.4975891113281,
+            "y1": 440.0063781738281
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 441.998779296875,
+            "x1": 477.5274353027344,
+            "y1": 451.96136474609375
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 453.9537658691406,
+            "x1": 477.5075378417969,
+            "y1": 463.9163513183594
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 465.90875244140625,
+            "x1": 233.96189880371094,
+            "y1": 475.871337890625
+          }
+        ]
+      }
+    },
+    {
+      "value": "123.2",
+      "kind": "result",
+      "section": "method",
+      "sentence": "For example, he records a perplexity of 141 for a 5-gram with Keyser-Ney smoothing, 141.8 for a word level feedforward neural network, 131.1 for the state-of-the-art compression algorithm PAQ8 and 123.2 for a dynamically evaluated word-level RNN.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 170.81893920898438,
+            "y0": 430.0437927246094,
+            "x1": 477.4975891113281,
+            "y1": 440.0063781738281
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 441.998779296875,
+            "x1": 477.5274353027344,
+            "y1": 451.96136474609375
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 453.9537658691406,
+            "x1": 477.5075378417969,
+            "y1": 463.9163513183594
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 465.90875244140625,
+            "x1": 233.96189880371094,
+            "y1": 475.871337890625
+          }
+        ]
+      }
+    },
+    {
+      "value": "89.4",
+      "kind": "result",
+      "section": "method",
+      "sentence": "However by combining multiple RNNs, a 5-gram and a cache model in an ensemble, he was able to achieve a perplexity of 89.4.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 237.34918212890625,
+            "y0": 465.90875244140625,
+            "x1": 477.5076904296875,
+            "y1": 475.871337890625
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 477.8637390136719,
+            "x1": 448.6060791015625,
+            "y1": 487.8263244628906
+          }
+        ]
+      }
+    },
+    {
+      "value": "124.7",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Interestingly, the benefit of dynamic evaluation was far more pronounced here than in Mikolov's thesis (he records a perplexity improvement from 124.7 to 123.2 with word-level RNNs).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 453.1091613769531,
+            "y0": 477.8637390136719,
+            "x1": 477.4876403808594,
+            "y1": 487.8263244628906
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 489.8187255859375,
+            "x1": 477.5275573730469,
+            "y1": 499.78131103515625
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 501.77471923828125,
+            "x1": 477.5076599121094,
+            "y1": 511.7373046875
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 513.7296752929688,
+            "x1": 236.20350646972656,
+            "y1": 523.6922607421875
+          }
+        ]
+      }
+    },
+    {
+      "value": "123.2",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Interestingly, the benefit of dynamic evaluation was far more pronounced here than in Mikolov's thesis (he records a perplexity improvement from 124.7 to 123.2 with word-level RNNs).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 453.1091613769531,
+            "y0": 477.8637390136719,
+            "x1": 477.4876403808594,
+            "y1": 487.8263244628906
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 489.8187255859375,
+            "x1": 477.5275573730469,
+            "y1": 499.78131103515625
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 501.77471923828125,
+            "x1": 477.5076599121094,
+            "y1": 511.7373046875
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 513.7296752929688,
+            "x1": 236.20350646972656,
+            "y1": 523.6922607421875
+          }
+        ]
+      }
+    },
+    {
+      "value": "21.3M",
+      "kind": "result",
+      "section": "method",
+      "sentence": "A much larger network was used for this data than the Penn data (reflecting the greater size and complexity of the training set) with seven hidden layers of 700 LSTM cells, giving approximately 21.3M weights.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.71202087402344,
+            "y0": 461.7239074707031,
+            "x1": 477.5278625488281,
+            "y1": 471.6864929199219
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 473.67889404296875,
+            "x1": 477.507568359375,
+            "y1": 483.6414794921875
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 485.6338806152344,
+            "x1": 365.83673095703125,
+            "y1": 495.5964660644531
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.0001",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The network was trained with stochastic gradient descent, using a learn rate of 0.0001 and a momentum of 0.9.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 370.130615234375,
+            "y0": 485.6338806152344,
+            "x1": 477.50750732421875,
+            "y1": 495.5964660644531
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 497.5888671875,
+            "x1": 477.49761962890625,
+            "y1": 507.55145263671875
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 509.54388427734375,
+            "x1": 161.7330322265625,
+            "y1": 519.5064697265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.9",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The network was trained with stochastic gradient descent, using a learn rate of 0.0001 and a momentum of 0.9.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 370.130615234375,
+            "y0": 485.6338806152344,
+            "x1": 477.50750732421875,
+            "y1": 495.5964660644531
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 497.5888671875,
+            "x1": 477.49761962890625,
+            "y1": 507.55145263671875
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 509.54388427734375,
+            "x1": 161.7330322265625,
+            "y1": 519.5064697265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.28",
+      "kind": "result",
+      "section": "method",
+      "sentence": "To put the results in context, the current winner of the Hutter Prize (a variant of the PAQ-8 compression algorithm ) achieves 1.28 BPC on the same data (including the code required to implement the algorithm), mainstream compressors such as zip generally get more than 2, and a character level RNN applied to a text-only version of the data (i.e. with all the XML, markup tags etc. removed) achieved 1.54 on held-out data, which improved to 1.47 when the RNN was combined with a maximum entropy model .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "1.54",
+      "kind": "result",
+      "section": "method",
+      "sentence": "To put the results in context, the current winner of the Hutter Prize (a variant of the PAQ-8 compression algorithm ) achieves 1.28 BPC on the same data (including the code required to implement the algorithm), mainstream compressors such as zip generally get more than 2, and a character level RNN applied to a text-only version of the data (i.e. with all the XML, markup tags etc. removed) achieved 1.54 on held-out data, which improved to 1.47 when the RNN was combined with a maximum entropy model .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "1.47",
+      "kind": "result",
+      "section": "method",
+      "sentence": "To put the results in context, the current winner of the Hutter Prize (a variant of the PAQ-8 compression algorithm ) achieves 1.28 BPC on the same data (including the code required to implement the algorithm), mainstream compressors such as zip generally get more than 2, and a character level RNN applied to a text-only version of the data (i.e. with all the XML, markup tags etc. removed) achieved 1.54 on held-out data, which improved to 1.47 when the RNN was combined with a maximum entropy model .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "3.4M",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Both networks had around 3.4M weights.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 22,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.8294372558594,
+            "y0": 252.9650115966797,
+            "x1": 477.5374755859375,
+            "y1": 262.9276123046875
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 264.9200439453125,
+            "x1": 168.6968994140625,
+            "y1": 274.88262939453125
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.075",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The three layer network was retrained with adaptive weight noise , with all std. devs. initialised to 0.075.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 22,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 173.49887084960938,
+            "y0": 264.9200439453125,
+            "x1": 460.77044677734375,
+            "y1": 274.88262939453125
+          }
+        ]
+      }
+    },
+    {
+      "value": "15.3",
+      "kind": "result",
+      "section": "method",
+      "sentence": "hand_pred shows that the three layer network had an average per-sequence loss 15.3 nats lower than the one layer net.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 22,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 183.5611572265625,
+            "y0": 603.075927734375,
+            "x1": 477.47772216796875,
+            "y1": 613.0385131835938
+          },
+          {
+            "x0": 133.76797485351562,
+            "y0": 615.0309448242188,
+            "x1": 310.29522705078125,
+            "y1": 624.9935302734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "16.7",
+      "kind": "result",
+      "section": "method",
+      "sentence": "However the sum-squared-error was slightly lower for the single layer network. the use of adaptive weight noise reduced the loss by another 16.7 nats relative to the unregularised three layer network, but did not significantly change the sum-squared error.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 22,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 318.3350524902344,
+            "y0": 615.0309448242188,
+            "x1": 477.487548828125,
+            "y1": 624.9935302734375
+          },
+          {
+            "x0": 133.76797485351562,
+            "y0": 626.9869384765625,
+            "x1": 323.8343811035156,
+            "y1": 636.9495239257812
+          },
+          {
+            "x0": 331.9837951660156,
+            "y0": 626.9869384765625,
+            "x1": 477.5174560546875,
+            "y1": 636.9495239257812
+          },
+          {
+            "x0": 133.76797485351562,
+            "y0": 638.9419555664062,
+            "x1": 477.51751708984375,
+            "y1": 648.904541015625
+          },
+          {
+            "x0": 133.76797485351562,
+            "y0": 650.8969116210938,
+            "x1": 415.3708190917969,
+            "y1": 660.8594970703125
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.7M",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The total number of weights was increased to approximately 3.7M.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 30,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 294.75360107421875,
+            "y0": 324.93792724609375,
+            "x1": 477.48760986328125,
+            "y1": 334.9005126953125
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 336.8929138183594,
+            "x1": 236.21340942382812,
+            "y1": 346.8554992675781
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.075",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The network was retrained with adaptive weight noise, initial standard deviation 0.075, and the output and LSTM gradients were again clipped in the range and respectively.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 30,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 232.0889129638672,
+            "y0": 360.8028869628906,
+            "x1": 477.5075378417969,
+            "y1": 370.7654724121094
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 372.7588806152344,
+            "x1": 477.5574035644531,
+            "y1": 382.7214660644531
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 384.7138671875,
+            "x1": 220.9905548095703,
+            "y1": 394.67645263671875
+          }
+        ]
+      }
+    },
+    {
+      "value": "31.3",
+      "kind": "result",
+      "section": "method",
+      "sentence": "hand_synth shows that adaptive weight noise gave a considerable improvement in log-loss (around 31.3 nats) but no significant change in sum-squared error.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 30,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 184.85630798339844,
+            "y0": 396.6688537597656,
+            "x1": 477.48773193359375,
+            "y1": 406.6314392089844
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 408.62384033203125,
+            "x1": 477.5274353027344,
+            "y1": 418.58642578125
+          }
+        ]
+      }
+    },
+    {
+      "value": "30 parameter",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "A mixture of 10 Gaussian functions was used for the window parameters, requiring a size 30 parameter vector.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 30,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 168.44781494140625,
+            "y0": 312.9829406738281,
+            "x1": 477.49755859375,
+            "y1": 322.9455261230469
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 324.93792724609375,
+            "x1": 290.5294494628906,
+            "y1": 334.9005126953125
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "",
+      "label": "",
+      "numericCells": 40,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Input",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Regularisation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Dynamic",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BPC",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Error (%)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Epochs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "167",
+            "value": "167",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.5",
+            "value": "28.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.29",
+            "value": "1.29",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "148",
+            "value": "148",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.0",
+            "value": "28.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "weight noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "140",
+            "value": "140",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.4",
+            "value": "27.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25",
+            "value": "25",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "weight noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.24",
+            "value": "1.24",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "124",
+            "value": "124",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.9",
+            "value": "26.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25",
+            "value": "25",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "adapt. wt. noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.26",
+            "value": "1.26",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "133",
+            "value": "133",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.4",
+            "value": "27.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26",
+            "value": "26",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "char",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "adapt. wt. noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.24",
+            "value": "1.24",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "122",
+            "value": "122",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.9",
+            "value": "26.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26",
+            "value": "26",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "138",
+            "value": "138",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.8",
+            "value": "77.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.25",
+            "value": "1.25",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "126",
+            "value": "126",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.9",
+            "value": "76.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "weight noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "no",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.25",
+            "value": "1.25",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "126",
+            "value": "126",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.9",
+            "value": "76.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14",
+            "value": "14",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "weight noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "yes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.23",
+            "value": "1.23",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "117",
+            "value": "117",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.2",
+            "value": "76.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14",
+            "value": "14",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "",
+      "label": "",
+      "numericCells": 3,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Train",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Validation (static)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Validation (dynamic)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1.42",
+            "value": "1.42",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.67",
+            "value": "1.67",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.33",
+            "value": "1.33",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "",
+      "label": "",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Regularisation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Log-Loss",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SSE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1 layer",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-1025.7",
+            "value": "-1025.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.40",
+            "value": "0.40",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "3 layer",
+            "value": "3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-1041.0",
+            "value": "-1041.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.41",
+            "value": "0.41",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "3 layer",
+            "value": "3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "adaptive weight noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-1057.7",
+            "value": "-1057.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.41",
+            "value": "0.41",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "",
+      "label": "",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Regularisation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Log-Loss",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SSE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-1096.9",
+            "value": "-1096.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.23",
+            "value": "0.23",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "adaptive weight noise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-1128.2",
+            "value": "-1128.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.23",
+            "value": "0.23",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\todo": "\\textcolor{red}{\\textbf{TODO:} #1}",
+    "\\re": "\\textcolor{red}{\\textbf{RE:} #1}",
+    "\\maybe": "\\textcolor{gray}{\\textbf{MAYBE:}{#1}}",
+    "\\more": "\\textcolor{red}{\\textbf{MORE HERE!}}",
+    "\\marginote": "\\addtocounter{mnote}{1}\\marginpar{\\themnote. \\scriptsize #1}",
+    "\\ie": "i.e.\\ ",
+    "\\eg": "e.g.\\ ",
+    "\\cf": "c.f.\\ ",
+    "\\yes": "\\checkmark",
+    "\\no": "\\ding{55}",
+    "\\flabel": "\\label{fig:#1}",
+    "\\seclabel": "\\label{sec:#1}",
+    "\\tlabel": "\\label{tab:#1}",
+    "\\alabel": "\\label{alg:#1}",
+    "\\fref": "Fig.~\\ref{fig:#1}",
+    "\\sref": "Section~\\ref{sec:#1}",
+    "\\tref": "Table~\\ref{tab:#1}",
+    "\\eqnref": "Eq.~(\\ref{eq:#1})",
+    "\\hfor": "\\overrightarrow{h}",
+    "\\hback": "\\overleftarrow{h}",
+    "\\igate": "i",
+    "\\fgate": "f",
+    "\\ogate": "o",
+    "\\state": "c",
+    "\\hiddenfn": "\\mathcal{H}",
+    "\\outputfn": "\\mathcal{Y}",
+    "\\kronecker": "\\delta_{#1 #2}",
+    "\\len": "|#1|",
+    "\\outelt": "k",
+    "\\wtmat": "W_{#1 #2}",
+    "\\ihwts": "\\wtmat{x}{h}",
+    "\\hhwts": "\\wtmat{h}{h}",
+    "\\howts": "\\wtmat{h}{y}",
+    "\\bias": "b_{#1}",
+    "\\hbias": "\\bias{h}",
+    "\\obias": "\\bias{y}",
+    "\\seq": "\\mathbf{#1}",
+    "\\alignment": "\\seq{a}",
+    "\\bestout": "\\best{\\outseq}",
+    "\\blank": "\\varnothing",
+    "\\blankseq": "\\seq{\\blank}",
+    "\\slice": "#1_{[#2:#3]}",
+    "\\exts": "ext(#1)",
+    "\\invble": "x",
+    "\\outvble": "y",
+    "\\targvble": "z",
+    "\\inseq": "\\seq{\\invble}",
+    "\\ann": "\\seq{c}",
+    "\\outseq": "\\seq{\\outvble}",
+    "\\predinseq": "\\hat{\\outseq}",
+    "\\hidseq": "\\seq{h}",
+    "\\targseq": "\\seq{\\targvble}",
+    "\\loss": "\\mathcal{L}(\\inseq)",
+    "\\aloss": "\\mathcal{L}(\\inseq)",
+    "\\losst": "\\mathcal{L}(x_t)",
+    "\\varspace": "\\mathcal{\\MakeUppercase{#1}}",
+    "\\inspace": "\\varspace{\\invble}",
+    "\\outspace": "\\varspace{\\outvble}",
+    "\\blankoutspace": "\\bar{\\outspace}",
+    "\\seqsover": "#1^*",
+    "\\outseqspace": "\\seqsover{\\outspace}",
+    "\\blankoutseqspace": "\\seqsover{\\blankoutspace}",
+    "\\range": "#1 \\leq #2 \\leq #3",
+    "\\trange": "\\range{1}{t}{T}",
+    "\\urange": "\\range{0}{u}{U}",
+    "\\insum": "\\sum_{t=1}^T",
+    "\\outsum": "\\sum_{u=0}^U",
+    "\\infn": "f",
+    "\\outfn": "g",
+    "\\densityfn": "h",
+    "\\partition": "\\mathcal{Z}",
+    "\\outprobvar": "\\Pr(#1| #2, #3)",
+    "\\outprobv": "\\outprobvar{#1}{t}{u}",
+    "\\outprob": "\\outprobv{\\outelt}",
+    "\\outseqprob": "\\Pr(\\outseq | \\inseq)",
+    "\\targseqprob": "\\Pr(\\targseq | \\inseq)",
+    "\\outslice": "\\slice{\\outseq}{#1}{#2}",
+    "\\inslice": "\\slice{\\inseq}{#1}{#2}",
+    "\\pseq": "\\seq{b}",
+    "\\tseq": "\\seq{f}",
+    "\\tslice": "\\slice{\\tseq}{#1}{#2}",
+    "\\outpref": "\\hat{\\outseq}",
+    "\\outprefs": "pref(\\outseq)",
+    "\\outlen": "\\len{\\outseq}",
+    "\\outpreflen": "\\len{\\outpref}",
+    "\\outfunc": "\\outfn(\\outslice{#1}{#2})",
+    "\\infunc": "\\infn(#1, \\inseq)",
+    "\\outfuncu": "\\outfunc{1}{u}",
+    "\\infunct": "\\infunc{t}",
+    "\\vect": "\\mathbf{#1}",
+    "\\mat": "\\mathbf{\\MakeUpperCase{#1}}",
+    "\\matelt": "#1_{#2 #3}",
+    "\\vectseqelt": "\\vect{#1}(#2)",
+    "\\wt": "w",
+    "\\wts": "\\wt",
+    "\\wtsa": "\\theta",
+    "\\wtsb": "\\psi",
+    "\\densityfunc": "\\densityfn(#1, t, u)",
+    "\\density": "\\densityfunc{\\outelt}",
+    "\\wtmatrix": "\\mat{W}",
+    "\\topology": "\\mathcal{N}",
+    "\\net": "\\topology_{\\wts}",
+    "\\naturals": "\\mathbb{N}",
+    "\\reals": "\\mathbb{R}",
+    "\\realn": "\\reals^{#1}",
+    "\\fnvals": "#1 \\mapsto #2",
+    "\\fn": "#1 : \\fnvals{#2}{#3}",
+    "\\realfnvals": "\\realn{#1} \\mapsto \\realn{#2}",
+    "\\realfn": "\\fn{#1}{\\realn{#2}}{\\realn{#3}}",
+    "\\realseq": "(\\realn{#1})^{*}",
+    "\\realseqfn": "\\fn{#1}{\\realseq{#2}}{\\realseq{#3}}",
+    "\\compose": "#1\\circ #2",
+    "\\subelt": "#1_{#2}",
+    "\\expo": "\\exp\\left(#1\\right)",
+    "\\kron": "\\delta_{#1,#2}",
+    "\\gauss": "\\mathcal{N}",
+    "\\condgauss": "\\mathcal{N}(#1|#2,#3)",
+    "\\prodrange": "\\prod_{#1=#2}^{#3}",
+    "\\prodto": "\\prodrange{#1}{1}{#2}",
+    "\\sumrange": "\\sum_{#1=#2}^{#3}",
+    "\\sumto": "\\sumrange{#1}{1}{#2}",
+    "\\segs": "s",
+    "\\argmax": "\\text{argmax}",
+    "\\argmin": "\\text{argmin}",
+    "\\mc": "\\mathcal{#1}",
+    "\\bb": "\\mathbb{#1}",
+    "\\pair": "(#1,#2)",
+    "\\deq": "\\mathrel{\\stackrel{\\text{\\tiny{def}}}{=}}",
+    "\\opequals": "\\ #1\\hspace{-3pt}=\\hspace{1pt}",
+    "\\plusequals": "\\opequals{+}",
+    "\\minusequals": "\\opequals{-}",
+    "\\timesequals": "\\opequals{*}",
+    "\\front": "beg(#1)",
+    "\\back": "end(#1)",
+    "\\stddev": "\\sigma",
+    "\\variance": "\\stddev^2",
+    "\\ifelse": "\\begin{cases}#1 \\text{ if } #2\\\\#3 \\text{ otherwise}\\end{cases}",
+    "\\jacobian": "\\mat{J}",
+    "\\wtderivs": "\\mat{D}",
+    "\\hessian": "\\mat{H}",
+    "\\instep": "\\elt{\\vect{\\inputvble}}{#1}",
+    "\\outputvble": "y",
+    "\\out": "\\seq{\\outputvble}",
+    "\\outstep": "\\elt{\\vect{\\outputvble}}{#1}",
+    "\\inplen": "T",
+    "\\inpprod": "\\prodto{t}{\\inplen}",
+    "\\targpt": "\\outelt",
+    "\\targ": "\\seq{\\targpt}",
+    "\\netin": "\\seq{a}",
+    "\\supex": "\\pair{\\inp}{\\targ}",
+    "\\obj": "\\mathcal{O}",
+    "\\objex": "\\obj\\supex",
+    "\\wtjk": "\\elt{\\vect{w}}{j,k}",
+    "\\opt": "#1^*",
+    "\\optwts": "\\opt{\\vect{w}}",
+    "\\suptargpw": "p(\\targ|\\inp,\\wts)",
+    "\\suptargp": "p(\\targ|\\inp)",
+    "\\targi": "\\elt{\\targ}{t}",
+    "\\targs": "\\elt{\\targ}{s}",
+    "\\targk": "\\elt{\\targ}{k}",
+    "\\targik": "\\elt{\\targ}{t,k}",
+    "\\ppath": "\\pi",
+    "\\pathi": "\\elt{\\ppath}{t}",
+    "\\targipathi": "\\elt{\\targ}{t,\\pathi}",
+    "\\outipathi": "\\elt{\\out}{t,\\pathi}",
+    "\\suppathp": "p(\\ppath|\\inp)",
+    "\\targsk": "\\elt{\\targ}{\\segs,k}",
+    "\\suptargip": "p(\\targi|\\inp)",
+    "\\suptargikp": "p(\\targik|\\inp)",
+    "\\suptargsegp": "p(\\elt{\\targ}{s}|\\inp)",
+    "\\condclassprobik": "\\condclassprob{t}{k})",
+    "\\condclassprob": "p(C(#1,#2)|\\inp)",
+    "\\softnorm": "\\sum_{#2'=1}^#3{\\expo{\\elt{\\netin}{#1,#2'}}}",
+    "\\softmax": "\\frac{\\expo{\\elt{\\netin}{#1,#2}}}{\\softnorm{#1}{#3}{#4}}",
+    "\\softmaxik": "\\softmax{t}{k}{k}{K}",
+    "\\sigmoid": "\\frac{1}{1+\\expo{-#1}}",
+    "\\bestk": "k^*",
+    "\\outi": "\\elt{\\out}{t}",
+    "\\optouti": "\\elt{\\opt{\\out}}{t}",
+    "\\optoutik": "\\elt{\\opt{\\out}}{t,k}",
+    "\\outik": "\\elt{\\out}{t,k}",
+    "\\outikdash": "\\elt{\\out}{t,k'}",
+    "\\outsk": "\\elt{\\out}{\\segs,k}",
+    "\\netini": "\\elt{\\netin}{t}",
+    "\\netinik": "\\elt{\\netin}{t,k}",
+    "\\netinikdash": "\\elt{\\netin}{t,k'}",
+    "\\objpd": "\\pd{\\objex}{\\netinik}",
+    "\\mapw": "\\vect{w}_{MAP}",
+    "\\mlw": "\\vect{w}_{ML}",
+    "\\subseq": "\\seq{#1}[#2:#3]",
+    "\\netins": "\\elt{\\netin}{\\segs}",
+    "\\netinsk": "\\elt{\\netin}{\\segs,k}",
+    "\\pdobjout": "\\pd{\\objex}{\\outik}",
+    "\\pdobjnetin": "\\pd{\\objex}{\\netinik}",
+    "\\pdoutnetin": "\\pd{\\outik}{\\netinik}",
+    "\\pdoutdashnetin": "\\pd{\\outikdash}{\\netinik}",
+    "\\outitargi": "\\elt{\\out}{t,\\targi}",
+    "\\outnitargi": "\\elt{\\out}{n,t,\\targi}",
+    "\\outprod": "\\prod_{k=1}^K",
+    "\\outsumdash": "\\sumto{k'}{K}",
+    "\\inpsum": "\\sumto{t}{\\inplen}",
+    "\\segsum": "\\sumto{s}{S}",
+    "\\segprod": "\\prodto{s}{S}",
+    "\\targni": "\\elt{\\targ_n}{t}",
+    "\\outnik": "\\elt{\\out_n}{t,k}",
+    "\\netinnik": "\\elt{\\netin_n}{t,k}",
+    "\\netinnikdash": "\\elt{\\netin_n}{t,k'}",
+    "\\outnitargni": "\\elt{\\out_n}{t,\\targni}",
+    "\\trset": "S",
+    "\\dist": "\\mc{D}",
+    "\\ispace": "\\mc{X}",
+    "\\tspace": "\\mc{Z}",
+    "\\supexnew": "\\pair{\\inpnew}{\\targnew}",
+    "\\supspace": "\\ispace\\times\\tspace",
+    "\\mixcoeff": "p(m|\\inp, t)",
+    "\\mixmean": "\\mu_m(\\inp, t)",
+    "\\mixvar": "\\variance_m(\\inp, t)",
+    "\\mixstddev": "\\stddev_m(\\inp, t)",
+    "\\mixmeank": "\\mu_{mk}(\\inp, t)",
+    "\\mixvark": "\\variance_{mk}(\\inp, t)",
+    "\\mixstddevk": "\\stddev_{mk}(\\inp, t)",
+    "\\mixoutcoeff": "\\elt{\\out}{t,\\pi_{m}}",
+    "\\mixincoeff": "\\elt{\\netin}{t,\\pi_{m}}",
+    "\\mixoutvar": "\\elt{\\out^2}{t,\\stddev_{mk}}",
+    "\\mixoutstddev": "\\elt{\\out}{t,\\stddev_{mk}}",
+    "\\mixinstddev": "\\elt{\\netin}{t,\\stddev_{mk}}",
+    "\\mixoutmean": "\\elt{\\out}{t,\\mu_{mk}}",
+    "\\mixinmean": "\\elt{\\netin}{t,\\mu_{mk}}",
+    "\\mixoutcoeffdash": "\\elt{\\out}{t,\\pi_{{mk}'}}",
+    "\\mixoutvardash": "\\elt{\\out}{t,\\stddev_{{mk}'}}",
+    "\\mixoutmeandash": "\\elt{\\out}{t,\\mu_{{mk}'}}",
+    "\\mixcondgauss": "\\condgauss{\\targi}{\\mixoutmean}{\\mixoutvar}",
+    "\\mixsum": "\\sum_{m=1}^M",
+    "\\mixrespo": "p(m|\\inp,t,\\targi)",
+    "\\sed": "||#1-#2||^2",
+    "\\alphabet": "A",
+    "\\blankalph": "A'",
+    "\\alphstrings": "#1^{#2}",
+    "\\paths": "\\alphstrings{\\blankalph}{\\inplen}",
+    "\\labellings": "\\alphstrings{\\alphabet}{\\leq\\inplen}",
+    "\\labelling": "\\mathbf{g}",
+    "\\blanklab": "\\labelling'",
+    "\\suplabp": "p(\\labelling|\\inp)",
+    "\\blanklabs": "\\alphstrings{\\blankalph}{\\leq\\inplen}",
+    "\\aligncollapse": "\\mathcal{B}",
+    "\\forward": "\\elt{\\alpha}{#1,#2}",
+    "\\backward": "\\elt{\\beta}{#1,#2}",
+    "\\prob": "\\elt{\\gamma}{#1,#2}",
+    "\\forwardts": "\\forward{t}{s}",
+    "\\backwardts": "\\backward{t}{s}",
+    "\\numclasses": "K",
+    "\\blanklablen": "S'",
+    "\\lablen": "S",
+    "\\labelt": "\\subelt{\\labelling}{#1}",
+    "\\blanklabelt": "\\subelt{\\blanklab}{#1}",
+    "\\best": "#1^*",
+    "\\bestlabelling": "\\best{\\labelling}",
+    "\\bestpath": "\\best{\\ppath}",
+    "\\targn": "\\subelt{\\targ}{n}",
+    "\\outn": "\\subelt{\\out}{n}",
+    "\\suptargn": "p(\\subelt{\\targ}{n}|\\inp)",
+    "\\netinn": "\\subelt{\\netin}{n}",
+    "\\objexn": "\\subelt{\\obj}{n}\\supex",
+    "\\inv": "\\vect{\\inputvble}",
+    "\\outv": "\\vect{\\outputvble}",
+    "\\kernelseq": "\\seq{v}",
+    "\\kernelelt": "\\vectseqelt{v}{#1}",
+    "\\kerneltransseq": "\\seq{\\hat{v}}",
+    "\\kerneltranselt": "\\vectseqelt{\\hat{v}}{#1}",
+    "\\predseq": "\\seq{h^2}",
+    "\\transseq": "\\seq{h^1}",
+    "\\pred": "\\Pr(x_{t+1}|y_t)",
+    "\\figdir": "",
+    "\\capt": "\\caption[#1]{\\textbf{#1}#2}",
+    "\\qcapt": "\\capt{#1}{}",
+    "\\figheadingnospace": "\\center{\\textbf{#1}}",
+    "\\figheading": "\\figheadingnospace{#1}\\vspace{3mm}",
+    "\\qfig": "\\fig{#1}{#1}{#2}{#3}{}"
+  },
+  "references": [
+    {
+      "key": "bengio94learning",
+      "raw": "Y. Bengio, P. Simard, and P. Frasconi. Learning long-term dependencies with gradient descent is difficult. IEEE Transactions on Neural Networks, 5(2):157--166, March 1994",
+      "authors": "Y. Bengio, P. Simard, and P. Frasconi",
+      "title": "Learning long-term dependencies with gradient descent is difficult",
+      "venue": "IEEE Transactions on Neural Networks, 5(2):157--166, March 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bishop94mixture",
+      "raw": "C. Bishop. Mixture density networks. Technical report, 1994",
+      "authors": "C. Bishop",
+      "title": "Mixture density networks",
+      "venue": "Technical report, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bishop95book",
+      "raw": "C. Bishop. Neural Networks for Pattern Recognition. Oxford University Press, Inc., 1995",
+      "authors": "C. Bishop",
+      "title": "Neural Networks for Pattern Recognition",
+      "venue": "Oxford University Press, Inc., 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "boulanger12music",
+      "raw": "N. Boulanger-Lewandowski, Y. Bengio, and P. Vincent. Modeling temporal dependencies in high-dimensional sequences: Application to polyphonic music generation and transcription. In Proceedings of the Twenty-nine International Conference on Machine Learning (ICML'12), 2012",
+      "authors": "N. Boulanger-Lewandowski, Y. Bengio, and P. Vincent",
+      "title": "Modeling temporal dependencies in high-dimensional sequences: Application to polyphonic music generation and transcription",
+      "venue": "In Proceedings of the Twenty-nine International Conference on Machine Learning (ICML'12), 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cleary84ppm",
+      "raw": "J. G. Cleary, Ian, and I. H. Witten. Data compression using adaptive coding and partial string matching. IEEE Transactions on Communications, 32:396--402, 1984",
+      "authors": "J. G. Cleary, Ian, and I. H. Witten",
+      "title": "Data compression using adaptive coding and partial string matching",
+      "venue": "IEEE Transactions on Communications, 32:396--402, 1984",
+      "year": 1984,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "eck02music",
+      "raw": "D. Eck and J. Schmidhuber. A first look at music composition using lstm recurrent neural networks. Technical report, IDSIA USI-SUPSI Instituto Dalle Molle",
+      "authors": "D. Eck and J. Schmidhuber",
+      "title": "A first look at music composition using lstm recurrent neural networks",
+      "venue": "Technical report, IDSIA USI-SUPSI Instituto Dalle Molle",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gers02peepholes",
+      "raw": "F. Gers, N. Schraudolph, and J. Schmidhuber. Learning precise timing with LSTM recurrent networks. Journal of Machine Learning Research, 3:115--143, 2002",
+      "authors": "F. Gers, N. Schraudolph, and J. Schmidhuber",
+      "title": "Learning precise timing with LSTM recurrent networks",
+      "venue": "Journal of Machine Learning Research, 3:115--143, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves11nips",
+      "raw": "A. Graves. Practical variational inference for neural networks. In Advances in Neural Information Processing Systems, volume 24, pages 2348--2356. 2011",
+      "authors": "A. Graves",
+      "title": "Practical variational inference for neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, volume 24, pages 2348--2356. 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves12transducer",
+      "raw": "A. Graves. Sequence transduction with recurrent neural networks. In ICML Representation Learning Worksop, 2012",
+      "authors": "A. Graves",
+      "title": "Sequence transduction with recurrent neural networks",
+      "venue": "In ICML Representation Learning Worksop, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves13icassp",
+      "raw": "A. Graves, A. Mohamed, and G. Hinton. Speech recognition with deep recurrent neural networks. In Proc. ICASSP, 2013",
+      "authors": "A. Graves, A. Mohamed, and G. Hinton",
+      "title": "Speech recognition with deep recurrent neural networks",
+      "venue": "In Proc. ICASSP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves05nn",
+      "raw": "A. Graves and J. Schmidhuber. Framewise phoneme classification with bidirectional LSTM and other neural network architectures. Neural Networks, 18:602--610, 2005",
+      "authors": "A. Graves and J. Schmidhuber",
+      "title": "Framewise phoneme classification with bidirectional LSTM and other neural network architectures",
+      "venue": "Neural Networks, 18:602--610, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves09nips",
+      "raw": "A. Graves and J. Schmidhuber. Offline handwriting recognition with multidimensional recurrent neural networks. In Advances in Neural Information Processing Systems, volume 21, 2008",
+      "authors": "A. Graves and J. Schmidhuber",
+      "title": "Offline handwriting recognition with multidimensional recurrent neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, volume 21, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "grunwald07mdl",
+      "raw": "P. D. Gr\\\"unwald. The Minimum Description Length Principle (Adaptive Computation and Machine Learning). The MIT Press, 2007",
+      "authors": "P. D. Gr\\\"unwald",
+      "title": "The Minimum Description Length Principle (Adaptive Computation and Machine Learning)",
+      "venue": "The MIT Press, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hinton10rbm",
+      "raw": "G. Hinton. A Practical Guide to Training Restricted Boltzmann Machines. Technical report, 2010",
+      "authors": "G. Hinton",
+      "title": "A Practical Guide to Training Restricted Boltzmann Machines",
+      "venue": "Technical report, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter01book",
+      "raw": "S. Hochreiter, Y. Bengio, P. Frasconi, and J. Schmidhuber. Gradient Flow in Recurrent Nets: the Difficulty of Learning Long-term Dependencies. In S. C. Kremer and J. F. Kolen, editors, A Field Guide to Dynamical Recurrent Neural Networks. 2001",
+      "authors": "S. Hochreiter, Y. Bengio, P. Frasconi, and J. Schmidhuber",
+      "title": "Gradient Flow in Recurrent Nets: the Difficulty of Learning Long-term Dependencies",
+      "venue": "In S. C. Kremer and J. F. Kolen, editors, A Field Guide to Dynamical Recurrent Neural Networks. 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter97lstm",
+      "raw": "S. Hochreiter and J. Schmidhuber. Long Short-Term Memory. Neural Computation, 9(8):1735--1780, 1997",
+      "authors": "S. Hochreiter and J. Schmidhuber",
+      "title": "Long Short-Term Memory",
+      "venue": "Neural Computation, 9(8):1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hutter06prize",
+      "raw": "M. Hutter. The Human Knowledge Compression Contest, 2012",
+      "authors": "M. Hutter",
+      "title": "The Human Knowledge Compression Contest, 2012",
+      "venue": "",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chuen96noise",
+      "raw": "K.-C. Jim, C. Giles, and B. Horne. An analysis of noise in recurrent neural networks: convergence and generalization. Neural Networks, IEEE Transactions on, 7(6):1424 --1438, 1996",
+      "authors": "K.-C. Jim, C. Giles, and B. Horne",
+      "title": "An analysis of noise in recurrent neural networks: convergence and generalization",
+      "venue": "Neural Networks, IEEE Transactions on, 7(6):1424 --1438, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lob",
+      "raw": "S. Johansson, R. Atwell, R. Garside, and G. Leech. The tagged LOB corpus user's manual; Norwegian Computing Centre for the Humanities, 1986",
+      "authors": "S. Johansson, R. Atwell, R. Garside, and G. Leech",
+      "title": "The tagged LOB corpus user's manual; Norwegian Computing Centre for the Humanities, 1986",
+      "venue": "",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "knoll11paq",
+      "raw": "B. Knoll and N. de Freitas. A machine learning perspective on predictive coding with paq. CoRR, abs/1108.3298, 2011",
+      "authors": "B. Knoll and N. de Freitas",
+      "title": "A machine learning perspective on predictive coding with paq",
+      "venue": "CoRR, abs/1108.3298, 2011",
+      "year": 2011,
+      "arxivId": "1108.3298",
+      "doi": null
+    },
+    {
+      "key": "liwicki05iam",
+      "raw": "M. Liwicki and H. Bunke. IAM-OnDB - an on-line English sentence database acquired from handwritten text on a whiteboard. In Proc. 8th Int. Conf. on Document Analysis and Recognition, volume 2, pages 956--961, 2005",
+      "authors": "M. Liwicki and H. Bunke",
+      "title": "IAM-OnDB - an on-line English sentence database acquired from handwritten text on a whiteboard",
+      "venue": "In Proc. 8th Int. Conf. on Document Analysis and Recognition, volume 2, pages 956--961, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "penn",
+      "raw": "M. P. Marcus, B. Santorini, and M. A. Marcinkiewicz. Building a large annotated corpus of english: The penn treebank. COMPUTATIONAL LINGUISTICS, 19(2):313--330, 1993",
+      "authors": "M. P. Marcus, B. Santorini, and M. A. Marcinkiewicz",
+      "title": "Building a large annotated corpus of english: The penn treebank",
+      "venue": "COMPUTATIONAL LINGUISTICS, 19(2):313--330, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov12thesis",
+      "raw": "T. Mikolov. Statistical Language Models based on Neural Networks. PhD thesis, Brno University of Technology, 2012",
+      "authors": "T. Mikolov",
+      "title": "Statistical Language Models based on Neural Networks",
+      "venue": "PhD thesis, Brno University of Technology, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov12subword",
+      "raw": "T. Mikolov, I. Sutskever, A. Deoras, H. Le, S. Kombrink, and J. Cernocky. Subword language modeling with neural networks. Technical report, Unpublished Manuscript, 2012",
+      "authors": "T. Mikolov, I. Sutskever, A. Deoras, H. Le, S. Kombrink, and J. Cernocky",
+      "title": "Subword language modeling with neural networks",
+      "venue": "Technical report, Unpublished Manuscript, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mnih08tree",
+      "raw": "A. Mnih and G. Hinton. A Scalable Hierarchical Distributed Language Model. In Advances in Neural Information Processing Systems, volume 21, 2008",
+      "authors": "A. Mnih and G. Hinton",
+      "title": "A Scalable Hierarchical Distributed Language Model",
+      "venue": "In Advances in Neural Information Processing Systems, volume 21, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mnih12noise",
+      "raw": "A. Mnih and Y. W. Teh. A fast and simple algorithm for training neural probabilistic language models. In Proceedings of the 29th International Conference on Machine Learning, pages 1751--1758, 2012",
+      "authors": "A. Mnih and Y. W. Teh",
+      "title": "A fast and simple algorithm for training neural probabilistic language models",
+      "venue": "In Proceedings of the 29th International Conference on Machine Learning, pages 1751--1758, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sainath13rank",
+      "raw": "T. N. Sainath, A. Mohamed, B. Kingsbury, and B. Ramabhadran. Low-rank matrix factorization for deep neural network training with high-dimensional output targets. In Proc. ICASSP, 2013",
+      "authors": "T. N. Sainath, A. Mohamed, B. Kingsbury, and B. Ramabhadran",
+      "title": "Low-rank matrix factorization for deep neural network training with high-dimensional output targets",
+      "venue": "In Proc. ICASSP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schuster99mixture",
+      "raw": "M. Schuster. Better generative models for sequential data problems: Bidirectional recurrent mixture density networks. pages 589--595. The MIT Press, 1999",
+      "authors": "M. Schuster",
+      "title": "Better generative models for sequential data problems: Bidirectional recurrent mixture density networks",
+      "venue": "pages 589--595. The MIT Press, 1999",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever08rtbm",
+      "raw": "I. Sutskever, G. E. Hinton, and G. W. Taylor. The recurrent temporal restricted boltzmann machine. pages 1601--1608, 2008",
+      "authors": "I. Sutskever, G. E. Hinton, and G. W. Taylor",
+      "title": "The recurrent temporal restricted boltzmann machine",
+      "venue": "pages 1601--1608, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever11rnn",
+      "raw": "I. Sutskever, J. Martens, and G. Hinton. Generating text with recurrent neural networks. In ICML, 2011",
+      "authors": "I. Sutskever, J. Martens, and G. Hinton",
+      "title": "Generating text with recurrent neural networks",
+      "venue": "In ICML, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "taylor09gait",
+      "raw": "G. W. Taylor and G. E. Hinton. Factored conditional restricted boltzmann machines for modeling motion style. In Proc. 26th Annual International Conference on Machine Learning, pages 1025--1032, 2009",
+      "authors": "G. W. Taylor and G. E. Hinton",
+      "title": "Factored conditional restricted boltzmann machines for modeling motion style",
+      "venue": "In Proc. 26th Annual International Conference on Machine Learning, pages 1025--1032, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tieleman12rms",
+      "raw": "T. Tieleman and G. Hinton. Lecture 6.5 - rmsprop: Divide the gradient by a running average of its recent magnitude, 2012",
+      "authors": "T. Tieleman and G. Hinton",
+      "title": "Lecture 6.5 - rmsprop: Divide the gradient by a running average of its recent magnitude, 2012",
+      "venue": "",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams95bptt",
+      "raw": "R. Williams and D. Zipser. Gradient-based learning algorithms for recurrent networks and their computational complexity. In Back-propagation: Theory, Architectures and Applications, pages 433--486. 1995",
+      "authors": "R. Williams and D. Zipser",
+      "title": "Gradient-based learning algorithms for recurrent networks and their computational complexity",
+      "venue": "In Back-propagation: Theory, Architectures and Applications, pages 433--486. 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "h^1_t &= \\hiddenfn\\left(W_{i h^1} x_t + W_{h^{1}h^{1}} h^1_{t-1} + \\hbias^1 \\right)\\\\\nh^n_t &= \\hiddenfn\\left(W_{i h^n} x_t + W_{h^{n-1}h^{n}} h^{n-1}_t + W_{h^{n}h^{n}} h^n_{t-1} + \\hbias^n \\right)",
+      "environment": "align",
+      "labels": [
+        "eq:pred_hidden"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\hat{y}_t &= \\obias + \\sum_{n=1}^N{W_{h^n y} h^n_t}\\\\\ny_t &= \\outputfn(\\hat{y}_t)",
+      "environment": "align",
+      "labels": [
+        "eq:pred_output"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\Pr(\\inseq) = \\prod_{t=1}^T{\\Pr(x_{t+1}|y_t)}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\loss = -\\sum_{t=1}^T{\\log \\Pr(x_{t+1}|y_t)}",
+      "environment": "equation",
+      "labels": [
+        "eq:loss"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\igate_t &= \\sigma\\left(\\wtmat{x}{\\igate} x_t + \\wtmat{h}{\\igate} h_{t-1} + \\wtmat{\\state}{\\igate} \\state_{t-1}  + b_\\igate\\right)\\\\\n\\fgate_t &= \\sigma\\left(\\wtmat{x}{\\fgate} x_t + \\wtmat{h}{\\fgate} h_{t-1} + \\wtmat{\\state}{\\fgate} \\state_{t-1} + b_\\fgate \\right)\\\\\n\\state_t &= \\fgate_t \\state_{t-1} + \\igate_t \\tanh \\left(\\wtmat{x}{\\state} x_t + \\wtmat{h}{\\state} h_{t-1} + b_\\state\\right)\\\\\n\\ogate_t &= \\sigma\\left(\\wtmat{x}{\\ogate} x_t + \\wtmat{h}{\\ogate} h_{t-1} + \\wtmat{\\state}{\\ogate} \\state_{t} + b_\\ogate\\right)\\\\\nh_t &= \\ogate_t \\tanh(\\state_t)",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\Pr(x_{t+1}=k|y_t) = y^k_t = \\frac{\\expo{\\hat{y}^k_t}}{\\sum_{k'=1}^K{\\expo{\\hat{y}^{k'}_{t}}}}",
+      "environment": "equation",
+      "labels": [
+        "eq:softmax"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\loss &= -\\sum_{t=1}^T{\\log y^{x_{t+1}}_t}\\\\\n\\implies \\pd{\\loss}{\\hat{y}^k_t} &= y^k_t - \\delta_{k,x_{t+1}}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "x_t &\\in \\reals \\times \\reals \\times \\{0,1\\}\\\\\ny_t &= \\left(e_t,\\{\\pi_t^j,\\mu_t^j,\\sigma_t^j,\\rho_t^j\\}_{j=1}^M\\right)",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\hat{y}_t = \\left(\\hat{e}_t,\\{\\hat{w}_t^j,\\hat{\\mu}_t^j,\\hat{\\sigma}_t^j,\\hat{\\rho}_t^j\\}_{j=1}^M\\right) = b_y + \\sum_{n=1}^N W_{h^n y}h^n_t",
+      "environment": "equation",
+      "labels": [
+        "eq:handwriting_out"
+      ]
+    },
+    {
+      "ordinal": 9,
+      "latex": "e_t &= \\frac{1}{1+\\expo{\\hat{e}_t}} &&\\implies e_t \\in (0,1)\\\\\n\n\\pi_t^j &= \\frac{\\expo{\\hat{\\pi}_t^j}}{\\sum_{{j'}=1}^M{\\expo{\\hat{\\pi}_t^{j'}}}} &&\\implies \\pi_t^j \\in (0,1),\\ \\ \\sum_j{\\pi_t^j} = 1\\\\\n\n\\mu_t^j &= \\hat{\\mu}_t^j &&\\implies \\mu_t^j \\in \\reals\\\\\n\n\\sigma_t^j &= \\expo{\\hat{\\sigma}_t^j} &&\\implies \\sigma_t^j > 0\\\\\n\n\\rho_t^j &= tanh(\\hat{\\rho}_t^j) &&\\implies \\rho_t^j \\in (-1,1)",
+      "environment": "align",
+      "labels": [
+        "eq:eos",
+        "eq:mix_wt",
+        "eq:mean",
+        "eq:dev",
+        "eq:corr"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\Pr(x_{t+1}|y_t) = \\sum_{j=1}^M{\\pi_t^j\\ \\gauss(x_{t+1}|\\mu_t^j, \\sigma_t^j, \\rho_t^j )}\\begin{cases}e_t  &\\text{if } (x_{t+1})_3 = 1\\\\1-e_t &\\text{otherwise}\\end{cases}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\gauss(x|\\mu, \\sigma, \\rho) &= \\frac{1}{2\\pi\\sigma_1\\sigma_2\\sqrt{1-\\rho^2}} \\exp \\left[\\frac{-Z}{2(1-\\rho^2)}\\right]",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "Z = \\frac{(x_1-\\mu_1)^2}{\\sigma_1^2} + \\frac{(x_2-\\mu_2)^2}{\\sigma_2^2} - \\frac{2 \\rho (x_1-\\mu_1)(x_2-\\mu_2)}{\\sigma_1 \\sigma_2}",
+      "environment": "equation",
+      "labels": [
+        "eq:z"
+      ]
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\aloss = \\sum_{t=1}^{T}{-\\log \\left(\\sum_j{\\pi^j_t \\gauss(x_{t+1}|\\mu_t^j, \\sigma_t^j, \\rho_t^j )}\\right)} - \\begin{cases}\\log e_t  &\\text{if } (x_{t+1})_3 = 1\\\\\\log(1-e_t) &\\text{otherwise}\\end{cases}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 14,
+      "latex": "\\pd{\\aloss}{\\hat{e}_t} = (x_{t+1})_3 - e_t",
+      "environment": "equation",
+      "labels": [
+        "eq:eos_deriv"
+      ]
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\hat{\\gamma}^j_t &= \\pi^j_t \\gauss(x_{t+1}|\\mu_t^j, \\sigma_t^j, \\rho_t^j )\\\\\n\\gamma^j_t &= \\frac{\\hat{\\gamma}^j_t}{\\sum_{j'=1}^M{\\hat{\\gamma}^{j'}_t}}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 16,
+      "latex": "\\pd{\\aloss}{\\hat{\\pi}^j_t} &= \\pi^j_t -\\gamma^j_t\\\\\n\n\\pd{\\aloss}{(\\hat{\\mu}^j_t,\\hat{\\sigma}^j_t,\\hat{\\rho}^j_t)} &= -\\gamma^j_t \\pd{\\log \\gauss(x_{t+1}|\\mu_t^j, \\sigma_t^j, \\rho_t^j )}{(\\hat{\\mu}^j_t,\\hat{\\sigma}^j_t,\\hat{\\rho}^j_t)}",
+      "environment": "align",
+      "labels": [
+        "eq:mix_wt_deriv",
+        "eq:component_derivs"
+      ]
+    },
+    {
+      "ordinal": 17,
+      "latex": "\\pd{\\log \\gauss(x|\\mu, \\sigma, \\rho)}{\\hat{\\mu}_1} &= \\frac{C}{\\sigma_1} \\left(\\frac{x_1-\\mu_1}{\\sigma_1} - \\frac{\\rho(x_2-\\mu_2)}{\\sigma_2} \\right)\\\\ \n\\pd{\\log \\gauss(x|\\mu, \\sigma, \\rho)}{\\hat{\\mu}_2} &= \\frac{C}{\\sigma_2} \\left(\\frac{x_2-\\mu_2}{\\sigma_2} - \\frac{\\rho(x_1-\\mu_1)}{\\sigma_1} \\right)\\\\ \n\\pd{\\log \\gauss(x|\\mu, \\sigma, \\rho)}{\\hat{\\sigma}_1} &= \\frac{C(x_1-\\mu_1)}{\\sigma_1} \\left(\\frac{x_1-\\mu_1}{\\sigma_1} - \\frac{\\rho(x_2-\\mu_2)}{\\sigma_2}\\right) - 1\\\\ \n\\pd{\\log \\gauss(x|\\mu, \\sigma, \\rho)}{\\hat{\\sigma}_2} &= \\frac{C(x_2-\\mu_2)}{\\sigma_2} \\left(\\frac{x_2-\\mu_2}{\\sigma_2} - \\frac{\\rho(x_1-\\mu_1)}{\\sigma_1}\\right) - 1\\\\ \n\\pd{\\log \\gauss(x|\\mu, \\sigma, \\rho)}{\\hat{\\rho}} &= \\frac{(x_1-\\mu_1)(x_2-\\mu_2)}{\\sigma_1 \\sigma_2} + \\rho\\left(1 - C Z\\right)",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 18,
+      "latex": "C = \\frac{1}{1- \\rho^2}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 19,
+      "latex": "n_i &= \\aleph n_i + (1-\\aleph) \\epsilon_i^2\\\\\ng_i &= \\aleph g_i + (1-\\aleph) \\epsilon_i\\\\\n\\Delta_i &= \\beth \\Delta_i - \\gimel \\frac{\\epsilon_i}{\\sqrt{n_i - g_i^2 + \\daleth}}\\\\\nw_i &= w_i + \\Delta_i",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 20,
+      "latex": "\\aleph &= 0.95\\\\\n\\beth &= 0.9\\\\\t\n\\gimel &= 0.0001\\\\\t\n\\daleth &= 0.0001",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 21,
+      "latex": "\\phi(t, u) &= \\sum_{k=1}^K{\\alpha^k_t\\expo{-\\beta_t^k\\left(\\kappa_t^k-u\\right)^2}}\\\\\nw_t &= \\sum_{u=1}^U{\\phi(t, u)c_u}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 22,
+      "latex": "(\\hat{\\alpha}_t, \\hat{\\beta}_t, \\hat{\\kappa}_t) &= W_{h^1 p} h^1_t + b_p\\\\\n{\\alpha}_t &= \\expo{\\hat{\\alpha}_t}\\\\\n{\\beta}_t &= \\expo{\\hat{\\beta}_t}\\\\\n{\\kappa}_t &= \\kappa_{t-1} + \\expo{\\hat{\\kappa}_t}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 23,
+      "latex": "h^1_t &= \\hiddenfn\\left(W_{i h^1} x_t + W_{h^{1}h^{1}} h^1_{t-1} + W_{w h^{1}} w_{t-1} + \\hbias^1 \\right)\\\\\nh^n_t &= \\hiddenfn\\left(W_{i h^n} x_t + W_{h^{n-1}h^{n}} h^{n-1}_t + W_{h^{n}h^{n}} h^n_{t-1} + W_{w h^{n}} w_{t} + \\hbias^n \\right)",
+      "environment": "align",
+      "labels": [
+        "eq:synth_hidden"
+      ]
+    },
+    {
+      "ordinal": 24,
+      "latex": "\\aloss = -\\log \\Pr(\\inseq|\\ann)",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 25,
+      "latex": "\\Pr(\\inseq|\\ann) = \\prod_{t=1}^{T}{\\Pr\\left(x_{t+1}|y_t\\right)}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 26,
+      "latex": "\\epsilon(k, t, u) &\\deq  {\\alpha}^k_t\\expo{-\\beta_t^k\\left(\\kappa_t^k-u\\right)^2} \\sum_{j=1}^{W}{\\pd{\\aloss}{w^j_t} c^j_u}\\\\\n\\pd{\\aloss}{\\hat{\\alpha}^k_t} &= \\sum_{u=1}^U{\\epsilon(k, t, u)}\\\\\n\\pd{\\aloss}{\\hat{\\beta}^k_t} &= -{\\beta}^k_t \\sum_{u=1}^U{\\epsilon(k, t, u) (\\kappa^k_t-u)^2}\\\\\n\\pd{\\aloss}{{\\kappa}^k_t} &= \\pd{\\aloss}{{\\kappa}^k_{t+1}} + 2 \\beta^k_t \\sum_{u=1}^U{\\epsilon(k, t, u) (u - \\kappa^k_t)}\\\\\n\\pd{\\aloss}{\\hat{\\kappa}^k_t} &= \\expo{\\hat{\\kappa}^k_t} \\pd{\\aloss}{{\\kappa}^k_t}",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 27,
+      "latex": "\\sigma^j_t = \\expo{\\hat{\\sigma}^j_t - b}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 28,
+      "latex": "\\pi^j_t = \\frac{\\expo{\\hat{\\pi}^j_t(1+b)}}{\\sum_{j'=1}^M{\\expo{\\hat{\\pi}^{j'}_t(1+b)}}}",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 535,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 5227,
+      "numbers": 0,
+      "citations": 10
+    },
+    {
+      "kind": "method",
+      "title": "Prediction Network",
+      "chars": 3007,
+      "numbers": 0,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Long Short-Term Memory",
+      "chars": 1907,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Text Prediction",
+      "chars": 2033,
+      "numbers": 2,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Penn Treebank Experiments",
+      "chars": 5420,
+      "numbers": 22,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Wikipedia Experiments",
+      "chars": 7836,
+      "numbers": 30,
+      "citations": 6
+    },
+    {
+      "kind": "method",
+      "title": "Handwriting Prediction",
+      "chars": 3384,
+      "numbers": 11,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Mixture Density Outputs",
+      "chars": 5087,
+      "numbers": 4,
+      "citations": 4
+    },
+    {
+      "kind": "method",
+      "title": "Experiments",
+      "chars": 2526,
+      "numbers": 16,
+      "citations": 2
+    },
+    {
+      "kind": "method",
+      "title": "Samples",
+      "chars": 650,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Handwriting Synthesis",
+      "chars": 2394,
+      "numbers": 0,
+      "citations": 1
+    },
+    {
+      "kind": "method",
+      "title": "Synthesis Network",
+      "chars": 4184,
+      "numbers": 5,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Experiments",
+      "chars": 2058,
+      "numbers": 12,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Unbiased Sampling",
+      "chars": 2023,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Biased Sampling",
+      "chars": 2552,
+      "numbers": 2,
+      "citations": 0
+    },
+    {
+      "kind": "method",
+      "title": "Primed Sampling",
+      "chars": 1991,
+      "numbers": 9,
+      "citations": 0
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions and Future Work",
+      "chars": 1312,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 266,
+      "numbers": 0,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 32,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "liwicki05iam",
+      "stance": "inherits",
+      "cue": "taken from",
+      "sentence": "All the data used for this paper were taken from the IAM online handwriting database (IAM-OnDB) [Liwicki et al. 2005].",
+      "section": "Handwriting Prediction",
+      "sectionKind": "method",
+      "ordinal": 29,
+      "title": "IAM-OnDB - an on-line English sentence database acquired from handwritten text on a whiteboard",
+      "authors": "M. Liwicki and H. Bunke",
+      "year": 2005,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 17,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.71200561523438,
+            "y0": 220.53099060058594,
+            "x1": 477.5377197265625,
+            "y1": 230.49359130859375
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 232.4860076904297,
+            "x1": 234.18104553222656,
+            "y1": 242.4486083984375
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "liwicki05iam",
+        "stance": "inherits",
+        "cue": "taken from",
+        "sentence": "All the data used for this paper were taken from the IAM online handwriting database (IAM-OnDB) [Liwicki et al. 2005].",
+        "section": "Handwriting Prediction",
+        "sectionKind": "method",
+        "ordinal": 29,
+        "title": "IAM-OnDB - an on-line English sentence database acquired from handwritten text on a whiteboard",
+        "authors": "M. Liwicki and H. Bunke",
+        "year": 2005,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 17,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 148.71200561523438,
+              "y0": 220.53099060058594,
+              "x1": 477.5377197265625,
+              "y1": 230.49359130859375
+            },
+            {
+              "x0": 133.76800537109375,
+              "y0": 232.4860076904297,
+              "x1": 234.18104553222656,
+              "y1": 242.4486083984375
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Assuming the predictions are probabilistic, novel sequences can be generated from a trained network by iteratively sampling from the network's output distribution, then feeding in the sample as input at the next step.",
+      "anchorText": "Assuming the predictions are probabilistic, novel sequences can be generated from a trained network by iteratively sampling from the network's output distribution, then feeding in the sample as input at the next step.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Assuming the",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 159.97959899902344,
+            "y0": 492.7048034667969,
+            "x1": 477.4976806640625,
+            "y1": 502.6673889160156
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 504.6597900390625,
+            "x1": 477.5374755859375,
+            "y1": 514.6223754882812
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 516.6148071289062,
+            "x1": 433.43316650390625,
+            "y1": 526.577392578125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "However we believe that a better memory is a more profound and effective solution.",
+      "anchorText": "However we believe that a better memory is a more profound and effective solution.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 331.7248229980469,
+            "y0": 354.12701416015625,
+            "x1": 477.4975891113281,
+            "y1": 364.089599609375
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 366.0820007324219,
+            "x1": 352.8853759765625,
+            "y1": 376.0445861816406
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The bias terms (which are added to i, f, c and o) have been omitted for clarity. lstm_variableslstm0.8Long Short-term Memory Cell The original LSTM algorithm used a custom designed approximate gradient calculation that allowed the weights to be updated after every timestep [Hochreiter et al. 1997].",
+      "anchorText": ") have been omitted for clarity. lstm_variableslstm0.8Long Short-term Memory Cell The original LSTM algorithm used a custom designed approximate gradient calculation that allowed the weights to be updated after every timestep",
+      "kind": "simplifying",
+      "support": "cited",
+      "cue": "for clarity",
+      "section": "Long Short-Term Memory",
+      "sectionKind": "method",
+      "cites": [
+        "hochreiter97lstm"
+      ],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "For prediction problems however, where the inputs are the targets, it is legitimate to allow the network to adapt its weights as it is being evaluated (so long as it only sees the test data once).",
+      "anchorText": "For prediction problems however, where the inputs are the targets, it is legitimate to allow the network to adapt its weights as it is being evaluated (so long as it only sees the test data once).",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "so long as",
+      "section": "Penn Treebank Experiments",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 462.9522399902344,
+            "y0": 432.2918701171875,
+            "x1": 477.5175476074219,
+            "y1": 442.25445556640625
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 444.2468566894531,
+            "x1": 477.4784240722656,
+            "y1": 454.2094421386719
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 456.2028503417969,
+            "x1": 477.4975891113281,
+            "y1": 466.1654357910156
+          },
+          {
+            "x0": 133.7680206298828,
+            "y0": 468.1578369140625,
+            "x1": 273.48358154296875,
+            "y1": 478.12042236328125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, the number of components is the number of choices the network has for the next output given the inputs so far.",
+      "anchorText": "Intuitively, the number of components is the number of choices the network has for the next output given the inputs so far.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Mixture Density Outputs",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 18,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 301.3388977050781,
+            "y0": 601.8418579101562,
+            "x1": 477.5474548339844,
+            "y1": 611.804443359375
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 613.7968139648438,
+            "x1": 477.5277099609375,
+            "y1": 623.7593994140625
+          },
+          {
+            "x0": 133.7679901123047,
+            "y0": 625.7518310546875,
+            "x1": 148.4727783203125,
+            "y1": 635.7144165039062
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The main challenge in conditioning the predictions on the text is that the two sequences are of very different lengths (the pen trace being on average twenty five times as long as the text), and the alignment between them is unknown until the data is generated.",
+      "anchorText": "The main challenge in conditioning the predictions on the text is that the two sequences are of very different lengths (the pen trace being on average twenty five times as long as the text), and the alignment between them is unknown until the data is generated.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Handwriting Synthesis",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 23,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.71200561523438,
+            "y0": 505.69073486328125,
+            "x1": 477.5277099609375,
+            "y1": 515.6533203125
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 517.6456909179688,
+            "x1": 477.48773193359375,
+            "y1": 527.6082763671875
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 529.6007080078125,
+            "x1": 477.5076904296875,
+            "y1": 539.5632934570312
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 541.5557250976562,
+            "x1": 227.78506469726562,
+            "y1": 551.518310546875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, the \u03ba_t parameters control the location of the window, the \u03b2_t parameters control the width of the window and the \u03b1_t parameters control the importance of the window within the mixture.",
+      "anchorText": "parameters control the importance of the window within the mixture.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Synthesis Network",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 25,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 234.22315979003906,
+            "y0": 412.13299560546875,
+            "x1": 477.5098876953125,
+            "y1": 422.0955810546875
+          },
+          {
+            "x0": 133.76815795898438,
+            "y0": 424.0879821777344,
+            "x1": 187.91490173339844,
+            "y1": 434.0505676269531
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The size of the soft window vectors is the same as the size of the character vectors c_u (assuming a one-hot encoding, this will be the number of characters in the alphabet).",
+      "anchorText": "(assuming a one-hot encoding, this will be the number of characters in the alphabet).",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "assuming a",
+      "section": "Synthesis Network",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 25,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 225.00216674804688,
+            "y0": 436.04296875,
+            "x1": 477.5142517089844,
+            "y1": 446.00555419921875
+          },
+          {
+            "x0": 133.76815795898438,
+            "y0": 447.99896240234375,
+            "x1": 256.2184753417969,
+            "y1": 457.9615478515625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, this means that network learns how far to slide each window at each step, rather than an absolute location.",
+      "anchorText": "Intuitively, this means that network learns how far to slide each window at each step, rather than an absolute location.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Synthesis Network",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 25,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 159.27224731445312,
+            "y0": 640.2778930664062,
+            "x1": 477.4808654785156,
+            "y1": 650.240478515625
+          },
+          {
+            "x0": 133.76795959472656,
+            "y0": 652.2328491210938,
+            "x1": 341.6375732421875,
+            "y1": 662.1954345703125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Presumably this is because the network learns an implicit character-level language model from the training set that gets confused when rare or unknown transitions occur.",
+      "anchorText": "Presumably this is because the network learns an implicit character-level language model from the training set that gets confused when rare or unknown transitions occur.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Presumably",
+      "section": "Unbiased Sampling",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 31,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 256.16851806640625,
+            "y0": 282.3960876464844,
+            "x1": 477.4877624511719,
+            "y1": 292.3586730957031
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 294.35107421875,
+            "x1": 477.49774169921875,
+            "y1": 304.31365966796875
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 306.3060607910156,
+            "x1": 310.883056640625,
+            "y1": 316.2686462402344
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, we would expect the network to give higher probability to good handwriting because it tends to be smoother and more predictable than bad handwriting.",
+      "anchorText": "Intuitively, we would expect the network to give higher probability to good handwriting because it tends to be smoother and more predictable than bad handwriting.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Biased Sampling",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 31,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 282.8682861328125,
+            "y0": 376.4260559082031,
+            "x1": 477.50762939453125,
+            "y1": 386.3886413574219
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 388.38104248046875,
+            "x1": 477.5375671386719,
+            "y1": 398.3436279296875
+          },
+          {
+            "x0": 133.76800537109375,
+            "y0": 400.3360290527344,
+            "x1": 330.16070556640625,
+            "y1": 410.2986145019531
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 11,
+    "cited": 1,
+    "shown": 0,
+    "bare": 10
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 34,
+    "rate": 0.85
+  },
+  "arxiv": {
+    "primary": "cs.NE",
+    "primaryName": "Neural and Evolutionary Computing",
+    "categories": [
+      "cs.NE",
+      "cs.CL"
+    ],
+    "published": "2013-08-04"
+  }
+}

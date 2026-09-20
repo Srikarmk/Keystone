@@ -1,0 +1,1239 @@
+{
+  "id": "1711.05101",
+  "title": "Decoupled Weight Decay Regularization",
+  "keystone": null,
+  "coverage": {
+    "claims": 1,
+    "supported": 0,
+    "declared": 1,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [
+    {
+      "value": "15%",
+      "section": "introduction",
+      "sentence": "In a comprehensive analysis, we show that Adam generalizes substantially better with decoupled weight decay than with L regularization, achieving 15% relative improvement in test error (see Figures and ); this holds true for various image recognition datasets (CIFAR-10 and ImageNet32x32), training budgets (ranging from 100 to 1800 epochs), and learning rate schedules (fixed, drop-step, and cosine annealing; see Figure ).",
+      "status": "declared_figure",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "fig2_hyp100epochs",
+      "anchor": null,
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1711.05101",
+  "numbers": [
+    {
+      "value": "15%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "In a comprehensive analysis, we show that Adam generalizes substantially better with decoupled weight decay than with L regularization, achieving 15% relative improvement in test error (see Figures and ); this holds true for various image recognition datasets (CIFAR-10 and ImageNet32x32), training budgets (ranging from 100 to 1800 epochs), and learning rate schedules (fixed, drop-step, and cosine annealing; see Figure ).",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "2.86%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our experimental setup follows that of , who proposed, in addition to L regularization, to apply the new Shake-Shake regularization to a 3-branch residual DNN that allowed to achieve new state-of-the-art results of 2.86% on the CIFAR-10 dataset .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "11.6M",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The base networks are a 26 2x64d ResNet (i.e. the network has a depth of 26, 2 residual branches and the first residual block has a width of 64) and a 26 2x96d ResNet with 11.6M and 25.6M parameters, respectively.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 170.04718017578125,
+            "y0": 580.9193725585938,
+            "x1": 504.0033874511719,
+            "y1": 590.8819580078125
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 591.8783569335938,
+            "x1": 504.0032653808594,
+            "y1": 601.8409423828125
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 602.8373413085938,
+            "x1": 252.19876098632812,
+            "y1": 612.7999267578125
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.2",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We also perform experiments on the ImageNet32x32 dataset , a downsampled version of the original ImageNet dataset with 1.2 million 32 32 pixels images.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.001",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The proposed approach renders the two hyperparameters more separable: even if the learning rate is not well tuned yet (e.g., consider the value of 1/1024 in Figure , top right), leaving it fixed and only optimizing the weight decay factor would yield a good value (of 1/4*0.001).",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 343.6951904296875,
+            "y0": 700.3883666992188,
+            "x1": 504.0032958984375,
+            "y1": 710.3509521484375
+          },
+          {
+            "x0": 107.9999771118164,
+            "y0": 711.347412109375,
+            "x1": 504.003173828125,
+            "y1": 721.3099975585938
+          },
+          {
+            "x0": 107.9999771118164,
+            "y0": 722.306396484375,
+            "x1": 209.57861328125,
+            "y1": 732.2689819335938
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.001",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We fixed the initial learning rate to 0.001 which represents both the default learning rate for Adam and the one which showed reasonably good results in our experiments.",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00003051757812,
+            "y0": 645.5933837890625,
+            "x1": 504.0032043457031,
+            "y1": 655.5559692382812
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 656.5523681640625,
+            "x1": 393.9962463378906,
+            "y1": 666.5149536132812
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.001",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "For the default learning rate of 0.001, AdamW achieved 15% relative improvement in test error compared to Adam both on CIFAR-10 (also see SuppFigure ) and ImageNet32x32 (also see SuppFigure ).",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 475.2312927246094,
+            "y0": 426.973388671875,
+            "x1": 504.0032653808594,
+            "y1": 436.9360046386719
+          },
+          {
+            "x0": 108.0,
+            "y0": 437.75592041015625,
+            "x1": 504.0048522949219,
+            "y1": 447.718505859375
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 448.71490478515625,
+            "x1": 292.8062744140625,
+            "y1": 458.677490234375
+          }
+        ]
+      }
+    },
+    {
+      "value": "15%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "For the default learning rate of 0.001, AdamW achieved 15% relative improvement in test error compared to Adam both on CIFAR-10 (also see SuppFigure ) and ImageNet32x32 (also see SuppFigure ).",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 475.2312927246094,
+            "y0": 426.973388671875,
+            "x1": 504.0032653808594,
+            "y1": 436.9360046386719
+          },
+          {
+            "x0": 108.0,
+            "y0": 437.75592041015625,
+            "x1": 504.0048522949219,
+            "y1": 447.718505859375
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 448.71490478515625,
+            "x1": 292.8062744140625,
+            "y1": 458.677490234375
+          }
+        ]
+      }
+    },
+    {
+      "value": "73.68%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "AdamW with the same hyperparameter setting as Adam yielded higher test set accuracy on Deep4Net (73.68% versus 71.37%) and statistically significantly higher test set accuracy on ResNet (72.04% versus 61.34%). employed AdamW",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.35450744628906,
+            "y0": 634.6353759765625,
+            "x1": 504.0032653808594,
+            "y1": 644.5979614257812
+          },
+          {
+            "x0": 108.0,
+            "y0": 645.5933837890625,
+            "x1": 504.0032043457031,
+            "y1": 655.5559692382812
+          },
+          {
+            "x0": 108.0,
+            "y0": 656.5523681640625,
+            "x1": 305.9169921875,
+            "y1": 666.5149536132812
+          }
+        ]
+      }
+    },
+    {
+      "value": "71.37%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "AdamW with the same hyperparameter setting as Adam yielded higher test set accuracy on Deep4Net (73.68% versus 71.37%) and statistically significantly higher test set accuracy on ResNet (72.04% versus 61.34%). employed AdamW",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.35450744628906,
+            "y0": 634.6353759765625,
+            "x1": 504.0032653808594,
+            "y1": 644.5979614257812
+          },
+          {
+            "x0": 108.0,
+            "y0": 645.5933837890625,
+            "x1": 504.0032043457031,
+            "y1": 655.5559692382812
+          },
+          {
+            "x0": 108.0,
+            "y0": 656.5523681640625,
+            "x1": 305.9169921875,
+            "y1": 666.5149536132812
+          }
+        ]
+      }
+    },
+    {
+      "value": "72.04%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "AdamW with the same hyperparameter setting as Adam yielded higher test set accuracy on Deep4Net (73.68% versus 71.37%) and statistically significantly higher test set accuracy on ResNet (72.04% versus 61.34%). employed AdamW",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.35450744628906,
+            "y0": 634.6353759765625,
+            "x1": 504.0032653808594,
+            "y1": 644.5979614257812
+          },
+          {
+            "x0": 108.0,
+            "y0": 645.5933837890625,
+            "x1": 504.0032043457031,
+            "y1": 655.5559692382812
+          },
+          {
+            "x0": 108.0,
+            "y0": 656.5523681640625,
+            "x1": 305.9169921875,
+            "y1": 666.5149536132812
+          }
+        ]
+      }
+    },
+    {
+      "value": "61.34%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "AdamW with the same hyperparameter setting as Adam yielded higher test set accuracy on Deep4Net (73.68% versus 71.37%) and statistically significantly higher test set accuracy on ResNet (72.04% versus 61.34%). employed AdamW",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.35450744628906,
+            "y0": 634.6353759765625,
+            "x1": 504.0032653808594,
+            "y1": 644.5979614257812
+          },
+          {
+            "x0": 108.0,
+            "y0": 645.5933837890625,
+            "x1": 504.0032043457031,
+            "y1": 655.5559692382812
+          },
+          {
+            "x0": 108.0,
+            "y0": 656.5523681640625,
+            "x1": 305.9169921875,
+            "y1": 666.5149536132812
+          }
+        ]
+      }
+    },
+    {
+      "value": "1800 epochs",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "In a comprehensive analysis, we show that Adam generalizes substantially better with decoupled weight decay than with L regularization, achieving 15% relative improvement in test error (see Figures and ); this holds true for various image recognition datasets (CIFAR-10 and ImageNet32x32), training budgets (ranging from 100 to 1800 epochs), and learning rate schedules (fixed, drop-step, and cosine annealing; see Figure ).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "25.6M parameters",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "The base networks are a 26 2x64d ResNet (i.e. the network has a depth of 26, 2 residual branches and the first residual block has a width of 64) and a 26 2x96d ResNet with 11.6M and 25.6M parameters, respectively.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 170.04718017578125,
+            "y0": 580.9193725585938,
+            "x1": 504.0033874511719,
+            "y1": 590.8819580078125
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 591.8783569335938,
+            "x1": 504.0032653808594,
+            "y1": 601.8409423828125
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 602.8373413085938,
+            "x1": 252.19876098632812,
+            "y1": 612.7999267578125
+          }
+        ]
+      }
+    },
+    {
+      "value": "100 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For each learning rate schedule and weight decay variant, we trained a 2x64d ResNet for 100 epochs, using different settings of the initial learning rate and the weight decay factor .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 428.79547119140625,
+            "x1": 504.0033264160156,
+            "y1": 438.7580871582031
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 439.75445556640625,
+            "x1": 304.7613525390625,
+            "y1": 449.7170715332031
+          }
+        ]
+      }
+    },
+    {
+      "value": "1800 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "suggested that the basin of optimal hyperparameters of AdamW is broader and deeper than the one of Adam, we next investigated the results for much longer runs of 1800 epochs to compare the generalization capabilities of AdamW and Adam.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 235.42166137695312,
+            "y0": 606.7393798828125,
+            "x1": 504.00335693359375,
+            "y1": 616.7019653320312
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 617.6983642578125,
+            "x1": 504.003173828125,
+            "y1": 627.6609497070312
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 628.6573486328125,
+            "x1": 419.8194580078125,
+            "y1": 638.6199340820312
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "macros": {
+    "\\norm": "\\left\\lVert#1\\right\\rVert",
+    "\\algorithmiccomment": "\\bgroup\\hfill $\\triangleright$ ~#1\\egroup",
+    "\\franknips": "\\textcolor{black}{#1}",
+    "\\vc": "\\textit{\\textbf{#1}}",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}",
+    "\\ma": "\\mathnormal{\\mathbf{#1}}",
+    "\\mstr": "\\mathrm{#1}",
+    "\\C": " \\ensuremath{\\ma{C}} ",
+    "\\I": " \\ensuremath{\\ma{I}} ",
+    "\\M": " \\ensuremath{\\ma{M}} ",
+    "\\NormalNullC": "{\\mathcal N}  \\hspace{-0.13em}\\left({\\ma{0},\\C\\,}\\right)",
+    "\\dd": "n",
+    "\\HYP": "H",
+    "\\adamcolor": "Thistle",
+    "\\ouradamcolor": "SpringGreen",
+    "\\adam": "\\colorbox{\\adamcolor}{$\\displaystyle #1$}",
+    "\\adamtext": "\\colorbox{\\adamcolor}{#1}",
+    "\\ouradam": "\\colorbox{\\ouradamcolor}{$\\displaystyle #1$}",
+    "\\ouradamtext": "\\colorbox{\\ouradamcolor}{#1}",
+    "\\denselist": "\\itemsep 0pt\\partopsep -20pt",
+    "\\fnum@figure": "SuppFigure ~\\thefigure"
+  },
+  "references": [
+    {
+      "key": "aitchison18",
+      "raw": "Laurence Aitchison. A unified theory of adaptive stochastic gradient descent as Bayesian filtering. arXiv:1507.02030, 2018",
+      "authors": "Laurence Aitchison",
+      "title": "A unified theory of adaptive stochastic gradient descent as Bayesian filtering",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": "1507.02030",
+      "doi": null
+    },
+    {
+      "key": "chrabaszcz2017downsampled",
+      "raw": "Patryk Chrabaszcz, Ilya Loshchilov, and Frank Hutter. A downsampled variant of ImageNet as an alternative to the CIFAR datasets. arXiv:1707.08819, 2017",
+      "authors": "Patryk Chrabaszcz, Ilya Loshchilov, and Frank Hutter",
+      "title": "A downsampled variant of ImageNet as an alternative to the CIFAR datasets",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": "1707.08819",
+      "doi": null
+    },
+    {
+      "key": "cubuk2018autoaugment",
+      "raw": "Ekin D Cubuk, Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V Le. Autoaugment: Learning augmentation policies from data. arXiv preprint arXiv:1805.09501, 2018",
+      "authors": "Ekin D Cubuk, Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc V Le",
+      "title": "Autoaugment: Learning augmentation policies from data",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.09501",
+      "doi": null
+    },
+    {
+      "key": "dinh2017sharp",
+      "raw": "Laurent Dinh, Razvan Pascanu, Samy Bengio, and Yoshua Bengio. Sharp minima can generalize for deep nets. arXiv:1703.04933, 2017",
+      "authors": "Laurent Dinh, Razvan Pascanu, Samy Bengio, and Yoshua Bengio",
+      "title": "Sharp minima can generalize for deep nets",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": "1703.04933",
+      "doi": null
+    },
+    {
+      "key": "duchi2011adaptive",
+      "raw": "John Duchi, Elad Hazan, and Yoram Singer. Adaptive subgradient methods for online learning and stochastic optimization. The Journal of Machine Learning Research, 12: 0 2121--2159, 2011",
+      "authors": "John Duchi, Elad Hazan, and Yoram Singer",
+      "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+      "venue": "The Journal of Machine Learning Research, 12: 0 2121--2159, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gastaldi2017shake",
+      "raw": "Xavier Gastaldi. Shake-Shake regularization. arXiv preprint arXiv:1705.07485, 2017",
+      "authors": "Xavier Gastaldi",
+      "title": "Shake-Shake regularization",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1705.07485",
+      "doi": null
+    },
+    {
+      "key": "hanson1988comparing",
+      "raw": "Stephen Jos\\'e Hanson and Lorien Y Pratt. Comparing biases for minimal network construction with back-propagation. In Proceedings of the 1st International Conference on Neural Information Processing Systems, pp.\\ 177--185, 1988",
+      "authors": "Stephen Jos\\'e Hanson and Lorien Y Pratt",
+      "title": "Comparing biases for minimal network construction with back-propagation",
+      "venue": "In Proceedings of the 1st International Conference on Neural Information Processing Systems, pp.\\ 177--185, 1988",
+      "year": 1988,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "SnapshotICLR2017",
+      "raw": "Gao Huang, Yixuan Li, Geoff Pleiss, Zhuang Liu, John E Hopcroft, and Kilian Q Weinberger. Snapshot ensembles: Train 1, get m for free. arXiv:1704.00109, 2017",
+      "authors": "Gao Huang, Yixuan Li, Geoff Pleiss, Zhuang Liu, John E Hopcroft, and Kilian Q Weinberger",
+      "title": "Snapshot ensembles: Train 1, get m for free",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": "1704.00109",
+      "doi": null
+    },
+    {
+      "key": "keskar2016large",
+      "raw": "Nitish Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy, and Ping Tak Peter Tang. On large-batch training for deep learning: Generalization gap and sharp minima. arXiv:1609.04836, 2016",
+      "authors": "Nitish Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy, and Ping Tak Peter Tang",
+      "title": "On large-batch training for deep learning: Generalization gap and sharp minima",
+      "venue": "2016",
+      "year": 2016,
+      "arxivId": "1609.04836",
+      "doi": null
+    },
+    {
+      "key": "kingma2014adam",
+      "raw": "Diederik Kingma and Jimmy Ba. Adam: A method for stochastic optimization. arXiv:1412.6980, 2014",
+      "authors": "Diederik Kingma and Jimmy Ba",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "2014",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2009learning",
+      "raw": "Alex Krizhevsky. Learning multiple layers of features from tiny images. 2009",
+      "authors": "Alex Krizhevsky",
+      "title": "Learning multiple layers of features from tiny images",
+      "venue": "2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2017visualizing",
+      "raw": "Hao Li, Zheng Xu, Gavin Taylor, and Tom Goldstein. Visualizing the loss landscape of neural nets. arXiv preprint arXiv:1712.09913, 2017",
+      "authors": "Hao Li, Zheng Xu, Gavin Taylor, and Tom Goldstein",
+      "title": "Visualizing the loss landscape of neural nets",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1712.09913",
+      "doi": null
+    },
+    {
+      "key": "loshchilov2016sgdr",
+      "raw": "Ilya Loshchilov and Frank Hutter. SGDR: stochastic gradient descent with warm restarts. arXiv:1608.03983, 2016",
+      "authors": "Ilya Loshchilov and Frank Hutter",
+      "title": "SGDR: stochastic gradient descent with warm restarts",
+      "venue": "2016",
+      "year": 2016,
+      "arxivId": "1608.03983",
+      "doi": null
+    },
+    {
+      "key": "martens2015optimizing",
+      "raw": "James Martens and Roger Grosse. Optimizing neural networks with kronecker-factored approximate curvature. In International conference on machine learning, pp.\\ 2408--2417, 2015",
+      "authors": "James Martens and Roger Grosse",
+      "title": "Optimizing neural networks with kronecker-factored approximate curvature",
+      "venue": "In International conference on machine learning, pp.\\ 2408--2417, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2015unsupervised",
+      "raw": "Alec Radford, Luke Metz, and Soumith Chintala. Unsupervised representation learning with deep convolutional generative adversarial networks. arXiv:1511.06434, 2015",
+      "authors": "Alec Radford, Luke Metz, and Soumith Chintala",
+      "title": "Unsupervised representation learning with deep convolutional generative adversarial networks",
+      "venue": "2015",
+      "year": 2015,
+      "arxivId": "1511.06434",
+      "doi": null
+    },
+    {
+      "key": "radford2018improving",
+      "raw": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. Improving language understanding by generative pre-training. URL https://s3-us-west-2. amazonaws. com/openai-assets/research-covers/language-unsupervised/language\\_ understanding\\_paper. pdf, 2018",
+      "authors": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever",
+      "title": "Improving language understanding by generative pre-training",
+      "venue": "URL amazonaws. com/openai-assets/research-covers/language-unsupervised/language\\_ understanding\\_paper. pdf, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "reddi2018iclr",
+      "raw": "Sashank J. Reddi, Satyen Kale, and Sanjiv Kumar. On the convergence of adam and beyond. International Conference on Learning Representations, 2018",
+      "authors": "Sashank J. Reddi, Satyen Kale, and Sanjiv Kumar",
+      "title": "On the convergence of adam and beyond",
+      "venue": "International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "smith2016",
+      "raw": "Leslie N Smith. Cyclical learning rates for training neural networks. arXiv:1506.01186v3, 2016",
+      "authors": "Leslie N Smith",
+      "title": "Cyclical learning rates for training neural networks",
+      "venue": "2016",
+      "year": 2016,
+      "arxivId": "1506.01186",
+      "doi": null
+    },
+    {
+      "key": "tieleman2012lecture",
+      "raw": "Tijmen Tieleman and Geoffrey Hinton. Lecture 6.5-rmsprop: Divide the gradient by a running average of its recent magnitude. COURSERA: Neural networks for machine learning, 4 0 (2): 0 26--31, 2012",
+      "authors": "Tijmen Tieleman and Geoffrey Hinton",
+      "title": "Lecture 6.5-rmsprop: Divide the gradient by a running average of its recent magnitude",
+      "venue": "COURSERA: Neural networks for machine learning, 4 0 (2): 0 26--31, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in Neural Information Processing Systems, pp.\\ 5998--6008, 2017",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+      "title": "Attention is all you need",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 5998--6008, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "volker2018intracranial",
+      "raw": "Martin V\\\"olker, Ji r\\' Hammer, Robin T Schirrmeister, Joos Behncke, Lukas DJ Fiederer, Andreas Schulze-Bonhage, Petr Marusi c, Wolfram Burgard, and Tonio Ball. Intracranial error detection via deep learning. arXiv preprint arXiv:1805.01667, 2018",
+      "authors": "Martin V\\\"olker, Ji r\\' Hammer, Robin T Schirrmeister, Joos Behncke, Lukas DJ Fiederer, Andreas Schulze-Bonhage, Petr Marusi c, Wolfram Burgard, and Tonio Ball",
+      "title": "Intracranial error detection via deep learning",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.01667",
+      "doi": null
+    },
+    {
+      "key": "2018arXiv180406559W",
+      "raw": "Jianfeng Wang, Ye Yuan, Gang Yu, and Sun Jian. Sface: An efficient network for face detection in large scale variations. arXiv preprint arXiv:1804.06559, 2018",
+      "authors": "Jianfeng Wang, Ye Yuan, Gang Yu, and Sun Jian",
+      "title": "Sface: An efficient network for face detection in large scale variations",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1804.06559",
+      "doi": null
+    },
+    {
+      "key": "wilson2017marginal",
+      "raw": "Ashia C Wilson, Rebecca Roelofs, Mitchell Stern, Nathan Srebro, and Benjamin Recht. The marginal value of adaptive gradient methods in machine learning. arXiv:1705.08292, 2017",
+      "authors": "Ashia C Wilson, Rebecca Roelofs, Mitchell Stern, Nathan Srebro, and Benjamin Recht",
+      "title": "The marginal value of adaptive gradient methods in machine learning",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": "1705.08292",
+      "doi": null
+    },
+    {
+      "key": "xu2015show",
+      "raw": "Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhudinov, Rich Zemel, and Yoshua Bengio. Show, attend and tell: Neural image caption generation with visual attention. In International Conference on Machine Learning, pp.\\ 2048--2057, 2015",
+      "authors": "Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhudinov, Rich Zemel, and Yoshua Bengio",
+      "title": "Show, attend and tell: Neural image caption generation with visual attention",
+      "venue": "In International Conference on Machine Learning, pp.\\ 2048--2057, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yang2016wider",
+      "raw": "Shuo Yang, Ping Luo, Chen-Change Loy, and Xiaoou Tang. Wider face: A face detection benchmark. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp.\\ 5525--5533, 2016",
+      "authors": "Shuo Yang, Ping Luo, Chen-Change Loy, and Xiaoou Tang",
+      "title": "Wider face: A face detection benchmark",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp.\\ 5525--5533, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhang2018three",
+      "raw": "Guodong Zhang, Chaoqi Wang, Bowen Xu, and Roger Grosse. Three mechanisms of weight decay regularization. arXiv preprint arXiv:1810.12281, 2018",
+      "authors": "Guodong Zhang, Chaoqi Wang, Bowen Xu, and Roger Grosse",
+      "title": "Three mechanisms of weight decay regularization",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1810.12281",
+      "doi": null
+    },
+    {
+      "key": "zhang2017normalized",
+      "raw": "Zijun Zhang, Lin Ma, Zongpeng Li, and Chuan Wu. Normalized direction-preserving adam. arXiv:1709.04546, 2017",
+      "authors": "Zijun Zhang, Lin Ma, Zongpeng Li, and Chuan Wu",
+      "title": "Normalized direction-preserving adam",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": "1709.04546",
+      "doi": null
+    },
+    {
+      "key": "zoph-arxiv17b",
+      "raw": "Barret Zoph, Vijay Vasudevan, Jonathon Shlens, and Quoc V. Le. Learning transferable architectures for scalable image recognition. In arXiv:1707.07012 [cs.CV], 2017",
+      "authors": "Barret Zoph, Vijay Vasudevan, Jonathon Shlens, and Quoc V. Le",
+      "title": "Learning transferable architectures for scalable image recognition",
+      "venue": "In [cs.CV], 2017",
+      "year": 2017,
+      "arxivId": "1707.07012",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\bm{\\theta}_{t+1} = (1 - \\lambda) \\bm{\\theta}_t - \\alpha \\nabla f_t(\\bm{\\theta}_t),",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:wdecay"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "f_{t}^{\\text{sreg}}(\\bm{\\theta}) = f_t(\\bm{\\theta}) + \\frac{\\lambda'}{2\\alpha} \\norm{\\bm{\\theta} \\odot{} \\sqrt{\\vc{s}}}_2^2,\\vspace*{-0.1cm}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\bm{\\mu}_{post} = \\bm{\\mu}_{prior} + \\bm{\\Sigma}_{post} \\times \\bm{g},",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "P(\\bm{\\theta}_{t+1} \\mid \\bm{\\theta}_t) = \\mathcal{N}((\\bm{I}-\\bm{A}) \\bm{\\theta}_t, \\bm{Q}),",
+      "environment": "equation",
+      "labels": [
+        "eq:aitchison"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\bm{\\theta}_{t+1} \\leftarrow \\bm{\\theta}_t - \\alpha \\nabla f_{t}^{\\text{reg}}(\\bm{\\theta}_t) = \\bm{\\theta}_t - \\alpha \\nabla f_t(\\bm{\\theta}_t) - \\alpha  \\lambda' \\bm{\\theta}_t.",
+      "environment": "equation",
+      "labels": [
+        "eq:sgdl2"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\bm{\\theta}_{t+1} \\leftarrow (1 - \\lambda) \\bm{\\theta}_t - \\alpha \\nabla f_t(\\bm{\\theta}_t).",
+      "environment": "equation",
+      "labels": [
+        "eq:sgdwd"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\bm{\\theta}_{t+1} &\\leftarrow& \\bm{\\theta}_t - \\alpha  \\lambda' \\mathbf{M}_t \\bm{\\theta}_t - \\alpha \\mathbf{M}_t \\nabla f_t(\\bm{\\theta}_t).\\\\\n\n\\bm{\\theta}_{t+1} &\\leftarrow& (1 - \\lambda) \\bm{\\theta}_t - \\alpha \\mathbf{M}_t \\nabla f_t(\\bm{\\theta}_t).",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:adgrl2",
+        "eq:adgr_wd"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\bm{\\theta}_{t+1} & \\leftarrow &\\bm{\\theta}_t - \\alpha \\nabla f_{t}^{\\text{sreg}}(\\bm{\\theta}_t)/\\vc{s}\\\\\n&=& \\bm{\\theta}_t - \\alpha \\nabla f_t(\\bm{\\theta}_t)/\\vc{s} - \\alpha  \\lambda' \\bm{\\theta}_t \\odot \\vc{s} / \\vc{s}\\\\\n&=& \\bm{\\theta}_t - \\alpha \\nabla f_t(\\bm{\\theta}_t)/\\vc{s} - \\alpha  \\lambda' \\bm{\\theta}_t,",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:sgdl2"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\bm{\\theta}_{t+1} &\\leftarrow& (1 - \\lambda) \\bm{\\theta}_t - \\alpha \\nabla f(\\bm{\\theta}_t) / \\vc{s}\\\\\n&=& \\bm{\\theta}_t - \\alpha \\nabla f(\\bm{\\theta}_t) / \\vc{s} -\\lambda \\bm{\\theta}_t ,",
+      "environment": "eqnarray",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\eta_t = \\eta^{(i)}_{min} + 0.5 (\\eta^{(i)}_{max} - \\eta^{(i)}_{min}) (1 + \\cos(\\pi T_{cur} / {T_i})),",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:t"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\eta_t = 0.5 + 0.5\\cos(\\pi T_{cur} / {T_i}).",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:t2"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1242,
+      "numbers": 0,
+      "citations": 0
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4019,
+      "numbers": 3,
+      "citations": 13
+    },
+    {
+      "kind": "method",
+      "title": "Decoupling the Weight Decay from the Gradient-based Update",
+      "chars": 5925,
+      "numbers": 5,
+      "citations": 3
+    },
+    {
+      "kind": "method",
+      "title": "Justification of Decoupled Weight Decay via a View of Adaptive Gradient Methods as Bayesian Filtering",
+      "chars": 3582,
+      "numbers": 0,
+      "citations": 6
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Validation",
+      "chars": 1009,
+      "numbers": 15,
+      "citations": 4
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluating Decoupled Weight Decay With Different Learning Rate Schedules",
+      "chars": 1660,
+      "numbers": 2,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Decoupling the Weight Decay and Initial Learning Rate Parameters",
+      "chars": 2771,
+      "numbers": 6,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "Better Generalization of AdamW",
+      "chars": 1803,
+      "numbers": 5,
+      "citations": 0
+    },
+    {
+      "kind": "experiments",
+      "title": "AdamWR with Warm Restarts for Better Anytime Performance",
+      "chars": 739,
+      "numbers": 3,
+      "citations": 1
+    },
+    {
+      "kind": "experiments",
+      "title": "Use of AdamW on other datasets and architectures",
+      "chars": 1393,
+      "numbers": 5,
+      "citations": 7
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion and Future Work",
+      "chars": 987,
+      "numbers": 0,
+      "citations": 4
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 1511,
+      "numbers": 7,
+      "citations": 0
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 1,
+      "contests": 1,
+      "compares": 0,
+      "background": 20,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "hanson1988comparing",
+      "stance": "inherits",
+      "cue": "as proposed by",
+      "sentence": "In order to decouple the effects of these two hyperparameters, we advocate to decouple the weight decay step as proposed by [Hanson et al. 1988] (Equation [ref]).",
+      "section": "Decoupling the Weight Decay from the Gradient-based Update",
+      "sectionKind": "method",
+      "ordinal": 12,
+      "title": "Comparing biases for minimal network construction with back-propagation",
+      "authors": "Stephen Jos\\'e Hanson and Lorien Y Pratt",
+      "year": 1988,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 189.9659423828125,
+            "y0": 589.803466796875,
+            "x1": 503.9971008300781,
+            "y1": 599.7660522460938
+          },
+          {
+            "x0": 108.00005340576172,
+            "y0": 600.762451171875,
+            "x1": 294.7589416503906,
+            "y1": 610.7250366210938
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "aitchison18",
+        "stance": "contests",
+        "cue": "rather than",
+        "sentence": "After we posted a preliminary version of our current paper on arXiv, Aitchison noted that his theory \u201cgives us a theoretical framework in which we can understand the superiority of this weight decay over L_2 regularization, because it is weight decay, rather than L_2 regularization that emerges through the straightforward application of Bayesian filtering.\u201d[Aitchison 2018].",
+        "section": "Justification of Decoupled Weight Decay via a View of Adaptive Gradient Methods as Bayesian Filtering",
+        "sectionKind": "method",
+        "ordinal": 15,
+        "title": "A unified theory of adaptive stochastic gradient descent as Bayesian filtering",
+        "authors": "Laurence Aitchison",
+        "year": 2018,
+        "arxivId": "1507.02030",
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 401.3486633300781,
+              "y0": 352.3874816894531,
+              "x1": 504.00323486328125,
+              "y1": 362.35009765625
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 363.34649658203125,
+              "x1": 504.0032043457031,
+              "y1": 373.3091125488281
+            },
+            {
+              "x0": 108.00003051757812,
+              "y0": 374.30548095703125,
+              "x1": 429.8417053222656,
+              "y1": 384.2680969238281
+            }
+          ]
+        }
+      },
+      {
+        "key": "hanson1988comparing",
+        "stance": "inherits",
+        "cue": "as proposed by",
+        "sentence": "In order to decouple the effects of these two hyperparameters, we advocate to decouple the weight decay step as proposed by [Hanson et al. 1988] (Equation [ref]).",
+        "section": "Decoupling the Weight Decay from the Gradient-based Update",
+        "sectionKind": "method",
+        "ordinal": 12,
+        "title": "Comparing biases for minimal network construction with back-propagation",
+        "authors": "Stephen Jos\\'e Hanson and Lorien Y Pratt",
+        "year": 1988,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 189.9659423828125,
+              "y0": 589.803466796875,
+              "x1": 503.9971008300781,
+              "y1": 599.7660522460938
+            },
+            {
+              "x0": 108.00005340576172,
+              "y0": 600.762451171875,
+              "x1": 294.7589416503906,
+              "y1": 610.7250366210938
+            }
+          ]
+        }
+      },
+      {
+        "key": "loshchilov2016sgdr",
+        "stance": "extends",
+        "cue": "we extended",
+        "sentence": "In order to improve the anytime performance of SGDW and AdamW we extended them with the warm restarts we introduced in [Loshchilov et al. 2016], to obtain SGDWR and AdamWR, respectively (see Section [ref] in the Appendix).",
+        "section": "AdamWR with Warm Restarts for Better Anytime Performance",
+        "sectionKind": "experiments",
+        "ordinal": 25,
+        "title": "SGDR: stochastic gradient descent with warm restarts",
+        "authors": "Ilya Loshchilov and Frank Hutter",
+        "year": 2016,
+        "arxivId": "1608.03983",
+        "inCorpus": true,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 394.096435546875,
+              "x1": 504.00335693359375,
+              "y1": 404.0590515136719
+            },
+            {
+              "x0": 108.0,
+              "y0": 405.055419921875,
+              "x1": 232.4727783203125,
+              "y1": 415.0180358886719
+            }
+          ]
+        }
+      },
+      {
+        "key": "wilson2017marginal",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following suggestions that adaptive gradient methods such as Adam might lead to worse generalization than SGD with momentum [Wilson et al. 2017], we identified and exposed the inequivalence of L_2 regularization and weight decay for Adam.",
+        "section": "Conclusion and Future Work",
+        "sectionKind": "conclusion",
+        "ordinal": 33,
+        "title": "The marginal value of adaptive gradient methods in machine learning",
+        "authors": "Ashia C Wilson, Rebecca Roelofs, Mitchell Stern, Nathan Srebro, and Benjamin Recht",
+        "year": 2017,
+        "arxivId": "1705.08292",
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99996948242188,
+              "y0": 108.42243957519531,
+              "x1": 504.00323486328125,
+              "y1": 118.38504028320312
+            },
+            {
+              "x0": 107.99996948242188,
+              "y0": 119.38142395019531,
+              "x1": 235.19244384765625,
+              "y1": 129.34402465820312
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Intuitively, when Adam is run on a loss function f plus L_2 regularization, weights that tend to have large gradients in f do not get regularized as much as they would with decoupled weight decay, since the gradient of the regularizer gets scaled along with the gradient of f.",
+      "anchorText": "do not get regularized as much as they would with decoupled weight decay, since the gradient of the regularizer gets scaled along with the gradient of",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Decoupling the Weight Decay from the Gradient-based Update",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "While we focused our experimental analysis on Adam, we believe that similar results also hold for other adaptive gradient methods, such as AdaGrad [Duchi et al. 2011] and AMSGrad [Reddi et al. 2018].",
+      "anchorText": "While we focused our experimental analysis on Adam, we believe that similar results also hold for other adaptive gradient methods, such as AdaGrad",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "we believe",
+      "section": "Conclusion and Future Work",
+      "sectionKind": "conclusion",
+      "cites": [
+        "duchi2011adaptive",
+        "reddi2018iclr"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 358.2306213378906,
+            "y0": 213.0303497314453,
+            "x1": 504.0032958984375,
+            "y1": 222.99295043945312
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 223.9883575439453,
+            "x1": 504.0031433105469,
+            "y1": 233.95095825195312
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 234.9473419189453,
+            "x1": 176.05450439453125,
+            "y1": 244.90994262695312
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 1,
+    "shown": 0,
+    "bare": 1
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "cs.NE",
+      "math.OC"
+    ],
+    "published": "2017-11-14"
+  }
+}
