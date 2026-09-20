@@ -3,6 +3,8 @@ import path from "node:path";
 
 import { ImageResponse } from "next/og";
 
+import { OG, fontOption, serif } from "@/lib/og";
+
 /*
  * The card people see before they see the site.
  *
@@ -17,29 +19,8 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
 export const alt = "Keystone — what is this paper standing on?";
-export const size = { width: 1200, height: 630 };
+export const size = OG.size;
 export const contentType = "image/png";
-
-/**
- * The site's own serif, so the card and the page are set in the same voice.
- *
- * Fetched at build rather than vendored, and wrapped because a card in the wrong
- * typeface is a much smaller problem than a build that fails when Google is slow.
- * `next/font` already has this file locally, but not at a path meant to be read.
- */
-async function serif(): Promise<ArrayBuffer | null> {
-  try {
-    const css = await fetch(
-      "https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&display=swap",
-      { headers: { "User-Agent": "Mozilla/5.0" } },
-    ).then((r) => r.text());
-    const url = /src:\s*url\((https:[^)]+\.(?:woff2?|ttf))\)/.exec(css)?.[1];
-    if (!url) return null;
-    return await fetch(url).then((r) => r.arrayBuffer());
-  } catch {
-    return null;
-  }
-}
 
 function library(): { papers: number; edges: number } {
   try {
@@ -60,10 +41,7 @@ function library(): { papers: number; edges: number } {
 export default async function OpengraphImage() {
   const { papers, edges } = library();
   const font = await serif();
-  const paper = "#f4f1ea";
-  const ink = "#1c1a17";
-  const soft = "#5b554b";
-  const brass = "#a97f3d";
+  const { paper, ink, soft, brass } = OG;
 
   return new ImageResponse(
     (
@@ -114,11 +92,6 @@ export default async function OpengraphImage() {
         </div>
       </div>
     ),
-    {
-      ...size,
-      fonts: font
-        ? [{ name: "Newsreader", data: font, style: "normal" as const, weight: 400 as const }]
-        : undefined,
-    },
+    { ...size, fonts: fontOption(font) },
   );
 }

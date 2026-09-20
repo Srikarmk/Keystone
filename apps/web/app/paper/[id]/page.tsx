@@ -47,6 +47,8 @@ export async function generateMetadata(
   const description = parts.length
     ? `${parts.join(", ")} — each quoted from the paper's own source and pinned to the page.`
     : "Citations and assumptions read out of the paper's own source.";
+  // No `images` here on purpose: `opengraph-image.tsx` in this segment supplies it.
+  // Naming one would override the generated card with a static path.
   return {
     title: built.title,
     description,
