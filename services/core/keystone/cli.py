@@ -795,7 +795,18 @@ _DOSSIER_FILE = re.compile(r"^(?P<id>\d{4}\.\d{4,5})\.json$")
 #: paper here costs *two* requests — the e-print and the PDF. Budgeting three seconds
 #: per paper rather than per request is what produced sixteen spurious "no source"
 #: results on the first expansion run, so the delay covers both.
-POLITE_DELAY = 6.0
+#: Seconds between e-print downloads.
+#:
+#: Measured, not guessed. At 6 seconds arXiv answered roughly a third of requests with
+#: HTTP 406 — which reads as "no acceptable representation" and is really "you are
+#: asking too often" — and three consecutive expansions each landed 8 to 12 papers out
+#: of 25 to 30 candidates. Re-fetching six of those same rejected ids at 20 seconds
+#: apart succeeded six times out of six.
+#:
+#: It is not even a trade of time for papers. A refusal costs the six seconds *and*
+#: the retry ladder behind it, which climbs to 93 seconds before giving up, so the
+#: impatient setting was both slower per paper and losing two thirds of them.
+POLITE_DELAY = 20.0
 
 
 @app.command()

@@ -151,3 +151,22 @@ body {
     animation: none;
   }
 }
+
+/* A row arrived at by link. Held for a few seconds rather than flashed, because the
+   point is to say "this is the one you were sent", and a flash is over before a
+   reader who followed a link has finished looking at the page.
+
+   Driven by an attribute the reader sets, not by `:target`, which does not reliably
+   match an element that was not in the document when the fragment was parsed — and
+   these rows are inside a section that only opens *because* of the fragment. */
+[data-targeted] {
+  animation: row-targeted 4s ease-out 1;
+}
+@keyframes row-targeted {
+  0%, 55% {
+    background-color: color-mix(in srgb, var(--color-brass) 13%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}

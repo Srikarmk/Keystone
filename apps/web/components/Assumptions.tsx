@@ -15,6 +15,8 @@
  * it is the most useful thing you can know before reading the rest.
  */
 
+import { RowLink } from "@/components/RowLink";
+import { assumptionId } from "@/lib/rows";
 import type { AnchorJson, Assumption, AssumptionKind, AssumptionSupport } from "@/lib/dossier";
 
 const SUPPORT_TONE: Record<AssumptionSupport, string> = {
@@ -77,8 +79,13 @@ function Row({
   onJump: (a: AnchorJson | null) => void;
 }) {
   const tone = SUPPORT_TONE[assumption.support];
+  const id = assumptionId(assumption);
   return (
-    <li className="border-l-2 pl-3.5" style={{ borderLeftColor: tone }}>
+    <li
+      id={id}
+      className="group/row scroll-mt-6 border-l-2 pl-3.5"
+      style={{ borderLeftColor: tone }}
+    >
       <div className="flex flex-wrap items-baseline gap-x-3">
         <span className="text-[0.74rem] uppercase tracking-[0.1em]" style={{ color: tone }}>
           {KIND_LABEL[assumption.kind]}
@@ -103,6 +110,7 @@ function Row({
             show on p{assumption.anchor.page + 1}
           </button>
         ) : null}
+        <RowLink id={id} what="assumption" />
       </div>
     </li>
   );

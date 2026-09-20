@@ -10,23 +10,39 @@
  */
 
 import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Section({
   title,
   count,
   subtitle,
   defaultOpen = false,
+  anchors,
   children,
 }: {
   title: string;
   count?: number;
   subtitle?: string;
   defaultOpen?: boolean;
+  /** Row ids this section contains, so a link to one of them can open it. */
+  anchors?: string[];
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const empty = count === 0;
+
+  // A closed section does not render its children at all, so a link to a row inside
+  // one lands on nothing. The section has to recognise its own rows and open.
+  useEffect(() => {
+    if (!anchors?.length) return;
+    const check = () => {
+      const target = window.location.hash.slice(1);
+      if (target && anchors.includes(target)) setOpen(true);
+    };
+    check();
+    window.addEventListener("hashchange", check);
+    return () => window.removeEventListener("hashchange", check);
+  }, [anchors]);
 
   return (
     <section className="border-b border-paper-edge/70">

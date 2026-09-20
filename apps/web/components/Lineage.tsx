@@ -23,6 +23,8 @@ import type {
   Stance,
 } from "@/lib/dossier";
 import { isLoadBearing } from "@/lib/dossier";
+import { RowLink } from "@/components/RowLink";
+import { edgeId } from "@/lib/rows";
 
 const TONE: Record<Stance, string> = {
   inherits: "var(--color-brass)",
@@ -65,8 +67,13 @@ function EdgeRow({
   onJump: (a: AnchorJson | null) => void;
 }) {
   const tone = TONE[edge.stance];
+  const id = edgeId(edge);
   return (
-    <li className="border-l-2 pl-3.5" style={{ borderLeftColor: tone }}>
+    <li
+      id={id}
+      className="group/row scroll-mt-6 border-l-2 pl-3.5"
+      style={{ borderLeftColor: tone }}
+    >
       <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
         <span className="text-[0.74rem] uppercase tracking-[0.1em]" style={{ color: tone }}>
           {LABEL[edge.stance]}
@@ -122,6 +129,7 @@ function EdgeRow({
         {edge.inCorpus ? (
           <span className="text-brass">in this library</span>
         ) : null}
+        <RowLink id={id} what="reading" />
       </div>
     </li>
   );

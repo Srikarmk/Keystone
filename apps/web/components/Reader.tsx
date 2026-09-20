@@ -32,6 +32,7 @@ import type {
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
 import { record, sync } from "@/lib/history";
+import { assumptionId, edgeId } from "@/lib/rows";
 import { AskTab } from "@/components/AskTab";
 import { AssumptionList, AssumptionSummary } from "@/components/Assumptions";
 import { Foundation, InboundList, LineageList } from "@/components/Lineage";
@@ -78,6 +79,53 @@ export function Reader({ id }: { id: string }) {
     fetch("/dossiers/lineage.json").then((r) => r.json()).then(setGraph).catch(() => {});
     fetch("/dossiers/accuracy.json").then((r) => r.json()).then(setAccuracy).catch(() => {});
   }, []);
+
+  // A link to one reading: land on it.
+  //
+  // Harder than one `scrollIntoView` for two reasons. The browser's own fragment jump
+  // has already happened and missed, because the row's section only opens once it
+  // recognises the fragment — a render later. And scrolling once is not enough
+  // either: the sections above expand over the next few hundred milliseconds and
+  // carry the row back off screen. So this keeps scrolling until the row actually
+  // holds still in view, then stops.
+  //
+  // The highlight is set here too rather than left to `:target`, which does not
+  // reliably apply to an element that did not exist when the fragment was parsed.
+  useEffect(() => {
+    if (!dossier) return;
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+
+    let tries = 0;
+    let settled = 0;
+    const timer = window.setInterval(() => {
+      tries += 1;
+      const target = document.getElementById(id);
+      if (!target) {
+        if (tries > 60) window.clearInterval(timer);
+        return;
+      }
+      const box = target.getBoundingClientRect();
+      const centred = box.top > 40 && box.bottom < window.innerHeight - 40;
+      if (centred) {
+        settled += 1;
+      } else {
+        settled = 0;
+        // Instant, not smooth. A smooth scroll takes longer than this interval, so
+        // each tick interrupted the one before it and the row never arrived — it
+        // took seven seconds to settle instead of a tenth of one. Following a link
+        // should land you there, not animate you there.
+        target.scrollIntoView({ behavior: "auto", block: "center" });
+      }
+      // Two consecutive ticks in view means the sections above have finished
+      // expanding and the row has stopped moving.
+      if (settled >= 2 || tries > 80) {
+        target.setAttribute("data-targeted", "");
+        window.clearInterval(timer);
+      }
+    }, 60);
+    return () => window.clearInterval(timer);
+  }, [dossier]);
 
   useEffect(() => {
     setDossier(null);
@@ -425,6 +473,7 @@ function Report({
       {/* Lineage first. What a paper inherits and argues with is always there and
           always specific; its arithmetic, on a careful paper, is always fine. */}
       <Section
+        anchors={stands.map(edgeId)}
         title="What it stands on"
         count={stands.length}
         subtitle="method and setup taken from other work"
@@ -447,6 +496,7 @@ function Report({
       </Section>
 
       <Section
+        anchors={disputes.map(edgeId)}
         title="What it argues with"
         count={disputes.length}
         subtitle={
@@ -458,6 +508,7 @@ function Report({
       </Section>
 
       <Section
+        anchors={dossier.assumptions.map(assumptionId)}
         title="What it takes on faith"
         count={dossier.assumptions.length}
         subtitle={
@@ -471,6 +522,7 @@ function Report({
       </Section>
 
       <Section
+        anchors={rivals.map(edgeId)}
         title="What it measures against"
         count={rivals.length}
         subtitle="baselines it puts itself beside"
