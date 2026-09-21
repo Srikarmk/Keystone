@@ -206,7 +206,10 @@ export function PaperView({
   return (
     <div
       ref={containerRef}
-      className="h-full overflow-y-auto overflow-x-hidden rounded-[2px] bg-paper-deep/40 px-3 py-3"
+      /* Room at the top for the actions bar that floats over this pane, so the
+         first page starts below it instead of underneath it — the title of the
+         paper is the last thing that should be covered by a toolbar. */
+      className="h-full overflow-y-auto overflow-x-hidden rounded-[2px] bg-paper-deep/40 px-3 pb-3 pt-12"
     >
       {pages.length === 0 ? (
         <p className="py-16 text-center text-[0.9rem] italic text-ink-faint">

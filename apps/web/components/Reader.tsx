@@ -222,6 +222,40 @@ export function Reader({ id }: { id: string }) {
                 fitPage={sideBySide}
                 onPageCount={setPageCount}
               />
+              {/* Over the page, not beside it. These act on the PDF — saving it,
+                  printing it, citing it — and they were sitting in the analysis
+                  column, which is the half of the screen they have nothing to do
+                  with. Along the top so they do not fight the view controls at the
+                  bottom: what to do with the file, and how to look at it, are
+                  different questions and now sit at different ends. */}
+              <div className="absolute left-2 right-2 top-0 z-10 flex flex-wrap items-baseline gap-x-5 gap-y-1 rounded-[2px] border border-paper-edge bg-paper/90 px-2.5 py-1.5 backdrop-blur sm:left-4 sm:right-4">
+                <PaperActions
+                  paper={{
+                    id: dossier.id,
+                    title: dossier.title || dossier.id,
+                    authors: dossier.arxiv?.authors,
+                    published: dossier.arxiv?.published,
+                    primary: dossier.arxiv?.primary,
+                  }}
+                  pdfUrl={dossier.pdfUrl}
+                />
+                {/* The repository only when the paper names one in its own text.
+                    Nothing is inferred from the authors or the title: a guessed URL
+                    sends a reader to somebody else's code, which is worse than
+                    nowhere. */}
+                {dossier.codeUrl ? (
+                  <a
+                    href={dossier.codeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
+                    title={dossier.codeUrl}
+                  >
+                    code &#8599;
+                  </a>
+                ) : null}
+              </div>
+
               <PageTools
                 step={zoomStep}
                 onZoom={setZoomStep}
@@ -416,36 +450,6 @@ function Summary({
               of numbers but the piece this paper would collapse without. */}
           <Foundation edge={lineage.foundation} onJump={onJump} />
           <Authors names={dossier.arxiv?.authors ?? []} published={dossier.arxiv?.published} />
-
-          {/* Taking the paper away with you, kept together and kept quiet: a reader
-              wants these about once a visit, so they sit below the line that says
-              what the paper is rather than competing with it. */}
-          <div className="mt-2.5 flex flex-wrap items-baseline gap-x-5 gap-y-1.5">
-            <PaperActions
-              paper={{
-                id: dossier.id,
-                title: dossier.title || dossier.id,
-                authors: dossier.arxiv?.authors,
-                published: dossier.arxiv?.published,
-                primary: dossier.arxiv?.primary,
-              }}
-              pdfUrl={dossier.pdfUrl}
-            />
-            {/* The repository only when the paper names one in its own text. Nothing
-                is inferred from the authors or the title: a guessed URL sends a
-                reader to somebody else's code, which is worse than nowhere. */}
-            {dossier.codeUrl ? (
-              <a
-                href={dossier.codeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
-                title={dossier.codeUrl}
-              >
-                code &#8599;
-              </a>
-            ) : null}
-          </div>
         </div>
 
         <button
