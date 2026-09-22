@@ -6,8 +6,8 @@
   "coverage": {
     "claims": 1,
     "supported": 0,
-    "declared": 1,
-    "unsupported": 0,
+    "declared": 0,
+    "unsupported": 1,
     "mismatched": 0,
     "rate": 0.0
   },
@@ -16,13 +16,13 @@
       "value": "1%",
       "section": "abstract",
       "sentence": "We show that this approach can effectively solve complex RL tasks without access to the reward function, including Atari games and simulated robot locomotion, while providing feedback on less than 1% of our agent's interactions with the environment.",
-      "status": "declared_figure",
+      "status": "untraced",
       "table": null,
       "caption": null,
       "row": null,
       "column": null,
       "cell": null,
-      "evidenceLabel": "fig:mujoco_ablation",
+      "evidenceLabel": null,
       "anchor": {
         "page": 0,
         "pageWidth": 612.0,
@@ -65,7 +65,7 @@
       "kind": "result",
       "section": "abstract",
       "sentence": "We show that this approach can effectively solve complex RL tasks without access to the reward function, including Atari games and simulated robot locomotion, while providing feedback on less than 1% of our agent's interactions with the environment.",
-      "status": "declared_figure",
+      "status": "untraced",
       "table": null,
       "row": null,
       "cell": null,
@@ -106,12 +106,31 @@
       "value": "10%",
       "kind": "result",
       "section": "method",
-      "sentence": "In some domains we also apply dropout for regularization. Rather than applying a softmax directly as described in eq:preference-elo, we assume there is a 10% chance that the human responds uniformly at random.",
+      "sentence": "Rather than applying a softmax directly as described in eq:preference-elo, we assume there is a 10% chance that the human responds uniformly at random.",
       "status": "declared_equation",
       "table": null,
       "row": null,
       "cell": null,
-      "anchor": null
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 420.31939697265625,
+            "y0": 643.2022705078125,
+            "x1": 504.0023498535156,
+            "y1": 653.2640380859375
+          },
+          {
+            "x0": 143.1179962158203,
+            "y0": 654.2205810546875,
+            "x1": 376.6128845214844,
+            "y1": 664.1382446289062
+          }
+        ]
+      }
     },
     {
       "value": "40%",
@@ -1209,7 +1228,7 @@
       "key": "Wilson12",
       "stance": "inherits",
       "cue": "based on",
-      "sentence": "In this paper, we will start from a goal expressed in natural language, ask a human to evaluate the agent's behavior based on how well it fulfills that goal, and then present videos of agents attempting to fulfill that goal. Our model based on trajectory segment comparisons is very similar to the trajectory preference queries used in [Wilson et al. 2012], except that we don't assume that we can reset the system to an arbitrary state[[Wilson et al. 2012] also assumes the ability to sample reasonable initial states.]",
+      "sentence": "Our model based on trajectory segment comparisons is very similar to the trajectory preference queries used in [Wilson et al. 2012], except that we don't assume that we can reset the system to an arbitrary state[[Wilson et al. 2012] also assumes the ability to sample reasonable initial states.]",
       "section": "Setting and Goal",
       "sectionKind": "method",
       "ordinal": 37,
@@ -1224,24 +1243,6 @@
         "pageHeight": 792.0,
         "precision": "tight",
         "rects": [
-          {
-            "x0": 197.12423706054688,
-            "y0": 223.91427612304688,
-            "x1": 504.0023498535156,
-            "y1": 233.97601318359375
-          },
-          {
-            "x0": 143.86599731445312,
-            "y0": 234.82327270507812,
-            "x1": 504.0021667480469,
-            "y1": 244.885009765625
-          },
-          {
-            "x0": 143.86599731445312,
-            "y0": 245.8074493408203,
-            "x1": 359.4366760253906,
-            "y1": 255.77005004882812
-          },
           {
             "x0": 108.0,
             "y0": 266.8293151855469,
@@ -1432,7 +1433,7 @@
         "key": "Wilson12",
         "stance": "inherits",
         "cue": "based on",
-        "sentence": "In this paper, we will start from a goal expressed in natural language, ask a human to evaluate the agent's behavior based on how well it fulfills that goal, and then present videos of agents attempting to fulfill that goal. Our model based on trajectory segment comparisons is very similar to the trajectory preference queries used in [Wilson et al. 2012], except that we don't assume that we can reset the system to an arbitrary state[[Wilson et al. 2012] also assumes the ability to sample reasonable initial states.]",
+        "sentence": "Our model based on trajectory segment comparisons is very similar to the trajectory preference queries used in [Wilson et al. 2012], except that we don't assume that we can reset the system to an arbitrary state[[Wilson et al. 2012] also assumes the ability to sample reasonable initial states.]",
         "section": "Setting and Goal",
         "sectionKind": "method",
         "ordinal": 37,
@@ -1447,24 +1448,6 @@
           "pageHeight": 792.0,
           "precision": "tight",
           "rects": [
-            {
-              "x0": 197.12423706054688,
-              "y0": 223.91427612304688,
-              "x1": 504.0023498535156,
-              "y1": 233.97601318359375
-            },
-            {
-              "x0": 143.86599731445312,
-              "y0": 234.82327270507812,
-              "x1": 504.0021667480469,
-              "y1": 244.885009765625
-            },
-            {
-              "x0": 143.86599731445312,
-              "y0": 245.8074493408203,
-              "x1": 359.4366760253906,
-              "y1": 255.77005004882812
-            },
             {
               "x0": 108.0,
               "y0": 266.8293151855469,
@@ -1552,7 +1535,7 @@
       }
     },
     {
-      "sentence": "More precisely, we will evaluate our algorithms' behavior in two ways: Quantitative: We say that preferences \u227b are generated by a reward function [Here we assume here that the reward is a function of the observation and action.]",
+      "sentence": "More precisely, we will evaluate our algorithms' behavior in two ways: [Quantitative:] We say that preferences \u227b are generated by a reward function [Here we assume here that the reward is a function of the observation and action.]",
       "anchorText": "are generated by a reward function Here we assume here that the reward is a function of the observation and action.",
       "kind": "stated",
       "support": "bare",
@@ -1564,8 +1547,8 @@
       "anchor": null
     },
     {
-      "sentence": "In some domains we also apply dropout for regularization. * Rather than applying a softmax directly as described in [ref], we assume there is a 10% chance that the human responds uniformly at random.",
-      "anchorText": "In some domains we also apply dropout for regularization. Rather than applying a softmax directly as described in eq:preference-elo, we assume there is a 10% chance that the human responds uniformly at random.",
+      "sentence": "Rather than applying a softmax directly as described in [ref], we assume there is a 10% chance that the human responds uniformly at random.",
+      "anchorText": "Rather than applying a softmax directly as described in eq:preference-elo, we assume there is a 10% chance that the human responds uniformly at random.",
       "kind": "stated",
       "support": "shown",
       "cue": "we assume",

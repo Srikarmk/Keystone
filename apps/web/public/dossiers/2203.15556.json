@@ -8755,29 +8755,35 @@
       "traversable": 5
     },
     "foundation": {
-      "key": "rae2021gopher",
+      "key": "loshchilov2018decoupled",
       "stance": "inherits",
-      "cue": "We evaluate on",
-      "sentence": "We evaluate on a large subset of the tasks presented in [Rae et al. 2021], shown in [ref].",
-      "section": "Results",
+      "cue": "We use",
+      "sentence": "We use AdamW [Loshchilov et al. 2019] for Chinchillarather than Adam [Kingma et al. 2014] as this improves the language modelling loss and the downstream task performance after finetuning.[Interestingly, a model trained with AdamW only passes the training performance of a model trained with Adam around 80% of the way through the cosine cycle, though the ending performance is notably better\u2013 see [ref]]",
+      "section": "Model and training details",
       "sectionKind": "method",
-      "ordinal": 47,
-      "title": "Scaling language models: Methods, analysis \\& insights from training Gopher",
-      "authors": "J. Rae, S. Borgeaud, T. Cai, K. Millican, J. Hoffmann, F. Song, J. Aslanides, S. Henderson, R. Ring, S. Young, E. Rutherford, T. Hennigan, J. Menick, A. Cassirer, R. Powell, G. van den Driessche, L. A. Hendricks, M. Rauh, P.-S. Huang, A. Glaese, J. Welbl, S. Dathathri, S. Huang, J. Uesato, J. Mellor, I. Higgins, A. Creswell, N. McAleese, A. Wu, E. Elsen, S. Jayakumar, E. Buchatskaya, D. Budden, E. Sutherland, K. Simonyan, M. Paganini, L. Sifre, L. Martens, X. L. Li, A. Kuncoro, A. Nematzadeh, E. Gribovskaya, D. Donato, A. Lazaridou, A. Mensch, J.-B. Lespiau, M. Tsimpoukelli, N. Grigorev, D. Fritz, T. Sottiaux, M. Pajarskas, T. Pohlen, Z. Gong, D. Toyama, C. de Masson d\u2019Autume, Y. Li, T. Terzi, I. Babuschkin, A. Clark, D. de Las Casas, A. Guy, J. Bradbury, M. Johnson, L. Weidinger, I. Gabriel, W. Isaac, E. Lockhart, S. Osindero, L. Rimell, C. Dyer, O. Vinyals, K. Ayoub, J. Stanway, L. Bennett, D. Hassabis, K. Kavukcuoglu, and G. Irving",
-      "year": 2021,
-      "arxivId": "2112.11446",
+      "ordinal": 38,
+      "title": "Decoupled weight decay regularization",
+      "authors": "I. Loshchilov and F. Hutter",
+      "year": 2019,
+      "arxivId": "1711.05101",
       "inCorpus": true,
       "anchor": {
-        "page": 9,
+        "page": 8,
         "pageWidth": 595.2760009765625,
         "pageHeight": 841.8900146484375,
         "precision": "tight",
         "rects": [
           {
-            "x0": 61.86000061035156,
-            "y0": 300.65570068359375,
-            "x1": 333.62164306640625,
-            "y1": 311.5648193359375
+            "x0": 139.250244140625,
+            "y0": 366.98974609375,
+            "x1": 532.9105224609375,
+            "y1": 377.8988342285156
+          },
+          {
+            "x0": 89.63500213623047,
+            "y0": 379.73435974121094,
+            "x1": 171.0083770751953,
+            "y1": 391.4478454589844
           }
         ]
       }
@@ -8879,7 +8885,7 @@
         "key": "kingma2014adam",
         "stance": "contests",
         "cue": "rather than",
-        "sentence": "The full set of hyperparameters used to train Chinchillaare given in [ref]. Chinchillauses the same model architecture and training setup as Gopherwith the exception of the differences listed below. * We train Chinchillaon MassiveText(the same dataset as Gopher) but use a slightly different subset distribution (shown in [ref]) to account for the increased number of training tokens. * We use AdamW [Loshchilov et al. 2019] for Chinchillarather than Adam [Kingma et al. 2014] as this improves the language modelling loss and the downstream task performance after finetuning.[Interestingly, a model trained with AdamW only passes the training performance of a model trained with Adam around 80% of the way through the cosine cycle, though the ending performance is notably better\u2013 see [ref]] * We train Chinchillawith a slightly modified SentencePiece [Kudo et al. 2018] tokenizer that does not apply NFKC normalisation.",
+        "sentence": "We use AdamW [Loshchilov et al. 2019] for Chinchillarather than Adam [Kingma et al. 2014] as this improves the language modelling loss and the downstream task performance after finetuning.[Interestingly, a model trained with AdamW only passes the training performance of a model trained with Adam around 80% of the way through the cosine cycle, though the ending performance is notably better\u2013 see [ref]]",
         "section": "Model and training details",
         "sectionKind": "method",
         "ordinal": 39,
@@ -8888,7 +8894,26 @@
         "year": 2014,
         "arxivId": "1412.6980",
         "inCorpus": true,
-        "anchor": null
+        "anchor": {
+          "page": 8,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 139.250244140625,
+              "y0": 366.98974609375,
+              "x1": 532.9105224609375,
+              "y1": 377.8988342285156
+            },
+            {
+              "x0": 89.63500213623047,
+              "y0": 379.73435974121094,
+              "x1": 171.0083770751953,
+              "y1": 391.4478454589844
+            }
+          ]
+        }
       },
       {
         "key": "levine2020depth",
@@ -8934,7 +8959,7 @@
         "key": "loshchilov2018decoupled",
         "stance": "inherits",
         "cue": "We use",
-        "sentence": "The full set of hyperparameters used to train Chinchillaare given in [ref]. Chinchillauses the same model architecture and training setup as Gopherwith the exception of the differences listed below. * We train Chinchillaon MassiveText(the same dataset as Gopher) but use a slightly different subset distribution (shown in [ref]) to account for the increased number of training tokens. * We use AdamW [Loshchilov et al. 2019] for Chinchillarather than Adam [Kingma et al. 2014] as this improves the language modelling loss and the downstream task performance after finetuning.[Interestingly, a model trained with AdamW only passes the training performance of a model trained with Adam around 80% of the way through the cosine cycle, though the ending performance is notably better\u2013 see [ref]] * We train Chinchillawith a slightly modified SentencePiece [Kudo et al. 2018] tokenizer that does not apply NFKC normalisation.",
+        "sentence": "We use AdamW [Loshchilov et al. 2019] for Chinchillarather than Adam [Kingma et al. 2014] as this improves the language modelling loss and the downstream task performance after finetuning.[Interestingly, a model trained with AdamW only passes the training performance of a model trained with Adam around 80% of the way through the cosine cycle, though the ending performance is notably better\u2013 see [ref]]",
         "section": "Model and training details",
         "sectionKind": "method",
         "ordinal": 38,
@@ -8943,7 +8968,26 @@
         "year": 2019,
         "arxivId": "1711.05101",
         "inCorpus": true,
-        "anchor": null
+        "anchor": {
+          "page": 8,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 139.250244140625,
+              "y0": 366.98974609375,
+              "x1": 532.9105224609375,
+              "y1": 377.8988342285156
+            },
+            {
+              "x0": 89.63500213623047,
+              "y0": 379.73435974121094,
+              "x1": 171.0083770751953,
+              "y1": 391.4478454589844
+            }
+          ]
+        }
       },
       {
         "key": "nocedal_updating_1980",

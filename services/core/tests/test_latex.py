@@ -9,6 +9,7 @@ from keystone.ingest.latex import (
     document_body,
     expand_inputs,
     expand_macros,
+    split_sentences,
     strip_comments,
     strip_markup,
     user_macros,
@@ -239,3 +240,144 @@ def test_readable_prose_is_never_used_for_anchoring() -> None:
     tex = r"We set the rate to $\alpha$ and cite \cite{he} for the residual block."
     assert "[ref]" in readable_prose(tex)
     assert "[ref]" not in longest_anchorable_run(tex)
+
+
+# ------------------------------------------------- run-in headings break sentences
+
+
+def test_a_run_in_heading_ends_the_sentence_before_it() -> None:
+    r"""Bold-with-a-colon is a heading that shares a line with the prose after it.
+
+    Deep Recurrent Models (arXiv:1606.04199) writes
+    "\noindent\textbf{LSTM layer:} In our experiments...". Read as prose, the heading
+    glues the sentence before it to the sentence after and yields a quote the paper
+    does not contain — which then anchors nowhere, because the page sets the heading
+    as its own run. It cost that paper 44% of its readings.
+    """
+    got = split_sentences(
+        "All layers work in the forward direction.\n"
+        "\\noindent\\textbf{LSTM layer:} In our experiments we use LSTMs."
+    )
+    assert len(got) == 2
+    assert got[0] == "All layers work in the forward direction."
+    assert got[1] == "In our experiments we use LSTMs."
+
+
+@pytest.mark.parametrize(
+    "source",
+    [
+        "Prior work is shallow.\n\\textbf{English-to-German}: We validate it here.",
+        "Prior work is shallow.\n\\paragraph{Encoder:} The layers are stacked.",
+        "Prior work is shallow.\n\\\\ \\textit{Decoder:} A single column is used.",
+    ],
+)
+def test_the_forms_run_in_headings_take(source: str) -> None:
+    assert len(split_sentences(source)) == 2
+
+
+@pytest.mark.parametrize(
+    "source",
+    [
+        # LaTeX wraps source lines wherever it likes, so emphasis can begin a line.
+        "We use a\n\\textbf{very} deep network with residual connections.",
+        "We use a \\textbf{very} deep network with residual connections.",
+        # A colon inside ordinary prose is not a heading either.
+        "The ratio was \\textbf{2:1} across every run of the experiment.",
+    ],
+)
+def test_ordinary_emphasis_is_not_a_heading(source: str) -> None:
+    """The colon requirement is what separates these from the case above."""
+    assert len(split_sentences(source)) == 1
+
+
+def test_a_sentence_does_not_span_an_environment_boundary() -> None:
+    r"""The page sets `\end{itemize}` on its own line; a quote across it matches nothing.
+
+    With the boundary left in, the period before it is followed by a backslash rather
+    than a capital, so the splitter never breaks and two sentences arrive as one
+    quote that appears nowhere on the page.
+    """
+    got = split_sentences(
+        "All layers work in the forward direction.\n"
+        "\\end{itemize}\n\n"
+        "\\noindent\\textbf{LSTM layer:} In our experiments we use LSTMs."
+    )
+    assert got == [
+        "All layers work in the forward direction.",
+        "In our experiments we use LSTMs.",
+    ]
+
+
+def test_a_hard_boundary_survives_the_abbreviation_rule() -> None:
+    r"""The two rules pull opposite ways and the boundary has to win.
+
+    "\item Translation, following Bahdanau et al. \item Parsing." ends its first item
+    on "et al.", which the abbreviation rule reads as mid-sentence — so it would glue
+    the two list items back together after the boundary had separated them.
+    """
+    got = split_sentences(
+        "We evaluate on three tasks.\n\\begin{itemize}\n"
+        "\\item Translation, following Bahdanau et al.\n"
+        "\\item Parsing.\n\\end{itemize}\nResults are in Table 2."
+    )
+    assert got == [
+        "We evaluate on three tasks.",
+        "Translation, following Bahdanau et al.",
+        "Parsing.",
+        "Results are in Table 2.",
+    ]
+
+
+@pytest.mark.parametrize(
+    "source",
+    [
+        "We follow Smith et al. (2020) in every experiment we report here.",
+        "The results are shown in Fig. 3 and discussed below in detail.",
+        "Accuracy reached 91.4 i.e. two points above the previous best result.",
+    ],
+)
+def test_abbreviations_within_a_sentence_are_untouched(source: str) -> None:
+    """The boundary rule must not cost what the abbreviation rule was protecting."""
+    assert split_sentences(source) == [source]
+
+
+def test_a_colon_lead_in_keeps_the_list_it_introduces() -> None:
+    r"""The cue is in the lead-in and the citation is in the item.
+
+    RoBERTa writes "We use the following text corpora: \item BookCorpus [Zhu et al.
+    2015] plus English Wikipedia." Breaking at the item put the cue "We use" in one
+    sentence and the citation in another, and the edge saying RoBERTa adopts
+    BookCorpus disappeared. A colon lead-in governs its list, so the boundary between
+    them is not a real one.
+    """
+    got = split_sentences(
+        "We use the following text corpora:\n"
+        # RoBERTa's actual source, optional argument and spacing command included:
+        # both leaked into the lead-in and stopped it ending in a colon.
+        "\\begin{itemize}[leftmargin=*]\n\\setlength\\itemsep{0em}\n"
+        "\\item BookCorpus [Zhu] plus English Wikipedia. This is the data BERT used.\n"
+        "\\item CC-News.\n\\end{itemize}"
+    )
+    assert got[0] == "We use the following text corpora: BookCorpus [Zhu] plus English Wikipedia."
+    # Only the *first* sentence of the item belongs to the lead-in; the remark about
+    # BERT is not part of what RoBERTa uses.
+    assert got[1] == "This is the data BERT used."
+    assert got[2] == "CC-News."
+
+
+def test_a_run_in_heading_is_not_a_lead_in() -> None:
+    """The two look alike and mean opposite things.
+
+    Both end in a colon. But a lead-in introduces what follows and belongs with it,
+    while a run-in heading is a title for the paragraph after it and belongs to
+    neither neighbour — so it is removed rather than kept, which is what stops the
+    colon rule from gluing across it.
+    """
+    got = split_sentences(
+        "All layers work in the forward direction.\n\\end{itemize}\n\n"
+        "\\noindent\\textbf{LSTM layer:} In our experiments we use LSTMs."
+    )
+    assert got == [
+        "All layers work in the forward direction.",
+        "In our experiments we use LSTMs.",
+    ]

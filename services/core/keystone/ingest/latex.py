@@ -853,6 +853,56 @@ jan feb mar apr jun jul aug sep sept oct nov dec
 _SENTENCE_BREAK = re.compile(r'(?<=[.!?])["\')\]]*\s+(?=[A-Z(\[])')
 
 
+#: Places the page puts a visual break that the source does not: a list item, an
+#: environment boundary, a forced line break.
+#:
+#: A sentence cannot span one of these and still match the PDF, because the page sets
+#: them on separate lines. Deep Recurrent Models has "…work in the forward direction.
+#: \\end{itemize} … In our experiments…" — with the environment boundary left in, the
+#: period is followed by a backslash rather than a capital, so the splitter never
+#: breaks and two sentences arrive as one quote that appears nowhere on the page.
+#:
+#: `itemize` and `enumerate` are deliberately *not* in the opaque-environment list
+#: callers blank out, because their prose is real prose and often carries the
+#: citation. It is only their scaffolding that has to stop a sentence.
+#: The sentinel a hard boundary leaves behind, so blocks stay separate.
+_BOUNDARY = re.compile(r"\x00+")
+
+_STRUCTURAL_BREAK = re.compile(
+    r"\\(?:"
+    r"item\b"
+    # The optional argument has to come too. RoBERTa writes
+    # `\begin{itemize}[leftmargin=*]`, and stopping at the brace left "[leftmargin=*]"
+    # sitting in the prose — which meant the lead-in no longer ended in a colon, so
+    # the rule that keeps a lead-in with its list never fired.
+    r"|(?:begin|end)\s*\{[^{}]*\}(?:\s*\[[^\]]*\])?"
+    # Spacing and layout commands that sit between a lead-in and its first item.
+    r"|(?:setlength|itemsep|vspace|hspace|vskip|hskip|smallskip|medskip|bigskip)"
+    r"\b\*?(?:\s*\\[a-zA-Z]+)?(?:\s*\{[^{}]*\})*"
+    r"|newline\b|par\b"
+    r")"
+)
+
+#: A run-in heading: bold text ending in a colon, used as a subsection that shares a
+#: line with the prose after it. "\\noindent\\textbf{LSTM layer:} In our experiments…"
+#:
+#: These have to break a sentence or they get swallowed into the one before *and* the
+#: one after. Deep Recurrent Models yielded "all layers work in the forward direction.
+#: LSTM layer: In our experiments, instead of an RNN…" — three fragments glued into a
+#: quote the paper does not contain, which then anchors nowhere because the page sets
+#: the heading as its own run.
+_RUN_IN_HEADING = re.compile(
+    r"(?:\\noindent\s*|\\\\\s*|^|(?<=\n))\s*"
+    r"\\(?:textbf|textit|emph|paragraph|subparagraph)\s*"
+    # The colon is required. LaTeX wraps source lines wherever it likes, so an
+    # ordinary emphasis can begin a line — "we use a \textbf{very} deep network" — and
+    # without this that would split a sentence in half. A run-in heading always ends
+    # in a colon, inside the braces or just after them.
+    r"\{([^{}]{2,60}?)(?::\}|\}\s*:)",
+    re.M,
+)
+
+
 def split_sentences(text: str) -> list[str]:
     """Split prose into sentences, keeping scientific abbreviations intact.
 
@@ -860,14 +910,59 @@ def split_sentences(text: str) -> list[str]:
     "Smith et al. (2020)",
     "see Fig. 3", "i.e. the baseline", and initials like "J. Smith" all break, and a
     fragment that stops mid-clause will not match the PDF's text either.
+
+    Run-in headings are turned into breaks first. They read as prose in the source and
+    as a heading on the page, so a sentence that spans one matches neither.
     """
-    pieces = _SENTENCE_BREAK.split(text)
+    # Hard boundaries first, and they stay hard. A block cannot be rejoined across
+    # one, which matters because the abbreviation rule would otherwise undo the split:
+    # "\\item Translation, following Bahdanau et al. \\item Parsing." ends the first
+    # item on "et al.", the rule reads that as mid-sentence, and the two list items
+    # come back as one quote.
+    blocks = _BOUNDARY.split(
+        _STRUCTURAL_BREAK.sub("\x00", _RUN_IN_HEADING.sub("\x00", text))
+    )
+
     out: list[str] = []
-    for piece in pieces:
-        if out and _ends_with_abbreviation(out[-1]):
+
+    def add(piece: str, *, joinable: bool, merge: bool = False) -> None:
+        """Append a sentence, or fold it into the one before.
+
+        ``merge`` folds unconditionally — used for the first item of a list whose
+        lead-in ends in a colon, where the two are one statement however they are
+        punctuated. ``joinable`` folds only when the previous sentence ended
+        mid-abbreviation, and is false for the first piece of a block so that an
+        abbreviation never swallows across a hard boundary.
+        """
+        if out and (merge or (joinable and _ends_with_abbreviation(out[-1]))):
             out[-1] = f"{out[-1]} {piece}"
         else:
             out.append(piece)
+
+    for block in blocks:
+        block = block.strip()
+        if not block:
+            continue
+        # A colon lead-in governs the list that follows it, so the boundary between
+        # them is not a real one. "We use the following text corpora: \\item BookCorpus
+        # [Zhu et al. 2015]" is one statement, and breaking it cost RoBERTa the edge
+        # that says it adopts BookCorpus — the cue is in the lead-in and the citation
+        # is in the item.
+        #
+        # A run-in heading is the opposite case and is already gone by this point: it
+        # is replaced rather than kept, so the block before it does not end in a colon
+        # and nothing gets merged across it.
+        # Tested on the stripped text, not the raw source. A lead-in can be followed
+        # by markup that is invisible on the page, and a colon two characters behind a
+        # leftover command is still a colon to a reader.
+        pieces = _SENTENCE_BREAK.split(block)
+        lead_in = bool(out) and strip_markup(out[-1]).rstrip().endswith(":")
+        for index, piece in enumerate(pieces):
+            # Only the *first* sentence of the list item belongs to the lead-in. The
+            # rest are their own sentences: RoBERTa's item is "BookCorpus [cite] plus
+            # English Wikipedia. This is the original data used to train BERT." — the
+            # second half is a remark about BERT and not part of what RoBERTa uses.
+            add(piece, joinable=index > 0, merge=index == 0 and lead_in)
     return [p.strip() for p in out if p.strip()]
 
 
