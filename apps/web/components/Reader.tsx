@@ -44,7 +44,9 @@ import { Section } from "@/components/Section";
 import { findCell, TableView } from "@/components/TableView";
 import { AccountMenu } from "@/components/AccountMenu";
 import { Outline } from "@/components/Outline";
+import { CodeGlyph } from "@/components/Glyph";
 import { PaperActions } from "@/components/PaperActions";
+import { Search } from "@/components/Search";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -228,7 +230,7 @@ export function Reader({ id }: { id: string }) {
                   with. Along the top so they do not fight the view controls at the
                   bottom: what to do with the file, and how to look at it, are
                   different questions and now sit at different ends. */}
-              <div className="absolute left-2 right-2 top-0 z-10 flex flex-wrap items-baseline gap-x-5 gap-y-1 rounded-[2px] border border-paper-edge bg-paper/90 px-2.5 py-1.5 backdrop-blur sm:left-4 sm:right-4">
+              <div className="absolute left-2 right-2 top-0 z-10 flex flex-wrap items-center gap-x-3.5 gap-y-1 rounded-[2px] border border-paper-edge bg-paper/90 px-2.5 py-1 backdrop-blur sm:left-4 sm:right-4">
                 <PaperActions
                   paper={{
                     id: dossier.id,
@@ -248,10 +250,11 @@ export function Reader({ id }: { id: string }) {
                     href={dossier.codeUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
-                    title={dossier.codeUrl}
+                    className="flex h-6 w-6 items-center justify-center text-ink-faint transition-colors hover:text-brass"
+                    title={`Code: ${dossier.codeUrl}`}
+                    aria-label="The code repository this paper names"
                   >
-                    code &#8599;
+                    <CodeGlyph />
                   </a>
                 ) : null}
               </div>
@@ -410,6 +413,7 @@ function Masthead({
       </Link>
 
       <span className="flex min-w-0 flex-1 items-center justify-end gap-4 sm:gap-7">
+        <Search />
         <ThemeToggle />
         <AccountMenu />
         <select

@@ -435,10 +435,12 @@ def dossier(
     merged.update({entry["id"]: entry for entry in index})
     index_path.write_text(json.dumps(list(merged.values()), indent=2))
     edges = _write_lineage_index(out)
+    found = _write_search_index(out)
 
     typer.secho(
         f"wrote {len(index)} dossier(s); index now lists {len(merged)}; "
-        f"{edges} edge(s) run between papers in the library",
+        f"{edges} edge(s) run between papers in the library; "
+        f"{found} searchable line(s)",
         fg=typer.colors.GREEN,
     )
     for arxiv_id, reason in failures:
@@ -1317,3 +1319,91 @@ def assumption_eval(
         "on and moves past, which is a subset. CoNLL-2010's ~85% F1 figures are for\n"
         "the hedging task and are not a bar this is trying to clear."
     )
+
+
+def _write_search_index(out: Path) -> int:
+    """Every line the library can be searched by, flattened into one file.
+
+    Searching a paper collection by title is the least useful search there is: a
+    reader looking for "does anything here argue with layer normalisation" is asking
+    about the *sentences*, and those are exactly what this project has and a title
+    index does not.
+
+    So the unit is a reading, not a paper — one entry per stanced citation and per
+    assumption, carrying the sentence, what it is, and the row id the reader page
+    uses. That last field is what lets a hit land on the line itself rather than on
+    the paper that happens to contain it.
+
+    Written as one file rather than fetched per paper because it is read on the first
+    keystroke and eighty round trips is not a search box, it is a wait.
+    """
+    rows: list[dict] = []
+    titles: dict[str, str] = {}
+
+    for path in sorted(out.glob("*.json")):
+        match = _DOSSIER_FILE.match(path.name)
+        if not match:
+            continue
+        try:
+            payload = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            continue
+        arxiv_id = match.group("id")
+        titles[arxiv_id] = payload.get("title") or arxiv_id
+
+        for edge in payload.get("lineage", {}).get("edges", []):
+            rows.append({
+                "paper": arxiv_id,
+                "kind": "edge",
+                "stance": edge.get("stance", ""),
+                "text": edge.get("sentence", ""),
+                "cue": edge.get("cue", ""),
+                "section": edge.get("section", ""),
+                "about": edge.get("title", ""),
+                "row": f"cite-{_row_slug(edge.get('key', ''))}",
+            })
+        for assumption in payload.get("assumptions", []):
+            sentence = assumption.get("sentence", "")
+            rows.append({
+                "paper": arxiv_id,
+                "kind": "assumption",
+                "stance": assumption.get("support", ""),
+                "text": sentence,
+                "cue": assumption.get("cue", ""),
+                "section": assumption.get("section", ""),
+                "about": "",
+                "row": f"assume-{_row_digest(sentence)}",
+            })
+
+    (out / "search.json").write_text(
+        json.dumps({"titles": titles, "rows": rows}, indent=1)
+    )
+    return len(rows)
+
+
+def _row_slug(text: str) -> str:
+    """The citation-key half of a row id, matching `lib/rows.ts`."""
+    slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+    return slug or _row_digest(text)
+
+
+def _row_digest(text: str) -> str:
+    """FNV-1a, 32-bit, base36 — the same digest `lib/rows.ts` computes.
+
+    Duplicated across the two languages rather than shared, which is a real cost: if
+    either side changes the hash, search results start pointing at rows that do not
+    exist and nothing fails loudly. The test in tests/test_search_index.py holds them
+    together by checking known values.
+    """
+    value = 0x811C9DC5
+    for character in text:
+        value ^= ord(character) & 0xFFFFFFFF
+        value = (value * 0x01000193) & 0xFFFFFFFF
+    digits = "0123456789abcdefghijklmnopqrstuvwxyz"
+    if value == 0:
+        return "0"
+    out = ""
+    while value:
+        value, remainder = divmod(value, 36)
+        out = digits[remainder] + out
+    return out

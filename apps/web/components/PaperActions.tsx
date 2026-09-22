@@ -3,6 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 import { bibtex, type Citable } from "@/lib/cite";
+import {
+  CiteGlyph,
+  DownloadGlyph,
+  PrintGlyph,
+  ShareGlyph,
+} from "@/components/Glyph";
 
 /*
  * Take the paper away with you: the file, a printout, a link, a citation.
@@ -17,23 +23,48 @@ import { bibtex, type Citable } from "@/lib/cite";
 type Busy = "" | "download" | "print";
 
 function Action({
-  label,
+  glyph,
   onClick,
   title,
+  busy,
 }: {
-  label: string;
+  glyph: React.ReactNode;
   onClick: () => void;
   title: string;
+  busy?: boolean;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
       title={title}
-      className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
+      aria-label={title}
+      aria-busy={busy || undefined}
+      className="flex h-6 w-6 items-center justify-center text-ink-faint transition-colors hover:text-brass disabled:text-ink-faint/40"
+      disabled={busy}
     >
-      {label}
+      {busy ? <Spinner /> : glyph}
     </button>
+  );
+}
+
+/** A quiet mark for the seconds a two-megabyte PDF takes to arrive. */
+function Spinner() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      aria-hidden
+      className="animate-spin"
+    >
+      <circle cx="8" cy="8" r="5.4" strokeOpacity="0.28" />
+      <path d="M8 2.6a5.4 5.4 0 0 1 5.4 5.4" />
+    </svg>
   );
 }
 
@@ -154,26 +185,30 @@ export function PaperActions({ paper, pdfUrl }: { paper: Citable; pdfUrl: string
        started wherever "cite" happened to sit — fourth along — and ran off the right
        edge of a phone: 528px of panel in a 527px window. From the row it starts at the
        text margin, where the width cap can actually keep it on screen. */
-    <div ref={citeBox} className="relative flex flex-wrap items-baseline gap-x-5 gap-y-1.5">
+    <div ref={citeBox} className="relative flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
       <Action
-        label={busy === "download" ? "fetching…" : "download"}
+        glyph={<DownloadGlyph />}
         onClick={download}
         title="Save the PDF"
+        busy={busy === "download"}
       />
       <Action
-        label={busy === "print" ? "preparing…" : "print"}
+        glyph={<PrintGlyph />}
         onClick={print}
         title="Print the paper"
+        busy={busy === "print"}
       />
-      <Action label="share" onClick={share} title="Copy a link to this paper" />
+      <Action glyph={<ShareGlyph />} onClick={share} title="Copy a link to this paper" />
 
       <button
         type="button"
         onClick={() => setShowCite((v) => !v)}
         aria-expanded={showCite}
-        className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
+        aria-label="Cite this paper"
+        title="Cite this paper"
+        className="flex h-6 w-6 items-center justify-center text-ink-faint transition-colors hover:text-brass"
       >
-        cite
+        <CiteGlyph />
       </button>
 
       {showCite ? (

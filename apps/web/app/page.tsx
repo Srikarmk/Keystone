@@ -14,6 +14,7 @@ import { categoryLabel, categoryOf } from "@/lib/dossier";
 import { AccountMenu } from "@/components/AccountMenu";
 import { Connector } from "@/components/Connector";
 import { LibraryGraph } from "@/components/LibraryGraph";
+import { Search } from "@/components/Search";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -113,6 +114,7 @@ export default function Home() {
       <header className="flex items-center justify-between border-b border-paper-edge py-5">
         <span className="pressed text-[1.4rem] leading-none">Keystone</span>
         <span className="flex items-center gap-5">
+          <Search />
           <ThemeToggle />
           <AccountMenu />
           <a
