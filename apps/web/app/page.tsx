@@ -12,6 +12,7 @@ import type {
 } from "@/lib/dossier";
 import { categoryLabel, categoryOf } from "@/lib/dossier";
 import { AccountMenu } from "@/components/AccountMenu";
+import { Connector } from "@/components/Connector";
 import { LibraryGraph } from "@/components/LibraryGraph";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -199,6 +200,13 @@ export default function Home() {
           {graph ? <LibraryGraph data={graph} /> : <div className="h-[22rem]" />}
         </div>
       </section>
+
+      {/* The graph shows every relationship at once; this answers one question about
+          two papers. Placed after it because the graph is what makes the question
+          occur to a reader in the first place. */}
+      {graph && index.length > 0 ? (
+        <Connector graph={graph} index={index} />
+      ) : null}
 
       <section className="mt-16 grid gap-8 border-t border-paper-edge pt-10 sm:grid-cols-3">
         {[
