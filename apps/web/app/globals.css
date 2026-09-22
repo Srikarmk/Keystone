@@ -170,3 +170,84 @@ body {
     background-color: transparent;
   }
 }
+
+/* --- PDF text layer ------------------------------------------------------------
+ *
+ * pdf.js draws a page to canvas, which gives pixels and nothing else: no selection,
+ * no copy, no highlight. The text layer is a second layer of invisible,
+ * absolutely-positioned spans sitting exactly over the drawn glyphs, so the
+ * browser's own selection lands on real text.
+ *
+ * The sizing rules below are pdf.js's own and have to be, because the renderer and
+ * the stylesheet share the work: pdf.js writes `--font-height`, `--scale-x` and
+ * `--rotate` onto each span as inline custom properties, and the CSS turns those
+ * into `font-size` and `transform`. Hand-written CSS that omits them leaves every
+ * span at the page's inherited 16px serif — which measured as spans overflowing 513px
+ * past the right edge of a 348px page, while vertical placement looked perfect. That
+ * asymmetry is the tell: the positions come from the renderer, the sizes from here.
+ */
+.textLayer {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  opacity: 1;
+  line-height: 1;
+  text-align: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  caret-color: var(--color-brass);
+  z-index: 0;
+
+  --min-font-size: 1;
+  --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+  --min-font-size-inv: calc(1 / var(--min-font-size));
+}
+
+.textLayer :is(span, br) {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+  user-select: text;
+  margin: 0;
+}
+
+/* The two halves of the contract: size from `--font-height`, shape from `--scale-x`. */
+.textLayer > :not(.markedContent),
+.textLayer .markedContent span:not(.markedContent) {
+  z-index: 1;
+  --font-height: 0;
+  font-size: calc(var(--text-scale-factor) * var(--font-height));
+  --scale-x: 1;
+  --rotate: 0deg;
+  transform: rotate(var(--rotate)) scaleX(var(--scale-x))
+    scale(var(--min-font-size-inv));
+}
+
+.textLayer .markedContent {
+  display: contents;
+}
+
+/* Brass rather than the browser's blue, so a selection reads as part of the
+   interface instead of a form field. */
+.textLayer ::selection {
+  background: color-mix(in srgb, var(--color-brass) 34%, transparent);
+  color: transparent;
+}
+.dark .textLayer ::selection {
+  background: color-mix(in srgb, var(--color-brass) 45%, transparent);
+  color: transparent;
+}
+
+.textLayer .endOfContent {
+  display: block;
+  position: absolute;
+  inset: 100% 0 0;
+  z-index: -1;
+  cursor: default;
+  user-select: none;
+}

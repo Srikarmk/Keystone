@@ -161,6 +161,48 @@ export function PaperView({
     return () => observer.disconnect();
   }, []);
 
+  // The text layer, drawn at layout scale rather than render scale.
+  //
+  // The canvas is rasterised at RENDER_SCALE for sharpness, but the text layer has to
+  // land on the page as the reader sees it, so it uses the plain layout viewport. Get
+  // this wrong and selection lands a fifth of a page away from the words.
+  const textRendered = useRef(new Map<HTMLDivElement, string>());
+  const renderText = useCallback(
+    async (pageNumber: number, holder: HTMLDivElement, layoutWidth: number) => {
+      const doc = docRef.current;
+      if (!doc) return;
+      // Keyed on the element *and* the width, so a zoom re-lays it out but a scroll
+      // past the same page does not rebuild it.
+      const stamp = `${pageNumber}@${Math.round(layoutWidth)}`;
+      if (textRendered.current.get(holder) === stamp) return;
+      textRendered.current.set(holder, stamp);
+
+      try {
+        const pdfjs = await import("pdfjs-dist");
+        const page = await doc.getPage(pageNumber);
+        const base = page.getViewport({ scale: 1 });
+        const viewport = page.getViewport({ scale: layoutWidth / base.width });
+
+        holder.replaceChildren();
+        // pdf.js positions every span with this, so it has to be on the container.
+        holder.style.setProperty("--scale-factor", String(viewport.scale));
+        holder.style.setProperty("--total-scale-factor", String(viewport.scale));
+
+        const layer = new pdfjs.TextLayer({
+          textContentSource: page.streamTextContent(),
+          container: holder,
+          viewport,
+        });
+        await layer.render();
+      } catch {
+        // A page whose text cannot be laid out stays unselectable. That is a lost
+        // convenience, not a broken page — the drawing is already on screen.
+        textRendered.current.delete(holder);
+      }
+    },
+    [],
+  );
+
   // Pages render only as they approach the viewport. A sixty-page appendix would
   // otherwise rasterise on load and lock the tab.
   const renderPage = useCallback(
@@ -240,6 +282,7 @@ export function PaperView({
             layoutWidth={layoutWidth}
             scale={scale}
             render={renderPage}
+            renderText={renderText}
             dark={dark}
             marks={
               highlight && highlight.page + 1 === page.number
@@ -258,6 +301,7 @@ function PageCanvas({
   layoutWidth,
   scale,
   render,
+  renderText,
   dark,
   marks,
 }: {
@@ -265,11 +309,13 @@ function PageCanvas({
   layoutWidth: number;
   scale: number;
   render: (n: number, canvas: HTMLCanvasElement, width: number) => void;
+  renderText: (n: number, holder: HTMLDivElement, width: number) => void;
   dark: boolean;
   marks: { rect: AnchorRect; kind: "claim" | "evidence" }[];
 }) {
   const holder = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
+  const text = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const node = holder.current;
@@ -278,13 +324,14 @@ function PageCanvas({
       (entries) => {
         if (entries.some((e) => e.isIntersecting) && canvas.current) {
           render(page.number, canvas.current, layoutWidth);
+          if (text.current) renderText(page.number, text.current, layoutWidth);
         }
       },
       { rootMargin: "600px 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, [page.number, layoutWidth, render]);
+  }, [page.number, layoutWidth, render, renderText]);
 
   return (
     <div
@@ -304,6 +351,12 @@ function PageCanvas({
         className="block h-full w-full"
         style={{ filter: dark ? DARK_PAGE : undefined }}
       />
+
+      {/* Invisible text over the drawn page, so the browser can select it. Outside
+          the inverting filter on purpose: the filter belongs to the picture of the
+          page, and running transparent text through it changes the selection colour
+          for no reason. */}
+      <div ref={text} className="textLayer" />
 
       {marks.map(({ rect, kind }, i) => (
         <span
