@@ -33,10 +33,13 @@ import type {
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
 import { record, sync } from "@/lib/history";
+import { useMarks } from "@/lib/useMarks";
+import type { Mark } from "@/lib/marks";
 import { assumptionId, edgeId } from "@/lib/rows";
 import { AskTab } from "@/components/AskTab";
 import { AssumptionList, AssumptionSummary } from "@/components/Assumptions";
 import { Foundation, InboundList, LineageList } from "@/components/Lineage";
+import { NoteList, NoteState, readingsOf } from "@/components/Notes";
 import { EquationView } from "@/components/EquationView";
 import { EvidenceMap } from "@/components/EvidenceMap";
 import { PaperView } from "@/components/PaperView";
@@ -69,6 +72,10 @@ export function Reader({ id }: { id: string }) {
   const [pageCount, setPageCount] = useState(0);
   const [accuracy, setAccuracy] = useState<Accuracy | null>(null);
   const appIsDark = useIsDark();
+  // The reader's own marks on whichever paper is open. Keyed on `current` rather than
+  // the prop, so switching papers from the picker reloads them with everything else.
+  const marks = useMarks(current);
+  const [activeMark, setActiveMark] = useState<string | null>(null);
   // The page pane is only as tall as the window when the panes sit side by side.
   const sideBySide = useIsWide();
 
@@ -156,6 +163,7 @@ export function Reader({ id }: { id: string }) {
     setShowEvidence(false);
     setJump(null);
     setAsking(false);
+    setActiveMark(null);
     fetch(`/dossiers/${current}.json`)
       .then((r) => r.json())
       .then((loaded: Dossier) => {
@@ -223,6 +231,12 @@ export function Reader({ id }: { id: string }) {
                 dark={darkPage}
                 fitPage={sideBySide}
                 onPageCount={setPageCount}
+                marks={marks.marks}
+                canMark={marks.signedIn && marks.storing}
+                onSave={(mark: Mark) => void marks.save(mark)}
+                onDelete={(markId: string) => void marks.remove(markId)}
+                active={activeMark}
+                onActive={setActiveMark}
               />
               {/* Over the page, not beside it. These act on the PDF — saving it,
                   printing it, citing it — and they were sitting in the analysis
@@ -305,6 +319,9 @@ export function Reader({ id }: { id: string }) {
                   onSelect={select}
                   onToggleEvidence={() => setShowEvidence((v) => !v)}
                   onJump={setJump}
+                  marks={marks}
+                  activeMark={activeMark}
+                  onActiveMark={setActiveMark}
                 />
               )}
             </>
@@ -528,6 +545,9 @@ function Report({
   onSelect,
   onToggleEvidence,
   onJump,
+  marks,
+  activeMark,
+  onActiveMark,
 }: {
   dossier: Dossier;
   graph: LibraryGraph | null;
@@ -538,6 +558,9 @@ function Report({
   onSelect: (i: number) => void;
   onToggleEvidence: () => void;
   onJump: (a: AnchorJson | null) => void;
+  marks: ReturnType<typeof useMarks>;
+  activeMark: string | null;
+  onActiveMark: (id: string | null) => void;
 }) {
   // The broadest external corpus, which is the only honest place to state an error
   // rate. The ninety hand labels were drawn from these same forty-one papers, so
@@ -561,7 +584,44 @@ function Report({
 
   return (
     <div className="mt-6 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:pr-3">
-      {/* Lineage first. What a paper inherits and argues with is always there and
+      {/* The reader's own marks first, because they are the one thing on this page
+          that nobody else wrote. `count` is omitted when it is zero rather than
+          passed as 0: a zero count makes `Section` treat itself as empty and refuse
+          to open, and an empty marks section is exactly the one a first-time reader
+          needs to be able to open, since it is where the feature explains itself. */}
+      <Section
+        title="Your marks"
+        count={marks.marks.length || undefined}
+        subtitle={
+          marks.marks.length > 0
+            ? `${marks.marks.filter((one) => one.note).length} with a note`
+            : marks.signedIn
+              ? "highlight anything in the paper"
+              : "sign in to highlight and annotate"
+        }
+        defaultOpen={marks.marks.length > 0}
+      >
+        <NoteState
+          signedIn={marks.signedIn}
+          storing={marks.storing}
+          loading={marks.loading}
+          count={marks.marks.length}
+        />
+        {marks.error ? (
+          <p className="mt-2 text-[0.84rem] text-missing">{marks.error}</p>
+        ) : null}
+        {marks.marks.length > 0 ? (
+          <NoteList
+            marks={marks.marks}
+            readings={readingsOf(dossier)}
+            active={activeMark}
+            onPick={onActiveMark}
+            onDelete={(markId) => void marks.remove(markId)}
+          />
+        ) : null}
+      </Section>
+
+      {/* Lineage next. What a paper inherits and argues with is always there and
           always specific; its arithmetic, on a careful paper, is always fine. */}
       <Section
         anchors={stands.map(edgeId)}

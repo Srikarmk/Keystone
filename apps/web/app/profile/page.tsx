@@ -1,10 +1,28 @@
 import Link from "next/link";
 
-import { availableProviders, currentUser, signOut } from "@/auth";
+import { availableProviders, currentUser, historyKey, signOut } from "@/auth";
+import { MarkedPapers } from "@/components/MarkedPapers";
 import { ReadingList } from "@/components/ReadingList";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { markedPapers } from "@/lib/store";
+import index from "@/public/dossiers/index.json";
 
 export const metadata = { title: "Profile — Keystone" };
+
+/*
+ * Never prerendered, and this has to be stated rather than inferred.
+ *
+ * Next decides a route is static when nothing in it reads the request, and whether
+ * this one reads the request was, until now, an accident: `currentUser()` returns null
+ * without touching cookies when no provider is configured, so a build done without the
+ * OAuth credentials to hand rendered a guest profile *once* and served that HTML to
+ * everybody. The build log said `○ (Static)` for this page and meant it.
+ *
+ * A profile is a page about whoever is asking for it. That is not a caching hint, it is
+ * the definition of the page, so it is declared here and cannot drift with the
+ * environment a build happens to run in.
+ */
+export const dynamic = "force-dynamic";
 
 /**
  * Who you are, if you said, and what you have read either way.
@@ -16,6 +34,25 @@ export const metadata = { title: "Profile — Keystone" };
 export default async function Profile() {
   const user = await currentUser();
   const canSignIn = availableProviders().length > 0;
+
+  // Which papers this reader has annotated. Titles resolved from the index that is
+  // bundled with the build rather than read off disk: a dynamic route on Vercel has
+  // no `public/` to read, which is a lesson this codebase has already paid for once.
+  const titles = new Map(
+    (index as { id: string; title: string }[]).map((entry) => [entry.id, entry.title]),
+  );
+  let marked: { id: string; title: string }[] = [];
+  try {
+    const handle = await historyKey();
+    if (handle) {
+      marked = (await markedPapers(handle))
+        .map((id) => ({ id, title: titles.get(id) ?? id }))
+        .sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" }));
+    }
+  } catch {
+    // The profile is still a profile without it.
+    marked = [];
+  }
 
   return (
     <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
@@ -105,6 +142,8 @@ export default async function Profile() {
 
         <ReadingList />
 
+        <MarkedPapers papers={marked} />
+
         <p className="mt-12 max-w-2xl border-t border-paper-edge pt-6 text-[0.82rem] leading-relaxed text-ink-faint">
           {user ? (
             <>
@@ -112,8 +151,10 @@ export default async function Profile() {
               machines. What is stored is the arXiv id, title, date and count of each
               paper you opened, filed under a hash of your provider account id
               &mdash; not your name and not your address, so a row on its own does not
-              say whose it is. &ldquo;Forget it everywhere&rdquo; above deletes it
-              here and there, immediately and for good.
+              say whose it is. Your highlights and notes are kept the same way, under
+              the same hash, and are never shown to anybody else. &ldquo;Forget it
+              everywhere&rdquo; and &ldquo;Delete every mark&rdquo; above delete each
+              of those, immediately and for good.
             </>
           ) : (
             <>

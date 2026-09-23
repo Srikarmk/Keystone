@@ -123,3 +123,85 @@ export function merge(a: Visit[], b: Visit[]): Visit[] {
   }
   return [...by.values()].sort((x, y) => y.at - x.at).slice(0, LIMIT);
 }
+
+/* ---------------------------------------------------------------------------------
+ * Marks: what a reader highlighted, and what they wrote about it.
+ *
+ * Filed per paper rather than in one blob per reader, because the reader opens one
+ * paper at a time and a person who annotates heavily should not make their own library
+ * slower to open. The price is a second key listing which papers they have marked,
+ * kept as a set so adding a mark to an already-marked paper is idempotent.
+ *
+ * Unlike the reading list there is no guest path here. A mark is the reader's own
+ * writing about a specific place in a document, and putting it in `localStorage` would
+ * mean promising to keep something and then losing it to a cleared cache — so it is
+ * offered only to a signed-in reader and stored only on the server.
+ * --------------------------------------------------------------------------------- */
+
+import { inOrder, MAX_MARKS, parseMark, type Mark } from "@/lib/marks";
+
+const MARKS = (handle: string, paper: string) => `keystone:marks:${handle}:${paper}`;
+const MARKED = (handle: string) => `keystone:marked:${handle}`;
+
+export async function readMarks(handle: string, paper: string): Promise<Mark[]> {
+  if (!storeAvailable()) return [];
+  const raw = await command("GET", MARKS(handle, paper));
+  if (typeof raw !== "string") return [];
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return [];
+  }
+  if (!Array.isArray(parsed)) return [];
+  return inOrder(parsed.flatMap((entry) => {
+    const mark = parseMark(entry);
+    return mark ? [mark] : [];
+  }));
+}
+
+export async function writeMarks(
+  handle: string,
+  paper: string,
+  marks: Mark[],
+): Promise<void> {
+  if (!storeAvailable()) return;
+  if (marks.length === 0) {
+    // Erasing the last mark erases the record of having marked the paper too, so a
+    // reader who clears their annotations does not leave the paper listed as annotated.
+    await command("DEL", MARKS(handle, paper));
+    await command("SREM", MARKED(handle), paper);
+    return;
+  }
+  await command(
+    "SET",
+    MARKS(handle, paper),
+    JSON.stringify(inOrder(marks).slice(0, MAX_MARKS)),
+  );
+  await command("SADD", MARKED(handle), paper);
+}
+
+/** Which papers this reader has marked. For the profile page, and nothing else yet. */
+export async function markedPapers(handle: string): Promise<string[]> {
+  if (!storeAvailable()) return [];
+  const raw = await command("SMEMBERS", MARKED(handle));
+  if (!Array.isArray(raw)) return [];
+  return raw.filter(
+    (entry): entry is string => typeof entry === "string" && /^\d{4}\.\d{4,5}$/.test(entry),
+  );
+}
+
+/**
+ * Every mark this reader has made, gone.
+ *
+ * Deleted one paper at a time from the set's own membership, so nothing is left
+ * orphaned under a key no index points at. Called when a reader asks for their data
+ * to be removed, where leaving a stray key behind would make the deletion a lie.
+ */
+export async function deleteMarks(handle: string): Promise<number> {
+  if (!storeAvailable()) return 0;
+  const papers = await markedPapers(handle);
+  for (const paper of papers) await command("DEL", MARKS(handle, paper));
+  await command("DEL", MARKED(handle));
+  return papers.length;
+}

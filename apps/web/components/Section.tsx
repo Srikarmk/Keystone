@@ -10,7 +10,7 @@
  */
 
 import { motion, AnimatePresence } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function Section({
   title,
@@ -30,6 +30,22 @@ export function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const empty = count === 0;
+
+  // `defaultOpen` is often a fact that arrives late.
+  //
+  // "Your marks" wants to be open when there are marks, and the marks come from a
+  // fetch; "What stands on this" wants to be open when the library graph says
+  // something leans on this paper, and the graph is a fetch too. Both mounted with
+  // the answer still unknown, so both defaulted shut and stayed shut — a reader
+  // reopening a paper they had annotated saw a closed section claiming one mark.
+  //
+  // Only false → true opens it, so a section the reader has deliberately closed is
+  // never reopened underneath them by an unrelated re-render.
+  const wasDefault = useRef(defaultOpen);
+  useEffect(() => {
+    if (defaultOpen && !wasDefault.current) setOpen(true);
+    wasDefault.current = defaultOpen;
+  }, [defaultOpen]);
 
   // A closed section does not render its children at all, so a link to a row inside
   // one lands on nothing. The section has to recognise its own rows and open.
