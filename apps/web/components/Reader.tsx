@@ -76,6 +76,17 @@ export function Reader({ id }: { id: string }) {
   // the prop, so switching papers from the picker reloads them with everything else.
   const marks = useMarks(current);
   const [activeMark, setActiveMark] = useState<string | null>(null);
+  /**
+   * The page, filling the window.
+   *
+   * A CSS overlay rather than the Fullscreen API. The API hides the browser chrome,
+   * which sounds better and is worse here: it drops out of fullscreen on any
+   * navigation, it is refused outright in some embedded contexts, and it takes the
+   * address bar with it — and the address bar is how a reader copies a link to the
+   * line they are looking at, which is the whole point of the deep links. The
+   * overlay gives the same reading area and none of that.
+   */
+  const [expanded, setExpanded] = useState(false);
   // The page pane is only as tall as the window when the panes sit side by side.
   const sideBySide = useIsWide();
 
@@ -90,6 +101,23 @@ export function Reader({ id }: { id: string }) {
   useEffect(() => {
     if (!chosePage.current) setDarkPage(appIsDark);
   }, [appIsDark]);
+
+  // Escape leaves the expanded page, and the page behind it stops scrolling while
+  // it is covered — without that, a scroll gesture that misses the pane scrolls the
+  // report underneath and the reader comes back to a different place than they left.
+  useEffect(() => {
+    if (!expanded) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setExpanded(false);
+    };
+    window.addEventListener("keydown", onKey);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previous;
+    };
+  }, [expanded]);
 
   useEffect(() => {
     // Sorted by title, not by the order the library happened to be built in. At nine
@@ -221,7 +249,13 @@ export function Reader({ id }: { id: string }) {
           wide screen; below about 1300px there was never any spare width, so narrow
           desktops are unchanged. */}
       <div className="mt-4 grid gap-7 lg:min-h-0 lg:flex-1 lg:justify-center lg:gap-9 lg:grid-cols-[minmax(0,42rem)_37rem]">
-        <section className="relative h-[58vh] lg:h-auto lg:min-h-0">
+        <section
+          className={
+            expanded
+              ? "fixed inset-0 z-50 bg-paper p-2 sm:p-3"
+              : "relative h-[58vh] lg:h-auto lg:min-h-0"
+          }
+        >
           {dossier ? (
             <>
               <PaperView
@@ -229,7 +263,7 @@ export function Reader({ id }: { id: string }) {
                 highlight={highlight}
                 zoom={ZOOMS[zoomStep]}
                 dark={darkPage}
-                fitPage={sideBySide}
+                fitPage={expanded || sideBySide}
                 onPageCount={setPageCount}
                 marks={marks.marks}
                 canMark={marks.signedIn && marks.storing}
@@ -276,6 +310,8 @@ export function Reader({ id }: { id: string }) {
               <PageTools
                 step={zoomStep}
                 onZoom={setZoomStep}
+                expanded={expanded}
+                onExpand={() => setExpanded((v) => !v)}
                 dark={darkPage}
                 onDark={() => {
                   chosePage.current = true;
@@ -341,6 +377,8 @@ function PageTools({
   sections,
   onJump,
   pages,
+  expanded,
+  onExpand,
 }: {
   step: number;
   onZoom: (n: number) => void;
@@ -350,6 +388,8 @@ function PageTools({
   sections: SectionData[];
   onJump: (a: AnchorJson | null) => void;
   pages: number;
+  expanded: boolean;
+  onExpand: () => void;
 }) {
   return (
     <div className="absolute bottom-3 right-2 flex max-w-[calc(100%-1rem)] items-center gap-1.5 rounded-[2px] border border-paper-edge bg-paper/90 px-2 py-1 text-[0.8rem] backdrop-blur sm:right-4">
@@ -407,7 +447,36 @@ function PageTools({
       >
         +
       </button>
+      <span aria-hidden className="text-ink-faint/40">|</span>
+      <button
+        type="button"
+        onClick={onExpand}
+        aria-pressed={expanded}
+        title={expanded ? "Back to the analysis (Esc)" : "Fill the window with the page"}
+        className="flex items-center px-1 transition-colors hover:text-brass"
+        style={{ color: expanded ? "var(--color-brass)" : "var(--color-ink-soft)" }}
+      >
+        <ExpandGlyph expanded={expanded} />
+        <span className="sr-only">{expanded ? "Leave full screen" : "Full screen"}</span>
+      </button>
     </div>
+  );
+}
+
+/** Four corners pointing out, or in. The one icon everybody already reads. */
+function ExpandGlyph({ expanded }: { expanded: boolean }) {
+  return (
+    <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden>
+      {expanded ? (
+        <g stroke="currentColor" strokeWidth="1.3" strokeLinecap="round">
+          <path d="M6.5 1.5v5h-5M9.5 1.5v5h5M6.5 14.5v-5h-5M9.5 14.5v-5h5" />
+        </g>
+      ) : (
+        <g stroke="currentColor" strokeWidth="1.3" strokeLinecap="round">
+          <path d="M1.5 5.5v-4h4M14.5 5.5v-4h-4M1.5 10.5v4h4M14.5 10.5v4h-4" />
+        </g>
+      )}
+    </svg>
   );
 }
 

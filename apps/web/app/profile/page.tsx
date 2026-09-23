@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { availableProviders, currentUser, historyKey, signOut } from "@/auth";
+import { Footer } from "@/components/Footer";
 import { MarkedPapers } from "@/components/MarkedPapers";
 import { ReadingList } from "@/components/ReadingList";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -165,6 +166,8 @@ export default async function Profile() {
           )}
         </p>
       </section>
+
+      <Footer />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { availableProviders, signIn } from "@/auth";
+import { Footer } from "@/components/Footer";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata = { title: "Sign in — Keystone" };
@@ -92,6 +93,7 @@ export default async function SignIn() {
           &larr; back to the library
         </Link>
       </section>
+      <Footer />
     </main>
   );
 }

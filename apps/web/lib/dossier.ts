@@ -221,6 +221,8 @@ export interface External {
   instances: number;
   /** Share of citations a stance was reported for at all. */
   coverage: number;
+  /** How many that is, in citations. `coverage` is this over `instances`. */
+  spoken: number;
   /** How often those were right. Excludes the silent class by construction. */
   spokenPrecision: number;
   spokenInterval: [number, number];

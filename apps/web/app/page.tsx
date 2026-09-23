@@ -11,11 +11,10 @@ import type {
   LibraryGraph as GraphData,
 } from "@/lib/dossier";
 import { categoryLabel, categoryOf } from "@/lib/dossier";
-import { AccountMenu } from "@/components/AccountMenu";
 import { Connector } from "@/components/Connector";
+import { Footer } from "@/components/Footer";
 import { LibraryGraph } from "@/components/LibraryGraph";
-import { Search } from "@/components/Search";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteHeader } from "@/components/SiteHeader";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -109,22 +108,35 @@ export default function Home() {
     [graph],
   );
 
+  /*
+   * The works the rest of the library is built on top of, by how many papers here
+   * take something from them.
+   *
+   * In-degree over adopt-and-extend edges only. Counting every edge would put the
+   * most *argued with* paper at the top of a list headed "what the library rests
+   * on", which is the opposite of what it says — and a citation this library
+   * merely mentions is not something it stands on either.
+   */
+  const foundations = useMemo(() => {
+    if (!graph) return [];
+    const by = new Map<string, Set<string>>();
+    for (const edge of graph.edges) {
+      if (edge.stance !== "inherits" && edge.stance !== "extends") continue;
+      if (edge.from === edge.to) continue;
+      const leaning = by.get(edge.to) ?? new Set<string>();
+      leaning.add(edge.from);
+      by.set(edge.to, leaning);
+    }
+    return [...by.entries()]
+      .map(([id, on]) => ({ id, n: on.size }))
+      .filter((row) => row.n > 1)
+      .sort((a, b) => b.n - a.n || a.id.localeCompare(b.id))
+      .slice(0, 8);
+  }, [graph]);
+
   return (
     <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
-      <header className="flex items-center justify-between border-b border-paper-edge py-5">
-        <span className="pressed text-[1.4rem] leading-none">Keystone</span>
-        <span className="flex items-center gap-5">
-          <Search />
-          <ThemeToggle />
-          <AccountMenu />
-          <a
-            href="https://github.com/Srikarmk/Keystone"
-            className="text-[0.8rem] italic text-ink-soft transition-colors hover:text-brass"
-          >
-            source
-          </a>
-        </span>
-      </header>
+      <SiteHeader />
 
       <section className="pt-10">
         <motion.div
@@ -149,19 +161,15 @@ export default function Home() {
             page where the paper admits it.
           </p>
 
-          {/* The error rate, up front, and measured on somebody else's labels.
-              Reading a cue out of position produces a confident opposite rather than a
-              vague answer, so the rate at which that happens is the first thing a
-              reader is owed — and a rate measured on the same papers the rules were
-              written against is not a rate, it is a restatement. */}
+          {/* The error rate stays above the fold, but as one sentence with a way in
+              rather than the five-line statistical paragraph that used to sit here.
+              A reader deciding whether to trust the page needs the headline figure
+              and a door; a reader who wants the Wilson interval will walk through it. */}
           {external ? (
             <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-ink-faint">
-              It is also often silent, and sometimes wrong. Scored against{" "}
-              <span className="numeral">
-                {external.instances.toLocaleString()}
-              </span>{" "}
-              citations labelled by other people in {external.corpus} &mdash; papers
-              from outside this library &mdash; it reported a stance for{" "}
+              It is also often silent, and sometimes wrong: on{" "}
+              <span className="numeral">{external.instances.toLocaleString()}</span>{" "}
+              citations labelled by other people it reported a stance for{" "}
               <span className="numeral text-ink-soft">
                 {Math.round(external.coverage * 100)}%
               </span>{" "}
@@ -169,14 +177,13 @@ export default function Home() {
               <span className="numeral text-ink-soft">
                 {Math.round(external.spokenPrecision * 100)}%
               </span>{" "}
-              of those right,{" "}
-              <span className="numeral">
-                {Math.round(external.spokenInterval[0] * 100)}&ndash;
-                {Math.round(external.spokenInterval[1] * 100)}%
-              </span>{" "}
-              at 95% confidence. The rest carry no cue phrase, so nothing is claimed
-              about them. Every row shows the sentence and the words that placed it, so
-              a wrong reading is visible rather than load-bearing.
+              of those right.{" "}
+              <Link
+                href="/method"
+                className="text-brass underline decoration-brass/40 underline-offset-2 transition-colors hover:decoration-brass"
+              >
+                How it reads, and how often it is wrong &rarr;
+              </Link>
             </p>
           ) : null}
 
@@ -243,6 +250,49 @@ export default function Home() {
           </motion.div>
         ))}
       </section>
+
+      {foundations.length > 0 ? (
+        <section className="mt-16 border-t border-paper-edge pt-10">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="text-[1.35rem] leading-snug">What the library rests on</h2>
+            <Link
+              href="/contested"
+              className="text-[0.88rem] text-ink-faint transition-colors hover:text-brass"
+            >
+              and where it argues with itself &rarr;
+            </Link>
+          </div>
+          <p className="mt-3 max-w-2xl text-[0.93rem] leading-relaxed text-ink-soft">
+            The works other papers here take a method or a setup from, counted by how
+            many of them do it. Adoption only &mdash; a paper that is argued with a
+            great deal is not one the library is standing on.
+          </p>
+
+          <ul className="mt-6 space-y-1">
+            {foundations.map((row) => (
+              <li key={row.id}>
+                <Link
+                  href={`/paper/${row.id}`}
+                  className="group flex items-center gap-4 border-b border-paper-edge/60 py-2.5"
+                >
+                  <span className="min-w-0 flex-1 truncate text-[0.98rem] transition-colors group-hover:text-brass">
+                    {titleOf[row.id] ?? row.id}
+                  </span>
+                  <span className="hidden w-32 shrink-0 sm:block">
+                    <span
+                      className="block h-1.5 rounded-[1px] bg-brass/50"
+                      style={{ width: `${(row.n / foundations[0].n) * 100}%` }}
+                    />
+                  </span>
+                  <span className="numeral w-20 shrink-0 text-right text-[0.8rem] text-ink-faint">
+                    {row.n} papers
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="mt-16 border-t border-paper-edge pt-8">
         <div className="flex flex-wrap items-baseline justify-between gap-4">
@@ -371,15 +421,8 @@ export default function Home() {
         ) : null}
       </section>
 
-      <footer className="mt-20 border-t border-paper-edge pt-6 text-[0.82rem] leading-relaxed text-ink-faint">
-        <p className="max-w-2xl">
-          Keystone reports what a paper says about other papers and about its own
-          assumptions, in the paper&rsquo;s own words. It does not judge whether the
-          idea is good, and a citation it says nothing about is one where the prose
-          made nothing checkable &mdash; not one that does not matter. Analysis covers
-          arXiv papers that ship LaTeX source; roughly one in ten does not.
-        </p>
-      </footer>
+      <Footer papers={totals.papers} />
+
     </main>
   );
 }
