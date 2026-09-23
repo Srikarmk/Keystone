@@ -2,7 +2,7 @@
 
 **What is this paper standing on?**
 
-**Live:** https://keystone-seven-beta.vercel.app
+**Live:** https://keystone-research.vercel.app
 
 No paper stands by itself. Each one adopts a method from somebody, argues with somebody
 else, and takes a handful of things on faith without flagging them. Keystone reads all

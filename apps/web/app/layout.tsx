@@ -19,7 +19,13 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const SITE = "https://keystone-seven-beta.vercel.app";
+//: The canonical origin, used for `metadataBase` and every social card's absolute
+//: URL. Renaming the project moved the *.vercel.app name and left this pointing at a
+//: DEPLOYMENT_NOT_FOUND page — so every card and canonical link on the site referred
+//: to a 404 while the site itself was fine. Worth an env var so a rename cannot do it
+//: again, with the current domain as the fallback.
+const SITE =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://keystone-research.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
