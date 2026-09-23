@@ -327,6 +327,7 @@ export function PaperView({
       page: Number(element.dataset.page) - 1,
       scale: Number(element.dataset.scale) || 1,
       box: element.getBoundingClientRect(),
+      element,
     }));
   }, []);
 
@@ -347,7 +348,10 @@ export function PaperView({
 
     // Per page, because a selection can run across a page break. Each client
     // rectangle is filed under the page its centre falls in.
-    const byPage = new Map<number, { scale: number; rects: AnchorRect[]; area: number }>();
+    const byPage = new Map<
+      number,
+      { scale: number; rects: AnchorRect[]; area: number; element: HTMLElement }
+    >();
     for (const client of selection.getRangeAt(0).getClientRects()) {
       if (client.width <= 0 || client.height <= 0) continue;
       const midX = client.left + client.width / 2;
@@ -358,7 +362,8 @@ export function PaperView({
       );
       if (!found) continue;
       const entry =
-        byPage.get(found.page) ?? { scale: found.scale, rects: [], area: 0 };
+        byPage.get(found.page) ??
+        { scale: found.scale, rects: [], area: 0, element: found.element };
       entry.rects.push({
         x0: (client.left - found.box.left) / found.scale,
         y0: (client.top - found.box.top) / found.scale,
@@ -373,12 +378,12 @@ export function PaperView({
     // rectangle list spanning a page break is not one place — so a selection dragged
     // across a break marks the page it covers most and leaves the rest alone, rather
     // than storing something that cannot be drawn or scrolled to.
-    let best: { page: number; rects: AnchorRect[] } | null = null;
+    let best: { page: number; rects: AnchorRect[]; element: HTMLElement } | null = null;
     let bestArea = 0;
     for (const [page, entry] of byPage) {
       if (entry.area > bestArea) {
         bestArea = entry.area;
-        best = { page, rects: entry.rects };
+        best = { page, rects: entry.rects, element: entry.element };
       }
     }
     if (!best) return;
@@ -386,13 +391,25 @@ export function PaperView({
     const rects = condense(best.rects);
     if (rects.length === 0) return;
 
+    // The quote, clipped to the page the mark ended up on.
+    //
+    // `selection.toString()` is the whole drag, which for a selection across a page
+    // break includes words that are not under any of the rectangles being stored — so
+    // the list would quote a sentence the highlight does not cover. Clamping the range
+    // to this page's element fixes that exactly, and is a no-op for the ordinary case
+    // where the whole selection is on one page.
+    const clipped = selection.getRangeAt(0).cloneRange();
+    if (!best.element.contains(clipped.startContainer)) clipped.setStartBefore(best.element);
+    if (!best.element.contains(clipped.endContainer)) clipped.setEndAfter(best.element);
+    const onPage = clipped.toString().replace(/\s+/g, " ").trim() || quote;
+
     const now = Date.now();
     setEditing({
       mark: {
         id: newMarkId(),
         page: best.page,
         rects,
-        quote,
+        quote: onPage,
         colour: "brass",
         note: "",
         at: now,
@@ -401,6 +418,31 @@ export function PaperView({
       fresh: true,
     });
   }, [pageBoxes]);
+
+  /**
+   * A selection made with the keyboard.
+   *
+   * Shift with the arrows, Home or End selects text perfectly well and produces no
+   * pointer event at all, so the panel simply never appeared for anybody reading this
+   * way — the feature was mouse-only without anybody deciding it should be. Keyed on
+   * release of the shift-modified key rather than on `selectionchange`, which fires on
+   * every character of a growing selection and would rebuild the panel continuously.
+   */
+  //: On `window`, not on the pane. Selecting with the keyboard leaves focus on the
+  //: document body, and an event from `body` bubbles *up* — so a handler on a div
+  //: inside body never hears it. `capture` checks the selection is in this pane
+  //: anyway, so a listener this wide costs nothing.
+  useEffect(() => {
+    const onKeyUp = (event: KeyboardEvent) => {
+      if (!event.shiftKey) return;
+      if (!/^(Arrow|Home|End|Page)/.test(event.key)) return;
+      const selection = window.getSelection();
+      if (!selection || selection.isCollapsed) return;
+      capture();
+    };
+    window.addEventListener("keyup", onKeyUp);
+    return () => window.removeEventListener("keyup", onKeyUp);
+  }, [capture]);
 
   /** A plain click: dismiss, or pick up a mark the reader clicked on. */
   const clicked = useCallback(
