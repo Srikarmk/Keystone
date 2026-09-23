@@ -143,6 +143,39 @@ const COLOUR_NAMES: Record<MarkColour, string> = {
   slate: "Slate",
 };
 
+/**
+ * The words a range covers, with the line breaks turned back into spaces.
+ *
+ * `Range.toString()` concatenates the text nodes and nothing else, and pdf.js puts
+ * each run of text in its own span with no trailing space — so a quote spanning a line
+ * break came out as "round each ofthe two sub-layers". `Selection.toString()` does not
+ * have that problem, because the browser inserts a break between block boxes, but a
+ * selection cannot be clipped to one page.
+ *
+ * So the text is taken a leaf at a time and joined with a space. A leaf of the text
+ * layer is exactly one run of glyphs, which is the unit a space belongs between; a
+ * selection inside a single run is one leaf and comes back unchanged.
+ */
+function words(range: Range): string {
+  const fragment = range.cloneContents();
+  const pieces: string[] = [];
+  const walk = (node: Node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      pieces.push(node.nodeValue ?? "");
+      return;
+    }
+    const children = [...node.childNodes];
+    if (children.length === 0) return;
+    if (children.every((child) => child.nodeType === Node.TEXT_NODE)) {
+      pieces.push(node.textContent ?? "");
+      return;
+    }
+    children.forEach(walk);
+  };
+  [...fragment.childNodes].forEach(walk);
+  return pieces.join(" ").replace(/\s+/g, " ").trim();
+}
+
 interface Painted {
   rect: AnchorRect;
   kind: "claim" | "evidence" | "mark";
@@ -240,6 +273,14 @@ export function PaperView({
   // land on the page as the reader sees it, so it uses the plain layout viewport. Get
   // this wrong and selection lands a fifth of a page away from the words.
   const textRendered = useRef(new Map<HTMLDivElement, string>());
+  //: The layer currently rendering into each page, so it can be called off.
+  //:
+  //: Without this, two renders at two widths — which is what a `ResizeObserver`
+  //: firing twice during layout produces — both clear the container and both keep
+  //: appending to it, and the page ends up with every span twice. Invisible, so the
+  //: page looked right; but a selection then picked up the doubled text and quoted
+  //: the sentence twice.
+  const textLayers = useRef(new Map<HTMLDivElement, { cancel: () => void }>());
   const renderText = useCallback(
     async (pageNumber: number, holder: HTMLDivElement, layoutWidth: number) => {
       const doc = docRef.current;
@@ -256,6 +297,7 @@ export function PaperView({
         const base = page.getViewport({ scale: 1 });
         const viewport = page.getViewport({ scale: layoutWidth / base.width });
 
+        textLayers.current.get(holder)?.cancel();
         holder.replaceChildren();
         // pdf.js positions every span with this, so it has to be on the container.
         holder.style.setProperty("--scale-factor", String(viewport.scale));
@@ -266,6 +308,7 @@ export function PaperView({
           container: holder,
           viewport,
         });
+        textLayers.current.set(holder, layer);
         await layer.render();
       } catch {
         // A page whose text cannot be laid out stays unselectable. That is a lost
@@ -396,12 +439,12 @@ export function PaperView({
     // `selection.toString()` is the whole drag, which for a selection across a page
     // break includes words that are not under any of the rectangles being stored — so
     // the list would quote a sentence the highlight does not cover. Clamping the range
-    // to this page's element fixes that exactly, and is a no-op for the ordinary case
-    // where the whole selection is on one page.
+    // to this page's element fixes that, and is a no-op when the whole selection is on
+    // one page.
     const clipped = selection.getRangeAt(0).cloneRange();
     if (!best.element.contains(clipped.startContainer)) clipped.setStartBefore(best.element);
     if (!best.element.contains(clipped.endContainer)) clipped.setEndAfter(best.element);
-    const onPage = clipped.toString().replace(/\s+/g, " ").trim() || quote;
+    const onPage = words(clipped) || quote;
 
     const now = Date.now();
     setEditing({
