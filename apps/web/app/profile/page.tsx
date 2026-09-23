@@ -8,7 +8,9 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { markedPapers } from "@/lib/store";
 import index from "@/public/dossiers/index.json";
 
-export const metadata = { title: "Profile — Keystone" };
+//: Just "Profile": the root layout's title template appends " — Keystone", so
+//: spelling it out here produced "Profile — Keystone — Keystone" in the tab.
+export const metadata = { title: "Profile" };
 
 /*
  * Never prerendered, and this has to be stated rather than inferred.

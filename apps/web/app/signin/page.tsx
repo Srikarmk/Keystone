@@ -4,7 +4,7 @@ import { availableProviders, signIn } from "@/auth";
 import { Footer } from "@/components/Footer";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-export const metadata = { title: "Sign in — Keystone" };
+export const metadata = { title: "Sign in" };
 
 const LABEL: Record<string, string> = { github: "GitHub", google: "Google" };
 
