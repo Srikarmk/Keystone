@@ -290,12 +290,30 @@ class handler(BaseHTTPRequestHandler):
                 reason="no-source",
                 id=arxiv_id,
             )
-        if isinstance(exc, urllib.error.HTTPError) and exc.code in (403, 429):
+        # HTTPError before URLError, because it is a subclass of it. Ordered the
+        # other way — as this was — every 404 from a mistyped identifier came back
+        # as "arXiv did not answer in time", which invites the reader to retry a
+        # paper that does not exist.
+        if isinstance(exc, urllib.error.HTTPError):
+            if exc.code in (403, 429):
+                return self.fail(
+                    429,
+                    "arXiv is rate-limiting this service at the moment. It usually "
+                    "clears within a minute or two.",
+                    reason="throttled",
+                    id=arxiv_id,
+                )
+            if exc.code == 404:
+                return self.fail(
+                    404,
+                    f"arXiv has no paper {arxiv_id}. Check the identifier.",
+                    reason="no-such-paper",
+                    id=arxiv_id,
+                )
             return self.fail(
-                429,
-                "arXiv is rate-limiting this service at the moment. It usually clears "
-                "within a minute or two.",
-                reason="throttled",
+                502,
+                f"arXiv answered {exc.code} for that paper.",
+                reason="arxiv-error",
                 id=arxiv_id,
             )
         if isinstance(exc, (urllib.error.URLError, TimeoutError)):
