@@ -65,9 +65,16 @@ export async function cardFor(id: string): Promise<Card> {
   try {
     const response = await fetch(
       `${SITE}/api/ingest?id=${encodeURIComponent(id)}&cached=1`,
-      // Bounded, because this sits in front of a page render. A card is worth a
+      // Bounded, because this sits in front of a page render: a card is worth a
       // second of somebody's time and not five.
-      { signal: AbortSignal.timeout(6000), cache: "force-cache" },
+      //
+      // Revalidated rather than force-cached, and that distinction is the whole bug.
+      // A paper is usually asked about *before* anybody has read it, so the first
+      // answer here is a 404 — and `force-cache` pinned that 404 in Next's data
+      // cache, so the title stayed the bare identifier permanently even after the
+      // paper had been analysed. A minute is short enough that the miss heals on its
+      // own and long enough that a shared link does not hit Redis on every render.
+      { signal: AbortSignal.timeout(6000), next: { revalidate: 60 } },
     );
     if (!response.ok) return unread(id);
     const dossier = (await response.json()) as {
