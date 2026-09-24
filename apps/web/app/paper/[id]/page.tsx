@@ -3,7 +3,19 @@ import { join } from "node:path";
 
 import type { Metadata } from "next";
 
+import { cardFor } from "@/lib/card";
 import { Reader } from "@/components/Reader";
+
+/**
+ * What the ingest cache holds for a paper that is not in the library.
+ *
+ * `cached=1`, so a crawler following a shared link reads a result but can never start
+ * an arXiv download. A paper nobody has opened yet is simply unnamed here.
+ */
+async function fromCache(id: string) {
+  const card = await cardFor(id);
+  return card.known ? { title: card.title, stands: card.stands, bare: card.bare } : null;
+}
 
 /** The dossier's own title and counts, read at build. */
 function dossier(id: string): { title: string; stands: number; bare: number } | null {
@@ -38,7 +50,10 @@ export async function generateMetadata(
   { params }: { params: Promise<{ id: string }> },
 ): Promise<Metadata> {
   const { id } = await params;
-  const built = dossier(id);
+  // The library's own file first — it is on disk at build, when these pages are
+  // generated — and then whatever the ingest cache holds for a paper somebody read
+  // on demand. A tab and a shared link should name the paper, not its identifier.
+  const built = dossier(id) ?? (await fromCache(id));
   if (!built) return { title: id };
   const parts = [
     built.stands > 0 ? `Rests on ${built.stands} works` : null,

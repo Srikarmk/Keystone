@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-import index from "@/public/dossiers/index.json";
+import { cardFor } from "@/lib/card";
 import { OG, fontOption, serif } from "@/lib/og";
 
 /*
@@ -17,48 +17,17 @@ export const alt = "A paper's citations and assumptions, read from its own sourc
 export const size = OG.size;
 export const contentType = "image/png";
 
-interface Built {
-  title: string;
-  category: string;
-  stands: number;
-  argues: number;
-  bare: number;
-  quote: string;
-}
 
-/**
- * Imported, not read from disk.
+/*
+ * The paper's figures come from `cardFor`, which reads an import the bundler can see
+ * and then the ingest cache — never the filesystem.
  *
- * This card renders in a serverless function, where `public/` is not on the
- * filesystem — the first version used `readFileSync` and shipped a card reading
- * "1810.04805 · 0 works it stands on" to anyone who pasted a link. An import the
- * bundler can see is the only data a dynamic route can rely on. The site's own card
- * gets away with `readFileSync` because it is generated once at build.
+ * This card renders in a serverless function, where `public/` is not on disk. The
+ * first version used `readFileSync` and shipped a card reading
+ * "1810.04805 · 0 works it stands on" to anyone who pasted a link. The second could
+ * do it again for any paper read on demand, which is why `cardFor` reports whether
+ * the paper is known at all rather than defaulting its counts to zero.
  */
-interface Entry {
-  id: string;
-  title?: string;
-  arxiv?: { primaryName?: string } | null;
-  lineage?: { inherits?: number; extends?: number; contests?: number };
-  assumptions?: { bare?: number };
-  foundation?: string;
-}
-
-const BY_ID = new Map((index as Entry[]).map((entry) => [entry.id, entry]));
-
-function read(id: string): Built | null {
-  const entry = BY_ID.get(id);
-  if (!entry) return null;
-  const tally = entry.lineage ?? {};
-  return {
-    title: entry.title ?? id,
-    category: entry.arxiv?.primaryName ?? "",
-    stands: (tally.inherits ?? 0) + (tally.extends ?? 0),
-    argues: tally.contests ?? 0,
-    bare: entry.assumptions?.bare ?? 0,
-    quote: entry.foundation ?? "",
-  };
-}
 
 function Figure({ n, label, tone }: { n: number; label: string; tone: string }) {
   return (
@@ -71,7 +40,7 @@ function Figure({ n, label, tone }: { n: number; label: string; tone: string }) 
 
 export default async function PaperCard({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const built = read(id);
+  const built = await cardFor(id);
   const font = await serif();
   const { paper, edge, ink, soft, faint, brass } = OG;
 
@@ -101,7 +70,7 @@ export default async function PaperCard({ params }: { params: Promise<{ id: stri
             <path d="M11 7.3h10l-1.9 12.5h-6.2z" fill="#d0a45c" />
           </svg>
           <span style={{ fontSize: 27, color: soft }}>Keystone</span>
-          {built?.category ? (
+          {built.category ? (
             <>
               <span style={{ fontSize: 22, color: edge }}>·</span>
               <span style={{ fontSize: 23, color: faint }}>{built.category}</span>
@@ -114,16 +83,16 @@ export default async function PaperCard({ params }: { params: Promise<{ id: stri
             style={{
               // Long titles are common and a clipped one looks broken, so the size
               // steps down rather than the text being cut.
-              fontSize: (built?.title.length ?? 0) > 62 ? 54 : 70,
+              fontSize: built.title.length > 62 ? 54 : 70,
               color: ink,
               letterSpacing: "-0.02em",
               lineHeight: 1.1,
               maxWidth: 1040,
             }}
           >
-            {built?.title ?? id}
+            {built.title}
           </span>
-          {built?.quote ? (
+          {built.quote ? (
             <span style={{ fontSize: 26, color: soft, maxWidth: 1000 }}>
               Stands on {built.quote}
             </span>
@@ -131,11 +100,17 @@ export default async function PaperCard({ params }: { params: Promise<{ id: stri
         </div>
 
         <div style={{ display: "flex", alignItems: "baseline", gap: 46 }}>
-          <Figure n={built?.stands ?? 0} label="works it stands on" tone={brass} />
-          {built && built.argues > 0 ? (
+          {built.known ? (
+            <Figure n={built.stands} label="works it stands on" tone={brass} />
+          ) : (
+            <span style={{ fontSize: 25, color: soft }}>
+              Not read yet — open it and the analysis runs
+            </span>
+          )}
+          {built.known && built.argues > 0 ? (
             <Figure n={built.argues} label="it argues with" tone="#a2503c" />
           ) : null}
-          {built && built.bare > 0 ? (
+          {built.known && built.bare > 0 ? (
             <Figure n={built.bare} label="bare assumptions" tone={ink} />
           ) : null}
         </div>

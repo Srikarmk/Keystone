@@ -98,12 +98,12 @@ def redis(*words: object) -> object:
         return None
 
 
-def key(arxiv_id: str) -> str:
-    return f"keystone:ingest:{arxiv_id}"
+def key(arxiv_id: str, part: str) -> str:
+    return f"keystone:ingest:{arxiv_id}" if part == "dossier" else f"keystone:{part}:{arxiv_id}"
 
 
-def cached(arxiv_id: str) -> bytes | None:
-    stored = redis("GET", key(arxiv_id))
+def cached(arxiv_id: str, part: str = "dossier") -> bytes | None:
+    stored = redis("GET", key(arxiv_id, part))
     if not isinstance(stored, str):
         return None
     try:
@@ -112,12 +112,12 @@ def cached(arxiv_id: str) -> bytes | None:
         return None
 
 
-def remember(arxiv_id: str, payload: bytes) -> None:
+def remember(arxiv_id: str, payload: bytes, part: str = "dossier") -> None:
     # Stored compressed. A dossier is around 650KB of JSON and about 55KB deflated,
     # which is the difference between fitting in a Redis value comfortably and
     # arguing with a size limit on every large paper.
     packed = base64.b64encode(zlib.compress(payload, 6)).decode()
-    redis("SET", key(arxiv_id), packed, "EX", CACHE_TTL)
+    redis("SET", key(arxiv_id, part), packed, "EX", CACHE_TTL)
 
 
 # --------------------------------------------------------------------------------- #
@@ -134,8 +134,14 @@ def fetch(url: str, limit: int) -> bytes:
     return payload
 
 
-def build(arxiv_id: str) -> dict:
-    """Download, parse, anchor. The same call the command line makes."""
+def build(arxiv_id: str) -> tuple[dict, dict]:
+    """Download, parse, anchor. The same call the command line makes.
+
+    Returns the dossier the reader draws and, separately, the paper's prose. They are
+    two artefacts because they have two audiences: every visitor downloads the first
+    and only a visitor who opens Ask needs the second, which is the larger of the two.
+    The command line writes them as two files for the same reason.
+    """
     from keystone import dossier as dossier_module
     from keystone.ingest import metadata as metadata_module
     from keystone.ingest.arxiv_source import SourceUnavailable, load_project
@@ -185,7 +191,17 @@ def build(arxiv_id: str) -> dict:
     # on-demand paper is analysed against itself, so its citations are not resolved
     # to other papers in the library and it has no inbound edges.
     payload["onDemand"] = True
-    return payload
+
+    context = {
+        "id": arxiv_id,
+        "title": payload["title"],
+        "sections": [
+            {"kind": str(section.kind), "title": section.title, "text": section.text}
+            for section in built.paper.sections
+            if section.text.strip()
+        ],
+    }
+    return payload, context
 
 
 class handler(BaseHTTPRequestHandler):
@@ -193,23 +209,48 @@ class handler(BaseHTTPRequestHandler):
         started = time.monotonic()
         params = parse_qs(urlparse(self.path).query)
         arxiv_id = read_id((params.get("id") or [""])[0])
+        #: "context" is the paper's prose, which Ask needs and the reader does not.
+        part = "context" if (params.get("part") or [""])[0] == "context" else "dossier"
+        #: Read the cache, and do not fill it.
+        #:
+        #: For the callers that are not a reader waiting for a page: the social card
+        #: and the page title. A crawler following a shared link should not be able to
+        #: start an arXiv download, and more to the point a card that reports "0 works
+        #: it stands on" because the paper was never read is worse than no card — that
+        #: exact card has shipped here once already.
+        only_cached = (params.get("cached") or [""])[0] in ("1", "true", "yes")
 
         if not arxiv_id:
             return self.fail(400, "Paste an arXiv id or link — 1706.03762, say.")
         if not valid(arxiv_id):
             return self.fail(400, f"“{arxiv_id}” is not an arXiv id.")
 
-        hit = cached(arxiv_id)
+        hit = cached(arxiv_id, part)
         if hit:
             return self.ok(hit, cache="hit", seconds=time.monotonic() - started)
+        if only_cached:
+            return self.fail(
+                404,
+                "That paper has not been read yet.",
+                reason="not-cached",
+                id=arxiv_id,
+            )
 
         try:
-            payload = json.dumps(build(arxiv_id)).encode()
+            dossier, context = build(arxiv_id)
         except Exception as exc:  # noqa: BLE001
             return self.explain(exc, arxiv_id)
 
-        remember(arxiv_id, payload)
-        return self.ok(payload, cache="miss", seconds=time.monotonic() - started)
+        # Both are stored, whichever was asked for. They come out of one parse, so a
+        # reader who opens Ask on the paper already in front of them gets a cache hit
+        # rather than a second ingest.
+        payloads = {
+            "dossier": json.dumps(dossier).encode(),
+            "context": json.dumps(context).encode(),
+        }
+        for name, body in payloads.items():
+            remember(arxiv_id, body, name)
+        return self.ok(payloads[part], cache="miss", seconds=time.monotonic() - started)
 
     # ----------------------------------------------------------------------------- #
 

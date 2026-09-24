@@ -38,7 +38,12 @@ export function MarkedPapers({
             >
               {paper.title}
             </Link>{" "}
-            <span className="numeral text-[0.76rem] text-ink-faint">{paper.id}</span>
+            {/* The identifier only when it is not already the whole row. A paper read
+                on demand is not in the library index, so its title falls back to its
+                id — and printing both rendered "1709.01507 1709.01507". */}
+            {paper.title === paper.id ? null : (
+              <span className="numeral text-[0.76rem] text-ink-faint">{paper.id}</span>
+            )}
           </li>
         ))}
       </ul>

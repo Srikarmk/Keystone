@@ -130,15 +130,39 @@ Rules, in order of importance:
 5. Numbers marked as verified have been checked against the table cell that carries them. Numbers marked as having no evidence were searched for in every table of the paper and not found; say that if it is relevant, since it is a fact about the paper.
 6. Be brief. A reader with the paper open wants the answer and the location, not a summary of what they can see.`;
 
-async function buildContext(origin: string, paperId: string): Promise<string> {
-  const [dossierResponse, contextResponse] = await Promise.all([
+/**
+ * The two halves of a paper, from the library or from the parser.
+ *
+ * The library's papers are files written at build. Anything else was read on demand
+ * and lives only in the ingest function's cache — so asking a question about a paper
+ * somebody pasted has to go back to the same place the reader got it from, or Ask is
+ * the one part of the page that does not work for their own paper.
+ *
+ * Both halves come out of a single parse and are cached separately, so this is two
+ * cache reads rather than two ingests.
+ */
+async function load(origin: string, paperId: string): Promise<[unknown, unknown]> {
+  const fromLibrary = await Promise.all([
     fetch(`${origin}/dossiers/${paperId}.json`, { cache: "force-cache" }),
     fetch(`${origin}/dossiers/${paperId}.context.json`, { cache: "force-cache" }),
   ]);
-  if (!dossierResponse.ok || !contextResponse.ok) throw new Error("not found");
+  if (fromLibrary[0].ok && fromLibrary[1].ok) {
+    return [await fromLibrary[0].json(), await fromLibrary[1].json()];
+  }
 
-  const dossier = await dossierResponse.json();
-  const prose = await contextResponse.json();
+  const id = encodeURIComponent(paperId);
+  const onDemand = await Promise.all([
+    fetch(`${origin}/api/ingest?id=${id}`, { cache: "force-cache" }),
+    fetch(`${origin}/api/ingest?id=${id}&part=context`, { cache: "force-cache" }),
+  ]);
+  if (!onDemand[0].ok || !onDemand[1].ok) throw new Error("not found");
+  return [await onDemand[0].json(), await onDemand[1].json()];
+}
+
+async function buildContext(origin: string, paperId: string): Promise<string> {
+  const [loadedDossier, loadedProse] = await load(origin, paperId);
+  const dossier = loadedDossier as Record<string, any>;
+  const prose = loadedProse as Record<string, any>;
 
   const traced = (dossier.numbers ?? [])
     .map((n: Record<string, unknown>) => {
