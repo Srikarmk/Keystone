@@ -3,13 +3,15 @@ name = "keystone-core"
 version = "0.1.0"
 description = "Keystone — adversarial reading room for research papers"
 requires-python = ">=3.12"
+# scipy, numpy and pillow were declared here and imported nowhere — `render` draws
+# through PyMuPDF's own pixmaps. They cost 107MB of the 192MB install, which does not
+# matter on a laptop and does when the same package has to fit inside a serverless
+# function alongside MuPDF.
 dependencies = [
     "pymupdf>=1.24",
     "rapidfuzz>=3.9",
     "typer>=0.12",
     "pydantic>=2.8",
-    "pillow>=10.4",
-    "scipy>=1.14",
     "pylatexenc>=2.11",
 ]
 
