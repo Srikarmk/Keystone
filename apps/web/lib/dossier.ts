@@ -255,6 +255,16 @@ export interface Dossier {
   id: string;
   title: string;
   pdfUrl: string;
+  /**
+   * Analysed just now rather than at build, because it is not in the library.
+   *
+   * It changes what the page can promise. A library paper's citations are resolved
+   * against every other paper's full title, so it has a place in the lineage graph
+   * and other papers can be shown leaning on it. A paper read on demand is analysed
+   * against itself: the readings are the same, the graph position is missing, and
+   * the page should say so rather than show an empty section.
+   */
+  onDemand?: boolean;
   /** What arXiv files this paper under. Absent for papers whose metadata failed. */
   arxiv?: ArxivRecord | null;
   /** The repository the paper itself names, if it names one. Never inferred. */

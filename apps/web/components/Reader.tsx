@@ -277,6 +277,7 @@ export function Reader({ id }: { id: string }) {
       <Masthead
         index={index}
         current={current}
+        visiting={dossier?.title}
         onSelect={(next) => {
           setCurrent(next);
           window.history.replaceState(null, "", `/paper/${next}`);
@@ -543,11 +544,27 @@ function Masthead({
   index,
   current,
   onSelect,
+  visiting,
 }: {
   index: IndexEntry[];
   current: string;
   onSelect: (id: string) => void;
+  /** The title of a paper being read on demand, which the index does not know. */
+  visiting?: string;
 }) {
+  /*
+   * A `select` shows its first option when its value matches none of them, so a
+   * paper read on demand left the picker naming a completely different paper — the
+   * alphabetically first one in the library — above the one on screen. Adding the
+   * visitor as its own option is the fix; it is not a library entry and choosing
+   * something else still navigates away from it, which is the behaviour anyone
+   * would expect.
+   */
+  const visitor =
+    current && !index.some((paper) => paper.id === current)
+      ? { id: current, title: visiting || current }
+      : null;
+
   return (
     <header className="flex shrink-0 flex-wrap items-center justify-between gap-5 border-b border-paper-edge pb-3.5">
       <Link
@@ -567,6 +584,11 @@ function Masthead({
           aria-label="Paper"
           className="w-full max-w-[28rem] truncate border-b border-ink/25 bg-transparent pb-0.5 font-[family-name:var(--font-display)] text-[0.95rem] text-ink outline-none transition-colors hover:border-brass focus:border-brass sm:text-[1rem]"
         >
+          {visitor ? (
+            <option key={visitor.id} value={visitor.id}>
+              {visitor.title}
+            </option>
+          ) : null}
           {index.map((p) => (
             <option key={p.id} value={p.id}>
               {p.title}
@@ -599,6 +621,13 @@ function Summary({
               of numbers but the piece this paper would collapse without. */}
           <Foundation edge={lineage.foundation} onJump={onJump} />
           <Authors names={dossier.arxiv?.authors ?? []} published={dossier.arxiv?.published} />
+          {dossier.onDemand ? (
+            <p className="mt-2 max-w-xl text-[0.8rem] leading-relaxed text-ink-faint">
+              Not in the library &mdash; read just now, by the same parser. Its
+              citations are not matched against the other papers here, so nothing is
+              shown standing on it.
+            </p>
+          ) : null}
         </div>
 
         <button
