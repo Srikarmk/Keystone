@@ -1,4 +1,5 @@
 import { historyKey } from "@/auth";
+import { isArxivId } from "@/lib/arxiv";
 import {
   MAX_MARKS,
   MAX_NOTE,
@@ -27,7 +28,7 @@ import { deleteMarks, readMarks, storeAvailable, writeMarks } from "@/lib/store"
 
 export const runtime = "nodejs";
 
-const PAPER = /^\d{4}\.\d{4,5}$/;
+
 
 async function handle(): Promise<string | null> {
   try {
@@ -39,7 +40,7 @@ async function handle(): Promise<string | null> {
 
 function paperOf(request: Request): string | null {
   const paper = new URL(request.url).searchParams.get("paper") ?? "";
-  return PAPER.test(paper) ? paper : null;
+  return isArxivId(paper) ? paper : null;
 }
 
 export async function GET(request: Request) {

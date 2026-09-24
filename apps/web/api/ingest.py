@@ -137,7 +137,9 @@ def fetch(url: str, limit: int) -> bytes:
 def build(arxiv_id: str) -> dict:
     """Download, parse, anchor. The same call the command line makes."""
     from keystone import dossier as dossier_module
-    from keystone.ingest.arxiv_source import SourceUnavailable
+    from keystone.ingest import metadata as metadata_module
+    from keystone.ingest.arxiv_source import SourceUnavailable, load_project
+    from keystone.ingest.latex import document_title
 
     work = Path("/tmp/keystone")
     cache = work / "cache"
@@ -156,8 +158,34 @@ def build(arxiv_id: str) -> dict:
             raise SourceUnavailable("arXiv did not return a PDF for that id")
         pdf_path.write_bytes(payload)
 
-    built = dossier_module.build(arxiv_id, cache, title="", pdf_path=pdf_path)
-    return built.to_dict()
+    # The title, from the paper's own LaTeX. The library gets its display titles the
+    # same way, and the command line can do better — it cross-checks against titles
+    # printed beside the same arXiv id in *other* papers' bibliographies, which is
+    # what catches a paper carrying a stale conference template. One paper on its own
+    # has no such second opinion, so this is the best available and occasionally it
+    # will be a template's title rather than the paper's.
+    document, _ = load_project(arxiv_id, cache)
+    title = " ".join(document_title(document.text).split())
+
+    built = dossier_module.build(arxiv_id, cache, title=title, pdf_path=pdf_path)
+    payload = built.to_dict()
+
+    # Authors, category and date, so an on-demand paper reads like a library one
+    # rather than an anonymous slab. A metadata request never downloads a paper, so
+    # it is cheap and is not subject to the e-print rate limiting; when it fails the
+    # dossier is served without it, which is what the reader already expects from
+    # papers whose metadata did not resolve.
+    try:
+        record = metadata_module.fetch([arxiv_id]).get(arxiv_id.split("v")[0])
+        payload["arxiv"] = record.to_dict() if record else None
+    except Exception:  # noqa: BLE001
+        payload["arxiv"] = None
+
+    # Said out loud in the payload, because it changes what the page can promise: an
+    # on-demand paper is analysed against itself, so its citations are not resolved
+    # to other papers in the library and it has no inbound edges.
+    payload["onDemand"] = True
+    return payload
 
 
 class handler(BaseHTTPRequestHandler):

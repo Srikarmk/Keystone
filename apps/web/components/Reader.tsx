@@ -76,6 +76,14 @@ export function Reader({ id }: { id: string }) {
   // the prop, so switching papers from the picker reloads them with everything else.
   const marks = useMarks(current);
   const [activeMark, setActiveMark] = useState<string | null>(null);
+  //: Whether this paper is being analysed right now, and why it could not be.
+  //:
+  //: Distinct from "loading" on purpose. Opening a paper from the library is a file
+  //: fetch and takes no time worth mentioning; opening one that has never been read
+  //: downloads a tarball, parses it and anchors several hundred sentences, and three
+  //: seconds of an unexplained blank pane reads as a broken page.
+  const [analysing, setAnalysing] = useState(false);
+  const [problem, setProblem] = useState<string | null>(null);
   /**
    * The page, filling the window.
    *
@@ -192,18 +200,59 @@ export function Reader({ id }: { id: string }) {
     setJump(null);
     setAsking(false);
     setActiveMark(null);
+    setAnalysing(false);
+    setProblem(null);
+
+    let cancelled = false;
+    const land = (loaded: Dossier) => {
+      if (cancelled) return;
+      setDossier(loaded);
+      setAnalysing(false);
+      // Noted after the dossier arrives, so a mistyped id or a paper that failed to
+      // build never lands in the reading list. Local first, then pushed to the
+      // account if there is one — not awaited, because a reader waiting on a
+      // bookkeeping request to read a paper would be the wrong trade.
+      record(loaded.id, loaded.title);
+      void sync();
+    };
+
+    /*
+     * The library first, then the parser.
+     *
+     * Seventy-four papers are analysed at build and served as files. Anything else is
+     * read on demand by the Python function, which runs the same parser and returns
+     * the same shape — so from here the only difference between a library paper and
+     * somebody's own is which of these two answered.
+     */
     fetch(`/dossiers/${current}.json`)
-      .then((r) => r.json())
-      .then((loaded: Dossier) => {
-        setDossier(loaded);
-        // Noted after the dossier arrives, so a mistyped id or a paper that failed to
-        // build never lands in the reading list. Local first, then pushed to the
-        // account if there is one — not awaited, because a reader waiting on a
-        // bookkeeping request to read a paper would be the wrong trade.
-        record(loaded.id, loaded.title);
-        void sync();
-      })
-      .catch(() => setDossier(null));
+      .then((response) => (response.ok ? response.json() : Promise.reject(response)))
+      .then(land)
+      .catch(() => {
+        if (cancelled) return;
+        setAnalysing(true);
+        return fetch(`/api/ingest?id=${encodeURIComponent(current)}`)
+          .then(async (response) => {
+            const body = await response.json().catch(() => null);
+            if (cancelled) return;
+            if (!response.ok || !body || body.error) {
+              setAnalysing(false);
+              setProblem(
+                body?.error ?? "That paper could not be read.",
+              );
+              return;
+            }
+            land(body as Dossier);
+          })
+          .catch(() => {
+            if (cancelled) return;
+            setAnalysing(false);
+            setProblem("The analyser could not be reached.");
+          });
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [current]);
 
   const claim = dossier && selected !== null ? dossier.claims[selected] : null;
@@ -324,8 +373,18 @@ export function Reader({ id }: { id: string }) {
               />
             </>
           ) : (
-            <div className="flex h-full items-center justify-center text-[0.95rem] italic text-ink-faint">
-              Fetching the paper&hellip;
+            <div className="flex h-full items-center justify-center px-8 text-center">
+              {problem ? (
+                <p className="max-w-sm text-[0.95rem] leading-relaxed text-ink-soft">
+                  {problem}
+                </p>
+              ) : (
+                <p className="text-[0.95rem] italic text-ink-faint">
+                  {analysing
+                    ? "Reading this paper for the first time — downloading its source and anchoring every sentence. A few seconds."
+                    : "Fetching the paper\u2026"}
+                </p>
+              )}
             </div>
           )}
         </section>

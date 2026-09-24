@@ -1,0 +1,20 @@
+# The Python side of this deployment: one serverless function, one dependency.
+#
+# This is deliberately not a requirements.txt. Vercel's Python builder converts one
+# into a uv project and runs `uv lock` over the result, and that conversion drops the
+# `#subdirectory=` fragment a git dependency needs — so the build went looking for a
+# Python package at the root of a JavaScript monorepo and failed. Stating the source
+# in uv's own syntax leaves nothing to be converted.
+#
+# The engine is installed from git because it lives in services/core, outside this
+# directory, and a Vercel build only uploads the project root. Vendoring a copy here
+# would drift from the real one the moment either changed.
+[project]
+name = "keystone-web-functions"
+version = "0.1.0"
+description = "Serverless functions for the Keystone reader"
+requires-python = ">=3.12"
+dependencies = ["keystone-core"]
+
+[tool.uv.sources]
+keystone-core = { git = "https://github.com/Srikarmk/Keystone.git", subdirectory = "services/core", branch = "main" }

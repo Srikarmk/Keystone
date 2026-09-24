@@ -1,6 +1,7 @@
 import { historyKey } from "@/auth";
 import type { Visit } from "@/lib/history";
 import { deleteHistory, merge, readHistory, storeAvailable, writeHistory } from "@/lib/store";
+import { isArxivId } from "@/lib/arxiv";
 
 /*
  * A signed-in reader's list, shared between their machines.
@@ -24,7 +25,7 @@ function clean(raw: unknown): Visit[] {
     // Ids are arXiv identifiers and nothing else. This is the boundary where a
     // browser's claim becomes a database key, so the shape is checked here rather
     // than trusted from the client that sent it.
-    if (typeof id !== "string" || !/^\d{4}\.\d{4,5}$/.test(id)) return [];
+    if (typeof id !== "string" || !isArxivId(id)) return [];
     return [
       {
         id,

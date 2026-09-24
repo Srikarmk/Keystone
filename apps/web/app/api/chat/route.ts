@@ -1,4 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { isArxivId } from "@/lib/arxiv";
 
 /*
  * Grounded question answering over one paper.
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
 
   const paperId = body.paperId;
   const messages = body.messages ?? [];
-  if (!paperId || !/^\d{4}\.\d{4,5}$/.test(paperId) || messages.length === 0) {
+  if (!paperId || !isArxivId(paperId) || messages.length === 0) {
     return Response.json({ error: "bad_request" }, { status: 400 });
   }
 

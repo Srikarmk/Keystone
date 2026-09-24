@@ -11,6 +11,7 @@ import type {
   LibraryGraph as GraphData,
 } from "@/lib/dossier";
 import { categoryLabel, categoryOf } from "@/lib/dossier";
+import { AddPaper } from "@/components/AddPaper";
 import { Connector } from "@/components/Connector";
 import { Footer } from "@/components/Footer";
 import { LibraryGraph } from "@/components/LibraryGraph";
@@ -200,6 +201,18 @@ export default function Home() {
                 {totals.papers} papers
               </p>
             ) : null}
+          </div>
+
+          {/* The library is a demonstration; this is the tool. Put where the reader
+              is already deciding what to open, rather than on a page of its own that
+              nobody would think to look for. */}
+          <div className="mt-8 border-t border-paper-edge pt-6">
+            <h2 className="text-[0.7rem] uppercase tracking-[0.18em] text-ink-faint">
+              Or read your own
+            </h2>
+            <div className="mt-3">
+              <AddPaper />
+            </div>
           </div>
         </motion.div>
 

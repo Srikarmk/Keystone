@@ -139,6 +139,7 @@ export function merge(a: Visit[], b: Visit[]): Visit[] {
  * --------------------------------------------------------------------------------- */
 
 import { inOrder, MAX_MARKS, parseMark, type Mark } from "@/lib/marks";
+import { isArxivId } from "@/lib/arxiv";
 
 const MARKS = (handle: string, paper: string) => `keystone:marks:${handle}:${paper}`;
 const MARKED = (handle: string) => `keystone:marked:${handle}`;
@@ -187,7 +188,7 @@ export async function markedPapers(handle: string): Promise<string[]> {
   const raw = await command("SMEMBERS", MARKED(handle));
   if (!Array.isArray(raw)) return [];
   return raw.filter(
-    (entry): entry is string => typeof entry === "string" && /^\d{4}\.\d{4,5}$/.test(entry),
+    (entry): entry is string => typeof entry === "string" && isArxivId(entry),
   );
 }
 
