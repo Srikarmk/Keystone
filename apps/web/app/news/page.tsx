@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import type { Item } from "@/lib/feeds";
+import { track } from "@/components/Track";
 
 /*
  * What is new, and what of it this project can read.
@@ -40,6 +41,7 @@ export default function News() {
   const [source, setSource] = useState<string | null>(null);
 
   useEffect(() => {
+    track("feed.read");
     fetch("/api/feed")
       .then((r) => (r.ok ? r.json() : Promise.reject(r)))
       .then(setFeed)

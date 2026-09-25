@@ -1,4 +1,5 @@
 import { isArxivId, readArxivId } from "@/lib/arxiv";
+import { record } from "@/lib/analytics";
 import { fetchBuilt } from "@/lib/built";
 
 /*
@@ -412,6 +413,10 @@ async function dispatch(message: Record<string, any>): Promise<object | null> {
               ? listDisagreements
               : null;
       if (!run) return err(id, -32602, `Unknown tool: ${name}`);
+
+      // Counted here rather than in a browser, because this route's callers are
+      // programs. Never awaited: a tool call must not wait on a counter.
+      void record({ events: [{ name: "mcp.call", label: String(name) }] }).catch(() => {});
 
       try {
         const { text, structured } = await run(args);

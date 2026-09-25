@@ -12,6 +12,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { track } from "@/components/Track";
 import { inOrder, type Mark } from "@/lib/marks";
 
 export interface MarksState {
@@ -111,6 +112,7 @@ export function useMarks(paper: string): Marks {
           marks: inOrder(Array.isArray(body.marks) ? body.marks : was.marks),
           error: null,
         }));
+        track("mark.create");
         return true;
       } catch {
         if (open.current === target) {

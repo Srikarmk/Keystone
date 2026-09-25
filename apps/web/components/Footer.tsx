@@ -55,13 +55,25 @@ export function Footer({ papers }: { papers?: number }) {
         <Column title="About" links={ABOUT} />
       </div>
 
-      <p className="mt-10 max-w-2xl border-t border-paper-edge pt-6 text-[0.8rem] leading-relaxed text-ink-faint">
-        Keystone reports what a paper says about other papers and about its own
-        assumptions, in the paper&rsquo;s own words. It does not judge whether the idea
-        is good, and a citation it says nothing about is one where the prose made
-        nothing checkable &mdash; not one that does not matter. Analysis covers arXiv
-        papers that ship LaTeX source; roughly one in ten does not.
-      </p>
+      <div className="mt-10 max-w-2xl space-y-3 border-t border-paper-edge pt-6 text-[0.8rem] leading-relaxed text-ink-faint">
+        <p>
+          Keystone reports what a paper says about other papers and about its own
+          assumptions, in the paper&rsquo;s own words. It does not judge whether the
+          idea is good, and a citation it says nothing about is one where the prose
+          made nothing checkable &mdash; not one that does not matter. Analysis covers
+          arXiv papers that ship LaTeX source; roughly one in ten does not.
+        </p>
+        {/* Said here because it applies to every visitor, not only a signed-in one.
+            A site that counts its readers and does not mention it is a site whose
+            privacy copy is true only by omission. */}
+        <p>
+          Visits are counted, and nobody is identified. No cookie is set and no
+          tracker from anywhere else is loaded. Page and feature counts are kept;
+          people are counted through a probabilistic sketch of a one-way hash that is
+          re-salted daily, so the same visitor tomorrow is a different mark and the
+          hashes themselves are never stored. Nothing is shared with anyone.
+        </p>
+      </div>
     </footer>
   );
 }

@@ -1,4 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
+
+import { Track } from "@/components/Track";
 import { IBM_Plex_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 
@@ -83,7 +86,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="grain min-h-screen bg-paper text-ink antialiased">{children}</body>
+      <body className="grain min-h-screen bg-paper text-ink antialiased">
+        {children}
+        {/* Counts page views. No cookie, nothing identifying — see lib/analytics.ts. */}
+        <Suspense fallback={null}>
+          <Track />
+        </Suspense>
+      </body>
     </html>
   );
 }

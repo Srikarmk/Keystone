@@ -33,6 +33,7 @@ import type {
 } from "@/lib/dossier";
 import { declaredAs, isDeclared, isSupported } from "@/lib/dossier";
 import { record, sync } from "@/lib/history";
+import { track } from "@/components/Track";
 import { useMarks } from "@/lib/useMarks";
 import type { Mark } from "@/lib/marks";
 import { assumptionId, edgeId } from "@/lib/rows";
@@ -230,11 +231,13 @@ export function Reader({ id }: { id: string }) {
       .catch(() => {
         if (cancelled) return;
         setAnalysing(true);
+        track("paper.ingest", current);
         return fetch(`/api/ingest?id=${encodeURIComponent(current)}`)
           .then(async (response) => {
             const body = await response.json().catch(() => null);
             if (cancelled) return;
             if (!response.ok || !body || body.error) {
+              track("paper.ingest.failed", body?.reason ?? "unknown");
               setAnalysing(false);
               setProblem(
                 body?.error ?? "That paper could not be read.",

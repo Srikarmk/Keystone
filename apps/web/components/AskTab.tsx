@@ -11,6 +11,7 @@
 
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
+import { track } from "@/components/Track";
 
 interface Turn {
   role: "user" | "assistant";
@@ -44,6 +45,7 @@ export function AskTab({ paperId, title }: { paperId: string; title: string }) {
     abort.current = new AbortController();
 
     try {
+      track("ask", paperId);
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },

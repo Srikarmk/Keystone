@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { SearchGlyph } from "@/components/Glyph";
+import { track } from "@/components/Track";
 
 /*
  * Search the library by what its papers said, not by what they are called.
@@ -149,6 +150,7 @@ export function Search() {
     setThinking(true);
     setGuide(null);
     try {
+      track("search");
       const response = await fetch("/api/guide", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
