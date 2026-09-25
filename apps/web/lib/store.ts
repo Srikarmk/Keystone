@@ -16,15 +16,15 @@ import type { Visit } from "@/lib/history";
 
 //: `UPSTASH_*` first, `KV_*` second, and the order is load-bearing.
 //:
-//: Both name a working store. `UPSTASH_*` is the database provisioned directly at
-//: upstash.com, which is the one on the free tier — Vercel's marketplace flow offers
-//: only Pay-As-You-Go and the Fixed plans, with no free option in the list. `KV_*` is
-//: that marketplace resource.
+//: `UPSTASH_*` is the database provisioned directly at upstash.com, on the free tier —
+//: Vercel's marketplace flow offers only Pay-As-You-Go and the Fixed plans, with no
+//: free option in the list. `KV_*` was that marketplace resource, and it has since
+//: been disconnected, so today only the first pair is set.
 //:
-//: With the old order the metered store won and the free one was never read, which is
-//: the kind of thing that shows up as a bill rather than as a bug. Two stores also
-//: means data lands in whichever one this resolves to, so the marketplace resource
-//: should be disconnected once this is confirmed — until then, this order decides.
+//: The fallback stays because attaching a Vercel-side store later should not need a
+//: code change. The order stays written down because the original had it the other
+//: way round: the metered store won, the free one was never read, and that is the
+//: kind of mistake that arrives as a bill rather than as a bug.
 const ENDPOINT =
   process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL ?? "";
 const TOKEN =

@@ -76,6 +76,11 @@ def read_id(raw: str) -> str:
 # The cache. Redis over HTTP, spoken to with urllib — the same protocol and the same
 # store the reading lists use, so there is one database to reason about and no client
 # library to keep current.
+#
+# `UPSTASH_*` first for the reason lib/store.ts gives: the free store must win over a
+# metered one. The marketplace resource has since been disconnected and only the first
+# pair is set, but the order is kept so attaching one later cannot silently redirect
+# every write to a store that bills per command.
 # --------------------------------------------------------------------------------- #
 
 ENDPOINT = os.environ.get("UPSTASH_REDIS_REST_URL") or os.environ.get("KV_REST_API_URL")
