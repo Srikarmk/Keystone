@@ -18,6 +18,7 @@ import Link from "next/link";
 const READING: { href: string; label: string; hint: string }[] = [
   { href: "/", label: "The library", hint: "every paper analysed" },
   { href: "/timeline", label: "In order", hint: "the papers on a time axis" },
+  { href: "/news", label: "What's new", hint: "papers and writing, as they are published" },
   { href: "/contested", label: "Disagreements", hint: "where papers say prior work is wrong" },
   { href: "/assumptions", label: "Taken on faith", hint: "what is asserted with nothing behind it" },
 ];

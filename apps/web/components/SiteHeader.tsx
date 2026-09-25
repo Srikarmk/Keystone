@@ -22,6 +22,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
  */
 
 const NAV = [
+  { href: "/news", label: "what's new" },
   { href: "/timeline", label: "in order" },
   { href: "/contested", label: "disagreements" },
   { href: "/assumptions", label: "taken on faith" },
