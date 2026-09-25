@@ -1,0 +1,4452 @@
+{
+  "id": "1806.08730",
+  "title": "The Natural Language Decathlon: Multitask Learning as Question Answering",
+  "keystone": null,
+  "codeUrl": "https://github.com/salesforce/decaNLP",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1806.08730",
+  "numbers": [
+    {
+      "value": "5.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "For the translation experiment, we use the IWSLT 2016 En Cs dataset and for NER, we use OntoNotes 5.0 .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 308.1716003417969,
+            "y0": 472.4051513671875,
+            "x1": 504.3044128417969,
+            "y1": 482.2877197265625
+          },
+          {
+            "x0": 108.0,
+            "y0": 483.0746307373047,
+            "x1": 161.96751403808594,
+            "y1": 493.2170715332031
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Summary of openly available benchmark datasets in and evaluation metrics that contribute to the . All metrics are case insensitive. nF1 is the normalized F1 metric used by SQuAD that strips out articles and punctuation. EM is an exact match comparison: for text classification, this amounts to accuracy; for WOZ it is equivalent to turn-based dialogue state exact match (dsEM) and for WikiSQL it is equivalent to exact match of logical forms (lfEM). F1 for QA-ZRE is a corpus level metric (cF1) that takes into account that some question are unanswerable. Precision is the true positive count divided by the number of times the system returned a non-null answer. Recall is the true positive count divided by the number of instances that have an answer.",
+      "label": "datasetInformation",
+      "numericCells": 30,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Task",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Dataset",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "# Train",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "# Dev",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "# Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Metric",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Question Answering",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "87599",
+            "value": "87599",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10570",
+            "value": "10570",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9616",
+            "value": "9616",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "nF1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Machine Translation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "IWSLT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "196884",
+            "value": "196884",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "993",
+            "value": "993",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1305",
+            "value": "1305",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Summarization",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "CNN/DM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "287227",
+            "value": "287227",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13368",
+            "value": "13368",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11490",
+            "value": "11490",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ROUGE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Natural Language Inference",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "392702",
+            "value": "392702",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20000",
+            "value": "20000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20000",
+            "value": "20000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Sentiment Analysis",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "SST",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6920",
+            "value": "6920",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "872",
+            "value": "872",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1821",
+            "value": "1821",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Semantic Role Labeling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "QA-SRL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6414",
+            "value": "6414",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2183",
+            "value": "2183",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2201",
+            "value": "2201",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "nF1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Zero-Shot Relation Extraction",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "QA-ZRE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "840000",
+            "value": "840000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "600",
+            "value": "600",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12000",
+            "value": "12000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cF1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Goal-Oriented Dialogue",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "WOZ",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2536",
+            "value": "2536",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "830",
+            "value": "830",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1646",
+            "value": "1646",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "dsEM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Semantic Parsing",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "WikiSQL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56355",
+            "value": "56355",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8421",
+            "value": "8421",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15878",
+            "value": "15878",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "lfEM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Pronoun Resolution",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "MWSC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80",
+            "value": "80",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "82",
+            "value": "82",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Validation metrics for baselines: sequence-to-sequence (S2S) with self-attentive transformer layers (w/SAtt), the addition of coattention (+CAtt) over a split context and question, and a question pointer (+QPtr). The last model is equivalent to MQAN. Multitask models use a round-robin batch-level sampling strategy to jointly train on the full . The last column includes an additional anti-curriculum (+ACurr) phase that trains on SQuAD alone before switching to the fully joint strategy. Entries marked with '-' would correspond to s for aggregates of separately trained models; this is not well-defined without a mechanism for choosing between models.",
+      "label": "modelAblations",
+      "numericCells": 95,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Single-task Training",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Multitask Training",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(lr)2-5 (lr)6-10 Dataset",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "S2S",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "w/SAtt",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "+CAtt",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "+QPtr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "S2S",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "w/SAtt",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "+CAtt",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "+QPtr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "+ACurr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48.2",
+            "value": "48.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.2",
+            "value": "68.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.6",
+            "value": "74.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.5",
+            "value": "75.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "47.5",
+            "value": "47.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.8",
+            "value": "66.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "71.8",
+            "value": "71.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.8",
+            "value": "70.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.3",
+            "value": "74.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "IWSLT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.0",
+            "value": "25.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.3",
+            "value": "23.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.0",
+            "value": "26.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.2",
+            "value": "14.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.6",
+            "value": "13.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.0",
+            "value": "9.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.1",
+            "value": "16.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.7",
+            "value": "13.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "CNN/DM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.0",
+            "value": "19.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.0",
+            "value": "20.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.1",
+            "value": "25.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.0",
+            "value": "24.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.7",
+            "value": "25.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.0",
+            "value": "14.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.7",
+            "value": "15.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.9",
+            "value": "23.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.6",
+            "value": "24.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.5",
+            "value": "67.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.5",
+            "value": "68.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.7",
+            "value": "34.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72.8",
+            "value": "72.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "60.9",
+            "value": "60.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.0",
+            "value": "69.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.4",
+            "value": "70.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.5",
+            "value": "70.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.2",
+            "value": "69.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SST",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.4",
+            "value": "86.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.8",
+            "value": "86.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.2",
+            "value": "86.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.1",
+            "value": "88.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.9",
+            "value": "85.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.7",
+            "value": "84.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.5",
+            "value": "86.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.2",
+            "value": "86.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.4",
+            "value": "86.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "QA-SRL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.5",
+            "value": "63.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.8",
+            "value": "67.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.8",
+            "value": "74.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.2",
+            "value": "75.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.7",
+            "value": "68.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.1",
+            "value": "75.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.1",
+            "value": "76.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.8",
+            "value": "75.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.6",
+            "value": "77.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "QA-ZRE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.0",
+            "value": "20.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.9",
+            "value": "19.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.6",
+            "value": "16.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.6",
+            "value": "15.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.5",
+            "value": "28.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.7",
+            "value": "31.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.5",
+            "value": "28.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.0",
+            "value": "28.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.7",
+            "value": "34.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WOZ",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.3",
+            "value": "85.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.0",
+            "value": "86.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.5",
+            "value": "86.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.4",
+            "value": "84.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.0",
+            "value": "84.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "82.8",
+            "value": "82.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.1",
+            "value": "75.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.6",
+            "value": "80.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.1",
+            "value": "84.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WikiSQL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "60.0",
+            "value": "60.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72.4",
+            "value": "72.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72.3",
+            "value": "72.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72.6",
+            "value": "72.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45.8",
+            "value": "45.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.8",
+            "value": "64.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62.9",
+            "value": "62.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62.0",
+            "value": "62.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58.7",
+            "value": "58.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MWSC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43.9",
+            "value": "43.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "46.3",
+            "value": "46.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.4",
+            "value": "40.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "52.4",
+            "value": "52.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "52.4",
+            "value": "52.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43.9",
+            "value": "43.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.8",
+            "value": "37.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48.8",
+            "value": "48.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48.4",
+            "value": "48.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "473.6",
+            "value": "473.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "546.4",
+            "value": "546.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "533.8",
+            "value": "533.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "562.7",
+            "value": "562.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "571.7",
+            "value": "571.7",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Validation metrics for using various training strategies. The first is fully joint, which samples batches round-robin from all tasks. Others first use a curriculum or anti-curriculum schedule over a subset of tasks before switching to fully joint over all tasks. Curriculum first trains tasks that take relatively few iterations to converge when trained alone. This omits SQuAD, IWSLT, CNN/DM, and MNLI. The remaining strategies are anti-curriculum. They include in the first phase either SQuAD alone, SQuAD, IWSLT, and CNN/DM, or SQuAD, IWSLT, CNN/DM, and MNLI.",
+      "label": "curriculumAblations",
+      "numericCells": 55,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Anti-Curriculum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(lr)4-6 Dataset",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Fully Joint",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Curriculum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "+IWSLT+CNN/DM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "+MNLI",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "SQuAD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.8",
+            "value": "70.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43.4",
+            "value": "43.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.3",
+            "value": "74.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.5",
+            "value": "74.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.6",
+            "value": "74.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "IWSLT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.1",
+            "value": "16.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.3",
+            "value": "4.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.7",
+            "value": "13.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.7",
+            "value": "18.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.0",
+            "value": "19.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "CNN/DM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.9",
+            "value": "23.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.3",
+            "value": "21.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.6",
+            "value": "24.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.8",
+            "value": "20.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.6",
+            "value": "21.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MNLI",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.5",
+            "value": "70.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58.9",
+            "value": "58.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.2",
+            "value": "69.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.6",
+            "value": "69.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72.7",
+            "value": "72.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SST",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.2",
+            "value": "86.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.5",
+            "value": "84.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.4",
+            "value": "86.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "83.6",
+            "value": "83.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86.8",
+            "value": "86.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "QA-SRL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.8",
+            "value": "75.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.6",
+            "value": "70.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.6",
+            "value": "77.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.5",
+            "value": "77.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.1",
+            "value": "75.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "QA-ZRE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.0",
+            "value": "28.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.6",
+            "value": "24.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.7",
+            "value": "34.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.1",
+            "value": "30.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.7",
+            "value": "37.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WOZ",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.6",
+            "value": "80.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.9",
+            "value": "81.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.1",
+            "value": "84.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.7",
+            "value": "81.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.6",
+            "value": "85.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WikiSQL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62.0",
+            "value": "62.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.6",
+            "value": "68.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58.7",
+            "value": "58.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "54.8",
+            "value": "54.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "42.6",
+            "value": "42.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MWSC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48.8",
+            "value": "48.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.5",
+            "value": "41.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "48.4",
+            "value": "48.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.9",
+            "value": "34.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.5",
+            "value": "41.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "decaScore",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "562.7",
+            "value": "562.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "499.6",
+            "value": "499.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "571.7",
+            "value": "571.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "546.2",
+            "value": "546.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "557.2",
+            "value": "557.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\challenge": "Natural Language Decathlon",
+    "\\chal": "decaNLP",
+    "\\Model": "Multitask Question Answering Network",
+    "\\model": "multitask question answering network",
+    "\\mdl": "MQAN",
+    "\\score": "decaScore",
+    "\\forward": "\\rightarrow",
+    "\\backward": "\\leftarrow",
+    "\\lstm": "{\\rm LSTM} \\left( #1 , #2 \\right)",
+    "\\bilstm": "{\\rm BiLSTM} \\left( #1 \\right)",
+    "\\sql": "^{\\rm sql}",
+    "\\enc": "^{\\rm enc}",
+    "\\dec": "^{\\rm dec}",
+    "\\softmax": "{\\rm softmax} \\left( #1 \\right)",
+    "\\argmax": "{\\rm argmax} \\left( #1 \\right)",
+    "\\embin": "L \\left[ #1 \\right]",
+    "\\embout": "O \\left[ #1 \\right]",
+    "\\ftanh": "{\\rm tanh} \\left( #1 \\right)",
+    "\\nitish": "{\\color{red}\\st{#1} #2}",
+    "\\nitishc": "{\\color{red}\\textit{#1} \\textbf{#2}}",
+    "\\gtxt": "{\\color{lightgray} {#1}}"
+  },
+  "references": [
+    {
+      "key": "andrychowicz2016learning",
+      "raw": "M. Andrychowicz, M. Denil, S. Gomez, M. W. Hoffman, D. Pfau, T. Schaul, and N. de Freitas. Learning to learn by gradient descent by gradient descent. In NIPS, pages 3981--3989, 2016",
+      "authors": "M. Andrychowicz, M. Denil, S. Gomez, M. W. Hoffman, D. Pfau, T. Schaul, and N. de Freitas",
+      "title": "Learning to learn by gradient descent by gradient descent",
+      "venue": "In NIPS, pages 3981--3989, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ba2016LayerN",
+      "raw": "J. Ba, R. Kiros, and G. E. Hinton. Layer normalization. CoRR, abs/1607.06450, 2016",
+      "authors": "J. Ba, R. Kiros, and G. E. Hinton",
+      "title": "Layer normalization",
+      "venue": "CoRR, abs/1607.06450, 2016",
+      "year": 2016,
+      "arxivId": "1607.06450",
+      "doi": null
+    },
+    {
+      "key": "Bahdanau2014NeuralMT",
+      "raw": "D. Bahdanau, K. Cho, and Y. Bengio. Neural machine translation by jointly learning to align and translate. CoRR, abs/1409.0473, 2014",
+      "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "CoRR, abs/1409.0473, 2014",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "Bengio1992",
+      "raw": "S. Bengio, Y. Bengio, J. Cloutier, and J. Gecsei. On the optimization of a synaptic learning rule. Optimality in Artificial and Biological Neural, pages Networks, pp. , 1992, 1992",
+      "authors": "S. Bengio, Y. Bengio, J. Cloutier, and J. Gecsei",
+      "title": "On the optimization of a synaptic learning rule",
+      "venue": "Optimality in Artificial and Biological Neural, pages Networks, pp. , 1992, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio2009CurriculumL",
+      "raw": "Y. Bengio, J. Louradour, R. Collobert, and J. Weston. Curriculum learning. In ICML, 2009",
+      "authors": "Y. Bengio, J. Louradour, R. Collobert, and J. Weston",
+      "title": "Curriculum learning",
+      "venue": "In ICML, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bos2005RecognisingTE",
+      "raw": "J. Bos and K. Markert. Recognising textual entailment with robust logical inference. In MLCW, 2005",
+      "authors": "J. Bos and K. Markert",
+      "title": "Recognising textual entailment with robust logical inference",
+      "venue": "In MLCW, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bowman2015ALA",
+      "raw": "S. R. Bowman, G. Angeli, C. Potts, and C. D. Manning. A large annotated corpus for learning natural language inference. In EMNLP, 2015",
+      "authors": "S. R. Bowman, G. Angeli, C. Potts, and C. D. Manning",
+      "title": "A large annotated corpus for learning natural language inference",
+      "venue": "In EMNLP, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Caruana1997MultitaskL",
+      "raw": "R. Caruana. Multitask learning. Machine Learning, 28: 0 41--75, 1997",
+      "authors": "R. Caruana",
+      "title": "Multitask learning",
+      "venue": "Machine Learning, 28: 0 41--75, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cettolo2016TheI2",
+      "raw": "M. Cettolo, J. Niehues, S. St\\\"uker, L. Bentivogli, R. Cattoni, and M. J. Federico. The iwslt 2016 evaluation campaign. In IWSLT, 2016",
+      "authors": "M. Cettolo, J. Niehues, S. St\\\"uker, L. Bentivogli, R. Cattoni, and M. J. Federico",
+      "title": "The iwslt 2016 evaluation campaign",
+      "venue": "In IWSLT, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chen2018best",
+      "raw": "M. X. Chen, O. Firat, A. Bapna, M. Johnson, W. Macherey, G. Foster, L. Jones, N. Parmar, M. Schuster, Z. Chen, et al. The best of both worlds: Combining recent advances in neural machine translation. arXiv preprint arXiv:1804.09849, 2018",
+      "authors": "M. X. Chen, O. Firat, A. Bapna, M. Johnson, W. Macherey, G. Foster, L. Jones, N. Parmar, M. Schuster, Z. Chen, et al",
+      "title": "The best of both worlds: Combining recent advances in neural machine translation",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1804.09849",
+      "doi": null
+    },
+    {
+      "key": "Chen2017NaturalLI",
+      "raw": "Q. Chen, X.-D. Zhu, Z.-H. Ling, D. Inkpen, and S. Wei. Natural language inference with external knowledge. CoRR, abs/1711.04289, 2017",
+      "authors": "Q. Chen, X.-D. Zhu, Z.-H. Ling, D. Inkpen, and S. Wei",
+      "title": "Natural language inference with external knowledge",
+      "venue": "CoRR, abs/1711.04289, 2017",
+      "year": 2017,
+      "arxivId": "1711.04289",
+      "doi": null
+    },
+    {
+      "key": "Choi2017LearningTC",
+      "raw": "J. Choi, K. M. Yoo, and S. goo Lee. Learning to compose task-specific tree structures. In Association for the Advancement of Artificial Intelligence, 2017",
+      "authors": "J. Choi, K. M. Yoo, and S. goo Lee",
+      "title": "Learning to compose task-specific tree structures",
+      "venue": "In Association for the Advancement of Artificial Intelligence, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Collobert2008AUA",
+      "raw": "R. Collobert and J. Weston. A unified architecture for natural language processing: deep neural networks with multitask learning. In ICML, 2008",
+      "authors": "R. Collobert and J. Weston",
+      "title": "A unified architecture for natural language processing: deep neural networks with multitask learning",
+      "venue": "In ICML, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Collobert2011NaturalLP",
+      "raw": "R. Collobert, J. Weston, L. Bottou, M. Karlen, K. Kavukcuoglu, and P. P. Kuksa. Natural language processing (almost) from scratch. Journal of Machine Learning Research, 12: 0 2493--2537, 2011",
+      "authors": "R. Collobert, J. Weston, L. Bottou, M. Karlen, K. Kavukcuoglu, and P. P. Kuksa",
+      "title": "Natural language processing (almost) from scratch",
+      "venue": "Journal of Machine Learning Research, 12: 0 2493--2537, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Condoravdi2003EntailmentIA",
+      "raw": "C. Condoravdi, D. Crouch, V. de Paiva, R. Stolle, and D. G. Bobrow. Entailment, intensionality and text understanding. In Proceedings of the HLT-NAACL 2003 Workshop on Text Meaning - Volume 9, HLT-NAACL-TEXTMEANING '03, 2003",
+      "authors": "C. Condoravdi, D. Crouch, V. de Paiva, R. Stolle, and D. G. Bobrow",
+      "title": "Entailment, intensionality and text understanding",
+      "venue": "In Proceedings of the HLT-NAACL 2003 Workshop on Text Meaning - Volume 9, HLT-NAACL-TEXTMEANING '03, 2003",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Dagan2005ThePR",
+      "raw": "I. Dagan, O. Glickman, and B. Magnini. The pascal recognising textual entailment challenge. In MLCW, 2005",
+      "authors": "I. Dagan, O. Glickman, and B. Magnini",
+      "title": "The pascal recognising textual entailment challenge",
+      "venue": "In MLCW, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "deb2014multi",
+      "raw": "K. Deb. Multi-objective optimization. In Search methodologies, pages 403--449. Springer, 2014",
+      "authors": "K. Deb",
+      "title": "Multi-objective optimization",
+      "venue": "In Search methodologies, pages 403--449. Springer, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dong2018coarse",
+      "raw": "L. Dong and M. Lapata. Coarse-to-fine decoding for neural semantic parsing. arXiv preprint arXiv:1805.04793, 2018",
+      "authors": "L. Dong and M. Lapata",
+      "title": "Coarse-to-fine decoding for neural semantic parsing",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.04793",
+      "doi": null
+    },
+    {
+      "key": "fernando2017pathnet",
+      "raw": "C. Fernando, D. Banarse, C. Blundell, Y. Zwols, D. Ha, A. A. Rusu, A. Pritzel, and D. Wierstra. Pathnet: Evolution channels gradient descent in super neural networks. arXiv preprint arXiv:1701.08734, 2017",
+      "authors": "C. Fernando, D. Banarse, C. Blundell, Y. Zwols, D. Ha, A. A. Rusu, A. Pritzel, and D. Wierstra",
+      "title": "Pathnet: Evolution channels gradient descent in super neural networks",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1701.08734",
+      "doi": null
+    },
+    {
+      "key": "Finn2017",
+      "raw": "C. Finn, P. Abbeel, and S. Levine. Model-agnostic meta-learning for fast adaptation of deep networks. In ICML, 2017",
+      "authors": "C. Finn, P. Abbeel, and S. Levine",
+      "title": "Model-agnostic meta-learning for fast adaptation of deep networks",
+      "venue": "In ICML, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Fyodorov2000ANL",
+      "raw": "Y. Fyodorov, Y. Winter, and N. Francez. A natural logic inference system. In In Proceedings of the 2nd Workshop on Inference in Computational Semantics (ICoS-2), 2000",
+      "authors": "Y. Fyodorov, Y. Winter, and N. Francez",
+      "title": "A natural logic inference system",
+      "venue": "In In Proceedings of the 2nd Workshop on Inference in Computational Semantics (ICoS-2), 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Gehring2017ConvolutionalST",
+      "raw": "J. Gehring, M. Auli, D. Grangier, D. Yarats, and Y. Dauphin. Convolutional sequence to sequence learning. In ICML, 2017",
+      "authors": "J. Gehring, M. Auli, D. Grangier, D. Yarats, and Y. Dauphin",
+      "title": "Convolutional sequence to sequence learning",
+      "venue": "In ICML, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gepperth2016bio",
+      "raw": "A. Gepperth and C. Karaoguz. A bio-inspired incremental learning architecture for applied perceptual problems. Cognitive Computation, 8 0 (5): 0 924--934, 2016",
+      "authors": "A. Gepperth and C. Karaoguz",
+      "title": "A bio-inspired incremental learning architecture for applied perceptual problems",
+      "venue": "Cognitive Computation, 8 0 (5): 0 924--934, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ghaeini2018DRBiLSTMDR",
+      "raw": "R. Ghaeini, S. A. Hasan, V. Datla, J. Liu, K. Lee, A. Qadir, Y. Ling, A. Prakash, X. Z. Fern, and O. Farri. Dr-bilstm: Dependent reading bidirectional lstm for natural language inference. CoRR, abs/1802.05577, 2018",
+      "authors": "R. Ghaeini, S. A. Hasan, V. Datla, J. Liu, K. Lee, A. Qadir, Y. Ling, A. Prakash, X. Z. Fern, and O. Farri",
+      "title": "Dr-bilstm: Dependent reading bidirectional lstm for natural language inference",
+      "venue": "CoRR, abs/1802.05577, 2018",
+      "year": 2018,
+      "arxivId": "1802.05577",
+      "doi": null
+    },
+    {
+      "key": "Graves2005FramewisePC",
+      "raw": "A. Graves and J. Schmidhuber. Framewise phoneme classification with bidirectional lstm and other neural network architectures. Neural networks : the official journal of the International Neural Network Society, 18 5-6: 0 602--10, 2005",
+      "authors": "A. Graves and J. Schmidhuber",
+      "title": "Framewise phoneme classification with bidirectional lstm and other neural network architectures",
+      "venue": "Neural networks : the official journal of the International Neural Network Society, 18 5-6: 0 602--10, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Grusky2018Newsroom",
+      "raw": "M. Grusky, M. Naaman, and Y. Artzi. Newsroom: A dataset of 1.3 million summaries with diverse extractive strategies. In NAACL-HLT, New Orleans, Louisiana, 2018",
+      "authors": "M. Grusky, M. Naaman, and Y. Artzi",
+      "title": "Newsroom: A dataset of 1.3 million summaries with diverse extractive strategies",
+      "venue": "In NAACL-HLT, New Orleans, Louisiana, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Gu2016",
+      "raw": "J. Gu, Z. Lu, H. Li, and V. O. K. Li. Incorporating Copying Mechanism in Sequence-to-Sequence Learning. CoRR, abs/1603.06393, 2016",
+      "authors": "J. Gu, Z. Lu, H. Li, and V. O. K. Li",
+      "title": "Incorporating Copying Mechanism in Sequence-to-Sequence Learning",
+      "venue": "CoRR, abs/1603.06393, 2016",
+      "year": 2016,
+      "arxivId": "1603.06393",
+      "doi": null
+    },
+    {
+      "key": "Gulcehre2016",
+      "raw": "c. G\\\"ul cehre, S. Ahn, R. Nallapati, B. Zhou, and Y. Bengio. Pointing the Unknown Words. arXiv preprint arXiv:1603.08148, 2016",
+      "authors": "c. G\\\"ul cehre, S. Ahn, R. Nallapati, B. Zhou, and Y. Bengio",
+      "title": "Pointing the Unknown Words",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1603.08148",
+      "doi": null
+    },
+    {
+      "key": "Hashimoto2016AJM",
+      "raw": "K. Hashimoto, C. Xiong, Y. Tsuruoka, and R. Socher. A joint many-task model: Growing a neural network for multiple NLP tasks. In ICLR, 2016",
+      "authors": "K. Hashimoto, C. Xiong, Y. Tsuruoka, and R. Socher",
+      "title": "A joint many-task model: Growing a neural network for multiple NLP tasks",
+      "venue": "In ICLR, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "He2015QuestionAnswerDS",
+      "raw": "L. He, M. Lewis, and L. S. Zettlemoyer. Question-answer driven semantic role labeling: Using natural language to annotate natural language. In EMNLP, 2015",
+      "authors": "L. He, M. Lewis, and L. S. Zettlemoyer",
+      "title": "Question-answer driven semantic role labeling: Using natural language to annotate natural language",
+      "venue": "In EMNLP, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "He2017DeepSR",
+      "raw": "L. He, K. Lee, M. Lewis, and L. S. Zettlemoyer. Deep semantic role labeling: What works and what's next. In ACL, 2017",
+      "authors": "L. He, K. Lee, M. Lewis, and L. S. Zettlemoyer",
+      "title": "Deep semantic role labeling: What works and what's next",
+      "venue": "In ACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hermann2015TeachingMT",
+      "raw": "K. M. Hermann, T. Kocisk\\'y, E. Grefenstette, L. Espeholt, W. Kay, M. Suleyman, and P. Blunsom. Teaching machines to read and comprehend. In NIPS, 2015",
+      "authors": "K. M. Hermann, T. Kocisk\\'y, E. Grefenstette, L. Espeholt, W. Kay, M. Suleyman, and P. Blunsom",
+      "title": "Teaching machines to read and comprehend",
+      "venue": "In NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter1997LongSM",
+      "raw": "S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural computation, 9 8: 0 1735--80, 1997",
+      "authors": "S. Hochreiter and J. Schmidhuber",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9 8: 0 1735--80, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter2001learning",
+      "raw": "S. Hochreiter, A. S. Younger, and P. R. Conwell. Learning to learn using gradient descent. In International Conference on Artificial Neural Networks, pages 87--94. Springer, 2001",
+      "authors": "S. Hochreiter, A. S. Younger, and P. R. Conwell",
+      "title": "Learning to learn using gradient descent",
+      "venue": "In International Conference on Artificial Neural Networks, pages 87--94. Springer, 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hovy2006OntoNotesT9",
+      "raw": "E. H. Hovy, M. P. Marcus, M. Palmer, L. A. Ramshaw, and R. M. Weischedel. Ontonotes: The 90% solution. In HLT-NAACL, 2006",
+      "authors": "E. H. Hovy, M. P. Marcus, M. Palmer, L. A. Ramshaw, and R. M. Weischedel",
+      "title": "Ontonotes: The 90% solution",
+      "venue": "In HLT-NAACL, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Howard2018FinetunedLM",
+      "raw": "J. Howard and S. Ruder. Fine-tuned language models for text classification. CoRR, abs/1801.06146, 2018",
+      "authors": "J. Howard and S. Ruder",
+      "title": "Fine-tuned language models for text classification",
+      "venue": "CoRR, abs/1801.06146, 2018",
+      "year": 2018,
+      "arxivId": "1801.06146",
+      "doi": null
+    },
+    {
+      "key": "Hu2017ReinforcedMR",
+      "raw": "M. Hu, Y. Peng, Z. Huang, X. Qiu, F. Wei, and M. Zhou. Reinforced mnemonic reader for machine reading comprehension. CoRR, abs/1705.02798, 2018",
+      "authors": "M. Hu, Y. Peng, Z. Huang, X. Qiu, F. Wei, and M. Zhou",
+      "title": "Reinforced mnemonic reader for machine reading comprehension",
+      "venue": "CoRR, abs/1705.02798, 2018",
+      "year": 2018,
+      "arxivId": "1705.02798",
+      "doi": null
+    },
+    {
+      "key": "Huang2017FusionNetFV",
+      "raw": "H.-Y. Huang, C. Zhu, Y. Shen, and W. Chen. Fusionnet: Fusing via fully-aware attention with application to machine comprehension. CoRR, abs/1711.07341, 2017",
+      "authors": "H.-Y. Huang, C. Zhu, Y. Shen, and W. Chen",
+      "title": "Fusionnet: Fusing via fully-aware attention with application to machine comprehension",
+      "venue": "CoRR, abs/1711.07341, 2017",
+      "year": 2017,
+      "arxivId": "1711.07341",
+      "doi": null
+    },
+    {
+      "key": "huang2018natural",
+      "raw": "P.-S. Huang, C. Wang, R. Singh, W.-t. Yih, and X. He. Natural language to structured query generation via meta-learning. arXiv preprint arXiv:1803.02400, 2018",
+      "authors": "P.-S. Huang, C. Wang, R. Singh, W.-t. Yih, and X. He",
+      "title": "Natural language to structured query generation via meta-learning",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1803.02400",
+      "doi": null
+    },
+    {
+      "key": "Im2017DistancebasedSN",
+      "raw": "J. Im and S. Cho. Distance-based self-attention network for natural language inference. CoRR, abs/1712.02047, 2017",
+      "authors": "J. Im and S. Cho",
+      "title": "Distance-based self-attention network for natural language inference",
+      "venue": "CoRR, abs/1712.02047, 2017",
+      "year": 2017,
+      "arxivId": "1712.02047",
+      "doi": null
+    },
+    {
+      "key": "Johansson2008DependencybasedSR",
+      "raw": "R. Johansson and P. Nugues. Dependency-based semantic role labeling of propbank. In EMNLP, 2008",
+      "authors": "R. Johansson and P. Nugues",
+      "title": "Dependency-based semantic role labeling of propbank",
+      "venue": "In EMNLP, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Johnson2017GooglesMN",
+      "raw": "M. Johnson, M. Schuster, Q. V. Le, M. Krikun, Y. Wu, Z. Chen, N. Thorat, F. B. Vi\\'egas, M. Wattenberg, G. S. Corrado, M. Hughes, and J. Dean. Google's multilingual neural machine translation system: Enabling zero-shot translation. TACL, 5: 0 339--351, 2017",
+      "authors": "M. Johnson, M. Schuster, Q. V. Le, M. Krikun, Y. Wu, Z. Chen, N. Thorat, F. B. Vi\\'egas, M. Wattenberg, G. S. Corrado, M. Hughes, and J. Dean",
+      "title": "Google's multilingual neural machine translation system: Enabling zero-shot translation",
+      "venue": "TACL, 5: 0 339--351, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Joshi2017TriviaQAAL",
+      "raw": "M. Joshi, E. Choi, D. S. Weld, and L. S. Zettlemoyer. Triviaqa: A large scale distantly supervised challenge dataset for reading comprehension. In ACL, 2017",
+      "authors": "M. Joshi, E. Choi, D. S. Weld, and L. S. Zettlemoyer",
+      "title": "Triviaqa: A large scale distantly supervised challenge dataset for reading comprehension",
+      "venue": "In ACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kaiser2017OneMT",
+      "raw": "L. Kaiser, A. N. Gomez, N. Shazeer, A. Vaswani, N. Parmar, L. Jones, and J. Uszkoreit. One model to learn them all. CoRR, abs/1706.05137, 2017",
+      "authors": "L. Kaiser, A. N. Gomez, N. Shazeer, A. Vaswani, N. Parmar, L. Jones, and J. Uszkoreit",
+      "title": "One model to learn them all",
+      "venue": "CoRR, abs/1706.05137, 2017",
+      "year": 2017,
+      "arxivId": "1706.05137",
+      "doi": null
+    },
+    {
+      "key": "Kemker2017MeasuringCF",
+      "raw": "R. Kemker, A. Abitino, M. McClure, and C. Kanan. Measuring catastrophic forgetting in neural networks. CoRR, abs/1708.02072, 2017",
+      "authors": "R. Kemker, A. Abitino, M. McClure, and C. Kanan",
+      "title": "Measuring catastrophic forgetting in neural networks",
+      "venue": "CoRR, abs/1708.02072, 2017",
+      "year": 2017,
+      "arxivId": "1708.02072",
+      "doi": null
+    },
+    {
+      "key": "kim2018semantic",
+      "raw": "S. Kim, J.-H. Hong, I. Kang, and N. Kwak. Semantic sentence matching with densely-connected recurrent and co-attentive information. arXiv preprint arXiv:1805.11360, 2018",
+      "authors": "S. Kim, J.-H. Hong, I. Kang, and N. Kwak",
+      "title": "Semantic sentence matching with densely-connected recurrent and co-attentive information",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.11360",
+      "doi": null
+    },
+    {
+      "key": "Kirkpatrick2017OvercomingCF",
+      "raw": "J. Kirkpatrick, R. Pascanu, N. C. Rabinowitz, J. Veness, G. Desjardins, A. A. Rusu, K. Milan, J. Quan, T. Ramalho, A. Grabska-Barwinska, D. Hassabis, C. Clopath, D. Kumaran, and R. Hadsell. Overcoming catastrophic forgetting in neural networks. Proceedings of the National Academy of Sciences of the United States of America, 114 13: 0 3521--3526, 2017",
+      "authors": "J. Kirkpatrick, R. Pascanu, N. C. Rabinowitz, J. Veness, G. Desjardins, A. A. Rusu, K. Milan, J. Quan, T. Ramalho, A. Grabska-Barwinska, D. Hassabis, C. Clopath, D. Kumaran, and R. Hadsell",
+      "title": "Overcoming catastrophic forgetting in neural networks",
+      "venue": "Proceedings of the National Academy of Sciences of the United States of America, 114 13: 0 3521--3526, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kiros2015SkipThoughtV",
+      "raw": "R. Kiros, Y. Zhu, R. Salakhutdinov, R. S. Zemel, R. Urtasun, A. Torralba, and S. Fidler. Skip-thought vectors. In NIPS, 2015",
+      "authors": "R. Kiros, Y. Zhu, R. Salakhutdinov, R. S. Zemel, R. Urtasun, A. Torralba, and S. Fidler",
+      "title": "Skip-thought vectors",
+      "venue": "In NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "amznyelp",
+      "raw": "D. Kotzias, M. Denil, N. De Freitas, and P. Smyth. From group to individual labels using deep features. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pages 597--606. ACM, 2015",
+      "authors": "D. Kotzias, M. Denil, N. De Freitas, and P. Smyth",
+      "title": "From group to individual labels using deep features",
+      "venue": "In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pages 597--606. ACM, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kumar2016",
+      "raw": "A. Kumar, O. Irsoy, P. Ondruska, M. Iyyer, J. Bradbury, I. Gulrajani, V. Zhong, R. Paulus, and R. Socher. Ask me anything: Dynamic memory networks for natural language processing. In ICML, 2016",
+      "authors": "A. Kumar, O. Irsoy, P. Ondruska, M. Iyyer, J. Bradbury, I. Gulrajani, V. Zhong, R. Paulus, and R. Socher",
+      "title": "Ask me anything: Dynamic memory networks for natural language processing",
+      "venue": "In ICML, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lee2017overcoming",
+      "raw": "S. Lee, J. Kim, J. Jun, J. Ha, and B. Zhang. Overcoming catastrophic forgetting by incremental moment matching. In Advances in Neural Information Processing Systems, pages 4655--4665, 2017",
+      "authors": "S. Lee, J. Kim, J. Jun, J. Ha, and B. Zhang",
+      "title": "Overcoming catastrophic forgetting by incremental moment matching",
+      "venue": "In Advances in Neural Information Processing Systems, pages 4655--4665, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "levesque2011winograd",
+      "raw": "H. J. Levesque, E. Davis, and L. Morgenstern. The winograd schema challenge. In Aaai spring symposium: Logical formalizations of commonsense reasoning, volume 46, page 47, 2011",
+      "authors": "H. J. Levesque, E. Davis, and L. Morgenstern",
+      "title": "The winograd schema challenge",
+      "venue": "In Aaai spring symposium: Logical formalizations of commonsense reasoning, volume 46, page 47, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Levy2017ZeroShotRE",
+      "raw": "O. Levy, M. Seo, E. Choi, and L. S. Zettlemoyer. Zero-shot relation extraction via reading comprehension. In CoNLL, 2017",
+      "authors": "O. Levy, M. Seo, E. Choi, and L. S. Zettlemoyer",
+      "title": "Zero-shot relation extraction via reading comprehension",
+      "venue": "In CoNLL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lin2004ROUGEAP",
+      "raw": "C.-Y. Lin. Rouge: A package for automatic evaluation of summaries. In Proceedings of ACL workshop on Text Summarization, 2004",
+      "authors": "C.-Y. Lin",
+      "title": "Rouge: A package for automatic evaluation of summaries",
+      "venue": "In Proceedings of ACL workshop on Text Summarization, 2004",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Liu2017PhaseCO",
+      "raw": "R. Liu, W. Wei, W. Mao, and M. Chikina. Phase conductor on multi-layered attentions for machine comprehension. CoRR, abs/1710.10504, 2017",
+      "authors": "R. Liu, W. Wei, W. Mao, and M. Chikina",
+      "title": "Phase conductor on multi-layered attentions for machine comprehension",
+      "venue": "CoRR, abs/1710.10504, 2017",
+      "year": 2017,
+      "arxivId": "1710.10504",
+      "doi": null
+    },
+    {
+      "key": "Liu2017StochasticAN",
+      "raw": "X. Liu, Y. Shen, K. Duh, and J. Gao. Stochastic answer networks for machine reading comprehension. CoRR, abs/1712.03556, 2017",
+      "authors": "X. Liu, Y. Shen, K. Duh, and J. Gao",
+      "title": "Stochastic answer networks for machine reading comprehension",
+      "venue": "CoRR, abs/1712.03556, 2017",
+      "year": 2017,
+      "arxivId": "1712.03556",
+      "doi": null
+    },
+    {
+      "key": "Luong2015MultitaskST",
+      "raw": "M.-T. Luong, Q. V. Le, I. Sutskever, O. Vinyals, and L. Kaiser. Multi-task sequence to sequence learning. CoRR, abs/1511.06114, 2015",
+      "authors": "M.-T. Luong, Q. V. Le, I. Sutskever, O. Vinyals, and L. Kaiser",
+      "title": "Multi-task sequence to sequence learning",
+      "venue": "CoRR, abs/1511.06114, 2015",
+      "year": 2015,
+      "arxivId": "1511.06114",
+      "doi": null
+    },
+    {
+      "key": "Luong2015EffectiveAT",
+      "raw": "T. Luong, H. Pham, and C. D. Manning. Effective approaches to attention-based neural machine translation. In EMNLP, 2015",
+      "authors": "T. Luong, H. Pham, and C. D. Manning",
+      "title": "Effective approaches to attention-based neural machine translation",
+      "venue": "In EMNLP, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "MacCartney2009AnEM",
+      "raw": "B. MacCartney and C. D. Manning. An extended model of natural logic. In IWCS, 2009",
+      "authors": "B. MacCartney and C. D. Manning",
+      "title": "An extended model of natural logic",
+      "venue": "In IWCS, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mallya2017packnet",
+      "raw": "A. Mallya and S. Lazebnik. Packnet: Adding multiple tasks to a single network by iterative pruning. arXiv preprint arXiv:1711.05769, 2017",
+      "authors": "A. Mallya and S. Lazebnik",
+      "title": "Packnet: Adding multiple tasks to a single network by iterative pruning",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1711.05769",
+      "doi": null
+    },
+    {
+      "key": "Marcheggiani2017ASA",
+      "raw": "D. Marcheggiani, A. Frolov, and I. Titov. A simple and accurate syntax-agnostic neural model for dependency-based semantic role labeling. In CoNLL, 2017",
+      "authors": "D. Marcheggiani, A. Frolov, and I. Titov",
+      "title": "A simple and accurate syntax-agnostic neural model for dependency-based semantic role labeling",
+      "venue": "In CoNLL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "McCann2017LearnedIT",
+      "raw": "B. McCann, J. Bradbury, C. Xiong, and R. Socher. Learned in translation: Contextualized word vectors. In NIPS, 2017",
+      "authors": "B. McCann, J. Bradbury, C. Xiong, and R. Socher",
+      "title": "Learned in translation: Contextualized word vectors",
+      "venue": "In NIPS, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "McCloskey1989CatastrophicII",
+      "raw": "M. McCloskey and N. J. Cohen. Catastrophic interference in connectionist networks: The sequential learning problem. In Psychology of learning and motivation, volume 24, pages 109--165. Elsevier, 1989",
+      "authors": "M. McCloskey and N. J. Cohen",
+      "title": "Catastrophic interference in connectionist networks: The sequential learning problem",
+      "venue": "In Psychology of learning and motivation, volume 24, pages 109--165. Elsevier, 1989",
+      "year": 1989,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Merity2016PointerSM",
+      "raw": "S. Merity, C. Xiong, J. Bradbury, and R. Socher. Pointer sentinel mixture models. ICLR, 2017",
+      "authors": "S. Merity, C. Xiong, J. Bradbury, and R. Socher",
+      "title": "Pointer sentinel mixture models",
+      "venue": "ICLR, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2013EfficientEO",
+      "raw": "T. Mikolov, K. Chen, G. S. Corrado, and J. Dean. Efficient estimation of word representations in vector space. CoRR, abs/1301.3781, 2013",
+      "authors": "T. Mikolov, K. Chen, G. S. Corrado, and J. Dean",
+      "title": "Efficient estimation of word representations in vector space",
+      "venue": "CoRR, abs/1301.3781, 2013",
+      "year": 2013,
+      "arxivId": "1301.3781",
+      "doi": null
+    },
+    {
+      "key": "Mikolov2013DistributedRO",
+      "raw": "T. Mikolov, I. Sutskever, K. Chen, G. S. Corrado, and J. Dean. Distributed representations of words and phrases and their compositionality. In NIPS, 2013",
+      "authors": "T. Mikolov, I. Sutskever, K. Chen, G. S. Corrado, and J. Dean",
+      "title": "Distributed representations of words and phrases and their compositionality",
+      "venue": "In NIPS, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Min2017QuestionAT",
+      "raw": "S. Min, M. J. Seo, and H. Hajishirzi. Question answering through transfer learning from large fine-grained supervision data. In ACL, 2017",
+      "authors": "S. Min, M. J. Seo, and H. Hajishirzi",
+      "title": "Question answering through transfer learning from large fine-grained supervision data",
+      "venue": "In ACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mitchell1980TheNF",
+      "raw": "T. M. Mitchell. The need for biases in learning generalizations. 1980",
+      "authors": "T. M. Mitchell",
+      "title": "The need for biases in learning generalizations",
+      "venue": "1980",
+      "year": 1980,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mrkvsic2016neural",
+      "raw": "N. Mrk si\\'c, D. O. S\\'eaghdha, T.-H. Wen, B. Thomson, and S. Young. Neural belief tracker: Data-driven dialogue state tracking. arXiv preprint arXiv:1606.03777, 2016",
+      "authors": "N. Mrk si\\'c, D. O. S\\'eaghdha, T.-H. Wen, B. Thomson, and S. Young",
+      "title": "Neural belief tracker: Data-driven dialogue state tracking",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.03777",
+      "doi": null
+    },
+    {
+      "key": "Nair2010RectifiedLU",
+      "raw": "V. Nair and G. E. Hinton. Rectified linear units improve restricted boltzmann machines. In ICML, 2010",
+      "authors": "V. Nair and G. E. Hinton",
+      "title": "Rectified linear units improve restricted boltzmann machines",
+      "venue": "In ICML, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Nallapati2016AbstractiveTS",
+      "raw": "R. Nallapati, B. Zhou, C. N. dos Santos, \u00c7aglar G\\\"ul\u00e7ehre, and B. Xiang. Abstractive text summarization using sequence-to-sequence RNNs and beyond. In CoNLL, 2016",
+      "authors": "R. Nallapati, B. Zhou, C. N. dos Santos, \u00c7aglar G\\\"ul\u00e7ehre, and B. Xiang",
+      "title": "Abstractive text summarization using sequence-to-sequence RNNs and beyond",
+      "venue": "In CoNLL, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pan2017MEMENME",
+      "raw": "B. Pan, H. Li, Z. Zhao, B. Cao, D. Cai, and X. He. Memen: Multi-layer embedding with memory networks for machine comprehension. CoRR, abs/1707.09098, 2017",
+      "authors": "B. Pan, H. Li, Z. Zhao, B. Cao, D. Cai, and X. He",
+      "title": "Memen: Multi-layer embedding with memory networks for machine comprehension",
+      "venue": "CoRR, abs/1707.09098, 2017",
+      "year": 2017,
+      "arxivId": "1707.09098",
+      "doi": null
+    },
+    {
+      "key": "Papineni2002BleuAM",
+      "raw": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu. Bleu: a method for automatic evaluation of machine translation. In ACL, 2002",
+      "authors": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu",
+      "title": "Bleu: a method for automatic evaluation of machine translation",
+      "venue": "In ACL, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pasunuru2018MultiRewardRS",
+      "raw": "R. Pasunuru and M. Bansal. Multi-reward reinforced summarization with saliency and entailment. In NAACL, 2018",
+      "authors": "R. Pasunuru and M. Bansal",
+      "title": "Multi-reward reinforced summarization with saliency and entailment",
+      "venue": "In NAACL, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pasunuru2017TowardsIA",
+      "raw": "R. Pasunuru, H. Guo, and M. Bansal. Towards improving abstractive summarization via entailment generation. In NFiS@EMNLP, 2017",
+      "authors": "R. Pasunuru, H. Guo, and M. Bansal",
+      "title": "Towards improving abstractive summarization via entailment generation",
+      "venue": "In NFiS@EMNLP, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "paulus2017deep",
+      "raw": "R. Paulus, C. Xiong, and R. Socher. A deep reinforced model for abstractive summarization. arXiv preprint arXiv:1705.04304, 2017",
+      "authors": "R. Paulus, C. Xiong, and R. Socher",
+      "title": "A deep reinforced model for abstractive summarization",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1705.04304",
+      "doi": null
+    },
+    {
+      "key": "Pennington2014GloveGV",
+      "raw": "J. Pennington, R. Socher, and C. D. Manning. Glove: Global vectors for word representation. In EMNLP, 2014",
+      "authors": "J. Pennington, R. Socher, and C. D. Manning",
+      "title": "Glove: Global vectors for word representation",
+      "venue": "In EMNLP, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Peters2018DeepCW",
+      "raw": "M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. S. Zettlemoyer. Deep contextualized word representations. CoRR, abs/1802.05365, 2018",
+      "authors": "M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. S. Zettlemoyer",
+      "title": "Deep contextualized word representations",
+      "venue": "CoRR, abs/1802.05365, 2018",
+      "year": 2018,
+      "arxivId": "1802.05365",
+      "doi": null
+    },
+    {
+      "key": "poliak2018evaluation",
+      "raw": "A. Poliak, Y. Belinkov, J. Glass, and B. Van Durme. On the evaluation of semantic phenomena in neural machine translation using natural language inference. arXiv preprint arXiv:1804.09779, 2018",
+      "authors": "A. Poliak, Y. Belinkov, J. Glass, and B. Van Durme",
+      "title": "On the evaluation of semantic phenomena in neural machine translation using natural language inference",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1804.09779",
+      "doi": null
+    },
+    {
+      "key": "poliak2018towards",
+      "raw": "A. Poliak, A. Haldar, R. Rudinger, J. E. Hu, E. Pavlick, A. S. White, and B. Van Durme. Towards a unified natural language inference framework to evaluate sentence representations. arXiv preprint arXiv:1804.08207, 2018",
+      "authors": "A. Poliak, A. Haldar, R. Rudinger, J. E. Hu, E. Pavlick, A. S. White, and B. Van Durme",
+      "title": "Towards a unified natural language inference framework to evaluate sentence representations",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1804.08207",
+      "doi": null
+    },
+    {
+      "key": "Punyakanok2008TheIO",
+      "raw": "V. Punyakanok, D. Roth, and W. tau Yih. The importance of syntactic parsing and inference in semantic role labeling. Computational Linguistics, 34: 0 257--287, 2008",
+      "authors": "V. Punyakanok, D. Roth, and W. tau Yih",
+      "title": "The importance of syntactic parsing and inference in semantic role labeling",
+      "venue": "Computational Linguistics, 34: 0 257--287, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Radford2017LearningTG",
+      "raw": "A. Radford, R. J\\'ozefowicz, and I. Sutskever. Learning to generate reviews and discovering sentiment. CoRR, abs/1704.01444, 2017",
+      "authors": "A. Radford, R. J\\'ozefowicz, and I. Sutskever",
+      "title": "Learning to generate reviews and discovering sentiment",
+      "venue": "CoRR, abs/1704.01444, 2017",
+      "year": 2017,
+      "arxivId": "1704.01444",
+      "doi": null
+    },
+    {
+      "key": "Rajpurkar2016SQuAD10",
+      "raw": "P. Rajpurkar, J. Zhang, K. Lopyrev, and P. Liang. Squad: 100, 000+ questions for machine comprehension of text. In EMNLP, 2016",
+      "authors": "P. Rajpurkar, J. Zhang, K. Lopyrev, and P. Liang",
+      "title": "Squad: 100, 000+ questions for machine comprehension of text",
+      "venue": "In EMNLP, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ramachandran2017UnsupervisedPF",
+      "raw": "P. Ramachandran, P. J. Liu, and Q. V. Le. Unsupervised pretraining for sequence to sequence learning. In EMNLP, 2017",
+      "authors": "P. Ramachandran, P. J. Liu, and Q. V. Le",
+      "title": "Unsupervised pretraining for sequence to sequence learning",
+      "venue": "In EMNLP, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ratcliff1990ConnectionistMO",
+      "raw": "R. M. Ratcliff. Connectionist models of recognition memory: constraints imposed by learning and forgetting functions. Psychological review, 97 2: 0 285--308, 1990",
+      "authors": "R. M. Ratcliff",
+      "title": "Connectionist models of recognition memory: constraints imposed by learning and forgetting functions",
+      "venue": "Psychological review, 97 2: 0 285--308, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "robins1995catastrophic",
+      "raw": "A. Robins. Catastrophic forgetting, rehearsal and pseudorehearsal. Connection Science, 7 0 (2): 0 123--146, 1995",
+      "authors": "A. Robins",
+      "title": "Catastrophic forgetting, rehearsal and pseudorehearsal",
+      "venue": "Connection Science, 7 0 (2): 0 123--146, 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ruder2017SluiceNL",
+      "raw": "S. Ruder, J. Bingel, I. Augenstein, and A. Sogaard. Sluice networks: Learning what to share between loosely related tasks. CoRR, abs/1705.08142, 2017",
+      "authors": "S. Ruder, J. Bingel, I. Augenstein, and A. Sogaard",
+      "title": "Sluice networks: Learning what to share between loosely related tasks",
+      "venue": "CoRR, abs/1705.08142, 2017",
+      "year": 2017,
+      "arxivId": "1705.08142",
+      "doi": null
+    },
+    {
+      "key": "Salant2017ContextualizedWR",
+      "raw": "S. Salant and J. Berant. Contextualized word representations for reading comprehension. CoRR, abs/1712.03609, 2017",
+      "authors": "S. Salant and J. Berant",
+      "title": "Contextualized word representations for reading comprehension",
+      "venue": "CoRR, abs/1712.03609, 2017",
+      "year": 2017,
+      "arxivId": "1712.03609",
+      "doi": null
+    },
+    {
+      "key": "santoro2016meta",
+      "raw": "A. Santoro, S. Bartunov, M. Botvinick, D. Wierstra, and T. Lillicrap. Meta-learning with memory-augmented neural networks. In International conference on machine learning, pages 1842--1850, 2016",
+      "authors": "A. Santoro, S. Bartunov, M. Botvinick, D. Wierstra, and T. Lillicrap",
+      "title": "Meta-learning with memory-augmented neural networks",
+      "venue": "In International conference on machine learning, pages 1842--1850, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schmidhuber1987evolutionary",
+      "raw": "J. Schmidhuber. Evolutionary principles in self-referential learning, or on learning how to learn: the meta-meta-... hook. PhD thesis, Technische Universit\\\"at M\\\"unchen, 1987",
+      "authors": "J. Schmidhuber",
+      "title": "Evolutionary principles in self-referential learning, or on learning how to learn: the meta-meta-... hook",
+      "venue": "PhD thesis, Technische Universit\\\"at M\\\"unchen, 1987",
+      "year": 1987,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schmidhuber1992learning",
+      "raw": "J. Schmidhuber. Learning to control fast-weight memories: An alternative to dynamic recurrent networks. Neural Computation, 4 0 (1): 0 131--139, 1992",
+      "authors": "J. Schmidhuber",
+      "title": "Learning to control fast-weight memories: An alternative to dynamic recurrent networks",
+      "venue": "Neural Computation, 4 0 (1): 0 131--139, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "See2017GetTT",
+      "raw": "A. See, P. J. Liu, and C. D. Manning. Get to the point: Summarization with pointer-generator networks. In ACL, 2017",
+      "authors": "A. See, P. J. Liu, and C. D. Manning",
+      "title": "Get to the point: Summarization with pointer-generator networks",
+      "venue": "In ACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sennrich2017TheUO",
+      "raw": "R. Sennrich, A. Birch, A. Currey, U. Germann, B. Haddow, K. Heafield, A. V. M. Barone, and P. Williams. The university of edinburgh's neural mt systems for wmt17. In WMT, 2017",
+      "authors": "R. Sennrich, A. Birch, A. Currey, U. Germann, B. Haddow, K. Heafield, A. V. M. Barone, and P. Williams",
+      "title": "The university of edinburgh's neural mt systems for wmt17",
+      "venue": "In WMT, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Seo2017BidirectionalAF",
+      "raw": "M. Seo, A. Kembhavi, A. Farhadi, and H. Hajishirzi. Bidirectional attention flow for machine comprehension. ICLR, 2017",
+      "authors": "M. Seo, A. Kembhavi, A. Farhadi, and H. Hajishirzi",
+      "title": "Bidirectional attention flow for machine comprehension",
+      "venue": "ICLR, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Shen2018ReinforcedSN",
+      "raw": "T. Shen, T. Zhou, G. Long, J. Jiang, S. Wang, and C. Zhang. Reinforced self-attention network: a hybrid of hard and soft attention for sequence modeling. CoRR, abs/1801.10296, 2018",
+      "authors": "T. Shen, T. Zhou, G. Long, J. Jiang, S. Wang, and C. Zhang",
+      "title": "Reinforced self-attention network: a hybrid of hard and soft attention for sequence modeling",
+      "venue": "CoRR, abs/1801.10296, 2018",
+      "year": 2018,
+      "arxivId": "1801.10296",
+      "doi": null
+    },
+    {
+      "key": "Socher2013EMNLP",
+      "raw": "R. Socher, A. Perelygin, J. Wu, J. Chuang, C. Manning, A. Ng, and C. Potts. Recursive deep models for semantic compositionality over a sentiment treebank. In EMNLP, 2013",
+      "authors": "R. Socher, A. Perelygin, J. Wu, J. Chuang, C. Manning, A. Ng, and C. Potts",
+      "title": "Recursive deep models for semantic compositionality over a sentiment treebank",
+      "venue": "In EMNLP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever2014SequenceTS",
+      "raw": "I. Sutskever, O. Vinyals, and Q. V. Le. Sequence to sequence learning with neural networks. In NIPS, 2014",
+      "authors": "I. Sutskever, O. Vinyals, and Q. V. Le",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In NIPS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Suzuki2017CuttingoffRR",
+      "raw": "J. Suzuki and M. Nagata. Cutting-off redundant repeating generations for neural abstractive summarization. In EACL, 2017",
+      "authors": "J. Suzuki and M. Nagata",
+      "title": "Cutting-off redundant repeating generations for neural abstractive summarization",
+      "venue": "In EACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Tai2015ImprovedSR",
+      "raw": "K. S. Tai, R. Socher, and C. D. Manning. Improved semantic representations from tree-structured long short-term memory networks. In ACL, 2015",
+      "authors": "K. S. Tai, R. Socher, and C. D. Manning",
+      "title": "Improved semantic representations from tree-structured long short-term memory networks",
+      "venue": "In ACL, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Tan2017DeepSR",
+      "raw": "Z. Tan, M. Wang, J. Xie, Y. Chen, and X. Shi. Deep semantic role labeling with self-attention. CoRR, abs/1712.01586, 2017",
+      "authors": "Z. Tan, M. Wang, J. Xie, Y. Chen, and X. Shi",
+      "title": "Deep semantic role labeling with self-attention",
+      "venue": "CoRR, abs/1712.01586, 2017",
+      "year": 2017,
+      "arxivId": "1712.01586",
+      "doi": null
+    },
+    {
+      "key": "Tay2017ACA",
+      "raw": "Y. Tay, L. A. Tuan, and S. C. Hui. A compare-propagate architecture with alignment factorization for natural language inference. CoRR, abs/1801.00102, 2017",
+      "authors": "Y. Tay, L. A. Tuan, and S. C. Hui",
+      "title": "A compare-propagate architecture with alignment factorization for natural language inference",
+      "venue": "CoRR, abs/1801.00102, 2017",
+      "year": 2017,
+      "arxivId": "1801.00102",
+      "doi": null
+    },
+    {
+      "key": "thrun1998lifelong",
+      "raw": "S. Thrun. Lifelong learning algorithms. In Learning to learn, pages 181--209. Springer, 1998",
+      "authors": "S. Thrun",
+      "title": "Lifelong learning algorithms",
+      "venue": "In Learning to learn, pages 181--209. Springer, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "thrun1998learning",
+      "raw": "S. Thrun and L. Pratt. Learning to learn: Introduction and overview. In Learning to learn, pages 3--17. Springer, 1998",
+      "authors": "S. Thrun and L. Pratt",
+      "title": "Learning to learn: Introduction and overview",
+      "venue": "In Learning to learn, pages 3--17. Springer, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Trischler2017NewsQAAM",
+      "raw": "A. Trischler, T. Wang, X. Yuan, J. Harris, A. Sordoni, P. Bachman, and K. Suleman. Newsqa: A machine comprehension dataset. In Rep4NLP@ACL, 2017",
+      "authors": "A. Trischler, T. Wang, X. Yuan, J. Harris, A. Sordoni, P. Bachman, and K. Suleman",
+      "title": "Newsqa: A machine comprehension dataset",
+      "venue": "In Rep4NLP@ACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Vaswani2017AttentionIA",
+      "raw": "A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin. Attention is all you need. In NIPS, 2017",
+      "authors": "A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin",
+      "title": "Attention is all you need",
+      "venue": "In NIPS, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vilalta2002perspective",
+      "raw": "R. Vilalta and Y. Drissi. A perspective view and survey of meta-learning. Artificial Intelligence Review, 18 0 (2): 0 77--95, 2002",
+      "authors": "R. Vilalta and Y. Drissi",
+      "title": "A perspective view and survey of meta-learning",
+      "venue": "Artificial Intelligence Review, 18 0 (2): 0 77--95, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Vinyals2015",
+      "raw": "O. Vinyals, M. Fortunato, and N. Jaitly. Pointer networks. In NIPS, 2015",
+      "authors": "O. Vinyals, M. Fortunato, and N. Jaitly",
+      "title": "Pointer networks",
+      "venue": "In NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2018glue",
+      "raw": "A. Wang, A. Singh, J. Michael, F. Hill, O. Levy, and S. R. Bowman. Glue: A multi-task benchmark and analysis platform for natural language understanding. arXiv preprint arXiv:1804.07461, 2018",
+      "authors": "A. Wang, A. Singh, J. Michael, F. Hill, O. Levy, and S. R. Bowman",
+      "title": "Glue: A multi-task benchmark and analysis platform for natural language understanding",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1804.07461",
+      "doi": null
+    },
+    {
+      "key": "wang2017machine",
+      "raw": "S. Wang and J. Jiang. Machine comprehension using Match-LSTM and answer pointer. In ICLR, 2017",
+      "authors": "S. Wang and J. Jiang",
+      "title": "Machine comprehension using Match-LSTM and answer pointer",
+      "venue": "In ICLR, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Wang2017GatedSN",
+      "raw": "W. Wang, N. Yang, F. Wei, B. Chang, and M. Zhou. Gated self-matching networks for reading comprehension and question answering. In ACL, 2017",
+      "authors": "W. Wang, N. Yang, F. Wei, B. Chang, and M. Zhou",
+      "title": "Gated self-matching networks for reading comprehension and question answering",
+      "venue": "In ACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Wang2017BilateralMM",
+      "raw": "Z. Wang, W. Hamza, and R. Florian. Bilateral multi-perspective matching for natural language sentences. In IJCAI, 2017",
+      "authors": "Z. Wang, W. Hamza, and R. Florian",
+      "title": "Bilateral multi-perspective matching for natural language sentences",
+      "venue": "In IJCAI, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Weissenborn2017MakingNQ",
+      "raw": "D. Weissenborn, G. Wiese, and L. Seiffe. Making neural qa as simple as possible but not simpler. In CoNLL, 2017",
+      "authors": "D. Weissenborn, G. Wiese, and L. Seiffe",
+      "title": "Making neural qa as simple as possible but not simpler",
+      "venue": "In CoNLL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wen2016network",
+      "raw": "T.-H. Wen, D. Vandyke, N. Mrksic, M. Gasic, L. M. Rojas-Barahona, P.-H. Su, S. Ultes, and S. Young. A network-based end-to-end trainable task-oriented dialogue system. arXiv preprint arXiv:1604.04562, 2016",
+      "authors": "T.-H. Wen, D. Vandyke, N. Mrksic, M. Gasic, L. M. Rojas-Barahona, P.-H. Su, S. Ultes, and S. Young",
+      "title": "A network-based end-to-end trainable task-oriented dialogue system",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1604.04562",
+      "doi": null
+    },
+    {
+      "key": "Williams2017ABC",
+      "raw": "A. Williams, N. Nangia, and S. R. Bowman. A broad-coverage challenge corpus for sentence understanding through inference. CoRR, abs/1704.05426, 2017",
+      "authors": "A. Williams, N. Nangia, and S. R. Bowman",
+      "title": "A broad-coverage challenge corpus for sentence understanding through inference",
+      "venue": "CoRR, abs/1704.05426, 2017",
+      "year": 2017,
+      "arxivId": "1704.05426",
+      "doi": null
+    },
+    {
+      "key": "winograd1972understanding",
+      "raw": "T. Winograd. Understanding natural language. Cognitive psychology, 3 0 (1): 0 1--191, 1972",
+      "authors": "T. Winograd",
+      "title": "Understanding natural language",
+      "venue": "Cognitive psychology, 3 0 (1): 0 1--191, 1972",
+      "year": 1972,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Wu2016GooglesNM",
+      "raw": "Y. Wu, M. Schuster, Z. Chen, Q. V. Le, M. Norouzi, W. Macherey, M. Krikun, Y. Cao, Q. Gao, K. Macherey, J. Klingner, A. Shah, M. Johnson, X. Liu, L. Kaiser, S. Gouws, Y. Kato, T. Kudo, H. Kazawa, K. Stevens, G. Kurian, N. Patil, W. Wang, C. Young, J. Smith, J. Riesa, A. Rudnick, O. Vinyals, G. S. Corrado, M. Hughes, and J. Dean. Google's neural machine translation system: Bridging the gap between human and machine translation. CoRR, abs/1609.08144, 2016",
+      "authors": "Y. Wu, M. Schuster, Z. Chen, Q. V. Le, M. Norouzi, W. Macherey, M. Krikun, Y. Cao, Q. Gao, K. Macherey, J. Klingner, A. Shah, M. Johnson, X. Liu, L. Kaiser, S. Gouws, Y. Kato, T. Kudo, H. Kazawa, K. Stevens, G. Kurian, N. Patil, W. Wang, C. Young, J. Smith, J. Riesa, A. Rudnick, O. Vinyals, G. S. Corrado, M. Hughes, and J. Dean",
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "venue": "CoRR, abs/1609.08144, 2016",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "doi": null
+    },
+    {
+      "key": "Xiong2016",
+      "raw": "C. Xiong, S. Merity, and R. Socher. Dynamic Memory Networks for Visual and Textual Question Answering. In ICML, 2016",
+      "authors": "C. Xiong, S. Merity, and R. Socher",
+      "title": "Dynamic Memory Networks for Visual and Textual Question Answering",
+      "venue": "In ICML, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Xiong2016DynamicCN",
+      "raw": "C. Xiong, V. Zhong, and R. Socher. Dynamic coattention networks for question answering. ICLR, 2017",
+      "authors": "C. Xiong, V. Zhong, and R. Socher",
+      "title": "Dynamic coattention networks for question answering",
+      "venue": "ICLR, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Xiong2017DCNMO",
+      "raw": "C. Xiong, V. Zhong, and R. Socher. Dcn+: Mixed objective and deep residual coattention for question answering. ICLR, 2018",
+      "authors": "C. Xiong, V. Zhong, and R. Socher",
+      "title": "Dcn+: Mixed objective and deep residual coattention for question answering",
+      "venue": "ICLR, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yu2018QanetCL",
+      "raw": "A. W. Yu, D. Dohan, M.-T. Luong, R. Zhao, K. Chen, M. Norouzi, and Q. V. Le. Qanet: Combining local convolution with global self-attention for reading compre- hension. In ICLR, 2018",
+      "authors": "A. W. Yu, D. Dohan, M.-T. Luong, R. Zhao, K. Chen, M. Norouzi, and Q. V. Le",
+      "title": "Qanet: Combining local convolution with global self-attention for reading compre- hension",
+      "venue": "In ICLR, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yu2017NeuralSE",
+      "raw": "H. Yu and T. Munkhdalai. Neural semantic encoders. Proceedings of the conference. Association for Computational Linguistics. Meeting, 1: 0 397--407, 2017",
+      "authors": "H. Yu and T. Munkhdalai",
+      "title": "Neural semantic encoders",
+      "venue": "Proceedings of the conference. Association for Computational Linguistics. Meeting, 1: 0 397--407, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yu2017NeuralTI",
+      "raw": "H. Yu and T. Munkhdalai. Neural tree indexers for text understanding. ACL, 2017",
+      "authors": "H. Yu and T. Munkhdalai",
+      "title": "Neural tree indexers for text understanding",
+      "venue": "ACL, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yu2018typesql",
+      "raw": "T. Yu, Z. Li, Z. Zhang, R. Zhang, and D. Radev. Typesql: Knowledge-based type-aware neural text-to-sql generation. arXiv preprint arXiv:1804.09769, 2018",
+      "authors": "T. Yu, Z. Li, Z. Zhang, R. Zhang, and D. Radev",
+      "title": "Typesql: Knowledge-based type-aware neural text-to-sql generation",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1804.09769",
+      "doi": null
+    },
+    {
+      "key": "Yu2016EndtoEndRC",
+      "raw": "Y. Yu, W. Zhang, K. S. Hasan, M. Yu, B. Xiang, and B. Zhou. End-to-end reading comprehension with dynamic answer chunk ranking. CoRR, abs/1610.09996, 2016",
+      "authors": "Y. Yu, W. Zhang, K. S. Hasan, M. Yu, B. Xiang, and B. Zhou",
+      "title": "End-to-end reading comprehension with dynamic answer chunk ranking",
+      "venue": "CoRR, abs/1610.09996, 2016",
+      "year": 2016,
+      "arxivId": "1610.09996",
+      "doi": null
+    },
+    {
+      "key": "zhongSeq2SQL2017",
+      "raw": "V. Zhong, C. Xiong, and R. Socher. Seq2sql: Generating structured queries from natural language using reinforcement learning. CoRR, abs/1709.00103, 2017",
+      "authors": "V. Zhong, C. Xiong, and R. Socher",
+      "title": "Seq2sql: Generating structured queries from natural language using reinforcement learning",
+      "venue": "CoRR, abs/1709.00103, 2017",
+      "year": 2017,
+      "arxivId": "1709.00103",
+      "doi": null
+    },
+    {
+      "key": "zhong2018global",
+      "raw": "V. Zhong, C. Xiong, and R. Socher. Global-locally self-attentive dialogue state tracker. arXiv preprint arXiv:1805.09655, 2018",
+      "authors": "V. Zhong, C. Xiong, and R. Socher",
+      "title": "Global-locally self-attentive dialogue state tracker",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1805.09655",
+      "doi": null
+    },
+    {
+      "key": "Zhou2015EndtoendLO",
+      "raw": "J. Zhou and W. Xu. End-to-end learning of semantic role labeling using recurrent neural networks. In ACL, 2015",
+      "authors": "J. Zhou and W. Xu",
+      "title": "End-to-end learning of semantic role labeling using recurrent neural networks",
+      "venue": "In ACL, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zoph2016TransferLF",
+      "raw": "B. Zoph, D. Yuret, J. May, and K. Knight. Transfer learning for low-resource neural machine translation. In EMNLP, 2016",
+      "authors": "B. Zoph, D. Yuret, J. May, and K. Knight",
+      "title": "Transfer learning for low-resource neural machine translation",
+      "venue": "In EMNLP, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "C \\in \\mathbb{R}^{l \\times d_{emb}}\n\\qquad \nQ \\in \\mathbb{R}^{m \\times d_{emb}}\n\\qquad A \\in \\mathbb{R}^{n \\times d_{emb}}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "AW_2 = A_{proj} \\in \\mathbb{R}^{n \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "PE[t,k] =\n\\begin{cases} \n\\text{sin}(t/10000^{k/2d})  & \\text{$k$ is even} \\\\\n\\text{cos}(t/10000^{(k-1)/2d}) & \\text{$k$ is odd}   \n\\end{cases}\n\\qquad \nA_{proj} + PE = A_{ppr} \\in \\mathbb{R}^{n \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\text{MultiHead}_A(A_{ppr}, A_{ppr}, A_{ppr}) = A_{mha} \\in \\mathbb{R}^{n \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\text{MultiHead}_AC((A_{mha} + A_{ppr}), C_{fin}, C_{fin}) = A_{ac} \\in \\mathbb{R}^{n \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "FFN_A(A_{ac} + A_{mha} + A_{ppr}) = A_{self}  \\in \\mathbb{R}^{n \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\text{LSTM}([ \\left(A_{self}\\right)_{t-1}; \\tilde c_{t-1} ], {h_{t-1}}) = h_{t} \\in \\mathbb{R}^{d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\softmax{C_{fin} (W_2 h_{t})} = \\alpha_{t}^C \\in \\mathbb{R}^{l}\n\\qquad \n\\softmax{Q_{fin} (W_3 h_{t})} = \\alpha_{t}^Q \\in \\mathbb{R}^{m}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\ftanh{W_4 \\left[ C_{fin}^\\top \\alpha_{t}^C; h_{t} \\right]}  = \\tilde c_{t}  \\in \\mathbb{R}^{d}\n \\qquad\n\\ftanh{W_5 \\left[ Q_{fin}^\\top \\alpha_{t}^Q; h_{t} \\right]} = \\tilde q_{t}  \\in \\mathbb{R}^{d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\sum_{i:c_i=w_t} \\left(\\alpha_{t}^C \\right)_i = p_c(w_t) \\in \\mathbb{R}^{n}\n\\qquad\n\\sum_{i:q_i=w_t} \\left(\\alpha_{t}^Q \\right)_i  = p_q(w_t)\\in \\mathbb{R}^{m}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\softmax{W_v \\tilde c_t} = p_v(w_t) \\in \\mathbb{R}^{v}",
+      "environment": "equation",
+      "labels": [
+        "generativeVocabulary"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\sigma \\left ( W_{pv} \\left [ \\tilde c_t; h_{t};  \\left(A_{self}\\right)_{t-1} \\right ] \\right ) = \\gamma \\in \\left [0,1 \\right]\n\\qquad\n\\sigma \\left ( W_{cq} \\left [ \\tilde q_t; h_{t}; \\left(A_{self}\\right)_{t-1} \\right ] \\right ) = \\lambda \\in \\left [0,1 \\right]",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\gamma p_v(w_t) + \\left ( 1 - \\gamma \\right ) [\\lambda p_c(w_t) + (1 - \\lambda) p_q(w_t) ] = p(w_t) \\in \\mathbb{R}^{l+m+v}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "C \\in \\mathbb{R}^{l \\times d_{emb}}\n\\qquad \nQ \\in \\mathbb{R}^{m \\times d_{emb}}\n\\qquad A \\in \\mathbb{R}^{n \\times d_{emb}}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 14,
+      "latex": "CW_1 = C_{proj} \\in \\mathbb{R}^{l \\times d} \n\\qquad \nQW_1 = Q_{proj} \\in \\mathbb{R}^{m \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\text{BiLSTM}_{ind}(C_{proj}) = C_{ind}  \\in \\mathbb{R}^{l \\times d}  \n\\qquad \n\\text{BiLSTM}_{ind}(Q_{proj}) = Q_{ind}  \\in \\mathbb{R}^{m \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 16,
+      "latex": "\\softmax{C_{ind}Q_{ind}^\\top} = S_{cq} \\in \\mathbb{R}^{(l+1) \\times (m+1)}\n\\qquad\n\\softmax{Q_{ind}C_{ind}^\\top} = S_{qc} \\in \\mathbb{R}^{(m+1) \\times (l+1)}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 17,
+      "latex": "S_{cq}^\\top C_{ind} = C_{sum} \\in \\mathbb{R}^{(m+1) \\times d}\n\\qquad\nS_{qc}^\\top Q_{ind} = Q_{sum} \\in \\mathbb{R}^{(l+1) \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 18,
+      "latex": "S_{qc}^\\top C_{sum} = C_{coa} \\in \\mathbb{R}^{(l+1) \\times d}\n\\qquad\nS_{cq}^\\top Q_{sum} = Q_{coa} \\in \\mathbb{R}^{(m+1) \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 19,
+      "latex": "\\text{BiLSTM}_{comC}([C_{proj}; C_{ind}; Q_{sum}; C_{coa}]) = C_{com}  \\in \\mathbb{R}^{l \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 20,
+      "latex": "\\text{BiLSTM}_{comQ}([Q_{proj}; Q_{ind}; C_{sum}; Q_{coa}]) = Q_{com}  \\in \\mathbb{R}^{m \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 21,
+      "latex": "\\text{Attention}(\\tilde X,\\tilde Y,\\tilde Z) = \\text{softmax}\\left(\\frac{\\tilde X \\tilde Y^\\top}{\\sqrt{d}}\\right) \\tilde Z",
+      "environment": "equation",
+      "labels": [
+        "attention"
+      ]
+    },
+    {
+      "ordinal": 22,
+      "latex": "\\text{MultiHead}(X, Y, Z) = [h_1;\\cdots;h_p]W_o \\qquad\n\\text{where } h_j = \\text{Attention}(XW_j^X, YW_j^Y, ZW_j^Z)",
+      "environment": "equation",
+      "labels": [
+        "multihead"
+      ]
+    },
+    {
+      "ordinal": 23,
+      "latex": "\\text{MultiHead}_C(C_{com}, C_{com}, C_{com}) = C_{mha}\n\\qquad\n\\text{MultiHead}_Q(Q_{com}, Q_{com}, Q_{com}) = Q_{mha}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 24,
+      "latex": "FFN(X) = \\text{max}(0, XU)V + X",
+      "environment": "equation",
+      "labels": [
+        "ffn"
+      ]
+    },
+    {
+      "ordinal": 25,
+      "latex": "FFN_C(C_{com} + C_{mha}) = C_{self}  \\in \\mathbb{R}^{l \\times d}\n\\qquad\nFFN_Q(Q_{com} + Q_{mha}) = Q_{self}  \\in \\mathbb{R}^{m \\times d}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 26,
+      "latex": "\\text{BiLSTM}_{finC}(C_{self}) = C_{fin}  \\in \\mathbb{R}^{l \\times d}\n\\qquad\n\\text{BiLSTM}_{finQ}(Q_{self}) = Q_{fin}  \\in \\mathbb{R}^{m \\times d}",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1433,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86599731445312,
+            "y0": 267.2543029785156,
+            "x1": 468.1309814453125,
+            "y1": 277.3160400390625
+          },
+          {
+            "x0": 143.53700256347656,
+            "y0": 278.1932678222656,
+            "x1": 244.781982421875,
+            "y1": 288.2154846191406
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3099,
+      "numbers": 0,
+      "citations": 20,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 508.5155334472656,
+            "x1": 503.99951171875,
+            "y1": 518.4332275390625
+          },
+          {
+            "x0": 108.0,
+            "y0": 519.4664306640625,
+            "x1": 504.00152587890625,
+            "y1": 529.3289184570312
+          },
+          {
+            "x0": 108.0,
+            "y0": 530.2843627929688,
+            "x1": 505.247314453125,
+            "y1": 540.266845703125
+          },
+          {
+            "x0": 108.0,
+            "y0": 541.13427734375,
+            "x1": 503.9973449707031,
+            "y1": 551.196044921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 552.1184692382812,
+            "x1": 277.34417724609375,
+            "y1": 562.0810546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Tasks and Metrics",
+      "chars": 7806,
+      "numbers": 1,
+      "citations": 16,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 511.28411865234375,
+            "x1": 504.66241455078125,
+            "y1": 521.1917724609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 522.1514892578125,
+            "x1": 203.23245239257812,
+            "y1": 532.1140747070312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Multitask Question Answering Network (MQAN)",
+      "chars": 3936,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 657.9754028320312,
+            "x1": 504.2455139160156,
+            "y1": 667.837890625
+          },
+          {
+            "x0": 108.0,
+            "y0": 668.7332763671875,
+            "x1": 266.1997375488281,
+            "y1": 678.7950439453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments and Analysis",
+      "chars": 1573,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "Baselines and MQAN",
+      "chars": 3072,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 537.7968139648438,
+            "x1": 415.25457763671875,
+            "y1": 547.8289184570312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Optimization Strategies and Curriculum Learning",
+      "chars": 1184,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 497.27740478515625,
+            "x1": 480.65728759765625,
+            "y1": 507.1398620605469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Analysis",
+      "chars": 4311,
+      "numbers": 1,
+      "citations": 4,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 679.6265258789062,
+            "x1": 313.3291931152344,
+            "y1": 689.589111328125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 4135,
+      "numbers": 0,
+      "citations": 45,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 98.0855712890625,
+            "x1": 486.58111572265625,
+            "y1": 108.02822875976562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 931,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 147.85427856445312,
+            "x1": 503.9968566894531,
+            "y1": 157.916015625
+          },
+          {
+            "x0": 108.0,
+            "y0": 158.9143829345703,
+            "x1": 505.7394104003906,
+            "y1": 168.77685546875
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 11,
+      "extends": 1,
+      "contests": 3,
+      "compares": 9,
+      "background": 59,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "Rajpurkar2016SQuAD10",
+      "stance": "inherits",
+      "cue": "We use",
+      "sentence": "We use the Stanford Question Answering Dataset (SQuAD) [Rajpurkar et al. 2016] for this task.",
+      "section": "Tasks and Metrics",
+      "sectionKind": "method",
+      "ordinal": 9,
+      "title": "Squad: 100, 000+ questions for machine comprehension of text",
+      "authors": "P. Rajpurkar, J. Zhang, K. Lopyrev, and P. Liang",
+      "year": 2016,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 311.3021545410156,
+            "y0": 549.525390625,
+            "x1": 504.00140380859375,
+            "y1": 559.3878784179688
+          },
+          {
+            "x0": 107.6709976196289,
+            "y0": 560.2832641601562,
+            "x1": 147.18026733398438,
+            "y1": 570.3450317382812
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Bahdanau2014NeuralMT",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "We provide a set of baselines for decaNLP that combine the basics of sequence-to-sequence learning [Sutskever et al. 2014; Bahdanau et al. 2014; Luong et al. 2015] with pointer networks [Vinyals et al. 2015; Merity et al. 2017; G\u00fcl et al. 2016; Gu et al. 2016; Nallapati et al. 2016], advanced attention mechanisms [Xiong et al. 2017], attention networks [Vaswani et al. 2017], question answering [Seo et al. 2017; Xiong et al. 2018; Yu et al. 2016; Weissenborn et al. 2017], and curriculum learning [Bengio et al. 2009].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 3,
+        "title": "Neural machine translation by jointly learning to align and translate",
+        "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+        "year": 2014,
+        "arxivId": "1409.0473",
+        "inCorpus": true,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 683.0134887695312,
+              "x1": 505.6573181152344,
+              "y1": 693.0604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 694.0623779296875,
+              "x1": 120.4775619506836,
+              "y1": 703.9248657226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "Cettolo2016TheI2",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the 2016 English to German training data prepared for the International Workshop on Spoken Language Translation (IWSLT) [Cettolo et al. 2016].",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 10,
+        "title": "The iwslt 2016 evaluation campaign",
+        "authors": "M. Cettolo, J. Niehues, S. St\\\"uker, L. Bentivogli, R. Cattoni, and M. J. Federico",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 300.2013244628906,
+              "y0": 609.3992919921875,
+              "x1": 503.9973449707031,
+              "y1": 619.4610595703125
+            },
+            {
+              "x0": 108.0,
+              "y0": 620.33447265625,
+              "x1": 445.0461730957031,
+              "y1": 630.3616333007812
+            }
+          ]
+        }
+      },
+      {
+        "key": "Gu2016",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "We provide a set of baselines for decaNLP that combine the basics of sequence-to-sequence learning [Sutskever et al. 2014; Bahdanau et al. 2014; Luong et al. 2015] with pointer networks [Vinyals et al. 2015; Merity et al. 2017; G\u00fcl et al. 2016; Gu et al. 2016; Nallapati et al. 2016], advanced attention mechanisms [Xiong et al. 2017], attention networks [Vaswani et al. 2017], question answering [Seo et al. 2017; Xiong et al. 2018; Yu et al. 2016; Weissenborn et al. 2017], and curriculum learning [Bengio et al. 2009].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 4,
+        "title": "Incorporating Copying Mechanism in Sequence-to-Sequence Learning",
+        "authors": "J. Gu, Z. Lu, H. Li, and V. O. K. Li",
+        "year": 2016,
+        "arxivId": "1603.06393",
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 683.0134887695312,
+              "x1": 505.6573181152344,
+              "y1": 693.0604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 694.0623779296875,
+              "x1": 120.4775619506836,
+              "y1": 703.9248657226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "Gulcehre2016",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "We provide a set of baselines for decaNLP that combine the basics of sequence-to-sequence learning [Sutskever et al. 2014; Bahdanau et al. 2014; Luong et al. 2015] with pointer networks [Vinyals et al. 2015; Merity et al. 2017; G\u00fcl et al. 2016; Gu et al. 2016; Nallapati et al. 2016], advanced attention mechanisms [Xiong et al. 2017], attention networks [Vaswani et al. 2017], question answering [Seo et al. 2017; Xiong et al. 2018; Yu et al. 2016; Weissenborn et al. 2017], and curriculum learning [Bengio et al. 2009].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 4,
+        "title": "Pointing the Unknown Words",
+        "authors": "c. G\\\"ul cehre, S. Ahn, R. Nallapati, B. Zhou, and Y. Bengio",
+        "year": 2016,
+        "arxivId": "1603.08148",
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 683.0134887695312,
+              "x1": 505.6573181152344,
+              "y1": 693.0604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 694.0623779296875,
+              "x1": 120.4775619506836,
+              "y1": 703.9248657226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "He2015QuestionAnswerDS",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use an SRL dataset that treats the task as question answering, QA-SRL [He et al. 2015].",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 19,
+        "title": "Question-answer driven semantic role labeling: Using natural language to annotate natural language",
+        "authors": "L. He, M. Lewis, and L. S. Zettlemoyer",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 171.18035888671875,
+              "y0": 505.1907653808594,
+              "x1": 464.0917663574219,
+              "y1": 515.0632934570312
+            }
+          ]
+        }
+      },
+      {
+        "key": "Hovy2006OntoNotesT9",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For the translation experiment, we use the IWSLT 2016 En\u2192Cs dataset and for NER, we use OntoNotes 5.0 [Hovy et al. 2006]. Zero-shot domain adaptation for text classification. Because MNLI is included in decaNLP, it is possible to adapt to the related Stanford Natural Language Inference Corpus (SNLI) [Bowman et al. 2015].",
+        "section": "Analysis",
+        "sectionKind": "experiments",
+        "ordinal": 38,
+        "title": "Ontonotes: The 90% solution",
+        "authors": "E. H. Hovy, M. P. Marcus, M. Palmer, L. A. Ramshaw, and R. M. Weischedel",
+        "year": 2006,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 393.1297302246094,
+              "y0": 483.25445556640625,
+              "x1": 418.86309814453125,
+              "y1": 493.2170715332031
+            },
+            {
+              "x0": 108.00000762939453,
+              "y0": 499.6311340332031,
+              "x1": 503.9960021972656,
+              "y1": 509.6086730957031
+            },
+            {
+              "x0": 108.0,
+              "y0": 510.5893249511719,
+              "x1": 439.9580993652344,
+              "y1": 520.5020141601562
+            }
+          ]
+        }
+      },
+      {
+        "key": "Levy2017ZeroShotRE",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "As with SRL, we use a dataset that maps relations to a set of questions so that relation extraction can be treated as question answering: QA-ZRE [Levy et al. 2017].",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 20,
+        "title": "Zero-shot relation extraction via reading comprehension",
+        "authors": "O. Levy, M. Seo, E. Choi, and L. S. Zettlemoyer",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.8506164550781,
+              "y0": 576.1199340820312,
+              "x1": 503.9994812011719,
+              "y1": 585.9974975585938
+            },
+            {
+              "x0": 108.0,
+              "y0": 586.9995727539062,
+              "x1": 478.54119873046875,
+              "y1": 596.917236328125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Luong2015EffectiveAT",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "First, the LSTM produces an intermediate state h_t using the previous answer word A_self^t-1 and recurrent context state [Luong et al. 2015]: Context and Question Attention. This intermediate state is used to get attention weights \u03b1_t^C and \u03b1_t^Q to allow the decoder to focus on encoded information relevant to time step t. Recurrent Context State. Context representations are combined with these weights and fed through a feedforward network with tanh activation to form the recurrent context state and question state: Multi-Pointer-Generator. Our model must be able to generate tokens that are not in the context or the question.",
+        "section": "Multitask Question Answering Network (MQAN)",
+        "sectionKind": "method",
+        "ordinal": 30,
+        "title": "Effective approaches to attention-based neural machine translation",
+        "authors": "T. Luong, H. Pham, and C. D. Manning",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "Merity2016PointerSM",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "We provide a set of baselines for decaNLP that combine the basics of sequence-to-sequence learning [Sutskever et al. 2014; Bahdanau et al. 2014; Luong et al. 2015] with pointer networks [Vinyals et al. 2015; Merity et al. 2017; G\u00fcl et al. 2016; Gu et al. 2016; Nallapati et al. 2016], advanced attention mechanisms [Xiong et al. 2017], attention networks [Vaswani et al. 2017], question answering [Seo et al. 2017; Xiong et al. 2018; Yu et al. 2016; Weissenborn et al. 2017], and curriculum learning [Bengio et al. 2009].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 4,
+        "title": "Pointer sentinel mixture models",
+        "authors": "S. Merity, C. Xiong, J. Bradbury, and R. Socher",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 683.0134887695312,
+              "x1": 505.6573181152344,
+              "y1": 693.0604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 694.0623779296875,
+              "x1": 120.4775619506836,
+              "y1": 703.9248657226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "Nallapati2016AbstractiveTS",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "We provide a set of baselines for decaNLP that combine the basics of sequence-to-sequence learning [Sutskever et al. 2014; Bahdanau et al. 2014; Luong et al. 2015] with pointer networks [Vinyals et al. 2015; Merity et al. 2017; G\u00fcl et al. 2016; Gu et al. 2016; Nallapati et al. 2016], advanced attention mechanisms [Xiong et al. 2017], attention networks [Vaswani et al. 2017], question answering [Seo et al. 2017; Xiong et al. 2018; Yu et al. 2016; Weissenborn et al. 2017], and curriculum learning [Bengio et al. 2009].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 4,
+        "title": "Abstractive text summarization using sequence-to-sequence RNNs and beyond",
+        "authors": "R. Nallapati, B. Zhou, C. N. dos Santos, \u00c7aglar G\\\"ul\u00e7ehre, and B. Xiang",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 683.0134887695312,
+              "x1": 505.6573181152344,
+              "y1": 693.0604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 694.0623779296875,
+              "x1": 120.4775619506836,
+              "y1": 703.9248657226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "Radford2017LearningTG",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the unparsed, binary version [Radford et al. 2017].",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 17,
+        "title": "Learning to generate reviews and discovering sentiment",
+        "authors": "A. Radford, R. J\\'ozefowicz, and I. Sutskever",
+        "year": 2017,
+        "arxivId": "1704.01444",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 391.6494140625,
+              "y0": 455.99139404296875,
+              "x1": 504.3470764160156,
+              "y1": 465.9739074707031
+            },
+            {
+              "x0": 107.7509994506836,
+              "y0": 466.91546630859375,
+              "x1": 136.9314422607422,
+              "y1": 476.8780822753906
+            }
+          ]
+        }
+      },
+      {
+        "key": "Rajpurkar2016SQuAD10",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the Stanford Question Answering Dataset (SQuAD) [Rajpurkar et al. 2016] for this task.",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 9,
+        "title": "Squad: 100, 000+ questions for machine comprehension of text",
+        "authors": "P. Rajpurkar, J. Zhang, K. Lopyrev, and P. Liang",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 311.3021545410156,
+              "y0": 549.525390625,
+              "x1": 504.00140380859375,
+              "y1": 559.3878784179688
+            },
+            {
+              "x0": 107.6709976196289,
+              "y0": 560.2832641601562,
+              "x1": 147.18026733398438,
+              "y1": 570.3450317382812
+            }
+          ]
+        }
+      },
+      {
+        "key": "See2017GetTT",
+        "stance": "compares",
+        "cue": "baseline",
+        "sentence": "Our first baseline is a pointer-generator sequence-to-sequence (S2S) model [See et al. 2017].",
+        "section": "Baselines and MQAN",
+        "sectionKind": "experiments",
+        "ordinal": 31,
+        "title": "Get to the point: Summarization with pointer-generator networks",
+        "authors": "A. See, P. J. Liu, and C. D. Manning",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 418.3357238769531,
+              "y0": 537.7968139648438,
+              "x1": 504.0013122558594,
+              "y1": 547.8289184570312
+            },
+            {
+              "x0": 108.0,
+              "y0": 548.6832275390625,
+              "x1": 324.64056396484375,
+              "y1": 558.7449951171875
+            }
+          ]
+        }
+      },
+      {
+        "key": "Seo2017BidirectionalAF",
+        "stance": "contests",
+        "cue": ", but this assumption does not hold",
+        "sentence": "Many recent QA models for question answering typically assume the answer can be copied from the context [Wang et al. 2017; Seo et al. 2017; Xiong et al. 2018], but this assumption does not hold for general question answering.",
+        "section": "Multitask Question Answering Network (MQAN)",
+        "sectionKind": "method",
+        "ordinal": 25,
+        "title": "Bidirectional attention flow for machine comprehension",
+        "authors": "M. Seo, A. Kembhavi, A. Farhadi, and H. Hajishirzi",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 189.35581970214844,
+              "y0": 679.6422729492188,
+              "x1": 504.1702880859375,
+              "y1": 689.7040405273438
+            },
+            {
+              "x0": 108.0,
+              "y0": 690.649169921875,
+              "x1": 230.29991149902344,
+              "y1": 700.5818481445312
+            }
+          ]
+        }
+      },
+      {
+        "key": "Sutskever2014SequenceTS",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "We provide a set of baselines for decaNLP that combine the basics of sequence-to-sequence learning [Sutskever et al. 2014; Bahdanau et al. 2014; Luong et al. 2015] with pointer networks [Vinyals et al. 2015; Merity et al. 2017; G\u00fcl et al. 2016; Gu et al. 2016; Nallapati et al. 2016], advanced attention mechanisms [Xiong et al. 2017], attention networks [Vaswani et al. 2017], question answering [Seo et al. 2017; Xiong et al. 2018; Yu et al. 2016; Weissenborn et al. 2017], and curriculum learning [Bengio et al. 2009].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 3,
+        "title": "Sequence to sequence learning with neural networks",
+        "authors": "I. Sutskever, O. Vinyals, and Q. V. Le",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 683.0134887695312,
+              "x1": 505.6573181152344,
+              "y1": 693.0604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 694.0623779296875,
+              "x1": 120.4775619506836,
+              "y1": 703.9248657226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "Vinyals2015",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "We provide a set of baselines for decaNLP that combine the basics of sequence-to-sequence learning [Sutskever et al. 2014; Bahdanau et al. 2014; Luong et al. 2015] with pointer networks [Vinyals et al. 2015; Merity et al. 2017; G\u00fcl et al. 2016; Gu et al. 2016; Nallapati et al. 2016], advanced attention mechanisms [Xiong et al. 2017], attention networks [Vaswani et al. 2017], question answering [Seo et al. 2017; Xiong et al. 2018; Yu et al. 2016; Weissenborn et al. 2017], and curriculum learning [Bengio et al. 2009].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 4,
+        "title": "Pointer networks",
+        "authors": "O. Vinyals, M. Fortunato, and N. Jaitly",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.53199768066406,
+              "y0": 683.0134887695312,
+              "x1": 505.6573181152344,
+              "y1": 693.0604248046875
+            },
+            {
+              "x0": 108.0,
+              "y0": 694.0623779296875,
+              "x1": 120.4775619506836,
+              "y1": 703.9248657226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "Williams2017ABC",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the Multi-Genre Natural Language Inference Corpus (MNLI) [Williams et al. 2017] which provides training examples from multiple domains (transcribed speech, popular fiction, government reports) and test pairs from seen and unseen domains.",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 15,
+        "title": "A broad-coverage challenge corpus for sentence understanding through inference",
+        "authors": "A. Williams, N. Nangia, and S. R. Bowman",
+        "year": 2017,
+        "arxivId": "1704.05426",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 308.9776306152344,
+              "y0": 395.9175109863281,
+              "x1": 503.99755859375,
+              "y1": 405.9644470214844
+            },
+            {
+              "x0": 108.0,
+              "y0": 406.9664306640625,
+              "x1": 504.0015563964844,
+              "y1": 416.8288879394531
+            },
+            {
+              "x0": 108.0,
+              "y0": 417.7994689941406,
+              "x1": 144.25390625,
+              "y1": 427.7620849609375
+            }
+          ]
+        }
+      },
+      {
+        "key": "Xiong2016DynamicCN",
+        "stance": "extends",
+        "cue": "we extend",
+        "sentence": "Noting this, we extend the coattention of [Xiong et al. 2017] to enrich the representation of not only the input but also the question.",
+        "section": "Multitask Question Answering Network (MQAN)",
+        "sectionKind": "method",
+        "ordinal": 26,
+        "title": "Dynamic coattention networks for question answering",
+        "authors": "C. Xiong, V. Zhong, and R. Socher",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 496.0914611816406,
+              "y0": 712.3692626953125,
+              "x1": 503.99737548828125,
+              "y1": 722.4310302734375
+            },
+            {
+              "x0": 303.5090026855469,
+              "y0": 742.3324584960938,
+              "x1": 308.49029541015625,
+              "y1": 752.2950439453125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Xiong2017DCNMO",
+        "stance": "contests",
+        "cue": ", but this assumption does not hold",
+        "sentence": "Many recent QA models for question answering typically assume the answer can be copied from the context [Wang et al. 2017; Seo et al. 2017; Xiong et al. 2018], but this assumption does not hold for general question answering.",
+        "section": "Multitask Question Answering Network (MQAN)",
+        "sectionKind": "method",
+        "ordinal": 25,
+        "title": "Dcn+: Mixed objective and deep residual coattention for question answering",
+        "authors": "C. Xiong, V. Zhong, and R. Socher",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 189.35581970214844,
+              "y0": 679.6422729492188,
+              "x1": 504.1702880859375,
+              "y1": 689.7040405273438
+            },
+            {
+              "x0": 108.0,
+              "y0": 690.649169921875,
+              "x1": 230.29991149902344,
+              "y1": 700.5818481445312
+            }
+          ]
+        }
+      },
+      {
+        "key": "levesque2011winograd",
+        "stance": "inherits",
+        "cue": "taken from",
+        "sentence": "We started with examples taken from the Winograd Schema Challenge [Levesque et al. 2011] and modified them to ensure that answers were a single word from the context.",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 24,
+        "title": "The winograd schema challenge",
+        "authors": "H. J. Levesque, E. Davis, and L. Morgenstern",
+        "year": 2011,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 242.56845092773438,
+              "y0": 523.1571655273438,
+              "x1": 504.0005187988281,
+              "y1": 533.0397338867188
+            },
+            {
+              "x0": 108.0,
+              "y0": 533.9302978515625,
+              "x1": 155.47618103027344,
+              "y1": 543.9920654296875
+            }
+          ]
+        }
+      },
+      {
+        "key": "wang2017machine",
+        "stance": "contests",
+        "cue": ", but this assumption does not hold",
+        "sentence": "Many recent QA models for question answering typically assume the answer can be copied from the context [Wang et al. 2017; Seo et al. 2017; Xiong et al. 2018], but this assumption does not hold for general question answering.",
+        "section": "Multitask Question Answering Network (MQAN)",
+        "sectionKind": "method",
+        "ordinal": 25,
+        "title": "Machine comprehension using Match-LSTM and answer pointer",
+        "authors": "S. Wang and J. Jiang",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 189.35581970214844,
+              "y0": 679.6422729492188,
+              "x1": 504.1702880859375,
+              "y1": 689.7040405273438
+            },
+            {
+              "x0": 108.0,
+              "y0": 690.649169921875,
+              "x1": 230.29991149902344,
+              "y1": 700.5818481445312
+            }
+          ]
+        }
+      },
+      {
+        "key": "wen2016network",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the English Wizard of Oz (WOZ) restaurant reservation task [Wen et al. 2016], which comes with a predefined ontology of foods, dates, times, addresses, and other information that would help an agent make a reservation for a customer.",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 21,
+        "title": "A network-based end-to-end trainable task-oriented dialogue system",
+        "authors": "T.-H. Wen, D. Vandyke, N. Mrksic, M. Gasic, L. M. Rojas-Barahona, P.-H. Su, S. Ultes, and S. Young",
+        "year": 2016,
+        "arxivId": "1604.04562",
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 305.9756164550781,
+              "y0": 381.2891540527344,
+              "x1": 504.0005187988281,
+              "y1": 391.1717224121094
+            },
+            {
+              "x0": 108.0,
+              "y0": 392.0622863769531,
+              "x1": 503.9974060058594,
+              "y1": 402.1240234375
+            },
+            {
+              "x0": 108.0,
+              "y0": 402.9712829589844,
+              "x1": 169.27597045898438,
+              "y1": 413.03302001953125
+            }
+          ]
+        }
+      },
+      {
+        "key": "winograd1972understanding",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "WikiSQL is evaluated by a logical form exact match (lfEM) to ensure that models do not obtain correct answers from incorrectly generated queries. Pronoun Resolution. Our final task is based on Winograd schemas [Winograd 1972], which require pronoun resolution: \"Joan made sure to thank Susan for the help she had [given/received].",
+        "section": "Tasks and Metrics",
+        "sectionKind": "method",
+        "ordinal": 23,
+        "title": "Understanding natural language",
+        "authors": "T. Winograd",
+        "year": 1972,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 394.015625,
+              "y0": 452.0872802734375,
+              "x1": 503.9974060058594,
+              "y1": 462.1490173339844
+            },
+            {
+              "x0": 108.0,
+              "y0": 463.1474304199219,
+              "x1": 504.3529052734375,
+              "y1": 473.0098876953125
+            },
+            {
+              "x0": 108.0,
+              "y0": 473.98046875,
+              "x1": 180.47793579101562,
+              "y1": 483.9430847167969
+            },
+            {
+              "x0": 108.0,
+              "y0": 490.4454040527344,
+              "x1": 373.38836669921875,
+              "y1": 500.307861328125
+            }
+          ]
+        }
+      },
+      {
+        "key": "zhongSeq2SQL2017",
+        "stance": "compares",
+        "cue": "baselines",
+        "sentence": "On WikiSQL, it obtains a much higher score than prior sequence-to-sequence baselines [Zhong et al. 2017], but it is low compared to MQAN (+QPtr) and the other baselines.",
+        "section": "Baselines and MQAN",
+        "sectionKind": "experiments",
+        "ordinal": 32,
+        "title": "Seq2sql: Generating structured queries from natural language using reinforcement learning",
+        "authors": "V. Zhong, C. Xiong, and R. Socher",
+        "year": 2017,
+        "arxivId": "1709.00103",
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 438.2652587890625,
+              "y0": 570.5012817382812,
+              "x1": 504.0022277832031,
+              "y1": 580.5630493164062
+            },
+            {
+              "x0": 108.0,
+              "y0": 581.5157470703125,
+              "x1": 388.1601867675781,
+              "y1": 591.4384155273438
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We hypothesize that more direct access to the question makes it easier for the model decide when generating output tokens is more appropriate than copying.",
+      "anchorText": "We hypothesize that more direct access to the question makes it easier for the model decide when generating output tokens is more appropriate than copying.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "Baselines and MQAN",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 281.03607177734375,
+            "y0": 423.7002868652344,
+            "x1": 503.9974670410156,
+            "y1": 433.76202392578125
+          },
+          {
+            "x0": 108.0,
+            "y0": 434.76141357421875,
+            "x1": 505.7394714355469,
+            "y1": 444.6238708496094
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 1,
+    "cited": 0,
+    "shown": 0,
+    "bare": 1
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2018-06-20",
+    "authors": [
+      "Bryan McCann",
+      "Nitish Shirish Keskar",
+      "Caiming Xiong",
+      "Richard Socher"
+    ]
+  }
+}

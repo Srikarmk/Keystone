@@ -1,0 +1,1698 @@
+{
+  "id": "1904.09751",
+  "title": "The Curious Case of Neural Text Degeneration",
+  "keystone": null,
+  "codeUrl": "https://github.com/ari-holtzman/degen",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1904.09751",
+  "numbers": [
+    {
+      "value": "0.7",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "When top- sampling is combined with a temperature of 0.7, as is commonly done , the output devolves into repetition, exhibiting the classic issues of low-temperature decoding.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "Pure Sampling",
+      "cell": "0.67",
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 254.98814392089844,
+            "y0": 228.17933654785156,
+            "x1": 504.0030822753906,
+            "y1": 238.14193725585938
+          },
+          {
+            "x0": 108.0,
+            "y0": 239.13832092285156,
+            "x1": 252.17872619628906,
+            "y1": 249.10092163085938
+          }
+        ]
+      }
+    },
+    {
+      "value": "40GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "In this study we use the Generatively Pre-trained Transformer, version 2 , which was trained on WebText, a 40GB collection of text scraped from the web. We perform experiments using the Large model (762M parameters).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "762M parameters",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "In this study we use the Generatively Pre-trained Transformer, version 2 , which was trained on WebText, a 40GB collection of text scraped from the web. We perform experiments using the Large model (762M parameters).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "200 tokens",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Our analysis is based on generating 5,000 text passages, which end upon reaching an end-of-document token or a maximum length of 200 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 189.89263916015625,
+            "y0": 500.0733642578125,
+            "x1": 504.0033874511719,
+            "y1": 510.0359802246094
+          },
+          {
+            "x0": 108.00004577636719,
+            "y0": 511.0313720703125,
+            "x1": 378.45465087890625,
+            "y1": 520.9939575195312
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Main results for comparing all decoding methods with selected parameters of each method. The numbers closest to human scores are in bold except for HUSE , a combined human and statistical evaluation, where the highest (best) value is bolded. For Top- and Nucleus Sampling, HUSE is computed with interpolation rather than truncation (see ).",
+      "label": "tab:stats",
+      "numericCells": 46,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Self-BLEU4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Zipf Coefficient",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Repetition %",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "HUSE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12.38",
+            "value": "12.38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.31",
+            "value": "0.31",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.93",
+            "value": "0.93",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.28",
+            "value": "0.28",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Greedy",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.50",
+            "value": "1.50",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.50",
+            "value": "0.50",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.00",
+            "value": "1.00",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "73.66",
+            "value": "73.66",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Beam, b=16",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.48",
+            "value": "1.48",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.44",
+            "value": "0.44",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.94",
+            "value": "0.94",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.94",
+            "value": "28.94",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Stochastic Beam, b=16",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "19.20",
+            "value": "19.20",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.28",
+            "value": "0.28",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.91",
+            "value": "0.91",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.32",
+            "value": "0.32",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Pure Sampling",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "22.73",
+            "value": "22.73",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.28",
+            "value": "0.28",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.93",
+            "value": "0.93",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.22",
+            "value": "0.22",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.67",
+            "value": "0.67",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Sampling, =0.9",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "10.25",
+            "value": "10.25",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.35",
+            "value": "0.35",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.96",
+            "value": "0.96",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.66",
+            "value": "0.66",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.79",
+            "value": "0.79",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Top- =40",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "6.88",
+            "value": "6.88",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.39",
+            "value": "0.39",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.96",
+            "value": "0.96",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.78",
+            "value": "0.78",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.19",
+            "value": "0.19",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Top- =640",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "13.82",
+            "value": "13.82",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.32",
+            "value": "0.32",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.96",
+            "value": "0.96",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.28",
+            "value": "0.28",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.94",
+            "value": "0.94",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Top- =40, =0.7",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "3.48",
+            "value": "3.48",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.44",
+            "value": "0.44",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1.00",
+            "value": "1.00",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "8.86",
+            "value": "8.86",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.08",
+            "value": "0.08",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Nucleus =0.95",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "13.13",
+            "value": "13.13",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.32",
+            "value": "0.32",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.95",
+            "value": "0.95",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.36",
+            "value": "0.36",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.97",
+            "value": "0.97",
+            "emphasised": true,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\nuc": "\\raisebox{-2pt}{\\includegraphics[width=13px]{atom2.png}}",
+    "\\ourmethod": "Nucleus Sampling",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}",
+    "\\ari": "\\textcolor{purple}{ #1 $\\alpha$}",
+    "\\jan": "\\textcolor{green}{[#1 $_\\beta$]}",
+    "\\leo": "\\textcolor{purple}{[#1 $_\\lambda$]}",
+    "\\yejin": "\\textcolor{magenta}{[#1 $_\\mathcal{X}$]}",
+    "\\needdiagram": "\\textcolor{red}{\\textbf{DIAGRAM NEEDED HERE}}",
+    "\\needtable": "\\textcolor{red}{\\textbf{TABLE NEEDED HERE}}",
+    "\\needgraph": "\\textcolor{red}{\\textbf{GRAPH NEEDED HERE}}",
+    "\\needexperiment": "\\textcolor{red}{\\textbf{EXPERIMENT TO RUN MENTIONED HERE}}",
+    "\\neednumber": "\\textcolor{red}{\\textbf{NUMBER NEEDED HERE}}",
+    "\\evid": "\\textcolor{red}{\\textbf{EVIDENCE}}",
+    "\\needcite": "\\textcolor{red}{\\textbf{CITE CITE CITE}}",
+    "\\n": "\\textcolor{red}{\\textbf{insert #1}}",
+    "\\neone": "\\textcolor{red}{\\textbf{NE1 CAN WRITE}}",
+    "\\move": "\\textcolor{red}{\\textbf{MOVE ELSEWHERE}}"
+  },
+  "references": [
+    {
+      "key": "ackley1985learning",
+      "raw": "David H Ackley, Geoffrey E Hinton, and Terrence J Sejnowski. A learning algorithm for boltzmann machines. Cognitive science, 9 0 (1): 0 147--169, 1985",
+      "authors": "David H Ackley, Geoffrey E Hinton, and Terrence J Sejnowski",
+      "title": "A learning algorithm for boltzmann machines",
+      "venue": "Cognitive science, 9 0 (1): 0 147--169, 1985",
+      "year": 1985,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bahdanau2015NeuralMT",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural machine translation by jointly learning to align and translate. Proceedings of the 2015 International Conference on Learning Representations, 2015",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "Proceedings of the 2015 International Conference on Learning Representations, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "caccia2018GANs",
+      "raw": "Massimo Caccia, Lucas Caccia, William Fedus, Hugo Larochelle, Joelle Pineau, and Laurent Charlin. Language gans falling short. In Critiquing and Correcting Trends in Machine Learning: NeurIPS 2018 Workshop, 2018. URL http://arxiv.org/abs/1811.02549",
+      "authors": "Massimo Caccia, Lucas Caccia, William Fedus, Hugo Larochelle, Joelle Pineau, and Laurent Charlin",
+      "title": "Language gans falling short",
+      "venue": "In Critiquing and Correcting Trends in Machine Learning: NeurIPS 2018 Workshop, 2018 URL",
+      "year": 2018,
+      "arxivId": "1811.02549",
+      "doi": null
+    },
+    {
+      "key": "chen-etal-2018-recurrent",
+      "raw": "Yining Chen, Sorcha Gilroy, Andreas Maletti, Jonathan May, and Kevin Knight. Recurrent neural networks as weighted language recognizers. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pp.\\ 2261--2271, New Orleans, Louisiana, June 2018",
+      "authors": "Yining Chen, Sorcha Gilroy, Andreas Maletti, Jonathan May, and Kevin Knight",
+      "title": "Recurrent neural networks as weighted language recognizers",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pp.\\ 2261--2271, New Orleans, Louisiana, June 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "clark2018-neural",
+      "raw": "Elizabeth Clark, Yangfeng Ji, and Noah A. Smith. Neural text generation in stories using entity representations as context. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pp.\\ 2250--2260, New Orleans, Louisiana, June 2018",
+      "authors": "Elizabeth Clark, Yangfeng Ji, and Noah A. Smith",
+      "title": "Neural text generation in stories using entity representations as context",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pp.\\ 2250--2260, New Orleans, Louisiana, June 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dauphin2017language",
+      "raw": "Yann N Dauphin, Angela Fan, Michael Auli, and David Grangier. Language modeling with gated convolutional networks. In Proceedings of the 34th International Conference on Machine Learning, pp.\\ 933--941, 2017",
+      "authors": "Yann N Dauphin, Angela Fan, Michael Auli, and David Grangier",
+      "title": "Language modeling with gated convolutional networks",
+      "venue": "In Proceedings of the 34th International Conference on Machine Learning, pp.\\ 933--941, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fan2018hierarchical",
+      "raw": "Angela Fan, Mike Lewis, and Yann Dauphin. Hierarchical neural story generation. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), volume 1, pp.\\ 889--898, 2018",
+      "authors": "Angela Fan, Mike Lewis, and Yann Dauphin",
+      "title": "Hierarchical neural story generation",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), volume 1, pp.\\ 889--898, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ficler2017controlling",
+      "raw": "Jessica Ficler and Yoav Goldberg. Controlling linguistic style aspects in neural language generation. In Proceedings of the Workshop on Stylistic Variation, pp.\\ 94--104, 2017",
+      "authors": "Jessica Ficler and Yoav Goldberg",
+      "title": "Controlling linguistic style aspects in neural language generation",
+      "venue": "In Proceedings of the Workshop on Stylistic Variation, pp.\\ 94--104, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Grice1975",
+      "raw": "H Paul Grice. Logic and conversation. In P Cole and J L Morgan (eds.), Speech Acts, volume 3 of Syntax and Semantics, pp.\\ 41--58. Academic Press, 1975",
+      "authors": "H Paul Grice",
+      "title": "Logic and conversation",
+      "venue": "In P Cole and J L Morgan (eds.), Speech Acts, volume 3 of Syntax and Semantics, pp.\\ 41--58. Academic Press, 1975",
+      "year": 1975,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hashimoto20190unifying",
+      "raw": "Tatsunori B. Hashimoto, Hugh Zhang, and Percy Liang. Unifying human and statistical evaluation for natural language generation. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2019",
+      "authors": "Tatsunori B. Hashimoto, Hugh Zhang, and Percy Liang",
+      "title": "Unifying human and statistical evaluation for natural language generation",
+      "venue": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "holtzman2018l2w",
+      "raw": "Ari Holtzman, Jan Buys, Maxwell Forbes, Antoine Bosselut, David Golub, and Yejin Choi. Learning to write with cooperative discriminators. In Proceedings of the Association for Computational Linguistics, 2018",
+      "authors": "Ari Holtzman, Jan Buys, Maxwell Forbes, Antoine Bosselut, David Golub, and Yejin Choi",
+      "title": "Learning to write with cooperative discriminators",
+      "venue": "In Proceedings of the Association for Computational Linguistics, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "koehn2017six",
+      "raw": "Philipp Koehn and Rebecca Knowles. Six challenges for neural machine translation. In Proceedings of the First Workshop on Neural Machine Translation, pp.\\ 28--39, 2017",
+      "authors": "Philipp Koehn and Rebecca Knowles",
+      "title": "Six challenges for neural machine translation",
+      "venue": "In Proceedings of the First Workshop on Neural Machine Translation, pp.\\ 28--39, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kulikov2018importance",
+      "raw": "Ilya Kulikov, Alexander H Miller, Kyunghyun Cho, and Jason Weston. Importance of search and evaluation strategies in neural dialogue modeling. International Conference on Natural Language Generation, 2019",
+      "authors": "Ilya Kulikov, Alexander H Miller, Kyunghyun Cho, and Jason Weston",
+      "title": "Importance of search and evaluation strategies in neural dialogue modeling",
+      "venue": "International Conference on Natural Language Generation, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2016decoding",
+      "raw": "Jiwei Li, Will Monroe, and Dan Jurafsky. A simple, fast diverse decoding algorithm for neural generation. arXiv preprint arXiv:1611.08562, 2016",
+      "authors": "Jiwei Li, Will Monroe, and Dan Jurafsky",
+      "title": "A simple, fast diverse decoding algorithm for neural generation",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.08562",
+      "doi": null
+    },
+    {
+      "key": "li2016deep",
+      "raw": "Jiwei Li, Will Monroe, Alan Ritter, Dan Jurafsky, Michel Galley, and Jianfeng Gao. Deep reinforcement learning for dialogue generation. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pp.\\ 1192--1202, 2016",
+      "authors": "Jiwei Li, Will Monroe, Alan Ritter, Dan Jurafsky, Michel Galley, and Jianfeng Gao",
+      "title": "Deep reinforcement learning for dialogue generation",
+      "venue": "In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pp.\\ 1192--1202, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "luong2015effective",
+      "raw": "Thang Luong, Hieu Pham, and Christopher D Manning. Effective approaches to attention-based neural machine translation. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pp.\\ 1412--1421, 2015",
+      "authors": "Thang Luong, Hieu Pham, and Christopher D Manning",
+      "title": "Effective approaches to attention-based neural machine translation",
+      "venue": "In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pp.\\ 1412--1421, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nallapati2016abstractive",
+      "raw": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gulcehre, and Bing Xiang. Abstractive text summarization using sequence-to-sequence rnns and beyond. In Proceedings of The 20th SIGNLL Conference on Computational Natural Language Learning, pp.\\ 280--290, 2016",
+      "authors": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gulcehre, and Bing Xiang",
+      "title": "Abstractive text summarization using sequence-to-sequence rnns and beyond",
+      "venue": "In Proceedings of The 20th SIGNLL Conference on Computational Natural Language Learning, pp.\\ 280--290, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "1661342",
+      "raw": "Chris Pal, Charles Sutton, and Andrew McCallum. Sparse forward-backward using minimum divergence beams for fast training of conditional random fields. In 2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings, volume 5, May 2006",
+      "authors": "Chris Pal, Charles Sutton, and Andrew McCallum",
+      "title": "Sparse forward-backward using minimum divergence beams for fast training of conditional random fields",
+      "venue": "In 2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings, volume 5, May 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "peng2018-towards",
+      "raw": "Nanyun Peng, Marjan Ghazvininejad, Jonathan May, and Kevin Knight. Towards controllable story generation. In Proceedings of the First Workshop on Storytelling, pp.\\ 43--49, New Orleans, Louisiana, June 2018. 10.18653/v1/W18-1505",
+      "authors": "Nanyun Peng, Marjan Ghazvininejad, Jonathan May, and Kevin Knight",
+      "title": "Towards controllable story generation",
+      "venue": "In Proceedings of the First Workshop on Storytelling, pp.\\ 43--49, New Orleans, Louisiana, June 2018 10.18653/v1/W18-1505",
+      "year": 2018,
+      "arxivId": null,
+      "doi": "10.18653/v1/W18-1505"
+    },
+    {
+      "key": "piantadosi2014zipf",
+      "raw": "Steven T Piantadosi. Zipf\u2019s word frequency law in natural language: A critical review and future directions. Psychonomic bulletin \\& review, 21 0 (5): 0 1112--1130, 2014",
+      "authors": "Steven T Piantadosi",
+      "title": "Zipf\u2019s word frequency law in natural language: A critical review and future directions",
+      "venue": "Psychonomic bulletin \\& review, 21 0 (5): 0 1112--1130, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2018improving",
+      "raw": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever. Improving language understanding by generative pre-training, 2018. URL https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf. Unpublished manuscript",
+      "authors": "Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever",
+      "title": "Improving language understanding by generative pre-training, 2018",
+      "venue": "URL Unpublished manuscript",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2019BetterLMs",
+      "raw": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language models are unsupervised multitask learners, February 2019. URL https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf. Unpublished manuscript",
+      "authors": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever",
+      "title": "Language models are unsupervised multitask learners, February 2019",
+      "venue": "URL Unpublished manuscript",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "semeniuta2018accurate",
+      "raw": "Stanislau Semeniuta, Aliaksei Severyn, and Sylvain Gelly. On accurate evaluation of gans for language generation. arXiv preprint arXiv:1806.04936, 2018",
+      "authors": "Stanislau Semeniuta, Aliaksei Severyn, and Sylvain Gelly",
+      "title": "On accurate evaluation of gans for language generation",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.04936",
+      "doi": null
+    },
+    {
+      "key": "shen2017style",
+      "raw": "Tianxiao Shen, Tao Lei, Regina Barzilay, and Tommi Jaakkola. Style transfer from non-parallel text by cross-alignment. In Advances in neural information processing systems, pp.\\ 6830--6841, 2017",
+      "authors": "Tianxiao Shen, Tao Lei, Regina Barzilay, and Tommi Jaakkola",
+      "title": "Style transfer from non-parallel text by cross-alignment",
+      "venue": "In Advances in neural information processing systems, pp.\\ 6830--6841, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "stahlberg2019nmt",
+      "raw": "Felix Stahlberg and Bill Byrne. On nmt search errors and model errors: Cat got your tongue? In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp.\\ 3347--3353, 2019",
+      "authors": "Felix Stahlberg and Bill Byrne",
+      "title": "On nmt search errors and model errors: Cat got your tongue?",
+      "venue": "In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp.\\ 3347--3353, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sundermeyer2012lstm",
+      "raw": "Martin Sundermeyer, Ralf Schl\\\"uter, and Hermann Ney. Lstm neural networks for language modeling. In Thirteenth annual conference of the international speech communication association, 2012",
+      "authors": "Martin Sundermeyer, Ralf Schl\\\"uter, and Hermann Ney",
+      "title": "Lstm neural networks for language modeling",
+      "venue": "In Thirteenth annual conference of the international speech communication association, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Tevet2018GanLMs",
+      "raw": "Guy Tevet, Gavriel Habib, Vered Shwartz, and Jonathan Berant. Evaluating text gans as language models. Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp.\\ 2241--2247, 2019",
+      "authors": "Guy Tevet, Gavriel Habib, Vered Shwartz, and Jonathan Berant",
+      "title": "Evaluating text gans as language models",
+      "venue": "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pp.\\ 2241--2247, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in Neural Information Processing Systems, pp.\\ 5998--6008, 2017",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+      "title": "Attention is all you need",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 5998--6008, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vijayakumar2018diverse",
+      "raw": "Ashwin K. Vijayakumar, Michael Cogswell, Ramprasaath R. Selvaraju, Qing Sun, Stefan Lee, David Crandall, and Dhruv Batra. Diverse beam search for improved description of complex scenes. In Thirty-Second AAAI Conference on Artificial Intelligence, 2018",
+      "authors": "Ashwin K. Vijayakumar, Michael Cogswell, Ramprasaath R. Selvaraju, Qing Sun, Stefan Lee, David Crandall, and Dhruv Batra",
+      "title": "Diverse beam search for improved description of complex scenes",
+      "venue": "In Thirty-Second AAAI Conference on Artificial Intelligence, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "welleck2019neural",
+      "raw": "Sean Welleck, Ilia Kulikov, Stephen Roller, Emily Dinan, Kyunghyun Cho, and Jason Weston. Neural text generation with unlikelihood training. In Proceedings of the International Conference on Learning Representations (ICLR), 2020",
+      "authors": "Sean Welleck, Ilia Kulikov, Stephen Roller, Emily Dinan, Kyunghyun Cho, and Jason Weston",
+      "title": "Neural text generation with unlikelihood training",
+      "venue": "In Proceedings of the International Conference on Learning Representations (ICLR), 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wiseman2017challenges",
+      "raw": "Sam Wiseman, Stuart Shieber, and Alexander Rush. Challenges in data-to-document generation. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pp.\\ 2253--2263, Copenhagen, Denmark, September 2017",
+      "authors": "Sam Wiseman, Stuart Shieber, and Alexander Rush",
+      "title": "Challenges in data-to-document generation",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pp.\\ 2253--2263, Copenhagen, Denmark, September 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "xu2018diversity",
+      "raw": "Jingjing Xu, Xuancheng Ren, Junyang Lin, and Xu Sun. Diversity-promoting gan: A cross-entropy based generative adversarial network for diversified text generation. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pp.\\ 3940--3949, Brussels, Belgium, oct 2018",
+      "authors": "Jingjing Xu, Xuancheng Ren, Junyang Lin, and Xu Sun",
+      "title": "Diversity-promoting gan: A cross-entropy based generative adversarial network for diversified text generation",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pp.\\ 3940--3949, Brussels, Belgium, oct 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yu2017SeqGAN",
+      "raw": "Lantao Yu, Weinan Zhang, Jun Wang, and Yong Yu. Seqgan: Sequence generative adversarial nets with policy gradient. In AAAI, 2017",
+      "authors": "Lantao Yu, Weinan Zhang, Jun Wang, and Yong Yu",
+      "title": "Seqgan: Sequence generative adversarial nets with policy gradient",
+      "venue": "In AAAI, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhu2018texygen",
+      "raw": "Yaoming Zhu, Sidi Lu, Lei Zheng, Jiaxian Guo, Weinan Zhang, Jun Wang, and Yong Yu. Texygen: A benchmarking platform for text generation models. SIGIR, 2018",
+      "authors": "Yaoming Zhu, Sidi Lu, Lei Zheng, Jiaxian Guo, Weinan Zhang, Jun Wang, and Yong Yu",
+      "title": "Texygen: A benchmarking platform for text generation models",
+      "venue": "SIGIR, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "P(x_{1:m+n}) = \\prod_{i=1}^{m+n} P(x_i | x_1 \\ldots x_{i-1}),",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\sum_{x \\in V^{(p)}} P(x | x_{1:i-1}) \\geq p.",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "P'(x | x_{1:i-1}) = \\left\\{ \n    \\begin{array}{ll}\n    P(x | x_{1:i-1})/p' & \\mbox{if } x \\in V^{(p)} \\\\\n    0 & \\mbox{otherwise.}\n    \\end{array}\n    \\right.",
+      "environment": "equation",
+      "labels": [
+        "eq:rescale"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "p(x = V_l | x_{1:i-1}) = \\frac {\\exp(u_l/ t)} {\\sum_{l'} \\exp(u_l'/ t)}.",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1607,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86595153808594,
+            "y0": 246.65553283691406,
+            "x1": 468.1385498046875,
+            "y1": 256.6181335449219
+          },
+          {
+            "x0": 143.86595153808594,
+            "y0": 257.614501953125,
+            "x1": 468.13153076171875,
+            "y1": 267.5771179199219
+          },
+          {
+            "x0": 143.86595153808594,
+            "y0": 268.573486328125,
+            "x1": 277.22528076171875,
+            "y1": 278.5361022949219
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3850,
+      "numbers": 1,
+      "citations": 5,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 693.9124755859375,
+            "x1": 504.0031433105469,
+            "y1": 703.8750610351562
+          },
+          {
+            "x0": 108.0,
+            "y0": 704.8714599609375,
+            "x1": 336.8089294433594,
+            "y1": 714.8340454101562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Background",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "related",
+      "title": "Text Generation Decoding Strategies",
+      "chars": 1536,
+      "numbers": 0,
+      "citations": 13,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 128.09645080566406,
+            "x1": 504.0032653808594,
+            "y1": 138.05905151367188
+          },
+          {
+            "x0": 108.0,
+            "y0": 139.05543518066406,
+            "x1": 373.67254638671875,
+            "y1": 149.01803588867188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Open-ended vs directed generation",
+      "chars": 1425,
+      "numbers": 0,
+      "citations": 13,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 337.6532287597656,
+            "x1": 504.00323486328125,
+            "y1": 347.6158447265625
+          },
+          {
+            "x0": 108.0,
+            "y0": 348.61224365234375,
+            "x1": 253.92166137695312,
+            "y1": 358.5748596191406
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Language Model Decoding",
+      "chars": 1414,
+      "numbers": 0,
+      "citations": 6,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 581.7720947265625,
+            "x1": 504.00244140625,
+            "y1": 591.7346801757812
+          },
+          {
+            "x0": 108.0,
+            "y0": 592.7310791015625,
+            "x1": 321.1498107910156,
+            "y1": 602.6936645507812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Nucleus Sampling",
+      "chars": 845,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 659.3764038085938,
+            "x1": 375.18695068359375,
+            "y1": 669.3389892578125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Top-k Sampling",
+      "chars": 2154,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 135.60890197753906,
+            "y0": 593.492431640625,
+            "x1": 429.6748352050781,
+            "y1": 603.4550170898438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Sampling with Temperature",
+      "chars": 726,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00008392333984,
+            "y0": 217.60633850097656,
+            "x1": 504.0032653808594,
+            "y1": 227.56893920898438
+          },
+          {
+            "x0": 108.00008392333984,
+            "y0": 228.56434631347656,
+            "x1": 189.703369140625,
+            "y1": 238.52694702148438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Likelihood Evaluation",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Setup",
+      "chars": 1702,
+      "numbers": 6,
+      "citations": 6,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00005340576172,
+            "y0": 434.3194274902344,
+            "x1": 504.00335693359375,
+            "y1": 444.28204345703125
+          },
+          {
+            "x0": 108.00005340576172,
+            "y0": 445.2784423828125,
+            "x1": 138.44577026367188,
+            "y1": 455.2410583496094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Perplexity",
+      "chars": 1727,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00005340576172,
+            "y0": 578.6153564453125,
+            "x1": 503.9969482421875,
+            "y1": 588.5779418945312
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 589.5743408203125,
+            "x1": 318.2607116699219,
+            "y1": 599.5369262695312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Natural Language Does Not Maximize Probability",
+      "chars": 1326,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99995422363281,
+            "y0": 300.3194274902344,
+            "x1": 504.0040588378906,
+            "y1": 310.28204345703125
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 311.2784423828125,
+            "x1": 504.0032958984375,
+            "y1": 321.2410583496094
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 322.2374267578125,
+            "x1": 204.11907958984375,
+            "y1": 332.2000427246094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Distributional Statistical Evaluation",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "Zipf Distribution Analysis",
+      "chars": 1264,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99995422363281,
+            "y0": 522.88427734375,
+            "x1": 504.0032958984375,
+            "y1": 532.8468627929688
+          },
+          {
+            "x0": 107.99995422363281,
+            "y0": 533.8433227539062,
+            "x1": 125.33486938476562,
+            "y1": 543.805908203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Self-BLEU",
+      "chars": 1445,
+      "numbers": 2,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99995422363281,
+            "y0": 667.5114135742188,
+            "x1": 311.6254577636719,
+            "y1": 677.4739990234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Repetition",
+      "chars": 633,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996185302734,
+            "y0": 392.5263671875,
+            "x1": 359.7448425292969,
+            "y1": 402.4889831542969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Human Evaluation",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "Human Unified with Statistical Evaluation (HUSE)",
+      "chars": 1922,
+      "numbers": 6,
+      "citations": 1,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99992370605469,
+            "y0": 535.0082397460938,
+            "x1": 458.51397705078125,
+            "y1": 544.9708251953125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Qualitative Analysis",
+      "chars": 732,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 146.00730895996094,
+            "y0": 162.42640686035156,
+            "x1": 318.6790771484375,
+            "y1": 172.38900756835938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 629,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 291.1943054199219,
+            "x1": 504.00323486328125,
+            "y1": 301.15692138671875
+          },
+          {
+            "x0": 108.0,
+            "y0": 302.1533203125,
+            "x1": 239.5660858154297,
+            "y1": 312.1159362792969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 342,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 409.0032653808594,
+            "x1": 504.00323486328125,
+            "y1": 418.96588134765625
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 419.9622802734375,
+            "x1": 504.00323486328125,
+            "y1": 429.9248962402344
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 430.9202880859375,
+            "x1": 504.0031433105469,
+            "y1": 440.8829040527344
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 441.8792724609375,
+            "x1": 399.06732177734375,
+            "y1": 451.8418884277344
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 31,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "radford2019BetterLMs",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "In this study we use the Generatively Pre-trained Transformer, version 2 [Radford et al. 2019], which was trained on WebText, a 40GB collection of text scraped from the web.[Available at <https://github.com/openai/gpt-2-output-dataset>] We perform experiments using the Large model (762M parameters).",
+      "section": "Experimental Setup",
+      "sectionKind": "experiments",
+      "ordinal": 29,
+      "title": "Language models are unsupervised multitask learners, February 2019",
+      "authors": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever",
+      "year": 2019,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 346.3552551269531,
+            "y0": 478.1553955078125,
+            "x1": 504.00335693359375,
+            "y1": 488.1180114746094
+          },
+          {
+            "x0": 108.00005340576172,
+            "y0": 489.1143798828125,
+            "x1": 306.16094970703125,
+            "y1": 499.0769958496094
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "hashimoto20190unifying",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "However, pure human evaluation does not take into account the diversity of the generated text; therefore we use HUSE [Hashimoto et al. 2019] to combine human and statistical evaluation.",
+        "section": "Human Unified with Statistical Evaluation (HUSE)",
+        "sectionKind": "experiments",
+        "ordinal": 34,
+        "title": "Unifying human and statistical evaluation for natural language generation",
+        "authors": "Tatsunori B. Hashimoto, Hugh Zhang, and Percy Liang",
+        "year": 2019,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 466.04571533203125,
+              "y0": 556.92626953125,
+              "x1": 504.00323486328125,
+              "y1": 566.8888549804688
+            },
+            {
+              "x0": 107.99992370605469,
+              "y0": 567.88525390625,
+              "x1": 504.0030212402344,
+              "y1": 577.8478393554688
+            },
+            {
+              "x0": 107.99992370605469,
+              "y0": 578.84423828125,
+              "x1": 134.0122833251953,
+              "y1": 588.8068237304688
+            }
+          ]
+        }
+      },
+      {
+        "key": "radford2019BetterLMs",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In this study we use the Generatively Pre-trained Transformer, version 2 [Radford et al. 2019], which was trained on WebText, a 40GB collection of text scraped from the web.[Available at <https://github.com/openai/gpt-2-output-dataset>] We perform experiments using the Large model (762M parameters).",
+        "section": "Experimental Setup",
+        "sectionKind": "experiments",
+        "ordinal": 29,
+        "title": "Language models are unsupervised multitask learners, February 2019",
+        "authors": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever",
+        "year": 2019,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 346.3552551269531,
+              "y0": 478.1553955078125,
+              "x1": 504.00335693359375,
+              "y1": 488.1180114746094
+            },
+            {
+              "x0": 108.00005340576172,
+              "y0": 489.1143798828125,
+              "x1": 306.16094970703125,
+              "y1": 499.0769958496094
+            }
+          ]
+        }
+      },
+      {
+        "key": "zhu2018texygen",
+        "stance": "inherits",
+        "cue": "We follow",
+        "sentence": "We follow previous work and compute Self-BLEU [Zhu et al. 2018] as a metric of diversity.",
+        "section": "Self-BLEU",
+        "sectionKind": "experiments",
+        "ordinal": 33,
+        "title": "Texygen: A benchmarking platform for text generation models",
+        "authors": "Yaoming Zhu, Sidi Lu, Lei Zheng, Jiaxian Guo, Weinan Zhang, Jun Wang, and Yong Yu",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99995422363281,
+              "y0": 667.5114135742188,
+              "x1": 311.6254577636719,
+              "y1": 677.4739990234375
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "While such utility functions encourage desirable properties in generations, they do not remove the need to choose an appropriate decoding strategy, and we believe that Nucleus Sampling will have complementary advantages in such approaches.",
+      "anchorText": "While such utility functions encourage desirable properties in generations, they do not remove the need to choose an appropriate decoding strategy, and we believe that Nucleus Sampling will have complementary advantages in such approaches.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Text Generation Decoding Strategies",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 310.8484191894531,
+            "y0": 215.76832580566406,
+            "x1": 504.0030822753906,
+            "y1": 225.73092651367188
+          },
+          {
+            "x0": 108.0,
+            "y0": 226.72633361816406,
+            "x1": 504.0032958984375,
+            "y1": 236.68893432617188
+          },
+          {
+            "x0": 108.0,
+            "y0": 237.68531799316406,
+            "x1": 504.0033874511719,
+            "y1": 247.64791870117188
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We assume that models compute P(x_1:m+n) using the common left-to-right decomposition of the text probability, which is used to generate the generation token-by-token using a particular decoding strategy. Maximization-based decoding The most commonly used decoding objective, in particular for directed generation, is maximization-based decoding.",
+      "anchorText": "using the common left-to-right decomposition of the text probability, which is used to generate the generation token-by-token using a particular decoding strategy. Maximization-based decoding The most commonly used decoding objective, in particular for directed generation, is maximization-based decoding.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Language Model Decoding",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "Assuming that the model assigns higher probability to higher quality text, these decoding strategies search for the continuation with the highest likelihood.",
+      "anchorText": "Assuming that the model assigns higher probability to higher quality text, these decoding strategies search for the continuation with the highest likelihood.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Assuming that",
+      "section": "Language Model Decoding",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "We conjecture that this is an intrinsic property of human language.",
+      "anchorText": "We conjecture that this is an intrinsic property of human language.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We conjecture",
+      "section": "Natural Language Does Not Maximize Probability",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 324.220947265625,
+            "y0": 383.0093688964844,
+            "x1": 503.9959411621094,
+            "y1": 392.97198486328125
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 393.9683837890625,
+            "x1": 187.1527862548828,
+            "y1": 403.9309997558594
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 0,
+    "shown": 0,
+    "bare": 4
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2019-04-22",
+    "authors": [
+      "Ari Holtzman",
+      "Jan Buys",
+      "Li Du",
+      "Maxwell Forbes",
+      "Yejin Choi"
+    ]
+  }
+}

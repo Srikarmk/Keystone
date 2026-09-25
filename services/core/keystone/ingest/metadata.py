@@ -14,11 +14,13 @@ be fetched is left uncategorised rather than assigned a plausible one.
 from __future__ import annotations
 
 import json
+import re
 import time
 import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 _API = "http://export.arxiv.org/api/query"
@@ -164,6 +166,69 @@ def fetch(ids: list[str], *, timeout: float = 30.0) -> dict[str, Metadata]:
     return found
 
 
+_ABS = "https://arxiv.org/abs/{arxiv_id}"
+_DATELINE = re.compile(r"Submitted on\s+(\d{1,2}\s+\w{3}\s+\d{4})")
+_SUBJECT = re.compile(r"\(([a-z-]+(?:\.[A-Z]{2})?)\)")
+_TAG = re.compile(r"<[^>]+>")
+
+
+def _text(html: str, pattern: str) -> str:
+    found = re.search(pattern, html, re.S)
+    return _TAG.sub(" ", found.group(1)).strip() if found else ""
+
+
+def from_abs(arxiv_id: str, *, timeout: float = 30.0) -> Metadata | None:
+    """The same record, read off the paper's abstract page.
+
+    The API is the right way to ask and this is the way that works when it will not
+    answer. arXiv returns 406 Not Acceptable when it is throttling, and it does so
+    for `export.arxiv.org/api/query` long after `arxiv.org/abs/` is still serving —
+    which is how twenty-seven papers ended up in the library with no date and no
+    category, invisible on the timeline.
+
+    Same three facts, same public page a reader would open. One request per paper, so
+    the caller is responsible for pacing.
+    """
+    try:
+        request = urllib.request.Request(
+            _ABS.format(arxiv_id=_strip_version(arxiv_id)),
+            headers={"User-Agent": "keystone/0.1 (+https://github.com/Srikarmk/Keystone)"},
+        )
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            html = response.read().decode("utf-8", "replace")
+    except (urllib.error.URLError, TimeoutError):
+        return None
+
+    dateline = _text(html, r'<div class="dateline">(.*?)</div>')
+    stamped = _DATELINE.search(dateline)
+    if not stamped:
+        return None
+    try:
+        published = datetime.strptime(stamped.group(1), "%d %b %Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return None
+
+    subjects = _text(html, r'<td class="tablecell subjects">(.*?)</td>')
+    codes = tuple(dict.fromkeys(_SUBJECT.findall(subjects)))
+    primary_text = _text(html, r'<span class="primary-subject">(.*?)</span>')
+    primary_code = _SUBJECT.findall(primary_text)
+    primary = primary_code[0] if primary_code else (codes[0] if codes else "")
+    # Primary first, then the cross-lists, matching what the API returns.
+    ordered = (primary,) + tuple(c for c in codes if c != primary) if primary else codes
+
+    authors = _text(html, r'<div class="authors">(.*?)</div>')
+    authors = re.sub(r"^\s*Authors?:\s*", "", authors)
+    names = tuple(n.strip() for n in authors.split(",") if n.strip())
+
+    return Metadata(
+        arxiv_id=_strip_version(arxiv_id),
+        primary=primary,
+        categories=ordered,
+        published=published,
+        authors=names,
+    )
+
+
 def load_cache(path: Path) -> dict[str, Metadata]:
     if not path.exists():
         return {}
@@ -210,5 +275,14 @@ def resolve(ids: list[str], cache_path: Path) -> dict[str, Metadata]:
     missing = [i for i in (_strip_version(x) for x in ids) if i and i not in cached]
     if missing:
         cached.update(fetch(missing))
+        # Whatever the API would not answer for, read off the abstract page instead.
+        # Saved as each one arrives, so a run cut short by throttling keeps its
+        # progress rather than starting over.
+        for ident in [i for i in missing if i not in cached]:
+            record = from_abs(ident)
+            if record:
+                cached[ident] = record
+                save_cache(cache_path, cached)
+            time.sleep(_PAUSE)
         save_cache(cache_path, cached)
     return cached

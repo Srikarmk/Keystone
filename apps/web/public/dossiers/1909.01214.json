@@ -1,0 +1,4168 @@
+{
+  "id": "1909.01214",
+  "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "Quality of reward metrics. G-Pre and G-Rec are the precision and recall rate of the \"good\" summaries identified by the metrics, resp. All metrics here require reference summaries. We perform stemming and stop words removal as preprosessing, as they help increase the correlation. For InferSent, the embeddings of the reference/system summaries are obtained by averaging the embeddings of the sentences therein.",
+    "supported": 3,
+    "share": 0.5,
+    "summary": "3 of the paper's headline numbers trace to Table 1"
+  },
+  "codeUrl": "https://github.com/yg211/summary-reward-no-reference",
+  "coverage": {
+    "claims": 6,
+    "supported": 6,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 1.0
+  },
+  "claims": [
+    {
+      "value": "0.26",
+      "section": "introduction",
+      "sentence": "study 500 news articles (each with four system summaries and one reference summmary) from the CNN/Dailymail dataset and find that the Spearman's correlation between ROUGE and human judgements are between 0.26 and 0.31.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Quality of reward metrics. G-Pre and G-Rec are the precision and recall rate of the \"good\" summaries identified by the metrics, resp. All metrics here require reference summaries. We perform stemming and stop words removal as preprosessing, as they help increase the correlation. For InferSent, the embeddings of the reference/system summaries are obtained by averaging the embeddings of the sentences therein.",
+      "row": "ROUGE-2",
+      "column": "",
+      "cell": ".259",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 88.49700927734375,
+            "y0": 92.30996704101562,
+            "x1": 126.48764038085938,
+            "y1": 101.2763671875
+          },
+          {
+            "x0": 161.7100067138672,
+            "y0": 92.30996704101562,
+            "x1": 177.4011993408203,
+            "y1": 101.2763671875
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.31",
+      "section": "introduction",
+      "sentence": "study 500 news articles (each with four system summaries and one reference summmary) from the CNN/Dailymail dataset and find that the Spearman's correlation between ROUGE and human judgements are between 0.26 and 0.31.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Quality of reward metrics. G-Pre and G-Rec are the precision and recall rate of the \"good\" summaries identified by the metrics, resp. All metrics here require reference summaries. We perform stemming and stop words removal as preprosessing, as they help increase the correlation. For InferSent, the embeddings of the reference/system summaries are obtained by averaging the embeddings of the sentences therein.",
+      "row": "BLEU-2",
+      "column": "",
+      "cell": ".312",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.86161804199219,
+            "y0": 215.2525177001953,
+            "x1": 290.2706298828125,
+            "y1": 225.21511840820312
+          },
+          {
+            "x0": 72.0,
+            "y0": 227.20851135253906,
+            "x1": 290.2706604003906,
+            "y1": 237.17111206054688
+          },
+          {
+            "x0": 72.0,
+            "y0": 239.1635284423828,
+            "x1": 290.2705993652344,
+            "y1": 249.12612915039062
+          },
+          {
+            "x0": 72.0,
+            "y0": 251.11854553222656,
+            "x1": 290.2705993652344,
+            "y1": 261.0811462402344
+          },
+          {
+            "x0": 72.0,
+            "y0": 263.07354736328125,
+            "x1": 290.2705993652344,
+            "y1": 273.0361633300781
+          },
+          {
+            "x0": 72.0,
+            "y0": 275.028564453125,
+            "x1": 290.2705993652344,
+            "y1": 284.9911804199219
+          },
+          {
+            "x0": 72.0,
+            "y0": 286.98358154296875,
+            "x1": 290.2705993652344,
+            "y1": 296.9461975097656
+          },
+          {
+            "x0": 72.0,
+            "y0": 298.9395751953125,
+            "x1": 265.951904296875,
+            "y1": 308.9021911621094
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.53",
+      "section": "introduction",
+      "sentence": "Our learned reward function correlates significantly better (Pearson correlation 0.53) with human judgements than ROUGE (best correlation 0.30).",
+      "status": "rounded",
+      "table": "Table 2",
+      "caption": "Summary-level correlation of learned reward functions. All results are averaged over 5-fold cross validations. Unlike the metrics in Table , all rewards in this table do not require reference summaries.",
+      "row": "MLP",
+      "column": "G-Rec",
+      "cell": ".532",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0.30",
+      "section": "introduction",
+      "sentence": "Our learned reward function correlates significantly better (Pearson correlation 0.53) with human judgements than ROUGE (best correlation 0.30).",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Quality of reward metrics. G-Pre and G-Rec are the precision and recall rate of the \"good\" summaries identified by the metrics, resp. All metrics here require reference summaries. We perform stemming and stop words removal as preprosessing, as they help increase the correlation. For InferSent, the embeddings of the reference/system summaries are obtained by averaging the embeddings of the sentences therein.",
+      "row": "ROUGE-1",
+      "column": "",
+      "cell": ".304",
+      "evidenceLabel": null,
+      "anchor": null,
+      "evidenceAnchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 189.35340881347656,
+            "y0": 82.34799194335938,
+            "x1": 205.0446014404297,
+            "y1": 91.31439208984375
+          }
+        ]
+      }
+    },
+    {
+      "value": ".50",
+      "section": "conclusion",
+      "sentence": "More importantly, their G-Pre and G-Rec scores are all below .50, which means that more than half of the good summaries identified by the metrics are actually not good, and more than 50% of the indeed good summaries cannot be identified by the considered metrics.",
+      "status": "rounded",
+      "table": "Table 2",
+      "caption": "Summary-level correlation of learned reward functions. All results are averaged over 5-fold cross validations. Unlike the metrics in Table , all rewards in this table do not require reference summaries.",
+      "row": "PMeans-RNN",
+      "column": "G-Pre",
+      "cell": ".502",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 338.7923583984375,
+            "y0": 714.044921875,
+            "x1": 525.5451049804688,
+            "y1": 724.9539794921875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 727.5939331054688,
+            "x1": 525.545166015625,
+            "y1": 738.5029907226562
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 741.1429443359375,
+            "x1": 525.5452270507812,
+            "y1": 752.052001953125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 754.6929321289062,
+            "x1": 525.545166015625,
+            "y1": 765.6019897460938
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "50%",
+      "section": "conclusion",
+      "sentence": "More importantly, their G-Pre and G-Rec scores are all below .50, which means that more than half of the good summaries identified by the metrics are actually not good, and more than 50% of the indeed good summaries cannot be identified by the considered metrics.",
+      "status": "rounded",
+      "table": "Table 2",
+      "caption": "Summary-level correlation of learned reward functions. All results are averaged over 5-fold cross validations. Unlike the metrics in Table , all rewards in this table do not require reference summaries.",
+      "row": "PMeans-RNN",
+      "column": "G-Pre",
+      "cell": ".502",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 338.7923583984375,
+            "y0": 714.044921875,
+            "x1": 525.5451049804688,
+            "y1": 724.9539794921875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 727.5939331054688,
+            "x1": 525.545166015625,
+            "y1": 738.5029907226562
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 741.1429443359375,
+            "x1": 525.5452270507812,
+            "y1": 752.052001953125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 754.6929321289062,
+            "x1": 525.545166015625,
+            "y1": 765.6019897460938
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1909.01214",
+  "numbers": [
+    {
+      "value": "0.26",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "study 500 news articles (each with four system summaries and one reference summmary) from the CNN/Dailymail dataset and find that the Spearman's correlation between ROUGE and human judgements are between 0.26 and 0.31.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "ROUGE-2",
+      "cell": ".259",
+      "anchor": null
+    },
+    {
+      "value": "0.31",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "study 500 news articles (each with four system summaries and one reference summmary) from the CNN/Dailymail dataset and find that the Spearman's correlation between ROUGE and human judgements are between 0.26 and 0.31.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "BLEU-2",
+      "cell": ".312",
+      "anchor": null
+    },
+    {
+      "value": "0.53",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Our learned reward function correlates significantly better (Pearson correlation 0.53) with human judgements than ROUGE (best correlation 0.30).",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "MLP",
+      "cell": ".532",
+      "anchor": null
+    },
+    {
+      "value": "0.30",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Our learned reward function correlates significantly better (Pearson correlation 0.53) with human judgements than ROUGE (best correlation 0.30).",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "ROUGE-1",
+      "cell": ".304",
+      "anchor": null
+    },
+    {
+      "value": ".50",
+      "kind": "result",
+      "section": "conclusion",
+      "sentence": "More importantly, their G-Pre and G-Rec scores are all below .50, which means that more than half of the good summaries identified by the metrics are actually not good, and more than 50% of the indeed good summaries cannot be identified by the considered metrics.",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "PMeans-RNN",
+      "cell": ".502",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 338.7923583984375,
+            "y0": 714.044921875,
+            "x1": 525.5451049804688,
+            "y1": 724.9539794921875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 727.5939331054688,
+            "x1": 525.545166015625,
+            "y1": 738.5029907226562
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 741.1429443359375,
+            "x1": 525.5452270507812,
+            "y1": 752.052001953125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 754.6929321289062,
+            "x1": 525.545166015625,
+            "y1": 765.6019897460938
+          }
+        ]
+      }
+    },
+    {
+      "value": "50%",
+      "kind": "result",
+      "section": "conclusion",
+      "sentence": "More importantly, their G-Pre and G-Rec scores are all below .50, which means that more than half of the good summaries identified by the metrics are actually not good, and more than 50% of the indeed good summaries cannot be identified by the considered metrics.",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "PMeans-RNN",
+      "cell": ".502",
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 338.7923583984375,
+            "y0": 714.044921875,
+            "x1": 525.5451049804688,
+            "y1": 724.9539794921875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 727.5939331054688,
+            "x1": 525.545166015625,
+            "y1": 738.5029907226562
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 741.1429443359375,
+            "x1": 525.5452270507812,
+            "y1": 752.052001953125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 754.6929321289062,
+            "x1": 525.545166015625,
+            "y1": 765.6019897460938
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.05",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Its performance is significantly better (p-value 0.05?? p value, double-tailed t-test) than the metrics we studied in , although our reward does not use reference summaries while the other metrics used.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "In particular, over 60% good summaries found by MLP-BERT ChM: before only BERT -- make consistent and either always use BERT or always use MLP-BERT are indeed good, and over 55% the good summaries identified by MLP-BERT are indeed good ChM: difference between the two observations? i.e. 60% vs. 55% (see the definition of good summaries in ).",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "BERT",
+      "cell": ".597",
+      "anchor": null
+    },
+    {
+      "value": "55%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "In particular, over 60% good summaries found by MLP-BERT ChM: before only BERT -- make consistent and either always use BERT or always use MLP-BERT are indeed good, and over 55% the good summaries identified by MLP-BERT are indeed good ChM: difference between the two observations? i.e. 60% vs. 55% (see the definition of good summaries in ).",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "SimRed",
+      "cell": ".549",
+      "anchor": null
+    },
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "In particular, over 60% good summaries found by MLP-BERT ChM: before only BERT -- make consistent and either always use BERT or always use MLP-BERT are indeed good, and over 55% the good summaries identified by MLP-BERT are indeed good ChM: difference between the two observations? i.e. 60% vs. 55% (see the definition of good summaries in ).",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "BERT",
+      "cell": ".597",
+      "anchor": null
+    },
+    {
+      "value": "55%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "In particular, over 60% good summaries found by MLP-BERT ChM: before only BERT -- make consistent and either always use BERT or always use MLP-BERT are indeed good, and over 55% the good summaries identified by MLP-BERT are indeed good ChM: difference between the two observations? i.e. 60% vs. 55% (see the definition of good summaries in ).",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "SimRed",
+      "cell": ".549",
+      "anchor": null
+    },
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Besides our learned reward, in order to encourage the agent to select the \"lead\" sentences (i.e. the first three sentences in each news article), we provide the agent with a small extra reward (0.5) for each \"lead\" sentence the agent chooses to extract.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "BLEU-5",
+      "cell": ".459",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.9777526855469,
+            "y0": 568.5108032226562,
+            "x1": 525.5450439453125,
+            "y1": 579.4198608398438
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 582.059814453125,
+            "x1": 525.5449829101562,
+            "y1": 592.9688720703125
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 595.6087646484375,
+            "x1": 525.5449829101562,
+            "y1": 606.517822265625
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 609.1577758789062,
+            "x1": 525.5450439453125,
+            "y1": 620.0668334960938
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 622.706787109375,
+            "x1": 525.5450439453125,
+            "y1": 633.6158447265625
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 636.2567749023438,
+            "x1": 352.3631896972656,
+            "y1": 647.1658325195312
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "other",
+      "sentence": "The value for the extra reward (0.5) is decided in a pilot study, in which we manually check the quality of the generated summaries with different extra rewards (0.1, 0.3, , 0.9).",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "BLEU-5",
+      "cell": ".459",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.6213684082031,
+            "y0": 636.2567749023438,
+            "x1": 525.5449829101562,
+            "y1": 647.1658325195312
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 649.8057861328125,
+            "x1": 525.545166015625,
+            "y1": 660.71484375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 663.3547973632812,
+            "x1": 525.5450439453125,
+            "y1": 674.2638549804688
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 676.90380859375,
+            "x1": 447.621337890625,
+            "y1": 687.8128662109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "other",
+      "sentence": "The value for the extra reward (0.5) is decided in a pilot study, in which we manually check the quality of the generated summaries with different extra rewards (0.1, 0.3, , 0.9).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.6213684082031,
+            "y0": 636.2567749023438,
+            "x1": 525.5449829101562,
+            "y1": 647.1658325195312
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 649.8057861328125,
+            "x1": 525.545166015625,
+            "y1": 660.71484375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 663.3547973632812,
+            "x1": 525.5450439453125,
+            "y1": 674.2638549804688
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 676.90380859375,
+            "x1": 447.621337890625,
+            "y1": 687.8128662109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.3",
+      "kind": "result",
+      "section": "other",
+      "sentence": "The value for the extra reward (0.5) is decided in a pilot study, in which we manually check the quality of the generated summaries with different extra rewards (0.1, 0.3, , 0.9).",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "ROUGE-1",
+      "cell": ".290",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.6213684082031,
+            "y0": 636.2567749023438,
+            "x1": 525.5449829101562,
+            "y1": 647.1658325195312
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 649.8057861328125,
+            "x1": 525.545166015625,
+            "y1": 660.71484375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 663.3547973632812,
+            "x1": 525.5450439453125,
+            "y1": 674.2638549804688
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 676.90380859375,
+            "x1": 447.621337890625,
+            "y1": 687.8128662109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.9",
+      "kind": "result",
+      "section": "other",
+      "sentence": "The value for the extra reward (0.5) is decided in a pilot study, in which we manually check the quality of the generated summaries with different extra rewards (0.1, 0.3, , 0.9).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.6213684082031,
+            "y0": 636.2567749023438,
+            "x1": 525.5449829101562,
+            "y1": 647.1658325195312
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 649.8057861328125,
+            "x1": 525.545166015625,
+            "y1": 660.71484375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 663.3547973632812,
+            "x1": 525.5450439453125,
+            "y1": 674.2638549804688
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 676.90380859375,
+            "x1": 447.621337890625,
+            "y1": 687.8128662109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.2",
+      "kind": "result",
+      "section": "other",
+      "sentence": "In addition, we force our summariser to stop adding new sentences when the number of tokens in the generated summary is 1.2 times as many as in the reference summary, because we find the abstractive summaries generated by the original ExtAbsRL algorithm are approximately of this length.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 146.96734619140625,
+            "y0": 659.8477783203125,
+            "x1": 290.2692565917969,
+            "y1": 670.7568359375
+          },
+          {
+            "x0": 72.0,
+            "y0": 673.3977661132812,
+            "x1": 290.26922607421875,
+            "y1": 684.3068237304688
+          },
+          {
+            "x0": 72.0,
+            "y0": 686.94677734375,
+            "x1": 290.269287109375,
+            "y1": 697.8558349609375
+          },
+          {
+            "x0": 72.0,
+            "y0": 700.4957275390625,
+            "x1": 290.2692565917969,
+            "y1": 711.40478515625
+          },
+          {
+            "x0": 72.0,
+            "y0": 714.0447387695312,
+            "x1": 290.269287109375,
+            "y1": 724.9537963867188
+          },
+          {
+            "x0": 72.0,
+            "y0": 727.59375,
+            "x1": 290.26922607421875,
+            "y1": 738.5028076171875
+          },
+          {
+            "x0": 72.0,
+            "y0": 741.1427612304688,
+            "x1": 188.3782958984375,
+            "y1": 752.0518188476562
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We have tried other values (0.1, 0.3, 0.7 and 0.9) but find that yields the best results.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.3",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We have tried other values (0.1, 0.3, 0.7 and 0.9) but find that yields the best results.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "ROUGE-1",
+      "cell": ".290",
+      "anchor": null
+    },
+    {
+      "value": "0.7",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We have tried other values (0.1, 0.3, 0.7 and 0.9) but find that yields the best results.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.9",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We have tried other values (0.1, 0.3, 0.7 and 0.9) but find that yields the best results.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "94.5",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We find that the summaries generated by ExtAbsRL include more tokens (94.5) than those generated by Refresh (83.4) and NeuralTD (85.6).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 198.0437774658203,
+            "y0": 565.00390625,
+            "x1": 290.2693176269531,
+            "y1": 575.9129638671875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 578.5528564453125,
+            "x1": 290.26922607421875,
+            "y1": 589.4619140625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 592.1018676757812,
+            "x1": 290.2692565917969,
+            "y1": 603.0109252929688
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 605.65185546875,
+            "x1": 168.68736267089844,
+            "y1": 616.5609130859375
+          }
+        ]
+      }
+    },
+    {
+      "value": "83.4",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We find that the summaries generated by ExtAbsRL include more tokens (94.5) than those generated by Refresh (83.4) and NeuralTD (85.6).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 198.0437774658203,
+            "y0": 565.00390625,
+            "x1": 290.2693176269531,
+            "y1": 575.9129638671875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 578.5528564453125,
+            "x1": 290.26922607421875,
+            "y1": 589.4619140625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 592.1018676757812,
+            "x1": 290.2692565917969,
+            "y1": 603.0109252929688
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 605.65185546875,
+            "x1": 168.68736267089844,
+            "y1": 616.5609130859375
+          }
+        ]
+      }
+    },
+    {
+      "value": "85.6",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We find that the summaries generated by ExtAbsRL include more tokens (94.5) than those generated by Refresh (83.4) and NeuralTD (85.6).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 198.0437774658203,
+            "y0": 565.00390625,
+            "x1": 290.2693176269531,
+            "y1": 575.9129638671875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 578.5528564453125,
+            "x1": 290.26922607421875,
+            "y1": 589.4619140625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 592.1018676757812,
+            "x1": 290.2692565917969,
+            "y1": 603.0109252929688
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 605.65185546875,
+            "x1": 168.68736267089844,
+            "y1": 616.5609130859375
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.2",
+      "kind": "result",
+      "section": "other",
+      "sentence": "is 1.2, lower than the average rating for the other summaries generated by ExtAbsRL (1.66).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 359.0069274902344,
+            "y0": 210.18569946289062,
+            "x1": 525.5450439453125,
+            "y1": 221.0948028564453
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 223.73568725585938,
+            "x1": 525.545166015625,
+            "y1": 234.64479064941406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 237.28469848632812,
+            "x1": 336.3596496582031,
+            "y1": 248.1938018798828
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.66",
+      "kind": "result",
+      "section": "other",
+      "sentence": "is 1.2, lower than the average rating for the other summaries generated by ExtAbsRL (1.66).",
+      "status": "exact",
+      "table": "Table 4",
+      "row": "Avg. Human Rating",
+      "cell": "1.66",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 359.0069274902344,
+            "y0": 210.18569946289062,
+            "x1": 525.5450439453125,
+            "y1": 221.0948028564453
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 223.73568725585938,
+            "x1": 525.545166015625,
+            "y1": 234.64479064941406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 237.28469848632812,
+            "x1": 336.3596496582031,
+            "y1": 248.1938018798828
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Note that the pre-trained BERT models can only encode texts with at most 512 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 145.88735961914062,
+            "y0": 498.77783203125,
+            "x1": 290.2693176269531,
+            "y1": 509.6869201660156
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 512.326904296875,
+            "x1": 290.2692565917969,
+            "y1": 523.2359619140625
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 525.8758544921875,
+            "x1": 94.61457824707031,
+            "y1": 536.784912109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 tokens",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "In line with , we therefore use a sliding window approach with the offset size of 128 tokens to encode overlength summaries and news articles.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.58926391601562,
+            "y0": 525.8758544921875,
+            "x1": 290.2692565917969,
+            "y1": 536.784912109375
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 539.4249267578125,
+            "x1": 290.2691955566406,
+            "y1": 550.333984375
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 552.974853515625,
+            "x1": 290.2692565917969,
+            "y1": 563.8839111328125
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 566.52392578125,
+            "x1": 187.8656005859375,
+            "y1": 577.4329833984375
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "with 512 tokens (which account for more the two-thirds of all articles in CNN/DailyMail), the positional embeddings in BERT fail to correctly grasp the absolute positions of sentences in the original article., which plays a highly important role in news summarisation .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "110 tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "recently show that, for summaries whose lengths are in the range of 50 to 110 tokens,",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 255.13108825683594,
+            "y0": 605.65185546875,
+            "x1": 290.2692565917969,
+            "y1": 616.5609130859375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 619.2008666992188,
+            "x1": 290.26922607421875,
+            "y1": 630.1099243164062
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 632.7498779296875,
+            "x1": 191.2800750732422,
+            "y1": 643.658935546875
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Quality of reward metrics. G-Pre and G-Rec are the precision and recall rate of the \"good\" summaries identified by the metrics, resp. All metrics here require reference summaries. We perform stemming and stop words removal as preprosessing, as they help increase the correlation. For InferSent, the embeddings of the reference/system summaries are obtained by averaging the embeddings of the sentences therein.",
+      "label": "table:correlation_table",
+      "numericCells": 48,
+      "supports": 3,
+      "rows": [
+        [
+          {
+            "text": "Metric",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "G-Pre",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "G-Rec",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ROUGE-1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".290",
+            "value": "0.290",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".304",
+            "value": "0.304",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".392",
+            "value": "0.392",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".428",
+            "value": "0.428",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ROUGE-2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".259",
+            "value": "0.259",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".278",
+            "value": "0.278",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".408",
+            "value": "0.408",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".444",
+            "value": "0.444",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ROUGE-L",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".274",
+            "value": "0.274",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".297",
+            "value": "0.297",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".390",
+            "value": "0.390",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".426",
+            "value": "0.426",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ROUGE-SU4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".282",
+            "value": "0.282",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".279",
+            "value": "0.279",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".404",
+            "value": "0.404",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".440",
+            "value": "0.440",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BLEU-1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".256",
+            "value": "0.256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".281",
+            "value": "0.281",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".409",
+            "value": "0.409",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".448",
+            "value": "0.448",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BLEU-2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".301",
+            "value": "0.301",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".312",
+            "value": "0.312",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".411",
+            "value": "0.411",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".446",
+            "value": "0.446",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BLEU-3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".317",
+            "value": "0.317",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".312",
+            "value": "0.312",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".409",
+            "value": "0.409",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".444",
+            "value": "0.444",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BLEU-4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".311",
+            "value": "0.311",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".307",
+            "value": "0.307",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".409",
+            "value": "0.409",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".446",
+            "value": "0.446",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BLEU-5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".308",
+            "value": "0.308",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".303",
+            "value": "0.303",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".420",
+            "value": "0.420",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".459",
+            "value": "0.459",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "METEOR",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".305",
+            "value": "0.305",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".285",
+            "value": "0.285",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".409",
+            "value": "0.409",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".444",
+            "value": "0.444",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "InferSent-Cosine",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".329",
+            "value": "0.329",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".339",
+            "value": "0.339",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".417",
+            "value": "0.417",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".460",
+            "value": "0.460",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BERT-Cosine",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".312",
+            "value": "0.312",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".335",
+            "value": "0.335",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".440",
+            "value": "0.440",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".484",
+            "value": "0.484",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.86161804199219,
+            "y0": 215.2525177001953,
+            "x1": 290.2706298828125,
+            "y1": 225.21511840820312
+          },
+          {
+            "x0": 72.0,
+            "y0": 227.20851135253906,
+            "x1": 290.2706604003906,
+            "y1": 237.17111206054688
+          },
+          {
+            "x0": 72.0,
+            "y0": 239.1635284423828,
+            "x1": 290.2705993652344,
+            "y1": 249.12612915039062
+          },
+          {
+            "x0": 72.0,
+            "y0": 251.11854553222656,
+            "x1": 290.2705993652344,
+            "y1": 261.0811462402344
+          },
+          {
+            "x0": 72.0,
+            "y0": 263.07354736328125,
+            "x1": 290.2705993652344,
+            "y1": 273.0361633300781
+          },
+          {
+            "x0": 72.0,
+            "y0": 275.028564453125,
+            "x1": 290.2705993652344,
+            "y1": 284.9911804199219
+          },
+          {
+            "x0": 72.0,
+            "y0": 286.98358154296875,
+            "x1": 290.2705993652344,
+            "y1": 296.9461975097656
+          },
+          {
+            "x0": 72.0,
+            "y0": 298.9395751953125,
+            "x1": 265.951904296875,
+            "y1": 308.9021911621094
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Summary-level correlation of learned reward functions. All results are averaged over 5-fold cross validations. Unlike the metrics in Table , all rewards in this table do not require reference summaries.",
+      "label": "tab:correlation",
+      "numericCells": 56,
+      "supports": 3,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Reg. loss (Eq. )",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Pref. loss (Eq. )",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Encoder",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "G-Pre",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "G-Rec",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "G-Pre",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "G-Rec",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MLP",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "CNN-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".311",
+            "value": "0.311",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".340",
+            "value": "0.340",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".486",
+            "value": "0.486",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".532",
+            "value": "0.532",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".318",
+            "value": "0.318",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".335",
+            "value": "0.335",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".481",
+            "value": "0.481",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".524",
+            "value": "0.524",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "PMeans-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".313",
+            "value": "0.313",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".331",
+            "value": "0.331",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".489",
+            "value": "0.489",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".536",
+            "value": "0.536",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".354",
+            "value": "0.354",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".375",
+            "value": "0.375",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".502",
+            "value": "0.502",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".556",
+            "value": "0.556",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".487",
+            "value": "0.487",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".526",
+            "value": "0.526",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".544",
+            "value": "0.544",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".597",
+            "value": "0.597",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".505",
+            "value": "0.505",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".531",
+            "value": "0.531",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".556",
+            "value": "0.556",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".608",
+            "value": "0.608",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "SimRed",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".340",
+            "value": "0.340",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".392",
+            "value": "0.392",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".470",
+            "value": "0.470",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".515",
+            "value": "0.515",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".396",
+            "value": "0.396",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".443",
+            "value": "0.443",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".499",
+            "value": "0.499",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".549",
+            "value": "0.549",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "PMeans",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".354",
+            "value": "0.354",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".393",
+            "value": "0.393",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".493",
+            "value": "0.493",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".541",
+            "value": "0.541",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".370",
+            "value": "0.370",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".374",
+            "value": "0.374",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".507",
+            "value": "0.507",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".551",
+            "value": "0.551",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BERT",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".266",
+            "value": "0.266",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".296",
+            "value": "0.296",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".458",
+            "value": "0.458",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".495",
+            "value": "0.495",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".325",
+            "value": "0.325",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".338",
+            "value": "0.338",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".485",
+            "value": "0.485",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": ".533",
+            "value": "0.533",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": ".177",
+            "value": "0.177",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": ".189",
+            "value": "0.189",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": ".271",
+            "value": "0.271",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": ".306",
+            "value": "0.306",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": ".175",
+            "value": "0.175",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": ".186",
+            "value": "0.186",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": ".268",
+            "value": "0.268",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": ".174",
+            "value": "0.174",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Full-length ROUGE F-scores of some recent RL-based (upper) and supervised (middle) extractive summarisation systems, as well as our system with learned rewards (bottom). R-1/2/L stands for ROUGE-1/2/L. Our system maximises the learned reward instead of ROUGE, hence receives lower ROUGE scores.",
+      "label": "table:rouge_ext",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "System",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Reward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-L",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-L",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.2",
+            "value": "40.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.4",
+            "value": "17.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.5",
+            "value": "37.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-1,2,L",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.0",
+            "value": "40.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.2",
+            "value": "18.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.6",
+            "value": "36.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-L",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.5",
+            "value": "41.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.7",
+            "value": "18.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.8",
+            "value": "37.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-1,2,L",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.5",
+            "value": "41.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.7",
+            "value": "18.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.6",
+            "value": "37.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "NA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41.1",
+            "value": "41.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "18.8",
+            "value": "18.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37.5",
+            "value": "37.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "NA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41.6",
+            "value": "41.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.0",
+            "value": "19.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "38.0",
+            "value": "38.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "NA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "39.1",
+            "value": "39.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17.9",
+            "value": "17.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "35.9",
+            "value": "35.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(ours) NeuralTD",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Learned",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "39.6",
+            "value": "39.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "18.1",
+            "value": "18.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36.5",
+            "value": "36.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 344.3568115234375,
+            "y0": 501.2734680175781,
+            "x1": 525.5465698242188,
+            "y1": 511.236083984375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 513.2284545898438,
+            "x1": 525.5465087890625,
+            "y1": 523.1910400390625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 525.1834716796875,
+            "x1": 525.546630859375,
+            "y1": 535.1460571289062
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 537.138427734375,
+            "x1": 525.5465087890625,
+            "y1": 547.1010131835938
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 549.0944213867188,
+            "x1": 525.5465698242188,
+            "y1": 559.0570068359375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 561.0494384765625,
+            "x1": 525.5465087890625,
+            "y1": 571.0120239257812
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Human evaluation on extractive summaries. Our system receives significantly higher human ratings on average. \"Best%\": in how many percentage of documents a system receives the highest human rating.",
+      "label": "table:human_ext",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Refresh",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ExtAbsRL",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Avg. Human Rating",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.52",
+            "value": "2.52",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "2.27",
+            "value": "2.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.66",
+            "value": "1.66",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Best%",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.0",
+            "value": "70.0",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "33.3",
+            "value": "33.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.7",
+            "value": "6.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 110.81429290771484,
+            "y0": 115.62648010253906,
+            "x1": 290.2706298828125,
+            "y1": 125.58908081054688
+          },
+          {
+            "x0": 72.0,
+            "y0": 127.58149719238281,
+            "x1": 290.27056884765625,
+            "y1": 137.54409790039062
+          },
+          {
+            "x0": 72.0,
+            "y0": 139.53651428222656,
+            "x1": 290.2705383300781,
+            "y1": 149.49911499023438
+          },
+          {
+            "x0": 72.0,
+            "y0": 151.4925079345703,
+            "x1": 276.3627624511719,
+            "y1": 161.45510864257812
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Performance of ExtAbsRL with different reward functions, measured in terms of ROUGE (center) and human judgements (right). Using our learned reward yields significantly ( ) higher average human rating. \"Pref%\": in how many percentage of documents a system receives the higher human rating.",
+      "label": "table:rouge_abs",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Reward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-L",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Pref%",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "R-L (original)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.9",
+            "value": "40.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.8",
+            "value": "17.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.5",
+            "value": "38.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.75",
+            "value": "1.75",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15",
+            "value": "15",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Learned (ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "39.2",
+            "value": "39.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.4",
+            "value": "17.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37.5",
+            "value": "37.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.20",
+            "value": "2.20",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "75",
+            "value": "75",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Human evaluation experiments on abstractive summarisation. Our system receives significantly ( ) higher human rating on average. \"Preferred%\": in how many percentage of documents a system receives the higher average rating.",
+      "label": "table:human_abs",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ExtAbsRL",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Avg. Human",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.2",
+            "value": "2.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.75",
+            "value": "1.75",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Preferred%",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.0",
+            "value": "75.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.0",
+            "value": "15.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\blfootnote": "\n  \\begingroup\n  \\renewcommand\\thefootnote{}\\footnote{#1}\n  \\addtocounter{footnote}{-1}\n  \\endgroup\n",
+    "\\thefootnote": "",
+    "\\BibTeX": "B{\\sc ib}\\TeX",
+    "\\confname": "EMNLP-IJCNLP 2019",
+    "\\conforg": "SIGDAT"
+  },
+  "references": [
+    {
+      "key": "DBLP:journals/corr/abs-1901-08634",
+      "raw": "Chris Alberti, Kenton Lee, and Michael Collins. 2019. http://arxiv.org/abs/1901.08634 A BERT Baseline for the Natural Questions. arXiv e-prints",
+      "authors": "Chris Alberti, Kenton Lee, and Michael Collins. 2019",
+      "title": "A BERT Baseline for the Natural Questions",
+      "venue": "arXiv e-prints",
+      "year": 2019,
+      "arxivId": "1901.08634",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1904-02321",
+      "raw": "Kristjan Arumae and Fei Liu. 2019. https://doi.org/http://dx.doi.org/10.18653/v1/N19-1264 Guiding extractive summarization with question-answering rewards. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2566--2577, Minneapolis, USA",
+      "authors": "Kristjan Arumae and Fei Liu. 2019",
+      "title": "Guiding extractive summarization with question-answering rewards",
+      "venue": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2566--2577, Minneapolis, USA",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/N19-1264"
+    },
+    {
+      "key": "DBLP:conf/emnlp/BowmanAPM15",
+      "raw": "Samuel R. Bowman, Gabor Angeli, Christopher Potts, and Christopher D. Manning. 2015. http://aclweb.org/anthology/D/D15/D15-1075.pdf A large annotated corpus for learning natural language inference. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 632--642, Lisbon, Portugal",
+      "authors": "Samuel R. Bowman, Gabor Angeli, Christopher Potts, and Christopher D. Manning. 2015",
+      "title": "A large annotated corpus for learning natural language inference",
+      "venue": "In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 632--642, Lisbon, Portugal",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chaganty-mussmann-liang:2018:Long",
+      "raw": "Arun Chaganty, Stephen Mussmann, and Percy Liang. 2018. http://www.aclweb.org/anthology/P18-1060 The price of debiasing automatic metrics in natural language evalaution. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 643--653, Melbourne, Australia",
+      "authors": "Arun Chaganty, Stephen Mussmann, and Percy Liang. 2018",
+      "title": "The price of debiasing automatic metrics in natural language evalaution",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 643--653, Melbourne, Australia",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/acl/BansalC18",
+      "raw": "Yen-Chun Chen and Mohit Bansal. 2018. https://aclanthology.info/papers/P18-1063/p18-1063 Fast abstractive summarization with reinforce-selected sentence rewriting. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 675--686, Melbourne, Australia",
+      "authors": "Yen-Chun Chen and Mohit Bansal. 2018",
+      "title": "Fast abstractive summarization with reinforce-selected sentence rewriting",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 675--686, Melbourne, Australia",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/corr/ConneauKSBB17",
+      "raw": "Alexis Conneau, Douwe Kiela, Holger Schwenk, Lo\\\" c Barrault, and Antoine Bordes. 2017. https://aclanthology.info/papers/D17-1070/d17-1070 Supervised learning of universal sentence representations from natural language inference data. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 670--680, Copenhagen, Denmark",
+      "authors": "Alexis Conneau, Douwe Kiela, Holger Schwenk, Lo\\\" c Barrault, and Antoine Bordes. 2017",
+      "title": "Supervised learning of universal sentence representations from natural language inference data",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 670--680, Copenhagen, Denmark",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1810-04805",
+      "raw": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. https://doi.org/10.18653/v1/N19-1423 BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171--4186, Minneapolis, Minnesota",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019",
+      "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 4171--4186, Minneapolis, Minnesota",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/N19-1423"
+    },
+    {
+      "key": "DBLP:conf/emnlp/DongSCHC18",
+      "raw": "Yue Dong, Yikang Shen, Eric Crawford, Herke van Hoof, and Jackie Chi Kit Cheung. 2018. https://aclanthology.info/papers/D18-1409/d18-1409 Banditsum: Extractive summarization as a contextual bandit. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 3739--3748, Brussels, Belgium",
+      "authors": "Yue Dong, Yikang Shen, Eric Crawford, Herke van Hoof, and Jackie Chi Kit Cheung. 2018",
+      "title": "Banditsum: Extractive summarization as a contextual bandit",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 3739--3748, Brussels, Belgium",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/emnlp/GaoMG18",
+      "raw": "Yang Gao, Christian M. Meyer, and Iryna Gurevych. 2018. https://aclanthology.info/papers/D18-1445/d18-1445 APRIL: interactively learning to summarise by combining active preference learning and reinforcement learning. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4120--4130, Brussels, Belgium",
+      "authors": "Yang Gao, Christian M. Meyer, and Iryna Gurevych. 2018",
+      "title": "APRIL: interactively learning to summarise by combining active preference learning and reinforcement learning",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4120--4130, Brussels, Belgium",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "irj2019",
+      "raw": "Yang Gao, Christian M. Meyer, and Iryna Gurevych. 2019. http://arxiv.org/abs/1906.02923 Preference-based Interactive Multi-Document Summarisation. arXiv e-prints",
+      "authors": "Yang Gao, Christian M. Meyer, and Iryna Gurevych. 2019",
+      "title": "Preference-based Interactive Multi-Document Summarisation",
+      "venue": "arXiv e-prints",
+      "year": 2019,
+      "arxivId": "1906.02923",
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/ijcai/0023MMG19",
+      "raw": "Yang Gao, Christian M. Meyer, Mohsen Mesgar, and Iryna Gurevych. 2019. https://doi.org/10.24963/ijcai.2019/326 Reward learning for efficient reinforcement learning in extractive document summarisation. In Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, pages 2350--2356, Macao, China",
+      "authors": "Yang Gao, Christian M. Meyer, Mohsen Mesgar, and Iryna Gurevych. 2019",
+      "title": "Reward learning for efficient reinforcement learning in extractive document summarisation",
+      "venue": "In Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, pages 2350--2356, Macao, China",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.24963/ijcai.2019/326"
+    },
+    {
+      "key": "DBLP:conf/naacl/GruskyNA18",
+      "raw": "Max Grusky, Mor Naaman, and Yoav Artzi. 2018. https://aclanthology.info/papers/N18-1065/n18-1065 Newsroom: A dataset of 1.3 million summaries with diverse extractive strategies. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 708--719, New Orleans, Louisiana, USA",
+      "authors": "Max Grusky, Mor Naaman, and Yoav Artzi. 2018",
+      "title": "Newsroom: A dataset of 1.3 million summaries with diverse extractive strategies",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 708--719, New Orleans, Louisiana, USA",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/nips/HermannKGEKSB15",
+      "raw": "Karl Moritz Hermann, Tom\\'as Kocisk\\'y, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015. http://papers.nips.cc/paper/5945-teaching-machines-to-read-and-comprehend Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems 28: Annual Conference on Neural Information Processing Systems 2015, pages 1693--1701, Montreal, Quebec, Canada",
+      "authors": "Karl Moritz Hermann, Tom\\'as Kocisk\\'y, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015",
+      "title": "Teaching machines to read and comprehend",
+      "venue": "In Advances in Neural Information Processing Systems 28: Annual Conference on Neural Information Processing Systems 2015, pages 1693--1701, Montreal, Quebec, Canada",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/emnlp/KedzieMD18",
+      "raw": "Chris Kedzie, Kathleen R. McKeown, and Hal Daum\\'e III. 2018. https://aclanthology.info/papers/D18-1208/d18-1208 Content selection in deep learning models of summarization. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 1818--1828, Brussels, Belgium",
+      "authors": "Chris Kedzie, Kathleen R. McKeown, and Hal Daum\\'e III. 2018",
+      "title": "Content selection in deep learning models of summarization",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 1818--1828, Brussels, Belgium",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/Kim14f",
+      "raw": "Yoon Kim. 2014. http://aclweb.org/anthology/D/D14/D14-1181.pdf Convolutional neural networks for sentence classification. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing, pages 1746--1751, Doha, Qatar",
+      "authors": "Yoon Kim. 2014",
+      "title": "Convolutional neural networks for sentence classification",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing, pages 1746--1751, Doha, Qatar",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/acl/KreutzerSR17",
+      "raw": "Julia Kreutzer, Artem Sokolov, and Stefan Riezler. 2017. https://doi.org/10.18653/v1/P17-1138 Bandit structured prediction for neural sequence-to-sequence learning. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 1503--1513, Vancouver, Canada",
+      "authors": "Julia Kreutzer, Artem Sokolov, and Stefan Riezler. 2017",
+      "title": "Bandit structured prediction for neural sequence-to-sequence learning",
+      "venue": "In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 1503--1513, Vancouver, Canada",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.18653/v1/P17-1138"
+    },
+    {
+      "key": "kreutzer2018b",
+      "raw": "Julia Kreutzer, Joshua Uyheng, and Stefan Riezler. 2018. Reliability and learnability of human bandit feedback for sequence-to-sequence reinforcement learning. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 1777--1788, Melbourne, Australia",
+      "authors": "Julia Kreutzer, Joshua Uyheng, and Stefan Riezler. 2018",
+      "title": "Reliability and learnability of human bandit feedback for sequence-to-sequence reinforcement learning",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 1777--1788, Melbourne, Australia",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/emnlp/KryscinskiPXS18",
+      "raw": "Wojciech Kryscinski, Romain Paulus, Caiming Xiong, and Richard Socher. 2018. https://aclanthology.info/papers/D18-1207/d18-1207 Improving abstraction in text summarization. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 1808--1817, Brussels, Belgium",
+      "authors": "Wojciech Kryscinski, Romain Paulus, Caiming Xiong, and Richard Socher. 2018",
+      "title": "Improving abstraction in text summarization",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 1808--1817, Brussels, Belgium",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/mt/LavieD09",
+      "raw": "Alon Lavie and Michael J. Denkowski. 2009. https://doi.org/10.1007/s10590-009-9059-4 The meteor metric for automatic evaluation of machine translation. Machine Translation, 23(2-3):105--115",
+      "authors": "Alon Lavie and Michael J. Denkowski. 2009",
+      "title": "The meteor metric for automatic evaluation of machine translation",
+      "venue": "Machine Translation, 23(2-3):105--115",
+      "year": 2009,
+      "arxivId": null,
+      "doi": "10.1007/s10590-009-9059-4"
+    },
+    {
+      "key": "lin2004looking",
+      "raw": "Chin-Yew Lin. 2004. Looking for a few good metrics: Rouge and its evaluation. In NTCIR Workshop",
+      "authors": "Chin-Yew Lin. 2004",
+      "title": "Looking for a few good metrics: Rouge and its evaluation",
+      "venue": "In NTCIR Workshop",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2004rouge",
+      "raw": "Chin-Yew Lin. 2004. http://aclweb.org/anthology/W04-1013 ROUGE: A package for automatic evaluation of summaries. In ACL Workshop ``Text Summarization Branches Out''",
+      "authors": "Chin-Yew Lin. 2004",
+      "title": "ROUGE: A package for automatic evaluation of summaries",
+      "venue": "In ACL Workshop ``Text Summarization Branches Out''",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/coling/LouisN13",
+      "raw": "Annie Louis and Ani Nenkova. 2013. https://doi.org/10.1162/COLI\\_a\\_00123 Automatically assessing machine summary content without a gold standard. Computational Linguistics, 39(2):267--300",
+      "authors": "Annie Louis and Ani Nenkova. 2013",
+      "title": "Automatically assessing machine summary content without a gold standard",
+      "venue": "Computational Linguistics, 39(2):267--300",
+      "year": 2013,
+      "arxivId": null,
+      "doi": "10.1162/COLI"
+    },
+    {
+      "key": "DBLP:conf/acl/YuLCNCPC18",
+      "raw": "Shashi Narayan, Ronald Cardenas, Nikos Papasarantopoulos, Shay B. Cohen, Mirella Lapata, Jiangsheng Yu, and Yi Chang. 2018. https://aclanthology.info/papers/P18-1188/p18-1188 Document modeling with external attention for sentence extraction. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 2020--2030, Melbourne, Australia",
+      "authors": "Shashi Narayan, Ronald Cardenas, Nikos Papasarantopoulos, Shay B. Cohen, Mirella Lapata, Jiangsheng Yu, and Yi Chang. 2018",
+      "title": "Document modeling with external attention for sentence extraction",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 2020--2030, Melbourne, Australia",
+      "year": 2030,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/naacl/NarayanCL18",
+      "raw": "Shashi Narayan, Shay B. Cohen, and Mirella Lapata. 2018. https://aclanthology.info/papers/N18-1158/n18-1158 Ranking sentences for extractive summarization with reinforcement learning. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 1747--1759, New Orleans, Louisiana, USA",
+      "authors": "Shashi Narayan, Shay B. Cohen, and Mirella Lapata. 2018",
+      "title": "Ranking sentences for extractive summarization with reinforcement learning",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 1747--1759, New Orleans, Louisiana, USA",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/icml/NgR00",
+      "raw": "Andrew Y. Ng and Stuart J. Russell. 2000. Algorithms for inverse reinforcement learning. In Proceedings of the Seventeenth International Conference on Machine Learning, pages 663--670, Stanford University, Stanford, CA, USA",
+      "authors": "Andrew Y. Ng and Stuart J. Russell. 2000",
+      "title": "Algorithms for inverse reinforcement learning",
+      "venue": "In Proceedings of the Seventeenth International Conference on Machine Learning, pages 663--670, Stanford University, Stanford, CA, USA",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/emnlp/NovikovaDCR17",
+      "raw": "Jekaterina Novikova, Ondrej Dusek, Amanda Cercas Curry, and Verena Rieser. 2017. https://aclanthology.info/papers/D17-1238/d17-1238 Why we need new evaluation metrics for NLG. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2241--2252, Copenhagen, Denmark",
+      "authors": "Jekaterina Novikova, Ondrej Dusek, Amanda Cercas Curry, and Verena Rieser. 2017",
+      "title": "Why we need new evaluation metrics for NLG",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2241--2252, Copenhagen, Denmark",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/acl/PapineniRWZ02",
+      "raw": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. http://www.aclweb.org/anthology/P02-1040.pdf BLEU: a method for automatic evaluation of machine translation. In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, pages 311--318, Philadelphia, PA, USA",
+      "authors": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002",
+      "title": "BLEU: a method for automatic evaluation of machine translation",
+      "venue": "In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, pages 311--318, Philadelphia, PA, USA",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/naacl/PasunuruB18",
+      "raw": "Ramakanth Pasunuru and Mohit Bansal. 2018. https://aclanthology.info/papers/N18-2102/n18-2102 Multi-reward reinforced summarization with saliency and entailment. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 646--653, New Orleans, Louisiana, USA",
+      "authors": "Ramakanth Pasunuru and Mohit Bansal. 2018",
+      "title": "Multi-reward reinforced summarization with saliency and entailment",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 646--653, New Orleans, Louisiana, USA",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/iclr/PaulusXS18",
+      "raw": "Romain Paulus, Caiming Xiong, and Richard Socher. 2018. https://openreview.net/forum?id=HkAClQgA- A deep reinforced model for abstractive summarization. In 6th International Conference on Learning Representations, Conference Track Proceedings, Vancouver, BC, Canada",
+      "authors": "Romain Paulus, Caiming Xiong, and Richard Socher. 2018",
+      "title": "A deep reinforced model for abstractive summarization",
+      "venue": "In 6th International Conference on Learning Representations, Conference Track Proceedings, Vancouver, BC, Canada",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pennington-etal-2014-glove",
+      "raw": "Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014. https://doi.org/10.3115/v1/D14-1162 Glove: Global vectors for word representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1532--1543, Doha, Qatar",
+      "authors": "Jeffrey Pennington, Richard Socher, and Christopher Manning. 2014",
+      "title": "Glove: Global vectors for word representation",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1532--1543, Doha, Qatar",
+      "year": 2014,
+      "arxivId": null,
+      "doi": "10.3115/v1/D14-1162"
+    },
+    {
+      "key": "DBLP:conf/emnlp/PeyrardBG17",
+      "raw": "Maxime Peyrard, Teresa Botschen, and Iryna Gurevych. 2017. https://aclanthology.info/papers/W17-4510/w17-4510 Learning to score system summaries for better content selection evaluation. In Proceedings of the Workshop on New Frontiers in Summarization, pages 74--84, Copenhagen, Denmark",
+      "authors": "Maxime Peyrard, Teresa Botschen, and Iryna Gurevych. 2017",
+      "title": "Learning to score system summaries for better content selection evaluation",
+      "venue": "In Proceedings of the Workshop on New Frontiers in Summarization, pages 74--84, Copenhagen, Denmark",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/naacl/PeyrardG18",
+      "raw": "Maxime Peyrard and Iryna Gurevych. 2018. https://aclanthology.info/papers/N18-2103/n18-2103 Objective function learning to match human judgements for optimization-based summarization. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 654--660, New Orleans, Louisiana, USA",
+      "authors": "Maxime Peyrard and Iryna Gurevych. 2018",
+      "title": "Objective function learning to match human judgements for optimization-based summarization",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers), pages 654--660, New Orleans, Louisiana, USA",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/emnlp/RajpurkarZLL16",
+      "raw": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016. http://aclweb.org/anthology/D/D16/D16-1264.pdf SQuAD: 100, 000+ Questions for Machine Comprehension of Text. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 2383--2392, Austin, Texas, USA",
+      "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. 2016",
+      "title": "SQuAD: 100, 000+ Questions for Machine Comprehension of Text",
+      "venue": "In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 2383--2392, Austin, Texas, USA",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rioux2014emnlp",
+      "raw": "Cody Rioux, Sadid A. Hasan, and Yllias Chali. 2014. http://aclweb.org/anthology/D/D14/D14-1075.pdf Fear the REAPER: A system for automatic multi-document summarization with reinforcement learning. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing, EMNLP 2014, pages 681--690, Doha, Qatar",
+      "authors": "Cody Rioux, Sadid A. Hasan, and Yllias Chali. 2014",
+      "title": "Fear the REAPER: A system for automatic multi-document summarization with reinforcement learning",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing, EMNLP 2014, pages 681--690, Doha, Qatar",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1803-01400",
+      "raw": "Andreas R\\\"uckl\\'e, Steffen Eger, Maxime Peyrard, and Iryna Gurevych. 2018. http://arxiv.org/abs/1803.01400 Concatenated Power Mean Word Embeddings as Universal Cross-Lingual Sentence Representations. arXiv e-prints",
+      "authors": "Andreas R\\\"uckl\\'e, Steffen Eger, Maxime Peyrard, and Iryna Gurevych. 2018",
+      "title": "Concatenated Power Mean Word Embeddings as Universal Cross-Lingual Sentence Representations",
+      "venue": "arXiv e-prints",
+      "year": 2018,
+      "arxivId": "1803.01400",
+      "doi": null
+    },
+    {
+      "key": "ryang2012emnlp",
+      "raw": "Seonggi Ryang and Takeshi Abekawa. 2012. http://www.aclweb.org/anthology/D12-1024 Framework of automatic text summarization using reinforcement learning. In Proceedings of the 2012 Joint Conference on Empirical Methods in Natural Language Processing and Computational Natural Language Learning, pages 256--265, Jeju Island, Korea",
+      "authors": "Seonggi Ryang and Takeshi Abekawa. 2012",
+      "title": "Framework of automatic text summarization using reinforcement learning",
+      "venue": "In Proceedings of the 2012 Joint Conference on Empirical Methods in Natural Language Processing and Computational Natural Language Learning, pages 256--265, Jeju Island, Korea",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/acl/SeeLM17",
+      "raw": "Abigail See, Peter J. Liu, and Christopher D. Manning. 2017. https://doi.org/10.18653/v1/P17-1099 Get to the point: Summarization with pointer-generator networks. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 1073--1083, Vancouver, Canada",
+      "authors": "Abigail See, Peter J. Liu, and Christopher D. Manning. 2017",
+      "title": "Get to the point: Summarization with pointer-generator networks",
+      "venue": "In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 1073--1083, Vancouver, Canada",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.18653/v1/P17-1099"
+    },
+    {
+      "key": "sun2019naacl",
+      "raw": "Simeng Sun, Ori Shapira, Ido Dagan, and Ani Nenkova. 2019. https://doi.org/10.18653/v1/W19-2303 How to Compare Summarizers without Target Length? Pitfalls, Solutions and Re-Examination of the Neural Summarization Literature. In Proceedings of the Workshop on Methods for Optimizing and Evaluating Neural Language Generation, pages 21--29, Minneapolis, Minnesota",
+      "authors": "Simeng Sun, Ori Shapira, Ido Dagan, and Ani Nenkova. 2019",
+      "title": "How to Compare Summarizers without Target Length? Pitfalls, Solutions and Re-Examination of the Neural Summarization Literature",
+      "venue": "In Proceedings of the Workshop on Methods for Optimizing and Evaluating Neural Language Generation, pages 21--29, Minneapolis, Minnesota",
+      "year": 2019,
+      "arxivId": null,
+      "doi": "10.18653/v1/W19-2303"
+    },
+    {
+      "key": "DBLP:conf/naacl/WilliamsNB18",
+      "raw": "Adina Williams, Nikita Nangia, and Samuel R. Bowman. 2018. https://aclanthology.info/papers/N18-1101/n18-1101 A broad-coverage challenge corpus for sentence understanding through inference. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 1112--1122, New Orleans, Louisiana, USA",
+      "authors": "Adina Williams, Nikita Nangia, and Samuel R. Bowman. 2018",
+      "title": "A broad-coverage challenge corpus for sentence understanding through inference",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 1112--1122, New Orleans, Louisiana, USA",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/emnlp/ZhangLWZ18",
+      "raw": "Xingxing Zhang, Mirella Lapata, Furu Wei, and Ming Zhou. 2018. https://aclanthology.info/papers/D18-1088/d18-1088 Neural latent extractive document summarization. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 779--784, Brussels, Belgium",
+      "authors": "Xingxing Zhang, Mirella Lapata, Furu Wei, and Ming Zhou. 2018",
+      "title": "Neural latent extractive document summarization",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 779--784, Brussels, Belgium",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:conf/acl/ZhaoZWYHZ18",
+      "raw": "Qingyu Zhou, Nan Yang, Furu Wei, Shaohan Huang, Ming Zhou, and Tiejun Zhao. 2018. https://aclanthology.info/papers/P18-1061/p18-1061 Neural document summarization by jointly learning to score and select sentences. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 654--663, Melbourne, Australia",
+      "authors": "Qingyu Zhou, Nan Yang, Furu Wei, Shaohan Huang, Ming Zhou, and Tiejun Zhao. 2018",
+      "title": "Neural document summarization by jointly learning to score and select sentences",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, Volume 1: Long Papers, pages 654--663, Melbourne, Australia",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "& \\mathcal{L}^{MSE}(\\theta) =  \\nonumber \\\\ \n& \\frac{1}{|\\overline{\\mathcal{X}}|\\cdot N} \n\\sum_{x \\in \\overline{\\mathcal{X}}} \\sum_{i=1}^N \n[R^*(x,y_x^i)-R(x,y_x^i;\\theta)]^2.",
+      "environment": "align",
+      "labels": [
+        "eq:regression_loss"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "P(y_x^{i} \\succ y_x^{j}) = \\frac{\\exp[R(x,y_x^{i};\\theta)]}{\n\\exp[R(x,y_x^{i};\\theta)]+ \\exp[R(x,y_x^{j};\\theta)]}.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "P(y_x^{i} \\succ y_x^{j}) & = \\frac{\\exp(r^i)}{\n\\exp(r^i)+ \\exp(r^j)},",
+      "environment": "align",
+      "labels": [
+        "eq:pref_loss"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "& \\mathcal{L}^{CE}(\\theta)  = \n- \\frac{1}{|\\overline{\\mathcal{X}}|N(N-1)/2} \n\\sum_{x \\in \\overline{\\mathcal{X}}} \n\\sum_{i=1}^N \\sum_{j>i}^N \n\\{ \\nonumber \\\\\n& \\mathbbm{1}[R^*(x,y_x^i)>\nR^*(x,y_x^j)] \\log P(y_x^i \\succ y_x^j) + \n\\nonumber \\\\\n& \\mathbbm{1}[R^*(x,y_x^j)>\nR^*(x,y_x^i)]\\log P(y_x^j \\succ y_x^i) \\},",
+      "environment": "align",
+      "labels": [
+        "eq:ce_loss"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\phi(s;p)=\\left(\\frac{\\mathbf{z}_{1}^{p}+\\cdots+\\mathbf{z}_{L}^{p}}{L}\\right)^{1/p} \\in \\mathbb{R}^e,",
+      "environment": "align",
+      "labels": [
+        "eq:power_means"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "R_{\\operatorname{SimRed}}(y_x,x) & = \\frac{\\alpha}{NM} \\sum_{i=1}^N \\sum_{j=1}^M \n    \n    \\cos(s_i,d_j) \\nonumber \\\\\n    - \\frac{1 - \\alpha}{N(N-1)/2} & \\sum_{k=1}^N\\sum_{l>k}^N (\n    \n    \\cos(s_k, s_l))^2,",
+      "environment": "align",
+      "labels": [
+        "eq:simred"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\pi(s;w) = \\frac{\\exp[V((d,s);w)]}{\\sum_{s'\\in S}\\exp[V((d,s');w)]},",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "R(y,\\!x)\\!\\! =\\!\\! \\beta R_{BMP}(y,\\!x) \\!+\\!\n(1\\!-\\!\\beta)R_{pos}(y,\\!x).",
+      "environment": "align",
+      "labels": [
+        "eq:mixed_rewards"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1096,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.0079574584961,
+            "y0": 252.21502685546875,
+            "x1": 273.26409912109375,
+            "y1": 262.1776123046875
+          },
+          {
+            "x0": 89.00794982910156,
+            "y0": 264.34747314453125,
+            "x1": 273.2563171386719,
+            "y1": 274.3100891113281
+          },
+          {
+            "x0": 89.00794982910156,
+            "y0": 276.302490234375,
+            "x1": 273.2562561035156,
+            "y1": 286.2651062011719
+          },
+          {
+            "x0": 89.00794982910156,
+            "y0": 288.25750732421875,
+            "x1": 273.2597351074219,
+            "y1": 298.2201232910156
+          },
+          {
+            "x0": 89.00796508789062,
+            "y0": 300.2125244140625,
+            "x1": 180.38279724121094,
+            "y1": 310.1751403808594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4431,
+      "numbers": 8,
+      "citations": 12,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 184.8689727783203,
+            "y0": 641.2612915039062,
+            "x1": 290.272705078125,
+            "y1": 652.1703491210938
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 655.0035400390625,
+            "x1": 290.2704162597656,
+            "y1": 665.91259765625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 668.5535278320312,
+            "x1": 290.2691955566406,
+            "y1": 679.4625854492188
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 682.1025390625,
+            "x1": 115.59274291992188,
+            "y1": 693.0115966796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 7294,
+      "numbers": 8,
+      "citations": 30,
+      "anchor": null
+    },
+    {
+      "kind": "conclusion",
+      "title": "Summary-Level Correlation Study",
+      "chars": 4685,
+      "numbers": 4,
+      "citations": 8,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 364.75604248046875,
+            "y0": 79.04367065429688,
+            "x1": 525.545166015625,
+            "y1": 89.95277404785156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 92.59268188476562,
+            "x1": 427.94146728515625,
+            "y1": 103.50178527832031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Problem Formulation",
+      "chars": 1852,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 461.54180908203125,
+            "x1": 290.269287109375,
+            "y1": 472.4508972167969
+          },
+          {
+            "x0": 72.0,
+            "y0": 475.0908203125,
+            "x1": 290.26922607421875,
+            "y1": 485.9999084472656
+          },
+          {
+            "x0": 72.0,
+            "y0": 488.63983154296875,
+            "x1": 95.06183624267578,
+            "y1": 499.5489196777344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Reward Learning Model",
+      "chars": 129,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.27618408203125,
+            "y0": 586.981689453125,
+            "x1": 476.4761962890625,
+            "y1": 597.8907470703125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "MLP",
+      "chars": 3209,
+      "numbers": 4,
+      "citations": 7,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2762451171875,
+            "y0": 659.8477172851562,
+            "x1": 474.0762939453125,
+            "y1": 670.7567749023438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Comparison Paradigm Network",
+      "chars": 677,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Similarity-Redundancy Matrix (SimRed)",
+      "chars": 2201,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 129.36004638671875,
+            "y0": 700.495849609375,
+            "x1": 290.26922607421875,
+            "y1": 711.4049072265625
+          },
+          {
+            "x0": 72.0,
+            "y0": 714.0448608398438,
+            "x1": 290.2692565917969,
+            "y1": 724.9539184570312
+          },
+          {
+            "x0": 72.0,
+            "y0": 727.5938720703125,
+            "x1": 290.2692565917969,
+            "y1": 738.5029296875
+          },
+          {
+            "x0": 72.0,
+            "y0": 741.1428833007812,
+            "x1": 94.41820526123047,
+            "y1": 752.0519409179688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Reward Quality Evaluation",
+      "chars": 4598,
+      "numbers": 14,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.26800537109375,
+            "y0": 443.0606689453125,
+            "x1": 525.540771484375,
+            "y1": 453.9697570800781
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 456.60968017578125,
+            "x1": 525.5452270507812,
+            "y1": 467.5187683105469
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 470.15966796875,
+            "x1": 350.6941833496094,
+            "y1": 481.0687561035156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "RL-based Summarisation with Learned Rewards",
+      "chars": 367,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00000762939453,
+            "y0": 646.2989501953125,
+            "x1": 290.2693176269531,
+            "y1": 657.2080078125
+          },
+          {
+            "x0": 72.00000762939453,
+            "y0": 659.847900390625,
+            "x1": 236.7026824951172,
+            "y1": 670.7569580078125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "RL-based Summarisation Systems",
+      "chars": 3365,
+      "numbers": 7,
+      "citations": 4,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 367.9620056152344,
+            "y0": 84.50588989257812,
+            "x1": 525.5439453125,
+            "y1": 95.41499328613281
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 98.05587768554688,
+            "x1": 525.5451049804688,
+            "y1": 108.96498107910156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 111.60488891601562,
+            "x1": 427.4615783691406,
+            "y1": 122.51399230957031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Extractive Summarisation",
+      "chars": 4770,
+      "numbers": 17,
+      "citations": 4,
+      "anchor": null
+    },
+    {
+      "kind": "other",
+      "title": "Abstractive Summarisation",
+      "chars": 2327,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 341.9014587402344,
+            "y0": 334.1517028808594,
+            "x1": 525.5452270507812,
+            "y1": 345.060791015625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 347.7016906738281,
+            "x1": 525.5451049804688,
+            "y1": 358.61077880859375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 361.2507019042969,
+            "x1": 525.5449829101562,
+            "y1": 372.1597900390625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 374.7997131347656,
+            "x1": 458.9996032714844,
+            "y1": 385.70880126953125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion & Discussion",
+      "chars": 3070,
+      "numbers": 7,
+      "citations": 3,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 117.39169311523438,
+            "x1": 290.26922607421875,
+            "y1": 128.30079650878906
+          },
+          {
+            "x0": 72.0,
+            "y0": 130.94070434570312,
+            "x1": 290.2691955566406,
+            "y1": 141.8498077392578
+          },
+          {
+            "x0": 72.0,
+            "y0": 144.48971557617188,
+            "x1": 134.84732055664062,
+            "y1": 155.39881896972656
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 220,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 617.6279296875,
+            "x1": 290.2691955566406,
+            "y1": 628.5369873046875
+          },
+          {
+            "x0": 72.0,
+            "y0": 631.1769409179688,
+            "x1": 290.269287109375,
+            "y1": 642.0859985351562
+          },
+          {
+            "x0": 72.0,
+            "y0": 644.7259521484375,
+            "x1": 290.269287109375,
+            "y1": 655.635009765625
+          },
+          {
+            "x0": 72.0,
+            "y0": 658.27490234375,
+            "x1": 290.269287109375,
+            "y1": 669.1839599609375
+          },
+          {
+            "x0": 72.0,
+            "y0": 671.824951171875,
+            "x1": 260.0292053222656,
+            "y1": 682.7340087890625
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 40,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "chaganty-mussmann-liang:2018:Long",
+      "stance": "inherits",
+      "cue": "We use",
+      "sentence": "We use the dataset compiled by [Chaganty et al. 2018], which includes human ratings on 2,500 summaries for 500 news articles from CNN/DailyMail.",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "ordinal": 9,
+      "title": "The price of debiasing automatic metrics in natural language evalaution",
+      "authors": "Arun Chaganty, Stephen Mussmann, and Percy Liang. 2018",
+      "year": 2018,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 464.4978332519531,
+            "y0": 673.3978271484375,
+            "x1": 525.5451049804688,
+            "y1": 684.306884765625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 686.9468383789062,
+            "x1": 525.5452880859375,
+            "y1": 697.8558959960938
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 700.495849609375,
+            "x1": 495.69775390625,
+            "y1": 711.4049072265625
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "DBLP:conf/corr/ConneauKSBB17",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Furthermore, in line with [Chaganty et al. 2018], we also use the cosine similarity between the embeddings of the generated summary and the reference summary as metrics: we use InferSent [Conneau et al. 2017] and BERT-Large-Cased [Devlin et al. 2019] to generate the embeddings.",
+        "section": "Summary-Level Correlation Study",
+        "sectionKind": "conclusion",
+        "ordinal": 38,
+        "title": "Supervised learning of universal sentence representations from natural language inference data",
+        "authors": "Alexis Conneau, Douwe Kiela, Holger Schwenk, Lo\\\" c Barrault, and Antoine Bordes. 2017",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 477.50146484375,
+              "y0": 119.69070434570312,
+              "x1": 525.5451049804688,
+              "y1": 130.5998077392578
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 133.23971557617188,
+              "x1": 525.5451049804688,
+              "y1": 144.14881896972656
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 146.78970336914062,
+              "x1": 525.5451049804688,
+              "y1": 157.6988067626953
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 160.33871459960938,
+              "x1": 479.5196533203125,
+              "y1": 171.24781799316406
+            }
+          ]
+        }
+      },
+      {
+        "key": "DBLP:conf/naacl/PeyrardG18",
+        "stance": "compares",
+        "cue": "outperforms",
+        "sentence": "In [ref], we show that our reward model does not use reference summaries but outperforms the feature-based baseline by [Peyrard et al. 2018] as well as ROUGE.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 32,
+        "title": "Objective function learning to match human judgements for optimization-based summarization",
+        "authors": "Maxime Peyrard and Iryna Gurevych. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 129.0500030517578,
+              "y0": 431.4938659667969,
+              "x1": 290.26904296875,
+              "y1": 442.4029541015625
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 445.0428771972656,
+              "x1": 290.2692565917969,
+              "y1": 455.95196533203125
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 458.5918884277344,
+              "x1": 232.571044921875,
+              "y1": 469.5009765625
+            }
+          ]
+        }
+      },
+      {
+        "key": "DBLP:journals/corr/abs-1810-04805",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Furthermore, in line with [Chaganty et al. 2018], we also use the cosine similarity between the embeddings of the generated summary and the reference summary as metrics: we use InferSent [Conneau et al. 2017] and BERT-Large-Cased [Devlin et al. 2019] to generate the embeddings.",
+        "section": "Summary-Level Correlation Study",
+        "sectionKind": "conclusion",
+        "ordinal": 39,
+        "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+        "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019",
+        "year": 2019,
+        "arxivId": "1810.04805",
+        "inCorpus": true,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 477.50146484375,
+              "y0": 119.69070434570312,
+              "x1": 525.5451049804688,
+              "y1": 130.5998077392578
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 133.23971557617188,
+              "x1": 525.5451049804688,
+              "y1": 144.14881896972656
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 146.78970336914062,
+              "x1": 525.5451049804688,
+              "y1": 157.6988067626953
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 160.33871459960938,
+              "x1": 479.5196533203125,
+              "y1": 171.24781799316406
+            }
+          ]
+        }
+      },
+      {
+        "key": "chaganty-mussmann-liang:2018:Long",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the dataset compiled by [Chaganty et al. 2018], which includes human ratings on 2,500 summaries for 500 news articles from CNN/DailyMail.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 9,
+        "title": "The price of debiasing automatic metrics in natural language evalaution",
+        "authors": "Arun Chaganty, Stephen Mussmann, and Percy Liang. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 464.4978332519531,
+              "y0": 673.3978271484375,
+              "x1": 525.5451049804688,
+              "y1": 684.306884765625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 686.9468383789062,
+              "x1": 525.5452880859375,
+              "y1": 697.8558959960938
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 700.495849609375,
+              "x1": 495.69775390625,
+              "y1": 711.4049072265625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We focus on reward learning for single-document summarisation in this work, formulated as follows.",
+      "anchorText": "We focus on reward learning for single-document summarisation in this work, formulated as follows.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We focus on",
+      "section": "Problem Formulation",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 461.54180908203125,
+            "x1": 290.269287109375,
+            "y1": 472.4508972167969
+          },
+          {
+            "x0": 72.0,
+            "y0": 475.0908203125,
+            "x1": 290.26922607421875,
+            "y1": 485.9999084472656
+          },
+          {
+            "x0": 72.0,
+            "y0": 488.63983154296875,
+            "x1": 95.06183624267578,
+            "y1": 499.5489196777344
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Suppose the RL agent has selected some sentences and has built a draft summary d using the selected sentences.",
+      "anchorText": "Suppose the RL agent has selected some sentences and has built a draft summary",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Suppose the",
+      "section": "RL-based Summarisation Systems",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.3778076171875,
+            "y0": 138.70291137695312,
+            "x1": 525.545166015625,
+            "y1": 149.6120147705078
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 152.25192260742188,
+            "x1": 488.4761047363281,
+            "y1": 163.16102600097656
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe this is the reason why ExtAbsRL has higher ROUGE scores.",
+      "anchorText": "We believe this is the reason why ExtAbsRL has higher ROUGE scores.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Extractive Summarisation",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 221.85830688476562,
+            "y0": 646.298828125,
+            "x1": 290.26922607421875,
+            "y1": 657.2078857421875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 659.8478393554688,
+            "x1": 290.269287109375,
+            "y1": 670.7568969726562
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 673.3978271484375,
+            "x1": 101.98909759521484,
+            "y1": 684.306884765625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In this work, we focus on Reinforcement Learning (RL) based summarisation, and propose a reward function directly learned from human ratings on summaries' overall quality.",
+      "anchorText": "In this work, we focus on Reinforcement Learning (RL) based summarisation, and propose a reward function directly learned from human ratings on summaries' overall quality.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Conclusion & Discussion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 117.39169311523438,
+            "x1": 290.26922607421875,
+            "y1": 128.30079650878906
+          },
+          {
+            "x0": 72.0,
+            "y0": 130.94070434570312,
+            "x1": 290.2691955566406,
+            "y1": 141.8498077392578
+          },
+          {
+            "x0": 72.0,
+            "y0": 144.48971557617188,
+            "x1": 290.2691955566406,
+            "y1": 155.39881896972656
+          },
+          {
+            "x0": 72.0,
+            "y0": 158.03872680664062,
+            "x1": 231.24012756347656,
+            "y1": 168.9478302001953
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Also, we believe the \u201clearning reward from human judgements\u201d idea has potential to boost the performance of RL in other natural language generation applications, e.g. translation, sentence simplification and dialogue generation. Reinforcement learning delivers strong performance on other natural language generation (NLG) tasks, e.g. translation [Kreutzer et al. 2017], sentence simplification [ref] and dialogue generation [ref].",
+      "anchorText": "Also, we believe the \"learning reward from human judgements\" idea has potential to boost the performance of RL in other natural language generation applications, e.g. translation, sentence simplification and dialogue generation. Reinforcement learning delivers strong performance on other natural language generation (NLG) tasks, e.g. translation",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "we believe",
+      "section": "Conclusion & Discussion",
+      "sectionKind": "conclusion",
+      "cites": [
+        "DBLP:conf/acl/KreutzerSR17",
+        "DBLP:conf/emnlp/ZhangL17",
+        "DBLP:conf/aaai/LiKR19"
+      ],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "While most work on RL-based NLG focuses on proposing more efficient RL algorithms, we believe that learning high-quality rewards is to key to further advancing RL-based NLG.",
+      "anchorText": "While most work on RL-based NLG focuses on proposing more efficient RL algorithms, we believe that learning high-quality rewards is to key to further advancing RL-based NLG.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Conclusion & Discussion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 6,
+    "cited": 1,
+    "shown": 0,
+    "bare": 5
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 23,
+    "rate": 0.575
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2019-09-03",
+    "authors": [
+      "Florian B\u00f6hm",
+      "Yang Gao",
+      "Christian M. Meyer",
+      "Ori Shapira",
+      "Ido Dagan",
+      "Iryna Gurevych"
+    ]
+  }
+}

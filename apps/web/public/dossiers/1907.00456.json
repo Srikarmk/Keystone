@@ -1,0 +1,3240 @@
+{
+  "id": "1907.00456",
+  "title": "Way Off-Policy Batch Deep Reinforcement Learning of Implicit Human Preferences in Dialog",
+  "keystone": null,
+  "codeUrl": "https://github.com/asmadotgh/neural_chat_web",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1907.00456",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Interactive human evaluation of techniques for off-policy batch RL. KL-control models strongly out-perform other techniques. Ratings are Likert scale, votes and human reward are -scores.",
+      "label": "tab:techniques_human",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model type",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Quality",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Fluent",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Diverse",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Related",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Empathy",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Total",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Votes",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "[c]@l@Human",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "reward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DBCQ",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.64 .29",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.87 .34",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.13 .58",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "1.84 .34",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.09 .38",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.58 1.55",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.228",
+            "value": "-0.228",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.050",
+            "value": "-0.050",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Batch Q",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.87 .30",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.36 .42",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.20 .41",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.91 .32",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.58 .47",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11.91 1.58",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.163",
+            "value": "-0.163",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.005",
+            "value": "-0.005",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Batch Q + MC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.85 .39",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.46 .44",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.46 .52",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.98 .39",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.34 .49",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11.07 1.82",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.068",
+            "value": "-0.068",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "KL-control Q",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.38 .39",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.24 .47",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.42 .54",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.38 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.56 .43",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.98 1.81",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".016",
+            "value": "0.016",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".004",
+            "value": "0.004",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "KL-control",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.33 .41",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.73 .53",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "2.82 .50",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.31 .44",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.47 .50",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "14.67 1.82",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".128",
+            "value": "0.128",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".061",
+            "value": "0.061",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "KL-control MA",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.60 .43",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "3.47 .42",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.00 .49",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.49 .44",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "2.89 .51",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.44 1.96",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".127",
+            "value": "0.127",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".042",
+            "value": "0.042",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Interactive human evaluation of techniques for off-policy batch RL. KL-control models strongly out-perform other techniques. Ratings are Likert scale, votes and human reward are -scores.",
+      "label": "tab:techniques_human",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "reward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Purely reward-maximizing methods like Batch Q trivially exploit the reward function by asking a question every turn, and using the maximum number of tokens in every sentence. In contrast, KL-control methods output plausible language by staying close to the prior, but shift to using polite, cheerful language to maximize implicit human rewards.",
+      "label": "tab:samples",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "[c]@l@ [User]: hey, what's up?",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[Batch Q]: where did you get??, that sounds so exciting. how do you work for you...",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "you want to talk to me?... you want",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: yes, i want to talk to you!",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[Batch Q]: where did you say to me?... you want to talk to you about you...",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "you are so good for you... you are so good...",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: thanks, i appreciate that.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[Batch Q]: where did you get??, that sounds so exciting. how do you work for you...",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "you want to see you...",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "[c]@l@ [User]: hey, what's up?",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[KL-control]: i'm not sure, but i'm glad to see you, and",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "i'm so happy that you're not alone",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: oh thanks, that's very nice of you!",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[KL-control]: i'm sorry, but i'm glad to see what you think.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: don't be sorry, you did a good job.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[KL-control]: that's really nice to me.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.00946044921875,
+            "y0": 178.63632202148438,
+            "x1": 504.3492126464844,
+            "y1": 188.69805908203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 189.69642639160156,
+            "x1": 505.2414245605469,
+            "y1": 199.55889892578125
+          },
+          {
+            "x0": 108.0,
+            "y0": 200.54461669921875,
+            "x1": 505.24700927734375,
+            "y1": 210.48727416992188
+          },
+          {
+            "x0": 108.0,
+            "y0": 211.43849182128906,
+            "x1": 330.3851623535156,
+            "y1": 221.40109252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Purely reward-maximizing methods like Batch Q trivially exploit the reward function by asking a question every turn, and using the maximum number of tokens in every sentence. In contrast, KL-control methods output plausible language by staying close to the prior, but shift to using polite, cheerful language to maximize implicit human rewards.",
+      "label": "tab:samples",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "[User]: hey, what's up?",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[Batch Q]: where did you get??, that sounds so exciting. how do you work for you...",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "you want to talk to me?... you want",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: yes, i want to talk to you!",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[Batch Q]: where did you say to me?... you want to talk to you about you...",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "you are so good for you... you are so good...",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: thanks, i appreciate that.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[Batch Q]: where did you get??, that sounds so exciting. how do you work for you...",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "you want to see you...",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.00946044921875,
+            "y0": 178.63632202148438,
+            "x1": 504.3492126464844,
+            "y1": 188.69805908203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 189.69642639160156,
+            "x1": 505.2414245605469,
+            "y1": 199.55889892578125
+          },
+          {
+            "x0": 108.0,
+            "y0": 200.54461669921875,
+            "x1": 505.24700927734375,
+            "y1": 210.48727416992188
+          },
+          {
+            "x0": 108.0,
+            "y0": 211.43849182128906,
+            "x1": 330.3851623535156,
+            "y1": 221.40109252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Purely reward-maximizing methods like Batch Q trivially exploit the reward function by asking a question every turn, and using the maximum number of tokens in every sentence. In contrast, KL-control methods output plausible language by staying close to the prior, but shift to using polite, cheerful language to maximize implicit human rewards.",
+      "label": "tab:samples",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "[User]: hey, what's up?",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[KL-control]: i'm not sure, but i'm glad to see you, and",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "i'm so happy that you're not alone",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: oh thanks, that's very nice of you!",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[KL-control]: i'm sorry, but i'm glad to see what you think.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[User]: don't be sorry, you did a good job.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[KL-control]: that's really nice to me.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.00946044921875,
+            "y0": 178.63632202148438,
+            "x1": 504.3492126464844,
+            "y1": 188.69805908203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 189.69642639160156,
+            "x1": 505.2414245605469,
+            "y1": 199.55889892578125
+          },
+          {
+            "x0": 108.0,
+            "y0": 200.54461669921875,
+            "x1": 505.24700927734375,
+            "y1": 210.48727416992188
+          },
+          {
+            "x0": 108.0,
+            "y0": 211.43849182128906,
+            "x1": 330.3851623535156,
+            "y1": 221.40109252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 6",
+      "caption": "Interactive human evaluation of different reward functions (models trained with KL-control)",
+      "label": "tab:rewards_human",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "[c]@l@Reward",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "function",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Quality",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Fluent",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Diverse",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Related",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Empathy",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Total",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Votes",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "[c]@l@Human",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "reward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Conv. len.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.20 .40",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.61 .53",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.02 .52",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.25 .46",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.48 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.57 1.84",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.035",
+            "value": "-0.035",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.003",
+            "value": "-0.003",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Semantic sim.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.93 .34",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.50 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.37 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.11 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.52 .48",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12.43 1.75",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.020",
+            "value": "-0.020",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".012",
+            "value": "0.012",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "User laughter",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.96 .38",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.56 .48",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.33 .51",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.93 .42",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.20 .55",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12.98 1.60",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.149",
+            "value": "-0.149",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.003",
+            "value": "-0.003",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Words elicited",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.11 .32",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.96 .44",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.04 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.04 .35",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.55 .46",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.70 1.44",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".059",
+            "value": "0.059",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".024",
+            "value": "0.024",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Manual votes",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.14 .38",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.47 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.91 .47",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.07 .39",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.42 .46",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.00 1.65",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-.030",
+            "value": "-0.030",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".010",
+            "value": "0.010",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Sent. trans.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.02 .31",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.71 .49",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.98 .50",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.04 .42",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.84 .48",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.60 1.63",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".031",
+            "value": "0.031",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".014",
+            "value": "0.014",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Question",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.29 .37",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.31 .50",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "3.31 .52",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "2.20 .40",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.60 .41",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.71 1.63",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".057",
+            "value": "0.057",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": ".012",
+            "value": "0.012",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Sentiment",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.47 .32",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "4.05 .45",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.23 .46",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.42 .39",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "3.23 .55",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "15.40 1.49",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".085",
+            "value": "0.085",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": ".045",
+            "value": "0.045",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.37864685058594,
+            "y0": 79.11895751953125,
+            "x1": 504.0036315917969,
+            "y1": 88.99650573730469
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "Interactive human evaluation of different reward functions (models trained with KL-control)",
+      "label": "tab:rewards_human",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Reward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "function",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.37864685058594,
+            "y0": 79.11895751953125,
+            "x1": 504.0036315917969,
+            "y1": 88.99650573730469
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "Interactive human evaluation of different reward functions (models trained with KL-control)",
+      "label": "tab:rewards_human",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "reward",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.37864685058594,
+            "y0": 79.11895751953125,
+            "x1": 504.0036315917969,
+            "y1": 88.99650573730469
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\asma": "",
+    "\\judy": "",
+    "\\natasha": "",
+    "\\cut": "",
+    "\\agata": ""
+  },
+  "references": [
+    {
+      "key": "abdolmaleki2018maximum",
+      "raw": "Abbas Abdolmaleki, Jost Tobias Springenberg, Yuval Tassa, Remi Munos, Nicolas Heess, and Martin Riedmiller. Maximum a posteriori policy optimisation. arXiv preprint arXiv:1806.06920, 2018",
+      "authors": "Abbas Abdolmaleki, Jost Tobias Springenberg, Yuval Tassa, Remi Munos, Nicolas Heess, and Martin Riedmiller",
+      "title": "Maximum a posteriori policy optimisation",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.06920",
+      "doi": null
+    },
+    {
+      "key": "andrychowicz2017hindsight",
+      "raw": "Marcin Andrychowicz, Filip Wolski, Alex Ray, Jonas Schneider, Rachel Fong, Peter Welinder, Bob McGrew, Josh Tobin, OpenAI Pieter Abbeel, and Wojciech Zaremba. Hindsight experience replay. In Advances in Neural Information Processing Systems, pages 5048--5058, 2017",
+      "authors": "Marcin Andrychowicz, Filip Wolski, Alex Ray, Jonas Schneider, Rachel Fong, Peter Welinder, Bob McGrew, Josh Tobin, OpenAI Pieter Abbeel, and Wojciech Zaremba",
+      "title": "Hindsight experience replay",
+      "venue": "In Advances in Neural Information Processing Systems, pages 5048--5058, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "azizzadenesheli2018efficient",
+      "raw": "Kamyar Azizzadenesheli, Emma Brunskill, and Animashree Anandkumar. Efficient exploration through bayesian deep q-networks. In 2018 Information Theory and Applications Workshop (ITA), pages 1--9. IEEE, 2018",
+      "authors": "Kamyar Azizzadenesheli, Emma Brunskill, and Animashree Anandkumar",
+      "title": "Efficient exploration through bayesian deep q-networks",
+      "venue": "In 2018 Information Theory and Applications Workshop (ITA), pages 1--9. IEEE, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bhatt2019crossnorm",
+      "raw": "Aditya Bhatt, Max Argus, Artemij Amiranashvili, and Thomas Brox. Crossnorm: Normalization for off-policy td reinforcement learning. arXiv preprint arXiv:1902.05605, 2019",
+      "authors": "Aditya Bhatt, Max Argus, Artemij Amiranashvili, and Thomas Brox",
+      "title": "Crossnorm: Normalization for off-policy td reinforcement learning",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1902.05605",
+      "doi": null
+    },
+    {
+      "key": "bodie2012listening",
+      "raw": "Graham D Bodie, Kellie St. Cyr, Michelle Pence, Michael Rold, and James Honeycutt. Listening competence in initial interactions i: Distinguishing between what listening is and what listeners do. International Journal of Listening, 26(1):1--28, 2012",
+      "authors": "Graham D Bodie, Kellie St. Cyr, Michelle Pence, Michael Rold, and James Honeycutt",
+      "title": "Listening competence in initial interactions i: Distinguishing between what listening is and what listeners do",
+      "venue": "International Journal of Listening, 26(1):1--28, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bodie2015role",
+      "raw": "Graham D Bodie, Andrea J Vickery, Kaitlin Cannava, and Susanne M Jones. The role of \u201cactive listening\u201d in informal helping conversations: Impact on perceptions of listener helpfulness, sensitivity, and supportiveness and discloser emotional improvement. Western Journal of Communication, 79(2):151--173, 2015",
+      "authors": "Graham D Bodie, Andrea J Vickery, Kaitlin Cannava, and Susanne M Jones",
+      "title": "The role of \u201cactive listening\u201d in informal helping conversations: Impact on perceptions of listener helpfulness, sensitivity, and supportiveness and discloser emotional improvement",
+      "venue": "Western Journal of Communication, 79(2):151--173, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "christiano2017deep",
+      "raw": "Paul F Christiano, Jan Leike, Tom Brown, Miljan Martic, Shane Legg, and Dario Amodei. Deep reinforcement learning from human preferences. In Advances in Neural Information Processing Systems, pages 4299--4307, 2017",
+      "authors": "Paul F Christiano, Jan Leike, Tom Brown, Miljan Martic, Shane Legg, and Dario Amodei",
+      "title": "Deep reinforcement learning from human preferences",
+      "venue": "In Advances in Neural Information Processing Systems, pages 4299--4307, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "conneau2017supervised",
+      "raw": "Alexis Conneau, Douwe Kiela, Holger Schwenk, Lo\\\" c Barrault, and Antoine Bordes. Supervised learning of universal sentence representations from natural language inference data. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 670--680, 2017",
+      "authors": "Alexis Conneau, Douwe Kiela, Holger Schwenk, Lo\\\" c Barrault, and Antoine Bordes",
+      "title": "Supervised learning of universal sentence representations from natural language inference data",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 670--680, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cornell_dataset",
+      "raw": "Cristian Danescu-Niculescu-Mizil and Lillian Lee. Chameleons in imagined conversations: A new approach to understanding coordination of linguistic style in dialogs. In Proceedings of the 2nd Workshop on Cognitive Modeling and Computational Linguistics, pages 76--87. Association for Computational Linguistics, 2011",
+      "authors": "Cristian Danescu-Niculescu-Mizil and Lillian Lee",
+      "title": "Chameleons in imagined conversations: A new approach to understanding coordination of linguistic style in dialogs",
+      "venue": "In Proceedings of the 2nd Workshop on Cognitive Modeling and Computational Linguistics, pages 76--87. Association for Computational Linguistics, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "degris2012off",
+      "raw": "Thomas Degris, Martha White, and Richard S Sutton. Off-policy actor-critic. In Proceedings of the 29th International Coference on International Conference on Machine Learning, pages 179--186. Omnipress, 2012",
+      "authors": "Thomas Degris, Martha White, and Richard S Sutton",
+      "title": "Off-policy actor-critic",
+      "venue": "In Proceedings of the 29th International Coference on International Conference on Machine Learning, pages 179--186. Omnipress, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "farajtabar2018more",
+      "raw": "Mehrdad Farajtabar, Yinlam Chow, and Mohammad Ghavamzadeh. More robust doubly robust off-policy evaluation. In International Conference on Machine Learning, pages 1446--1455, 2018",
+      "authors": "Mehrdad Farajtabar, Yinlam Chow, and Mohammad Ghavamzadeh",
+      "title": "More robust doubly robust off-policy evaluation",
+      "venue": "In International Conference on Machine Learning, pages 1446--1455, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fatemi2016policy",
+      "raw": "Mehdi Fatemi, Layla El Asri, Hannes Schulz, Jing He, and Kaheer Suleman. Policy networks with two-stage training for dialogue systems. In Proceedings of the 17th Annual Meeting of the Special Interest Group on Discourse and Dialogue, pages 101--110, 2016",
+      "authors": "Mehdi Fatemi, Layla El Asri, Hannes Schulz, Jing He, and Kaheer Suleman",
+      "title": "Policy networks with two-stage training for dialogue systems",
+      "venue": "In Proceedings of the 17th Annual Meeting of the Special Interest Group on Discourse and Dialogue, pages 101--110, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "felbo2017using",
+      "raw": "Bjarke Felbo, Alan Mislove, Anders S gaard, Iyad Rahwan, and Sune Lehmann. Using millions of emoji occurrences to learn any-domain representations for detecting sentiment, emotion and sarcasm. In 2017 Conference on Empirical Methods in Natural Language ProcessingConference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, 2017",
+      "authors": "Bjarke Felbo, Alan Mislove, Anders S gaard, Iyad Rahwan, and Sune Lehmann",
+      "title": "Using millions of emoji occurrences to learn any-domain representations for detecting sentiment, emotion and sarcasm",
+      "venue": "In 2017 Conference on Empirical Methods in Natural Language ProcessingConference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fox2016taming",
+      "raw": "Roy Fox, Ari Pakman, and Naftali Tishby. Taming the noise in reinforcement learning via soft updates. In Proceedings of the Thirty-Second Conference on Uncertainty in Artificial Intelligence, pages 202--211. AUAI Press, 2016",
+      "authors": "Roy Fox, Ari Pakman, and Naftali Tishby",
+      "title": "Taming the noise in reinforcement learning via soft updates",
+      "venue": "In Proceedings of the Thirty-Second Conference on Uncertainty in Artificial Intelligence, pages 202--211. AUAI Press, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fujimoto2018addressing",
+      "raw": "Scott Fujimoto, Herke Hoof, and David Meger. Addressing function approximation error in actor-critic methods. In International Conference on Machine Learning, pages 1582--1591, 2018",
+      "authors": "Scott Fujimoto, Herke Hoof, and David Meger",
+      "title": "Addressing function approximation error in actor-critic methods",
+      "venue": "In International Conference on Machine Learning, pages 1582--1591, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fujimoto2018off",
+      "raw": "Scott Fujimoto, David Meger, and Doina Precup. Off-policy deep reinforcement learning without exploration. arXiv preprint arXiv:1812.02900, 2018",
+      "authors": "Scott Fujimoto, David Meger, and Doina Precup",
+      "title": "Off-policy deep reinforcement learning without exploration",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1812.02900",
+      "doi": null
+    },
+    {
+      "key": "gal2016dropout",
+      "raw": "Yarin Gal and Zoubin Ghahramani. Dropout as a bayesian approximation: Representing model uncertainty in deep learning. In international conference on machine learning, pages 1050--1059, 2016",
+      "authors": "Yarin Gal and Zoubin Ghahramani",
+      "title": "Dropout as a bayesian approximation: Representing model uncertainty in deep learning",
+      "venue": "In international conference on machine learning, pages 1050--1059, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gavsic2011line",
+      "raw": "Milica Ga si\\'c, Filip Jur c\\' cek, Blaise Thomson, Kai Yu, and Steve Young. On-line policy optimisation of spoken dialogue systems via live interaction with human subjects. In 2011 IEEE Workshop on Automatic Speech Recognition \\& Understanding, pages 312--317. IEEE, 2011",
+      "authors": "Milica Ga si\\'c, Filip Jur c\\' cek, Blaise Thomson, Kai Yu, and Steve Young",
+      "title": "On-line policy optimisation of spoken dialogue systems via live interaction with human subjects",
+      "venue": "In 2011 IEEE Workshop on Automatic Speech Recognition \\& Understanding, pages 312--317. IEEE, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gelada2019off",
+      "raw": "Carles Gelada and Marc G Bellemare. Off-policy deep reinforcement learning by bootstrapping the covariate shift. arXiv preprint arXiv:1901.09455, 2019",
+      "authors": "Carles Gelada and Marc G Bellemare",
+      "title": "Off-policy deep reinforcement learning by bootstrapping the covariate shift",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1901.09455",
+      "doi": null
+    },
+    {
+      "key": "ghandeharioun2019approximating",
+      "raw": "Asma Ghandeharioun, Judy Shen, Natasha Jaques, Craig Ferguson, Noah Jones, Agata Lapedriza, and Rosalind Picard. Approximating interactive human evaluation with self-play for open-domain dialog systems. arXiv preprint arXiv:1906.09308, 2019",
+      "authors": "Asma Ghandeharioun, Judy Shen, Natasha Jaques, Craig Ferguson, Noah Jones, Agata Lapedriza, and Rosalind Picard",
+      "title": "Approximating interactive human evaluation with self-play for open-domain dialog systems",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1906.09308",
+      "doi": null
+    },
+    {
+      "key": "haarnoja2017reinforcement",
+      "raw": "Tuomas Haarnoja, Haoran Tang, Pieter Abbeel, and Sergey Levine. Reinforcement learning with deep energy-based policies. In Proceedings of the 34th International Conference on Machine Learning-Volume 70, pages 1352--1361. JMLR. org, 2017",
+      "authors": "Tuomas Haarnoja, Haoran Tang, Pieter Abbeel, and Sergey Levine",
+      "title": "Reinforcement learning with deep energy-based policies",
+      "venue": "In Proceedings of the 34th International Conference on Machine Learning-Volume 70, pages 1352--1361. JMLR. org, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "haarnoja2018soft",
+      "raw": "Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine. Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor. In International Conference on Machine Learning, pages 1856--1865, 2018",
+      "authors": "Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine",
+      "title": "Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor",
+      "venue": "In International Conference on Machine Learning, pages 1856--1865, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hancock2019learning",
+      "raw": "Braden Hancock, Antoine Bordes, Pierre-Emmanuel Mazare, and Jason Weston. Learning from dialogue after deployment: Feed yourself, chatbot! arXiv preprint arXiv:1901.05415, 2019",
+      "authors": "Braden Hancock, Antoine Bordes, Pierre-Emmanuel Mazare, and Jason Weston",
+      "title": "Learning from dialogue after deployment: Feed yourself, chatbot!",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1901.05415",
+      "doi": null
+    },
+    {
+      "key": "hay2000functions",
+      "raw": "Jennifer Hay. Functions of humor in the conversations of men and women. Journal of pragmatics, 32(6):709--742, 2000",
+      "authors": "Jennifer Hay",
+      "title": "Functions of humor in the conversations of men and women",
+      "venue": "Journal of pragmatics, 32(6):709--742, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hinton2015distilling",
+      "raw": "Geoffrey Hinton, Oriol Vinyals, and Jeff Dean. Distilling the knowledge in a neural network. arXiv preprint arXiv:1503.02531, 2015",
+      "authors": "Geoffrey Hinton, Oriol Vinyals, and Jeff Dean",
+      "title": "Distilling the knowledge in a neural network",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1503.02531",
+      "doi": null
+    },
+    {
+      "key": "tay",
+      "raw": "Helena Horton. Microsoft deletes 'teen girl' ai after it became a hitler-loving sex robot within 24 hours. In Telegraph UK, 2016",
+      "authors": "Helena Horton",
+      "title": "Microsoft deletes 'teen girl' ai after it became a hitler-loving sex robot within 24 hours",
+      "venue": "In Telegraph UK, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ireland2011language",
+      "raw": "Molly E Ireland, Richard B Slatcher, Paul W Eastwick, Lauren E Scissors, Eli J Finkel, and James W Pennebaker. Language style matching predicts relationship initiation and stability. Psychological science, 22(1):39--44, 2011",
+      "authors": "Molly E Ireland, Richard B Slatcher, Paul W Eastwick, Lauren E Scissors, Eli J Finkel, and James W Pennebaker",
+      "title": "Language style matching predicts relationship initiation and stability",
+      "venue": "Psychological science, 22(1):39--44, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jaques2017sequence",
+      "raw": "Natasha Jaques, Shixiang Gu, Dzmitry Bahdanau, Jos\\'e Miguel Hern\\'andez-Lobato, Richard E Turner, and Douglas Eck. Sequence tutor: Conservative fine-tuning of sequence generation models with kl-control. In Proceedings of the 34th International Conference on Machine Learning-Volume 70, pages 1645--1654. JMLR. org, 2017",
+      "authors": "Natasha Jaques, Shixiang Gu, Dzmitry Bahdanau, Jos\\'e Miguel Hern\\'andez-Lobato, Richard E Turner, and Douglas Eck",
+      "title": "Sequence tutor: Conservative fine-tuning of sequence generation models with kl-control",
+      "venue": "In Proceedings of the 34th International Conference on Machine Learning-Volume 70, pages 1645--1654. JMLR. org, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jiang2016doubly",
+      "raw": "Nan Jiang and Lihong Li. Doubly robust off-policy value evaluation for reinforcement learning. In International Conference on Machine Learning, pages 652--661, 2016",
+      "authors": "Nan Jiang and Lihong Li",
+      "title": "Doubly robust off-policy value evaluation for reinforcement learning",
+      "venue": "In International Conference on Machine Learning, pages 652--661, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kaelbling1993learning",
+      "raw": "Leslie Pack Kaelbling. Learning to achieve goals. In IJCAI, pages 1094--1099. Citeseer, 1993",
+      "authors": "Leslie Pack Kaelbling",
+      "title": "Learning to achieve goals",
+      "venue": "In IJCAI, pages 1094--1099. Citeseer, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kahn2017uncertainty",
+      "raw": "Gregory Kahn, Adam Villaflor, Vitchyr Pong, Pieter Abbeel, and Sergey Levine. Uncertainty-aware reinforcement learning for collision avoidance. arXiv preprint arXiv:1702.01182, 2017",
+      "authors": "Gregory Kahn, Adam Villaflor, Vitchyr Pong, Pieter Abbeel, and Sergey Levine",
+      "title": "Uncertainty-aware reinforcement learning for collision avoidance",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1702.01182",
+      "doi": null
+    },
+    {
+      "key": "kakade2002natural",
+      "raw": "Sham M Kakade. A natural policy gradient. In Advances in neural information processing systems (NIPS), volume 14, pages 1531--1538, 2002",
+      "authors": "Sham M Kakade",
+      "title": "A natural policy gradient",
+      "venue": "In Advances in neural information processing systems (NIPS), volume 14, pages 1531--1538, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kappen2012optimal",
+      "raw": "Hilbert J Kappen, Vicen c G\\'omez, and Manfred Opper. Optimal control as a graphical model inference problem. Machine learning, 87(2):159--182, 2012",
+      "authors": "Hilbert J Kappen, Vicen c G\\'omez, and Manfred Opper",
+      "title": "Optimal control as a graphical model inference problem",
+      "venue": "Machine learning, 87(2):159--182, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2016dialogue",
+      "raw": "Jiwei Li, Alexander H Miller, Sumit Chopra, Marc'Aurelio Ranzato, and Jason Weston. Dialogue learning with human-in-the-loop. arXiv preprint arXiv:1611.09823, 2016",
+      "authors": "Jiwei Li, Alexander H Miller, Sumit Chopra, Marc'Aurelio Ranzato, and Jason Weston",
+      "title": "Dialogue learning with human-in-the-loop",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.09823",
+      "doi": null
+    },
+    {
+      "key": "li2016deep",
+      "raw": "Jiwei Li, Will Monroe, Alan Ritter, Dan Jurafsky, Michel Galley, and Jianfeng Gao. Deep reinforcement learning for dialogue generation. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 1192--1202, 2016",
+      "authors": "Jiwei Li, Will Monroe, Alan Ritter, Dan Jurafsky, Michel Galley, and Jianfeng Gao",
+      "title": "Deep reinforcement learning for dialogue generation",
+      "venue": "In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 1192--1202, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2017adversarial",
+      "raw": "Jiwei Li, Will Monroe, Tianlin Shi, S\\'ebastien Jean, Alan Ritter, and Dan Jurafsky. Adversarial learning for neural dialogue generation. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2157--2169, 2017",
+      "authors": "Jiwei Li, Will Monroe, Tianlin Shi, S\\'ebastien Jean, Alan Ritter, and Dan Jurafsky",
+      "title": "Adversarial learning for neural dialogue generation",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, pages 2157--2169, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2018dialogue",
+      "raw": "Ziming Li, Julia Kiseleva, and Maarten de Rijke. Dialogue generation: From imitation learning to inverse reinforcement learning. arXiv preprint arXiv:1812.03509, 2018",
+      "authors": "Ziming Li, Julia Kiseleva, and Maarten de Rijke",
+      "title": "Dialogue generation: From imitation learning to inverse reinforcement learning",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1812.03509",
+      "doi": null
+    },
+    {
+      "key": "liu2017iterative",
+      "raw": "Bing Liu and Ian Lane. Iterative policy learning in end-to-end trainable task-oriented neural dialog models. In 2017 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 482--489. IEEE, 2017",
+      "authors": "Bing Liu and Ian Lane",
+      "title": "Iterative policy learning in end-to-end trainable task-oriented neural dialog models",
+      "venue": "In 2017 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 482--489. IEEE, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liu2018dialogue",
+      "raw": "Bing Liu, Gokhan T\\\"ur, Dilek Hakkani-T\\\"ur, Pararth Shah, and Larry Heck. Dialogue learning with human teaching and feedback in end-to-end trainable task-oriented dialogue systems. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2060--2069, 2018",
+      "authors": "Bing Liu, Gokhan T\\\"ur, Dilek Hakkani-T\\\"ur, Pararth Shah, and Larry Heck",
+      "title": "Dialogue learning with human teaching and feedback in end-to-end trainable task-oriented dialogue systems",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 2060--2069, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liu2019off",
+      "raw": "Yao Liu, Adith Swaminathan, Alekh Agarwal, and Emma Brunskill. Off-policy policy gradient with state distribution correction. arXiv preprint arXiv:1904.08473, 2019",
+      "authors": "Yao Liu, Adith Swaminathan, Alekh Agarwal, and Emma Brunskill",
+      "title": "Off-policy policy gradient with state distribution correction",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1904.08473",
+      "doi": null
+    },
+    {
+      "key": "dqn",
+      "raw": "Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra, and Martin Riedmiller. Playing atari with deep reinforcement learning. arXiv preprint arXiv:1312.5602, 2013",
+      "authors": "Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis Antonoglou, Daan Wierstra, and Martin Riedmiller",
+      "title": "Playing atari with deep reinforcement learning",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.5602",
+      "doi": null
+    },
+    {
+      "key": "osband2016deep",
+      "raw": "Ian Osband, Charles Blundell, Alexander Pritzel, and Benjamin Van Roy. Deep exploration via bootstrapped dqn. In Advances in neural information processing systems, pages 4026--4034, 2016",
+      "authors": "Ian Osband, Charles Blundell, Alexander Pritzel, and Benjamin Van Roy",
+      "title": "Deep exploration via bootstrapped dqn",
+      "venue": "In Advances in neural information processing systems, pages 4026--4034, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "park2018hierarchical",
+      "raw": "Yookoon Park, Jaemin Cho, and Gunhee Kim. A hierarchical latent structure for variational conversation modeling. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 1792--1801, 2018",
+      "authors": "Yookoon Park, Jaemin Cho, and Gunhee Kim",
+      "title": "A hierarchical latent structure for variational conversation modeling",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 1792--1801, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "peters2010relative",
+      "raw": "Jan Peters, Katharina M\\\"ulling, and Yasemin Altun. Relative entropy policy search. In AAAI, pages 1607--1612. Atlanta, 2010",
+      "authors": "Jan Peters, Katharina M\\\"ulling, and Yasemin Altun",
+      "title": "Relative entropy policy search",
+      "venue": "In AAAI, pages 1607--1612. Atlanta, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "precup2000eligibility",
+      "raw": "Doina Precup. Eligibility traces for off-policy policy evaluation. Computer Science Department Faculty Publication Series, page 80, 2000",
+      "authors": "Doina Precup",
+      "title": "Eligibility traces for off-policy policy evaluation",
+      "venue": "Computer Science Department Faculty Publication Series, page 80, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "provine1996laughter",
+      "raw": "Robert R Provine. Laughter. American scientist, 84(1):38--48, 1996",
+      "authors": "Robert R Provine",
+      "title": "Laughter",
+      "venue": "American scientist, 84(1):38--48, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2019language",
+      "raw": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. Language models are unsupervised multitask learners. OpenAI Blog, 1:8, 2019",
+      "authors": "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever",
+      "title": "Language models are unsupervised multitask learners",
+      "venue": "OpenAI Blog, 1:8, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rawlik2012stochastic",
+      "raw": "Konrad Rawlik, Marc Toussaint, and Sethu Vijayakumar. On stochastic optimal control and reinforcement learning by approximate inference. In Robotics: science and systems, 2012",
+      "authors": "Konrad Rawlik, Marc Toussaint, and Sethu Vijayakumar",
+      "title": "On stochastic optimal control and reinforcement learning by approximate inference",
+      "venue": "In Robotics: science and systems, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "riedmiller2005neural",
+      "raw": "Martin Riedmiller. Neural fitted q iteration--first experiences with a data efficient neural reinforcement learning method. In European Conference on Machine Learning, pages 317--328. Springer, 2005",
+      "authors": "Martin Riedmiller",
+      "title": "Neural fitted q iteration--first experiences with a data efficient neural reinforcement learning method",
+      "venue": "In European Conference on Machine Learning, pages 317--328. Springer, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "slmja-trpo-15",
+      "raw": "John Schulman, Sergey Levine, Pieter Abbeel, Michael Jordan, and Philipp Moritz. Trust region policy optimization. In Proceedings of the 32nd International Conference on Machine Learning (ICML-15), pages 1889--1897, 2015",
+      "authors": "John Schulman, Sergey Levine, Pieter Abbeel, Michael Jordan, and Philipp Moritz",
+      "title": "Trust region policy optimization",
+      "venue": "In Proceedings of the 32nd International Conference on Machine Learning (ICML-15), pages 1889--1897, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "serban2017deep",
+      "raw": "Iulian V Serban, Chinnadhurai Sankar, Mathieu Germain, Saizheng Zhang, Zhouhan Lin, Sandeep Subramanian, Taesup Kim, Michael Pieper, Sarath Chandar, Nan Rosemary Ke, et al. A deep reinforcement learning chatbot. arXiv preprint arXiv:1709.02349, 2017",
+      "authors": "Iulian V Serban, Chinnadhurai Sankar, Mathieu Germain, Saizheng Zhang, Zhouhan Lin, Sandeep Subramanian, Taesup Kim, Michael Pieper, Sarath Chandar, Nan Rosemary Ke, et al",
+      "title": "A deep reinforcement learning chatbot",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1709.02349",
+      "doi": null
+    },
+    {
+      "key": "serban2016building",
+      "raw": "Iulian V Serban, Alessandro Sordoni, Yoshua Bengio, Aaron Courville, and Joelle Pineau. Building end-to-end dialogue systems using generative hierarchical neural network models. In Thirtieth AAAI Conference on Artificial Intelligence, 2016",
+      "authors": "Iulian V Serban, Alessandro Sordoni, Yoshua Bengio, Aaron Courville, and Joelle Pineau",
+      "title": "Building end-to-end dialogue systems using generative hierarchical neural network models",
+      "venue": "In Thirtieth AAAI Conference on Artificial Intelligence, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "serban2017hierarchical",
+      "raw": "Iulian Vlad Serban, Alessandro Sordoni, Ryan Lowe, Laurent Charlin, Joelle Pineau, Aaron Courville, and Yoshua Bengio. A hierarchical latent variable encoder-decoder model for generating dialogues. In Thirty-First AAAI Conference on Artificial Intelligence, 2017",
+      "authors": "Iulian Vlad Serban, Alessandro Sordoni, Ryan Lowe, Laurent Charlin, Joelle Pineau, Aaron Courville, and Yoshua Bengio",
+      "title": "A hierarchical latent variable encoder-decoder model for generating dialogues",
+      "venue": "In Thirty-First AAAI Conference on Artificial Intelligence, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shah2018bootstrapping",
+      "raw": "Pararth Shah, Dilek Hakkani-Tur, Bing Liu, and Gokhan Tur. Bootstrapping a neural conversational agent with dialogue self-play, crowdsourcing and on-line reinforcement learning. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 3 (Industry Papers), pages 41--51, 2018",
+      "authors": "Pararth Shah, Dilek Hakkani-Tur, Bing Liu, and Gokhan Tur",
+      "title": "Bootstrapping a neural conversational agent with dialogue self-play, crowdsourcing and on-line reinforcement learning",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 3 (Industry Papers), pages 41--51, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shi2018sentiment",
+      "raw": "Weiyan Shi and Zhou Yu. Sentiment adaptive end-to-end dialog systems. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1509--1519, 2018",
+      "authors": "Weiyan Shi and Zhou Yu",
+      "title": "Sentiment adaptive end-to-end dialog systems",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1509--1519, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shin2019happybot",
+      "raw": "Jamin Shin, Peng Xu, Andrea Madotto, and Pascale Fung. Happybot: Generating empathetic dialogue responses by improving user experience look-ahead. arXiv preprint arXiv:1906.08487, 2019",
+      "authors": "Jamin Shin, Peng Xu, Andrea Madotto, and Pascale Fung",
+      "title": "Happybot: Generating empathetic dialogue responses by improving user experience look-ahead",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1906.08487",
+      "doi": null
+    },
+    {
+      "key": "sidner2004look",
+      "raw": "Candace L Sidner, Cory D Kidd, Christopher Lee, and Neal Lesh. Where to look: a study of human-robot engagement. In Proceedings of the 9th international conference on Intelligent user interfaces, pages 78--84. ACM, 2004",
+      "authors": "Candace L Sidner, Cory D Kidd, Christopher Lee, and Neal Lesh",
+      "title": "Where to look: a study of human-robot engagement",
+      "venue": "In Proceedings of the 9th international conference on Intelligent user interfaces, pages 78--84. ACM, 2004",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "stengel1986stochastic",
+      "raw": "Robert F Stengel. Stochastic optimal control. John Wiley and Sons New York, New York, 1986",
+      "authors": "Robert F Stengel",
+      "title": "Stochastic optimal control",
+      "venue": "John Wiley and Sons New York, New York, 1986",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "su2017sample",
+      "raw": "Pei-Hao Su, Pawe Budzianowski, Stefan Ultes, Milica Gasic, and Steve Young. Sample-efficient actor-critic reinforcement learning with supervised data for dialogue management. In Proceedings of the 18th Annual SIGdial Meeting on Discourse and Dialogue, pages 147--157, 2017",
+      "authors": "Pei-Hao Su, Pawe Budzianowski, Stefan Ultes, Milica Gasic, and Steve Young",
+      "title": "Sample-efficient actor-critic reinforcement learning with supervised data for dialogue management",
+      "venue": "In Proceedings of the 18th Annual SIGdial Meeting on Discourse and Dialogue, pages 147--157, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "thomas2016data",
+      "raw": "Philip Thomas and Emma Brunskill. Data-efficient off-policy policy evaluation for reinforcement learning. In International Conference on Machine Learning, pages 2139--2148, 2016",
+      "authors": "Philip Thomas and Emma Brunskill",
+      "title": "Data-efficient off-policy policy evaluation for reinforcement learning",
+      "venue": "In International Conference on Machine Learning, pages 2139--2148, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "todorov2006linearly",
+      "raw": "Emanuel Todorov. Linearly-solvable markov decision problems. In Advances in neural information processing systems (NIPS), pages 1369--1376, 2007",
+      "authors": "Emanuel Todorov",
+      "title": "Linearly-solvable markov decision problems",
+      "venue": "In Advances in neural information processing systems (NIPS), pages 1369--1376, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "van2016deep",
+      "raw": "Hado Van Hasselt, Arthur Guez, and David Silver. Deep reinforcement learning with double q-learning. In Thirtieth AAAI Conference on Artificial Intelligence, 2016",
+      "authors": "Hado Van Hasselt, Arthur Guez, and David Silver",
+      "title": "Deep reinforcement learning with double q-learning",
+      "venue": "In Thirtieth AAAI Conference on Artificial Intelligence, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "weger2010active",
+      "raw": "Harry Weger Jr, Gina R Castle, and Melissa C Emmett. Active listening in peer interviews: The influence of message paraphrasing on perceptions of listening skill. The Intl. Journal of Listening, 24(1):34--49, 2010",
+      "authors": "Harry Weger Jr, Gina R Castle, and Melissa C Emmett",
+      "title": "Active listening in peer interviews: The influence of message paraphrasing on perceptions of listening skill",
+      "venue": "The Intl. Journal of Listening, 24(1):34--49, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhou2018design",
+      "raw": "Li Zhou, Jianfeng Gao, Di Li, and Heung-Yeung Shum. The design and implementation of xiaoice, an empathetic social chatbot. arXiv preprint arXiv:1812.08989, 2018",
+      "authors": "Li Zhou, Jianfeng Gao, Di Li, and Heung-Yeung Shum",
+      "title": "The design and implementation of xiaoice, an empathetic social chatbot",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1812.08989",
+      "doi": null
+    },
+    {
+      "key": "ziebart2008maximum",
+      "raw": "Brian D Ziebart, Andrew L Maas, J Andrew Bagnell, and Anind K Dey. Maximum entropy inverse reinforcement learning. In AAAI, volume 8, pages 1433--1438. Chicago, IL, USA, 2008",
+      "authors": "Brian D Ziebart, Andrew L Maas, J Andrew Bagnell, and Anind K Dey",
+      "title": "Maximum entropy inverse reinforcement learning",
+      "venue": "In AAAI, volume 8, pages 1433--1438. Chicago, IL, USA, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "Q_{\\theta_\\pi}(s_t,a_t) &= r(s_t,a_t) + \\gamma \\mathbb{E}_{s_{t+1}\\sim p(\\cdot|s_t,a_t)}[\\max_{a_{t+1}} Q_{\\theta_T}(s_{t+1},a_{t+1})]",
+      "environment": "align",
+      "labels": [
+        "eq:bellman"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "Q(a_{t+1}, s_{t+1}) = \\min_{i=1...M}[Q_{\\theta_T}(a_{t+1}, s_{t+1}; d_i)]",
+      "environment": "align",
+      "labels": [
+        "eq:dropout_mc"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\pi_{BCQ}(s) = \\argmax_{a_i+\\xi(s,a_i;\\Phi)}Q_{\\theta}(s,a_i+\\xi(s,a_i;\\Phi))",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\pi_{DBCQ}(s) = \\argmax_{a_i \\sim p(a|s)}Q_{\\theta_{\\pi}}(s,a_i)",
+      "environment": "align",
+      "labels": [
+        "eq:dbcq"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "L(q) = \\mathbb{E}_{q(\\tau)}[r(\\tau)]/c - D_{KL}[q(\\tau)||p(\\tau)]",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\vspace{-0.5cm}\n    \n    Q^{\\pi}(s_t, a_t) = \\mathbb{E}_{\\pi}[\\sum_{t'=t}^T r(s_{t'}, a_{t'})/c + \\log p(a_{t'}|s_{t'}) - \\log \\pi(a_{t'}|s_{t'})]\n    \\vspace{-0.5cm}",
+      "environment": "align",
+      "labels": [
+        "eq:kl_value"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "Q(s_t, a_t) = \\mathbb{E}_{\\pi}[\\sum_{t'=t}^T r(s_{t'}, a_{t'})/c + \\log p(a_{t'}|s_{t'}) + \\mathcal{H}(\\cdot|s_{t'})]",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\Psi^*(s_t, a_t) &= r(s_{t'}, a_{t'})/c + \\log p(a_{t'}|s_{t'}) + \\gamma \\log \\sum_{a'}\\exp(\\Psi^*(s', a')) \\\\\n    \\pi^*_{\\Psi}(a_t|s_t) &= \\exp(\\Psi^*(s_t, a_t))",
+      "environment": "align",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1437,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86599731445312,
+            "y0": 301.05029296875,
+            "x1": 468.486572265625,
+            "y1": 311.1120300292969
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 311.98175048828125,
+            "x1": 469.8799743652344,
+            "y1": 322.01385498046875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4264,
+      "numbers": 2,
+      "citations": 5,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 545.2163696289062,
+            "x1": 504.00140380859375,
+            "y1": 555.078857421875
+          },
+          {
+            "x0": 108.0,
+            "y0": 556.0645751953125,
+            "x1": 153.19813537597656,
+            "y1": 566.0072631835938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 4253,
+      "numbers": 0,
+      "citations": 44,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 456.0905456542969,
+            "x1": 484.9753723144531,
+            "y1": 466.0082092285156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Methods",
+      "chars": 1257,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 365.4774169921875,
+            "x1": 266.8014831542969,
+            "y1": 375.3398742675781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Dropout for uncertainty estimation of Target -values",
+      "chars": 2065,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 182.58099365234375,
+            "y0": 586.9654541015625,
+            "x1": 435.4272155761719,
+            "y1": 596.9280395507812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Discrete Batch Constrained",
+      "chars": 1483,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 480.5052185058594,
+            "y0": 636.0390014648438,
+            "x1": 504.0036315917969,
+            "y1": 646.0562744140625
+          },
+          {
+            "x0": 108.0,
+            "y0": 646.9630737304688,
+            "x1": 232.26058959960938,
+            "y1": 656.96044921875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "KL Control from pre-trained prior",
+      "chars": 2123,
+      "numbers": 0,
+      "citations": 6,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 511.9082946777344,
+            "x1": 366.1314392089844,
+            "y1": 521.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Model averaging",
+      "chars": 513,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 291.068603515625,
+            "x1": 504.0010986328125,
+            "y1": 301.05609130859375
+          },
+          {
+            "x0": 108.0,
+            "y0": 301.9851379394531,
+            "x1": 173.520751953125,
+            "y1": 311.9626770019531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "RL for open-domain dialog generation",
+      "chars": 2907,
+      "numbers": 1,
+      "citations": 10,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 395.956298828125,
+            "x1": 296.0349426269531,
+            "y1": 406.0180358886719
+          },
+          {
+            "x0": 108.0,
+            "y0": 406.92913818359375,
+            "x1": 164.34764099121094,
+            "y1": 416.90667724609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Learning from implicit human preferences",
+      "chars": 1857,
+      "numbers": 7,
+      "citations": 8,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 205.98550415039062,
+            "x1": 503.99560546875,
+            "y1": 216.0324249267578
+          },
+          {
+            "x0": 108.0,
+            "y0": 216.88327026367188,
+            "x1": 407.4801330566406,
+            "y1": 226.94500732421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 1395,
+      "numbers": 6,
+      "citations": 5,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 453.868408203125,
+            "x1": 503.9952392578125,
+            "y1": 463.7308654785156
+          },
+          {
+            "x0": 108.0,
+            "y0": 464.62628173828125,
+            "x1": 448.57745361328125,
+            "y1": 474.6880187988281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 8943,
+      "numbers": 2,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 657.8242797851562,
+            "x1": 504.0033874511719,
+            "y1": 667.8860473632812
+          },
+          {
+            "x0": 108.0,
+            "y0": 668.7783203125,
+            "x1": 300.4606628417969,
+            "y1": 678.7807006835938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1267,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 322.1432800292969,
+            "x1": 504.34893798828125,
+            "y1": 332.20501708984375
+          },
+          {
+            "x0": 107.64099884033203,
+            "y0": 333.20343017578125,
+            "x1": 326.55474853515625,
+            "y1": 343.0658874511719
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgments",
+      "chars": 641,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 496.3479309082031,
+            "x1": 503.9998474121094,
+            "y1": 506.2505798339844
+          },
+          {
+            "x0": 108.0,
+            "y0": 507.2873840332031,
+            "x1": 357.3656921386719,
+            "y1": 517.1498413085938
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 6,
+      "extends": 0,
+      "contests": 1,
+      "compares": 0,
+      "background": 55,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "jaques2017sequence",
+      "stance": "inherits",
+      "cue": "following",
+      "sentence": "We refer to it as a \u03a8-function following previous work [Jaques et al. 2017], which derived this function as a generalization of the \u03a8-learning proposed by [Rawlik et al. 2012].",
+      "section": "KL Control from pre-trained prior",
+      "sectionKind": "method",
+      "ordinal": 42,
+      "title": "Sequence tutor: Conservative fine-tuning of sequence generation models with kl-control",
+      "authors": "Natasha Jaques, Shixiang Gu, Dzmitry Bahdanau, Jos\\'e Miguel Hern\\'andez-Lobato, Richard E Turner, and Douglas Eck",
+      "year": 2017,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 375.6336669921875,
+            "y0": 157.7266082763672,
+            "x1": 503.9981994628906,
+            "y1": 167.5941162109375
+          },
+          {
+            "x0": 108.0,
+            "y0": 168.56349182128906,
+            "x1": 207.59613037109375,
+            "y1": 178.52609252929688
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "ghandeharioun2019approximating",
+        "stance": "inherits",
+        "cue": "we employ",
+        "sentence": "In this work, we employ hierarchical seq2seq dialog models [Ghandeharioun et al. 2019; Park et al. 2018; Serban et al. 2016; Serban et al. 2017], which use three recurrent networks to generate the next utterance in a conversation (see Figure [ref]).",
+        "section": "RL for open-domain dialog generation",
+        "sectionKind": "method",
+        "ordinal": 45,
+        "title": "Approximating interactive human evaluation with self-play for open-domain dialog systems",
+        "authors": "Asma Ghandeharioun, Judy Shen, Natasha Jaques, Craig Ferguson, Noah Jones, Agata Lapedriza, and Rosalind Picard",
+        "year": 2019,
+        "arxivId": "1906.09308",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 215.04200744628906,
+              "y0": 406.92913818359375,
+              "x1": 296.0406188964844,
+              "y1": 416.90667724609375
+            },
+            {
+              "x0": 108.0,
+              "y0": 417.9254150390625,
+              "x1": 296.0420837402344,
+              "y1": 427.7878723144531
+            },
+            {
+              "x0": 108.0,
+              "y0": 428.68328857421875,
+              "x1": 226.33477783203125,
+              "y1": 438.7450256347656
+            }
+          ]
+        }
+      },
+      {
+        "key": "jaques2017sequence",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "We refer to it as a \u03a8-function following previous work [Jaques et al. 2017], which derived this function as a generalization of the \u03a8-learning proposed by [Rawlik et al. 2012].",
+        "section": "KL Control from pre-trained prior",
+        "sectionKind": "method",
+        "ordinal": 42,
+        "title": "Sequence tutor: Conservative fine-tuning of sequence generation models with kl-control",
+        "authors": "Natasha Jaques, Shixiang Gu, Dzmitry Bahdanau, Jos\\'e Miguel Hern\\'andez-Lobato, Richard E Turner, and Douglas Eck",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 375.6336669921875,
+              "y0": 157.7266082763672,
+              "x1": 503.9981994628906,
+              "y1": 167.5941162109375
+            },
+            {
+              "x0": 108.0,
+              "y0": 168.56349182128906,
+              "x1": 207.59613037109375,
+              "y1": 178.52609252929688
+            }
+          ]
+        }
+      },
+      {
+        "key": "park2018hierarchical",
+        "stance": "inherits",
+        "cue": "we employ",
+        "sentence": "In this work, we employ hierarchical seq2seq dialog models [Ghandeharioun et al. 2019; Park et al. 2018; Serban et al. 2016; Serban et al. 2017], which use three recurrent networks to generate the next utterance in a conversation (see Figure [ref]).",
+        "section": "RL for open-domain dialog generation",
+        "sectionKind": "method",
+        "ordinal": 45,
+        "title": "A hierarchical latent structure for variational conversation modeling",
+        "authors": "Yookoon Park, Jaemin Cho, and Gunhee Kim",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 215.04200744628906,
+              "y0": 406.92913818359375,
+              "x1": 296.0406188964844,
+              "y1": 416.90667724609375
+            },
+            {
+              "x0": 108.0,
+              "y0": 417.9254150390625,
+              "x1": 296.0420837402344,
+              "y1": 427.7878723144531
+            },
+            {
+              "x0": 108.0,
+              "y0": 428.68328857421875,
+              "x1": 226.33477783203125,
+              "y1": 438.7450256347656
+            }
+          ]
+        }
+      },
+      {
+        "key": "serban2016building",
+        "stance": "inherits",
+        "cue": "we employ",
+        "sentence": "In this work, we employ hierarchical seq2seq dialog models [Ghandeharioun et al. 2019; Park et al. 2018; Serban et al. 2016; Serban et al. 2017], which use three recurrent networks to generate the next utterance in a conversation (see Figure [ref]).",
+        "section": "RL for open-domain dialog generation",
+        "sectionKind": "method",
+        "ordinal": 45,
+        "title": "Building end-to-end dialogue systems using generative hierarchical neural network models",
+        "authors": "Iulian V Serban, Alessandro Sordoni, Yoshua Bengio, Aaron Courville, and Joelle Pineau",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 215.04200744628906,
+              "y0": 406.92913818359375,
+              "x1": 296.0406188964844,
+              "y1": 416.90667724609375
+            },
+            {
+              "x0": 108.0,
+              "y0": 417.9254150390625,
+              "x1": 296.0420837402344,
+              "y1": 427.7878723144531
+            },
+            {
+              "x0": 108.0,
+              "y0": 428.68328857421875,
+              "x1": 226.33477783203125,
+              "y1": 438.7450256347656
+            }
+          ]
+        }
+      },
+      {
+        "key": "serban2017hierarchical",
+        "stance": "inherits",
+        "cue": "we employ",
+        "sentence": "In this work, we employ hierarchical seq2seq dialog models [Ghandeharioun et al. 2019; Park et al. 2018; Serban et al. 2016; Serban et al. 2017], which use three recurrent networks to generate the next utterance in a conversation (see Figure [ref]).",
+        "section": "RL for open-domain dialog generation",
+        "sectionKind": "method",
+        "ordinal": 45,
+        "title": "A hierarchical latent variable encoder-decoder model for generating dialogues",
+        "authors": "Iulian Vlad Serban, Alessandro Sordoni, Ryan Lowe, Laurent Charlin, Joelle Pineau, Aaron Courville, and Yoshua Bengio",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 215.04200744628906,
+              "y0": 406.92913818359375,
+              "x1": 296.0406188964844,
+              "y1": 416.90667724609375
+            },
+            {
+              "x0": 108.0,
+              "y0": 417.9254150390625,
+              "x1": 296.0420837402344,
+              "y1": 427.7878723144531
+            },
+            {
+              "x0": 108.0,
+              "y0": 428.68328857421875,
+              "x1": 226.33477783203125,
+              "y1": 438.7450256347656
+            }
+          ]
+        }
+      },
+      {
+        "key": "shin2019happybot",
+        "stance": "contests",
+        "cue": ", but are unable",
+        "sentence": "Shin and colleagues uses on-policy learning in conjunction with a user-sentiment approximator to improve a seq2seq model [Shin et al. 2019], but are unable to learn directly from user feedback.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 32,
+        "title": "Happybot: Generating empathetic dialogue responses by improving user experience look-ahead",
+        "authors": "Jamin Shin, Peng Xu, Andrea Madotto, and Pascale Fung",
+        "year": 2019,
+        "arxivId": "1906.08487",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 468.35284423828125,
+              "y0": 270.7640075683594,
+              "x1": 503.9978332519531,
+              "y1": 280.801025390625
+            },
+            {
+              "x0": 108.0,
+              "y0": 281.70684814453125,
+              "x1": 504.0042419433594,
+              "y1": 291.69927978515625
+            },
+            {
+              "x0": 108.0,
+              "y0": 292.71441650390625,
+              "x1": 165.56471252441406,
+              "y1": 302.5768737792969
+            }
+          ]
+        }
+      },
+      {
+        "key": "stengel1986stochastic",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "The approach we propose is based on KL-control, a branch of stochastic optimal control (SOC) [Stengel 1986] where the Kullback-Leibler (KL) divergence from some distribution is used to regularize an RL policy (e.g. [Abdolmaleki et al. 2018; Kappen et al. 2012; Rawlik et al. 2012; Todorov 2007]).",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 6,
+        "title": "Stochastic optimal control",
+        "authors": "Robert F Stengel",
+        "year": 1986,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.64099884033203,
+              "y0": 466.8902893066406,
+              "x1": 504.4920349121094,
+              "y1": 476.9520263671875
+            },
+            {
+              "x0": 108.0,
+              "y0": 477.9504089355469,
+              "x1": 151.90577697753906,
+              "y1": 487.8128662109375
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "It has been shown that dropout approximates Bayesian uncertainty for neural networks, by assuming the weights of the network are drawn from a Gaussian prior, W \u223c N(0,I), and using variational inference to estimate the posterior distribution p(W|X, Y) [Gal et al. 2016].",
+      "anchorText": "It has been shown that dropout approximates Bayesian uncertainty for neural networks, by assuming the weights of the network are drawn from a Gaussian prior,",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "assuming the",
+      "section": "Dropout for uncertainty estimation of Target -values",
+      "sectionKind": "method",
+      "cites": [
+        "gal2016dropout"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 377.2688903808594,
+            "y0": 701.4602661132812,
+            "x1": 503.9974060058594,
+            "y1": 711.5220336914062
+          },
+          {
+            "x0": 108.0,
+            "y0": 712.4747314453125,
+            "x1": 503.9975891113281,
+            "y1": 722.3973999023438
+          },
+          {
+            "x0": 303.5090026855469,
+            "y0": 742.3324584960938,
+            "x1": 308.49029541015625,
+            "y1": 752.2950439453125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "To act, n possible actions are sampled from the generative model, {a_i \u223c G_w(s)}_i=1^n, perturbed, and the action with the maximum Q-value is selected, giving the BCQ policy: We focus on the scenario where a model of p(a|s) can be obtained through MLE training on data of known action sequences.",
+      "anchorText": "-value is selected, giving the BCQ policy: We focus on the scenario where a model of",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We focus on",
+      "section": "Discrete Batch Constrained",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "This prior model provides a more robust estimate of p(a|s) than one learned from the batch data, assuming the size of the batch is small relative to unsupervised data related to the problem (i.e. when the batch comes from human interaction data).",
+      "anchorText": "than one learned from the batch data, assuming the size of the batch is small relative to unsupervised data related to the problem (i.e. when the batch comes from human interaction data).",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "assuming the",
+      "section": "Discrete Batch Constrained",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 469.0459899902344,
+            "y0": 376.1943054199219,
+            "x1": 504.0027770996094,
+            "y1": 386.25604248046875
+          },
+          {
+            "x0": 108.0,
+            "y0": 387.1033020019531,
+            "x1": 503.9972229003906,
+            "y1": 397.1650390625
+          },
+          {
+            "x0": 108.0,
+            "y0": 398.0122985839844,
+            "x1": 438.5956726074219,
+            "y1": 408.07403564453125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe this is because the rewards proposed here do not fully cover what it means to have a high quality conversation (as we will elucidate later), and hope that other researchers be able to use the techniques we propose to learn from improved rewards. models across both ratings and human reward.",
+      "anchorText": "We believe this is because the rewards proposed here do not fully cover what it means to have a high quality conversation (as we will elucidate later), and hope that other researchers be able to use the techniques we propose to learn from improved rewards. models across both ratings and human reward.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Results",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "In contrast, the KL-control model uses realistic language, but shifts its distribution towards cheerful and polite speech, presumably because this is what led to positive human responses in the batch data.",
+      "anchorText": "In contrast, the KL-control model uses realistic language, but shifts its distribution towards cheerful and polite speech, presumably because this is what led to positive human responses in the batch data.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "presumably",
+      "section": "Results",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 224.93240356445312,
+            "y0": 627.831787109375,
+            "x1": 504.00201416015625,
+            "y1": 637.7794189453125
+          },
+          {
+            "x0": 108.0,
+            "y0": 638.805419921875,
+            "x1": 504.0014343261719,
+            "y1": 648.6679077148438
+          },
+          {
+            "x0": 108.0,
+            "y0": 649.6497802734375,
+            "x1": 217.01153564453125,
+            "y1": 659.597412109375
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 5,
+    "cited": 1,
+    "shown": 0,
+    "bare": 4
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "stat.ML"
+    ],
+    "published": "2019-06-30",
+    "authors": [
+      "Natasha Jaques",
+      "Asma Ghandeharioun",
+      "Judy Hanwen Shen",
+      "Craig Ferguson",
+      "Agata Lapedriza",
+      "Noah Jones",
+      "Shixiang Gu",
+      "Rosalind Picard"
+    ]
+  }
+}

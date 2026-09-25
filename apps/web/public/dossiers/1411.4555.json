@@ -1,0 +1,3268 @@
+{
+  "id": "1411.4555",
+  "title": "Show and Tell: A Neural Image Caption Generator",
+  "keystone": {
+    "table": "Table 2",
+    "caption": "Scores on the MSCOCO development set.",
+    "supported": 1,
+    "share": 1.0,
+    "summary": "1 of the paper's headline numbers trace to Table 2"
+  },
+  "codeUrl": "",
+  "coverage": {
+    "claims": 1,
+    "supported": 1,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 1.0
+  },
+  "claims": [
+    {
+      "value": "27.7",
+      "section": "abstract",
+      "sentence": "Lastly, on the newly released COCO dataset, we achieve a BLEU-4 of 27.7, which is the current state-of-the-art.",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Scores on the MSCOCO development set.",
+      "row": "NIC",
+      "column": "BLEU-4",
+      "cell": "27.7",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 173.3791961669922,
+            "y0": 443.4958801269531,
+            "x1": 286.36505126953125,
+            "y1": 453.4584655761719
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 455.4518737792969,
+            "x1": 286.3649597167969,
+            "y1": 465.4144592285156
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 467.4068603515625,
+            "x1": 144.3780517578125,
+            "y1": 477.36944580078125
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 411.9079895019531,
+            "y0": 86.53809356689453,
+            "x1": 427.59918212890625,
+            "y1": 95.5044937133789
+          },
+          {
+            "x0": 352.8940124511719,
+            "y0": 86.61996459960938,
+            "x1": 368.33416748046875,
+            "y1": 95.58636474609375
+          }
+        ]
+      }
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1411.4555",
+  "numbers": [
+    {
+      "value": "27.7",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Lastly, on the newly released COCO dataset, we achieve a BLEU-4 of 27.7, which is the current state-of-the-art.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "NIC",
+      "cell": "27.7",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 173.3791961669922,
+            "y0": 443.4958801269531,
+            "x1": 286.36505126953125,
+            "y1": 453.4584655761719
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 455.4518737792969,
+            "x1": 286.3649597167969,
+            "y1": 465.4144592285156
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 467.4068603515625,
+            "x1": 144.3780517578125,
+            "y1": 477.36944580078125
+          }
+        ]
+      }
+    },
+    {
+      "value": "2 BLEU",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Using a beam size of 1 (i.e., greedy search) did degrade our results by 2 BLEU points on average.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 433.4244079589844,
+            "y0": 205.9145050048828,
+            "x1": 545.1151733398438,
+            "y1": 215.87710571289062
+          },
+          {
+            "x0": 308.8620300292969,
+            "y0": 217.86952209472656,
+            "x1": 545.1151123046875,
+            "y1": 227.83212280273438
+          },
+          {
+            "x0": 308.8620300292969,
+            "y0": 229.8245391845703,
+            "x1": 341.97772216796875,
+            "y1": 239.78713989257812
+          }
+        ]
+      }
+    },
+    {
+      "value": "27.2 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "On the official test set for which labels are only available through the official website, our model had a 27.2 BLEU-4.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 443.2574462890625,
+            "y0": 317.68548583984375,
+            "x1": 545.1151123046875,
+            "y1": 327.6481018066406
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 329.6404724121094,
+            "x1": 545.1150512695312,
+            "y1": 339.60308837890625
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 341.595458984375,
+            "x1": 432.5476989746094,
+            "y1": 351.5580749511719
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Indeed, when training on Flickr30k (with about 4 times more training data), the results obtained are 4 BLEU points better.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 308.86199951171875,
+            "y0": 483.7503662109375,
+            "x1": 545.1148071289062,
+            "y1": 493.7129821777344
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 495.7053527832031,
+            "x1": 545.1150512695312,
+            "y1": 505.66796875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 507.66033935546875,
+            "x1": 333.4895324707031,
+            "y1": 517.6229248046875
+          }
+        ]
+      }
+    },
+    {
+      "value": "80%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "If we take the best candidate, the sentence is present in the training set 80% of the times.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 103.3222427368164,
+            "y0": 289.0395812988281,
+            "x1": 286.3651123046875,
+            "y1": 299.002197265625
+          },
+          {
+            "x0": 50.11201477050781,
+            "y0": 300.99456787109375,
+            "x1": 234.44004821777344,
+            "y1": 310.9571838378906
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "",
+      "label": "sec:data",
+      "numericCells": 11,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Dataset name",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "size",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "train",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "valid.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "test",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Pascal VOC 2008",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Flickr8k",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6000",
+            "value": "6000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Flickr30k",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "28000",
+            "value": "28000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MSCOCO",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "82783",
+            "value": "82783",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "40504",
+            "value": "40504",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "40775",
+            "value": "40775",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "SBU",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "1M",
+            "value": "1000000",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Scores on the MSCOCO development set.",
+      "label": "tab:coco",
+      "numericCells": 12,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Metric",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "METEOR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CIDER",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "NIC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.7",
+            "value": "27.7",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "23.7",
+            "value": "23.7",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "85.5",
+            "value": "85.5",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Random",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.6",
+            "value": "4.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.0",
+            "value": "9.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.1",
+            "value": "5.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Nearest Neighbor",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.9",
+            "value": "9.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.7",
+            "value": "15.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.5",
+            "value": "36.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "21.7",
+            "value": "21.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25.2",
+            "value": "25.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "85.4",
+            "value": "85.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 366.908203125,
+            "y0": 130.69198608398438,
+            "x1": 517.97412109375,
+            "y1": 139.65838623046875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "BLEU-1 scores. We only report previous work results when available. SOTA stands for the current state-of-the-art.",
+      "label": "tab:bleu",
+      "numericCells": 19,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Approach",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "PASCAL",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Flickr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Flickr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SBU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(xfer)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "30k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "8k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Im2Text",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "TreeTalk",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BabyTalk",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25",
+            "value": "25",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Tri5Sem",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "m-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "55",
+            "value": "55",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58",
+            "value": "58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MNLM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "56",
+            "value": "56",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51",
+            "value": "51",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "SOTA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25",
+            "value": "25",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "56",
+            "value": "56",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "58",
+            "value": "58",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NIC",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "59",
+            "value": "59",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "66",
+            "value": "66",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "63",
+            "value": "63",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "28",
+            "value": "28",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "69",
+            "value": "69",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "68",
+            "value": "68",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "70",
+            "value": "70",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 341.9659729003906,
+            "y0": 277.156982421875,
+            "x1": 545.1089477539062,
+            "y1": 286.1233825683594
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 288.1159973144531,
+            "x1": 525.678466796875,
+            "y1": 297.0823974609375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "N-best examples from the MSCOCO test set. Bold lines indicate a novel sentence not present in the training set.",
+      "label": "tab:diversity",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "A man throwing a frisbee in a park.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "A man holding a frisbee in his hand.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "A man standing in the grass with a frisbee.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "A close up of a sandwich on a plate.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "A close up of a plate of food with french fries.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "A white plate topped with a cut in half sandwich.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "A display case filled with lots of donuts.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "A display case filled with lots of cakes.",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "A bakery display case filled with lots of donuts.",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 81.6737289428711,
+            "y0": 526.367919921875,
+            "x1": 286.35870361328125,
+            "y1": 535.3343505859375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 537.3269653320312,
+            "x1": 248.56533813476562,
+            "y1": 546.2933959960938
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Recall@k and median rank on Flickr8k.",
+      "label": "tab:recall@10",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Approach",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Image Annotation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Image Search",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@10",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Med",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@10",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Med",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DeFrag",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44",
+            "value": "44",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14",
+            "value": "14",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43",
+            "value": "43",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15",
+            "value": "15",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "m-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15",
+            "value": "15",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "49",
+            "value": "49",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "42",
+            "value": "42",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15",
+            "value": "15",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MNLM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18",
+            "value": "18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "55",
+            "value": "55",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "52",
+            "value": "52",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NIC",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "61",
+            "value": "61",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 370.57623291015625,
+            "y0": 141.65097045898438,
+            "x1": 514.3076171875,
+            "y1": 150.61737060546875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 6",
+      "caption": "Recall@k and median rank on Flickr30k.",
+      "label": "tab:recall@1030k",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Approach",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Image Annotation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Image Search",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@10",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Med",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R@10",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Med",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DeFrag",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "55",
+            "value": "55",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45",
+            "value": "45",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "m-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18",
+            "value": "18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51",
+            "value": "51",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "42",
+            "value": "42",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MNLM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23",
+            "value": "23",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "63",
+            "value": "63",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "17",
+            "value": "17",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "57",
+            "value": "57",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NIC",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17",
+            "value": "17",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "56",
+            "value": "56",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17",
+            "value": "17",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "57",
+            "value": "57",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 368.334228515625,
+            "y0": 235.31399536132812,
+            "x1": 516.548828125,
+            "y1": 244.2803955078125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "Nearest neighbors of a few example words",
+      "label": "tab:embeddings",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Word",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neighbors",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "car",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "van, cab, suv, vehicule, jeep",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "boy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "toddler, gentleman, daughter, son",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "street",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "road, streets, highway, freeway",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "horse",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "pony, donkey, pig, goat, mule",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "computer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computers, pc, crt, chip, compute",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 365.9761962890625,
+            "y0": 491.9679870605469,
+            "x1": 518.9071044921875,
+            "y1": 500.93438720703125
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {},
+  "references": [
+    {
+      "key": "aker2010generating",
+      "raw": "A. Aker and R. Gaizauskas. Generating image descriptions using dependency relational patterns. In ACL, 2010",
+      "authors": "A. Aker and R. Gaizauskas",
+      "title": "Generating image descriptions using dependency relational patterns",
+      "venue": "In ACL, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau2014neural",
+      "raw": "D. Bahdanau, K. Cho, and Y. Bengio. Neural machine translation by jointly learning to align and translate. arXiv:1409.0473, 2014",
+      "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "2014",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "cho2014learning",
+      "raw": "K. Cho, B. van Merrienboer, C. Gulcehre, F. Bougares, H. Schwenk, and Y. Bengio. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In EMNLP, 2014",
+      "authors": "K. Cho, B. van Merrienboer, C. Gulcehre, F. Bougares, H. Schwenk, and Y. Bengio",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "venue": "In EMNLP, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "decaf2014",
+      "raw": "J. Donahue, Y. Jia, O. Vinyals, J. Hoffman, N. Zhang, E. Tzeng, and T. Darrell. Decaf: A deep convolutional activation feature for generic visual recognition. In ICML, 2014",
+      "authors": "J. Donahue, Y. Jia, O. Vinyals, J. Hoffman, N. Zhang, E. Tzeng, and T. Darrell",
+      "title": "Decaf: A deep convolutional activation feature for generic visual recognition",
+      "venue": "In ICML, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "elliott2013image",
+      "raw": "D. Elliott and F. Keller. Image description using visual dependency representations. In EMNLP, 2013",
+      "authors": "D. Elliott and F. Keller",
+      "title": "Image description using visual dependency representations",
+      "venue": "In EMNLP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "farhadi2010every",
+      "raw": "A. Farhadi, M. Hejrati, M. A. Sadeghi, P. Young, C. Rashtchian, J. Hockenmaier, and D. Forsyth. Every picture tells a story: Generating sentences from images. In ECCV, 2010",
+      "authors": "A. Farhadi, M. Hejrati, M. A. Sadeghi, P. Young, C. Rashtchian, J. Hockenmaier, and D. Forsyth",
+      "title": "Every picture tells a story: Generating sentences from images",
+      "venue": "In ECCV, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gerber1996knowledge",
+      "raw": "R. Gerber and H.-H. Nagel. Knowledge representation for the generation of quantified natural language descriptions of vehicle traffic in image sequences. In ICIP. IEEE, 1996",
+      "authors": "R. Gerber and H.-H. Nagel",
+      "title": "Knowledge representation for the generation of quantified natural language descriptions of vehicle traffic in image sequences",
+      "venue": "In ICIP. IEEE, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gong2014improving",
+      "raw": "Y. Gong, L. Wang, M. Hodosh, J. Hockenmaier, and S. Lazebnik. Improving image-sentence embeddings using large weakly annotated photo collections. In ECCV, 2014",
+      "authors": "Y. Gong, L. Wang, M. Hodosh, J. Hockenmaier, and S. Lazebnik",
+      "title": "Improving image-sentence embeddings using large weakly annotated photo collections",
+      "venue": "In ECCV, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2013generating",
+      "raw": "A. Graves. Generating sequences with recurrent neural networks. arXiv:1308.0850, 2013",
+      "authors": "A. Graves",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "2013",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural Computation, 9(8), 1997",
+      "authors": "S. Hochreiter and J. Schmidhuber",
+      "title": "Long short-term memory",
+      "venue": "Neural Computation, 9(8), 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hodosh2013framing",
+      "raw": "M. Hodosh, P. Young, and J. Hockenmaier. Framing image description as a ranking task: Data, models and evaluation metrics. JAIR, 47, 2013",
+      "authors": "M. Hodosh, P. Young, and J. Hockenmaier",
+      "title": "Framing image description as a ranking task: Data, models and evaluation metrics",
+      "venue": "JAIR, 47, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "batchnorm",
+      "raw": "S. Ioffe and C. Szegedy. Batch normalization: Accelerating deep network training by reducing internal covariate shift. In arXiv:1502.03167, 2015",
+      "authors": "S. Ioffe and C. Szegedy",
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "venue": "In 2015",
+      "year": 2015,
+      "arxivId": "1502.03167",
+      "doi": null
+    },
+    {
+      "key": "karpathy2014deep",
+      "raw": "A. Karpathy, A. Joulin, and L. Fei-Fei. Deep fragment embeddings for bidirectional image sentence mapping. NIPS, 2014",
+      "authors": "A. Karpathy, A. Joulin, and L. Fei-Fei",
+      "title": "Deep fragment embeddings for bidirectional image sentence mapping",
+      "venue": "NIPS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kiros2014",
+      "raw": "R. Kiros, R. Salakhutdinov, and R. S. Zemel. Unifying visual-semantic embeddings with multimodal neural language models. In arXiv:1411.2539, 2014",
+      "authors": "R. Kiros, R. Salakhutdinov, and R. S. Zemel",
+      "title": "Unifying visual-semantic embeddings with multimodal neural language models",
+      "venue": "In 2014",
+      "year": 2014,
+      "arxivId": "1411.2539",
+      "doi": null
+    },
+    {
+      "key": "kiros2013multimodal",
+      "raw": "R. Kiros and R. Z. R. Salakhutdinov. Multimodal neural language models. In NIPS Deep Learning Workshop, 2013",
+      "authors": "R. Kiros and R. Z. R. Salakhutdinov",
+      "title": "Multimodal neural language models",
+      "venue": "In NIPS Deep Learning Workshop, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kulkarni2011baby",
+      "raw": "G. Kulkarni, V. Premraj, S. Dhar, S. Li, Y. Choi, A. C. Berg, and T. L. Berg. Baby talk: Understanding and generating simple image descriptions. In CVPR, 2011",
+      "authors": "G. Kulkarni, V. Premraj, S. Dhar, S. Li, Y. Choi, A. C. Berg, and T. L. Berg",
+      "title": "Baby talk: Understanding and generating simple image descriptions",
+      "venue": "In CVPR, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kuznetsova2012collective",
+      "raw": "P. Kuznetsova, V. Ordonez, A. C. Berg, T. L. Berg, and Y. Choi. Collective generation of natural image descriptions. In ACL, 2012",
+      "authors": "P. Kuznetsova, V. Ordonez, A. C. Berg, T. L. Berg, and Y. Choi",
+      "title": "Collective generation of natural image descriptions",
+      "venue": "In ACL, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kuznetsova2014treetalk",
+      "raw": "P. Kuznetsova, V. Ordonez, T. Berg, and Y. Choi. Treetalk: Composition and compression of trees for image descriptions. ACL, 2(10), 2014",
+      "authors": "P. Kuznetsova, V. Ordonez, T. Berg, and Y. Choi",
+      "title": "Treetalk: Composition and compression of trees for image descriptions",
+      "venue": "ACL, 2(10), 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2011composing",
+      "raw": "S. Li, G. Kulkarni, T. L. Berg, A. C. Berg, and Y. Choi. Composing simple image descriptions using web-scale n-grams. In Conference on Computational Natural Language Learning, 2011",
+      "authors": "S. Li, G. Kulkarni, T. L. Berg, A. C. Berg, and Y. Choi",
+      "title": "Composing simple image descriptions using web-scale n-grams",
+      "venue": "In Conference on Computational Natural Language Learning, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2014microsoft",
+      "raw": "T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Doll\\'ar, and C. L. Zitnick. Microsoft coco: Common objects in context. arXiv:1405.0312, 2014",
+      "authors": "T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Doll\\'ar, and C. L. Zitnick",
+      "title": "Microsoft coco: Common objects in context",
+      "venue": "2014",
+      "year": 2014,
+      "arxivId": "1405.0312",
+      "doi": null
+    },
+    {
+      "key": "baidu2014",
+      "raw": "J. Mao, W. Xu, Y. Yang, J. Wang, and A. Yuille. Explain images with multimodal recurrent neural networks. In arXiv:1410.1090, 2014",
+      "authors": "J. Mao, W. Xu, Y. Yang, J. Wang, and A. Yuille",
+      "title": "Explain images with multimodal recurrent neural networks",
+      "venue": "In 2014",
+      "year": 2014,
+      "arxivId": "1410.1090",
+      "doi": null
+    },
+    {
+      "key": "mikolov2013",
+      "raw": "T. Mikolov, K. Chen, G. Corrado, and J. Dean. Efficient estimation of word representations in vector space. In ICLR, 2013",
+      "authors": "T. Mikolov, K. Chen, G. Corrado, and J. Dean",
+      "title": "Efficient estimation of word representations in vector space",
+      "venue": "In ICLR, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mitchell2012midge",
+      "raw": "M. Mitchell, X. Han, J. Dodge, A. Mensch, A. Goyal, A. C. Berg, K. Yamaguchi, T. L. Berg, K. Stratos, and H. D. III. Midge: Generating image descriptions from computer vision detections. In EACL, 2012",
+      "authors": "M. Mitchell, X. Han, J. Dodge, A. Mensch, A. Goyal, A. C. Berg, K. Yamaguchi, T. L. Berg, K. Stratos, and H. D. III",
+      "title": "Midge: Generating image descriptions from computer vision detections",
+      "venue": "In EACL, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ordonez2011im2text",
+      "raw": "V. Ordonez, G. Kulkarni, and T. L. Berg. Im2text: Describing images using 1 million captioned photographs. In NIPS, 2011",
+      "authors": "V. Ordonez, G. Kulkarni, and T. L. Berg",
+      "title": "Im2text: Describing images using 1 million captioned photographs",
+      "venue": "In NIPS, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "papineni2002",
+      "raw": "K. Papineni, S. Roukos, T. Ward, and W. J. Zhu. BLEU: A method for automatic evaluation of machine translation. In ACL, 2002",
+      "authors": "K. Papineni, S. Roukos, T. Ward, and W. J. Zhu",
+      "title": "BLEU: A method for automatic evaluation of machine translation",
+      "venue": "In ACL, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rashtchian2010collecting",
+      "raw": "C. Rashtchian, P. Young, M. Hodosh, and J. Hockenmaier. Collecting image annotations using amazon's mechanical turk. In NAACL HLT Workshop on Creating Speech and Language Data with Amazon's Mechanical Turk, pages 139--147, 2010",
+      "authors": "C. Rashtchian, P. Young, M. Hodosh, and J. Hockenmaier",
+      "title": "Collecting image annotations using amazon's mechanical turk",
+      "venue": "In NAACL HLT Workshop on Creating Speech and Language Data with Amazon's Mechanical Turk, pages 139--147, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ILSVRCarxiv14",
+      "raw": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, A. C. Berg, and L. Fei-Fei. ImageNet Large Scale Visual Recognition Challenge, 2014",
+      "authors": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, A. C. Berg, and L. Fei-Fei",
+      "title": "ImageNet Large Scale Visual Recognition Challenge, 2014",
+      "venue": "",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sermanet2013overfeat",
+      "raw": "P. Sermanet, D. Eigen, X. Zhang, M. Mathieu, R. Fergus, and Y. LeCun. Overfeat: Integrated recognition, localization and detection using convolutional networks. arXiv preprint arXiv:1312.6229, 2013",
+      "authors": "P. Sermanet, D. Eigen, X. Zhang, M. Mathieu, R. Fergus, and Y. LeCun",
+      "title": "Overfeat: Integrated recognition, localization and detection using convolutional networks",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.6229",
+      "doi": null
+    },
+    {
+      "key": "socher2014grounded",
+      "raw": "R. Socher, A. Karpathy, Q. V. Le, C. Manning, and A. Y. Ng. Grounded compositional semantics for finding and describing images with sentences. In ACL, 2014",
+      "authors": "R. Socher, A. Karpathy, Q. V. Le, C. Manning, and A. Y. Ng",
+      "title": "Grounded compositional semantics for finding and describing images with sentences",
+      "venue": "In ACL, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "I. Sutskever, O. Vinyals, and Q. V. Le. Sequence to sequence learning with neural networks. In NIPS, 2014",
+      "authors": "I. Sutskever, O. Vinyals, and Q. V. Le",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In NIPS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cider",
+      "raw": "R. Vedantam, C. L. Zitnick, and D. Parikh. CIDEr: Consensus-based image description evaluation. In arXiv:1411.5726, 2015",
+      "authors": "R. Vedantam, C. L. Zitnick, and D. Parikh",
+      "title": "CIDEr: Consensus-based image description evaluation",
+      "venue": "In 2015",
+      "year": 2015,
+      "arxivId": "1411.5726",
+      "doi": null
+    },
+    {
+      "key": "yao2010i2t",
+      "raw": "B. Z. Yao, X. Yang, L. Lin, M. W. Lee, and S.-C. Zhu. I2t: Image parsing to text description. Proceedings of the IEEE, 98(8), 2010",
+      "authors": "B. Z. Yao, X. Yang, L. Lin, M. W. Lee, and S.-C. Zhu",
+      "title": "I2t: Image parsing to text description",
+      "venue": "Proceedings of the IEEE, 98(8), 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hodoshimage",
+      "raw": "P. Young, A. Lai, M. Hodosh, and J. Hockenmaier. From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions. In ACL, 2014",
+      "authors": "P. Young, A. Lai, M. Hodosh, and J. Hockenmaier",
+      "title": "From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions",
+      "venue": "In ACL, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zaremba2014",
+      "raw": "W. Zaremba, I. Sutskever, and O. Vinyals. Recurrent neural network regularization. In arXiv:1409.2329, 2014",
+      "authors": "W. Zaremba, I. Sutskever, and O. Vinyals",
+      "title": "Recurrent neural network regularization",
+      "venue": "In 2014",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\theta^\\star = \\arg\\max_\\theta \\sum_{(I,S)} \\log p(S | I ; \\theta)",
+      "environment": "equation",
+      "labels": [
+        "eqn:obj"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\log p(S | I) = \\sum_{t=0}^N \\log p(S_t | I, S_0, \\ldots, S_{t-1})",
+      "environment": "equation",
+      "labels": [
+        "eqn:chain"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "h_{t+1} = f(h_{t}, x_t)\\;.",
+      "environment": "equation",
+      "labels": [
+        "eq:rnn"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "i_t &= &\\sigma(W_{ix} x_t+ W_{im} m_{t-1}) \\\\\nf_t  &= & \\sigma(W_{fx} x_t+ W_{fm} m_{t-1}) \\\\\no_t  &= & \\sigma(W_{ox} x_t + W_{om} m_{t-1})  \\\\\nc_t  &= & f_t \\odot c_{t-1} + i_t \\odot h(W_{cx} x_t + W_{cm} m_{t-1}) \\\\\nm_t  &= & o_t \\odot c_t \\\\\np_{t+1} &=& \\textrm{Softmax}(m_t)",
+      "environment": "eqnarray",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "x_{-1} &=& \\textrm{CNN}(I)\\\\\nx_t &=& W_e S_t, \\quad t\\in\\{0\\ldots N-1\\}\\quad \\\\\np_{t+1} &=& \\textrm{LSTM}(x_t), \\quad t\\in\\{0\\ldots N-1\\}\\quad",
+      "environment": "eqnarray",
+      "labels": [
+        "eqn:sparse"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "L(I, S) = - \\sum_{t=1}^N \\log p_t(S_t) \\; .",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1121,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06696319580078,
+            "y0": 240.258056640625,
+            "x1": 286.3648986816406,
+            "y1": 250.2206573486328
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 252.21405029296875,
+            "x1": 286.36505126953125,
+            "y1": 262.1766357421875
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 264.1690673828125,
+            "x1": 254.52450561523438,
+            "y1": 274.13165283203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3508,
+      "numbers": 7,
+      "citations": 7,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06696319580078,
+            "y0": 523.769287109375,
+            "x1": 286.3649597167969,
+            "y1": 533.7318725585938
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 535.7243041992188,
+            "x1": 286.36505126953125,
+            "y1": 545.6868896484375
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 547.6793212890625,
+            "x1": 286.36505126953125,
+            "y1": 557.6419067382812
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 559.6343383789062,
+            "x1": 286.3650207519531,
+            "y1": 569.596923828125
+          },
+          {
+            "x0": 50.111961364746094,
+            "y0": 571.58935546875,
+            "x1": 176.9158935546875,
+            "y1": 581.5519409179688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 3589,
+      "numbers": 0,
+      "citations": 23,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 308.81170654296875,
+            "x1": 286.3649597167969,
+            "y1": 318.7743225097656
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 320.7666931152344,
+            "x1": 286.3650207519531,
+            "y1": 330.72930908203125
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 332.7216796875,
+            "x1": 133.07054138183594,
+            "y1": 342.6842956542969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Model",
+      "chars": 2709,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8169860839844,
+            "y0": 462.0675048828125,
+            "x1": 545.1148681640625,
+            "y1": 472.0301208496094
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 474.02349853515625,
+            "x1": 510.6244201660156,
+            "y1": 483.9861145019531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "LSTM-based Sentence Generator",
+      "chars": 4575,
+      "numbers": 3,
+      "citations": 6,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 140.80239868164062,
+            "y0": 548.0274658203125,
+            "x1": 286.36590576171875,
+            "y1": 557.9900512695312
+          },
+          {
+            "x0": 50.11194610595703,
+            "y0": 559.982421875,
+            "x1": 206.0664520263672,
+            "y1": 569.9450073242188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 181,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8170166015625,
+            "y0": 271.02056884765625,
+            "x1": 545.1149291992188,
+            "y1": 280.9831848144531
+          },
+          {
+            "x0": 308.8620300292969,
+            "y0": 282.9755554199219,
+            "x1": 545.114990234375,
+            "y1": 292.93817138671875
+          },
+          {
+            "x0": 308.8620300292969,
+            "y0": 294.9305419921875,
+            "x1": 545.1151733398438,
+            "y1": 304.8931579589844
+          },
+          {
+            "x0": 308.8620300292969,
+            "y0": 306.8855285644531,
+            "x1": 343.72113037109375,
+            "y1": 316.84814453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation Metrics",
+      "chars": 3876,
+      "numbers": 3,
+      "citations": 5,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8170166015625,
+            "y0": 343.1005554199219,
+            "x1": 545.1149291992188,
+            "y1": 353.06317138671875
+          },
+          {
+            "x0": 308.8620300292969,
+            "y0": 355.0555419921875,
+            "x1": 545.1151733398438,
+            "y1": 365.0181579589844
+          },
+          {
+            "x0": 308.8620300292969,
+            "y0": 367.0105285644531,
+            "x1": 486.69439697265625,
+            "y1": 376.97314453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Datasets",
+      "chars": 1060,
+      "numbers": 3,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 652.9844970703125,
+            "x1": 286.3650207519531,
+            "y1": 662.9470825195312
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 664.939453125,
+            "x1": 286.3651123046875,
+            "y1": 674.9020385742188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 429,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8169860839844,
+            "y0": 370.387451171875,
+            "x1": 545.1151123046875,
+            "y1": 380.3500671386719
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 382.3424377441406,
+            "x1": 545.1150512695312,
+            "y1": 392.3050537109375
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 394.29742431640625,
+            "x1": 545.1151733398438,
+            "y1": 404.2600402832031
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 406.2524108886719,
+            "x1": 545.1149291992188,
+            "y1": 416.21502685546875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 418.2084045410156,
+            "x1": 545.1150512695312,
+            "y1": 428.1710205078125
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 430.16339111328125,
+            "x1": 353.25537109375,
+            "y1": 440.1260070800781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Training Details",
+      "chars": 2079,
+      "numbers": 3,
+      "citations": 3,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 308.86199951171875,
+            "y0": 500.09637451171875,
+            "x1": 545.114990234375,
+            "y1": 510.0589904785156
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 512.0513916015625,
+            "x1": 440.6471252441406,
+            "y1": 522.0139770507812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Generation Results",
+      "chars": 2371,
+      "numbers": 1,
+      "citations": 6,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 50.11199951171875,
+            "y0": 350.67767333984375,
+            "x1": 286.3651123046875,
+            "y1": 360.6402893066406
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 362.6326599121094,
+            "x1": 66.16175079345703,
+            "y1": 372.59527587890625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Transfer Learning, Data Size and Label Quality",
+      "chars": 1533,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 308.86199951171875,
+            "y0": 387.9534606933594,
+            "x1": 545.1151123046875,
+            "y1": 397.91607666015625
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 399.908447265625,
+            "x1": 545.1150512695312,
+            "y1": 409.8710632324219
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 411.8634338378906,
+            "x1": 545.1151123046875,
+            "y1": 421.8260498046875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 423.81842041015625,
+            "x1": 545.1150512695312,
+            "y1": 433.7810363769531
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 435.7744140625,
+            "x1": 420.9212951660156,
+            "y1": 445.7370300292969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Generation Diversity Discussion",
+      "chars": 1664,
+      "numbers": 4,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 50.11199951171875,
+            "y0": 157.53248596191406,
+            "x1": 226.8186492919922,
+            "y1": 167.49508666992188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Ranking Results",
+      "chars": 1124,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 50.11199951171875,
+            "y0": 595.8474731445312,
+            "x1": 286.3651123046875,
+            "y1": 605.81005859375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 607.803466796875,
+            "x1": 286.36505126953125,
+            "y1": 617.7660522460938
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 619.7584228515625,
+            "x1": 286.3650817871094,
+            "y1": 629.7210083007812
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 631.7134399414062,
+            "x1": 181.2098846435547,
+            "y1": 641.676025390625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Human Evaluation",
+      "chars": 1169,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 346.5205993652344,
+            "y0": 583.8923950195312,
+            "x1": 545.114990234375,
+            "y1": 593.85498046875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 595.847412109375,
+            "x1": 545.114990234375,
+            "y1": 605.8099975585938
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 607.8033447265625,
+            "x1": 455.88995361328125,
+            "y1": 617.7659301757812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Analysis of Embeddings",
+      "chars": 1335,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 50.11199188232422,
+            "y0": 430.8464660644531,
+            "x1": 214.12625122070312,
+            "y1": 440.80908203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1018,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 479.8599548339844,
+            "y0": 524.116455078125,
+            "x1": 545.1150512695312,
+            "y1": 534.0790405273438
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 536.0724487304688,
+            "x1": 545.1149291992188,
+            "y1": 546.0350341796875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 548.0274658203125,
+            "x1": 545.1150512695312,
+            "y1": 557.9900512695312
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 559.982421875,
+            "x1": 490.7789611816406,
+            "y1": 569.9450073242188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgement",
+      "chars": 169,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 93.97151184082031,
+            "x1": 286.3649597167969,
+            "y1": 103.93411254882812
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 105.92652893066406,
+            "x1": 286.36505126953125,
+            "y1": 115.88912963867188
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 117.88252258300781,
+            "x1": 274.3900146484375,
+            "y1": 127.84512329101562
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 3,
+      "contests": 0,
+      "compares": 0,
+      "background": 26,
+      "traversable": 3
+    },
+    "foundation": {
+      "key": "mikolov2013",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "In order to represent the previous word S_t-1 as input to the decoding LSTM producing S_t, we use word embedding vectors [Mikolov et al. 2013], which have the advantage of being independent of the size of the dictionary (contrary to a simpler one-hot-encoding approach).",
+      "section": "Analysis of Embeddings",
+      "sectionKind": "experiments",
+      "ordinal": 40,
+      "title": "Efficient estimation of word representations in vector space",
+      "authors": "T. Mikolov, K. Chen, G. Corrado, and J. Dean",
+      "year": 2013,
+      "arxivId": "1301.3781",
+      "inCorpus": true,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.22145080566406,
+            "y0": 454.7564392089844,
+            "x1": 286.3650207519531,
+            "y1": 464.71905517578125
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 466.71142578125,
+            "x1": 286.36505126953125,
+            "y1": 476.6740417480469
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 478.66741943359375,
+            "x1": 148.2236785888672,
+            "y1": 488.6300354003906
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "bahdanau2014neural",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "The model is inspired by recent successes of sequence generation in machine translation [Cho et al. 2014; Bahdanau et al. 2014; Sutskever et al. 2014], with the difference that instead of starting with a sentence, we provide an image processed by a convolutional net.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 15,
+        "title": "Neural machine translation by jointly learning to align and translate",
+        "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+        "year": 2014,
+        "arxivId": "1409.0473",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 358.2366027832031,
+              "y0": 193.95960998535156,
+              "x1": 545.1149291992188,
+              "y1": 203.92221069335938
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 205.9146270751953,
+              "x1": 545.1151733398438,
+              "y1": 215.87722778320312
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 217.86964416503906,
+              "x1": 367.1630554199219,
+              "y1": 227.83224487304688
+            }
+          ]
+        }
+      },
+      {
+        "key": "cho2014learning",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "The model is inspired by recent successes of sequence generation in machine translation [Cho et al. 2014; Bahdanau et al. 2014; Sutskever et al. 2014], with the difference that instead of starting with a sentence, we provide an image processed by a convolutional net.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 15,
+        "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+        "authors": "K. Cho, B. van Merrienboer, C. Gulcehre, F. Bougares, H. Schwenk, and Y. Bengio",
+        "year": 2014,
+        "arxivId": "1406.1078",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 358.2366027832031,
+              "y0": 193.95960998535156,
+              "x1": 545.1149291992188,
+              "y1": 203.92221069335938
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 205.9146270751953,
+              "x1": 545.1151733398438,
+              "y1": 215.87722778320312
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 217.86964416503906,
+              "x1": 367.1630554199219,
+              "y1": 227.83224487304688
+            }
+          ]
+        }
+      },
+      {
+        "key": "hodosh2013framing",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "In this paper, we used this to reinforce that some of the automatic metrics indeed correlate with this subjective score, following the guidelines proposed in [Hodosh et al. 2013], which asks the graders to evaluate each generated sentence with a scale from 1 to 4[ The raters are asked whether the image is described without any errors, described with minor errors, with a somewhat related description, or with an unrelated description, with a score of 4 being the best and 1 being the worst.].",
+        "section": "Evaluation Metrics",
+        "sectionKind": "experiments",
+        "ordinal": 26,
+        "title": "Framing image description as a ranking task: Data, models and evaluation metrics",
+        "authors": "M. Hodosh, P. Young, and J. Hockenmaier",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 353.24542236328125,
+              "y0": 402.8764953613281,
+              "x1": 545.114990234375,
+              "y1": 412.839111328125
+            },
+            {
+              "x0": 308.8620300292969,
+              "y0": 414.83148193359375,
+              "x1": 545.1150512695312,
+              "y1": 424.7940979003906
+            },
+            {
+              "x0": 308.8620300292969,
+              "y0": 426.7864685058594,
+              "x1": 496.9457702636719,
+              "y1": 436.74908447265625
+            }
+          ]
+        }
+      },
+      {
+        "key": "mikolov2013",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In order to represent the previous word S_t-1 as input to the decoding LSTM producing S_t, we use word embedding vectors [Mikolov et al. 2013], which have the advantage of being independent of the size of the dictionary (contrary to a simpler one-hot-encoding approach).",
+        "section": "Analysis of Embeddings",
+        "sectionKind": "experiments",
+        "ordinal": 40,
+        "title": "Efficient estimation of word representations in vector space",
+        "authors": "T. Mikolov, K. Chen, G. Corrado, and J. Dean",
+        "year": 2013,
+        "arxivId": "1301.3781",
+        "inCorpus": true,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.22145080566406,
+              "y0": 454.7564392089844,
+              "x1": 286.3650207519531,
+              "y1": 464.71905517578125
+            },
+            {
+              "x0": 50.11199951171875,
+              "y0": 466.71142578125,
+              "x1": 286.36505126953125,
+              "y1": 476.6740417480469
+            },
+            {
+              "x0": 50.11199951171875,
+              "y0": 478.66741943359375,
+              "x1": 148.2236785888672,
+              "y1": 488.6300354003906
+            }
+          ]
+        }
+      },
+      {
+        "key": "sutskever2014sequence",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "The model is inspired by recent successes of sequence generation in machine translation [Cho et al. 2014; Bahdanau et al. 2014; Sutskever et al. 2014], with the difference that instead of starting with a sentence, we provide an image processed by a convolutional net.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 15,
+        "title": "Sequence to sequence learning with neural networks",
+        "authors": "I. Sutskever, O. Vinyals, and Q. V. Le",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 358.2366027832031,
+              "y0": 193.95960998535156,
+              "x1": 545.1149291992188,
+              "y1": 203.92221069335938
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 205.9146270751953,
+              "x1": 545.1151733398438,
+              "y1": 215.87722778320312
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 217.86964416503906,
+              "x1": 367.1630554199219,
+              "y1": 227.83224487304688
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "The rest of the metrics can be computed automatically assuming one has access to groundtruth, i.e. human generated descriptions.",
+      "anchorText": "The rest of the metrics can be computed automatically assuming one has access to groundtruth, i.e. human generated descriptions.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "assuming",
+      "section": "Evaluation Metrics",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8170471191406,
+            "y0": 570.2483520507812,
+            "x1": 545.114990234375,
+            "y1": 580.2109375
+          },
+          {
+            "x0": 308.862060546875,
+            "y0": 582.203369140625,
+            "x1": 545.1151733398438,
+            "y1": 592.1659545898438
+          },
+          {
+            "x0": 308.862060546875,
+            "y0": 594.1593627929688,
+            "x1": 387.7956848144531,
+            "y1": 604.1219482421875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Now that our models can generate descriptions of reasonable quality, and despite the ambiguities of evaluating an image description (where there could be multiple valid descriptions not in the groundtruth) we believe we should concentrate on evaluation metrics for the generation task rather than for ranking.",
+      "anchorText": "Now that our models can generate descriptions of reasonable quality, and despite the ambiguities of evaluating an image description (where there could be multiple valid descriptions not in the groundtruth) we believe we should concentrate on evaluation metrics for the generation task rather than for ranking.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Evaluation Metrics",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 553.7864379882812,
+            "x1": 286.364990234375,
+            "y1": 563.7490234375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 565.741455078125,
+            "x1": 286.36505126953125,
+            "y1": 575.7040405273438
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 577.6974487304688,
+            "x1": 286.3650817871094,
+            "y1": 587.6600341796875
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 589.6524658203125,
+            "x1": 286.3650207519531,
+            "y1": 599.6150512695312
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 601.607421875,
+            "x1": 286.3651123046875,
+            "y1": 611.5700073242188
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 613.5624389648438,
+            "x1": 142.51507568359375,
+            "y1": 623.5250244140625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "As a result, we believe that, even with the results we obtained which are quite good, the advantage of our method versus most current human-engineered approaches will only increase in the next few years as training set sizes will grow.",
+      "anchorText": "As a result, we believe that, even with the results we obtained which are quite good, the advantage of our method versus most current human-engineered approaches will only increase in the next few years as training set sizes will grow.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Training Details",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 483.38671875,
+            "y0": 595.7373657226562,
+            "x1": 545.114990234375,
+            "y1": 605.699951171875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 607.6923828125,
+            "x1": 545.1151123046875,
+            "y1": 617.6549682617188
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 619.6483154296875,
+            "x1": 545.114990234375,
+            "y1": 629.6109008789062
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 631.6033325195312,
+            "x1": 545.114990234375,
+            "y1": 641.56591796875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 643.558349609375,
+            "x1": 488.7965087890625,
+            "y1": 653.5209350585938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We tried initializing them from a large news corpus [Mikolov et al. 2013], but no significant gains were observed, and we decided to just leave them uninitialized for simplicity.",
+      "anchorText": ", but no significant gains were observed, and we decided to just leave them uninitialized for simplicity.",
+      "kind": "simplifying",
+      "support": "cited",
+      "cue": "for simplicity",
+      "section": "Training Details",
+      "sectionKind": "experiments",
+      "cites": [
+        "mikolov2013"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 267.2767639160156,
+            "y0": 98.31752014160156,
+            "x1": 286.3650817871094,
+            "y1": 108.28012084960938
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 110.27253723144531,
+            "x1": 286.36505126953125,
+            "y1": 120.23513793945312
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 122.22755432128906,
+            "x1": 223.85977172851562,
+            "y1": 132.19015502929688
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We hypothesize that, in the extreme case where we see very few examples of a class (e.g., \u201cunicorn\u201d), its proximity to other word embeddings (e.g., \u201chorse\u201d) should provide a lot more information that would be completely lost with more traditional bag-of-words based approaches.",
+      "anchorText": "We hypothesize that, in the extreme case where we see very few examples of a class (e.g., \"unicorn\"), its proximity to other word embeddings (e.g., \"horse\") should provide a lot more information that would be completely lost with more traditional bag-of-words based approaches.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "Analysis of Embeddings",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.87272644042969,
+            "y0": 598.7403564453125,
+            "x1": 286.3651428222656,
+            "y1": 608.7029418945312
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 610.6963500976562,
+            "x1": 286.3651123046875,
+            "y1": 620.658935546875
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 622.6513671875,
+            "x1": 286.3650207519531,
+            "y1": 632.6139526367188
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 634.6063842773438,
+            "x1": 286.36505126953125,
+            "y1": 644.5689697265625
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 646.5614013671875,
+            "x1": 282.1509094238281,
+            "y1": 656.5239868164062
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 5,
+    "cited": 1,
+    "shown": 0,
+    "bare": 4
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.CV",
+    "primaryName": "Computer Vision",
+    "categories": [
+      "cs.CV"
+    ],
+    "published": "2014-11-17",
+    "authors": [
+      "Oriol Vinyals",
+      "Alexander Toshev",
+      "Samy Bengio",
+      "Dumitru Erhan"
+    ]
+  }
+}

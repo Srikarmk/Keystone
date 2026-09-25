@@ -1,0 +1,1251 @@
+{
+  "id": "1212.5701",
+  "title": "ADADELTA: An Adaptive Learning Rate Method",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1212.5701",
+  "numbers": [
+    {
+      "value": "6 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Our method was trained on mini-batches of 100 images per batch for 6 epochs through the training set.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 123.95399475097656,
+            "y0": 641.8474731445312,
+            "x1": 298.1998596191406,
+            "y1": 651.81005859375
+          },
+          {
+            "x0": 54.425025939941406,
+            "y0": 653.802490234375,
+            "x1": 298.1998596191406,
+            "y1": 663.7650756835938
+          }
+        ]
+      }
+    },
+    {
+      "value": "50 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "To further analyze various methods to convergence, we train the same neural network with 500 hidden units in the first layer, 300 hidden units in the second layer and rectified linear activation functions in both layers for 50 epochs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 330.1570129394531,
+            "y0": 290.6664733886719,
+            "x1": 558.9879760742188,
+            "y1": 300.62908935546875
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 302.6214599609375,
+            "x1": 558.987548828125,
+            "y1": 312.5840759277344
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 314.5764465332031,
+            "x1": 558.9876708984375,
+            "y1": 324.5390625
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 326.53143310546875,
+            "x1": 513.6578369140625,
+            "y1": 336.4940490722656
+          }
+        ]
+      }
+    },
+    {
+      "value": "10 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "ADAGRAD performs well for the first 10 epochs of training, after which it slows down due to the accumulations in the denominator which continually increase.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.2130126953125,
+            "y0": 422.73834228515625,
+            "x1": 558.98779296875,
+            "y1": 432.7009582519531
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 434.6933288574219,
+            "x1": 558.9877319335938,
+            "y1": 444.65594482421875
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 446.6483154296875,
+            "x1": 468.30816650390625,
+            "y1": 456.6109313964844
+          }
+        ]
+      }
+    },
+    {
+      "value": "6 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "In other_hyper we vary the learning rates for each method and show the test set errors after 6 epochs of training using rectified linear units as the activation function.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 129.5629425048828,
+            "y0": 129.8035430908203,
+            "x1": 298.1999206542969,
+            "y1": 139.76614379882812
+          },
+          {
+            "x0": 54.42499923706055,
+            "y0": 141.75856018066406,
+            "x1": 298.19989013671875,
+            "y1": 151.72116088867188
+          },
+          {
+            "x0": 54.42499923706055,
+            "y0": 153.7145538330078,
+            "x1": 243.62472534179688,
+            "y1": 163.67715454101562
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "MNIST test error rates after 6 epochs of training for various hyperparameter settings using SGD, MOMENTUM, and ADAGRAD.",
+      "label": "tab:other_hyper",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "SGD",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MOMENTUM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ADAGRAD",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "89.68%",
+            "value": "89.68",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43.76%",
+            "value": "43.76",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.51%",
+            "value": "2.51",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.82%",
+            "value": "2.82",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "7.02%",
+            "value": "7.02",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.68%",
+            "value": "2.68",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "17.01%",
+            "value": "17.01",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "6.98%",
+            "value": "6.98",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "5.21%",
+            "value": "5.21",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "58.10%",
+            "value": "58.10",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "16.98%",
+            "value": "16.98",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "12.59%",
+            "value": "12.59",
+            "emphasised": false,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 351.7210388183594,
+            "y0": 592.909423828125,
+            "x1": 558.9929809570312,
+            "y1": 602.8720092773438
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 604.8644409179688,
+            "x1": 558.98779296875,
+            "y1": 614.8270263671875
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 616.8194580078125,
+            "x1": 383.5863342285156,
+            "y1": 626.7820434570312
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "MNIST test error rate after 6 epochs for various hyperparameter settings using ADADELTA.",
+      "label": "tab:adadelta_hyper",
+      "numericCells": 11,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.59%",
+            "value": "2.59",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.58%",
+            "value": "2.58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.32%",
+            "value": "2.32",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.05%",
+            "value": "2.05",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.99%",
+            "value": "1.99",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.28%",
+            "value": "2.28",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.90%",
+            "value": "1.90",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.05%",
+            "value": "2.05",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.29%",
+            "value": "2.29",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2.13%",
+            "value": "2.13",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2.00%",
+            "value": "2.00",
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 357.2574462890625,
+            "y0": 703.6764526367188,
+            "x1": 558.9901733398438,
+            "y1": 713.6390380859375
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 715.6324462890625,
+            "x1": 491.6606140136719,
+            "y1": 725.5950317382812
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\alg": "Algorithm \\ref{alg:#1}",
+    "\\eqn": "Eqn.~\\ref{eqn:#1}",
+    "\\fig": "Fig.~\\ref{fig:#1}",
+    "\\tab": "Table~\\ref{tab:#1}",
+    "\\secc": "Section~\\ref{sec:#1}"
+  },
+  "references": [
+    {
+      "key": "robbins51",
+      "raw": "H. Robinds and S. Monro, ``A stochastic approximation method,'' Annals of Mathematical Statistics, vol. 22, pp. 400--407, 1951",
+      "authors": "H. Robinds and S. Monro",
+      "title": "``A stochastic approximation method,''",
+      "venue": "Annals of Mathematical Statistics, vol. 22, pp. 400--407, 1951",
+      "year": 1951,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "autoencoder-nn",
+      "raw": "D.E. Rumelhart, G.E. Hinton, and R.J. Williams, ``Learning representations by back-propagating errors,'' Nature, vol. 323, pp. 533--536, 1986",
+      "authors": "D.E. Rumelhart, G.E. Hinton, and R.J. Williams",
+      "title": "``Learning representations by back-propagating errors,''",
+      "venue": "Nature, vol. 323, pp. 533--536, 1986",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "adagrad",
+      "raw": "J. Duchi, E. Hazan, and Y. Singer, ``Adaptive subgradient methods for online leaning and stochastic optimization,'' in COLT, 2010",
+      "authors": "J. Duchi, E. Hazan, and Y. Singer",
+      "title": "``Adaptive subgradient methods for online leaning and stochastic optimization,''",
+      "venue": "in COLT, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gbrain-nips12",
+      "raw": "J. Dean, G. Corrado, R. Monga, K. Chen, M. Devin, Q. Le, M. Mao, M. Ranzato, A. Senior, P. Tucker, K. Yang, and A. Ng, ``Large scale distributed deep networks,'' in NIPS, 2012",
+      "authors": "J. Dean, G. Corrado, R. Monga, K. Chen, M. Devin, Q. Le, M. Mao, M. Ranzato, A. Senior, P. Tucker, K. Yang, and A. Ng",
+      "title": "``Large scale distributed deep networks,''",
+      "venue": "in NIPS, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "becker1988",
+      "raw": "S. Becker and Y. LeCun, ``Improving the convergence of back-propagation learning with second order methods,'' Tech. Rep., Department of Computer Science, University of Toronto, Toronto, ON, Canada, 1988",
+      "authors": "S. Becker and Y. LeCun",
+      "title": "``Improving the convergence of back-propagation learning with second order methods,''",
+      "venue": "Tech. Rep., Department of Computer Science, University of Toronto, Toronto, ON, Canada, 1988",
+      "year": 1988,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schaul2012",
+      "raw": "T. Schaul, S. Zhang, and Y. LeCun, ``No more pesky learning rates,'' arXiv:1206.1106, 2012",
+      "authors": "T. Schaul, S. Zhang, and Y. LeCun",
+      "title": "``No more pesky learning rates,'' 2012",
+      "venue": "",
+      "year": 2012,
+      "arxivId": "1206.1106",
+      "doi": null
+    },
+    {
+      "key": "navdeep12",
+      "raw": "N. Jaitly, P. Nguyen, A. Senior, and V. Vanhoucke, ``Application of pretrained deep neural networks to large vocabulary speech recognition,'' in Interspeech, 2012",
+      "authors": "N. Jaitly, P. Nguyen, A. Senior, and V. Vanhoucke",
+      "title": "``Application of pretrained deep neural networks to large vocabulary speech recognition,''",
+      "venue": "in Interspeech, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 638,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.425018310546875,
+            "y0": 211.68946838378906,
+            "x1": 298.2098388671875,
+            "y1": 221.65206909179688
+          },
+          {
+            "x0": 54.425018310546875,
+            "y0": 223.6444854736328,
+            "x1": 207.42063903808594,
+            "y1": 233.60708618164062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2293,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.425010681152344,
+            "y0": 411.2714538574219,
+            "x1": 298.2098388671875,
+            "y1": 421.23406982421875
+          },
+          {
+            "x0": 54.425010681152344,
+            "y0": 423.2264404296875,
+            "x1": 122.47949981689453,
+            "y1": 433.1890563964844
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 588,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.2129821777344,
+            "y0": 493.5943908691406,
+            "x1": 558.98779296875,
+            "y1": 503.5570068359375
+          },
+          {
+            "x0": 315.2129821777344,
+            "y0": 505.54937744140625,
+            "x1": 339.2925720214844,
+            "y1": 515.511962890625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Learning Rate Annealing",
+      "chars": 821,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.21295166015625,
+            "y0": 665.7573852539062,
+            "x1": 558.98779296875,
+            "y1": 675.719970703125
+          },
+          {
+            "x0": 315.21295166015625,
+            "y0": 677.71240234375,
+            "x1": 558.9877319335938,
+            "y1": 687.6749877929688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Per-Dimension First Order Methods",
+      "chars": 339,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42500305175781,
+            "y0": 226.5816192626953,
+            "x1": 298.2098083496094,
+            "y1": 236.54421997070312
+          },
+          {
+            "x0": 54.42500305175781,
+            "y0": 238.53761291503906,
+            "x1": 298.1998596191406,
+            "y1": 248.50021362304688
+          },
+          {
+            "x0": 54.42500305175781,
+            "y0": 250.4926300048828,
+            "x1": 115.00756072998047,
+            "y1": 260.4552307128906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Momentum",
+      "chars": 1523,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42500305175781,
+            "y0": 330.93658447265625,
+            "x1": 298.1998291015625,
+            "y1": 340.8992004394531
+          },
+          {
+            "x0": 54.42500305175781,
+            "y0": 342.8915710449219,
+            "x1": 119.17193603515625,
+            "y1": 352.85418701171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "ADAGRAD",
+      "chars": 1949,
+      "numbers": 2,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42502212524414,
+            "y0": 689.66845703125,
+            "x1": 240.08799743652344,
+            "y1": 699.6310424804688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Methods Using Second Order Information",
+      "chars": 1496,
+      "numbers": 4,
+      "citations": 3,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.21307373046875,
+            "y0": 497.17041015625,
+            "x1": 558.9879760742188,
+            "y1": 507.1330261230469
+          },
+          {
+            "x0": 315.21307373046875,
+            "y0": 509.1253662109375,
+            "x1": 558.9879150390625,
+            "y1": 519.0879516601562
+          },
+          {
+            "x0": 315.21307373046875,
+            "y0": 521.0803833007812,
+            "x1": 558.9879150390625,
+            "y1": 531.04296875
+          },
+          {
+            "x0": 315.21307373046875,
+            "y0": 533.035400390625,
+            "x1": 558.988037109375,
+            "y1": 542.9979858398438
+          },
+          {
+            "x0": 315.21307373046875,
+            "y0": 544.9903564453125,
+            "x1": 334.90911865234375,
+            "y1": 554.9529418945312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "ADADELTA Method",
+      "chars": 703,
+      "numbers": 2,
+      "citations": 2,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42498779296875,
+            "y0": 259.02557373046875,
+            "x1": 298.1998596191406,
+            "y1": 268.9881896972656
+          },
+          {
+            "x0": 54.42498779296875,
+            "y0": 270.9805908203125,
+            "x1": 82.64904022216797,
+            "y1": 280.9432067871094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Idea 1: Accumulate Over Window",
+      "chars": 1104,
+      "numbers": 5,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42497253417969,
+            "y0": 447.0454406738281,
+            "x1": 298.1998291015625,
+            "y1": 457.008056640625
+          },
+          {
+            "x0": 54.42497253417969,
+            "y0": 459.00042724609375,
+            "x1": 298.1998291015625,
+            "y1": 468.9630432128906
+          },
+          {
+            "x0": 54.42497253417969,
+            "y0": 470.9564208984375,
+            "x1": 186.72828674316406,
+            "y1": 480.9190368652344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Idea 2: Correct Units with Hessian Approximation",
+      "chars": 3403,
+      "numbers": 10,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.2130126953125,
+            "y0": 241.32447814941406,
+            "x1": 482.0765380859375,
+            "y1": 251.28707885742188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 361,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42503356933594,
+            "y0": 457.64154052734375,
+            "x1": 298.1998291015625,
+            "y1": 467.6041564941406
+          },
+          {
+            "x0": 54.42503356933594,
+            "y0": 469.5965270996094,
+            "x1": 172.4918212890625,
+            "y1": 479.55914306640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Handwritten Digit Classification",
+      "chars": 2025,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42503356933594,
+            "y0": 582.0714721679688,
+            "x1": 298.19989013671875,
+            "y1": 592.0340576171875
+          },
+          {
+            "x0": 54.42503356933594,
+            "y0": 594.0264892578125,
+            "x1": 232.12799072265625,
+            "y1": 603.9890747070312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Sensitivity to Hyperparameters",
+      "chars": 785,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42499923706055,
+            "y0": 93.93849182128906,
+            "x1": 298.1997985839844,
+            "y1": 103.90109252929688
+          },
+          {
+            "x0": 54.42499923706055,
+            "y0": 105.89350891113281,
+            "x1": 298.1998291015625,
+            "y1": 115.85610961914062
+          },
+          {
+            "x0": 54.42499923706055,
+            "y0": 117.84852600097656,
+            "x1": 298.2098083496094,
+            "y1": 127.81112670898438
+          },
+          {
+            "x0": 54.42499923706055,
+            "y0": 129.8035430908203,
+            "x1": 85.13970184326172,
+            "y1": 139.76614379882812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Effective Learning Rates",
+      "chars": 2275,
+      "numbers": 6,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 110.45463562011719,
+            "y0": 333.74163818359375,
+            "x1": 298.19989013671875,
+            "y1": 343.7042541503906
+          },
+          {
+            "x0": 54.42499923706055,
+            "y0": 345.6966247558594,
+            "x1": 97.0549545288086,
+            "y1": 355.65924072265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Speech Data",
+      "chars": 1832,
+      "numbers": 12,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.2130126953125,
+            "y0": 378.41351318359375,
+            "x1": 558.9877319335938,
+            "y1": 388.3761291503906
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 390.3684997558594,
+            "x1": 558.98779296875,
+            "y1": 400.33111572265625
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 402.323486328125,
+            "x1": 558.98779296875,
+            "y1": 412.2861022949219
+          },
+          {
+            "x0": 315.2130126953125,
+            "y0": 414.27947998046875,
+            "x1": 371.3323059082031,
+            "y1": 424.2420959472656
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 724,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.42499542236328,
+            "y0": 554.3323974609375,
+            "x1": 298.1997985839844,
+            "y1": 564.2949829101562
+          },
+          {
+            "x0": 54.42499542236328,
+            "y0": 566.2874145507812,
+            "x1": 298.1998291015625,
+            "y1": 576.25
+          },
+          {
+            "x0": 54.42499542236328,
+            "y0": 578.242431640625,
+            "x1": 298.1998291015625,
+            "y1": 588.2050170898438
+          },
+          {
+            "x0": 54.42499542236328,
+            "y0": 590.1984252929688,
+            "x1": 84.58177185058594,
+            "y1": 600.1610107421875
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 6,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "becker1988",
+      "stance": "inherits",
+      "cue": "as in",
+      "sentence": "Since we require the square root of this quantity in the parameter updates, this effectively becomes the RMS of previous squared gradients up to time t: RMS[g]_t = \u221a(E[g^2]_t + \u03f5) where a constant \u03f5 is added to better condition the denominator as in [Becker et al. 1988].",
+      "section": "Idea 1: Accumulate Over Window",
+      "sectionKind": "method",
+      "ordinal": 11,
+      "title": "``Improving the convergence of back-propagation learning with second order methods,''",
+      "authors": "S. Becker and Y. LeCun",
+      "year": 1988,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.71495056152344,
+            "y0": 629.4703369140625,
+            "x1": 298.1997985839844,
+            "y1": 639.4329223632812
+          },
+          {
+            "x0": 54.42501449584961,
+            "y0": 641.4253540039062,
+            "x1": 298.1999206542969,
+            "y1": 651.387939453125
+          },
+          {
+            "x0": 54.42501449584961,
+            "y0": 653.38037109375,
+            "x1": 214.6634521484375,
+            "y1": 663.3429565429688
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "becker1988",
+        "stance": "inherits",
+        "cue": "as in",
+        "sentence": "Since we require the square root of this quantity in the parameter updates, this effectively becomes the RMS of previous squared gradients up to time t: RMS[g]_t = \u221a(E[g^2]_t + \u03f5) where a constant \u03f5 is added to better condition the denominator as in [Becker et al. 1988].",
+        "section": "Idea 1: Accumulate Over Window",
+        "sectionKind": "method",
+        "ordinal": 11,
+        "title": "``Improving the convergence of back-propagation learning with second order methods,''",
+        "authors": "S. Becker and Y. LeCun",
+        "year": 1988,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.71495056152344,
+              "y0": 629.4703369140625,
+              "x1": 298.1997985839844,
+              "y1": 639.4329223632812
+            },
+            {
+              "x0": 54.42501449584961,
+              "y0": 641.4253540039062,
+              "x1": 298.1999206542969,
+              "y1": 651.387939453125
+            },
+            {
+              "x0": 54.42501449584961,
+              "y0": 653.38037109375,
+              "x1": 214.6634521484375,
+              "y1": 663.3429565429688
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "The units in SGD and Momentum relate to the gradient, not the parameter: \u0394x \u221dg \u221d\u2202f/\u2202x \u221d1/ x assuming the cost function, f, is unitless.",
+      "anchorText": "The units in SGD and Momentum relate to the gradient, not the parameter: x g f x 1 x assuming the cost function,",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "assuming the",
+      "section": "Idea 2: Correct Units with Hessian Approximation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "Since second order methods are correct, we rearrange Newton's method (assuming a diagonal Hessian) for the inverse of the second derivative to determine the quantities involved: \u0394x = \u2202f/\u2202x/\u2202^2 f/\u2202x^2 \u21d21/\u2202^2 f/\u2202x^2 = \u0394x/\u2202f/\u2202x Since the RMS of the previous gradients is already represented in the denominator in idea1 we considered a measure of the \u0394 x quantity in the numerator. \u0394 x_t for the current time step is not known, so we assume the curvature is locally smooth and approximate \u0394 x_t by compute the exponentially decaying RMS over a window of size w of previous \u0394 x to give the ADADELTA method: \u0394x_t = - RMS[\u0394x]_t-1/RMS[g]_t g_t where the same constant \u03f5 is added to the numerator RMS as well.",
+      "anchorText": "Since second order methods are correct, we rearrange Newton's method (assuming a diagonal Hessian) for the inverse of the second derivative to determine the quantities involved: x = f x ^2 f x^2 1 ^2 f x^2 = x f x Since the RMS of the previous gradients is already represented in the denominator in idea1 we considered a measure of the",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "assuming a",
+      "section": "Idea 2: Correct Units with Hessian Approximation",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 0,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 28,
+    "rate": 0.7
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2012-12-22",
+    "authors": [
+      "Matthew D. Zeiler"
+    ]
+  }
+}

@@ -1,0 +1,5806 @@
+{
+  "id": "2107.03374",
+  "title": "Evaluating Large Language Models Trained on Code",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "Codex, GPT-Neo, & TabNine evaluations for HumanEval. We find that GPT-J pass@1 is between Codex-85M and Codex-300M performance.",
+    "supported": 3,
+    "share": 0.273,
+    "summary": "3 of the paper's headline numbers trace to Table 1"
+  },
+  "codeUrl": "https://github.com/openai/human-eval",
+  "coverage": {
+    "claims": 11,
+    "supported": 4,
+    "declared": 3,
+    "unsupported": 4,
+    "mismatched": 0,
+    "rate": 0.364
+  },
+  "claims": [
+    {
+      "value": "28.8%",
+      "section": "abstract",
+      "sentence": "On https://github.com/openai/human-evalHumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Codex, GPT-Neo, & TabNine evaluations for HumanEval. We find that GPT-J pass@1 is between Codex-85M and Codex-300M performance.",
+      "row": "Codex-12B",
+      "column": "pass@",
+      "cell": "28.81%",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.88827514648438,
+            "y0": 359.11029052734375,
+            "x1": 271.1646423339844,
+            "y1": 369.1720275878906
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 371.13671875,
+            "x1": 271.1673278808594,
+            "y1": 381.1042785644531
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 383.0202941894531,
+            "x1": 270.75811767578125,
+            "y1": 393.08203125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 394.97528076171875,
+            "x1": 269.51837158203125,
+            "y1": 405.0370178222656
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 406.9302978515625,
+            "x1": 250.5868682861328,
+            "y1": 416.9920349121094
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 75.83500671386719,
+            "y0": 277.0349426269531,
+            "x1": 123.23075866699219,
+            "y1": 286.0013427734375
+          },
+          {
+            "x0": 151.50181579589844,
+            "y0": 277.0349426269531,
+            "x1": 181.38681030273438,
+            "y1": 286.0013427734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "0%",
+      "section": "abstract",
+      "sentence": "On https://github.com/openai/human-evalHumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%.",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Finetuned GPT-Neo numbers from the APPS paper referenced above. For Codex-12B, the number of passing programs that timeout on some test is in the bracket. We used temperature 0.6 for sampling to cover all in pass@ , so raw pass@1 results could be improved with lower temperature.",
+      "row": "GPT-Neo 2.7B raw pass@1",
+      "column": "Competition",
+      "cell": "0.00%",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.88827514648438,
+            "y0": 359.11029052734375,
+            "x1": 271.1646423339844,
+            "y1": 369.1720275878906
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 371.13671875,
+            "x1": 271.1673278808594,
+            "y1": 381.1042785644531
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 383.0202941894531,
+            "x1": 270.75811767578125,
+            "y1": 393.08203125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 394.97528076171875,
+            "x1": 269.51837158203125,
+            "y1": 405.0370178222656
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 406.9302978515625,
+            "x1": 250.5868682861328,
+            "y1": 416.9920349121094
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "11.4%",
+      "section": "abstract",
+      "sentence": "On https://github.com/openai/human-evalHumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "gpt-j",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.88827514648438,
+            "y0": 359.11029052734375,
+            "x1": 271.1646423339844,
+            "y1": 369.1720275878906
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 371.13671875,
+            "x1": 271.1673278808594,
+            "y1": 381.1042785644531
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 383.0202941894531,
+            "x1": 270.75811767578125,
+            "y1": 393.08203125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 394.97528076171875,
+            "x1": 269.51837158203125,
+            "y1": 405.0370178222656
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 406.9302978515625,
+            "x1": 250.5868682861328,
+            "y1": 416.9920349121094
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "70.2%",
+      "section": "abstract",
+      "sentence": "Using this method, we solve 70.2% of our problems with 100 samples per problem.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 257.0716552734375,
+            "y0": 442.9474182128906,
+            "x1": 271.169921875,
+            "y1": 452.80987548828125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 454.8719177246094,
+            "x1": 269.5103759765625,
+            "y1": 464.7745666503906
+          },
+          {
+            "x0": 75.00700378417969,
+            "y0": 466.8041687011719,
+            "x1": 197.43565368652344,
+            "y1": 476.7368469238281
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "28.8%",
+      "section": "introduction",
+      "sentence": "With just a single sample, a 12B parameter Codex solves 28.8% of these problems, and a 300M parameter Codex solves 13.2% of these problems.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Codex, GPT-Neo, & TabNine evaluations for HumanEval. We find that GPT-J pass@1 is between Codex-85M and Codex-300M performance.",
+      "row": "Codex-12B",
+      "column": "pass@",
+      "cell": "28.81%",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.68451690673828,
+            "y0": 534.2313842773438,
+            "x1": 289.69207763671875,
+            "y1": 544.0938720703125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 546.0352783203125,
+            "x1": 289.6097717285156,
+            "y1": 556.0970458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 558.0616455078125,
+            "x1": 212.7073211669922,
+            "y1": 568.0292358398438
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 75.83500671386719,
+            "y0": 277.0349426269531,
+            "x1": 123.23075866699219,
+            "y1": 286.0013427734375
+          },
+          {
+            "x0": 151.50181579589844,
+            "y0": 277.0349426269531,
+            "x1": 181.38681030273438,
+            "y1": 286.0013427734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "13.2%",
+      "section": "introduction",
+      "sentence": "With just a single sample, a 12B parameter Codex solves 28.8% of these problems, and a 300M parameter Codex solves 13.2% of these problems.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "Codex, GPT-Neo, & TabNine evaluations for HumanEval. We find that GPT-J pass@1 is between Codex-85M and Codex-300M performance.",
+      "row": "Codex-300M",
+      "column": "pass@",
+      "cell": "13.17%",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.68451690673828,
+            "y0": 534.2313842773438,
+            "x1": 289.69207763671875,
+            "y1": 544.0938720703125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 546.0352783203125,
+            "x1": 289.6097717285156,
+            "y1": 556.0970458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 558.0616455078125,
+            "x1": 212.7073211669922,
+            "y1": 568.0292358398438
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 75.83500671386719,
+            "y0": 247.14694213867188,
+            "x1": 130.15281677246094,
+            "y1": 256.11334228515625
+          },
+          {
+            "x0": 151.50181579589844,
+            "y0": 247.14694213867188,
+            "x1": 181.38681030273438,
+            "y1": 256.11334228515625
+          }
+        ]
+      }
+    },
+    {
+      "value": "11.4%",
+      "section": "introduction",
+      "sentence": "In contrast, the 6B parameter GPT-J achieves 11.4% on the same dataset, while all GPT models achieve near 0%.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "gpt-j",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 254.85623168945312,
+            "y0": 569.9452514648438,
+            "x1": 289.4370422363281,
+            "y1": 580.0070190429688
+          },
+          {
+            "x0": 54.69300079345703,
+            "y0": 581.9002685546875,
+            "x1": 289.44195556640625,
+            "y1": 591.9620361328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 594.0073852539062,
+            "x1": 89.95343780517578,
+            "y1": 603.869873046875
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0%",
+      "section": "introduction",
+      "sentence": "In contrast, the 6B parameter GPT-J achieves 11.4% on the same dataset, while all GPT models achieve near 0%.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "gpt-j",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 254.85623168945312,
+            "y0": 569.9452514648438,
+            "x1": 289.4370422363281,
+            "y1": 580.0070190429688
+          },
+          {
+            "x0": 54.69300079345703,
+            "y0": 581.9002685546875,
+            "x1": 289.44195556640625,
+            "y1": 591.9620361328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 594.0073852539062,
+            "x1": 89.95343780517578,
+            "y1": 603.869873046875
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "37.7%",
+      "section": "introduction",
+      "sentence": "The resulting model, Codex-S, solves 37.7% of problems with a single sample.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 236.93438720703125,
+            "y0": 617.867919921875,
+            "x1": 289.4358215332031,
+            "y1": 627.7955932617188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 629.7212524414062,
+            "x1": 289.4370422363281,
+            "y1": 639.7830200195312
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 641.7363891601562,
+            "x1": 86.27754974365234,
+            "y1": 651.7188720703125
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "77.5%",
+      "section": "introduction",
+      "sentence": "Within 100 samples, Codex-S is able to generate at least one correct function for 77.5% of the problems.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 69.52055358886719,
+            "x1": 543.096923828125,
+            "y1": 79.41316986083984
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 81.34829711914062,
+            "x1": 329.17620849609375,
+            "y1": 91.41002655029297
+          },
+          {
+            "x0": 135.38230895996094,
+            "y0": 707.5813598632812,
+            "x1": 289.43817138671875,
+            "y1": 717.44384765625
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "44.5%",
+      "section": "introduction",
+      "sentence": "Indeed, we find that the sample with highest mean log-probability passes unit tests for 44.5% of the problems.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 392.5760192871094,
+            "y0": 117.21328735351562,
+            "x1": 541.4371337890625,
+            "y1": 127.27501678466797
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 129.25103759765625,
+            "x1": 541.4409790039062,
+            "y1": 139.20367431640625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 141.19850158691406,
+            "x1": 361.6763916015625,
+            "y1": 151.16110229492188
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/2107.03374",
+  "numbers": [
+    {
+      "value": "28.8%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "On https://github.com/openai/human-evalHumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "Codex-12B",
+      "cell": "28.81%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.88827514648438,
+            "y0": 359.11029052734375,
+            "x1": 271.1646423339844,
+            "y1": 369.1720275878906
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 371.13671875,
+            "x1": 271.1673278808594,
+            "y1": 381.1042785644531
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 383.0202941894531,
+            "x1": 270.75811767578125,
+            "y1": 393.08203125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 394.97528076171875,
+            "x1": 269.51837158203125,
+            "y1": 405.0370178222656
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 406.9302978515625,
+            "x1": 250.5868682861328,
+            "y1": 416.9920349121094
+          }
+        ]
+      }
+    },
+    {
+      "value": "0%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "On https://github.com/openai/human-evalHumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GPT-Neo 2.7B raw pass@1",
+      "cell": "0.00%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.88827514648438,
+            "y0": 359.11029052734375,
+            "x1": 271.1646423339844,
+            "y1": 369.1720275878906
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 371.13671875,
+            "x1": 271.1673278808594,
+            "y1": 381.1042785644531
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 383.0202941894531,
+            "x1": 270.75811767578125,
+            "y1": 393.08203125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 394.97528076171875,
+            "x1": 269.51837158203125,
+            "y1": 405.0370178222656
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 406.9302978515625,
+            "x1": 250.5868682861328,
+            "y1": 416.9920349121094
+          }
+        ]
+      }
+    },
+    {
+      "value": "11.4%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "On https://github.com/openai/human-evalHumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 214.88827514648438,
+            "y0": 359.11029052734375,
+            "x1": 271.1646423339844,
+            "y1": 369.1720275878906
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 371.13671875,
+            "x1": 271.1673278808594,
+            "y1": 381.1042785644531
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 383.0202941894531,
+            "x1": 270.75811767578125,
+            "y1": 393.08203125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 394.97528076171875,
+            "x1": 269.51837158203125,
+            "y1": 405.0370178222656
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 406.9302978515625,
+            "x1": 250.5868682861328,
+            "y1": 416.9920349121094
+          }
+        ]
+      }
+    },
+    {
+      "value": "70.2%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Using this method, we solve 70.2% of our problems with 100 samples per problem.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 257.0716552734375,
+            "y0": 442.9474182128906,
+            "x1": 271.169921875,
+            "y1": 452.80987548828125
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 454.8719177246094,
+            "x1": 269.5103759765625,
+            "y1": 464.7745666503906
+          },
+          {
+            "x0": 75.00700378417969,
+            "y0": 466.8041687011719,
+            "x1": 197.43565368652344,
+            "y1": 476.7368469238281
+          }
+        ]
+      }
+    },
+    {
+      "value": "28.8%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "With just a single sample, a 12B parameter Codex solves 28.8% of these problems, and a 300M parameter Codex solves 13.2% of these problems.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "Codex-12B",
+      "cell": "28.81%",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.68451690673828,
+            "y0": 534.2313842773438,
+            "x1": 289.69207763671875,
+            "y1": 544.0938720703125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 546.0352783203125,
+            "x1": 289.6097717285156,
+            "y1": 556.0970458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 558.0616455078125,
+            "x1": 212.7073211669922,
+            "y1": 568.0292358398438
+          }
+        ]
+      }
+    },
+    {
+      "value": "13.2%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "With just a single sample, a 12B parameter Codex solves 28.8% of these problems, and a 300M parameter Codex solves 13.2% of these problems.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "Codex-300M",
+      "cell": "13.17%",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.68451690673828,
+            "y0": 534.2313842773438,
+            "x1": 289.69207763671875,
+            "y1": 544.0938720703125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 546.0352783203125,
+            "x1": 289.6097717285156,
+            "y1": 556.0970458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 558.0616455078125,
+            "x1": 212.7073211669922,
+            "y1": 568.0292358398438
+          }
+        ]
+      }
+    },
+    {
+      "value": "11.4%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "In contrast, the 6B parameter GPT-J achieves 11.4% on the same dataset, while all GPT models achieve near 0%.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 254.85623168945312,
+            "y0": 569.9452514648438,
+            "x1": 289.4370422363281,
+            "y1": 580.0070190429688
+          },
+          {
+            "x0": 54.69300079345703,
+            "y0": 581.9002685546875,
+            "x1": 289.44195556640625,
+            "y1": 591.9620361328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 594.0073852539062,
+            "x1": 89.95343780517578,
+            "y1": 603.869873046875
+          }
+        ]
+      }
+    },
+    {
+      "value": "0%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "In contrast, the 6B parameter GPT-J achieves 11.4% on the same dataset, while all GPT models achieve near 0%.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 254.85623168945312,
+            "y0": 569.9452514648438,
+            "x1": 289.4370422363281,
+            "y1": 580.0070190429688
+          },
+          {
+            "x0": 54.69300079345703,
+            "y0": 581.9002685546875,
+            "x1": 289.44195556640625,
+            "y1": 591.9620361328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 594.0073852539062,
+            "x1": 89.95343780517578,
+            "y1": 603.869873046875
+          }
+        ]
+      }
+    },
+    {
+      "value": "37.7%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "The resulting model, Codex-S, solves 37.7% of problems with a single sample.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 236.93438720703125,
+            "y0": 617.867919921875,
+            "x1": 289.4358215332031,
+            "y1": 627.7955932617188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 629.7212524414062,
+            "x1": 289.4370422363281,
+            "y1": 639.7830200195312
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 641.7363891601562,
+            "x1": 86.27754974365234,
+            "y1": 651.7188720703125
+          }
+        ]
+      }
+    },
+    {
+      "value": "77.5%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Within 100 samples, Codex-S is able to generate at least one correct function for 77.5% of the problems.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 69.52055358886719,
+            "x1": 543.096923828125,
+            "y1": 79.41316986083984
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 81.34829711914062,
+            "x1": 329.17620849609375,
+            "y1": 91.41002655029297
+          },
+          {
+            "x0": 135.38230895996094,
+            "y0": 707.5813598632812,
+            "x1": 289.43817138671875,
+            "y1": 717.44384765625
+          }
+        ]
+      }
+    },
+    {
+      "value": "44.5%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Indeed, we find that the sample with highest mean log-probability passes unit tests for 44.5% of the problems.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 392.5760192871094,
+            "y0": 117.21328735351562,
+            "x1": 541.4371337890625,
+            "y1": 127.27501678466797
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 129.25103759765625,
+            "x1": 541.4409790039062,
+            "y1": 139.20367431640625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 141.19850158691406,
+            "x1": 361.6763916015625,
+            "y1": 151.16110229492188
+          }
+        ]
+      }
+    },
+    {
+      "value": "7.7",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Each problem includes a function signature, docstring, body, and several unit tests, with an average of 7.7 tests per problem.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 131.79615783691406,
+            "y0": 111.95529174804688,
+            "x1": 291.0933837890625,
+            "y1": 122.01702117919922
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 123.91030883789062,
+            "x1": 291.09344482421875,
+            "y1": 133.9720458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 135.86526489257812,
+            "x1": 183.78421020507812,
+            "y1": 145.927001953125
+          }
+        ]
+      }
+    },
+    {
+      "value": "30%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "This allows us to represent code using approximately 30% fewer tokens.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.1310119628906,
+            "y0": 516.2689819335938,
+            "x1": 542.266357421875,
+            "y1": 526.2862548828125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 528.2655029296875,
+            "x1": 360.75982666015625,
+            "y1": 538.2280883789062
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.8",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Figure demonstrates the benefits of applying these heuristics to samples (at temperature 0.8) from Codex-12B.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GPT-Neo 2.7B raw pass@5",
+      "cell": "0.80%",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 261.2709045410156,
+            "y0": 683.67041015625,
+            "x1": 291.09796142578125,
+            "y1": 693.5328979492188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 695.4827880859375,
+            "x1": 289.44476318359375,
+            "y1": 705.53466796875
+          },
+          {
+            "x0": 55.11199951171875,
+            "y0": 707.5054321289062,
+            "x1": 206.5832977294922,
+            "y1": 717.468017578125
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.8",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Finally, we compute BLEU scores for all Codex-12B HumanEval samples (at temperature 0.8) against their reference solutions.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GPT-Neo 2.7B raw pass@5",
+      "cell": "0.80%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 370.7432861328125,
+            "x1": 291.0933532714844,
+            "y1": 380.8050231933594
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 382.84942626953125,
+            "x1": 289.4382629394531,
+            "y1": 392.7118835449219
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 394.78155517578125,
+            "x1": 93.37689208984375,
+            "y1": 404.6741638183594
+          }
+        ]
+      }
+    },
+    {
+      "value": "8%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Two recent works similar in spirit to Codex are GPT-Neo and GPT-J , which are trained on The Pile , a dataset containing text from a variety of sources as well as 8% GitHub code.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "TabNine",
+      "cell": "7.59%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 264.4388427734375,
+            "y0": 546.0352783203125,
+            "x1": 290.68695068359375,
+            "y1": 556.0970458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 557.990234375,
+            "x1": 289.4370422363281,
+            "y1": 568.052001953125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 569.9677734375,
+            "x1": 136.69100952148438,
+            "y1": 579.9998779296875
+          }
+        ]
+      }
+    },
+    {
+      "value": "6.4%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We confirm these findings using the HumanEval dataset, showing that GPT-Neo achieves 6.4% pass@1 and 21.3% pass@100, while GPT models of comparable sizes achieve near 0% on both metrics.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "GPT-Neo 2.7B",
+      "cell": "6.41%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 611.7882690429688,
+            "x1": 290.6864013671875,
+            "y1": 621.8500366210938
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 623.7442626953125,
+            "x1": 290.2702941894531,
+            "y1": 633.8060302734375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 635.7933959960938,
+            "x1": 289.4411926269531,
+            "y1": 645.7310791015625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 647.737060546875,
+            "x1": 155.15512084960938,
+            "y1": 657.689697265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "21.3%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We confirm these findings using the HumanEval dataset, showing that GPT-Neo achieves 6.4% pass@1 and 21.3% pass@100, while GPT models of comparable sizes achieve near 0% on both metrics.",
+      "status": "mismatch",
+      "table": "Table 1",
+      "row": "Codex-85M",
+      "cell": "22.4%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 611.7882690429688,
+            "x1": 290.6864013671875,
+            "y1": 621.8500366210938
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 623.7442626953125,
+            "x1": 290.2702941894531,
+            "y1": 633.8060302734375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 635.7933959960938,
+            "x1": 289.4411926269531,
+            "y1": 645.7310791015625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 647.737060546875,
+            "x1": 155.15512084960938,
+            "y1": 657.689697265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We confirm these findings using the HumanEval dataset, showing that GPT-Neo achieves 6.4% pass@1 and 21.3% pass@100, while GPT models of comparable sizes achieve near 0% on both metrics.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GPT-Neo 2.7B raw pass@1",
+      "cell": "0.00%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 611.7882690429688,
+            "x1": 290.6864013671875,
+            "y1": 621.8500366210938
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 623.7442626953125,
+            "x1": 290.2702941894531,
+            "y1": 633.8060302734375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 635.7933959960938,
+            "x1": 289.4411926269531,
+            "y1": 645.7310791015625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 647.737060546875,
+            "x1": 155.15512084960938,
+            "y1": 657.689697265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "11.6%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Similarly, GPT-J-6B achieves 11.6% pass@1 and 27.7% pass@100, which is roughly equivalent to Codex-300M ( fewer parameters).",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "GPT-J 6B",
+      "cell": "11.62%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 207.57754516601562,
+            "y0": 671.62060546875,
+            "x1": 289.43902587890625,
+            "y1": 681.6080932617188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 683.519287109375,
+            "x1": 289.43701171875,
+            "y1": 693.5810546875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 695.6264038085938,
+            "x1": 215.94989013671875,
+            "y1": 705.4888916015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "27.7%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Similarly, GPT-J-6B achieves 11.6% pass@1 and 27.7% pass@100, which is roughly equivalent to Codex-300M ( fewer parameters).",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "GPT-J 6B",
+      "cell": "27.74%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 207.57754516601562,
+            "y0": 671.62060546875,
+            "x1": 289.43902587890625,
+            "y1": 681.6080932617188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 683.519287109375,
+            "x1": 289.43701171875,
+            "y1": 693.5810546875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 695.6264038085938,
+            "x1": 215.94989013671875,
+            "y1": 705.4888916015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.2",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Pass rates are obtained by taking the best result from evaluating at temperatures 0.2, 0.4, and 0.8 for GPT-Neo, and from temperatures 0.2 and 0.8 for GPT-J.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "GPT-Neo 1.3B",
+      "cell": "16.30%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.4257507324219,
+            "y0": 376.7203063964844,
+            "x1": 541.4371337890625,
+            "y1": 386.78204345703125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 388.67529296875,
+            "x1": 475.3038635253906,
+            "y1": 398.7370300292969
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.4",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Pass rates are obtained by taking the best result from evaluating at temperatures 0.2, 0.4, and 0.8 for GPT-Neo, and from temperatures 0.2 and 0.8 for GPT-J.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "Codex-300M",
+      "cell": "36.27%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.4257507324219,
+            "y0": 376.7203063964844,
+            "x1": 541.4371337890625,
+            "y1": 386.78204345703125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 388.67529296875,
+            "x1": 475.3038635253906,
+            "y1": 398.7370300292969
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.8",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Pass rates are obtained by taking the best result from evaluating at temperatures 0.2, 0.4, and 0.8 for GPT-Neo, and from temperatures 0.2 and 0.8 for GPT-J.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GPT-Neo 2.7B raw pass@5",
+      "cell": "0.80%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.4257507324219,
+            "y0": 376.7203063964844,
+            "x1": 541.4371337890625,
+            "y1": 386.78204345703125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 388.67529296875,
+            "x1": 475.3038635253906,
+            "y1": 398.7370300292969
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.2",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Pass rates are obtained by taking the best result from evaluating at temperatures 0.2, 0.4, and 0.8 for GPT-Neo, and from temperatures 0.2 and 0.8 for GPT-J.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "GPT-Neo 1.3B",
+      "cell": "16.30%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.4257507324219,
+            "y0": 376.7203063964844,
+            "x1": 541.4371337890625,
+            "y1": 386.78204345703125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 388.67529296875,
+            "x1": 475.3038635253906,
+            "y1": 398.7370300292969
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.8",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Pass rates are obtained by taking the best result from evaluating at temperatures 0.2, 0.4, and 0.8 for GPT-Neo, and from temperatures 0.2 and 0.8 for GPT-J.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GPT-Neo 2.7B raw pass@5",
+      "cell": "0.80%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.4257507324219,
+            "y0": 376.7203063964844,
+            "x1": 541.4371337890625,
+            "y1": 386.78204345703125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 388.67529296875,
+            "x1": 475.3038635253906,
+            "y1": 398.7370300292969
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.6%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Finally, we benchmark Codex against the largest free model from Tabnine, a leading code autocomplete system, which achieves 2.6% pass@1 (at ) and 7.6% pass@100 (at ).",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "TabNine",
+      "cell": "2.58%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 418.71441650390625,
+            "x1": 541.4381103515625,
+            "y1": 428.5768737792969
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 430.5557861328125,
+            "x1": 541.4371337890625,
+            "y1": 440.56805419921875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 442.47430419921875,
+            "x1": 414.3427429199219,
+            "y1": 452.5360412597656
+          }
+        ]
+      }
+    },
+    {
+      "value": "7.6%",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Finally, we benchmark Codex against the largest free model from Tabnine, a leading code autocomplete system, which achieves 2.6% pass@1 (at ) and 7.6% pass@100 (at ).",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "TabNine",
+      "cell": "7.59%",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 418.71441650390625,
+            "x1": 541.4381103515625,
+            "y1": 428.5768737792969
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 430.5557861328125,
+            "x1": 541.4371337890625,
+            "y1": 440.56805419921875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 442.47430419921875,
+            "x1": 414.3427429199219,
+            "y1": 452.5360412597656
+          }
+        ]
+      }
+    },
+    {
+      "value": "6.5",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Codex-S outperforms the corresponding Codex by an average margin of 6.5 percentage points on pass@1 and by a larger average margin of 15.1 percentage points on pass@100 across model size.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 354.11932373046875,
+            "y0": 551.234375,
+            "x1": 541.689208984375,
+            "y1": 561.1720581054688
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 563.0952758789062,
+            "x1": 542.1891479492188,
+            "y1": 573.1570434570312
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 575.201416015625,
+            "x1": 541.4381713867188,
+            "y1": 585.0639038085938
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 587.0804443359375,
+            "x1": 423.97259521484375,
+            "y1": 597.0430297851562
+          }
+        ]
+      }
+    },
+    {
+      "value": "15.1",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Codex-S outperforms the corresponding Codex by an average margin of 6.5 percentage points on pass@1 and by a larger average margin of 15.1 percentage points on pass@100 across model size.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 354.11932373046875,
+            "y0": 551.234375,
+            "x1": 541.689208984375,
+            "y1": 561.1720581054688
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 563.0952758789062,
+            "x1": 542.1891479492188,
+            "y1": 573.1570434570312
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 575.201416015625,
+            "x1": 541.4381713867188,
+            "y1": 585.0639038085938
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 587.0804443359375,
+            "x1": 423.97259521484375,
+            "y1": 597.0430297851562
+          }
+        ]
+      }
+    },
+    {
+      "value": "11.6",
+      "kind": "result",
+      "section": "other",
+      "sentence": "When ranking between 1 and 100 samples by mean log probability, the average benefit over random ranking is 11.6 percentage points, which is over 2 percentage points higher than the corresponding benefit for Codex.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "GPT-J 6B",
+      "cell": "11.62%",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.6678466796875,
+            "y0": 628.8482666015625,
+            "x1": 541.4371948242188,
+            "y1": 638.9100341796875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 640.8042602539062,
+            "x1": 541.4371948242188,
+            "y1": 650.8660278320312
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 652.910400390625,
+            "x1": 541.4380493164062,
+            "y1": 662.7728881835938
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 664.7894287109375,
+            "x1": 528.1015625,
+            "y1": 674.7520141601562
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.8",
+      "kind": "result",
+      "section": "other",
+      "sentence": "Due to the time consuming nature of this process, we only grade 10 samples per problem, for a total of 1640 problems, from Codex-D-12B at temperature 0.8.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "GPT-Neo 2.7B raw pass@5",
+      "cell": "0.80%",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 371.9169921875,
+            "y0": 363.7342834472656,
+            "x1": 541.4371337890625,
+            "y1": 373.7960205078125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 375.74560546875,
+            "x1": 541.4402465820312,
+            "y1": 385.73309326171875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 387.720458984375,
+            "x1": 538.0543212890625,
+            "y1": 397.6830749511719
+          }
+        ]
+      }
+    },
+    {
+      "value": "100 percent",
+      "kind": "result",
+      "section": "limitations",
+      "sentence": "This training was performed on a platform (Azure) that purchases carbon credits and sources significant amounts of renewable energy, reducing its carbon footprint. Microsoft made a commitment in 2020 to shift to 100 percent renewable energy supply in its buildings and data centers by 2025. https://blogs.microsoft.com/blog/2020/01/16/microsoft-will-be-carbon-negative-by-2030/ A full assessment of the environmental impact of compute use is impossible to conduct without grounding in context and making comparison to the counterfactual impacts of competing products or services.",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 68.09300231933594,
+            "y0": 546.039306640625,
+            "x1": 290.9311828613281,
+            "y1": 555.0949096679688
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 556.0023193359375,
+            "x1": 289.4425964355469,
+            "y1": 565.0579223632812
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 566.0150146484375,
+            "x1": 290.9305419921875,
+            "y1": 575.0038452148438
+          },
+          {
+            "x0": 55.11800003051758,
+            "y0": 575.9273071289062,
+            "x1": 290.931396484375,
+            "y1": 584.98291015625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 586.0263061523438,
+            "x1": 289.4398193359375,
+            "y1": 594.902587890625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 595.98828125,
+            "x1": 289.43988037109375,
+            "y1": 604.8645629882812
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 605.9375610351562,
+            "x1": 207.07981872558594,
+            "y1": 614.8319702148438
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1%",
+      "kind": "result",
+      "section": "limitations",
+      "sentence": "Such occurrences were 0.1% in a study examining the frequency of code generations that appear to match code snippets in the training data .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "12B parameter",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "With just a single sample, a 12B parameter Codex solves 28.8% of these problems, and a 300M parameter Codex solves 13.2% of these problems.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.68451690673828,
+            "y0": 534.2313842773438,
+            "x1": 289.69207763671875,
+            "y1": 544.0938720703125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 546.0352783203125,
+            "x1": 289.6097717285156,
+            "y1": 556.0970458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 558.0616455078125,
+            "x1": 212.7073211669922,
+            "y1": 568.0292358398438
+          }
+        ]
+      }
+    },
+    {
+      "value": "300M parameter",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "With just a single sample, a 12B parameter Codex solves 28.8% of these problems, and a 300M parameter Codex solves 13.2% of these problems.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.68451690673828,
+            "y0": 534.2313842773438,
+            "x1": 289.69207763671875,
+            "y1": 544.0938720703125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 546.0352783203125,
+            "x1": 289.6097717285156,
+            "y1": 556.0970458984375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 558.0616455078125,
+            "x1": 212.7073211669922,
+            "y1": 568.0292358398438
+          }
+        ]
+      }
+    },
+    {
+      "value": "6B parameter",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "In contrast, the 6B parameter GPT-J achieves 11.4% on the same dataset, while all GPT models achieve near 0%.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 254.85623168945312,
+            "y0": 569.9452514648438,
+            "x1": 289.4370422363281,
+            "y1": 580.0070190429688
+          },
+          {
+            "x0": 54.69300079345703,
+            "y0": 581.9002685546875,
+            "x1": 289.44195556640625,
+            "y1": 591.9620361328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 594.0073852539062,
+            "x1": 89.95343780517578,
+            "y1": 603.869873046875
+          }
+        ]
+      }
+    },
+    {
+      "value": "12B parameters",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We fine-tune GPT models containing up to 12B parameters on code to produce Codex.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 652.0989379882812,
+            "x1": 289.442626953125,
+            "y1": 662.026611328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 663.9532470703125,
+            "x1": 166.58016967773438,
+            "y1": 674.0150146484375
+          }
+        ]
+      }
+    },
+    {
+      "value": "179 GB",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "Our training dataset was collected in May 2020 from 54 million public software repositories hosted on GitHub, containing 179 GB of unique Python files under 1 MB.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 143.52540588378906,
+            "x1": 543.0980834960938,
+            "y1": 153.38787841796875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 155.468994140625,
+            "x1": 543.0946655273438,
+            "y1": 165.34654235839844
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 167.39732360839844,
+            "x1": 495.6255798339844,
+            "y1": 177.3099822998047
+          }
+        ]
+      }
+    },
+    {
+      "value": "1 MB",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "Our training dataset was collected in May 2020 from 54 million public software repositories hosted on GitHub, containing 179 GB of unique Python files under 1 MB.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 143.52540588378906,
+            "x1": 543.0980834960938,
+            "y1": 153.38787841796875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 155.468994140625,
+            "x1": 543.0946655273438,
+            "y1": 165.34654235839844
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 167.39732360839844,
+            "x1": 495.6255798339844,
+            "y1": 177.3099822998047
+          }
+        ]
+      }
+    },
+    {
+      "value": "159 GB",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "After filtering, our final dataset totaled 159 GB.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 353.3974914550781,
+            "y0": 215.1804962158203,
+            "x1": 542.9459838867188,
+            "y1": 225.14309692382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "679M parameter",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "In particular, for a 679M parameter model, the optimal temperature for pass@1 is and the optimal temperature for pass@100 is .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 444.54833984375,
+            "x1": 291.09326171875,
+            "y1": 454.4359436035156
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 456.37506103515625,
+            "x1": 146.68515014648438,
+            "y1": 466.4318542480469
+          }
+        ]
+      }
+    },
+    {
+      "value": "3 seconds",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We use a timeout of 3 seconds in our evaluation.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 223.22213745117188,
+            "y0": 536.869384765625,
+            "x1": 289.4371643066406,
+            "y1": 546.7318725585938
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 548.7484741210938,
+            "x1": 197.168701171875,
+            "y1": 558.7110595703125
+          }
+        ]
+      }
+    },
+    {
+      "value": "10B tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We train using a learning rate as large as used for fine-tuning Codex, but adhere to the same learning rate schedule, and train until validation loss plateaus (less than 10B tokens).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 459.4620056152344,
+            "y0": 381.8252868652344,
+            "x1": 541.6104736328125,
+            "y1": 391.88702392578125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 393.7803039550781,
+            "x1": 541.4371337890625,
+            "y1": 403.842041015625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 405.7652587890625,
+            "x1": 541.4365234375,
+            "y1": 415.7874755859375
+          },
+          {
+            "x0": 306.6929931640625,
+            "y0": 417.7664489746094,
+            "x1": 357.5121765136719,
+            "y1": 427.72906494140625
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Codex, GPT-Neo, & TabNine evaluations for HumanEval. We find that GPT-J pass@1 is between Codex-85M and Codex-300M performance.",
+      "label": "tab:gptneo",
+      "numericCells": 39,
+      "supports": 3,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "pass@",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "GPT-Neo 125M",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.75%",
+            "value": "0.75",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.88%",
+            "value": "1.88",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.97%",
+            "value": "2.97",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GPT-Neo 1.3B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.79%",
+            "value": "4.79",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.47%",
+            "value": "7.47",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.30%",
+            "value": "16.30",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GPT-Neo 2.7B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.41%",
+            "value": "6.41",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11.27%",
+            "value": "11.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.37%",
+            "value": "21.37",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GPT-J 6B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11.62%",
+            "value": "11.62",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.74%",
+            "value": "15.74",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.74%",
+            "value": "27.74",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "TabNine",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.58%",
+            "value": "2.58",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.35%",
+            "value": "4.35",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.59%",
+            "value": "7.59",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Codex-12M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.00%",
+            "value": "2.00",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.62%",
+            "value": "3.62",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "8.58%",
+            "value": "8.58",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Codex-25M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.21%",
+            "value": "3.21",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.1%",
+            "value": "7.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.89%",
+            "value": "12.89",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Codex-42M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5.06%",
+            "value": "5.06",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "8.8%",
+            "value": "8.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.55%",
+            "value": "15.55",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Codex-85M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "8.22%",
+            "value": "8.22",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.81%",
+            "value": "12.81",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "22.4%",
+            "value": "22.4",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Codex-300M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.17%",
+            "value": "13.17",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "20.37%",
+            "value": "20.37",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36.27%",
+            "value": "36.27",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Codex-679M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "16.22%",
+            "value": "16.22",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.7%",
+            "value": "25.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "40.95%",
+            "value": "40.95",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Codex-2.5B",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "21.36%",
+            "value": "21.36",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "35.42%",
+            "value": "35.42",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "59.5%",
+            "value": "59.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Codex-12B",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.81%",
+            "value": "28.81",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "46.81%",
+            "value": "46.81",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "72.31%",
+            "value": "72.31",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 87.79100036621094,
+            "y0": 76.40631866455078,
+            "x1": 291.0096435546875,
+            "y1": 85.28260803222656
+          },
+          {
+            "x0": 55.01900100708008,
+            "y0": 87.22930145263672,
+            "x1": 290.93304443359375,
+            "y1": 96.28491973876953
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 98.25601196289062,
+            "x1": 126.65113830566406,
+            "y1": 107.222412109375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Finetuned GPT-Neo numbers from the APPS paper referenced above. For Codex-12B, the number of passing programs that timeout on some test is in the bracket. We used temperature 0.6 for sampling to cover all in pass@ , so raw pass@1 results could be improved with lower temperature.",
+      "label": "tab:apps",
+      "numericCells": 6,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Introductory",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Interview",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Competition",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "GPT-Neo 2.7B raw pass@1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.90%",
+            "value": "3.90",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.57%",
+            "value": "0.57",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.00%",
+            "value": "0.00",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GPT-Neo 2.7B raw pass@5",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.50%",
+            "value": "5.50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.80%",
+            "value": "0.80",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.00%",
+            "value": "0.00",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "1-shot Codex raw pass@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.14% (4.33%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.14% (0.30%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.02% (0.03%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "1-shot Codex raw pass@5",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.65% (10.05%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.51% (1.02%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.09% (0.16%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "1-shot Codex raw pass@100",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20.20% (21.57%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.04% (3.99%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.05% (1.73%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "1-shot Codex raw pass@1000",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25.02% (27.77%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.70% (7.94%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.23% (5.85%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "1-shot Codex filtered pass@1",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "22.78% (25.10%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.64% (5.78%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.04% (5.25%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "1-shot Codex filtered pass@5",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "24.52% (27.15%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.23% (7.13%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.08% (5.53%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Pass rates for our docstring generating model Codex-D, which is evaluated by hand-grading 10 samples per task due to the lack of a ground-truth automatic evaluation. We find similar but lower pass-rates compared to Codex-S.",
+      "label": "tab:codex-d:human-eval",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "pass@1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "pass@10",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Codex-S-12B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32.2%",
+            "value": "32.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "59.5%",
+            "value": "59.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Codex-D-12B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.3%",
+            "value": "20.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "46.5%",
+            "value": "46.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 85.80000305175781,
+            "y0": 76.27031707763672,
+            "x1": 290.56365966796875,
+            "y1": 85.32593536376953
+          },
+          {
+            "x0": 55.11800003051758,
+            "y0": 87.35501098632812,
+            "x1": 289.4374084472656,
+            "y1": 96.244873046875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 98.18834686279297,
+            "x1": 289.4425354003906,
+            "y1": 107.24396514892578
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 109.21499633789062,
+            "x1": 195.77313232421875,
+            "y1": 118.181396484375
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\theHalgorithm": "\\arabic{algorithm}"
+  },
+  "references": [
+    {
+      "key": "cwe327",
+      "raw": "Cwe-327: Use of a broken or risky cryptographic algorithm, 2006. URL https://cwe.mitre.org/data/definitions/327.html",
+      "authors": "Cwe-327: Use of a broken or risky cryptographic algorithm, 2006",
+      "title": "URL",
+      "venue": "",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cwe780",
+      "raw": "Cwe-780: Use of rsa algorithm without oaep, 2009. URL https://cwe.mitre.org/data/definitions/780.html",
+      "authors": "Cwe-780: Use of rsa algorithm without oaep, 2009",
+      "title": "URL",
+      "venue": "",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "owasp2017",
+      "raw": "A6:2017-security misconfiguration, 2017. URL https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html",
+      "authors": "A6:2017-security misconfiguration, 2017",
+      "title": "URL",
+      "venue": "",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "abid2021persistent",
+      "raw": "Abid, A., Farooqi, M., and Zou, J. Persistent anti-muslim bias in large language models. arXiv preprint arXiv:2101.05783, 2021",
+      "authors": "Abid, A., Farooqi, M., and Zou, J",
+      "title": "Persistent anti-muslim bias in large language models",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2101.05783",
+      "doi": null
+    },
+    {
+      "key": "acemoglu2020robots",
+      "raw": "Acemoglu, D. and Restrepo, P. Robots and jobs: Evidence from us labor markets. Journal of Political Economy, 128 0 (6): 0 2188--2244, 2020",
+      "authors": "Acemoglu, D. and Restrepo, P",
+      "title": "Robots and jobs: Evidence from us labor markets",
+      "venue": "Journal of Political Economy, 128 0 (6): 0 2188--2244, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "acemoglu2020wrong",
+      "raw": "Acemoglu, D. and Restrepo, P. The wrong kind of ai? artificial intelligence and the future of labour demand. Cambridge Journal of Regions, Economy and Society, 13 0 (1): 0 25--35, 2020",
+      "authors": "Acemoglu, D. and Restrepo, P",
+      "title": "The wrong kind of ai? artificial intelligence and the future of labour demand",
+      "venue": "Cambridge Journal of Regions, Economy and Society, 13 0 (1): 0 25--35, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "agrawal1995fault",
+      "raw": "Agrawal, H., Horgan, J. R., London, S., and Wong, W. E. Fault localization using execution slices and dataflow tests. Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95, pp.\\ 143--151, 1995",
+      "authors": "Agrawal, H., Horgan, J. R., London, S., and Wong, W. E",
+      "title": "Fault localization using execution slices and dataflow tests",
+      "venue": "Proceedings of Sixth International Symposium on Software Reliability Engineering. ISSRE'95, pp.\\ 143--151, 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "allamanis2015code",
+      "raw": "Allamanis, M., Tarlow, D., Gordon, A., and Wei, Y. Bimodal modelling of source code and natural language. In Bach, F. and Blei, D. (eds.), Proceedings of the 32nd International Conference on Machine Learning, volume 37 of Proceedings of Machine Learning Research, pp.\\ 2123--2132, Lille, France, 07--09 Jul 2015. PMLR. URL http://proceedings.mlr.press/v37/allamanis15.html",
+      "authors": "Allamanis, M., Tarlow, D., Gordon, A., and Wei, Y",
+      "title": "Bimodal modelling of source code and natural language",
+      "venue": "In Bach, F. and Blei, D. (eds.), Proceedings of the 32nd International Conference on Machine Learning, volume 37 of Proceedings of Machine Learning Research, pp.\\ 2123--2132, Lille, France, 07--09 Jul 2015. PMLR URL",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "alley2019unified",
+      "raw": "Alley, E. C., Khimulya, G., Biswas, S., AlQuraishi, M., and Church, G. M. Unified rational protein engineering with sequence-based deep representation learning. Nature methods, 16 0 (12): 0 1315--1322, 2019",
+      "authors": "Alley, E. C., Khimulya, G., Biswas, S., AlQuraishi, M., and Church, G. M",
+      "title": "Unified rational protein engineering with sequence-based deep representation learning",
+      "venue": "Nature methods, 16 0 (12): 0 1315--1322, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "alon2018code2seq",
+      "raw": "Alon, U., Brody, S., Levy, O., and Yahav, E. code2seq: Generating sequences from structured representations of code. In International Conference on Learning Representations, 2018",
+      "authors": "Alon, U., Brody, S., Levy, O., and Yahav, E",
+      "title": "code2seq: Generating sequences from structured representations of code",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "aye2021autocompletion",
+      "raw": "Aye, G. A., Kim, S., and Li, H. Learning autocompletion from real-world datasets. 2021 IEEE/ACM 43rd International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP), pp.\\ 131--139, 2021",
+      "authors": "Aye, G. A., Kim, S., and Li, H",
+      "title": "Learning autocompletion from real-world datasets",
+      "venue": "2021 IEEE/ACM 43rd International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP), pp.\\ 131--139, 2021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "baevski2020wav2vec",
+      "raw": "Baevski, A., Zhou, H., Mohamed, A., and Auli, M. wav2vec 2.0: A framework for self-supervised learning of speech representations. arXiv preprint arXiv:2006.11477, 2020",
+      "authors": "Baevski, A., Zhou, H., Mohamed, A., and Auli, M",
+      "title": "wav2vec 2.0: A framework for self-supervised learning of speech representations",
+      "venue": "arXiv preprint 2020",
+      "year": 2020,
+      "arxivId": "2006.11477",
+      "doi": null
+    },
+    {
+      "key": "balog2017deepcoder",
+      "raw": "Balog, M., Gaunt, A., Brockschmidt, M., Nowozin, S., and Tarlow, D. Deepcoder: Learning to write programs. In 5th International Conference on Learning Representations (ICLR), 2017",
+      "authors": "Balog, M., Gaunt, A., Brockschmidt, M., Nowozin, S., and Tarlow, D",
+      "title": "Deepcoder: Learning to write programs",
+      "venue": "In 5th International Conference on Learning Representations (ICLR), 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bao2021beit",
+      "raw": "Bao, H., Dong, L., and Wei, F. Beit: Bert pre-training of image transformers. arXiv preprint arXiv:2106.08254, 2021",
+      "authors": "Bao, H., Dong, L., and Wei, F",
+      "title": "Beit: Bert pre-training of image transformers",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2106.08254",
+      "doi": null
+    },
+    {
+      "key": "barone2017apc",
+      "raw": "Barone, A. V. M. and Sennrich, R. A parallel corpus of python functions and documentation strings for automated code documentation and code generation. ArXiv, abs/1707.02275, 2017",
+      "authors": "Barone, A. V. M. and Sennrich, R",
+      "title": "A parallel corpus of python functions and documentation strings for automated code documentation and code generation",
+      "venue": "ArXiv, abs/1707.02275, 2017",
+      "year": 2017,
+      "arxivId": "1707.02275",
+      "doi": null
+    },
+    {
+      "key": "barrington2000computation",
+      "raw": "Barrington, I. M. and Maciel, A. Lecture 3: Nondeterministic computation. https://people.clarkson.edu/ alexis/PCMI/Notes/lectureB03.pdf, 2000. [Online; accessed 29-June-2000]",
+      "authors": "Barrington, I. M. and Maciel, A",
+      "title": "Lecture 3: Nondeterministic computation",
+      "venue": "alexis/PCMI/Notes/lectureB03.pdf, 2000 [Online; accessed 29-June-2000]",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bender2021dangers",
+      "raw": "Bender, E. M., Gebru, T., McMillan-Major, A., and Shmitchell, S. On the dangers of stochastic parrots: Can language models be too big? In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pp.\\ 610--623, 2021",
+      "authors": "Bender, E. M., Gebru, T., McMillan-Major, A., and Shmitchell, S",
+      "title": "On the dangers of stochastic parrots: Can language models be too big?",
+      "venue": "In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pp.\\ 610--623, 2021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gpt-neo",
+      "raw": "Black, S., Gao, L., Wang, P., Leahy, C., and Biderman, S. GPT-Neo: Large scale autoregressive language modeling with mesh-tensorflow, 2021. URL http://github.com/eleutherai/gpt-neo",
+      "authors": "Black, S., Gao, L., Wang, P., Leahy, C., and Biderman, S",
+      "title": "GPT-Neo: Large scale autoregressive language modeling with mesh-tensorflow, 2021",
+      "venue": "URL",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "blodgett2020language",
+      "raw": "Blodgett, S. L., Barocas, S., Daum\\'e III, H., and Wallach, H. Language (technology) is power: A critical survey of ``bias'' in nlp. arXiv preprint arXiv:2005.14050, 2020",
+      "authors": "Blodgett, S. L., Barocas, S., Daum\\'e III, H., and Wallach, H",
+      "title": "Language (technology) is power: A critical survey of ``bias'' in nlp",
+      "venue": "arXiv preprint 2020",
+      "year": 2020,
+      "arxivId": "2005.14050",
+      "doi": null
+    },
+    {
+      "key": "brown2020gpt3",
+      "raw": "Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B., Clark, J., Berner, C., McCandlish, S., Radford, A., Sutskever, I., and Amodei, D. Language models are few-shot learners. ArXiv, abs/2005.14165, 2020",
+      "authors": "Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., Hesse, C., Chen, M., Sigler, E., Litwin, M., Gray, S., Chess, B., Clark, J., Berner, C., McCandlish, S., Radford, A., Sutskever, I., and Amodei, D",
+      "title": "Language models are few-shot learners",
+      "venue": "ArXiv, abs/2005.14165, 2020",
+      "year": 2020,
+      "arxivId": "2005.14165",
+      "doi": null
+    },
+    {
+      "key": "blscomputerprogrammers",
+      "raw": "Bureau of Labor Statistics, U. D. o. L. Computer programmers. Occupational Outlook Handbook, 2021. URL https://www.bls.gov/ooh/computer-and-information-technology/computer-programmers.htm",
+      "authors": "Bureau of Labor Statistics, U. D. o. L",
+      "title": "Computer programmers",
+      "venue": "Occupational Outlook Handbook, 2021 URL",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "blssoftwaredevelopers",
+      "raw": "Bureau of Labor Statistics, U. D. o. L. Bls - software developers. Occupational Outlook Handbook, 2021. URL https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm",
+      "authors": "Bureau of Labor Statistics, U. D. o. L",
+      "title": "Bls - software developers",
+      "venue": "Occupational Outlook Handbook, 2021 URL",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "carlini2020extracting",
+      "raw": "Carlini, N., Tram\u00e8r, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, U., Oprea, A., and Raffel, C. Extracting training data from large language models. In 30th USENIX Security Symposium (USENIX Security 21). USENIX Association, August 2021. URL https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting",
+      "authors": "Carlini, N., Tram\u00e8r, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, U., Oprea, A., and Raffel, C",
+      "title": "Extracting training data from large language models",
+      "venue": "In 30th USENIX Security Symposium (USENIX Security 21). USENIX Association, August 2021 URL",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chen2020generative",
+      "raw": "Chen, M., Radford, A., Child, R., Wu, J., Jun, H., Luan, D., and Sutskever, I. Generative pretraining from pixels. In International Conference on Machine Learning, pp.\\ 1691--1703. PMLR, 2020",
+      "authors": "Chen, M., Radford, A., Child, R., Wu, J., Jun, H., Luan, D., and Sutskever, I",
+      "title": "Generative pretraining from pixels",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1691--1703. PMLR, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "child2019sparsetransformer",
+      "raw": "Child, R., Gray, S., Radford, A., and Sutskever, I. Generating long sequences with sparse transformers. ArXiv, abs/1904.10509, 2019",
+      "authors": "Child, R., Gray, S., Radford, A., and Sutskever, I",
+      "title": "Generating long sequences with sparse transformers",
+      "venue": "ArXiv, abs/1904.10509, 2019",
+      "year": 2019,
+      "arxivId": "1904.10509",
+      "doi": null
+    },
+    {
+      "key": "clarifying",
+      "raw": "Christiano, P. Clarifying \"ai alignment\". AI Alignment Forum, 2018. URL https://www.alignmentforum.org/posts/ZeE7EKHTFMBs8eMxn/clarifying-ai-alignment",
+      "authors": "Christiano, P",
+      "title": "Clarifying \"ai alignment\"",
+      "venue": "AI Alignment Forum, 2018 URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "clarkson2014temporal",
+      "raw": "Clarkson, M. R., Finkbeiner, B., Koleini, M., Micinski, K. K., Rabe, M. N., and S\\'anchez, C. Temporal logics for hyperproperties. In International Conference on Principles of Security and Trust, pp.\\ 265--284. Springer, 2014",
+      "authors": "Clarkson, M. R., Finkbeiner, B., Koleini, M., Micinski, K. K., Rabe, M. N., and S\\'anchez, C",
+      "title": "Temporal logics for hyperproperties",
+      "venue": "In International Conference on Principles of Security and Trust, pp.\\ 265--284. Springer, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "clement2020pymt5",
+      "raw": "Clement, C., Drain, D., Timcheck, J., Svyatkovskiy, A., and Sundaresan, N. Pymt5: Multi-mode translation of natural language and python code with transformers. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp.\\ 9052--9065, 2020",
+      "authors": "Clement, C., Drain, D., Timcheck, J., Svyatkovskiy, A., and Sundaresan, N",
+      "title": "Pymt5: Multi-mode translation of natural language and python code with transformers",
+      "venue": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp.\\ 9052--9065, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "youtube",
+      "raw": "Crawford, K. The trouble with bias. NIPS 2017 Keynote, 2017. URL https://www.youtube.com/watch?v=fMym_BKWQzk",
+      "authors": "Crawford, K",
+      "title": "The trouble with bias",
+      "venue": "NIPS 2017 Keynote, 2017 URL",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "crawford2021",
+      "raw": "Crawford, K. Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence. Yale University Press, 2021",
+      "authors": "Crawford, K",
+      "title": "Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence",
+      "venue": "Yale University Press, 2021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dai2015semi",
+      "raw": "Dai, A. M. and Le, Q. V. Semi-supervised sequence learning. Advances in neural information processing systems, 28: 0 3079--3087, 2015",
+      "authors": "Dai, A. M. and Le, Q. V",
+      "title": "Semi-supervised sequence learning",
+      "venue": "Advances in neural information processing systems, 28: 0 3079--3087, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "das2017visual",
+      "raw": "Das, A., Kottur, S., Gupta, K., Singh, A., Yadav, D., Moura, J. M., Parikh, D., and Batra, D. Visual dialog. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp.\\ 326--335, 2017",
+      "authors": "Das, A., Kottur, S., Gupta, K., Singh, A., Yadav, D., Moura, J. M., Parikh, D., and Batra, D",
+      "title": "Visual dialog",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp.\\ 326--335, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "davis_2018",
+      "raw": "Davis, B. Protecting applications with automated software diversity, Sep 2018. URL https://galois.com/blog/2018/09/protecting-applications-with-automated-software-diversity",
+      "authors": "Davis, B",
+      "title": "Protecting applications with automated software diversity, Sep 2018",
+      "venue": "URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dehghani2019universal",
+      "raw": "Dehghani, M., Gouws, S., Vinyals, O., Uszkoreit, J., and \u0141ukasz Kaiser. Universal transformers, 2019",
+      "authors": "Dehghani, M., Gouws, S., Vinyals, O., Uszkoreit, J., and \u0141ukasz Kaiser",
+      "title": "Universal transformers, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "devlin2017robustfill",
+      "raw": "Devlin, J., Uesato, J., Bhupatiraju, S., Singh, R., rahman Mohamed, A., and Kohli, P. Robustfill: Neural program learning under noisy i/o. In ICML, 2017",
+      "authors": "Devlin, J., Uesato, J., Bhupatiraju, S., Singh, R., rahman Mohamed, A., and Kohli, P",
+      "title": "Robustfill: Neural program learning under noisy i/o",
+      "venue": "In ICML, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "devlin2018bert",
+      "raw": "Devlin, J., Chang, M.-W., Lee, K., and Toutanova, K. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805, 2018",
+      "authors": "Devlin, J., Chang, M.-W., Lee, K., and Toutanova, K",
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1810.04805",
+      "doi": null
+    },
+    {
+      "key": "dhariwal2020jukebox",
+      "raw": "Dhariwal, P., Jun, H., Payne, C., Kim, J. W., Radford, A., and Sutskever, I. Jukebox: A generative model for music. arXiv preprint arXiv:2005.00341, 2020",
+      "authors": "Dhariwal, P., Jun, H., Payne, C., Kim, J. W., Radford, A., and Sutskever, I",
+      "title": "Jukebox: A generative model for music",
+      "venue": "arXiv preprint 2020",
+      "year": 2020,
+      "arxivId": "2005.00341",
+      "doi": null
+    },
+    {
+      "key": "drain2021bugfixing",
+      "raw": "Drain, D., Wu, C., Svyatkovskiy, A., and Sundaresan, N. Generating bug-fixes using pretrained transformers. Proceedings of the 5th ACM SIGPLAN International Symposium on Machine Programming, 2021",
+      "authors": "Drain, D., Wu, C., Svyatkovskiy, A., and Sundaresan, N",
+      "title": "Generating bug-fixes using pretrained transformers",
+      "venue": "Proceedings of the 5th ACM SIGPLAN International Symposium on Machine Programming, 2021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "eghbal2020working",
+      "raw": "Eghbal, N. Working in public: the making and maintenance of open source software. Stripe Press, 2020",
+      "authors": "Eghbal, N",
+      "title": "Working in public: the making and maintenance of open source software",
+      "venue": "Stripe Press, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "feng2020codebert",
+      "raw": "Feng, Z., Guo, D., Tang, D., Duan, N., Feng, X., Gong, M., Shou, L., Qin, B., Liu, T., Jiang, D., et al. Codebert: A pre-trained model for programming and natural languages. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp.\\ 1536--1547, 2020",
+      "authors": "Feng, Z., Guo, D., Tang, D., Duan, N., Feng, X., Gong, M., Shou, L., Qin, B., Liu, T., Jiang, D., et al",
+      "title": "Codebert: A pre-trained model for programming and natural languages",
+      "venue": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp.\\ 1536--1547, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "frey2019technology",
+      "raw": "Frey, C. B. The technology trap. Princeton University Press, 2019",
+      "authors": "Frey, C. B",
+      "title": "The technology trap",
+      "venue": "Princeton University Press, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gao2020pile",
+      "raw": "Gao, L., Biderman, S., Black, S., Golding, L., Hoppe, T., Foster, C., Phang, J., He, H., Thite, A., Nabeshima, N., Presser, S., and Leahy, C. The pile: An 800gb dataset of diverse text for language modeling. 2020",
+      "authors": "Gao, L., Biderman, S., Black, S., Golding, L., Hoppe, T., Foster, C., Phang, J., He, H., Thite, A., Nabeshima, N., Presser, S., and Leahy, C",
+      "title": "The pile: An 800gb dataset of diverse text for language modeling",
+      "venue": "2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goldblum2021dataset",
+      "raw": "Goldblum, M., Tsipras, D., Xie, C., Chen, X., Schwarzschild, A., Song, D., Madry, A., Li, B., and Goldstein, T. Dataset security for machine learning: Data poisoning, backdoor attacks, and defenses, 2021",
+      "authors": "Goldblum, M., Tsipras, D., Xie, C., Chen, X., Schwarzschild, A., Song, D., Madry, A., Li, B., and Goldstein, T",
+      "title": "Dataset security for machine learning: Data poisoning, backdoor attacks, and defenses, 2021",
+      "venue": "",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goues2012genetic",
+      "raw": "Goues, C. L., Dewey-Vogt, M., Forrest, S., and Weimer, W. A systematic study of automated program repair: Fixing 55 out of 105 bugs for \\$8 each. 2012 34th International Conference on Software Engineering (ICSE), pp.\\ 3--13, 2012",
+      "authors": "Goues, C. L., Dewey-Vogt, M., Forrest, S., and Weimer, W",
+      "title": "A systematic study of automated program repair: Fixing 55 out of 105 bugs for \\$8 each",
+      "venue": "2012 34th International Conference on Software Engineering (ICSE), pp.\\ 3--13, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2014generating",
+      "raw": "Graves, A. Generating sequences with recurrent neural networks, 2014",
+      "authors": "Graves, A",
+      "title": "Generating sequences with recurrent neural networks, 2014",
+      "venue": "",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2014neural",
+      "raw": "Graves, A., Wayne, G., and Danihelka, I. Neural turing machines. arXiv preprint arXiv:1410.5401, 2014",
+      "authors": "Graves, A., Wayne, G., and Danihelka, I",
+      "title": "Neural turing machines",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.5401",
+      "doi": null
+    },
+    {
+      "key": "graves2016hybrid",
+      "raw": "Graves, A., Wayne, G., Reynolds, M., Harley, T., Danihelka, I., Grabska-Barwi\\'nska, A., Colmenarejo, S. G., Grefenstette, E., Ramalho, T., Agapiou, J., et al. Hybrid computing using a neural network with dynamic external memory. Nature, 538 0 (7626): 0 471--476, 2016",
+      "authors": "Graves, A., Wayne, G., Reynolds, M., Harley, T., Danihelka, I., Grabska-Barwi\\'nska, A., Colmenarejo, S. G., Grefenstette, E., Ramalho, T., Agapiou, J., et al",
+      "title": "Hybrid computing using a neural network with dynamic external memory",
+      "venue": "Nature, 538 0 (7626): 0 471--476, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gulwani2011automating",
+      "raw": "Gulwani, S. Automating string processing in spreadsheets using input-output examples. In PoPL'11, January 26-28, 2011, Austin, Texas, USA, January 2011",
+      "authors": "Gulwani, S",
+      "title": "Automating string processing in spreadsheets using input-output examples",
+      "venue": "In PoPL'11, January 26-28, 2011, Austin, Texas, USA, January 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gulwani2012autosp2",
+      "raw": "Gulwani, S., Harris, W. R., and Singh, R. Spreadsheet data manipulation using examples. Commun. ACM, 55: 0 97--105, 2012",
+      "authors": "Gulwani, S., Harris, W. R., and Singh, R",
+      "title": "Spreadsheet data manipulation using examples",
+      "venue": "Commun. ACM, 55: 0 97--105, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "he2020deberta",
+      "raw": "He, P., Liu, X., Gao, J., and Chen, W. Deberta: Decoding-enhanced bert with disentangled attention. arXiv preprint arXiv:2006.03654, 2020",
+      "authors": "He, P., Liu, X., Gao, J., and Chen, W",
+      "title": "Deberta: Decoding-enhanced bert with disentangled attention",
+      "venue": "arXiv preprint 2020",
+      "year": 2020,
+      "arxivId": "2006.03654",
+      "doi": null
+    },
+    {
+      "key": "helmuth2015general",
+      "raw": "Helmuth, T. and Spector, L. General program synthesis benchmark suite. In Proceedings of the 2015 Annual Conference on Genetic and Evolutionary Computation, pp.\\ 1039--1046, 2015",
+      "authors": "Helmuth, T. and Spector, L",
+      "title": "General program synthesis benchmark suite",
+      "venue": "In Proceedings of the 2015 Annual Conference on Genetic and Evolutionary Computation, pp.\\ 1039--1046, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hendrycks2021apps",
+      "raw": "Hendrycks, D., Basart, S., Kadavath, S., Mazeika, M., Arora, A., Guo, E., Burns, C., Puranik, S., He, H., Song, D., et al. Measuring coding challenge competence with apps. arXiv preprint arXiv:2105.09938, 2021",
+      "authors": "Hendrycks, D., Basart, S., Kadavath, S., Mazeika, M., Arora, A., Guo, E., Burns, C., Puranik, S., He, H., Song, D., et al",
+      "title": "Measuring coding challenge competence with apps",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2105.09938",
+      "doi": null
+    },
+    {
+      "key": "hindle2012naturalness",
+      "raw": "Hindle, A., Barr, E. T., Su, Z., Gabel, M., and Devanbu, P. On the naturalness of software. In 2012 34th International Conference on Software Engineering (ICSE), pp.\\ 837--847. IEEE, 2012",
+      "authors": "Hindle, A., Barr, E. T., Su, Z., Gabel, M., and Devanbu, P",
+      "title": "On the naturalness of software",
+      "venue": "In 2012 34th International Conference on Software Engineering (ICSE), pp.\\ 837--847. IEEE, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "holtzman2020curious",
+      "raw": "Holtzman, A., Buys, J., Du, L., Forbes, M., and Choi, Y. The curious case of neural text degeneration, 2020",
+      "authors": "Holtzman, A., Buys, J., Du, L., Forbes, M., and Choi, Y",
+      "title": "The curious case of neural text degeneration, 2020",
+      "venue": "",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "husain2019codesearchnet",
+      "raw": "Husain, H., Wu, H.-H., Gazit, T., Allamanis, M., and Brockschmidt, M. Codesearchnet challenge: Evaluating the state of semantic code search. ArXiv, abs/1909.09436, 2019",
+      "authors": "Husain, H., Wu, H.-H., Gazit, T., Allamanis, M., and Brockschmidt, M",
+      "title": "Codesearchnet challenge: Evaluating the state of semantic code search",
+      "venue": "ArXiv, abs/1909.09436, 2019",
+      "year": 2019,
+      "arxivId": "1909.09436",
+      "doi": null
+    },
+    {
+      "key": "jain2020ccr",
+      "raw": "Jain, P., Jain, A., Zhang, T., Abbeel, P., Gonzalez, J., and Stoica, I. Contrastive code representation learning. ArXiv, abs/2007.04973, 2020",
+      "authors": "Jain, P., Jain, A., Zhang, T., Abbeel, P., Gonzalez, J., and Stoica, I",
+      "title": "Contrastive code representation learning",
+      "venue": "ArXiv, abs/2007.04973, 2020",
+      "year": 2020,
+      "arxivId": "2007.04973",
+      "doi": null
+    },
+    {
+      "key": "jeffrey2009bugfix",
+      "raw": "Jeffrey, D., Feng, M., Gupta, N., and Gupta, R. Bugfix: A learning-based tool to assist developers in fixing bugs. 2009 IEEE 17th International Conference on Program Comprehension, pp.\\ 70--79, 2009",
+      "authors": "Jeffrey, D., Feng, M., Gupta, N., and Gupta, R",
+      "title": "Bugfix: A learning-based tool to assist developers in fixing bugs",
+      "venue": "2009 IEEE 17th International Conference on Program Comprehension, pp.\\ 70--79, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jones2011economics",
+      "raw": "Jones, C. and Bonsignour, O. The economics of software quality. Addison-Wesley Professional, 2011",
+      "authors": "Jones, C. and Bonsignour, O",
+      "title": "The economics of software quality",
+      "venue": "Addison-Wesley Professional, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kaiser2015neural",
+      "raw": "Kaiser, . and Sutskever, I. Neural gpus learn algorithms. arXiv preprint arXiv:1511.08228, 2015",
+      "authors": "Kaiser, . and Sutskever, I",
+      "title": "Neural gpus learn algorithms",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.08228",
+      "doi": null
+    },
+    {
+      "key": "kaplan2020scaling",
+      "raw": "Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., and Amodei, D. Scaling laws for neural language models, 2020",
+      "authors": "Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., and Amodei, D",
+      "title": "Scaling laws for neural language models, 2020",
+      "venue": "",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kenton2021alignment",
+      "raw": "Kenton, Z., Everitt, T., Weidinger, L., Gabriel, I., Mikulik, V., and Irving, G. Alignment of language agents. arXiv preprint arXiv:2103.14659, 2021",
+      "authors": "Kenton, Z., Everitt, T., Weidinger, L., Gabriel, I., Mikulik, V., and Irving, G",
+      "title": "Alignment of language agents",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2103.14659",
+      "doi": null
+    },
+    {
+      "key": "keskar2019ctrl",
+      "raw": "Keskar, N. S., McCann, B., Varshney, L. R., Xiong, C., and Socher, R. Ctrl: A conditional transformer language model for controllable generation, 2019",
+      "authors": "Keskar, N. S., McCann, B., Varshney, L. R., Xiong, C., and Socher, R",
+      "title": "Ctrl: A conditional transformer language model for controllable generation, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "korel1997dynamic",
+      "raw": "Korel, B. and Rilling, J. Application of dynamic slicing in program debugging. In AADEBUG, 1997",
+      "authors": "Korel, B. and Rilling, J",
+      "title": "Application of dynamic slicing in program debugging",
+      "venue": "In AADEBUG, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "koza1999genetic",
+      "raw": "Koza, J. R., Andre, D., Keane, M. A., and Bennett III, F. H. Genetic programming III: Darwinian invention and problem solving, volume 3. Morgan Kaufmann, 1999",
+      "authors": "Koza, J. R., Andre, D., Keane, M. A., and Bennett III, F. H",
+      "title": "Genetic programming III: Darwinian invention and problem solving, volume 3",
+      "venue": "Morgan Kaufmann, 1999",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kulal2019spoc",
+      "raw": "Kulal, S., Pasupat, P., Chandra, K., Lee, M., Padon, O., Aiken, A., and Liang, P. S. Spoc: Search-based pseudocode to code. In Wallach, H., Larochelle, H., Beygelzimer, A., d Alch\\'e-Buc, F., Fox, E., and Garnett, R. (eds.), Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc., 2019. URL https://proceedings.neurips.cc/paper/2019/file/7298332f04ac004a0ca44cc69ecf6f6b-Paper.pdf",
+      "authors": "Kulal, S., Pasupat, P., Chandra, K., Lee, M., Padon, O., Aiken, A., and Liang, P. S",
+      "title": "Spoc: Search-based pseudocode to code",
+      "venue": "In Wallach, H., Larochelle, H., Beygelzimer, A., d Alch\\'e-Buc, F., Fox, E., and Garnett, R. (eds.), Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc., 2019 URL",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lacasse2018open",
+      "raw": "Lacasse, N. Open-sourcing gvisor, a sandboxed container runtime, 2018",
+      "authors": "Lacasse, N",
+      "title": "Open-sourcing gvisor, a sandboxed container runtime, 2018",
+      "venue": "",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lachaux2020unsuptrans",
+      "raw": "Lachaux, M.-A., Rozi\\`ere, B., Chanussot, L., and Lample, G. Unsupervised translation of programming languages. ArXiv, abs/2006.03511, 2020",
+      "authors": "Lachaux, M.-A., Rozi\\`ere, B., Chanussot, L., and Lample, G",
+      "title": "Unsupervised translation of programming languages",
+      "venue": "ArXiv, abs/2006.03511, 2020",
+      "year": 2020,
+      "arxivId": "2006.03511",
+      "doi": null
+    },
+    {
+      "key": "riskmatrix",
+      "raw": "Leveson, N. Improving the standard risk matrix: Part 1. 2019. URL http://sunnyday.mit.edu/Risk-Matrix.pdf",
+      "authors": "Leveson, N",
+      "title": "Improving the standard risk matrix: Part 1",
+      "venue": "2019 URL",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2020distinguishes",
+      "raw": "Li, P. L., Ko, A. J., and Begel, A. What distinguishes great software engineers? Empirical Software Engineering, 25 0 (1): 0 322--352, 2020",
+      "authors": "Li, P. L., Ko, A. J., and Begel, A",
+      "title": "What distinguishes great software engineers?",
+      "venue": "Empirical Software Engineering, 25 0 (1): 0 322--352, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ling2016latent",
+      "raw": "Ling, W., Blunsom, P., Grefenstette, E., Hermann, K. M., Ko cisk\\`y, T., Wang, F., and Senior, A. Latent predictor networks for code generation. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (ACL), pp.\\ 599--609, 2016",
+      "authors": "Ling, W., Blunsom, P., Grefenstette, E., Hermann, K. M., Ko cisk\\`y, T., Wang, F., and Senior, A",
+      "title": "Latent predictor networks for code generation",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (ACL), pp.\\ 599--609, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liu2019roberta",
+      "raw": "Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., Levy, O., Lewis, M., Zettlemoyer, L., and Stoyanov, V. Roberta: A robustly optimized bert pretraining approach. ArXiv, abs/1907.11692, 2019",
+      "authors": "Liu, Y., Ott, M., Goyal, N., Du, J., Joshi, M., Chen, D., Levy, O., Lewis, M., Zettlemoyer, L., and Stoyanov, V",
+      "title": "Roberta: A robustly optimized bert pretraining approach",
+      "venue": "ArXiv, abs/1907.11692, 2019",
+      "year": 2019,
+      "arxivId": "1907.11692",
+      "doi": null
+    },
+    {
+      "key": "lu2019vilbert",
+      "raw": "Lu, J., Batra, D., Parikh, D., and Lee, S. Vilbert: Pretraining task-agnostic visiolinguistic representations for vision-and-language tasks. arXiv preprint arXiv:1908.02265, 2019",
+      "authors": "Lu, J., Batra, D., Parikh, D., and Lee, S",
+      "title": "Vilbert: Pretraining task-agnostic visiolinguistic representations for vision-and-language tasks",
+      "venue": "arXiv preprint 2019",
+      "year": 2019,
+      "arxivId": "1908.02265",
+      "doi": null
+    },
+    {
+      "key": "lu2021codexglue",
+      "raw": "Lu, S., Guo, D., Ren, S., Huang, J., Svyatkovskiy, A., Blanco, A., Clement, C., Drain, D., Jiang, D., Tang, D., Li, G., Zhou, L., Shou, L., Zhou, L., Tufano, M., Gong, M., Zhou, M., Duan, N., Sundaresan, N., Deng, S. K., Fu, S., and Liu, S. Codexglue: A machine learning benchmark dataset for code understanding and generation. ArXiv, abs/2102.04664, 2021",
+      "authors": "Lu, S., Guo, D., Ren, S., Huang, J., Svyatkovskiy, A., Blanco, A., Clement, C., Drain, D., Jiang, D., Tang, D., Li, G., Zhou, L., Shou, L., Zhou, L., Tufano, M., Gong, M., Zhou, M., Duan, N., Sundaresan, N., Deng, S. K., Fu, S., and Liu, S",
+      "title": "Codexglue: A machine learning benchmark dataset for code understanding and generation",
+      "venue": "ArXiv, abs/2102.04664, 2021",
+      "year": 2021,
+      "arxivId": "2102.04664",
+      "doi": null
+    },
+    {
+      "key": "maddison2014structured",
+      "raw": "Maddison, C. J. and Tarlow, D. Structured generative models of natural source code. In Proceedings of the 31st International Conference on International Conference on Machine Learning (ICML), pp.\\ II--649, 2014",
+      "authors": "Maddison, C. J. and Tarlow, D",
+      "title": "Structured generative models of natural source code",
+      "venue": "In Proceedings of the 31st International Conference on International Conference on Machine Learning (ICML), pp.\\ II--649, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "manna1971progsyn",
+      "raw": "Manna, Z. and Waldinger, R. J. Toward automatic program synthesis. 14 0 (3): 0 151\u2013165, March 1971. ISSN 0001-0782. 10.1145/362566.362568. URL https://doi.org/10.1145/362566.362568",
+      "authors": "Manna, Z. and Waldinger, R. J",
+      "title": "Toward automatic program synthesis",
+      "venue": "14 0 (3): 0 151\u2013165, March 1971 ISSN 0001-0782 10.1145/362566.362568 URL",
+      "year": 1971,
+      "arxivId": null,
+      "doi": "10.1145/362566.362568"
+    },
+    {
+      "key": "masanet2020recalibrating",
+      "raw": "Masanet, E., Shehabi, A., Lei, N., Smith, S., and Koomey, J. Recalibrating global data center energy-use estimates. Science, 367 0 (6481): 0 984--986, 2020",
+      "authors": "Masanet, E., Shehabi, A., Lei, N., Smith, S., and Koomey, J",
+      "title": "Recalibrating global data center energy-use estimates",
+      "venue": "Science, 367 0 (6481): 0 984--986, 2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "menezes2018handbook",
+      "raw": "Menezes, A., van Oorschot, P., and Vanstone, S. Handbook of Applied Cryptography. Discrete Mathematics and Its Applications. CRC Press, 2018. ISBN 9780429881329. URL https://books.google.com/books?id=YyCyDwAAQBAJ",
+      "authors": "Menezes, A., van Oorschot, P., and Vanstone, S",
+      "title": "Handbook of Applied Cryptography",
+      "venue": "Discrete Mathematics and Its Applications. CRC Press, 2018 ISBN 9780429881329 URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "menick2018generating",
+      "raw": "Menick, J. and Kalchbrenner, N. Generating high fidelity images with subscale pixel networks and multidimensional upscaling, 2018",
+      "authors": "Menick, J. and Kalchbrenner, N",
+      "title": "Generating high fidelity images with subscale pixel networks and multidimensional upscaling, 2018",
+      "venue": "",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2013distributed",
+      "raw": "Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., and Dean, J. Distributed representations of words and phrases and their compositionality. In Advances in neural information processing systems, pp.\\ 3111--3119, 2013",
+      "authors": "Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., and Dean, J",
+      "title": "Distributed representations of words and phrases and their compositionality",
+      "venue": "In Advances in neural information processing systems, pp.\\ 3111--3119, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ohm2020backstabbers",
+      "raw": "Ohm, M., Plate, H., Sykosch, A., and Meier, M. Backstabber's knife collection: A review of open source software supply chain attacks, 2020",
+      "authors": "Ohm, M., Plate, H., Sykosch, A., and Meier, M",
+      "title": "Backstabber's knife collection: A review of open source software supply chain attacks, 2020",
+      "venue": "",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "o'keefe_lansky_clark_payne_2019",
+      "raw": "O'Keefe, C., Lansky, D., Clark, J., and Payne, C. Comment regarding request for comments on intellectual property protection for artificial intelligence innovation. Before the United States Patent and Trademark Office Department of Commerce, 2019. URL https://perma.cc/ZS7G-2QWF",
+      "authors": "O'Keefe, C., Lansky, D., Clark, J., and Payne, C",
+      "title": "Comment regarding request for comments on intellectual property protection for artificial intelligence innovation",
+      "venue": "Before the United States Patent and Trademark Office Department of Commerce, 2019 URL",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "onetsoftwaredevelopers",
+      "raw": "O*NET. 15-1252.00 - software developers, 2021. URL https://www.onetonline.org/link/summary/15-1252.00",
+      "authors": "O*NET",
+      "title": "15-1252.00 - software developers, 2021",
+      "venue": "URL",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "oord2016wavenet",
+      "raw": "Oord, A. v. d., Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A., Kalchbrenner, N., Senior, A., and Kavukcuoglu, K. Wavenet: A generative model for raw audio. arXiv preprint arXiv:1609.03499, 2016",
+      "authors": "Oord, A. v. d., Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A., Kalchbrenner, N., Senior, A., and Kavukcuoglu, K",
+      "title": "Wavenet: A generative model for raw audio",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1609.03499",
+      "doi": null
+    },
+    {
+      "key": "oord2018representation",
+      "raw": "Oord, A. v. d., Li, Y., and Vinyals, O. Representation learning with contrastive predictive coding. arXiv preprint arXiv:1807.03748, 2018",
+      "authors": "Oord, A. v. d., Li, Y., and Vinyals, O",
+      "title": "Representation learning with contrastive predictive coding",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1807.03748",
+      "doi": null
+    },
+    {
+      "key": "o2019automatic",
+      "raw": "O\u2019Neill, M. and Spector, L. Automatic programming: The open issue? Genetic Programming and Evolvable Machines, pp.\\ 1--12, 2019",
+      "authors": "O\u2019Neill, M. and Spector, L",
+      "title": "Automatic programming: The open issue?",
+      "venue": "Genetic Programming and Evolvable Machines, pp.\\ 1--12, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pantridge2017difficulty",
+      "raw": "Pantridge, E., Helmuth, T., McPhee, N. F., and Spector, L. On the difficulty of benchmarking inductive program synthesis methods. In Proceedings of the Genetic and Evolutionary Computation Conference Companion, pp.\\ 1589--1596, 2017",
+      "authors": "Pantridge, E., Helmuth, T., McPhee, N. F., and Spector, L",
+      "title": "On the difficulty of benchmarking inductive program synthesis methods",
+      "venue": "In Proceedings of the Genetic and Evolutionary Computation Conference Companion, pp.\\ 1589--1596, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "patterson2021carbon",
+      "raw": "Patterson, D., Gonzalez, J., Le, Q., Liang, C., Munguia, L.-M., Rothchild, D., So, D., Texier, M., and Dean, J. Carbon emissions and large neural network training. arXiv preprint arXiv:2104.10350, 2021",
+      "authors": "Patterson, D., Gonzalez, J., Le, Q., Liang, C., Munguia, L.-M., Rothchild, D., So, D., Texier, M., and Dean, J",
+      "title": "Carbon emissions and large neural network training",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2104.10350",
+      "doi": null
+    },
+    {
+      "key": "peters2018deep",
+      "raw": "Peters, M. E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K., and Zettlemoyer, L. Deep contextualized word representations. arXiv preprint arXiv:1802.05365, 2018",
+      "authors": "Peters, M. E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K., and Zettlemoyer, L",
+      "title": "Deep contextualized word representations",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1802.05365",
+      "doi": null
+    },
+    {
+      "key": "pierrot2021learning",
+      "raw": "Pierrot, T., Ligner, G., Reed, S., Sigaud, O., Perrin, N., Laterre, A., Kas, D., Beguir, K., and de Freitas, N. Learning compositional neural programs with recursive tree search and planning, 2021",
+      "authors": "Pierrot, T., Ligner, G., Reed, S., Sigaud, O., Perrin, N., Laterre, A., Kas, D., Beguir, K., and de Freitas, N",
+      "title": "Learning compositional neural programs with recursive tree search and planning, 2021",
+      "venue": "",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "planning2002economic",
+      "raw": "Planning, S. The economic impacts of inadequate infrastructure for software testing. National Institute of Standards and Technology, 2002",
+      "authors": "Planning, S",
+      "title": "The economic impacts of inadequate infrastructure for software testing",
+      "venue": "National Institute of Standards and Technology, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jetbrainssurvey2020",
+      "raw": "Python\\ Software\\ Foundation\\ and\\ JetBrains. Python developers survey 2020 results, 2020. URL https://www.jetbrains.com/lp/python-developers-survey-2020/",
+      "authors": "Python\\ Software\\ Foundation\\ and\\ JetBrains",
+      "title": "Python developers survey 2020 results, 2020",
+      "venue": "URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "qi2015correctness",
+      "raw": "Qi, Z., Long, F., Achour, S., and Rinard, M. An analysis of patch plausibility and correctness for generate-and-validate patch generation systems. Proceedings of the 2015 International Symposium on Software Testing and Analysis, 2015",
+      "authors": "Qi, Z., Long, F., Achour, S., and Rinard, M",
+      "title": "An analysis of patch plausibility and correctness for generate-and-validate patch generation systems",
+      "venue": "Proceedings of the 2015 International Symposium on Software Testing and Analysis, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2018improving",
+      "raw": "Radford, A., Narasimhan, K., Salimans, T., and Sutskever, I. Improving language understanding by generative pre-training. 2018",
+      "authors": "Radford, A., Narasimhan, K., Salimans, T., and Sutskever, I",
+      "title": "Improving language understanding by generative pre-training",
+      "venue": "2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2019gpt2",
+      "raw": "Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and Sutskever, I. Language models are unsupervised multitask learners. 2019",
+      "authors": "Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and Sutskever, I",
+      "title": "Language models are unsupervised multitask learners",
+      "venue": "2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford2021learning",
+      "raw": "Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., et al. Learning transferable visual models from natural language supervision. arXiv preprint arXiv:2103.00020, 2021",
+      "authors": "Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., et al",
+      "title": "Learning transferable visual models from natural language supervision",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2103.00020",
+      "doi": null
+    },
+    {
+      "key": "raffel2020t5",
+      "raw": "Raffel, C., Shazeer, N. M., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., and Liu, P. J. Exploring the limits of transfer learning with a unified text-to-text transformer. ArXiv, abs/1910.10683, 2020",
+      "authors": "Raffel, C., Shazeer, N. M., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., and Liu, P. J",
+      "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+      "venue": "ArXiv, abs/1910.10683, 2020",
+      "year": 2020,
+      "arxivId": "1910.10683",
+      "doi": null
+    },
+    {
+      "key": "ramesh2021dalle",
+      "raw": "Ramesh, A., Pavlov, M., Goh, G., Gray, S., Voss, C., Radford, A., Chen, M., and Sutskever, I. Zero-shot text-to-image generation. ArXiv, abs/2102.12092, 2021",
+      "authors": "Ramesh, A., Pavlov, M., Goh, G., Gray, S., Voss, C., Radford, A., Chen, M., and Sutskever, I",
+      "title": "Zero-shot text-to-image generation",
+      "venue": "ArXiv, abs/2102.12092, 2021",
+      "year": 2021,
+      "arxivId": "2102.12092",
+      "doi": null
+    },
+    {
+      "key": "reed2016neural",
+      "raw": "Reed, S. and de Freitas, N. Neural programmer-interpreters, 2016",
+      "authors": "Reed, S. and de Freitas, N",
+      "title": "Neural programmer-interpreters, 2016",
+      "venue": "",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ren2020codebleu",
+      "raw": "Ren, S., Guo, D., Lu, S., Zhou, L., Liu, S., Tang, D., Sundaresan, N., Zhou, M., Blanco, A., and Ma, S. Codebleu: a method for automatic evaluation of code synthesis. arXiv preprint arXiv:2009.10297, 2020",
+      "authors": "Ren, S., Guo, D., Lu, S., Zhou, L., Liu, S., Tang, D., Sundaresan, N., Zhou, M., Blanco, A., and Ma, S",
+      "title": "Codebleu: a method for automatic evaluation of code synthesis",
+      "venue": "arXiv preprint 2020",
+      "year": 2020,
+      "arxivId": "2009.10297",
+      "doi": null
+    },
+    {
+      "key": "rives2021biological",
+      "raw": "Rives, A., Meier, J., Sercu, T., Goyal, S., Lin, Z., Liu, J., Guo, D., Ott, M., Zitnick, C. L., Ma, J., et al. Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences. Proceedings of the National Academy of Sciences, 118 0 (15), 2021",
+      "authors": "Rives, A., Meier, J., Sercu, T., Goyal, S., Lin, Z., Liu, J., Guo, D., Ott, M., Zitnick, C. L., Ma, J., et al",
+      "title": "Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences",
+      "venue": "Proceedings of the National Academy of Sciences, 118 0 (15), 2021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rokon",
+      "raw": "Rokon, M. O. F., Islam, R., Darki, A., Papalexakis, E. E., and Faloutsos, M. Sourcefinder: Finding malware source-code from publicly available repositories in github. In 23rd International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2020), pp.\\ 149--163, San Sebastian, October 2020. USENIX Association. ISBN 978-1-939133-18-2. URL https://www.usenix.org/conference/raid2020/presentation/omar",
+      "authors": "Rokon, M. O. F., Islam, R., Darki, A., Papalexakis, E. E., and Faloutsos, M",
+      "title": "Sourcefinder: Finding malware source-code from publicly available repositories in github",
+      "venue": "In 23rd International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2020), pp.\\ 149--163, San Sebastian, October 2020. USENIX Association ISBN 978-1-939133-18-2 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "autocompleteme",
+      "raw": "Schuster, R., Song, C., Tromer, E., and Shmatikov, V. You autocomplete me: Poisoning vulnerabilities in neural code completion. The Advanced Computing Systems Association, 2020. URL https://www.usenix.org/system/files/sec21summer_schuster.pdf",
+      "authors": "Schuster, R., Song, C., Tromer, E., and Shmatikov, V",
+      "title": "You autocomplete me: Poisoning vulnerabilities in neural code completion",
+      "venue": "The Advanced Computing Systems Association, 2020 URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schwartz2019green",
+      "raw": "Schwartz, R., Dodge, J., Smith, N. A., and Etzioni, O. Green ai, 2019",
+      "authors": "Schwartz, R., Dodge, J., Smith, N. A., and Etzioni, O",
+      "title": "Green ai, 2019",
+      "venue": "",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shin2018improving",
+      "raw": "Shin, E. C., Polosukhin, I., and Song, D. Improving neural program synthesis with inferred execution traces. Advances in Neural Information Processing Systems, 31: 0 8917--8926, 2018",
+      "authors": "Shin, E. C., Polosukhin, I., and Song, D",
+      "title": "Improving neural program synthesis with inferred execution traces",
+      "venue": "Advances in Neural Information Processing Systems, 31: 0 8917--8926, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "simon1963compiler",
+      "raw": "Simon, H. A. Experiments with a heuristic compiler. J. ACM, 10 0 (4): 0 493\u2013506, October 1963. ISSN 0004-5411. 10.1145/321186.321192. URL https://doi.org/10.1145/321186.321192",
+      "authors": "Simon, H. A",
+      "title": "Experiments with a heuristic compiler",
+      "venue": "J. ACM, 10 0 (4): 0 493\u2013506, October 1963 ISSN 0004-5411 10.1145/321186.321192 URL",
+      "year": 1963,
+      "arxivId": null,
+      "doi": "10.1145/321186.321192"
+    },
+    {
+      "key": "stackoverflowsurvey2020",
+      "raw": "Stack\\ Overflow. 2020 developer survey, 2020. URL https://insights.stackoverflow.com/survey/2020#overview",
+      "authors": "Stack\\ Overflow",
+      "title": "2020 developer survey, 2020",
+      "venue": "URL",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "stiennon2020learning",
+      "raw": "Stiennon, N., Ouyang, L., Wu, J., Ziegler, D. M., Lowe, R., Voss, C., Radford, A., Amodei, D., and Christiano, P. Learning to summarize from human feedback, 2020",
+      "authors": "Stiennon, N., Ouyang, L., Wu, J., Ziegler, D. M., Lowe, R., Voss, C., Radford, A., Amodei, D., and Christiano, P",
+      "title": "Learning to summarize from human feedback, 2020",
+      "venue": "",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sukhbaatar2015endtoend",
+      "raw": "Sukhbaatar, S., Szlam, A., Weston, J., and Fergus, R. End-to-end memory networks, 2015",
+      "authors": "Sukhbaatar, S., Szlam, A., Weston, J., and Fergus, R",
+      "title": "End-to-end memory networks, 2015",
+      "venue": "",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Sutskever, I., Vinyals, O., and Le, Q. V. Sequence to sequence learning with neural networks. In Advances in neural information processing systems, pp.\\ 3104--3112, 2014",
+      "authors": "Sutskever, I., Vinyals, O., and Le, Q. V",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in neural information processing systems, pp.\\ 3104--3112, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "trinkenreich2021women",
+      "raw": "Trinkenreich, B., Wiese, I., Sarma, A., Gerosa, M., and Steinmacher, I. Women's participation in open source software: A survey of the literature. arXiv preprint arXiv:2105.08777, 2021",
+      "authors": "Trinkenreich, B., Wiese, I., Sarma, A., Gerosa, M., and Steinmacher, I",
+      "title": "Women's participation in open source software: A survey of the literature",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2105.08777",
+      "doi": null
+    },
+    {
+      "key": "tufano2019bugfixing",
+      "raw": "Tufano, M., Watson, C., Bavota, G., Penta, M. D., White, M., and Poshyvanyk, D. An empirical study on learning bug-fixing patches in the wild via neural machine translation. ACM Transactions on Software Engineering and Methodology (TOSEM), 28: 0 1 -- 29, 2019",
+      "authors": "Tufano, M., Watson, C., Bavota, G., Penta, M. D., White, M., and Poshyvanyk, D",
+      "title": "An empirical study on learning bug-fixing patches in the wild via neural machine translation",
+      "venue": "ACM Transactions on Software Engineering and Methodology (TOSEM), 28: 0 1 -- 29, 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tufano2020utcgen",
+      "raw": "Tufano, M., Drain, D., Svyatkovskiy, A., Deng, S. K., and Sundaresan, N. Unit test case generation with transformers and focal context. 2020",
+      "authors": "Tufano, M., Drain, D., Svyatkovskiy, A., Deng, S. K., and Sundaresan, N",
+      "title": "Unit test case generation with transformers and focal context",
+      "venue": "2020",
+      "year": 2020,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "van2016pixel",
+      "raw": "Van Oord, A., Kalchbrenner, N., and Kavukcuoglu, K. Pixel recurrent neural networks. In International Conference on Machine Learning, pp.\\ 1747--1756. PMLR, 2016",
+      "authors": "Van Oord, A., Kalchbrenner, N., and Kavukcuoglu, K",
+      "title": "Pixel recurrent neural networks",
+      "venue": "In International Conference on Machine Learning, pp.\\ 1747--1756. PMLR, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vaswani2017transformer",
+      "raw": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L. u., and Polosukhin, I. Attention is all you need. In Guyon, I., Luxburg, U. V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., and Garnett, R. (eds.), Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc., 2017. URL https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf",
+      "authors": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L. u., and Polosukhin, I",
+      "title": "Attention is all you need",
+      "venue": "In Guyon, I., Luxburg, U. V., Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S., and Garnett, R. (eds.), Advances in Neural Information Processing Systems, volume 30. Curran Associates, Inc., 2017 URL",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gpt-j",
+      "raw": "Wang, B. and Komatsuzaki, A. GPT-J-6B: A 6 Billion Parameter Autoregressive Language Model. https://github.com/kingoflolz/mesh-transformer-jax, May 2021",
+      "authors": "Wang, B. and Komatsuzaki, A",
+      "title": "GPT-J-6B: A 6 Billion Parameter Autoregressive Language Model",
+      "venue": "May 2021",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "weston2015memory",
+      "raw": "Weston, J., Chopra, S., and Bordes, A. Memory networks, 2015",
+      "authors": "Weston, J., Chopra, S., and Bordes, A",
+      "title": "Memory networks, 2015",
+      "venue": "",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "woolf2021fun",
+      "raw": "Woolf, M. Fun and dystopia with ai-based code generation using gpt-j-6b, June 2021. URL https://minimaxir.com/2021/06/gpt-j-6b/",
+      "authors": "Woolf, M",
+      "title": "Fun and dystopia with ai-based code generation using gpt-j-6b, June 2021",
+      "venue": "URL",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "xu2021ide",
+      "raw": "Xu, F. F., Vasilescu, B., and Neubig, G. In-ide code generation from natural language: Promise and challenges. arXiv preprint arXiv:2101.11149, 2021",
+      "authors": "Xu, F. F., Vasilescu, B., and Neubig, G",
+      "title": "In-ide code generation from natural language: Promise and challenges",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2101.11149",
+      "doi": null
+    },
+    {
+      "key": "yin2017syntactic",
+      "raw": "Yin, P. and Neubig, G. A syntactic neural model for general-purpose code generation. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (ACL), pp.\\ 440--450, 2017",
+      "authors": "Yin, P. and Neubig, G",
+      "title": "A syntactic neural model for general-purpose code generation",
+      "venue": "In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (ACL), pp.\\ 440--450, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zaremba2014learning",
+      "raw": "Zaremba, W. and Sutskever, I. Learning to execute. arXiv preprint arXiv:1410.4615, 2014",
+      "authors": "Zaremba, W. and Sutskever, I",
+      "title": "Learning to execute",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.4615",
+      "doi": null
+    },
+    {
+      "key": "zellers2021merlot",
+      "raw": "Zellers, R., Lu, X., Hessel, J., Yu, Y., Park, J. S., Cao, J., Farhadi, A., and Choi, Y. Merlot: Multimodal neural script knowledge models. arXiv preprint arXiv:2106.02636, 2021",
+      "authors": "Zellers, R., Lu, X., Hessel, J., Yu, Y., Park, J. S., Cao, J., Farhadi, A., and Choi, Y",
+      "title": "Merlot: Multimodal neural script knowledge models",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2106.02636",
+      "doi": null
+    },
+    {
+      "key": "zhao2021calibrate",
+      "raw": "Zhao, T. Z., Wallace, E., Feng, S., Klein, D., and Singh, S. Calibrate before use: Improving few-shot performance of language models. arXiv preprint arXiv:2102.09690, 2021",
+      "authors": "Zhao, T. Z., Wallace, E., Feng, S., Klein, D., and Singh, S",
+      "title": "Calibrate before use: Improving few-shot performance of language models",
+      "venue": "arXiv preprint 2021",
+      "year": 2021,
+      "arxivId": "2102.09690",
+      "doi": null
+    },
+    {
+      "key": "ziegler_2021",
+      "raw": "Ziegler, A. A first look at rote learning in github copilot suggestions., Jun 2021. URL https://docs.github.com/en/github/copilot/research-recitation",
+      "authors": "Ziegler, A",
+      "title": "A first look at rote learning in github copilot suggestions., Jun 2021",
+      "venue": "URL",
+      "year": 2021,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\text{pass@$k$} &:= \\mathop{\\mathbb{E}}_{\\text{Problems}} \\left[ 1 - \\frac{{\\binom{n-c}{k}}} {\\binom{n}{k}} \\right]",
+      "environment": "align",
+      "labels": [
+        "eq:estimator"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\mathbb{E}_c \\left[\n    1 - \\frac{{n - c \\choose k}}{{n \\choose k}}\n  \\right]\n  &=\n  1 -\n  \\mathbb{E}_c \\left[\n    \\frac{{n - c \\choose k}}{{n \\choose k}}\n  \\right]\n  \\\\\n  &=\n  1\n  -\n  \\sum_{i = 0}^{n - k} {\n    \\frac{{n - i \\choose k}}{{n \\choose k}}\n    {n \\choose i} p^i (1 - p)^{n - i}\n  }\n  \\\\\n  &=\n  1\n  -\n  \\sum_{i = 0}^{n - k} {\n    {n - k \\choose i} p^i (1 - p)^{n - i}\n  }\n  \\\\\n  &=\n  1\n  -\n  (1 - p)^k\n  \\sum_{i = 0}^{n - k} {\n    {n - k \\choose i} p^i (1 - p)^{n - k - i}\n  }\n  \\\\\n  &=\n  1\n  -\n  (1 - p)^k.",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 996,
+      "numbers": 5,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 75.36599731445312,
+            "y0": 311.4289855957031,
+            "x1": 271.1719055175781,
+            "y1": 321.3065490722656
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 323.2442932128906,
+            "x1": 270.7581481933594,
+            "y1": 333.3060302734375
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 335.19927978515625,
+            "x1": 271.2560729980469,
+            "y1": 345.2610168457031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4549,
+      "numbers": 12,
+      "citations": 34,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 293.7742919921875,
+            "x1": 470.73095703125,
+            "y1": 303.8360290527344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation Framework",
+      "chars": 388,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 230.90426635742188,
+            "x1": 541.4371948242188,
+            "y1": 240.96600341796875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 242.87904357910156,
+            "x1": 353.9857482910156,
+            "y1": 252.9160919189453
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Functional Correctness",
+      "chars": 2783,
+      "numbers": 1,
+      "citations": 4,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 346.5724182128906,
+            "x1": 541.4381103515625,
+            "y1": 356.43487548828125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 358.37628173828125,
+            "x1": 541.4370727539062,
+            "y1": 368.4380187988281
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 370.3688049316406,
+            "x1": 517.3480224609375,
+            "y1": 380.3810729980469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "HumanEval: Hand-Written Evaluation Set",
+      "chars": 971,
+      "numbers": 2,
+      "citations": 1,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 88.04531860351562,
+            "x1": 291.09283447265625,
+            "y1": 98.10704803466797
+          },
+          {
+            "x0": 55.082000732421875,
+            "y0": 100.00027465820312,
+            "x1": 291.091064453125,
+            "y1": 110.06200408935547
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 111.95529174804688,
+            "x1": 125.5974349975586,
+            "y1": 122.01702117919922
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Sandbox for Executing Generated Programs",
+      "chars": 1224,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 329.23095703125,
+            "x1": 289.43963623046875,
+            "y1": 339.1085205078125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 341.0462951660156,
+            "x1": 289.43695068359375,
+            "y1": 351.1080322265625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 353.00128173828125,
+            "x1": 182.07699584960938,
+            "y1": 363.0630187988281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Code Fine-Tuning",
+      "chars": 513,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 652.0989379882812,
+            "x1": 289.442626953125,
+            "y1": 662.026611328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 663.9532470703125,
+            "x1": 166.58016967773438,
+            "y1": 674.0150146484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Data Collection",
+      "chars": 414,
+      "numbers": 6,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 143.52540588378906,
+            "x1": 543.0980834960938,
+            "y1": 153.38787841796875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 155.468994140625,
+            "x1": 543.0946655273438,
+            "y1": 165.34654235839844
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 167.39732360839844,
+            "x1": 495.6255798339844,
+            "y1": 177.3099822998047
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Methods",
+      "chars": 1666,
+      "numbers": 3,
+      "citations": 2,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 306.97198486328125,
+            "y0": 268.4024353027344,
+            "x1": 541.4389038085938,
+            "y1": 278.264892578125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 280.357421875,
+            "x1": 543.0980224609375,
+            "y1": 290.2198791503906
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 292.2591552734375,
+            "x1": 315.42169189453125,
+            "y1": 302.19183349609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Results",
+      "chars": 3808,
+      "numbers": 7,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.0820007324219,
+            "y0": 461.6274108886719,
+            "x1": 541.6073608398438,
+            "y1": 471.4898681640625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 473.4044494628906,
+            "x1": 381.9775085449219,
+            "y1": 483.46063232421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Comparative Analysis of Related Models and Systems",
+      "chars": 1849,
+      "numbers": 19,
+      "citations": 4,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.13100051879883,
+            "y0": 522.125244140625,
+            "x1": 289.4429931640625,
+            "y1": 532.18701171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Results on the APPS Dataset",
+      "chars": 3570,
+      "numbers": 12,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 453.51678466796875,
+            "y0": 510.1692810058594,
+            "x1": 541.4370727539062,
+            "y1": 520.2310180664062
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 522.230712890625,
+            "x1": 543.0973510742188,
+            "y1": 532.1533813476562
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 534.1441650390625,
+            "x1": 365.1666564941406,
+            "y1": 544.1217041015625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Supervised Fine-Tuning",
+      "chars": 788,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 88.78776550292969,
+            "x1": 541.4442138671875,
+            "y1": 98.81985473632812
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 100.81158447265625,
+            "x1": 542.6882934570312,
+            "y1": 110.75424194335938
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 112.7817611694336,
+            "x1": 466.10968017578125,
+            "y1": 122.70442962646484
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Problems from Competitive Programming",
+      "chars": 873,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 305.90130615234375,
+            "x1": 541.4370727539062,
+            "y1": 315.9630432128906
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 317.8562927246094,
+            "x1": 543.0933837890625,
+            "y1": 327.91802978515625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 329.8902282714844,
+            "x1": 441.83062744140625,
+            "y1": 339.84783935546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Problems from Continuous Integration",
+      "chars": 1792,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 535.1043701171875,
+            "x1": 541.4388427734375,
+            "y1": 545.0170288085938
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 546.947265625,
+            "x1": 342.1529235839844,
+            "y1": 557.009033203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Filtering Problems",
+      "chars": 678,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 532.48828125,
+            "x1": 289.43701171875,
+            "y1": 542.550048828125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 544.4432373046875,
+            "x1": 247.7835693359375,
+            "y1": 554.5050048828125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Methods",
+      "chars": 714,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 306.97198486328125,
+            "y0": 268.4024353027344,
+            "x1": 541.4389038085938,
+            "y1": 278.264892578125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 280.357421875,
+            "x1": 543.0980224609375,
+            "y1": 290.2198791503906
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 292.2591552734375,
+            "x1": 315.42169189453125,
+            "y1": 302.19183349609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Results",
+      "chars": 1425,
+      "numbers": 12,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.0820007324219,
+            "y0": 461.6274108886719,
+            "x1": 541.6073608398438,
+            "y1": 471.4898681640625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 473.4044494628906,
+            "x1": 381.9775085449219,
+            "y1": 483.46063232421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Docstring Generation",
+      "chars": 3282,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 88.76528930664062,
+            "x1": 541.6910400390625,
+            "y1": 98.82701873779297
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 100.87239837646484,
+            "x1": 541.4382934570312,
+            "y1": 110.73487091064453
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 112.8274154663086,
+            "x1": 520.8863525390625,
+            "y1": 122.68988800048828
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Limitations",
+      "chars": 3093,
+      "numbers": 1,
+      "citations": 5,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 306.9322814941406,
+            "x1": 289.4364929199219,
+            "y1": 316.9940185546875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 318.8872985839844,
+            "x1": 289.4370422363281,
+            "y1": 328.94903564453125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 330.9174499511719,
+            "x1": 144.27645874023438,
+            "y1": 340.88006591796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Broader Impacts and Hazard Analysis",
+      "chars": 1809,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 635.6992797851562,
+            "x1": 543.184814453125,
+            "y1": 645.7610473632812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Over-reliance",
+      "chars": 1289,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 430.05792236328125,
+            "x1": 289.4403991699219,
+            "y1": 440.0304870605469
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 441.9452819824219,
+            "x1": 291.1848449707031,
+            "y1": 452.00701904296875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Misalignment",
+      "chars": 1893,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.0820007324219,
+            "y0": 402.72442626953125,
+            "x1": 541.4415283203125,
+            "y1": 412.5868835449219
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 414.6794128417969,
+            "x1": 543.0979614257812,
+            "y1": 424.5418701171875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 426.6344299316406,
+            "x1": 469.765380859375,
+            "y1": 436.49688720703125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Bias and representation",
+      "chars": 1004,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 161.15040588378906,
+            "x1": 289.4382629394531,
+            "y1": 171.01287841796875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 172.98805236816406,
+            "x1": 180.6876220703125,
+            "y1": 183.0052947998047
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Economic and labor market impacts",
+      "chars": 1041,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 419.977294921875,
+            "x1": 289.4369812011719,
+            "y1": 430.0390319824219
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 432.0301513671875,
+            "x1": 234.19589233398438,
+            "y1": 441.96282958984375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Security implications",
+      "chars": 2257,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 88.14698791503906,
+            "x1": 543.1870727539062,
+            "y1": 98.07465362548828
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Environmental impacts",
+      "chars": 842,
+      "numbers": 3,
+      "citations": 5,
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 88.04531860351562,
+            "x1": 289.79266357421875,
+            "y1": 98.10704803466797
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 100.05281829833984,
+            "x1": 223.2045440673828,
+            "y1": 110.0452651977539
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Legal implications",
+      "chars": 1547,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.13100051879883,
+            "y0": 287.26226806640625,
+            "x1": 289.4351806640625,
+            "y1": 297.3042297363281
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 299.27471923828125,
+            "x1": 76.76133728027344,
+            "y1": 309.2422790527344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Risk mitigation",
+      "chars": 1144,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 214.79727172851562,
+            "x1": 541.4371337890625,
+            "y1": 224.8590087890625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 226.75228881835938,
+            "x1": 541.7927856445312,
+            "y1": 236.81402587890625
+          },
+          {
+            "x0": 307.0820007324219,
+            "y0": 238.70730590820312,
+            "x1": 543.0911254882812,
+            "y1": 248.76904296875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 250.8134307861328,
+            "x1": 541.4382934570312,
+            "y1": 260.6759033203125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 262.6172790527344,
+            "x1": 396.0006103515625,
+            "y1": 272.67901611328125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 5017,
+      "numbers": 0,
+      "citations": 46,
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.1310119628906,
+            "y0": 513.8722534179688,
+            "x1": 541.4360961914062,
+            "y1": 523.8298950195312
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 525.748291015625,
+            "x1": 427.3703308105469,
+            "y1": 535.81005859375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 828,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 306.97198486328125,
+            "y0": 589.5592651367188,
+            "x1": 543.0928955078125,
+            "y1": 599.6210327148438
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 601.5264892578125,
+            "x1": 541.4376831054688,
+            "y1": 611.5734252929688
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 613.4702758789062,
+            "x1": 444.2796630859375,
+            "y1": 623.5320434570312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 709,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 14,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 165.17750549316406,
+            "x1": 291.0971374511719,
+            "y1": 175.20465087890625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 177.10629272460938,
+            "x1": 291.0934143066406,
+            "y1": 187.16802978515625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 189.06130981445312,
+            "x1": 290.68695068359375,
+            "y1": 199.123046875
+          },
+          {
+            "x0": 55.13100051879883,
+            "y0": 201.10760498046875,
+            "x1": 289.4368591308594,
+            "y1": 211.05026245117188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 212.97232055664062,
+            "x1": 290.68695068359375,
+            "y1": 223.0340576171875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 224.92727661132812,
+            "x1": 289.4370422363281,
+            "y1": 234.989013671875
+          },
+          {
+            "x0": 55.082000732421875,
+            "y0": 236.88229370117188,
+            "x1": 291.09112548828125,
+            "y1": 246.94403076171875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 248.98841857910156,
+            "x1": 160.22027587890625,
+            "y1": 258.85089111328125
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 95,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "holtzman2020curious",
+      "stance": "inherits",
+      "cue": "We use",
+      "sentence": "We use nucleus sampling [Holtzman et al. 2020] with top p=0.95 for all sampling evaluation in this work.",
+      "section": "Methods",
+      "sectionKind": "other",
+      "ordinal": 24,
+      "title": "The curious case of neural text degeneration, 2020",
+      "authors": "Holtzman, A., Buys, J., Du, L., Forbes, M., and Choi, Y",
+      "year": 2020,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 517.1500244140625,
+            "y0": 629.8468017578125,
+            "x1": 541.4402465820312,
+            "y1": 639.8590698242188
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 641.8394775390625,
+            "x1": 439.9524841308594,
+            "y1": 651.8020629882812
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "aye2021autocompletion",
+        "stance": "compares",
+        "cue": "outperformed",
+        "sentence": "Finally, we note that coding is a broad activity which involves much more than synthesizing code from docstrings. [Tufano et al. 2020] use Transformers to generate unit tests for code which outperformed commercial offerings. [Aye et al. 2021] built an internal auto-complete tool for Facebook, and found that training on accepted user completions boosted system performance.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 75,
+        "title": "Learning autocompletion from real-world datasets",
+        "authors": "Aye, G. A., Kim, S., and Li, H",
+        "year": 2021,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 13,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 359.7634582519531,
+              "y0": 302.5182800292969,
+              "x1": 543.0934448242188,
+              "y1": 312.58001708984375
+            },
+            {
+              "x0": 307.44000244140625,
+              "y0": 314.5825500488281,
+              "x1": 541.4384765625,
+              "y1": 324.5002136230469
+            },
+            {
+              "x0": 307.44000244140625,
+              "y0": 326.4657897949219,
+              "x1": 425.0372314453125,
+              "y1": 336.4780578613281
+            }
+          ]
+        }
+      },
+      {
+        "key": "holtzman2020curious",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use nucleus sampling [Holtzman et al. 2020] with top p=0.95 for all sampling evaluation in this work.",
+        "section": "Methods",
+        "sectionKind": "other",
+        "ordinal": 24,
+        "title": "The curious case of neural text degeneration, 2020",
+        "authors": "Holtzman, A., Buys, J., Du, L., Forbes, M., and Choi, Y",
+        "year": 2020,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 517.1500244140625,
+              "y0": 629.8468017578125,
+              "x1": 541.4402465820312,
+              "y1": 639.8590698242188
+            },
+            {
+              "x0": 307.44000244140625,
+              "y0": 641.8394775390625,
+              "x1": 439.9524841308594,
+              "y1": 651.8020629882812
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Given the considerable success of large language models in other modalities and the abundance of publicly available code, we hypothesized that a specialized GPT model, called Codex, could excel at a variety of coding tasks.",
+      "anchorText": "Given the considerable success of large language models in other modalities and the abundance of publicly available code, we hypothesized that a specialized GPT model, called Codex, could excel at a variety of coding tasks.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we hypothesized",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 358.9911193847656,
+            "y0": 634.4972534179688,
+            "x1": 543.093505859375,
+            "y1": 644.5590209960938
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 646.4522705078125,
+            "x1": 541.4370727539062,
+            "y1": 656.5140380859375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 658.4938354492188,
+            "x1": 541.4448852539062,
+            "y1": 668.4414672851562
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 670.5133666992188,
+            "x1": 541.4381713867188,
+            "y1": 680.3758544921875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 682.3172607421875,
+            "x1": 330.30419921875,
+            "y1": 692.3790283203125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In this work, we focus on the task of generating standalone Python functions from docstrings, and evaluate the correctness of code samples automatically through unit tests.",
+      "anchorText": "In this work, we focus on the task of generating standalone Python functions from docstrings, and evaluate the correctness of code samples automatically through unit tests.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 360.73028564453125,
+            "x1": 291.0934753417969,
+            "y1": 370.7920227050781
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 372.71527099609375,
+            "x1": 289.43658447265625,
+            "y1": 382.73748779296875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 384.6402893066406,
+            "x1": 289.4369201660156,
+            "y1": 394.7020263671875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 396.5953063964844,
+            "x1": 76.04823303222656,
+            "y1": 406.65704345703125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Since Codex is evaluated on natural language prompts, we hypothesized that it would be beneficial to fine-tune from the GPT-3 [Brown et al. 2020] model family, which already contains strong natural language representations.",
+      "anchorText": "Since Codex is evaluated on natural language prompts, we hypothesized that it would be beneficial to fine-tune from the GPT-3",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "we hypothesized",
+      "section": "Methods",
+      "sectionKind": "other",
+      "cites": [
+        "brown2020gpt3"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 253.2700653076172,
+            "x1": 541.4443969726562,
+            "y1": 263.2674560546875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 265.1772766113281,
+            "x1": 541.4371337890625,
+            "y1": 275.239013671875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 277.2834167480469,
+            "x1": 347.3818664550781,
+            "y1": 287.1458740234375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "This code is seemingly unrelated to synthesizing functions from docstrings, and we hypothesize that the distribution mismatch reduces HumanEval performance.",
+      "anchorText": "This code is seemingly unrelated to synthesizing functions from docstrings, and we hypothesize that the distribution mismatch reduces HumanEval performance.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we hypothesize",
+      "section": "Supervised Fine-Tuning",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 469.2030334472656,
+            "y0": 112.7817611694336,
+            "x1": 543.0973510742188,
+            "y1": 122.70442962646484
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 124.63131713867188,
+            "x1": 542.6870727539062,
+            "y1": 134.69305419921875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 136.642578125,
+            "x1": 541.4400634765625,
+            "y1": 146.63006591796875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 148.61647033691406,
+            "x1": 410.1046142578125,
+            "y1": 158.57907104492188
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Codex-D often generates incorrect unit tests along with a docstring, but we ignore these during grading.",
+      "anchorText": "Codex-D often generates incorrect unit tests along with a docstring, but we ignore these during grading.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we ignore",
+      "section": "Docstring Generation",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 405.5773010253906,
+            "x1": 541.4370727539062,
+            "y1": 415.6390380859375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 417.5332946777344,
+            "x1": 498.7472229003906,
+            "y1": 427.59503173828125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "However, we do not consider the docstring correct when the model simply copies the code body into the docstring.",
+      "anchorText": "However, we do not consider the docstring correct when the model simply copies the code body into the docstring.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we do not consider",
+      "section": "Docstring Generation",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 503.9501037597656,
+            "y0": 417.5332946777344,
+            "x1": 542.6870727539062,
+            "y1": 427.59503173828125
+          },
+          {
+            "x0": 307.0820007324219,
+            "y0": 429.48828125,
+            "x1": 541.4449462890625,
+            "y1": 439.5500183105469
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 441.44329833984375,
+            "x1": 499.8345031738281,
+            "y1": 451.5050354003906
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Note that by focusing largely on risks in this section, we do not mean to imply that we expect the impact of this class of technologies to be net-negative; rather, risks merit particular attention here because they may be subtle or require deliberate effort to address, whereas we expect the benefits to be more obvious and \u201cautomatic\u201d from the perspective of most users and affected stakeholders.",
+      "anchorText": "Note that by focusing largely on risks in this section, we do not mean to imply that we expect the impact of this class of technologies to be net-negative; rather, risks merit particular attention here because they may be subtle or require deliberate effort to address, whereas we expect the benefits to be more obvious and \"automatic\" from the perspective of most users and affected stakeholders.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Broader Impacts and Hazard Analysis",
+      "sectionKind": "limitations",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 314.5977478027344,
+            "x1": 289.4380187988281,
+            "y1": 324.4953918457031
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 326.56414794921875,
+            "x1": 289.4423522949219,
+            "y1": 336.44671630859375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 338.5354309082031,
+            "x1": 289.6139221191406,
+            "y1": 348.39788818359375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 350.49041748046875,
+            "x1": 291.0979309082031,
+            "y1": 360.3528747558594
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 362.2942810058594,
+            "x1": 289.4369812011719,
+            "y1": 372.35601806640625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 374.4004211425781,
+            "x1": 289.4382019042969,
+            "y1": 384.26287841796875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 386.2794494628906,
+            "x1": 181.795654296875,
+            "y1": 396.2420654296875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We note several immediate ways to improve safety in the subsection on risk mitigation below, though over-reliance in particular is one that we believe merits further inquiry in industry and academia.",
+      "anchorText": "We note several immediate ways to improve safety in the subsection on risk mitigation below, though over-reliance in particular is one that we believe merits further inquiry in industry and academia.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Over-reliance",
+      "sectionKind": "limitations",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 579.4292602539062,
+            "x1": 289.4363708496094,
+            "y1": 589.4910278320312
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 591.38525390625,
+            "x1": 289.4370422363281,
+            "y1": 601.447021484375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 603.3402709960938,
+            "x1": 289.7926330566406,
+            "y1": 613.4020385742188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 615.3780517578125,
+            "x1": 157.63082885742188,
+            "y1": 625.3306884765625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "While we expect that misaligned behaviour like this is unlikely to cause significant harm in current models, it is likely to become more dangerous and harder to eliminate as model capabilities increase.",
+      "anchorText": "While we expect that misaligned behaviour like this is unlikely to cause significant harm in current models, it is likely to become more dangerous and harder to eliminate as model capabilities increase.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Misalignment",
+      "sectionKind": "limitations",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "Although this is worthy of concern, based on our testing, we believe that at their current level of capability, Codex models do not materially lower the barrier to entry for malware development.[For more on characterizing Codex\u2019s capability limitations, see the Limitations section and experiments in the security analysis in Appendix [ref].] We expect that more powerful code generation models will lead to future advancements, and therefore further research into mitigations and continued study of model capabilities are necessary.",
+      "anchorText": "Although this is worthy of concern, based on our testing, we believe that at their current level of capability, Codex models do not materially lower the barrier to entry for malware development.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Security implications",
+      "sectionKind": "limitations",
+      "cites": [],
+      "refs": [
+        "section:Appendix F"
+      ],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 503.3077087402344,
+            "y0": 177.73451232910156,
+            "x1": 541.4358520507812,
+            "y1": 187.76165771484375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 189.6905059814453,
+            "x1": 541.4358520507812,
+            "y1": 199.7176513671875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 201.61929321289062,
+            "x1": 541.43701171875,
+            "y1": 211.6810302734375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 213.64193725585938,
+            "x1": 543.097900390625,
+            "y1": 223.614501953125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 224.25613403320312,
+            "x1": 343.9529113769531,
+            "y1": 235.59100341796875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For example, a more capable code generation model could conceivably advance techniques for generating polymorphic malware.[Polymorphic malware is malicious code that mutates its implementation while maintaining its function.] We believe that application security and model deployment strategies including rate-limiting access and abuse monitoring can manage this threat in the near term; however, the efficacy of these mitigations may scale sublinearly as more capable models are developed.",
+      "anchorText": "We believe that application security and model deployment strategies including rate-limiting access and abuse monitoring can manage this threat in the near term; however, the efficacy of these mitigations may scale sublinearly as more capable models are developed.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Security implications",
+      "sectionKind": "limitations",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 407.6510009765625,
+            "y0": 386.9242858886719,
+            "x1": 543.0982055664062,
+            "y1": 396.98602294921875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 399.0304260253906,
+            "x1": 541.4383544921875,
+            "y1": 408.89288330078125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 410.85302734375,
+            "x1": 541.4429931640625,
+            "y1": 420.8900451660156
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 422.789306640625,
+            "x1": 541.792724609375,
+            "y1": 432.8510437011719
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 434.8204650878906,
+            "x1": 532.2462158203125,
+            "y1": 444.7830810546875
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 11,
+    "cited": 1,
+    "shown": 0,
+    "bare": 10
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG"
+    ],
+    "published": "2021-07-07",
+    "authors": [
+      "Mark Chen",
+      "Jerry Tworek",
+      "Heewoo Jun",
+      "Qiming Yuan",
+      "Henrique Ponde de Oliveira Pinto",
+      "Jared Kaplan",
+      "Harri Edwards",
+      "Yuri Burda",
+      "Nicholas Joseph",
+      "Greg Brockman",
+      "Alex Ray",
+      "Raul Puri",
+      "Gretchen Krueger",
+      "Michael Petrov",
+      "Heidy Khlaaf",
+      "Girish Sastry",
+      "Pamela Mishkin",
+      "Brooke Chan",
+      "Scott Gray",
+      "Nick Ryder",
+      "Mikhail Pavlov",
+      "Alethea Power",
+      "Lukasz Kaiser",
+      "Mohammad Bavarian",
+      "Clemens Winter",
+      "Philippe Tillet",
+      "Felipe Petroski Such",
+      "Dave Cummings",
+      "Matthias Plappert",
+      "Fotios Chantzis",
+      "Elizabeth Barnes",
+      "Ariel Herbert-Voss",
+      "William Hebgen Guss",
+      "Alex Nichol",
+      "Alex Paino",
+      "Nikolas Tezak",
+      "Jie Tang",
+      "Igor Babuschkin",
+      "Suchir Balaji",
+      "Shantanu Jain",
+      "William Saunders",
+      "Christopher Hesse",
+      "Andrew N. Carr",
+      "Jan Leike",
+      "Josh Achiam",
+      "Vedant Misra",
+      "Evan Morikawa",
+      "Alec Radford",
+      "Matthew Knight",
+      "Miles Brundage",
+      "Mira Murati",
+      "Katie Mayer",
+      "Peter Welinder",
+      "Bob McGrew",
+      "Dario Amodei",
+      "Sam McCandlish",
+      "Ilya Sutskever",
+      "Wojciech Zaremba"
+    ]
+  }
+}

@@ -1,0 +1,5107 @@
+{
+  "id": "1804.05958",
+  "title": "Can Neural Machine Translation be Improved with User Feedback?",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1804.05958",
+  "numbers": [
+    {
+      "value": "34%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Since 34% of the titles were rated more than once, the ratings for each title are averaged.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 395.5851135253906,
+            "y0": 210.26962280273438,
+            "x1": 525.545166015625,
+            "y1": 221.17872619628906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 223.81863403320312,
+            "x1": 525.5449829101562,
+            "y1": 234.7277374267578
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 237.36862182617188,
+            "x1": 348.99237060546875,
+            "y1": 248.27772521972656
+          }
+        ]
+      }
+    },
+    {
+      "value": "42.3%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "However, when we ask another three annotators to indicate whether they agree or disagree with a balanced subset of 2,000 user ratings, they agree with 42.3% of the ratings (by majority voting).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 345.9877014160156,
+            "y0": 441.8337097167969,
+            "x1": 525.5404663085938,
+            "y1": 452.7427978515625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 455.3827209472656,
+            "x1": 525.545166015625,
+            "y1": 466.29180908203125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 468.9317321777344,
+            "x1": 525.5452270507812,
+            "y1": 479.8408203125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 482.4807434082031,
+            "x1": 525.5450439453125,
+            "y1": 493.38983154296875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 496.0307312011719,
+            "x1": 327.57781982421875,
+            "y1": 506.9398193359375
+          }
+        ]
+      }
+    },
+    {
+      "value": "90%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "From this collection we filter the cases where (a) the original query and the translated query are the same, or (b) more than 90% of the words from the query translation are not contained in the retrieved source title.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 224.6619415283203,
+            "y0": 467.5048522949219,
+            "x1": 290.2692565917969,
+            "y1": 478.4139404296875
+          },
+          {
+            "x0": 72.0,
+            "y0": 481.0538635253906,
+            "x1": 290.269287109375,
+            "y1": 491.96295166015625
+          },
+          {
+            "x0": 72.0,
+            "y0": 494.6028747558594,
+            "x1": 290.26922607421875,
+            "y1": 505.511962890625
+          },
+          {
+            "x0": 72.0,
+            "y0": 508.1528625488281,
+            "x1": 290.26922607421875,
+            "y1": 519.0619506835938
+          },
+          {
+            "x0": 72.0,
+            "y0": 521.701904296875,
+            "x1": 290.2691955566406,
+            "y1": 532.6109619140625
+          },
+          {
+            "x0": 72.0,
+            "y0": 535.2509155273438,
+            "x1": 85.6363754272461,
+            "y1": 546.1599731445312
+          }
+        ]
+      }
+    },
+    {
+      "value": "15%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "This leaves us with a dataset of 164,065 tuples of Spanish queries, English product titles and their Spanish translations (15% of the original collection).",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 562.3489379882812,
+            "x1": 290.2691955566406,
+            "y1": 573.2579956054688
+          },
+          {
+            "x0": 72.0,
+            "y0": 575.89892578125,
+            "x1": 290.26922607421875,
+            "y1": 586.8079833984375
+          },
+          {
+            "x0": 72.0,
+            "y0": 589.4479370117188,
+            "x1": 290.2691955566406,
+            "y1": 600.3569946289062
+          },
+          {
+            "x0": 72.0,
+            "y0": 602.9969482421875,
+            "x1": 95.33456420898438,
+            "y1": 613.906005859375
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.7M",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The model is trained with MLE on 2.7M parallel sentences of out-of-domain data until the early stopping point which is determined on a small in-domain dev set of 1,619 product title translations.",
+      "status": "rounded",
+      "table": "Table 7",
+      "row": "Train:",
+      "cell": "2,741,087",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 407.4651184082031,
+            "y0": 443.105712890625,
+            "x1": 525.5451049804688,
+            "y1": 454.0148010253906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 456.65472412109375,
+            "x1": 525.545166015625,
+            "y1": 467.5638122558594
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 470.2037353515625,
+            "x1": 525.5451049804688,
+            "y1": 481.1128234863281
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 483.75274658203125,
+            "x1": 525.5451049804688,
+            "y1": 494.6618347167969
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 497.3017578125,
+            "x1": 417.7087097167969,
+            "y1": 508.2108459472656
+          }
+        ]
+      }
+    },
+    {
+      "value": "+1.49",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Evaluating the models in terms of estimated user reward, however, we find an improvement of +1.49 for DC, +0.04 for DPM over the baseline (53.93) (not shown in Table )---but these improvements do not transfer to BLEU because the reward model largely over-estimates the translation quality of translations with major faults.",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.6978454589844,
+            "y0": 192.38986206054688,
+            "x1": 525.5451049804688,
+            "y1": 203.29896545410156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 205.93887329101562,
+            "x1": 525.5450439453125,
+            "y1": 216.8479766845703
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 219.48788452148438,
+            "x1": 525.5452880859375,
+            "y1": 230.39698791503906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 233.03689575195312,
+            "x1": 503.03973388671875,
+            "y1": 243.9459991455078
+          }
+        ]
+      }
+    },
+    {
+      "value": "+0.04",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Evaluating the models in terms of estimated user reward, however, we find an improvement of +1.49 for DC, +0.04 for DPM over the baseline (53.93) (not shown in Table )---but these improvements do not transfer to BLEU because the reward model largely over-estimates the translation quality of translations with major faults.",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.6978454589844,
+            "y0": 192.38986206054688,
+            "x1": 525.5451049804688,
+            "y1": 203.29896545410156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 205.93887329101562,
+            "x1": 525.5450439453125,
+            "y1": 216.8479766845703
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 219.48788452148438,
+            "x1": 525.5452880859375,
+            "y1": 230.39698791503906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 233.03689575195312,
+            "x1": 503.03973388671875,
+            "y1": 243.9459991455078
+          }
+        ]
+      }
+    },
+    {
+      "value": "53.93",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Evaluating the models in terms of estimated user reward, however, we find an improvement of +1.49 for DC, +0.04 for DPM over the baseline (53.93) (not shown in Table )---but these improvements do not transfer to BLEU because the reward model largely over-estimates the translation quality of translations with major faults.",
+      "status": "mismatch",
+      "table": "Table 5",
+      "row": "MLE (all)",
+      "cell": "51.35",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.6978454589844,
+            "y0": 192.38986206054688,
+            "x1": 525.5451049804688,
+            "y1": 203.29896545410156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 205.93887329101562,
+            "x1": 525.5450439453125,
+            "y1": 216.8479766845703
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 219.48788452148438,
+            "x1": 525.5452880859375,
+            "y1": 230.39698791503906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 233.03689575195312,
+            "x1": 503.03973388671875,
+            "y1": 243.9459991455078
+          }
+        ]
+      }
+    },
+    {
+      "value": "42%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Table shows that this filtering strategy leads to large improvements over the baseline, for MLE and even more for MIX, even though the data set size is reduced by 42%.",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 392.35601806640625,
+            "y0": 391.23095703125,
+            "x1": 525.545166015625,
+            "y1": 402.1400451660156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 404.78094482421875,
+            "x1": 525.5452270507812,
+            "y1": 415.6900329589844
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 418.3299560546875,
+            "x1": 525.5450439453125,
+            "y1": 429.2390441894531
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 431.87896728515625,
+            "x1": 475.13427734375,
+            "y1": 442.7880554199219
+          }
+        ]
+      }
+    },
+    {
+      "value": "55%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "However, around the same improvements can be achieved with a random selection of logged translations of the same size (MIX small, containing 55% five-star ratings).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 483.9815673828125,
+            "y0": 431.87896728515625,
+            "x1": 525.5452880859375,
+            "y1": 442.7880554199219
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 445.427978515625,
+            "x1": 525.5451049804688,
+            "y1": 456.3370666503906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 458.97698974609375,
+            "x1": 525.5451049804688,
+            "y1": 469.8860778808594
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 472.5269775390625,
+            "x1": 525.5452270507812,
+            "y1": 483.4360656738281
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 486.07598876953125,
+            "x1": 364.2759704589844,
+            "y1": 496.9850769042969
+          }
+        ]
+      }
+    },
+    {
+      "value": "62%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Bandit-to-Supervised Conversion. We apply the same filtering technique to the logged implicit feedback by treating translations with as references for training MIX with sBLEU (reduction of the data set by 62%).",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 609.948486328125,
+            "x1": 469.10150146484375,
+            "y1": 620.8575439453125
+          },
+          {
+            "x0": 480.0140075683594,
+            "y0": 610.048095703125,
+            "x1": 525.5485229492188,
+            "y1": 620.9571533203125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 623.5970458984375,
+            "x1": 525.5449829101562,
+            "y1": 634.506103515625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 637.1460571289062,
+            "x1": 474.7524108886719,
+            "y1": 648.0551147460938
+          }
+        ]
+      }
+    },
+    {
+      "value": "12%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The W-MIX model shows the largest improvement in query recall (12% points) and BLEU (6 points) over the baseline out of all tested learning approaches.",
+      "status": "rounded",
+      "table": "Table 3",
+      "row": "Star ratings",
+      "cell": "0.1240",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 360.43597412109375,
+            "y0": 215.80972290039062,
+            "x1": 525.5451049804688,
+            "y1": 226.7188262939453
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 229.35873413085938,
+            "x1": 525.545166015625,
+            "y1": 240.26783752441406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 242.90872192382812,
+            "x1": 525.5450439453125,
+            "y1": 253.8178253173828
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 256.4577331542969,
+            "x1": 398.9887390136719,
+            "y1": 267.3668212890625
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Examples for averaged five-star user ratings, five-star expert ratings and expert judgments on the user ratings.",
+      "label": "tab:userexample",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Source Title",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Title Translation",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "User Rating",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(avg)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Expert Rating",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(avg)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Expert Judgment",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(majority)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Universal 4in1 Dual USB Car Charger",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Adapter Voltage DC 5V 3.1A Tester For iPhone",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Coche Cargador Adaptador De Voltaje",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Probador De Corriente Continua 5V 3.1A para iPhone",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.5625",
+            "value": "4.5625",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.33",
+            "value": "4.33",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Correct",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BEAN BUSH THREE COLOURS: YELLOW",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BERGGOLD, PURPLE KING AND GREEN TOP CROP",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Bean Bush tres colores: Amarillo Berggold, p\\'urpura",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "y verde Top Crop King",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.66",
+            "value": "4.66",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Incorrect",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 118.67521667480469,
+            "y0": 133.27102661132812,
+            "x1": 510.5696716308594,
+            "y1": 142.2374267578125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Example for query and product title translation. `candado' is translated to `lock' in the query, but then translated back to `cerradura' in the title. The recall metric would prefer a title translation with `candado', as it was specified by the user.",
+      "label": "tab:ex-query",
+      "numericCells": 1,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Query",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Translated Query",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Title",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Translated Title",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Recall",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "candado bicicleta",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "bicycle lock",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "New Bicycle Vibration Code Moped Lock",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Bike Cycling Security Alarm Sound Lock",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Nuevo c\\'odigo de vibraci\\'on Bicicleta Ciclomotor alarma de seguridad",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "de bloqueo Bicicleta Ciclismo Cerradura De Sonido",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.5",
+            "value": "0.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Results for the reward estimators trained and evaluated on human star ratings and simulated sBLEU.",
+      "label": "tab:re",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Data \\",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MSE",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Macro-avg.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Distance",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Micro-Avg.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Distance",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Pearson's",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "r",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Spearman's",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Star ratings",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1620",
+            "value": "0.1620",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.3203",
+            "value": "0.3203",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1240",
+            "value": "0.1240",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1026",
+            "value": "0.1026",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "sBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0096",
+            "value": "0.0096",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0055",
+            "value": "0.0055",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0710",
+            "value": "0.0710",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.8816",
+            "value": "0.8816",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.8675",
+            "value": "0.8675",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 103.7500228881836,
+            "y0": 293.0409851074219,
+            "x1": 290.2677307128906,
+            "y1": 302.00738525390625
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 303.0039978027344,
+            "x1": 254.79803466796875,
+            "y1": 311.97039794921875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Results for models trained on explicit user ratings evaluated on the product titles test set. `small' indicates a random subset of logged translations of the same size as the filtered log that only contains translations with an average rating of five stars (` '). The differences in BLEU are not significant at between MIX models, but over other models.",
+      "label": "tab:user",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Test BLEU",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Test TER",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.38",
+            "value": "28.38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "57.58",
+            "value": "57.58",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "DPM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.19",
+            "value": "28.19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "57.80",
+            "value": "57.80",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DPM-random",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.19",
+            "value": "28.19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "57.64",
+            "value": "57.64",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DC",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.41",
+            "value": "28.41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "64.25",
+            "value": "64.25",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MLE (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.98",
+            "value": "31.98",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "51.08",
+            "value": "51.08",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MIX (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "34.47",
+            "value": "34.47",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "47.97",
+            "value": "47.97",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MIX (small)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "34.16",
+            "value": "34.16",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "48.12",
+            "value": "48.12",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MIX ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "34.35",
+            "value": "34.35",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "47.99",
+            "value": "47.99",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Results for models trained on implicit task-based feedback data evaluated on the product titles test set. `small' indicates a random subset of logged translations of the same size as the filtered log that only contains translations that contain all the query words (` '). The BLEU score of MIX (small) significantly differs from MIX (all) at , the score of MIX ( ) does not. Other differences are significant.",
+      "label": "tab:query",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Test BLEU",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Test TER",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.38",
+            "value": "28.38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "57.58",
+            "value": "57.58",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MLE (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.89",
+            "value": "31.89",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "51.35",
+            "value": "51.35",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MIX (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.39",
+            "value": "34.39",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "47.94",
+            "value": "47.94",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MIX (small)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.13",
+            "value": "34.13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "48.27",
+            "value": "48.27",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MIX ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.17",
+            "value": "34.17",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "47.72",
+            "value": "47.72",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "W-MIX",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "34.52",
+            "value": "34.52",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "46.91",
+            "value": "46.91",
+            "emphasised": true,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Query recall results on the query test set, comparing the logged translations, the baseline and the best MIX models trained on logged translations (MIX (all) from Tables and ) with the W-MIX model trained via word-based query matching (W-MIX from Table ).",
+      "label": "tab:queryrecall",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Logged",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "BL",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MIX (Tab. )",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MIX (Tab. )",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "W-MIX",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "65.33",
+            "value": "65.33",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45.96",
+            "value": "45.96",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62.92",
+            "value": "62.92",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.21",
+            "value": "63.21",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.12",
+            "value": "68.12",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Corpus statistics for the out-of domain training data and in-domain dev and test data.",
+      "label": "tab:data",
+      "numericCells": 21,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "En",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Es",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Train:",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Sentences",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2,741,087",
+            "value": "2741087",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Tokens",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17,139,416",
+            "value": "17139416",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18,270,753",
+            "value": "18270753",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Vocabulary",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "327,504",
+            "value": "327504",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "393,757",
+            "value": "393757",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Singletons",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "162,834",
+            "value": "162834",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "190,686",
+            "value": "190686",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Dev.:",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Sentences",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1,619",
+            "value": "1619",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Tokens",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "29,063",
+            "value": "29063",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31,813",
+            "value": "31813",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Vocabulary",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11,314",
+            "value": "11314",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11,532",
+            "value": "11532",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "OOVs",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2,645",
+            "value": "2645",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2,493",
+            "value": "2493",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Test",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Sentences",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Tokens",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9,851",
+            "value": "9851",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11,221",
+            "value": "11221",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Vocabulary",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6,735",
+            "value": "6735",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6,668",
+            "value": "6668",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "OOVs",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1,966",
+            "value": "1966",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1,902",
+            "value": "1902",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 339.277099609375,
+            "y0": 248.98397827148438,
+            "x1": 525.544921875,
+            "y1": 257.95037841796875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 258.9459533691406,
+            "x1": 423.59710693359375,
+            "y1": 267.912353515625
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "Data set sizes for collected feedback in number of sentences. The in-domain title translations are only used for simulation experiments.",
+      "label": "tab:data-2",
+      "numericCells": 7,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Description",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Size",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "User star ratings",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69,412",
+            "value": "69412",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "with 5 stars",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40,064",
+            "value": "40064",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Expert star ratings",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1,000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Expert judgments",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2,000",
+            "value": "2000",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Query-title pairs",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "164,065",
+            "value": "164065",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "with",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "61,965",
+            "value": "61965",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Title translations",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "62,162",
+            "value": "62162",
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 340.9627685546875,
+            "y0": 418.1199951171875,
+            "x1": 525.5450439453125,
+            "y1": 427.0863952636719
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 428.0830078125,
+            "x1": 525.5449829101562,
+            "y1": 437.0494079589844
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 438.0450134277344,
+            "x1": 393.3175048828125,
+            "y1": 447.01141357421875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 9",
+      "caption": "Hyperparameter settings for training of the models.",
+      "label": "tab:hyperparam",
+      "numericCells": 46,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Adam's",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Length-Normalization",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MRT",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Sample Size",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MIX",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Estimator Loss Weight",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Simulated Feedback",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MLE",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MIX",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "EL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2e-6",
+            "value": "0.000002",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DPM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2e-6",
+            "value": "0.000002",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "x",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DPM-random",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2e-6",
+            "value": "0.000002",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "x",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DC",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Explicit Star Rating Feedback",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DPM",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2e-6",
+            "value": "0.000002",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "x",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "DPM-random",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2e-6",
+            "value": "0.000002",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "x",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "DC",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2e-6",
+            "value": "0.000002",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "x",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MLE (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MIX (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MIX (small)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MIX (stars=5)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Implicit Task-Based Feedback",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MLE (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "MIX (all)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "MIX (small)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "MIX (recall=1)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "W-MIX",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.002",
+            "value": "0.002",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.05",
+            "value": "0.05",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 222.6082305908203,
+            "y0": 357.21099853515625,
+            "x1": 406.634521484375,
+            "y1": 366.1773986816406
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 10",
+      "caption": "Results for simulation experiments evaluated on the product titles test set.",
+      "label": "tab:simulation",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Learning",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Test BLEU",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Test TER",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Pre-trained",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.38",
+            "value": "28.38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "57.58",
+            "value": "57.58",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Fully Supervised",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "MLE",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.72",
+            "value": "31.72",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "53.02",
+            "value": "53.02",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MIX",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.79",
+            "value": "34.79",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "48.56",
+            "value": "48.56",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Online Bandit",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "EL",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.78",
+            "value": "31.78",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "51.11",
+            "value": "51.11",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Counterfactual",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "DPM",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "30.19",
+            "value": "30.19",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "56.28",
+            "value": "56.28",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DPM-random",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "28.20",
+            "value": "28.20",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "57.89",
+            "value": "57.89",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DC",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "31.11",
+            "value": "31.11",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "55.05",
+            "value": "55.05",
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.66783905029297,
+            "y0": 179.12802124023438,
+            "x1": 290.2650146484375,
+            "y1": 188.09442138671875
+          },
+          {
+            "x0": 72.0,
+            "y0": 189.09103393554688,
+            "x1": 161.4129638671875,
+            "y1": 198.05743408203125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 11",
+      "caption": "BLEU results for simulation models evaluated on the News Commentary test set (nc-test2007) with beam search and greedy decoding. SMT results are from .",
+      "label": "tab:ep-nc",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "SMT",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "NMT (beam search)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "NMT (greedy)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "EP BL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.27",
+            "value": "25.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.55",
+            "value": "27.55",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.32",
+            "value": "26.32",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NC BL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.35",
+            "value": "22.35",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.63",
+            "value": "19.63",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MLE",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.08",
+            "value": "28.08",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "32.48",
+            "value": "32.48",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.04",
+            "value": "31.04",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "EL",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.02",
+            "value": "28.02",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "27.93",
+            "value": "27.93",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "DPM",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "26.24",
+            "value": "26.24",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "27.54",
+            "value": "27.54",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "26.36",
+            "value": "26.36",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "DC",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "26.33",
+            "value": "26.33",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "28.20",
+            "value": "28.20",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "27.39",
+            "value": "27.39",
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 12",
+      "caption": "Example for product title translation from the test set where W-MIX improved the lexical choice over BL and MIX on in-domain title set and MIX on full query-title set (`perforadora' vs `taladro' as translation for `drill', `adjuntos' vs `accesorio' as translation for `attachment').",
+      "label": "tab:ex1",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Title (en)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro ao drill synthes dhs \\",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "dcs attachment / warranty",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Reference-0 (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro ao taladro synthes dhs \\",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "dcs accesorio / garant\\'ia",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Reference-1 (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro synthes , perforaci\\'on , accesorio de dhs y dcs , todo original , garant\\'ia",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BL (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro ao perforadora synthes dhs \\",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "dcs adjuntos / garant\\'ia",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MIX on star-rated titles (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro ao perforadora synthes dhs \\",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "dcs adjuntos / garant\\'ia",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MIX on query-titles, small (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro ao perforadora synthes dhs \\",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "dcs adjuntos / garant\\'ia",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MIX on query-titles, all (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro ao taladro synthes dhs \\",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "dcs adjuntos / garant\\'ia",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "W-MIX",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "hall linvatec pro2070 powerpro ao taladro synthes dhs \\",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "dcs accesorio / garant\\'ia",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 13",
+      "caption": "Examples for product title translations of the logged query test set. In the first example, the W-MIX model improves the translation of \"brushes\", but also chooses a worse translation for \"foundation\" (\"fundaci\\'on\" vs \"base\"). In the second example, one of the tricky parts is to translate the sequence of nouns \"Men Women Plastic Shoe Boxes\" and to disambiguate the relations between them. The BL model translates \"shoes of plastic\", the Log has \"woman of plastic\" and the W-MIX model makes it \"shoes of plastic\" and \"boxes of plastic\". The W-MIX model learns to use \"para\" from the query, but omits the translation of \"women\".",
+      "label": "tab:ex2",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Title (en)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Unicorn Thread 12pcs Makeup Brushes Set Gorgeous Colorful Foundation Brush",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Query (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "unicorn brushes // makeup brushes // brochas de unicornio // brochas unicornio",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Query (en)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "unicorn brushes // makeup brushes",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BL (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "galletas de maquillaje de 12pcs",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Log (es )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Unicorn Rosca 12 un. Conjunto de Pinceles para Maquillaje Hermosa Colorida Base Cepillo",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "W-MIX",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "unicornio rosca 12pcs brochas maquillaje conjunto precioso colorido fundaci\\'on cepillo",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Title (en)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "12 Men Women Plastic Shoe Boxes 33*20*12cm Storage Organisers Clear Large Boxes",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Query (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "cajas plasticas para zapatos",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Query (en)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "plastic shoe boxes",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "BL (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "12 hombres mujeres zapatos de pl\\'astico cajas de almacenamiento 33*20*12cm organizadores de gran tama no",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Log (es)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "12 Zapato De Hombre Mujer De Pl\\'astico Cajas Organizadores de almacenamiento 33*20*12cm cajas Grande Claro",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "W-MIX",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "12 para hombres zapatos de pl\\'astico cajas de pl\\'astico 33*20*12cm almacenamiento organizador transparente grandes cajas",
+            "value": null,
+            "emphasised": true,
+            "block": 7
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\theadalign": "bc",
+    "\\theadgape": "\\Gape[2pt]",
+    "\\todo": "\\textcolor{red}{TODO: #1}\\PackageWarning{TODO:}{#1!}",
+    "\\note": "\\textcolor{gray}{NOTE: #1}\\PackageWarning{NOTE:}{#1?}",
+    "\\BibTeX": "B{\\sc ib}\\TeX"
+  },
+  "references": [
+    {
+      "key": "tensorflow2015-whitepaper",
+      "raw": "Mart\\' n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Man\\'e, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Vi\\'egas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. 2015. https://www.tensorflow.org/TensorFlow: Large-scale machine learning on heterogeneous systems. https://www.tensorflow.org/https://www.tensorflow.org/",
+      "authors": "Mart\\' n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard, Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh Levenberg, Dan Man\\'e, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Vi\\'egas, Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng. 2015",
+      "title": "Large-scale machine learning on heterogeneous systems",
+      "venue": "",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau2017actor",
+      "raw": "Dzmitry Bahdanau, Philemon Brakel, Kelvin Xu, Anirudh Goyal, Ryan Lowe, Joelle Pineau, Aaron Courville, and Yoshua Bengio. 2017. An actor-critic algorithm for sequence prediction. In 5th International Conference on Learning Representations\\/. Toulon, France",
+      "authors": "Dzmitry Bahdanau, Philemon Brakel, Kelvin Xu, Anirudh Goyal, Ryan Lowe, Joelle Pineau, Aaron Courville, and Yoshua Bengio. 2017",
+      "title": "An actor-critic algorithm for sequence prediction",
+      "venue": "In 5th International Conference on Learning Representations\\/. Toulon, France",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "BahdanauETAL:15",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015. Neural machine translation by jointly learning to align and translate. In Third International Conference on Learning Representations\\/. San Diego, California",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "In Third International Conference on Learning Representations\\/. San Diego, California",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "BottouETAL:13",
+      "raw": "L\\'eon Bottou, Jonas Peters, Joaquin Qui\\ nonero-Candela, Denis X. Charles, D. Max Chickering, Elon Portugaly, Dipanakar Ray, Patrice Simard, and Ed Snelson. 2013. Counterfactual reasoning and learning systems: The example of computational advertising. Journal of Machine Learning Research\\/ 14:3207--3260",
+      "authors": "L\\'eon Bottou, Jonas Peters, Joaquin Qui\\ nonero-Candela, Denis X. Charles, D. Max Chickering, Elon Portugaly, Dipanakar Ray, Patrice Simard, and Ed Snelson. 2013",
+      "title": "Counterfactual reasoning and learning systems: The example of computational advertising",
+      "venue": "Journal of Machine Learning Research\\/ 14:3207--3260",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "calixto-EtAl:2017:EACLshort",
+      "raw": "Iacer Calixto, Daniel Stein, Evgeny Matusov, Pintu Lohar, Sheila Castilho, and Andy Way. 2017. Using images to improve machine-translating e-commerce product listings. In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics\\/. Valencia, Spain",
+      "authors": "Iacer Calixto, Daniel Stein, Evgeny Matusov, Pintu Lohar, Sheila Castilho, and Andy Way. 2017",
+      "title": "Using images to improve machine-translating e-commerce product listings",
+      "venue": "In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics\\/. Valencia, Spain",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "clark-EtAl:2011:ACL-HLT2011",
+      "raw": "Jonathan H. Clark, Chris Dyer, Alon Lavie, and Noah A. Smith. 2011. Better hypothesis testing for statistical machine translation: Controlling for optimizer instability. In Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies\\/. Portland, Oregon",
+      "authors": "Jonathan H. Clark, Chris Dyer, Alon Lavie, and Noah A. Smith. 2011",
+      "title": "Better hypothesis testing for statistical machine translation: Controlling for optimizer instability",
+      "venue": "In Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies\\/. Portland, Oregon",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dudik2011doubly",
+      "raw": "Miroslav Dud\\' k, John Langford, and Lihong Li. 2011. Doubly robust policy evaluation and learning. In Proceedings of the 28th International Conference on Machine Learning\\/. Bellevue, Washington",
+      "authors": "Miroslav Dud\\' k, John Langford, and Lihong Li. 2011",
+      "title": "Doubly robust policy evaluation and learning",
+      "venue": "In Proceedings of the 28th International Conference on Machine Learning\\/. Bellevue, Washington",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fleiss1971measuring",
+      "raw": "Joseph L Fleiss. 1971. Measuring nominal scale agreement among many raters. Psychological bulletin\\/ 76(5):378",
+      "authors": "Joseph L Fleiss. 1971",
+      "title": "Measuring nominal scale agreement among many raters",
+      "venue": "Psychological bulletin\\/ 76(5):378",
+      "year": 1971,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gal2016dropout",
+      "raw": "Y Gal and Z Ghahramani. 2016. Dropout as a bayesian approximation: Representing model uncertainty in deep learning. In 33rd International Conference on Machine Learning\\/. New York City, NY",
+      "authors": "Y Gal and Z Ghahramani. 2016",
+      "title": "Dropout as a bayesian approximation: Representing model uncertainty in deep learning",
+      "venue": "In 33rd International Conference on Machine Learning\\/. New York City, NY",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jean-EtAl:2015:ACL-IJCNLP",
+      "raw": "S\\'ebastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio. 2015. On using very large target vocabulary for neural machine translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing\\/. Beijing, China",
+      "authors": "S\\'ebastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio. 2015",
+      "title": "On using very large target vocabulary for neural machine translation",
+      "venue": "In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing\\/. Beijing, China",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "JiangLi:16",
+      "raw": "Nan Jiang and Lihong Li. 2016. Doubly robust off-policy value evaluation for reinforcement learning. In Proceedings of the 33rd International Conference on Machine Learning (ICML)\\/. New York, NY",
+      "authors": "Nan Jiang and Lihong Li. 2016",
+      "title": "Doubly robust off-policy value evaluation for reinforcement learning",
+      "venue": "In Proceedings of the 33rd International Conference on Machine Learning (ICML)\\/. New York, NY",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kim:2014:EMNLP2014",
+      "raw": "Yoon Kim. 2014. Convolutional neural networks for sentence classification. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing\\/. Doha, Qatar",
+      "authors": "Yoon Kim. 2014",
+      "title": "Convolutional neural networks for sentence classification",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing\\/. Doha, Qatar",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kingma2014adam",
+      "raw": "Diederik Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980\\/",
+      "authors": "Diederik Kingma and Jimmy Ba. 2014",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "koehn2007moses",
+      "raw": "Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard Zens, et al. 2007. Moses: Open source toolkit for statistical machine translation. In Proceedings of the 45th Annual Meeting of the Association for Computational Linguistics: Interactive Poster and Demonstration Sessions\\/. Prague, Czech Republic",
+      "authors": "Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard Zens, et al. 2007",
+      "title": "Moses: Open source toolkit for statistical machine translation",
+      "venue": "In Proceedings of the 45th Annual Meeting of the Association for Computational Linguistics: Interactive Poster and Demonstration Sessions\\/. Prague, Czech Republic",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kreutzer-sokolov-riezler:2017:Long",
+      "raw": "Julia Kreutzer, Artem Sokolov, and Stefan Riezler. 2017. Bandit structured prediction for neural sequence-to-sequence learning. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics\\/. Vancouver, Canada",
+      "authors": "Julia Kreutzer, Artem Sokolov, and Stefan Riezler. 2017",
+      "title": "Bandit structured prediction for neural sequence-to-sequence learning",
+      "venue": "In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics\\/. Vancouver, Canada",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "LangfordETAL:08",
+      "raw": "John Langford, Alexander Strehl, and Jennifer Wortman. 2008. Exploration scavenging. In Proceedings of the 25th International Conference on Machine Learning (ICML)\\/. Helsinki, Finland",
+      "authors": "John Langford, Alexander Strehl, and Jennifer Wortman. 2008",
+      "title": "Exploration scavenging",
+      "venue": "In Proceedings of the 25th International Conference on Machine Learning (ICML)\\/. Helsinki, Finland",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "LawrenceETALnips:17",
+      "raw": "Carolin Lawrence, Pratik Gajane, and Stefan Riezler. 2017. Counterfactual learning for machine translation: Degeneracies and solutions. In Proceedings of the NIPS WhatIF Workshop\\/. Long Beach, CA",
+      "authors": "Carolin Lawrence, Pratik Gajane, and Stefan Riezler. 2017",
+      "title": "Counterfactual learning for machine translation: Degeneracies and solutions",
+      "venue": "In Proceedings of the NIPS WhatIF Workshop\\/. Long Beach, CA",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lawrence-sokolov-riezler:2017:EMNLP2017",
+      "raw": "Carolin Lawrence, Artem Sokolov, and Stefan Riezler. 2017. Counterfactual learning from bandit feedback under deterministic logging : A case study in statistical machine translation. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing\\/. Copenhagen, Denmark",
+      "authors": "Carolin Lawrence, Artem Sokolov, and Stefan Riezler. 2017",
+      "title": "Counterfactual learning from bandit feedback under deterministic logging : A case study in statistical machine translation",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing\\/. Copenhagen, Denmark",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "le:2017:arxiv",
+      "raw": "Hoa T. Le, Christophe Cerisara, and Alexandre Denis. 2017. Do convolutional networks need to be deep for text classification ? arXiv preprint arXiv:1707.04108\\/",
+      "authors": "Hoa T. Le, Christophe Cerisara, and Alexandre Denis. 2017",
+      "title": "Do convolutional networks need to be deep for text classification ?",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1707.04108",
+      "doi": null
+    },
+    {
+      "key": "luong2015stanford",
+      "raw": "Minh-Thang Luong and Christopher D Manning. 2015. Stanford neural machine translation systems for spoken language domains. In Proceedings of the International Workshop on Spoken Language Translation\\/. Da Nang, Vietnam",
+      "authors": "Minh-Thang Luong and Christopher D Manning. 2015",
+      "title": "Stanford neural machine translation systems for spoken language domains",
+      "venue": "In Proceedings of the International Workshop on Spoken Language Translation\\/. Da Nang, Vietnam",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nguyen-daumeiii-boydgraber:2017:EMNLP2017",
+      "raw": "Khanh Nguyen, Hal Daum\\'e III, and Jordan Boyd-Graber. 2017. Reinforcement learning for bandit neural machine translation with simulated human feedback. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing\\/. Copenhagen, Denmark",
+      "authors": "Khanh Nguyen, Hal Daum\\'e III, and Jordan Boyd-Graber. 2017",
+      "title": "Reinforcement learning for bandit neural machine translation with simulated human feedback",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing\\/. Copenhagen, Denmark",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "PrecupETAL:00",
+      "raw": "Doina Precup, Richard S. Sutton, and Satinder P. Singh. 2000. Eligibility traces for off-policy policy evaluation. In Proceedings of the Seventeenth International Conference on Machine Learning (ICML)\\/. San Francisco, CA",
+      "authors": "Doina Precup, Richard S. Sutton, and Satinder P. Singh. 2000",
+      "title": "Eligibility traces for off-policy policy evaluation",
+      "venue": "In Proceedings of the Seventeenth International Conference on Machine Learning (ICML)\\/. San Francisco, CA",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sennrich-haddow-birch:2016:WMT",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016. Edinburgh neural machine translation systems for wmt 16. In Proceedings of the First Conference on Machine Translation\\/. Berlin, Germany",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016",
+      "title": "Edinburgh neural machine translation systems for wmt 16",
+      "venue": "In Proceedings of the First Conference on Machine Translation\\/. Berlin, Germany",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sennrich-haddow-birch:2016:P16-11",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016. Improving neural machine translation models with monolingual data. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016",
+      "title": "Improving neural machine translation models with monolingual data",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sennrich-haddow-birch:2016:P16-12",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016. Neural machine translation of rare words with subword units. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shen2016minimum",
+      "raw": "Shiqi Shen, Yong Cheng, Zhongjun He, Wei He, Hua Wu, Maosong Sun, and Yang Liu. 2016. Minimum risk training for neural machine translation. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "authors": "Shiqi Shen, Yong Cheng, Zhongjun He, Wei He, Hua Wu, Maosong Sun, and Yang Liu. 2016",
+      "title": "Minimum risk training for neural machine translation",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "snover2006study",
+      "raw": "Matthew Snover, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John Makhoul. 2006. A study of translation edit rate with targeted human annotation. In Proceedings of the 7th Conference of the Association for Machine Translation in the Americas\\/. Cambridge, Massachusetts",
+      "authors": "Matthew Snover, Bonnie Dorr, Richard Schwartz, Linnea Micciulla, and John Makhoul. 2006",
+      "title": "A study of translation edit rate with targeted human annotation",
+      "venue": "In Proceedings of the 7th Conference of the Association for Machine Translation in the Americas\\/. Cambridge, Massachusetts",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sokolov-EtAl:2016:P16-1",
+      "raw": "Artem Sokolov, Julia Kreutzer, Christopher Lo, and Stefan Riezler. 2016. Learning structured predictors from bandit feedback for interactive nlp. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "authors": "Artem Sokolov, Julia Kreutzer, Christopher Lo, and Stefan Riezler. 2016",
+      "title": "Learning structured predictors from bandit feedback for interactive nlp",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics\\/. Berlin, Germany",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sokolovNIPS2016",
+      "raw": "Artem Sokolov, Julia Kreutzer, Stefan Riezler, and Christopher Lo. 2016. Stochastic structured prediction under bandit feedback. In Advances in Neural Information Processing Systems\\/. Barcelona, Spain",
+      "authors": "Artem Sokolov, Julia Kreutzer, Stefan Riezler, and Christopher Lo. 2016",
+      "title": "Stochastic structured prediction under bandit feedback",
+      "venue": "In Advances in Neural Information Processing Systems\\/. Barcelona, Spain",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sokolov-EtAl:2017:WMT",
+      "raw": "Artem Sokolov, Julia Kreutzer, Kellen Sunderland, Pavel Danchenko, Witold Szymaniak, Hagen F\\\"urstenau, and Stefan Riezler. 2017. A shared task on bandit learning for machine translation. In Proceedings of the Second Conference on Machine Translation\\/. Copenhagen, Denmark",
+      "authors": "Artem Sokolov, Julia Kreutzer, Kellen Sunderland, Pavel Danchenko, Witold Szymaniak, Hagen F\\\"urstenau, and Stefan Riezler. 2017",
+      "title": "A shared task on bandit learning for machine translation",
+      "venue": "In Proceedings of the Second Conference on Machine Translation\\/. Copenhagen, Denmark",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "StrehlETAL:10",
+      "raw": "Alexander L. Strehl, John Langford, Lihong Li, and Sham M. Kakade. 2010. Learning from logged implicit exploration data. In Advances in Neural Information Processing Sytems (NIPS)\\/. Vancouver, Canada",
+      "authors": "Alexander L. Strehl, John Langford, Lihong Li, and Sham M. Kakade. 2010",
+      "title": "Learning from logged implicit exploration data",
+      "venue": "In Advances in Neural Information Processing Sytems (NIPS)\\/. Vancouver, Canada",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "SwaminathanJoachimsNIPS:15",
+      "raw": "Adith Swaminathan and Thorsten Joachims. 2015. The self-normalized estimator for counterfactual learning. In Advances in Neural Information Processing Systems (NIPS)\\/. Montreal, Canada",
+      "authors": "Adith Swaminathan and Thorsten Joachims. 2015",
+      "title": "The self-normalized estimator for counterfactual learning",
+      "venue": "In Advances in Neural Information Processing Systems (NIPS)\\/. Montreal, Canada",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tiedemann2009news",
+      "raw": "J\\\"org Tiedemann. 2009. News from opus-a collection of multilingual parallel corpora with tools and interfaces. In Recent advances in natural language processing\\/. volume 5, pages 237--248",
+      "authors": "J\\\"org Tiedemann. 2009",
+      "title": "News from opus-a collection of multilingual parallel corpora with tools and interfaces",
+      "venue": "In Recent advances in natural language processing\\/. volume 5, pages 237--248",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams1992simple",
+      "raw": "Ronald J Williams. 1992. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine learning\\/ 8:229--256",
+      "authors": "Ronald J Williams. 1992",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "venue": "Machine learning\\/ 8:229--256",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wu2016google",
+      "raw": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. 2016. Google's neural machine translation system: Bridging the gap between human and machine translation. arXiv preprint arXiv:1609.08144\\/",
+      "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. 2016",
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\text{match}(w, \\mathbf{q}) = \\begin{cases} \n1, & \\text{if} \\, w \\in \\mathbf{q} \\\\\n0, & \\text{otherwise}. \n\\end{cases}",
+      "environment": "align",
+      "labels": [
+        "eq:match"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\text{recall}(\\mathbf{y}, \\mathbf{q}) = \\frac{1}{T} \\sum_{t=1}^T \\text{match}(y_t, \\mathbf{q}).",
+      "environment": "align",
+      "labels": [
+        "eq:recall"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "L^{\\text{MLE}}(\\theta) = \\sum_{s=1}^S \\log p_{\\theta}(\\mathbf{y}^{(s)}|\\mathbf{x}^{(s)}).",
+      "environment": "align",
+      "labels": [
+        "eq:mle-loss"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "R^{\\text{MRT}}(\\theta) = \\sum_{s=1}^S  \\sum_{\\mathbf{\\tilde{y}} \\in \\mathcal{S}(\\mathbf{x}^{(s)})} q^{\\alpha}_{\\theta}(\\mathbf{\\tilde{y}}|\\mathbf{x}^{(s)})\\, \\Delta (\\mathbf{\\tilde{y}}),",
+      "environment": "align",
+      "labels": [
+        "eq:mrt-loss"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "R^{\\text{W-MRT}}(\\theta) =& \\sum_{s=1}^S   \\sum_{\\mathbf{\\tilde{y}} \\in \\mathcal{S}(\\mathbf{x}^{(s)})}\\prod_{t=1}^T \\nonumber \\\\ \n& \\biggl[  \nq^{\\alpha}_{\\theta}(\\tilde{y}_t|\\mathbf{x}^{(s)}, \\mathbf{\\tilde{y}}_{<t})\n\\, \\Delta(y_t) \\biggr],",
+      "environment": "align",
+      "labels": [
+        "eq:wm"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "R^{\\text{(W-)MIX}}(\\theta) = \\lambda \\cdot R^{\\text{MLE}}(\\theta) + R^{\\text{(W-)MRT}}(\\theta).",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "R^{\\text{DPM}}(\\theta) = \\frac{1}{H}\\sum_{h=1}^H \\Delta(\\mathbf{y}^{(h)}) \\, \\bar{p}_{\\theta}(\\mathbf{y}^{(h)}|\\mathbf{x}^{(h)}),",
+      "environment": "align",
+      "labels": [
+        "eq:dpm-loss"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "&R^{\\text{DC}}(\\theta) = \\frac{1}{H}\\sum_{h=1}^H \\biggl[ \\left( \\Delta(\\mathbf{y}^{(h)}) - \\hat{\\Delta}_{\\phi}(\\mathbf{y}^{(h)}) \\right)  \\nonumber \\\\ \n & \\times \\bar{p}_{\\theta}(\\mathbf{y}^{(h)}|\\mathbf{x}^{(h)}) +\\sum_{\\mathbf{y} \\in \\mathcal{S}(\\mathbf{x}^{(h)})} \\hat{\\Delta}_{\\phi}(\\mathbf{y}) \\, p_{\\theta} (\\mathbf{y}|\\mathbf{x}^{(h)}) \\biggr]",
+      "environment": "align",
+      "labels": [
+        "eq:dc-loss"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "R^{\\text{EL}}(\\theta) =& \\mathbb{E}_{p(\\mathbf{x}) p_{\\theta}(\\mathbf{\\tilde{y}}|\\mathbf{x})} \\left[\\Delta (\\mathbf{\\tilde{y}}) \\right].",
+      "environment": "align",
+      "labels": [
+        "eq:el-loss"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 764,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.0079116821289,
+            "y0": 230.97567749023438,
+            "x1": 273.2625732421875,
+            "y1": 241.88478088378906
+          },
+          {
+            "x0": 89.0079116821289,
+            "y0": 244.52468872070312,
+            "x1": 273.2625427246094,
+            "y1": 255.4337921142578
+          },
+          {
+            "x0": 89.0079116821289,
+            "y0": 258.0736999511719,
+            "x1": 273.2625732421875,
+            "y1": 268.9827880859375
+          },
+          {
+            "x0": 89.0079116821289,
+            "y0": 271.6227111816406,
+            "x1": 273.2625427246094,
+            "y1": 282.53179931640625
+          },
+          {
+            "x0": 89.0079116821289,
+            "y0": 285.1717224121094,
+            "x1": 273.2625732421875,
+            "y1": 296.080810546875
+          },
+          {
+            "x0": 89.0079116821289,
+            "y0": 298.7217102050781,
+            "x1": 179.4989013671875,
+            "y1": 309.63079833984375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2315,
+      "numbers": 0,
+      "citations": 9,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99990844726562,
+            "y0": 520.0518798828125,
+            "x1": 290.2691345214844,
+            "y1": 530.9609375
+          },
+          {
+            "x0": 71.99990844726562,
+            "y0": 533.600830078125,
+            "x1": 290.2691345214844,
+            "y1": 544.5098876953125
+          },
+          {
+            "x0": 71.99990844726562,
+            "y0": 547.15087890625,
+            "x1": 290.2691955566406,
+            "y1": 558.0599365234375
+          },
+          {
+            "x0": 71.99990844726562,
+            "y0": 560.6998291015625,
+            "x1": 290.26922607421875,
+            "y1": 571.60888671875
+          },
+          {
+            "x0": 71.99990844726562,
+            "y0": 574.2489013671875,
+            "x1": 290.26922607421875,
+            "y1": 585.157958984375
+          },
+          {
+            "x0": 71.99990844726562,
+            "y0": 587.7978515625,
+            "x1": 290.2691650390625,
+            "y1": 598.7069091796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 1356,
+      "numbers": 0,
+      "citations": 11,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 180.66554260253906,
+            "y0": 88.78067016601562,
+            "x1": 290.2692565917969,
+            "y1": 99.68977355957031
+          },
+          {
+            "x0": 72.0,
+            "y0": 102.32968139648438,
+            "x1": 290.2691955566406,
+            "y1": 113.23878479003906
+          },
+          {
+            "x0": 72.0,
+            "y0": 115.87869262695312,
+            "x1": 290.2692565917969,
+            "y1": 126.78779602050781
+          },
+          {
+            "x0": 72.0,
+            "y0": 129.42770385742188,
+            "x1": 290.26922607421875,
+            "y1": 140.33680725097656
+          },
+          {
+            "x0": 72.0,
+            "y0": 142.97671508789062,
+            "x1": 290.2692565917969,
+            "y1": 153.8858184814453
+          },
+          {
+            "x0": 72.0,
+            "y0": 156.52670288085938,
+            "x1": 290.2692565917969,
+            "y1": 167.43580627441406
+          },
+          {
+            "x0": 72.0,
+            "y0": 170.07571411132812,
+            "x1": 248.88011169433594,
+            "y1": 180.9848175048828
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "User Feedback",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Explicit Feedback via Star Ratings",
+      "chars": 3742,
+      "numbers": 6,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 578.5529174804688,
+            "x1": 290.269287109375,
+            "y1": 589.4619750976562
+          },
+          {
+            "x0": 72.0,
+            "y0": 592.1019287109375,
+            "x1": 290.2691345214844,
+            "y1": 603.010986328125
+          },
+          {
+            "x0": 72.0,
+            "y0": 605.6519165039062,
+            "x1": 290.2692565917969,
+            "y1": 616.5609741210938
+          },
+          {
+            "x0": 72.0,
+            "y0": 619.200927734375,
+            "x1": 127.02550506591797,
+            "y1": 630.1099853515625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Task-Based Implicit Feedback",
+      "chars": 2790,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 323.38531494140625,
+            "x1": 466.87603759765625,
+            "y1": 334.29443359375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Learning from User Feedback",
+      "chars": 5053,
+      "numbers": 3,
+      "citations": 9,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 406.0159912109375,
+            "y0": 466.3896789550781,
+            "x1": 525.546875,
+            "y1": 477.29876708984375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 479.9396667480469,
+            "x1": 525.5451049804688,
+            "y1": 490.8487548828125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 493.4886779785156,
+            "x1": 496.1779479980469,
+            "y1": 504.39776611328125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "NMT Model",
+      "chars": 1039,
+      "numbers": 3,
+      "citations": 6,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 348.26068115234375,
+            "x1": 525.545166015625,
+            "y1": 359.1697692871094
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 361.8096923828125,
+            "x1": 525.5452880859375,
+            "y1": 372.7187805175781
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 375.35968017578125,
+            "x1": 525.5452270507812,
+            "y1": 386.2687683105469
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 388.90869140625,
+            "x1": 440.5087890625,
+            "y1": 399.8177795410156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Reward Estimator",
+      "chars": 2108,
+      "numbers": 7,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00001525878906,
+            "y0": 357.49468994140625,
+            "x1": 290.269287109375,
+            "y1": 368.4037780761719
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 371.043701171875,
+            "x1": 261.01104736328125,
+            "y1": 381.9527893066406
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Explicit Star Rating Feedback",
+      "chars": 2270,
+      "numbers": 5,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 83.8962173461914,
+            "x1": 460.472412109375,
+            "y1": 94.8053207397461
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Task-Based Implicit Feedback",
+      "chars": 3083,
+      "numbers": 6,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 323.38531494140625,
+            "x1": 466.87603759765625,
+            "y1": 334.29443359375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 945,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 397.1817932128906,
+            "x1": 525.5452270507812,
+            "y1": 408.09088134765625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 410.7308044433594,
+            "x1": 439.96331787109375,
+            "y1": 421.639892578125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 204,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 700.4959106445312,
+            "x1": 525.5452880859375,
+            "y1": 711.4049682617188
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 714.044921875,
+            "x1": 421.04693603515625,
+            "y1": 724.9539794921875
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 4,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 24,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "wu2016google",
+      "stance": "inherits",
+      "cue": "Following",
+      "sentence": "Following [Wu et al. 2016], we furthermore adopt a linear combination of MLE and (W-)MRT to stabilize learning: Counterfactual Learning by Deterministic Propensity Matching. Counterfactual learning attempts to improve a target MT system from a log of source sentences, translations produced by a historic MT system, and obtained feedback L = {(\ud835\udc31^(h), \ud835\udc32^(h), \u0394(\ud835\udc32^(h)))} ^H_h=1.",
+      "section": "Learning from User Feedback",
+      "sectionKind": "method",
+      "ordinal": 15,
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. 2016",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "inCorpus": true,
+      "anchor": null
+    },
+    "edges": [
+      {
+        "key": "clark-EtAl:2011:ACL-HLT2011",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "For significance tests we used approximate randomization [Clark et al. 2011], for BLEU score evaluation (lowercased) the multi-bleu script of the Moses decoder [Koehn et al. 2007], for TER computation the tercom tool [Snover et al. 2006].",
+        "section": "NMT Model",
+        "sectionKind": "experiments",
+        "ordinal": 26,
+        "title": "Better hypothesis testing for statistical machine translation: Controlling for optimizer instability",
+        "authors": "Jonathan H. Clark, Chris Dyer, Alon Lavie, and Noah A. Smith. 2011",
+        "year": 2011,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.2760009765625,
+              "y0": 551.498779296875,
+              "x1": 525.545166015625,
+              "y1": 562.4078369140625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 565.0478515625,
+              "x1": 490.7123107910156,
+              "y1": 575.9569091796875
+            }
+          ]
+        }
+      },
+      {
+        "key": "koehn2007moses",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "For significance tests we used approximate randomization [Clark et al. 2011], for BLEU score evaluation (lowercased) the multi-bleu script of the Moses decoder [Koehn et al. 2007], for TER computation the tercom tool [Snover et al. 2006].",
+        "section": "NMT Model",
+        "sectionKind": "experiments",
+        "ordinal": 27,
+        "title": "Moses: Open source toolkit for statistical machine translation",
+        "authors": "Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard Zens, et al. 2007",
+        "year": 2007,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.2760009765625,
+              "y0": 551.498779296875,
+              "x1": 525.545166015625,
+              "y1": 562.4078369140625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 565.0478515625,
+              "x1": 490.7123107910156,
+              "y1": 575.9569091796875
+            }
+          ]
+        }
+      },
+      {
+        "key": "lawrence-sokolov-riezler:2017:EMNLP2017",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Our offline learning algorithms range from a simple bandit-to-supervised conversion (i.e., using translations with good feedback for supervised tuning) to transferring the counterfactual learning techniques presented by [Lawrence et al. 2017] from statistical machine translation (SMT) to NMT models.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 3,
+        "title": "Counterfactual learning from bandit feedback under deterministic logging : A case study in statistical machine translation",
+        "authors": "Carolin Lawrence, Artem Sokolov, and Stefan Riezler. 2017",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 508.5816345214844,
+              "y0": 551.4547729492188,
+              "x1": 525.5452880859375,
+              "y1": 562.3638305664062
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 565.0037841796875,
+              "x1": 525.5451049804688,
+              "y1": 575.912841796875
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 578.5527954101562,
+              "x1": 525.5452270507812,
+              "y1": 589.4618530273438
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 592.101806640625,
+              "x1": 525.5452270507812,
+              "y1": 603.0108642578125
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 605.6517944335938,
+              "x1": 525.5451049804688,
+              "y1": 616.5608520507812
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 619.2008056640625,
+              "x1": 394.1888122558594,
+              "y1": 630.10986328125
+            }
+          ]
+        }
+      },
+      {
+        "key": "wu2016google",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following [Wu et al. 2016], we furthermore adopt a linear combination of MLE and (W-)MRT to stabilize learning: Counterfactual Learning by Deterministic Propensity Matching. Counterfactual learning attempts to improve a target MT system from a log of source sentences, translations produced by a historic MT system, and obtained feedback L = {(\ud835\udc31^(h), \ud835\udc32^(h), \u0394(\ud835\udc32^(h)))} ^H_h=1.",
+        "section": "Learning from User Feedback",
+        "sectionKind": "method",
+        "ordinal": 15,
+        "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+        "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. 2016",
+        "year": 2016,
+        "arxivId": "1609.08144",
+        "inCorpus": true,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Another crucial difference of our work to previous research is the fact that we assume a counterfactual learning scenario where human feedback has been given to a historic system different from the target system.",
+      "anchorText": "Another crucial difference of our work to previous research is the fact that we assume a counterfactual learning scenario where human feedback has been given to a historic system different from the target system.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 318.18499755859375,
+            "y0": 443.0606994628906,
+            "x1": 525.5449829101562,
+            "y1": 453.96978759765625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 456.6097106933594,
+            "x1": 525.545166015625,
+            "y1": 467.518798828125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 470.1596984863281,
+            "x1": 525.5451049804688,
+            "y1": 481.06878662109375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 483.7087097167969,
+            "x1": 525.5451049804688,
+            "y1": 494.6177978515625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 497.2577209472656,
+            "x1": 386.00689697265625,
+            "y1": 508.16680908203125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For the experiments in this paper, we focus on translations from English to Spanish.",
+      "anchorText": "For the experiments in this paper, we focus on translations from English to Spanish.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Explicit Feedback via Star Ratings",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 258.9383544921875,
+            "y0": 714.044921875,
+            "x1": 290.269287109375,
+            "y1": 724.9539794921875
+          },
+          {
+            "x0": 72.0,
+            "y0": 727.5938720703125,
+            "x1": 290.269287109375,
+            "y1": 738.5029296875
+          },
+          {
+            "x0": 72.0,
+            "y0": 741.1428833007812,
+            "x1": 180.7855224609375,
+            "y1": 752.0519409179688
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 0,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "stat.ML"
+    ],
+    "published": "2018-04-16",
+    "authors": [
+      "Julia Kreutzer",
+      "Shahram Khadivi",
+      "Evgeny Matusov",
+      "Stefan Riezler"
+    ]
+  }
+}

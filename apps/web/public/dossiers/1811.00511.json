@@ -1,0 +1,5786 @@
+{
+  "id": "1811.00511",
+  "title": "Towards Coherent and Cohesive Long-form Text Generation",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1811.00511",
+  "numbers": [
+    {
+      "value": "1.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "During optimization using Adam , we set the learning rate to and clip the gradient's L2-norm to 1.0.",
+      "status": "exact",
+      "table": "Table 10",
+      "row": "",
+      "cell": "1.00",
+      "anchor": null
+    },
+    {
+      "value": "40%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We identified a group of poor judges (probable spammers) who choose over the Human more than 40% of the time, and eliminated them from the judge pool.",
+      "status": "rounded",
+      "table": "Table 21",
+      "row": "Human",
+      "cell": "39.72%",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 358.578857421875,
+            "x1": 525.5407104492188,
+            "y1": 369.4879455566406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 372.12786865234375,
+            "x1": 472.4287414550781,
+            "y1": 383.0369567871094
+          }
+        ]
+      }
+    },
+    {
+      "value": "60 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We initially train for 60 epochs on the TripAdvisor data and 30 epochs on the Yelp data.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 199.58595275878906,
+            "y0": 705.2957763671875,
+            "x1": 290.2732849121094,
+            "y1": 716.204833984375
+          },
+          {
+            "x0": 71.99995422363281,
+            "y0": 718.8447265625,
+            "x1": 287.76007080078125,
+            "y1": 729.7537841796875
+          }
+        ]
+      }
+    },
+    {
+      "value": "30 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We initially train for 60 epochs on the TripAdvisor data and 30 epochs on the Yelp data.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 199.58595275878906,
+            "y0": 705.2957763671875,
+            "x1": 290.2732849121094,
+            "y1": 716.204833984375
+          },
+          {
+            "x0": 71.99995422363281,
+            "y0": 718.8447265625,
+            "x1": 287.76007080078125,
+            "y1": 729.7537841796875
+          }
+        ]
+      }
+    },
+    {
+      "value": "50 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We fix and in equations ( ) and ( ). We train both discriminators for 50 epochs and choose the models with the best R 1 scores on the validation dataset.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "5 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Model . In the fine-tuning stage, we use the negative-critical sequence training method, as described in Section , up to 5 epochs, with a learning rate of .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Coherence and cohesion rewards on test data. The cohesion reward at the end of each line is computed with its next sentence. This is an example of contradiction and inconsistent sentiment, suggestive of incoherence. We append more examples with extreme cohesion rewards.",
+      "label": "sanity",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "source",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "cohesion",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "coherence",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CB0000 this hotel was unbelievably overpriced .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "343434 0.0002",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[c]@l@we were looking for something cheaper but thought we would at least",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "be staying in a decent hotel having paid that much when booking .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "343434 0.0411",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "it wasn t clear when booking that we would have to CB0000 share a bathroom .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "343434 0.0084",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "there was one shower for the whole floor which was tiny and unclean .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "343434 0.0054",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "the room was old and lacking in facilities .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "target",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "the beds were very uncomfortable and the linen was very old .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "343434 0.0768",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "343434",
+            "value": "343434",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "breakfast was ok , but the staff were incompetent .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434 0.0591",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434",
+            "value": "343434",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "on our last day they were too lazy to clean our table and never bothered taking our order .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434 -0.0097",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434",
+            "value": "343434",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "we had to leave having had no breakfast , as we ran out of time .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434 0.0457",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434",
+            "value": "343434",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "they saw us get up and leave and didn t even apologise for the appalling lack of service .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "343434 +0.3735",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "negative target",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "the staff recommended great restaurants with very reasonable prices within walking distance .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434 0.0514",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "CB0000",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "the paris hop on bus stops nearby .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "343434 0.0798",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "CB0000",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "the gare l est is within 3 blocks .",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "343434 -0.0156",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "CB0000",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "[c]@l@we paid 75 euro per nite excluding breakfast but paid for breakfast one day and found it CB0000 very",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CB0000 good and reasonably priced .",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "343434 0.0082",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "CB0000",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "the rooms are clean and CB0000 bathrooms ensuite .",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CB0000 -0.2001",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "more examples of cohesion",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "once you get there you are greeted by the staff .",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "they explain everything to you , and in english , not the best , but good enough .",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.1004",
+            "value": "0.1004",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "the coffee was even good for a coffee snob like myself .",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "CB0000",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "the hotel is much smaller than i thought and only has six floors .",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "CB0000 -0.1103",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "the only negative was the curtain in the bathroom .",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[c]@l@it was very shear and we felt that people in the building across the street could look",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "right in at night .",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.0787",
+            "value": "0.0787",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "the beer at the lobby bar was stale .",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "CB0000",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "there are many friendly cats on the grounds .",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "CB0000 -0.0830",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.51293182373047,
+            "y0": 458.51947021484375,
+            "x1": 525.54736328125,
+            "y1": 468.4820861816406
+          },
+          {
+            "x0": 72.0,
+            "y0": 470.4744567871094,
+            "x1": 525.5471801757812,
+            "y1": 480.43707275390625
+          },
+          {
+            "x0": 72.0,
+            "y0": 482.429443359375,
+            "x1": 307.93426513671875,
+            "y1": 492.3920593261719
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Coherence and cohesion rewards on test data. The cohesion reward at the end of each line is computed with its next sentence. This is an example of contradiction and inconsistent sentiment, suggestive of incoherence. We append more examples with extreme cohesion rewards.",
+      "label": "sanity",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "we were looking for something cheaper but thought we would at least",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "be staying in a decent hotel having paid that much when booking .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.51293182373047,
+            "y0": 458.51947021484375,
+            "x1": 525.54736328125,
+            "y1": 468.4820861816406
+          },
+          {
+            "x0": 72.0,
+            "y0": 470.4744567871094,
+            "x1": 525.5471801757812,
+            "y1": 480.43707275390625
+          },
+          {
+            "x0": 72.0,
+            "y0": 482.429443359375,
+            "x1": 307.93426513671875,
+            "y1": 492.3920593261719
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Coherence and cohesion rewards on test data. The cohesion reward at the end of each line is computed with its next sentence. This is an example of contradiction and inconsistent sentiment, suggestive of incoherence. We append more examples with extreme cohesion rewards.",
+      "label": "sanity",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "we paid 75 euro per nite excluding breakfast but paid for breakfast one day and found it CB0000 very",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CB0000 good and reasonably priced .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.51293182373047,
+            "y0": 458.51947021484375,
+            "x1": 525.54736328125,
+            "y1": 468.4820861816406
+          },
+          {
+            "x0": 72.0,
+            "y0": 470.4744567871094,
+            "x1": 525.5471801757812,
+            "y1": 480.43707275390625
+          },
+          {
+            "x0": 72.0,
+            "y0": 482.429443359375,
+            "x1": 307.93426513671875,
+            "y1": 492.3920593261719
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Coherence and cohesion rewards on test data. The cohesion reward at the end of each line is computed with its next sentence. This is an example of contradiction and inconsistent sentiment, suggestive of incoherence. We append more examples with extreme cohesion rewards.",
+      "label": "sanity",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "it was very shear and we felt that people in the building across the street could look",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "right in at night .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.51293182373047,
+            "y0": 458.51947021484375,
+            "x1": 525.54736328125,
+            "y1": 468.4820861816406
+          },
+          {
+            "x0": 72.0,
+            "y0": 470.4744567871094,
+            "x1": 525.5471801757812,
+            "y1": 480.43707275390625
+          },
+          {
+            "x0": 72.0,
+            "y0": 482.429443359375,
+            "x1": 307.93426513671875,
+            "y1": 492.3920593261719
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Retrieval ratios for coherence and cohesion discriminators from a collection of 100 negative candidates from the test data. The reported numbers are the averages over 20 evaluations. Notations: is a convolutional input encoder with filter sizes 2, 3, 4, and 5, and there are 512 filters for each filter size. is a 1-layered bi-directional GRU input encoder with hidden size 1024. We experimented different configurations for both encoder types, and selected the best performing models for the negative-critical sequence training step.",
+      "label": "retrieval",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "TripAdvisor",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Target Sentences Retrieval",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yelp",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Target Sentences Retrieval",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Discriminators",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Encoding",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "R@5",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "R@10",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Discriminators",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Encoding",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "R@5",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "R@10",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.18",
+            "value": "0.18",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.43",
+            "value": "0.43",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.60",
+            "value": "0.60",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.33",
+            "value": "0.33",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.61",
+            "value": "0.61",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.74",
+            "value": "0.74",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.26",
+            "value": "0.26",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "0.50",
+            "value": "0.50",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "0.65",
+            "value": "0.65",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.39",
+            "value": "0.39",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "0.68",
+            "value": "0.68",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "0.81",
+            "value": "0.81",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.12",
+            "value": "0.12",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.28",
+            "value": "0.28",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.43",
+            "value": "0.43",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.14",
+            "value": "0.14",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.33",
+            "value": "0.33",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.47",
+            "value": "0.47",
+            "emphasised": true,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.11",
+            "value": "0.11",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.21",
+            "value": "0.21",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.33",
+            "value": "0.33",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.11",
+            "value": "0.11",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.26",
+            "value": "0.26",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.39",
+            "value": "0.39",
+            "emphasised": false,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Sample generations from our MLE-trained baseline model, , and our discriminator-guided model . The redred texts highlight a common problem in - it exhibits a repetition, and an inconsistent opinion as a review. In contrast, our discriminator-guided model is able to generate a more interesting, and sentiment-consistent continuation.",
+      "label": "sample",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "source sentences",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "[c]@l@the hotel inglaterra delivered as promised . the staff was welcoming and spoke good english . the cleaning staff did a",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "very good job every day . the rooms were spotless and very modern . the bathroom was large and had a very nice shower",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": ", and there were two generously sized bath towels that were twice the size of normal towels .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "[c]@l@ redthe breakfast in the morning was delicious and very good . it was the only hotel where i slept very well . the staff was",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "very helpful in late afternoon or late times . redthe breakfast was adequate , with a decent range of cereals , fruit , and",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "redfruits . there is also free use of the coffee in the reception area .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "[c]@l@the breakfast was plentiful including fresh breads and cooked to order . the location was fantastic . it is in the north",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "of the marina and in a very short distance . the marina has a small swimming pool with sitting area and a small gym .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "they are very popular and guests have an evening reception which is very nice .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Sample generations from our MLE-trained baseline model, , and our discriminator-guided model . The redred texts highlight a common problem in - it exhibits a repetition, and an inconsistent opinion as a review. In contrast, our discriminator-guided model is able to generate a more interesting, and sentiment-consistent continuation.",
+      "label": "sample",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "the hotel inglaterra delivered as promised . the staff was welcoming and spoke good english . the cleaning staff did a",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "very good job every day . the rooms were spotless and very modern . the bathroom was large and had a very nice shower",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": ", and there were two generously sized bath towels that were twice the size of normal towels .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "Sample generations from our MLE-trained baseline model, , and our discriminator-guided model . The redred texts highlight a common problem in - it exhibits a repetition, and an inconsistent opinion as a review. In contrast, our discriminator-guided model is able to generate a more interesting, and sentiment-consistent continuation.",
+      "label": "sample",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "redthe breakfast in the morning was delicious and very good . it was the only hotel where i slept very well . the staff was",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "very helpful in late afternoon or late times . redthe breakfast was adequate , with a decent range of cereals , fruit , and",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "redfruits . there is also free use of the coffee in the reception area .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Sample generations from our MLE-trained baseline model, , and our discriminator-guided model . The redred texts highlight a common problem in - it exhibits a repetition, and an inconsistent opinion as a review. In contrast, our discriminator-guided model is able to generate a more interesting, and sentiment-consistent continuation.",
+      "label": "sample",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "the breakfast was plentiful including fresh breads and cooked to order . the location was fantastic . it is in the north",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "of the marina and in a very short distance . the marina has a small swimming pool with sitting area and a small gym .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "they are very popular and guests have an evening reception which is very nice .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 10",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 80,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "TripAdvisor",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "NLL",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "BLEU-3",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "BLEU-4",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "BLEU-5",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "l [c]@l@intra-",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "l [c]@l@intra-",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "l [c]@l@inter-",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "l [c]@l@inter-",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "l [c]@l@length",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(baseline)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.86",
+            "value": "0.86",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.36",
+            "value": "2.36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.38",
+            "value": "0.38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.19",
+            "value": "0.19",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.08",
+            "value": "0.08",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.66",
+            "value": "0.66",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.93",
+            "value": "0.93",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.40",
+            "value": "0.40",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.72",
+            "value": "0.72",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.08",
+            "value": "1.08",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.77",
+            "value": "0.77",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2.18",
+            "value": "2.18",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "0.46",
+            "value": "0.46",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "0.27",
+            "value": "0.27",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "0.14",
+            "value": "0.14",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "0.64",
+            "value": "0.64",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.94",
+            "value": "0.94",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.38",
+            "value": "0.38",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.71",
+            "value": "0.71",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.97",
+            "value": "0.97",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.80",
+            "value": "0.80",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.24",
+            "value": "2.24",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.44",
+            "value": "0.44",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.25",
+            "value": "0.25",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.12",
+            "value": "0.12",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.64",
+            "value": "0.64",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.94",
+            "value": "0.94",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.39",
+            "value": "0.39",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.72",
+            "value": "0.72",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.06",
+            "value": "1.06",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.80",
+            "value": "0.80",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2.25",
+            "value": "2.25",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.44",
+            "value": "0.44",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.24",
+            "value": "0.24",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.12",
+            "value": "0.12",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.65",
+            "value": "0.65",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.94",
+            "value": "0.94",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.40",
+            "value": "0.40",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.72",
+            "value": "0.72",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "1.02",
+            "value": "1.02",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Yelp",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "NLL",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "BLEU-3",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "BLEU-4",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "BLEU-5",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "l [c]@l@intra-",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-1",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "l [c]@l@intra-",
+            "value": null,
+            "emphasised": true,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "l [c]@l@inter-",
+            "value": null,
+            "emphasised": true,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "l [c]@l@inter-",
+            "value": null,
+            "emphasised": true,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-3",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "l [c]@l@length",
+            "value": null,
+            "emphasised": true,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(baseline)",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "1.32",
+            "value": "1.32",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "3.84",
+            "value": "3.84",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.37",
+            "value": "0.37",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.17",
+            "value": "0.17",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.07",
+            "value": "0.07",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.68",
+            "value": "0.68",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.95",
+            "value": "0.95",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.54",
+            "value": "0.54",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "0.86",
+            "value": "0.86",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "1.07",
+            "value": "1.07",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.26",
+            "value": "1.26",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "3.65",
+            "value": "3.65",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.45",
+            "value": "0.45",
+            "emphasised": true,
+            "block": 7
+          },
+          {
+            "text": "0.23",
+            "value": "0.23",
+            "emphasised": true,
+            "block": 7
+          },
+          {
+            "text": "0.11",
+            "value": "0.11",
+            "emphasised": true,
+            "block": 7
+          },
+          {
+            "text": "0.68",
+            "value": "0.68",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.95",
+            "value": "0.95",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.53",
+            "value": "0.53",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "0.85",
+            "value": "0.85",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "1.05",
+            "value": "1.05",
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.24",
+            "value": "1.24",
+            "emphasised": true,
+            "block": 8
+          },
+          {
+            "text": "3.56",
+            "value": "3.56",
+            "emphasised": true,
+            "block": 8
+          },
+          {
+            "text": "0.45",
+            "value": "0.45",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "0.23",
+            "value": "0.23",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "0.11",
+            "value": "0.11",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "0.69",
+            "value": "0.69",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "0.95",
+            "value": "0.95",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "0.55",
+            "value": "0.55",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "0.87",
+            "value": "0.87",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "1.00",
+            "value": "1.00",
+            "emphasised": false,
+            "block": 8
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.25",
+            "value": "1.25",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "3.59",
+            "value": "3.59",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "0.43",
+            "value": "0.43",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "0.22",
+            "value": "0.22",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "0.11",
+            "value": "0.11",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "0.69",
+            "value": "0.69",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "0.95",
+            "value": "0.95",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "0.56",
+            "value": "0.56",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "0.88",
+            "value": "0.88",
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "1.05",
+            "value": "1.05",
+            "emphasised": false,
+            "block": 9
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 11",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "intra-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 12",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "intra-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 13",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "inter-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 14",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "inter-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 15",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "length",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 16",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "intra-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 17",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "intra-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 18",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "inter-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 19",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "inter-",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "unique-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 20",
+      "caption": "An ablation study with automated evaluation metric scores: NLL, PPL, BLEU- , intra/inter-unique- , along with the length ratio with the length of corresponding true target sentences as 1. Significant numbers are highlighted in bold before rounding.",
+      "label": "modelstats",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "length",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 21",
+      "caption": "Results of Human Evaluation showing preferences (%) for our model vis-a-vis the baseline after adjustment for spamming. is preferred over . For simplicity, the 5-point Likert scale has been collapsed to a 3-point scale. See the Appendix for further details of distributions.",
+      "label": "tab:humanevalresults",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Cohesion",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Coherence",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Human judges preferred:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Human judges preferred:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Our Method",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Comparison",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Our Method",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Comparison",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "36.41%",
+            "value": "36.41",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "33.57%",
+            "value": "33.57",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "30.50%",
+            "value": "30.50",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "37.23%",
+            "value": "37.23",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "31.44%",
+            "value": "31.44",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.80%",
+            "value": "31.80",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "29.91%",
+            "value": "29.91",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "30.85%",
+            "value": "30.85",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "39.24%",
+            "value": "39.24",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "28.96%",
+            "value": "28.96",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "31.32%",
+            "value": "31.32",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "39.72%",
+            "value": "39.72",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 22",
+      "caption": "Results of Human Evaluation showing preferences (%) for our model vis-a-vis the baseline before adjustment for spamming. For simplicity, the 5-point Likert scale has been collapsed to a 3-point scale.",
+      "label": "tab:humanevalresults_unadjusted",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Cohesion",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Coherence",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Human judges preferred:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Human judges preferred:",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Our Method",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Comparison",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Our Method",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Comparison",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "36.25%",
+            "value": "36.25",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "26.62%",
+            "value": "26.62",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "37.13%",
+            "value": "37.13",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "39.25%",
+            "value": "39.25",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "23.12%",
+            "value": "23.12",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "37.63%",
+            "value": "37.63",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "34.25%",
+            "value": "34.25",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "23.63%",
+            "value": "23.63",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "42.12%",
+            "value": "42.12",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "35.63%",
+            "value": "35.63",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "21.50%",
+            "value": "21.50",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "42.87%",
+            "value": "42.87",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\BibTeX": "B{\\sc ib}\\TeX",
+    "\\JG": "{\\color{blue}{[{\\bf JG}: #1]}}",
+    "\\yz": "{\\color{blue}{[{\\bf YZ}: #1]}}"
+  },
+  "references": [
+    {
+      "key": "arora2017asimple",
+      "raw": "Sanjeev Arora, Yingyu Liang, and Tengyu Ma. 2017. A simple but tough-to-beat baseline for sentence embeddings. In International Conference on Learning Representations",
+      "authors": "Sanjeev Arora, Yingyu Liang, and Tengyu Ma. 2017",
+      "title": "A simple but tough-to-beat baseline for sentence embeddings",
+      "venue": "In International Conference on Learning Representations",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "baeza1999modern",
+      "raw": "Ricardo Baeza-Yates and Berthier Ribeiro-Neto. 1999. Modern information retrieval, volume 463. ACM Press Books",
+      "authors": "Ricardo Baeza-Yates and Berthier Ribeiro-Neto. 1999",
+      "title": "Modern information retrieval, volume 463",
+      "venue": "ACM Press Books",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau2016actor",
+      "raw": "Dzmitry Bahdanau, Philemon Brakel, Kelvin Xu, Anirudh Goyal, Ryan Lowe, Joelle Pineau, Aaron Courville, and Yoshua Bengio. 2016. An actor-critic algorithm for sequence prediction. arXiv preprint arXiv:1607.07086",
+      "authors": "Dzmitry Bahdanau, Philemon Brakel, Kelvin Xu, Anirudh Goyal, Ryan Lowe, Joelle Pineau, Aaron Courville, and Yoshua Bengio. 2016",
+      "title": "An actor-critic algorithm for sequence prediction",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1607.07086",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/BahdanauCB14",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014. http://arxiv.org/abs/1409.0473 Neural machine translation by jointly learning to align and translate. CoRR, abs/1409.0473",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "CoRR, abs/1409.0473",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "barto1983neuronlike",
+      "raw": "Andrew G Barto, Richard S Sutton, and Charles W Anderson. 1983. Neuronlike adaptive elements that can solve difficult learning control problems. IEEE transactions on systems, man, and cybernetics, SMC-13(5):834--846",
+      "authors": "Andrew G Barto, Richard S Sutton, and Charles W Anderson. 1983",
+      "title": "Neuronlike adaptive elements that can solve difficult learning control problems",
+      "venue": "IEEE transactions on systems, man, and cybernetics, SMC-13(5):834--846",
+      "year": 1983,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "barzilay2008modeling",
+      "raw": "Regina Barzilay and Mirella Lapata. 2008. Modeling local coherence: An entity-based approach. Computational Linguistics, 34(1):1--34",
+      "authors": "Regina Barzilay and Mirella Lapata. 2008",
+      "title": "Modeling local coherence: An entity-based approach",
+      "venue": "Computational Linguistics, 34(1):1--34",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bosselut18discourse",
+      "raw": "Antoine Bosselut, Asli Celikyilmaz, Xiaodong He, Jianfeng Gao, Po-Sen Huang, and Yejin Choi. 2018. Discourse-aware neural rewards for coherent text generation. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology, pages 173--184",
+      "authors": "Antoine Bosselut, Asli Celikyilmaz, Xiaodong He, Jianfeng Gao, Po-Sen Huang, and Yejin Choi. 2018",
+      "title": "Discourse-aware neural rewards for coherent text generation",
+      "venue": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology, pages 173--184",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cho-al-emnlp14",
+      "raw": "Kyunghyun Cho, Bart van Merri\\\"enboer, Ca\u011flar G\\\"ul cehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014. Learning phrase representations using rnn encoder--decoder for statistical machine translation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "authors": "Kyunghyun Cho, Bart van Merri\\\"enboer, Ca\u011flar G\\\"ul cehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014",
+      "title": "Learning phrase representations using rnn encoder--decoder for statistical machine translation",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cohen1985speech",
+      "raw": "Philip R Cohen and Hector J Levesque. 1985. Speech acts and rationality. In Proceedings of the 23rd annual meeting on Association for Computational Linguistics, pages 49--60. Association for Computational Linguistics",
+      "authors": "Philip R Cohen and Hector J Levesque. 1985",
+      "title": "Speech acts and rationality",
+      "venue": "In Proceedings of the 23rd annual meeting on Association for Computational Linguistics, pages 49--60. Association for Computational Linguistics",
+      "year": 1985,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Collobert:2011:NLP:1953048.2078186",
+      "raw": "Ronan Collobert, Jason Weston, L\\'eon Bottou, Michael Karlen, Koray Kavukcuoglu, and Pavel Kuksa. 2011. Natural language processing (almost) from scratch. J. Mach. Learn. Res., 12:2493--2537",
+      "authors": "Ronan Collobert, Jason Weston, L\\'eon Bottou, Michael Karlen, Koray Kavukcuoglu, and Pavel Kuksa. 2011",
+      "title": "Natural language processing (almost) from scratch",
+      "venue": "J. Mach. Learn. Res., 12:2493--2537",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cristea1998veins",
+      "raw": "Dan Cristea, Nancy Ide, and Laurent Romary. 1998. Veins theory: A model of global discourse cohesion and coherence. In Proceedings of the 36th Annual Meeting of the Association for Computational Linguistics and 17th International Conference on Computational Linguistics-Volume 1, pages 281--285. Association for Computational Linguistics",
+      "authors": "Dan Cristea, Nancy Ide, and Laurent Romary. 1998",
+      "title": "Veins theory: A model of global discourse cohesion and coherence",
+      "venue": "In Proceedings of the 36th Annual Meeting of the Association for Computational Linguistics and 17th International Conference on Computational Linguistics-Volume 1, pages 281--285. Association for Computational Linguistics",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-0907-0786",
+      "raw": "Hal Daum\\'e, John Langford, and Daniel Marcu. 2009. https://doi.org/10.1007/s10994-009-5106-x Search-based structured prediction. Machine Learning, 75(3):297--325",
+      "authors": "Hal Daum\\'e, John Langford, and Daniel Marcu. 2009",
+      "title": "Search-based structured prediction",
+      "venue": "Machine Learning, 75(3):297--325",
+      "year": 2009,
+      "arxivId": null,
+      "doi": "10.1007/s10994-009-5106-x"
+    },
+    {
+      "key": "edmundson1969new",
+      "raw": "Harold P Edmundson. 1969. New methods in automatic extracting. Journal of the ACM (JACM), 16(2):264--285",
+      "authors": "Harold P Edmundson. 1969",
+      "title": "New methods in automatic extracting",
+      "venue": "Journal of the ACM (JACM), 16(2):264--285",
+      "year": 1969,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "46657",
+      "raw": "William Fedus, Ian Goodfellow, and Andrew Dai. 2018. MaskGAN: Better text generation via filling in the ____. In ICLR",
+      "authors": "William Fedus, Ian Goodfellow, and Andrew Dai. 2018",
+      "title": "MaskGAN: Better text generation via filling in the ____",
+      "venue": "In ICLR",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gaosurvey",
+      "raw": "Jianfeng Gao, Michel Galley, and Lihong Li. 2018. Neural approaches to conversational AI. arXiv preprint arXiv:1809.08267",
+      "authors": "Jianfeng Gao, Michel Galley, and Lihong Li. 2018",
+      "title": "Neural approaches to conversational AI",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1809.08267",
+      "doi": null
+    },
+    {
+      "key": "gao2014modeling",
+      "raw": "Jianfeng Gao, Patrick Pantel, Michael Gamon, Xiaodong He, and Li Deng. 2014. Modeling interestingness with deep neural networks. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 2--13",
+      "authors": "Jianfeng Gao, Patrick Pantel, Michael Gamon, Xiaodong He, and Li Deng. 2014",
+      "title": "Modeling interestingness with deep neural networks",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 2--13",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gong2013deep",
+      "raw": "Yunchao Gong, Yangqing Jia, Thomas Leung, Alexander Toshev, and Sergey Ioffe. 2013. Deep convolutional ranking for multilabel image annotation. arXiv preprint arXiv:1312.4894",
+      "authors": "Yunchao Gong, Yangqing Jia, Thomas Leung, Alexander Toshev, and Sergey Ioffe. 2013",
+      "title": "Deep convolutional ranking for multilabel image annotation",
+      "venue": "arXiv preprint",
+      "year": 2013,
+      "arxivId": "1312.4894",
+      "doi": null
+    },
+    {
+      "key": "NIPS2014_5423",
+      "raw": "Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. Generative adversarial nets. In Advances in Neural Information Processing Systems 27, pages 2672--2680",
+      "authors": "Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014",
+      "title": "Generative adversarial nets",
+      "venue": "In Advances in Neural Information Processing Systems 27, pages 2672--2680",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2013generating",
+      "raw": "Alex Graves. 2013. Generating sequences with recurrent neural networks. arXiv preprint arXiv:1308.0850",
+      "authors": "Alex Graves. 2013",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "arXiv preprint",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1805-12352",
+      "raw": "Xiaodong Gu, Kyunghyun Cho, JungWoo Ha, and Sunghun Kim. 2018. http://arxiv.org/abs/1805.12352 DialogWAE: Multimodal response generation with conditional wasserstein auto-encoder. CoRR, abs/1805.12352",
+      "authors": "Xiaodong Gu, Kyunghyun Cho, JungWoo Ha, and Sunghun Kim. 2018",
+      "title": "DialogWAE: Multimodal response generation with conditional wasserstein auto-encoder",
+      "venue": "CoRR, abs/1805.12352",
+      "year": 2018,
+      "arxivId": "1805.12352",
+      "doi": null
+    },
+    {
+      "key": "guo2017long",
+      "raw": "Jiaxian Guo, Sidi Lu, Han Cai, Weinan Zhang, Yong Yu, and Jun Wang. 2017. Long text generation via adversarial training with leaked information. arXiv preprint arXiv:1709.08624",
+      "authors": "Jiaxian Guo, Sidi Lu, Han Cai, Weinan Zhang, Yong Yu, and Jun Wang. 2017",
+      "title": "Long text generation via adversarial training with leaked information",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1709.08624",
+      "doi": null
+    },
+    {
+      "key": "halliday1996cohesion",
+      "raw": "M Halliday and Ruqaiya Hasan. 1976. Cohesion in English. London, Longmans",
+      "authors": "M Halliday and Ruqaiya Hasan. 1976",
+      "title": "Cohesion in English",
+      "venue": "London, Longmans",
+      "year": 1976,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hobbs1985coherence",
+      "raw": "Jerry Hobbs. 1985. On the coherence and structure of discourse. Center for the Study of Language and Information, Stanford University",
+      "authors": "Jerry Hobbs. 1985",
+      "title": "On the coherence and structure of discourse",
+      "venue": "Center for the Study of Language and Information, Stanford University",
+      "year": 1985,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "holtzman2018l2w",
+      "raw": "Ari Holtzman, Jan Buys, Maxwell Forbes, Antoine Bosselut, David Golub, and Yejin Choi. 2018. Learning to write with cooperative discriminators. In Proceedings of the Association for Computational Linguistics",
+      "authors": "Ari Holtzman, Jan Buys, Maxwell Forbes, Antoine Bosselut, David Golub, and Yejin Choi. 2018",
+      "title": "Learning to write with cooperative discriminators",
+      "venue": "In Proceedings of the Association for Computational Linguistics",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hovy1988planning",
+      "raw": "Eduard H Hovy. 1988. Planning coherent multisentential text. In Proceedings of the 26th annual meeting on Association for Computational Linguistics, pages 163--169. Association for Computational Linguistics",
+      "authors": "Eduard H Hovy. 1988",
+      "title": "Planning coherent multisentential text",
+      "venue": "In Proceedings of the 26th annual meeting on Association for Computational Linguistics, pages 163--169. Association for Computational Linguistics",
+      "year": 1988,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hovy1991approaches",
+      "raw": "Eduard H Hovy. 1991. Approaches to the planning of coherent text. In Natural language generation in artificial intelligence and computational linguistics, pages 83--102. Springer",
+      "authors": "Eduard H Hovy. 1991",
+      "title": "Approaches to the planning of coherent text",
+      "venue": "In Natural language generation in artificial intelligence and computational linguistics, pages 83--102. Springer",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Huang2013LearningDS",
+      "raw": "Po-Sen Huang, Xiaodong He, Jianfeng Gao, Li Deng, Alex Acero, and Larry P. Heck. 2013. Learning deep structured semantic models for web search using clickthrough data. In CIKM",
+      "authors": "Po-Sen Huang, Xiaodong He, Jianfeng Gao, Li Deng, Alex Acero, and Larry P. Heck. 2013",
+      "title": "Learning deep structured semantic models for web search using clickthrough data",
+      "venue": "In CIKM",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kim2014ConvolutionalNN",
+      "raw": "Yoon Kim. 2014. Convolutional neural networks for sentence classification. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "authors": "Yoon Kim. 2014",
+      "title": "Convolutional neural networks for sentence classification",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kingma2014AdamAM",
+      "raw": "Diederik P Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980",
+      "authors": "Diederik P Kingma and Jimmy Ba. 2014",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "arXiv preprint",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "lewis2017deal",
+      "raw": "Mike Lewis, Denis Yarats, Yann N Dauphin, Devi Parikh, and Dhruv Batra. 2017. Deal or no deal? end-to-end learning for negotiation dialogues. arXiv preprint arXiv:1706.05125",
+      "authors": "Mike Lewis, Denis Yarats, Yann N Dauphin, Devi Parikh, and Dhruv Batra. 2017",
+      "title": "Deal or no deal? end-to-end learning for negotiation dialogues",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1706.05125",
+      "doi": null
+    },
+    {
+      "key": "li2015diversity",
+      "raw": "Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2015. A diversity-promoting objective function for neural conversation models. arXiv preprint arXiv:1510.03055",
+      "authors": "Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2015",
+      "title": "A diversity-promoting objective function for neural conversation models",
+      "venue": "arXiv preprint",
+      "year": 2015,
+      "arxivId": "1510.03055",
+      "doi": null
+    },
+    {
+      "key": "li2016persona",
+      "raw": "Jiwei Li, Michel Galley, Chris Brockett, Georgios P Spithourakis, Jianfeng Gao, and Bill Dolan. 2016. A persona-based neural conversation model. arXiv preprint arXiv:1603.06155",
+      "authors": "Jiwei Li, Michel Galley, Chris Brockett, Georgios P Spithourakis, Jianfeng Gao, and Bill Dolan. 2016",
+      "title": "A persona-based neural conversation model",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1603.06155",
+      "doi": null
+    },
+    {
+      "key": "li2016deep",
+      "raw": "Jiwei Li, Will Monroe, Alan Ritter, Michel Galley, Jianfeng Gao, and Dan Jurafsky. 2016. Deep reinforcement learning for dialogue generation. arXiv preprint arXiv:1606.01541",
+      "authors": "Jiwei Li, Will Monroe, Alan Ritter, Michel Galley, Jianfeng Gao, and Dan Jurafsky. 2016",
+      "title": "Deep reinforcement learning for dialogue generation",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1606.01541",
+      "doi": null
+    },
+    {
+      "key": "li2017adversarial",
+      "raw": "Jiwei Li, Will Monroe, Tianlin Shi, S\\'ebastien Jean, Alan Ritter, and Dan Jurafsky. 2017. Adversarial learning for neural dialogue generation. arXiv preprint arXiv:1701.06547",
+      "authors": "Jiwei Li, Will Monroe, Tianlin Shi, S\\'ebastien Jean, Alan Ritter, and Dan Jurafsky. 2017",
+      "title": "Adversarial learning for neural dialogue generation",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1701.06547",
+      "doi": null
+    },
+    {
+      "key": "liddy1991discourse",
+      "raw": "Elizabeth DuRoss Liddy. 1991. The discourse-level structure of empirical abstracts: An exploratory study. Information Processing \\& Management, 27(1):55--81",
+      "authors": "Elizabeth DuRoss Liddy. 1991",
+      "title": "The discourse-level structure of empirical abstracts: An exploratory study",
+      "venue": "Information Processing \\& Management, 27(1):55--81",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lin:2003:AES:1073445.1073465",
+      "raw": "Chin-Yew Lin and Eduard Hovy. 2003. Automatic evaluation of summaries using n-gram co-occurrence statistics. In Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology - Volume 1, NAACL '03, pages 71--78, Stroudsburg, PA, USA",
+      "authors": "Chin-Yew Lin and Eduard Hovy. 2003",
+      "title": "Automatic evaluation of summaries using n-gram co-occurrence statistics",
+      "venue": "In Proceedings of the 2003 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology - Volume 1, NAACL '03, pages 71--78, Stroudsburg, PA, USA",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2017adversarial",
+      "raw": "Kevin Lin, Dianqi Li, Xiaodong He, Zhengyou Zhang, and Ming-Ting Sun. 2017. Adversarial ranking for language generation. In Advances in Neural Information Processing Systems, pages 3155--3165",
+      "authors": "Kevin Lin, Dianqi Li, Xiaodong He, Zhengyou Zhang, and Ming-Ting Sun. 2017",
+      "title": "Adversarial ranking for language generation",
+      "venue": "In Advances in Neural Information Processing Systems, pages 3155--3165",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mani1998using",
+      "raw": "Inderjeet Mani, Eric Bloedorn, and Barbara Gates. 1998. Using cohesion and coherence models for text summarization. In Intelligent Text Summarization Symposium, pages 69--76",
+      "authors": "Inderjeet Mani, Eric Bloedorn, and Barbara Gates. 1998",
+      "title": "Using cohesion and coherence models for text summarization",
+      "venue": "In Intelligent Text Summarization Symposium, pages 69--76",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mann1988rhetorical",
+      "raw": "William C Mann and Sandra A Thompson. 1988. Rhetorical structure theory: Toward a functional theory of text organization. Text-Interdisciplinary Journal for the Study of Discourse, 8(3):243--281",
+      "authors": "William C Mann and Sandra A Thompson. 1988",
+      "title": "Rhetorical structure theory: Toward a functional theory of text organization",
+      "venue": "Text-Interdisciplinary Journal for the Study of Discourse, 8(3):243--281",
+      "year": 1988,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mckeown1985discourse",
+      "raw": "Kathleen R McKeown. 1985. Discourse strategies for generating natural-language text. Artificial Intelligence, 27(1):1--41",
+      "authors": "Kathleen R McKeown. 1985",
+      "title": "Discourse strategies for generating natural-language text",
+      "venue": "Artificial Intelligence, 27(1):1--41",
+      "year": 1985,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Nguyen2017ReinforcementLF",
+      "raw": "Khanh Nguyen, Hal Daum\\'e, and Jordan L. Boyd-Graber. 2017. Reinforcement learning for bandit neural machine translation with simulated human feedback. In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "authors": "Khanh Nguyen, Hal Daum\\'e, and Jordan L. Boyd-Graber. 2017",
+      "title": "Reinforcement learning for bandit neural machine translation with simulated human feedback",
+      "venue": "In Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hamiddssm",
+      "raw": "H. Palangi, L. Deng, Y. Shen, J. Gao, X. He, J. Chen, X. Song, and R. Ward. 2016. https://doi.org/10.1109/TASLP.2016.2520371 Deep sentence embedding using long short-term memory networks: Analysis and application to information retrieval. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 24(4):694--707",
+      "authors": "H. Palangi, L. Deng, Y. Shen, J. Gao, X. He, J. Chen, X. Song, and R. Ward. 2016",
+      "title": "Deep sentence embedding using long short-term memory networks: Analysis and application to information retrieval",
+      "venue": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 24(4):694--707",
+      "year": 2016,
+      "arxivId": null,
+      "doi": "10.1109/TASLP.2016.2520371"
+    },
+    {
+      "key": "Papineni:2002:BMA:1073083.1073135",
+      "raw": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. BLEU: A method for automatic evaluation of machine translation. In Proceedings of the 40th Annual Meeting on Association for Computational Linguistics, ACL '02, pages 311--318",
+      "authors": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002",
+      "title": "BLEU: A method for automatic evaluation of machine translation",
+      "venue": "In Proceedings of the 40th Annual Meeting on Association for Computational Linguistics, ACL '02, pages 311--318",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/PaulusXS17",
+      "raw": "Romain Paulus, Caiming Xiong, and Richard Socher. 2017. http://arxiv.org/abs/1705.04304 A deep reinforced model for abstractive summarization. CoRR, abs/1705.04304",
+      "authors": "Romain Paulus, Caiming Xiong, and Richard Socher. 2017",
+      "title": "A deep reinforced model for abstractive summarization",
+      "venue": "CoRR, abs/1705.04304",
+      "year": 2017,
+      "arxivId": "1705.04304",
+      "doi": null
+    },
+    {
+      "key": "pennington2014glove",
+      "raw": "Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. GloVe: Global vectors for word representation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1532--1543",
+      "authors": "Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014",
+      "title": "GloVe: Global vectors for word representation",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1532--1543",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/RanzatoCAZ15",
+      "raw": "Marc'Aurelio Ranzato, Sumit Chopra, Michael Auli, and Wojciech Zaremba. 2015. http://arxiv.org/abs/1511.06732 Sequence level training with recurrent neural networks. CoRR, abs/1511.06732",
+      "authors": "Marc'Aurelio Ranzato, Sumit Chopra, Michael Auli, and Wojciech Zaremba. 2015",
+      "title": "Sequence level training with recurrent neural networks",
+      "venue": "CoRR, abs/1511.06732",
+      "year": 2015,
+      "arxivId": "1511.06732",
+      "doi": null
+    },
+    {
+      "key": "Rennie2017SelfCriticalST",
+      "raw": "Steven J. Rennie, Etienne Marcheret, Youssef Mroueh, Jarret Ross, and Vaibhava Goel. 2017. Self-critical sequence training for image captioning. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1179--1195",
+      "authors": "Steven J. Rennie, Etienne Marcheret, Youssef Mroueh, Jarret Ross, and Vaibhava Goel. 2017",
+      "title": "Self-critical sequence training for image captioning",
+      "venue": "2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1179--1195",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shang2015neural",
+      "raw": "Lifeng Shang, Zhengdong Lu, and Hang Li. 2015. Neural responding machine for short-text conversation. arXiv preprint arXiv:1503.02364",
+      "authors": "Lifeng Shang, Zhengdong Lu, and Hang Li. 2015",
+      "title": "Neural responding machine for short-text conversation",
+      "venue": "arXiv preprint",
+      "year": 2015,
+      "arxivId": "1503.02364",
+      "doi": null
+    },
+    {
+      "key": "sordoni2015neural",
+      "raw": "Alessandro Sordoni, Michel Galley, Michael Auli, Chris Brockett, Yangfeng Ji, Margaret Mitchell, Jian-Yun Nie, Jianfeng Gao, and Bill Dolan. 2015. A neural network approach to context-sensitive generation of conversational responses. In Proceedings of the 2015 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology",
+      "authors": "Alessandro Sordoni, Michel Galley, Michael Auli, Chris Brockett, Yangfeng Ji, Margaret Mitchell, Jian-Yun Nie, Jianfeng Gao, and Bill Dolan. 2015",
+      "title": "A neural network approach to context-sensitive generation of conversational responses",
+      "venue": "In Proceedings of the 2015 Conference of the North American Chapter of the Association for Computational Linguistics on Human Language Technology",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "NIPS2014_5346",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. 2014. Sequence to sequence learning with neural networks. In Advances in neural information processing systems, pages 3104--3112",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. 2014",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in neural information processing systems, pages 3104--3112",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutton:1999:PGM:3009657.3009806",
+      "raw": "Richard S. Sutton, David McAllester, Satinder Singh, and Yishay Mansour. 1999. Policy gradient methods for reinforcement learning with function approximation. In Proceedings of the 12th International Conference on Neural Information Processing Systems, NIPS'99, pages 1057--1063. MIT Press",
+      "authors": "Richard S. Sutton, David McAllester, Satinder Singh, and Yishay Mansour. 1999",
+      "title": "Policy gradient methods for reinforcement learning with function approximation",
+      "venue": "In Proceedings of the 12th International Conference on Neural Information Processing Systems, NIPS'99, pages 1057--1063. MIT Press",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "van2013news",
+      "raw": "Teun A Van Dijk. 2013. News as discourse. Routledge",
+      "authors": "Teun A Van Dijk. 2013",
+      "title": "News as discourse",
+      "venue": "Routledge",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vinyals2015neural",
+      "raw": "Oriol Vinyals and Quoc Le. 2015. A neural conversational model. ICML Deep Learning Workshop",
+      "authors": "Oriol Vinyals and Quoc Le. 2015",
+      "title": "A neural conversational model",
+      "venue": "ICML Deep Learning Workshop",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Wang2010LatentAR",
+      "raw": "Hongning Wang, Yue Lu, and ChengXiang Zhai. 2010. Latent aspect rating analysis on review text data: a rating regression approach. In KDD",
+      "authors": "Hongning Wang, Yue Lu, and ChengXiang Zhai. 2010",
+      "title": "Latent aspect rating analysis on review text data: a rating regression approach",
+      "venue": "In KDD",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wieting2016iclr",
+      "raw": "John Wieting, Mohit Bansal, Kevin Gimpel, and Karen Livescu. 2016. Towards universal paraphrastic sentence embeddings. ICLR",
+      "authors": "John Wieting, Mohit Bansal, Kevin Gimpel, and Karen Livescu. 2016",
+      "title": "Towards universal paraphrastic sentence embeddings",
+      "venue": "ICLR",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams1995style",
+      "raw": "J.M. Williams and G.G. Colomb. 1995. Style: Toward Clarity and Grace. Chicago guides to writing, editing, and publishing. University of Chicago Press",
+      "authors": "J.M. Williams and G.G. Colomb. 1995",
+      "title": "Style: Toward Clarity and Grace",
+      "venue": "Chicago guides to writing, editing, and publishing. University of Chicago Press",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Williams:1992:SSG:139611.139614",
+      "raw": "Ronald J. Williams. 1992. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Mach. Learn., 8(3-4):229--256",
+      "authors": "Ronald J. Williams. 1992",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "venue": "Mach. Learn., 8(3-4):229--256",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "witten1977adaptive",
+      "raw": "Ian H Witten. 1977. An adaptive optimal controller for discrete-time markov environments. Information and control, 34(4):286--295",
+      "authors": "Ian H Witten. 1977",
+      "title": "An adaptive optimal controller for discrete-time markov environments",
+      "venue": "Information and control, 34(4):286--295",
+      "year": 1977,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wu2016google",
+      "raw": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. 2016. Google's neural machine translation system: Bridging the gap between human and machine translation. arXiv preprint arXiv:1609.08144",
+      "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. 2016",
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "doi": null
+    },
+    {
+      "key": "xu2017attngan",
+      "raw": "Tao Xu, Pengchuan Zhang, Qiuyuan Huang, Han Zhang, Zhe Gan, Xiaolei Huang, and Xiaodong He. 2018. Attngan: Fine-grained text to image generation with attentional generative adversarial networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1316--1324",
+      "authors": "Tao Xu, Pengchuan Zhang, Qiuyuan Huang, Han Zhang, Zhe Gan, Xiaolei Huang, and Xiaodong He. 2018",
+      "title": "Attngan: Fine-grained text to image generation with attentional generative adversarial networks",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1316--1324",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "yang2018unsupervised",
+      "raw": "Zichao Yang, Zhiting Hu, Chris Dyer, Eric P Xing, and Taylor Berg-Kirkpatrick. 2018. Unsupervised text style transfer using language models as discriminators. In Advances in Neural Information Processing Systems, pages 7287--7298",
+      "authors": "Zichao Yang, Zhiting Hu, Chris Dyer, Eric P Xing, and Taylor Berg-Kirkpatrick. 2018",
+      "title": "Unsupervised text style transfer using language models as discriminators",
+      "venue": "In Advances in Neural Information Processing Systems, pages 7287--7298",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yu2017SeqGANSG",
+      "raw": "Lantao Yu, Weinan Zhang, Jun Wang, and Yong Yu. 2017. Seqgan: Sequence generative adversarial nets with policy gradient. In Thirty-First AAAI Conference on Artificial Intelligence",
+      "authors": "Lantao Yu, Weinan Zhang, Jun Wang, and Yong Yu. 2017",
+      "title": "Seqgan: Sequence generative adversarial nets with policy gradient",
+      "venue": "In Thirty-First AAAI Conference on Artificial Intelligence",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhang2018generating",
+      "raw": "Yizhe Zhang, Michel Galley, Jianfeng Gao, Zhe Gan, Xiujun Li, Chris Brockett, and Bill Dolan. 2018. Generating informative and diverse conversational responses via adversarial information maximization. In Advances in Neural Information Processing Systems, pages 1810--1820",
+      "authors": "Yizhe Zhang, Michel Galley, Jianfeng Gao, Zhe Gan, Xiujun Li, Chris Brockett, and Bill Dolan. 2018",
+      "title": "Generating informative and diverse conversational responses via adversarial information maximization",
+      "venue": "In Advances in Neural Information Processing Systems, pages 1810--1820",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhang2017adversarial",
+      "raw": "Yizhe Zhang, Zhe Gan, Kai Fan, Zhi Chen, Ricardo Henao, Dinghan Shen, and Lawrence Carin. 2017. Adversarial feature matching for text generation. In Proceedings of the 34th International Conference on Machine Learning-Volume 70, pages 4006--4015. JMLR. org",
+      "authors": "Yizhe Zhang, Zhe Gan, Kai Fan, Zhi Chen, Ricardo Henao, Dinghan Shen, and Lawrence Carin. 2017",
+      "title": "Adversarial feature matching for text generation",
+      "venue": "In Proceedings of the 34th International Conference on Machine Learning-Volume 70, pages 4006--4015. JMLR. org",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\resizebox{0.89\\columnwidth}{!}{$\n\\begin{aligned}\n\t&L_{\\text{coherence}}(\\theta_f,\\theta_g) \\coloneqq \\max\\Big(0, \\delta - D_{\\text{coherence}}(S, T) \\\\\n\t&+ \\text{AVG}^{\\lambda} \\left( \\{D_{\\text{coherence}} (S, \\widetilde{T}_{j})\\}_{j=1}^{2B-1} \\right) \\Big).\n\\end{aligned}$}",
+      "environment": "equation",
+      "labels": [
+        "coherence_loss_function"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\resizebox{0.89\\columnwidth}{!}{$\n\\begin{aligned}\n\t&L_{\\text{cohesion}}(\\theta_u,\\theta_v) \\coloneqq \\max\\Big(0, \\delta - D_{\\text{cohesion}}(s_{k},s_{k+1}) \\\\\n\t&+ \\text{AVG}^{\\lambda} \\left( \\{D_{\\text{cohesion}} (s_{k}, \\widetilde{s}_{k+1,j})\\}_{j=1}^{2B-1} \\right) \\Big).\n\\end{aligned}$}",
+      "environment": "equation",
+      "labels": [
+        "cohesion_loss_function"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\begin{aligned}\nR_{\\text{coherence}}(S,T_{gen})  & \\coloneqq D_{\\text{coherence}}(S,T_{gen}) \\\\ \n&- {\\mathbb{E}_{\\widetilde{T}}} \\left[D_{\\text{coherence}}(S,\\widetilde{T})\\right] \n\\end{aligned}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\begin{aligned}\n& R_{\\text{cohesion}}(\\left[S_{-1}, T_{gen}\\right]) \\coloneqq \n\\\\\n&\\;\\;\\; \\frac{1}{|T_{gen}|} \\sum \\limits_{\\substack{ (s_{k},s_{k+1}) \\\\ \\subset \\left[S_{-1}, T_{gen}\\right]}} D_{\\text{cohesion}}(s_{k},s_{k+1})\n\\\\\n&\\;\\;\\; -{\\mathbb{E}_{\\widetilde{s}_{k+1} \\mathrel{\\Big|} \\substack{(s_{k},s_{k+1}) \\\\ \\subset \\left[S, T\\right]}}} \\Big[D_{\\text{cohesion}}(s_{k},\\widetilde{s}_{k+1}) \\Big]\n\\end{aligned}",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 877,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.00792694091797,
+            "y0": 244.04945373535156,
+            "x1": 273.2561950683594,
+            "y1": 254.01205444335938
+          },
+          {
+            "x0": 89.00792694091797,
+            "y0": 256.00445556640625,
+            "x1": 201.27645874023438,
+            "y1": 265.9670715332031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2760,
+      "numbers": 4,
+      "citations": 9,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99992370605469,
+            "y0": 510.8065490722656,
+            "x1": 290.2650451660156,
+            "y1": 521.7156372070312
+          },
+          {
+            "x0": 71.99992370605469,
+            "y0": 524.3565673828125,
+            "x1": 222.76368713378906,
+            "y1": 535.265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related work",
+      "chars": 3640,
+      "numbers": 0,
+      "citations": 32,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.26919555664062,
+            "y0": 206.90274047851562,
+            "x1": 290.2692565917969,
+            "y1": 217.8118438720703
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 220.45272827148438,
+            "x1": 230.3892059326172,
+            "y1": 231.36183166503906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Coherence and Cohesion Models",
+      "chars": 1101,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 88.50668334960938,
+            "x1": 290.2692565917969,
+            "y1": 99.41578674316406
+          },
+          {
+            "x0": 72.0,
+            "y0": 102.05569458007812,
+            "x1": 166.66917419433594,
+            "y1": 112.96479797363281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Coherence discriminator: Lg",
+      "chars": 4059,
+      "numbers": 3,
+      "citations": 7,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 446.3117980957031,
+            "x1": 290.26922607421875,
+            "y1": 457.22088623046875
+          },
+          {
+            "x0": 72.0,
+            "y0": 459.8608093261719,
+            "x1": 290.2692565917969,
+            "y1": 470.7698974609375
+          },
+          {
+            "x0": 72.0,
+            "y0": 473.4098205566406,
+            "x1": 290.26922607421875,
+            "y1": 484.31890869140625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Cohesion discriminator: Lg",
+      "chars": 5020,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 65.49362182617188,
+            "x1": 507.69775390625,
+            "y1": 76.40272521972656
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 741.1436767578125,
+            "x1": 290.2693176269531,
+            "y1": 752.052734375
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 754.692626953125,
+            "x1": 290.2692565917969,
+            "y1": 765.6016845703125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Negative-Critical Sequence Training for Long-form Text Generation",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Long-form text generator:",
+      "chars": 639,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 155.42300415039062,
+            "y0": 401.148681640625,
+            "x1": 290.27032470703125,
+            "y1": 412.0577697753906
+          },
+          {
+            "x0": 72.00000762939453,
+            "y0": 414.69769287109375,
+            "x1": 235.28741455078125,
+            "y1": 425.6067810058594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Negative-critical sequence training",
+      "chars": 5841,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00000762939453,
+            "y0": 632.4747924804688,
+            "x1": 172.5382843017578,
+            "y1": 643.3838500976562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 278,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.27606201171875,
+            "y0": 714.0447998046875,
+            "x1": 382.4397277832031,
+            "y1": 724.953857421875
+          },
+          {
+            "x0": 392.1924743652344,
+            "y0": 714.0447998046875,
+            "x1": 525.545166015625,
+            "y1": 724.953857421875
+          },
+          {
+            "x0": 307.27606201171875,
+            "y0": 727.59375,
+            "x1": 369.2942199707031,
+            "y1": 738.5028076171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Dataset",
+      "chars": 639,
+      "numbers": 8,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 706.3446655273438,
+            "x1": 525.5452270507812,
+            "y1": 717.2537231445312
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 719.8947143554688,
+            "x1": 396.8287048339844,
+            "y1": 730.8037719726562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation details",
+      "chars": 2487,
+      "numbers": 23,
+      "citations": 4,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 181.8739471435547,
+            "y0": 596.9027709960938,
+            "x1": 290.2667541503906,
+            "y1": 607.8118286132812
+          },
+          {
+            "x0": 71.99994659423828,
+            "y0": 610.4517822265625,
+            "x1": 290.2691955566406,
+            "y1": 621.36083984375
+          },
+          {
+            "x0": 71.99994659423828,
+            "y0": 624.000732421875,
+            "x1": 188.47642517089844,
+            "y1": 634.9097900390625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 1756,
+      "numbers": 3,
+      "citations": 2,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 266.0279846191406,
+            "y0": 399.6707458496094,
+            "x1": 290.2679748535156,
+            "y1": 410.579833984375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 413.2207336425781,
+            "x1": 290.26922607421875,
+            "y1": 424.12982177734375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 426.7697448730469,
+            "x1": 290.26922607421875,
+            "y1": 437.6788330078125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 440.3187561035156,
+            "x1": 290.2691955566406,
+            "y1": 451.22784423828125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 453.6745300292969,
+            "x1": 133.00198364257812,
+            "y1": 464.77685546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1080,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 443.0608825683594,
+            "x1": 525.5452270507812,
+            "y1": 453.969970703125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 456.6098937988281,
+            "x1": 525.545166015625,
+            "y1": 467.51898193359375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 470.1589050292969,
+            "x1": 525.545166015625,
+            "y1": 481.0679931640625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 483.7088928222656,
+            "x1": 340.29779052734375,
+            "y1": 494.61798095703125
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 4,
+      "extends": 5,
+      "contests": 0,
+      "compares": 0,
+      "background": 54,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "gong2013deep",
+      "stance": "inherits",
+      "cue": "following",
+      "sentence": "To achieve this, we propose to minimize the following pairwise ranking loss [Gong et al. 2013] with margin \u03b4: where AVG^\u03bb({x_j}_j=1^N) = \u2211^N_j=1w_jx_j and w_j=e^\u03bb x_j/\u2211_ke^\u03bb x_k.",
+      "section": "Coherence discriminator: Lg",
+      "sectionKind": "method",
+      "ordinal": 26,
+      "title": "Deep convolutional ranking for multilabel image annotation",
+      "authors": "Yunchao Gong, Yangqing Jia, Thomas Leung, Alexander Toshev, and Sergey Ioffe. 2013",
+      "year": 2013,
+      "arxivId": "1312.4894",
+      "inCorpus": false,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 201.69009399414062,
+            "y0": 459.38671875,
+            "x1": 290.27197265625,
+            "y1": 470.2958068847656
+          },
+          {
+            "x0": 71.99989318847656,
+            "y0": 472.93572998046875,
+            "x1": 290.2691345214844,
+            "y1": 483.8448181152344
+          },
+          {
+            "x0": 71.99989318847656,
+            "y0": 486.4847412109375,
+            "x1": 105.6435546875,
+            "y1": 497.3938293457031
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "DBLP:journals/corr/abs-1805-12352",
+        "stance": "inherits",
+        "cue": "as in",
+        "sentence": "Nevertheless, we report the scores of widely used metrics, including negative log-likelihood (NLL), perplexity (PPL), BLEU and the proportion of unique n-grams within a single generation (intra-unique-n), and across generations (inter-unique-n), as in [Gu et al. 2018].",
+        "section": "Results",
+        "sectionKind": "experiments",
+        "ordinal": 37,
+        "title": "DialogWAE: Multimodal response generation with conditional wasserstein auto-encoder",
+        "authors": "Xiaodong Gu, Kyunghyun Cho, JungWoo Ha, and Sunghun Kim. 2018",
+        "year": 2018,
+        "arxivId": "1805.12352",
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 168.20738220214844,
+              "y0": 583.9568481445312,
+              "x1": 290.269287109375,
+              "y1": 594.8659057617188
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 597.505859375,
+              "x1": 290.2691955566406,
+              "y1": 608.4149169921875
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 611.0548706054688,
+              "x1": 290.2693176269531,
+              "y1": 621.9639282226562
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 624.6038818359375,
+              "x1": 195.1309814453125,
+              "y1": 635.512939453125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Huang2013LearningDS",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Our design of these two discriminators is inspired by the Deep Structured Semantic Model (DSSM) which was originally developed to measure the semantic similarity between two texts [Huang et al. 2013; Gao et al. 2014; Palangi et al. 2016; Xu et al. 2018].",
+        "section": "Coherence and Cohesion Models",
+        "sectionKind": "method",
+        "ordinal": 21,
+        "title": "Learning deep structured semantic models for web search using clickthrough data",
+        "authors": "Po-Sen Huang, Xiaodong He, Jianfeng Gao, Li Deng, Alex Acero, and Larry P. Heck. 2013",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 228.6874542236328,
+              "y0": 306.9887390136719,
+              "x1": 290.26934814453125,
+              "y1": 317.8978271484375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 320.5377502441406,
+              "x1": 290.2692565917969,
+              "y1": 331.44683837890625
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 334.0867614746094,
+              "x1": 290.269287109375,
+              "y1": 344.995849609375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 347.6357727050781,
+              "x1": 290.26922607421875,
+              "y1": 358.54486083984375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 361.1847839355469,
+              "x1": 179.43283081054688,
+              "y1": 372.0938720703125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Kingma2014AdamAM",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "During optimization using Adam [Kingma et al. 2014], we set the learning rate to 2e-4 and clip the gradient's L2-norm to 1.0.",
+        "section": "Implementation details",
+        "sectionKind": "experiments",
+        "ordinal": 34,
+        "title": "Adam: A method for stochastic optimization",
+        "authors": "Diederik P Kingma and Jimmy Ba. 2014",
+        "year": 2014,
+        "arxivId": "1412.6980",
+        "inCorpus": true,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 140.99395751953125,
+              "y0": 691.7467651367188,
+              "x1": 290.2631530761719,
+              "y1": 702.6558227539062
+            },
+            {
+              "x0": 71.99995422363281,
+              "y0": 705.2957763671875,
+              "x1": 88.36360168457031,
+              "y1": 716.204833984375
+            }
+          ]
+        }
+      },
+      {
+        "key": "Wang2010LatentAR",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the TripAdvisor hotel English reviews dataset collected by [Wang et al. 2010] and the Yelp English reviews dataset[https://www.yelp.com/dataset].",
+        "section": "Dataset",
+        "sectionKind": "experiments",
+        "ordinal": 33,
+        "title": "Latent aspect rating analysis on review text data: a rating regression approach",
+        "authors": "Hongning Wang, Yue Lu, and ChengXiang Zhai. 2010",
+        "year": 2010,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.2760009765625,
+              "y0": 706.3446655273438,
+              "x1": 525.5452270507812,
+              "y1": 717.2537231445312
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 719.8947143554688,
+              "x1": 396.8287048339844,
+              "y1": 730.8037719726562
+            }
+          ]
+        }
+      },
+      {
+        "key": "gao2014modeling",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Our design of these two discriminators is inspired by the Deep Structured Semantic Model (DSSM) which was originally developed to measure the semantic similarity between two texts [Huang et al. 2013; Gao et al. 2014; Palangi et al. 2016; Xu et al. 2018].",
+        "section": "Coherence and Cohesion Models",
+        "sectionKind": "method",
+        "ordinal": 21,
+        "title": "Modeling interestingness with deep neural networks",
+        "authors": "Jianfeng Gao, Patrick Pantel, Michael Gamon, Xiaodong He, and Li Deng. 2014",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 228.6874542236328,
+              "y0": 306.9887390136719,
+              "x1": 290.26934814453125,
+              "y1": 317.8978271484375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 320.5377502441406,
+              "x1": 290.2692565917969,
+              "y1": 331.44683837890625
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 334.0867614746094,
+              "x1": 290.269287109375,
+              "y1": 344.995849609375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 347.6357727050781,
+              "x1": 290.26922607421875,
+              "y1": 358.54486083984375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 361.1847839355469,
+              "x1": 179.43283081054688,
+              "y1": 372.0938720703125
+            }
+          ]
+        }
+      },
+      {
+        "key": "gong2013deep",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "To achieve this, we propose to minimize the following pairwise ranking loss [Gong et al. 2013] with margin \u03b4: where AVG^\u03bb({x_j}_j=1^N) = \u2211^N_j=1w_jx_j and w_j=e^\u03bb x_j/\u2211_ke^\u03bb x_k.",
+        "section": "Coherence discriminator: Lg",
+        "sectionKind": "method",
+        "ordinal": 26,
+        "title": "Deep convolutional ranking for multilabel image annotation",
+        "authors": "Yunchao Gong, Yangqing Jia, Thomas Leung, Alexander Toshev, and Sergey Ioffe. 2013",
+        "year": 2013,
+        "arxivId": "1312.4894",
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 201.69009399414062,
+              "y0": 459.38671875,
+              "x1": 290.27197265625,
+              "y1": 470.2958068847656
+            },
+            {
+              "x0": 71.99989318847656,
+              "y0": 472.93572998046875,
+              "x1": 290.2691345214844,
+              "y1": 483.8448181152344
+            },
+            {
+              "x0": 71.99989318847656,
+              "y0": 486.4847412109375,
+              "x1": 105.6435546875,
+              "y1": 497.3938293457031
+            }
+          ]
+        }
+      },
+      {
+        "key": "hamiddssm",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Our design of these two discriminators is inspired by the Deep Structured Semantic Model (DSSM) which was originally developed to measure the semantic similarity between two texts [Huang et al. 2013; Gao et al. 2014; Palangi et al. 2016; Xu et al. 2018].",
+        "section": "Coherence and Cohesion Models",
+        "sectionKind": "method",
+        "ordinal": 21,
+        "title": "Deep sentence embedding using long short-term memory networks: Analysis and application to information retrieval",
+        "authors": "H. Palangi, L. Deng, Y. Shen, J. Gao, X. He, J. Chen, X. Song, and R. Ward. 2016",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 228.6874542236328,
+              "y0": 306.9887390136719,
+              "x1": 290.26934814453125,
+              "y1": 317.8978271484375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 320.5377502441406,
+              "x1": 290.2692565917969,
+              "y1": 331.44683837890625
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 334.0867614746094,
+              "x1": 290.269287109375,
+              "y1": 344.995849609375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 347.6357727050781,
+              "x1": 290.26922607421875,
+              "y1": 358.54486083984375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 361.1847839355469,
+              "x1": 179.43283081054688,
+              "y1": 372.0938720703125
+            }
+          ]
+        }
+      },
+      {
+        "key": "wieting2016iclr",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "The next section describes the way these negative pairs are generated. Constructing negative (incoherent) pairs. Given a training minibatch {(S_i,T_i)}_i=1^B, we construct 2*B-1 negative pairs {(S_i,T_i,j)}_j=1^2B-1 for every positive pair (S_i, T_i) using three different methods, inspired by [Wieting et al. 2016].",
+        "section": "Coherence discriminator: Lg",
+        "sectionKind": "method",
+        "ordinal": 25,
+        "title": "Towards universal paraphrastic sentence embeddings",
+        "authors": "John Wieting, Mohit Bansal, Kevin Gimpel, and Karen Livescu. 2016",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 171.78555297851562,
+              "y0": 79.04367065429688,
+              "x1": 290.2692565917969,
+              "y1": 89.95277404785156
+            },
+            {
+              "x0": 72.0,
+              "y0": 92.59268188476562,
+              "x1": 258.1419982910156,
+              "y1": 103.50178527832031
+            },
+            {
+              "x0": 72.0,
+              "y0": 112.5781021118164,
+              "x1": 133.21096801757812,
+              "y1": 123.4872055053711
+            },
+            {
+              "x0": 145.0037078857422,
+              "y0": 112.5781021118164,
+              "x1": 183.5673828125,
+              "y1": 123.4872055053711
+            },
+            {
+              "x0": 195.34921264648438,
+              "y0": 112.5781021118164,
+              "x1": 252.10928344726562,
+              "y1": 123.4872055053711
+            },
+            {
+              "x0": 263.9020080566406,
+              "y0": 112.5781021118164,
+              "x1": 290.269287109375,
+              "y1": 123.4872055053711
+            },
+            {
+              "x0": 72.0,
+              "y0": 126.22769165039062,
+              "x1": 188.9019012451172,
+              "y1": 137.1367950439453
+            }
+          ]
+        }
+      },
+      {
+        "key": "xu2017attngan",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Our design of these two discriminators is inspired by the Deep Structured Semantic Model (DSSM) which was originally developed to measure the semantic similarity between two texts [Huang et al. 2013; Gao et al. 2014; Palangi et al. 2016; Xu et al. 2018].",
+        "section": "Coherence and Cohesion Models",
+        "sectionKind": "method",
+        "ordinal": 21,
+        "title": "Attngan: Fine-grained text to image generation with attentional generative adversarial networks",
+        "authors": "Tao Xu, Pengchuan Zhang, Qiuyuan Huang, Han Zhang, Zhe Gan, Xiaolei Huang, and Xiaodong He. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 228.6874542236328,
+              "y0": 306.9887390136719,
+              "x1": 290.26934814453125,
+              "y1": 317.8978271484375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 320.5377502441406,
+              "x1": 290.2692565917969,
+              "y1": 331.44683837890625
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 334.0867614746094,
+              "x1": 290.269287109375,
+              "y1": 344.995849609375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 347.6357727050781,
+              "x1": 290.26922607421875,
+              "y1": 358.54486083984375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 361.1847839355469,
+              "x1": 179.43283081054688,
+              "y1": 372.0938720703125
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We assume that global coherence of a text depends to a large degree upon how its individual sentences with different meanings are organized.",
+      "anchorText": "We assume that global coherence of a text depends to a large degree upon how its individual sentences with different meanings are organized.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Coherence and Cohesion Models",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 88.50668334960938,
+            "x1": 290.2692565917969,
+            "y1": 99.41578674316406
+          },
+          {
+            "x0": 72.0,
+            "y0": 102.05569458007812,
+            "x1": 290.2691955566406,
+            "y1": 112.96479797363281
+          },
+          {
+            "x0": 72.0,
+            "y0": 115.60470581054688,
+            "x1": 240.7528533935547,
+            "y1": 126.51380920410156
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity, we decided to use a 1-layer convolutional network architecture [Kim. 2014; Collobert et al. 2011]. or RNN[For clarity in our model description, we omit RNN hereafter.]",
+      "anchorText": "For simplicity, we decided to use a 1-layer convolutional network architecture",
+      "kind": "simplifying",
+      "support": "cited",
+      "cue": "For simplicity",
+      "section": "Coherence discriminator: Lg",
+      "sectionKind": "method",
+      "cites": [
+        "Kim2014ConvolutionalNN",
+        "Collobert:2011:NLP:1953048.2078186"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 422.84381103515625,
+            "y0": 705.4409790039062,
+            "x1": 525.544921875,
+            "y1": 714.4074096679688
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 715.4029541015625,
+            "x1": 479.6729431152344,
+            "y1": 724.369384765625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For notation simplicity, we omit the minibatch index i in the rest of this section.",
+      "anchorText": "For notation simplicity, we omit the minibatch index",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we omit",
+      "section": "Coherence discriminator: Lg",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 275.2801208496094,
+            "y0": 168.31668090820312,
+            "x1": 290.26922607421875,
+            "y1": 179.2257843017578
+          },
+          {
+            "x0": 71.9999771118164,
+            "y0": 181.86569213867188,
+            "x1": 290.2692565917969,
+            "y1": 192.77479553222656
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "To help readers understand the roles of D_coherence and D_cohesion, we present examples of positive and negative pairs and their rewards in Table [ref]. Automatic evaluation of Lg. It is widely known that there is no perfect automated metric to evaluate text generators.",
+      "anchorText": "Lg. It is widely known that there is no perfect automated metric to evaluate text generators.",
+      "kind": "conventional",
+      "support": "shown",
+      "cue": "It is widely known",
+      "section": "Results",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [
+        "sanity"
+      ],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 1,
+    "shown": 1,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2018-11-01",
+    "authors": [
+      "Woon Sang Cho",
+      "Pengchuan Zhang",
+      "Yizhe Zhang",
+      "Xiujun Li",
+      "Michel Galley",
+      "Chris Brockett",
+      "Mengdi Wang",
+      "Jianfeng Gao"
+    ]
+  }
+}

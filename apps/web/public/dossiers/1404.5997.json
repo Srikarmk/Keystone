@@ -1,0 +1,3066 @@
+{
+  "id": "1404.5997",
+  "title": "One weird trick for parallelizing convolutional neural networks",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1404.5997",
+  "numbers": [
+    {
+      "value": "5%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Modern convolutional neural nets consist of two types of layers with rather different properties: Convolutional layers cumulatively contain about 90-95% of the computation, about 5% of the parameters, and have large representations.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.88800048828125,
+            "y0": 526.8810424804688,
+            "x1": 396.4804382324219,
+            "y1": 536.8436279296875
+          },
+          {
+            "x0": 407.41937255859375,
+            "y0": 526.8810424804688,
+            "x1": 432.1265869140625,
+            "y1": 536.8436279296875
+          },
+          {
+            "x0": 443.0655212402344,
+            "y0": 526.8810424804688,
+            "x1": 498.39776611328125,
+            "y1": 536.8436279296875
+          },
+          {
+            "x0": 509.3267517089844,
+            "y0": 526.8810424804688,
+            "x1": 541.1472778320312,
+            "y1": 536.8436279296875
+          },
+          {
+            "x0": 335.88800048828125,
+            "y0": 538.8360595703125,
+            "x1": 541.12744140625,
+            "y1": 548.7986450195312
+          },
+          {
+            "x0": 335.88800048828125,
+            "y0": 550.7920532226562,
+            "x1": 541.1175537109375,
+            "y1": 560.754638671875
+          },
+          {
+            "x0": 335.88800048828125,
+            "y0": 562.7470092773438,
+            "x1": 359.7384338378906,
+            "y1": 572.7095947265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "95%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Fully-connected layers contain about 5-10% of the computation, about 95% of the parameters, and have small representations.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.88800048828125,
+            "y0": 584.2550659179688,
+            "x1": 541.1174926757812,
+            "y1": 594.2176513671875
+          },
+          {
+            "x0": 335.88800048828125,
+            "y0": 596.2100219726562,
+            "x1": 541.1275024414062,
+            "y1": 606.172607421875
+          },
+          {
+            "x0": 335.88800048828125,
+            "y0": 608.1650390625,
+            "x1": 472.7740173339844,
+            "y1": 618.1276245117188
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.2",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "At 1.2 million images in 1000 categories, it falls somewhere in between the two extremes.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 513.0422973632812,
+            "y0": 677.4950561523438,
+            "x1": 541.166748046875,
+            "y1": 687.4576416015625
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 689.4500732421875,
+            "x1": 541.1467895507812,
+            "y1": 699.4126586914062
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 701.405029296875,
+            "x1": 444.7488098144531,
+            "y1": 711.3676147460938
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.2%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "This model has 0.2% more parameters and 2.4% fewer connections than the two-tower model.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 281.5948791503906,
+            "y0": 133.1613006591797,
+            "x1": 301.011962890625,
+            "y1": 143.1239013671875
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 145.11729431152344,
+            "x1": 301.0019836425781,
+            "y1": 155.07989501953125
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 157.0723114013672,
+            "x1": 226.71096801757812,
+            "y1": 167.034912109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.4%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "This model has 0.2% more parameters and 2.4% fewer connections than the two-tower model.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 281.5948791503906,
+            "y0": 133.1613006591797,
+            "x1": 301.011962890625,
+            "y1": 143.1239013671875
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 145.11729431152344,
+            "x1": 301.0019836425781,
+            "y1": 155.07989501953125
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 157.0723114013672,
+            "x1": 226.71096801757812,
+            "y1": 167.034912109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "25%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "But with tens of thousands of classes, the cost of normalization becomes noticeable. I trained all models for exactly 90 epochs, and multiplied the learning rate by at 25%, 50%, and 75% training progress.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 298.9146728515625,
+            "y0": 695.9639282226562,
+            "x1": 541.0781860351562,
+            "y1": 703.93408203125
+          },
+          {
+            "x0": 70.86600494384766,
+            "y0": 705.427978515625,
+            "x1": 144.0395050048828,
+            "y1": 713.3981323242188
+          }
+        ]
+      }
+    },
+    {
+      "value": "50%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "But with tens of thousands of classes, the cost of normalization becomes noticeable. I trained all models for exactly 90 epochs, and multiplied the learning rate by at 25%, 50%, and 75% training progress.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 298.9146728515625,
+            "y0": 695.9639282226562,
+            "x1": 541.0781860351562,
+            "y1": 703.93408203125
+          },
+          {
+            "x0": 70.86600494384766,
+            "y0": 705.427978515625,
+            "x1": 144.0395050048828,
+            "y1": 713.3981323242188
+          }
+        ]
+      }
+    },
+    {
+      "value": "75%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "But with tens of thousands of classes, the cost of normalization becomes noticeable. I trained all models for exactly 90 epochs, and multiplied the learning rate by at 25%, 50%, and 75% training progress.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 298.9146728515625,
+            "y0": 695.9639282226562,
+            "x1": 541.0781860351562,
+            "y1": 703.93408203125
+          },
+          {
+            "x0": 70.86600494384766,
+            "y0": 705.427978515625,
+            "x1": 144.0395050048828,
+            "y1": 713.3981323242188
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Each CPU provides two PCI-Express 2.0 lanes for four GPUs.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 124.08621215820312,
+            "y0": 96.96525573730469,
+            "x1": 300.99200439453125,
+            "y1": 106.92784881591797
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 108.92027282714844,
+            "x1": 157.62033081054688,
+            "y1": 118.88286590576172
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "GPUs which have the same CPU \"parent\" can communicate amongst themselves simultaneously at the full PCI-Express 2.0 rate (about 6GB/sec) through a PCI-Express switch.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 161.7050018310547,
+            "y0": 108.92027282714844,
+            "x1": 301.01202392578125,
+            "y1": 118.88286590576172
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 120.87528991699219,
+            "x1": 300.97210693359375,
+            "y1": 130.837890625
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 132.83128356933594,
+            "x1": 301.01202392578125,
+            "y1": 142.79388427734375
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 144.7863006591797,
+            "x1": 255.17404174804688,
+            "y1": 154.7489013671875
+          }
+        ]
+      }
+    },
+    {
+      "value": "50%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Communication outside this set must happen through the host memory and incurs a latency penalty, as well as a throughput penalty of 50% if all GPUs wish to communicate simultaneously.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 263.6422424316406,
+            "y0": 144.7863006591797,
+            "x1": 300.9820556640625,
+            "y1": 154.7489013671875
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 156.74131774902344,
+            "x1": 300.97210693359375,
+            "y1": 166.70391845703125
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 168.6963348388672,
+            "x1": 301.001953125,
+            "y1": 178.658935546875
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 180.65135192871094,
+            "x1": 301.02191162109375,
+            "y1": 190.61395263671875
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 192.6073455810547,
+            "x1": 197.679931640625,
+            "y1": 202.5699462890625
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.611",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 1 & & 2.611 & 42.33% & 98.05h & 1x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "2.611",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "42.33%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 1 & & 2.611 & 42.33% & 98.05h & 1x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "42.33%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "98.05",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 1 & & 2.611 & 42.33% & 98.05h & 1x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.624",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.624 & 42.63% & 50.24h & 1.95x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "2.624",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "42.63%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.624 & 42.63% & 50.24h & 1.95x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "42.63%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "50.24",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.624 & 42.63% & 50.24h & 1.95x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.95",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.624 & 42.63% & 50.24h & 1.95x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.614",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.614 & 42.27% & 50.90h & 1.93x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "2.614",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "42.27%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.614 & 42.27% & 50.90h & 1.93x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "42.27%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "50.90",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.614 & 42.27% & 50.90h & 1.93x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.93",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 2 & & 2.614 & 42.27% & 50.90h & 1.93x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.637",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.637 & 42.59% & 26.20h & 3.74x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "2.637",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "42.59%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.637 & 42.59% & 26.20h & 3.74x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "42.59%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "26.20",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.637 & 42.59% & 26.20h & 3.74x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.74",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.637 & 42.59% & 26.20h & 3.74x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.625",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.625 & 42.44% & 26.78h & 3.66x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "2.625",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "42.44%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.625 & 42.44% & 26.78h & 3.66x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "42.44%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "26.78",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.625 & 42.44% & 26.78h & 3.66x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.66",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 4 & & 2.625 & 42.44% & 26.78h & 3.66x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.678",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 1|c|8 & & 2.678 & 43.28% & 15.68h & 6.25x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "2.678",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "43.28%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 1|c|8 & & 2.678 & 43.28% & 15.68h & 6.25x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "43.28%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "15.68",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 1|c|8 & & 2.678 & 43.28% & 15.68h & 6.25x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "6.25",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 1|c|8 & & 2.678 & 43.28% & 15.68h & 6.25x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.651",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 8 & & 2.651 & 42.86% & 15.91h & 6.16x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "2.651",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "42.86%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 8 & & 2.651 & 42.86% & 15.91h & 6.16x\\",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "GPUs",
+      "cell": "42.86%",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "15.91",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 8 & & 2.651 & 42.86% & 15.91h & 6.16x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "6.16",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "One weird trick for parallelizing convolutional neural networks Alex Krizhevsky Google Inc.\\ akrizhevsky@google.com 8 & & 2.651 & 42.86% & 15.91h & 6.16x\\",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.93000030517578,
+            "y0": 109.2339096069336,
+            "x1": 527.1939086914062,
+            "y1": 126.44931030273438
+          },
+          {
+            "x0": 263.87298583984375,
+            "y0": 142.22640991210938,
+            "x1": 348.1451721191406,
+            "y1": 154.18161010742188
+          },
+          {
+            "x0": 276.7039794921875,
+            "y0": 156.17440795898438,
+            "x1": 312.2348327636719,
+            "y1": 168.12960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.2",
+      "kind": "result",
+      "section": "results",
+      "sentence": "They achieved a speedup of 2.2x on 4 GPUs, relative to a 1-GPU implementation that takes 226.8 hours to train for 90 epochs on an NVIDIA GeForce Titan.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 430.3228454589844,
+            "y0": 191.74815368652344,
+            "x1": 541.1168212890625,
+            "y1": 201.71075439453125
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 203.7031707763672,
+            "x1": 541.1468505859375,
+            "y1": 213.665771484375
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 215.65818786621094,
+            "x1": 541.1468505859375,
+            "y1": 225.62078857421875
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 227.6132049560547,
+            "x1": 442.8857421875,
+            "y1": 237.5758056640625
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.2",
+      "kind": "result",
+      "section": "results",
+      "sentence": "They achieved a speedup of 3.2x on 8 GPUs, relative to a 1-GPU implementation that takes 256.8 hours to train on an NVIDIA K20X.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 467.1844177246094,
+            "y0": 287.3891906738281,
+            "x1": 541.1268310546875,
+            "y1": 297.351806640625
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 299.34417724609375,
+            "x1": 541.1367797851562,
+            "y1": 309.3067932128906
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 311.2991638183594,
+            "x1": 541.1268920898438,
+            "y1": 321.26177978515625
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 323.2551574707031,
+            "x1": 378.8661193847656,
+            "y1": 333.2177734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.2",
+      "kind": "result",
+      "section": "results",
+      "sentence": "Furthermore, this 3.2x speedup came at a rather significant accuracy cost: their 8-GPU model achieved a final validation error rate of 45%.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 381.5759582519531,
+            "y0": 323.2551574707031,
+            "x1": 541.136962890625,
+            "y1": 333.2177734375
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 335.21014404296875,
+            "x1": 541.1368408203125,
+            "y1": 345.1727600097656
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 347.1651306152344,
+            "x1": 534.6610717773438,
+            "y1": 357.12774658203125
+          }
+        ]
+      }
+    },
+    {
+      "value": "45%",
+      "kind": "result",
+      "section": "results",
+      "sentence": "Furthermore, this 3.2x speedup came at a rather significant accuracy cost: their 8-GPU model achieved a final validation error rate of 45%.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 381.5759582519531,
+            "y0": 323.2551574707031,
+            "x1": 541.136962890625,
+            "y1": 333.2177734375
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 335.21014404296875,
+            "x1": 541.1368408203125,
+            "y1": 345.1727600097656
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 347.1651306152344,
+            "x1": 534.6610717773438,
+            "y1": 357.12774658203125
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "In reference to the figure, the forward pass works like this: Each of the workers is given a different data batch of (let's say) 128 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 161.5850067138672,
+            "y0": 435.0441589355469,
+            "x1": 301.0215148925781,
+            "y1": 445.00677490234375
+          },
+          {
+            "x0": 95.77301025390625,
+            "y0": 446.9991455078125,
+            "x1": 241.19711303710938,
+            "y1": 456.9617614746094
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "The workers then compute the fully-connected activities on this batch of 128 examples and then begin to backpropagate the gradients (more on this below) for these 128 examples. In parallel with this computation, the next worker sends its last-stage convolutional layer activities to all other workers.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 357.8059997558594,
+            "y0": 322.7381286621094,
+            "x1": 451.2451477050781,
+            "y1": 332.70074462890625
+          },
+          {
+            "x0": 138.69216918945312,
+            "y0": 641.629150390625,
+            "x1": 301.0028076171875,
+            "y1": 651.5917358398438
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 653.5841674804688,
+            "x1": 301.0028076171875,
+            "y1": 663.5467529296875
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 665.5391235351562,
+            "x1": 300.9827880859375,
+            "y1": 675.501708984375
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 677.4951782226562,
+            "x1": 301.01275634765625,
+            "y1": 687.457763671875
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 689.4501342773438,
+            "x1": 301.0118103027344,
+            "y1": 699.4127197265625
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 701.4051513671875,
+            "x1": 301.00372314453125,
+            "y1": 711.3677368164062
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 713.3601684570312,
+            "x1": 301.03271484375,
+            "y1": 723.32275390625
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "The workers then compute the fully-connected activities on this batch of 128 examples and then begin to backpropagate the gradients (more on this below) for these 128 examples. In parallel with this computation, the next worker sends its last-stage convolutional layer activities to all other workers.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 357.8059997558594,
+            "y0": 322.7381286621094,
+            "x1": 451.2451477050781,
+            "y1": 332.70074462890625
+          },
+          {
+            "x0": 138.69216918945312,
+            "y0": 641.629150390625,
+            "x1": 301.0028076171875,
+            "y1": 651.5917358398438
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 653.5841674804688,
+            "x1": 301.0028076171875,
+            "y1": 663.5467529296875
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 665.5391235351562,
+            "x1": 300.9827880859375,
+            "y1": 675.501708984375
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 677.4951782226562,
+            "x1": 301.01275634765625,
+            "y1": 687.457763671875
+          },
+          {
+            "x0": 117.69100189208984,
+            "y0": 689.4501342773438,
+            "x1": 301.0118103027344,
+            "y1": 699.4127197265625
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 701.4051513671875,
+            "x1": 301.00372314453125,
+            "y1": 711.3677368164062
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 713.3601684570312,
+            "x1": 301.03271484375,
+            "y1": 723.32275390625
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Then the workers compute the fully-connected activities on this second batch of 128 examples, and so on.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 461.2376403808594,
+            "y0": 322.7381286621094,
+            "x1": 541.1377563476562,
+            "y1": 332.70074462890625
+          },
+          {
+            "x0": 357.8059997558594,
+            "y0": 334.693115234375,
+            "x1": 541.10791015625,
+            "y1": 344.6557312011719
+          },
+          {
+            "x0": 357.8059997558594,
+            "y0": 346.6481018066406,
+            "x1": 541.1077880859375,
+            "y1": 356.6107177734375
+          },
+          {
+            "x0": 357.8059997558594,
+            "y0": 358.6040954589844,
+            "x1": 371.08612060546875,
+            "y1": 368.56671142578125
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "In scheme (b), each worker has computed the last-stage convolutional layer activity gradients for one batch of 128 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 117.69099426269531,
+            "y0": 361.75018310546875,
+            "x1": 301.00787353515625,
+            "y1": 371.7127990722656
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 373.7051696777344,
+            "x1": 301.0027770996094,
+            "y1": 383.66778564453125
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 385.6611633300781,
+            "x1": 301.03265380859375,
+            "y1": 395.623779296875
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 397.61614990234375,
+            "x1": 137.1081085205078,
+            "y1": 407.5787658691406
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Each worker then sends these gradients to the worker which is responsible for this batch of 128 examples. In parallel with this, the workers compute the fully-connected forward pass on the next batch of 128 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.26873779296875,
+            "y0": 397.61614990234375,
+            "x1": 300.9828186035156,
+            "y1": 407.5787658691406
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 409.5711364746094,
+            "x1": 301.0027770996094,
+            "y1": 419.53375244140625
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 421.526123046875,
+            "x1": 301.0159606933594,
+            "y1": 431.4887390136719
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 433.4811096191406,
+            "x1": 301.0124206542969,
+            "y1": 443.4437255859375
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 445.43609619140625,
+            "x1": 300.98284912109375,
+            "y1": 455.3987121582031
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 457.39208984375,
+            "x1": 192.02194213867188,
+            "y1": 467.3547058105469
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Each worker then sends these gradients to the worker which is responsible for this batch of 128 examples. In parallel with this, the workers compute the fully-connected forward pass on the next batch of 128 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.26873779296875,
+            "y0": 397.61614990234375,
+            "x1": 300.9828186035156,
+            "y1": 407.5787658691406
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 409.5711364746094,
+            "x1": 301.0027770996094,
+            "y1": 419.53375244140625
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 421.526123046875,
+            "x1": 301.0159606933594,
+            "y1": 431.4887390136719
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 433.4811096191406,
+            "x1": 301.0124206542969,
+            "y1": 443.4437255859375
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 445.43609619140625,
+            "x1": 300.98284912109375,
+            "y1": 455.3987121582031
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 457.39208984375,
+            "x1": 192.02194213867188,
+            "y1": 467.3547058105469
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Each worker has computed the last-stage convolutional layer activity gradients for 128 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 117.69099426269531,
+            "y0": 534.4880981445312,
+            "x1": 300.9928283691406,
+            "y1": 544.45068359375
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 546.4430541992188,
+            "x1": 301.0526428222656,
+            "y1": 556.4056396484375
+          },
+          {
+            "x0": 117.69099426269531,
+            "y0": 558.3991088867188,
+            "x1": 180.69447326660156,
+            "y1": 568.3616943359375
+          }
+        ]
+      }
+    },
+    {
+      "value": "128 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Notice also that schemes (b) and (c) perform forward and backward passes through the fully-connected layers, each time with a different batch of 128 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 324.84698486328125,
+            "y0": 360.5431823730469,
+            "x1": 541.114990234375,
+            "y1": 370.50579833984375
+          },
+          {
+            "x0": 310.9809875488281,
+            "y0": 372.4981689453125,
+            "x1": 541.1070556640625,
+            "y1": 382.4607849121094
+          },
+          {
+            "x0": 310.9809875488281,
+            "y0": 384.4531555175781,
+            "x1": 372.3904113769531,
+            "y1": 394.415771484375
+          }
+        ]
+      }
+    },
+    {
+      "value": "90 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "But with tens of thousands of classes, the cost of normalization becomes noticeable. I trained all models for exactly 90 epochs, and multiplied the learning rate by at 25%, 50%, and 75% training progress.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 298.9146728515625,
+            "y0": 695.9639282226562,
+            "x1": 541.0781860351562,
+            "y1": 703.93408203125
+          },
+          {
+            "x0": 70.86600494384766,
+            "y0": 705.427978515625,
+            "x1": 144.0395050048828,
+            "y1": 713.3981323242188
+          }
+        ]
+      }
+    },
+    {
+      "value": "6GB",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "GPUs which have the same CPU \"parent\" can communicate amongst themselves simultaneously at the full PCI-Express 2.0 rate (about 6GB/sec) through a PCI-Express switch.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 161.7050018310547,
+            "y0": 108.92027282714844,
+            "x1": 301.01202392578125,
+            "y1": 118.88286590576172
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 120.87528991699219,
+            "x1": 300.97210693359375,
+            "y1": 130.837890625
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 132.83128356933594,
+            "x1": 301.01202392578125,
+            "y1": 142.79388427734375
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 144.7863006591797,
+            "x1": 255.17404174804688,
+            "y1": 154.7489013671875
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 GPUs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "They achieved a speedup of 2.2x on 4 GPUs, relative to a 1-GPU implementation that takes 226.8 hours to train for 90 epochs on an NVIDIA GeForce Titan.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 430.3228454589844,
+            "y0": 191.74815368652344,
+            "x1": 541.1168212890625,
+            "y1": 201.71075439453125
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 203.7031707763672,
+            "x1": 541.1468505859375,
+            "y1": 213.665771484375
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 215.65818786621094,
+            "x1": 541.1468505859375,
+            "y1": 225.62078857421875
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 227.6132049560547,
+            "x1": 442.8857421875,
+            "y1": 237.5758056640625
+          }
+        ]
+      }
+    },
+    {
+      "value": "226.8 hours",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "They achieved a speedup of 2.2x on 4 GPUs, relative to a 1-GPU implementation that takes 226.8 hours to train for 90 epochs on an NVIDIA GeForce Titan.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 430.3228454589844,
+            "y0": 191.74815368652344,
+            "x1": 541.1168212890625,
+            "y1": 201.71075439453125
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 203.7031707763672,
+            "x1": 541.1468505859375,
+            "y1": 213.665771484375
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 215.65818786621094,
+            "x1": 541.1468505859375,
+            "y1": 225.62078857421875
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 227.6132049560547,
+            "x1": 442.8857421875,
+            "y1": 237.5758056640625
+          }
+        ]
+      }
+    },
+    {
+      "value": "90 epochs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "They achieved a speedup of 2.2x on 4 GPUs, relative to a 1-GPU implementation that takes 226.8 hours to train for 90 epochs on an NVIDIA GeForce Titan.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 430.3228454589844,
+            "y0": 191.74815368652344,
+            "x1": 541.1168212890625,
+            "y1": 201.71075439453125
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 203.7031707763672,
+            "x1": 541.1468505859375,
+            "y1": 213.665771484375
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 215.65818786621094,
+            "x1": 541.1468505859375,
+            "y1": 225.62078857421875
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 227.6132049560547,
+            "x1": 442.8857421875,
+            "y1": 237.5758056640625
+          }
+        ]
+      }
+    },
+    {
+      "value": "8 GPUs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "They achieved a speedup of 3.2x on 8 GPUs, relative to a 1-GPU implementation that takes 256.8 hours to train on an NVIDIA K20X.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 467.1844177246094,
+            "y0": 287.3891906738281,
+            "x1": 541.1268310546875,
+            "y1": 297.351806640625
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 299.34417724609375,
+            "x1": 541.1367797851562,
+            "y1": 309.3067932128906
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 311.2991638183594,
+            "x1": 541.1268920898438,
+            "y1": 321.26177978515625
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 323.2551574707031,
+            "x1": 378.8661193847656,
+            "y1": 333.2177734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "256.8 hours",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "They achieved a speedup of 3.2x on 8 GPUs, relative to a 1-GPU implementation that takes 256.8 hours to train on an NVIDIA K20X.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 467.1844177246094,
+            "y0": 287.3891906738281,
+            "x1": 541.1268310546875,
+            "y1": 297.351806640625
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 299.34417724609375,
+            "x1": 541.1367797851562,
+            "y1": 309.3067932128906
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 311.2991638183594,
+            "x1": 541.1268920898438,
+            "y1": 321.26177978515625
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 323.2551574707031,
+            "x1": 378.8661193847656,
+            "y1": 333.2177734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "8 GPUs",
+      "kind": "configuration",
+      "section": "conclusion",
+      "sentence": "In particular, as we scale the algorithm past 8 GPUs, we should: Consider architectures with some sort of restricted connectivity in the upper layers, in place of the dense connectivity in current nets.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.77299499511719,
+            "y0": 505.2960510253906,
+            "x1": 301.0124816894531,
+            "y1": 515.2586669921875
+          },
+          {
+            "x0": 95.77299499511719,
+            "y0": 517.2510986328125,
+            "x1": 301.0024719238281,
+            "y1": 527.2136840820312
+          },
+          {
+            "x0": 95.77299499511719,
+            "y0": 529.2061157226562,
+            "x1": 300.9826354980469,
+            "y1": 539.168701171875
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Error rates on the validation set of ILSVRC 2012, with the model described in Section . Batch size indicates an effective batch size of in the convolutional layers and in the fully-connected layers. All models use data parallelism in the convolutional layers and model parallelism in the fully-connected layers. Time indicates total training time in hours.",
+      "label": "tab:error-rates",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "GPUs",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Batch size",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Cross-entropy",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-1 error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Time",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Speedup 1",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.611",
+            "value": "2.611",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42.33%",
+            "value": "42.33",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "98.05h",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1x 2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.624",
+            "value": "2.624",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42.63%",
+            "value": "42.63",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50.24h",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.95x 2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.614",
+            "value": "2.614",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42.27%",
+            "value": "42.27",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50.90h",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.93x 4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.637",
+            "value": "2.637",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42.59%",
+            "value": "42.59",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "26.20h",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "3.74x 4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.625",
+            "value": "2.625",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42.44%",
+            "value": "42.44",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "26.78h",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "3.66x 8",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.678",
+            "value": "2.678",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "43.28%",
+            "value": "43.28",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "15.68h",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "6.25x 8",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2.651",
+            "value": "2.651",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42.86%",
+            "value": "42.86",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "15.91h",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "6.16x",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\tabularnewline": "\\\\}\n\n\n\\usepackage{multicol} \n\n\\makeatother\n\n\\usepackage{babel}\n\\begin{document}\n\\title{One weird trick for parallelizing convolutional neural networks}\n\\author{Alex Krizhevsky\\\\Google Inc.\\\\{\\tt akrizhevsky@google.com }"
+  },
+  "references": [
+    {
+      "key": "coates2013deep",
+      "raw": "Adam Coates, Brody Huval, Tao Wang, David Wu, Bryan Catanzaro, and Ng Andrew. Deep learning with cots hpc systems. In Proceedings of The 30th International Conference on Machine Learning, pages 1337--1345, 2013",
+      "authors": "Adam Coates, Brody Huval, Tao Wang, David Wu, Bryan Catanzaro, and Ng Andrew",
+      "title": "Deep learning with cots hpc systems",
+      "venue": "In Proceedings of The 30th International Conference on Machine Learning, pages 1337--1345, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dean2012large",
+      "raw": "Jeffrey Dean, Greg Corrado, Rajat Monga, Kai Chen, Matthieu Devin, Quoc V Le, Mark Z Mao, Marc'Aurelio Ranzato, Andrew W Senior, Paul A Tucker, et al. Large scale distributed deep networks. In NIPS, pages 1232--1240, 2012",
+      "authors": "Jeffrey Dean, Greg Corrado, Rajat Monga, Kai Chen, Matthieu Devin, Quoc V Le, Mark Z Mao, Marc'Aurelio Ranzato, Andrew W Senior, Paul A Tucker, et al",
+      "title": "Large scale distributed deep networks",
+      "venue": "In NIPS, pages 1232--1240, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "deng2009imagenet",
+      "raw": "Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. Imagenet: A large-scale hierarchical image database. In Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on, pages 248--255. IEEE, 2009",
+      "authors": "Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei",
+      "title": "Imagenet: A large-scale hierarchical image database",
+      "venue": "In Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on, pages 248--255. IEEE, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton. Imagenet classification with deep convolutional neural networks. In NIPS, volume 1, page 4, 2012",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In NIPS, volume 1, page 4, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "niu2011hogwild",
+      "raw": "Feng Niu, Benjamin Recht, Christopher R\\'e, and Stephen J Wright. Hogwild!: A lock-free approach to parallelizing stochastic gradient descent. Advances in Neural Information Processing Systems, 24: 0 693--701, 2011",
+      "authors": "Feng Niu, Benjamin Recht, Christopher R\\'e, and Stephen J Wright",
+      "title": "Hogwild!: A lock-free approach to parallelizing stochastic gradient descent",
+      "venue": "Advances in Neural Information Processing Systems, 24: 0 693--701, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "paine2013gpu",
+      "raw": "Thomas Paine, Hailin Jin, Jianchao Yang, Zhe Lin, and Thomas Huang. Gpu asynchronous stochastic gradient descent to speed up neural network training. arXiv preprint arXiv:1312.6186, 2013",
+      "authors": "Thomas Paine, Hailin Jin, Jianchao Yang, Zhe Lin, and Thomas Huang",
+      "title": "Gpu asynchronous stochastic gradient descent to speed up neural network training",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.6186",
+      "doi": null
+    },
+    {
+      "key": "yadan2013multi",
+      "raw": "Omry Yadan, Keith Adams, Yaniv Taigman, and Marc'Aurelio Ranzato. Multi-gpu training of convnets. arXiv preprint arXiv:1312.5853, 2013",
+      "authors": "Omry Yadan, Keith Adams, Yaniv Taigman, and Marc'Aurelio Ranzato",
+      "title": "Multi-gpu training of convnets",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.5853",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\Delta w & := & \\mu\\Delta w+\\epsilon\\left(\\langle\\frac{\\partial E}{\\partial w}\\rangle_{i}-\\omega w\\right)\\\\\nw & := & w+\\Delta w",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "w_{k} & = & w_{k-1}-\\epsilon\\omega w_{k-1}\\\\\n & = & w_{k-1}(1-\\epsilon\\omega)\\\\\n & = & w_{0}(1-\\epsilon\\omega)^{k}.",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "w_{1}^{\\prime} & = & w_{0}-\\epsilon^{\\prime}\\omega^{\\prime}w_{0}\\\\\n & = & w_{0}(1-\\epsilon^{\\prime}\\omega^{\\prime})",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\omega^{\\prime} & = & \\frac{1}{\\epsilon^{\\prime}}\\cdot\\left(1-\\left(1-\\epsilon\\omega\\right){}^{k}\\right)\\\\\n & = & \\frac{1}{\\sqrt{k}\\epsilon}\\cdot\\left(1-\\left(1-\\epsilon\\omega\\right){}^{k}\\right).",
+      "environment": "eqnarray*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 217,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.59297180175781,
+            "y0": 247.30856323242188,
+            "x1": 516.2369995117188,
+            "y1": 256.27496337890625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 415,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 70.86597442626953,
+            "y0": 314.1772155761719,
+            "x1": 300.991943359375,
+            "y1": 324.13983154296875
+          },
+          {
+            "x0": 70.86597442626953,
+            "y0": 326.1322021484375,
+            "x1": 301.0417785644531,
+            "y1": 336.0948181152344
+          },
+          {
+            "x0": 70.86597442626953,
+            "y0": 338.08819580078125,
+            "x1": 292.9323425292969,
+            "y1": 348.0508117675781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Existing approaches",
+      "chars": 1663,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 70.86597442626953,
+            "y0": 452.44415283203125,
+            "x1": 301.011962890625,
+            "y1": 462.4067687988281
+          },
+          {
+            "x0": 70.86597442626953,
+            "y0": 464.3991394042969,
+            "x1": 137.91427612304688,
+            "y1": 474.36175537109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Some observations",
+      "chars": 749,
+      "numbers": 4,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 335.88800048828125,
+            "y0": 584.2550659179688,
+            "x1": 541.1174926757812,
+            "y1": 594.2176513671875
+          },
+          {
+            "x0": 335.88800048828125,
+            "y0": 596.2100219726562,
+            "x1": 541.1275024414062,
+            "y1": 606.172607421875
+          },
+          {
+            "x0": 335.88800048828125,
+            "y0": 608.1650390625,
+            "x1": 472.7740173339844,
+            "y1": 618.1276245117188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "The proposed algorithm",
+      "chars": 5034,
+      "numbers": 9,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 70.86599731445312,
+            "y0": 344.55621337890625,
+            "x1": 301.0219421386719,
+            "y1": 354.5188293457031
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 356.51220703125,
+            "x1": 301.0318908691406,
+            "y1": 366.4748229980469
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 368.4671936035156,
+            "x1": 301.011962890625,
+            "y1": 378.4298095703125
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 380.42218017578125,
+            "x1": 167.57293701171875,
+            "y1": 390.3847961425781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Weight synchronization",
+      "chars": 582,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 310.98101806640625,
+            "y0": 91.44309997558594,
+            "x1": 541.0972290039062,
+            "y1": 101.40569305419922
+          },
+          {
+            "x0": 310.98101806640625,
+            "y0": 103.39811706542969,
+            "x1": 397.5459899902344,
+            "y1": 113.36071014404297
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Variable batch size",
+      "chars": 1057,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 310.9809875488281,
+            "y0": 300.7672424316406,
+            "x1": 541.0870361328125,
+            "y1": 310.7298583984375
+          },
+          {
+            "x0": 310.9809875488281,
+            "y0": 312.72222900390625,
+            "x1": 541.1268310546875,
+            "y1": 322.6848449707031
+          },
+          {
+            "x0": 310.9809875488281,
+            "y0": 324.6772155761719,
+            "x1": 541.1069946289062,
+            "y1": 334.63983154296875
+          },
+          {
+            "x0": 310.9809875488281,
+            "y0": 336.6332092285156,
+            "x1": 541.1069946289062,
+            "y1": 346.5958251953125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 4661,
+      "numbers": 16,
+      "citations": 3,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 310.98095703125,
+            "y0": 593.8090209960938,
+            "x1": 541.1069946289062,
+            "y1": 603.7716064453125
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 605.7640380859375,
+            "x1": 447.0998840332031,
+            "y1": 615.7266235351562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Results",
+      "chars": 1005,
+      "numbers": 36,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "results",
+      "title": "Comparisons to other work on parallel convolutional neural network training",
+      "chars": 852,
+      "numbers": 12,
+      "citations": 6,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 406.3528747558594,
+            "y0": 131.9720916748047,
+            "x1": 541.1168823242188,
+            "y1": 141.9346923828125
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 143.92710876464844,
+            "x1": 364.191162109375,
+            "y1": 153.88970947265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Other work on parallel neural network training",
+      "chars": 1473,
+      "numbers": 1,
+      "citations": 5,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 383.9768371582031,
+            "y0": 424.60614013671875,
+            "x1": 541.1267700195312,
+            "y1": 434.5687561035156
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 436.5611267089844,
+            "x1": 541.1268310546875,
+            "y1": 446.52374267578125
+          },
+          {
+            "x0": 310.98095703125,
+            "y0": 448.51611328125,
+            "x1": 332.0617980957031,
+            "y1": 458.4787292480469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1182,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 70.86599731445312,
+            "y0": 393.4471740722656,
+            "x1": 300.97210693359375,
+            "y1": 403.4097900390625
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 405.4031677246094,
+            "x1": 301.02191162109375,
+            "y1": 415.36578369140625
+          },
+          {
+            "x0": 70.86599731445312,
+            "y0": 417.358154296875,
+            "x1": 171.64764404296875,
+            "y1": 427.3207702636719
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 7,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": []
+  },
+  "assumptions": [
+    {
+      "sentence": "Assuming \u03bc=0 for now, k applications of the weight decay penalty under batch size N, learning rate \u03f5, and weight decay coefficient \u03c9 give While one application of weight decay under batch size N^', learning rate \u03f5^' and weight decay coefficient \u03c9^' gives so we want to pick \u03c9^' such that (1-\u03f5\u03c9)^k=1-\u03f5^'\u03c9^' which gives So, for example, if we trained a net with batch size N=128 and \u03f5=0.01,\u03c9=0.0005, the theory suggests that for batch size N^'=1024 we should use \u03f5^'=\u221a(8)\u00b70.01 and \u03c9^'\u22480.0014141888.",
+      "anchorText": "which gives So, for example, if we trained a net with batch size",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Assuming",
+      "section": "Experiments",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 1,
+    "cited": 0,
+    "shown": 0,
+    "bare": 1
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.NE",
+    "primaryName": "Neural and Evolutionary Computing",
+    "categories": [
+      "cs.NE",
+      "cs.DC",
+      "cs.LG"
+    ],
+    "published": "2014-04-23",
+    "authors": [
+      "Alex Krizhevsky"
+    ]
+  }
+}

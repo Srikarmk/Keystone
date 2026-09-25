@@ -443,6 +443,30 @@ def dossier(
         f"{found} searchable line(s)",
         fg=typer.colors.GREEN,
     )
+
+    # Papers arXiv told us nothing about, said out loud.
+    #
+    # A missing record is survivable — the analysis is read from the paper, not from
+    # the catalogue — and `resolve_metadata` swallows a failed request on purpose so
+    # an arXiv outage cannot block a build. But the consequences are not cosmetic: a
+    # paper with no `published` date is filtered out of the timeline entirely and
+    # falls into an "uncategorised" heap on the front page.
+    #
+    # Twenty-seven papers landed that way once and the build said nothing, because
+    # counting them was nobody's job. It is now.
+    dateless = [
+        entry["id"]
+        for entry in merged.values()
+        if not ((entry.get("arxiv") or {}).get("published"))
+    ]
+    if dateless:
+        typer.secho(
+            f"{len(dateless)} paper(s) have no arXiv record, so they carry no date "
+            f"and no category: {', '.join(dateless[:8])}"
+            + (" …" if len(dateless) > 8 else "")
+            + "\n  arXiv answers 406 when it is throttling; re-run to fill them in.",
+            fg=typer.colors.YELLOW,
+        )
     for arxiv_id, reason in failures:
         typer.secho(f"  failed: {arxiv_id} {reason}", fg=typer.colors.RED)
 
