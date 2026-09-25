@@ -275,10 +275,28 @@ def trace_all(
 
 
 def mismatch_findings(coverage: Coverage) -> list[Finding]:
-    """Headline numbers that nearly, but do not, match the cell they refer to."""
+    """Headline numbers that nearly, but do not, match the cell they refer to.
+
+    Only where the cell can actually be named. A mismatch is an accusation — it says a
+    paper reports a number its own table does not support — and the evidence for one
+    has to be a *cell*, identified by its row and its column. With no row header the
+    claim degrades to "some value in a column with a similar name differs", which is
+    not the same statement and is not enough to make it.
+
+    Measured on the library at 101 papers: seven mismatches, two with a row and five
+    without. The two are real and localised — EfficientNet's introduction says 76.3%
+    for ResNet-50 where its Table 3 says 76.0%, and you can go and look. Of the five,
+    every one paired a headline number against a different configuration's row in a
+    multi-row table: Megatron-LM's 76% scaling efficiency against a 77% cell, MBPP's
+    59.6% few-shot result against a 59.0% cell belonging to another model size.
+    Five false accusations against two true ones is not a rate this can ship at, and
+    the row header is exactly what separates them.
+    """
     findings: list[Finding] = []
     for trace in coverage.mismatched:
         assert trace.cell is not None and trace.table is not None and trace.cell.number is not None
+        if not trace.cell.row_header.strip():
+            continue
         stated = trace.mention.number
         found = trace.cell.number
         delta = abs(stated.as_fraction - found.as_fraction)
