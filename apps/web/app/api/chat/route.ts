@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { isArxivId } from "@/lib/arxiv";
+import { fetchBuilt } from "@/lib/built";
 
 /*
  * Grounded question answering over one paper.
@@ -142,9 +143,12 @@ Rules, in order of importance:
  * cache reads rather than two ingests.
  */
 async function load(origin: string, paperId: string): Promise<[unknown, unknown]> {
+  // Keyed to this deployment: `force-cache` on a built file meant a rebuilt dossier
+  // was never picked up, because Next's data cache outlives the deployment that
+  // filled it.
   const fromLibrary = await Promise.all([
-    fetch(`${origin}/dossiers/${paperId}.json`, { cache: "force-cache" }),
-    fetch(`${origin}/dossiers/${paperId}.context.json`, { cache: "force-cache" }),
+    fetchBuilt(`/dossiers/${paperId}.json`),
+    fetchBuilt(`/dossiers/${paperId}.context.json`),
   ]);
   if (fromLibrary[0].ok && fromLibrary[1].ok) {
     return [await fromLibrary[0].json(), await fromLibrary[1].json()];

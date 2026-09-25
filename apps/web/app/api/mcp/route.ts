@@ -1,4 +1,5 @@
 import { isArxivId, readArxivId } from "@/lib/arxiv";
+import { fetchBuilt } from "@/lib/built";
 
 /*
  * Keystone as a tool other software can use.
@@ -72,9 +73,7 @@ interface Library {
  * The fetch cache alone is the same speed and actually expires.
  */
 async function library(): Promise<Library> {
-  const response = await fetch(`${SITE}/dossiers/search.json`, {
-    next: { revalidate: 3600 },
-  });
+  const response = await fetchBuilt("/dossiers/search.json");
   if (!response.ok) throw new Error("library index unavailable");
   return (await response.json()) as Library;
 }
@@ -238,9 +237,7 @@ async function readPaper(args: Record<string, unknown>) {
 
   // The library's own file, then the parser. Same order the reader uses, so this
   // answers for any paper on arXiv rather than only the seventy-four here.
-  const fromLibrary = await fetch(`${SITE}/dossiers/${id}.json`, {
-    next: { revalidate: 3600 },
-  });
+  const fromLibrary = await fetchBuilt(`/dossiers/${id}.json`);
   const dossier: Record<string, any> = await (async () => {
     if (fromLibrary.ok) return fromLibrary.json();
     const parsed = await fetch(`${SITE}/api/ingest?id=${encodeURIComponent(id)}`, {
