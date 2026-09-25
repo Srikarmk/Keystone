@@ -60,17 +60,23 @@ interface Library {
   rows: Row[];
 }
 
-let cached: Promise<Library> | null = null;
-
-/** The whole library's readings. Memoised per instance; it is a static file. */
-function library(): Promise<Library> {
-  cached ??= fetch(`${SITE}/dossiers/search.json`, {
+/**
+ * The whole library's readings.
+ *
+ * Cached by Next's own fetch cache, which has a lifetime. The first version also
+ * memoised the promise in a module-level variable, and that was wrong in a way that
+ * showed up immediately: a warm instance holds that variable for as long as it lives,
+ * so the hour-long revalidation never applied to it. The library grew from 74 papers
+ * to 101 and this route went on reporting 40 disputes where there were 52.
+ *
+ * The fetch cache alone is the same speed and actually expires.
+ */
+async function library(): Promise<Library> {
+  const response = await fetch(`${SITE}/dossiers/search.json`, {
     next: { revalidate: 3600 },
-  }).then((response) => {
-    if (!response.ok) throw new Error("library index unavailable");
-    return response.json() as Promise<Library>;
   });
-  return cached;
+  if (!response.ok) throw new Error("library index unavailable");
+  return (await response.json()) as Library;
 }
 
 /* --------------------------------------------------------------------------------- *
