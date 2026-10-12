@@ -104,39 +104,40 @@ Keystone's is oriented at experiments, which is where ML/CS papers actually go w
 
 ## Status
 
-**Phase 0 (substrate) — anchor gate passed.** The trust primitive is built and
-measured. Nothing here calls an LLM yet; it is all deterministic geometry and text.
+Live at <https://keystone-research.vercel.app>. The numbers below are read from the
+generated JSON the build writes, so they cannot drift from the run that produced them.
 
-| Metric | Result | Gate |
-|---|---|---|
-| Tight anchors surviving independent geometric round-trip | **99.94%** (1755/1756) | ≥ 99% |
-| Approximate anchors meeting their weaker contract | **100%** (89/89) | — |
-| Real spans wrongly rejected | **0** of 1845 | 0 |
-| Anchors landing on the wrong words | **0** of 1845 | 0 |
-| Fabricated quotes wrongly anchored | **0** of 359 | 0 |
-| arXiv LaTeX source sentences anchored into the PDF | **93.5%** (2666/2852) | ≥ 90% |
-
-Measured over ten arXiv papers spanning the layouts that actually break anchoring:
-one and two column, dense display maths, wide benchmark tables, rotated axis labels,
-ligatures and combining diacritics.
-
-**Phase 1 (audit engine) — first deterministic checks landed.** Two checks run over
-tables built from arXiv LaTeX source, with no model in the loop and no network:
-
-| Metric | Result |
+| | |
 |---|---|
-| Findings on nine unmodified, heavily reviewed papers | **0** |
-| Recall on deliberately planted defects | **11%** (1/9) |
-| Collateral findings caused by one planted defect | **0** |
+| Papers analysed | **101** |
+| Citation readings | **702**, 92.9% anchored to the page |
+| Assumptions | **522**, of which 449 state nothing in support |
+| Walkable paper-to-paper edges | **146** |
+| Tests | 261 Python, 41 JavaScript |
 
-The recall number is the honest one and the operating point is deliberate. A sweep of
-the premise parameters showed the only configurations reaching 33% recall also produced
-three or four false positives across the same nine papers. For a tool whose entire
-claim is that its findings can be checked rather than trusted, that is the wrong trade.
+**The anchor layer.** Tight anchors survive an independent geometric round-trip through
+MuPDF rather than through the matcher's own index; the gate is ≥99% and the suite
+refuses to build below it. Real spans are never rejected and fabricated quotes are never
+anchored — both are gated at zero. Roughly 93% of a paper's LaTeX sentences can be found
+in its PDF, and a source that matches its PDF on fewer than a quarter of sampled
+sentences is refused outright rather than published.
 
-**Not yet built:** the persistence layer (Postgres + pgvector, docker-compose), claim
-and prose extraction, citation faithfulness, and the reader UI. Persistence is
-deliberately deferred until there is extracted structure to store.
+**The cue rules, scored on somebody else's labels.** Against SciCite (11,014 citation
+contexts) the rules report a stance for 4% of citations and are right about 80% of those,
+95% CI 76–84%. Macro-F1 is 0.325 against neural classifiers near 0.84, and that gap is
+the deliberate trade: macro-F1 punishes silence exactly as hard as error, and this is
+built to be silent where a sentence carries no cue. See `/method` on the site.
+
+**What runs.** The reader with pixel-anchored highlights, highlights and notes for
+signed-in readers, Google sign-in with cross-device sync, search and a library guide,
+library-wide views (`/timeline`, `/contested`, `/assumptions`), a feed of new work
+(`/news`), on-demand analysis of any arXiv paper that ships LaTeX source, an MCP server
+at `/api/mcp`, and cookieless analytics.
+
+**Deliberately not built.** Per-visitor tracking, and any claim the parser cannot anchor.
+The deterministic numeric checks were largely retired: on carefully reviewed papers their
+best case was a blank page, and the project's value turned out to be lineage rather than
+arithmetic. See `RELEASE.md`.
 
 ## Why the anchor layer got this much attention
 
@@ -212,11 +213,28 @@ services/core/keystone/ingest/
 └── sampling.py       span sampling for the anchor audit
 
 services/core/keystone/
+├── lineage/stance.py       the cue rules: adopts / extends / disputes / compares
+├── lineage/assumptions.py  what a paper takes on faith, and what it offers for it
+├── lineage/graph.py        paper-to-paper edges, for the library views
 ├── audit/numbers.py        number parsing that preserves reported precision
 ├── audit/registry.py       check registration and the runner
 ├── audit/checks/tables.py  table consistency checks
 ├── graph/models.py         the typed structures checks reason over
+├── eval/external.py        scoring the cue rules on SciCite and ACL-ARC
 └── eval/planted.py         planting known defects to measure detection
+```
+
+The reader and everything served from it:
+
+```
+apps/web/
+├── app/                    routes: the reader, the library views, /news, /stats
+├── app/api/                account, marks, chat, guide, feed, mcp, track
+├── app/api/ingest.py       Python function: analyse any arXiv paper on request
+├── components/             the reader, the page view, the graph, the timeline
+├── lib/                    marks geometry, anchors, analytics, feeds, the store
+├── test/                   node --test, no framework
+└── public/dossiers/        the built library, committed so the site needs no database
 ```
 
 ## Running it
