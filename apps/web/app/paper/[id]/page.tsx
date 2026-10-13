@@ -2,7 +2,9 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
+import { readArxivId } from "@/lib/arxiv";
 import { cardFor } from "@/lib/card";
 import { Reader } from "@/components/Reader";
 
@@ -50,6 +52,8 @@ export async function generateMetadata(
   { params }: { params: Promise<{ id: string }> },
 ): Promise<Metadata> {
   const { id } = await params;
+  // Before the title, or the 404 is named after the id it refuses.
+  if (!readArxivId(decodeURIComponent(id))) notFound();
   // The library's own file first — it is on disk at build, when these pages are
   // generated — and then whatever the ingest cache holds for a paper somebody read
   // on demand. A tab and a shared link should name the paper, not its identifier.
@@ -86,5 +90,11 @@ export function generateStaticParams() {
 
 export default async function PaperPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  // Something that cannot be an arXiv id is a missing page, said with a 404. It used
+  // to answer 200, start a fetch that was certain to fail, and settle on "That paper
+  // could not be read" — which reads as Keystone failing on a paper that exists.
+  // Lenient on purpose: anything `readArxivId` accepts, a version suffix included,
+  // goes on to the reader as before.
+  if (!readArxivId(decodeURIComponent(id))) notFound();
   return <Reader id={id} />;
 }
