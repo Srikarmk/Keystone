@@ -14,12 +14,17 @@ import katex from "katex";
 import "katex/dist/katex.min.css";
 import { useMemo } from "react";
 
+import { typesettable } from "@/lib/equation";
+
 export function EquationView({
   latex,
+  environment,
   label,
   macros,
 }: {
   latex: string;
+  /** The environment the body came out of; multi-line ones need it put back. */
+  environment: string;
   label?: string;
   /**
    * The paper's own \newcommand definitions. Papers write their equations in their
@@ -30,7 +35,7 @@ export function EquationView({
 }) {
   const html = useMemo(() => {
     try {
-      return katex.renderToString(latex, {
+      return katex.renderToString(typesettable(latex, environment), {
         displayMode: true,
         throwOnError: false,
         macros,
@@ -44,7 +49,7 @@ export function EquationView({
     } catch {
       return null;
     }
-  }, [latex, macros]);
+  }, [latex, environment, macros]);
 
   if (!html) {
     return (

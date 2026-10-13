@@ -900,6 +900,7 @@ function Report({
             <li key={equation.ordinal} className="border-b border-paper-edge/50 pb-4">
               <EquationView
                 latex={equation.latex}
+                environment={equation.environment}
                 label={equation.labels[0] ?? equation.environment}
                 macros={dossier.macros}
               />

@@ -13,9 +13,14 @@
  * previous library. `?v=` is ignored by the static file handler.
  */
 
-//: Vercel sets the commit SHA on every deployment. Locally there is none, and a
-//: constant is right there: `next dev` has no data cache to go stale.
-const STAMP = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 12) ?? "dev";
+//: The deployment id first. Deploys here are made from the CLI, and a commit SHA does
+//: not change when the library is rebuilt and redeployed before it is committed — two
+//: deployments, one key, and the second serves the first one's files. Locally there is
+//: neither, and a constant is right there: `next dev` has no data cache to go stale.
+const STAMP =
+  process.env.VERCEL_DEPLOYMENT_ID ??
+  process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 12) ??
+  "dev";
 
 const SITE =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://keystone-research.vercel.app";

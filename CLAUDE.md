@@ -26,7 +26,7 @@ services/core/          Python engine (parser, anchors, cue rules). 261 tests.
   keystone/ingest/      arXiv source, PDF, anchors, metadata
   keystone/lineage/     stance + assumption cue rules
   keystone/audit/       numeric tracing and the deterministic checks
-apps/web/               Next 15 App Router site. 41 JS tests.
+apps/web/               Next 15 App Router site. 44 JS tests.
   app/api/ingest.py     Python serverless function: analyse any arXiv paper on demand
   public/dossiers/      the built library — 101 papers, committed
 eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in the repo.
@@ -36,17 +36,20 @@ eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in t
 
 ```bash
 # Python engine
-cd services/core && uv run pytest -q              # 261 tests
+cd services/core && uv run pytest -q              # 261 tests (needs `brew install uv`)
 cd services/core && uv run keystone --help        # the CLI
 
 # Site
-cd apps/web && npm test                           # 41 tests (node --test)
+cd apps/web && npm test                           # 44 tests (node --test)
 cd apps/web && npx tsc --noEmit -p .              # typecheck
 cd apps/web && npm run build
 
 # Deploy — see the trap below, this is NOT automatic
 cd apps/web && npx vercel --prod --yes
 ```
+
+On a fresh clone 26 of the 261 skip: they read PDFs from `eval/corpus/pdf/`, which is
+gitignored. "235 passed, 26 skipped" is a clean run without the corpus, not a failure.
 
 ## Traps that have actually cost time here
 
@@ -63,7 +66,8 @@ starting the dev server, every time.
 **Next's data cache outlives deployments.** A route that fetches a built file with
 `revalidate` or `force-cache` keeps serving the *previous build's* copy. This made the
 MCP route report 40 disputes when there were 52, through a redeploy and through a fix
-that was not the cause. Use `lib/built.ts`, which keys the URL with the commit SHA.
+that was not the cause. Use `lib/built.ts`, which keys the URL with the deployment id
+(not the commit SHA: a CLI deploy of an uncommitted rebuild has the previous one's SHA).
 
 **A dynamic route cannot read `public/`.** `readFileSync` works at build and fails in a
 serverless function. Import the JSON so the bundler sees it (`lib/card.ts`), or fetch it.
@@ -118,6 +122,15 @@ wrong.
 requirements into a uv project and loses the `#subdirectory=` fragment a git dependency
 needs. `apps/web/pyproject.toml` states the source in uv's own syntax.
 
+**Never type a count into copy.** The MCP route said "899 readings from 74 papers" to
+every empty search long after the library reached 101. Count it off the JSON.
+
+**An equation body has no environment.** The parser stores what is inside `align` or
+`eqnarray` and the environment beside it, so the body alone has bare `&`s that KaTeX
+rejects. `lib/equation.ts` puts the environment back; without it 164 of 524 equations
+rendered as error-coloured source. Ten still do, each for a paper-specific reason (an uncaptured
+macro, `\resizebox`).
+
 **Growing the corpus is a test of the checks.** Going 74 → 101 papers produced five false
 `headline_table_mismatch` findings, all of which had matched a *column* with no row
 identified. A finding that cannot name the cell it accuses must not be published. The
@@ -150,10 +163,11 @@ trap above).
 | `ANTHROPIC_API_KEY` | Ask, and the library guide |
 | `KEYSTONE_OWNER` | email(s) allowed to read `/stats`; unset = nobody |
 
-## State, as of 2026-10-12
+## State, as of 2026-10-13
 
 101 papers · 146 walkable edges · 702 citation readings (92.9% anchored) · 522
-assumptions · 1224 searchable rows. 261 Python tests, 41 JS tests, all green.
+assumptions · 1224 searchable rows · 514 of 524 equations typeset. 261 Python tests,
+44 JS tests, all green.
 
 Shipped and verified on production: the reader with pixel anchors, full-screen page,
 highlights and notes (sign-in required, stored in the PDF's coordinate space so they can

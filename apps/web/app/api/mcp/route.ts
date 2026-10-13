@@ -79,6 +79,15 @@ async function library(): Promise<Library> {
   return (await response.json()) as Library;
 }
 
+/**
+ * "1224 readings taken from 101 arXiv papers", counted off the index rather than
+ * typed in. The typed-in version went on saying 899 from 74 after the library reached
+ * 101, and told every empty search it had looked through a library a quarter smaller.
+ */
+function extent({ titles, rows }: Library): string {
+  return `${rows.length} readings taken from ${Object.keys(titles).length} arXiv papers`;
+}
+
 /* --------------------------------------------------------------------------------- *
  * The tools.
  *
@@ -87,12 +96,14 @@ async function library(): Promise<Library> {
  * reading the model's answer — which is the same discipline the site is built on.
  * --------------------------------------------------------------------------------- */
 
-const TOOLS = [
+//: `scope` is the library's extent when the index could be read. Without it the
+//: description says what is searched and leaves the size out, rather than guess.
+const tools = (scope: string | null) => [
   {
     name: "search_library",
     title: "Search what Keystone read",
     description:
-      "Search 899 readings taken from 74 arXiv papers' LaTeX source: citation " +
+      `Search ${scope ?? "the readings taken from arXiv papers"}' LaTeX source: citation ` +
       "stances (adopts, extends, disputes, measures against) and stated assumptions. " +
       "Matches on the quoted sentence, the cue phrase that decided it, and the work " +
       "cited. Returns the sentence verbatim with a link to the exact line.",
@@ -156,7 +167,7 @@ const TOOLS = [
       additionalProperties: false,
     },
   },
-] as const;
+];
 
 function urlFor(row: Row): string {
   return `${SITE}/paper/${row.paper}#${row.row}`;
@@ -192,7 +203,8 @@ async function searchLibrary(args: Record<string, unknown>) {
   const stance = typeof args.stance === "string" ? args.stance : "";
   const limit = Math.min(50, Math.max(1, Number(args.limit) || 15));
 
-  const { titles, rows } = await library();
+  const lib = await library();
+  const { titles, rows } = lib;
   const hits = rows.filter((row) => {
     if (stance && row.stance !== stance) return false;
     return `${row.text} ${row.cue} ${row.about} ${titles[row.paper] ?? ""}`
@@ -210,7 +222,7 @@ async function searchLibrary(args: Record<string, unknown>) {
         ...shown.map((row) => describe(row, titles)),
       ].join("\n")
     : `Nothing in the library's readings matches "${args.query}". That is a statement ` +
-      `about 899 readings from 74 papers, not about the literature.`;
+      `about ${extent(lib)}, not about the literature.`;
 
   return {
     text,
@@ -237,7 +249,7 @@ async function readPaper(args: Record<string, unknown>) {
   const include = typeof args.include === "string" ? args.include : "all";
 
   // The library's own file, then the parser. Same order the reader uses, so this
-  // answers for any paper on arXiv rather than only the seventy-four here.
+  // answers for any paper on arXiv rather than only the ones in the library.
   const fromLibrary = await fetchBuilt(`/dossiers/${id}.json`);
   const dossier: Record<string, any> = await (async () => {
     if (fromLibrary.ok) return fromLibrary.json();
@@ -398,8 +410,12 @@ async function dispatch(message: Record<string, any>): Promise<object | null> {
     case "ping":
       return ok(id, {});
 
-    case "tools/list":
-      return ok(id, { tools: TOOLS });
+    case "tools/list": {
+      // A client listing tools should get them even if the index is unreachable; it
+      // loses only the count, and the first search will say what went wrong.
+      const lib = await library().catch(() => null);
+      return ok(id, { tools: tools(lib ? extent(lib) : null) });
+    }
 
     case "tools/call": {
       const name = params?.name;
