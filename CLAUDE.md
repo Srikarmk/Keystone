@@ -143,7 +143,9 @@ which `table.aggregate_mismatch` read as wrong. Folded tables are now skipped.
 becomes a walkable edge only when the *citing* paper is built with the cited one already
 in the library. Adding 27 papers at 74 → 101 without rebuilding the rest left 34 edges
 unwalked. Rebuild on top of the committed `public/dossiers/` — an empty `--out` loses
-the bibliographies that confirm titles and drops edges instead.
+the bibliographies that confirm titles and drops edges instead. Expect some headlines to
+move: `foundation` breaks ties toward a work that is in the library, so at 101 → 125
+nine papers' "Stands on" changed with no reading changed. That is the rule working.
 
 **Five of the top expansion candidates are refused, correctly.** Adam, PPO and
 1704.06611 ship only an `\includepdf`; 1806.03822 has no prose in its source;
