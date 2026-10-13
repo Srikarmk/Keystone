@@ -379,8 +379,12 @@ def aggregate_mismatch(paper: Paper) -> Iterator[Finding]:
       fails in the one that is wrong. A row that adds up in none of them is not a
       total row at all, and the right response is silence rather than a finding for
       every column.
+
+    And one refusal: a *folded* table is not checked at all. See `_is_folded`.
     """
     for table in paper.tables:
+        if _is_folded(table):
+            continue
         for row_index in sorted({c.row for c in table.cells}):
             label = _row_label(table, row_index)
             match = _AGGREGATE_LABEL.match(label.strip())
@@ -463,6 +467,52 @@ def _check_aggregate(
                 f"{kind} row."
             ),
         )
+
+
+def _is_folded(table: Table) -> bool:
+    """Whether a long list was printed as two side-by-side halves.
+
+    Zeiler & Fergus print twenty PASCAL classes as two columns of ten, each half with
+    its own label column, and close with a "Mean" row that averages all twenty. Read
+    as one table, that row averages only the ten cells above it in each column, and
+    the check reported a mismatch of 82.2 against 82.8 with certainty — on a correct
+    table, the first time the library grew past 101 papers.
+
+    The tell is the header starting over: a column to the right of the numbers that
+    holds text in every row with numbers, under the same header as the label column,
+    followed by the same header as the column after that. A text column alone is not
+    enough — the first version stopped there and caught 81 of 1254 tables, most of
+    them hyperparameter lists with a text column, which fold nothing. Which half an
+    aggregate row covers is not written anywhere, so the answer for a folded table is
+    to say nothing about it, not to guess.
+    """
+    body = {c.row for c in table.cells if c.is_numeric}
+    first_numeric = min((c.column for c in table.cells if c.is_numeric), default=None)
+    if first_numeric is None:
+        return False
+
+    def header(column: int) -> str:
+        return next(
+            (c.column_header for c in table.column(column) if c.row in body), ""
+        ).strip()
+
+    labels = min(table.column_indices)
+    for column in table.column_indices:
+        if column <= first_numeric:
+            continue
+        cells = [c for c in table.column(column) if c.row in body]
+        if not (
+            len(cells) >= 2
+            and len(cells) == len(body)
+            and not any(c.is_numeric for c in cells)
+        ):
+            continue
+        if header(column) and (header(column), header(column + 1)) == (
+            header(labels),
+            header(labels + 1),
+        ):
+            return True
+    return False
 
 
 def _is_aggregate_row(table: Table, row_index: int) -> bool:

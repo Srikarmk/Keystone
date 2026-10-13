@@ -187,6 +187,30 @@ def test_silent_when_a_total_row_matches_in_no_column():
     assert not _findings(_table(rows), "table.aggregate_mismatch")
 
 
+def test_silent_on_a_table_folded_into_two_halves():
+    """A long list printed side by side, with one mean row for both halves.
+
+    From Zeiler & Fergus (1311.2901), Table 6, cut down: the "Mean" row averages every
+    class in both halves, so against the left half alone [B] looks wrong. "Ours"
+    happens to average the same in both halves, which is what the real table did in
+    one column, and that coincidence is what got past the agreement guard.
+    """
+    rows = [
+        ["Class", "[B]", "Ours", "Class", "[B]", "Ours"],
+        ["Airplane", "97.3", "96.0", "Dog", "83.0", "87.8"],
+        ["Bicycle", "84.2", "77.1", "Horse", "87.5", "86.0"],
+        ["Bird", "80.8", "88.4", "Sofa", "73.4", "87.7"],
+        ["Mean", "84.4", "87.2", "# won", "3", "3"],
+    ]
+    assert not _findings(_table(rows), "table.aggregate_mismatch")
+
+
+def test_a_trailing_text_column_alone_is_not_a_fold():
+    """Text in only some rows of a later column is a note, not a second label column."""
+    rows = [row[:] + [note] for row, note in zip(TOTALS, ["Note", "", "", "", ""])]
+    assert _findings(_table(rows), "table.aggregate_mismatch")
+
+
 def test_tolerates_rounding_in_the_parts():
     """Summing values that were each rounded for display must not be a finding."""
     rows = [
