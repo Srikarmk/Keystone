@@ -22,13 +22,13 @@ change that trades that away is the wrong change, however much it improves a num
 ## Where things are
 
 ```
-services/core/          Python engine (parser, anchors, cue rules). 261 tests.
+services/core/          Python engine (parser, anchors, cue rules). 263 tests.
   keystone/ingest/      arXiv source, PDF, anchors, metadata
   keystone/lineage/     stance + assumption cue rules
   keystone/audit/       numeric tracing and the deterministic checks
 apps/web/               Next 15 App Router site. 44 JS tests.
   app/api/ingest.py     Python serverless function: analyse any arXiv paper on demand
-  public/dossiers/      the built library — 101 papers, committed
+  public/dossiers/      the built library — 125 papers, committed
 eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in the repo.
 ```
 
@@ -36,7 +36,7 @@ eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in t
 
 ```bash
 # Python engine
-cd services/core && uv run pytest -q              # 261 tests (needs `brew install uv`)
+cd services/core && uv run pytest -q              # 263 tests (needs `brew install uv`)
 cd services/core && uv run keystone --help        # the CLI
 
 # Site
@@ -48,8 +48,9 @@ cd apps/web && npm run build
 cd apps/web && npx vercel --prod --yes
 ```
 
-On a fresh clone 26 of the 261 skip: they read PDFs from `eval/corpus/pdf/`, which is
-gitignored. "235 passed, 26 skipped" is a clean run without the corpus, not a failure.
+On a fresh clone 26 of the 263 skip: they read PDFs from `eval/corpus/pdf/`, which is
+gitignored. "237 passed, 26 skipped" is a clean run without the corpus, not a failure. Fetch the
+corpus with `eval/fetch_library.sh` (about 45 minutes; arXiv refused nothing at ~4s).
 
 ## Traps that have actually cost time here
 
@@ -128,13 +129,26 @@ every empty search long after the library reached 101. Count it off the JSON.
 **An equation body has no environment.** The parser stores what is inside `align` or
 `eqnarray` and the environment beside it, so the body alone has bare `&`s that KaTeX
 rejects. `lib/equation.ts` puts the environment back; without it 164 of 524 equations
-rendered as error-coloured source. Ten still do, each for a paper-specific reason (an uncaptured
+rendered as error-coloured source. Twenty of 637 still do, each for a paper-specific reason (an uncaptured
 macro, `\resizebox`).
 
 **Growing the corpus is a test of the checks.** Going 74 → 101 papers produced five false
 `headline_table_mismatch` findings, all of which had matched a *column* with no row
 identified. A finding that cannot name the cell it accuses must not be published. The
-same thing happened at 9 → 35 papers with a different check.
+same thing happened at 9 → 35 papers with a different check, and again at 101 → 125:
+Zeiler & Fergus print a table as two side-by-side halves with one Mean row for both,
+which `table.aggregate_mismatch` read as wrong. Folded tables are now skipped.
+
+**Rebuild the whole library when you grow it, not only the new papers.** A citation
+becomes a walkable edge only when the *citing* paper is built with the cited one already
+in the library. Adding 27 papers at 74 → 101 without rebuilding the rest left 34 edges
+unwalked. Rebuild on top of the committed `public/dossiers/` — an empty `--out` loses
+the bibliographies that confirm titles and drops edges instead.
+
+**Five of the top expansion candidates are refused, correctly.** Adam, PPO and
+1704.06611 ship only an `\includepdf`; 1806.03822 has no prose in its source;
+1909.08593's LaTeX is a stale template that does not match its PDF. `expand` will
+keep ranking them first — skip them rather than work around the guards.
 
 ## Conventions
 
@@ -165,8 +179,8 @@ trap above).
 
 ## State, as of 2026-10-13
 
-101 papers · 146 walkable edges · 702 citation readings (92.9% anchored) · 522
-assumptions · 1224 searchable rows · 514 of 524 equations typeset. 261 Python tests,
+125 papers · 240 walkable edges · 883 citation readings (91.4% anchored) · 607
+assumptions · 1490 searchable rows · 617 of 637 equations typeset. 263 Python tests,
 44 JS tests, all green.
 
 Shipped and verified on production: the reader with pixel anchors, full-screen page,
@@ -180,7 +194,7 @@ at `/api/mcp`, and cookieless analytics at `/stats`.
 
 Nothing is broken or half-finished. These are the open directions, roughly by value:
 
-1. **Grow the library further.** 101 papers; the ranking in `keystone expand --dry-run`
+1. **Grow the library further.** 125 papers; the ranking in `keystone expand --dry-run`
    has plenty of good candidates left. Fetch with the curl workaround above. Watch for
    new findings each time — see the corpus trap.
 2. **Hand-label more stance rows.** Accuracy is measured on 90 labelled rows, only 30 of

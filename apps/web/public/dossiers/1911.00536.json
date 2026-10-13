@@ -1,0 +1,6364 @@
+{
+  "id": "1911.00536",
+  "title": "DialoGPT: Large-Scale Generative Pre-training for Conversational Response Generation",
+  "keystone": null,
+  "codeUrl": "https://github.com/microsoft/DialoGPT",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1911.00536",
+  "numbers": [
+    {
+      "value": "90%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "In addition, we aggressively filtered out blandness, e.g., removing instances where the responses contained 90% of tri-grams that have been seen more than 1000 times.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 348.1087341308594,
+            "y0": 146.78970336914062,
+            "x1": 525.5451049804688,
+            "y1": 157.6988067626953
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 160.33871459960938,
+            "x1": 525.5452270507812,
+            "y1": 171.24781799316406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 173.88772583007812,
+            "x1": 525.5452270507812,
+            "y1": 184.7968292236328
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 187.43673706054688,
+            "x1": 428.72698974609375,
+            "y1": 198.34584045410156
+          }
+        ]
+      }
+    },
+    {
+      "value": "1%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Often uninformative, such responses account for about 1% of the data.",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "",
+      "cell": "1.47%",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 433.4288024902344,
+            "y0": 187.43673706054688,
+            "x1": 525.5452270507812,
+            "y1": 198.34584045410156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 200.98574829101562,
+            "x1": 525.5453491210938,
+            "y1": 211.8948516845703
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.8",
+      "kind": "result",
+      "section": "method",
+      "sentence": "After filtering, the dataset comprises 147,116,725 dialogue instances, in total 1.8 billion words.",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "Team B",
+      "cell": "1.83%",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 214.53475952148438,
+            "x1": 525.5450439453125,
+            "y1": 225.44386291503906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 228.08474731445312,
+            "x1": 503.2250671386719,
+            "y1": 238.9938507080078
+          }
+        ]
+      }
+    },
+    {
+      "value": "48 layers",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "They also have higher model capacity due to their deep structure (up to 48 layers in GPT-2) and are more effective in leveraging large-scale datasets (more than 100 million training instances) than RNN-based approaches .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 482.8033447265625,
+            "y0": 686.9468383789062,
+            "x1": 525.545166015625,
+            "y1": 697.8558959960938
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 700.495849609375,
+            "x1": 525.545166015625,
+            "y1": 711.4049072265625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 714.0447998046875,
+            "x1": 525.545166015625,
+            "y1": 724.953857421875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 727.5938110351562,
+            "x1": 525.5449829101562,
+            "y1": 738.5028686523438
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 741.143798828125,
+            "x1": 525.545166015625,
+            "y1": 752.0528564453125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 754.6928100585938,
+            "x1": 356.3451232910156,
+            "y1": 765.6018676757812
+          }
+        ]
+      }
+    },
+    {
+      "value": "5 epochs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "For small and medium models, we trained the models for up to 5 epochs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 334.0687561035156,
+            "y0": 231.40072631835938,
+            "x1": 525.5450439453125,
+            "y1": 242.30982971191406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 244.94973754882812,
+            "x1": 437.5961608886719,
+            "y1": 255.8588409423828
+          }
+        ]
+      }
+    },
+    {
+      "value": "3 epochs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "For the large model we trained for at most 3 epochs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 440.901611328125,
+            "y0": 244.94973754882812,
+            "x1": 525.5452270507812,
+            "y1": 255.8588409423828
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 258.4997253417969,
+            "x1": 446.945068359375,
+            "y1": 269.4088134765625
+          }
+        ]
+      }
+    },
+    {
+      "value": "345M parameters",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Table summarizes the automatic evaluation results. DialoGPT with 345M parameters and beam search achieved the highest automatic score across most metrics.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 145.861572265625,
+            "y0": 350.9657897949219,
+            "x1": 290.2652587890625,
+            "y1": 361.8748779296875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 364.5148010253906,
+            "x1": 290.2689514160156,
+            "y1": 375.42388916015625
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 378.0638122558594,
+            "x1": 290.26922607421875,
+            "y1": 388.972900390625
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 391.6128234863281,
+            "x1": 186.2073516845703,
+            "y1": 402.52191162109375
+          }
+        ]
+      }
+    },
+    {
+      "value": "345M parameters",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Scores for DialoGPT with 345M parameters are better across the board than with 117M parameters.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 189.5564422607422,
+            "y0": 391.6128234863281,
+            "x1": 289.99517822265625,
+            "y1": 402.52191162109375
+          },
+          {
+            "x0": 72.0,
+            "y0": 405.1628112792969,
+            "x1": 290.2693176269531,
+            "y1": 416.0718994140625
+          },
+          {
+            "x0": 72.0,
+            "y0": 418.7118225097656,
+            "x1": 198.78558349609375,
+            "y1": 429.62091064453125
+          }
+        ]
+      }
+    },
+    {
+      "value": "117M parameters",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Scores for DialoGPT with 345M parameters are better across the board than with 117M parameters.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 189.5564422607422,
+            "y0": 391.6128234863281,
+            "x1": 289.99517822265625,
+            "y1": 402.52191162109375
+          },
+          {
+            "x0": 72.0,
+            "y0": 405.1628112792969,
+            "x1": 290.2693176269531,
+            "y1": 416.0718994140625
+          },
+          {
+            "x0": 72.0,
+            "y0": 418.7118225097656,
+            "x1": 198.78558349609375,
+            "y1": 429.62091064453125
+          }
+        ]
+      }
+    },
+    {
+      "value": "6K examples",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "We further evaluate DialoGPT on a multi-reference test set with 6K examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 429.59173583984375,
+            "x1": 525.5406494140625,
+            "y1": 440.5008239746094
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 443.1417236328125,
+            "x1": 470.10504150390625,
+            "y1": 454.0508117675781
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Model configurations. \"B\" denotes batch size per GPU.",
+      "label": "tab:param",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Layers",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "117M",
+            "value": "117000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "768",
+            "value": "768",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "345M",
+            "value": "345000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24",
+            "value": "24",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1024",
+            "value": "1024",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "762M",
+            "value": "762000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1280",
+            "value": "1280",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 342.9421081542969,
+            "y0": 131.0144805908203,
+            "x1": 525.5464477539062,
+            "y1": 140.97708129882812
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 142.96949768066406,
+            "x1": 344.9047546386719,
+            "y1": 152.93209838867188
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "DSTC evaluation. \"Team B\" is the winner system of the DSTC-7 challenge. \"Beam\" denotes beam search. \"Human\" represents the held-out ground truth reference.",
+      "label": "tab:dstc",
+      "numericCells": 93,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "NIST",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "METEOR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Entropy",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Dist",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Avg Len",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "E-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "D-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "D-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.18",
+            "value": "0.18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.19",
+            "value": "0.19",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.20",
+            "value": "0.20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.20",
+            "value": "0.20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31.73%",
+            "value": "31.73",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.44%",
+            "value": "10.44",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.92%",
+            "value": "3.92",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.47%",
+            "value": "1.47",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.42%",
+            "value": "5.42",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.89",
+            "value": "6.89",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.9%",
+            "value": "5.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.4%",
+            "value": "16.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.2",
+            "value": "8.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Team B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.34",
+            "value": "2.34",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.51",
+            "value": "2.51",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.52",
+            "value": "2.52",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.52",
+            "value": "2.52",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.22%",
+            "value": "41.22",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.35%",
+            "value": "14.35",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.01%",
+            "value": "5.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.83%",
+            "value": "1.83",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.07%",
+            "value": "8.07",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.03",
+            "value": "9.03",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.9%",
+            "value": "10.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32.5%",
+            "value": "32.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.1",
+            "value": "15.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "(117M)",
+            "value": "117000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.49",
+            "value": "1.49",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.58",
+            "value": "1.58",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.59",
+            "value": "1.59",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.60",
+            "value": "1.60",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.09%",
+            "value": "34.09",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.36%",
+            "value": "10.36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.28%",
+            "value": "4.28",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.02%",
+            "value": "2.02",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.17%",
+            "value": "7.17",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.94",
+            "value": "6.94",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.2%",
+            "value": "6.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "18.94%",
+            "value": "18.94",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.0",
+            "value": "13.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "GPT(345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.70",
+            "value": "1.70",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.78",
+            "value": "1.78",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.79",
+            "value": "1.79",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.79",
+            "value": "1.79",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33.41%",
+            "value": "33.41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.13%",
+            "value": "9.13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.86%",
+            "value": "2.86",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.06%",
+            "value": "1.06",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.38%",
+            "value": "6.38",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.72",
+            "value": "9.72",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.9%",
+            "value": "11.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "44.2%",
+            "value": "44.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "14.7",
+            "value": "14.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(345M)",
+            "value": "345000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.59",
+            "value": "2.59",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.80",
+            "value": "2.80",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.82",
+            "value": "2.82",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.82",
+            "value": "2.82",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "39.27%",
+            "value": "39.27",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "14.16%",
+            "value": "14.16",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.55%",
+            "value": "5.55",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.31%",
+            "value": "2.31",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.51%",
+            "value": "8.51",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.08",
+            "value": "10.08",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "9.1%",
+            "value": "9.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "39.7%",
+            "value": "39.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.9",
+            "value": "16.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(345M,Beam)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.59",
+            "value": "2.59",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2.92",
+            "value": "2.92",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2.96",
+            "value": "2.96",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2.97",
+            "value": "2.97",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "42.38%",
+            "value": "42.38",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "19.18%",
+            "value": "19.18",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "10.27%",
+            "value": "10.27",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "6.05%",
+            "value": "6.05",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "9.29%",
+            "value": "9.29",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "9.57",
+            "value": "9.57",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.7%",
+            "value": "15.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "51.0%",
+            "value": "51.0",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "14.2",
+            "value": "14.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.42",
+            "value": "2.42",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.62",
+            "value": "2.62",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.65",
+            "value": "2.65",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.65",
+            "value": "2.65",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "34.08%",
+            "value": "34.08",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.35%",
+            "value": "12.35",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5.72%",
+            "value": "5.72",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.13%",
+            "value": "3.13",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "8.31%",
+            "value": "8.31",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.45",
+            "value": "10.45",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "16.7%",
+            "value": "16.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "67.0%",
+            "value": "67.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "18.8",
+            "value": "18.8",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 110.45563507080078,
+            "y0": 192.2704620361328,
+            "x1": 525.54736328125,
+            "y1": 202.23306274414062
+          },
+          {
+            "x0": 72.0,
+            "y0": 204.22547912597656,
+            "x1": 328.4970703125,
+            "y1": 214.18807983398438
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "6K Reddit multi-reference evaluation. \"Beam\" denotes beam search. \"Human\" represents the held-out ground truth reference.",
+      "label": "tab:multiref",
+      "numericCells": 149,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "NIST",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "METEOR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Entropy",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Dist",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Avg Len",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "E-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "D-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "D-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.73",
+            "value": "0.73",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.78",
+            "value": "0.78",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.79",
+            "value": "0.79",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.79",
+            "value": "0.79",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32.78%",
+            "value": "32.78",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11.22%",
+            "value": "11.22",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.35%",
+            "value": "4.35",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.95%",
+            "value": "1.95",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.93%",
+            "value": "6.93",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.37",
+            "value": "8.37",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.8%",
+            "value": "5.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.8%",
+            "value": "18.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.12",
+            "value": "8.12",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Training from scratch:",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(117M)",
+            "value": "117000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.16",
+            "value": "1.16",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.23",
+            "value": "1.23",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.30",
+            "value": "1.30",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.37",
+            "value": "1.37",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.69%",
+            "value": "34.69",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.74%",
+            "value": "9.74",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.80%",
+            "value": "3.80",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.77%",
+            "value": "1.77",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.17%",
+            "value": "6.17",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.11",
+            "value": "7.11",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.3%",
+            "value": "5.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.9%",
+            "value": "15.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.41",
+            "value": "9.41",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(345M)",
+            "value": "345000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.23",
+            "value": "2.23",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.51",
+            "value": "2.51",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.79",
+            "value": "2.79",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.08",
+            "value": "3.08",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "35.23%",
+            "value": "35.23",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.92%",
+            "value": "16.92",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.34%",
+            "value": "8.34",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.59%",
+            "value": "4.59",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.34%",
+            "value": "9.34",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.03",
+            "value": "9.03",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.7%",
+            "value": "6.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25.6%",
+            "value": "25.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.16",
+            "value": "11.16",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(762M)",
+            "value": "762000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.24",
+            "value": "2.24",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.52",
+            "value": "2.52",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.81",
+            "value": "2.81",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.10",
+            "value": "3.10",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "42.53%",
+            "value": "42.53",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17.87%",
+            "value": "17.87",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.07%",
+            "value": "9.07",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.19%",
+            "value": "5.19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.53%",
+            "value": "9.53",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.32",
+            "value": "9.32",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.5%",
+            "value": "7.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "29.3%",
+            "value": "29.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.72",
+            "value": "10.72",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Training from OpenAI GPT-2:",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(117M)",
+            "value": "117000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.25",
+            "value": "2.25",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.39",
+            "value": "2.39",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.41",
+            "value": "2.41",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.41",
+            "value": "2.41",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "35.43%",
+            "value": "35.43",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.54%",
+            "value": "10.54",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.85%",
+            "value": "3.85",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.55%",
+            "value": "1.55",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.53%",
+            "value": "7.53",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.77",
+            "value": "10.77",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "8.6%",
+            "value": "8.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "39.9%",
+            "value": "39.9",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.82",
+            "value": "12.82",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(345M)",
+            "value": "345000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.67",
+            "value": "2.67",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.00",
+            "value": "3.00",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.05",
+            "value": "3.05",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.06",
+            "value": "3.06",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "40.97%",
+            "value": "40.97",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "16.96%",
+            "value": "16.96",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "8.31%",
+            "value": "8.31",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "4.56%",
+            "value": "4.56",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.81%",
+            "value": "9.81",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.12",
+            "value": "9.12",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6.8%",
+            "value": "6.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "26.3%",
+            "value": "26.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.19",
+            "value": "12.19",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(345M, Beam)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.94",
+            "value": "2.94",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.4",
+            "value": "3.4",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "3.49",
+            "value": "3.49",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "3.5",
+            "value": "3.5",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "45.27%",
+            "value": "45.27",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "21.76%",
+            "value": "21.76",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "12.51%",
+            "value": "12.51",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "7.92%",
+            "value": "7.92",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "10.74%",
+            "value": "10.74",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.48",
+            "value": "10.48",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.38%",
+            "value": "12.38",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "48.74%",
+            "value": "48.74",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "11.34",
+            "value": "11.34",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(762M)",
+            "value": "762000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.51",
+            "value": "2.51",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.84",
+            "value": "2.84",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.89",
+            "value": "2.89",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.90",
+            "value": "2.90",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "44.45%",
+            "value": "44.45",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "18.66%",
+            "value": "18.66",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.32%",
+            "value": "9.32",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5.25%",
+            "value": "5.25",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.66%",
+            "value": "9.66",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.72",
+            "value": "9.72",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.76%",
+            "value": "7.76",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "29.93%",
+            "value": "29.93",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.19",
+            "value": "11.19",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(762M, Beam)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.51",
+            "value": "2.51",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.90",
+            "value": "2.90",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.97",
+            "value": "2.97",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.98",
+            "value": "2.98",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "44.84%",
+            "value": "44.84",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "21.08%",
+            "value": "21.08",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.01%",
+            "value": "12.01",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.57%",
+            "value": "7.57",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.11%",
+            "value": "10.11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.06",
+            "value": "10.06",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.62%",
+            "value": "11.62",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "44.07%",
+            "value": "44.07",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.68",
+            "value": "10.68",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(345M, MMI)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.95",
+            "value": "2.95",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "3.28",
+            "value": "3.28",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.32",
+            "value": "3.32",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.33",
+            "value": "3.33",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "39.18%",
+            "value": "39.18",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.68%",
+            "value": "15.68",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.45%",
+            "value": "7.45",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.94%",
+            "value": "3.94",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.23%",
+            "value": "11.23",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "11.25",
+            "value": "11.25",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "9.39%",
+            "value": "9.39",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "45.55%",
+            "value": "45.55",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "17.21",
+            "value": "17.21",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "2.99",
+            "value": "2.99",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "3.41",
+            "value": "3.41",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "3.83",
+            "value": "3.83",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "4.25",
+            "value": "4.25",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "39.61%",
+            "value": "39.61",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "17.90%",
+            "value": "17.90",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "10.71%",
+            "value": "10.71",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "7.48%",
+            "value": "7.48",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "10.64%",
+            "value": "10.64",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "10.99",
+            "value": "10.99",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "14.5%",
+            "value": "14.5",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "63.0%",
+            "value": "63.0",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "13.10",
+            "value": "13.10",
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.9014663696289,
+            "y0": 422.3644714355469,
+            "x1": 525.5475463867188,
+            "y1": 432.32708740234375
+          },
+          {
+            "x0": 72.0,
+            "y0": 434.3194580078125,
+            "x1": 163.56626892089844,
+            "y1": 444.2820739746094
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Addressing commonsense questions",
+      "label": "tab:generation",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "source",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Response",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "who is the first president of the United States?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "George Washington",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "what is the boiling point of water?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I think it's about 212 F.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "which one is bigger, sun or moon?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "The sun .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "which animal has black and white stripes?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "A black and white striped cat .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 361.7947998046875,
+            "y0": 601.6925048828125,
+            "x1": 506.2425231933594,
+            "y1": 611.6550903320312
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "An interactive example of multi-turn dialogue",
+      "label": "tab:generation_2",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Role",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "response",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "User",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Does money buy happiness?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bot",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Depends how much money you spend on it .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "User",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "What is the best way to buy happiness ?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bot",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "You just have to be a millionaire by your early 20s, then you can be happy .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "User",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "This is so difficult !",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bot",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "You have no idea how hard it is to be a millionaire and happy . There is a reason the rich have a lot of money",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.29178619384766,
+            "y0": 184.81947326660156,
+            "x1": 290.19512939453125,
+            "y1": 194.78207397460938
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 6",
+      "caption": "An example of multi-turn self-playing dialogue with user prompt",
+      "label": "tab:generation_3",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Role",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Response",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "User",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "what is the meaning of life ?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bot",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "The meaning is to be with your family and friends .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bot",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I'm going to guess : It means that your parents and friends have loved you . That's the meaning , I believe .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bot",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I think the meaning is to make sure you're alive when you die . So you'll be with your family , friends , and yourself .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bot",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "It's not , but thanks for trying to help .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 112.0994644165039,
+            "y0": 347.8294677734375,
+            "x1": 290.27056884765625,
+            "y1": 357.7920837402344
+          },
+          {
+            "x0": 72.0,
+            "y0": 359.78546142578125,
+            "x1": 164.70196533203125,
+            "y1": 369.7480773925781
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "Results of Human Evaluation for relevance, informativeness and human-response possibility, showing preferences (%) for our model (DialoGPT) vis-a-vis its variants and real human responses. Distributions skew towards DialoGPT with MMI, even when compared with human outputs. Numbers in bold indicate the preferred systems. Statistically significant results are indicated: * p 0.01, ** p 0.001, *** p 0.0001, **** p 0.00001.",
+      "label": "tab:human_eval",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Relevance: A and B, which is more relevant and appropriate to the immediately preceding turn?",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "System A",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "System B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3281 ( 72%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "394 (9% )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "882 (19%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "PersonalityChat ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2379 (40%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "527 (9% )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3094 (52%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (345M, w/ MMI) ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3019 ( 50%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "581 (10%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2400 (40%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (345M, Beam) ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2726 ( 45%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "576 (10%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2698 (45%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (762M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2671 (45%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "513 (9% )",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2816 (47%)",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "Human response",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M, w/ MMI)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2871 ( 48%)",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "522 (9%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2607 (43%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Human response ***",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "Results of Human Evaluation for relevance, informativeness and human-response possibility, showing preferences (%) for our model (DialoGPT) vis-a-vis its variants and real human responses. Distributions skew towards DialoGPT with MMI, even when compared with human outputs. Numbers in bold indicate the preferred systems. Statistically significant results are indicated: * p 0.01, ** p 0.001, *** p 0.0001, **** p 0.00001.",
+      "label": "tab:human_eval",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Informative: A and B, which is more contentful, interesting and informative?",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "System A",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "System B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3490 ( 77%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "206 (5%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "861 (19% )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "PersonalityChat ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2474 (41%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "257 (4%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3269( 54%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (345M, w/ MMI) ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3230 ( 54%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "362 (6%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2408( 40%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (345M, Beam) *****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2856 ( 48%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "303 (5%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2841( 47%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (762M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2722 (45%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "234 (4%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3044( 51%)",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "Human response ****",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M, w/ MMI)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3011 ( 50%)",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "234 (4%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2755( 46%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Human response **",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Results of Human Evaluation for relevance, informativeness and human-response possibility, showing preferences (%) for our model (DialoGPT) vis-a-vis its variants and real human responses. Distributions skew towards DialoGPT with MMI, even when compared with human outputs. Numbers in bold indicate the preferred systems. Statistically significant results are indicated: * p 0.01, ** p 0.001, *** p 0.0001, **** p 0.00001.",
+      "label": "tab:human_eval",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Human-like: A and B, which is more likely to be generated by human rather than a chatbot?",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "System A",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Neutral",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "System B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3462 ( 76)%",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "196 (4%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "899 (20%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "PersonalityChat ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2478 (41)%",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "289 (5%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3233 (54%)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (345M, w/ MMI) ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3233 ( 54)%",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "340 (6%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2427 (40%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (345M, Beam) ****",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2847 ( 47)%",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "321 (5%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2832 (47%)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "DialoGPT (762M)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2716 (45)%",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "263 (4%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3021 (50%)",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "Human response ***",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "DialoGPT (345M, w/ MMI)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2978 ( 50)%",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "241 (4%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2781 (46%)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Human response *",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 10",
+      "caption": "Human evaluation significance test. Bold results represent differences that are NOT statistically significant. Notation: 1 - Human response; 2 - 345M; 3 - PersonalityChat; 4 - 345M w/ MMI; 5 - 345M Beam search; 6 - 762M",
+      "label": "tab:sig",
+      "numericCells": 108,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "System 1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "System 2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Pairwise",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Mean",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Std",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95% CI",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Mean",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Std",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95% CI",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Std",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95% CI",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "P-Value",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 1 Human-like",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4527",
+            "value": "0.4527",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4400, 0.4653 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5035",
+            "value": "0.5035",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4909, 0.5162 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0127",
+            "value": "0.0127",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.0758, -0.0259 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0001",
+            "value": "0.0001",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 1 Informativeness",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4537",
+            "value": "0.4537",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4410, 0.4663 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5073",
+            "value": "0.5073",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4948, 0.5199 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0127",
+            "value": "0.0127",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.0785, -0.0287 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 1 Relevance",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.4452",
+            "value": "0.4452",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(0.4326, 0.4577 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4693",
+            "value": "0.4693",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4568, 0.4819 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0124",
+            "value": "0.0124",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.0485, 0.0002 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0552",
+            "value": "0.0552",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 3 Human-like",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.7597",
+            "value": "0.7597",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.7473, 0.7723 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1973",
+            "value": "0.1973",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0059",
+            "value": "0.0059",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.1858, 0.2089 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0117",
+            "value": "0.0117",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5392, 0.5852 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 3 Informativeness",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.7659",
+            "value": "0.7659",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0063",
+            "value": "0.0063",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.7536, 0.7783 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1889",
+            "value": "0.1889",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0058",
+            "value": "0.0058",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.1777, 0.2003 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0115",
+            "value": "0.0115",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5540, 0.5993 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 3 Relevance",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.7200",
+            "value": "0.7200",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1935",
+            "value": "0.1935",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.7070, 0.7333 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.1935",
+            "value": "0.1935",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0067",
+            "value": "0.0067",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.7070, 0.7333 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0117",
+            "value": "0.0117",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5034, 0.5493 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 4 Human-like",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4130",
+            "value": "0.4130",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0063",
+            "value": "0.0063",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4005, 0.4253 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5388",
+            "value": "0.5388",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5263, 0.5514 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0124",
+            "value": "0.0124",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.1504, -0.1016 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 4 Informativeness",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4123",
+            "value": "0.4123",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0063",
+            "value": "0.0063",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.3999, 0.4246 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5448",
+            "value": "0.5448",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5323, 0.5575 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0124",
+            "value": "0.0124",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.1570, -0.1082 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 4 Relevance",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.3965",
+            "value": "0.3965",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0063",
+            "value": "0.0063",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.3841, 0.4088 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5157",
+            "value": "0.5157",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5031, 0.5281 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0122",
+            "value": "0.0122",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.1431, -0.0955 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 5 Human-like",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5388",
+            "value": "0.5388",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5263, 0.5513 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4045",
+            "value": "0.4045",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0063",
+            "value": "0.0063",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.3921, 0.4169 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0125",
+            "value": "0.0125",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.1098, 0.1587 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 5 Informativeness",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5383",
+            "value": "0.5383",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.5258, 0.5508 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4013",
+            "value": "0.4013",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0063",
+            "value": "0.0063",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.3890, 0.4137 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0124",
+            "value": "0.0124",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.1127, 0.1611 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 5 Relevance",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5032",
+            "value": "0.5032",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4906, 0.5157 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4000",
+            "value": "0.4000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0063",
+            "value": "0.0063",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.3876, 0.4124 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0122",
+            "value": "0.0122",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.079, 0.127 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0000",
+            "value": "0.0000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 6 Human-like",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.4745",
+            "value": "0.4745",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4618, 0.4872 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4720",
+            "value": "0.4720",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4596, 0.4846 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0125",
+            "value": "0.0125",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.0220, 0.0272 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.8476",
+            "value": "0.8476",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 6 Informativeness",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.4760",
+            "value": "0.4760",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4634, 0.4887 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4735",
+            "value": "0.4735",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4610, 0.4861 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0126",
+            "value": "0.0126",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.0221, 0.0273 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.8449",
+            "value": "0.8449",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2 vs 6 Relevance",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.4543",
+            "value": "0.4543",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4417, 0.4671 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4497",
+            "value": "0.4497",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4372, 0.4622 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0123",
+            "value": "0.0123",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "(-0.0193, 0.0289 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.7066",
+            "value": "0.7066",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "4 vs 1 Human-like",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4963",
+            "value": "0.4963",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4838, 0.5090 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4635",
+            "value": "0.4635",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4508, 0.4762 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0127",
+            "value": "0.0127",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.0081, 0.0578 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0094",
+            "value": "0.0094",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "4 vs 1 Informativeness",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.5018",
+            "value": "0.5018",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4894, 0.5144 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4592",
+            "value": "0.4592",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0127",
+            "value": "0.0127",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.0180, 0.0676 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0127",
+            "value": "0.0127",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.0180, 0.0676 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0009",
+            "value": "0.0009",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "4 vs 1 Relevance",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4785",
+            "value": "0.4785",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0064",
+            "value": "0.0064",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4660, 0.4911 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.4345",
+            "value": "0.4345",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0065",
+            "value": "0.0065",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.4218, 0.4472 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0123",
+            "value": "0.0123",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "( 0.0199, 0.0682 )",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.0005",
+            "value": "0.0005",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\BibTeX": "B\\textsc{ib}\\TeX",
+    "\\cb": "{\\color{red}{[{\\bf cb: #1]}}}",
+    "\\yz": "{\\color{red}{[{\\bf yz}: #1]}}",
+    "\\jg": "{\\color{blue}{[{\\bf jg}: #1]}}",
+    "\\mg": "{\\color{blue}{[{\\bf mg}: #1]}}",
+    "\\xg": "{\\color{green}{[{\\bf xg}: #1]}}",
+    "\\siqi": "{\\color{purple}{[{\\bf siqi}: #1]}}",
+    "\\system": "{{\\textsc{DialoGPT}}}\\xspace",
+    "\\sts": "{{\\textsc{Seq2Seq}}}\\xspace",
+    "\\neurocon": "{{\\textsc{PersonalityChat}}}\\xspace"
+  },
+  "references": [
+    {
+      "key": "deeppavlov",
+      "raw": "M. Burtsev, A. Seliverstov, R. Airapetyan, M. Arkhipov, D. Baymurzina, N. Bushkov, O. Gureenkova, T. Khakhulin, Y. Kuratov, D. Kuznetsov, A. Litinsky, V. Logacheva, A. Lymar, V. Malykh, M. Petrov, V. Polulyakh, L. Pugachev, A. Sorokin, M. Vikhreva, and M. Zaynutdinov. 2018. DeepPavlov: Open-source library for dialogue systems. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics-System Demonstrations",
+      "authors": "M. Burtsev, A. Seliverstov, R. Airapetyan, M. Arkhipov, D. Baymurzina, N. Bushkov, O. Gureenkova, T. Khakhulin, Y. Kuratov, D. Kuznetsov, A. Litinsky, V. Logacheva, A. Lymar, V. Malykh, M. Petrov, V. Polulyakh, L. Pugachev, A. Sorokin, M. Vikhreva, and M. Zaynutdinov. 2018",
+      "title": "DeepPavlov: Open-source library for dialogue systems",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics-System Demonstrations",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "devlin2019bert",
+      "raw": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. NAACL 2019",
+      "authors": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019",
+      "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+      "venue": "NAACL 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "convai2",
+      "raw": "E. Dinan, V. Logacheva, V. Malykh, A. Miller, K. Shuster, J. Urbanek, D. Kiela, A. Szlam, I. Serban, R. Lowe, S. Prabhumoye, A. W. Black, A. Rudnicky, J. Williams, J. Pineau, M. Burtsev, and J. Weston. 2019. The second conversational intelligence challenge (ConvAI2)",
+      "authors": "E. Dinan, V. Logacheva, V. Malykh, A. Miller, K. Shuster, J. Urbanek, D. Kiela, A. Szlam, I. Serban, R. Lowe, S. Prabhumoye, A. W. Black, A. Rudnicky, J. Williams, J. Pineau, M. Burtsev, and J. Weston. 2019",
+      "title": "The second conversational intelligence challenge (ConvAI2)",
+      "venue": "",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "doddington2002nist",
+      "raw": "George Doddington. 2002. Automatic evaluation of machine translation quality using n-gram co-occurrence statistics. In Proceedings of the second international conference on Human Language Technology Research. Morgan Kaufmann Publishers Inc",
+      "authors": "George Doddington. 2002",
+      "title": "Automatic evaluation of machine translation quality using n-gram co-occurrence statistics",
+      "venue": "In Proceedings of the second international conference on Human Language Technology Research. Morgan Kaufmann Publishers Inc",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "galley2019grounded",
+      "raw": "Michel Galley, Chris Brockett, Xiang Gao, Jianfeng Gao, and Bill Dolan. 2019. Grounded response generation task at DSTC7. In AAAI Dialog System Technology Challenges Workshop",
+      "authors": "Michel Galley, Chris Brockett, Xiang Gao, Jianfeng Gao, and Bill Dolan. 2019",
+      "title": "Grounded response generation task at DSTC7",
+      "venue": "In AAAI Dialog System Technology Challenges Workshop",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gao2019neural",
+      "raw": "J. Gao, M. Galley, and L. Li. 2019. Neural approaches to conversational AI. Foundations and Trends in Information Retrieval",
+      "authors": "J. Gao, M. Galley, and L. Li. 2019",
+      "title": "Neural approaches to conversational AI",
+      "venue": "Foundations and Trends in Information Retrieval",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jointly2019gao",
+      "raw": "Xiang Gao, Sungjin Lee, Yizhe Zhang, Chris Brockett, Michel Galley, Jianfeng Gao, and Bill Dolan. 2019. Jointly optimizing diversity and relevance in neural response generation. NAACL-HLT 2019",
+      "authors": "Xiang Gao, Sungjin Lee, Yizhe Zhang, Chris Brockett, Michel Galley, Jianfeng Gao, and Bill Dolan. 2019",
+      "title": "Jointly optimizing diversity and relevance in neural response generation",
+      "venue": "NAACL-HLT 2019",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gao2019structuring",
+      "raw": "Xiang Gao, Yizhe Zhang, Sungjin Lee, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2019. Structuring latent spaces for stylized response generation. EMNLP-IJCNLP",
+      "authors": "Xiang Gao, Yizhe Zhang, Sungjin Lee, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2019",
+      "title": "Structuring latent spaces for stylized response generation",
+      "venue": "EMNLP-IJCNLP",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "allennlp",
+      "raw": "M. Gardner, J. Grus, M. Neumann, O. Tafjord, P. Dasigi, N. F. Liu, M. Peters, M. Schmitz, and L. S. Zettlemoyer. 2018. AllenNLP: A deep semantic natural language processing platform. In Proceedings of Workshop for NLP Open Source Software",
+      "authors": "M. Gardner, J. Grus, M. Neumann, O. Tafjord, P. Dasigi, N. F. Liu, M. Peters, M. Schmitz, and L. S. Zettlemoyer. 2018",
+      "title": "AllenNLP: A deep semantic natural language processing platform",
+      "venue": "In Proceedings of Workshop for NLP Open Source Software",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gupta2019investigating",
+      "raw": "Prakhar Gupta, Shikib Mehri, Tiancheng Zhao, Amy Pavel, Maxine Eskenazi, and Jeffrey P Bigham. 2019. Investigating evaluation of open-domain dialogue systems with human generated multiple references. arXiv preprint arXiv:1907.10568",
+      "authors": "Prakhar Gupta, Shikib Mehri, Tiancheng Zhao, Amy Pavel, Maxine Eskenazi, and Jeffrey P Bigham. 2019",
+      "title": "Investigating evaluation of open-domain dialogue systems with human generated multiple references",
+      "venue": "arXiv preprint",
+      "year": 2019,
+      "arxivId": "1907.10568",
+      "doi": null
+    },
+    {
+      "key": "texar",
+      "raw": "Z. Hu, H. Shi, Z. Yang, B. Tan, T. Zhao, J. He, W. Wang, L. Qin, D. Wang, et al. 2018. Texar: A modularized, versatile, and extensible toolkit for text generation. ACL",
+      "authors": "Z. Hu, H. Shi, Z. Yang, B. Tan, T. Zhao, J. He, W. Wang, L. Qin, D. Wang, et al. 2018",
+      "title": "Texar: A modularized, versatile, and extensible toolkit for text generation",
+      "venue": "ACL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pytorchtransformer",
+      "raw": "HuggingFace. 2019. PyTorch transformer repository. https://github.com/huggingface/pytorch-transformers",
+      "authors": "HuggingFace. 2019",
+      "title": "PyTorch transformer repository",
+      "venue": "",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lavie2007meteor",
+      "raw": "Alon Lavie and Abhaya Agarwal. 2007. Meteor: An automatic metric for mt evaluation with high levels of correlation with human judgments. In Proceedings of the Second Workshop on Statistical Machine Translation, pages 228--231. Association for Computational Linguistics",
+      "authors": "Alon Lavie and Abhaya Agarwal. 2007",
+      "title": "Meteor: An automatic metric for mt evaluation with high levels of correlation with human judgments",
+      "venue": "In Proceedings of the Second Workshop on Statistical Machine Translation, pages 228--231. Association for Computational Linguistics",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2015diversity",
+      "raw": "Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2016. A diversity-promoting objective function for neural conversation models. NAACL",
+      "authors": "Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2016",
+      "title": "A diversity-promoting objective function for neural conversation models",
+      "venue": "NAACL",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "li2016persona",
+      "raw": "Jiwei Li, Michel Galley, Chris Brockett, Georgios P Spithourakis, Jianfeng Gao, and Bill Dolan. 2016. A persona-based neural conversation model. ACL",
+      "authors": "Jiwei Li, Michel Galley, Chris Brockett, Georgios P Spithourakis, Jianfeng Gao, and Bill Dolan. 2016",
+      "title": "A persona-based neural conversation model",
+      "venue": "ACL",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "parlai",
+      "raw": "A. H. Miller, W. Feng, A. Fisch, J. Lu, D. Batra, A. Bordes, D. Parikh, and J. Weston. 2017. ParlAI: A dialog research software platform. In Proceedings of the 2017 EMNLP System Demonstration",
+      "authors": "A. H. Miller, W. Feng, A. Fisch, J. Lu, D. Batra, A. Bordes, D. Parikh, and J. Weston. 2017",
+      "title": "ParlAI: A dialog research software platform",
+      "venue": "In Proceedings of the 2017 EMNLP System Demonstration",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "olabiyi2019multi",
+      "raw": "Oluwatobi Olabiyi and Erik T Mueller. 2019. Multi-turn dialogue response generation with autoregressive transformer models. arXiv preprint:1908.01841",
+      "authors": "Oluwatobi Olabiyi and Erik T Mueller. 2019",
+      "title": "Multi-turn dialogue response generation with autoregressive transformer models",
+      "venue": "arXiv preprint:1908.01841",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "papineni2002bleu",
+      "raw": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. Bleu: a method for automatic evaluation of machine translation. ACL",
+      "authors": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002",
+      "title": "Bleu: a method for automatic evaluation of machine translation",
+      "venue": "ACL",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "elmo",
+      "raw": "M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. Zettlemoyer. 2018. Deep contextualized word representations. NAACL",
+      "authors": "M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. Zettlemoyer. 2018",
+      "title": "Deep contextualized word representations",
+      "venue": "NAACL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "qin2019conversing",
+      "raw": "Lianhui Qin, Michel Galley, Chris Brockett, Xiaodong Liu, Xiang Gao, Bill Dolan, Yejin Choi, and Jianfeng Gao. 2019. Conversing by reading: Contentful neural conversation with on-demand machine reading. ACL",
+      "authors": "Lianhui Qin, Michel Galley, Chris Brockett, Xiaodong Liu, Xiang Gao, Bill Dolan, Yejin Choi, and Jianfeng Gao. 2019",
+      "title": "Conversing by reading: Contentful neural conversation with on-demand machine reading",
+      "venue": "ACL",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gpt2",
+      "raw": "A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever. 2018. Language models are unsupervised multitask learners. Technical report, OpenAI",
+      "authors": "A. Radford, J. Wu, R. Child, D. Luan, D. Amodei, and I. Sutskever. 2018",
+      "title": "Language models are unsupervised multitask learners",
+      "venue": "Technical report, OpenAI",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "2019t5",
+      "raw": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2019. Exploring the limits of transfer learning with a unified text-to-text transformer. arXiv preprint:1910.10683",
+      "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J. Liu. 2019",
+      "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+      "venue": "arXiv preprint:1910.10683",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bpe",
+      "raw": "R. Sennrich, B. Haddow, and A. Birch. 2016. Neural machine translation of rare words with subword units. ACL",
+      "authors": "R. Sennrich, B. Haddow, and A. Birch. 2016",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "ACL",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "serban2017hierarchical",
+      "raw": "Iulian Vlad Serban, Alessandro Sordoni, Ryan Lowe, Laurent Charlin, Joelle Pineau, Aaron Courville, and Yoshua Bengio. 2017. A hierarchical latent variable encoder-decoder model for generating dialogues. AAAI",
+      "authors": "Iulian Vlad Serban, Alessandro Sordoni, Ryan Lowe, Laurent Charlin, Joelle Pineau, Aaron Courville, and Yoshua Bengio. 2017",
+      "title": "A hierarchical latent variable encoder-decoder model for generating dialogues",
+      "venue": "AAAI",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shiv2019microsoft",
+      "raw": "Vighnesh Leonardo Shiv, Chris Quirk, Anshuman Suri, Xiang Gao, Khuram Shahid, Nithya Govindarajan, Yizhe Zhang, Jianfeng Gao, Michel Galley, Chris Brockett, et al. 2019. Microsoft icecaps: An open-source toolkit for conversation modeling. ACL",
+      "authors": "Vighnesh Leonardo Shiv, Chris Quirk, Anshuman Suri, Xiang Gao, Khuram Shahid, Nithya Govindarajan, Yizhe Zhang, Jianfeng Gao, Michel Galley, Chris Brockett, et al. 2019",
+      "title": "Microsoft icecaps: An open-source toolkit for conversation modeling",
+      "venue": "ACL",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. NeurIPS",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. 2017",
+      "title": "Attention is all you need",
+      "venue": "NeurIPS",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams1992simple",
+      "raw": "Ronald J Williams. 1992. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine learning",
+      "authors": "Ronald J Williams. 1992",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "venue": "Machine learning",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/abs-1901-08149",
+      "raw": "Thomas Wolf, Victor Sanh, Julien Chaumond, and Clement Delangue. 2019. TransferTransfo: A transfer learning approach for neural network based conversational agents. CoRR, abs/1901.08149",
+      "authors": "Thomas Wolf, Victor Sanh, Julien Chaumond, and Clement Delangue. 2019",
+      "title": "TransferTransfo: A transfer learning approach for neural network based conversational agents",
+      "venue": "CoRR, abs/1901.08149",
+      "year": 2019,
+      "arxivId": "1901.08149",
+      "doi": null
+    },
+    {
+      "key": "zhang2018generating",
+      "raw": "Yizhe Zhang, Michel Galley, Jianfeng Gao, Zhe Gan, Xiujun Li, Chris Brockett, and Bill Dolan. 2018. Generating informative and diverse conversational responses via adversarial information maximization. NeurIPS",
+      "authors": "Yizhe Zhang, Michel Galley, Jianfeng Gao, Zhe Gan, Xiujun Li, Chris Brockett, and Bill Dolan. 2018",
+      "title": "Generating informative and diverse conversational responses via adversarial information maximization",
+      "venue": "NeurIPS",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhang2019consistent",
+      "raw": "Yizhe Zhang, Xiang Gao, Sungjin Lee, Chris Brockett, Michel Galley, Jianfeng Gao, and Bill Dolan. 2019. Consistent dialogue generation with self-supervised feature learning. arXiv preprint:1903.05759",
+      "authors": "Yizhe Zhang, Xiang Gao, Sungjin Lee, Chris Brockett, Michel Galley, Jianfeng Gao, and Bill Dolan. 2019",
+      "title": "Consistent dialogue generation with self-supervised feature learning",
+      "venue": "arXiv preprint:1903.05759",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "p(T|S) = \\prod_{n=m+1}^N p(x_n|x_1, \\cdots, x_{n-1})",
+      "environment": "align",
+      "labels": [
+        "eq:lm"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 783,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.00801849365234,
+            "y0": 248.17945861816406,
+            "x1": 273.25634765625,
+            "y1": 258.1420593261719
+          },
+          {
+            "x0": 89.00801849365234,
+            "y0": 260.13543701171875,
+            "x1": 273.01068115234375,
+            "y1": 270.0980529785156
+          },
+          {
+            "x0": 89.00804138183594,
+            "y0": 272.0904541015625,
+            "x1": 273.25640869140625,
+            "y1": 282.0530700683594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3697,
+      "numbers": 3,
+      "citations": 19,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00004577636719,
+            "y0": 496.0166015625,
+            "x1": 290.2726745605469,
+            "y1": 506.9256896972656
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 509.5656433105469,
+            "x1": 290.2693176269531,
+            "y1": 520.4747314453125
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 523.1146240234375,
+            "x1": 265.4401550292969,
+            "y1": 534.023681640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Dataset",
+      "chars": 1453,
+      "numbers": 12,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00001525878906,
+            "y0": 477.1217956542969,
+            "x1": 290.2692565917969,
+            "y1": 488.0308837890625
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 490.6708068847656,
+            "x1": 290.2692565917969,
+            "y1": 501.57989501953125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Method",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Model Architecture",
+      "chars": 1579,
+      "numbers": 1,
+      "citations": 4,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 291.6997375488281,
+            "x1": 525.5389404296875,
+            "y1": 302.60882568359375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 305.2497253417969,
+            "x1": 352.472412109375,
+            "y1": 316.1588134765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Mutual Information Maximization",
+      "chars": 1247,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 192.42575073242188,
+            "x1": 290.2692565917969,
+            "y1": 203.33485412597656
+          },
+          {
+            "x0": 72.0,
+            "y0": 205.97573852539062,
+            "x1": 290.26922607421875,
+            "y1": 216.8848419189453
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Result",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "results",
+      "title": "Experimental Details",
+      "chars": 1286,
+      "numbers": 9,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.9999771118164,
+            "y0": 655.501953125,
+            "x1": 290.26922607421875,
+            "y1": 666.4110107421875
+          },
+          {
+            "x0": 71.9999771118164,
+            "y0": 669.0509643554688,
+            "x1": 290.2691955566406,
+            "y1": 679.9600219726562
+          },
+          {
+            "x0": 71.9999771118164,
+            "y0": 682.6009521484375,
+            "x1": 98.43273162841797,
+            "y1": 693.510009765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "DSTC-7 Dialogue Generation Challenge",
+      "chars": 6410,
+      "numbers": 9,
+      "citations": 8,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 470.4627990722656,
+            "x1": 525.5452270507812,
+            "y1": 481.37188720703125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 484.0127868652344,
+            "x1": 372.9814453125,
+            "y1": 494.921875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "A New Reddit Multi-reference Dataset",
+      "chars": 644,
+      "numbers": 4,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 429.59173583984375,
+            "x1": 525.5406494140625,
+            "y1": 440.5008239746094
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 443.1417236328125,
+            "x1": 470.10504150390625,
+            "y1": 454.0508117675781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Re-ranking The Response Using MMI",
+      "chars": 684,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 646.298828125,
+            "x1": 525.5450439453125,
+            "y1": 657.2078857421875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 659.8478393554688,
+            "x1": 397.6796569824219,
+            "y1": 670.7568969726562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Generation Examples",
+      "chars": 1899,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 576.1387329101562,
+            "x1": 282.2728576660156,
+            "y1": 587.0477905273438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Human Evaluation",
+      "chars": 3501,
+      "numbers": 4,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 412.01300048828125,
+            "y0": 652.4967041015625,
+            "x1": 525.5439453125,
+            "y1": 663.40576171875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 666.0457153320312,
+            "x1": 525.545166015625,
+            "y1": 676.9547729492188
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 679.5947265625,
+            "x1": 458.2033386230469,
+            "y1": 690.5037841796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related work",
+      "chars": 1571,
+      "numbers": 0,
+      "citations": 10,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 86.50765991210938,
+            "x1": 525.5451049804688,
+            "y1": 97.41676330566406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 100.05764770507812,
+            "x1": 475.2978210449219,
+            "y1": 110.96675109863281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "limitations",
+      "title": "Limitations and risks",
+      "chars": 968,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.5480041503906,
+            "y0": 632.7499389648438,
+            "x1": 525.5442504882812,
+            "y1": 643.6589965820312
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 646.2989501953125,
+            "x1": 525.5451049804688,
+            "y1": 657.2080078125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 659.847900390625,
+            "x1": 327.57781982421875,
+            "y1": 670.7569580078125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 792,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00003051757812,
+            "y0": 659.8477172851562,
+            "x1": 290.26922607421875,
+            "y1": 670.7567749023438
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 673.397705078125,
+            "x1": 290.2708435058594,
+            "y1": 684.3067626953125
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 686.9467163085938,
+            "x1": 138.93829345703125,
+            "y1": 697.8557739257812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 140,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760314941406,
+            "y0": 636.9976806640625,
+            "x1": 525.5452270507812,
+            "y1": 647.90673828125
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 650.5466918945312,
+            "x1": 525.5452880859375,
+            "y1": 661.4557495117188
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 664.095703125,
+            "x1": 525.5452270507812,
+            "y1": 675.0047607421875
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 677.6447143554688,
+            "x1": 336.06512451171875,
+            "y1": 688.5537719726562
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 5,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 24,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "williams1992simple",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We also attempted to optimize the reward R \u225c P(Source|Hypothesis) using a policy gradient [Williams. 1992] with a sample-averaged baseline, following [Zhang et al. 2018].",
+      "section": "Mutual Information Maximization",
+      "sectionKind": "method",
+      "ordinal": 16,
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "authors": "Ronald J Williams. 1992",
+      "year": 1992,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 153.81820678710938,
+            "y0": 423.6578674316406,
+            "x1": 290.26922607421875,
+            "y1": 434.56695556640625
+          },
+          {
+            "x0": 71.9999771118164,
+            "y0": 437.2068786621094,
+            "x1": 137.6072998046875,
+            "y1": 448.115966796875
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "lavie2007meteor",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We performed automatic evaluation using standard machine translation metrics, including BLEU [Papineni et al. 2002], METEOR [Lavie et al. 2007], and NIST [Doddington. 2002].",
+        "section": "DSTC-7 Dialogue Generation Challenge",
+        "sectionKind": "results",
+        "ordinal": 21,
+        "title": "Meteor: An automatic metric for mt evaluation with high levels of correlation with human judgments",
+        "authors": "Alon Lavie and Abhaya Agarwal. 2007",
+        "year": 2007,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.90899658203125,
+              "y0": 147.25869750976562,
+              "x1": 290.2691345214844,
+              "y1": 158.1678009033203
+            },
+            {
+              "x0": 72.0,
+              "y0": 160.80770874023438,
+              "x1": 290.269287109375,
+              "y1": 171.71681213378906
+            }
+          ]
+        }
+      },
+      {
+        "key": "li2015diversity",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "We compared DialoGPTwith our in-house competitive sequence-to-sequence model PersonalityChatbased on [Li et al. 2016] and trained on Twitter data, which has been used in production as a Cognitive Service for Microsoft Azure.[Project PersonalityChat: <https://docs.microsoft.com/en-us/azure/cognitive-services/project-personality-chat/overview>] Table [ref] summarizes the automatic evaluation results. DialoGPTwith 345M parameters and beam search achieved the highest automatic score across most metrics.",
+        "section": "DSTC-7 Dialogue Generation Challenge",
+        "sectionKind": "results",
+        "ordinal": 26,
+        "title": "A diversity-promoting objective function for neural conversation models",
+        "authors": "Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2016",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 145.861572265625,
+              "y0": 350.9657897949219,
+              "x1": 290.2652587890625,
+              "y1": 361.8748779296875
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 364.5148010253906,
+              "x1": 290.2689514160156,
+              "y1": 375.42388916015625
+            },
+            {
+              "x0": 71.99999237060547,
+              "y0": 378.0638122558594,
+              "x1": 290.26922607421875,
+              "y1": 388.972900390625
+            },
+            {
+              "x0": 71.99999237060547,
+              "y0": 391.6128234863281,
+              "x1": 186.2073516845703,
+              "y1": 402.52191162109375
+            }
+          ]
+        }
+      },
+      {
+        "key": "papineni2002bleu",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We performed automatic evaluation using standard machine translation metrics, including BLEU [Papineni et al. 2002], METEOR [Lavie et al. 2007], and NIST [Doddington. 2002].",
+        "section": "DSTC-7 Dialogue Generation Challenge",
+        "sectionKind": "results",
+        "ordinal": 20,
+        "title": "Bleu: a method for automatic evaluation of machine translation",
+        "authors": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002",
+        "year": 2002,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.90899658203125,
+              "y0": 147.25869750976562,
+              "x1": 290.2691345214844,
+              "y1": 158.1678009033203
+            },
+            {
+              "x0": 72.0,
+              "y0": 160.80770874023438,
+              "x1": 290.269287109375,
+              "y1": 171.71681213378906
+            }
+          ]
+        }
+      },
+      {
+        "key": "williams1992simple",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We also attempted to optimize the reward R \u225c P(Source|Hypothesis) using a policy gradient [Williams. 1992] with a sample-averaged baseline, following [Zhang et al. 2018].",
+        "section": "Mutual Information Maximization",
+        "sectionKind": "method",
+        "ordinal": 16,
+        "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+        "authors": "Ronald J Williams. 1992",
+        "year": 1992,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 153.81820678710938,
+              "y0": 423.6578674316406,
+              "x1": 290.26922607421875,
+              "y1": 434.56695556640625
+            },
+            {
+              "x0": 71.9999771118164,
+              "y0": 437.2068786621094,
+              "x1": 137.6072998046875,
+              "y1": 448.115966796875
+            }
+          ]
+        }
+      },
+      {
+        "key": "zhang2018generating",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We also attempted to optimize the reward R \u225c P(Source|Hypothesis) using a policy gradient [Williams. 1992] with a sample-averaged baseline, following [Zhang et al. 2018].",
+        "section": "Mutual Information Maximization",
+        "sectionKind": "method",
+        "ordinal": 17,
+        "title": "Generating informative and diverse conversational responses via adversarial information maximization",
+        "authors": "Yizhe Zhang, Michel Galley, Jianfeng Gao, Zhe Gan, Xiujun Li, Chris Brockett, and Bill Dolan. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 153.81820678710938,
+              "y0": 423.6578674316406,
+              "x1": 290.26922607421875,
+              "y1": 434.56695556640625
+            },
+            {
+              "x0": 71.9999771118164,
+              "y0": 437.2068786621094,
+              "x1": 137.6072998046875,
+              "y1": 448.115966796875
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "The success of GPT-2 demonstrates that a transformer language model is able to characterize human language data distributions at a fine-grained level, presumably due to large large model capacity and superior efficiency.",
+      "anchorText": "The success of GPT-2 demonstrates that a transformer language model is able to characterize human language data distributions at a fine-grained level, presumably due to large large model capacity and superior efficiency.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "presumably",
+      "section": "Model Architecture",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 508.58154296875,
+            "y0": 386.5447692871094,
+            "x1": 525.545166015625,
+            "y1": 397.453857421875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 400.0937805175781,
+            "x1": 525.5452270507812,
+            "y1": 411.00286865234375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 413.6427917480469,
+            "x1": 525.545166015625,
+            "y1": 424.5518798828125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 427.1918029785156,
+            "x1": 525.545166015625,
+            "y1": 438.10089111328125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 440.7417907714844,
+            "x1": 525.5450439453125,
+            "y1": 451.65087890625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 454.2908020019531,
+            "x1": 390.34869384765625,
+            "y1": 465.19989013671875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, maximizing backward model likelihood penalizes the bland hypotheses, as frequent and repetitive hypotheses can be associated with many possible queries, thus yielding a lower probability for any specific query.",
+      "anchorText": "Intuitively, maximizing backward model likelihood penalizes the bland hypotheses, as frequent and repetitive hypotheses can be associated with many possible queries, thus yielding a lower probability for any specific query.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Mutual Information Maximization",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.21096801757812,
+            "y0": 327.9178161621094,
+            "x1": 290.26922607421875,
+            "y1": 338.826904296875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 341.4678039550781,
+            "x1": 290.2691650390625,
+            "y1": 352.37689208984375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 355.0168151855469,
+            "x1": 290.26922607421875,
+            "y1": 365.9259033203125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 368.5658264160156,
+            "x1": 290.26922607421875,
+            "y1": 379.47491455078125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 382.1148376464844,
+            "x1": 246.5783233642578,
+            "y1": 393.02392578125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We hypothesize that transformers can become trapped in local optima due to their strong model representation power.",
+      "anchorText": "We hypothesize that transformers can become trapped in local optima due to their strong model representation power.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "Mutual Information Maximization",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 196.47280883789062,
+            "y0": 532.0519409179688,
+            "x1": 290.2691650390625,
+            "y1": 542.9609985351562
+          },
+          {
+            "x0": 71.9999771118164,
+            "y0": 545.6009521484375,
+            "x1": 290.2691955566406,
+            "y1": 556.510009765625
+          },
+          {
+            "x0": 71.9999771118164,
+            "y0": 559.1499633789062,
+            "x1": 290.2691955566406,
+            "y1": 570.0590209960938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Presumably, the model learns background information during pre-training and is unhindered by the lack of a grounding document.",
+      "anchorText": "Presumably, the model learns background information during pre-training and is unhindered by the lack of a grounding document.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Presumably",
+      "section": "DSTC-7 Dialogue Generation Challenge",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 272.09466552734375,
+            "y0": 486.4578552246094,
+            "x1": 290.2691955566406,
+            "y1": 497.366943359375
+          },
+          {
+            "x0": 72.0,
+            "y0": 500.0068664550781,
+            "x1": 290.26922607421875,
+            "y1": 510.91595458984375
+          },
+          {
+            "x0": 72.0,
+            "y0": 513.555908203125,
+            "x1": 290.26922607421875,
+            "y1": 524.4649658203125
+          },
+          {
+            "x0": 72.0,
+            "y0": 527.1049194335938,
+            "x1": 205.6146240234375,
+            "y1": 538.0139770507812
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Without loss of generality, suppose R1-R3 are the \u201cground truth\u201d references that will be tested on, while R4 is the \u201cheld-out\u201d human response that serves to compute a \u201chuman\u201d score.",
+      "anchorText": "Without loss of generality, suppose R1-R3 are the \"ground truth\" references that will be tested on, while R4 is the \"held-out\" human response that serves to compute a \"human\" score.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "Without loss of generality",
+      "section": "DSTC-7 Dialogue Generation Challenge",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 179.3346405029297,
+            "y0": 622.4189453125,
+            "x1": 290.2691650390625,
+            "y1": 633.3280029296875
+          },
+          {
+            "x0": 72.0,
+            "y0": 635.9679565429688,
+            "x1": 290.2691650390625,
+            "y1": 646.8770141601562
+          },
+          {
+            "x0": 72.0,
+            "y0": 649.5169677734375,
+            "x1": 290.2691955566406,
+            "y1": 660.426025390625
+          },
+          {
+            "x0": 72.0,
+            "y0": 663.06591796875,
+            "x1": 290.2691955566406,
+            "y1": 673.9749755859375
+          },
+          {
+            "x0": 72.0,
+            "y0": 676.615966796875,
+            "x1": 125.71641540527344,
+            "y1": 687.5250244140625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In semantic space, a generated response R_g from a well-trained model will presumably tend to lie in the vicinity the geometric center of all possible responses, because the training objective seeks to generate the most likely response.",
+      "anchorText": "from a well-trained model will presumably tend to lie in the vicinity the geometric center of all possible responses, because the training objective seeks to generate the most likely response.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "presumably",
+      "section": "DSTC-7 Dialogue Generation Challenge",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "The output is based on top-K sampling.[Owing to occasional toxic outputs, we are unable to release the generation code at this time.] Interestingly, our model exhibits the ability to address commonsense questions to some extent, presumably owing to the rich amount of information that can be learned from Reddit data.",
+      "anchorText": "Interestingly, our model exhibits the ability to address commonsense questions to some extent, presumably owing to the rich amount of information that can be learned from Reddit data.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "presumably",
+      "section": "Generation Examples",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 126.76199340820312,
+            "y0": 616.7867431640625,
+            "x1": 290.26751708984375,
+            "y1": 627.69580078125
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 630.335693359375,
+            "x1": 290.26922607421875,
+            "y1": 641.2447509765625
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 643.8847045898438,
+            "x1": 290.2692565917969,
+            "y1": 654.7937622070312
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 657.4337158203125,
+            "x1": 290.2691955566406,
+            "y1": 668.3427734375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We suspect that this may have helped bias the results towards the extremes. Overall judge preferences for relevance, informativeness and human-likeness, presented as raw numbers and a percentage of the total, are shown in Table [ref].",
+      "anchorText": "We suspect that this may have helped bias the results towards the extremes. Overall judge preferences for relevance, informativeness and human-likeness, presented as raw numbers and a percentage of the total, are shown in Table",
+      "kind": "conjectural",
+      "support": "shown",
+      "cue": "We suspect",
+      "section": "Human Evaluation",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [
+        "tab:human_eval"
+      ],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 8,
+    "cited": 0,
+    "shown": 1,
+    "bare": 7
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2019-11-01",
+    "authors": [
+      "Yizhe Zhang",
+      "Siqi Sun",
+      "Michel Galley",
+      "Yen-Chun Chen",
+      "Chris Brockett",
+      "Xiang Gao",
+      "Jianfeng Gao",
+      "Jingjing Liu",
+      "Bill Dolan"
+    ]
+  }
+}

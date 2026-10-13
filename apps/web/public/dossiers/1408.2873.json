@@ -1,0 +1,1341 @@
+{
+  "id": "1408.2873",
+  "title": "First-Pass Large Vocabulary Continuous Speech Recognition using Bi-Directional Recurrent DNNs",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "Word error rate (WER) and character error rate (CER) results from a BDRNN trained with the CTC loss function. As a baseline (No LM) we decode by choosing the most likely label at each timestep and performing standard collapsing as done in CTC training. We compare this baseline against our modified prefix-search decoder using a dictionary constraint and bigram language model.",
+    "supported": 1,
+    "share": 1.0,
+    "summary": "1 of the paper's headline numbers trace to Table 1"
+  },
+  "codeUrl": "",
+  "coverage": {
+    "claims": 1,
+    "supported": 1,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 1.0
+  },
+  "claims": [
+    {
+      "value": "10%",
+      "section": "introduction",
+      "sentence": "Using CTC the authors were able to train a neural network to predict the character sequence of test utterances with a character error rate (CER) under 10% on the Wall Street Journal LVCSR corpus.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "Word error rate (WER) and character error rate (CER) results from a BDRNN trained with the CTC loss function. As a baseline (No LM) we decode by choosing the most likely label at each timestep and performing standard collapsing as done in CTC training. We compare this baseline against our modified prefix-search decoder using a dictionary constraint and bigram language model.",
+      "row": "No LM",
+      "column": "CER",
+      "cell": "10.0",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 284.8800354003906,
+            "y0": 697.5082397460938,
+            "x1": 504.0774230957031,
+            "y1": 710.7984008789062
+          },
+          {
+            "x0": 107.99986267089844,
+            "y0": 708.4281616210938,
+            "x1": 504.1388244628906,
+            "y1": 721.7183227539062
+          },
+          {
+            "x0": 107.99984741210938,
+            "y0": 719.3480834960938,
+            "x1": 274.1703796386719,
+            "y1": 732.6382446289062
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 248.39999389648438,
+            "y0": 155.6783905029297,
+            "x1": 275.0910949707031,
+            "y1": 167.63954162597656
+          },
+          {
+            "x0": 316.0801086425781,
+            "y0": 155.6783905029297,
+            "x1": 331.72332763671875,
+            "y1": 167.63954162597656
+          }
+        ]
+      }
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1408.2873",
+  "numbers": [
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Using CTC the authors were able to train a neural network to predict the character sequence of test utterances with a character error rate (CER) under 10% on the Wall Street Journal LVCSR corpus.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "No LM",
+      "cell": "10.0",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 284.8800354003906,
+            "y0": 697.5082397460938,
+            "x1": 504.0774230957031,
+            "y1": 710.7984008789062
+          },
+          {
+            "x0": 107.99986267089844,
+            "y0": 708.4281616210938,
+            "x1": 504.1388244628906,
+            "y1": 721.7183227539062
+          },
+          {
+            "x0": 107.99984741210938,
+            "y0": 719.3480834960938,
+            "x1": 274.1703796386719,
+            "y1": 732.6382446289062
+          }
+        ]
+      }
+    },
+    {
+      "value": "20.9M",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We trained a BRDNN with 5 hidden layers, all with 1824 hidden units, for a total of 20.9M free parameters.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 256.02947998046875,
+            "x1": 504.1044006347656,
+            "y1": 269.31964111328125
+          },
+          {
+            "x0": 108.0,
+            "y0": 266.94940185546875,
+            "x1": 154.4106903076172,
+            "y1": 280.23956298828125
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.95",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We use the Nesterov accelerated gradient optimization algorithm as described in with initial learning rate , and maximum momentum 0.95.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 234.00035095214844,
+            "y0": 288.90948486328125,
+            "x1": 504.03558349609375,
+            "y1": 302.19964599609375
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 299.8293762207031,
+            "x1": 156.5413360595703,
+            "y1": 313.1195373535156
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.2",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "After each full pass through the training set we divide the learning rate by 1.2 to ensure the overall learning rate decreases over time.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99978637695312,
+            "y0": 310.8691711425781,
+            "x1": 504.2505187988281,
+            "y1": 324.1593322753906
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 321.7894592285156,
+            "x1": 244.650146484375,
+            "y1": 335.0796203613281
+          }
+        ]
+      }
+    },
+    {
+      "value": "16.8M",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Note that we report performance for a DNN of only 16.8M total parameters which is smaller than the total number of parameters used in both the RDNN and BRDNN models.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 201.47950744628906,
+            "y0": 631.74853515625,
+            "x1": 504.27532958984375,
+            "y1": 645.0386962890625
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 642.66845703125,
+            "x1": 504.0904235839844,
+            "y1": 655.9586181640625
+          }
+        ]
+      }
+    },
+    {
+      "value": "81 hour",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We evaluate our approach on the 81 hour Wall Street Journal (WSJ) news article dictation corpus (available in the LDC catalog as LDC94S13B and LDC93S6B).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00051879882812,
+            "y0": 697.5086669921875,
+            "x1": 504.276123046875,
+            "y1": 710.798828125
+          },
+          {
+            "x0": 108.00051879882812,
+            "y0": 708.4285888671875,
+            "x1": 359.9707946777344,
+            "y1": 721.71875
+          }
+        ]
+      }
+    },
+    {
+      "value": "81 hours",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Our training set consists of 81 hours of speech from 37,318 utterances.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 361.9203186035156,
+            "y0": 708.4285888671875,
+            "x1": 504.2757263183594,
+            "y1": 721.71875
+          },
+          {
+            "x0": 108.00051879882812,
+            "y0": 719.3484497070312,
+            "x1": 243.45123291015625,
+            "y1": 732.6386108398438
+          }
+        ]
+      }
+    },
+    {
+      "value": "96 hours",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We train the network for a total of 20 passes over the training set, which takes about 96 hours using our Python GPU implementation.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 250.19949340820312,
+            "y0": 321.7894592285156,
+            "x1": 504.180908203125,
+            "y1": 335.0796203613281
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 332.7093505859375,
+            "x1": 399.33050537109375,
+            "y1": 345.99951171875
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Word error rate (WER) and character error rate (CER) results from a BDRNN trained with the CTC loss function. As a baseline (No LM) we decode by choosing the most likely label at each timestep and performing standard collapsing as done in CTC training. We compare this baseline against our modified prefix-search decoder using a dictionary constraint and bigram language model.",
+      "label": "tab:res_decode",
+      "numericCells": 6,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CER",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "WER",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "No LM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.0",
+            "value": "10.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "35.8",
+            "value": "35.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Dictionary LM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.5",
+            "value": "8.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.4",
+            "value": "24.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bigram LM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.7",
+            "value": "5.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.1",
+            "value": "14.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.16014099121094,
+            "y0": 88.14935302734375,
+            "x1": 503.94024658203125,
+            "y1": 101.43951416015625
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 99.06964111328125,
+            "x1": 504.06256103515625,
+            "y1": 112.35980224609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 109.98956298828125,
+            "x1": 504.10345458984375,
+            "y1": 123.27972412109375
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 121.02935791015625,
+            "x1": 504.2106628417969,
+            "y1": 134.31951904296875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Train and test set character error rate (CER) results for a deep neural network (DNN) without recurrence, recurrent deep neural network with forward temporal connections (RDNN), and a bi-directional recurrent deep neural network (BRDNN). All models have 5 hidden layers. The DNN and RDNN both have 2,048 hidden units in each hidden layer while the BRDNN has 1,824 hidden units per hidden layer to keep its total number of free parameters similar to the other models. For all models we choose the most likely character at each timestep and apply CTC collapsing to obtain a character-level transcript hypothesis.",
+      "label": "tab:res_recurrence",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Parameters (M)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Train CER",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test CER",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.8",
+            "value": "16.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.8",
+            "value": "3.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.3",
+            "value": "22.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RDNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.0",
+            "value": "22.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.2",
+            "value": "4.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.5",
+            "value": "13.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BRDNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.9",
+            "value": "20.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.8",
+            "value": "2.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.7",
+            "value": "10.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.11990356445312,
+            "y0": 88.14935302734375,
+            "x1": 504.0780334472656,
+            "y1": 101.43951416015625
+          },
+          {
+            "x0": 108.0,
+            "y0": 99.06964111328125,
+            "x1": 504.0613708496094,
+            "y1": 112.35980224609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 109.98956298828125,
+            "x1": 504.1034240722656,
+            "y1": 123.27972412109375
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 121.02935791015625,
+            "x1": 504.181396484375,
+            "y1": 134.31951904296875
+          },
+          {
+            "x0": 108.0,
+            "y0": 131.94927978515625,
+            "x1": 504.0911560058594,
+            "y1": 145.23944091796875
+          },
+          {
+            "x0": 108.0,
+            "y0": 142.86956787109375,
+            "x1": 503.9411315917969,
+            "y1": 156.15972900390625
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 153.90936279296875,
+            "x1": 288.81121826171875,
+            "y1": 167.19952392578125
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "Dahl2013",
+      "raw": "Dahl, G.E., Sainath, T.N., and Hinton, G.E. Improving Deep Neural Networks for LVCSR using Rectified Linear Units and Dropout. In ICASSP, 2013",
+      "authors": "Dahl, G.E., Sainath, T.N., and Hinton, G.E",
+      "title": "Improving Deep Neural Networks for LVCSR using Rectified Linear Units and Dropout",
+      "venue": "In ICASSP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Glorot2011",
+      "raw": "Glorot, X., Bordes, A., and Bengio, Y. Deep Sparse Rectifier Networks. In AISTATS, pp.\\ 315--323, 2011",
+      "authors": "Glorot, X., Bordes, A., and Bengio, Y",
+      "title": "Deep Sparse Rectifier Networks",
+      "venue": "In AISTATS, pp.\\ 315--323, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2014",
+      "raw": "Graves, A. and Jaitly, N. Towards End-to-End Speech Recognition with Recurrent Neural Networks. In ICML, 2014",
+      "authors": "Graves, A. and Jaitly, N",
+      "title": "Towards End-to-End Speech Recognition with Recurrent Neural Networks",
+      "venue": "In ICML, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2006",
+      "raw": "Graves, A., Fern\\'andez, S., Gomez, F., and Schmidhuber, J. Connectionist temporal classification: Labelling unsegmented sequence data with recurrent neural networks. In ICML, pp.\\ 369--376. ACM, 2006",
+      "authors": "Graves, A., Fern\\'andez, S., Gomez, F., and Schmidhuber, J",
+      "title": "Connectionist temporal classification: Labelling unsegmented sequence data with recurrent neural networks",
+      "venue": "In ICML, pp.\\ 369--376. ACM, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton2012",
+      "raw": "Hinton, G.E., Deng, L., Yu, D., Dahl, G.E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T., and Kingsbury, B. Deep Neural Networks for Acoustic Modeling in Speech Recognition. IEEE Signal Processing Magazine, 29 0 (November): 0 82--97, 2012",
+      "authors": "Hinton, G.E., Deng, L., Yu, D., Dahl, G.E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T., and Kingsbury, B",
+      "title": "Deep Neural Networks for Acoustic Modeling in Speech Recognition",
+      "venue": "IEEE Signal Processing Magazine, 29 0 (November): 0 82--97, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter1997",
+      "raw": "Hochreiter, S. and Schmidhuber, J. Long short-term memory. Neural Computation, 9: 0 1735--1780, 1997",
+      "authors": "Hochreiter, S. and Schmidhuber, J",
+      "title": "Long short-term memory",
+      "venue": "Neural Computation, 9: 0 1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Maas2013",
+      "raw": "Maas, A., Hannun, A., and Ng, A. Rectifier Nonlinearities Improve Neural Network Acoustic Models. In ICML Workshop on Deep Learning for Audio, Speech, and Language Processing, 2013",
+      "authors": "Maas, A., Hannun, A., and Ng, A",
+      "title": "Rectifier Nonlinearities Improve Neural Network Acoustic Models",
+      "venue": "In ICML Workshop on Deep Learning for Audio, Speech, and Language Processing, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Povey2011",
+      "raw": "Povey, D., Ghoshal, A., Boulianne, G., Burget, L., Glembek, O., Vesel\\'y, K., Goel, N., Hannemann, M., Motlicek, P., Qian, Y., Schwarz, P., Silovsky, J., and Stemmer, G. The kaldi speech recognition toolkit. In ASRU, 2011",
+      "authors": "Povey, D., Ghoshal, A., Boulianne, G., Burget, L., Glembek, O., Vesel\\'y, K., Goel, N., Hannemann, M., Motlicek, P., Qian, Y., Schwarz, P., Silovsky, J., and Stemmer, G",
+      "title": "The kaldi speech recognition toolkit",
+      "venue": "In ASRU, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever2013",
+      "raw": "Sutskever, I., Martens, J., Dahl, G., and Hinton, G. On the Importance of Momentum and Initialization in Deep Learning. In ICML, 2013",
+      "authors": "Sutskever, I., Martens, J., Dahl, G., and Hinton, G",
+      "title": "On the Importance of Momentum and Initialization in Deep Learning",
+      "venue": "In ICML, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zeiler2013",
+      "raw": "Zeiler, M.D., Ranzato, M., Monga, R., Mao, M., Yang, K., Le, Q.V., Nguyen, P., Senior, A., Vanhoucke, V., Dean, J., and Hinton, G.E. On Rectified Linear Units for Speech Processing. In ICASSP, 2013",
+      "authors": "Zeiler, M.D., Ranzato, M., Monga, R., Mao, M., Yang, K., Le, Q.V., Nguyen, P., Senior, A., Vanhoucke, V., Dean, J., and Hinton, G.E",
+      "title": "On Rectified Linear Units for Speech Processing",
+      "venue": "In ICASSP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "h^{(1)} = \\sigma(W^{(1)T} x_t + b^{(1)}).",
+      "environment": "align",
+      "labels": [
+        "eqn:hidden_input"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "h^{(i)} = \\sigma(W^{(i)T} h^{(i-1)} + b^{(i)}).",
+      "environment": "align",
+      "labels": [
+        "eqn:hidden_hidden"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "p(c=c_k|x_t) = \\frac{\\exp(- ( W^{(s)T}_k h^{(i-1)} + b^{(s)}_k))}\n  {\\sum_j \\exp(- ( W^{(s)T}_j h^{(i-1)} + b^{(s)}_j))},",
+      "environment": "align",
+      "labels": [
+        "eqn:softmax"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "h^{(j)}_t = \\sigma(W^{(j)T} h^{(j-1)}_t +  W^{(f)T} h^{(j)}_{t-1} + b^{(j)}).",
+      "environment": "align",
+      "labels": [
+        "eqn:hidden_rdnn"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\begin{split}\n  &h^{(f)}_t = \\sigma(W^{(j)T} h^{(j-1)}_t +  W^{(f)T} h^{(f)}_{t-1} + b^{(j)}), \\\\\n  &h^{(b)}_t = \\sigma(W^{(j)T} h^{(j-1)}_t +  W^{(b)T} h^{(b)}_{t+1} + b^{(j)}).\n\\end{split}",
+      "environment": "align",
+      "labels": [
+        "eqn:hidden_brdnn"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\begin{split}\n  h^{(j)}_t = h^{(f)}_t + h^{(b)}_t.\n\\end{split}",
+      "environment": "align",
+      "labels": [
+        "eqn:hidden_brdnn_sum"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "p_{\\text{net}}(W ; X) p_{\\text{lm}}(W).",
+      "environment": "equation",
+      "labels": [
+        "eq:joint"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "p_{\\text{net}}(W ; X) p_{\\text{lm}}(W)^\\alpha |W|^\\beta.",
+      "environment": "equation",
+      "labels": [
+        "eq:amlm"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "p(\\ell; x_{1:t}) = (p_b(\\ell; x_{1:t}) + p_{nb}(\\ell; x_{1:t})) |W(\\ell)|^\\beta,",
+      "environment": "equation",
+      "labels": [
+        "eq:prefixprob"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 994,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8799591064453,
+            "y0": 369.7890319824219,
+            "x1": 468.1813049316406,
+            "y1": 383.0791931152344
+          },
+          {
+            "x0": 143.87997436523438,
+            "y0": 380.70892333984375,
+            "x1": 394.7705078125,
+            "y1": 393.99908447265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4362,
+      "numbers": 1,
+      "citations": 7,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99989318847656,
+            "y0": 559.9886474609375,
+            "x1": 504.1285705566406,
+            "y1": 573.27880859375
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 570.9085083007812,
+            "x1": 149.7304229736328,
+            "y1": 584.1986694335938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Model",
+      "chars": 502,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00016784667969,
+            "y0": 529.6283569335938,
+            "x1": 503.95697021484375,
+            "y1": 542.9185180664062
+          },
+          {
+            "x0": 108.00018310546875,
+            "y0": 540.5482788085938,
+            "x1": 282.57073974609375,
+            "y1": 553.8384399414062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deep Neural Networks",
+      "chars": 1366,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00096130371094,
+            "y0": 629.4680786132812,
+            "x1": 368.6236572265625,
+            "y1": 642.7582397460938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Recurrent Deep Neural Networks",
+      "chars": 1382,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 184.08033752441406,
+            "y0": 313.26861572265625,
+            "x1": 490.89129638671875,
+            "y1": 326.55877685546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Bi-Directional Recurrent Deep Neural Networks",
+      "chars": 1345,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00076293945312,
+            "y0": 561.0682373046875,
+            "x1": 504.104248046875,
+            "y1": 574.3583984375
+          },
+          {
+            "x0": 108.00077819824219,
+            "y0": 571.988525390625,
+            "x1": 504.1978759765625,
+            "y1": 585.2786865234375
+          },
+          {
+            "x0": 108.00079345703125,
+            "y0": 583.0283203125,
+            "x1": 165.0912628173828,
+            "y1": 596.3184814453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Decoding",
+      "chars": 3304,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0006103515625,
+            "y0": 212.46917724609375,
+            "x1": 222.9020538330078,
+            "y1": 225.75933837890625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 1610,
+      "numbers": 11,
+      "citations": 1,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00051879882812,
+            "y0": 697.5086669921875,
+            "x1": 504.276123046875,
+            "y1": 710.798828125
+          },
+          {
+            "x0": 108.00051879882812,
+            "y0": 708.4285888671875,
+            "x1": 359.9707946777344,
+            "y1": 721.71875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "First-Pass Decoding with a Language Model",
+      "chars": 2358,
+      "numbers": 9,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 256.02947998046875,
+            "x1": 504.1044006347656,
+            "y1": 269.31964111328125
+          },
+          {
+            "x0": 108.0,
+            "y0": 266.94940185546875,
+            "x1": 154.4106903076172,
+            "y1": 280.23956298828125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "The Effect of Recurrent Connections",
+      "chars": 2116,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99977111816406,
+            "y0": 549.0686645507812,
+            "x1": 504.27520751953125,
+            "y1": 562.3588256835938
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 559.9889526367188,
+            "x1": 210.33038330078125,
+            "y1": 573.2791137695312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1275,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 271.5091247558594,
+            "x1": 504.07781982421875,
+            "y1": 284.7992858886719
+          },
+          {
+            "x0": 108.0,
+            "y0": 282.42901611328125,
+            "x1": 226.650390625,
+            "y1": 295.71917724609375
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 7,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "Graves2006",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We reserve a full exposition of the loss function here because our formulation follows exactly the previous work on using CTC to predict the characters of an utterance transcription [Graves et al. 2014; Graves et al. 2006].",
+      "section": "Model",
+      "sectionKind": "method",
+      "ordinal": 6,
+      "title": "Connectionist temporal classification: Labelling unsegmented sequence data with recurrent neural networks",
+      "authors": "Graves, A., Fern\\'andez, S., Gomez, F., and Schmidhuber, J",
+      "year": 2006,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 290.0398254394531,
+            "y0": 562.5083618164062,
+            "x1": 504.10333251953125,
+            "y1": 575.7985229492188
+          },
+          {
+            "x0": 108.0009765625,
+            "y0": 573.4282836914062,
+            "x1": 504.27655029296875,
+            "y1": 586.7184448242188
+          },
+          {
+            "x0": 108.00096130371094,
+            "y0": 584.3482055664062,
+            "x1": 220.26243591308594,
+            "y1": 597.6383666992188
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Graves2006",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We reserve a full exposition of the loss function here because our formulation follows exactly the previous work on using CTC to predict the characters of an utterance transcription [Graves et al. 2014; Graves et al. 2006].",
+        "section": "Model",
+        "sectionKind": "method",
+        "ordinal": 6,
+        "title": "Connectionist temporal classification: Labelling unsegmented sequence data with recurrent neural networks",
+        "authors": "Graves, A., Fern\\'andez, S., Gomez, F., and Schmidhuber, J",
+        "year": 2006,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 290.0398254394531,
+              "y0": 562.5083618164062,
+              "x1": 504.10333251953125,
+              "y1": 575.7985229492188
+            },
+            {
+              "x0": 108.0009765625,
+              "y0": 573.4282836914062,
+              "x1": 504.27655029296875,
+              "y1": 586.7184448242188
+            },
+            {
+              "x0": 108.00096130371094,
+              "y0": 584.3482055664062,
+              "x1": 220.26243591308594,
+              "y1": 597.6383666992188
+            }
+          ]
+        }
+      },
+      {
+        "key": "Graves2014",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We reserve a full exposition of the loss function here because our formulation follows exactly the previous work on using CTC to predict the characters of an utterance transcription [Graves et al. 2014; Graves et al. 2006].",
+        "section": "Model",
+        "sectionKind": "method",
+        "ordinal": 6,
+        "title": "Towards End-to-End Speech Recognition with Recurrent Neural Networks",
+        "authors": "Graves, A. and Jaitly, N",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 290.0398254394531,
+              "y0": 562.5083618164062,
+              "x1": 504.10333251953125,
+              "y1": 575.7985229492188
+            },
+            {
+              "x0": 108.0009765625,
+              "y0": 573.4282836914062,
+              "x1": 504.27655029296875,
+              "y1": 586.7184448242188
+            },
+            {
+              "x0": 108.00096130371094,
+              "y0": 584.3482055664062,
+              "x1": 220.26243591308594,
+              "y1": 597.6383666992188
+            }
+          ]
+        }
+      },
+      {
+        "key": "Sutskever2013",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the Nesterov accelerated gradient optimization algorithm as described in [Sutskever et al. 2013] with initial learning rate 10^-5, and maximum momentum 0.95.",
+        "section": "First-Pass Decoding with a Language Model",
+        "sectionKind": "experiments",
+        "ordinal": 9,
+        "title": "On the Importance of Momentum and Initialization in Deep Learning",
+        "authors": "Sutskever, I., Martens, J., Dahl, G., and Hinton, G",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 234.00035095214844,
+              "y0": 288.90948486328125,
+              "x1": 504.03558349609375,
+              "y1": 302.19964599609375
+            },
+            {
+              "x0": 108.00001525878906,
+              "y0": 299.8293762207031,
+              "x1": 156.5413360595703,
+              "y1": 313.1195373535156
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Assuming an input of length T, the output of the neural network will be p(c; x_t) for t = 1,\u2026,T.",
+      "anchorText": ", the output of the neural network will be",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Assuming an",
+      "section": "Decoding",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 232.9205322265625,
+            "y0": 212.46917724609375,
+            "x1": 398.3843688964844,
+            "y1": 225.75933837890625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Taken together with previous work on CTC-based LVCSR, we believe there is an exciting path forward for high quality LVCSR without the complexity of HMM-based infrastructure.",
+      "anchorText": "Taken together with previous work on CTC-based LVCSR, we believe there is an exciting path forward for high quality LVCSR without the complexity of HMM-based infrastructure.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 322.3204040527344,
+            "y0": 397.98883056640625,
+            "x1": 503.95855712890625,
+            "y1": 411.27899169921875
+          },
+          {
+            "x0": 108.0,
+            "y0": 409.02862548828125,
+            "x1": 504.1037292480469,
+            "y1": 422.31878662109375
+          },
+          {
+            "x0": 108.0,
+            "y0": 419.9485168457031,
+            "x1": 275.8509216308594,
+            "y1": 433.2386779785156
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 0,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.LG",
+      "cs.NE"
+    ],
+    "published": "2014-08-12",
+    "authors": [
+      "Awni Y. Hannun",
+      "Andrew L. Maas",
+      "Daniel Jurafsky",
+      "Andrew Y. Ng"
+    ]
+  }
+}

@@ -1,0 +1,2049 @@
+{
+  "id": "1706.05137",
+  "title": "One Model To Learn Them All",
+  "keystone": null,
+  "codeUrl": "https://github.com/tensorflow/tensor2tensor",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1706.05137",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Comparing MultiModel to state-of-the-art from and .",
+      "label": "tab-sota",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Problem",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MultiModel (joint 8-problem)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "State of the art",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ImageNet (top-5 accuracy)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86%",
+            "value": "86",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "95%",
+            "value": "95",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WMT EN DE (BLEU)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.2",
+            "value": "21.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.0",
+            "value": "26.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "WMT EN FR (BLEU)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.5",
+            "value": "30.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.5",
+            "value": "40.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Comparison of the MultiModel trained jointly on 8 tasks and separately on each task.",
+      "label": "tab-compare",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Problem",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Joint 8-problem",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Single problem",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(perpexity)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(perplexity)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ImageNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.7",
+            "value": "1.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "66%",
+            "value": "66",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.6",
+            "value": "1.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67%",
+            "value": "67",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "WMT EN DE",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.4",
+            "value": "1.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "72%",
+            "value": "72",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.4",
+            "value": "1.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "71%",
+            "value": "71",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "WSJ speech",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.4",
+            "value": "4.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41%",
+            "value": "41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5.7",
+            "value": "5.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23%",
+            "value": "23",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Parsing",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.15",
+            "value": "0.15",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "98%",
+            "value": "98",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.2",
+            "value": "0.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "97%",
+            "value": "97",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 153.70779418945312,
+            "y0": 260.75848388671875,
+            "x1": 493.5121154785156,
+            "y1": 270.7210998535156
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Results on training parsing alone, with ImageNet, and with 8 other tasks. We report log-perplexity, per-token accuracy, and the percentage of fully correct parse trees.",
+      "label": "tab-parse",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Problem",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Alone",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "W/ ImageNet",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "W/ 8 Problems",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(ppl)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(ppl)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(ppl)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Parsing",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.20",
+            "value": "0.20",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "97.1%",
+            "value": "97.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.7%",
+            "value": "11.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.16",
+            "value": "0.16",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "97.5%",
+            "value": "97.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.7%",
+            "value": "12.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.15",
+            "value": "0.15",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "97.9%",
+            "value": "97.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "14.5%",
+            "value": "14.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.0072021484375,
+            "y0": 128.19931030273438,
+            "x1": 504.00335693359375,
+            "y1": 138.26104736328125
+          },
+          {
+            "x0": 108.0,
+            "y0": 139.18348693847656,
+            "x1": 432.8205871582031,
+            "y1": 149.14608764648438
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Ablating mixture-of-experts and attention from MultiModel training.",
+      "label": "tab-blocks",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Problem",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "All Blocks",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Without MoE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Without Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(perpexity)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(perplexity)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "log(perplexity)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ImageNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.6",
+            "value": "1.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67%",
+            "value": "67",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.6",
+            "value": "1.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "66%",
+            "value": "66",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.6",
+            "value": "1.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67%",
+            "value": "67",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "WMT EN FR",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.2",
+            "value": "1.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "76%",
+            "value": "76",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.3",
+            "value": "1.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "74%",
+            "value": "74",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.4",
+            "value": "1.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "72%",
+            "value": "72",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 186.29579162597656,
+            "y0": 230.78346252441406,
+            "x1": 460.9246520996094,
+            "y1": 240.74606323242188
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\blfootnote": "\n  \\begingroup\n  \\renewcommand\\thefootnote{}\\footnote{#1}\n  \\addtocounter{footnote}{-1}\n  \\endgroup\n",
+    "\\thefootnote": "",
+    "\\todo": "\\textcolor{red}{TODO[[#1]]}",
+    "\\mc": "\\mathcal{#1}",
+    "\\cs": "ConvStep_{#1}(#2)",
+    "\\concat": "\\left[#1 \\parallel_#3 #2\\right]",
+    "\\natexlab": "#1",
+    "\\url": "\\texttt{#1}",
+    "\\doi": "doi: \\begingroup \\urlstyle{rm}\\Url"
+  },
+  "references": [
+    {
+      "key": "attnall",
+      "raw": "Niki Parmar Jakob Uszkoreit Llion Jones Aidan N. Gomez Lukasz Kaiser Illia Polosukhin Ashish Vaswani, Noam Shazeer. Attention is all you need. arXiv preprint arXiv:1706.03762, 2017",
+      "authors": "Niki Parmar Jakob Uszkoreit Llion Jones Aidan N. Gomez Lukasz Kaiser Illia Polosukhin Ashish Vaswani, Noam Shazeer",
+      "title": "Attention is all you need",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1706.03762",
+      "doi": null
+    },
+    {
+      "key": "layernorm2016",
+      "raw": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton. Layer normalization. arXiv preprint arXiv:1607.06450, 2016",
+      "authors": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton",
+      "title": "Layer normalization",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1607.06450",
+      "doi": null
+    },
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural machine translation by jointly learning to align and translate. CoRR, abs/1409.0473, 2014. URL http://arxiv.org/abs/1409.0473",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "CoRR, abs/1409.0473, 2014 URL",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "cho2014learning",
+      "raw": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. Learning phrase representations using rnn encoder-decoder for statistical machine translation. CoRR, abs/1406.1078, 2014. URL http://arxiv.org/abs/1406.1078",
+      "authors": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Fethi Bougares, Holger Schwenk, and Yoshua Bengio",
+      "title": "Learning phrase representations using rnn encoder-decoder for statistical machine translation",
+      "venue": "CoRR, abs/1406.1078, 2014 URL",
+      "year": 2014,
+      "arxivId": "1406.1078",
+      "doi": null
+    },
+    {
+      "key": "xception2016",
+      "raw": "Francois Chollet. Xception: Deep learning with depthwise separable convolutions. arXiv preprint arXiv:1610.02357, 2016",
+      "authors": "Francois Chollet",
+      "title": "Xception: Deep learning with depthwise separable convolutions",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1610.02357",
+      "doi": null
+    },
+    {
+      "key": "unifiednlp",
+      "raw": "Ronan Collobert and Jason Weston. A unified architecture for natural language processing: deep neural networks with multitask learning. In Proceedings of the 25th International Conference on Machine learning, pages 160--167, 2008",
+      "authors": "Ronan Collobert and Jason Weston",
+      "title": "A unified architecture for natural language processing: deep neural networks with multitask learning",
+      "venue": "In Proceedings of the 25th International Conference on Machine learning, pages 160--167, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wsj1audio",
+      "raw": "Linguistic Data Consortium et al. Csr-ii (wsj1) complete. Linguistic Data Consortium, Philadelphia, vol. LDC94S13A, 1994",
+      "authors": "Linguistic Data Consortium et al",
+      "title": "Csr-ii (wsj1) complete",
+      "venue": "Linguistic Data Consortium, Philadelphia, vol. LDC94S13A, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dahl12",
+      "raw": "George E. Dahl, Dong Yu, Li Deng, and Alex Acero. Context-dependent pre-trained deep neural networks for large-vocabulary speech recognition. IEEE Transactions on Audio, Speech \\& Language Processing, 20 0 (1): 0 30--42, 2012",
+      "authors": "George E. Dahl, Dong Yu, Li Deng, and Alex Acero",
+      "title": "Context-dependent pre-trained deep neural networks for large-vocabulary speech recognition",
+      "venue": "IEEE Transactions on Audio, Speech \\& Language Processing, 20 0 (1): 0 30--42, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997",
+      "raw": "Sepp Hochreiter and J\\\"urgen Schmidhuber. Long short-term memory. Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "authors": "Sepp Hochreiter and J\\\"urgen Schmidhuber",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "KalchbrennerB13",
+      "raw": "Nal Kalchbrenner and Phil Blunsom. Recurrent continuous translation models. In Proceedings EMNLP 2013, pages 1700--1709, 2013. URL http://nal.co/papers/KalchbrennerBlunsom_EMNLP13",
+      "authors": "Nal Kalchbrenner and Phil Blunsom",
+      "title": "Recurrent continuous translation models",
+      "venue": "In Proceedings EMNLP 2013, pages 1700--1709, 2013 URL",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bytenet2016",
+      "raw": "Nal Kalchbrenner, Lasse Espeholt, Karen Simonyan, Aaron van den Oord, Alex Graves, and Koray Kavukcuoglu. Neural machine translation in linear time. arXiv preprint arXiv:1610.10099, 2016",
+      "authors": "Nal Kalchbrenner, Lasse Espeholt, Karen Simonyan, Aaron van den Oord, Alex Graves, and Koray Kavukcuoglu",
+      "title": "Neural machine translation in linear time",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1610.10099",
+      "doi": null
+    },
+    {
+      "key": "adam",
+      "raw": "Diederik P. Kingma and Jimmy Ba. Adam: A method for stochastic optimization. CoRR, abs/1412.6980, 2014. URL http://arxiv.org/abs/1412.6980",
+      "authors": "Diederik P. Kingma and Jimmy Ba",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "CoRR, abs/1412.6980, 2014 URL",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "img12",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. Imagenet classification with deep convolutional neural network. In Advances in Neural Information Processing Systems, 2012",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton",
+      "title": "Imagenet classification with deep convolutional neural network",
+      "venue": "In Advances in Neural Information Processing Systems, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "COCO",
+      "raw": "Tsung-Yi Lin, Michael Maire, Serge J. Belongie, Lubomir D. Bourdev, Ross B. Girshick, James Hays, Pietro Perona, Deva Ramanan, Piotr Doll\\'ar, and C. Lawrence Zitnick. Microsoft COCO: common objects in context. CoRR, abs/1405.0312, 2014. URL http://arxiv.org/abs/1405.0312",
+      "authors": "Tsung-Yi Lin, Michael Maire, Serge J. Belongie, Lubomir D. Bourdev, Ross B. Girshick, James Hays, Pietro Perona, Deva Ramanan, Piotr Doll\\'ar, and C. Lawrence Zitnick",
+      "title": "Microsoft COCO: common objects in context",
+      "venue": "CoRR, abs/1405.0312, 2014 URL",
+      "year": 2014,
+      "arxivId": "1405.0312",
+      "doi": null
+    },
+    {
+      "key": "sepconvnmt",
+      "raw": "Francois Chollet ukasz Kaiser, Aidan N. Gomez. Depthwise separable convolutions for neural machine translation. arXiv preprint arXiv:1706.03059, 2017",
+      "authors": "Francois Chollet ukasz Kaiser, Aidan N. Gomez",
+      "title": "Depthwise separable convolutions for neural machine translation",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1706.03059",
+      "doi": null
+    },
+    {
+      "key": "extendedngpu",
+      "raw": "Samy Bengio ukasz Kaiser. Can active memory replace attention? In Advances in Neural Information Processing Systems, (NIPS), 2016",
+      "authors": "Samy Bengio ukasz Kaiser",
+      "title": "Can active memory replace attention?",
+      "venue": "In Advances in Neural Information Processing Systems, (NIPS), 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "marcus1999wsjtreebank",
+      "raw": "Mitchell P Marcus, Beatrice Santorini, Mary Ann Marcinkiewicz, and Ann Taylor. Treebank-3 ldc99t42. CD-ROM. Philadelphia, Penn.: Linguistic Data Consortium, 1999",
+      "authors": "Mitchell P Marcus, Beatrice Santorini, Mary Ann Marcinkiewicz, and Ann Taylor",
+      "title": "Treebank-3 ldc99t42",
+      "venue": "CD-ROM. Philadelphia, Penn.: Linguistic Data Consortium, 1999",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gnmtmulti",
+      "raw": "Quoc V. Le Maxim Krikun Yonghui Wu Zhifeng Chen Nikhil Thorat Fernanda Vi\u00e9gas Martin Wattenberg Greg Corrado Macduff Hughes Jeffrey Dean Melvin Johnson, Mike Schuster. Google's multilingual neural machine translation system: Enabling zero-shot translation. arXiv preprint arXiv:1611.04558, 2016",
+      "authors": "Quoc V. Le Maxim Krikun Yonghui Wu Zhifeng Chen Nikhil Thorat Fernanda Vi\u00e9gas Martin Wattenberg Greg Corrado Macduff Hughes Jeffrey Dean Melvin Johnson, Mike Schuster",
+      "title": "Google's multilingual neural machine translation system: Enabling zero-shot translation",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.04558",
+      "doi": null
+    },
+    {
+      "key": "MengLWLJL15",
+      "raw": "Fandong Meng, Zhengdong Lu, Mingxuan Wang, Hang Li, Wenbin Jiang, and Qun Liu. Encoding source language with convolutional neural network for machine translation. In ACL, pages 20--30, 2015",
+      "authors": "Fandong Meng, Zhengdong Lu, Mingxuan Wang, Hang Li, Wenbin Jiang, and Qun Liu",
+      "title": "Encoding source language with convolutional neural network for machine translation",
+      "venue": "In ACL, pages 20--30, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "multimodaldeepl",
+      "raw": "Jiquan Ngiam, Aditya Khosla, Mingyu Kim, Juhan Nam, Honglak Lee, and Andrew Y. Ng. Multimodal deep learning. In Proceedings of ICML'11, pages 689--696, 2011",
+      "authors": "Jiquan Ngiam, Aditya Khosla, Mingyu Kim, Juhan Nam, Honglak Lee, and Andrew Y. Ng",
+      "title": "Multimodal deep learning",
+      "venue": "In Proceedings of ICML'11, pages 689--696, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "moe",
+      "raw": "Krzysztof Maziarz Andy Davis Quoc Le Geoffrey Hinton Jeff Dean Noam Shazeer, Azalia Mirhoseini. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. arXiv preprint 1701.06538, 2017",
+      "authors": "Krzysztof Maziarz Andy Davis Quoc Le Geoffrey Hinton Jeff Dean Noam Shazeer, Azalia Mirhoseini",
+      "title": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer",
+      "venue": "arXiv preprint 1701.06538, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "unrelatedtasks",
+      "raw": "Bernardino Romera-Paredes, Andreas Argyriou, Nadia Berthouze, and Massimiliano Pontil. Exploiting unrelated tasks in multi-task learning. In JMLR Proceedings of AISTATS'12, pages 951--959, 2012",
+      "authors": "Bernardino Romera-Paredes, Andreas Argyriou, Nadia Berthouze, and Massimiliano Pontil",
+      "title": "Exploiting unrelated tasks in multi-task learning",
+      "venue": "In JMLR Proceedings of AISTATS'12, pages 951--959, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "imagenet",
+      "raw": "Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander C. Berg, and Li Fei-Fei. ImageNet Large Scale Visual Recognition Challenge. International Journal of Computer Vision (IJCV), 115 0 (3): 0 211--252, 2015. 10.1007/s11263-015-0816-y",
+      "authors": "Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma, Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, Alexander C. Berg, and Li Fei-Fei",
+      "title": "ImageNet Large Scale Visual Recognition Challenge",
+      "venue": "International Journal of Computer Vision (IJCV), 115 0 (3): 0 211--252, 2015 10.1007/s11263-015-0816-y",
+      "year": 2015,
+      "arxivId": null,
+      "doi": "10.1007/s11263-015-0816-y"
+    },
+    {
+      "key": "speechmulti",
+      "raw": "Michael L. Seltzer and Jasha Droppo. Multi-task learning in deep neural networks for improved phoneme recognition. In Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'13), 2013",
+      "authors": "Michael L. Seltzer and Jasha Droppo",
+      "title": "Multi-task learning in deep neural networks for improved phoneme recognition",
+      "venue": "In Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'13), 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "SennrichHB15",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. Neural machine translation of rare words with subword units. CoRR, 2015",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "CoRR, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sifre2013",
+      "raw": "Laurent Sifre and St\\'ephane Mallat. Rotation, scaling and deformation invariant scattering for texture discrimination. In 2013 IEEE Conference on Computer Vision and Pattern Recognition, Portland, OR, USA, June 23-28, 2013, pages 1233--1240, 2013",
+      "authors": "Laurent Sifre and St\\'ephane Mallat",
+      "title": "Rotation, scaling and deformation invariant scattering for texture discrimination",
+      "venue": "In 2013 IEEE Conference on Computer Vision and Pattern Recognition, Portland, OR, USA, June 23-28, 2013, pages 1233--1240, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever14",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc VV Le. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pages 3104--3112, 2014. URL http://arxiv.org/abs/1409.3215",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc VV Le",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pages 3104--3112, 2014 URL",
+      "year": 2014,
+      "arxivId": "1409.3215",
+      "doi": null
+    },
+    {
+      "key": "SzegedyIV16",
+      "raw": "Christian Szegedy, Sergey Ioffe, and Vincent Vanhoucke. Inception-v4, inception-resnet and the impact of residual connections on learning. CoRR, abs/1602.07261, 2016",
+      "authors": "Christian Szegedy, Sergey Ioffe, and Vincent Vanhoucke",
+      "title": "Inception-v4, inception-resnet and the impact of residual connections on learning",
+      "venue": "CoRR, abs/1602.07261, 2016",
+      "year": 2016,
+      "arxivId": "1602.07261",
+      "doi": null
+    },
+    {
+      "key": "wavenet2016",
+      "raw": "A\\\"aron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex Graves, Nal Kalchbrenner, Andrew Senior, and Koray Kavukcuoglu. Wavenet: A generative model for raw audio. CoRR abs/1609.03499, 2016",
+      "authors": "A\\\"aron van den Oord, Sander Dieleman, Heiga Zen, Karen Simonyan, Oriol Vinyals, Alex Graves, Nal Kalchbrenner, Andrew Senior, and Koray Kavukcuoglu",
+      "title": "Wavenet: A generative model for raw audio",
+      "venue": "CoRR abs/1609.03499, 2016",
+      "year": 2016,
+      "arxivId": "1609.03499",
+      "doi": null
+    },
+    {
+      "key": "dilatedconv2015",
+      "raw": "Fisher Yu and Vladlen Koltun. Multi-scale context aggregation by dilated convolutions. arXiv preprint arXiv:1511.07122, 2015",
+      "authors": "Fisher Yu and Vladlen Koltun",
+      "title": "Multi-scale context aggregation by dilated convolutions",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.07122",
+      "doi": null
+    },
+    {
+      "key": "facemulti",
+      "raw": "Loy C.C. Tang X. Zhang Z., Luo P. Facial landmark detection by deep multi-task learning. In Proceedings of ECCV'14, 2014",
+      "authors": "Loy C.C. Tang X. Zhang Z., Luo P",
+      "title": "Facial landmark detection by deep multi-task learning",
+      "venue": "In Proceedings of ECCV'14, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "hidden1(x) &= \\cs{}{W^{3 \\times 1}_{h1}, x}\\\\\n    hidden2(x) &= x + \\cs{}{W^{3 \\times 1}_{h2}, hidden1(x)}\\\\\n    hidden3(x) &= \\cs{}{W^{15 \\times 1}_{h3}, hidden2(x)}\\\\\n    hidden4(x) &= x + \\cs{d=8}{W^{15 \\times 1}_{h4}, hidden3(x)}\\\\\n    ConvBlock(x) &= \\begin{cases}\n                Dropout(hidden4(x), 0.4) & \\text{during training}\\\\\n                hidden4(x) & \\text{otherwise}\n              \\end{cases}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\Delta(2d) &= 1e4^{-\\frac{2d}{depth}} \\\\\n    timing{(t, [2d,2d+1])}   &= \\concat{\\sin(t\\Delta(2d))}{\\cos(t\\Delta(2d))}{2}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "LanguageModality_{\\text{in}}(x, W_E) &= W_E \\cdot x\\\\\n    LanguageModality_{\\text{out}}(x, W_S) &= Softmax(W_S \\cdot x)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "c1(x,F) &= \\cs{f=F}{W^{3 \\times 3}, x}\\\\\n    c2(x,F) &= \\cs{f=F}{W^{3 \\times 3}, c1(x,F)}\\\\\n    p1(x,F) &= MaxPool_2([3 \\times 3], c2(x,F))\\\\\n    ConvRes(x, F) &= p1(x, F) + \\cs{s=2}{W^{1 \\times 1}, x},",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "h1(x) &= \\cs{s=2,f=32}{W^{3 \\times 3}, x}\\\\\n    h2(x) &= \\cs{f=64}{W^{3 \\times 3}, h1(x)}\\\\\n    r1(x) &= ConvRes(h2(x), 128)\\\\\n    r2(x) &= ConvRes(r1(x), 256)\\\\\n    ImageModality_{\\text{in}}(x) &= ConvRes(r2(x), d)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "skip(x) &= \\cs{s=2}{W^{3 \\times 3}_{skip}, x}\\\\\n    h1(x) &= \\cs{}{W^{3 \\times 3}_{h1}, x}\\\\\n    h2(x) &= \\cs{}{W^{3 \\times 3}_{h2}, h1(x)}\\\\\n    h3(x) &= skip(x) + MaxPool_2([3 \\times 3], h2(x))\\\\\n    h4(x) &= \\cs{f=1536}{W^{3 \\times 3}_{h4}, h3(x)}\\\\\n    h5(x) &= \\cs{f=2048}{W^{3 \\times 3}, h4(x)}\\\\\n    h6(x) &= GlobalAvgPool(ReLU(h5(x)))\\\\\n    CategoricalModality_{\\text{out}}(x) &= PointwiseConv(W^{classes}, h6(x))",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1152,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86599731445312,
+            "y0": 295.37530517578125,
+            "x1": 469.3808288574219,
+            "y1": 305.4370422363281
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 306.2843017578125,
+            "x1": 285.9896545410156,
+            "y1": 316.3460388183594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 5567,
+      "numbers": 1,
+      "citations": 15,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 496.81640625,
+            "x1": 475.10211181640625,
+            "y1": 506.6788635253906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "MultiModel Architecture",
+      "chars": 780,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 431.4401550292969,
+            "x1": 504.0021667480469,
+            "y1": 441.3728332519531
+          },
+          {
+            "x0": 108.0,
+            "y0": 442.25128173828125,
+            "x1": 230.58242797851562,
+            "y1": 452.3130187988281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Convolutional Blocks",
+      "chars": 2270,
+      "numbers": 1,
+      "citations": 5,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 586.8902587890625,
+            "x1": 505.64959716796875,
+            "y1": 596.9520263671875
+          },
+          {
+            "x0": 108.0,
+            "y0": 597.7992553710938,
+            "x1": 153.44381713867188,
+            "y1": 607.8610229492188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Attention Blocks",
+      "chars": 1138,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 363.4792785644531,
+            "x1": 439.56103515625,
+            "y1": 373.541015625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Mixture-of-Experts Blocks",
+      "chars": 675,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 580.9243774414062,
+            "x1": 426.7251281738281,
+            "y1": 590.786865234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Encoder and Mixer and Decoder",
+      "chars": 1490,
+      "numbers": 4,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 690.55126953125,
+            "x1": 504.00360107421875,
+            "y1": 700.613037109375
+          },
+          {
+            "x0": 108.0,
+            "y0": 701.5166015625,
+            "x1": 504.0010681152344,
+            "y1": 711.5040893554688
+          },
+          {
+            "x0": 108.0,
+            "y0": 712.4444580078125,
+            "x1": 352.3526916503906,
+            "y1": 722.4070434570312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Modality Nets",
+      "chars": 87,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 429.70147705078125,
+            "x1": 450.8232727050781,
+            "y1": 439.6640930175781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Language modality net",
+      "chars": 592,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 479.0674133300781,
+            "x1": 504.0014953613281,
+            "y1": 488.92987060546875
+          },
+          {
+            "x0": 108.0,
+            "y0": 489.9764099121094,
+            "x1": 172.40879821777344,
+            "y1": 499.8388671875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Image modality net",
+      "chars": 610,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 618.9742431640625,
+            "x1": 377.8235168457031,
+            "y1": 629.0360107421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Categorical modality net",
+      "chars": 632,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 203.44140625,
+            "x1": 386.9738464355469,
+            "y1": 213.3790740966797
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Audio modality net",
+      "chars": 363,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 419.1402893066406,
+            "x1": 503.9967956542969,
+            "y1": 429.2020263671875
+          },
+          {
+            "x0": 108.0,
+            "y0": 430.2004089355469,
+            "x1": 158.70106506347656,
+            "y1": 440.0628662109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Related Models",
+      "chars": 1163,
+      "numbers": 0,
+      "citations": 15,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 507.6412658691406,
+            "x1": 504.0035095214844,
+            "y1": 517.7030029296875
+          },
+          {
+            "x0": 108.0,
+            "y0": 518.55126953125,
+            "x1": 190.3719940185547,
+            "y1": 528.613037109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 4948,
+      "numbers": 10,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 690.55126953125,
+            "x1": 503.99688720703125,
+            "y1": 700.613037109375
+          },
+          {
+            "x0": 108.0,
+            "y0": 701.4602661132812,
+            "x1": 222.9305877685547,
+            "y1": 711.5220336914062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 574,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 330.7392883300781,
+            "x1": 503.99688720703125,
+            "y1": 340.801025390625
+          },
+          {
+            "x0": 108.0,
+            "y0": 341.65203857421875,
+            "x1": 272.58245849609375,
+            "y1": 351.7088317871094
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 6,
+      "extends": 3,
+      "contests": 0,
+      "compares": 0,
+      "background": 19,
+      "traversable": 4
+    },
+    "foundation": {
+      "key": "SennrichHB15",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "Our language-based data is all tokenized using the same vocabulary with 8k subword-units, following the method from [Sennrich et al. 2015].",
+      "section": "Language modality net",
+      "sectionKind": "method",
+      "ordinal": 26,
+      "title": "Neural machine translation of rare words with subword units",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+      "year": 2015,
+      "arxivId": "1508.07909",
+      "inCorpus": true,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 479.0674133300781,
+            "x1": 504.0014953613281,
+            "y1": 488.92987060546875
+          },
+          {
+            "x0": 108.0,
+            "y0": 489.9764099121094,
+            "x1": 172.40879821777344,
+            "y1": 499.8388671875
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "SennrichHB15",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Our language-based data is all tokenized using the same vocabulary with 8k subword-units, following the method from [Sennrich et al. 2015].",
+        "section": "Language modality net",
+        "sectionKind": "method",
+        "ordinal": 26,
+        "title": "Neural machine translation of rare words with subword units",
+        "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+        "year": 2015,
+        "arxivId": "1508.07909",
+        "inCorpus": true,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 479.0674133300781,
+              "x1": 504.0014953613281,
+              "y1": 488.92987060546875
+            },
+            {
+              "x0": 108.0,
+              "y0": 489.9764099121094,
+              "x1": 172.40879821777344,
+              "y1": 499.8388671875
+            }
+          ]
+        }
+      },
+      {
+        "key": "adam",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "In all training runs reported below we used the same set of hyper-parameters and the Adam optimizer [Kingma et al. 2014] with gradient clipping.",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 40,
+        "title": "Adam: A method for stochastic optimization",
+        "authors": "Diederik P. Kingma and Jimmy Ba",
+        "year": 2014,
+        "arxivId": "1412.6980",
+        "inCorpus": true,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 228.77365112304688,
+              "y0": 701.4602661132812,
+              "x1": 505.6537170410156,
+              "y1": 711.5220336914062
+            },
+            {
+              "x0": 108.0,
+              "y0": 712.4747314453125,
+              "x1": 249.7207489013672,
+              "y1": 722.3973999023438
+            }
+          ]
+        }
+      },
+      {
+        "key": "attnall",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "For attention, we use a multi-head dot-product attention mechanism inspired by [Bahdanau et al. 2014] and similar to [Vaswani 2017], as depicted in Figure [ref].",
+        "section": "Attention Blocks",
+        "sectionKind": "method",
+        "ordinal": 20,
+        "title": "Attention is all you need",
+        "authors": "Niki Parmar Jakob Uszkoreit Llion Jones Aidan N. Gomez Lukasz Kaiser Illia Polosukhin Ashish Vaswani, Noam Shazeer",
+        "year": 2017,
+        "arxivId": "1706.03762",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 363.4792785644531,
+              "x1": 439.56103515625,
+              "y1": 373.541015625
+            }
+          ]
+        }
+      },
+      {
+        "key": "bahdanau2014neural",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "For attention, we use a multi-head dot-product attention mechanism inspired by [Bahdanau et al. 2014] and similar to [Vaswani 2017], as depicted in Figure [ref].",
+        "section": "Attention Blocks",
+        "sectionKind": "method",
+        "ordinal": 19,
+        "title": "Neural machine translation by jointly learning to align and translate",
+        "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+        "year": 2014,
+        "arxivId": "1409.0473",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 363.4792785644531,
+              "x1": 439.56103515625,
+              "y1": 373.541015625
+            }
+          ]
+        }
+      },
+      {
+        "key": "extendedngpu",
+        "stance": "extends",
+        "cue": "improve on",
+        "sentence": "The results we achieve are similar to the ones task-specific models get without heavy tuning, e.g., on English-French translation we improve on the Extended Neural GPU results reported last year [Kaiser 2016].",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 41,
+        "title": "Can active memory replace attention?",
+        "authors": "Samy Bengio ukasz Kaiser",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 488.1955261230469,
+              "y0": 445.0223083496094,
+              "x1": 503.9972229003906,
+              "y1": 455.08404541015625
+            },
+            {
+              "x0": 108.0,
+              "y0": 455.9313049316406,
+              "x1": 503.997314453125,
+              "y1": 465.9930419921875
+            },
+            {
+              "x0": 108.0,
+              "y0": 466.91546630859375,
+              "x1": 482.8926086425781,
+              "y1": 476.8780822753906
+            }
+          ]
+        }
+      },
+      {
+        "key": "moe",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use sparsely-gated mixture-of-experts layers of the same kind as introduced in [Shazeer 2017]: A mixture-of-experts layer consists of a number of simple feed-forward neural networks (experts) and a trainable gating network which selects a sparse combination of the experts to process each input.",
+        "section": "Mixture-of-Experts Blocks",
+        "sectionKind": "method",
+        "ordinal": 21,
+        "title": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer",
+        "authors": "Krzysztof Maziarz Andy Davis Quoc Le Geoffrey Hinton Jeff Dean Noam Shazeer, Azalia Mirhoseini",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 429.0683288574219,
+              "y0": 580.9243774414062,
+              "x1": 505.6518859863281,
+              "y1": 590.786865234375
+            },
+            {
+              "x0": 108.0,
+              "y0": 591.7498779296875,
+              "x1": 503.99725341796875,
+              "y1": 601.7224731445312
+            },
+            {
+              "x0": 108.0,
+              "y0": 602.5912475585938,
+              "x1": 465.15887451171875,
+              "y1": 612.6530151367188
+            }
+          ]
+        }
+      },
+      {
+        "key": "sepconvnmt",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For convolution operations, we use depthwise separable convolutions, introduced in [Chollet 2016], in a way similar to [Kaiser 2017].",
+        "section": "Convolutional Blocks",
+        "sectionKind": "method",
+        "ordinal": 15,
+        "title": "Depthwise separable convolutions for neural machine translation",
+        "authors": "Francois Chollet ukasz Kaiser, Aidan N. Gomez",
+        "year": 2017,
+        "arxivId": "1706.03059",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 625.0962524414062,
+              "x1": 449.96685791015625,
+              "y1": 635.1580200195312
+            }
+          ]
+        }
+      },
+      {
+        "key": "wsj1audio",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "Concretely, we train the MultiModel simultaneously on the following 8 corpora: WSJ speech corpus [Consortium 1994]",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 10,
+        "title": "Csr-ii (wsj1) complete",
+        "authors": "Linguistic Data Consortium et al",
+        "year": 1994,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "xception2016",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For convolution operations, we use depthwise separable convolutions, introduced in [Chollet 2016], in a way similar to [Kaiser 2017].",
+        "section": "Convolutional Blocks",
+        "sectionKind": "method",
+        "ordinal": 14,
+        "title": "Xception: Deep learning with depthwise separable convolutions",
+        "authors": "Francois Chollet",
+        "year": 2016,
+        "arxivId": "1610.02357",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 625.0962524414062,
+              "x1": 449.96685791015625,
+              "y1": 635.1580200195312
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We did not invest much time yet in tuning hyper-parameters of the MultiModel, so we believe that the difference seen there will become much smaller with more tuning.",
+      "anchorText": "We did not invest much time yet in tuning hyper-parameters of the MultiModel, so we believe that the difference seen there will become much smaller with more tuning.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Experiments",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 193.2721405029297,
+            "y0": 434.2605895996094,
+            "x1": 505.2460632324219,
+            "y1": 444.1280822753906
+          },
+          {
+            "x0": 108.0,
+            "y0": 445.0223083496094,
+            "x1": 481.9154968261719,
+            "y1": 455.08404541015625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The difference in performance is significant, and since we use both dropout and early stopping, we conjecture that it is not related to over-fitting.",
+      "anchorText": "The difference in performance is significant, and since we use both dropout and early stopping, we conjecture that it is not related to over-fitting.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we conjecture",
+      "section": "Experiments",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 171.99874877929688,
+            "y0": 608.859375,
+            "x1": 504.3531494140625,
+            "y1": 618.7218627929688
+          },
+          {
+            "x0": 108.0,
+            "y0": 619.7303466796875,
+            "x1": 339.80950927734375,
+            "y1": 629.6430053710938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe that this treads a path towards interesting future work on more general deep learning architectures, especially since our model shows transfer learning from tasks with a large amount of available data to ones where the data is limited.",
+      "anchorText": "We believe that this treads a path towards interesting future work on more general deep learning architectures, especially since our model shows transfer learning from tasks with a large amount of available data to ones where the data is limited.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Conclusions",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 237.93063354492188,
+            "y0": 363.6174011230469,
+            "x1": 504.0014953613281,
+            "y1": 373.4798583984375
+          },
+          {
+            "x0": 108.0,
+            "y0": 374.3902893066406,
+            "x1": 504.0031433105469,
+            "y1": 384.4322509765625
+          },
+          {
+            "x0": 108.0,
+            "y0": 385.3594665527344,
+            "x1": 411.4608154296875,
+            "y1": 395.32208251953125
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 0,
+    "shown": 0,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2017-06-16",
+    "authors": [
+      "Lukasz Kaiser",
+      "Aidan N. Gomez",
+      "Noam Shazeer",
+      "Ashish Vaswani",
+      "Niki Parmar",
+      "Llion Jones",
+      "Jakob Uszkoreit"
+    ]
+  }
+}
