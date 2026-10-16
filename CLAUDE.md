@@ -22,13 +22,13 @@ change that trades that away is the wrong change, however much it improves a num
 ## Where things are
 
 ```
-services/core/          Python engine (parser, anchors, cue rules). 263 tests.
+services/core/          Python engine (parser, anchors, cue rules). 270 tests.
   keystone/ingest/      arXiv source, PDF, anchors, metadata
   keystone/lineage/     stance + assumption cue rules
   keystone/audit/       numeric tracing and the deterministic checks
 apps/web/               Next 15 App Router site. 44 JS tests.
   app/api/ingest.py     Python serverless function: analyse any arXiv paper on demand
-  public/dossiers/      the built library — 125 papers, committed
+  public/dossiers/      the built library — 160 papers, committed
 eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in the repo.
 ```
 
@@ -36,7 +36,7 @@ eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in t
 
 ```bash
 # Python engine
-cd services/core && uv run pytest -q              # 263 tests (needs `brew install uv`)
+cd services/core && uv run pytest -q              # 270 tests (needs `brew install uv`)
 cd services/core && uv run keystone --help        # the CLI
 
 # Site
@@ -48,8 +48,8 @@ cd apps/web && npm run build
 cd apps/web && npx vercel --prod --yes
 ```
 
-On a fresh clone 26 of the 263 skip: they read PDFs from `eval/corpus/pdf/`, which is
-gitignored. "237 passed, 26 skipped" is a clean run without the corpus, not a failure. Fetch the
+On a fresh clone 26 of the 270 skip: they read PDFs from `eval/corpus/pdf/`, which is
+gitignored. "244 passed, 26 skipped" is a clean run without the corpus, not a failure. Fetch the
 corpus with `eval/fetch_library.sh` (about 45 minutes; arXiv refused nothing at ~4s).
 
 ## Traps that have actually cost time here
@@ -129,7 +129,7 @@ every empty search long after the library reached 101. Count it off the JSON.
 **An equation body has no environment.** The parser stores what is inside `align` or
 `eqnarray` and the environment beside it, so the body alone has bare `&`s that KaTeX
 rejects. `lib/equation.ts` puts the environment back; without it 164 of 524 equations
-rendered as error-coloured source. Twenty of 637 still do, each for a paper-specific reason (an uncaptured
+rendered as error-coloured source. 28 of 840 still do, each for a paper-specific reason (an uncaptured
 macro, `\resizebox`).
 
 **Growing the corpus is a test of the checks.** Going 74 → 101 papers produced five false
@@ -137,7 +137,12 @@ macro, `\resizebox`).
 identified. A finding that cannot name the cell it accuses must not be published. The
 same thing happened at 9 → 35 papers with a different check, and again at 101 → 125:
 Zeiler & Fergus print a table as two side-by-side halves with one Mean row for both,
-which `table.aggregate_mismatch` read as wrong. Folded tables are now skipped.
+which `table.aggregate_mismatch` read as wrong. Folded tables are now skipped. At
+125 → 160, `headline_table_mismatch` read 0.90 under an "E %" heading as 90% to accuse
+an abstract's 89.94%, and set "greater than 99%" against a cell; a mismatch now believes
+the header's unit and never accuses a bound. The same growth found a *real* one —
+Gillick et al.'s AVERAGE row — which is listed in `VERIFIED` in `tests/test_planted.py`
+with the arithmetic. Add to that list only with proof; it is what keeps the gate a gate.
 
 **Rebuild the whole library when you grow it, not only the new papers.** A citation
 becomes a walkable edge only when the *citing* paper is built with the cited one already
@@ -147,7 +152,14 @@ the bibliographies that confirm titles and drops edges instead. Expect some head
 move: `foundation` breaks ties toward a work that is in the library, so at 101 → 125
 nine papers' "Stands on" changed with no reading changed. That is the rule working.
 
-**Five of the top expansion candidates are refused, correctly.** Adam, PPO and
+**Build twice after growing, and diff the two.** Titles are confirmed by what the
+library's bibliographies print, read from the dossiers on disk *before* the run, so the
+first build after adding papers has not seen the new papers' bibliographies. At
+125 → 160 the second pass changed three titles and added an edge; the third changed
+nothing. Stop when two consecutive builds are byte-identical (`diff -rq`).
+
+**Six of the top expansion candidates are refused, correctly.** PALMS (2106.10328)
+has no source at all. The other five: Adam, PPO and
 1704.06611 ship only an `\includepdf`; 1806.03822 has no prose in its source;
 1909.08593's LaTeX is a stale template that does not match its PDF. `expand` will
 keep ranking them first — skip them rather than work around the guards.
@@ -179,11 +191,11 @@ trap above).
 | `ANTHROPIC_API_KEY` | Ask, and the library guide |
 | `KEYSTONE_OWNER` | email(s) allowed to read `/stats`; unset = nobody |
 
-## State, as of 2026-10-13
+## State, as of 2026-10-16
 
-125 papers · 240 walkable edges · 883 citation readings (91.4% anchored) · 607
-assumptions · 1490 searchable rows · 617 of 637 equations typeset. 263 Python tests,
-44 JS tests, all green.
+160 papers · 322 walkable edges · 1056 citation readings (90.8% anchored) · 729
+assumptions · 1785 searchable rows · 812 of 840 equations typeset. 270 Python tests,
+44 JS tests, all green. Three findings, all verified real: EfficientNet ×2, Gillick ×1.
 
 Shipped and verified on production: the reader with pixel anchors, full-screen page,
 highlights and notes (sign-in required, stored in the PDF's coordinate space so they can
@@ -196,12 +208,14 @@ at `/api/mcp`, and cookieless analytics at `/stats`.
 
 Nothing is broken or half-finished. These are the open directions, roughly by value:
 
-1. **Grow the library further.** 125 papers; the ranking in `keystone expand --dry-run`
+1. **Grow the library further.** 160 papers; the ranking in `keystone expand --dry-run`
    has plenty of good candidates left. Fetch with the curl workaround above. Watch for
    new findings each time — see the corpus trap.
-2. **Hand-label more stance rows.** Accuracy is measured on 90 labelled rows, only 30 of
-   them drawn after the rules last changed, which is why the held-out interval is
-   63–90%. `keystone stance-sample` draws more; more labels narrow the honest number.
+2. **Hand-label more stance rows.** In progress: 60 more rows were drawn on 2026-10-16
+   (`gold: null` in `eval/labels/stance.jsonl`, all `heldout`) and are being labelled
+   blind on a claude.ai page, <https://claude.ai/artifact/796x9V3VLo3LRf5XAtZ3cK>, whose
+   database holds the labels (`labels/<row>`, rows `r01`–`r60` in file order of the
+   unlabelled rows). Copy them into the file, then `stance-refresh` and `stance-eval`.
 3. **Compare two papers** — a view for what two papers share, where they disagree, and
    which assumptions they both make. All the data exists; `lib/paths.ts` already walks
    between papers.
@@ -213,6 +227,6 @@ Nothing is broken or half-finished. These are the open directions, roughly by va
    so it needs the same anchor-or-say-nothing gate as everything else.
 
 Two things that look like bugs and are not: `/stats` holds ~7 events from testing on
-2026-09-25, and two `headline_table_mismatch` findings are shown in the library — both
-are real (EfficientNet's introduction says 76.3% for ResNet-50 where its Table 3 says
-76.0%).
+2026-09-25, and three findings are shown in the library — all real: EfficientNet's
+introduction says 76.3% for ResNet-50 where its Table 3 says 76.0% (and 83.0 vs 82.9),
+and Gillick et al.'s Table 1 averages 95.85 where its rows give 95.83.

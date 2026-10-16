@@ -22,8 +22,9 @@ from __future__ import annotations
 
 from decimal import Decimal
 
-from keystone.audit.numbers import Number
-from keystone.audit.trace import Coverage, Trace, mismatch_findings
+from keystone.audit.numbers import Number, find_numbers
+from keystone.audit.trace import Coverage, Trace, mismatch_findings, trace_all
+from keystone.ingest.tables import cell_number
 from keystone.graph.models import NumericMention, SectionKind, Table, TableCell
 
 
@@ -81,3 +82,39 @@ def test_a_mismatch_with_no_row_is_not_reported() -> None:
 
 def test_a_whitespace_row_is_no_row() -> None:
     assert mismatch_findings(_mismatch("   ")) == []
+
+
+# ------------------------------------------------ what may be set against a cell at all
+#
+# Both from the library's growth to 160 papers, and both pairings the tracer made
+# before any row test was reached.
+
+
+def _traced(sentence: str, raw_cell: str, column: str, row: str = "SNLI") -> str:
+    """Trace the first number in `sentence` against a one-cell table; return its status."""
+    number = find_numbers(sentence)[0]
+    mention = NumericMention(number=number, sentence=sentence, section=SectionKind.ABSTRACT)
+    cell = TableCell(
+        row=1, column=1, raw=raw_cell, number=cell_number(raw_cell),
+        row_header=row, column_header=column,
+    )
+    table = Table(ordinal=8, caption="SNLI entailment accuracy under triggers", cells=(cell,))
+    return trace_all((mention,), (table,)).traces[0].status
+
+
+def test_a_near_miss_on_the_same_scale_is_still_a_mismatch() -> None:
+    """The control: without it the two below would pass by suppressing everything."""
+    assert _traced("SNLI entailment accuracy is 89.94% before attack.", "90.31%", "Accuracy") == "mismatch"
+
+
+def test_a_cell_under_a_percent_heading_is_read_as_a_percentage() -> None:
+    """0.90 under "E %" is under one percent, not ninety (1908.07125, Table 8)."""
+    assert _traced("SNLI entailment accuracy is 89.94% before attack.", "0.90", "E %") != "mismatch"
+
+
+def test_a_bound_is_never_set_against_a_cell() -> None:
+    """"Greater than 99%" holds for 99.6 and for 100 alike (1511.04834)."""
+    assert _traced(
+        "SNLI entailment accuracy is greater than 99.10% on most cases.", "99.40%", "Accuracy"
+    ) != "mismatch"
+    assert _traced("SNLI entailment accuracy is 99.10% on most cases.", "99.40%", "Accuracy") == "mismatch"

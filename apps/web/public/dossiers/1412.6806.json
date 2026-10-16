@@ -1,0 +1,3437 @@
+{
+  "id": "1412.6806",
+  "title": "Striving for Simplicity: The All Convolutional Net",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1412.6806",
+  "numbers": [
+    {
+      "value": "350 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We used and trained all networks for a total of 350 epochs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 227.58494567871094,
+            "y0": 584.0514526367188,
+            "x1": 427.7832946777344,
+            "y1": 594.0140380859375
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "The three base networks used for classification on CIFAR-10 and CIFAR-100.",
+      "label": "base-models",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "A",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "B",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "C",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Input RGB image",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "max-pooling stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "max-pooling stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv. 10 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "global averaging over spatial dimensions",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "10 or 100-way softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 167.64479064941406,
+            "y0": 503.34503173828125,
+            "x1": 479.57373046875,
+            "y1": 513.3076171875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Model description of the three networks derived from base model C used for evaluating the importance of pooling in case of classification on CIFAR-10 and CIFAR-100. The derived models for base models A and B are built analogously. The higher layers are the same as in Table .",
+      "label": "derived-models",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Strided-CNN-C",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ConvPool-CNN-C",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "All-CNN-C",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Input RGB image",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "with stride",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "max-pooling stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "conv. 96 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "with stride",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "with stride",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "max-pooling stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "conv. 192 ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "with stride",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Comparison between the base and derived models on the CIFAR-10 dataset.",
+      "label": "results-cifar10-base",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "CIFAR-10 classification error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Error ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "# parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "without data augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.47 %",
+            "value": "12.47",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Strided-CNN-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.46 %",
+            "value": "13.46",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ConvPool-CNN-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ALL-CNN-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.30 %",
+            "value": "10.30",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Model B",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.20 %",
+            "value": "10.20",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Strided-CNN-B",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.98 %",
+            "value": "10.98",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "ConvPool-CNN-B",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.33 %",
+            "value": "9.33",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "ALL-CNN-B",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Model C",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.74 %",
+            "value": "9.74",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Strided-CNN-C",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "10.19 %",
+            "value": "10.19",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "ConvPool-CNN-C",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.31 %",
+            "value": "9.31",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "ALL-CNN-C",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 171.85482788085938,
+            "y0": 305.67730712890625,
+            "x1": 475.3654479980469,
+            "y1": 315.6399230957031
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Test error on CIFAR-10 and CIFAR-100 for the All-CNN compared to the state of the art from the literature. The All-CNN is the version adapted from base model C (i.e. All-CNN-C). The other results are from: [1] , [2] , [3] , [4] , [5] , [6] . The number of parameters is given in million parameters.",
+      "label": "results-cifar10",
+      "numericCells": 8,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "CIFAR-10 classification error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Error ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "# params",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "without data augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maxout [1]",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.68 %",
+            "value": "11.68",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Network in Network [2]",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.41 %",
+            "value": "10.41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deeply Supervised [3]",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.69 %",
+            "value": "9.69",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ALL-CNN (Ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "with data augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maxout [1]",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.38 %",
+            "value": "9.38",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "DropConnect [2]",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.32 %",
+            "value": "9.32",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "dasNet [4]",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "9.22 %",
+            "value": "9.22",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Network in Network [2]",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "8.81 %",
+            "value": "8.81",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Deeply Supervised [3]",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "7.97 %",
+            "value": "7.97",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "ALL-CNN (Ours)",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Test error on CIFAR-10 and CIFAR-100 for the All-CNN compared to the state of the art from the literature. The All-CNN is the version adapted from base model C (i.e. All-CNN-C). The other results are from: [1] , [2] , [3] , [4] , [5] , [6] . The number of parameters is given in million parameters.",
+      "label": "results-cifar10",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "CIFAR-100 classification error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Error ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CNN + tree prior [5]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.85 %",
+            "value": "36.85",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Network in Network [2]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "35.68 %",
+            "value": "35.68",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deeply Supervised [3]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.57 %",
+            "value": "34.57",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Maxout (larger) [4]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.54 %",
+            "value": "34.54",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "dasNet [4]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.78 %",
+            "value": "33.78",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ALL-CNN (Ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.71 %",
+            "value": "33.71",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Fractional Pooling (1 test) [6]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Fractional Pooling (12 tests) [6]",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Test error on CIFAR-10 and CIFAR-100 for the All-CNN compared to the state of the art from the literature. The All-CNN is the version adapted from base model C (i.e. All-CNN-C). The other results are from: [1] , [2] , [3] , [4] , [5] , [6] . The number of parameters is given in million parameters.",
+      "label": "results-cifar10",
+      "numericCells": 3,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "CIFAR-10 classification error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Error ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "with large data augmentation",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Spatially Sparse CNN [6]",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.47 %",
+            "value": "4.47",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Large ALL-CNN (Ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.41 %",
+            "value": "4.41",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Fractional Pooling (1 test) [6]",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.50 %",
+            "value": "4.50",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Fractional Pooling (100 tests) [6]",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Schematic of visualizing the activations of high layer neurons. a) Given an input image, we perform the forward pass to the layer we are interested in, then set to zero all activations except one and propagate back to the image to get a reconstruction. b) Different methods of propagating back through a ReLU nonlinearity. c) Formal definition of different methods for propagating a output activation back through a ReLU unit in layer ; note that the 'deconvnet' approach and guided backpropagation do not compute a true gradient but rather an imputed version.",
+      "label": "fig:scheme_deconv",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "conv1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "conv2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "conv3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "Visualization of patterns learned by the layer conv6 (top) and layer conv9 (bottom) of the network trained on ImageNet. Each row corresponds to one filter. The visualization using \"guided backpropagation\" is based on the top 10 image patches activating this filter taken from the ImageNet dataset. Note that image sizes are not preserved (in order to save space).",
+      "label": "fig:pool_reconstructions",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "deconv",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "guided backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "corresponding image crops",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.5415802001953,
+            "y0": 319.5494689941406,
+            "x1": 504.00323486328125,
+            "y1": 329.5120849609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 330.5074768066406,
+            "x1": 504.003173828125,
+            "y1": 340.4700927734375
+          },
+          {
+            "x0": 108.0,
+            "y0": 341.46649169921875,
+            "x1": 504.0032653808594,
+            "y1": 351.4291076660156
+          },
+          {
+            "x0": 108.0,
+            "y0": 352.42547607421875,
+            "x1": 395.2716064453125,
+            "y1": 362.3880920410156
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 9",
+      "caption": "Visualization of patterns learned by the layer conv6 (top) and layer conv9 (bottom) of the network trained on ImageNet. Each row corresponds to one filter. The visualization using \"guided backpropagation\" is based on the top 10 image patches activating this filter taken from the ImageNet dataset. Note that image sizes are not preserved (in order to save space).",
+      "label": "fig:pool_reconstructions",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "deconv",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "guided backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "corresponding image crops",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.5415802001953,
+            "y0": 319.5494689941406,
+            "x1": 504.00323486328125,
+            "y1": 329.5120849609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 330.5074768066406,
+            "x1": 504.003173828125,
+            "y1": 340.4700927734375
+          },
+          {
+            "x0": 108.0,
+            "y0": 341.46649169921875,
+            "x1": 504.0032653808594,
+            "y1": 351.4291076660156
+          },
+          {
+            "x0": 108.0,
+            "y0": 352.42547607421875,
+            "x1": 395.2716064453125,
+            "y1": 362.3880920410156
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 10",
+      "caption": "Architecture of the Large All-CNN network for CIFAR-10.",
+      "label": "tbl:large_cifar_net",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Large All-CNN for CIFAR-10",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Layer name",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Layer description",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "input",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Input RGB image",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 320 LeakyReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 320 LeakyReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv3",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 320 LeakyReLU, stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 640 LeakyReLU, stride 1, dropout 0.1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv5",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 640 LeakyReLU, stride 1, dropout 0.1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv6",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 640 LeakyReLU, stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv7",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 960 LeakyReLU, stride 1, dropout 0.2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv8",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 960 LeakyReLU, stride 1, dropout 0.2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv9",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 960 LeakyReLU, stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv10",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1280 LeakyReLU, stride 1, dropout 0.3",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv11",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1280 LeakyReLU, stride 1, dropout 0.3",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv12",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1280 LeakyReLU, stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv13",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1600 LeakyReLU, stride 1, dropout 0.4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv14",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1600 LeakyReLU, stride 1, dropout 0.4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv15",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1600 LeakyReLU, stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv16",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1920 LeakyReLU, stride 1, dropout 0.5",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv17",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1920 LeakyReLU, stride 1, dropout 0.5",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10-way softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 205.42286682128906,
+            "y0": 262.06134033203125,
+            "x1": 441.7954406738281,
+            "y1": 272.0239562988281
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 11",
+      "caption": "Architecture of the ImageNet network.",
+      "label": "tbl:imagenet_net",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "ImageNet model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Layer name",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Layer description",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "input",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Input RGB image",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 96 ReLU units, stride 4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 96 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv3",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 96 ReLU, stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv4",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 256 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv5",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 256 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv6",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 256 ReLU, stride 2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv7",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 384 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv8",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 384 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv9",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 384 ReLU, stride 2, dropout 50 %",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv10",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1024 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv11",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1024 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "conv12",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "conv. 1000 ReLU, stride 1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "global_pool",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "global average pooling ( )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1000-way softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 246.3347930908203,
+            "y0": 91.06349182128906,
+            "x1": 400.8845520019531,
+            "y1": 101.02609252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 12",
+      "caption": "Architecture of the ImageNet network.",
+      "label": "tbl:imagenet_net",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "'deconvnet'",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "guided backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "with pooling + switches",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "without pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 246.3347930908203,
+            "y0": 91.06349182128906,
+            "x1": 400.8845520019531,
+            "y1": 101.02609252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 13",
+      "caption": "Visualization of descriptive image regions with different methods from the single largest activation in the last convolutional layer conv12 of the network trained on ImageNet. Reconstructions for 4 different images are shown.",
+      "label": "fig:cccp8_different_methods",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "'deconvnet'",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "guided backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "with pooling + switches",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "without pooling",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.268798828125,
+            "y0": 649.0484619140625,
+            "x1": 504.0032653808594,
+            "y1": 659.0110473632812
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 660.0074462890625,
+            "x1": 504.0032653808594,
+            "y1": 669.9700317382812
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 670.9664306640625,
+            "x1": 261.6133117675781,
+            "y1": 680.9290161132812
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 14",
+      "caption": "Visualization of descriptive image regions with different methods from the single largest activation in the last convolutional layer conv12 of the network trained on ImageNet. Reconstructions for 4 different images are shown.",
+      "label": "fig:cccp8_different_methods",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "'deconvnet'",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "guided backpropagation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.268798828125,
+            "y0": 649.0484619140625,
+            "x1": 504.0032653808594,
+            "y1": 659.0110473632812
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 660.0074462890625,
+            "x1": 504.0032653808594,
+            "y1": 669.9700317382812
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 670.9664306640625,
+            "x1": 261.6133117675781,
+            "y1": 680.9290161132812
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}",
+    "\\TODO": "[TODO #1]"
+  },
+  "references": [
+    {
+      "key": "Behnke2003",
+      "raw": "Behnke, Sven. Hierarchical neural networks for image interpretation. PhD thesis, 2003",
+      "authors": "Behnke, Sven",
+      "title": "Hierarchical neural networks for image interpretation",
+      "venue": "PhD thesis, 2003",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ciresan_2011",
+      "raw": "Ciresan, Dan C., Meier, Ueli, Masci, Jonathan, Gambardella, Luca M., and Schmidhuber, J\\\"urgen. High-performance neural networks for visual object classification. In arxiv:cs/arXiv:1102.0183. URL http://arxiv.org/abs/1102.0183",
+      "authors": "Ciresan, Dan C., Meier, Ueli, Masci, Jonathan, Gambardella, Luca M., and Schmidhuber, J\\\"urgen",
+      "title": "High-performance neural networks for visual object classification",
+      "venue": "In arxiv:cs/ URL",
+      "year": null,
+      "arxivId": "1102.0183",
+      "doi": null
+    },
+    {
+      "key": "Imagenet_2009",
+      "raw": "Deng, Jia, Dong, Wei, Socher, Richard, jia Li, Li, Li, Kai, and Fei-fei, Li. Imagenet: A large-scale hierarchical image database. In CVPR, 2009",
+      "authors": "Deng, Jia, Dong, Wei, Socher, Richard, jia Li, Li, Li, Kai, and Fei-fei, Li",
+      "title": "Imagenet: A large-scale hierarchical image database",
+      "venue": "In CVPR, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Estrach_2014",
+      "raw": "Estrach, Joan B., Szlam, Arthur, and Lecun, Yann. Signal recovery from pooling representations. In ICML, 2014",
+      "authors": "Estrach, Joan B., Szlam, Arthur, and Lecun, Yann",
+      "title": "Signal recovery from pooling representations",
+      "venue": "In ICML, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow2013",
+      "raw": "Goodfellow, Ian J., Warde-Farley, David, Mirza, Mehdi, Courville, Aaron, and Bengio, Yoshua. Maxout networks. In ICML, 2013",
+      "authors": "Goodfellow, Ian J., Warde-Farley, David, Mirza, Mehdi, Courville, Aaron, and Bengio, Yoshua",
+      "title": "Maxout networks",
+      "venue": "In ICML, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graham2015",
+      "raw": "Graham, Benjamin. Fractional max-pooling. In arxiv:cs/arXiv:1412.6071, 2015",
+      "authors": "Graham, Benjamin",
+      "title": "Fractional max-pooling",
+      "venue": "In arxiv:cs/ 2015",
+      "year": 2015,
+      "arxivId": "1412.6071",
+      "doi": null
+    },
+    {
+      "key": "Gulcehre_2014",
+      "raw": "G\\\"ul cehre, Caglar, Cho, KyungHyun, Pascanu, Razvan, and Bengio, Yoshua. Learned-norm pooling for deep feedforward and recurrent neural networks. In ECML, 2014",
+      "authors": "G\\\"ul cehre, Caglar, Cho, KyungHyun, Pascanu, Razvan, and Bengio, Yoshua",
+      "title": "Learned-norm pooling for deep feedforward and recurrent neural networks",
+      "venue": "In ECML, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton_arxiv2012",
+      "raw": "Hinton, Geoffrey E., Srivastava, Nitish, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan R. Improving neural networks by preventing co-adaptation of feature detectors. 2012. pre-print, arxiv:cs/1207.0580v3",
+      "authors": "Hinton, Geoffrey E., Srivastava, Nitish, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan R",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "venue": "2012 pre-print, arxiv:cs/1207.0580v3",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Jarrett_2009",
+      "raw": "Jarrett, Kevin, Kavukcuoglu, Koray, Ranzato, Marc'Aurelio, and LeCun, Yann. What is the best multi-stage architecture for object recognition? In ICCV, 2009",
+      "authors": "Jarrett, Kevin, Kavukcuoglu, Koray, Ranzato, Marc'Aurelio, and LeCun, Yann",
+      "title": "What is the best multi-stage architecture for object recognition?",
+      "venue": "In ICCV, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Jia_2012",
+      "raw": "Jia, Yangqing, Huang, Chang, and Darrell, Trevor. Beyond spatial pyramids: Receptive field learning for pooled image features. In CVPR, 2012",
+      "authors": "Jia, Yangqing, Huang, Chang, and Darrell, Trevor",
+      "title": "Beyond spatial pyramids: Receptive field learning for pooled image features",
+      "venue": "In CVPR, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "caffe",
+      "raw": "Jia, Yangqing, Shelhamer, Evan, Donahue, Jeff, Karayev, Sergey, Long, Jonathan, Girshick, Ross, Guadarrama, Sergio, and Darrell, Trevor. Caffe: Convolutional architecture for fast feature embedding. arXiv preprint arXiv:1408.5093, 2014",
+      "authors": "Jia, Yangqing, Shelhamer, Evan, Donahue, Jeff, Karayev, Sergey, Long, Jonathan, Girshick, Ross, Guadarrama, Sergio, and Darrell, Trevor",
+      "title": "Caffe: Convolutional architecture for fast feature embedding",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1408.5093",
+      "doi": null
+    },
+    {
+      "key": "Krizhevsky2009",
+      "raw": "Krizhevsky, A. and Hinton, G. Learning multiple layers of features from tiny images. 2009",
+      "authors": "Krizhevsky, A. and Hinton, G",
+      "title": "Learning multiple layers of features from tiny images",
+      "venue": "2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Krizhevsky_NIPS2012",
+      "raw": "Krizhevsky, Alex, Sutskever, Ilya, and Hinton, Geoffrey E. Imagenet classification with deep convolutional neural networks. In NIPS, pp.\\ 1106--1114, 2012",
+      "authors": "Krizhevsky, Alex, Sutskever, Ilya, and Hinton, Geoffrey E",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In NIPS, pp.\\ 1106--1114, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "LeCun_IEEE1998",
+      "raw": "LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86 0 (11): 0 2278--2324, November 1998",
+      "authors": "LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P",
+      "title": "Gradient-based learning applied to document recognition",
+      "venue": "Proceedings of the IEEE, 86 0 (11): 0 2278--2324, November 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lee_2014",
+      "raw": "Lee, Chen-Yu, Xie, Saining, Gallagher, Patrick, Zhang, Zhengyou, and Tu, Zhuowen. Deeply supervised nets. In Deep Learning and Representation Learning Workshop, NIPS, 2014",
+      "authors": "Lee, Chen-Yu, Xie, Saining, Gallagher, Patrick, Zhang, Zhengyou, and Tu, Zhuowen",
+      "title": "Deeply supervised nets",
+      "venue": "In Deep Learning and Representation Learning Workshop, NIPS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lin_2014",
+      "raw": "Lin, Min, Chen, Qiang, and Yan, Shuicheng. Network in network. In ICLR: Conference Track, 2014",
+      "authors": "Lin, Min, Chen, Qiang, and Yan, Shuicheng",
+      "title": "Network in network",
+      "venue": "In ICLR: Conference Track, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "VGG_2014",
+      "raw": "Simonyan, Karen and Zisserman, Andrew. Very deep convolutional networks for large-scale image recognition. In arxiv:cs/arXiv:1409.1556, 2014",
+      "authors": "Simonyan, Karen and Zisserman, Andrew",
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "venue": "In arxiv:cs/ 2014",
+      "year": 2014,
+      "arxivId": "1409.1556",
+      "doi": null
+    },
+    {
+      "key": "Simonyan_arxiv2014",
+      "raw": "Simonyan, Karen, Vedaldi, Andrea, and Zisserman, Andrew. Deep inside convolutional networks: Visualising image classification models and saliency maps. In 1312.6034, also appeared at ICLR Workshop 2014, 2014. URL http://arxiv.org/abs/1312.6034",
+      "authors": "Simonyan, Karen, Vedaldi, Andrea, and Zisserman, Andrew",
+      "title": "Deep inside convolutional networks: Visualising image classification models and saliency maps",
+      "venue": "In 1312.6034, also appeared at ICLR Workshop 2014, 2014 URL",
+      "year": 2014,
+      "arxivId": "1312.6034",
+      "doi": null
+    },
+    {
+      "key": "SprRied2014a",
+      "raw": "Springenberg, Jost Tobias and Riedmiller, Martin. Improving deep neural networks with probabilistic maxout units. In arXiv:1312.6116, also appeared at ICLR: Workshop Track, 2013. URL http://arxiv.org/abs/1312.6116",
+      "authors": "Springenberg, Jost Tobias and Riedmiller, Martin",
+      "title": "Improving deep neural networks with probabilistic maxout units",
+      "venue": "In also appeared at ICLR: Workshop Track, 2013 URL",
+      "year": 2013,
+      "arxivId": "1312.6116",
+      "doi": null
+    },
+    {
+      "key": "Nitish2013",
+      "raw": "Srivastava, Nitish and Salakhutdinov, Ruslan. Discriminative transfer learning with tree-based priors. In NIPS. 2013",
+      "authors": "Srivastava, Nitish and Salakhutdinov, Ruslan",
+      "title": "Discriminative transfer learning with tree-based priors",
+      "venue": "In NIPS. 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Srivastava14a",
+      "raw": "Srivastava, Nitish, Hinton, Geoffrey, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan. Dropout: A simple way to prevent neural networks from overfitting. Journal of Machine Learning Research (JMLR), 15: 0 1929--1958, 2014",
+      "authors": "Srivastava, Nitish, Hinton, Geoffrey, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan",
+      "title": "Dropout: A simple way to prevent neural networks from overfitting",
+      "venue": "Journal of Machine Learning Research (JMLR), 15: 0 1929--1958, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "SrivastavaSchmid_2013",
+      "raw": "Srivastava, Rupesh K, Masci, Jonathan, Kazerounian, Sohrob, Gomez, Faustino, and Schmidhuber, J\\\"urgen. Compete to compute. In NIPS. 2013",
+      "authors": "Srivastava, Rupesh K, Masci, Jonathan, Kazerounian, Sohrob, Gomez, Faustino, and Schmidhuber, J\\\"urgen",
+      "title": "Compete to compute",
+      "venue": "In NIPS. 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Stollenga_2014",
+      "raw": "Stollenga, Marijn F, Masci, Jonathan, Gomez, Faustino, and Schmidhuber, J\\\"urgen. Deep networks with internal selective attention through feedback connections. In NIPS, 2014",
+      "authors": "Stollenga, Marijn F, Masci, Jonathan, Gomez, Faustino, and Schmidhuber, J\\\"urgen",
+      "title": "Deep networks with internal selective attention through feedback connections",
+      "venue": "In NIPS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "GoingDeep_2014",
+      "raw": "Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet, Pierre, Reed, Scott, Anguelov, Dragomir, Erhan, Dumitru, Vanhoucke, Vincent, and Rabinovich, Andrew. Going deeper with convolutions. In arxiv:cs/arXiv:1409.4842, 2014",
+      "authors": "Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet, Pierre, Reed, Scott, Anguelov, Dragomir, Erhan, Dumitru, Vanhoucke, Vincent, and Rabinovich, Andrew",
+      "title": "Going deeper with convolutions",
+      "venue": "In arxiv:cs/ 2014",
+      "year": 2014,
+      "arxivId": "1409.4842",
+      "doi": null
+    },
+    {
+      "key": "WanLi2013",
+      "raw": "Wan, Li, Zeiler, Matthew D., Zhang, Sixin, LeCun, Yann, and Fergus, Rob. Regularization of neural networks using dropconnect. In International Conference on Machine Learning (ICML), 2013",
+      "authors": "Wan, Li, Zeiler, Matthew D., Zhang, Sixin, LeCun, Yann, and Fergus, Rob",
+      "title": "Regularization of neural networks using dropconnect",
+      "venue": "In International Conference on Machine Learning (ICML), 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ZeilerStochastic2013",
+      "raw": "Zeiler, Matthew D. and Fergus, Rob. Stochastic pooling for regularization of deep convolutional neural networks. In ICLR, 2013",
+      "authors": "Zeiler, Matthew D. and Fergus, Rob",
+      "title": "Stochastic pooling for regularization of deep convolutional neural networks",
+      "venue": "In ICLR, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zeiler_ECCV2014",
+      "raw": "Zeiler, Matthew D. and Fergus, Rob. Visualizing and understanding convolutional networks. In ECCV, 2014",
+      "authors": "Zeiler, Matthew D. and Fergus, Rob",
+      "title": "Visualizing and understanding convolutional networks",
+      "venue": "In ECCV, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "s_{i,j,u}(f) = \\left (\\sum_{h=-\\floor{k/2}}^{\\floor{k/2}} \\sum_{w=-\\floor{k/2}}^{\\floor{k/2}}\n     |f_{g(h,w,i,j,u)}|^p \\right )^{1/p},",
+      "environment": "equation",
+      "labels": [
+        "eq:pooling"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "c_{i,j,o}(f) = \\sigma \\left ( \\sum_{h=-\\floor{k/2}}^{\\floor{k/2}}\n     \\sum_{w=-\\floor{k/2}}^{\\floor{k/2}} \\sum_{u=1}^{N}\n     \\theta_{h,w,u,o} \\cdot f_{g(h,w,i,j,u)} \\right ),",
+      "environment": "equation",
+      "labels": [
+        "eq:convolition"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1063,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86598205566406,
+            "y0": 246.2984161376953,
+            "x1": 468.13836669921875,
+            "y1": 256.2610168457031
+          },
+          {
+            "x0": 143.86598205566406,
+            "y0": 257.25738525390625,
+            "x1": 468.138427734375,
+            "y1": 267.2200012207031
+          },
+          {
+            "x0": 143.86598205566406,
+            "y0": 268.21636962890625,
+            "x1": 371.1426696777344,
+            "y1": 278.1789855957031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Introduction and Related Work",
+      "chars": 2937,
+      "numbers": 1,
+      "citations": 18,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99998474121094,
+            "y0": 446.42523193359375,
+            "x1": 504.00311279296875,
+            "y1": 456.3878479003906
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 457.38421630859375,
+            "x1": 504.0031433105469,
+            "y1": 467.3468322753906
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 468.34320068359375,
+            "x1": 311.02777099609375,
+            "y1": 478.3058166503906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Model description - the all convolutional network",
+      "chars": 2036,
+      "numbers": 7,
+      "citations": 8,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 245.8653106689453,
+            "x1": 472.3521423339844,
+            "y1": 255.82791137695312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 572,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 107.15846252441406,
+            "x1": 504.003173828125,
+            "y1": 117.12106323242188
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 118.11744689941406,
+            "x1": 238.8089141845703,
+            "y1": 128.08004760742188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Setup",
+      "chars": 3971,
+      "numbers": 8,
+      "citations": 4,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996185302734,
+            "y0": 217.6693878173828,
+            "x1": 504.00311279296875,
+            "y1": 227.63198852539062
+          },
+          {
+            "x0": 107.99996185302734,
+            "y0": 228.6283721923828,
+            "x1": 446.08062744140625,
+            "y1": 238.59097290039062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Classification results",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "CIFAR-10",
+      "chars": 5360,
+      "numbers": 2,
+      "citations": 5,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 507.3394775390625,
+            "x1": 353.10980224609375,
+            "y1": 517.3020629882812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "CIFAR-100",
+      "chars": 772,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0000228881836,
+            "y0": 678.470458984375,
+            "x1": 504.0033264160156,
+            "y1": 688.4330444335938
+          },
+          {
+            "x0": 108.0000228881836,
+            "y0": 689.429443359375,
+            "x1": 309.1448669433594,
+            "y1": 699.3920288085938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "CIFAR-10 with additional data augmentation",
+      "chars": 1046,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 159.66236877441406,
+            "x1": 394.5342712402344,
+            "y1": 169.62496948242188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Classification of Imagenet",
+      "chars": 1664,
+      "numbers": 2,
+      "citations": 2,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99994659423828,
+            "y0": 325.4172058105469,
+            "x1": 478.7779541015625,
+            "y1": 335.37982177734375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Deconvolution",
+      "chars": 6706,
+      "numbers": 3,
+      "citations": 2,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99992370605469,
+            "y0": 573.862060546875,
+            "x1": 504.0032958984375,
+            "y1": 583.8246459960938
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 584.821044921875,
+            "x1": 504.003173828125,
+            "y1": 594.7836303710938
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 595.780029296875,
+            "x1": 147.0034942626953,
+            "y1": 605.7426147460938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Discussion",
+      "chars": 2178,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 496.8108215332031,
+            "y0": 513.111083984375,
+            "x1": 504.0038146972656,
+            "y1": 523.0736694335938
+          },
+          {
+            "x0": 143.86598205566406,
+            "y0": 524.070068359375,
+            "x1": 382.5599670410156,
+            "y1": 534.0326538085938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 226,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 407.1864929199219,
+            "x1": 504.0031433105469,
+            "y1": 417.14910888671875
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 418.1455078125,
+            "x1": 504.0033264160156,
+            "y1": 428.1081237792969
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 429.103515625,
+            "x1": 287.9942321777344,
+            "y1": 439.0661315917969
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 24,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "caffe",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We performed all experiments using the Caffe [Jia et al. 2014] framework.",
+      "section": "Experiments",
+      "sectionKind": "experiments",
+      "ordinal": 19,
+      "title": "Caffe: Convolutional architecture for fast feature embedding",
+      "authors": "Jia, Yangqing, Shelhamer, Evan, Donahue, Jeff, Karayev, Sergey, Long, Jonathan, Girshick, Ross, Guadarrama, Sergio, and Darrell, Trevor",
+      "year": 2014,
+      "arxivId": "1408.5093",
+      "inCorpus": false,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 172.91139221191406,
+            "x1": 291.1515808105469,
+            "y1": 182.87399291992188
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "VGG_2014",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Our results both confirm the effectiveness of using small convolutional layers as recently proposed by [Simonyan et al. 2014] and give rise to interesting new questions about the necessity of pooling in CNNs.",
+        "section": "Introduction and Related Work",
+        "sectionKind": "related",
+        "ordinal": 9,
+        "title": "Very deep convolutional networks for large-scale image recognition",
+        "authors": "Simonyan, Karen and Zisserman, Andrew",
+        "year": 2014,
+        "arxivId": "1409.1556",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 258.79388427734375,
+              "y0": 128.10438537597656,
+              "x1": 504.00323486328125,
+              "y1": 138.06698608398438
+            },
+            {
+              "x0": 108.0,
+              "y0": 139.06336975097656,
+              "x1": 270.9084777832031,
+              "y1": 149.02597045898438
+            }
+          ]
+        }
+      },
+      {
+        "key": "Zeiler_ECCV2014",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "For a first step in that direction we study properties of our network using a deconvolutional approach similar to [Zeiler et al. 2014].",
+        "section": "Introduction and Related Work",
+        "sectionKind": "related",
+        "ordinal": 11,
+        "title": "Visualizing and understanding convolutional networks",
+        "authors": "Zeiler, Matthew D. and Fergus, Rob",
+        "year": 2014,
+        "arxivId": "1311.2901",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 437.2936706542969,
+              "y0": 171.94032287597656,
+              "x1": 504.0032043457031,
+              "y1": 181.90292358398438
+            },
+            {
+              "x0": 108.0,
+              "y0": 182.89930725097656,
+              "x1": 477.8414001464844,
+              "y1": 192.86190795898438
+            }
+          ]
+        }
+      },
+      {
+        "key": "caffe",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We performed all experiments using the Caffe [Jia et al. 2014] framework.",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 19,
+        "title": "Caffe: Convolutional architecture for fast feature embedding",
+        "authors": "Jia, Yangqing, Shelhamer, Evan, Donahue, Jeff, Karayev, Sergey, Long, Jonathan, Girshick, Ross, Guadarrama, Sergio, and Darrell, Trevor",
+        "year": 2014,
+        "arxivId": "1408.5093",
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99996948242188,
+              "y0": 172.91139221191406,
+              "x1": 291.1515808105469,
+              "y1": 182.87399291992188
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "While a complete answer of this question is not easy to give (see the experiments and discussion for further details and remarks) we assume that in general there exist three possible explanations why pooling can help in CNNs: 1) the p-norm makes the representation in a CNN more invariant; 2) the spatial dimensionality reduction performed by pooling makes covering larger parts of the input in higher layers possible; 3) the feature-wise nature of the pooling operation (as opposed to a convolutional layer where features get mixed) could make optimization easier.",
+      "anchorText": "While a complete answer of this question is not easy to give (see the experiments and discussion for further details and remarks) we assume that in general there exist three possible explanations why pooling can help in CNNs: 1) the p-norm makes the representation in a CNN more invariant; 2) the spatial dimensionality reduction performed by pooling makes covering larger parts of the input in higher layers possible; 3) the feature-wise nature of the pooling operation (as opposed to a convolutional layer where features get mixed) could make optimization easier.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "Model description - the all convolutional network",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 266.4947509765625,
+            "y0": 573.9981079101562,
+            "x1": 504.0030822753906,
+            "y1": 583.960693359375
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 584.9571533203125,
+            "x1": 504.00311279296875,
+            "y1": 594.9197387695312
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 595.9161376953125,
+            "x1": 504.0029296875,
+            "y1": 605.8787231445312
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 606.8741455078125,
+            "x1": 504.0029602050781,
+            "y1": 616.8367309570312
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 617.8331298828125,
+            "x1": 504.0030517578125,
+            "y1": 627.7957153320312
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 628.7921142578125,
+            "x1": 504.0028991699219,
+            "y1": 638.7546997070312
+          },
+          {
+            "x0": 107.99978637695312,
+            "y0": 639.7510986328125,
+            "x1": 133.17526245117188,
+            "y1": 649.7136840820312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Assuming that only the second part \u2013 the dimensionality reduction performed by pooling \u2013 is crucial for achieving good performance with CNNs (a hypothesis that we later test in our experiments) one can now easily see that pooling can be removed from a network without abandoning the spatial dimensionality reduction by two means: We can remove each pooling layer and increase the stride of the convolutional layer that preceded it accordingly.",
+      "anchorText": "Assuming that only the second part -- the dimensionality reduction performed by pooling -- is crucial for achieving good performance with CNNs (a hypothesis that we later test in our experiments) one can now easily see that pooling can be removed from a network without abandoning the spatial dimensionality reduction by two means: We can remove each pooling layer and increase the stride of the convolutional layer that preceded it accordingly.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Assuming that",
+      "section": "Model description - the all convolutional network",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "Although we expect that a larger network using only 3 \u00d7 3 convolutions and having stride 1 in the first layer (and thus similar in style to [Simonyan et al. 2014]) would perform even better on this dataset, training it would take several weeks and could thus not be completed in time for this manuscript.",
+      "anchorText": ") would perform even better on this dataset, training it would take several weeks and could thus not be completed in time for this manuscript.",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "we expect",
+      "section": "Experimental Setup",
+      "sectionKind": "experiments",
+      "cites": [
+        "VGG_2014"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 474.118408203125,
+            "y0": 207.4733428955078,
+            "x1": 503.9961853027344,
+            "y1": 217.43594360351562
+          },
+          {
+            "x0": 108.00004577636719,
+            "y0": 218.4323272705078,
+            "x1": 504.00323486328125,
+            "y1": 228.39492797851562
+          },
+          {
+            "x0": 108.00004577636719,
+            "y0": 229.3913116455078,
+            "x1": 272.0940246582031,
+            "y1": 239.35391235351562
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 1,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "cs.CV",
+      "cs.NE"
+    ],
+    "published": "2014-12-21",
+    "authors": [
+      "Jost Tobias Springenberg",
+      "Alexey Dosovitskiy",
+      "Thomas Brox",
+      "Martin Riedmiller"
+    ]
+  }
+}

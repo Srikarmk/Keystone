@@ -1,0 +1,3415 @@
+{
+  "id": "1312.6026",
+  "title": "How to Construct Deep Recurrent Neural Networks",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1312.6026",
+  "numbers": [
+    {
+      "value": "200 steps",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For Nottingham and MuseData datasets we compute each gradient step on subsequences of at most 200 steps, while we use subsequences of 50 steps for JSB Chorales.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 237.27027893066406,
+            "y0": 711.3474731445312,
+            "x1": 503.9988708496094,
+            "y1": 721.31005859375
+          },
+          {
+            "x0": 107.9999771118164,
+            "y0": 722.3064575195312,
+            "x1": 504.00323486328125,
+            "y1": 732.26904296875
+          }
+        ]
+      }
+    },
+    {
+      "value": "50 steps",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For Nottingham and MuseData datasets we compute each gradient step on subsequences of at most 200 steps, while we use subsequences of 50 steps for JSB Chorales.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 237.27027893066406,
+            "y0": 711.3474731445312,
+            "x1": 503.9988708496094,
+            "y1": 721.31005859375
+          },
+          {
+            "x0": 107.9999771118164,
+            "y0": 722.3064575195312,
+            "x1": 504.00323486328125,
+            "y1": 732.26904296875
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "",
+      "label": "",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "#2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "The sizes of the trained models. We provide the number of hidden units as well as the total number of parameters. For DT(S)-RNN, the two numbers provided for the number of units mean the size of the hidden state and that of the intermediate layer, respectively. For DOT(S)-RNN, the three numbers are the size of the hidden state, that of the intermediate layer between the consecutive hidden states and that of the intermediate layer between the hidden state and the output layer. For sRNN, the number corresponds to the size of the hidden state at each level",
+      "label": "tab:model_size",
+      "numericCells": 41,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DT(S)-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DOT(S)-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "sRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2 layers",
+            "value": "2",
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Music",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Notthingam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "# units",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "# parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "600",
+            "value": "600",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "465K",
+            "value": "465000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "400,400",
+            "value": "400400",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "585K",
+            "value": "585000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "400,400,400",
+            "value": "400400400",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "745K",
+            "value": "745000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "550K",
+            "value": "550000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "JSB Chorales",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "# units",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "# parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "75K",
+            "value": "75000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "400,400",
+            "value": "400400",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "585K",
+            "value": "585000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "400,400,400",
+            "value": "400400400",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "745K",
+            "value": "745000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "550K",
+            "value": "550000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MuseData",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "# units",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "# parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "600",
+            "value": "600",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "465K",
+            "value": "465000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "400,400",
+            "value": "400400",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "585K",
+            "value": "585000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "400,400,400",
+            "value": "400400400",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "745K",
+            "value": "745000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "600",
+            "value": "600",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "1185K",
+            "value": "1185000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Language",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "Char-level",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "# units",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "# parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "600",
+            "value": "600",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "420K",
+            "value": "420000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "400,400",
+            "value": "400400",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "540K",
+            "value": "540000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "400,400,600",
+            "value": "400400600",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "790K",
+            "value": "790000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "520K",
+            "value": "520000",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Word-level",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "# units",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "# parameters",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "4.04M",
+            "value": "4040000.00",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "200,200",
+            "value": "200200",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "6.12M",
+            "value": "6120000.00",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "200,200,200",
+            "value": "200200200",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "6.16M",
+            "value": "6160000.00",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "400",
+            "value": "400",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "8.48M",
+            "value": "8480000.00",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.14805603027344,
+            "y0": 490.4484558105469,
+            "x1": 504.0032653808594,
+            "y1": 500.41107177734375
+          },
+          {
+            "x0": 108.0,
+            "y0": 501.4064636230469,
+            "x1": 504.0032653808594,
+            "y1": 511.36907958984375
+          },
+          {
+            "x0": 108.0,
+            "y0": 512.365478515625,
+            "x1": 504.0032958984375,
+            "y1": 522.3280639648438
+          },
+          {
+            "x0": 108.0,
+            "y0": 523.324462890625,
+            "x1": 504.0032958984375,
+            "y1": 533.2870483398438
+          },
+          {
+            "x0": 108.0,
+            "y0": 534.283447265625,
+            "x1": 504.0032653808594,
+            "y1": 544.2460327148438
+          },
+          {
+            "x0": 108.0,
+            "y0": 545.242431640625,
+            "x1": 404.2080383300781,
+            "y1": 555.2050170898438
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "The performances of the four types of RNNs on the polyphonic music prediction. The numbers represent negative log-probabilities on test sequences. (*) We obtained these results using DOT(S)-RNN with units in the deep transition, maxout units in the deep output function and dropout .",
+      "label": "tab:result_music",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DT(S)-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DOT(S)-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "sRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DOT(S)-RNN*",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Notthingam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.225",
+            "value": "3.225",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.206",
+            "value": "3.206",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.215",
+            "value": "3.215",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.258",
+            "value": "3.258",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.95",
+            "value": "2.95",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "JSB Chorales",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.338",
+            "value": "8.338",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.278",
+            "value": "8.278",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.437",
+            "value": "8.437",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.367",
+            "value": "8.367",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.92",
+            "value": "7.92",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MuseData",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.990",
+            "value": "6.990",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.988",
+            "value": "6.988",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.973",
+            "value": "6.973",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.954",
+            "value": "6.954",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.59",
+            "value": "6.59",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "The performances of the four types of RNNs on the tasks of language modeling. The numbers represent bit-per-character and perplexity computed on test sequence, respectively, for the character-level and word-level modeling tasks. The previous/current state-of-the-art results obtained with shallow RNNs. The previous/current state-of-the-art results obtained with RNNs having long-short term memory units.",
+      "label": "tab:result_lm_penn",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DT(S)-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DOT(S)-RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "sRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Character-Level",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.414",
+            "value": "1.414",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.409",
+            "value": "1.409",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1.412",
+            "value": "1.412",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.41",
+            "value": "1.41",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.24",
+            "value": "1.24",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Word-Level",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "117.7",
+            "value": "117.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "112.0",
+            "value": "112.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "110.0",
+            "value": "110.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "123",
+            "value": "123",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "117",
+            "value": "117",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\hess": "\\mathbf{H}",
+    "\\jacob": "\\mathbf{J}",
+    "\\params": "\\mathbf{\\theta}",
+    "\\cost": "\\mathcal{L}",
+    "\\lout": "\\mathbf{r}",
+    "\\louti": "r",
+    "\\outi": "y",
+    "\\out": "\\mathbf{y}",
+    "\\gauss": "\\mathbf{G_N}",
+    "\\eye": "\\mathbf{I}",
+    "\\softmax": "\\phi",
+    "\\targ": "\\mathbf{t}",
+    "\\metric": "\\mathbf{G}",
+    "\\sample": "\\mathbf{z}",
+    "\\bmx": "\\begin{bmatrix}",
+    "\\emx": "\\end{bmatrix}",
+    "\\qt": "\\left<#1\\right>",
+    "\\qexp": "\\left<#1\\right>",
+    "\\qlay": "\\left[#1\\right]",
+    "\\vect": "\\mathbf{#1}",
+    "\\vects": "\\boldsymbol{#1}",
+    "\\matr": "\\mathbf{#1}",
+    "\\var": "\\operatorname{Var}",
+    "\\cov": "\\operatorname{Cov}",
+    "\\diag": "\\operatorname{diag}",
+    "\\matrs": "\\boldsymbol{#1}",
+    "\\va": "\\vect{a}",
+    "\\vb": "\\vect{b}",
+    "\\vc": "\\vect{c}",
+    "\\vh": "\\vect{h}",
+    "\\vv": "\\vect{v}",
+    "\\vx": "\\vect{x}",
+    "\\vw": "\\vect{w}",
+    "\\vs": "\\vect{s}",
+    "\\vf": "\\vect{f}",
+    "\\vy": "\\vect{y}",
+    "\\vg": "\\vect{g}",
+    "\\vm": "\\vect{m}",
+    "\\vu": "\\vect{u}",
+    "\\vL": "\\vect{L}",
+    "\\mW": "\\matr{W}",
+    "\\mG": "\\matr{G}",
+    "\\mX": "\\matr{X}",
+    "\\mQ": "\\matr{Q}",
+    "\\mU": "\\matr{U}",
+    "\\mV": "\\matr{V}",
+    "\\mA": "\\matr{A}",
+    "\\mD": "\\matr{D}",
+    "\\mS": "\\matr{S}",
+    "\\mI": "\\matr{I}",
+    "\\td": "\\text{d}",
+    "\\vsig": "\\vects{\\sigma}",
+    "\\valpha": "\\vects{\\alpha}",
+    "\\vmu": "\\vects{\\mu}",
+    "\\vzero": "\\vect{0}",
+    "\\tf": "\\text{m}",
+    "\\tdf": "\\text{dm}",
+    "\\TT": "{\\vects{\\theta}}",
+    "\\grad": "\\nabla",
+    "\\alert": "\\textcolor{red}{#1}",
+    "\\N": "\\mathcal{N}",
+    "\\LL": "\\mathcal{L}",
+    "\\HH": "\\mathcal{H}",
+    "\\RR": "\\mathbb{R}",
+    "\\Scal": "\\mathcal{S}",
+    "\\sigmoid": "\\sigma",
+    "\\E": "\\mathbb{E}",
+    "\\enabla": "\\ensuremath{\n    \\overset{\\raisebox{-0.3ex}[0.5ex][0ex]{\n    \\ensuremath{\\scriptscriptstyle e}}}{\\nabla}}",
+    "\\enhnabla": "\\nabla_{\\hspace{-0.5mm}e}\\,",
+    "\\tred": "\\textcolor{red}{#1}",
+    "\\tb": "\\textcolor{blue}{#1}",
+    "\\todo": "{\\Large\\textcolor{red}{#1}}",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "Bastien-Theano-2012",
+      "raw": "Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012). Theano: new features and speed improvements. Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop",
+      "authors": "Bastien, F., Lamblin, P., Pascanu, R., Bergstra, J., Goodfellow, I. J., Bergeron, A., Bouchard, N., and Bengio, Y. (2012)",
+      "title": "Theano: new features and speed improvements",
+      "venue": "Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Justin2013",
+      "raw": "Bayer, J., Osendorfer, C., Korhammer, D., Chen, N., Urban, S., and van der Smagt, P. (2013). On fast dropout and its applicability to recurrent networks. arXiv: 1311.0701 [cs.NE]\\/",
+      "authors": "Bayer, J., Osendorfer, C., Korhammer, D., Chen, N., Urban, S., and van der Smagt, P. (2013)",
+      "title": "On fast dropout and its applicability to recurrent networks",
+      "venue": "[cs.NE]\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio2009FTML",
+      "raw": "Bengio, Y. (2009). Learning deep architectures for AI. Found. Trends Mach. Learn., 2(1), 1--127",
+      "authors": "Bengio, Y. (2009)",
+      "title": "Learning deep architectures for AI",
+      "venue": "Found. Trends Mach. Learn., 2(1), 1--127",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-trnn93",
+      "raw": "Bengio, Y., Simard, P., and Frasconi, P. (1994). Learning long-term dependencies with gradient descent is difficult. IEEE Transactions on Neural Networks\\/, 5(2), 157--166",
+      "authors": "Bengio, Y., Simard, P., and Frasconi, P. (1994)",
+      "title": "Learning long-term dependencies with gradient descent is difficult",
+      "venue": "IEEE Transactions on Neural Networks\\/, 5(2), 157--166",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio-et-al-ICML2013",
+      "raw": "Bengio, Y., Mesnil, G., Dauphin, Y., and Rifai, S. (2013). Better mixing via deep representations. In ICML'13\\/",
+      "authors": "Bengio, Y., Mesnil, G., Dauphin, Y., and Rifai, S. (2013)",
+      "title": "Better mixing via deep representations",
+      "venue": "In ICML'13\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bergstra+al:2010-scipy",
+      "raw": "Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010). Theano: a CPU and GPU math expression compiler. In Proceedings of the Python for Scientific Computing Conference (SciPy)\\/. Oral Presentation",
+      "authors": "Bergstra, J., Breuleux, O., Bastien, F., Lamblin, P., Pascanu, R., Desjardins, G., Turian, J., Warde-Farley, D., and Bengio, Y. (2010)",
+      "title": "Theano: a CPU and GPU math expression compiler",
+      "venue": "In Proceedings of the Python for Scientific Computing Conference (SciPy)\\/ Oral Presentation",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Boulanger+al-ICML2012-small",
+      "raw": "Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2012). Modeling temporal dependencies in high-dimensional sequences: Application to polyphonic music generation and transcription. In ICML'2012\\/",
+      "authors": "Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2012)",
+      "title": "Modeling temporal dependencies in high-dimensional sequences: Application to polyphonic music generation and transcription",
+      "venue": "In ICML'2012\\/",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Chen2013",
+      "raw": "Chen, J. and Deng, L. (2013). A new method for learning deep recurrent neural networks. arXiv: 1311.6091 [cs.LG]\\/",
+      "authors": "Chen, J. and Deng, L. (2013)",
+      "title": "A new method for learning deep recurrent neural networks",
+      "venue": "[cs.LG]\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Delalleau+Bengio-2011-small",
+      "raw": "Delalleau, O. and Bengio, Y. (2011). Shallow vs. deep sum-product networks. In NIPS\\/",
+      "authors": "Delalleau, O. and Bengio, Y. (2011)",
+      "title": "Shallow vs. deep sum-product networks",
+      "venue": "In NIPS\\/",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ElHihi+Bengio-nips8",
+      "raw": "El Hihi, S. and Bengio, Y. (1996). Hierarchical recurrent neural networks for long-term dependencies. In NIPS 8\\/. MIT Press",
+      "authors": "El Hihi, S. and Bengio, Y. (1996)",
+      "title": "Hierarchical recurrent neural networks for long-term dependencies",
+      "venue": "In NIPS 8\\/. MIT Press",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Glorot+al-AI-2011-small",
+      "raw": "Glorot, X., Bordes, A., and Bengio, Y. (2011a). Deep sparse rectifier neural networks. In AISTATS\\/",
+      "authors": "Glorot, X., Bordes, A., and Bengio, Y. (2011a)",
+      "title": "Deep sparse rectifier neural networks",
+      "venue": "In AISTATS\\/",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Glorot+al-ICML-2011-small",
+      "raw": "Glorot, X., Bordes, A., and Bengio, Y. (2011b). Domain adaptation for large-scale sentiment classification: A deep learning approach. In ICML'2011\\/",
+      "authors": "Glorot, X., Bordes, A., and Bengio, Y. (2011b)",
+      "title": "Domain adaptation for large-scale sentiment classification: A deep learning approach",
+      "venue": "In ICML'2011\\/",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow2009",
+      "raw": "Goodfellow, I., Le, Q., Saxe, A., and Ng, A. (2009). Measuring invariances in deep networks. In NIPS'09\\/, pages 646--654",
+      "authors": "Goodfellow, I., Le, Q., Saxe, A., and Ng, A. (2009)",
+      "title": "Measuring invariances in deep networks",
+      "venue": "In NIPS'09\\/, pages 646--654",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow_maxout_2013",
+      "raw": "Goodfellow, I. J., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013). Maxout networks. In ICML'2013\\/",
+      "authors": "Goodfellow, I. J., Warde-Farley, D., Mirza, M., Courville, A., and Bengio, Y. (2013)",
+      "title": "Maxout networks",
+      "venue": "In ICML'2013\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2011",
+      "raw": "Graves, A. (2011). Practical variational inference for neural networks. In J. Shawe-Taylor, R. Zemel, P. Bartlett, F. Pereira, and K. Weinberger, editors, Advances in Neural Information Processing Systems 24\\/, pages 2348--2356",
+      "authors": "Graves, A. (2011)",
+      "title": "Practical variational inference for neural networks",
+      "venue": "In J. Shawe-Taylor, R. Zemel, P. Bartlett, F. Pereira, and K. Weinberger, editors, Advances in Neural Information Processing Systems 24\\/, pages 2348--2356",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2013",
+      "raw": "Graves, A. (2013). Generating sequences with recurrent neural networks. arXiv: 1308.0850 [cs.NE]\\/",
+      "authors": "Graves, A. (2013)",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "[cs.NE]\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves09",
+      "raw": "Graves, A., Liwicki, M., Fernandez, S., Bertolami, R., Bunke, H., and Schmidhuber, J. (2009). A novel connectionist system for improved unconstrained handwriting recognition. IEEE Transactions on Pattern Analysis and Machine Intelligence\\/",
+      "authors": "Graves, A., Liwicki, M., Fernandez, S., Bertolami, R., Bunke, H., and Schmidhuber, J. (2009)",
+      "title": "A novel connectionist system for improved unconstrained handwriting recognition",
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence\\/",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves13speech",
+      "raw": "Graves, A., Mohamed, A., and Hinton, G. (2013). Speech recognition with deep recurrent neural networks. ICASSP\\/",
+      "authors": "Graves, A., Mohamed, A., and Hinton, G. (2013)",
+      "title": "Speech recognition with deep recurrent neural networks",
+      "venue": "ICASSP\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Gulcehre2013",
+      "raw": "Gulcehre, C., Cho, K., Pascanu, R., and Bengio, Y. (2013). Learned-norm pooling for deep feedforward and recurrent neural networks. arXiv: 1311.1780 [cs.NE]\\/",
+      "authors": "Gulcehre, C., Cho, K., Pascanu, R., and Bengio, Y. (2013)",
+      "title": "Learned-norm pooling for deep feedforward and recurrent neural networks",
+      "venue": "[cs.NE]\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hermans2013",
+      "raw": "Hermans, M. and Schrauwen, B. (2013). Training and analysing deep recurrent neural networks. In Advances in Neural Information Processing Systems 26\\/, pages 190--198",
+      "authors": "Hermans, M. and Schrauwen, B. (2013)",
+      "title": "Training and analysing deep recurrent neural networks",
+      "venue": "In Advances in Neural Information Processing Systems 26\\/, pages 190--198",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton-et-al-2012",
+      "raw": "Hinton, G., Deng, L., Dahl, G. E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T., and Kingsbury, B. (2012a). Deep neural networks for acoustic modeling in speech recognition. IEEE Signal Processing Magazine\\/, 29(6), 82--97",
+      "authors": "Hinton, G., Deng, L., Dahl, G. E., Mohamed, A., Jaitly, N., Senior, A., Vanhoucke, V., Nguyen, P., Sainath, T., and Kingsbury, B. (2012a)",
+      "title": "Deep neural networks for acoustic modeling in speech recognition",
+      "venue": "IEEE Signal Processing Magazine\\/, 29(6), 82--97",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton-Science2006",
+      "raw": "Hinton, G. E. and Salakhutdinov, R. (2006). Reducing the dimensionality of data with neural networks. Science\\/, 313(5786), 504--507",
+      "authors": "Hinton, G. E. and Salakhutdinov, R. (2006)",
+      "title": "Reducing the dimensionality of data with neural networks",
+      "venue": "Science\\/, 313(5786), 504--507",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hinton-et-al-arxiv2012",
+      "raw": "Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2012b). Improving neural networks by preventing co-adaptation of feature detectors. Technical report, arXiv:1207.0580",
+      "authors": "Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2012b)",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "venue": "Technical report",
+      "year": null,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "Hornik89",
+      "raw": "Hornik, K., Stinchcombe, M., and White, H. (1989). Multilayer feedforward networks are universal approximators. Neural Networks\\/, 2, 359--366",
+      "authors": "Hornik, K., Stinchcombe, M., and White, H. (1989)",
+      "title": "Multilayer feedforward networks are universal approximators",
+      "venue": "Neural Networks\\/, 2, 359--366",
+      "year": 1989,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Jaeger2007",
+      "raw": "Jaeger, H. (2007). Discovering multiscale dynamical features with hierarchical echo state networks. Technical report, Jacobs University",
+      "authors": "Jaeger, H. (2007)",
+      "title": "Discovering multiscale dynamical features with hierarchical echo state networks",
+      "venue": "Technical report, Jacobs University",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ko09",
+      "raw": "Ko, J. and Dieter, F. (2009). Gp-bayesfilters: Bayesian filtering using gaussian process prediction and observation models. Autonomous Robots\\/",
+      "authors": "Ko, J. and Dieter, F. (2009)",
+      "title": "Gp-bayesfilters: Bayesian filtering using gaussian process prediction and observation models",
+      "venue": "Autonomous Robots\\/",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Larochelle+Murray-2011",
+      "raw": "Larochelle, H. and Murray, I. (2011). The Neural Autoregressive Distribution Estimator. In Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics (AISTATS'2011)\\/, volume 15 of JMLR: W\\&CP",
+      "authors": "Larochelle, H. and Murray, I. (2011)",
+      "title": "The Neural Autoregressive Distribution Estimator",
+      "venue": "In Proceedings of the Fourteenth International Conference on Artificial Intelligence and Statistics (AISTATS'2011)\\/, volume 15 of JMLR: W\\&CP",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Roux2010",
+      "raw": "Le Roux, N. and Bengio, Y. (2010). Deep belief networks are compact universal approximators. Neural Computation\\/, 22(8), 2192--2207",
+      "authors": "Le Roux, N. and Bengio, Y. (2010)",
+      "title": "Deep belief networks are compact universal approximators",
+      "venue": "Neural Computation\\/, 22(8), 2192--2207",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Marcus1993",
+      "raw": "Marcus, M. P., Marcinkiewicz, M. A., and Santorini, B. (1993). Building a large annotated corpus of english: The Penn Treebank. Computational Linguistics\\/, 19(2), 313--330",
+      "authors": "Marcus, M. P., Marcinkiewicz, M. A., and Santorini, B. (1993)",
+      "title": "Building a large annotated corpus of english: The Penn Treebank",
+      "venue": "Computational Linguistics\\/, 19(2), 313--330",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "martens2010hessian",
+      "raw": "Martens, J. (2010). Deep learning via Hessian-free optimization. In L. Bottou and M. Littman, editors, Proceedings of the Twenty-seventh International Conference on Machine Learning (ICML-10)\\/, pages 735--742. ACM",
+      "authors": "Martens, J. (2010)",
+      "title": "Deep learning via Hessian-free optimization",
+      "venue": "In L. Bottou and M. Littman, editors, Proceedings of the Twenty-seventh International Conference on Machine Learning (ICML-10)\\/, pages 735--742. ACM",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Martens+Sutskever-ICML2011",
+      "raw": "Martens, J. and Sutskever, I. (2011). Learning recurrent neural networks with Hessian-free optimization. In Proc. ICML'2011\\/. ACM",
+      "authors": "Martens, J. and Sutskever, I. (2011)",
+      "title": "Learning recurrent neural networks with Hessian-free optimization",
+      "venue": "In Proc. ICML'2011\\/. ACM",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov-thesis-2012",
+      "raw": "Mikolov, T. (2012). Statistical Language Models based on Neural Networks\\/. Ph.D. thesis, Brno University of Technology",
+      "authors": "Mikolov, T. (2012)",
+      "title": "Statistical Language Models based on Neural Networks\\/",
+      "venue": "Ph.D. thesis, Brno University of Technology",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2010",
+      "raw": "Mikolov, T., Karafi\\'at, M., Burget, L., Cernocky, J., and Khudanpur, S. (2010). Recurrent neural network based language model. In Proceedings of the 11th Annual Conference of the International Speech Communication Association (INTERSPEECH 2010)\\/, volume 2010, pages 1045--1048. International Speech Communication Association",
+      "authors": "Mikolov, T., Karafi\\'at, M., Burget, L., Cernocky, J., and Khudanpur, S. (2010)",
+      "title": "Recurrent neural network based language model",
+      "venue": "In Proceedings of the 11th Annual Conference of the International Speech Communication Association (INTERSPEECH 2010)\\/, volume 2010, pages 1045--1048. International Speech Communication Association",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov-ICASSP-2011",
+      "raw": "Mikolov, T., Kombrink, S., Burget, L., Cernocky, J., and Khudanpur, S. (2011). Extensions of recurrent neural network language model. In Proc. 2011 IEEE international conference on acoustics, speech and signal processing (ICASSP 2011)\\/",
+      "authors": "Mikolov, T., Kombrink, S., Burget, L., Cernocky, J., and Khudanpur, S. (2011)",
+      "title": "Extensions of recurrent neural network language model",
+      "venue": "In Proc. 2011 IEEE international conference on acoustics, speech and signal processing (ICASSP 2011)\\/",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "TomasIlya",
+      "raw": "Mikolov, T., Sutskever, I., Deoras, A., Le, H., Kombrink, S., and Cernocky, J. (2012a). Subword language modeling with neural networks. unpublished\\/",
+      "authors": "Mikolov, T., Sutskever, I., Deoras, A., Le, H., Kombrink, S., and Cernocky, J. (2012a)",
+      "title": "Subword language modeling with neural networks",
+      "venue": "unpublished\\/",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov-Sutskever-2012",
+      "raw": "Mikolov, T., Sutskever, I., Deoras, A., Le, H.-S., Kombrink, S., and Cernocky, J. (2012b). Subword language modeling with neural networks. preprint (http://www.fit.vutbr.cz/ imikolov/rnnlm/char.pdf)",
+      "authors": "Mikolov, T., Sutskever, I., Deoras, A., Le, H.-S., Kombrink, S., and Cernocky, J. (2012b)",
+      "title": "Subword language modeling with neural networks",
+      "venue": "preprint ( imikolov/rnnlm/char.pdf)",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2013",
+      "raw": "Mikolov, T., Sutskever, I., Chen, K., Corrado, G., and Dean, J. (2013a). Distributed representations of words and phrases and their compositionality. In Advances in Neural Information Processing Systems 26\\/, pages 3111--3119",
+      "authors": "Mikolov, T., Sutskever, I., Chen, K., Corrado, G., and Dean, J. (2013a)",
+      "title": "Distributed representations of words and phrases and their compositionality",
+      "venue": "In Advances in Neural Information Processing Systems 26\\/, pages 3111--3119",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov-et-al-ICLR2013",
+      "raw": "Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013b). Efficient estimation of word representations in vector space. In International Conference on Learning Representations: Workshops Track\\/",
+      "authors": "Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013b)",
+      "title": "Efficient estimation of word representations in vector space",
+      "venue": "In International Conference on Learning Representations: Workshops Track\\/",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pascanu+Bengio-arxiv2013",
+      "raw": "Pascanu, R. and Bengio, Y. (2013). Revisiting natural gradient for deep networks. Technical report, arXiv:1301.3584",
+      "authors": "Pascanu, R. and Bengio, Y. (2013)",
+      "title": "Revisiting natural gradient for deep networks",
+      "venue": "Technical report",
+      "year": 2013,
+      "arxivId": "1301.3584",
+      "doi": null
+    },
+    {
+      "key": "Pascanu+al-ICML2013-small",
+      "raw": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013a). On the difficulty of training recurrent neural networks. In ICML'2013\\/",
+      "authors": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013a)",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "In ICML'2013\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pascanu2014",
+      "raw": "Pascanu, R., Montufar, G., and Bengio, Y. (2013b). On the number of response regions of deep feed forward networks with piece-wise linear activations. arXiv: 1312.6098[cs.LG]\\/",
+      "authors": "Pascanu, R., Montufar, G., and Bengio, Y. (2013b)",
+      "title": "On the number of response regions of deep feed forward networks with piece-wise linear activations",
+      "venue": "",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pinheiro2013",
+      "raw": "Pinheiro, P. and Collobert, R. (2014). Recurrent convolutional neural networks for scene labeling. In Proceedings of The 31st International Conference on Machine Learning\\/, pages 82--90",
+      "authors": "Pinheiro, P. and Collobert, R. (2014)",
+      "title": "Recurrent convolutional neural networks for scene labeling",
+      "venue": "In Proceedings of The 31st International Conference on Machine Learning\\/, pages 82--90",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Raiko2012",
+      "raw": "Raiko, T., Valpola, H., and LeCun, Y. (2012). Deep learning made easier by linear transformations in perceptrons. In Proceedings of the Fifteenth Internation Conference on Artificial Intelligence and Statistics (AISTATS 2012)\\/, volume 22 of JMLR Workshop and Conference Proceedings\\/, pages 924--932. JMLR W\\&CP",
+      "authors": "Raiko, T., Valpola, H., and LeCun, Y. (2012)",
+      "title": "Deep learning made easier by linear transformations in perceptrons",
+      "venue": "In Proceedings of the Fifteenth Internation Conference on Artificial Intelligence and Statistics (AISTATS 2012)\\/, volume 22 of JMLR Workshop and Conference Proceedings\\/, pages 924--932. JMLR W\\&CP",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Rumelhart86b",
+      "raw": "Rumelhart, D. E., Hinton, G. E., and Williams, R. J. (1986). Learning representations by back-propagating errors. Nature\\/, 323, 533--536",
+      "authors": "Rumelhart, D. E., Hinton, G. E., and Williams, R. J. (1986)",
+      "title": "Learning representations by back-propagating errors",
+      "venue": "Nature\\/, 323, 533--536",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Schmidhuber1992",
+      "raw": "Schmidhuber, J. (1992). Learning complex, extended sequences using the principle of history compression. Neural Computation\\/, (4), 234--242",
+      "authors": "Schmidhuber, J. (1992)",
+      "title": "Learning complex, extended sequences using the principle of history compression",
+      "venue": "Neural Computation\\/, (4), 234--242",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever2011",
+      "raw": "Sutskever, I., Martens, J., and Hinton, G. (2011). Generating text with recurrent neural networks. In L. Getoor and T. Scheffer, editors, Proceedings of the 28th International Conference on Machine Learning (ICML 2011)\\/, pages 1017--1024, New York, NY, USA. ACM",
+      "authors": "Sutskever, I., Martens, J., and Hinton, G. (2011)",
+      "title": "Generating text with recurrent neural networks",
+      "venue": "In L. Getoor and T. Scheffer, editors, Proceedings of the 28th International Conference on Machine Learning (ICML 2011)\\/, pages 1017--1024, New York, NY, USA. ACM",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskeverimportance",
+      "raw": "Sutskever, I., Martens, J., Dahl, G., and Hinton, G. (2013). On the importance of initialization and momentum in deep learning. In ICML\\/",
+      "authors": "Sutskever, I., Martens, J., Dahl, G., and Hinton, G. (2013)",
+      "title": "On the importance of initialization and momentum in deep learning",
+      "venue": "In ICML\\/",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Valpola2002",
+      "raw": "Valpola, H. and Karhunen, J. (2002). An unsupervised ensemble learning method for nonlinear dynamic state-space models. Neural Comput., 14(11), 2647--2692",
+      "authors": "Valpola, H. and Karhunen, J. (2002)",
+      "title": "An unsupervised ensemble learning method for nonlinear dynamic state-space models",
+      "venue": "Neural Comput., 14(11), 2647--2692",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\vh_t &= f_h(\\vx_t, \\vh_{t-1}) \n    \\\\\n    \n    \\vy_t &= f_o(\\vh_t),",
+      "environment": "align",
+      "labels": [
+        "eq:dynamical_system_trans",
+        "eq:dynamical_system_out"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "J(\\TT) = \\frac{1}{N} \\sum_{n=1}^N \\sum_{t=1}^{T_n} \n    d(\\vy_t^{(n)}, f_o(\\vh_t^{(n)})),",
+      "environment": "align",
+      "labels": [
+        "eq:cost_function"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\vh_t &= f_h(\\vx_t, \\vh_{t-1}) = \\phi_h\\left(\\mW^\\top\n    \\vh_{t-1} + \\mU^\\top \\vx_t \\right) \\\\\n    \n    \\vy_t &= f_o(\\vh_t, \\vx_t) = \\phi_o\\left(\\mV^\\top\n    \\vh_{t}\\right),",
+      "environment": "align",
+      "labels": [
+        "eq:rnn_shallow_trans",
+        "eq:rnn_shallow_out"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\vh_t &= f_h(\\vx_t, \\vh_{t-1}) = \\phi_h \\left(\n    \\mW_L^\\top \\phi_{L-1} \\left(\n    \\mW_{L-1}^\\top \\phi_{L-2} \\left(\n    \\cdots \\phi_{1} \\left(\n    \\mW_{1}^\\top \\vh_{t-1} + \\mU^\\top \\vx_t\n    \\right)\n    \\right)\n    \\right)\n    \\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\vy_t &= f_o(\\vh_t) = \\phi_o \\left(\n    \\mV_L^\\top \\phi_{L-1} \\left(\n    \\mV_{L-1}^\\top \\phi_{L-2} \\left(\n    \\cdots \\phi_{1} \\left(\n    \\mV_{1}^\\top \\vh_{t}\n    \\right)\n    \\right)\n    \\right)\n    \\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\vh_t^{(l)} &= f_h^{(l)}(\\vh_{t}^{(l-1)}, \\vh_{t-1}^{(l)}) = \n    \\phi_h\\left(\\mW_{l}^\\top \\vh_{t-1}^{(l)} + \n    \\mU_{l}^\\top \\vh_{t}^{(l-1)} \\right),",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\vh' = \\vx \\oplus \\vh,",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\vx' = \\rhd \\vh",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 990,
+      "numbers": 3,
+      "citations": 2,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86599731445312,
+            "y0": 293.01055908203125,
+            "x1": 468.13848876953125,
+            "y1": 302.9731750488281
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 303.96954345703125,
+            "x1": 237.27867126464844,
+            "y1": 313.9321594238281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2170,
+      "numbers": 0,
+      "citations": 13,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 291.8243408203125,
+            "y0": 109.69583892822266,
+            "x1": 496.91162109375,
+            "y1": 126.91123962402344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Recurrent Neural Networks",
+      "chars": 690,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 219.0703887939453,
+            "x1": 504.0033264160156,
+            "y1": 229.03298950195312
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 230.0293731689453,
+            "x1": 208.13409423828125,
+            "y1": 239.99197387695312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Conventional Recurrent Neural Networks",
+      "chars": 669,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00003051757812,
+            "y0": 450.23663330078125,
+            "x1": 493.7517395019531,
+            "y1": 460.1992492675781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deep Recurrent Neural Networks",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Why Deep Recurrent Neural Networks?",
+      "chars": 585,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 645.5936279296875,
+            "x1": 504.0033264160156,
+            "y1": 655.5562133789062
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 656.5526123046875,
+            "x1": 375.88433837890625,
+            "y1": 666.5151977539062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Depth of a Recurrent Neural Network",
+      "chars": 1413,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 227.20545959472656,
+            "x1": 504.0020751953125,
+            "y1": 237.16806030273438
+          },
+          {
+            "x0": 108.0,
+            "y0": 238.16444396972656,
+            "x1": 211.17263793945312,
+            "y1": 248.12704467773438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deep Input-to-Hidden Function",
+      "chars": 1334,
+      "numbers": 0,
+      "citations": 6,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99986267089844,
+            "y0": 447.3583068847656,
+            "x1": 504.00299072265625,
+            "y1": 457.3209228515625
+          },
+          {
+            "x0": 107.99986267089844,
+            "y0": 458.31732177734375,
+            "x1": 165.21505737304688,
+            "y1": 468.2799377441406
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deep Hidden-to-Output Function",
+      "chars": 717,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.9998779296875,
+            "y0": 650.5752563476562,
+            "x1": 504.0029602050781,
+            "y1": 660.537841796875
+          },
+          {
+            "x0": 107.9998779296875,
+            "y0": 661.5342407226562,
+            "x1": 284.5371398925781,
+            "y1": 671.496826171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deep Hidden-to-Hidden Transition",
+      "chars": 3139,
+      "numbers": 0,
+      "citations": 6,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 289.2153625488281,
+            "x1": 424.6212158203125,
+            "y1": 299.177978515625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Stack of Hidden States",
+      "chars": 1450,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99993896484375,
+            "y0": 711.34716796875,
+            "x1": 504.0031433105469,
+            "y1": 721.3097534179688
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 722.3062133789062,
+            "x1": 189.2250213623047,
+            "y1": 732.268798828125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Formal descriptions of deep RNNs",
+      "chars": 176,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 280.22027587890625,
+            "x1": 504.003173828125,
+            "y1": 290.1828918457031
+          },
+          {
+            "x0": 108.0,
+            "y0": 291.17926025390625,
+            "x1": 467.8690185546875,
+            "y1": 301.1418762207031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deep Transition RNN",
+      "chars": 880,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 335.9982604980469,
+            "x1": 490.1554260253906,
+            "y1": 345.96087646484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deep Output RNN",
+      "chars": 550,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99993896484375,
+            "y0": 536.9102172851562,
+            "x1": 304.84100341796875,
+            "y1": 546.872802734375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Stacked RNN",
+      "chars": 738,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 378.0660400390625,
+            "y0": 682.0301513671875,
+            "x1": 504.0031433105469,
+            "y1": 691.9927368164062
+          },
+          {
+            "x0": 108.0,
+            "y0": 692.9891967773438,
+            "x1": 189.35455322265625,
+            "y1": 702.9517822265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Another Perspective: Neural Operators",
+      "chars": 2225,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99998474121094,
+            "y0": 238.91737365722656,
+            "x1": 504.003173828125,
+            "y1": 248.87997436523438
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 249.87635803222656,
+            "x1": 450.7729797363281,
+            "y1": 259.8389587402344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 989,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.9999008178711,
+            "y0": 711.3473510742188,
+            "x1": 504.0032043457031,
+            "y1": 721.3099365234375
+          },
+          {
+            "x0": 107.9999008178711,
+            "y0": 722.3063354492188,
+            "x1": 181.5836639404297,
+            "y1": 732.2689208984375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Model Descriptions",
+      "chars": 2021,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99990844726562,
+            "y0": 288.95635986328125,
+            "x1": 504.0030212402344,
+            "y1": 298.9189758300781
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 299.91534423828125,
+            "x1": 504.0030517578125,
+            "y1": 309.8779602050781
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 310.87432861328125,
+            "x1": 461.0544738769531,
+            "y1": 320.8369445800781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Training",
+      "chars": 852,
+      "numbers": 8,
+      "citations": 6,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 683.4514770507812,
+            "x1": 504.00323486328125,
+            "y1": 693.4140625
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 694.4104614257812,
+            "x1": 117.96257019042969,
+            "y1": 704.373046875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Result and Analysis",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "Polyphonic Music Prediction",
+      "chars": 2684,
+      "numbers": 0,
+      "citations": 11,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 643.9924926757812,
+            "x1": 478.28985595703125,
+            "y1": 653.955078125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Language Modeling",
+      "chars": 1242,
+      "numbers": 1,
+      "citations": 6,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 141.57394409179688,
+            "y0": 485.7054748535156,
+            "x1": 442.39453125,
+            "y1": 495.6680908203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Discussion",
+      "chars": 3393,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 147.7804718017578,
+            "x1": 504.0031433105469,
+            "y1": 157.74307250976562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Acknowledgments",
+      "chars": 477,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 636.946044921875,
+            "x1": 307.5209655761719,
+            "y1": 646.9086303710938
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 6,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 41,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "Hinton-et-al-arxiv2012",
+      "stance": "inherits",
+      "cue": "we used",
+      "sentence": "Furthermore, we used the method of dropout [Hinton et al.] instead of weight noise during training.",
+      "section": "Polyphonic Music Prediction",
+      "sectionKind": "experiments",
+      "ordinal": 46,
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "authors": "Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2012b)",
+      "year": null,
+      "arxivId": "1207.0580",
+      "inCorpus": true,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 261.96380615234375,
+            "y0": 155.99940490722656,
+            "x1": 443.9305725097656,
+            "y1": 165.96200561523438
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Boulanger+al-ICML2012-small",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We test the RNNs on the task of polyphonic music prediction using three datasets which are Nottingham, JSB Chorales and MuseData [Boulanger-Lewandowski et al. 2012].",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 34,
+        "title": "Modeling temporal dependencies in high-dimensional sequences: Application to polyphonic music generation and transcription",
+        "authors": "Boulanger-Lewandowski, N., Bengio, Y., and Vincent, P. (2012)",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.9998779296875,
+              "y0": 219.98439025878906,
+              "x1": 504.00311279296875,
+              "y1": 229.94699096679688
+            },
+            {
+              "x0": 107.9998779296875,
+              "y0": 230.94337463378906,
+              "x1": 244.21853637695312,
+              "y1": 240.90597534179688
+            }
+          ]
+        }
+      },
+      {
+        "key": "Glorot+al-AI-2011-small",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "Only for the character-level language modeling we used rectified linear units [Glorot et al.] for the intermediate layers of the output function, which gave lower validation error.",
+        "section": "Model Descriptions",
+        "sectionKind": "experiments",
+        "ordinal": 36,
+        "title": "Deep sparse rectifier neural networks",
+        "authors": "Glorot, X., Bordes, A., and Bengio, Y. (2011a)",
+        "year": null,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 309.4610900878906,
+              "y0": 625.4384765625,
+              "x1": 504.00054931640625,
+              "y1": 635.4010620117188
+            },
+            {
+              "x0": 107.99996948242188,
+              "y0": 636.3974609375,
+              "x1": 244.05917358398438,
+              "y1": 646.3600463867188
+            }
+          ]
+        }
+      },
+      {
+        "key": "Hinton-et-al-arxiv2012",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "Furthermore, we used the method of dropout [Hinton et al.] instead of weight noise during training.",
+        "section": "Polyphonic Music Prediction",
+        "sectionKind": "experiments",
+        "ordinal": 46,
+        "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+        "authors": "Hinton, G. E., Srivastava, N., Krizhevsky, A., Sutskever, I., and Salakhutdinov, R. (2012b)",
+        "year": null,
+        "arxivId": "1207.0580",
+        "inCorpus": true,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 261.96380615234375,
+              "y0": 155.99940490722656,
+              "x1": 443.9305725097656,
+              "y1": 165.96200561523438
+            }
+          ]
+        }
+      },
+      {
+        "key": "Marcus1993",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "On the task of character-level and word-level language modeling, we use Penn Treebank Corpus [Marcus et al. 1993].",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 35,
+        "title": "Building a large annotated corpus of english: The Penn Treebank",
+        "authors": "Marcus, M. P., Marcinkiewicz, M. A., and Santorini, B. (1993)",
+        "year": 1993,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 405.93023681640625,
+              "y0": 230.94337463378906,
+              "x1": 504.0019836425781,
+              "y1": 240.90597534179688
+            },
+            {
+              "x0": 107.99990844726562,
+              "y0": 241.90235900878906,
+              "x1": 393.39849853515625,
+              "y1": 251.86495971679688
+            }
+          ]
+        }
+      },
+      {
+        "key": "Martens+Sutskever-ICML2011",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Our result, however, is better than the performance achieved by conventional, shallow RNNs without any of those advanced regularization methods [Mikolov et al.], where they reported the best performance of 1.41 using an RNN trained with the Hessian-free learning algorithm [Martens et al. 2011].",
+        "section": "Language Modeling",
+        "sectionKind": "experiments",
+        "ordinal": 59,
+        "title": "Learning recurrent neural networks with Hessian-free optimization",
+        "authors": "Martens, J. and Sutskever, I. (2011)",
+        "year": 2011,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "Mikolov-Sutskever-2012",
+        "stance": "compares",
+        "cue": "better than",
+        "sentence": "Our result, however, is better than the performance achieved by conventional, shallow RNNs without any of those advanced regularization methods [Mikolov et al.], where they reported the best performance of 1.41 using an RNN trained with the Hessian-free learning algorithm [Martens et al. 2011].",
+        "section": "Language Modeling",
+        "sectionKind": "experiments",
+        "ordinal": 58,
+        "title": "Subword language modeling with neural networks",
+        "authors": "Mikolov, T., Sutskever, I., Deoras, A., Le, H.-S., Kombrink, S., and Cernocky, J. (2012b)",
+        "year": null,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "Pascanu+al-ICML2013-small",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use stochastic gradient descent (SGD) and employ the strategy of clipping the gradient proposed by [Pascanu et al. 2013].",
+        "section": "Training",
+        "sectionKind": "experiments",
+        "ordinal": 37,
+        "title": "On the difficulty of training recurrent neural networks",
+        "authors": "Pascanu, R., Mikolov, T., and Bengio, Y. (2013a)",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99996948242188,
+              "y0": 683.4514770507812,
+              "x1": 504.00323486328125,
+              "y1": 693.4140625
+            },
+            {
+              "x0": 107.99996948242188,
+              "y0": 694.4104614257812,
+              "x1": 117.96257019042969,
+              "y1": 704.373046875
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Depth for feedforward models can lead to more expressive models [Pascanu et al.], and we believe the same should hold for recurrent models.",
+      "anchorText": "Depth for feedforward models can lead to more expressive models",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "we believe",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [
+        "Pascanu2014"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 361.7959899902344,
+            "y0": 556.9263305664062,
+            "x1": 504.0020751953125,
+            "y1": 566.888916015625
+          },
+          {
+            "x0": 108.0,
+            "y0": 567.8853149414062,
+            "x1": 235.93971252441406,
+            "y1": 577.847900390625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We hypothesize that such higher-level representations should make it easier to learn the temporal structure between successive time steps because the relationship between abstract features can generally be expressed more easily.",
+      "anchorText": "We hypothesize that such higher-level representations should make it easier to learn the temporal structure between successive time steps because the relationship between abstract features can generally be expressed more easily.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "Deep Input-to-Hidden Function",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.9998779296875,
+            "y0": 491.19427490234375,
+            "x1": 504.00311279296875,
+            "y1": 501.1568908691406
+          },
+          {
+            "x0": 107.9998779296875,
+            "y0": 502.15325927734375,
+            "x1": 504.0032043457031,
+            "y1": 512.1158447265625
+          },
+          {
+            "x0": 107.9998779296875,
+            "y0": 513.1122436523438,
+            "x1": 234.20611572265625,
+            "y1": 523.0748291015625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We suspect that in the future it will be possible to design and train yet another deeper variant of an RNN that combines the proposed models together to be more robust to the characteristics of datasets.",
+      "anchorText": "We suspect that in the future it will be possible to design and train yet another deeper variant of an RNN that combines the proposed models together to be more robust to the characteristics of datasets.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We suspect",
+      "section": "Discussion",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 258.704345703125,
+            "y0": 373.93218994140625,
+            "x1": 504.003173828125,
+            "y1": 383.8948059082031
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 384.89117431640625,
+            "x1": 504.0032653808594,
+            "y1": 394.8537902832031
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 395.85015869140625,
+            "x1": 264.8015441894531,
+            "y1": 405.8127746582031
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 1,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.NE",
+    "primaryName": "Neural and Evolutionary Computing",
+    "categories": [
+      "cs.NE",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2013-12-20",
+    "authors": [
+      "Razvan Pascanu",
+      "Caglar Gulcehre",
+      "Kyunghyun Cho",
+      "Yoshua Bengio"
+    ]
+  }
+}

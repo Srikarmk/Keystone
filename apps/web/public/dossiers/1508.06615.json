@@ -1,0 +1,4628 @@
+{
+  "id": "1508.06615",
+  "title": "Character-Aware Neural Language Models",
+  "keystone": null,
+  "codeUrl": "https://github.com/yoonkim/lstm-char-cnn",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1508.06615",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Corpus statistics. word vocabulary size; character vocabulary size; number of tokens in training set. The small English data is from the Penn Treebank and the Arabic data is from the News-Commentary corpus. The rest are from the 2013 ACL Workshop on Machine Translation. is large because of (rarely occurring) special characters.",
+      "label": "tab:corpus",
+      "numericCells": 13,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Data-s",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Data-l",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "English (En)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51",
+            "value": "51",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "60 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "197",
+            "value": "197",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Czech (Cs)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "46 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "101",
+            "value": "101",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "206 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "195",
+            "value": "195",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "German (De)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74",
+            "value": "74",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "339 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "260",
+            "value": "260",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Spanish (Es)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72",
+            "value": "72",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "152 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "222",
+            "value": "222",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "French (Fr)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76",
+            "value": "76",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "137 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "225",
+            "value": "225",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "57 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Russian (Ru)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "62",
+            "value": "62",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "497 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "111",
+            "value": "111",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Arabic (Ar)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86 k",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "132",
+            "value": "132",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Architecture of the small and large models. dimensionality of character embeddings; filter widths; number of filter matrices, as a function of filter width (so the large model has filters of width of size for a total of filters); nonlinearity functions; number of layers; number of hidden units.",
+      "label": "tab:hyper",
+      "numericCells": 8,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Small",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Large",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "15",
+            "value": "15",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15",
+            "value": "15",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tanh",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "tanh",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Highway",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "ReLU",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "650",
+            "value": "650",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Performance of our model versus other neural language models on the English Penn Treebank test set. refers to perplexity (lower is better) and size refers to the approximate number of parameters in the model. KN- is a Kneser-Ney -gram language model which serves as a non-neural baseline. For these models the authors did not explicitly state the number of parameters, and hence sizes shown here are estimates based on our understanding of their papers or private correspondence with the respective authors.",
+      "label": "tab:ptb",
+      "numericCells": 13,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Size",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LSTM-Word-Small",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "97.6",
+            "value": "97.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM-Char-Small",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM-Word-Large",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.4",
+            "value": "85.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM-Char-Large",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "78.9",
+            "value": "78.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "KN-5 (Mikolov et al. 2012)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "141.2",
+            "value": "141.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RNN (Mikolov et al. 2012)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "124.7",
+            "value": "124.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "RNN-LDA (Mikolov et al. 2012)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "113.7",
+            "value": "113.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "genCNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "116.4",
+            "value": "116.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "FOFE-FNNLM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "108.0",
+            "value": "108.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Deep RNN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "107.5",
+            "value": "107.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Sum-Prod Net",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "LSTM-1 (Zaremba et al. 2014)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "82.7",
+            "value": "82.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "LSTM-2 (Zaremba et al. 2014)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "78.4",
+            "value": "78.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "52 m",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Test set perplexities for Data-s. First two rows are from Botha2014b Botha2014b (except on Arabic where we trained our own KN- model) while the last six are from this paper. KN- is a Kneser-Ney -gram language model, and MLBL is the best performing morphological logbilinear model from Botha Botha2014b. Small/Large refer to model size (see Table ), and Word/Morph/Char are models with words/morphemes/characters as inputs respectively.",
+      "label": "tab:others",
+      "numericCells": 40,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Data-s",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Cs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "De",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Es",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Fr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ru",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ar",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Botha",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "KN-4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "545",
+            "value": "545",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "366",
+            "value": "366",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "241",
+            "value": "241",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "274",
+            "value": "274",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "396",
+            "value": "396",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "323",
+            "value": "323",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MLBL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "465",
+            "value": "465",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "296",
+            "value": "296",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "225",
+            "value": "225",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "304",
+            "value": "304",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Small",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Word",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "503",
+            "value": "503",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "305",
+            "value": "305",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "212",
+            "value": "212",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "229",
+            "value": "229",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "352",
+            "value": "352",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "216",
+            "value": "216",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Morph",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "414",
+            "value": "414",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "278",
+            "value": "278",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "197",
+            "value": "197",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "216",
+            "value": "216",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "290",
+            "value": "290",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "230",
+            "value": "230",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Char",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "401",
+            "value": "401",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "260",
+            "value": "260",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "182",
+            "value": "182",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "189",
+            "value": "189",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "278",
+            "value": "278",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "196",
+            "value": "196",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Large",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Word",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "493",
+            "value": "493",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "286",
+            "value": "286",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "222",
+            "value": "222",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "357",
+            "value": "357",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "172",
+            "value": "172",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Morph",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "398",
+            "value": "398",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "263",
+            "value": "263",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "177",
+            "value": "177",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "196",
+            "value": "196",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "271",
+            "value": "271",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Char",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Test set perplexities on Data-l. First two rows are from Botha2014b Botha2014b, while the last three rows are from the small LSTM models described in the paper. KN- is a Kneser-Ney -gram language model, and MLBL is the best performing morphological logbilinear model from Botha2014b Botha2014b. Word/Morph/Char are models with words/morphemes/characters as inputs respectively.",
+      "label": "tab:others2",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Data-l",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Cs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "De",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Es",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Fr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ru",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "En",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Botha",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "KN-4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "862",
+            "value": "862",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "463",
+            "value": "463",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "219",
+            "value": "219",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "243",
+            "value": "243",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "390",
+            "value": "390",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "291",
+            "value": "291",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MLBL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "643",
+            "value": "643",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "404",
+            "value": "404",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "203",
+            "value": "203",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "227",
+            "value": "227",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "273",
+            "value": "273",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Small",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Word",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "701",
+            "value": "701",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "347",
+            "value": "347",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "186",
+            "value": "186",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "202",
+            "value": "202",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "353",
+            "value": "353",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "236",
+            "value": "236",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Morph",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "615",
+            "value": "615",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "331",
+            "value": "331",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "189",
+            "value": "189",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "209",
+            "value": "209",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "331",
+            "value": "331",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "233",
+            "value": "233",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Char",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "313",
+            "value": "313",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Nearest neighbor words (based on cosine similarity) of word representations from the large word-level and character-level (before and after highway layers) models trained on the PTB. Last three words are OOV words, and therefore they do not have representations in the word-level model.",
+      "label": "tab:nn",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "In Vocabulary",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Out-of-Vocabulary",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "while",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "his",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "you",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "richard",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "trading",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "computer-aided",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "misinformed",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "looooook",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LSTM-Word",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "although",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "your",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "conservatives",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "jonathan",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "advertised",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "letting",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "her",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "we",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "robert",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "advertising",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "though",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "my",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "guys",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "neil",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "turnover",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "minute",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "their",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "i",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "nancy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "turnover",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "chile",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "this",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "your",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "hard",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "heading",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computer-guided",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "informed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "look",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM-Char",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "whole",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "hhs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "young",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "rich",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computerized",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "performed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cook",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "(before highway)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "meanwhile",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "is",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "four",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "richer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "reading",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "disk-drive",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "transformed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "looks",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "white",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "has",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "youth",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "richter",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "leading",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "inform",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "shook",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "meanwhile",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "hhs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "we",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "eduard",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "trade",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computer-guided",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "informed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "look",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM-Char",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "whole",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "this",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "your",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "gerard",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "training",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computer-driven",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "performed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "looks",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "(after highway)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "though",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "their",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "doug",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "edward",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "traded",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computerized",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "outperformed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "looked",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "nevertheless",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "your",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "i",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "carl",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "trader",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "computer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "transformed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "looking",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 87.625,
+            "y0": 239.42098999023438,
+            "x1": 558.002197265625,
+            "y1": 248.38739013671875
+          },
+          {
+            "x0": 54.0,
+            "y0": 249.38296508789062,
+            "x1": 558.0012817382812,
+            "y1": 258.349365234375
+          },
+          {
+            "x0": 54.0,
+            "y0": 259.3459777832031,
+            "x1": 119.29331970214844,
+            "y1": 268.3123779296875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "Perplexity on the Penn Treebank for small/large models trained with/without highway layers.",
+      "label": "tab:highway",
+      "numericCells": 8,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "LSTM-Char",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Small",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Large",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "No Highway Layers",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.3",
+            "value": "100.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.6",
+            "value": "84.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "One Highway Layer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "79.7",
+            "value": "79.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Two Highway Layers",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "90.1",
+            "value": "90.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "78.9",
+            "value": "78.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "One MLP Layer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "111.2",
+            "value": "111.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "92.6",
+            "value": "92.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 88.29399871826172,
+            "y0": 381.0309753417969,
+            "x1": 292.5036926269531,
+            "y1": 389.99737548828125
+          },
+          {
+            "x0": 54.0,
+            "y0": 390.9939880371094,
+            "x1": 185.90472412109375,
+            "y1": 399.96038818359375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "Perplexity reductions by going from small word-level to character-level models based on different corpus/vocabulary sizes on German (De). is the vocabulary size and is the number of tokens in the training set. The full vocabulary of the m dataset was less than k and hence that scenario is unavailable.",
+      "label": "tab:relperf",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "10 k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "25 k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50 k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100 k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17%",
+            "value": "17",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16%",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21%",
+            "value": "21",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8%",
+            "value": "8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14%",
+            "value": "14",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16%",
+            "value": "16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21%",
+            "value": "21",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "10 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9%",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9%",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12%",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15%",
+            "value": "15",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "25 m",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9%",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8%",
+            "value": "8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9%",
+            "value": "9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10%",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {},
+  "references": [
+    {
+      "key": "Alexandrescu2006",
+      "raw": "Alexandrescu, A., and Kirchhoff, K. 2006. Factored Neural Language Models. In Proceedings of NAACL",
+      "authors": "Alexandrescu, A., and Kirchhoff, K",
+      "title": "2006",
+      "venue": "Factored Neural Language Models In Proceedings of NAACL",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ballesteros2015",
+      "raw": "Ballesteros, M.; Dyer, C.; and Smith, N. A. 2015. Improved Transition-Based Parsing by Modeling Characters instead of Words with LSTMs. In Proceedings of EMNLP",
+      "authors": "Ballesteros, M.; Dyer, C.; and Smith, N. A",
+      "title": "2015",
+      "venue": "Improved Transition-Based Parsing by Modeling Characters instead of Words with LSTMs In Proceedings of EMNLP",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio2003",
+      "raw": "Bengio, Y.; Ducharme, R.; and Vincent, P. 2003. A Neural Probabilistic Language Model. Journal of Machine Learning Research 3:1137--1155",
+      "authors": "Bengio, Y.; Ducharme, R.; and Vincent, P",
+      "title": "2003",
+      "venue": "A Neural Probabilistic Language Model Journal of Machine Learning Research 3:1137--1155",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bengio1994",
+      "raw": "Bengio, Y.; Simard, P.; and Frasconi, P. 1994. Learning Long-term Dependencies with Gradient Descent is Difficult. IEEE Transactions on Neural Networks 5:157--166",
+      "authors": "Bengio, Y.; Simard, P.; and Frasconi, P",
+      "title": "1994",
+      "venue": "Learning Long-term Dependencies with Gradient Descent is Difficult IEEE Transactions on Neural Networks 5:157--166",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bilmes2003",
+      "raw": "Bilmes, J., and Kirchhoff, K. 2003. Factored Language Models and Generalized Parallel Backoff. In Proceedings of NAACL",
+      "authors": "Bilmes, J., and Kirchhoff, K",
+      "title": "2003",
+      "venue": "Factored Language Models and Generalized Parallel Backoff In Proceedings of NAACL",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Botha2014",
+      "raw": "Botha, J., and Blunsom, P. 2014. Compositional Morphology for Word Representations and Language Modelling. In Proceedings of ICML",
+      "authors": "Botha, J., and Blunsom, P",
+      "title": "2014",
+      "venue": "Compositional Morphology for Word Representations and Language Modelling In Proceedings of ICML",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Botha2014b",
+      "raw": "Botha, J. 2014. Probabilistic Modelling of Morphologically Rich Languages. DPhil Dissertation, Oxford University",
+      "authors": "Botha, J",
+      "title": "2014",
+      "venue": "Probabilistic Modelling of Morphologically Rich Languages DPhil Dissertation, Oxford University",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Chen1998",
+      "raw": "Chen, S., and Goodman, J. 1998. An Empirical Study of Smoothing Techniques for Language Modeling. Technical Report, Harvard University",
+      "authors": "Chen, S., and Goodman, J",
+      "title": "1998",
+      "venue": "An Empirical Study of Smoothing Techniques for Language Modeling Technical Report, Harvard University",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cheng2014",
+      "raw": "Cheng, W. C.; Kok, S.; Pham, H. V.; Chieu, H. L.; and Chai, K. M. 2014. Language Modeling with Sum-Product Networks. In Proceedings of INTERSPEECH",
+      "authors": "Cheng, W. C.; Kok, S.; Pham, H. V.; Chieu, H. L.; and Chai, K. M",
+      "title": "2014",
+      "venue": "Language Modeling with Sum-Product Networks In Proceedings of INTERSPEECH",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cho2014",
+      "raw": "Cho, K.; van Merrienboer, B.; Gulcehre, C.; Bahdanau, D.; Bougares, F.; Schwenk, H.; and Bengio, Y. 2014. Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation. In Proceedings of EMNLP",
+      "authors": "Cho, K.; van Merrienboer, B.; Gulcehre, C.; Bahdanau, D.; Bougares, F.; Schwenk, H.; and Bengio, Y",
+      "title": "2014",
+      "venue": "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation In Proceedings of EMNLP",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Collobert2011",
+      "raw": "Collobert, R.; Weston, J.; Bottou, L.; Karlen, M.; Kavukcuoglu, K.; and Kuksa, P. 2011. Natural Language Processing (almost) from Scratch. Journal of Machine Learning Research 12:2493--2537",
+      "authors": "Collobert, R.; Weston, J.; Bottou, L.; Karlen, M.; Kavukcuoglu, K.; and Kuksa, P",
+      "title": "2011",
+      "venue": "Natural Language Processing (almost) from Scratch Journal of Machine Learning Research 12:2493--2537",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Creutz2007",
+      "raw": "Creutz, M., and Lagus, K. 2007. Unsupervised Models for Morpheme Segmentation and Morphology Learning. In Proceedings of the ACM Transations on Speech and Language Processing",
+      "authors": "Creutz, M., and Lagus, K",
+      "title": "2007",
+      "venue": "Unsupervised Models for Morpheme Segmentation and Morphology Learning In Proceedings of the ACM Transations on Speech and Language Processing",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Deerwester1990",
+      "raw": "Deerwester, S.; Dumais, S.; and Harshman, R. 1990. Indexing by Latent Semantic Analysis. Journal of American Society of Information Science 41:391--407",
+      "authors": "Deerwester, S.; Dumais, S.; and Harshman, R",
+      "title": "1990",
+      "venue": "Indexing by Latent Semantic Analysis Journal of American Society of Information Science 41:391--407",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Santos2015",
+      "raw": "dos Santos, C. N., and Guimaraes, V. 2015. Boosting Named Entity Recognition with Neural Character Embeddings. In Proceedings of ACL Named Entities Workshop",
+      "authors": "dos Santos, C. N., and Guimaraes, V",
+      "title": "2015",
+      "venue": "Boosting Named Entity Recognition with Neural Character Embeddings In Proceedings of ACL Named Entities Workshop",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Santos2014a",
+      "raw": "dos Santos, C. N., and Zadrozny, B. 2014. Learning Character-level Representations for Part-of-Speech Tagging. In Proceedings of ICML",
+      "authors": "dos Santos, C. N., and Zadrozny, B",
+      "title": "2014",
+      "venue": "Learning Character-level Representations for Part-of-Speech Tagging In Proceedings of ICML",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves2013",
+      "raw": "Graves, A. 2013. Generating Sequences with Recurrent Neural Networks. arXiv:1308.0850",
+      "authors": "Graves, A",
+      "title": "2013",
+      "venue": "Generating Sequences with Recurrent Neural Networks",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "Hinton2012",
+      "raw": "Hinton, G.; Srivastava, N.; Krizhevsky, A.; Sutskever, I.; and Salakhutdinov, R. 2012. Improving Neural Networks by Preventing Co-Adaptation of Feature Detectors. arxiv:1207.0580",
+      "authors": "Hinton, G.; Srivastava, N.; Krizhevsky, A.; Sutskever, I.; and Salakhutdinov, R",
+      "title": "2012",
+      "venue": "Improving Neural Networks by Preventing Co-Adaptation of Feature Detectors",
+      "year": 2012,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "Hochreiter1997",
+      "raw": "Hochreiter, S., and Schmidhuber, J. 1997. Long Short-Term Memory. Neural Computation 9:1735--1780",
+      "authors": "Hochreiter, S., and Schmidhuber, J",
+      "title": "1997",
+      "venue": "Long Short-Term Memory Neural Computation 9:1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kalchbrenner2014",
+      "raw": "Kalchbrenner, N.; Grefenstette, E.; and Blunsom, P. 2014. A Convolutional Neural Network for Modelling Sentences. In Proceedings of ACL",
+      "authors": "Kalchbrenner, N.; Grefenstette, E.; and Blunsom, P",
+      "title": "2014",
+      "venue": "A Convolutional Neural Network for Modelling Sentences In Proceedings of ACL",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kim2014",
+      "raw": "Kim, Y. 2014. Convolutional Neural Networks for Sentence Classification. In Proceedings of EMNLP",
+      "authors": "Kim, Y",
+      "title": "2014",
+      "venue": "Convolutional Neural Networks for Sentence Classification In Proceedings of EMNLP",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Krizhevsky2012",
+      "raw": "Krizhevsky, A.; Sutskever, I.; and Hinton, G. 2012. ImageNet Classification with Deep Convolutional Neural Networks. In Proceedings of NIPS",
+      "authors": "Krizhevsky, A.; Sutskever, I.; and Hinton, G",
+      "title": "2012",
+      "venue": "ImageNet Classification with Deep Convolutional Neural Networks In Proceedings of NIPS",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "LeCun1989",
+      "raw": "LeCun, Y.; Boser, B.; Denker, J. S.; Henderson, D.; Howard, R. E.; Hubbard, W.; and Jackel, L. D. 1989. Handwritten Digit Recognition with a Backpropagation Network. In Proceedings of NIPS",
+      "authors": "LeCun, Y.; Boser, B.; Denker, J. S.; Henderson, D.; Howard, R. E.; Hubbard, W.; and Jackel, L. D",
+      "title": "1989",
+      "venue": "Handwritten Digit Recognition with a Backpropagation Network In Proceedings of NIPS",
+      "year": 1989,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lei2015",
+      "raw": "Lei, T.; Barzilay, R.; and Jaakola, T. 2015. Molding CNNs for Text: Non-linear, Non-consecutive Convolutions. In Proceedings of EMNLP",
+      "authors": "Lei, T.; Barzilay, R.; and Jaakola, T",
+      "title": "2015",
+      "venue": "Molding CNNs for Text: Non-linear, Non-consecutive Convolutions In Proceedings of EMNLP",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ling2015",
+      "raw": "Ling, W.; Lui, T.; Marujo, L.; Astudillo, R. F.; Amir, S.; Dyer, C.; Black, A. W.; and Trancoso, I. 2015. Finding Function in Form: Compositional Character Models for Open Vocabulary Word Representation. In Proceedings of EMNLP",
+      "authors": "Ling, W.; Lui, T.; Marujo, L.; Astudillo, R. F.; Amir, S.; Dyer, C.; Black, A. W.; and Trancoso, I",
+      "title": "2015",
+      "venue": "Finding Function in Form: Compositional Character Models for Open Vocabulary Word Representation In Proceedings of EMNLP",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Luong2013",
+      "raw": "Luong, M.-T.; Socher, R.; and Manning, C. 2013. Better Word Representations with Recursive Neural Networks for Morphology. In Proceedings of CoNLL",
+      "authors": "Luong, M.-T.; Socher, R.; and Manning, C",
+      "title": "2013",
+      "venue": "Better Word Representations with Recursive Neural Networks for Morphology In Proceedings of CoNLL",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Marcus1993",
+      "raw": "Marcus, M.; Santorini, B.; and Marcinkiewicz, M. 1993. Building a Large Annotated Corpus of English: the Penn Treebank. Computational Linguistics 19:331--330",
+      "authors": "Marcus, M.; Santorini, B.; and Marcinkiewicz, M",
+      "title": "1993",
+      "venue": "Building a Large Annotated Corpus of English: the Penn Treebank Computational Linguistics 19:331--330",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2012a",
+      "raw": "Mikolov, T., and Zweig, G. 2012. Context Dependent Recurrent Neural Network Language Model. In Proceedings of SLT",
+      "authors": "Mikolov, T., and Zweig, G",
+      "title": "2012",
+      "venue": "Context Dependent Recurrent Neural Network Language Model In Proceedings of SLT",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2010",
+      "raw": "Mikolov, T.; Karafiat, M.; Burget, L.; Cernocky, J.; and Khudanpur, S. 2010. Recurrent Neural Network Based Language Model. In Proceedings of INTERSPEECH",
+      "authors": "Mikolov, T.; Karafiat, M.; Burget, L.; Cernocky, J.; and Khudanpur, S",
+      "title": "2010",
+      "venue": "Recurrent Neural Network Based Language Model In Proceedings of INTERSPEECH",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2011",
+      "raw": "Mikolov, T.; Deoras, A.; Kombrink, S.; Burget, L.; and Cernocky, J. 2011. Empirical Evaluation and Combination of Advanced Language Modeling Techniques. In Proceedings of INTERSPEECH",
+      "authors": "Mikolov, T.; Deoras, A.; Kombrink, S.; Burget, L.; and Cernocky, J",
+      "title": "2011",
+      "venue": "Empirical Evaluation and Combination of Advanced Language Modeling Techniques In Proceedings of INTERSPEECH",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2012b",
+      "raw": "Mikolov, T.; Sutskever, I.; Deoras, A.; Le, H.-S.; Kombrink, S.; and Cernocky, J. 2012. Subword Language Modeling with Neural Networks. preprint: www.fit.vutbr.cz/\\ imikolov/rnnlm/char.pdf",
+      "authors": "Mikolov, T.; Sutskever, I.; Deoras, A.; Le, H.-S.; Kombrink, S.; and Cernocky, J",
+      "title": "2012",
+      "venue": "Subword Language Modeling with Neural Networks preprint: imikolov/rnnlm/char.pdf",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mikolov2013a",
+      "raw": "Mikolov, T.; Chen, K.; Corrado, G.; and Dean, J. 2013. Efficient Estimation of Word Representations in Vector Space. arXiv:1301.3781",
+      "authors": "Mikolov, T.; Chen, K.; Corrado, G.; and Dean, J",
+      "title": "2013",
+      "venue": "Efficient Estimation of Word Representations in Vector Space",
+      "year": 2013,
+      "arxivId": "1301.3781",
+      "doi": null
+    },
+    {
+      "key": "Mnih2007",
+      "raw": "Mnih, A., and Hinton, G. 2007. Three New Graphical Models for Statistical Language Modelling. In Proceedings of ICML",
+      "authors": "Mnih, A., and Hinton, G",
+      "title": "2007",
+      "venue": "Three New Graphical Models for Statistical Language Modelling In Proceedings of ICML",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Morin2005",
+      "raw": "Morin, F., and Bengio, Y. 2005. Hierarchical Probabilistic Neural Network Language Model. In Proceedings of AISTATS",
+      "authors": "Morin, F., and Bengio, Y",
+      "title": "2005",
+      "venue": "Hierarchical Probabilistic Neural Network Language Model In Proceedings of AISTATS",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pascanu2013",
+      "raw": "Pascanu, R.; Culcehre, C.; Cho, K.; and Bengio, Y. 2013. How to Construct Deep Neural Networks. arXiv:1312.6026",
+      "authors": "Pascanu, R.; Culcehre, C.; Cho, K.; and Bengio, Y",
+      "title": "2013",
+      "venue": "How to Construct Deep Neural Networks",
+      "year": 2013,
+      "arxivId": "1312.6026",
+      "doi": null
+    },
+    {
+      "key": "Qui2014",
+      "raw": "Qui, S.; Cui, Q.; Bian, J.; and Gao, B. 2014. Co-learning of Word Representations and Morpheme Representations. In Proceedings of COLING",
+      "authors": "Qui, S.; Cui, Q.; Bian, J.; and Gao, B",
+      "title": "2014",
+      "venue": "Co-learning of Word Representations and Morpheme Representations In Proceedings of COLING",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Shen2014",
+      "raw": "Shen, Y.; He, X.; Gao, J.; Deng, L.; and Mesnil, G. 2014. A Latent Semantic Model with Convolutional-pooling Structure for Information Retrieval. In Proceedings of CIKM",
+      "authors": "Shen, Y.; He, X.; Gao, J.; Deng, L.; and Mesnil, G",
+      "title": "2014",
+      "venue": "A Latent Semantic Model with Convolutional-pooling Structure for Information Retrieval In Proceedings of CIKM",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Srivastava2015",
+      "raw": "Srivastava, R. K.; Greff, K.; and Schmidhuber, J. 2015. Training Very Deep Networks. arXiv:1507.06228",
+      "authors": "Srivastava, R. K.; Greff, K.; and Schmidhuber, J",
+      "title": "2015",
+      "venue": "Training Very Deep Networks",
+      "year": 2015,
+      "arxivId": "1507.06228",
+      "doi": null
+    },
+    {
+      "key": "Sundermeyer2012",
+      "raw": "Sundermeyer, M.; Schluter, R.; and Ney, H. 2012. LSTM Neural Networks for Language Modeling",
+      "authors": "Sundermeyer, M.; Schluter, R.; and Ney, H",
+      "title": "2012",
+      "venue": "LSTM Neural Networks for Language Modeling",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever2011",
+      "raw": "Sutskever, I.; Martens, J.; and Hinton, G. 2011. Generating Text with Recurrent Neural Networks",
+      "authors": "Sutskever, I.; Martens, J.; and Hinton, G",
+      "title": "2011",
+      "venue": "Generating Text with Recurrent Neural Networks",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever2014",
+      "raw": "Sutskever, I.; Vinyals, O.; and Le, Q. 2014. Sequence to Sequence Learning with Neural Networks",
+      "authors": "Sutskever, I.; Vinyals, O.; and Le, Q",
+      "title": "2014",
+      "venue": "Sequence to Sequence Learning with Neural Networks",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Wang2015",
+      "raw": "Wang, M.; Lu, Z.; Li, H.; Jiang, W.; and Liu, Q. 2015. $gen$CNN: A Convolutional Architecture for Word Sequence Prediction. In Proceedings of ACL",
+      "authors": "Wang, M.; Lu, Z.; Li, H.; Jiang, W.; and Liu, Q",
+      "title": "2015",
+      "venue": "$gen$CNN: A Convolutional Architecture for Word Sequence Prediction In Proceedings of ACL",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Werbos1990",
+      "raw": "Werbos, P. 1990. Back-propagation Through Time: what it does and how to do it. In Proceedings of IEEE",
+      "authors": "Werbos, P",
+      "title": "1990",
+      "venue": "Back-propagation Through Time: what it does and how to do it In Proceedings of IEEE",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zaremba2014",
+      "raw": "Zaremba, W.; Sutskever, I.; and Vinyals, O. 2014. Recurrent Neural Network Regularization. arXiv:1409.2329",
+      "authors": "Zaremba, W.; Sutskever, I.; and Vinyals, O",
+      "title": "2014",
+      "venue": "Recurrent Neural Network Regularization",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    },
+    {
+      "key": "Shang2015",
+      "raw": "Zhang, S.; Jiang, H.; Xu, M.; Hou, J.; and Dai, L. 2015. The Fixed-Size Ordinally-Forgetting Encoding Method for Neural Network Language Models. In Proceedings of ACL",
+      "authors": "Zhang, S.; Jiang, H.; Xu, M.; Hou, J.; and Dai, L",
+      "title": "2015",
+      "venue": "The Fixed-Size Ordinally-Forgetting Encoding Method for Neural Network Language Models In Proceedings of ACL",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zhang2015",
+      "raw": "Zhang, X.; Zhao, J.; and LeCun, Y. 2015. Character-level Convolutional Networks for Text Classification. In Proceedings of NIPS",
+      "authors": "Zhang, X.; Zhao, J.; and LeCun, Y",
+      "title": "2015",
+      "venue": "Character-level Convolutional Networks for Text Classification In Proceedings of NIPS",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\mathbf{h}_t = f(\\mathbf{W} \\mathbf{x}_t + \\mathbf{U} \\mathbf{h}_{t-1} + \\mathbf{b})",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\begin{split}\n\\mathbf{i}_t &= \\sigma (\\mathbf{W}^i \\mathbf{x}_t + \\mathbf{U}^i \\mathbf{h}_{t-1} + \\mathbf{b}^i) \\\\\n\\mathbf{f}_t &= \\sigma (\\mathbf{W}^f \\mathbf{x}_t + \\mathbf{U}^f \\mathbf{h}_{t-1} + \\mathbf{b}^f) \\\\\n\\mathbf{o}_t &= \\sigma (\\mathbf{W}^o \\mathbf{x}_t + \\mathbf{U}^o \\mathbf{h}_{t-1} + \\mathbf{b}^o) \\\\\n\\mathbf{g}_t &= \\mbox{tanh} (\\mathbf{W}^g \\mathbf{x}_t + \\mathbf{U}^g \\mathbf{h}_{t-1} + \\mathbf{b}^g) \\\\\n\\mathbf{c}_t &= \\mathbf{f}_t \\odot \\mathbf{c}_{t-1} + \\mathbf{i}_t \\odot \\mathbf{g}_t \\\\\n\\mathbf{h}_t &= \\mathbf{o}_t \\odot \\mbox{tanh} (\\mathbf{c}_t)\n\\end{split}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\mbox{Pr}(w_{t+1} = j|w_{1:t}) = \\frac{\\mbox{exp}(\\mathbf{h}_t \\cdot \\mathbf{p}^j + q^j)}{\\sum_{j' \\in \\mathcal{V}} \n\\mbox{exp}(\\mathbf{h}_t \\cdot \\mathbf{p}^{j'} + q^{j'})}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "NLL = -\\sum_{t=1}^T \\mbox{log } \\mbox{Pr}(w_{t} | w_{1:t-1})",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\mathbf{f}^k[i] = \\mbox{tanh}(\\langle \\mathbf{C}^k[\\ast, i:i+w-1] \n, \\mathbf{H} \\rangle + b)",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "y^k = \\max_{i} \\mathbf{f}^k[i]",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\mathbf{z} = g(\\mathbf{W}\\mathbf{y} + \\mathbf{b})",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\mathbf{z} = \\mathbf{t} \\odot g(\\mathbf{W}_H\\mathbf{y} + \\mathbf{b}_H) + (\\mathbf{1} -  \\mathbf{t}) \\odot \\mathbf{y}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "PPL = \\mbox{exp} \\Big( \\frac{NLL}{T} \\Big)",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\begin{split}\n\\mbox{Pr}(w_{t+1} = j|w_{1:t}) &= \\frac{\\mbox{exp}(\\mathbf{h}_t \\cdot \\mathbf{s}^r + t^r)}{\\sum_{r'=1}^c \n\\mbox{exp}(\\mathbf{h}_t \\cdot \\mathbf{s}^{r'} + t^{r'})} \\\\ \n&\\times \\frac{\\mbox{exp}(\\mathbf{h}_t \\cdot \\mathbf{p}^j_r + q^j_r)}{\\sum_{j' \\in \\mathcal{V}_r} \n\\mbox{exp}(\\mathbf{h}_t \\cdot \\mathbf{p}^{j'}_r + q^{j'}_r)}\n\\end{split}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\mathbf{x}^k + \\sum_{j \\in \\mathcal{M}_k} \\mathbf{m}^j",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 926,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 73.92499542236328,
+            "y0": 236.61898803710938,
+            "x1": 272.5755615234375,
+            "y1": 245.58538818359375
+          },
+          {
+            "x0": 73.92499542236328,
+            "y0": 246.58200073242188,
+            "x1": 199.40078735351562,
+            "y1": 255.54840087890625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2907,
+      "numbers": 0,
+      "citations": 9,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 447.9126281738281,
+            "x1": 292.5046081542969,
+            "y1": 457.875244140625
+          },
+          {
+            "x0": 54.0,
+            "y0": 458.87164306640625,
+            "x1": 292.50457763671875,
+            "y1": 468.8342590332031
+          },
+          {
+            "x0": 54.0,
+            "y0": 469.82965087890625,
+            "x1": 292.504638671875,
+            "y1": 479.7922668457031
+          },
+          {
+            "x0": 54.0,
+            "y0": 480.78863525390625,
+            "x1": 98.552734375,
+            "y1": 490.7512512207031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Model",
+      "chars": 552,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.00000762939453,
+            "y0": 70.11146545410156,
+            "x1": 239.125,
+            "y1": 80.07406616210938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Recurrent Neural Network",
+      "chars": 3248,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.000003814697266,
+            "y0": 214.1083526611328,
+            "x1": 292.5046081542969,
+            "y1": 224.07095336914062
+          },
+          {
+            "x0": 54.000003814697266,
+            "y0": 225.0673370361328,
+            "x1": 292.5046691894531,
+            "y1": 235.02993774414062
+          },
+          {
+            "x0": 54.000003814697266,
+            "y0": 236.0263214111328,
+            "x1": 117.5016098022461,
+            "y1": 245.98892211914062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Recurrent Neural Network Language Model",
+      "chars": 1006,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 347.5799865722656,
+            "y0": 661.567626953125,
+            "x1": 506.9616394042969,
+            "y1": 671.5302124023438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Character-level Convolutional Neural Network",
+      "chars": 716,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 324.4154357910156,
+            "x1": 192.07168579101562,
+            "y1": 334.3780517578125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Highway Network",
+      "chars": 1173,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 434.9600524902344,
+            "y0": 262.49029541015625,
+            "x1": 544.199951171875,
+            "y1": 272.4529113769531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Setup",
+      "chars": 2457,
+      "numbers": 3,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.49993896484375,
+            "y0": 534.64306640625,
+            "x1": 558.004638671875,
+            "y1": 544.6056518554688
+          },
+          {
+            "x0": 319.49993896484375,
+            "y0": 545.3715209960938,
+            "x1": 348.4744567871094,
+            "y1": 555.5646362304688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Optimization",
+      "chars": 2569,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.99992370605469,
+            "y0": 575.3112182617188,
+            "x1": 292.5045471191406,
+            "y1": 585.2738037109375
+          },
+          {
+            "x0": 53.99992370605469,
+            "y0": 586.2702026367188,
+            "x1": 106.50282287597656,
+            "y1": 596.2327880859375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "results",
+      "title": "English Penn Treebank",
+      "chars": 1909,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.000022888183594,
+            "y0": 417.0205383300781,
+            "x1": 292.504638671875,
+            "y1": 426.983154296875
+          },
+          {
+            "x0": 54.000022888183594,
+            "y0": 427.97955322265625,
+            "x1": 183.0754852294922,
+            "y1": 437.9421691894531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Other Languages",
+      "chars": 4166,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.99998474121094,
+            "y0": 672.5264282226562,
+            "x1": 292.50457763671875,
+            "y1": 682.489013671875
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 683.4854736328125,
+            "x1": 292.5046691894531,
+            "y1": 693.4480590820312
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 694.4444580078125,
+            "x1": 142.9261474609375,
+            "y1": 704.4070434570312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Discussion",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "discussion",
+      "title": "Learned Word Representations",
+      "chars": 1298,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.000030517578125,
+            "y0": 471.20721435546875,
+            "x1": 292.50469970703125,
+            "y1": 481.1698303222656
+          },
+          {
+            "x0": 54.000030517578125,
+            "y0": 482.16619873046875,
+            "x1": 102.54777526855469,
+            "y1": 492.1288146972656
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Learned Character -gram Representations",
+      "chars": 1512,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.4999694824219,
+            "y0": 385.1404724121094,
+            "x1": 558.0045776367188,
+            "y1": 395.10308837890625
+          },
+          {
+            "x0": 319.4999694824219,
+            "y0": 396.0994873046875,
+            "x1": 502.3035888671875,
+            "y1": 406.0621032714844
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Highway Layers",
+      "chars": 1426,
+      "numbers": 3,
+      "citations": 6,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.50006103515625,
+            "y0": 639.6493530273438,
+            "x1": 558.0047607421875,
+            "y1": 649.6119384765625
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 650.6083374023438,
+            "x1": 450.4883117675781,
+            "y1": 660.5709228515625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Effect of Corpus/Vocab Sizes",
+      "chars": 1159,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 661.5673828125,
+            "x1": 292.5046691894531,
+            "y1": 671.5299682617188
+          },
+          {
+            "x0": 54.0,
+            "y0": 672.5263671875,
+            "x1": 292.5046691894531,
+            "y1": 682.4889526367188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Further Observations",
+      "chars": 1362,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 399.9691467285156,
+            "y0": 639.650390625,
+            "x1": 518.0060424804688,
+            "y1": 649.6129760742188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2292,
+      "numbers": 0,
+      "citations": 13,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.99998474121094,
+            "y0": 272.7732849121094,
+            "x1": 292.50457763671875,
+            "y1": 282.73590087890625
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 283.7322998046875,
+            "x1": 292.5046081542969,
+            "y1": 293.6949157714844
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 960,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 262.021240234375,
+            "x1": 558.0045776367188,
+            "y1": 271.9838562011719
+          },
+          {
+            "x0": 319.5,
+            "y0": 272.980224609375,
+            "x1": 428.2616271972656,
+            "y1": 282.9428405761719
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 102,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 512.0740356445312,
+            "x1": 558.0047607421875,
+            "y1": 522.03662109375
+          },
+          {
+            "x0": 319.5,
+            "y0": 523.0330200195312,
+            "x1": 495.46942138671875,
+            "y1": 532.99560546875
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 4,
+      "compares": 0,
+      "background": 31,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "Hinton2012",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "For regularization we use dropout [Hinton et al. 2012] with probability 0.5 on the LSTM input-to-hidden layers (except on the initial Highway to LSTM layer) and the hidden-to-output softmax layer.",
+      "section": "Optimization",
+      "sectionKind": "experiments",
+      "ordinal": 17,
+      "title": "2012",
+      "authors": "Hinton, G.; Srivastava, N.; Krizhevsky, A.; Sutskever, I.; and Salakhutdinov, R",
+      "year": 2012,
+      "arxivId": "1207.0580",
+      "inCorpus": true,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 406.46087646484375,
+            "y0": 353.72442626953125,
+            "x1": 558.0020141601562,
+            "y1": 363.6870422363281
+          },
+          {
+            "x0": 319.4998779296875,
+            "y0": 364.68341064453125,
+            "x1": 558.0044555664062,
+            "y1": 374.6460266113281
+          },
+          {
+            "x0": 319.4998779296875,
+            "y0": 375.64239501953125,
+            "x1": 449.9998779296875,
+            "y1": 385.6050109863281
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Botha2014",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike previous works that utilize subword information via morphemes [Botha et al. 2014; Luong et al. 2013], our model does not require morphological tagging as a pre-processing step.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 5,
+        "title": "2014",
+        "authors": "Botha, J., and Blunsom, P",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 424.9740295410156,
+              "y0": 407.09429931640625,
+              "x1": 558.004638671875,
+              "y1": 417.0569152832031
+            },
+            {
+              "x0": 319.50006103515625,
+              "y0": 418.05328369140625,
+              "x1": 508.9387512207031,
+              "y1": 428.0158996582031
+            }
+          ]
+        }
+      },
+      {
+        "key": "Hinton2012",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For regularization we use dropout [Hinton et al. 2012] with probability 0.5 on the LSTM input-to-hidden layers (except on the initial Highway to LSTM layer) and the hidden-to-output softmax layer.",
+        "section": "Optimization",
+        "sectionKind": "experiments",
+        "ordinal": 17,
+        "title": "2012",
+        "authors": "Hinton, G.; Srivastava, N.; Krizhevsky, A.; Sutskever, I.; and Salakhutdinov, R",
+        "year": 2012,
+        "arxivId": "1207.0580",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 406.46087646484375,
+              "y0": 353.72442626953125,
+              "x1": 558.0020141601562,
+              "y1": 363.6870422363281
+            },
+            {
+              "x0": 319.4998779296875,
+              "y0": 364.68341064453125,
+              "x1": 558.0044555664062,
+              "y1": 374.6460266113281
+            },
+            {
+              "x0": 319.4998779296875,
+              "y0": 375.64239501953125,
+              "x1": 449.9998779296875,
+              "y1": 385.6050109863281
+            }
+          ]
+        }
+      },
+      {
+        "key": "Luong2013",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike previous works that utilize subword information via morphemes [Botha et al. 2014; Luong et al. 2013], our model does not require morphological tagging as a pre-processing step.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 5,
+        "title": "2013",
+        "authors": "Luong, M.-T.; Socher, R.; and Manning, C",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 424.9740295410156,
+              "y0": 407.09429931640625,
+              "x1": 558.004638671875,
+              "y1": 417.0569152832031
+            },
+            {
+              "x0": 319.50006103515625,
+              "y0": 418.05328369140625,
+              "x1": 508.9387512207031,
+              "y1": 428.0158996582031
+            }
+          ]
+        }
+      },
+      {
+        "key": "Morin2005",
+        "stance": "inherits",
+        "cue": "we employ",
+        "sentence": "Finally, in order to speed up training on Data-l we employ a hierarchical softmax [Morin et al. 2005]\u2014a common strategy for training language models with very large |\ud835\udcb1|\u2014instead of the usual softmax.",
+        "section": "Optimization",
+        "sectionKind": "experiments",
+        "ordinal": 18,
+        "title": "2005",
+        "authors": "Morin, F., and Bengio, Y",
+        "year": 2005,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 329.4629211425781,
+              "y0": 452.7693176269531,
+              "x1": 558.0005493164062,
+              "y1": 462.73193359375
+            },
+            {
+              "x0": 319.4999694824219,
+              "y0": 463.72833251953125,
+              "x1": 432.79461669921875,
+              "y1": 473.6909484863281
+            }
+          ]
+        }
+      },
+      {
+        "key": "Santos2014a",
+        "stance": "contests",
+        "cue": "unlike",
+        "sentence": "And, unlike the recent line of work which combines input word embeddings with features from a character-level model [Santos et al. 2014; Santos et al. 2015], our model does not utilize word embeddings at all in the input layer.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 6,
+        "title": "2014",
+        "authors": "dos Santos, C. N., and Zadrozny, B",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 511.2401123046875,
+              "y0": 418.05328369140625,
+              "x1": 558.0046997070312,
+              "y1": 428.0158996582031
+            },
+            {
+              "x0": 319.50006103515625,
+              "y0": 429.01226806640625,
+              "x1": 558.0046997070312,
+              "y1": 438.9748840332031
+            },
+            {
+              "x0": 319.50006103515625,
+              "y0": 439.97125244140625,
+              "x1": 510.1143798828125,
+              "y1": 449.9338684082031
+            }
+          ]
+        }
+      },
+      {
+        "key": "Santos2015",
+        "stance": "contests",
+        "cue": "unlike",
+        "sentence": "And, unlike the recent line of work which combines input word embeddings with features from a character-level model [Santos et al. 2014; Santos et al. 2015], our model does not utilize word embeddings at all in the input layer.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 6,
+        "title": "2015",
+        "authors": "dos Santos, C. N., and Guimaraes, V",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 511.2401123046875,
+              "y0": 418.05328369140625,
+              "x1": 558.0046997070312,
+              "y1": 428.0158996582031
+            },
+            {
+              "x0": 319.50006103515625,
+              "y0": 429.01226806640625,
+              "x1": 558.0046997070312,
+              "y1": 438.9748840332031
+            },
+            {
+              "x0": 319.50006103515625,
+              "y0": 439.97125244140625,
+              "x1": 510.1143798828125,
+              "y1": 449.9338684082031
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "For notational convenience we assume that words and characters have already been converted into indices.",
+      "anchorText": "For notational convenience we assume that words and characters have already been converted into indices.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "Model",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 151.34434509277344,
+            "y0": 157.78334045410156,
+            "x1": 292.5044250488281,
+            "y1": 167.74594116210938
+          },
+          {
+            "x0": 54.000003814697266,
+            "y0": 168.74134826660156,
+            "x1": 292.5046081542969,
+            "y1": 178.70394897460938
+          },
+          {
+            "x0": 54.000003814697266,
+            "y0": 179.70033264160156,
+            "x1": 102.70713806152344,
+            "y1": 189.66293334960938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Suppose that word k \u2208\ud835\udcb1 is made up of a sequence of characters [c_1, \u2026, c_l], where l is the length of word k.",
+      "anchorText": "is made up of a sequence of characters",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "Suppose that",
+      "section": "Character-level Convolutional Neural Network",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 285.85498046875,
+            "y0": 446.00335693359375,
+            "x1": 292.5000305175781,
+            "y1": 455.9659729003906
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 456.96136474609375,
+            "x1": 200.59970092773438,
+            "y1": 466.9239807128906
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "As is standard in language modeling, we use perplexity (PPL) to evaluate the performance of our models.",
+      "anchorText": "As is standard in language modeling, we use perplexity (",
+      "kind": "conventional",
+      "support": "bare",
+      "cue": "As is standard",
+      "section": "Experimental Setup",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.49993896484375,
+            "y0": 534.64306640625,
+            "x1": 558.004638671875,
+            "y1": 544.6056518554688
+          },
+          {
+            "x0": 319.49993896484375,
+            "y0": 545.3715209960938,
+            "x1": 348.4744567871094,
+            "y1": 555.5646362304688
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Concretely, suppose that \u2133 is the set of morphemes in a language, \ud835\udc0c\u2208\u211d^n \u00d7 |\u2133| is the matrix of morpheme embeddings, and \ud835\udc26^j is the j-th column of \ud835\udc0c (i.e. a morpheme embedding).",
+      "anchorText": "is the matrix of morpheme embeddings, and",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "suppose that",
+      "section": "Other Languages",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 413.7759094238281,
+            "y0": 460.7663269042969,
+            "x1": 558.0045166015625,
+            "y1": 470.72894287109375
+          },
+          {
+            "x0": 319.4999084472656,
+            "y0": 471.725341796875,
+            "x1": 361.6117858886719,
+            "y1": 481.6879577636719
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We also find that the representations are particularly sensitive to character n-grams containing hyphens (orange), presumably because this is a strong signal of a word's part-of-speech.",
+      "anchorText": "-grams containing hyphens (orange), presumably because this is a strong signal of a word's part-of-speech.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "presumably",
+      "section": "Learned Character -gram Representations",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.50006103515625,
+            "y0": 593.42333984375,
+            "x1": 557.9971313476562,
+            "y1": 603.3859252929688
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 604.38232421875,
+            "x1": 513.3621826171875,
+            "y1": 614.3449096679688
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We hypothesize that highway networks are especially well-suited to work with CNNs, adaptively combining local features detected by the individual filters.",
+      "anchorText": "We hypothesize that highway networks are especially well-suited to work with CNNs, adaptively combining local features detected by the individual filters.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We hypothesize",
+      "section": "Highway Layers",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 63.9630012512207,
+            "y0": 457.8424072265625,
+            "x1": 292.5050354003906,
+            "y1": 467.8050231933594
+          },
+          {
+            "x0": 54.0,
+            "y0": 468.8013916015625,
+            "x1": 292.5045471191406,
+            "y1": 478.7640075683594
+          },
+          {
+            "x0": 54.0,
+            "y0": 479.7603759765625,
+            "x1": 241.2968292236328,
+            "y1": 489.7229919433594
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "CNNs have already proven to be been successful for many NLP tasks [Collobert et al. 2011; Shen et al. 2014; Kalchbrenner et al. 2014; Kim 2014; Zhang et al. 2015; Lei et al. 2015], and we posit that further gains could be achieved by employing highway layers on top of existing CNN architectures.",
+      "anchorText": ", and we posit that further gains could be achieved by employing highway layers on top of existing CNN architectures.",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "we posit",
+      "section": "Highway Layers",
+      "sectionKind": "discussion",
+      "cites": [
+        "Collobert2011",
+        "Shen2014",
+        "Kalchbrenner2014",
+        "Kim2014",
+        "Zhang2015",
+        "Lei2015"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 234.75149536132812,
+            "y0": 523.5953369140625,
+            "x1": 292.504638671875,
+            "y1": 533.5579223632812
+          },
+          {
+            "x0": 54.0,
+            "y0": 534.5543212890625,
+            "x1": 292.5045471191406,
+            "y1": 544.5169067382812
+          },
+          {
+            "x0": 54.0,
+            "y0": 545.5133056640625,
+            "x1": 266.2532043457031,
+            "y1": 555.4758911132812
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 7,
+    "cited": 1,
+    "shown": 0,
+    "bare": 6
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 35,
+    "rate": 0.875
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.NE",
+      "stat.ML"
+    ],
+    "published": "2015-08-26",
+    "authors": [
+      "Yoon Kim",
+      "Yacine Jernite",
+      "David Sontag",
+      "Alexander M. Rush"
+    ]
+  }
+}

@@ -1,0 +1,1676 @@
+{
+  "id": "1901.08149",
+  "title": "TransferTransfo: A Transfer Learning Approach for Neural Network Based Conversational Agents",
+  "keystone": null,
+  "codeUrl": "https://github.com/huggingface/pytorch-openai-transformer-lm",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1901.08149",
+  "numbers": [
+    {
+      "value": "6.25e-5",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We used Adam with a learning rate of 6.25e-5, , , L2 weight decay of 0,01 and a coefficient of 2 on the Language Modeling loss when summing with the next-utterance classification loss losses.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 532.821533203125,
+            "y0": 442.0263671875,
+            "x1": 557.9996948242188,
+            "y1": 452.2195129394531
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 453.21588134765625,
+            "x1": 558.0047607421875,
+            "y1": 463.1784973144531
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 464.17388916015625,
+            "x1": 558.004638671875,
+            "y1": 474.1365051269531
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 475.13287353515625,
+            "x1": 419.086181640625,
+            "y1": 485.0954895019531
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We use a dropout probability of 0.1 on all layers.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 518.1541748046875,
+            "y0": 486.09185791015625,
+            "x1": 558.004638671875,
+            "y1": 496.0544738769531
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 497.05084228515625,
+            "x1": 488.84405517578125,
+            "y1": 507.0134582519531
+          }
+        ]
+      }
+    },
+    {
+      "value": "512 tokens",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Following radford_improving_2018,devlin_bert:_2018 the model uses learned positional embeddings with supported sequence lengths up to 512 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 495.3899841308594,
+            "y0": 324.75244140625,
+            "x1": 558.0049438476562,
+            "y1": 334.7150573730469
+          },
+          {
+            "x0": 319.5,
+            "y0": 335.71044921875,
+            "x1": 558.0045776367188,
+            "y1": 345.6730651855469
+          },
+          {
+            "x0": 319.5,
+            "y0": 346.66943359375,
+            "x1": 429.9253845214844,
+            "y1": 356.6320495605469
+          }
+        ]
+      }
+    },
+    {
+      "value": "250 tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We fine-tuned the model with a batch size of 32 sequences having an average of 250 tokens depending on the batch for 200,000 steps, which is approximately 2 epochs over the persona-chat training dataset (32 sequences * 250 tokens = 8,000 tokens/batch).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 409.3630676269531,
+            "y0": 387.46197509765625,
+            "x1": 557.9952392578125,
+            "y1": 397.4245910644531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 398.42095947265625,
+            "x1": 558.0046997070312,
+            "y1": 408.3835754394531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 409.37994384765625,
+            "x1": 558.0046997070312,
+            "y1": 419.3425598144531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 420.33892822265625,
+            "x1": 557.998779296875,
+            "y1": 430.3015441894531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 431.29791259765625,
+            "x1": 521.4618530273438,
+            "y1": 441.2605285644531
+          }
+        ]
+      }
+    },
+    {
+      "value": "200,000 steps",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We fine-tuned the model with a batch size of 32 sequences having an average of 250 tokens depending on the batch for 200,000 steps, which is approximately 2 epochs over the persona-chat training dataset (32 sequences * 250 tokens = 8,000 tokens/batch).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 409.3630676269531,
+            "y0": 387.46197509765625,
+            "x1": 557.9952392578125,
+            "y1": 397.4245910644531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 398.42095947265625,
+            "x1": 558.0046997070312,
+            "y1": 408.3835754394531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 409.37994384765625,
+            "x1": 558.0046997070312,
+            "y1": 419.3425598144531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 420.33892822265625,
+            "x1": 557.998779296875,
+            "y1": 430.3015441894531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 431.29791259765625,
+            "x1": 521.4618530273438,
+            "y1": 441.2605285644531
+          }
+        ]
+      }
+    },
+    {
+      "value": "2 epochs",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We fine-tuned the model with a batch size of 32 sequences having an average of 250 tokens depending on the batch for 200,000 steps, which is approximately 2 epochs over the persona-chat training dataset (32 sequences * 250 tokens = 8,000 tokens/batch).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 409.3630676269531,
+            "y0": 387.46197509765625,
+            "x1": 557.9952392578125,
+            "y1": 397.4245910644531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 398.42095947265625,
+            "x1": 558.0046997070312,
+            "y1": 408.3835754394531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 409.37994384765625,
+            "x1": 558.0046997070312,
+            "y1": 419.3425598144531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 420.33892822265625,
+            "x1": 557.998779296875,
+            "y1": 430.3015441894531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 431.29791259765625,
+            "x1": 521.4618530273438,
+            "y1": 441.2605285644531
+          }
+        ]
+      }
+    },
+    {
+      "value": "250 tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We fine-tuned the model with a batch size of 32 sequences having an average of 250 tokens depending on the batch for 200,000 steps, which is approximately 2 epochs over the persona-chat training dataset (32 sequences * 250 tokens = 8,000 tokens/batch).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 409.3630676269531,
+            "y0": 387.46197509765625,
+            "x1": 557.9952392578125,
+            "y1": 397.4245910644531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 398.42095947265625,
+            "x1": 558.0046997070312,
+            "y1": 408.3835754394531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 409.37994384765625,
+            "x1": 558.0046997070312,
+            "y1": 419.3425598144531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 420.33892822265625,
+            "x1": 557.998779296875,
+            "y1": 430.3015441894531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 431.29791259765625,
+            "x1": 521.4618530273438,
+            "y1": 441.2605285644531
+          }
+        ]
+      }
+    },
+    {
+      "value": "8,000 tokens",
+      "kind": "configuration",
+      "section": "other",
+      "sentence": "We fine-tuned the model with a batch size of 32 sequences having an average of 250 tokens depending on the batch for 200,000 steps, which is approximately 2 epochs over the persona-chat training dataset (32 sequences * 250 tokens = 8,000 tokens/batch).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 409.3630676269531,
+            "y0": 387.46197509765625,
+            "x1": 557.9952392578125,
+            "y1": 397.4245910644531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 398.42095947265625,
+            "x1": 558.0046997070312,
+            "y1": 408.3835754394531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 409.37994384765625,
+            "x1": 558.0046997070312,
+            "y1": 419.3425598144531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 420.33892822265625,
+            "x1": 557.998779296875,
+            "y1": 430.3015441894531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 431.29791259765625,
+            "x1": 521.4618530273438,
+            "y1": 441.2605285644531
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Example dialog from the persona-chat dataset. Person 1 is given their own persona (top left) at the beginning of the chat, but does not know the persona of Person 2, and vice-versa. They have to get to know each other during the conversation.",
+      "label": "table:persona-chat-example",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Persona 1",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Persona 2",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "I like to ski",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I am an artist",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "My wife does not like me anymore",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I have four children",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "I have went to Mexico 4 times this year",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I recently got a cat",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "I hate Mexican food",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I enjoy walking for exercise",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "I like to eat cheetos",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I love watching Game of Thrones",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 1:] Hi",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 2:] Hello ! How are you today ?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 1:] I am good thank you , how are you.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 2:] Great, thanks ! My children and I were just about to watch Game of Thrones.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 1:] Nice ! How old are your children?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 2:] I have four that range in age from 10 to 21. You?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 1:] I do not have children at the moment.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 2:] That just means you get to keep all the popcorn for yourself.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 1:] And Cheetos at the moment!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 2:] Good choice. Do you watch Game of Thrones?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 1:] No, I do not have much time for TV.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[PERSON 2:] I usually spend my time painting: but, I love the show.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 88.1617431640625,
+            "y0": 254.68348693847656,
+            "x1": 558.00146484375,
+            "y1": 264.6460876464844
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 265.6424560546875,
+            "x1": 555.1187744140625,
+            "y1": 275.6050720214844
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Results on the (public) validation and (private) test set of the persona-chat dataset. The results on the test set were evaluated by the ConvAI evaluation server. PPL stands for perplexity, Hits@1 for correct identification of a gold answer from a set of 19 distractors and F1 for precision and recall of content words in a dialog utterance (see zhang_personalizing_2018 and http://convai.io/ for details)",
+      "label": "tab:result-comparisons",
+      "numericCells": 23,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Eval",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Hits@1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Hits@1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Generative Profile Memory",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.54",
+            "value": "34.54",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "12.5",
+            "value": "12.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Retrieval KV Profile Memory",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "51.1",
+            "value": "51.1",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Seq2Seq + Attention (ConvAI2 baseline )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "35.07",
+            "value": "35.07",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.5",
+            "value": "12.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.82",
+            "value": "16.82",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "29.8",
+            "value": "29.8",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "12.6",
+            "value": "12.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.18",
+            "value": "16.18",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Language Model (ConvAI2 baseline )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "51.1",
+            "value": "51.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.31",
+            "value": "15.31",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "46.0",
+            "value": "46.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.02",
+            "value": "15.02",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "KV Profile Memory (ConvAI2 baseline )",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "55.1",
+            "value": "55.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.72",
+            "value": "11.72",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "55.2",
+            "value": "55.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "11.9",
+            "value": "11.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "TransferTransfo (this work)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "17.51",
+            "value": "17.51",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "82.1",
+            "value": "82.1",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "19.09",
+            "value": "19.09",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "16.28",
+            "value": "16.28",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "80.7",
+            "value": "80.7",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "19.5",
+            "value": "19.5",
+            "emphasised": true,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {},
+  "references": [
+    {
+      "key": "chelba_one_2013",
+      "raw": "Chelba, C.; Mikolov, T.; Schuster, M.; Ge, Q.; Brants, T.; Koehn, P.; and Robinson, T. 2013. One Billion Word Benchmark for Measuring Progress in Statistical Language Modeling. arXiv:1312.3005 [cs]. arXiv: 1312.3005",
+      "authors": "Chelba, C.; Mikolov, T.; Schuster, M.; Ge, Q.; Brants, T.; Koehn, P.; and Robinson, T",
+      "title": "2013",
+      "venue": "One Billion Word Benchmark for Measuring Progress in Statistical Language Modeling [cs]",
+      "year": 2013,
+      "arxivId": "1312.3005",
+      "doi": null
+    },
+    {
+      "key": "devlin_bert:_2018",
+      "raw": "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K. 2018. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. arXiv:1810.04805 [cs]. arXiv: 1810.04805",
+      "authors": "Devlin, J.; Chang, M.-W.; Lee, K.; and Toutanova, K",
+      "title": "2018",
+      "venue": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding [cs]",
+      "year": 2018,
+      "arxivId": "1810.04805",
+      "doi": null
+    },
+    {
+      "key": "lee_set_2018",
+      "raw": "Lee, J.; Lee, Y.; Kim, J.; Kosiorek, A. R.; Choi, S.; and Teh, Y. W. 2018. Set Transformer. arXiv:1810.00825 [cs, stat]. arXiv: 1810.00825",
+      "authors": "Lee, J.; Lee, Y.; Kim, J.; Kosiorek, A. R.; Choi, S.; and Teh, Y. W",
+      "title": "2018",
+      "venue": "Set Transformer [cs, stat]",
+      "year": 2018,
+      "arxivId": "1810.00825",
+      "doi": null
+    },
+    {
+      "key": "li_neural_2016",
+      "raw": "Li, J., and Jurafsky, D. 2016. Neural Net Models for Open-Domain Discourse Coherence. arXiv:1606.01545 [cs]. arXiv: 1606.01545",
+      "authors": "Li, J., and Jurafsky, D",
+      "title": "2016",
+      "venue": "Neural Net Models for Open-Domain Discourse Coherence [cs]",
+      "year": 2016,
+      "arxivId": "1606.01545",
+      "doi": null
+    },
+    {
+      "key": "li_adversarial_2017",
+      "raw": "Li, J.; Monroe, W.; Shi, T.; Ritter, A.; and Jurafsky, D. 2017. Adversarial Learning for Neural Dialogue Generation. arXiv:1701.06547 [cs]. arXiv: 1701.06547",
+      "authors": "Li, J.; Monroe, W.; Shi, T.; Ritter, A.; and Jurafsky, D",
+      "title": "2017",
+      "venue": "Adversarial Learning for Neural Dialogue Generation [cs]",
+      "year": 2017,
+      "arxivId": "1701.06547",
+      "doi": null
+    },
+    {
+      "key": "li_simple_2016",
+      "raw": "Li, J.; Monroe, W.; and Jurafsky, D. 2016. A Simple, Fast Diverse Decoding Algorithm for Neural Generation. arXiv:1611.08562 [cs]. arXiv: 1611.08562",
+      "authors": "Li, J.; Monroe, W.; and Jurafsky, D",
+      "title": "2016",
+      "venue": "A Simple, Fast Diverse Decoding Algorithm for Neural Generation [cs]",
+      "year": 2016,
+      "arxivId": "1611.08562",
+      "doi": null
+    },
+    {
+      "key": "liu_how_2016",
+      "raw": "Liu, C.-W.; Lowe, R.; Serban, I. V.; Noseworthy, M.; Charlin, L.; and Pineau, J. 2016. How NOT To Evaluate Your Dialogue System: An Empirical Study of Unsupervised Evaluation Metrics for Dialogue Response Generation. arXiv:1603.08023 [cs]. arXiv: 1603.08023",
+      "authors": "Liu, C.-W.; Lowe, R.; Serban, I. V.; Noseworthy, M.; Charlin, L.; and Pineau, J",
+      "title": "2016",
+      "venue": "How NOT To Evaluate Your Dialogue System: An Empirical Study of Unsupervised Evaluation Metrics for Dialogue Response Generation [cs]",
+      "year": 2016,
+      "arxivId": "1603.08023",
+      "doi": null
+    },
+    {
+      "key": "miao_neural_2015",
+      "raw": "Miao, Y.; Yu, L.; and Blunsom, P. 2015. Neural Variational Inference for Text Processing. arXiv:1511.06038 [cs, stat]. arXiv: 1511.06038",
+      "authors": "Miao, Y.; Yu, L.; and Blunsom, P",
+      "title": "2015",
+      "venue": "Neural Variational Inference for Text Processing [cs, stat]",
+      "year": 2015,
+      "arxivId": "1511.06038",
+      "doi": null
+    },
+    {
+      "key": "peters_deep_2018",
+      "raw": "Peters, M. E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and Zettlemoyer, L. 2018. Deep contextualized word representations",
+      "authors": "Peters, M. E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and Zettlemoyer, L",
+      "title": "2018",
+      "venue": "Deep contextualized word representations",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "radford_improving_2018",
+      "raw": "Radford, A.; Narasimhan, K.; Salimans, T.; and Sutskever, I. 2018. Improving Language Understanding by Generative Pre-Training. 12",
+      "authors": "Radford, A.; Narasimhan, K.; Salimans, T.; and Sutskever, I",
+      "title": "2018",
+      "venue": "Improving Language Understanding by Generative Pre-Training 12",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sennrich_neural_2015",
+      "raw": "Sennrich, R.; Haddow, B.; and Birch, A. 2015. Neural Machine Translation of Rare Words with Subword Units. arXiv:1508.07909 [cs]. arXiv: 1508.07909",
+      "authors": "Sennrich, R.; Haddow, B.; and Birch, A",
+      "title": "2015",
+      "venue": "Neural Machine Translation of Rare Words with Subword Units [cs]",
+      "year": 2015,
+      "arxivId": "1508.07909",
+      "doi": null
+    },
+    {
+      "key": "serban_hierarchical_2016",
+      "raw": "Serban, I. V.; Sordoni, A.; Lowe, R.; Charlin, L.; Pineau, J.; Courville, A.; and Bengio, Y. 2016. A Hierarchical Latent Variable Encoder-Decoder Model for Generating Dialogues. arXiv:1605.06069 [cs]. arXiv: 1605.06069",
+      "authors": "Serban, I. V.; Sordoni, A.; Lowe, R.; Charlin, L.; Pineau, J.; Courville, A.; and Bengio, Y",
+      "title": "2016",
+      "venue": "A Hierarchical Latent Variable Encoder-Decoder Model for Generating Dialogues [cs]",
+      "year": 2016,
+      "arxivId": "1605.06069",
+      "doi": null
+    },
+    {
+      "key": "serban_deep_2017",
+      "raw": "Serban, I. V.; Sankar, C.; Germain, M.; Zhang, S.; Lin, Z.; Subramanian, S.; Kim, T.; Pieper, M.; Chandar, S.; Ke, N. R.; Mudumba, S.; de Brebisson, A.; Sotelo, J. M. R.; Suhubdy, D.; Michalski, V.; Nguyen, A.; Pineau, J.; and Bengio, Y. 2017. A Deep Reinforcement Learning Chatbot. arXiv:1709.02349 [cs, stat]. arXiv: 1709.02349",
+      "authors": "Serban, I. V.; Sankar, C.; Germain, M.; Zhang, S.; Lin, Z.; Subramanian, S.; Kim, T.; Pieper, M.; Chandar, S.; Ke, N. R.; Mudumba, S.; de Brebisson, A.; Sotelo, J. M. R.; Suhubdy, D.; Michalski, V.; Nguyen, A.; Pineau, J.; and Bengio, Y",
+      "title": "2017",
+      "venue": "A Deep Reinforcement Learning Chatbot [cs, stat]",
+      "year": 2017,
+      "arxivId": "1709.02349",
+      "doi": null
+    },
+    {
+      "key": "sordoni_hierarchical_2015",
+      "raw": "Sordoni, A.; Bengio, Y.; Vahabi, H.; Lioma, C.; Simonsen, J. G.; and Nie, J.-Y. 2015. A Hierarchical Recurrent Encoder-Decoder For Generative Context-Aware Query Suggestion. arXiv:1507.02221 [cs]. arXiv: 1507.02221",
+      "authors": "Sordoni, A.; Bengio, Y.; Vahabi, H.; Lioma, C.; Simonsen, J. G.; and Nie, J.-Y",
+      "title": "2015",
+      "venue": "A Hierarchical Recurrent Encoder-Decoder For Generative Context-Aware Query Suggestion [cs]",
+      "year": 2015,
+      "arxivId": "1507.02221",
+      "doi": null
+    },
+    {
+      "key": "vaswani_attention_2017",
+      "raw": "Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A. N.; Kaiser, L.; and Polosukhin, I. 2017. Attention Is All You Need. arXiv:1706.03762 [cs]. arXiv: 1706.03762",
+      "authors": "Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A. N.; Kaiser, L.; and Polosukhin, I",
+      "title": "2017",
+      "venue": "Attention Is All You Need [cs]",
+      "year": 2017,
+      "arxivId": "1706.03762",
+      "doi": null
+    },
+    {
+      "key": "vinyals_neural_2015",
+      "raw": "Vinyals, O., and Le, Q. 2015. A Neural Conversational Model. arXiv:1506.05869 [cs]. arXiv: 1506.05869",
+      "authors": "Vinyals, O., and Le, Q",
+      "title": "2015",
+      "venue": "A Neural Conversational Model [cs]",
+      "year": 2015,
+      "arxivId": "1506.05869",
+      "doi": null
+    },
+    {
+      "key": "zhang_personalizing_2018",
+      "raw": "Zhang, S.; Dinan, E.; Urbanek, J.; Szlam, A.; Kiela, D.; and Weston, J. 2018. Personalizing Dialogue Agents: I have a dog, do you have pets too? arXiv:1801.07243 [cs]. arXiv: 1801.07243",
+      "authors": "Zhang, S.; Dinan, E.; Urbanek, J.; Szlam, A.; Kiela, D.; and Weston, J",
+      "title": "2018",
+      "venue": "Personalizing Dialogue Agents: I have a dog, do you have pets too? [cs]",
+      "year": 2018,
+      "arxivId": "1801.07243",
+      "doi": null
+    },
+    {
+      "key": "zhu_aligning_2015",
+      "raw": "Zhu, Y.; Kiros, R.; Zemel, R.; Salakhutdinov, R.; Urtasun, R.; Torralba, A.; and Fidler, S. 2015. Aligning Books and Movies: Towards Story-like Visual Explanations by Watching Movies and Reading Books. arXiv:1506.06724 [cs]. arXiv: 1506.06724",
+      "authors": "Zhu, Y.; Kiros, R.; Zemel, R.; Salakhutdinov, R.; Urtasun, R.; Torralba, A.; and Fidler, S",
+      "title": "2015",
+      "venue": "Aligning Books and Movies: Towards Story-like Visual Explanations by Watching Movies and Reading Books [cs]",
+      "year": 2015,
+      "arxivId": "1506.06724",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 793,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 63.96299743652344,
+            "y0": 236.38284301757812,
+            "x1": 282.536865234375,
+            "y1": 245.3492431640625
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 246.34585571289062,
+            "x1": 282.5395812988281,
+            "y1": 255.312255859375
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 256.3078308105469,
+            "x1": 282.5393981933594,
+            "y1": 265.27423095703125
+          },
+          {
+            "x0": 63.962989807128906,
+            "y0": 266.2708435058594,
+            "x1": 212.34683227539062,
+            "y1": 275.23724365234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 1702,
+      "numbers": 0,
+      "citations": 9,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.00001525878906,
+            "y0": 407.0934143066406,
+            "x1": 292.504638671875,
+            "y1": 417.0560302734375
+          },
+          {
+            "x0": 54.00001525878906,
+            "y0": 418.05242919921875,
+            "x1": 292.504638671875,
+            "y1": 428.0150451660156
+          },
+          {
+            "x0": 54.00001525878906,
+            "y0": 429.01141357421875,
+            "x1": 292.5046691894531,
+            "y1": 438.9740295410156
+          },
+          {
+            "x0": 54.00001525878906,
+            "y0": 439.96942138671875,
+            "x1": 292.50457763671875,
+            "y1": 449.9320373535156
+          },
+          {
+            "x0": 54.00001525878906,
+            "y0": 450.92840576171875,
+            "x1": 111.27497863769531,
+            "y1": 460.8910217285156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Tasks and evaluation",
+      "chars": 3111,
+      "numbers": 5,
+      "citations": 2,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 368.67333984375,
+            "x1": 558.0046997070312,
+            "y1": 378.6359558105469
+          },
+          {
+            "x0": 319.5,
+            "y0": 379.63232421875,
+            "x1": 558.0045166015625,
+            "y1": 389.5949401855469
+          },
+          {
+            "x0": 319.5,
+            "y0": 390.59130859375,
+            "x1": 400.8258972167969,
+            "y1": 400.5539245605469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Model",
+      "chars": 1523,
+      "numbers": 5,
+      "citations": 4,
+      "anchor": null
+    },
+    {
+      "kind": "other",
+      "title": "Training",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "other",
+      "title": "Pre-training",
+      "chars": 659,
+      "numbers": 2,
+      "citations": 3,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 533.6561279296875,
+            "y0": 443.84442138671875,
+            "x1": 558.0047607421875,
+            "y1": 453.8070373535156
+          },
+          {
+            "x0": 319.5,
+            "y0": 454.80340576171875,
+            "x1": 558.0045776367188,
+            "y1": 464.7660217285156
+          },
+          {
+            "x0": 319.5,
+            "y0": 465.76239013671875,
+            "x1": 558.004638671875,
+            "y1": 475.7250061035156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Fine-tuning",
+      "chars": 344,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 600.29833984375,
+            "x1": 558.0046997070312,
+            "y1": 610.2609252929688
+          },
+          {
+            "x0": 319.7489929199219,
+            "y0": 611.25732421875,
+            "x1": 557.9965209960938,
+            "y1": 621.2199096679688
+          },
+          {
+            "x0": 319.5,
+            "y0": 622.21630859375,
+            "x1": 558.0045776367188,
+            "y1": 632.1788940429688
+          },
+          {
+            "x0": 319.5,
+            "y0": 633.17431640625,
+            "x1": 414.6726989746094,
+            "y1": 643.1369018554688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Input representation",
+      "chars": 2217,
+      "numbers": 4,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 418.7720031738281,
+            "y0": 650.6083374023438,
+            "x1": 557.9993286132812,
+            "y1": 660.5709228515625
+          },
+          {
+            "x0": 319.5,
+            "y0": 661.5673217773438,
+            "x1": 558.0046997070312,
+            "y1": 671.5299072265625
+          },
+          {
+            "x0": 319.5,
+            "y0": 672.5263061523438,
+            "x1": 558.00439453125,
+            "y1": 682.4888916015625
+          },
+          {
+            "x0": 319.5,
+            "y0": 683.4853515625,
+            "x1": 558.004638671875,
+            "y1": 693.4479370117188
+          },
+          {
+            "x0": 319.5,
+            "y0": 694.4443359375,
+            "x1": 460.5498046875,
+            "y1": 704.4069213867188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Multi-task learning",
+      "chars": 2526,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 147.1309814453125,
+            "y0": 606.7041625976562,
+            "x1": 292.4952392578125,
+            "y1": 616.666748046875
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 617.6632080078125,
+            "x1": 292.504638671875,
+            "y1": 627.6257934570312
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 628.6221923828125,
+            "x1": 248.53964233398438,
+            "y1": 638.5847778320312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Fine-tuning details",
+      "chars": 693,
+      "numbers": 13,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 409.3630676269531,
+            "y0": 387.46197509765625,
+            "x1": 557.9952392578125,
+            "y1": 397.4245910644531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 398.42095947265625,
+            "x1": 558.0046997070312,
+            "y1": 408.3835754394531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 409.37994384765625,
+            "x1": 558.0046997070312,
+            "y1": 419.3425598144531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 420.33892822265625,
+            "x1": 557.998779296875,
+            "y1": 430.3015441894531
+          },
+          {
+            "x0": 319.50006103515625,
+            "y0": 431.29791259765625,
+            "x1": 521.4618530273438,
+            "y1": 441.2605285644531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Decoding details",
+      "chars": 603,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 400.3270263671875,
+            "y0": 536.2717895507812,
+            "x1": 558.0050659179688,
+            "y1": 546.234375
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 547.2297973632812,
+            "x1": 558.0045776367188,
+            "y1": 557.1923828125
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 558.1887817382812,
+            "x1": 558.0046997070312,
+            "y1": 568.1513671875
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 569.1478271484375,
+            "x1": 558.0046997070312,
+            "y1": 579.1104125976562
+          },
+          {
+            "x0": 319.5000305175781,
+            "y0": 580.1068115234375,
+            "x1": 523.5438842773438,
+            "y1": 590.0693969726562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 925,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 88.77942657470703,
+            "y0": 346.0904541015625,
+            "x1": 292.5046691894531,
+            "y1": 356.0530700683594
+          },
+          {
+            "x0": 54.0,
+            "y0": 357.0494384765625,
+            "x1": 292.5046081542969,
+            "y1": 367.0120544433594
+          },
+          {
+            "x0": 54.0,
+            "y0": 368.0084228515625,
+            "x1": 81.67610168457031,
+            "y1": 377.9710388183594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 682,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.99998474121094,
+            "y0": 573.8963623046875,
+            "x1": 292.5045471191406,
+            "y1": 583.8589477539062
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 584.8553466796875,
+            "x1": 292.5046081542969,
+            "y1": 594.8179321289062
+          },
+          {
+            "x0": 53.99998474121094,
+            "y0": 595.8143310546875,
+            "x1": 198.77650451660156,
+            "y1": 605.7769165039062
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 17,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": []
+  },
+  "assumptions": [],
+  "assumptionTally": {
+    "total": 0,
+    "cited": 0,
+    "shown": 0,
+    "bare": 0
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 31,
+    "rate": 0.775
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2019-01-23",
+    "authors": [
+      "Thomas Wolf",
+      "Victor Sanh",
+      "Julien Chaumond",
+      "Clement Delangue"
+    ]
+  }
+}

@@ -46,6 +46,19 @@ def _papers(paths):
     return out
 
 
+#: Findings checked by hand against the paper and found to be true. The gate below is
+#: "nothing the suite says about a real paper is wrong", not "the suite never speaks";
+#: a finding goes here only with the arithmetic that proves it, so anything else that
+#: appears still fails the gate.
+VERIFIED = {
+    # Gillick et al., Table 1, column BTS. The thirteen per-language accuracies average
+    # 95.832; even if each was rounded from an unrounded value, the true mean lies in
+    # [95.827, 95.837]. The row prints 95.85. The other three columns average to what
+    # they print, so it is an unweighted mean row and this cell is the one that is off.
+    "1512.00103: Table 1: 'AVERAGE' row states 95.85, parts give 95.83",
+}
+
+
 @requires_cache
 def test_no_findings_on_unmodified_papers():
     """The registered suite must produce nothing at all on real papers.
@@ -63,9 +76,10 @@ def test_no_findings_on_unmodified_papers():
         pytest.skip("library too small to be a meaningful gate")
 
     spurious = [
-        f"{paper.id}: {finding.title}"
+        line
         for paper in papers
         for finding in run(paper)
+        if (line := f"{paper.id}: {finding.title}") not in VERIFIED
     ]
     assert not spurious, (
         f"findings reported on {len(papers)} unmodified papers:\n" + "\n".join(spurious)

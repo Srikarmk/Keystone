@@ -88,6 +88,17 @@ _MISMATCH_MAX_RELATIVE = Decimal("0.05")
 # sentence about FLAN and T0 with a "74" sitting in an unrelated percentile column.
 _MISMATCH_MIN_CONTEXT = 2
 
+# Words that make a stated number a bound rather than a measurement. "Greater than
+# 99% accuracy" is true of a cell holding 99.6 and of one holding 100; it cannot be
+# contradicted by a nearby value, so it is never set against one. Read off the text
+# immediately before the number.
+_BOUND = re.compile(
+    r"(?<![A-Za-z])(?:(?:greater|more|higher|better|less|lower|fewer|worse|smaller|larger)\s+than"
+    r"|over|above|below|under|exceeding|at\s+(?:least|most)|up\s+to|as\s+(?:much|high|low)\s+as"
+    r"|nearly|almost|approximately|about|around|roughly|~|>|<|≥|≤)\s*$",
+    re.I,
+)
+
 # Tokens too common to tie a sentence to a table. Without this, "the" and "on" link
 # every sentence to every table and the context test stops meaning anything.
 _STOPWORDS = frozenset("""
@@ -444,6 +455,8 @@ def _trace_one(
             relative = _relative_gap(mention.number, cell.number)
             if relative is None or not (_MISMATCH_MIN_RELATIVE <= relative <= _MISMATCH_MAX_RELATIVE):
                 continue
+            if _is_bound(mention) or not _header_scale_agrees(mention.number, cell):
+                continue
             score = _context_score(mention, table, cell)
             if score >= _MISMATCH_MIN_CONTEXT:
                 near.append((score, relative, table, cell))
@@ -512,6 +525,32 @@ def _drop_accounted_mismatches(traces: tuple[Trace, ...]) -> tuple[Trace, ...]:
         else t
         for t in traces
     )
+
+
+def _is_bound(mention: NumericMention) -> bool:
+    """Whether the sentence states this number as a bound ("over 99%") not a value."""
+    before = mention.sentence[: mention.number.start]
+    return bool(before) and _BOUND.search(before) is not None
+
+
+def _header_scale_agrees(stated: Number, cell: TableCell) -> bool:
+    """Whether a near-miss still is one once the column header's unit is believed.
+
+    A bare cell under a "%" heading is a percentage: 0.90 under "E %" is under one
+    percent, not ninety. Matching may try both scales — it only has to find the paper
+    evidencing a number — but a mismatch is an accusation, and reading 0.90 as 90%
+    to set it beside an abstract's 89.94% accused a paper of a discrepancy between two
+    unrelated quantities. Only ever vetoes: a pairing the header does not speak to is
+    left as it was.
+    """
+    assert cell.number is not None
+    if cell.number.is_percent or "%" not in (cell.column_header or ""):
+        return True
+    as_percent = cell.number.value / 100
+    scale = max(abs(stated.as_fraction), abs(as_percent))
+    if scale == 0:
+        return False
+    return abs(stated.as_fraction - as_percent) / scale <= _MISMATCH_MAX_RELATIVE
 
 
 def _relative_gap(stated: Number, found: Number) -> Decimal | None:

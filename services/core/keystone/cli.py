@@ -693,7 +693,7 @@ def resolve_titles(
     for ident in library:
         votes = attested.get(ident)
         if votes:
-            resolve[ident] = votes.most_common(1)[0][0]
+            resolve[ident] = _attested_choice(votes, own.get(ident))
         elif ident in own:
             owners = claimed.get(fold(own[ident]), set())
             if not owners - {ident}:
@@ -707,6 +707,32 @@ def resolve_titles(
         for ident, title in resolve.items()
         if duplicates[fold(title)] == 1
     }
+
+
+def _attested_choice(votes: Counter[str], own: str | None = None) -> str:
+    """The title the bibliographies agree on, in its best-preserved capitalisation.
+
+    Votes are pooled across spellings that differ only in case, because bibliography
+    styles lowercase titles and the same work arrives as "Megatron-LM: …" from one
+    paper and "Megatron-lm: …" from another. Counted apart, the lowercased copy won
+    as soon as a second bibliography using that style joined the library, and the
+    display title flipped with no change to what it names. The most capitals within
+    the winning group is the copy least touched by a style file.
+
+    A tie between genuinely different wordings goes to the one the paper itself uses:
+    one bibliography's "COCO Captions" against another's "Microsoft COCO Captions" is
+    settled by the paper's own title page, not by which bibliography was read first.
+    """
+    from keystone.lineage.graph import fold
+
+    groups: dict[str, Counter[str]] = {}
+    for title, count in votes.items():
+        groups.setdefault(fold(title), Counter())[title] += count
+    mine = fold(own) if own else None
+    best = max(
+        groups.items(), key=lambda item: (sum(item[1].values()), item[0] == mine)
+    )[1]
+    return max(best, key=lambda title: (sum(c.isupper() for c in title), best[title]))
 
 
 def _write_lineage_index(out: Path) -> int:

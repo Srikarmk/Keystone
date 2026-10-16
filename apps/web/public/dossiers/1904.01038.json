@@ -1,0 +1,2320 @@
+{
+  "id": "1904.01038",
+  "title": "fairseq: A Fast, Extensible Toolkit for Sequence Modeling",
+  "keystone": null,
+  "codeUrl": "https://github.com/pytorch/fairseq",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1904.01038",
+  "numbers": [
+    {
+      "value": "54%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "During inference we build batches with a variable number of examples up to a user-specified number of tokens, similar to training. fairseq also supports inference in FP16 which increases decoding speed by 54% compared to FP32 with no loss in accuracy (Table ).",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.90898132324219,
+            "y0": 625.0059204101562,
+            "x1": 290.2691345214844,
+            "y1": 635.9149780273438
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 638.554931640625,
+            "x1": 290.2691955566406,
+            "y1": 649.4639892578125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 652.1038818359375,
+            "x1": 242.7492218017578,
+            "y1": 663.012939453125
+          },
+          {
+            "x0": 251.04998779296875,
+            "y0": 653.7584838867188,
+            "x1": 290.0,
+            "y1": 662.4857788085938
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 665.6528930664062,
+            "x1": 290.2692565917969,
+            "y1": 676.5619506835938
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 679.201904296875,
+            "x1": 290.26922607421875,
+            "y1": 690.1109619140625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 692.7518920898438,
+            "x1": 185.47645568847656,
+            "y1": 703.6609497070312
+          }
+        ]
+      }
+    },
+    {
+      "value": "4.5M",
+      "kind": "result",
+      "section": "method",
+      "sentence": "For En--De we replicate the setup of which relies on WMT'16 for training with 4.5M sentence pairs, we validate on newstest13 and test on newstest14.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.75238037109375,
+            "y0": 367.0780334472656,
+            "x1": 525.5451049804688,
+            "y1": 377.98712158203125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 380.6270446777344,
+            "x1": 525.5450439453125,
+            "y1": 391.5361328125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 394.1760559082031,
+            "x1": 478.8324279785156,
+            "y1": 405.08514404296875
+          }
+        ]
+      }
+    },
+    {
+      "value": ".2",
+      "kind": "result",
+      "section": "method",
+      "sentence": "We measure case-sensitive tokenized BLEU with multi-bleu and de-tokenized BLEU with SacreBLEU + numrefs.1+smooth.exp+test.wmt14/full+tok.13a+version.1.2.9 .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": ".9",
+      "kind": "result",
+      "section": "method",
+      "sentence": "We measure case-sensitive tokenized BLEU with multi-bleu and de-tokenized BLEU with SacreBLEU + numrefs.1+smooth.exp+test.wmt14/full+tok.13a+version.1.2.9 .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.6",
+      "kind": "result",
+      "section": "method",
+      "sentence": "All results use beam search with a beam width of 4 and length penalty of 0.6, following . fairseq results are summarized in Table .",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2759704589844,
+            "y0": 543.8821411132812,
+            "x1": 525.5451049804688,
+            "y1": 554.7911987304688
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 557.43115234375,
+            "x1": 462.6541748046875,
+            "y1": 568.3402099609375
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.5K",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The second model has 24 blocks, inner dimension 8K and embedding dimension 1.5K; results on the One Billion Word benchmark are in Table .",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 211.38558959960938,
+            "y0": 591.44580078125,
+            "x1": 290.2692565917969,
+            "y1": 602.3548583984375
+          },
+          {
+            "x0": 72.0,
+            "y0": 604.9947509765625,
+            "x1": 290.2692565917969,
+            "y1": 615.90380859375
+          },
+          {
+            "x0": 72.0,
+            "y0": 618.5437622070312,
+            "x1": 290.2692565917969,
+            "y1": 629.4528198242188
+          },
+          {
+            "x0": 72.0,
+            "y0": 632.0927734375,
+            "x1": 174.42556762695312,
+            "y1": 643.0018310546875
+          }
+        ]
+      }
+    },
+    {
+      "value": "400 tokens",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "We evaluate on the full-text version with no entity anonymization ; we truncate articles to 400 tokens .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Translation speed measured on a V100 GPU on the test set of the standard WMT'14 English-German benchmark using a big Transformer model.",
+      "label": "tab:inference",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Sentences/sec",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "FP32",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.1",
+            "value": "88.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "FP16",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "136.0",
+            "value": "136.0",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.14057159423828,
+            "y0": 126.38648986816406,
+            "x1": 290.27056884765625,
+            "y1": 136.34909057617188
+          },
+          {
+            "x0": 72.0,
+            "y0": 138.3415069580078,
+            "x1": 290.27056884765625,
+            "y1": 148.30410766601562
+          },
+          {
+            "x0": 72.0,
+            "y0": 150.29652404785156,
+            "x1": 278.8833312988281,
+            "y1": 160.25912475585938
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "BLEU on news2014 for WMT English-German (En--De) and English-French (En--Fr). All results are based on WMT'14 training data, except for En--De (b), (c), (d) and our models which were trained on WMT'16. Train times based on V100 GPUs.",
+      "label": "tab:testwmt",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "En--De",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "En--Fr",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "a.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.2",
+            "value": "25.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.5",
+            "value": "40.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "b.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.4",
+            "value": "28.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.0",
+            "value": "41.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "c.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.9",
+            "value": "28.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.4",
+            "value": "41.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "d.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.2",
+            "value": "29.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.5",
+            "value": "41.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Transformer base",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.1",
+            "value": "28.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41.1",
+            "value": "41.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer big",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "29.3",
+            "value": "29.3",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "43.2",
+            "value": "43.2",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "detok. SacreBLEU",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "28.6",
+            "value": "28.6",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "41.4",
+            "value": "41.4",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "8 GPU training time",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "12 h",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "73 h",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "128 GPU training time",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.3 h",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "7.2 h",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 116.5029296875,
+            "y0": 226.7074737548828,
+            "x1": 290.2705078125,
+            "y1": 236.67007446289062
+          },
+          {
+            "x0": 72.0,
+            "y0": 238.66249084472656,
+            "x1": 290.2705383300781,
+            "y1": 248.62509155273438
+          },
+          {
+            "x0": 72.0,
+            "y0": 250.6175079345703,
+            "x1": 290.2705383300781,
+            "y1": 260.5801086425781
+          },
+          {
+            "x0": 72.0,
+            "y0": 262.573486328125,
+            "x1": 290.2705383300781,
+            "y1": 272.5361022949219
+          },
+          {
+            "x0": 72.0,
+            "y0": 274.52850341796875,
+            "x1": 264.0091552734375,
+            "y1": 284.4911193847656
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Test perplexity on WikiText-103 (cf. Table ).",
+      "label": "tab:wiki_best",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "40.8",
+            "value": "40.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "37.2",
+            "value": "37.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "33.0",
+            "value": "33.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "29.2",
+            "value": "29.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Adaptive inputs",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "18.7",
+            "value": "18.7",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Test perplexity on the One Billion Word benchmark. Adaptive inputs share parameters with an adaptive softmax.",
+      "label": "tab:gbw_best",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "31.9",
+            "value": "31.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "30.0",
+            "value": "30.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "28.0",
+            "value": "28.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Adaptive inputs",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.0",
+            "value": "23.0",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 350.1948547363281,
+            "y0": 158.9615020751953,
+            "x1": 525.5465087890625,
+            "y1": 168.92410278320312
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 170.91651916503906,
+            "x1": 525.5465698242188,
+            "y1": 180.87911987304688
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 182.8725128173828,
+            "x1": 377.7115783691406,
+            "y1": 192.83511352539062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Abstractive summarization results on the full-text version of CNN-DailyMail dataset.",
+      "label": "tab:abs",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "L",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "39.5",
+            "value": "39.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.3",
+            "value": "17.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.4",
+            "value": "36.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "41.2",
+            "value": "41.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.7",
+            "value": "18.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "38.3",
+            "value": "38.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "40.1",
+            "value": "40.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17.6",
+            "value": "17.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.8",
+            "value": "36.8",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ pre-trained LM",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41.6",
+            "value": "41.6",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "18.9",
+            "value": "18.9",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "38.5",
+            "value": "38.5",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 342.7030029296875,
+            "y0": 318.46746826171875,
+            "x1": 525.5465087890625,
+            "y1": 328.4300842285156
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 330.4224548339844,
+            "x1": 464.9739074707031,
+            "y1": 340.38507080078125
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\figleft": "{\\em (Left)}",
+    "\\figcenter": "{\\em (Center)}",
+    "\\figright": "{\\em (Right)}",
+    "\\figtop": "{\\em (Top)}",
+    "\\figbottom": "{\\em (Bottom)}",
+    "\\captiona": "{\\em (a)}",
+    "\\captionb": "{\\em (b)}",
+    "\\captionc": "{\\em (c)}",
+    "\\captiond": "{\\em (d)}",
+    "\\newterm": "{\\bf #1}",
+    "\\train": "\\mathcal{D}",
+    "\\valid": "\\mathcal{D_{\\mathrm{valid}}}",
+    "\\test": "\\mathcal{D_{\\mathrm{test}}}",
+    "\\tens": "\\bm{\\mathsfit{#1}}",
+    "\\etens": "\\mathsfit{#1}",
+    "\\pdata": "p_{\\rm{data}}",
+    "\\ptrain": "\\hat{p}_{\\rm{data}}",
+    "\\Ptrain": "\\hat{P}_{\\rm{data}}",
+    "\\pmodel": "p_{\\rm{model}}",
+    "\\Pmodel": "P_{\\rm{model}}",
+    "\\ptildemodel": "\\tilde{p}_{\\rm{model}}",
+    "\\pencode": "p_{\\rm{encoder}}",
+    "\\pdecode": "p_{\\rm{decoder}}",
+    "\\precons": "p_{\\rm{reconstruct}}",
+    "\\laplace": "\\mathrm{Laplace}",
+    "\\E": "\\mathbb{E}",
+    "\\Ls": "\\mathcal{L}",
+    "\\R": "\\mathbb{R}",
+    "\\emp": "\\tilde{p}",
+    "\\lr": "\\alpha",
+    "\\reg": "\\lambda",
+    "\\rect": "\\mathrm{rectifier}",
+    "\\softmax": "\\mathrm{softmax}",
+    "\\sigmoid": "\\sigma",
+    "\\softplus": "\\zeta",
+    "\\KL": "D_{\\mathrm{KL}}",
+    "\\Var": "\\mathrm{Var}",
+    "\\standarderror": "\\mathrm{SE}",
+    "\\Cov": "\\mathrm{Cov}",
+    "\\normlzero": "L^0",
+    "\\normlone": "L^1",
+    "\\normltwo": "L^2",
+    "\\normlp": "L^p",
+    "\\normmax": "L^\\infty",
+    "\\parents": "Pa",
+    "\\Re": "\\mathbb{R}",
+    "\\BibTeX": "B{\\sc ib}\\TeX",
+    "\\secomment": "\\textcolor{green}{{#1}}",
+    "\\fairseq": "\\textsc{fairseq}",
+    "\\customtilde": "\\raise.17ex\\hbox{$\\scriptstyle\\sim$}",
+    "\\@fnsymbol": "\\ensuremath{\\ifcase#1\\or * \\or \\dagger\\or \\ddagger\\or\n    \\mathsection\\or \\mathparagraph\\or \\|\\or **\\or \\dagger\\dagger\n    \\or \\ddagger\\ddagger \\else\\@ctrerr\\fi}",
+    "\\abmark": "\\textcolor{red}{{#1}}",
+    "\\mamark": "\\textcolor{orange}{{#1}}",
+    "\\macomment": "\\textcolor{orange}{{*MA*: #1}}",
+    "\\bleu": "\\num[round-mode=places,round-precision=1]{#1}"
+  },
+  "references": [
+    {
+      "key": "ahmed2017WeightedTN",
+      "raw": "Karim Ahmed, Nitish Shirish Keskar, and Richard Socher. 2017. Weighted transformer network for machine translation. arxiv, 1711.02132",
+      "authors": "Karim Ahmed, Nitish Shirish Keskar, and Richard Socher. 2017",
+      "title": "Weighted transformer network for machine translation",
+      "venue": "arxiv, 1711.02132",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "artetxe2018massively",
+      "raw": "Mikel Artetxe and Holger Schwenk. 2018. Massively multilingual sentence embeddings for zero-shot cross-lingual transfer and beyond. arXiv, abs/1812.10464",
+      "authors": "Mikel Artetxe and Holger Schwenk. 2018",
+      "title": "Massively multilingual sentence embeddings for zero-shot cross-lingual transfer and beyond",
+      "venue": "arXiv, abs/1812.10464",
+      "year": 2018,
+      "arxivId": "1812.10464",
+      "doi": null
+    },
+    {
+      "key": "baevski2018adp",
+      "raw": "Alexei Baevski and Michael Auli. 2019. Adaptive input representations for neural language modeling. In Proc. of ICLR",
+      "authors": "Alexei Baevski and Michael Auli. 2019",
+      "title": "Adaptive input representations for neural language modeling",
+      "venue": "In Proc. of ICLR",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chen2018stable",
+      "raw": "Yun Chen, Victor OK Li, Kyunghyun Cho, and Samuel R Bowman. 2018. A stable and effective learning strategy for trainable greedy decoding. arXiv, abs/1804.07915",
+      "authors": "Yun Chen, Victor OK Li, Kyunghyun Cho, and Samuel R Bowman. 2018",
+      "title": "A stable and effective learning strategy for trainable greedy decoding",
+      "venue": "arXiv, abs/1804.07915",
+      "year": 2018,
+      "arxivId": "1804.07915",
+      "doi": null
+    },
+    {
+      "key": "chollampatt2018multilayer",
+      "raw": "Shamil Chollampatt and Hwee Tou Ng. 2018. A multilayer convolutional encoder-decoder neural network for grammatical error correction. arXiv, abs/1801.08831",
+      "authors": "Shamil Chollampatt and Hwee Tou Ng. 2018",
+      "title": "A multilayer convolutional encoder-decoder neural network for grammatical error correction",
+      "venue": "arXiv, abs/1801.08831",
+      "year": 2018,
+      "arxivId": "1801.08831",
+      "doi": null
+    },
+    {
+      "key": "dauphin2017convlm",
+      "raw": "Yann N. Dauphin, Angela Fan, Michael Auli, and David Grangier. 2017. Language modeling with gated convolutional networks. In Proc. of ICML",
+      "authors": "Yann N. Dauphin, Angela Fan, Michael Auli, and David Grangier. 2017",
+      "title": "Language modeling with gated convolutional networks",
+      "venue": "In Proc. of ICML",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dinan2019wizard",
+      "raw": "Emily Dinan, Stephen Roller, Kurt Shuster, Angela Fan, Michael Auli, and Jason Weston. 2019. Wizard of Wikipedia: Knowledge-powered conversational agents. In Proc. of ICLR",
+      "authors": "Emily Dinan, Stephen Roller, Kurt Shuster, Angela Fan, Michael Auli, and Jason Weston. 2019",
+      "title": "Wizard of Wikipedia: Knowledge-powered conversational agents",
+      "venue": "In Proc. of ICLR",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "edunov2018backtranslation",
+      "raw": "Sergey Edunov, Myle Ott, Michael Auli, and David Grangier. 2018. Understanding back-translation at scale. In Conference of the Association for Computational Linguistics (ACL)",
+      "authors": "Sergey Edunov, Myle Ott, Michael Auli, and David Grangier. 2018",
+      "title": "Understanding back-translation at scale",
+      "venue": "In Conference of the Association for Computational Linguistics (ACL)",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "edunov2018classical",
+      "raw": "Sergey Edunov, Myle Ott, Michael Auli, David Grangier, et al. 2018. Classical structured prediction losses for sequence to sequence learning. In Proc. of NAACL",
+      "authors": "Sergey Edunov, Myle Ott, Michael Auli, David Grangier, et al. 2018",
+      "title": "Classical structured prediction losses for sequence to sequence learning",
+      "venue": "In Proc. of NAACL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fan2018controllable",
+      "raw": "Angela Fan, David Grangier, and Michael Auli. 2018. http://aclweb.org/anthology/W18-2706 Controllable abstractive summarization. In ACL Workshop on Neural Machine Translation and Generation",
+      "authors": "Angela Fan, David Grangier, and Michael Auli. 2018",
+      "title": "Controllable abstractive summarization",
+      "venue": "In ACL Workshop on Neural Machine Translation and Generation",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fan2018hierarchical",
+      "raw": "Angela Fan, Mike Lewis, and Yann Dauphin. 2018. Hierarchical neural story generation. In Proc. of ACL",
+      "authors": "Angela Fan, Mike Lewis, and Yann Dauphin. 2018",
+      "title": "Hierarchical neural story generation",
+      "venue": "In Proc. of ACL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fan2019strategies",
+      "raw": "Angela Fan, Mike Lewis, and Yann Dauphin. 2019. Strategies for structuring story generation. arXiv, abs/1902.01109",
+      "authors": "Angela Fan, Mike Lewis, and Yann Dauphin. 2019",
+      "title": "Strategies for structuring story generation",
+      "venue": "arXiv, abs/1902.01109",
+      "year": 2019,
+      "arxivId": "1902.01109",
+      "doi": null
+    },
+    {
+      "key": "gehring2017convs2s",
+      "raw": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N Dauphin. 2017. Convolutional Sequence to Sequence Learning. In Proc. of ICML",
+      "authors": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N Dauphin. 2017",
+      "title": "Convolutional Sequence to Sequence Learning",
+      "venue": "In Proc. of ICML",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gehrmann2018bottom",
+      "raw": "Sebastian Gehrmann, Yuntian Deng, and Alexander M Rush. 2018. Bottom-up abstractive summarization. arXiv, abs/1808.10792",
+      "authors": "Sebastian Gehrmann, Yuntian Deng, and Alexander M Rush. 2018",
+      "title": "Bottom-up abstractive summarization",
+      "venue": "arXiv, abs/1808.10792",
+      "year": 2018,
+      "arxivId": "1808.10792",
+      "doi": null
+    },
+    {
+      "key": "grave2017icml",
+      "raw": "Edouard Grave, Armand Joulin, Moustapha Ciss\\'e, David Grangier, and Herv\\'e J\\'egou. 2017. Efficient softmax approximation for gpus. In Proc. of ICML",
+      "authors": "Edouard Grave, Armand Joulin, Moustapha Ciss\\'e, David Grangier, and Herv\\'e J\\'egou. 2017",
+      "title": "Efficient softmax approximation for gpus",
+      "venue": "In Proc. of ICML",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "grave2016cache",
+      "raw": "Edouard Grave, Armand Joulin, and Nicolas Usunier. 2016. Improving neural language models with a continuous cache. arXiv, abs/1612.04426",
+      "authors": "Edouard Grave, Armand Joulin, and Nicolas Usunier. 2016",
+      "title": "Improving neural language models with a continuous cache",
+      "venue": "arXiv, abs/1612.04426",
+      "year": 2016,
+      "arxivId": "1612.04426",
+      "doi": null
+    },
+    {
+      "key": "hermann2015teaching",
+      "raw": "Karl Moritz Hermann, Tomas Kocisky, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015. http://papers.nips.cc/paper/5945-teaching-machines-to-read-and-comprehend.pdf Teaching machines to read and comprehend. In NIPS",
+      "authors": "Karl Moritz Hermann, Tomas Kocisky, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015",
+      "title": "Teaching machines to read and comprehend",
+      "venue": "In NIPS",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sockeye",
+      "raw": "Felix Hieber, Tobias Domhan, Michael Denkowski, David Vilar, Artem Sokolov, Ann Clifton, and Matt Post. 2018. Sockeye: A Toolkit for Neural Machine Translation. arXiv, abs/1712.05690",
+      "authors": "Felix Hieber, Tobias Domhan, Michael Denkowski, David Vilar, Artem Sokolov, Ann Clifton, and Matt Post. 2018",
+      "title": "Sockeye: A Toolkit for Neural Machine Translation",
+      "venue": "arXiv, abs/1712.05690",
+      "year": 2018,
+      "arxivId": "1712.05690",
+      "doi": null
+    },
+    {
+      "key": "multibleu",
+      "raw": "Hieu Hoang, Philipp Koehn, Ulrich Germann, Kenneth Heafield, and Barry Haddow. 2006. multi-bleu.perl. https://github.com/moses-smt/mosesdecoder/blob/master/scripts/generic/multi-bleu.perl",
+      "authors": "Hieu Hoang, Philipp Koehn, Ulrich Germann, Kenneth Heafield, and Barry Haddow. 2006",
+      "title": "multi-bleu.perl",
+      "venue": "",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jozefowicz2016lm",
+      "raw": "Rafal J\\'ozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu. 2016. Exploring the limits of language modeling. arXiv, abs/1602.02410",
+      "authors": "Rafal J\\'ozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu. 2016",
+      "title": "Exploring the limits of language modeling",
+      "venue": "arXiv, abs/1602.02410",
+      "year": 2016,
+      "arxivId": "1602.02410",
+      "doi": null
+    },
+    {
+      "key": "mariannmt",
+      "raw": "Marcin Junczys-Dowmunt, Roman Grundkiewicz, Tomasz Dwojak, Hieu Hoang, Kenneth Heafield, Tom Neckermann, Frank Seide, Ulrich Germann, Alham Fikri Aji, Nikolay Bogoychev, Andr\\'e F. T. Martins, and Alexandra Birch. 2018. Marian: Fast neural machine translation in C++. In Proc. of ACL 2018, System Demonstrations",
+      "authors": "Marcin Junczys-Dowmunt, Roman Grundkiewicz, Tomasz Dwojak, Hieu Hoang, Kenneth Heafield, Tom Neckermann, Frank Seide, Ulrich Germann, Alham Fikri Aji, Nikolay Bogoychev, Andr\\'e F. T. Martins, and Alexandra Birch. 2018",
+      "title": "Marian: Fast neural machine translation in C++",
+      "venue": "In Proc. of ACL 2018, System Demonstrations",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kim2016character",
+      "raw": "Yoon Kim, Yacine Jernite, David Sontag, and Alexander M Rush. 2016. Character-aware neural language models. In Proc. of AAAI",
+      "authors": "Yoon Kim, Yacine Jernite, David Sontag, and Alexander M Rush. 2016",
+      "title": "Character-aware neural language models",
+      "venue": "In Proc. of AAAI",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "opennmt",
+      "raw": "Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander M. Rush. 2017. https://doi.org/10.18653/v1/P17-4012 OpenNMT: Open-source toolkit for neural machine translation. In Proc. ACL",
+      "authors": "Guillaume Klein, Yoon Kim, Yuntian Deng, Jean Senellart, and Alexander M. Rush. 2017",
+      "title": "OpenNMT: Open-source toolkit for neural machine translation",
+      "venue": "In Proc. ACL",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.18653/v1/P17-4012"
+    },
+    {
+      "key": "openseq2seq",
+      "raw": "Oleksii Kuchaiev, Boris Ginsburg, Igor Gitman, Vitaly Lavrukhin, Carl Case, and Paulius Micikevicius. 2018. OpenSeq2Seq: Extensible Toolkit for Distributed and Mixed Precision Training of Sequence-to-Sequence Models. In Proc. of Workshop for NLP Open Source Software",
+      "authors": "Oleksii Kuchaiev, Boris Ginsburg, Igor Gitman, Vitaly Lavrukhin, Carl Case, and Paulius Micikevicius. 2018",
+      "title": "OpenSeq2Seq: Extensible Toolkit for Distributed and Mixed Precision Training of Sequence-to-Sequence Models",
+      "venue": "In Proc. of Workshop for NLP Open Source Software",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lample2018phrase",
+      "raw": "Guillaume Lample, Myle Ott, Alexis Conneau, Ludovic Denoyer, and Marc'Aurelio Ranzato. 2018. Phrase-based \\& neural unsupervised machine translation. In Proc. of EMNLP",
+      "authors": "Guillaume Lample, Myle Ott, Alexis Conneau, Ludovic Denoyer, and Marc'Aurelio Ranzato. 2018",
+      "title": "Phrase-based \\& neural unsupervised machine translation",
+      "venue": "In Proc. of EMNLP",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2004rouge",
+      "raw": "Chin-Yew Lin. 2004. https://www.microsoft.com/en-us/research/publication/rouge-a-package-for-automatic-evaluation-of-summaries/ Rouge: a package for automatic evaluation of summaries. In ACL Workshop on Text Summarization Branches Out",
+      "authors": "Chin-Yew Lin. 2004",
+      "title": "Rouge: a package for automatic evaluation of summaries",
+      "venue": "In ACL Workshop on Text Summarization Branches Out",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liu2018controlling",
+      "raw": "Yizhu Liu, Zhiyi Luo, and Kenny Zhu. 2018. Controlling length in abstractive summarization using a convolutional neural network. In Proc. of EMNLP",
+      "authors": "Yizhu Liu, Zhiyi Luo, and Kenny Zhu. 2018",
+      "title": "Controlling length in abstractive summarization using a convolutional neural network",
+      "venue": "In Proc. of EMNLP",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "loshchilov2016sgdr",
+      "raw": "Ilya Loshchilov and Frank Hutter. 2016. Sgdr: Stochastic gradient descent with warm restarts. In Proc. of ICLR",
+      "authors": "Ilya Loshchilov and Frank Hutter. 2016",
+      "title": "Sgdr: Stochastic gradient descent with warm restarts",
+      "venue": "In Proc. of ICLR",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "luong2015effective",
+      "raw": "Minh-Thang Luong, Hieu Pham, and Christopher D Manning. 2015. Effective approaches to attention-based neural machine translation. In Proc. of EMNLP",
+      "authors": "Minh-Thang Luong, Hieu Pham, and Christopher D Manning. 2015",
+      "title": "Effective approaches to attention-based neural machine translation",
+      "venue": "In Proc. of EMNLP",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "merity2018lm",
+      "raw": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher. 2018. An analysis of neural language modeling at multiple scales. arXiv, abs/1803.08240",
+      "authors": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher. 2018",
+      "title": "An analysis of neural language modeling at multiple scales",
+      "venue": "arXiv, abs/1803.08240",
+      "year": 2018,
+      "arxivId": "1803.08240",
+      "doi": null
+    },
+    {
+      "key": "narang2018iclr",
+      "raw": "Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory F. Diamos, Erich Elsen, David Garcia, Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh Venkatesh, and Hao Wu. 2018. Mixed Precision Training. In Proc. of ICLR",
+      "authors": "Paulius Micikevicius, Sharan Narang, Jonah Alben, Gregory F. Diamos, Erich Elsen, David Garcia, Boris Ginsburg, Michael Houston, Oleksii Kuchaiev, Ganesh Venkatesh, and Hao Wu. 2018",
+      "title": "Mixed Precision Training",
+      "venue": "In Proc. of ICLR",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "miller2017parlai",
+      "raw": "A. H. Miller, W. Feng, A. Fisch, J. Lu, D. Batra, A. Bordes, D. Parikh, and J. Weston. 2017. Parlai: A dialog research software platform. arXiv, abs/1705.06476",
+      "authors": "A. H. Miller, W. Feng, A. Fisch, J. Lu, D. Batra, A. Bordes, D. Parikh, and J. Weston. 2017",
+      "title": "Parlai: A dialog research software platform",
+      "venue": "arXiv, abs/1705.06476",
+      "year": 2017,
+      "arxivId": "1705.06476",
+      "doi": null
+    },
+    {
+      "key": "morishita2017wmt",
+      "raw": "Makoto Morishita, Yusuke Oda, Graham Neubig, Koichiro Yoshino, Katsuhito Sudoh, and Satoshi Nakamura. 2017. An empirical study of mini-batch creation strategies for neural machine translation. In Proc. of WMT",
+      "authors": "Makoto Morishita, Yusuke Oda, Graham Neubig, Koichiro Yoshino, Katsuhito Sudoh, and Satoshi Nakamura. 2017",
+      "title": "An empirical study of mini-batch creation strategies for neural machine translation",
+      "venue": "In Proc. of WMT",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nallapati2016abstractive",
+      "raw": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gulcehre, and Bing Xiang. 2016. https://doi.org/10.18653/v1/K16-1028 Abstractive text summarization using sequence-to-sequence rnns and beyond. In SIGNLL Conference on Computational Natural Language Learning",
+      "authors": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gulcehre, and Bing Xiang. 2016",
+      "title": "Abstractive text summarization using sequence-to-sequence rnns and beyond",
+      "venue": "In SIGNLL Conference on Computational Natural Language Learning",
+      "year": 2016,
+      "arxivId": null,
+      "doi": "10.18653/v1/K16-1028"
+    },
+    {
+      "key": "narayan2018don",
+      "raw": "Shashi Narayan, Shay B Cohen, and Mirella Lapata. 2018. Don't give me the details, just the summary! topic-aware convolutional neural networks for extreme summarization. arXiv, abs/1808.08745",
+      "authors": "Shashi Narayan, Shay B Cohen, and Mirella Lapata. 2018",
+      "title": "Don't give me the details, just the summary! topic-aware convolutional neural networks for extreme summarization",
+      "venue": "arXiv, abs/1808.08745",
+      "year": 2018,
+      "arxivId": "1808.08745",
+      "doi": null
+    },
+    {
+      "key": "ott:uncertainty:2018",
+      "raw": "Myle Ott, Michael Auli, David Grangier, and Marc\u2019Aurelio Ranzato. 2018. Analyzing uncertainty in neural machine translation. In Proc. of ICML",
+      "authors": "Myle Ott, Michael Auli, David Grangier, and Marc\u2019Aurelio Ranzato. 2018",
+      "title": "Analyzing uncertainty in neural machine translation",
+      "venue": "In Proc. of ICML",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ott2018scaling",
+      "raw": "Myle Ott, Sergey Edunov, David Grangier, and Michael Auli. 2018. Scaling neural machine translation. In Proc. of WMT",
+      "authors": "Myle Ott, Sergey Edunov, David Grangier, and Michael Auli. 2018",
+      "title": "Scaling neural machine translation",
+      "venue": "In Proc. of WMT",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "paulus17",
+      "raw": "Romain Paulus, Caiming Xiong, and Richard Socher. 2017. A deep reinforced model for abstractive summarization. arXiv preprint arXiv:1705.04304",
+      "authors": "Romain Paulus, Caiming Xiong, and Richard Socher. 2017",
+      "title": "A deep reinforced model for abstractive summarization",
+      "venue": "arXiv preprint",
+      "year": 2017,
+      "arxivId": "1705.04304",
+      "doi": null
+    },
+    {
+      "key": "post2018sacrebleu",
+      "raw": "Matt Post. 2018. A call for clarity in reporting bleu scores. arXiv, abs/1804.08771",
+      "authors": "Matt Post. 2018",
+      "title": "A call for clarity in reporting bleu scores",
+      "venue": "arXiv, abs/1804.08771",
+      "year": 2018,
+      "arxivId": "1804.08771",
+      "doi": null
+    },
+    {
+      "key": "hebbian",
+      "raw": "Jack W. Rae, Chris Dyer, Peter Dayan, and Timothy P. Lillicrap. 2018. Fast parametric learning with activation memorization. arXiv, abs/1803.10049",
+      "authors": "Jack W. Rae, Chris Dyer, Peter Dayan, and Timothy P. Lillicrap. 2018",
+      "title": "Fast parametric learning with activation memorization",
+      "venue": "arXiv, abs/1803.10049",
+      "year": 2018,
+      "arxivId": "1803.10049",
+      "doi": null
+    },
+    {
+      "key": "see2017get",
+      "raw": "Abigail See, Peter J. Liu, and Christopher D. Manning. 2017. https://doi.org/10.18653/v1/P17-1099 Get to the point: Summarization with pointer-generator networks. In ACL",
+      "authors": "Abigail See, Peter J. Liu, and Christopher D. Manning. 2017",
+      "title": "Get to the point: Summarization with pointer-generator networks",
+      "venue": "In ACL",
+      "year": 2017,
+      "arxivId": null,
+      "doi": "10.18653/v1/P17-1099"
+    },
+    {
+      "key": "bpe",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016. Neural machine translation of rare words with subword units. In Proc. of ACL",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "In Proc. of ACL",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shaw2018relpos",
+      "raw": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani. 2018. Self-attention with relative position representations. In Proc. of NAACL",
+      "authors": "Peter Shaw, Jakob Uszkoreit, and Ashish Vaswani. 2018",
+      "title": "Self-attention with relative position representations",
+      "venue": "In Proc. of NAACL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shazeer2017",
+      "raw": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc V. Le, Geoffrey E. Hinton, and Jeff Dean. 2017. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. arXiv, abs/1701.06538",
+      "authors": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc V. Le, Geoffrey E. Hinton, and Jeff Dean. 2017",
+      "title": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer",
+      "venue": "arXiv, abs/1701.06538",
+      "year": 2017,
+      "arxivId": "1701.06538",
+      "doi": null
+    },
+    {
+      "key": "shazeer2018adafactor",
+      "raw": "Noam Shazeer and Mitchell Stern. 2018. Adafactor: Adaptive learning rates with sublinear memory cost. arXiv preprint arXiv:1804.04235",
+      "authors": "Noam Shazeer and Mitchell Stern. 2018",
+      "title": "Adafactor: Adaptive learning rates with sublinear memory cost",
+      "venue": "arXiv preprint",
+      "year": 2018,
+      "arxivId": "1804.04235",
+      "doi": null
+    },
+    {
+      "key": "shen2019mixture",
+      "raw": "Tianxiao Shen, Myle Ott, Michael Auli, and Marc'Aurelio Ranzato. 2019. Mixture models for diverse machine translation: Tricks of the trade. arXiv, abs/1902.07816",
+      "authors": "Tianxiao Shen, Myle Ott, Michael Auli, and Marc'Aurelio Ranzato. 2019",
+      "title": "Mixture models for diverse machine translation: Tricks of the trade",
+      "venue": "arXiv, abs/1902.07816",
+      "year": 2019,
+      "arxivId": "1902.07816",
+      "doi": null
+    },
+    {
+      "key": "song2018double",
+      "raw": "Kaitao Song, Xu Tan, Di He, Jianfeng Lu, Tao Qin, and Tie-Yan Liu. 2018. Double path networks for sequence to sequence learning. arXiv, abs/1806.04856",
+      "authors": "Kaitao Song, Xu Tan, Di He, Jianfeng Lu, Tao Qin, and Tie-Yan Liu. 2018",
+      "title": "Double path networks for sequence to sequence learning",
+      "venue": "arXiv, abs/1806.04856",
+      "year": 2018,
+      "arxivId": "1806.04856",
+      "doi": null
+    },
+    {
+      "key": "tensor2tensor",
+      "raw": "A. Vaswani, S. Bengio, E. Brevdo, F. Chollet, A. N. Gomez, S. Gouws, L. Jones, . Kaiser, N. Kalchbrenner, N. Parmar, R. Sepassi, N. Shazeer, and J. Uszkoreit. 2018. Tensor2Tensor for Neural Machine Translation. arXiv, abs/1803.07416",
+      "authors": "A. Vaswani, S. Bengio, E. Brevdo, F. Chollet, A. N. Gomez, S. Gouws, L. Jones, . Kaiser, N. Kalchbrenner, N. Parmar, R. Sepassi, N. Shazeer, and J. Uszkoreit. 2018",
+      "title": "Tensor2Tensor for Neural Machine Translation",
+      "venue": "arXiv, abs/1803.07416",
+      "year": 2018,
+      "arxivId": "1803.07416",
+      "doi": null
+    },
+    {
+      "key": "vaswani2017transformer",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017. Attention Is All You Need. In Proc. of NIPS",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. 2017",
+      "title": "Attention Is All You Need",
+      "venue": "In Proc. of NIPS",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vijayakumar2016diverse",
+      "raw": "Ashwin K Vijayakumar, Michael Cogswell, Ramprasath R Selvaraju, Qing Sun, Stefan Lee, David Crandall, and Dhruv Batra. 2016. Diverse beam search: Decoding diverse solutions from neural sequence models. arXiv preprint arXiv:1610.02424",
+      "authors": "Ashwin K Vijayakumar, Michael Cogswell, Ramprasath R Selvaraju, Qing Sun, Stefan Lee, David Crandall, and Dhruv Batra. 2016",
+      "title": "Diverse beam search: Decoding diverse solutions from neural sequence models",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1610.02424",
+      "doi": null
+    },
+    {
+      "key": "wu2019pay",
+      "raw": "Felix Wu, Angela Fan, Alexei Baevski, Yann N. Dauphin, and Michael Auli. 2019. Pay less attention with lightweight and dynamic convlutions. In Proc. of ICLR",
+      "authors": "Felix Wu, Angela Fan, Alexei Baevski, Yann N. Dauphin, and Michael Auli. 2019",
+      "title": "Pay less attention with lightweight and dynamic convlutions",
+      "venue": "In Proc. of ICLR",
+      "year": 2019,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 451,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.25700378417969,
+            "y0": 244.4514923095703,
+            "x1": 273.26275634765625,
+            "y1": 254.41409301757812
+          },
+          {
+            "x0": 89.00800323486328,
+            "y0": 256.406494140625,
+            "x1": 273.2563781738281,
+            "y1": 266.3691101074219
+          },
+          {
+            "x0": 89.00800323486328,
+            "y0": 268.36151123046875,
+            "x1": 273.25634765625,
+            "y1": 278.3241271972656
+          },
+          {
+            "x0": 89.00800323486328,
+            "y0": 280.3165283203125,
+            "x1": 273.2562561035156,
+            "y1": 290.2791442871094
+          },
+          {
+            "x0": 89.00800323486328,
+            "y0": 292.27154541015625,
+            "x1": 177.904296875,
+            "y1": 302.2341613769531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 1600,
+      "numbers": 0,
+      "citations": 6,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 404.0867004394531,
+            "x1": 290.26922607421875,
+            "y1": 414.99578857421875
+          },
+          {
+            "x0": 72.0,
+            "y0": 417.6357116699219,
+            "x1": 290.2692565917969,
+            "y1": 428.5447998046875
+          },
+          {
+            "x0": 72.0,
+            "y0": 431.1847229003906,
+            "x1": 290.2692565917969,
+            "y1": 442.09381103515625
+          },
+          {
+            "x0": 72.0,
+            "y0": 444.7337341308594,
+            "x1": 249.07647705078125,
+            "y1": 455.642822265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Design",
+      "chars": 2423,
+      "numbers": 0,
+      "citations": 7,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 436.7301330566406,
+            "x1": 368.03961181640625,
+            "y1": 447.6392517089844
+          },
+          {
+            "x0": 379.2200012207031,
+            "y0": 436.8297424316406,
+            "x1": 525.543212890625,
+            "y1": 447.73883056640625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 450.3787536621094,
+            "x1": 525.5452270507812,
+            "y1": 461.287841796875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 463.9277648925781,
+            "x1": 525.5451049804688,
+            "y1": 474.83685302734375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 477.4777526855469,
+            "x1": 468.479736328125,
+            "y1": 488.3868408203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Implementation",
+      "chars": 4124,
+      "numbers": 1,
+      "citations": 8,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.27300262451172,
+            "y0": 596.5698852539062,
+            "x1": 290.2731628417969,
+            "y1": 607.4789428710938
+          },
+          {
+            "x0": 72.00000762939453,
+            "y0": 610.118896484375,
+            "x1": 290.2691955566406,
+            "y1": 621.0279541015625
+          },
+          {
+            "x0": 72.00000762939453,
+            "y0": 623.6678466796875,
+            "x1": 271.3856506347656,
+            "y1": 634.576904296875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Applications",
+      "chars": 218,
+      "numbers": 0,
+      "citations": 18,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.27298736572266,
+            "y0": 741.1428833007812,
+            "x1": 290.272705078125,
+            "y1": 752.0519409179688
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 754.6929321289062,
+            "x1": 192.98190307617188,
+            "y1": 765.6019897460938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Machine translation",
+      "chars": 1702,
+      "numbers": 11,
+      "citations": 12,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 230.92098999023438,
+            "x1": 525.545166015625,
+            "y1": 241.83009338378906
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 244.47000122070312,
+            "x1": 525.5451049804688,
+            "y1": 255.3791046142578
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 258.0190124511719,
+            "x1": 525.5451049804688,
+            "y1": 268.9281005859375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 271.5680236816406,
+            "x1": 336.3705749511719,
+            "y1": 282.47711181640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Language modeling",
+      "chars": 1092,
+      "numbers": 6,
+      "citations": 8,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.5479736328125,
+            "y0": 655.1121826171875,
+            "x1": 525.5486450195312,
+            "y1": 666.021240234375
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 668.6611328125,
+            "x1": 402.09783935546875,
+            "y1": 679.5701904296875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Abstractive document summarization",
+      "chars": 1109,
+      "numbers": 3,
+      "citations": 6,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 673.3977661132812,
+            "x1": 290.2692565917969,
+            "y1": 684.3068237304688
+          },
+          {
+            "x0": 72.0,
+            "y0": 686.94677734375,
+            "x1": 290.2692565917969,
+            "y1": 697.8558349609375
+          },
+          {
+            "x0": 72.0,
+            "y0": 700.4957275390625,
+            "x1": 290.2691650390625,
+            "y1": 711.40478515625
+          },
+          {
+            "x0": 72.0,
+            "y0": 714.0447387695312,
+            "x1": 233.74923706054688,
+            "y1": 724.9537963867188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 223,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 615.8037719726562,
+            "x1": 525.5429077148438,
+            "y1": 626.7128295898438
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 629.353759765625,
+            "x1": 525.545166015625,
+            "y1": 640.2628173828125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 642.9027709960938,
+            "x1": 427.188720703125,
+            "y1": 653.8118286132812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgements",
+      "chars": 77,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 727.59375,
+            "x1": 525.5452270507812,
+            "y1": 738.5028076171875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 741.1437377929688,
+            "x1": 433.97418212890625,
+            "y1": 752.0527954101562
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 10,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 33,
+      "traversable": 5
+    },
+    "foundation": {
+      "key": "shazeer2018adafactor",
+      "stance": "inherits",
+      "cue": "implementation of",
+      "sentence": "We provide wrappers around most PyTorch optimizers and an implementation of Adafactor [Shazeer et al. 2018], which is a memory-efficient variant of Adam. Learning Rate Schedulers update the learning rate over the course of training.",
+      "section": "Design",
+      "sectionKind": "method",
+      "ordinal": 10,
+      "title": "Adafactor: Adaptive learning rates with sublinear memory cost",
+      "authors": "Noam Shazeer and Mitchell Stern. 2018",
+      "year": 2018,
+      "arxivId": "1804.04235",
+      "inCorpus": true,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 221.20379638671875,
+            "y0": 300.4447326660156,
+            "x1": 290.269287109375,
+            "y1": 311.35382080078125
+          },
+          {
+            "x0": 72.0,
+            "y0": 313.9937438964844,
+            "x1": 231.72015380859375,
+            "y1": 324.90283203125
+          },
+          {
+            "x0": 72.0,
+            "y0": 336.525146484375,
+            "x1": 199.54920959472656,
+            "y1": 347.43426513671875
+          },
+          {
+            "x0": 210.45700073242188,
+            "y0": 336.624755859375,
+            "x1": 290.26788330078125,
+            "y1": 347.5338439941406
+          },
+          {
+            "x0": 72.0,
+            "y0": 350.17376708984375,
+            "x1": 241.13470458984375,
+            "y1": 361.0828552246094
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "baevski2018adp",
+        "stance": "inherits",
+        "cue": "following",
+        "sentence": "We evaluate two Transformer language models, which use only a decoder network and adaptive input embeddings, following [Baevski et al. 2019].",
+        "section": "Language modeling",
+        "sectionKind": "method",
+        "ordinal": 43,
+        "title": "Adaptive input representations for neural language modeling",
+        "authors": "Alexei Baevski and Michael Auli. 2019",
+        "year": 2019,
+        "arxivId": "1809.10853",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.90899658203125,
+              "y0": 523.69970703125,
+              "x1": 290.2691650390625,
+              "y1": 534.6087646484375
+            },
+            {
+              "x0": 72.0,
+              "y0": 537.248779296875,
+              "x1": 290.2692565917969,
+              "y1": 548.1578369140625
+            },
+            {
+              "x0": 72.0,
+              "y0": 550.7977294921875,
+              "x1": 203.73828125,
+              "y1": 561.706787109375
+            }
+          ]
+        }
+      },
+      {
+        "key": "fan2018controllable",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use BPE with 30K operations to form our vocabulary following [Fan et al. 2018].",
+        "section": "Abstractive document summarization",
+        "sectionKind": "method",
+        "ordinal": 47,
+        "title": "Controllable abstractive summarization",
+        "authors": "Angela Fan, David Grangier, and Michael Auli. 2018",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 421.3086853027344,
+              "y0": 395.6206359863281,
+              "x1": 525.5449829101562,
+              "y1": 406.52972412109375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 409.1696472167969,
+              "x1": 505.64703369140625,
+              "y1": 420.0787353515625
+            }
+          ]
+        }
+      },
+      {
+        "key": "gehring2017convs2s",
+        "stance": "inherits",
+        "cue": "we train on",
+        "sentence": "For En\u2013Fr, we train on WMT'14 and borrow the setup of [Gehring et al. 2017] with 36M training sentence pairs.",
+        "section": "Machine translation",
+        "sectionKind": "method",
+        "ordinal": 30,
+        "title": "Convolutional Sequence to Sequence Learning",
+        "authors": "Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann N Dauphin. 2017",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.2760009765625,
+              "y0": 434.8230895996094,
+              "x1": 525.5452880859375,
+              "y1": 445.732177734375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 448.3730773925781,
+              "x1": 343.0032958984375,
+              "y1": 459.28216552734375
+            }
+          ]
+        }
+      },
+      {
+        "key": "hermann2015teaching",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the CNN-Dailymail dataset [Hermann et al. 2015; Nallapati et al. 2016] of news articles paired with multi-sentence summaries.",
+        "section": "Abstractive document summarization",
+        "sectionKind": "method",
+        "ordinal": 44,
+        "title": "Teaching machines to read and comprehend",
+        "authors": "Karl Moritz Hermann, Tomas Kocisky, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 182.43284606933594,
+              "y0": 741.1437377929688,
+              "x1": 290.2693176269531,
+              "y1": 752.0527954101562
+            },
+            {
+              "x0": 72.0,
+              "y0": 754.6927490234375,
+              "x1": 213.75283813476562,
+              "y1": 765.601806640625
+            }
+          ]
+        }
+      },
+      {
+        "key": "lin2004rouge",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "To evaluate, we use the standard rouge metric [Lin. 2004] and report rouge-1, rouge-2, and rouge-l.",
+        "section": "Abstractive document summarization",
+        "sectionKind": "method",
+        "ordinal": 48,
+        "title": "Rouge: a package for automatic evaluation of summaries",
+        "authors": "Chin-Yew Lin. 2004",
+        "year": 2004,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 377.74871826171875,
+              "y0": 422.7186584472656,
+              "x1": 525.5451049804688,
+              "y1": 433.62774658203125
+            },
+            {
+              "x0": 307.5480041503906,
+              "y0": 437.0950012207031,
+              "x1": 371.5356750488281,
+              "y1": 446.91319274902344
+            }
+          ]
+        }
+      },
+      {
+        "key": "loshchilov2016sgdr",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "We provide several popular schedulers, e.g., the inverse square-root scheduler from [Vaswani et al. 2017] and cyclical schedulers based on warm restarts [Loshchilov et al. 2016]. Reproducibility and forward compatibility. fairseq includes features designed to improve reproducibility and forward compatibility.",
+        "section": "Design",
+        "sectionKind": "method",
+        "ordinal": 12,
+        "title": "Sgdr: Stochastic gradient descent with warm restarts",
+        "authors": "Ilya Loshchilov and Frank Hutter. 2016",
+        "year": 2016,
+        "arxivId": "1608.03983",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 213.32737731933594,
+              "y0": 404.37078857421875,
+              "x1": 241.5055694580078,
+              "y1": 415.2798767089844
+            },
+            {
+              "x0": 72.0,
+              "y0": 426.90118408203125,
+              "x1": 290.26922607421875,
+              "y1": 437.810302734375
+            },
+            {
+              "x0": 72.27300262451172,
+              "y0": 440.55078125,
+              "x1": 290.2646179199219,
+              "y1": 451.4598693847656
+            },
+            {
+              "x0": 72.00000762939453,
+              "y0": 454.09979248046875,
+              "x1": 250.56016540527344,
+              "y1": 465.0088806152344
+            }
+          ]
+        }
+      },
+      {
+        "key": "nallapati2016abstractive",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the CNN-Dailymail dataset [Hermann et al. 2015; Nallapati et al. 2016] of news articles paired with multi-sentence summaries.",
+        "section": "Abstractive document summarization",
+        "sectionKind": "method",
+        "ordinal": 44,
+        "title": "Abstractive text summarization using sequence-to-sequence rnns and beyond",
+        "authors": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gulcehre, and Bing Xiang. 2016",
+        "year": 2016,
+        "arxivId": "1602.06023",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 182.43284606933594,
+              "y0": 741.1437377929688,
+              "x1": 290.2693176269531,
+              "y1": 752.0527954101562
+            },
+            {
+              "x0": 72.0,
+              "y0": 754.6927490234375,
+              "x1": 213.75283813476562,
+              "y1": 765.601806640625
+            }
+          ]
+        }
+      },
+      {
+        "key": "paulus17",
+        "stance": "inherits",
+        "cue": "we follow",
+        "sentence": "To generate summaries, we follow standard practice in tuning the minimum output length and disallow repeating the same trigram [Paulus et al. 2017].",
+        "section": "Abstractive document summarization",
+        "sectionKind": "method",
+        "ordinal": 49,
+        "title": "A deep reinforced model for abstractive summarization",
+        "authors": "Romain Paulus, Caiming Xiong, and Richard Socher. 2017",
+        "year": 2017,
+        "arxivId": "1705.04304",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 422.1163635253906,
+              "y0": 449.8176574707031,
+              "x1": 525.5455322265625,
+              "y1": 460.72674560546875
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 463.3666687011719,
+              "x1": 525.5451049804688,
+              "y1": 474.2757568359375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 476.9156799316406,
+              "x1": 525.5451049804688,
+              "y1": 487.82476806640625
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 490.4646911621094,
+              "x1": 364.8214416503906,
+              "y1": 501.373779296875
+            }
+          ]
+        }
+      },
+      {
+        "key": "see2017get",
+        "stance": "inherits",
+        "cue": "We evaluate on",
+        "sentence": "We evaluate on the full-text version with no entity anonymization [See et al. 2017]; we truncate articles to 400 tokens [See et al. 2017].",
+        "section": "Abstractive document summarization",
+        "sectionKind": "method",
+        "ordinal": 45,
+        "title": "Get to the point: Summarization with pointer-generator networks",
+        "authors": "Abigail See, Peter J. Liu, and Christopher D. Manning. 2017",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "shazeer2018adafactor",
+        "stance": "inherits",
+        "cue": "implementation of",
+        "sentence": "We provide wrappers around most PyTorch optimizers and an implementation of Adafactor [Shazeer et al. 2018], which is a memory-efficient variant of Adam. Learning Rate Schedulers update the learning rate over the course of training.",
+        "section": "Design",
+        "sectionKind": "method",
+        "ordinal": 10,
+        "title": "Adafactor: Adaptive learning rates with sublinear memory cost",
+        "authors": "Noam Shazeer and Mitchell Stern. 2018",
+        "year": 2018,
+        "arxivId": "1804.04235",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 221.20379638671875,
+              "y0": 300.4447326660156,
+              "x1": 290.269287109375,
+              "y1": 311.35382080078125
+            },
+            {
+              "x0": 72.0,
+              "y0": 313.9937438964844,
+              "x1": 231.72015380859375,
+              "y1": 324.90283203125
+            },
+            {
+              "x0": 72.0,
+              "y0": 336.525146484375,
+              "x1": 199.54920959472656,
+              "y1": 347.43426513671875
+            },
+            {
+              "x0": 210.45700073242188,
+              "y0": 336.624755859375,
+              "x1": 290.26788330078125,
+              "y1": 347.5338439941406
+            },
+            {
+              "x0": 72.0,
+              "y0": 350.17376708984375,
+              "x1": 241.13470458984375,
+              "y1": 361.0828552246094
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [],
+  "assumptionTally": {
+    "total": 0,
+    "cited": 0,
+    "shown": 0,
+    "bare": 0
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2019-04-01",
+    "authors": [
+      "Myle Ott",
+      "Sergey Edunov",
+      "Alexei Baevski",
+      "Angela Fan",
+      "Sam Gross",
+      "Nathan Ng",
+      "David Grangier",
+      "Michael Auli"
+    ]
+  }
+}

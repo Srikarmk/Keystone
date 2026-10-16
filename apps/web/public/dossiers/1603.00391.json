@@ -1,0 +1,1844 @@
+{
+  "id": "1603.00391",
+  "title": "Noisy Activation Functions",
+  "keystone": null,
+  "codeUrl": "https://github.com/wojciechz/learning_to_execute",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1603.00391",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Performance of the noisy network on the Learning to Execute / task. Just changing the activation function to the proposed noisy one yielded about 2.5% improvement in accuracy.",
+      "label": "tbl:learning-to-execute",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model name",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Reference Model",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "46.45%",
+            "value": "46.45",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Noisy Network(NAH)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "48.09%",
+            "value": "48.09",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 85.80000305175781,
+            "y0": 312.2139587402344,
+            "x1": 289.442138671875,
+            "y1": 321.18035888671875
+          },
+          {
+            "x0": 55.1619987487793,
+            "y0": 323.3242492675781,
+            "x1": 289.4375305175781,
+            "y1": 332.0911865234375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 334.1319885253906,
+            "x1": 256.4129333496094,
+            "y1": 343.098388671875
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Penntreebank word-level comparative perplexities. We only replaced in the code from the and by corresponding noisy variants and observe a substantial improvement in perplexity, which makes this the state-of-the-art on this task.",
+      "label": "tbl:penntreebank_word_ppl",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Valid ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Noisy LSTM + NAN",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "111.7",
+            "value": "111.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "108.0",
+            "value": "108.0",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Noisy LSTM + NAH",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "112.6",
+            "value": "112.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "108.7",
+            "value": "108.7",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM (Reference)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "119.4",
+            "value": "119.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "115.6",
+            "value": "115.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Image Caption Generation on Flickr8k. This time we added noisy activations in the code from and obtain substantial improvements on the higher-order BLEU scores and the METEOR metric, as well as in NLL. Soft attention and hard attention here refers to using backprop versus REINFORCE when training the attention mechanism. We fixed for NANI and for both NAN and NANIL.",
+      "label": "tbl:Flickr8kCapgen",
+      "numericCells": 35,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU -1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU-3",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU-4",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "METEOR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test NLL",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Soft Attention (Sigmoid and Tanh) (Reference)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67",
+            "value": "67",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "44.8",
+            "value": "44.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.9",
+            "value": "29.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.5",
+            "value": "19.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.9",
+            "value": "18.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.33",
+            "value": "40.33",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Soft Attention ( NAH Sigmoid \\",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Tanh)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66",
+            "value": "66",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45.8",
+            "value": "45.8",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "30.69",
+            "value": "30.69",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "20.9",
+            "value": "20.9",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "20.5",
+            "value": "20.5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "40.17",
+            "value": "40.17",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Soft Attention ( NAH Sigmoid \\",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Tanh wo dropout)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.9",
+            "value": "64.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44.2",
+            "value": "44.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.7",
+            "value": "30.7",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "20.9",
+            "value": "20.9",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "20.3",
+            "value": "20.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "39.8",
+            "value": "39.8",
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Soft Attention ( NANI Sigmoid \\",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Tanh)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66",
+            "value": "66",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "45.0",
+            "value": "45.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.6",
+            "value": "30.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.7",
+            "value": "20.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.5",
+            "value": "20.5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "40.0",
+            "value": "40.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Soft Attention ( NANIL Sigmoid \\",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Tanh)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66",
+            "value": "66",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44.6",
+            "value": "44.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.1",
+            "value": "30.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.0",
+            "value": "20.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.5",
+            "value": "20.5",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "39.9",
+            "value": "39.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Hard Attention (Sigmoid and Tanh)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67",
+            "value": "67",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "45.7",
+            "value": "45.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "21.3",
+            "value": "21.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.5",
+            "value": "19.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Neural machine Translation on Europarl. Using existing code from with nonlinearities replaced by their noisy versions, we find much improved performance (2 BLEU points is considered a lot for machine translation). We also see that simply using the hard versions of the nonlinearities buys about half of the gain.",
+      "label": "tbl:NMTEuroparl",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Valid nll",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Sigmoid and Tanh NMT (Reference)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.26",
+            "value": "65.26",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.18",
+            "value": "20.18",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Hard-Tanh and Hard-Sigmoid NMT",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.27",
+            "value": "64.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.59",
+            "value": "21.59",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Noisy (NAH) Tanh and Sigmoid NMT",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "63.46",
+            "value": "63.46",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "22.57",
+            "value": "22.57",
+            "emphasised": true,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Experimental results on the task of finding the unique number of elements in a random integer sequence. This illustrates the effect of annealing the noise level, turning the training procedure into a continuation method. Noise annealing yields better results than the curriculum.",
+      "label": "tbl:unique_number_cont",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Error %",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "LSTM+MLP(Reference)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.28",
+            "value": "33.28",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Noisy LSTM+MLP(NAN)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "31.12",
+            "value": "31.12",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Curriculum LSTM+MLP",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.83",
+            "value": "14.83",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Noisy LSTM+MLP(NAN) Annealed Noise",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "9.53",
+            "value": "9.53",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Noisy LSTM+MLP(NANIL) Annealed Noise",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "20.94",
+            "value": "20.94",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 85.80000305175781,
+            "y0": 70.66897583007812,
+            "x1": 289.44488525390625,
+            "y1": 79.6353759765625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 81.66887664794922,
+            "x1": 289.4364013671875,
+            "y1": 90.5813217163086
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 92.75918579101562,
+            "x1": 289.44000244140625,
+            "y1": 101.49855041503906
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 103.54598999023438,
+            "x1": 289.44500732421875,
+            "y1": 112.51239013671875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 114.50497436523438,
+            "x1": 127.90644073486328,
+            "y1": 123.47137451171875
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\theHalgorithm": "\\arabic{algorithm}"
+  },
+  "references": [
+    {
+      "key": "Allgower80-short",
+      "raw": "Allgower, E. L. and Georg, K. Numerical Continuation Methods. An Introduction. Springer-Verlag, 1980",
+      "authors": "Allgower, E. L. and Georg, K",
+      "title": "Numerical Continuation Methods. An Introduction",
+      "venue": "Springer-Verlag, 1980",
+      "year": 1980,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua. Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473, 2014",
+      "authors": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "Bengio-arxiv2013",
+      "raw": "Bengio, Yoshua. Estimating or propagating gradients through stochastic neurons. Technical Report arXiv:1305.2982, Universite de Montreal, 2013",
+      "authors": "Bengio, Yoshua",
+      "title": "Estimating or propagating gradients through stochastic neurons",
+      "venue": "Technical Report Universite de Montreal, 2013",
+      "year": 2013,
+      "arxivId": "1305.2982",
+      "doi": null
+    },
+    {
+      "key": "Bengio+al-2009-small",
+      "raw": "Bengio, Yoshua, Louradour, Jerome, Collobert, Ronan, and Weston, Jason. Curriculum learning. In ICML'09, 2009",
+      "authors": "Bengio, Yoshua, Louradour, Jerome, Collobert, Ronan, and Weston, Jason",
+      "title": "Curriculum learning",
+      "venue": "In ICML'09, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2013estimating",
+      "raw": "Bengio, Yoshua, L\\'eonard, Nicholas, and Courville, Aaron. Estimating or propagating gradients through stochastic neurons for conditional computation. arXiv preprint arXiv:1308.3432, 2013",
+      "authors": "Bengio, Yoshua, L\\'eonard, Nicholas, and Courville, Aaron",
+      "title": "Estimating or propagating gradients through stochastic neurons for conditional computation",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1308.3432",
+      "doi": null
+    },
+    {
+      "key": "cho2014learning",
+      "raw": "Cho, Kyunghyun, Van Merri\\\"enboer, Bart, Gulcehre, Caglar, Bahdanau, Dzmitry, Bougares, Fethi, Schwenk, Holger, and Bengio, Yoshua. Learning phrase representations using rnn encoder-decoder for statistical machine translation. arXiv preprint arXiv:1406.1078, 2014",
+      "authors": "Cho, Kyunghyun, Van Merri\\\"enboer, Bart, Gulcehre, Caglar, Bahdanau, Dzmitry, Bougares, Fethi, Schwenk, Holger, and Bengio, Yoshua",
+      "title": "Learning phrase representations using rnn encoder-decoder for statistical machine translation",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1406.1078",
+      "doi": null
+    },
+    {
+      "key": "ge2015escaping",
+      "raw": "Ge, Rong, Huang, Furong, Jin, Chi, and Yuan, Yang. Escaping from saddle points---online stochastic gradient for tensor decomposition. arXiv preprint arXiv:1503.02101, 2015",
+      "authors": "Ge, Rong, Huang, Furong, Jin, Chi, and Yuan, Yang",
+      "title": "Escaping from saddle points---online stochastic gradient for tensor decomposition",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1503.02101",
+      "doi": null
+    },
+    {
+      "key": "glorot2011deep",
+      "raw": "Glorot, Xavier, Bordes, Antoine, and Bengio, Yoshua. Deep sparse rectifier neural networks. In International Conference on Artificial Intelligence and Statistics, pp.\\ 315--323, 2011",
+      "authors": "Glorot, Xavier, Bordes, Antoine, and Bengio, Yoshua",
+      "title": "Deep sparse rectifier neural networks",
+      "venue": "In International Conference on Artificial Intelligence and Statistics, pp.\\ 315--323, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goodfellow2013maxout",
+      "raw": "Goodfellow, Ian J, Warde-Farley, David, Mirza, Mehdi, Courville, Aaron, and Bengio, Yoshua. Maxout networks. arXiv preprint arXiv:1302.4389, 2013",
+      "authors": "Goodfellow, Ian J, Warde-Farley, David, Mirza, Mehdi, Courville, Aaron, and Bengio, Yoshua",
+      "title": "Maxout networks",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1302.4389",
+      "doi": null
+    },
+    {
+      "key": "graves2014neural",
+      "raw": "Graves, Alex, Wayne, Greg, and Danihelka, Ivo. Neural turing machines. arXiv preprint arXiv:1410.5401, 2014",
+      "authors": "Graves, Alex, Wayne, Greg, and Danihelka, Ivo",
+      "title": "Neural turing machines",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.5401",
+      "doi": null
+    },
+    {
+      "key": "hannun2014deep",
+      "raw": "Hannun, Awni, Case, Carl, Casper, Jared, Catanzaro, Bryan, Diamos, Greg, Elsen, Erich, Prenger, Ryan, Satheesh, Sanjeev, Sengupta, Shubho, Coates, Adam, et al. Deep speech: Scaling up end-to-end speech recognition. arXiv preprint arXiv:1412.5567, 2014",
+      "authors": "Hannun, Awni, Case, Carl, Casper, Jared, Catanzaro, Bryan, Diamos, Greg, Elsen, Erich, Prenger, Ryan, Satheesh, Sanjeev, Sengupta, Shubho, Coates, Adam, et al",
+      "title": "Deep speech: Scaling up end-to-end speech recognition",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1412.5567",
+      "doi": null
+    },
+    {
+      "key": "hermann2015teaching",
+      "raw": "Hermann, Karl Moritz, Kocisky, Tomas, Grefenstette, Edward, Espeholt, Lasse, Kay, Will, Suleyman, Mustafa, and Blunsom, Phil. Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems, pp.\\ 1684--1692, 2015",
+      "authors": "Hermann, Karl Moritz, Kocisky, Tomas, Grefenstette, Edward, Espeholt, Lasse, Kay, Will, Suleyman, Mustafa, and Blunsom, Phil",
+      "title": "Teaching machines to read and comprehend",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 1684--1692, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen. Long short-term memory. Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "authors": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "karpathy2015visualizing",
+      "raw": "Karpathy, Andrej, Johnson, Justin, and Fei-Fei, Li. Visualizing and understanding recurrent networks. arXiv preprint arXiv:1506.02078, 2015",
+      "authors": "Karpathy, Andrej, Johnson, Justin, and Fei-Fei, Li",
+      "title": "Visualizing and understanding recurrent networks",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1506.02078",
+      "doi": null
+    },
+    {
+      "key": "Kirkpatrick83",
+      "raw": "Kirkpatrick, S., Jr., C. D. Gelatt, , and Vecchi, M. P. Optimization by simulated annealing. Science, 220: 0 671--680, 1983",
+      "authors": "Kirkpatrick, S., Jr., C. D. Gelatt, , and Vecchi, M. P",
+      "title": "Optimization by simulated annealing",
+      "venue": "Science, 220: 0 671--680, 1983",
+      "year": 1983,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "le2015simple",
+      "raw": "Le, Quoc V, Jaitly, Navdeep, and Hinton, Geoffrey E. A simple way to initialize recurrent networks of rectified linear units. arXiv preprint arXiv:1504.00941, 2015",
+      "authors": "Le, Quoc V, Jaitly, Navdeep, and Hinton, Geoffrey E",
+      "title": "A simple way to initialize recurrent networks of rectified linear units",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1504.00941",
+      "doi": null
+    },
+    {
+      "key": "lecun2015deep",
+      "raw": "LeCun, Yann, Bengio, Yoshua, and Hinton, Geoffrey. Deep learning. Nature, 521 0 (7553): 0 436--444, 2015",
+      "authors": "LeCun, Yann, Bengio, Yoshua, and Hinton, Geoffrey",
+      "title": "Deep learning",
+      "venue": "Nature, 521 0 (7553): 0 436--444, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mobahi2016training",
+      "raw": "Mobahi, Hossein. Training recurrent neural networks by diffusion. arXiv preprint arXiv:1601.04114, 2016",
+      "authors": "Mobahi, Hossein",
+      "title": "Training recurrent neural networks by diffusion",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1601.04114",
+      "doi": null
+    },
+    {
+      "key": "nair2010rectified",
+      "raw": "Nair, Vinod and Hinton, Geoffrey E. Rectified linear units improve restricted boltzmann machines. In Proceedings of the 27th International Conference on Machine Learning (ICML-10), pp.\\ 807--814, 2010",
+      "authors": "Nair, Vinod and Hinton, Geoffrey E",
+      "title": "Rectified linear units improve restricted boltzmann machines",
+      "venue": "In Proceedings of the 27th International Conference on Machine Learning (ICML-10), pp.\\ 807--814, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "neelakantan2015adding",
+      "raw": "Neelakantan, Arvind, Vilnis, Luke, Le, Quoc V, Sutskever, Ilya, Kaiser, Lukasz, Kurach, Karol, and Martens, James. Adding gradient noise improves learning for very deep networks. arXiv preprint arXiv:1511.06807, 2015",
+      "authors": "Neelakantan, Arvind, Vilnis, Luke, Le, Quoc V, Sutskever, Ilya, Kaiser, Lukasz, Kurach, Karol, and Martens, James",
+      "title": "Adding gradient noise improves learning for very deep networks",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.06807",
+      "doi": null
+    },
+    {
+      "key": "weston2014memory",
+      "raw": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine. Memory networks. arXiv preprint arXiv:1410.3916, 2014",
+      "authors": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine",
+      "title": "Memory networks",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.3916",
+      "doi": null
+    },
+    {
+      "key": "xu2015show",
+      "raw": "Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Courville, Aaron, Salakhutdinov, Ruslan, Zemel, Richard, and Bengio, Yoshua. Show, attend and tell: Neural image caption generation with visual attention. arXiv preprint arXiv:1502.03044, 2015",
+      "authors": "Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Courville, Aaron, Salakhutdinov, Ruslan, Zemel, Richard, and Bengio, Yoshua",
+      "title": "Show, attend and tell: Neural image caption generation with visual attention",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1502.03044",
+      "doi": null
+    },
+    {
+      "key": "yao2015capgenvid",
+      "raw": "Yao, Li, Torabi, Atousa, Cho, Kyunghyun, Ballas, Nicolas, Pal, Christopher, Larochelle, Hugo, and Courville, Aaron. Describing videos by exploiting temporal structure. In Computer Vision (ICCV), 2015 IEEE International Conference on. IEEE, 2015",
+      "authors": "Yao, Li, Torabi, Atousa, Cho, Kyunghyun, Ballas, Nicolas, Pal, Christopher, Larochelle, Hugo, and Courville, Aaron",
+      "title": "Describing videos by exploiting temporal structure",
+      "venue": "In Computer Vision (ICCV), 2015 IEEE International Conference on. IEEE, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zaremba2014learning",
+      "raw": "Zaremba, Wojciech and Sutskever, Ilya. Learning to execute. arXiv preprint arXiv:1410.4615, 2014",
+      "authors": "Zaremba, Wojciech and Sutskever, Ilya",
+      "title": "Learning to execute",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.4615",
+      "doi": null
+    },
+    {
+      "key": "zaremba2014recurrent",
+      "raw": "Zaremba, Wojciech, Sutskever, Ilya, and Vinyals, Oriol. Recurrent neural network regularization. arXiv preprint arXiv:1409.2329, 2014",
+      "authors": "Zaremba, Wojciech, Sutskever, Ilya, and Vinyals, Oriol",
+      "title": "Recurrent neural network regularization",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\sigm(x) & \\approx  \\fu^s(x) = 0.25 x + 0.5 \\\\\n    \\tanh(x) & \\approx \\fu^t(x) = x.",
+      "environment": "align",
+      "labels": [
+        "eq:linearizations"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\hardsigm(x) = \\max(\\min(\\fu^s(x),~1),~0) \\\\\n    \\hardtanh(x) = \\max(\\min(\\fu^t(x),~1),~-1).",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\lim_{|\\xi|\\rightarrow\\infty} |\\frac{\\partial \\phi(x,\\xi)}{\\partial x}| \\rightarrow \\infty.",
+      "environment": "equation",
+      "labels": [
+        "eq:large-xi-derivative"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\phi(x,\\xi) = \\h(x) + s",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\E_{\\xi \\sim \\mathcal{N}(0,1)}[\\phi(x,\\xi)] \\approx \\h(x)",
+      "environment": "align",
+      "labels": [
+        "eq:expectation-condition"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\Delta = \\h(x) - \\fu(x)",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\begin{aligned}\n        & \\sigma(x) = c~(\\g(p \\Delta) - 0.5)^2 \\\\ \n        & \\g(x) = \\text{sigmoid}(x) .\n    \\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "eqn:parameterization_std"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\phi(x,\\xi) =  \\h(x) + \\sigma(x) \\xi",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\phi'(x, \\xi) = \\frac{\\partial}{\\partial x} \\phi(x, \\xi) = \\sigma'(x)\\xi",
+      "environment": "align",
+      "labels": [
+        "eq:gradient-flow"
+      ]
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\fd(x) =& -\\operatorname{sgn}(x) \\operatorname{sgn}(1 - \\alpha) \\\\\n    s =& \\mu(x) + \\fd(x)\\sigma(x) |\\xi|.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\begin{aligned}\n    \\phi(x, \\xi) &= \\fu(x) + \\alpha \\Delta + \\fd(x) \\sigma(x) \\epsilon \\\\\n\\end{aligned}",
+      "environment": "equation",
+      "labels": [
+        "eqn:theoretical_ver"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\phi(x, \\xi) = \\alpha \\h(x) + (1 - \\alpha) \\fu(x) + \\fd(x) \\sigma(x) \\epsilon",
+      "environment": "equation",
+      "labels": [
+        "eqn:experimental_ver"
+      ]
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\E_{\\xi}[\\phi(x, \\xi)] = \\alpha \\h(x) + (1 - \\alpha) \\fu(x) + \\fd(x) \\sigma(x) \\E_{\\xi}[\\epsilon]",
+      "environment": "equation",
+      "labels": [
+        "eqn:test_ver"
+      ]
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\phi(x, \\xi) = \\h(x + \\sigma \\xi)~\\text{and}~\\xi \\sim \\mathcal{N}(0, 1).",
+      "environment": "equation",
+      "labels": [
+        "eqn:noise_at_inp"
+      ]
+    },
+    {
+      "ordinal": 14,
+      "latex": "\\phi(x, \\xi) = \\h(x + \\mathbf{1}_{|x| \\ge |x_t|}(\\sigma \\xi))~\\text{and}~\\xi \\sim \\mathcal{N}(0, 1).",
+      "environment": "equation",
+      "labels": [
+        "eqn:noise_at_inp_sat"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1403,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 75.36614990234375,
+            "y0": 245.7504425048828,
+            "x1": 269.5173034667969,
+            "y1": 255.71304321289062
+          },
+          {
+            "x0": 75.36614990234375,
+            "y0": 257.107421875,
+            "x1": 269.5173034667969,
+            "y1": 267.0700378417969
+          },
+          {
+            "x0": 75.36614990234375,
+            "y0": 268.46539306640625,
+            "x1": 269.51727294921875,
+            "y1": 278.4280090332031
+          },
+          {
+            "x0": 75.36614990234375,
+            "y0": 279.8223876953125,
+            "x1": 269.5173034667969,
+            "y1": 289.7850036621094
+          },
+          {
+            "x0": 75.36614990234375,
+            "y0": 291.17938232421875,
+            "x1": 269.6866149902344,
+            "y1": 301.1419982910156
+          },
+          {
+            "x0": 75.36614990234375,
+            "y0": 302.5373840332031,
+            "x1": 140.25254821777344,
+            "y1": 312.5
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3784,
+      "numbers": 0,
+      "citations": 17,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.13100051879883,
+            "y0": 616.7530517578125,
+            "x1": 289.43658447265625,
+            "y1": 626.5751342773438
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 628.0034790039062,
+            "x1": 162.86669921875,
+            "y1": 637.966064453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Saturating Activation Functions",
+      "chars": 3115,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 216.8087615966797,
+            "y0": 424.0965576171875,
+            "x1": 291.0950012207031,
+            "y1": 433.87310791015625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 435.3124694824219,
+            "x1": 124.06237030029297,
+            "y1": 445.27508544921875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Annealing with Noisy Activation Functions",
+      "chars": 3050,
+      "numbers": 0,
+      "citations": 5,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 201.58949279785156,
+            "x1": 203.26504516601562,
+            "y1": 211.55209350585938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Adding Noise when the Unit Saturate",
+      "chars": 2907,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.0820007324219,
+            "y0": 414.5454406738281,
+            "x1": 541.4420776367188,
+            "y1": 424.508056640625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 425.8114929199219,
+            "x1": 541.4430541992188,
+            "y1": 435.7740783691406
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 437.16949462890625,
+            "x1": 541.4415283203125,
+            "y1": 447.132080078125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 448.5264892578125,
+            "x1": 361.96466064453125,
+            "y1": 458.5800476074219
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Derivatives in the Saturated Regime",
+      "chars": 1508,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 603.930908203125,
+            "x1": 227.14218139648438,
+            "y1": 613.8335571289062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Pushing Activations towards Linear Regime",
+      "chars": 2928,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.0820007324219,
+            "y0": 525.8598022460938,
+            "x1": 541.44140625,
+            "y1": 535.5701293945312
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 537.1627197265625,
+            "x1": 435.4702453613281,
+            "y1": 546.9443359375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Adding Noise to Input of the Function",
+      "chars": 700,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.0820007324219,
+            "y0": 323.55816650390625,
+            "x1": 541.44091796875,
+            "y1": 333.2838134765625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 334.90069580078125,
+            "x1": 541.4379272460938,
+            "y1": 344.646728515625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 346.09344482421875,
+            "x1": 344.520751953125,
+            "y1": 356.0560607910156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Results",
+      "chars": 907,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 565.2394409179688,
+            "x1": 541.44140625,
+            "y1": 575.2020263671875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 576.596435546875,
+            "x1": 541.44140625,
+            "y1": 586.5590209960938
+          },
+          {
+            "x0": 307.1910095214844,
+            "y0": 588.025634765625,
+            "x1": 330.55902099609375,
+            "y1": 597.8931274414062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Exploratory Analysis",
+      "chars": 2538,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.082000732421875,
+            "y0": 134.7913818359375,
+            "x1": 291.0955505371094,
+            "y1": 144.7290496826172
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 146.1294708251953,
+            "x1": 291.1849365234375,
+            "y1": 156.09207153320312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Learning to Execute",
+      "chars": 1811,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.1308898925781,
+            "y0": 572.7305297851562,
+            "x1": 541.4412231445312,
+            "y1": 582.693115234375
+          },
+          {
+            "x0": 307.43988037109375,
+            "y0": 584.0885620117188,
+            "x1": 363.6986083984375,
+            "y1": 594.0511474609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Penntreebank Experiments",
+      "chars": 1954,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 111.49400329589844,
+            "y0": 599.5304565429688,
+            "x1": 289.4437561035156,
+            "y1": 609.4930419921875
+          },
+          {
+            "x0": 55.44001007080078,
+            "y0": 610.887451171875,
+            "x1": 125.79588317871094,
+            "y1": 620.8500366210938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Neural Machine Translation Experiments",
+      "chars": 1160,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 306.97198486328125,
+            "y0": 603.5161743164062,
+            "x1": 541.4451293945312,
+            "y1": 613.3987426757812
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 614.8124389648438,
+            "x1": 541.4414672851562,
+            "y1": 624.7750244140625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Image Caption Generation Experiments",
+      "chars": 843,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.97200012207031,
+            "y0": 622.9974365234375,
+            "x1": 289.6907958984375,
+            "y1": 632.9600219726562
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 634.3544921875,
+            "x1": 184.19664001464844,
+            "y1": 644.3170776367188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments with Continuation",
+      "chars": 2245,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 306.97198486328125,
+            "y0": 379.2249755859375,
+            "x1": 541.4397583007812,
+            "y1": 388.981201171875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 390.6177673339844,
+            "x1": 543.1810913085938,
+            "y1": 400.328125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1658,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 446.2854309082031,
+            "x1": 289.4415283203125,
+            "y1": 456.248046875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 457.6424255371094,
+            "x1": 86.5930404663086,
+            "y1": 467.60504150390625
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 22,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "zaremba2014recurrent",
+      "stance": "inherits",
+      "cue": "We used",
+      "sentence": "We used the same model proposed by [Zaremba et al. 2014]. [We used the code provided in <https://github.com/wojzaremba/lstm>]We simply replaced all and tanh units with noisy and units.",
+      "section": "Penntreebank Experiments",
+      "sectionKind": "experiments",
+      "ordinal": 23,
+      "title": "Recurrent neural network regularization",
+      "authors": "Zaremba, Wojciech, Sutskever, Ilya, and Vinyals, Oriol",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "inCorpus": true,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 132.42100524902344,
+            "y0": 610.887451171875,
+            "x1": 289.79022216796875,
+            "y1": 620.8500366210938
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "graves2014neural",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "As a second test, we used the same annealing procedure in order to train a Neural Turing Machine (NTM) on the associative recall task [Graves et al. 2014].",
+        "section": "Experiments with Continuation",
+        "sectionKind": "experiments",
+        "ordinal": 29,
+        "title": "Neural turing machines",
+        "authors": "Graves, Alex, Wayne, Greg, and Danihelka, Ivo",
+        "year": 2014,
+        "arxivId": "1410.5401",
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.0820007324219,
+              "y0": 608.8588256835938,
+              "x1": 543.0975952148438,
+              "y1": 618.5691528320312
+            },
+            {
+              "x0": 307.44000244140625,
+              "y0": 620.2158203125,
+              "x1": 541.4395141601562,
+              "y1": 629.9261474609375
+            },
+            {
+              "x0": 307.44000244140625,
+              "y0": 631.549560546875,
+              "x1": 346.4322204589844,
+              "y1": 641.29052734375
+            }
+          ]
+        }
+      },
+      {
+        "key": "xu2015show",
+        "stance": "inherits",
+        "cue": "We used",
+        "sentence": "We used the soft neural attention model proposed in [Xu et al. 2015] as our reference model.[We used the code provided at <https://github.com/kelvinxu/arctic-captions>.] We scaled down the weight matrices initialized to be orthogonal scaled by multiplying with 0.01.",
+        "section": "Image Caption Generation Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 26,
+        "title": "Show, attend and tell: Neural image caption generation with visual attention",
+        "authors": "Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Courville, Aaron, Salakhutdinov, Ruslan, Zemel, Richard, and Bengio, Yoshua",
+        "year": 2015,
+        "arxivId": "1502.03044",
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "zaremba2014recurrent",
+        "stance": "inherits",
+        "cue": "We used",
+        "sentence": "We used the same model proposed by [Zaremba et al. 2014]. [We used the code provided in <https://github.com/wojzaremba/lstm>]We simply replaced all and tanh units with noisy and units.",
+        "section": "Penntreebank Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 23,
+        "title": "Recurrent neural network regularization",
+        "authors": "Zaremba, Wojciech, Sutskever, Ilya, and Vinyals, Oriol",
+        "year": 2014,
+        "arxivId": "1409.2329",
+        "inCorpus": true,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 132.42100524902344,
+              "y0": 610.887451171875,
+              "x1": 289.79022216796875,
+              "y1": 620.8500366210938
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Intuitively when the unit saturates we pin its output to the threshold value t and add noise.",
+      "anchorText": "Intuitively when the unit saturates we pin its output to the threshold value",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Adding Noise when the Unit Saturate",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "Intuitively we would like to add more noise when x is far into the saturated regime, since a large change in parameters would be required desaturate h.",
+      "anchorText": "is far into the saturated regime, since a large change in parameters would be required desaturate",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Adding Noise when the Unit Saturate",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 268.98199462890625,
+            "y0": 247.20851135253906,
+            "x1": 289.614501953125,
+            "y1": 257.1711120605469
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 258.6768493652344,
+            "x1": 289.4366760253906,
+            "y1": 268.4939270019531
+          },
+          {
+            "x0": 55.082000732421875,
+            "y0": 270.0299987792969,
+            "x1": 167.34454345703125,
+            "y1": 279.8521423339844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively we would prefer these messages to \u201cpush back\u201d the saturated unit towards a non-saturated state where the gradient of (x) can be used safely.",
+      "anchorText": "Intuitively we would prefer these messages to \"push back\" the saturated unit towards a non-saturated state where the gradient of",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Pushing Activations towards Linear Regime",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 484.8253479003906,
+            "y0": 571.0984497070312,
+            "x1": 541.4428100585938,
+            "y1": 581.06103515625
+          },
+          {
+            "x0": 307.08197021484375,
+            "y0": 582.4554443359375,
+            "x1": 541.4421997070312,
+            "y1": 592.4180297851562
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 593.9420166015625,
+            "x1": 521.6773681640625,
+            "y1": 603.7337646484375
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 0,
+    "shown": 0,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 36,
+    "rate": 0.9
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "cs.NE",
+      "stat.ML"
+    ],
+    "published": "2016-03-01",
+    "authors": [
+      "Caglar Gulcehre",
+      "Marcin Moczulski",
+      "Misha Denil",
+      "Yoshua Bengio"
+    ]
+  }
+}

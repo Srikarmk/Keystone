@@ -1,0 +1,3408 @@
+{
+  "id": "1511.04834",
+  "title": "Neural Programmer: Inducing Latent Programs with Gradient Descent",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 1,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 1,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [
+    {
+      "value": "99%",
+      "section": "introduction",
+      "sentence": "Neural Programmer, however, can completely solve this task or achieve greater than 99% accuracy on most cases by inducing the required latent program.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 279.3865661621094,
+            "y0": 221.7532501220703,
+            "x1": 504.0033264160156,
+            "y1": 231.71585083007812
+          },
+          {
+            "x0": 108.0,
+            "y0": 232.7122344970703,
+            "x1": 504.0032653808594,
+            "y1": 242.67483520507812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1511.04834",
+  "numbers": [
+    {
+      "value": "99%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Neural Programmer, however, can completely solve this task or achieve greater than 99% accuracy on most cases by inducing the required latent program.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 279.3865661621094,
+            "y0": 221.7532501220703,
+            "x1": 504.0033264160156,
+            "y1": 231.71585083007812
+          },
+          {
+            "x0": 108.0,
+            "y0": 232.7122344970703,
+            "x1": 504.0032653808594,
+            "y1": 242.67483520507812
+          }
+        ]
+      }
+    },
+    {
+      "value": "-0.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The parameters are initialized uniformly randomly within the range [-0.1, 0.1].",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 408.67120361328125,
+            "y0": 678.4703979492188,
+            "x1": 504.0032958984375,
+            "y1": 688.4329833984375
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 689.4293823242188,
+            "x1": 335.1471862792969,
+            "y1": 699.3919677734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The parameters are initialized uniformly randomly within the range [-0.1, 0.1].",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 408.67120361328125,
+            "y0": 678.4703979492188,
+            "x1": 504.0032958984375,
+            "y1": 688.4329833984375
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 689.4293823242188,
+            "x1": 335.1471862792969,
+            "y1": 699.3919677734375
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "List of operations along with their definitions at time step , is the data source in the form of a table and functions as a row selector.",
+      "label": "operations",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Type",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Operation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Definition",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Aggregate",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Sum",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Count",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Arithmetic",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Difference",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Comparison",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Greater",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Lesser",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Logic",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "And",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Or",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Assign Lookup",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "assign",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Reset",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "Reset",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Summary of the performance of Neural Programmer on various versions of the synthetic table-comprehension task. The prediction of the model is considered correct if it is equal to the correct answer up to the first decimal place. The last column indicates the percentage of question templates in the test set that are observed during training. The unseen question templates generate questions containing sequences of words that the model has never seen before. The model can generalize to unseen question templates which is evident in the 10-columns, word variability on 5-columns and text match on 5 columns experiments. This indicates that Neural Programmer is a powerful compositional model since solving unseen question templates requires performing a sequence of actions that it has never done during training.",
+      "label": "results",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Type",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "No. of Test Question Templates",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Accuracy",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "% seen test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Single Column",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23",
+            "value": "23",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100.0",
+            "value": "100.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "3 Columns",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "307",
+            "value": "307",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "99.02",
+            "value": "99.02",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "5 Columns",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1231",
+            "value": "1231",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "99.11",
+            "value": "99.11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "98.62",
+            "value": "98.62",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "10 Columns",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "7900",
+            "value": "7900",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "99.13",
+            "value": "99.13",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "62.44",
+            "value": "62.44",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Word Variability on 1 Column",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "1368",
+            "value": "1368",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "96.49",
+            "value": "96.49",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Word Variability on 5 Columns",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "24000",
+            "value": "24000",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "88.99",
+            "value": "88.99",
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "31.31",
+            "value": "31.31",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Text Match on 2 Columns",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "1125",
+            "value": "1125",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "99.11",
+            "value": "99.11",
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "97.42",
+            "value": "97.42",
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "Text Match on 5 Columns",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "14600",
+            "value": "14600",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "98.03",
+            "value": "98.03",
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "31.02",
+            "value": "31.02",
+            "emphasised": false,
+            "block": 8
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.73211669921875,
+            "y0": 314.65045166015625,
+            "x1": 504.0032653808594,
+            "y1": 324.6130676269531
+          },
+          {
+            "x0": 108.0,
+            "y0": 325.60943603515625,
+            "x1": 504.0030212402344,
+            "y1": 335.5720520019531
+          },
+          {
+            "x0": 108.0,
+            "y0": 336.56842041015625,
+            "x1": 504.0033874511719,
+            "y1": 346.5310363769531
+          },
+          {
+            "x0": 108.0,
+            "y0": 347.52740478515625,
+            "x1": 504.0033264160156,
+            "y1": 357.4900207519531
+          },
+          {
+            "x0": 108.0,
+            "y0": 358.48638916015625,
+            "x1": 504.0033874511719,
+            "y1": 368.4490051269531
+          },
+          {
+            "x0": 108.0,
+            "y0": 369.44439697265625,
+            "x1": 504.0032958984375,
+            "y1": 379.4070129394531
+          },
+          {
+            "x0": 108.0,
+            "y0": 380.40338134765625,
+            "x1": 504.0033264160156,
+            "y1": 390.3659973144531
+          },
+          {
+            "x0": 108.0,
+            "y0": 391.36236572265625,
+            "x1": 504.0032653808594,
+            "y1": 401.3249816894531
+          },
+          {
+            "x0": 108.0,
+            "y0": 402.32135009765625,
+            "x1": 337.8072204589844,
+            "y1": 412.2839660644531
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Example outputs from the model for time steps on three questions in the test set. We show the synthetically generated question along with its natural language translation. For each question, the model takes 4 steps and at each step selects an operation and a column. The pivot numbers for the comparison operations are computed before performing the 4 steps. We show the selected columns in cases during which the selected operation acts on a particular column.",
+      "label": "parse",
+      "numericCells": 18,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Question",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "t",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Selected",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Selected",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Row",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Op",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Column",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "select",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater 50.32 C and lesser 20.21 E sum H",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Greater",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "C",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50.32",
+            "value": "50.32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.21",
+            "value": "20.21",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "What is the sum of numbers in column H",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Lesser",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "E",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "whose field in column C is greater than 50.32",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "And",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "and field in Column E is lesser than 20.21.",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Sum",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "H",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser -80.97 D or greater 12.57 B print F",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Lesser",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "D",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.57",
+            "value": "12.57",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-80.97",
+            "value": "-80.97",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Print elements in column F",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Greater",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "whose field in column D is lesser than -80.97",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Or",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "or field in Column B is greater than 12.57.",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Assign",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "sum A diff count",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Sum",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "A",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-1",
+            "value": "-1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-1",
+            "value": "-1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "What is the difference",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Reset",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "between sum of elements in",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Count",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "column A and number of rows",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Diff",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "23 question templates for single column experiment. We have four categories of questions: 1) simple aggregation (sum, count) 2) comparison (greater, lesser) 3) logic (and, or) and, 4) arithmetic (diff). We first sample the categories uniformly randomly and each program within a category is equally likely. In the word variability experiment with columns we sampled from the set of all programs uniformly randomly since greater than of the test questions were unseen during training using the other procedure.",
+      "label": "type-questions",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "print",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number] count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number] count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number] print",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number] print",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] and lesser [number2] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number1] and greater [number2] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] or lesser [number2] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number1] or greater [number2] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] and lesser [number2] count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number1] and greater [number2] count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] or lesser [number2] count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number1] or greater [number2] count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] and lesser [number2] print",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number1] and greater [number2] print",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] or lesser [number2] print",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser [number1] or greater [number2] print",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "sum diff count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "count diff sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "8 question templates of type \"greater [number1] and lesser [number2] sum\" when there are 2 columns.",
+      "label": "3-questions",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "greater [number1] A and lesser [number2] A sum A",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] B and lesser [number2] B sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] A and lesser [number2] A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] A and lesser [number2] B sum A",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] B and lesser [number2] A sum A",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] A and lesser [number2] B sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] B and lesser [number2] B sum A",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number1] B and lesser [number2] B sum A",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.01852416992188,
+            "y0": 579.4844360351562,
+            "x1": 504.0032958984375,
+            "y1": 589.447021484375
+          },
+          {
+            "x0": 108.0,
+            "y0": 590.4434814453125,
+            "x1": 151.725830078125,
+            "y1": 600.4060668945312
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 6",
+      "caption": "Word variability, multiple ways to refer to the same operation.",
+      "label": "wv",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "sum, total, total of, sum of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "count",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "count, count of, how many",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "greater, greater than, bigger, bigger than, larger, larger than",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "lesser",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "lesser, lesser than, smaller, smaller than, under",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "assign",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "print, display, show",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "difference",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "difference, difference between",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 16,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 199.8547821044922,
+            "y0": 719.0184326171875,
+            "x1": 447.3655700683594,
+            "y1": 728.9810180664062
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "24 questions templates for questions of type \"greater [number] sum\" in the single column word variability experiment.",
+      "label": "wv:question",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "greater [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number] total",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number] total of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater [number] sum of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater than [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater than [number] total",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater than [number] total of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "greater than [number] sum of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger [number] total",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger [number] total of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger [number] sum of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger than [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger than [number] total",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger than [number] total of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "bigger than [number] sum of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger [number] total",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger [number] total of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger [number] sum of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger than [number] sum",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger than [number] total",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger than [number] total of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "larger than [number] sum of",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 17,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.9849090576172,
+            "y0": 382.6494445800781,
+            "x1": 504.003173828125,
+            "y1": 392.612060546875
+          },
+          {
+            "x0": 108.0,
+            "y0": 393.60845947265625,
+            "x1": 221.22496032714844,
+            "y1": 403.5710754394531
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 8",
+      "caption": "10 questions templates for questions of type \"[word] A sum B\" in the two columns text match experiment.",
+      "label": "text-match",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "word:0 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:1 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:2 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:3 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:4 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:5 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:6 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:7 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:8 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "word:9 A sum B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 17,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 145.4294891357422,
+            "y0": 564.7664794921875,
+            "x1": 504.00311279296875,
+            "y1": 574.7290649414062
+          },
+          {
+            "x0": 108.0,
+            "y0": 575.7254638671875,
+            "x1": 182.00218200683594,
+            "y1": 585.6880493164062
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "jacob",
+      "raw": "Andreas, Jacob, Rohrbach, Marcus, Darrell, Trevor, and Klein, Dan. Learning to compose neural networks for question answering. ArXiv, 2016",
+      "authors": "Andreas, Jacob, Rohrbach, Marcus, Darrell, Trevor, and Klein, Dan",
+      "title": "Learning to compose neural networks for question answering",
+      "venue": "ArXiv, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "BahdanauCB14",
+      "raw": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua. Neural machine translation by jointly learning to align and translate. ICLR, 2014",
+      "authors": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "ICLR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "BahdanauCSBB15",
+      "raw": "Bahdanau, Dzmitry, Chorowski, Jan, Serdyuk, Dmitriy, Brakel, Philemon, and Bengio, Yoshua. End-to-end attention-based large vocabulary speech recognition. arXiv preprint arxiv:1508.04395, 2015",
+      "authors": "Bahdanau, Dzmitry, Chorowski, Jan, Serdyuk, Dmitriy, Brakel, Philemon, and Bengio, Yoshua",
+      "title": "End-to-end attention-based large vocabulary speech recognition",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1508.04395",
+      "doi": null
+    },
+    {
+      "key": "BordesCW14",
+      "raw": "Bordes, Antoine, Chopra, Sumit, and Weston, Jason. Question answering with subgraph embeddings. In EMNLP, 2014",
+      "authors": "Bordes, Antoine, Chopra, Sumit, and Weston, Jason",
+      "title": "Question answering with subgraph embeddings",
+      "venue": "In EMNLP, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Cantlon06",
+      "raw": "Cantlon, Jessica F., Brannon, Elizabeth M., Carter, Elizabeth J., and Pelphrey, Kevin A. Functional imaging of numerical processing in adults and 4-y-old children. PLoS Biology, 2006",
+      "authors": "Cantlon, Jessica F., Brannon, Elizabeth M., Carter, Elizabeth J., and Pelphrey, Kevin A",
+      "title": "Functional imaging of numerical processing in adults and 4-y-old children",
+      "venue": "PLoS Biology, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ChanJLV15",
+      "raw": "Chan, William, Jaitly, Navdeep, Le, Quoc V., and Vinyals, Oriol. Listen, attend and spell. arXiv preprint arxiv:1508.01211, 2015",
+      "authors": "Chan, William, Jaitly, Navdeep, Le, Quoc V., and Vinyals, Oriol",
+      "title": "Listen, attend and spell",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1508.01211",
+      "doi": null
+    },
+    {
+      "key": "clarke-EtAl:2010:CONLL",
+      "raw": "Clarke, James, Goldwasser, Dan, Chang, Ming-Wei, and Roth, Dan. Driving semantic parsing from the world's response. In CoNLL, 2010",
+      "authors": "Clarke, James, Goldwasser, Dan, Chang, Ming-Wei, and Roth, Dan",
+      "title": "Driving semantic parsing from the world's response",
+      "venue": "In CoNLL, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Das92learningcontext-free",
+      "raw": "Das, Sreerupa, Giles, C. Lee, and zheng Sun, Guo. Learning context-free grammars: Capabilities and limitations of a recurrent neural network with an external stack memory. In CogSci, 1992",
+      "authors": "Das, Sreerupa, Giles, C. Lee, and zheng Sun, Guo",
+      "title": "Learning context-free grammars: Capabilities and limitations of a recurrent neural network with an external stack memory",
+      "venue": "In CogSci, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Das92usingprior",
+      "raw": "Das, Sreerupa, Giles, C. Lee, and zheng Sun, Guo. Using prior knowledge in an NNPDA to learn context-free languages. In NIPS, 1992",
+      "authors": "Das, Sreerupa, Giles, C. Lee, and zheng Sun, Guo",
+      "title": "Using prior knowledge in an NNPDA to learn context-free languages",
+      "venue": "In NIPS, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dastjerdi2013numerical",
+      "raw": "Dastjerdi, Mohammad, Ozker, Muge, Foster, Brett L, Rangarajan, Vinitha, and Parvizi, Josef. Numerical processing in the human parietal cortex during experimental and natural conditions. Nature communications, 4, 2013",
+      "authors": "Dastjerdi, Mohammad, Ozker, Muge, Foster, Brett L, Rangarajan, Vinitha, and Parvizi, Josef",
+      "title": "Numerical processing in the human parietal cortex during experimental and natural conditions",
+      "venue": "Nature communications, 4, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Eisenstein:2009",
+      "raw": "Eisenstein, Jacob, Clarke, James, Goldwasser, Dan, and Roth, Dan. Reading to learn: Constructing features from semantic abstracts. In EMNLP, 2009",
+      "authors": "Eisenstein, Jacob, Clarke, James, Goldwasser, Dan, and Roth, Dan",
+      "title": "Reading to learn: Constructing features from semantic abstracts",
+      "venue": "In EMNLP, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fias2007processing",
+      "raw": "Fias, Wim, Lammertyn, Jan, Caessens, Bernie, and Orban, Guy A. Processing of abstract ordinal knowledge in the horizontal segment of the intraparietal sulcus. The Journal of Neuroscience, 2007",
+      "authors": "Fias, Wim, Lammertyn, Jan, Caessens, Bernie, and Orban, Guy A",
+      "title": "Processing of abstract ordinal knowledge in the horizontal segment of the intraparietal sulcus",
+      "venue": "The Journal of Neuroscience, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Gers01lstmrecurrent",
+      "raw": "Gers, Felix A. and Schmidhuber, J\\\"urgen. LSTM recurrent networks learn simple context free and context sensitive languages. IEEE Transactions on Neural Networks, 2001",
+      "authors": "Gers, Felix A. and Schmidhuber, J\\\"urgen",
+      "title": "LSTM recurrent networks learn simple context free and context sensitive languages",
+      "venue": "IEEE Transactions on Neural Networks, 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Graves13",
+      "raw": "Graves, Alex. Generating sequences with recurrent neural networks. arXiv preprint arxiv:1308.0850, 2013",
+      "authors": "Graves, Alex",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "graves2014towards",
+      "raw": "Graves, Alex and Jaitly, Navdeep. Towards end-to-end speech recognition with recurrent neural networks. In ICML, 2014",
+      "authors": "Graves, Alex and Jaitly, Navdeep",
+      "title": "Towards end-to-end speech recognition with recurrent neural networks",
+      "venue": "In ICML, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "GravesWD14",
+      "raw": "Graves, Alex, Wayne, Greg, and Danihelka, Ivo. Neural Turing Machines. arXiv preprint arxiv:1410.5401, 2014",
+      "authors": "Graves, Alex, Wayne, Greg, and Danihelka, Ivo",
+      "title": "Neural Turing Machines",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.5401",
+      "doi": null
+    },
+    {
+      "key": "HannunCCCDEPSSCN14",
+      "raw": "Hannun, Awni Y., Case, Carl, Casper, Jared, Catanzaro, Bryan C., Diamos, Greg, Elsen, Erich, Prenger, Ryan, Satheesh, Sanjeev, Sengupta, Shubho, Coates, Adam, and Ng, Andrew Y. Deep Speech: Scaling up end-to-end speech recognition. arXiv preprint arxiv:1412.5567, 2014",
+      "authors": "Hannun, Awni Y., Case, Carl, Casper, Jared, Catanzaro, Bryan C., Diamos, Greg, Elsen, Erich, Prenger, Ryan, Satheesh, Sanjeev, Sengupta, Shubho, Coates, Adam, and Ng, Andrew Y",
+      "title": "Deep Speech: Scaling up end-to-end speech recognition",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1412.5567",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/HermannKGEKSB15",
+      "raw": "Hermann, Karl Moritz, Kocisk\\'y, Tom\\'as, Grefenstette, Edward, Espeholt, Lasse, Kay, Will, Suleyman, Mustafa, and Blunsom, Phil. Teaching machines to read and comprehend. NIPS, 2015",
+      "authors": "Hermann, Karl Moritz, Kocisk\\'y, Tom\\'as, Grefenstette, Edward, Espeholt, Lasse, Kay, Will, Suleyman, Mustafa, and Blunsom, Phil",
+      "title": "Teaching machines to read and comprehend",
+      "venue": "NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "38131",
+      "raw": "Hinton, Geoffrey, Deng, Li, Yu, Dong, Dahl, George, rahman Mohamed, Abdel, Jaitly, Navdeep, Senior, Andrew, Vanhoucke, Vincent, Nguyen, Patrick, Sainath, Tara, and Kingsbury, Brian. Deep neural networks for acoustic modeling in speech recognition. Signal Processing Magazine, 2012",
+      "authors": "Hinton, Geoffrey, Deng, Li, Yu, Dong, Dahl, George, rahman Mohamed, Abdel, Jaitly, Navdeep, Senior, Andrew, Vanhoucke, Vincent, Nguyen, Patrick, Sainath, Tara, and Kingsbury, Brian",
+      "title": "Deep neural networks for acoustic modeling in speech recognition",
+      "venue": "Signal Processing Magazine, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter:1997",
+      "raw": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen. Long short-term memory. Neural Computation, 1997",
+      "authors": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen",
+      "title": "Long short-term memory",
+      "venue": "Neural Computation, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "huber",
+      "raw": "Huber, Peter. Robust estimation of a location parameter. In The Annals of Mathematical Statistics, 1964",
+      "authors": "Huber, Peter",
+      "title": "Robust estimation of a location parameter",
+      "venue": "In The Annals of Mathematical Statistics, 1964",
+      "year": 1964,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "IyyerBCSD14",
+      "raw": "Iyyer, Mohit, Boyd-Graber, Jordan L., Claudino, Leonardo Max Batista, Socher, Richard, and III, Hal Daum\\'e. A neural network for factoid question answering over paragraphs. In EMNLP, 2014",
+      "authors": "Iyyer, Mohit, Boyd-Graber, Jordan L., Claudino, Leonardo Max Batista, Socher, Richard, and III, Hal Daum\\'e",
+      "title": "A neural network for factoid question answering over paragraphs",
+      "venue": "In EMNLP, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "JoulinM15",
+      "raw": "Joulin, Armand and Mikolov, Tomas. Inferring algorithmic patterns with stack-augmented recurrent nets. NIPS, 2015",
+      "authors": "Joulin, Armand and Mikolov, Tomas",
+      "title": "Inferring algorithmic patterns with stack-augmented recurrent nets",
+      "venue": "NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "KingmaB14",
+      "raw": "Kingma, Diederik P. and Ba, Jimmy. Adam: A method for stochastic optimization. ICLR, 2014",
+      "authors": "Kingma, Diederik P. and Ba, Jimmy",
+      "title": "Adam: A method for stochastic optimization",
+      "venue": "ICLR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "KrizhevskySH12",
+      "raw": "Krizhevsky, Alex, Sutskever, Ilya, and Hinton, Geoffrey E. Imagenet classification with deep convolutional neural networks. In NIPS, 2012",
+      "authors": "Krizhevsky, Alex, Sutskever, Ilya, and Hinton, Geoffrey E",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In NIPS, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kucian2006impaired",
+      "raw": "Kucian, Karin, Loenneker, Thomas, Dietrich, Thomas, Dosch, Mengia, Martin, Ernst, and Von Aster, Michael. Impaired neural networks for approximate calculation in dyscalculic children: a functional mri study. Behavioral and Brain Functions, 2006",
+      "authors": "Kucian, Karin, Loenneker, Thomas, Dietrich, Thomas, Dosch, Mengia, Martin, Ernst, and Von Aster, Michael",
+      "title": "Impaired neural networks for approximate calculation in dyscalculic children: a functional mri study",
+      "venue": "Behavioral and Brain Functions, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "KumarISBEPOGS15",
+      "raw": "Kumar, Ankit, Irsoy, Ozan, Su, Jonathan, Bradbury, James, English, Robert, Pierce, Brian, Ondruska, Peter, Gulrajani, Ishaan, and Socher, Richard. Ask me anything: Dynamic memory networks for natural language processing. ArXiv, 2015",
+      "authors": "Kumar, Ankit, Irsoy, Ozan, Su, Jonathan, Bradbury, James, English, Robert, Pierce, Brian, Ondruska, Peter, Gulrajani, Ishaan, and Socher, Richard",
+      "title": "Ask me anything: Dynamic memory networks for natural language processing",
+      "venue": "ArXiv, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liang2010learning",
+      "raw": "Liang, Percy, Jordan, Michael I., and Klein, Dan. Learning programs: A hierarchical Bayesian approach. In ICML, 2010",
+      "authors": "Liang, Percy, Jordan, Michael I., and Klein, Dan",
+      "title": "Learning programs: A hierarchical Bayesian approach",
+      "venue": "In ICML, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Liang:2011",
+      "raw": "Liang, Percy, Jordan, Michael I., and Klein, Dan. Learning dependency-based compositional semantics. In ACL, 2011",
+      "authors": "Liang, Percy, Jordan, Michael I., and Klein, Dan",
+      "title": "Learning dependency-based compositional semantics",
+      "venue": "In ACL, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "LinLLSRL15",
+      "raw": "Lin, Yankai, Liu, Zhiyuan, Luan, Huan-Bo, Sun, Maosong, Rao, Siwei, and Liu, Song. Modeling relation paths for representation learning of knowledge bases. In EMNLP, 2015",
+      "authors": "Lin, Yankai, Liu, Zhiyuan, Luan, Huan-Bo, Sun, Maosong, Rao, Siwei, and Liu, Song",
+      "title": "Modeling relation paths for representation learning of knowledge bases",
+      "venue": "In EMNLP, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "luong2014addressing",
+      "raw": "Luong, Thang, Sutskever, Ilya, Le, Quoc V., Vinyals, Oriol, and Zaremba, Wojciech. Addressing the rare word problem in neural machine translation. ACL, 2014",
+      "authors": "Luong, Thang, Sutskever, Ilya, Le, Quoc V., Vinyals, Oriol, and Zaremba, Wojciech",
+      "title": "Addressing the rare word problem in neural machine translation",
+      "venue": "ACL, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "NeelakantanRM15",
+      "raw": "Neelakantan, Arvind, Roth, Benjamin, and McCallum, Andrew. Compositional vector space models for knowledge base completion. In ACL, 2015",
+      "authors": "Neelakantan, Arvind, Roth, Benjamin, and McCallum, Andrew",
+      "title": "Compositional vector space models for knowledge base completion",
+      "venue": "In ACL, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "noise",
+      "raw": "Neelakantan, Arvind, Vilnis, Luke, Le, Quoc V., Sutskever, Ilya, Kaiser, Lukasz, Kurach, Karol, and Martens, James. Adding gradient noise improves learning for very deep networks. ICLR Workshop, 2016",
+      "authors": "Neelakantan, Arvind, Vilnis, Luke, Le, Quoc V., Sutskever, Ilya, Kaiser, Lukasz, Kurach, Karol, and Martens, James",
+      "title": "Adding gradient noise improves learning for very deep networks",
+      "venue": "ICLR Workshop, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "PasupatL15",
+      "raw": "Pasupat, Panupong and Liang, Percy. Compositional semantic parsing on semi-structured tables. In ACL, 2015",
+      "authors": "Pasupat, Panupong and Liang, Percy",
+      "title": "Compositional semantic parsing on semi-structured tables",
+      "venue": "In ACL, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/PengLLW15",
+      "raw": "Peng, Baolin, Lu, Zhengdong, Li, Hang, and Wong, Kam-Fai. Towards neural network-based reasoning. arXiv preprint arxiv:1508.05508, 2015",
+      "authors": "Peng, Baolin, Lu, Zhengdong, Li, Hang, and Wong, Kam-Fai",
+      "title": "Towards neural network-based reasoning",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1508.05508",
+      "doi": null
+    },
+    {
+      "key": "piantadosi2008bayesian",
+      "raw": "Piantadosi, Steven T., Goodman, N.D., Ellis, B.A., and Tenenbaum, J.B. A Bayesian model of the acquisition of compositional semantics. In CogSci, 2008",
+      "authors": "Piantadosi, Steven T., Goodman, N.D., Ellis, B.A., and Tenenbaum, J.B",
+      "title": "A Bayesian model of the acquisition of compositional semantics",
+      "venue": "In CogSci, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "piazza2004tuning",
+      "raw": "Piazza, Manuela, Izard, Veronique, Pinel, Philippe, Le Bihan, Denis, and Dehaene, Stanislas. Tuning curves for approximate numerosity in the human intraparietal sulcus. Neuron, 2004",
+      "authors": "Piazza, Manuela, Izard, Veronique, Pinel, Philippe, Le Bihan, Denis, and Dehaene, Stanislas",
+      "title": "Tuning curves for approximate numerosity in the human intraparietal sulcus",
+      "venue": "Neuron, 2004",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Poon13",
+      "raw": "Poon, Hoifung. Grounded unsupervised semantic parsing. In ACL, 2013",
+      "authors": "Poon, Hoifung",
+      "title": "Grounded unsupervised semantic parsing",
+      "venue": "In ACL, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "reed2015",
+      "raw": "Reed, Scott and Freitas, Nando De. Neural programmer-interpreters. ICLR, 2016",
+      "authors": "Reed, Scott and Freitas, Nando De",
+      "title": "Neural programmer-interpreters",
+      "venue": "ICLR, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Schmidhuber:93",
+      "raw": "Schmidhuber, J. A self-referentialweight matrix. In ICANN, 1993",
+      "authors": "Schmidhuber, J",
+      "title": "A self-referentialweight matrix",
+      "venue": "In ICANN, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shang2015neural",
+      "raw": "Shang, Lifeng, Lu, Zhengdogn, and Li, Hang. Neural responding machine for short-text conversation. arXiv preprint arXiv:1503.02364, 2015",
+      "authors": "Shang, Lifeng, Lu, Zhengdogn, and Li, Hang",
+      "title": "Neural responding machine for short-text conversation",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1503.02364",
+      "doi": null
+    },
+    {
+      "key": "Steijvers96arecurrent",
+      "raw": "Steijvers, Mark. A recurrent network that performs a context-sensitive prediction task. In CogSci, 1996",
+      "authors": "Steijvers, Mark",
+      "title": "A recurrent network that performs a context-sensitive prediction task",
+      "venue": "In CogSci, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sukhbaatar2015weakly",
+      "raw": "Sukhbaatar, Sainbayar, Szlam, Arthur, Weston, Jason, and Fergus, Rob. End-to-end memory networks. arXiv preprint arXiv:1503.08895, 2015",
+      "authors": "Sukhbaatar, Sainbayar, Szlam, Arthur, Weston, Jason, and Fergus, Rob",
+      "title": "End-to-end memory networks",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1503.08895",
+      "doi": null
+    },
+    {
+      "key": "SutskeverVL14",
+      "raw": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc V. Sequence to sequence learning with neural networks. In NIPS, 2014",
+      "authors": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc V",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In NIPS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vinyals2015neural",
+      "raw": "Vinyals, Oriol and Le, Quoc V. A neural conversational model. ICML DL Workshop, 2015",
+      "authors": "Vinyals, Oriol and Le, Quoc V",
+      "title": "A neural conversational model",
+      "venue": "ICML DL Workshop, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "VinyalsTBE15",
+      "raw": "Vinyals, Oriol, Toshev, Alexander, Bengio, Samy, and Erhan, Dumitru. Show and tell: A neural image caption generator. In CVPR, 2015",
+      "authors": "Vinyals, Oriol, Toshev, Alexander, Bengio, Samy, and Erhan, Dumitru",
+      "title": "Show and tell: A neural image caption generator",
+      "venue": "In CVPR, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "von1993first",
+      "raw": "Von Neumann, John. First draft of a report on the EDVAC. Technical report, 1945",
+      "authors": "Von Neumann, John",
+      "title": "First draft of a report on the EDVAC",
+      "venue": "Technical report, 1945",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "WangBL15",
+      "raw": "Wang, Yushi, Berant, Jonathan, and Liang, Percy. Building a semantic parser overnight. In ACL, 2015",
+      "authors": "Wang, Yushi, Berant, Jonathan, and Liang, Percy",
+      "title": "Building a semantic parser overnight",
+      "venue": "In ACL, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "WellingT11",
+      "raw": "Welling, Max and Teh, Yee Whye. Bayesian learning via stochastic gradient Langevin dynamics. In ICML, 2011",
+      "authors": "Welling, Max and Teh, Yee Whye",
+      "title": "Bayesian learning via stochastic gradient Langevin dynamics",
+      "venue": "In ICML, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "werbos:bptt",
+      "raw": "Werbos, P. Backpropagation through time: what does it do and how to do it. In Proceedings of IEEE, 1990",
+      "authors": "Werbos, P",
+      "title": "Backpropagation through time: what does it do and how to do it",
+      "venue": "In Proceedings of IEEE, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "WestonCB14",
+      "raw": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine. Memory Networks. 2015",
+      "authors": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine",
+      "title": "Memory Networks",
+      "venue": "2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "XuBKCCSZB15",
+      "raw": "Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Cho, Kyunghyun, Courville, Aaron C., Salakhutdinov, Ruslan, Zemel, Richard S., and Bengio, Yoshua. Show, attend and tell: Neural image caption generation with visual attention. In ICML, 2015",
+      "authors": "Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Cho, Kyunghyun, Courville, Aaron C., Salakhutdinov, Ruslan, Zemel, Richard S., and Bengio, Yoshua",
+      "title": "Show, attend and tell: Neural image caption generation with visual attention",
+      "venue": "In ICML, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "YinLLK15",
+      "raw": "Yin, Pengcheng, Lu, Zhengdong, Li, Hang, and Kao, Ben. Neural enquirer: Learning to query tables with natural language. ArXiv, 2015",
+      "authors": "Yin, Pengcheng, Lu, Zhengdong, Li, Hang, and Kao, Ben",
+      "title": "Neural enquirer: Learning to query tables with natural language",
+      "venue": "ArXiv, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zelle:aaai96",
+      "raw": "Zelle, John M. and Mooney, Raymond J. Learning to parse database queries using inductive logic programming. In AAAI/IAAI, 1996",
+      "authors": "Zelle, John M. and Mooney, Raymond J",
+      "title": "Learning to parse database queries using inductive logic programming",
+      "venue": "In AAAI/IAAI, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zeng94discrete",
+      "raw": "Zeng, Z., Goodman, R., and Smyth, P. Discrete recurrent neural networks for grammatical inference. IEEE Transactions on Neural Networks, 1994",
+      "authors": "Zeng, Z., Goodman, R., and Smyth, P",
+      "title": "Discrete recurrent neural networks for grammatical inference",
+      "venue": "IEEE Transactions on Neural Networks, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zettlemoyer05learningto",
+      "raw": "Zettlemoyer, Luke S. and Collins, Michael. Learning to map sentences to logical form: Structured classification with probabilistic categorial grammars. In UAI, 2005",
+      "authors": "Zettlemoyer, Luke S. and Collins, Michael",
+      "title": "Learning to map sentences to logical form: Structured classification with probabilistic categorial grammars",
+      "venue": "In UAI, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "z_{i} = \\tanh(W^{\\mathit{question}}[z_{i-1}; V(w_{i})]), \\forall i={1, 2, \\ldots, Q}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\alpha^{op}_{t} = \\mathit{softmax}(U \\tanh(W^{op}[q;h_t]))",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\alpha^{col}_{t} = \\mathit{softmax}(P \\tanh(W^{col}[q;h_t]))",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\beta_{\\mathit{op}} = \\mathit{softmax}(Z U(\\mathit{op})) \\\\\n\\mathit{pivot_{op}} = \\sum \\limits_{i=1}^{N} \\beta_{\\mathit{op}}(i) qn_i",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "&\\mathit{scalar\\_answer_t} = \\alpha^{op}_t(\\text{count}) \\mathit{count_t}  + \\alpha^{op}_t(\\text{difference}) \\mathit{diff_t} + \\sum \\limits_{j=1}^C \\alpha^{col}_t(j) \\alpha^{op}_t(\\text{sum}) \\mathit{sum_t[j]}, \\\\\n  &\\mathit{lookup\\_answer_t}[i][j] = \\alpha^{col}_t(j) \\alpha^{op}_t(\\text{assign}) \\mathit{assign_t}[i][j], \\forall (i, j) i=1,2,\\ldots, M, j = 1, 2, \\ldots, C",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\mathit{row\\_select_t[i]} = \\alpha^{op}_t(\\text{and}) & \\mathit{and_t}[i]  + \\alpha^{op}_t(\\text{or}) \\mathit{or_t}[i] + \\alpha^{op}_t(\\text{reset}) \\mathit{reset_t}[i] + \\\\ &\\sum \\limits_{j=1}^C \\alpha^{col}_t(j) (\\alpha^{op}_t(\\text{greater}) g_t[i][j] + \\alpha^{op}_t(\\text{lesser}) l_t[i][j]), \\forall i = 1, \\ldots, M",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "B[m][k] = \\mathit{sigmoid} \\left(\\sum \\limits_{p=1}^d A[m][k][p] \\cdot q[p] \\right) \\; \\; \\forall (m,k) \\; \\; m = 1, \\ldots, M, k = 1, \\ldots, K",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "D[k][p] = \\frac{1}{M}\\sum \\limits_{m=1}^M \\left( B[m][k] \\cdot A[m][k][p] \\right) \\; \\; \\forall (k,p) \\; \\; k = 1, \\ldots, K,  p = 1, \\ldots, d",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\mathit{text\\_match}[m][k] = \\mathit{sigmoid} \\left(\\sum \\limits_{p=1}^d A[m][k][p] \\cdot G[k][p] \\right) \\; \\; \\forall (m,k) \\; \\; m = 1, \\ldots, M, k = 1, \\ldots, K",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\mathit{row\\_select_t[i]} = \\alpha^{op}_t(\\text{and}) & \\mathit{and_t}[i]  + \\alpha^{op}_t(\\text{or}) \\mathit{or_t}[i] + \\alpha^{op}_t(\\text{reset}) \\mathit{reset_t}[i] \n + \\\\ &\\sum \\limits_{j=K+1}^C \\alpha^{col}_t(j) (\\alpha^{op}_t(\\text{greater}) g_t[i][j] + \\alpha^{op}_t(\\text{lesser}) l_t[i][j])\n + \\\\ &\\sum \\limits_{j=1}^K \\alpha^{col}_t(j) (\\alpha^{op}_t(\\text{text\\_match}) \\mathit{text\\_match}_t[i][j], \\forall i = 1, \\ldots, M",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "c_t = [(\\alpha^{op}_{t-1})^{T} U; (\\alpha^{col}_{t-1})^{T} P]",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "h_{t} = \\tanh(W^{\\mathit{history}}[c_t; h_{t-1}]) , \\forall i={1, 2, \\ldots, Q}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "L_{scalar}(scalar\\_answer_T, y)= \n\\begin{cases}\n    \\frac{1}{2} a^2 , \\text{if } a\\leq \\delta\\\\\n    \\delta a - \\frac{1}{2} \\delta^2,               \\text{otherwise}\n\\end{cases}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "L_{\\mathit{lookup}}(\\mathit{lookup\\_answer}_T, y) = -\\frac{1}{MC} \\sum \\limits_{i=1}^{M} \\sum \\limits_{j=1}^{C} & \\bigg(y[i, j]\\log (\\mathit{lookup\\_answer}_T[i, j]) + \\\\ & (1 - y[i,j])\\log (1 - \\mathit{lookup\\_answer}_T[i, j])\\bigg)",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 14,
+      "latex": "L = \\frac{1}{N}\\sum \\limits_{k=1}^{N} \\bigg([n_k == True]L^{(k)}_{\\mathit{scalar}} + [n_k == False]\\lambda L^{(k)}_{\\mathit{lookup}}\\bigg)",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1634,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8650360107422,
+            "y0": 225.7243194580078,
+            "x1": 468.1376647949219,
+            "y1": 235.68692016601562
+          },
+          {
+            "x0": 143.8650360107422,
+            "y0": 236.6833038330078,
+            "x1": 468.1376647949219,
+            "y1": 246.64590454101562
+          },
+          {
+            "x0": 143.8650360107422,
+            "y0": 247.6422882080078,
+            "x1": 258.9330749511719,
+            "y1": 257.6048889160156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 6509,
+      "numbers": 4,
+      "citations": 36,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 507.9520263671875,
+            "x1": 504.0032958984375,
+            "y1": 517.9146118164062
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 518.9110717773438,
+            "x1": 355.47100830078125,
+            "y1": 528.8736572265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Neural Programmer",
+      "chars": 1732,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 149.09800720214844,
+            "y0": 667.5114135742188,
+            "x1": 281.7921447753906,
+            "y1": 677.4739990234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Question Module",
+      "chars": 1420,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 151.47340393066406,
+            "x1": 425.1392517089844,
+            "y1": 161.43600463867188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Selector",
+      "chars": 1567,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.9999008178711,
+            "y0": 520.9754028320312,
+            "x1": 395.4208068847656,
+            "y1": 530.93798828125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Operations",
+      "chars": 4005,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 452.031494140625,
+            "x1": 504.0032043457031,
+            "y1": 461.9941101074219
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 462.990478515625,
+            "x1": 283.2759094238281,
+            "y1": 472.9530944824219
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Handling Text Entries",
+      "chars": 3425,
+      "numbers": 6,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00004577636719,
+            "y0": 307.01348876953125,
+            "x1": 445.094482421875,
+            "y1": 316.9761047363281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "History RNN",
+      "chars": 1150,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00003051757812,
+            "y0": 375.3504638671875,
+            "x1": 504.0032653808594,
+            "y1": 385.3130798339844
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 386.3094482421875,
+            "x1": 328.1136474609375,
+            "y1": 396.2720642089844
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Training Objective",
+      "chars": 2750,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99998474121094,
+            "y0": 104.79646301269531,
+            "x1": 409.3785095214844,
+            "y1": 114.75906372070312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 885,
+      "numbers": 4,
+      "citations": 1,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 567.1724243164062,
+            "x1": 504.0033874511719,
+            "y1": 577.135009765625
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 578.1314697265625,
+            "x1": 354.6042175292969,
+            "y1": 588.0940551757812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Data",
+      "chars": 1756,
+      "numbers": 16,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 711.347412109375,
+            "x1": 405.01495361328125,
+            "y1": 721.3099975585938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Models",
+      "chars": 386,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 580.62744140625,
+            "x1": 504.0032653808594,
+            "y1": 590.5900268554688
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 591.58642578125,
+            "x1": 225.1602020263672,
+            "y1": 601.5490112304688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Neural Programmer",
+      "chars": 5309,
+      "numbers": 18,
+      "citations": 5,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 149.09800720214844,
+            "y0": 667.5114135742188,
+            "x1": 281.7921447753906,
+            "y1": 677.4739990234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Comparison to LSTM and LSTM with Attention",
+      "chars": 924,
+      "numbers": 3,
+      "citations": 3,
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99995422363281,
+            "y0": 678.4703369140625,
+            "x1": 439.8939514160156,
+            "y1": 688.4329223632812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 1690,
+      "numbers": 0,
+      "citations": 31,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0000991821289,
+            "y0": 656.5524291992188,
+            "x1": 399.5754089355469,
+            "y1": 666.5150146484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 756,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 334.2192077636719,
+            "x1": 504.0031433105469,
+            "y1": 344.18182373046875
+          },
+          {
+            "x0": 108.0,
+            "y0": 345.17822265625,
+            "x1": 391.9240417480469,
+            "y1": 355.1408386230469
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 5,
+      "extends": 1,
+      "contests": 0,
+      "compares": 0,
+      "background": 50,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "werbos:bptt",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "In the basic version of our model, we use a simple RNN [Werbos 1990] parameterized by W^question and the last hidden state of the RNN is used as the question representation (Figure [ref]).",
+      "section": "Question Module",
+      "sectionKind": "method",
+      "ordinal": 22,
+      "title": "Backpropagation through time: what does it do and how to do it",
+      "authors": "Werbos, P",
+      "year": 1990,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 429.9649963378906,
+            "y0": 162.43238830566406,
+            "x1": 503.99700927734375,
+            "y1": 172.39498901367188
+          },
+          {
+            "x0": 108.0,
+            "y0": 173.39137268066406,
+            "x1": 357.5829772949219,
+            "y1": 183.35397338867188
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "BahdanauCB14",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Our work is also inspired by the success of the soft attention mechanism [Bahdanau et al. 2014] and its application in learning a neural network to control an additional memory component [Graves et al. 2014; Sukhbaatar et al. 2015].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 17,
+        "title": "Neural machine translation by jointly learning to align and translate",
+        "authors": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua",
+        "year": 2014,
+        "arxivId": "1409.0473",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 255.52615356445312,
+              "y0": 711.347412109375,
+              "x1": 504.0032043457031,
+              "y1": 721.3099975585938
+            },
+            {
+              "x0": 108.0,
+              "y0": 722.3064575195312,
+              "x1": 230.310791015625,
+              "y1": 732.26904296875
+            }
+          ]
+        }
+      },
+      {
+        "key": "Hochreiter:1997",
+        "stance": "inherits",
+        "cue": "We apply",
+        "sentence": "We apply a three-layer sequence-to-sequence LSTM recurrent network model [Hochreiter et al. 1997; Sutskever et al. 2014] and LSTM model with attention [Bahdanau et al. 2014].",
+        "section": "Comparison to LSTM and LSTM with Attention",
+        "sectionKind": "experiments",
+        "ordinal": 30,
+        "title": "Long short-term memory",
+        "authors": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen",
+        "year": 1997,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 10,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99995422363281,
+              "y0": 678.4703369140625,
+              "x1": 439.8939514160156,
+              "y1": 688.4329223632812
+            }
+          ]
+        }
+      },
+      {
+        "key": "SutskeverVL14",
+        "stance": "inherits",
+        "cue": "We apply",
+        "sentence": "We apply a three-layer sequence-to-sequence LSTM recurrent network model [Hochreiter et al. 1997; Sutskever et al. 2014] and LSTM model with attention [Bahdanau et al. 2014].",
+        "section": "Comparison to LSTM and LSTM with Attention",
+        "sectionKind": "experiments",
+        "ordinal": 30,
+        "title": "Sequence to sequence learning with neural networks",
+        "authors": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc V",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 10,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99995422363281,
+              "y0": 678.4703369140625,
+              "x1": 439.8939514160156,
+              "y1": 688.4329223632812
+            }
+          ]
+        }
+      },
+      {
+        "key": "WellingT11",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use a schedule inspired from [Welling et al. 2011], where at every step we sample a Gaussian of 0 mean and variance=curr_step^-0.55.",
+        "section": "Neural Programmer",
+        "sectionKind": "experiments",
+        "ordinal": 27,
+        "title": "Bayesian learning via stochastic gradient Langevin dynamics",
+        "authors": "Welling, Max and Teh, Yee Whye",
+        "year": 2011,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 10,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 95.22743225097656,
+              "x1": 317.8621826171875,
+              "y1": 105.19003295898438
+            }
+          ]
+        }
+      },
+      {
+        "key": "huber",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "When the answer is a scalar, we use Huber loss [Huber 1964] given by: where a = |\ud835\udc60\ud835\udc50\ud835\udc4e\ud835\udc59\ud835\udc4e\ud835\udc5f_\ud835\udc4e\ud835\udc5b\ud835\udc60\ud835\udc64\ud835\udc52\ud835\udc5f_T - y| is the absolute difference between the predicted and true answer, and \u03b4 is the Huber constant treated as a model hyper-parameter.",
+        "section": "Training Objective",
+        "sectionKind": "method",
+        "ordinal": 23,
+        "title": "Robust estimation of a location parameter",
+        "authors": "Huber, Peter",
+        "year": 1964,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 246.40200805664062,
+              "y0": 206.50050354003906,
+              "x1": 504.00482177734375,
+              "y1": 216.46310424804688
+            },
+            {
+              "x0": 108.00001525878906,
+              "y0": 217.45851135253906,
+              "x1": 122.3860092163086,
+              "y1": 227.42111206054688
+            }
+          ]
+        }
+      },
+      {
+        "key": "werbos:bptt",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In the basic version of our model, we use a simple RNN [Werbos 1990] parameterized by W^question and the last hidden state of the RNN is used as the question representation (Figure [ref]).",
+        "section": "Question Module",
+        "sectionKind": "method",
+        "ordinal": 22,
+        "title": "Backpropagation through time: what does it do and how to do it",
+        "authors": "Werbos, P",
+        "year": 1990,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 429.9649963378906,
+              "y0": 162.43238830566406,
+              "x1": 503.99700927734375,
+              "y1": 172.39498901367188
+            },
+            {
+              "x0": 108.0,
+              "y0": 173.39137268066406,
+              "x1": 357.5829772949219,
+              "y1": 183.35397338867188
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We assume that the data source is in the form of a table, \ud835\udc61\ud835\udc4e\ud835\udc4f\ud835\udc59\ud835\udc52\u2208\u211d^M \u00d7 C, containing M rows and C columns (M and C can vary amongst examples).",
+      "anchorText": "We assume that the data source is in the form of a table,",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Neural Programmer",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 490.97216796875,
+            "y0": 722.3064575195312,
+            "x1": 504.0032653808594,
+            "y1": 732.26904296875
+          },
+          {
+            "x0": 303.50897216796875,
+            "y0": 752.1944580078125,
+            "x1": 308.4902648925781,
+            "y1": 762.1570434570312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We assume a column can contain either numeric or text entries.",
+      "anchorText": "We assume a column can contain either numeric or text entries.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Handling Text Entries",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 418.3249816894531,
+            "y0": 317.97247314453125,
+            "x1": 504.0033874511719,
+            "y1": 327.9350891113281
+          },
+          {
+            "x0": 108.00004577636719,
+            "y0": 328.93145751953125,
+            "x1": 278.8287353515625,
+            "y1": 338.8940734863281
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Finally, text match selection is done by: Without loss of generality, let the first K (K \u2208 [0, 1, \u2026, C]) columns out of C columns of the table contain text entries while the remaining contain numeric entries.",
+      "anchorText": "columns of the table contain text entries while the remaining contain numeric entries.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "Without loss of generality",
+      "section": "Handling Text Entries",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 423.4029541015625,
+            "y0": 168.4824981689453,
+            "x1": 504.00030517578125,
+            "y1": 178.44509887695312
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 179.4414825439453,
+            "x1": 367.8444519042969,
+            "y1": 189.40408325195312
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 0,
+    "shown": 0,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "stat.ML"
+    ],
+    "published": "2015-11-16",
+    "authors": [
+      "Arvind Neelakantan",
+      "Quoc V. Le",
+      "Ilya Sutskever"
+    ]
+  }
+}

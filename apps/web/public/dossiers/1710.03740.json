@@ -1,0 +1,1643 @@
+{
+  "id": "1710.03740",
+  "title": "Mixed Precision Training",
+  "keystone": null,
+  "codeUrl": "https://github.com/baidu-research/DeepBench",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1710.03740",
+  "numbers": [
+    {
+      "value": "5%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "We can see in Figure that approximately 5% of weight gradient values have exponents smaller than .",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "80%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "As shown in , we match FP32 training results when updating an FP32 master copy of weights after FP16 forward and backward passes, while updating FP16 weights results in 80% relative accuracy loss.",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 286.74896240234375,
+            "y0": 493.1142578125,
+            "x1": 504.0033264160156,
+            "y1": 503.0768737792969
+          },
+          {
+            "x0": 108.0,
+            "y0": 504.0732421875,
+            "x1": 504.0033264160156,
+            "y1": 514.0358276367188
+          },
+          {
+            "x0": 108.0,
+            "y0": 515.0322265625,
+            "x1": 255.19741821289062,
+            "y1": 524.9948120117188
+          }
+        ]
+      }
+    },
+    {
+      "value": "50%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Even though maintaining an additional copy of weights increases the memory requirements for the weights by 50% compared with single precision training, impact on overall memory usage is much smaller.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 531.96826171875,
+            "x1": 504.00323486328125,
+            "y1": 541.9308471679688
+          },
+          {
+            "x0": 108.0,
+            "y0": 542.92724609375,
+            "x1": 504.00323486328125,
+            "y1": 552.8898315429688
+          },
+          {
+            "x0": 108.0,
+            "y0": 553.88623046875,
+            "x1": 139.27259826660156,
+            "y1": 563.8488159179688
+          }
+        ]
+      }
+    },
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "results",
+      "sentence": "As shown in table , Pseudo FP16 results are roughly 5 to 10% better than the baseline.",
+      "status": "declared_table",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 465.06939697265625,
+            "y0": 208.1034698486328,
+            "x1": 504.00323486328125,
+            "y1": 218.06607055664062
+          },
+          {
+            "x0": 108.0,
+            "y0": 219.0624542236328,
+            "x1": 350.5295104980469,
+            "y1": 229.02505493164062
+          }
+        ]
+      }
+    },
+    {
+      "value": "800 hours",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "To illustrate the need for an FP32 master copy of weights, we use the Mandarin speech model (described in more detail in Section ) trained on a dataset comprising of approximately 800 hours of speech data for 20 epochs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 471.1962585449219,
+            "x1": 504.00335693359375,
+            "y1": 481.15887451171875
+          },
+          {
+            "x0": 108.0,
+            "y0": 482.1552734375,
+            "x1": 248.58229064941406,
+            "y1": 492.1178894042969
+          }
+        ]
+      }
+    },
+    {
+      "value": "20 epochs",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "To illustrate the need for an FP32 master copy of weights, we use the Mandarin speech model (described in more detail in Section ) trained on a dataset comprising of approximately 800 hours of speech data for 20 epochs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 471.1962585449219,
+            "x1": 504.00335693359375,
+            "y1": 481.15887451171875
+          },
+          {
+            "x0": 108.0,
+            "y0": 482.1552734375,
+            "x1": 248.58229064941406,
+            "y1": 492.1178894042969
+          }
+        ]
+      }
+    },
+    {
+      "value": "6000 hours",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "This model is trained on our internal dataset consisting of 6000 hours of English speech.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.55776977539062,
+            "y0": 656.5524291992188,
+            "x1": 504.0032043457031,
+            "y1": 666.5150146484375
+          }
+        ]
+      }
+    },
+    {
+      "value": "2600 hours",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "The Mandarin model was trained on 2600 hours of our internal training set.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 463.7742919921875,
+            "y0": 667.511474609375,
+            "x1": 504.0032653808594,
+            "y1": 677.4740600585938
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 678.470458984375,
+            "x1": 380.15814208984375,
+            "y1": 688.4330444335938
+          }
+        ]
+      }
+    },
+    {
+      "value": "20 epochs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "All the models were trained for 20 epochs using Nesterov Stochastic Gradient Descent (SGD).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 272.193603515625,
+            "y0": 689.429443359375,
+            "x1": 504.00323486328125,
+            "y1": 699.3920288085938
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 700.388427734375,
+            "x1": 252.2086944580078,
+            "y1": 710.3510131835938
+          }
+        ]
+      }
+    },
+    {
+      "value": "5 layers",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "The networks we trained had 3 or 5 layers in the encoder and decoder, each.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 249.1301727294922,
+            "y0": 455.59344482421875,
+            "x1": 504.0031433105469,
+            "y1": 465.5560607910156
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 466.55242919921875,
+            "x1": 165.91262817382812,
+            "y1": 476.5150451660156
+          }
+        ]
+      }
+    },
+    {
+      "value": "50 epochs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "This model was trained for 50 epochs using the Adagrad optimizer.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 233.3494110107422,
+            "y0": 577.9913330078125,
+            "x1": 504.0031433105469,
+            "y1": 587.9539184570312
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 GPUs",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "Batch size aggregated over 4 GPUs is 1024.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 183.05824279785156,
+            "y0": 599.9083251953125,
+            "x1": 361.0101623535156,
+            "y1": 609.8709106445312
+          }
+        ]
+      }
+    },
+    {
+      "value": "7 layers",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "The generator had 7 layers of fractionally-strided convolutions, 6 with leaky ReLU activations, 1 with .",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.38092041015625,
+            "y0": 470.04345703125,
+            "x1": 504.0032043457031,
+            "y1": 480.0060729980469
+          },
+          {
+            "x0": 108.0,
+            "y0": 481.00244140625,
+            "x1": 158.97860717773438,
+            "y1": 490.9650573730469
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "ILSVRC12 classification top-1 accuracy.",
+      "label": "tab:classification-results",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Mixed Precision",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "AlexNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56.77%",
+            "value": "56.77",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56.93%",
+            "value": "56.93",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "VGG-D",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.40%",
+            "value": "65.40",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.43%",
+            "value": "65.43",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "GoogLeNet (Inception v1)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.33%",
+            "value": "68.33",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.43%",
+            "value": "68.43",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Inception v2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.03%",
+            "value": "70.03",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.02%",
+            "value": "70.02",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Inception v3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "73.85%",
+            "value": "73.85",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.13%",
+            "value": "74.13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Resnet50",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.92%",
+            "value": "75.92",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.04%",
+            "value": "76.04",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 242.1057891845703,
+            "y0": 161.77040100097656,
+            "x1": 405.1138000488281,
+            "y1": 171.73300170898438
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Detection network average mean precision.",
+      "label": "tab:detection-map",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MP without loss-scale",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "MP with loss-scale",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Faster R-CNN",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.1%",
+            "value": "69.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.6%",
+            "value": "68.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.7%",
+            "value": "69.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Multibox SSD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76.9%",
+            "value": "76.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "diverges",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.1%",
+            "value": "77.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 237.37779235839844,
+            "y0": 458.1193542480469,
+            "x1": 409.84033203125,
+            "y1": 468.08197021484375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Character Error Rate (CER) using mixed precision training for speech recognition. English results are reported on the WSJ '92 test set. Mandarin results are reported on our internal test set.",
+      "label": "tab:deepspeech-res",
+      "numericCells": 4,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model/Dataset",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Mixed Precision",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "English",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.20",
+            "value": "2.20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.99",
+            "value": "1.99",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Mandarin",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.82",
+            "value": "15.82",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.01",
+            "value": "15.01",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 142.9488067626953,
+            "y0": 81.97749328613281,
+            "x1": 504.00311279296875,
+            "y1": 91.94009399414062
+          },
+          {
+            "x0": 108.0,
+            "y0": 92.93647766113281,
+            "x1": 495.12664794921875,
+            "y1": 102.89907836914062
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\vv": "\\boldsymbol{#1}",
+    "\\vx": "\\boldsymbol{x}",
+    "\\rot": "\\rotatebox{90}",
+    "\\relu": "\\mathrm{relu}",
+    "\\softsign": "\\mathrm{softsign}"
+  },
+  "references": [
+    {
+      "key": "amodei2016deep",
+      "raw": "D. Amodei, R. Anubhai, E. Battenberg, C. Case, J. Casper, B. Catanzaro, J. Chen, M. Chrzanowski, A. Coates, G. Diamos, et al. Deep speech 2: End-to-end speech recognition in english and mandarin. In Proceedings of The 33rd International Conference on Machine Learning, pages 173--182, 2016",
+      "authors": "D. Amodei, R. Anubhai, E. Battenberg, C. Case, J. Casper, B. Catanzaro, J. Chen, M. Chrzanowski, A. Coates, G. Diamos, et al",
+      "title": "Deep speech 2: End-to-end speech recognition in english and mandarin",
+      "venue": "In Proceedings of The 33rd International Conference on Machine Learning, pages 173--182, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cho2014learning",
+      "raw": "K. Cho, B. Van Merri\\\"enboer, C. Gulcehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio. Learning phrase representations using rnn encoder-decoder for statistical machine translation. arXiv preprint arXiv:1406.1078, 2014",
+      "authors": "K. Cho, B. Van Merri\\\"enboer, C. Gulcehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio",
+      "title": "Learning phrase representations using rnn encoder-decoder for statistical machine translation",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1406.1078",
+      "doi": null
+    },
+    {
+      "key": "binaryconnect",
+      "raw": "M. Courbariaux, Y. Bengio, and J.-P. David. Binaryconnect: Training deep neural networks with binary weights during propagations. In C. Cortes, N. D. Lawrence, D. D. Lee, M. Sugiyama, and R. Garnett, editors, Advances in Neural Information Processing Systems 28, pages 3123--3131. Curran Associates, Inc., 2015. URL http://papers.nips.cc/paper/5647-binaryconnect-training-deep-neural-networks-with-binary-weights-during-propagations.pdf",
+      "authors": "M. Courbariaux, Y. Bengio, and J.-P. David",
+      "title": "Binaryconnect: Training deep neural networks with binary weights during propagations",
+      "venue": "In C. Cortes, N. D. Lawrence, D. D. Lee, M. Sugiyama, and R. Garnett, editors, Advances in Neural Information Processing Systems 28, pages 3123--3131. Curran Associates, Inc., 2015 URL",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "github_faster_rcnn",
+      "raw": "R. Girshick. Faster r-cnn github repository. https://github.com/rbgirshick/py-faster-rcnn",
+      "authors": "R. Girshick",
+      "title": "Faster r-cnn github repository",
+      "venue": "",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "seq2seq",
+      "raw": "Google. Tensorflow tutorial: Sequence-to-sequence models. URL https://www.tensorflow.org/tutorials/seq2seq",
+      "authors": "Google",
+      "title": "Tensorflow tutorial: Sequence-to-sequence models",
+      "venue": "URL",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2006connectionist",
+      "raw": "A. Graves, S. Fern\\'andez, F. Gomez, and J. Schmidhuber. Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks. In Proceedings of the 23rd international conference on Machine learning, pages 369--376. ACM, 2006",
+      "authors": "A. Graves, S. Fern\\'andez, F. Gomez, and J. Schmidhuber",
+      "title": "Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks",
+      "venue": "In Proceedings of the 23rd international conference on Machine learning, pages 369--376. ACM, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gupta2015deep",
+      "raw": "S. Gupta, A. Agrawal, K. Gopalakrishnan, and P. Narayanan. Deep learning with limited numerical precision. In Proceedings of the 32nd International Conference on Machine Learning (ICML-15), pages 1737--1746, 2015",
+      "authors": "S. Gupta, A. Agrawal, K. Gopalakrishnan, and P. Narayanan",
+      "title": "Deep learning with limited numerical precision",
+      "venue": "In Proceedings of the 32nd International Conference on Machine Learning (ICML-15), pages 1737--1746, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hannun2014deep",
+      "raw": "A. Hannun, C. Case, J. Casper, B. Catanzaro, G. Diamos, E. Elsen, R. Prenger, S. Satheesh, S. Sengupta, A. Coates, et al. Deep speech: Scaling up end-to-end speech recognition. arXiv preprint arXiv:1412.5567, 2014",
+      "authors": "A. Hannun, C. Case, J. Casper, B. Catanzaro, G. Diamos, E. Elsen, R. Prenger, S. Satheesh, S. Sengupta, A. Coates, et al",
+      "title": "Deep speech: Scaling up end-to-end speech recognition",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1412.5567",
+      "doi": null
+    },
+    {
+      "key": "he2016deep",
+      "raw": "K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 770--778, 2016",
+      "authors": "K. He, X. Zhang, S. Ren, and J. Sun",
+      "title": "Deep residual learning for image recognition",
+      "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 770--778, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "resnet",
+      "raw": "K. He, X. Zhang, S. Ren, and J. Sun. Identity mappings in deep residual networks. In ECCV, 2016",
+      "authors": "K. He, X. Zhang, S. Ren, and J. Sun",
+      "title": "Identity mappings in deep residual networks",
+      "venue": "In ECCV, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "he2016effective",
+      "raw": "Q. He, H. Wen, S. Zhou, Y. Wu, C. Yao, X. Zhou, and Y. Zou. Effective quantization methods for recurrent neural networks. arXiv preprint arXiv:1611.10176, 2016",
+      "authors": "Q. He, H. Wen, S. Zhou, Y. Wu, C. Yao, X. Zhou, and Y. Zou",
+      "title": "Effective quantization methods for recurrent neural networks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.10176",
+      "doi": null
+    },
+    {
+      "key": "lstm",
+      "raw": "S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural Comput., 9 0 (8): 0 1735--1780, Nov. 1997. ISSN 0899-7667. 10.1162/neco.1997.9.8.1735. URL http://dx.doi.org/10.1162/neco.1997.9.8.1735",
+      "authors": "S. Hochreiter and J. Schmidhuber",
+      "title": "Long short-term memory",
+      "venue": "Neural Comput., 9 0 (8): 0 1735--1780, Nov. 1997 ISSN 0899-7667 10.1162/neco.1997.9.8.1735 URL",
+      "year": 1997,
+      "arxivId": null,
+      "doi": "10.1162/neco.1997.9.8.1735"
+    },
+    {
+      "key": "hubara2016binarized",
+      "raw": "I. Hubara, M. Courbariaux, D. Soudry, R. El-Yaniv, and Y. Bengio. Binarized neural networks. In Advances in Neural Information Processing Systems, pages 4107--4115, 2016",
+      "authors": "I. Hubara, M. Courbariaux, D. Soudry, R. El-Yaniv, and Y. Bengio",
+      "title": "Binarized neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pages 4107--4115, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hubara2016quantized",
+      "raw": "I. Hubara, M. Courbariaux, D. Soudry, R. El-Yaniv, and Y. Bengio. Quantized neural networks: Training neural networks with low precision weights and activations. arXiv preprint arXiv:1609.07061, 2016",
+      "authors": "I. Hubara, M. Courbariaux, D. Soudry, R. El-Yaniv, and Y. Bengio",
+      "title": "Quantized neural networks: Training neural networks with low precision weights and activations",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1609.07061",
+      "doi": null
+    },
+    {
+      "key": "batch_norm",
+      "raw": "S. Ioffe and C. Szegedy. Batch normalization: Accelerating deep network training by reducing internal covariate shift. In F. R. Bach and D. M. Blei, editors, ICML, volume 37 of JMLR Workshop and Conference Proceedings, pages 448--456. JMLR.org, 2015. URL http://dblp.uni-trier.de/db/conf/icml/icml2015.html#IoffeS15",
+      "authors": "S. Ioffe and C. Szegedy",
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "venue": "In F. R. Bach and D. M. Blei, editors, ICML, volume 37 of JMLR Workshop and Conference Proceedings, pages 448--456. JMLR.org, 2015 URL",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jia2014caffe",
+      "raw": "Y. Jia, E. Shelhamer, J. Donahue, S. Karayev, J. Long, R. Girshick, S. Guadarrama, and T. Darrell. Caffe: Convolutional architecture for fast feature embedding. arXiv preprint arXiv:1408.5093, 2014",
+      "authors": "Y. Jia, E. Shelhamer, J. Donahue, S. Karayev, J. Long, R. Girshick, S. Guadarrama, and T. Darrell",
+      "title": "Caffe: Convolutional architecture for fast feature embedding",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1408.5093",
+      "doi": null
+    },
+    {
+      "key": "bigLSTM",
+      "raw": "R. Jozefowicz, O. Vinyals, M. Schuster, N. Shazeer, and Y. Wu. Exploring the limits of language modeling, 2016. URL https://arxiv.org/pdf/1602.02410.pdf",
+      "authors": "R. Jozefowicz, O. Vinyals, M. Schuster, N. Shazeer, and Y. Wu",
+      "title": "Exploring the limits of language modeling, 2016",
+      "venue": "URL",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "NIPS2012_4824",
+      "raw": "A. Krizhevsky, I. Sutskever, and G. E. Hinton. Imagenet classification with deep convolutional neural networks. In F. Pereira, C. J. C. Burges, L. Bottou, and K. Q. Weinberger, editors, Advances in Neural Information Processing Systems 25, pages 1097--1105. Curran Associates, Inc., 2012. URL http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf",
+      "authors": "A. Krizhevsky, I. Sutskever, and G. E. Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In F. Pereira, C. J. C. Burges, L. Bottou, and K. Q. Weinberger, editors, Advances in Neural Information Processing Systems 25, pages 1097--1105. Curran Associates, Inc., 2012 URL",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "github_ssd",
+      "raw": "W. Liu. Ssd github repository. https://github.com/weiliu89/caffe/tree/ssd",
+      "authors": "W. Liu",
+      "title": "Ssd github repository",
+      "venue": "",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "multibox_ssd",
+      "raw": "W. Liu, D. Anguelov, D. Erhan, C. Szegedy, and S. E. Reed. Ssd: Single shot multibox detector. CoRR, abs/1512.02325, 2015. URL http://dblp.uni-trier.de/db/journals/corr/corr1512.html#LiuAESR15",
+      "authors": "W. Liu, D. Anguelov, D. Erhan, C. Szegedy, and S. E. Reed",
+      "title": "Ssd: Single shot multibox detector",
+      "venue": "CoRR, abs/1512.02325, 2015 URL",
+      "year": 2015,
+      "arxivId": "1512.02325",
+      "doi": null
+    },
+    {
+      "key": "celebfaces",
+      "raw": "Z. Liu, P. Luo, X. Wang, and X. Tang. Deep learning face attributes in the wild. In Proceedings of International Conference on Computer Vision (ICCV), 2015",
+      "authors": "Z. Liu, P. Luo, X. Wang, and X. Tang",
+      "title": "Deep learning face attributes in the wild",
+      "venue": "In Proceedings of International Conference on Computer Vision (ICCV), 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wrpn",
+      "raw": "A. Mishra, E. Nurvitadhi, J. Cook, and D. Marr. Wrpn: Wide reduced-precision networks. arXiv preprint arXiv:1709.01134, year=2017",
+      "authors": "A. Mishra, E. Nurvitadhi, J. Cook, and D. Marr",
+      "title": "Wrpn: Wide reduced-precision networks",
+      "venue": "arXiv preprint year=2017",
+      "year": 2017,
+      "arxivId": "1709.01134",
+      "doi": null
+    },
+    {
+      "key": "volta2017whitepaper",
+      "raw": "NVIDIA. Nvidia tesla v100 gpu architecture. https://images.nvidia.com/content/volta-architecture/pdf/Volta-Architecture-Whitepaper-v1.0.pdf, 2017",
+      "authors": "NVIDIA",
+      "title": "Nvidia tesla v100 gpu architecture",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ott2016recurrent",
+      "raw": "J. Ott, Z. Lin, Y. Zhang, S.-C. Liu, and Y. Bengio. Recurrent neural networks with limited numerical precision. arXiv preprint arXiv:1608.06902, 2016",
+      "authors": "J. Ott, Z. Lin, Y. Zhang, S.-C. Liu, and Y. Bengio",
+      "title": "Recurrent neural networks with limited numerical precision",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1608.06902",
+      "doi": null
+    },
+    {
+      "key": "pytorch",
+      "raw": "A. Paszke, S. Gross, S. Chintala, G. Chanan, E. Yang, Z. DeVito, Z. Lin, A. Desmaison, L. Antiga, and A. Lerer. Automatic differentiation in pytorch. 2017",
+      "authors": "A. Paszke, S. Gross, S. Chintala, G. Chanan, E. Yang, Z. DeVito, Z. Lin, A. Desmaison, L. Antiga, and A. Lerer",
+      "title": "Automatic differentiation in pytorch",
+      "venue": "2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dcgan",
+      "raw": "A. Radford, L. Metz, and S. Chintala. Unsupervised representation learning with deep convolutional generative adversarial networks. CoRR, abs/1511.06434, 2015. URL http://dblp.uni-trier.de/db/journals/corr/corr1511.html#RadfordMC15",
+      "authors": "A. Radford, L. Metz, and S. Chintala",
+      "title": "Unsupervised representation learning with deep convolutional generative adversarial networks",
+      "venue": "CoRR, abs/1511.06434, 2015 URL",
+      "year": 2015,
+      "arxivId": "1511.06434",
+      "doi": null
+    },
+    {
+      "key": "Rastegari2016",
+      "raw": "M. Rastegari, V. Ordonez, J. Redmon, and A. Farhadi. XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks, pages 525--542. Springer International Publishing, Cham, 2016. ISBN 978-3-319-46493-0. 10.1007/978-3-319-46493-0_32. URL https://doi.org/10.1007/978-3-319-46493-0_32",
+      "authors": "M. Rastegari, V. Ordonez, J. Redmon, and A. Farhadi",
+      "title": "XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks, pages 525--542",
+      "venue": "Springer International Publishing, Cham, 2016 ISBN 978-3-319-46493-0 10.1007/978-3-319-46493-0_32 URL",
+      "year": 2016,
+      "arxivId": null,
+      "doi": "10.1007/978-3-319-46493-0_32"
+    },
+    {
+      "key": "faster_rcnn",
+      "raw": "S. Ren, K. He, R. Girshick, and J. Sun. Faster R-CNN: Towards real-time object detection with region proposal networks. In Neural Information Processing Systems (NIPS), 2015",
+      "authors": "S. Ren, K. He, R. Girshick, and J. Sun",
+      "title": "Faster R-CNN: Towards real-time object detection with region proposal networks",
+      "venue": "In Neural Information Processing Systems (NIPS), 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ILSVRC15",
+      "raw": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, A. C. Berg, and L. Fei-Fei. ImageNet Large Scale Visual Recognition Challenge. International Journal of Computer Vision (IJCV), 115 0 (3): 0 211--252, 2015. 10.1007/s11263-015-0816-y",
+      "authors": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, A. C. Berg, and L. Fei-Fei",
+      "title": "ImageNet Large Scale Visual Recognition Challenge",
+      "venue": "International Journal of Computer Vision (IJCV), 115 0 (3): 0 211--252, 2015 10.1007/s11263-015-0816-y",
+      "year": 2015,
+      "arxivId": null,
+      "doi": "10.1007/s11263-015-0816-y"
+    },
+    {
+      "key": "simonyan2014very",
+      "raw": "K. Simonyan and A. Zisserman. Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556, 2014",
+      "authors": "K. Simonyan and A. Zisserman",
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.1556",
+      "doi": null
+    },
+    {
+      "key": "googlenet",
+      "raw": "C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, and A. Rabinovich. Going deeper with convolutions. In Computer Vision and Pattern Recognition (CVPR), 2015. URL http://arxiv.org/abs/1409.4842",
+      "authors": "C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, and A. Rabinovich",
+      "title": "Going deeper with convolutions",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2015 URL",
+      "year": 2015,
+      "arxivId": "1409.4842",
+      "doi": null
+    },
+    {
+      "key": "Szegedy_2016_CVPR",
+      "raw": "C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna. Rethinking the inception architecture for computer vision. In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016",
+      "authors": "C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna",
+      "title": "Rethinking the inception architecture for computer vision",
+      "venue": "In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wu2016google",
+      "raw": "Y. Wu, M. Schuster, Z. Chen, Q. V. Le, M. Norouzi, W. Macherey, M. Krikun, Y. Cao, Q. Gao, K. Macherey, et al. Google's neural machine translation system: Bridging the gap between human and machine translation. arXiv preprint arXiv:1609.08144, 2016",
+      "authors": "Y. Wu, M. Schuster, Z. Chen, Q. V. Le, M. Norouzi, W. Macherey, M. Krikun, Y. Cao, Q. Gao, K. Macherey, et al",
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "doi": null
+    },
+    {
+      "key": "dorefanet",
+      "raw": "S. Zhou, Z. Ni, X. Zhou, H. Wen, Y. Wu, and Y. Zou. Dorefa-net: Training low bitwidth convolutional neural networks with low bitwidth gradients. CoRR, abs/1606.06160, 2016. URL http://arxiv.org/abs/1606.06160",
+      "authors": "S. Zhou, Z. Ni, X. Zhou, H. Wen, Y. Wu, and Y. Zou",
+      "title": "Dorefa-net: Training low bitwidth convolutional neural networks with low bitwidth gradients",
+      "venue": "CoRR, abs/1606.06160, 2016 URL",
+      "year": 2016,
+      "arxivId": "1606.06160",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1249,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86598205566406,
+            "y0": 275.4194030761719,
+            "x1": 468.1385192871094,
+            "y1": 285.38201904296875
+          },
+          {
+            "x0": 143.86598205566406,
+            "y0": 286.37841796875,
+            "x1": 426.13623046875,
+            "y1": 296.3410339355469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2374,
+      "numbers": 5,
+      "citations": 6,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 495.9822082519531,
+            "x1": 504.0032043457031,
+            "y1": 505.94482421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2707,
+      "numbers": 4,
+      "citations": 13,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 225.9583282470703,
+            "x1": 504.0031433105469,
+            "y1": 235.92092895507812
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 236.9173126220703,
+            "x1": 181.6335906982422,
+            "y1": 246.87991333007812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Implementation",
+      "chars": 342,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 631.6580200195312,
+            "x1": 504.0032043457031,
+            "y1": 641.62060546875
+          },
+          {
+            "x0": 108.0,
+            "y0": 642.6170043945312,
+            "x1": 504.00341796875,
+            "y1": 652.57958984375
+          },
+          {
+            "x0": 108.0,
+            "y0": 653.5760498046875,
+            "x1": 209.85757446289062,
+            "y1": 663.5386352539062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "FP32 master copy of weights",
+      "chars": 3452,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 700.3880004882812,
+            "x1": 432.4619445800781,
+            "y1": 710.3505859375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Loss scaling",
+      "chars": 3009,
+      "numbers": 5,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 634.6342163085938,
+            "x1": 401.1593933105469,
+            "y1": 644.5968017578125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Arithmetic precision",
+      "chars": 1402,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 208.04335021972656,
+            "x1": 504.0031433105469,
+            "y1": 218.00595092773438
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 219.00233459472656,
+            "x1": 214.61976623535156,
+            "y1": 228.96493530273438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 1340,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 438.68719482421875,
+            "x1": 504.00311279296875,
+            "y1": 448.6498107910156
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 449.64617919921875,
+            "x1": 139.2726287841797,
+            "y1": 459.6087951660156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "CNNs for ILSVRC Classification",
+      "chars": 1480,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0000228881836,
+            "y0": 678.47021484375,
+            "x1": 339.6902770996094,
+            "y1": 688.4328002929688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Detection CNNs",
+      "chars": 1324,
+      "numbers": 1,
+      "citations": 4,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 348.49346923828125,
+            "x1": 504.00323486328125,
+            "y1": 358.4560852050781
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 359.45147705078125,
+            "x1": 504.0033264160156,
+            "y1": 369.4140930175781
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 370.41046142578125,
+            "x1": 237.18507385253906,
+            "y1": 380.3730773925781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Speech Recognition",
+      "chars": 2000,
+      "numbers": 10,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 612.7174682617188,
+            "x1": 504.00335693359375,
+            "y1": 622.6800537109375
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 623.6764526367188,
+            "x1": 200.39320373535156,
+            "y1": 633.6390380859375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Machine Translation",
+      "chars": 764,
+      "numbers": 7,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 433.67645263671875,
+            "x1": 504.0031433105469,
+            "y1": 443.6390686035156
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 444.63446044921875,
+            "x1": 212.53759765625,
+            "y1": 454.5970764160156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Language Modeling",
+      "chars": 804,
+      "numbers": 10,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 556.0733642578125,
+            "x1": 358.310302734375,
+            "y1": 566.0359497070312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "DCGAN results",
+      "chars": 1340,
+      "numbers": 8,
+      "citations": 2,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 689.4293823242188,
+            "x1": 504.0032043457031,
+            "y1": 699.3919677734375
+          },
+          {
+            "x0": 108.0,
+            "y0": 700.3883666992188,
+            "x1": 123.22284698486328,
+            "y1": 710.3509521484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions and Future Work",
+      "chars": 1389,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 609.974365234375,
+            "x1": 504.0032653808594,
+            "y1": 619.9369506835938
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 620.9334106445312,
+            "x1": 465.16912841796875,
+            "y1": 630.89599609375
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 28,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": []
+  },
+  "assumptions": [
+    {
+      "sentence": "There is no downside to choosing a large scaling factor as long as it does not cause overflow during back-propagation - overflows will result in infinities and NaNs in the weight gradients which will irreversibly damage the weights after an update.",
+      "anchorText": "There is no downside to choosing a large scaling factor as long as it does not cause overflow during back-propagation - overflows will result in infinities and NaNs in the weight gradients which will irreversibly damage the weights after an update.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Loss scaling",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 106.18641662597656,
+            "x1": 504.0032653808594,
+            "y1": 116.14901733398438
+          },
+          {
+            "x0": 108.0,
+            "y0": 117.14540100097656,
+            "x1": 504.0032043457031,
+            "y1": 127.10800170898438
+          },
+          {
+            "x0": 108.0,
+            "y0": 128.10438537597656,
+            "x1": 301.0353698730469,
+            "y1": 138.06698608398438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "To maintain model accuracy, we found that some networks require that FP16 vector dot-product accumulates the partial products into an FP32 value, which is converted to FP16 before writing to memory.",
+      "anchorText": "To maintain model accuracy, we found that some networks require that FP16 vector dot-product accumulates the partial products into an FP32 value, which is converted to FP16 before writing to memory.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "require that",
+      "section": "Arithmetic precision",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 220.01953125,
+            "y0": 229.96131896972656,
+            "x1": 504.003173828125,
+            "y1": 239.92391967773438
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 240.92030334472656,
+            "x1": 504.0031433105469,
+            "y1": 250.88290405273438
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 251.87928771972656,
+            "x1": 247.5162353515625,
+            "y1": 261.8418884277344
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 0,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.AI",
+    "primaryName": "Artificial Intelligence",
+    "categories": [
+      "cs.AI",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2017-10-10",
+    "authors": [
+      "Paulius Micikevicius",
+      "Sharan Narang",
+      "Jonah Alben",
+      "Gregory Diamos",
+      "Erich Elsen",
+      "David Garcia",
+      "Boris Ginsburg",
+      "Michael Houston",
+      "Oleksii Kuchaiev",
+      "Ganesh Venkatesh",
+      "Hao Wu"
+    ]
+  }
+}

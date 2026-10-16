@@ -288,6 +288,34 @@ def test_attested_title_beats_the_papers_own_claim() -> None:
     assert resolved["1909.08593"] == "Fine-tuning language models from human preferences"
 
 
+def test_attestations_differing_only_in_case_are_one_vote_in_their_best_case() -> None:
+    """Bibliography styles lowercase titles; that is not a different name.
+
+    At 160 papers two bibliographies printing "Megatron-lm" outvoted one printing
+    "Megatron-LM" and the library's display title lost its capitals.
+    """
+    lowered = "Megatron-lm: Training multi-billion parameter language models"
+    cased = "Megatron-LM: Training Multi-Billion Parameter Language Models"
+    resolved = resolve_titles(
+        library={"1909.08053"},
+        own={},
+        attested={"1909.08053": Counter({lowered: 2, cased: 1, "Something else entirely": 2})},
+    )
+    assert resolved["1909.08053"] == cased
+
+
+def test_a_tie_between_attested_wordings_goes_to_the_papers_own() -> None:
+    resolved = resolve_titles(
+        library={"1504.00325"},
+        own={"1504.00325": "Microsoft COCO Captions: Data Collection and Evaluation Server"},
+        attested={"1504.00325": Counter({
+            "COCO Captions: Data Collection and Evaluation Server": 1,
+            "Microsoft COCO Captions: Data Collection and Evaluation Server": 1,
+        })},
+    )
+    assert resolved["1504.00325"].startswith("Microsoft")
+
+
 def test_an_unattested_paper_still_resolves_by_its_own_title() -> None:
     """Requiring attestation outright cost nine real edges.
 

@@ -1,0 +1,1822 @@
+{
+  "id": "1602.07261",
+  "title": "Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning",
+  "keystone": {
+    "table": "Table 5",
+    "caption": "Ensemble results with 144 crops/dense evaluation. Reported on the all 50000 images of the validation set of ILSVRC 2012. For Inception-v4(+Residual), the ensemble consists of one pure Inception-v4 and three Inception-ResNet-v2 models and were evaluated both on the validation and on the test-set. The test-set performance was top-5 error verifying that we don't over-fit on the validation set.",
+    "supported": 1,
+    "share": 0.5,
+    "summary": "1 of the paper's headline numbers trace to Table 5"
+  },
+  "codeUrl": "",
+  "coverage": {
+    "claims": 2,
+    "supported": 1,
+    "declared": 0,
+    "unsupported": 1,
+    "mismatched": 0,
+    "rate": 0.5
+  },
+  "claims": [
+    {
+      "value": "3.08%",
+      "section": "abstract",
+      "sentence": "With an ensemble of three residual and one Inception-v4, we achieve 3.08% top-5 error on the test set of the ImageNet classification (CLS) challenge.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 268.09368896484375,
+            "y0": 558.3357543945312,
+            "x1": 286.3650817871094,
+            "y1": 568.29833984375
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 570.290771484375,
+            "x1": 286.3651123046875,
+            "y1": 580.2533569335938
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 582.2457885742188,
+            "x1": 286.3651123046875,
+            "y1": 592.2083740234375
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 594.2008056640625,
+            "x1": 172.30325317382812,
+            "y1": 604.1633911132812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "3.1%",
+      "section": "introduction",
+      "sentence": "Nonetheless, it still allows us to report 3.1% top-5 error on the validation set with four models ensembled setting a new state of the art, to our best knowledge.",
+      "status": "exact",
+      "table": "Table 5",
+      "caption": "Ensemble results with 144 crops/dense evaluation. Reported on the all 50000 images of the validation set of ILSVRC 2012. For Inception-v4(+Residual), the ensemble consists of one pure Inception-v4 and three Inception-ResNet-v2 models and were evaluated both on the validation and on the test-set. The test-set performance was top-5 error verifying that we don't over-fit on the validation set.",
+      "row": "Inception-v4 + Inception-ResNet-v2",
+      "column": "Top-5 Error",
+      "cell": "3.1%",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 128.75674438476562,
+            "y0": 202.5546417236328,
+            "x1": 286.3650817871094,
+            "y1": 212.51724243164062
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 214.50965881347656,
+            "x1": 286.3651123046875,
+            "y1": 224.47225952148438
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 226.4656524658203,
+            "x1": 286.3650817871094,
+            "y1": 236.42825317382812
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 238.42066955566406,
+            "x1": 71.41203308105469,
+            "y1": 248.38327026367188
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1602.07261",
+  "numbers": [
+    {
+      "value": "3.08%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "With an ensemble of three residual and one Inception-v4, we achieve 3.08% top-5 error on the test set of the ImageNet classification (CLS) challenge.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 268.09368896484375,
+            "y0": 558.3357543945312,
+            "x1": 286.3650817871094,
+            "y1": 568.29833984375
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 570.290771484375,
+            "x1": 286.3651123046875,
+            "y1": 580.2533569335938
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 582.2457885742188,
+            "x1": 286.3651123046875,
+            "y1": 592.2083740234375
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 594.2008056640625,
+            "x1": 172.30325317382812,
+            "y1": 604.1633911132812
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.1%",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Nonetheless, it still allows us to report 3.1% top-5 error on the validation set with four models ensembled setting a new state of the art, to our best knowledge.",
+      "status": "exact",
+      "table": "Table 5",
+      "row": "Inception-v4 + Inception-ResNet-v2",
+      "cell": "3.1%",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 128.75674438476562,
+            "y0": 202.5546417236328,
+            "x1": 286.3650817871094,
+            "y1": 212.51724243164062
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 214.50965881347656,
+            "x1": 286.3651123046875,
+            "y1": 224.47225952148438
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 226.4656524658203,
+            "x1": 286.3650817871094,
+            "y1": 236.42825317382812
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 238.42066955566406,
+            "x1": 71.41203308105469,
+            "y1": 248.38327026367188
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "method",
+      "sentence": "In general we picked some scaling factors between 0.1 and 0.3 to scale the residuals before their being added to the accumulated layer activations (cf. Figure ).",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "BN-Inception",
+      "cell": "7.8%",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 86.55518341064453,
+            "y0": 430.4692687988281,
+            "x1": 286.3651428222656,
+            "y1": 440.431884765625
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 442.42425537109375,
+            "x1": 286.3651123046875,
+            "y1": 452.3868713378906
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 454.3792419433594,
+            "x1": 227.83482360839844,
+            "y1": 464.34185791015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.3",
+      "kind": "result",
+      "section": "method",
+      "sentence": "In general we picked some scaling factors between 0.1 and 0.3 to scale the residuals before their being added to the accumulated layer activations (cf. Figure ).",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "BN-Inception",
+      "cell": "25.2%",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 86.55518341064453,
+            "y0": 430.4692687988281,
+            "x1": 286.3651428222656,
+            "y1": 440.431884765625
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 442.42425537109375,
+            "x1": 286.3651123046875,
+            "y1": 452.3868713378906
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 454.3792419433594,
+            "x1": 227.83482360839844,
+            "y1": 464.34185791015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.00001",
+      "kind": "result",
+      "section": "method",
+      "sentence": "We found that if the number of filters is very high, then even a very low (0.00001) learning rate is not sufficient to cope with the instabilities and the training with high learning rate had a chance to destroy its effects.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 154.68942260742188,
+            "y0": 514.6531982421875,
+            "x1": 286.36505126953125,
+            "y1": 524.6157836914062
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 526.608154296875,
+            "x1": 286.364990234375,
+            "y1": 536.5707397460938
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 538.5631713867188,
+            "x1": 286.3651123046875,
+            "y1": 548.5257568359375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 550.5191650390625,
+            "x1": 286.3650207519531,
+            "y1": 560.4817504882812
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 562.4741821289062,
+            "x1": 78.9039077758789,
+            "y1": 572.436767578125
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.3%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The difference is about 0.3% for top- error and about 0.15% for the top- error.",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 388.40338134765625,
+            "y0": 500.0412292480469,
+            "x1": 545.1123046875,
+            "y1": 510.00384521484375
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.15%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The difference is about 0.3% for top- error and about 0.15% for the top- error.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 388.40338134765625,
+            "y0": 500.0412292480469,
+            "x1": 545.1123046875,
+            "y1": 510.00384521484375
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "The number of filters of the Reduction-A module for the three Inception variants presented in this paper. The four numbers in the colums of the paper parametrize the four convolutions of Figure",
+      "label": "reductionto17params",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Inception-v4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "192",
+            "value": "192",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "224",
+            "value": "224",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "384",
+            "value": "384",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "192",
+            "value": "192",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "192",
+            "value": "192",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "384",
+            "value": "384",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "384",
+            "value": "384",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "384",
+            "value": "384",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 340.28924560546875,
+            "y0": 668.5069580078125,
+            "x1": 545.1087646484375,
+            "y1": 677.473388671875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 679.4659423828125,
+            "x1": 545.108642578125,
+            "y1": 688.432373046875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 690.4249267578125,
+            "x1": 545.1087036132812,
+            "y1": 699.391357421875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 701.3839721679688,
+            "x1": 332.2732849121094,
+            "y1": 710.3504028320312
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Single crop - single model experimental results. Reported on the non-blacklisted subset of the validation set of ILSVRC 2012.",
+      "label": "singlesingle",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-1 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BN-Inception",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.2%",
+            "value": "25.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.8%",
+            "value": "7.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.2%",
+            "value": "21.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.6%",
+            "value": "5.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.3%",
+            "value": "21.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.5%",
+            "value": "5.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.0%",
+            "value": "20.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.0%",
+            "value": "5.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.9%",
+            "value": "19.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.9%",
+            "value": "4.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 80.5977554321289,
+            "y0": 589.3709716796875,
+            "x1": 286.35870361328125,
+            "y1": 598.33740234375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 600.3299560546875,
+            "x1": 286.3587341308594,
+            "y1": 609.29638671875
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 611.2879638671875,
+            "x1": 70.2863998413086,
+            "y1": 620.25439453125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "10/12 crops evaluations - single model experimental results. Reported on the all 50000 images of the validation set of ILSVRC 2012.",
+      "label": "multisingle",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Crops",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Top-1 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ResNet-151",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.4%",
+            "value": "21.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.7%",
+            "value": "5.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.8%",
+            "value": "19.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.6%",
+            "value": "4.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.8%",
+            "value": "19.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.6%",
+            "value": "4.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.7%",
+            "value": "18.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.2%",
+            "value": "4.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.7%",
+            "value": "18.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.1%",
+            "value": "4.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.34620666503906,
+            "y0": 150.21896362304688,
+            "x1": 286.3586730957031,
+            "y1": 159.18536376953125
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 161.17794799804688,
+            "x1": 286.3587341308594,
+            "y1": 170.14434814453125
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 172.13693237304688,
+            "x1": 104.41252136230469,
+            "y1": 181.10333251953125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "144 crops evaluations - single model experimental results. Reported on the all 50000 images of the validation set of ILSVRC 2012.",
+      "label": "manysingle",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Crops",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Top-1 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ResNet-151",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "dense",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.4%",
+            "value": "19.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.5%",
+            "value": "4.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.9%",
+            "value": "18.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.3%",
+            "value": "4.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.8%",
+            "value": "18.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.3%",
+            "value": "4.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.7%",
+            "value": "17.7",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.8%",
+            "value": "3.8",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-ResNet-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.8%",
+            "value": "17.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.7%",
+            "value": "3.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 80.40049743652344,
+            "y0": 269.8479919433594,
+            "x1": 286.3586120605469,
+            "y1": 278.81439208984375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 280.8069763183594,
+            "x1": 286.3587646484375,
+            "y1": 289.77337646484375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 291.7659606933594,
+            "x1": 70.2863998413086,
+            "y1": 300.73236083984375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Ensemble results with 144 crops/dense evaluation. Reported on the all 50000 images of the validation set of ILSVRC 2012. For Inception-v4(+Residual), the ensemble consists of one pure Inception-v4 and three Inception-ResNet-v2 models and were evaluated both on the validation and on the test-set. The test-set performance was top-5 error verifying that we don't over-fit on the validation set.",
+      "label": "manyensemble",
+      "numericCells": 8,
+      "supports": 1,
+      "rows": [
+        [
+          {
+            "text": "Network",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Top-1 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Top-5 Error",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ResNet-151",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "--",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.6%",
+            "value": "3.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.3%",
+            "value": "17.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.6%",
+            "value": "3.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Inception-v4 + Inception-ResNet-v2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "16.5%",
+            "value": "16.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.1%",
+            "value": "3.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {},
+  "references": [
+    {
+      "key": "tensorflow2015-whitepaper",
+      "raw": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng. TensorFlow: Large-scale machine learning on heterogeneous systems, 2015. Software available from tensorflow.org",
+      "authors": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng",
+      "title": "TensorFlow: Large-scale machine learning on heterogeneous systems, 2015",
+      "venue": "Software available from tensorflow.org",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dean2012large",
+      "raw": "J. Dean, G. Corrado, R. Monga, K. Chen, M. Devin, M. Mao, A. Senior, P. Tucker, K. Yang, Q. V. Le, et al. Large scale distributed deep networks. In Advances in Neural Information Processing Systems, pages 1223--1231, 2012",
+      "authors": "J. Dean, G. Corrado, R. Monga, K. Chen, M. Devin, M. Mao, A. Senior, P. Tucker, K. Yang, Q. V. Le, et al",
+      "title": "Large scale distributed deep networks",
+      "venue": "In Advances in Neural Information Processing Systems, pages 1223--1231, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dong2014learning",
+      "raw": "C. Dong, C. C. Loy, K. He, and X. Tang. Learning a deep convolutional network for image super-resolution. In Computer Vision--ECCV 2014, pages 184--199. Springer, 2014",
+      "authors": "C. Dong, C. C. Loy, K. He, and X. Tang",
+      "title": "Learning a deep convolutional network for image super-resolution",
+      "venue": "In Computer Vision--ECCV 2014, pages 184--199. Springer, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "girshick2014rcnn",
+      "raw": "R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hierarchies for accurate object detection and semantic segmentation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014",
+      "authors": "R. Girshick, J. Donahue, T. Darrell, and J. Malik",
+      "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "he2015deep",
+      "raw": "K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. arXiv preprint arXiv:1512.03385, 2015",
+      "authors": "K. He, X. Zhang, S. Ren, and J. Sun",
+      "title": "Deep residual learning for image recognition",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1512.03385",
+      "doi": null
+    },
+    {
+      "key": "ioffe2015batch",
+      "raw": "S. Ioffe and C. Szegedy. Batch normalization: Accelerating deep network training by reducing internal covariate shift. In Proceedings of The 32nd International Conference on Machine Learning, pages 448--456, 2015",
+      "authors": "S. Ioffe and C. Szegedy",
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "venue": "In Proceedings of The 32nd International Conference on Machine Learning, pages 448--456, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "karpathy2014large",
+      "raw": "A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei. Large-scale video classification with convolutional neural networks. In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1725--1732. IEEE, 2014",
+      "authors": "A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei",
+      "title": "Large-scale video classification with convolutional neural networks",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1725--1732. IEEE, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "A. Krizhevsky, I. Sutskever, and G. E. Hinton. Imagenet classification with deep convolutional neural networks. In Advances in neural information processing systems, pages 1097--1105, 2012",
+      "authors": "A. Krizhevsky, I. Sutskever, and G. E. Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In Advances in neural information processing systems, pages 1097--1105, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2013network",
+      "raw": "M. Lin, Q. Chen, and S. Yan. Network in network. arXiv preprint arXiv:1312.4400, 2013",
+      "authors": "M. Lin, Q. Chen, and S. Yan",
+      "title": "Network in network",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.4400",
+      "doi": null
+    },
+    {
+      "key": "long2015fully",
+      "raw": "J. Long, E. Shelhamer, and T. Darrell. Fully convolutional networks for semantic segmentation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 3431--3440, 2015",
+      "authors": "J. Long, E. Shelhamer, and T. Darrell",
+      "title": "Fully convolutional networks for semantic segmentation",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 3431--3440, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "russakovsky2014imagenet",
+      "raw": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, et al. Imagenet large scale visual recognition challenge. 2014",
+      "authors": "O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, et al",
+      "title": "Imagenet large scale visual recognition challenge",
+      "venue": "2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "simonyan2014very",
+      "raw": "K. Simonyan and A. Zisserman. Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556, 2014",
+      "authors": "K. Simonyan and A. Zisserman",
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.1556",
+      "doi": null
+    },
+    {
+      "key": "icml2013_sutskever13",
+      "raw": "I. Sutskever, J. Martens, G. Dahl, and G. Hinton. On the importance of initialization and momentum in deep learning. In Proceedings of the 30th International Conference on Machine Learning (ICML-13), volume 28, pages 1139--1147. JMLR Workshop and Conference Proceedings, May 2013",
+      "authors": "I. Sutskever, J. Martens, G. Dahl, and G. Hinton",
+      "title": "On the importance of initialization and momentum in deep learning",
+      "venue": "In Proceedings of the 30th International Conference on Machine Learning (ICML-13), volume 28, pages 1139--1147. JMLR Workshop and Conference Proceedings, May 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "szegedy2015going",
+      "raw": "C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, and A. Rabinovich. Going deeper with convolutions. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1--9, 2015",
+      "authors": "C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, and A. Rabinovich",
+      "title": "Going deeper with convolutions",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 1--9, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "szegedy2015rethinking",
+      "raw": "C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna. Rethinking the inception architecture for computer vision. arXiv preprint arXiv:1512.00567, 2015",
+      "authors": "C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna",
+      "title": "Rethinking the inception architecture for computer vision",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1512.00567",
+      "doi": null
+    },
+    {
+      "key": "rmsprop",
+      "raw": "T. Tieleman and G. Hinton. Divide the gradient by a running average of its recent magnitude. COURSERA: Neural Networks for Machine Learning, 4, 2012. Accessed: 2015-11-05",
+      "authors": "T. Tieleman and G. Hinton",
+      "title": "Divide the gradient by a running average of its recent magnitude",
+      "venue": "COURSERA: Neural Networks for Machine Learning, 4, 2012 Accessed: 2015-11-05",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "toshev2014deeppose",
+      "raw": "A. Toshev and C. Szegedy. Deeppose: Human pose estimation via deep neural networks. In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1653--1660. IEEE, 2014",
+      "authors": "A. Toshev and C. Szegedy",
+      "title": "Deeppose: Human pose estimation via deep neural networks",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2014 IEEE Conference on, pages 1653--1660. IEEE, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2013learning",
+      "raw": "N. Wang and D.-Y. Yeung. Learning a deep compact image representation for visual tracking. In Advances in Neural Information Processing Systems, pages 809--817, 2013",
+      "authors": "N. Wang and D.-Y. Yeung",
+      "title": "Learning a deep compact image representation for visual tracking",
+      "venue": "In Advances in Neural Information Processing Systems, pages 809--817, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1428,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.066993713378906,
+            "y0": 307.2770080566406,
+            "x1": 286.36492919921875,
+            "y1": 317.2395935058594
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 319.23199462890625,
+            "x1": 286.3650817871094,
+            "y1": 329.194580078125
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 331.1869812011719,
+            "x1": 100.81165313720703,
+            "y1": 341.1495666503906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3203,
+      "numbers": 1,
+      "citations": 14,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.066993713378906,
+            "y0": 655.624267578125,
+            "x1": 215.3017578125,
+            "y1": 665.5868530273438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 1670,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 372.0596618652344,
+            "x1": 286.36492919921875,
+            "y1": 382.02227783203125
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 384.0146484375,
+            "x1": 268.2630615234375,
+            "y1": 393.9772644042969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Architectural Choices",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Pure Inception blocks",
+      "chars": 1871,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8169860839844,
+            "y0": 536.0723876953125,
+            "x1": 545.1148071289062,
+            "y1": 546.0349731445312
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 548.0274047851562,
+            "x1": 545.114990234375,
+            "y1": 557.989990234375
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 559.982421875,
+            "x1": 545.1149291992188,
+            "y1": 569.9450073242188
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 571.9374389648438,
+            "x1": 383.5117492675781,
+            "y1": 581.9000244140625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Residual Inception Blocks",
+      "chars": 4200,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 315.5036926269531,
+            "x1": 286.36492919921875,
+            "y1": 325.46630859375
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 327.45867919921875,
+            "x1": 286.36505126953125,
+            "y1": 337.4212951660156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Scaling of the Residuals",
+      "chars": 1696,
+      "numbers": 4,
+      "citations": 1,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 310.41937255859375,
+            "x1": 286.364990234375,
+            "y1": 320.3819885253906
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 322.3743591308594,
+            "x1": 286.3651428222656,
+            "y1": 332.33697509765625
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 334.3303527832031,
+            "x1": 286.3651123046875,
+            "y1": 344.29296875
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 346.28533935546875,
+            "x1": 286.3650817871094,
+            "y1": 356.2479553222656
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 358.2403259277344,
+            "x1": 286.36505126953125,
+            "y1": 368.20294189453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Training Methodology",
+      "chars": 471,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.06700134277344,
+            "y0": 655.6231689453125,
+            "x1": 286.36492919921875,
+            "y1": 665.5857543945312
+          },
+          {
+            "x0": 50.11199951171875,
+            "y0": 667.5791625976562,
+            "x1": 150.44532775878906,
+            "y1": 677.541748046875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Results",
+      "chars": 5768,
+      "numbers": 10,
+      "citations": 6,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8169860839844,
+            "y0": 392.4443359375,
+            "x1": 545.1148681640625,
+            "y1": 402.4069519042969
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 404.3993225097656,
+            "x1": 477.0106201171875,
+            "y1": 414.3619384765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 696,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.066993713378906,
+            "y0": 599.3793334960938,
+            "x1": 286.3649597167969,
+            "y1": 609.3419189453125
+          },
+          {
+            "x0": 50.11199188232422,
+            "y0": 611.3343505859375,
+            "x1": 75.01848602294922,
+            "y1": 621.2969360351562
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 16,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "rmsprop",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "Our earlier experiments used momentum [Sutskever et al. 2013] with a decay of 0.9, while our best models were achieved using RMSProp [Tieleman et al. 2015] with decay of 0.9 and \u03f5=1.0.",
+      "section": "Training Methodology",
+      "sectionKind": "method",
+      "ordinal": 26,
+      "title": "Divide the gradient by a running average of its recent magnitude",
+      "authors": "T. Tieleman and G. Hinton",
+      "year": 2015,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": null
+    },
+    "edges": [
+      {
+        "key": "rmsprop",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Our earlier experiments used momentum [Sutskever et al. 2013] with a decay of 0.9, while our best models were achieved using RMSProp [Tieleman et al. 2015] with decay of 0.9 and \u03f5=1.0.",
+        "section": "Training Methodology",
+        "sectionKind": "method",
+        "ordinal": 26,
+        "title": "Divide the gradient by a running average of its recent magnitude",
+        "authors": "T. Tieleman and G. Hinton",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "szegedy2015going",
+        "stance": "inherits",
+        "cue": "as described in",
+        "sentence": "Table [ref] shows the performance of the various models with a small number of crops: 10 crops for ResNet as was reported in [He et al. 2015]), for the Inception variants, we have used the 12 crops evaluation as as described in [Szegedy et al. 2015].",
+        "section": "Experimental Results",
+        "sectionKind": "experiments",
+        "ordinal": 28,
+        "title": "Going deeper with convolutions",
+        "authors": "C. Szegedy, W. Liu, Y. Jia, P. Sermanet, S. Reed, D. Anguelov, D. Erhan, V. Vanhoucke, and A. Rabinovich",
+        "year": 2015,
+        "arxivId": "1409.4842",
+        "inCorpus": true,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 355.6661682128906,
+              "y0": 667.5794677734375,
+              "x1": 545.1149291992188,
+              "y1": 677.5420532226562
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 679.534423828125,
+              "x1": 545.1150512695312,
+              "y1": 689.4970092773438
+            },
+            {
+              "x0": 308.86199951171875,
+              "y0": 691.4894409179688,
+              "x1": 352.00994873046875,
+              "y1": 701.4520263671875
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We would like to stress that this final validation was done only once and we have submitted our results only twice in the last year: once for the BN-Inception paper and later during the ILSVR-2015 CLSLOC competition, so we believe that the test set numbers constitute a true estimate of the generalization capabilities of our model.",
+      "anchorText": "We would like to stress that this final validation was done only once and we have submitted our results only twice in the last year: once for the BN-Inception paper and later during the ILSVR-2015 CLSLOC competition, so we believe that the test set numbers constitute a true estimate of the generalization capabilities of our model.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Experimental Results",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 358.66497802734375,
+            "y0": 607.72021484375,
+            "x1": 545.1149291992188,
+            "y1": 617.6828002929688
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 619.6751708984375,
+            "x1": 545.1148681640625,
+            "y1": 629.6377563476562
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 631.6301879882812,
+            "x1": 545.1149291992188,
+            "y1": 641.5927734375
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 643.586181640625,
+            "x1": 545.114990234375,
+            "y1": 653.5487670898438
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 655.5411987304688,
+            "x1": 545.1148071289062,
+            "y1": 665.5037841796875
+          },
+          {
+            "x0": 308.86199951171875,
+            "y0": 667.4962158203125,
+            "x1": 495.0728759765625,
+            "y1": 677.4588012695312
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 1,
+    "cited": 0,
+    "shown": 0,
+    "bare": 1
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.CV",
+    "primaryName": "Computer Vision",
+    "categories": [
+      "cs.CV"
+    ],
+    "published": "2016-02-23",
+    "authors": [
+      "Christian Szegedy",
+      "Sergey Ioffe",
+      "Vincent Vanhoucke",
+      "Alex Alemi"
+    ]
+  }
+}

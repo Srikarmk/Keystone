@@ -1,0 +1,1227 @@
+{
+  "id": "1507.02030",
+  "title": "A unified theory of adaptive stochastic gradient descent as Bayesian filtering",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1507.02030",
+  "numbers": [
+    {
+      "value": "0.2",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Then the following is a lower bound on : 1-p:=P(Y_t<0) (1- )^b = (1- )^0.2/ , where is the probability that all samples are negative.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [],
+  "macros": {
+    "\\mO": "\\mathcal{O}",
+    "\\startfoo": "\n    \\par\\medskip\n    \\begin{mdframed}[linewidth=1pt]\n    \\let\\figure\\figurehere\n    \\let\\endfigure\\endfigurehere\n    \\ignorespaces\n",
+    "\\stopfoo": "\n    \\unskip\n    \\end{mdframed}\n    \\par\\medskip\n",
+    "\\secref": "Sec. \\ref{#1}",
+    "\\lemref": "Lemma~\\ref{#1}",
+    "\\vv": "\\ensuremath{\\mathbf v}",
+    "\\uu": "\\ensuremath{\\mathbf u}",
+    "\\sphere": "\\ensuremath{\\mathbf S}",
+    "\\D": "{\\mathcal{D}}",
+    "\\Acal": "\\mathcal{A}",
+    "\\K": "\\mathcal{K}",
+    "\\R": "\\mathcal{R}",
+    "\\Ccal": "\\mathcal{C}",
+    "\\Dcal": "\\mathcal{D}",
+    "\\Ecal": "\\mathcal{E}",
+    "\\Fcal": "\\mathcal{F}",
+    "\\Gcal": "\\mathcal{G}",
+    "\\Hcal": "\\mathcal{H}",
+    "\\Ical": "\\mathcal{I}",
+    "\\Jcal": "\\mathcal{J}",
+    "\\Kcal": "\\mathcal{K}",
+    "\\Lcal": "\\mathcal{L}",
+    "\\Mcal": "\\mathcal{M}",
+    "\\Ncal": "\\mathcal{N}",
+    "\\Ocal": "\\mathcal{O}",
+    "\\Pcal": "\\mathcal{P}",
+    "\\Qcal": "\\mathcal{Q}",
+    "\\Rcal": "\\mathcal{R}",
+    "\\Scal": "\\mathcal{S}",
+    "\\Tcal": "\\mathcal{T}",
+    "\\Ucal": "\\mathcal{U}",
+    "\\Vcal": "\\mathcal{V}",
+    "\\Wcal": "\\mathcal{W}",
+    "\\Xcal": "\\mathcal{X}",
+    "\\Ycal": "\\mathcal{Y}",
+    "\\Zcal": "\\mathcal{Z}",
+    "\\figref": "Fig.~\\ref{#1}",
+    "\\round": "\\mathop{\\mbox{\\rm round}}",
+    "\\myspan": "\\mathop{\\mbox{\\rm span}}",
+    "\\edges": "\\mathop{\\mbox{\\rm edges}}",
+    "\\conv": "\\mathop{\\mbox{\\rm conv}}",
+    "\\sign": "\\mathop{\\mbox{\\rm sign}}",
+    "\\poly": "\\mathop{\\mbox{\\rm poly}}",
+    "\\ignore": "",
+    "\\equaldef": "\\stackrel{\\text{\\tiny def}}{=}",
+    "\\equaltri": "\\triangleq",
+    "\\E": "\\mbox{\\bf E}",
+    "\\B": "\\mathbb{B}",
+    "\\Sp": "\\mathbb{S}",
+    "\\val": "\\mathop{\\mbox{\\rm val}}",
+    "\\deg": "\\mathop{\\mbox{\\rm deg}}",
+    "\\eps": "\\epsilon",
+    "\\half": "\\frac{1}{2}",
+    "\\eh": "\\textbf{\\textcolor{blue}{EH: #1}}",
+    "\\kl": "\\textbf{\\textcolor{gray}{KL: #1}}",
+    "\\sss": "\\textbf{\\textcolor{blue}{SSS: #1}}",
+    "\\inner": "\\langle #1\\rangle",
+    "\\todo": "\\textbf{\\textcolor{red}{TODO: #1}}",
+    "\\tnabla": "\\tilde{\\nabla}",
+    "\\ind": "1\\!\\!1_{#1}",
+    "\\ds": "\\displaystyle",
+    "\\blr": "\\big(#1\\big)",
+    "\\Blr": "\\Big(#1\\Big)",
+    "\\wbar": "\\overline{w}",
+    "\\A": "\\mathcal{A}",
+    "\\W": "\\mathcal{W}",
+    "\\G": "\\mathcal{G}",
+    "\\O": "O",
+    "\\err": "\\widehat{\\text{err}}",
+    "\\Err": "\\mathcal{E}",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "auer1996exponentially",
+      "raw": "P. Auer, M. Herbster, and M. K. Warmuth. Exponentially many local minima for single neurons. Advances in neural information processing systems, pages 316--322, 1996",
+      "authors": "P. Auer, M. Herbster, and M. K. Warmuth",
+      "title": "Exponentially many local minima for single neurons",
+      "venue": "Advances in neural information processing systems, pages 316--322, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2009learning",
+      "raw": "Y. Bengio. Learning deep architectures for AI. Foundations and trends in Machine Learning, 2 0 (1): 0 1--127, 2009",
+      "authors": "Y. Bengio",
+      "title": "Learning deep architectures for AI",
+      "venue": "Foundations and trends in Machine Learning, 2 0 (1): 0 1--127, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "boyd2004convex",
+      "raw": "S. Boyd and L. Vandenberghe. Convex optimization. Cambridge university press, 2004",
+      "authors": "S. Boyd and L. Vandenberghe",
+      "title": "Convex optimization",
+      "venue": "Cambridge university press, 2004",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "doya1993bifurcations",
+      "raw": "K. Doya. Bifurcations of recurrent neural networks in gradient descent learning. IEEE Transactions on neural networks, 1: 0 75--80, 1993",
+      "authors": "K. Doya",
+      "title": "Bifurcations of recurrent neural networks in gradient descent learning",
+      "venue": "IEEE Transactions on neural networks, 1: 0 75--80, 1993",
+      "year": 1993,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goffin1996complexity",
+      "raw": "J.-L. Goffin, Z.-Q. Luo, and Y. Ye. Complexity analysis of an interior cutting plane method for convex feasibility problems. SIAM Journal on Optimization, 6 0 (3): 0 638--652, 1996",
+      "authors": "J.-L. Goffin, Z.-Q. Luo, and Y. Ye",
+      "title": "Complexity analysis of an interior cutting plane method for convex feasibility problems",
+      "venue": "SIAM Journal on Optimization, 6 0 (3): 0 638--652, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kalai",
+      "raw": "A. T. Kalai and R. Sastry. The isotron algorithm: High-dimensional isotonic regression. In COLT, 2009",
+      "authors": "A. T. Kalai and R. Sastry",
+      "title": "The isotron algorithm: High-dimensional isotonic regression",
+      "venue": "In COLT, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ke2007quasiconvex",
+      "raw": "Q. Ke and T. Kanade. Quasiconvex optimization for robust geometric reconstruction. Pattern Analysis and Machine Intelligence, IEEE Transactions on, 29 0 (10): 0 1834--1847, 2007",
+      "authors": "Q. Ke and T. Kanade",
+      "title": "Quasiconvex optimization for robust geometric reconstruction",
+      "venue": "Pattern Analysis and Machine Intelligence, IEEE Transactions on, 29 0 (10): 0 1834--1847, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "khabibullin1977method",
+      "raw": "R. F. Khabibullin. A method to find a point of a convex set. Issled. Prik. Mat., 4: 0 15--22, 1977",
+      "authors": "R. F. Khabibullin",
+      "title": "A method to find a point of a convex set",
+      "venue": "Issled. Prik. Mat., 4: 0 15--22, 1977",
+      "year": 1977,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kiwiel2001convergence",
+      "raw": "K. C. Kiwiel. Convergence and efficiency of subgradient methods for quasiconvex minimization. Mathematical programming, 90 0 (1): 0 1--25, 2001",
+      "authors": "K. C. Kiwiel",
+      "title": "Convergence and efficiency of subgradient methods for quasiconvex minimization",
+      "venue": "Mathematical programming, 90 0 (1): 0 1--25, 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "konnov2003convergence",
+      "raw": "I. V. Konnov. On convergence properties of a subgradient method. Optimization Methods and Software, 18 0 (1): 0 53--62, 2003",
+      "authors": "I. V. Konnov",
+      "title": "On convergence properties of a subgradient method",
+      "venue": "Optimization Methods and Software, 18 0 (1): 0 53--62, 2003",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "laffont2009theory",
+      "raw": "J.-J. Laffont and D. Martimort. The theory of incentives: the principal-agent model. Princeton university press, 2009",
+      "authors": "J.-J. Laffont and D. Martimort",
+      "title": "The theory of incentives: the principal-agent model",
+      "venue": "Princeton university press, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "martens2011learning",
+      "raw": "J. Martens and I. Sutskever. Learning recurrent neural networks with hessian-free optimization. In Proceedings of the 28th International Conference on Machine Learning (ICML-11), pages 1033--1040, 2011",
+      "authors": "J. Martens and I. Sutskever",
+      "title": "Learning recurrent neural networks with hessian-free optimization",
+      "venue": "In Proceedings of the 28th International Conference on Machine Learning (ICML-11), pages 1033--1040, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "GLM",
+      "raw": "P. McCullagh and J. Nelder. Generalised linear models. London: Chapman and Hall/CRC, 1989",
+      "authors": "P. McCullagh and J. Nelder",
+      "title": "Generalised linear models",
+      "venue": "London: Chapman and Hall/CRC, 1989",
+      "year": 1989,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nesterov1984minimization",
+      "raw": "Y. E. Nesterov. Minimization methods for nonsmooth convex and quasiconvex functions. Matekon, 29: 0 519--531, 1984",
+      "authors": "Y. E. Nesterov",
+      "title": "Minimization methods for nonsmooth convex and quasiconvex functions",
+      "venue": "Matekon, 29: 0 519--531, 1984",
+      "year": 1984,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pascanu2013difficulty",
+      "raw": "R. Pascanu, T. Mikolov, and Y. Bengio. On the difficulty of training recurrent neural networks. In Proceedings of The 30th International Conference on Machine Learning, pages 1310--1318, 2013",
+      "authors": "R. Pascanu, T. Mikolov, and Y. Bengio",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "In Proceedings of The 30th International Conference on Machine Learning, pages 1310--1318, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "polyak1967general",
+      "raw": "B. T. Polyak. A general method of solving extremum problems. Dokl. Akademii Nauk SSSR, 174 0 (1): 0 33, 1967",
+      "authors": "B. T. Polyak",
+      "title": "A general method of solving extremum problems",
+      "venue": "Dokl. Akademii Nauk SSSR, 174 0 (1): 0 33, 1967",
+      "year": 1967,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sikorski1986quasi",
+      "raw": "J. Sikorski. Quasi subgradient algorithms for calculating surrogate constraints. In Analysis and algorithms of optimization problems, pages 203--236. Springer, 1986",
+      "authors": "J. Sikorski",
+      "title": "Quasi subgradient algorithms for calculating surrogate constraints",
+      "venue": "In Analysis and algorithms of optimization problems, pages 203--236. Springer, 1986",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2013importance",
+      "raw": "I. Sutskever, J. Martens, G. Dahl, and G. Hinton. On the importance of initialization and momentum in deep learning. In Proceedings of the 30th International Conference on Machine Learning (ICML-13), pages 1139--1147, 2013",
+      "authors": "I. Sutskever, J. Martens, G. Dahl, and G. Hinton",
+      "title": "On the importance of initialization and momentum in deep learning",
+      "venue": "In Proceedings of the 30th International Conference on Machine Learning (ICML-13), pages 1139--1147, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "varian1985price",
+      "raw": "H. R. Varian. Price discrimination and social welfare. The American Economic Review, pages 870--875, 1985",
+      "authors": "H. R. Varian",
+      "title": "Price discrimination and social welfare",
+      "venue": "The American Economic Review, pages 870--875, 1985",
+      "year": 1985,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wolfstetter1999topics",
+      "raw": "E. Wolfstetter. Topics in microeconomics: Industrial organization, auctions, and incentives. Cambridge University Press, 1999",
+      "authors": "E. Wolfstetter",
+      "title": "Topics in microeconomics: Industrial organization, auctions, and incentives",
+      "venue": "Cambridge University Press, 1999",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zabotin1972minimization",
+      "raw": "Y. I. Zabotin, A. Korablev, and R. F. Khabibullin. The minimization of quasicomplex functionals. Izv. Vyssh. Uch. Zaved. Mat., 0 (10): 0 27--33, 1972",
+      "authors": "Y. I. Zabotin, A. Korablev, and R. F. Khabibullin",
+      "title": "The minimization of quasicomplex functionals",
+      "venue": "Izv. Vyssh. Uch. Zaved. Mat., 0 (10): 0 27--33, 1972",
+      "year": 1972,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "S_f(\\x) = \\{\\y : f(\\y) \\le f(\\x)\\}~.",
+      "environment": "align",
+      "labels": [
+        "equation:sublevelset"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "g(\\x)=(1+e^{-x_1})^{-1}+(1+e^{-x_2})^{-1}~.",
+      "environment": "equation",
+      "labels": [
+        "eq:FuncExample"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\err_m(\\w) = \\frac{1}{m}\\sum_{i=1}^m \\left(y_i-\\phi\\inner{\\w,\\x_i}\\right)^2~.",
+      "environment": "align",
+      "labels": [
+        "eq:ErrPerceptron"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\|\\x_{t+1}-\\x^*\\|^2 &\\le \\|\\x_t - \\x^*\\|^2  - 2 \\eta\n\\eps/\\kappa + \\eta^2 \\\\\n&= \\|\\x_t - \\x^*\\|^2  - \\eps^2/\\kappa^2~.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\nonumber\nX_{t+1}\\vert \\{X_t = i\\}=\n\\begin{cases}\n\n\n\ti-1 \t&\\quad \\text{w.p. ~~$p$ } \\\\ \n\ti +1            \t&\\quad \\text{w.p. ~~$1-p$}\\\\ \n\n\n\\end{cases}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "f(\\x)=\n\\begin{cases}\n\n\n\t-0.5\\eps \\x \t&\\quad \\text{w.p. ~~$1-\\eps$ } \\\\ \n\t\\left(1-0.5\\eps\\right)\\max\\{\\x+3,0\\}         \t&\\quad \\text{w.p. ~~$\\eps$}\\\\ \n\n\n\\end{cases}",
+      "environment": "equation",
+      "labels": [
+        "eq:DitsLosses"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\nonumber\nX_{t+1}\\vert \\{X_t = i\\eta\\}=\n\\begin{cases}\n\n\n\t(i-1)\\eta \t&\\quad \\text{w.p. ~~$p$ } \\\\ \n\t(i +1)\\eta            \t&\\quad \\text{w.p. ~~$1-p$}\\\\ \n\n\n\\end{cases}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "P(\\exists t>0: X_t \\text{ is $\\eps$-optimal }\\vert X_0=0) & \\leq \\left(\\frac{p}{1-p} \\right)^{\\frac{1}{\\eta}-1}\\\\\n&\\leq \\left(\\frac{1}{4} \\right)^{\\frac{1}{\\eps}-1}\\\\\n&\\leq \\left( \\frac{1}{4} \\right)^{9}~,",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "0&\\leq \\inner{ \\nabla f(\\z),\\z-\\x} = \\inner{ \\nabla f(\\z),\\alpha \\x+(1-\\alpha)\\y-\\x} = (1-\\alpha) \\inner{ \\nabla f(\\z),\\y-\\x}~,\\\\\n0&\\leq \\inner{ \\nabla f(\\z),\\z-\\y} = \\inner{ \\nabla f(\\z),\\alpha \\x+(1-\\alpha)\\y-\\y} = -\\alpha \\inner{ \\nabla f(\\z),\\y-\\x}~.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\inner{g_\\x,\\x-\\y} \n&\\geq\n      \\sum_{i=1}^2 \\frac{e^{-x_i}(x_i+10+(x_i^*-y_i))}{(1+e^{-x_i})^2} \\\\\n&\\geq\n  \\sum_{i=1}^2 \\frac{e^{-x_i}(x_i+10-\\eps)}{(1+e^{-x_i})^2} \\\\\n&\\geq\n   \\frac{19e^{-10}}{(1+e^{-10})^2}  -\\frac{\\eps e^{-10+\\eps}}{(1+e^{-10+\\eps})^2}\\\\\n&\\geq\n   \\frac{e^{-10}}{(1+e^{-10})^2}(19 - \\eps e^{\\eps}) \\\\\n&>\n0~.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\inner{\\nabla & \\err_m(\\w),\\w-\\v} \\nonumber \\\\\n&= \\frac{2}{m}\\sum_{i=1}^m\\frac{e^{\\inner{\\w,\\x_i} } } {(1+e^{\\inner{\\w,\\x_i}})^2}( \\phi\\inner{\\w,\\x_i}-y_i)(\\inner{\\w,\\x_i}-  \\inner{\\v,\\x_i})\\nonumber\\\\\n&= \\frac{2}{m}\\sum_{i=1}^m\\frac{e^{\\inner{\\w,\\x_i} } } {(1+e^{\\inner{\\w,\\x_i}})^2}( \\phi\\inner{\\w,\\x_i}- \\phi\\inner{\\w^*,\\x_i})(\\inner{\\w,\\x_i}-  \\inner{\\w^*,\\x_i}+\\inner{\\w^*-\\v,\\x_i})\\nonumber\\\\\n& \\geq \\frac{2}{m}\\sum_{i=1}^m \\frac{4e^{\\inner{\\w,\\x_i} } } {(1+e^{\\inner{\\w,\\x_i}})^2}(\\phi\\inner{\\w,\\x_i}- \\phi\\inner{\\w^*,\\x_i})^2-\\frac{\\eps e^{-W}}{2}\\nonumber\\\\\n& \\geq 2e^{-W}\\err_m(\\w)-\\frac{\\eps e^{-W}}{2}\\nonumber\\\\\n&> 0~.",
+      "environment": "align",
+      "labels": [
+        "eq:app1"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\err_m(\\w)&= \\frac{1}{m}\\sum_{i=1}^m(y_i - \\phi\\inner{\\w,\\x_i})^2\\\\\n&=  \\frac{1}{m}\\sum_{i=1}^m(\\phi\\inner{\\w^*,\\x_i} - \\phi\\inner{\\w,\\x_i})^2 + \\frac{1}{m}\\sum_{i=1}^m \\xi_i\\theta_i(\\w)+c~.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\err_m(\\w)-\\err_m(\\w^*)& =  \\frac{1}{m}\\sum_{i=1}^m(\\phi\\inner{\\w^*,\\x_i} - \\phi\\inner{\\w,\\x_i})^2 + \\frac{1}{m}\\sum_{i=1}^m \\xi_i\\theta_i(\\w)~.",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\inner{\\nabla &\\err_m(\\w),\\w-\\v}  \\nonumber\\\\\n&= \\frac{2}{m}\\sum_{i=1}^m\\frac{e^{\\inner{\\w,\\x_i} } } {(1+e^{\\inner{\\w,\\x_i}})^2}( \\phi\\inner{\\w,\\x_i}-y_i)(\\inner{\\w,\\x_i}-  \\inner{\\v,\\x_i})\\nonumber\\\\\n&= \\frac{2}{m}\\sum_{i=1}^m\\frac{e^{\\inner{\\w,\\x_i} } } {(1+e^{\\inner{\\w,\\x_i}})^2}( \\phi\\inner{\\w,\\x_i}- \\phi\\inner{\\w^*,\\x_i}-\\xi_i )(\\inner{\\w,\\x_i}-  \\inner{\\w^*,\\x_i}+\\inner{\\w^*-\\v,\\x_i})\\nonumber\\\\\n& \\geq \\frac{2}{m}\\sum_{i=1}^m \\frac{4e^{\\inner{\\w,\\x_i} } } {(1+e^{\\inner{\\w,\\x_i}})^2}(\\phi\\inner{\\w,\\x_i}- \\phi\\inner{\\w^*,\\x_i})^2-\\frac{\\eps e^{-W}}{2}+ \\frac{1}{m}\\sum_{i=1}^m \\xi_i \\lambda_i(\\w)\\nonumber\\\\\n& \\geq \\frac{2}{m}\\sum_{i=1}^m \\frac{4e^{\\inner{\\w,\\x_i} } } {(1+e^{\\inner{\\w,\\x_i}})^2}\\big[(\\phi\\inner{\\w,\\x_i}- \\phi\\inner{\\w^*,\\x_i})^2+\\xi_i\\theta_i(\\w)\\big]-\\frac{\\eps e^{-W}}{2}\n+ \\frac{1}{m}\\sum_{i=1}^m \\xi_i \\tilde{\\lambda}_i(\\w)\\nonumber\\\\\n& \\geq 2e^{-W}\\left( \\err_m(\\w)-\\err_m(\\w^*)\\right)-\\frac{\\eps e^{-W}}{2}+ \\frac{1}{m}\\sum_{i=1}^m \\xi_i \\tilde{\\lambda}_i(\\w)\\nonumber\\\\\n&\\geq \\frac{3}{2}\\eps e^{-W} + \\frac{1}{m}\\sum_{i=1}^m \\xi_i \\tilde{\\lambda}_i(\\w)~.",
+      "environment": "align",
+      "labels": [
+        "eq:app2"
+      ]
+    },
+    {
+      "ordinal": 14,
+      "latex": "&\\alpha_i = (1-p)\\alpha_{i+1}+p \\alpha_{i-1}, \\qquad \\forall i>1 \\\\\n&\\alpha_{1} = (1-p)\\alpha_{2}+p",
+      "environment": "align",
+      "labels": [
+        "equation:ChainRecursive",
+        "equation:ChainBase"
+      ]
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\err_m(\\w) = \\frac{1}{m}\\sum_{i=1}^m \\left(y_i-\\phi\\inner{\\w,\\x_i}\\right)^2~.",
+      "environment": "align",
+      "labels": [
+        "eq:ErrPerceptronBroad"
+      ]
+    },
+    {
+      "ordinal": 16,
+      "latex": "\\G(\\w) = \\frac{1}{m}\\sum_{i=1}^m \\left(\\phi\\inner{\\w,\\x_i}-y_i\\right)\\x_i~.",
+      "environment": "align",
+      "labels": [
+        "eq:DirectiveOracle"
+      ]
+    },
+    {
+      "ordinal": 17,
+      "latex": "\\inner{\\G(\\w)&,\\w-\\v} \\nonumber \\\\\n&= \\frac{1}{m}\\sum_{i=1}^m( \\phi\\inner{\\w,\\x_i}-y_i)(\\inner{\\w,\\x_i}-  \\inner{\\v,\\x_i})\\nonumber\\\\\n&= \\frac{1}{m}\\sum_{i=1}^m( \\phi\\inner{\\w,\\x_i}- \\phi\\inner{\\w^*,\\x_i})(\\inner{\\w,\\x_i}-  \\inner{\\w^*,\\x_i}+\\inner{\\w^*-\\v,\\x_i})\\nonumber\\\\\n& \\geq \\frac{\\gamma}{m}\\sum_{i=1}^m (\\phi\\inner{\\w,\\x_i}- \\phi\\inner{\\w^*,\\x_i})^2-\\gamma\\eps/2 \\nonumber\\\\\n&\\geq \\gamma\\eps-\\gamma\\eps/2 \\nonumber\\\\\n&> 0~.",
+      "environment": "align",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1155,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 117.62896728515625,
+            "y0": 289.6141662597656,
+            "x1": 510.7709655761719,
+            "y1": 300.52325439453125
+          },
+          {
+            "x0": 101.26496887207031,
+            "y0": 303.1641540527344,
+            "x1": 142.52317810058594,
+            "y1": 314.0732421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3173,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99998474121094,
+            "y0": 544.3596801757812,
+            "x1": 540.0220947265625,
+            "y1": 556.3148803710938
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 558.8056640625,
+            "x1": 172.68670654296875,
+            "y1": 570.7608642578125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Related Work",
+      "chars": 2335,
+      "numbers": 0,
+      "citations": 16,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99995422363281,
+            "y0": 650.99169921875,
+            "x1": 501.0242919921875,
+            "y1": 662.9468994140625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Definitions and Notations",
+      "chars": 1334,
+      "numbers": 3,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 129.2008514404297,
+            "y0": 529.922607421875,
+            "x1": 298.6216125488281,
+            "y1": 541.8778076171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Local-Quasi-Convexity",
+      "chars": 1572,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99993896484375,
+            "y0": 643.0287475585938,
+            "x1": 520.1884765625,
+            "y1": 654.9839477539062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Generalized Linear Models (GLM)",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "The Idealized GLM",
+      "chars": 885,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99992370605469,
+            "y0": 492.3155212402344,
+            "x1": 256.14593505859375,
+            "y1": 504.2707214355469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "The Noisy GLM",
+      "chars": 1283,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0000228881836,
+            "y0": 230.4306182861328,
+            "x1": 222.57579040527344,
+            "y1": 242.3858184814453
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "NGD for Locally-Quasi-Convex Optimization",
+      "chars": 2555,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.55907440185547,
+            "y0": 608.5396728515625,
+            "x1": 540.054931640625,
+            "y1": 620.494873046875
+          },
+          {
+            "x0": 72.00007629394531,
+            "y0": 622.9856567382812,
+            "x1": 181.12716674804688,
+            "y1": 634.9408569335938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Locally-Lipschitz/Smooth Quasi-Convex Optimization",
+      "chars": 830,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 254.47865295410156,
+            "x1": 313.75811767578125,
+            "y1": 266.4338684082031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "SNGD for Stochastic SLQC Optimization",
+      "chars": 2220,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 574.1265869140625,
+            "x1": 388.7889099121094,
+            "y1": 586.081787109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Main Results",
+      "chars": 2943,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99996948242188,
+            "y0": 202.9995880126953,
+            "x1": 245.78079223632812,
+            "y1": 214.9547882080078
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Remaining Proofs",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Proof of Lemma",
+      "chars": 539,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 175.04600524902344,
+            "y0": 224.5086212158203,
+            "x1": 371.0463562011719,
+            "y1": 236.4638214111328
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Proof of Lemma",
+      "chars": 401,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 175.04600524902344,
+            "y0": 224.5086212158203,
+            "x1": 371.0463562011719,
+            "y1": 236.4638214111328
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Proof of Theorem",
+      "chars": 2103,
+      "numbers": 6,
+      "citations": 0,
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 350.0396423339844,
+            "x1": 410.308349609375,
+            "y1": 361.9948425292969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 1574,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 12,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 565.2015991210938,
+            "x1": 540.0460815429688,
+            "y1": 577.1567993164062
+          },
+          {
+            "x0": 72.0,
+            "y0": 579.6475830078125,
+            "x1": 344.69818115234375,
+            "y1": 591.602783203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Discussion",
+      "chars": 582,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 13,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00007629394531,
+            "y0": 471.9936828613281,
+            "x1": 540.058349609375,
+            "y1": 483.9488830566406
+          },
+          {
+            "x0": 72.00007629394531,
+            "y0": 486.439697265625,
+            "x1": 127.29289245605469,
+            "y1": 498.3948974609375
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 21,
+      "traversable": 0
+    },
+    "foundation": null,
+    "edges": []
+  },
+  "assumptions": [
+    {
+      "sentence": "It is well known that convex and Lipschitz functions can be minimized efficiently using Stochastic Gradient Descent (SGD).",
+      "anchorText": "It is well known that convex and Lipschitz functions can be minimized efficiently using Stochastic Gradient Descent (SGD).",
+      "kind": "conventional",
+      "support": "bare",
+      "cue": "It is well known",
+      "section": "Abstract",
+      "sectionKind": "abstract",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.28318786621094,
+            "y0": 303.1641540527344,
+            "x1": 510.7705993652344,
+            "y1": 314.0732421875
+          },
+          {
+            "x0": 101.26496887207031,
+            "y0": 316.7131652832031,
+            "x1": 338.3197326660156,
+            "y1": 327.62225341796875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The above positive result requires that at each iteration of SNGD, the gradient should be estimated using a minibatch of a minimal size.",
+      "anchorText": "The above positive result requires that at each iteration of SNGD, the gradient should be estimated using a minibatch of a minimal size.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "requires that",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 101.26495361328125,
+            "y0": 526.4176635742188,
+            "x1": 540.0567016601562,
+            "y1": 538.3728637695312
+          },
+          {
+            "x0": 101.26495361328125,
+            "y0": 540.8636474609375,
+            "x1": 348.7256164550781,
+            "y1": 552.81884765625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "It is well known that quasi-convex optimization tasks can be solved by a series of convex feasibility problems [Boyd et al. 2004]; However, generally solving such feasibility problems may be very costly [Goffin et al. 1996].",
+      "anchorText": "It is well known that quasi-convex optimization tasks can be solved by a series of convex feasibility problems",
+      "kind": "conventional",
+      "support": "cited",
+      "cue": "It is well known",
+      "section": "Related Work",
+      "sectionKind": "introduction",
+      "cites": [
+        "boyd2004convex",
+        "goffin1996complexity"
+      ],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "This work was later extended by [Kiwiel 2001], showing that the same result may be achieved assuming upper semi-continuous quasi-convex objectives.",
+      "anchorText": ", showing that the same result may be achieved assuming upper semi-continuous quasi-convex objectives.",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "assuming",
+      "section": "Related Work",
+      "sectionKind": "introduction",
+      "cites": [
+        "kiwiel2001convergence"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.19605255126953,
+            "y0": 175.73255920410156,
+            "x1": 540.0339965820312,
+            "y1": 187.68775939941406
+          },
+          {
+            "x0": 71.99993896484375,
+            "y0": 190.1785430908203,
+            "x1": 196.26229858398438,
+            "y1": 202.1337432861328
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity, throughout the paper we always assume that functions are differentiable (but if not stated explicitly, we do not assume any bound on the norm of the gradients).",
+      "anchorText": "For simplicity, throughout the paper we always assume that functions are differentiable (but if not stated explicitly, we do not assume any bound on the norm of the gradients).",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "For simplicity",
+      "section": "Definitions and Notations",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.55889892578125,
+            "y0": 558.8146362304688,
+            "x1": 540.0050659179688,
+            "y1": 570.7698364257812
+          },
+          {
+            "x0": 71.99990844726562,
+            "y0": 573.2606201171875,
+            "x1": 525.6043090820312,
+            "y1": 585.2158203125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, from an optimization point of view, we only need such a direction whenever we do not exploit, i.e., whenever we are not approximately optimal.",
+      "anchorText": "Intuitively, from an optimization point of view, we only need such a direction whenever we do not exploit, i.e., whenever we are not approximately optimal.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Local-Quasi-Convexity",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 262.1116943359375,
+            "y0": 146.84059143066406,
+            "x1": 540.05810546875,
+            "y1": 158.79579162597656
+          },
+          {
+            "x0": 72.00006103515625,
+            "y0": 161.2865753173828,
+            "x1": 540.025634765625,
+            "y1": 173.2417755126953
+          },
+          {
+            "x0": 72.00006103515625,
+            "y0": 175.73255920410156,
+            "x1": 114.28561401367188,
+            "y1": 187.68775939941406
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We assume that there exists a predictor ^*\u2208^d such that _(,y)\u223c\ud835\udc9f[y|] = \u03d5^*,, where \u03d5 is an activation function.",
+      "anchorText": "We assume that there exists a predictor",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "The Noisy GLM",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 523.74609375,
+            "y0": 244.87660217285156,
+            "x1": 539.9931640625,
+            "y1": 256.8318176269531
+          },
+          {
+            "x0": 72.0,
+            "y0": 259.3226013183594,
+            "x1": 255.4764862060547,
+            "y1": 271.2778015136719
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "It is intuitively clear that to obtain robustness to plateaus (where the gradient can be arbitrarily small) and to exploding gradients (where the gradient can be arbitrarily large), one must ignore the size of the gradient.",
+      "anchorText": "It is intuitively clear that to obtain robustness to plateaus (where the gradient can be arbitrarily small) and to exploding gradients (where the gradient can be arbitrarily large), one must ignore the size of the gradient.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "intuitively",
+      "section": "NGD for Locally-Quasi-Convex Optimization",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 129.05023193359375,
+            "y0": 234.3886260986328,
+            "x1": 540.070068359375,
+            "y1": 246.3438262939453
+          },
+          {
+            "x0": 72.0,
+            "y0": 248.83460998535156,
+            "x1": 540.0939331054688,
+            "y1": 260.7898254394531
+          },
+          {
+            "x0": 72.0,
+            "y0": 263.2806091308594,
+            "x1": 318.372802734375,
+            "y1": 275.2358093261719
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity we have presented NGD for unconstrained problems.",
+      "anchorText": "For simplicity we have presented NGD for unconstrained problems.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "For simplicity",
+      "section": "NGD for Locally-Quasi-Convex Optimization",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.55903625488281,
+            "y0": 456.5557556152344,
+            "x1": 441.8190612792969,
+            "y1": 468.5109558105469
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Consider the problem of minimizing a function f:^d\u21a6, and assume there exists a distribution over functions \ud835\udc9f, such that: f():= _\u03c8\u223c\ud835\udc9f[\u03c8()]. We assume that we may access f by randomly sampling minibatches of size b, and querying the gradients of these minibatches.",
+      "anchorText": ", and assume there exists a distribution over functions",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "SNGD for Stochastic SLQC Optimization",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 151.59901428222656,
+            "y0": 314.43365478515625,
+            "x1": 453.28814697265625,
+            "y1": 326.38885498046875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Note that we assume that b_0= poly(1/\u03f5,log(T/\u03b4)). Justification of Assumption [ref] Noisy GLM regression (see Section [ref]), is an interesting instance of stochastic optimization problem where Assumption [ref] holds.",
+      "anchorText": "), is an interesting instance of stochastic optimization problem where Assumption",
+      "kind": "stated",
+      "support": "shown",
+      "cue": "we assume",
+      "section": "SNGD for Stochastic SLQC Optimization",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "ass:SLQC",
+        "sec:IdealizedPerceptNoisy"
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 458.8839416503906,
+            "y0": 533.901611328125,
+            "x1": 540.0238647460938,
+            "y1": 545.8568115234375
+          },
+          {
+            "x0": 72.00007629394531,
+            "y0": 548.34765625,
+            "x1": 445.3848571777344,
+            "y1": 560.3028564453125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "These random variables are bounded, since we assume \u2200 t,, |f_t()|\u2264 M (see Thm. [ref]).",
+      "anchorText": "These random variables are bounded, since we assume",
+      "kind": "stated",
+      "support": "shown",
+      "cue": "we assume",
+      "section": "Proof of Lemma",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "theorem:SNGD"
+      ],
+      "anchor": {
+        "page": 11,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 175.42079162597656,
+            "y0": 253.4005889892578,
+            "x1": 444.9388122558594,
+            "y1": 265.3558044433594
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 12,
+    "cited": 2,
+    "shown": 2,
+    "bare": 8
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 35,
+    "rate": 0.875
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "math.OC"
+    ],
+    "published": "2015-07-08",
+    "authors": [
+      "Elad Hazan",
+      "Kfir Y. Levy",
+      "Shai Shalev-Shwartz"
+    ]
+  }
+}

@@ -1,0 +1,2400 @@
+{
+  "id": "1509.00685",
+  "title": "A Neural Attention Model for Abstractive Sentence Summarization",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1509.00685",
+  "numbers": [
+    {
+      "value": "9.5",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Gigaword contains around 9.5 million news articles sourced from various domestic and international news services over the last two decades.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 160.4619140625,
+            "y0": 270.2137756347656,
+            "x1": 290.2693176269531,
+            "y1": 281.12286376953125
+          },
+          {
+            "x0": 72.0,
+            "y0": 283.7637634277344,
+            "x1": 290.269287109375,
+            "y1": 294.6728515625
+          },
+          {
+            "x0": 72.0,
+            "y0": 297.3127746582031,
+            "x1": 290.26922607421875,
+            "y1": 308.22186279296875
+          },
+          {
+            "x0": 72.0,
+            "y0": 310.8617858886719,
+            "x1": 128.23641967773438,
+            "y1": 321.7708740234375
+          }
+        ]
+      }
+    },
+    {
+      "value": "31.7 ROUGE",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "For reference, the best human evaluator scores 31.7 ROUGE-1.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 351.43475341796875,
+            "y0": 305.5400085449219,
+            "x1": 525.5438232421875,
+            "y1": 316.4490966796875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 319.0890197753906,
+            "x1": 408.0324401855469,
+            "y1": 329.99810791015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "160 seconds",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Processing 1000 mini-batches with , requires 160 seconds.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 103.38546752929688,
+            "y0": 479.414794921875,
+            "x1": 261.6764831542969,
+            "y1": 490.3238830566406
+          }
+        ]
+      }
+    },
+    {
+      "value": "15 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Best validation accuracy is reached after 15 epochs through the data, which requires around 4 days of training.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 237.86085510253906,
+            "y0": 492.96380615234375,
+            "x1": 290.26812744140625,
+            "y1": 503.8728942871094
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 506.5137634277344,
+            "x1": 290.269287109375,
+            "y1": 517.4228515625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 520.0628662109375,
+            "x1": 290.2691650390625,
+            "y1": 530.971923828125
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 days",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Best validation accuracy is reached after 15 epochs through the data, which requires around 4 days of training.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 237.86085510253906,
+            "y0": 492.96380615234375,
+            "x1": 290.26812744140625,
+            "y1": 503.8728942871094
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 506.5137634277344,
+            "x1": 290.269287109375,
+            "y1": 517.4228515625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 520.0628662109375,
+            "x1": 290.2691650390625,
+            "y1": 530.971923828125
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Experimental results on the main summary tasks on various ROUGE metrics . Baseline models are described in detail in Section . We report the percentage of tokens in the summary that also appear in the input for Gigaword as Ext %.",
+      "label": "tab:results",
+      "numericCells": 52,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "DUC-2004",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Gigaword",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE-L",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE-L",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ext. %",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "IR",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "11.06",
+            "value": "11.06",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.67",
+            "value": "1.67",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.67",
+            "value": "9.67",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "16.91",
+            "value": "16.91",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.55",
+            "value": "5.55",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.58",
+            "value": "15.58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.2",
+            "value": "29.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Prefix",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.43",
+            "value": "22.43",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.49",
+            "value": "6.49",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.65",
+            "value": "19.65",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "23.14",
+            "value": "23.14",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.25",
+            "value": "8.25",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.73",
+            "value": "21.73",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Compress",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19.77",
+            "value": "19.77",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.02",
+            "value": "4.02",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.30",
+            "value": "17.30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "19.63",
+            "value": "19.63",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.13",
+            "value": "5.13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.28",
+            "value": "18.28",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "W\\",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "L",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22",
+            "value": "22",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17",
+            "value": "17",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Topiary",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.12",
+            "value": "25.12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.46",
+            "value": "6.46",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "20.12",
+            "value": "20.12",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Moses+",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.50",
+            "value": "26.50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.13",
+            "value": "8.13",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.85",
+            "value": "22.85",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "28.77",
+            "value": "28.77",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12.10",
+            "value": "12.10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.44",
+            "value": "26.44",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.5",
+            "value": "70.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Abs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.55",
+            "value": "26.55",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.06",
+            "value": "7.06",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.05",
+            "value": "22.05",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "30.88",
+            "value": "30.88",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12.22",
+            "value": "12.22",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.77",
+            "value": "27.77",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.4",
+            "value": "85.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Abs+",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.18",
+            "value": "28.18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.49",
+            "value": "8.49",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.81",
+            "value": "23.81",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "31.00",
+            "value": "31.00",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "12.65",
+            "value": "12.65",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.34",
+            "value": "28.34",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.5",
+            "value": "91.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "29.21",
+            "value": "29.21",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.38",
+            "value": "8.38",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24.46",
+            "value": "24.46",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "45.6",
+            "value": "45.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Perplexity results on the Gigaword validation set comparing various language models with C=5 and end-to-end summarization models. The encoders are defined in Section .",
+      "label": "tab:perp",
+      "numericCells": 5,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Encoder",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "KN-Smoothed 5-Gram",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "183.2",
+            "value": "183.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Feed-Forward NNLM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "none",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "145.9",
+            "value": "145.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Bag-of-Word",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "enc",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43.6",
+            "value": "43.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Convolutional (TDNN)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "enc",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "35.9",
+            "value": "35.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Attention-Based (Abs)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "enc",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.1",
+            "value": "27.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "ROUGE scores on DUC-2003 development data for various versions of inference. Greedy and Beam are described in Section . Ext. is a purely extractive version of the system (Eq. )",
+      "label": "tab:ablations",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Decoder",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Cons.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "R-L",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Greedy",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Abs+",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Abs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.67",
+            "value": "26.67",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.72",
+            "value": "6.72",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.70",
+            "value": "21.70",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Beam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BoW",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Abs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.15",
+            "value": "22.15",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.60",
+            "value": "4.60",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.23",
+            "value": "18.23",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Beam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Abs+",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Ext",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.89",
+            "value": "27.89",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.56",
+            "value": "7.56",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22.84",
+            "value": "22.84",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Beam",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Abs+",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Abs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.48",
+            "value": "28.48",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8.91",
+            "value": "8.91",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.97",
+            "value": "23.97",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\enc": "\\mathrm{enc}",
+    "\\xvec": "\\mathbf{x}",
+    "\\yvec": "\\mathbf{y}",
+    "\\zvec": "\\mathbf{z}",
+    "\\mcY": "\\mathcal{Y}",
+    "\\mcV": "\\mathcal{V}",
+    "\\context": "\\mathbf{y}_{\\mathrm{c}}",
+    "\\embcontext": "\\mathbf{\\tilde{y}}_{\\mathrm{c}}",
+    "\\inpcontext": "\\mathbf{\\tilde{x}}",
+    "\\start": "\\mathbf{\\tilde{y}}_{\\mathrm{c0}}",
+    "\\End": "\\mathrm{\\texttt{</s>}}",
+    "\\Uvec": "\\mathbf{U}",
+    "\\Evec": "\\mathbf{E}",
+    "\\Gvec": "\\mathbf{G}",
+    "\\Fvec": "\\mathbf{F}",
+    "\\Pvec": "\\mathbf{P}",
+    "\\pvec": "\\mathbf{p}",
+    "\\Vvec": "\\mathbf{V}",
+    "\\Wvec": "\\mathbf{W}",
+    "\\hvec": "\\mathbf{h}",
+    "\\reals": "\\mathbb{R}",
+    "\\algorithmicrequire": "\\textbf{Input:}",
+    "\\algorithmicensure": "\\textbf{Output:}"
+  },
+  "references": [
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014. Neural machine translation by jointly learning to align and translate. CoRR, abs/1409.0473",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "2014",
+      "venue": "Neural machine translation by jointly learning to align and translate CoRR, abs/1409.0473",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "banko2000headline",
+      "raw": "Michele Banko, Vibhu O Mittal, and Michael J Witbrock. 2000. Headline generation based on statistical translation. In Proceedings of the 38th Annual Meeting on Association for Computational Linguistics, pages 318--325. Association for Computational Linguistics",
+      "authors": "Michele Banko, Vibhu O Mittal, and Michael J Witbrock",
+      "title": "2000",
+      "venue": "Headline generation based on statistical translation In Proceedings of the 38th Annual Meeting on Association for Computational Linguistics, pages 318--325. Association for Computational Linguistics",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2003neural",
+      "raw": "Yoshua Bengio, R\\'ejean Ducharme, Pascal Vincent, and Christian Janvin. 2003. A neural probabilistic language model. The Journal of Machine Learning Research, 3:1137--1155",
+      "authors": "Yoshua Bengio, R\\'ejean Ducharme, Pascal Vincent, and Christian Janvin",
+      "title": "2003",
+      "venue": "A neural probabilistic language model The Journal of Machine Learning Research, 3:1137--1155",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cho2014learning",
+      "raw": "Kyunghyun Cho, Bart van Merrienboer, Caglar G\\\"ul cehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. 2014. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In Proceedings of EMNLP 2014, pages 1724--1734",
+      "authors": "Kyunghyun Cho, Bart van Merrienboer, Caglar G\\\"ul cehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio",
+      "title": "2014",
+      "venue": "Learning phrase representations using RNN encoder-decoder for statistical machine translation In Proceedings of EMNLP 2014, pages 1724--1734",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "clarke2008global",
+      "raw": "James Clarke and Mirella Lapata. 2008. Global inference for sentence compression: An integer linear programming approach. Journal of Artificial Intelligence Research, pages 399--429",
+      "authors": "James Clarke and Mirella Lapata",
+      "title": "2008",
+      "venue": "Global inference for sentence compression: An integer linear programming approach Journal of Artificial Intelligence Research, pages 399--429",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cohn2008sentence",
+      "raw": "Trevor Cohn and Mirella Lapata. 2008. Sentence compression beyond word deletion. In Proceedings of the 22nd International Conference on Computational Linguistics-Volume 1, pages 137--144. Association for Computational Linguistics",
+      "authors": "Trevor Cohn and Mirella Lapata",
+      "title": "2008",
+      "venue": "Sentence compression beyond word deletion In Proceedings of the 22nd International Conference on Computational Linguistics-Volume 1, pages 137--144. Association for Computational Linguistics",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "daume2002noisy",
+      "raw": "Hal Daum\\'e III and Daniel Marcu. 2002. A noisy-channel model for document compression. In Proceedings of the 40th Annual Meeting on Association for Computational Linguistics, pages 449--456. Association for Computational Linguistics",
+      "authors": "Hal Daum\\'e III and Daniel Marcu",
+      "title": "2002",
+      "venue": "A noisy-channel model for document compression In Proceedings of the 40th Annual Meeting on Association for Computational Linguistics, pages 449--456. Association for Computational Linguistics",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dorr2003hedge",
+      "raw": "Bonnie Dorr, David Zajic, and Richard Schwartz. 2003. Hedge trimmer: A parse-and-trim approach to headline generation. In Proceedings of the HLT-NAACL 03 on Text summarization workshop-Volume 5, pages 1--8. Association for Computational Linguistics",
+      "authors": "Bonnie Dorr, David Zajic, and Richard Schwartz",
+      "title": "2003",
+      "venue": "Hedge trimmer: A parse-and-trim approach to headline generation In Proceedings of the HLT-NAACL 03 on Text summarization workshop-Volume 5, pages 1--8. Association for Computational Linguistics",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "filippova2013overcoming",
+      "raw": "Katja Filippova and Yasemin Altun. 2013. Overcoming the lack of parallel data in sentence compression. In EMNLP, pages 1481--1491",
+      "authors": "Katja Filippova and Yasemin Altun",
+      "title": "2013",
+      "venue": "Overcoming the lack of parallel data in sentence compression In EMNLP, pages 1481--1491",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graff2003english",
+      "raw": "David Graff, Junbo Kong, Ke Chen, and Kazuaki Maeda. 2003. English gigaword. Linguistic Data Consortium, Philadelphia",
+      "authors": "David Graff, Junbo Kong, Ke Chen, and Kazuaki Maeda",
+      "title": "2003",
+      "venue": "English gigaword Linguistic Data Consortium, Philadelphia",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hinton2012improving",
+      "raw": "Geoffrey E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov. 2012. Improving neural networks by preventing co-adaptation of feature detectors. CoRR, abs/1207.0580",
+      "authors": "Geoffrey E. Hinton, Nitish Srivastava, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov",
+      "title": "2012",
+      "venue": "Improving neural networks by preventing co-adaptation of feature detectors CoRR, abs/1207.0580",
+      "year": 2012,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "jing2002using",
+      "raw": "Hongyan Jing. 2002. Using hidden markov modeling to decompose human-written summaries. Computational linguistics, 28(4):527--543",
+      "authors": "Hongyan Jing",
+      "title": "2002",
+      "venue": "Using hidden markov modeling to decompose human-written summaries Computational linguistics, 28(4):527--543",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kalchbrenner2013recurrent",
+      "raw": "Nal Kalchbrenner and Phil Blunsom. 2013. Recurrent continuous translation models. In EMNLP, pages 1700--1709",
+      "authors": "Nal Kalchbrenner and Phil Blunsom",
+      "title": "2013",
+      "venue": "Recurrent continuous translation models In EMNLP, pages 1700--1709",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "knight2002summarization",
+      "raw": "Kevin Knight and Daniel Marcu. 2002. Summarization beyond sentence extraction: A probabilistic approach to sentence compression. Artificial Intelligence, 139(1):91--107",
+      "authors": "Kevin Knight and Daniel Marcu",
+      "title": "2002",
+      "venue": "Summarization beyond sentence extraction: A probabilistic approach to sentence compression Artificial Intelligence, 139(1):91--107",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "koehn2007moses",
+      "raw": "Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard Zens, et al. 2007. Moses: Open source toolkit for statistical machine translation. In Proceedings of the 45th annual meeting of the ACL on interactive poster and demonstration sessions, pages 177--180. Association for Computational Linguistics",
+      "authors": "Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard Zens, et al",
+      "title": "2007",
+      "venue": "Moses: Open source toolkit for statistical machine translation In Proceedings of the 45th annual meeting of the ACL on interactive poster and demonstration sessions, pages 177--180. Association for Computational Linguistics",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2004rouge",
+      "raw": "Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. In Text Summarization Branches Out: Proceedings of the ACL-04 Workshop, pages 74--81",
+      "authors": "Chin-Yew Lin",
+      "title": "2004",
+      "venue": "Rouge: A package for automatic evaluation of summaries In Text Summarization Branches Out: Proceedings of the ACL-04 Workshop, pages 74--81",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "luong2014addressing",
+      "raw": "Thang Luong, Ilya Sutskever, Quoc V. Le, Oriol Vinyals, and Wojciech Zaremba. 2015. Addressing the rare word problem in neural machine translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics, pages 11--19",
+      "authors": "Thang Luong, Ilya Sutskever, Quoc V. Le, Oriol Vinyals, and Wojciech Zaremba",
+      "title": "2015",
+      "venue": "Addressing the rare word problem in neural machine translation In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics, pages 11--19",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "manning2008introduction",
+      "raw": "Christopher D Manning, Prabhakar Raghavan, and Hinrich Sch\\\"utze. 2008. Introduction to information retrieval, volume 1. Cambridge university press Cambridge",
+      "authors": "Christopher D Manning, Prabhakar Raghavan, and Hinrich Sch\\\"utze",
+      "title": "2008",
+      "venue": "Introduction to information retrieval, volume 1 Cambridge university press Cambridge",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "manning2014stanford",
+      "raw": "Christopher D Manning, Mihai Surdeanu, John Bauer, Jenny Finkel, Steven J Bethard, and David McClosky. 2014. The stanford corenlp natural language processing toolkit. In Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pages 55--60",
+      "authors": "Christopher D Manning, Mihai Surdeanu, John Bauer, Jenny Finkel, Steven J Bethard, and David McClosky",
+      "title": "2014",
+      "venue": "The stanford corenlp natural language processing toolkit In Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pages 55--60",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "napoles2012annotated",
+      "raw": "Courtney Napoles, Matthew Gormley, and Benjamin Van Durme. 2012. Annotated gigaword. In Proceedings of the Joint Workshop on Automatic Knowledge Base Construction and Web-scale Knowledge Extraction, pages 95--100. Association for Computational Linguistics",
+      "authors": "Courtney Napoles, Matthew Gormley, and Benjamin Van Durme",
+      "title": "2012",
+      "venue": "Annotated gigaword In Proceedings of the Joint Workshop on Automatic Knowledge Base Construction and Web-scale Knowledge Extraction, pages 95--100. Association for Computational Linguistics",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "och2003minimum",
+      "raw": "Franz Josef Och. 2003. Minimum error rate training in statistical machine translation. In Proceedings of the 41st Annual Meeting on Association for Computational Linguistics-Volume 1, pages 160--167. Association for Computational Linguistics",
+      "authors": "Franz Josef Och",
+      "title": "2003",
+      "venue": "Minimum error rate training in statistical machine translation In Proceedings of the 41st Annual Meeting on Association for Computational Linguistics-Volume 1, pages 160--167. Association for Computational Linguistics",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "over2007duc",
+      "raw": "Paul Over, Hoa Dang, and Donna Harman. 2007. Duc in context. Information Processing \\& Management, 43(6):1506--1520",
+      "authors": "Paul Over, Hoa Dang, and Donna Harman",
+      "title": "2007",
+      "venue": "Duc in context Information Processing \\& Management, 43(6):1506--1520",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc VV Le. 2014. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pages 3104--3112",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc VV Le",
+      "title": "2014",
+      "venue": "Sequence to sequence learning with neural networks In Advances in Neural Information Processing Systems, pages 3104--3112",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "woodsend2010generation",
+      "raw": "Kristian Woodsend, Yansong Feng, and Mirella Lapata. 2010. Generation with quasi-synchronous grammar. In Proceedings of the 2010 conference on empirical methods in natural language processing, pages 513--523. Association for Computational Linguistics",
+      "authors": "Kristian Woodsend, Yansong Feng, and Mirella Lapata",
+      "title": "2010",
+      "venue": "Generation with quasi-synchronous grammar In Proceedings of the 2010 conference on empirical methods in natural language processing, pages 513--523. Association for Computational Linguistics",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wubben2012sentence",
+      "raw": "Sander Wubben, Antal Van Den Bosch, and Emiel Krahmer. 2012. Sentence simplification by monolingual machine translation. In Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics: Long Papers-Volume 1, pages 1015--1024. Association for Computational Linguistics",
+      "authors": "Sander Wubben, Antal Van Den Bosch, and Emiel Krahmer",
+      "title": "2012",
+      "venue": "Sentence simplification by monolingual machine translation In Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics: Long Papers-Volume 1, pages 1015--1024. Association for Computational Linguistics",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zaidan2009z",
+      "raw": "Omar Zaidan. 2009. Z-mert: A fully configurable open source tool for minimum error rate training of machine translation systems. The Prague Bulletin of Mathematical Linguistics, 91:79--88",
+      "authors": "Omar Zaidan",
+      "title": "2009",
+      "venue": "Z-mert: A fully configurable open source tool for minimum error rate training of machine translation systems The Prague Bulletin of Mathematical Linguistics, 91:79--88",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zajic2004bbn",
+      "raw": "David Zajic, Bonnie Dorr, and Richard Schwartz. 2004. Bbn/umd at duc-2004: Topiary. In Proceedings of the HLT-NAACL 2004 Document Understanding Workshop, Boston, pages 112--119",
+      "authors": "David Zajic, Bonnie Dorr, and Richard Schwartz",
+      "title": "2004",
+      "venue": "Bbn/umd at duc-2004: Topiary In Proceedings of the HLT-NAACL 2004 Document Understanding Workshop, Boston, pages 112--119",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\argmax_{\\yvec \\in \\mcY} s(\\xvec, \\yvec),",
+      "environment": "eqnarray",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\argmax_{m \\in \\{1,\\ldots M\\}^N } s(\\xvec, \\xvec_{[m_1, \\ldots,m_N]}),",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:ext"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\argmax_{m \\in \\{1,\\ldots M\\}^N, m_{i-1} < m_{i} } s(\\xvec, \\xvec_{[m_1, \\ldots,m_N]}).",
+      "environment": "eqnarray",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "s(\\xvec, \\yvec) \\approx \\sum_{i=0}^{N-1} g(\\yvec_{i+1}, \\xvec, \\context),",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:factor"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\log p(\\yvec | \\xvec; \\theta) &\\approx&\\sum_{i=0}^{N-1} \\log p(\\yvec_{i+1} | \\xvec, \\context; \\theta),",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "p(\\yvec_{i+1} | \\context, \\xvec; \\theta) &\\propto& \\exp(\\Vvec \\hvec + \\Wvec \\enc(\\xvec, \\context)), \\\\  \n  \\embcontext &=& [\\Evec \\yvec_{i-C + 1}, \\dots,\\Evec \\yvec_{i}],  \\\\ \n \\hvec &=& \\tanh(\\Uvec  \\embcontext ).",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\enc_1(\\xvec, \\context) &=&  \\mathbf{p}^\\top \\inpcontext,  \\\\ \n  \\mathbf{p} & =  & [1/M, \\ldots, 1/M],   \\\\ \n  \\inpcontext &=& [\\Fvec \\xvec_1, \\dots, \\Fvec \\xvec_{M}].",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "\\forall j, \\;\\; \\enc_2(\\xvec, \\context)_j &=& \\max_{i} \\tilde{\\xvec}^{L}_{i,j} ,   \\\\\n \\forall i, l\\in \\{1,\\ldots L\\}, \\;\\; \\tilde{\\xvec}_{j}^{l} &=& \\tanh ( \\max \\{ \\bar{\\xvec}^{l}_{2i-1}, \\bar{\\xvec}^{l}_{2i} \\} ), \\nonumber \\\\  \\\\ \n \\forall i, l \\in \\{1,\\ldots L\\}, \\;\\; \\bar{\\xvec}_i^{l} &=&  \\mathbf{Q}^{l} \\inpcontext^{l-1}_{[i-Q, \\ldots, i +Q]} ,  \\\\ \n \\inpcontext^{0} &=& [\\Fvec \\xvec_1, \\dots, \\Fvec \\xvec_{M}].",
+      "environment": "eqnarray",
+      "labels": [
+        "eq:max",
+        "eq:pool",
+        "eq:conv"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\enc_3(\\xvec, \\context) &=& \\mathbf{p}^\\top \\bar{\\xvec},    \\\\\n \\mathbf{p} & \\propto  & \\exp(\\inpcontext  \\Pvec \\embcontext' ),   \\\\ \n \\inpcontext &=& [\\Fvec \\xvec_1, \\dots, \\Fvec \\xvec_{M}],  \\\\ \n  \\mathbf{\\embcontext'} &=& [\\Gvec \\yvec_{i-C + 1}, \\dots,\\Gvec \\yvec_{i}], \\\\ \n \\forall i \\;\\;\\; \\bar{\\xvec}_i &=& \\sum_{q=i-Q}^{i+Q}  \\inpcontext_{i} / Q.",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\mathrm{NLL}(\\theta) &=& -\\sum_{j=1}^J \\log p(\\yvec^{(j)}| \\xvec^{(j)};\\theta), \\\\\n&=& -\\sum_{j=1}^J \\sum_{i=1}^{N-1} \\log p(\\yvec_{i+1}^{(j)}| \\xvec^{(j)}, \\context ; \\theta).",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\yvec^* &=& \\argmax_{\\yvec \\in \\mcY} \\sum_{i=0}^{N-1} g(\\yvec_{i+1}, \\xvec, \\context).",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "p(\\yvec | \\xvec;\\theta, \\alpha ) &\\propto& \\exp( \\mathbf{\\alpha}^\\top \\sum_{i = 0}^{N-1} f(\\yvec_{i+1}, \\xvec, \\context) ).",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "s(\\yvec, \\xvec) &=&   \\sum_{i = 0}^{N-1} \\mathbf{\\alpha}^\\top  f(\\yvec_{i+1}, \\xvec, \\context) .",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "f(&\\yvec_{i+1}, \\xvec, \\context)  = [\\ \\log p(\\yvec_{i+1} | \\xvec, \\context; \\theta),  \\\\\n &\\mathbbm{1}\\{\\exists j.\\ \\yvec_{i+1} = \\xvec_{j}\\ \\}, \\\\\n &\\mathbbm{1}\\{\\exists j.\\ \\yvec_{i+1-k} = \\xvec_{j-k}\\ \\forall k\\in\\{0,1\\}\\},  \\\\\n &\\mathbbm{1}\\{\\exists j.\\ \\yvec_{i+1-k} = \\xvec_{j-k}\\ \\forall k\\in\\{0,1,2\\} \\}, \\\\\n &\\mathbbm{1}\\{\\exists k>j.\\ \\yvec_{i} = \\xvec_{k}, \\yvec_{i+1} = \\xvec_j\\}\\ ].",
+      "environment": "align*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 591,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.00798797607422,
+            "y0": 232.50863647460938,
+            "x1": 273.2626647949219,
+            "y1": 243.41773986816406
+          },
+          {
+            "x0": 89.00798797607422,
+            "y0": 246.05764770507812,
+            "x1": 273.26263427734375,
+            "y1": 256.96673583984375
+          },
+          {
+            "x0": 89.00798797607422,
+            "y0": 259.6066589355469,
+            "x1": 273.2626647949219,
+            "y1": 270.5157470703125
+          },
+          {
+            "x0": 89.00798797607422,
+            "y0": 273.1556701660156,
+            "x1": 146.1498565673828,
+            "y1": 284.06475830078125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3893,
+      "numbers": 1,
+      "citations": 6,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99998474121094,
+            "y0": 469.7657165527344,
+            "x1": 290.2691955566406,
+            "y1": 480.6748046875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 483.3147277832031,
+            "x1": 192.52371215820312,
+            "y1": 494.22381591796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Background",
+      "chars": 2392,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99998474121094,
+            "y0": 536.040771484375,
+            "x1": 290.2691650390625,
+            "y1": 546.9498291015625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 549.5907592773438,
+            "x1": 92.30181884765625,
+            "y1": 560.4998168945312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Model",
+      "chars": 1798,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99996948242188,
+            "y0": 350.1277770996094,
+            "x1": 198.3600616455078,
+            "y1": 361.036865234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Neural Language Model",
+      "chars": 669,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99999237060547,
+            "y0": 617.7948608398438,
+            "x1": 290.269287109375,
+            "y1": 628.7039184570312
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 631.3438720703125,
+            "x1": 290.2691650390625,
+            "y1": 642.2529296875
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 644.892822265625,
+            "x1": 138.15280151367188,
+            "y1": 655.8018798828125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Encoders",
+      "chars": 3642,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 443.2337341308594,
+            "x1": 525.5451049804688,
+            "y1": 454.142822265625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 456.7827453613281,
+            "x1": 430.4178466796875,
+            "y1": 467.69183349609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Training",
+      "chars": 727,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.27618408203125,
+            "y0": 370.08880615234375,
+            "x1": 525.5453491210938,
+            "y1": 380.9978942871094
+          },
+          {
+            "x0": 307.27618408203125,
+            "y0": 383.6378173828125,
+            "x1": 525.5452880859375,
+            "y1": 394.5469055175781
+          },
+          {
+            "x0": 307.27618408203125,
+            "y0": 397.18780517578125,
+            "x1": 331.2107238769531,
+            "y1": 408.0968933105469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Generating Summaries",
+      "chars": 1546,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 85.71768188476562,
+            "x1": 290.269287109375,
+            "y1": 96.62678527832031
+          },
+          {
+            "x0": 72.0,
+            "y0": 99.26669311523438,
+            "x1": 103.8109359741211,
+            "y1": 110.17579650878906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Extension: Extractive Tuning",
+      "chars": 1839,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2759704589844,
+            "y0": 85.55068969726562,
+            "x1": 525.5450439453125,
+            "y1": 96.45979309082031
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 99.10067749023438,
+            "x1": 525.5450439453125,
+            "y1": 110.00978088378906
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 112.64968872070312,
+            "x1": 525.5450439453125,
+            "y1": 123.55879211425781
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 126.19869995117188,
+            "x1": 354.8177490234375,
+            "y1": 137.10780334472656
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2707,
+      "numbers": 6,
+      "citations": 5,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 89.03970336914062,
+            "x1": 290.2691955566406,
+            "y1": 99.94880676269531
+          },
+          {
+            "x0": 72.0,
+            "y0": 102.58871459960938,
+            "x1": 290.2692565917969,
+            "y1": 113.49781799316406
+          },
+          {
+            "x0": 72.0,
+            "y0": 116.13772583007812,
+            "x1": 96.54547882080078,
+            "y1": 127.04682922363281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Setup",
+      "chars": 245,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 276.8600158691406,
+            "x1": 525.5451049804688,
+            "y1": 287.76910400390625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 290.4090270996094,
+            "x1": 525.5451049804688,
+            "y1": 301.318115234375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 303.9580383300781,
+            "x1": 340.29779052734375,
+            "y1": 314.86712646484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Data Set",
+      "chars": 4131,
+      "numbers": 13,
+      "citations": 5,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 387.6840515136719,
+            "x1": 525.5451049804688,
+            "y1": 398.5931396484375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 401.2330627441406,
+            "x1": 525.5452270507812,
+            "y1": 412.14215087890625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 414.7820739746094,
+            "x1": 392.3561096191406,
+            "y1": 425.691162109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Baselines",
+      "chars": 2259,
+      "numbers": 5,
+      "citations": 4,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 727.5939331054688,
+            "x1": 290.2691955566406,
+            "y1": 738.5029907226562
+          },
+          {
+            "x0": 72.0,
+            "y0": 741.1429443359375,
+            "x1": 290.26922607421875,
+            "y1": 752.052001953125
+          },
+          {
+            "x0": 72.0,
+            "y0": 754.6929321289062,
+            "x1": 204.08740234375,
+            "y1": 765.6019897460938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation",
+      "chars": 1056,
+      "numbers": 5,
+      "citations": 2,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99996948242188,
+            "y0": 262.5896911621094,
+            "x1": 290.2691955566406,
+            "y1": 273.498779296875
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 276.1387023925781,
+            "x1": 269.8146667480469,
+            "y1": 287.04779052734375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 7732,
+      "numbers": 9,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.9999771118164,
+            "y0": 632.7498779296875,
+            "x1": 254.30194091796875,
+            "y1": 643.658935546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 519,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 532.0587158203125,
+            "x1": 290.2692565917969,
+            "y1": 542.9677734375
+          },
+          {
+            "x0": 72.0,
+            "y0": 545.6087646484375,
+            "x1": 290.2691955566406,
+            "y1": 556.517822265625
+          },
+          {
+            "x0": 72.0,
+            "y0": 559.15771484375,
+            "x1": 264.87286376953125,
+            "y1": 570.0667724609375
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 20,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "koehn2007moses",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "Finally, we use a phrase-based statistical machine translation system trained on Gigaword to produce summaries, Moses+ [Koehn et al. 2007].",
+      "section": "Baselines",
+      "sectionKind": "experiments",
+      "ordinal": 19,
+      "title": "2007",
+      "authors": "Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard Zens, et al",
+      "year": 2007,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 318.18499755859375,
+            "y0": 565.004150390625,
+            "x1": 525.5450439453125,
+            "y1": 575.9132080078125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 578.5531005859375,
+            "x1": 525.5452270507812,
+            "y1": 589.462158203125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 592.1021118164062,
+            "x1": 456.6767272949219,
+            "y1": 603.0111694335938
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "dorr2003hedge",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We also report the winning system on this shared task, Topiary [Zajic et al. 2004]. Topiary merges a compression system using linguistically-motivated transformations of the input [Dorr et al. 2003] with an unsupervised topic detection (UTD) algorithm that appends key phrases from the full article onto the compressed output. woodsend2010generation (described above) also report results on the DUC dataset.",
+        "section": "Baselines",
+        "sectionKind": "experiments",
+        "ordinal": 17,
+        "title": "2003",
+        "authors": "Bonnie Dorr, David Zajic, and Richard Schwartz",
+        "year": 2003,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "koehn2007moses",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Finally, we use a phrase-based statistical machine translation system trained on Gigaword to produce summaries, Moses+ [Koehn et al. 2007].",
+        "section": "Baselines",
+        "sectionKind": "experiments",
+        "ordinal": 19,
+        "title": "2007",
+        "authors": "Philipp Koehn, Hieu Hoang, Alexandra Birch, Chris Callison-Burch, Marcello Federico, Nicola Bertoldi, Brooke Cowan, Wade Shen, Christine Moran, Richard Zens, et al",
+        "year": 2007,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 318.18499755859375,
+              "y0": 565.004150390625,
+              "x1": 525.5450439453125,
+              "y1": 575.9132080078125
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 578.5531005859375,
+              "x1": 525.5452270507812,
+              "y1": 589.462158203125
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 592.1021118164062,
+              "x1": 456.6767272949219,
+              "y1": 603.0111694335938
+            }
+          ]
+        }
+      },
+      {
+        "key": "zaidan2009z",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "For this step we use Z-MERT [Zaidan 2009].",
+        "section": "Implementation",
+        "sectionKind": "experiments",
+        "ordinal": 21,
+        "title": "2009",
+        "authors": "Omar Zaidan",
+        "year": 2009,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 121.17821502685547,
+              "y0": 560.7478637695312,
+              "x1": 250.80015563964844,
+              "y1": 571.6569213867188
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We focus on the task of sentence-level summarization.",
+      "anchorText": "We focus on the task of sentence-level summarization.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "We focus on",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.90899658203125,
+            "y0": 605.6517944335938,
+            "x1": 290.2691650390625,
+            "y1": 616.5608520507812
+          },
+          {
+            "x0": 72.0,
+            "y0": 619.2008056640625,
+            "x1": 121.38550567626953,
+            "y1": 630.10986328125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In this work we focus on factored scoring functions, s, that take into account a fixed window of previous words: where we define \ud835\udc32_c\u225c\ud835\udc32_[i-C+1, \u2026, i] for a window of size C.",
+      "anchorText": ", that take into account a fixed window of previous words: where we define",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Background",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "For readability, we omit these terms throughout the paper. D is the size of the word embeddings, and \ud835\udc21 is a hidden layer of size H.",
+      "anchorText": "For readability, we omit these terms throughout the paper.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we omit",
+      "section": "Neural Language Model",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 392.0174865722656,
+            "y0": 746.2029418945312,
+            "x1": 525.5451049804688,
+            "y1": 755.1693725585938
+          },
+          {
+            "x0": 307.27606201171875,
+            "y0": 756.1659545898438,
+            "x1": 383.7325439453125,
+            "y1": 765.1323852539062
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity we assume that the convolution is padded at the boundaries, and that M is greater than 2^L so that the dimensions are well-defined. Attention-Based Encoder While the convolutional encoder has richer capacity than bag-of-words, it still is required to produce a single representation for the entire input sentence.",
+      "anchorText": "so that the dimensions are well-defined. Attention-Based Encoder While the convolutional encoder has richer capacity than bag-of-words, it still is required to produce a single representation for the entire input sentence.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "Encoders",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 260.9260559082031,
+            "y0": 491.7467346191406,
+            "x1": 290.2715148925781,
+            "y1": 502.65582275390625
+          },
+          {
+            "x0": 72.00006103515625,
+            "y0": 505.2967224121094,
+            "x1": 213.79656982421875,
+            "y1": 516.205810546875
+          },
+          {
+            "x0": 72.00006103515625,
+            "y0": 525.337158203125,
+            "x1": 191.84744262695312,
+            "y1": 536.2462158203125
+          },
+          {
+            "x0": 202.75205993652344,
+            "y0": 525.436767578125,
+            "x1": 290.264892578125,
+            "y1": 536.3458251953125
+          },
+          {
+            "x0": 72.00006103515625,
+            "y0": 538.9857788085938,
+            "x1": 290.2693176269531,
+            "y1": 549.8948364257812
+          },
+          {
+            "x0": 72.00006103515625,
+            "y0": 552.5357666015625,
+            "x1": 290.2692565917969,
+            "y1": 563.44482421875
+          },
+          {
+            "x0": 72.00006103515625,
+            "y0": 566.0847778320312,
+            "x1": 250.85475158691406,
+            "y1": 576.9938354492188
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We do this by modifying our scoring function to directly estimate the probability of a summary using a log-linear model, as is standard in machine translation: Where \u03b1\u2208\u211d^5 is a weight vector and f is a feature function.",
+      "anchorText": "We do this by modifying our scoring function to directly estimate the probability of a summary using a log-linear model, as is standard in machine translation: Where",
+      "kind": "conventional",
+      "support": "bare",
+      "cue": "as is standard",
+      "section": "Extension: Extractive Tuning",
+      "sectionKind": "other",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 5,
+    "cited": 0,
+    "shown": 0,
+    "bare": 5
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2015-09-02",
+    "authors": [
+      "Alexander M. Rush",
+      "Sumit Chopra",
+      "Jason Weston"
+    ]
+  }
+}
