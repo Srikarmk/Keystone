@@ -31,7 +31,7 @@ import math
 import random
 import re
 from collections import Counter, defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 #: Every stance a citation can be labelled with, including the negative class.
@@ -136,6 +136,11 @@ def sample(
     almost entirely background and measure nothing about the interesting classes.
     Stratifying costs the ability to read the numbers as corpus-wide rates, which is
     why ``report`` prints per-class counts rather than one headline accuracy.
+
+    Every row drawn here is ``heldout``. A row is only ``tuned`` once the rules have
+    been changed after seeing it, and a row that has just been drawn has not been seen.
+    The field's default used to stand in, which would have filed every later draw with
+    the first sixty — the rows the held-out number exists to be kept apart from.
     """
     already = {(row.paper, row.key) for row in (existing or [])}
     buckets: dict[str, list[Row]] = defaultdict(list)
@@ -148,7 +153,7 @@ def sample(
     for stance in STANCES:
         rows = sorted(buckets.get(stance, []), key=lambda r: (r.paper, r.key))
         rng.shuffle(rows)
-        out.extend(rows[:per_stance])
+        out.extend(replace(row, split="heldout") for row in rows[:per_stance])
     return out
 
 
