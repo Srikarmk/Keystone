@@ -1,0 +1,3599 @@
+{
+  "id": "1609.04309",
+  "title": "Efficient softmax approximation for GPUs",
+  "keystone": null,
+  "codeUrl": "https://github.com/facebookresearch/adaptive-softmax",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1609.04309",
+  "numbers": [
+    {
+      "value": "0.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We use Adagrad , with a step size of 0.1 and 5 epochs, and we clip the norm of the gradients to 1. The batch size is set to 128, except on the Finnish portion of Europarl where =64 due to memory constraints.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "0.22 ms",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "Empirically, ms on a K40 and 0.22 ms on a M40.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 149.82699584960938,
+            "y0": 524.08740234375,
+            "x1": 291.18072509765625,
+            "y1": 533.9498901367188
+          }
+        ]
+      }
+    },
+    {
+      "value": "60M tokens",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For most languages, there are 10M--60M tokens and the vocabulary is in between 44k and 250k words.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 441.8218078613281,
+            "y0": 552.9984130859375,
+            "x1": 541.437255859375,
+            "y1": 562.8609008789062
+          },
+          {
+            "x0": 327.3659973144531,
+            "y0": 564.953369140625,
+            "x1": 541.4373779296875,
+            "y1": 574.8158569335938
+          },
+          {
+            "x0": 327.0169982910156,
+            "y0": 576.83349609375,
+            "x1": 410.4836120605469,
+            "y1": 586.7960815429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "20 steps",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For the backpropagation through time, we unroll the models for 20 steps.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 206.79212951660156,
+            "y0": 465.4935607910156,
+            "x1": 291.0970764160156,
+            "y1": 475.4112243652344
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 477.33929443359375,
+            "x1": 271.9688415527344,
+            "y1": 487.4010314941406
+          }
+        ]
+      }
+    },
+    {
+      "value": "5 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We use Adagrad , with a step size of 0.1 and 5 epochs, and we clip the norm of the gradients to 1. The batch size is set to 128, except on the Finnish portion of Europarl where =64 due to memory constraints.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Text8: perplexity and training time after 5 epochs. Our approach is significantly better than other published approximate strategies. We also show that improving the baseline D-softmax [*] as discussed in text improve the results, but is slower than our proposal. Note, approximate strategies are comparatively less interesting for small vocabularies such as in this case.",
+      "label": "tab:text8",
+      "numericCells": 7,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ppl \\",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "training time",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "full softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "83 min",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "sampling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "166",
+            "value": "166",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41 min",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "HSM (freq)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "166",
+            "value": "166",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34 min",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "HSM (sim)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "155",
+            "value": "155",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41 min",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "D-softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "195",
+            "value": "195",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "53 min",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "D-softmax [*]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "147",
+            "value": "147",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "54 min",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "147",
+            "value": "147",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30 min",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 337.79998779296875,
+            "y0": 189.0102996826172,
+            "x1": 541.5943603515625,
+            "y1": 198.06593322753906
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 200.0199737548828,
+            "x1": 541.443603515625,
+            "y1": 209.00875854492188
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 211.06434631347656,
+            "x1": 541.4397583007812,
+            "y1": 219.9406280517578
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 221.88731384277344,
+            "x1": 541.5889892578125,
+            "y1": 230.9429473876953
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 232.84629821777344,
+            "x1": 541.4428100585938,
+            "y1": 241.9019317626953
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 243.87197875976562,
+            "x1": 499.5809020996094,
+            "y1": 252.83837890625
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "One Billion Word benchmark. Perplexity on the test set for single models. Our result is obtained after epochs.",
+      "label": "tab:oneb",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Interpolated Kneser-Ney 5-gram",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.6",
+            "value": "67.6",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Feedforward NN + D-Softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "91.2",
+            "value": "91.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "4-layer IRNN-512",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.4",
+            "value": "69.4",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNN-2048 + BlackOut sampling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.3",
+            "value": "68.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Sparse Non-negative Matrix Language Model",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "52.9",
+            "value": "52.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "RNN-1024 + MaxEnt 9-gram",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51.3",
+            "value": "51.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM-2048-512",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43.7",
+            "value": "43.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "2-layer LSTM-8192-1024 + CNN inputs",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.0",
+            "value": "30.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ours (LSTM-2048)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "43.9",
+            "value": "43.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ours (2-layer LSTM-2048)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "39.8",
+            "value": "39.8",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Europarl. Perplexity after 5 epochs for different languages as a function of time (minutes).",
+      "label": "tab:europar",
+      "numericCells": 94,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Language:",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "bg",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "cs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "da",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "de",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "el",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "es",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "=",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "83k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "128k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "143k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "87k",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "\\",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "\\",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "\\",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "\\",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "\\",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ppl",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "\\",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Full",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "37",
+            "value": "37",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58",
+            "value": "58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "62",
+            "value": "62",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "132",
+            "value": "132",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "37",
+            "value": "37",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "713",
+            "value": "713",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42",
+            "value": "42",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "802",
+            "value": "802",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "38",
+            "value": "38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "383",
+            "value": "383",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "30",
+            "value": "30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "536",
+            "value": "536",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Sampling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "40",
+            "value": "40",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29",
+            "value": "29",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "70",
+            "value": "70",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "53",
+            "value": "53",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "40",
+            "value": "40",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "247",
+            "value": "247",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "45",
+            "value": "45",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "262",
+            "value": "262",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "41",
+            "value": "41",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "144",
+            "value": "144",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "217",
+            "value": "217",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "HSM (freq)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "43",
+            "value": "43",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17",
+            "value": "17",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "78",
+            "value": "78",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29",
+            "value": "29",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "42",
+            "value": "42",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "114",
+            "value": "114",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "51",
+            "value": "51",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "124",
+            "value": "124",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "45",
+            "value": "45",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "73",
+            "value": "73",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "34",
+            "value": "34",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "110",
+            "value": "110",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "130",
+            "value": "130",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30",
+            "value": "30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "HSM (sim)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "39",
+            "value": "39",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25",
+            "value": "25",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "68",
+            "value": "68",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "43",
+            "value": "43",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "38",
+            "value": "38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "150",
+            "value": "150",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "43",
+            "value": "43",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "154",
+            "value": "154",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "39",
+            "value": "39",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "98",
+            "value": "98",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "30",
+            "value": "30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "147",
+            "value": "147",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "130",
+            "value": "130",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30",
+            "value": "30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "D-softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "47",
+            "value": "47",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "82",
+            "value": "82",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75",
+            "value": "75",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "46",
+            "value": "46",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "369",
+            "value": "369",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "56",
+            "value": "56",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "397",
+            "value": "397",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "50",
+            "value": "50",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "211",
+            "value": "211",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "38",
+            "value": "38",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "296",
+            "value": "296",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "139",
+            "value": "139",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "86",
+            "value": "86",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "D-softmax [*]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "37",
+            "value": "37",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "62",
+            "value": "62",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "76",
+            "value": "76",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "366",
+            "value": "366",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "41",
+            "value": "41",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "398",
+            "value": "398",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "37",
+            "value": "37",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "213",
+            "value": "213",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "29",
+            "value": "29",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "303",
+            "value": "303",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "99",
+            "value": "99",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84",
+            "value": "84",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Ours",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "37",
+            "value": "37",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18",
+            "value": "18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "62",
+            "value": "62",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30",
+            "value": "30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "35",
+            "value": "35",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "105",
+            "value": "105",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "40",
+            "value": "40",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "110",
+            "value": "110",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "72",
+            "value": "72",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "29",
+            "value": "29",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "103",
+            "value": "103",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "101",
+            "value": "101",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29",
+            "value": "29",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {},
+  "references": [
+    {
+      "key": "andreas2014and",
+      "raw": "Andreas, Jacob and Klein, Dan. When and why are log-linear models self-normalizing. In ACL, 2014",
+      "authors": "Andreas, Jacob and Klein, Dan",
+      "title": "When and why are log-linear models self-normalizing",
+      "venue": "In ACL, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahl1983maximum",
+      "raw": "Bahl, Lalit R, Jelinek, Frederick, and Mercer, Robert L. A maximum likelihood approach to continuous speech recognition. PAMI, 1983",
+      "authors": "Bahl, Lalit R, Jelinek, Frederick, and Mercer, Robert L",
+      "title": "A maximum likelihood approach to continuous speech recognition",
+      "venue": "PAMI, 1983",
+      "year": 1983,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2008adaptive",
+      "raw": "Bengio, Yoshua and Sen\\'ecal, Jean-S\\'ebastien. Adaptive importance sampling to accelerate training of a neural probabilistic language model. Neural Networks, 2008",
+      "authors": "Bengio, Yoshua and Sen\\'ecal, Jean-S\\'ebastien",
+      "title": "Adaptive importance sampling to accelerate training of a neural probabilistic language model",
+      "venue": "Neural Networks, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2003neural",
+      "raw": "Bengio, Yoshua, Ducharme, R\\'ejean, Vincent, Pascal, and Jauvin, Christian. A neural probabilistic language model. JMLR, 2003",
+      "authors": "Bengio, Yoshua, Ducharme, R\\'ejean, Vincent, Pascal, and Jauvin, Christian",
+      "title": "A neural probabilistic language model",
+      "venue": "JMLR, 2003",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio2003quick",
+      "raw": "Bengio, Yoshua, Sen\\'ecal, Jean-S\\'ebastien, et al. Quick training of probabilistic neural nets by importance sampling. In AISTATS, 2003",
+      "authors": "Bengio, Yoshua, Sen\\'ecal, Jean-S\\'ebastien, et al",
+      "title": "Quick training of probabilistic neural nets by importance sampling",
+      "venue": "In AISTATS, 2003",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "brown1992class",
+      "raw": "Brown, Peter F, Desouza, Peter V, Mercer, Robert L, Pietra, Vincent J Della, and Lai, Jenifer C. Class-based n-gram models of natural language. Computational linguistics, 1992",
+      "authors": "Brown, Peter F, Desouza, Peter V, Mercer, Robert L, Pietra, Vincent J Della, and Lai, Jenifer C",
+      "title": "Class-based n-gram models of natural language",
+      "venue": "Computational linguistics, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chelba2013one",
+      "raw": "Chelba, Ciprian, Mikolov, Tomas, Schuster, Mike, Ge, Qi, Brants, Thorsten, Koehn, Phillipp, and Robinson, Tony. One billion word benchmark for measuring progress in statistical language modeling. arXiv preprint arXiv:1312.3005, 2013",
+      "authors": "Chelba, Ciprian, Mikolov, Tomas, Schuster, Mike, Ge, Qi, Brants, Thorsten, Koehn, Phillipp, and Robinson, Tony",
+      "title": "One billion word benchmark for measuring progress in statistical language modeling",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.3005",
+      "doi": null
+    },
+    {
+      "key": "chen2015strategies",
+      "raw": "Chen, Welin, Grangier, David, and Auli, Michael. Strategies for training large vocabulary neural language models. arXiv preprint arXiv:1512.04906, 2015",
+      "authors": "Chen, Welin, Grangier, David, and Auli, Michael",
+      "title": "Strategies for training large vocabulary neural language models",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1512.04906",
+      "doi": null
+    },
+    {
+      "key": "chung2014empirical",
+      "raw": "Chung, Junyoung, Gulcehre, Caglar, Cho, KyungHyun, and Bengio, Yoshua. Empirical evaluation of gated recurrent neural networks on sequence modeling. arXiv preprint arXiv:1412.3555, 2014",
+      "authors": "Chung, Junyoung, Gulcehre, Caglar, Cho, KyungHyun, and Bengio, Yoshua",
+      "title": "Empirical evaluation of gated recurrent neural networks on sequence modeling",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1412.3555",
+      "doi": null
+    },
+    {
+      "key": "devlin2014fast",
+      "raw": "Devlin, Jacob, Zbib, Rabih, Huang, Zhongqiang, Lamar, Thomas, Schwartz, Richard M, and Makhoul, John. Fast and robust neural network joint models for statistical machine translation. In ACL, 2014",
+      "authors": "Devlin, Jacob, Zbib, Rabih, Huang, Zhongqiang, Lamar, Thomas, Schwartz, Richard M, and Makhoul, John",
+      "title": "Fast and robust neural network joint models for statistical machine translation",
+      "venue": "In ACL, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "duchi2011adaptive",
+      "raw": "Duchi, John, Hazan, Elad, and Singer, Yoram. Adaptive subgradient methods for online learning and stochastic optimization. JMLR, 2011",
+      "authors": "Duchi, John, Hazan, Elad, and Singer, Yoram",
+      "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+      "venue": "JMLR, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "elman1990finding",
+      "raw": "Elman, Jeffrey L. Finding structure in time. Cognitive science, 1990",
+      "authors": "Elman, Jeffrey L",
+      "title": "Finding structure in time",
+      "venue": "Cognitive science, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goodman2001classes",
+      "raw": "Goodman, Joshua. Classes for fast maximum entropy training. In ICASSP, 2001",
+      "authors": "Goodman, Joshua",
+      "title": "Classes for fast maximum entropy training",
+      "venue": "In ICASSP, 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goodman2001bit",
+      "raw": "Goodman, Joshua T. A bit of progress in language modeling. Computer Speech \\& Language, 2001",
+      "authors": "Goodman, Joshua T",
+      "title": "A bit of progress in language modeling",
+      "venue": "Computer Speech \\& Language, 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2013speech",
+      "raw": "Graves, Alan, Mohamed, Abdel-rahman, and Hinton, Geoffrey. Speech recognition with deep recurrent neural networks. In ICASSP, 2013",
+      "authors": "Graves, Alan, Mohamed, Abdel-rahman, and Hinton, Geoffrey",
+      "title": "Speech recognition with deep recurrent neural networks",
+      "venue": "In ICASSP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gutmann2010noise",
+      "raw": "Gutmann, Michael and Hyv\\\"arinen, Aapo. Noise-contrastive estimation: A new estimation principle for unnormalized statistical models. In International Conference on Artificial Intelligence and Statistics, 2010",
+      "authors": "Gutmann, Michael and Hyv\\\"arinen, Aapo",
+      "title": "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models",
+      "venue": "In International Conference on Artificial Intelligence and Statistics, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hinton2012deep",
+      "raw": "Hinton, Geoffrey, Deng, Li, Yu, Dong, Dahl, George E, Mohamed, Abdel-rahman, Jaitly, Navdeep, Senior, Andrew, Vanhoucke, Vincent, Nguyen, Patrick, Sainath, Tara N, et al. Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups. Signal Processing Magazine, 2012",
+      "authors": "Hinton, Geoffrey, Deng, Li, Yu, Dong, Dahl, George E, Mohamed, Abdel-rahman, Jaitly, Navdeep, Senior, Andrew, Vanhoucke, Vincent, Nguyen, Patrick, Sainath, Tara N, et al",
+      "title": "Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups",
+      "venue": "Signal Processing Magazine, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen. Long short-term memory. Neural computation, 1997",
+      "authors": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jean2015",
+      "raw": "Jean, Sebastien, Cho, Kyunghyun, Memisevic, Roland, and Bengio, Yoshua. On using very large target vocabulary for neural machine translation. 2015",
+      "authors": "Jean, Sebastien, Cho, Kyunghyun, Memisevic, Roland, and Bengio, Yoshua",
+      "title": "On using very large target vocabulary for neural machine translation",
+      "venue": "2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ji2015blackout",
+      "raw": "Ji, Shihao, Vishwanathan, SVN, Satish, Nadathur, Anderson, Michael J, and Dubey, Pradeep. Blackout: Speeding up recurrent neural network language models with very large vocabularies. arXiv preprint arXiv:1511.06909, 2015",
+      "authors": "Ji, Shihao, Vishwanathan, SVN, Satish, Nadathur, Anderson, Michael J, and Dubey, Pradeep",
+      "title": "Blackout: Speeding up recurrent neural network language models with very large vocabularies",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.06909",
+      "doi": null
+    },
+    {
+      "key": "joulin2015learning",
+      "raw": "Joulin, Armand, van der Maaten, Laurens, Jabri, Allan, and Vasilache, Nicolas. Learning visual features from large weakly supervised data. arXiv preprint arXiv:1511.02251, 2015",
+      "authors": "Joulin, Armand, van der Maaten, Laurens, Jabri, Allan, and Vasilache, Nicolas",
+      "title": "Learning visual features from large weakly supervised data",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.02251",
+      "doi": null
+    },
+    {
+      "key": "jozefowicz2016exploring",
+      "raw": "Jozefowicz, Rafal, Vinyals, Oriol, Schuster, Mike, Shazeer, Noam, and Wu, Yonghui. Exploring the limits of language modeling. arXiv preprint arXiv:1602.02410, 2016",
+      "authors": "Jozefowicz, Rafal, Vinyals, Oriol, Schuster, Mike, Shazeer, Noam, and Wu, Yonghui",
+      "title": "Exploring the limits of language modeling",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1602.02410",
+      "doi": null
+    },
+    {
+      "key": "katz1987estimation",
+      "raw": "Katz, Slava M. Estimation of probabilities from sparse data for the language model component of a speech recognizer. ICASSP, 1987",
+      "authors": "Katz, Slava M",
+      "title": "Estimation of probabilities from sparse data for the language model component of a speech recognizer",
+      "venue": "ICASSP, 1987",
+      "year": 1987,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kneser1995improved",
+      "raw": "Kneser, Reinhard and Ney, Hermann. Improved backing-off for m-gram language modeling. In ICASSP, 1995",
+      "authors": "Kneser, Reinhard and Ney, Hermann",
+      "title": "Improved backing-off for m-gram language modeling",
+      "venue": "In ICASSP, 1995",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "koehn2005europarl",
+      "raw": "Koehn, Philipp. Europarl: A parallel corpus for statistical machine translation. In MT summit, 2005",
+      "authors": "Koehn, Philipp",
+      "title": "Europarl: A parallel corpus for statistical machine translation",
+      "venue": "In MT summit, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kuhn1990cache",
+      "raw": "Kuhn, Roland and De Mori, Renato. A cache-based natural language model for speech recognition. PAMI, 1990",
+      "authors": "Kuhn, Roland and De Mori, Renato",
+      "title": "A cache-based natural language model for speech recognition",
+      "venue": "PAMI, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "le2011structured",
+      "raw": "Le, Hai-Son, Oparin, Ilya, Allauzen, Alexandre, Gauvain, Jean-Luc, and Yvon, Fran cois. Structured output layer neural network language model. In ICASSP, 2011",
+      "authors": "Le, Hai-Son, Oparin, Ilya, Allauzen, Alexandre, Gauvain, Jean-Luc, and Yvon, Fran cois",
+      "title": "Structured output layer neural network language model",
+      "venue": "In ICASSP, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "le2015simple",
+      "raw": "Le, Quoc V, Jaitly, Navdeep, and Hinton, Geoffrey E. A simple way to initialize recurrent networks of rectified linear units. arXiv preprint arXiv:1504.00941, 2015",
+      "authors": "Le, Quoc V, Jaitly, Navdeep, and Hinton, Geoffrey E",
+      "title": "A simple way to initialize recurrent networks of rectified linear units",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1504.00941",
+      "doi": null
+    },
+    {
+      "key": "mikolov2012context",
+      "raw": "Mikolov, Tomas and Zweig, Geoffrey. Context dependent recurrent neural network language model. In SLT, 2012",
+      "authors": "Mikolov, Tomas and Zweig, Geoffrey",
+      "title": "Context dependent recurrent neural network language model",
+      "venue": "In SLT, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2010recurrent",
+      "raw": "Mikolov, Tomas, Karafi\\'at, Martin, Burget, Lukas, Cernock\\`y, Jan, and Khudanpur, Sanjeev. Recurrent neural network based language model. In INTERSPEECH, 2010",
+      "authors": "Mikolov, Tomas, Karafi\\'at, Martin, Burget, Lukas, Cernock\\`y, Jan, and Khudanpur, Sanjeev",
+      "title": "Recurrent neural network based language model",
+      "venue": "In INTERSPEECH, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2011empirical",
+      "raw": "Mikolov, Tomas, Deoras, Anoop, Kombrink, Stefan, Burget, Lukas, and Cernock\\`y, Jan. Empirical evaluation and combination of advanced language modeling techniques. In INTERSPEECH, 2011",
+      "authors": "Mikolov, Tomas, Deoras, Anoop, Kombrink, Stefan, Burget, Lukas, and Cernock\\`y, Jan",
+      "title": "Empirical evaluation and combination of advanced language modeling techniques",
+      "venue": "In INTERSPEECH, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2011strategies",
+      "raw": "Mikolov, Tom\\'a s, Deoras, Anoop, Povey, Daniel, Burget, Luk\\'a s, and Cernock\\`y, Jan. Strategies for training large scale neural network language models. In ASRU, 2011",
+      "authors": "Mikolov, Tom\\'a s, Deoras, Anoop, Povey, Daniel, Burget, Luk\\'a s, and Cernock\\`y, Jan",
+      "title": "Strategies for training large scale neural network language models",
+      "venue": "In ASRU, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2011extensions",
+      "raw": "Mikolov, Tom\\'a s, Kombrink, Stefan, Burget, Luk\\'a s, Cernock\\`y, Jan Honza, and Khudanpur, Sanjeev. Extensions of recurrent neural network language model. In ICASSP, 2011",
+      "authors": "Mikolov, Tom\\'a s, Kombrink, Stefan, Burget, Luk\\'a s, Cernock\\`y, Jan Honza, and Khudanpur, Sanjeev",
+      "title": "Extensions of recurrent neural network language model",
+      "venue": "In ICASSP, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2013efficient",
+      "raw": "Mikolov, Tomas, Chen, Kai, Corrado, Greg, and Dean, Jeffrey. Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781, 2013",
+      "authors": "Mikolov, Tomas, Chen, Kai, Corrado, Greg, and Dean, Jeffrey",
+      "title": "Efficient estimation of word representations in vector space",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1301.3781",
+      "doi": null
+    },
+    {
+      "key": "mikolov2014learning",
+      "raw": "Mikolov, Tomas, Joulin, Armand, Chopra, Sumit, Mathieu, Michael, and Ranzato, Marc'Aurelio. Learning longer memory in recurrent neural networks. arXiv preprint arXiv:1412.7753, 2014",
+      "authors": "Mikolov, Tomas, Joulin, Armand, Chopra, Sumit, Mathieu, Michael, and Ranzato, Marc'Aurelio",
+      "title": "Learning longer memory in recurrent neural networks",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1412.7753",
+      "doi": null
+    },
+    {
+      "key": "mnih2009scalable",
+      "raw": "Mnih, Andriy and Hinton, Geoffrey E. A scalable hierarchical distributed language model. In NIPS, 2009",
+      "authors": "Mnih, Andriy and Hinton, Geoffrey E",
+      "title": "A scalable hierarchical distributed language model",
+      "venue": "In NIPS, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mnih2012fast",
+      "raw": "Mnih, Andriy and Teh, Yee Whye. A fast and simple algorithm for training neural probabilistic language models. arXiv preprint arXiv:1206.6426, 2012",
+      "authors": "Mnih, Andriy and Teh, Yee Whye",
+      "title": "A fast and simple algorithm for training neural probabilistic language models",
+      "venue": "arXiv preprint 2012",
+      "year": 2012,
+      "arxivId": "1206.6426",
+      "doi": null
+    },
+    {
+      "key": "morin2005hierarchical",
+      "raw": "Morin, Frederic and Bengio, Yoshua. Hierarchical probabilistic neural network language model. In Aistats, 2005",
+      "authors": "Morin, Frederic and Bengio, Yoshua",
+      "title": "Hierarchical probabilistic neural network language model",
+      "venue": "In Aistats, 2005",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schwenk2007continuous",
+      "raw": "Schwenk, Holger. Continuous space language models. Computer Speech \\& Language, pp.\\ 492--518, 2007",
+      "authors": "Schwenk, Holger",
+      "title": "Continuous space language models",
+      "venue": "Computer Speech \\& Language, pp.\\ 492--518, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "schwenk2012large",
+      "raw": "Schwenk, Holger, Rousseau, Anthony, and Attik, Mohammed. Large, pruned or continuous space language models on a gpu for statistical machine translation. In NAACL-HLT Workshop, 2012",
+      "authors": "Schwenk, Holger, Rousseau, Anthony, and Attik, Mohammed",
+      "title": "Large, pruned or continuous space language models on a gpu for statistical machine translation",
+      "venue": "In NAACL-HLT Workshop, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shazeer2015sparse",
+      "raw": "Shazeer, Noam, Pelemans, Joris, and Chelba, Ciprian. Sparse non-negative matrix language modeling for skip-grams. In Proceedings of Interspeech, pp.\\ 1428--1432, 2015",
+      "authors": "Shazeer, Noam, Pelemans, Joris, and Chelba, Ciprian",
+      "title": "Sparse non-negative matrix language modeling for skip-grams",
+      "venue": "In Proceedings of Interspeech, pp.\\ 1428--1432, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc V. Sequence to sequence learning with neural networks. In Advances in neural information processing systems, 2014",
+      "authors": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc V",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in neural information processing systems, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vaswani2013decoding",
+      "raw": "Vaswani, Ashish, Zhao, Yinggong, Fossum, Victoria, and Chiang, David. Decoding with large-scale neural language models improves translation. In EMNLP, 2013",
+      "authors": "Vaswani, Ashish, Zhao, Yinggong, Fossum, Victoria, and Chiang, David",
+      "title": "Decoding with large-scale neural language models improves translation",
+      "venue": "In EMNLP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vincent2015efficient",
+      "raw": "Vincent, Pascal, de Br\\'ebisson, Alexandre, and Bouthillier, Xavier. Efficient exact gradient update for training deep networks with very large sparse targets. In NIPS, 2015",
+      "authors": "Vincent, Pascal, de Br\\'ebisson, Alexandre, and Bouthillier, Xavier",
+      "title": "Efficient exact gradient update for training deep networks with very large sparse targets",
+      "venue": "In NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "werbos1990backpropagation",
+      "raw": "Werbos, Paul J. Backpropagation through time: what it does and how to do it. 1990",
+      "authors": "Werbos, Paul J",
+      "title": "Backpropagation through time: what it does and how to do it",
+      "venue": "1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams1990efficient",
+      "raw": "Williams, Ronald J and Peng, Jing. An efficient gradient-based algorithm for on-line training of recurrent network trajectories. Neural computation, 1990",
+      "authors": "Williams, Ronald J and Peng, Jing",
+      "title": "An efficient gradient-based algorithm for on-line training of recurrent network trajectories",
+      "venue": "Neural computation, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zipf1949human",
+      "raw": "Zipf, George Kingsley. Human behavior and the principle of least effort. 1949",
+      "authors": "Zipf, George Kingsley",
+      "title": "Human behavior and the principle of least effort",
+      "venue": "1949",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zweig2013speed",
+      "raw": "Zweig, Geoffrey and Makarychev, Konstantin. Speed regularization and optimality in word classing. In ICASSP, 2013",
+      "authors": "Zweig, Geoffrey and Makarychev, Konstantin",
+      "title": "Speed regularization and optimality in word classing",
+      "venue": "In ICASSP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "P(w_1,\\dots,w_T) = \\prod_{t=1}^T P(w_t~|~w_{t-1},\\dots,w_1).",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "h_t & = \\sigma( A P x_t ), \\\\ \ny_t & = f(B h_t),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "f(z_w) =\n\\frac{\\exp(z_w)}{\\sum_{w' \\in \\Vcal} \\exp(z_{w'})}.",
+      "environment": "align",
+      "labels": [
+        "eq:softmax"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "p(w_t \\ | \\ h_t) = p_1(\\mathcal{C}(w_t) \\ | \\ h_t) \\times p_2(w_t \\ | \\ \\mathcal{C}(w_t), \\ h_t),",
+      "environment": "equation*",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "g(k) & = \\max (c + \\lambda k_0 , c + \\lambda k) \\\\\n& = c_\\mathrm{m} + \\max \\big[0,\\lambda (k-k_0)\\big].",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "g(k, B) = \\max(c + \\lambda k_0 B_0, c + \\lambda k B).",
+      "environment": "equation",
+      "labels": [
+        "equ:costmodel"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "C = g(J+\\kh,\\ B) + \\sum_{i} g(k_i,\\ p_i B).",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "C & = c + \\lambda (J+\\kh)B + \\sum_i \\left(c + \\lambda k_i p_i B\\right) \\\\\n  & = (J+1)c + \\lambda B \\big[J+\\kh + \\sum_i  p_i \\, k_i \\big].",
+      "environment": "align",
+      "labels": [
+        "equ:totalcost"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "p_i k_i + p_j k_j = p_i (k_i - k_j) + p_{i+j} k_j.",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 884,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 75.36599731445312,
+            "y0": 194.9875946044922,
+            "x1": 269.8647155761719,
+            "y1": 204.8551025390625
+          },
+          {
+            "x0": 75.36599731445312,
+            "y0": 206.89320373535156,
+            "x1": 269.67926025390625,
+            "y1": 216.82586669921875
+          },
+          {
+            "x0": 75.11699676513672,
+            "y0": 218.75027465820312,
+            "x1": 174.38812255859375,
+            "y1": 228.81201171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3100,
+      "numbers": 0,
+      "citations": 21,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.13100051879883,
+            "y0": 465.1004943847656,
+            "x1": 289.4394836425781,
+            "y1": 475.1276550292969
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 477.029296875,
+            "x1": 267.8329162597656,
+            "y1": 487.0910339355469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related work",
+      "chars": 3645,
+      "numbers": 0,
+      "citations": 37,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 239.73171997070312,
+            "x1": 291.0899963378906,
+            "y1": 249.6293487548828
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 251.56228637695312,
+            "x1": 117.51876831054688,
+            "y1": 261.6240234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Preliminaries on language modeling",
+      "chars": 743,
+      "numbers": 0,
+      "citations": 12,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.1310119628906,
+            "y0": 659.6995849609375,
+            "x1": 543.09375,
+            "y1": 669.6422729492188
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 671.62060546875,
+            "x1": 541.7906494140625,
+            "y1": 681.6080932617188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Feedforward network.",
+      "chars": 774,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 307.6202697753906,
+            "x1": 290.68682861328125,
+            "y1": 317.6424865722656
+          },
+          {
+            "x0": 55.082000732421875,
+            "y0": 319.5452880859375,
+            "x1": 164.17967224121094,
+            "y1": 329.6070251464844
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Recurrent network.",
+      "chars": 909,
+      "numbers": 0,
+      "citations": 12,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 201.33883666992188,
+            "y0": 566.8450317382812,
+            "x1": 289.4409484863281,
+            "y1": 576.7976684570312
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 578.71826171875,
+            "x1": 289.43701171875,
+            "y1": 588.780029296875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 590.8244018554688,
+            "x1": 169.01705932617188,
+            "y1": 600.6868896484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Class-based hierarchical softmax.",
+      "chars": 1106,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 232.7565460205078,
+            "x1": 541.4356689453125,
+            "y1": 242.78369140625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 244.7415771484375,
+            "x1": 541.440185546875,
+            "y1": 254.72906494140625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 256.7381591796875,
+            "x1": 541.7904052734375,
+            "y1": 266.67083740234375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 268.5953063964844,
+            "x1": 356.6436767578125,
+            "y1": 278.65704345703125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Our approach: the adaptive softmax",
+      "chars": 784,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 599.8370361328125,
+            "x1": 541.44140625,
+            "y1": 609.893798828125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 611.908935546875,
+            "x1": 543.092041015625,
+            "y1": 621.8115844726562
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 623.8916015625,
+            "x1": 384.2973327636719,
+            "y1": 633.7590942382812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Computation time model of matrix-multiplication",
+      "chars": 1557,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.13100051879883,
+            "y0": 312.46875,
+            "x1": 291.0953369140625,
+            "y1": 322.5008544921875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 324.40130615234375,
+            "x1": 291.09344482421875,
+            "y1": 334.4630432128906
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 336.3572998046875,
+            "x1": 187.57455444335938,
+            "y1": 346.4190368652344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Intuition: the two-clusters case",
+      "chars": 4020,
+      "numbers": 3,
+      "citations": 8,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 88.04531860351562,
+            "x1": 543.093505859375,
+            "y1": 98.10704803466797
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 100.00027465820312,
+            "x1": 407.3209228515625,
+            "y1": 110.06200408935547
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "General case",
+      "chars": 5037,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 659.6092529296875,
+            "x1": 291.0933532714844,
+            "y1": 669.6710205078125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 671.5642700195312,
+            "x1": 151.4390106201172,
+            "y1": 681.6260375976562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 6844,
+      "numbers": 18,
+      "citations": 13,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.1310119628906,
+            "y0": 293.0823059082031,
+            "x1": 543.0892944335938,
+            "y1": 303.14404296875
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 305.03729248046875,
+            "x1": 541.4371337890625,
+            "y1": 315.0990295410156
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 317.1444091796875,
+            "x1": 541.4380493164062,
+            "y1": 327.0068664550781
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 329.09942626953125,
+            "x1": 437.0386962890625,
+            "y1": 338.9618835449219
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 972,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 563.96826171875,
+            "x1": 291.0933532714844,
+            "y1": 574.030029296875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 575.9232788085938,
+            "x1": 208.98556518554688,
+            "y1": 585.9850463867188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgements",
+      "chars": 161,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.1310119628906,
+            "y0": 160.99929809570312,
+            "x1": 541.4430541992188,
+            "y1": 171.06103515625
+          },
+          {
+            "x0": 307.0820007324219,
+            "y0": 172.95431518554688,
+            "x1": 541.44482421875,
+            "y1": 183.01605224609375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 184.9844512939453,
+            "x1": 508.7442321777344,
+            "y1": 194.94705200195312
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 1,
+      "compares": 0,
+      "background": 43,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "duchi2011adaptive",
+      "stance": "inherits",
+      "cue": "We use",
+      "sentence": "We use Adagrad [Duchi et al. 2011], with a step size of 0.1 and 5 epochs, and we clip the norm of the gradients to 1. The batch size B is set to 128, except on the Finnish portion of Europarl where B=64 due to memory constraints.",
+      "section": "Experiments",
+      "sectionKind": "experiments",
+      "ordinal": 66,
+      "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+      "authors": "Duchi, John, Hazan, Elad, and Singer, Yoram",
+      "year": 2011,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 160.24960327148438,
+            "y0": 489.4454040527344,
+            "x1": 289.43829345703125,
+            "y1": 499.307861328125
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 501.2492980957031,
+            "x1": 289.4369812011719,
+            "y1": 511.31103515625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 513.2578125,
+            "x1": 95.21881866455078,
+            "y1": 523.2503051757812
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "brown1992class",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "For the similarity-based binning, we used the Brown clustering algorithm [Brown et al. 1992] to determine the word classes.",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 69,
+        "title": "Class-based n-gram models of natural language",
+        "authors": "Brown, Peter F, Desouza, Peter V, Mercer, Robert L, Pietra, Vincent J Della, and Lai, Jenifer C",
+        "year": 1992,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 138.52330017089844,
+              "y0": 671.5642700195312,
+              "x1": 289.4369812011719,
+              "y1": 681.6260375976562
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 683.519287109375,
+              "x1": 204.6668243408203,
+              "y1": 693.5810546875
+            }
+          ]
+        }
+      },
+      {
+        "key": "chen2015strategies",
+        "stance": "contests",
+        "cue": "Unlike",
+        "sentence": "Unlike [Chen et al. 2015], we share the state of hidden layer across clusters and simply reduce the input size of the classifiers by applying a projection matrix.",
+        "section": "Intuition: the two-clusters case",
+        "sectionKind": "method",
+        "ordinal": 62,
+        "title": "Strategies for training large vocabulary neural language models",
+        "authors": "Chen, Welin, Grangier, David, and Auli, Michael",
+        "year": 2015,
+        "arxivId": "1512.04906",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 204.8192138671875,
+              "y0": 568.0032958984375,
+              "x1": 289.43701171875,
+              "y1": 578.0650634765625
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 579.98828125,
+              "x1": 289.4366149902344,
+              "y1": 590.0104370117188
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 591.9998168945312,
+              "x1": 291.1829528808594,
+              "y1": 601.9474487304688
+            }
+          ]
+        }
+      },
+      {
+        "key": "duchi2011adaptive",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use Adagrad [Duchi et al. 2011], with a step size of 0.1 and 5 epochs, and we clip the norm of the gradients to 1. The batch size B is set to 128, except on the Finnish portion of Europarl where B=64 due to memory constraints.",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 66,
+        "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+        "authors": "Duchi, John, Hazan, Elad, and Singer, Yoram",
+        "year": 2011,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 160.24960327148438,
+              "y0": 489.4454040527344,
+              "x1": 289.43829345703125,
+              "y1": 499.307861328125
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 501.2492980957031,
+              "x1": 289.4369812011719,
+              "y1": 511.31103515625
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 513.2578125,
+              "x1": 95.21881866455078,
+              "y1": 523.2503051757812
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "In this work, we focus on the standard word level LSTM architecture since it has obtained state of the art performance on the challenging One Billion Word Benchmark [Jozefowicz et al. 2016].",
+      "anchorText": "In this work, we focus on the standard word level LSTM architecture since it has obtained state of the art performance on the challenging One Billion Word Benchmark",
+      "kind": "simplifying",
+      "support": "cited",
+      "cue": "we focus on",
+      "section": "Recurrent network.",
+      "sectionKind": "method",
+      "cites": [
+        "jozefowicz2016exploring"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 337.9459228515625,
+            "y0": 153.07931518554688,
+            "x1": 541.4371337890625,
+            "y1": 163.14105224609375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 165.03427124023438,
+            "x1": 541.4370727539062,
+            "y1": 175.09600830078125
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 176.98928833007812,
+            "x1": 543.0934448242188,
+            "y1": 187.051025390625
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 189.0194854736328,
+            "x1": 327.91314697265625,
+            "y1": 198.98208618164062
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For two distinct clusters _i and _j, we can re-write p_j k_j as (p_i+j - p_i) k_j, where p_i+j=p_i+p_j, so that Without loss of generality, we assume that k_i > k_j.",
+      "anchorText": ", so that Without loss of generality, we assume that",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we assume",
+      "section": "General case",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "In other terms, an optimal solution for Equation [ref] requires that the most frequent words are assigned to the smallest cluster.",
+      "anchorText": "requires that the most frequent words are assigned to the smallest cluster.",
+      "kind": "conditional",
+      "support": "shown",
+      "cue": "requires that",
+      "section": "General case",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "equ:totalcost"
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 84.9155502319336,
+            "y0": 330.4604187011719,
+            "x1": 289.4382019042969,
+            "y1": 340.3228759765625
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 342.3432312011719,
+            "x1": 133.67764282226562,
+            "y1": 352.30084228515625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Note, this analysis remains valid as long as the g is monotonically increasing in k. Determining k_i with J fixed: dynamic programming. We now assume that the number of clusters is fixed.",
+      "anchorText": "fixed: dynamic programming. We now assume that the number of clusters is fixed.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "General case",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 159.17498779296875,
+            "y0": 441.1455078125,
+            "x1": 291.179443359375,
+            "y1": 451.10809326171875
+          },
+          {
+            "x0": 54.97200012207031,
+            "y0": 453.1163024902344,
+            "x1": 269.8037109375,
+            "y1": 463.17803955078125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe our approach to be general enough to be applied to other parallel computing architectures and other losses, as well as to other domains where the distributions of the class are unbalanced.",
+      "anchorText": "We believe our approach to be general enough to be applied to other parallel computing architectures and other losses, as well as to other domains where the distributions of the class are unbalanced.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 336.5849304199219,
+            "y0": 81.45755004882812,
+            "x1": 541.4383544921875,
+            "y1": 91.3752212524414
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 93.36339569091797,
+            "x1": 541.6072998046875,
+            "y1": 103.34590148925781
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 105.27324676513672,
+            "x1": 541.440185546875,
+            "y1": 115.31523132324219
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 117.28846740722656,
+            "x1": 417.2677307128906,
+            "y1": 127.25106811523438
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 5,
+    "cited": 1,
+    "shown": 1,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2016-09-14",
+    "authors": [
+      "Edouard Grave",
+      "Armand Joulin",
+      "Moustapha Ciss\u00e9",
+      "David Grangier",
+      "Herv\u00e9 J\u00e9gou"
+    ]
+  }
+}

@@ -109,11 +109,11 @@ generated JSON the build writes, so they cannot drift from the run that produced
 
 | | |
 |---|---|
-| Papers analysed | **160** |
-| Citation readings | **1056**, 90.8% anchored to the page |
-| Assumptions | **729**, of which 626 state nothing in support |
-| Walkable paper-to-paper edges | **322** |
-| Tests | 270 Python, 44 JavaScript |
+| Papers analysed | **197** |
+| Citation readings | **1279**, 90.9% anchored to the page |
+| Assumptions | **839**, of which 722 state nothing in support |
+| Walkable paper-to-paper edges | **437** |
+| Tests | 272 Python, 44 JavaScript |
 
 **The anchor layer.** Tight anchors survive an independent geometric round-trip through
 MuPDF rather than through the matcher's own index; the gate is ≥99% and the suite

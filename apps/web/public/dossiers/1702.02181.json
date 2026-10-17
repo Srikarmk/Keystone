@@ -1,0 +1,2061 @@
+{
+  "id": "1702.02181",
+  "title": "Deep Learning with Dynamic Computation Graphs",
+  "keystone": null,
+  "codeUrl": "https://github.com/tensorflow/fold",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1702.02181",
+  "numbers": [
+    {
+      "value": "20%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The cost is only 20% for inference on GPUs with batch-size 1, but rises to 60% for training with backpropagation.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 264.81134033203125,
+            "y0": 337.1024169921875,
+            "x1": 504.0032958984375,
+            "y1": 347.0650329589844
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 348.0614013671875,
+            "x1": 319.834716796875,
+            "y1": 358.0240173339844
+          }
+        ]
+      }
+    },
+    {
+      "value": "60%",
+      "kind": "result",
+      "section": "method",
+      "sentence": "The cost is only 20% for inference on GPUs with batch-size 1, but rises to 60% for training with backpropagation.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 264.81134033203125,
+            "y0": 337.1024169921875,
+            "x1": 504.0032958984375,
+            "y1": 347.0650329589844
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 348.0614013671875,
+            "x1": 319.834716796875,
+            "y1": 358.0240173339844
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Inference timing benchmark; times are wall-clock averages in seconds",
+      "label": "tab:timing",
+      "numericCells": 124,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "batch-size",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "manual",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "dynamic",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "full dynamic",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "speedup",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "batch",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tree",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "batch",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tree",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "batch",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "tree",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "(CPU) 1024",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.62",
+            "value": "14.62",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.014",
+            "value": "0.014",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.68",
+            "value": "18.68",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.018",
+            "value": "0.018",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.37",
+            "value": "18.37",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.017",
+            "value": "0.017",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.86",
+            "value": "28.86",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.54",
+            "value": "7.54",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.014",
+            "value": "0.014",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.84",
+            "value": "9.84",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.019",
+            "value": "0.019",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.57",
+            "value": "9.57",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.018",
+            "value": "0.018",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.30",
+            "value": "1.30",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27.68",
+            "value": "27.68",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.14",
+            "value": "4.14",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.016",
+            "value": "0.016",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.22",
+            "value": "5.22",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.020",
+            "value": "0.020",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.25",
+            "value": "5.25",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.020",
+            "value": "0.020",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.26",
+            "value": "1.26",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.23",
+            "value": "25.23",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.48",
+            "value": "2.48",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.019",
+            "value": "0.019",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2.95",
+            "value": "2.95",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.023",
+            "value": "0.023",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.08",
+            "value": "3.08",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.024",
+            "value": "0.024",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.18",
+            "value": "1.18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "21.47",
+            "value": "21.47",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.64",
+            "value": "1.64",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.025",
+            "value": "0.025",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.76",
+            "value": "1.76",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.027",
+            "value": "0.027",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.78",
+            "value": "1.78",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.027",
+            "value": "0.027",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.06",
+            "value": "1.06",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18.55",
+            "value": "18.55",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.27",
+            "value": "1.27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.039",
+            "value": "0.039",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.05",
+            "value": "1.05",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.032",
+            "value": "0.032",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.10",
+            "value": "1.10",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.034",
+            "value": "0.034",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.82",
+            "value": "0.82",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "14.94",
+            "value": "14.94",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.52",
+            "value": "0.52",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.517",
+            "value": "0.517",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.26",
+            "value": "0.26",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.258",
+            "value": "0.258",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.26",
+            "value": "0.26",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.262",
+            "value": "0.262",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.49",
+            "value": "0.49",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.97",
+            "value": "1.97",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "(GPU) 1024",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.978",
+            "value": "0.978",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0009",
+            "value": "0.0009",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.590",
+            "value": "1.590",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0015",
+            "value": "0.0015",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.617",
+            "value": "1.617",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0015",
+            "value": "0.0015",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.62",
+            "value": "1.62",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "101.79",
+            "value": "101.79",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "512",
+            "value": "512",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.530",
+            "value": "0.530",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0010",
+            "value": "0.0010",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.715",
+            "value": "0.715",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0013",
+            "value": "0.0013",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.721",
+            "value": "0.721",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0014",
+            "value": "0.0014",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.34",
+            "value": "1.34",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "114.15",
+            "value": "114.15",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "256",
+            "value": "256",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.312",
+            "value": "0.312",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0012",
+            "value": "0.0012",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.323",
+            "value": "0.323",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0012",
+            "value": "0.0012",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.340",
+            "value": "0.340",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0013",
+            "value": "0.0013",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.03",
+            "value": "1.03",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "120.86",
+            "value": "120.86",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.236",
+            "value": "0.236",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0018",
+            "value": "0.0018",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.164",
+            "value": "0.164",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0012",
+            "value": "0.0012",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.178",
+            "value": "0.178",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0013",
+            "value": "0.0013",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.69",
+            "value": "0.69",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "115.05",
+            "value": "115.05",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.193",
+            "value": "0.193",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0030",
+            "value": "0.0030",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.093",
+            "value": "0.093",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0014",
+            "value": "0.0014",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.106",
+            "value": "0.106",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0016",
+            "value": "0.0016",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.48",
+            "value": "0.48",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "96.40",
+            "value": "96.40",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.153",
+            "value": "0.153",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0047",
+            "value": "0.0047",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.061",
+            "value": "0.061",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0019",
+            "value": "0.0019",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.074",
+            "value": "0.074",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0023",
+            "value": "0.0023",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.40",
+            "value": "0.40",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.79",
+            "value": "68.79",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.161",
+            "value": "0.161",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.1608",
+            "value": "0.1608",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.038",
+            "value": "0.038",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0376",
+            "value": "0.0376",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.036",
+            "value": "0.036",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.0359",
+            "value": "0.0359",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.23",
+            "value": "0.23",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.47",
+            "value": "4.47",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 183.5657958984375,
+            "y0": 91.06349182128906,
+            "x1": 463.65435791015625,
+            "y1": 101.02609252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Test set accuracies on the Stanford Sentiment Treebank",
+      "label": "tab:sstb",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "fine-grained",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "binary",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "51.0 (0.5)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "88.0 (0.3)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "52.8",
+            "value": "52.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.7",
+            "value": "89.7",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "53.1",
+            "value": "53.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "89.3",
+            "value": "89.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Ours (Single Model)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "52.3 (0.7)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "89.4 (0.4)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ours (Ensemble)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "53.6",
+            "value": "53.6",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "90.2",
+            "value": "90.2",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 213.32379150390625,
+            "y0": 91.06349182128906,
+            "x1": 433.895751953125,
+            "y1": 101.02609252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Lines of code comparison",
+      "label": "tab:loc",
+      "numericCells": 9,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ours",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "original",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Feed-Forward Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26",
+            "value": "26",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "71",
+            "value": "71",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.37",
+            "value": "0.37",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Tree-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "119",
+            "value": "119",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "219",
+            "value": "219",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.54",
+            "value": "0.54",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Graph Convolutions",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44",
+            "value": "44",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.73",
+            "value": "0.73",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 272.0077819824219,
+            "y0": 201.21449279785156,
+            "x1": 375.2103576660156,
+            "y1": 211.17709350585938
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}",
+    "\\INP": "\\mathit{Input}",
+    "\\TEN": "\\mathit{Tensor}",
+    "\\TUP": "\\mathit{Tuple}",
+    "\\SEQ": "\\mathit{Sequence}",
+    "\\VOID": "\\mathit{Void}",
+    "\\tfstate": "\\texttt{#1}",
+    "\\tfop": "*+[F]{\\texttt{#1}}"
+  },
+  "references": [
+    {
+      "key": "tensorflow",
+      "raw": "Mart n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, et al. TensorFlow: Large-scale machine learning on heterogeneous systems, 2015. arXiv, 1603.04467, 2016",
+      "authors": "Mart n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig Citro, Greg S Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, et al",
+      "title": "TensorFlow: Large-scale machine learning on heterogeneous systems, 2015",
+      "venue": "arXiv, 1603.04467, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "neural_module",
+      "raw": "Jacob Andreas, Marcus Rohrbach, Trevor Darrell, and Dan Klein. Learning to compose neural networks for question answering. In NAACL, 2016",
+      "authors": "Jacob Andreas, Marcus Rohrbach, Trevor Darrell, and Dan Klein",
+      "title": "Learning to compose neural networks for question answering",
+      "venue": "In NAACL, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nlp",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural machine translation by jointly learning to align and translate. In ICLR, 2015",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "In ICLR, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chem",
+      "raw": "Anna Maria Bianucci, Alessio Micheli, Alessandro Sperduti, and Antonina Starita. Application of cascade correlation networks for structures to chemistry. Applied Intelligence, 2000",
+      "authors": "Anna Maria Bianucci, Alessio Micheli, Alessandro Sperduti, and Antonina Starita",
+      "title": "Application of cascade correlation networks for structures to chemistry",
+      "venue": "Applied Intelligence, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "spinn",
+      "raw": "Samuel R. Bowman, Jon Gauthier, Abhinav Rastogi, Raghav Gupta, Christopher D. Manning, and Christopher Potts. A fast unified model for parsing and sentence understanding. In NAACL, 2016",
+      "authors": "Samuel R. Bowman, Jon Gauthier, Abhinav Rastogi, Raghav Gupta, Christopher D. Manning, and Christopher Potts",
+      "title": "A fast unified model for parsing and sentence understanding",
+      "venue": "In NAACL, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "torch",
+      "raw": "Ronan Collobert, Koray Kavukcuoglu, and Cl\\'ement Farabet. Torch7: A Matlab-like environment for machine learning. In BigLearn, NIPS Workshop, 2011",
+      "authors": "Ronan Collobert, Koray Kavukcuoglu, and Cl\\'ement Farabet",
+      "title": "Torch7: A Matlab-like environment for machine learning",
+      "venue": "In BigLearn, NIPS Workshop, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bps",
+      "raw": "Christoph Goller and Andreas Kuchler. Learning task-dependent distributed representations by backpropagation through structure. In ICNN, 1996",
+      "authors": "Christoph Goller and Andreas Kuchler",
+      "title": "Learning task-dependent distributed representations by backpropagation through structure",
+      "venue": "In ICNN, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hughes2000generalising",
+      "raw": "John Hughes. Generalising monads to arrows. Science of Computer Programming, 2000",
+      "authors": "John Hughes",
+      "title": "Generalising monads to arrows",
+      "venue": "Science of Computer Programming, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hutton1996monadic",
+      "raw": "Graham Hutton and Erik Meijer. Monadic parser combinators. Technical Report NOTTCS-TR-96-4, 1996",
+      "authors": "Graham Hutton and Erik Meijer",
+      "title": "Monadic parser combinators",
+      "venue": "Technical Report NOTTCS-TR-96-4, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "qm13",
+      "raw": "Steven Kearnes, Kevin McCloskey, Marc Berndl, Vijay Pande, and Patrick Riley. Molecular graph convolutions: moving beyond fingerprints. Journal of Computer-Aided Molecular Design, 2016",
+      "authors": "Steven Kearnes, Kevin McCloskey, Marc Berndl, Vijay Pande, and Patrick Riley",
+      "title": "Molecular graph convolutions: moving beyond fingerprints",
+      "venue": "Journal of Computer-Aided Molecular Design, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vision",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton. Imagenet classification with deep convolutional neural networks. In NIPS, 2012",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In NIPS, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tree_bakeoff",
+      "raw": "Jiwei Li, Minh-Thang Luong, Dan Jurafsky, and Eudard Hovy. When are tree structures necessary for deep learning of representations? arXiv, 1503.00185, 2015",
+      "authors": "Jiwei Li, Minh-Thang Luong, Dan Jurafsky, and Eudard Hovy",
+      "title": "When are tree structures necessary for deep learning of representations?",
+      "venue": "arXiv, 1503.00185, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nse",
+      "raw": "Tsendsuren Munkhdalai and Hong Yu. Neural semantic encoders. arXiv, 1607.04315, 2016",
+      "authors": "Tsendsuren Munkhdalai and Hong Yu",
+      "title": "Neural semantic encoders",
+      "venue": "arXiv, 1607.04315, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nti",
+      "raw": "Tsendsuren Munkhdalai and Hong Yu. Neural tree indexers for text understanding. arXiv, 1607.04492, 2016",
+      "authors": "Tsendsuren Munkhdalai and Hong Yu",
+      "title": "Neural tree indexers for text understanding",
+      "venue": "arXiv, 1607.04492, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gpu",
+      "raw": "Kyoung-Su Oh and Keechul Jung. GPU implementation of neural networks. Pattern Recognition, 2004",
+      "authors": "Kyoung-Su Oh and Keechul Jung",
+      "title": "GPU implementation of neural networks",
+      "venue": "Pattern Recognition, 2004",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "raam",
+      "raw": "Jordan B Pollack. Recursive distributed representations. Artificial Intelligence, 1990",
+      "authors": "Jordan B Pollack",
+      "title": "Recursive distributed representations",
+      "venue": "Artificial Intelligence, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "feedforwardattn",
+      "raw": "Colin Raffel and Daniel PW Ellis. Feed-forward networks with attention can solve some long-term memory problems. In ICLR (Workshop Track), 2016",
+      "authors": "Colin Raffel and Daniel PW Ellis",
+      "title": "Feed-forward networks with attention can solve some long-term memory problems",
+      "venue": "In ICLR (Workshop Track), 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rdropout",
+      "raw": "Stanislau Semeniuta, Aliaksei Severyn, and Erhardt Barth. Recurrent dropout without memory loss. arXiv, 1603.05118, 2016",
+      "authors": "Stanislau Semeniuta, Aliaksei Severyn, and Erhardt Barth",
+      "title": "Recurrent dropout without memory loss",
+      "venue": "arXiv, 1603.05118, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "treelstm",
+      "raw": "Kai Sheng Tai, Richard Socher, and Christopher D Manning. Improved semantic representations from tree-structured long short-term memory networks. In NAACL, 2015",
+      "authors": "Kai Sheng Tai, Richard Socher, and Christopher D Manning",
+      "title": "Improved semantic representations from tree-structured long short-term memory networks",
+      "venue": "In NAACL, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "theano",
+      "raw": "Theano Development Team. Theano: A Python framework for fast computation of mathematical expressions. arXiv, 1605.02688, 2016",
+      "authors": "Theano Development Team",
+      "title": "Theano: A Python framework for fast computation of mathematical expressions",
+      "venue": "arXiv, 1605.02688, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cpu",
+      "raw": "Vincent Vanhoucke, Andrew Senior, and Mark Z. Mao. Improving the speed of neural networks on CPUs. In Deep Learning and Unsupervised Feature Learning, NIPS Workshop, 2011",
+      "authors": "Vincent Vanhoucke, Andrew Senior, and Mark Z. Mao",
+      "title": "Improving the speed of neural networks on CPUs",
+      "venue": "In Deep Learning and Unsupervised Feature Learning, NIPS Workshop, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\xymatrix{\nsplit \\ar[r] & word2vec \\ar[dl] &  & c & & expr \\ar[dr] & & a^y & p^y \\\\\nrnn \\ar[r] & logits & h \\ar[ur] \\ar[r] & e \\ar[r] & \\alpha \\ar[ul] & word  \\ar[u] & pair \\ar@/_/[ul] & a^x \\ar[u] \\ar[ur] & p^x \\ar[ul] \\ar[u] }",
+      "environment": "displaymath",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "e_t = a(h_t), \\alpha_t = \\frac{\\exp(e_t)}{\\sum_{k = 1}^T \\exp(e_k)}, c = \\sum_{t = 1}^T \\alpha_t h_t",
+      "environment": "equation",
+      "labels": [
+        "eq:ffattention"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "h_{word} &= TreeLSTM(Embedding(word), 0, 0) \\\\\nh_{left, right} &= TreeLSTM(0, h_{left}, h_{right})",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "a^y_i &= f_{A}(f_{A \\to A}(a^x_i), \\sum_{j=1}^N{f_{P \\to A}(p^x_{i, j})}) \\\\\np^y_{i, j} &= f_{P}(f_{A \\to P}(a^x_i, a^x_j) + f_{A \\to P}(a^x_j, a^x_i),\n                    f_{P \\to P}(p^x_{i, j}))",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\TUP(\\TEN_{\\texttt{float32}, \\texttt{[n]}}, \\SEQ(\\TEN_{\\texttt{float32}, \\texttt{[n]}})).",
+      "environment": "equation*",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\TUP(\\SEQ(\\TEN_{\\texttt{float32}, \\texttt{[n]}}), \\SEQ(\\SEQ(\\TEN_{\\texttt{float32}, \\texttt{[m]}}))).",
+      "environment": "equation*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1055,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8660125732422,
+            "y0": 222.1894073486328,
+            "x1": 284.5279541015625,
+            "y1": 232.15200805664062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2189,
+      "numbers": 0,
+      "citations": 16,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 407.94024658203125,
+            "x1": 504.0032958984375,
+            "y1": 417.9028625488281
+          },
+          {
+            "x0": 108.0,
+            "y0": 418.89923095703125,
+            "x1": 404.08837890625,
+            "y1": 428.8618469238281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Dynamic batching",
+      "chars": 5505,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 109.09346008300781,
+            "x1": 430.10076904296875,
+            "y1": 119.05606079101562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Experimental results",
+      "chars": 4409,
+      "numbers": 15,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.9999008178711,
+            "y0": 441.35943603515625,
+            "x1": 504.00311279296875,
+            "y1": 451.3220520019531
+          },
+          {
+            "x0": 107.9999008178711,
+            "y0": 452.31842041015625,
+            "x1": 453.7417907714844,
+            "y1": 462.2810363769531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "A combinator library for neural networks",
+      "chars": 1850,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99998474121094,
+            "y0": 490.829345703125,
+            "x1": 504.0031433105469,
+            "y1": 500.7919616699219
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 501.788330078125,
+            "x1": 347.27166748046875,
+            "y1": 511.7509460449219
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Type system",
+      "chars": 474,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 180.69239807128906,
+            "x1": 423.8243408203125,
+            "y1": 190.65499877929688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Blocks and combinators",
+      "chars": 1157,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996185302734,
+            "y0": 368.9933166503906,
+            "x1": 400.13323974609375,
+            "y1": 378.9559326171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Pipelines",
+      "chars": 2295,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 232.5534210205078,
+            "x1": 503.9993896484375,
+            "y1": 242.51602172851562
+          },
+          {
+            "x0": 108.0,
+            "y0": 243.5124053955078,
+            "x1": 125.28510284423828,
+            "y1": 253.47500610351562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Complex compositions",
+      "chars": 503,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 240.8811798095703,
+            "y0": 104.79145812988281,
+            "x1": 504.0030822753906,
+            "y1": 114.75405883789062
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 115.75044250488281,
+            "x1": 134.7396240234375,
+            "y1": 125.71304321289062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Recursive definitions",
+      "chars": 1460,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 196.1391143798828,
+            "y0": 275.5264892578125,
+            "x1": 504.0032958984375,
+            "y1": 285.4891052246094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Experimental Results",
+      "chars": 1900,
+      "numbers": 5,
+      "citations": 6,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00003814697266,
+            "y0": 611.720458984375,
+            "x1": 405.1045837402344,
+            "y1": 621.6830444335938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Graph convolutions",
+      "chars": 286,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 447.09234619140625,
+            "x1": 504.0030517578125,
+            "y1": 457.0549621582031
+          },
+          {
+            "x0": 108.0,
+            "y0": 458.05133056640625,
+            "x1": 144.2837677001953,
+            "y1": 468.0139465332031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "discussion",
+      "title": "Discussion",
+      "chars": 1571,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 537.9093017578125,
+            "x1": 504.00323486328125,
+            "y1": 547.8718872070312
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 548.8682861328125,
+            "x1": 138.72463989257812,
+            "y1": 558.8308715820312
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 19,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "nse",
+      "stance": "inherits",
+      "cue": "based on",
+      "sentence": "The numbers in parentheses are standard deviations. [Tai et al. 2015] report five independent runs, our results are based on thirty independent runs.[[Munkhdalai et al. 2016; Munkhdalai et al. 2016] do not report standard deviations or number of runs.] Noting the small size of this dataset (8544/1101/2210 trees for train/dev/test), we further evaluated an ensemble consisting of these thirty independently trained models; this variant sets a new state-of-the-art on both subtasks.",
+      "section": "Experimental Results",
+      "sectionKind": "method",
+      "ordinal": 25,
+      "title": "Neural semantic encoders",
+      "authors": "Tsendsuren Munkhdalai and Hong Yu",
+      "year": 2016,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": null
+    },
+    "edges": [
+      {
+        "key": "nse",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "The numbers in parentheses are standard deviations. [Tai et al. 2015] report five independent runs, our results are based on thirty independent runs.[[Munkhdalai et al. 2016; Munkhdalai et al. 2016] do not report standard deviations or number of runs.] Noting the small size of this dataset (8544/1101/2210 trees for train/dev/test), we further evaluated an ensemble consisting of these thirty independently trained models; this variant sets a new state-of-the-art on both subtasks.",
+        "section": "Experimental Results",
+        "sectionKind": "method",
+        "ordinal": 25,
+        "title": "Neural semantic encoders",
+        "authors": "Tsendsuren Munkhdalai and Hong Yu",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "nti",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "The numbers in parentheses are standard deviations. [Tai et al. 2015] report five independent runs, our results are based on thirty independent runs.[[Munkhdalai et al. 2016; Munkhdalai et al. 2016] do not report standard deviations or number of runs.] Noting the small size of this dataset (8544/1101/2210 trees for train/dev/test), we further evaluated an ensemble consisting of these thirty independently trained models; this variant sets a new state-of-the-art on both subtasks.",
+        "section": "Experimental Results",
+        "sectionKind": "method",
+        "ordinal": 25,
+        "title": "Neural tree indexers for text understanding",
+        "authors": "Tsendsuren Munkhdalai and Hong Yu",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "With DCGs, the graph of operations is not static, but is assumed to be different for every input, so multiple inputs no longer naturally batch together in the same way.",
+      "anchorText": "With DCGs, the graph of operations is not static, but is assumed to be different for every input, so multiple inputs no longer naturally batch together in the same way.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "is assumed to",
+      "section": "Dynamic batching",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 216.47447204589844,
+            "y0": 141.9694366455078,
+            "x1": 504.0049133300781,
+            "y1": 151.93203735351562
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 152.9284210205078,
+            "x1": 485.4328918457031,
+            "y1": 162.89102172851562
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Our algorithm requires that all operations which might be used be specified in advance, and it enumerates them for scheduling purposes.",
+      "anchorText": "Our algorithm requires that all operations which might be used be specified in advance, and it enumerates them for scheduling purposes.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "requires that",
+      "section": "Dynamic batching",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 447.5950622558594,
+            "y0": 268.4952392578125,
+            "x1": 504.00323486328125,
+            "y1": 278.4578552246094
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 279.4542236328125,
+            "x1": 504.0032653808594,
+            "y1": 289.4168395996094
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 290.4132080078125,
+            "x1": 192.921142578125,
+            "y1": 300.3758239746094
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Dynamic batching solves the former problem in full generality, we believe for the first time.",
+      "anchorText": "Dynamic batching solves the former problem in full generality, we believe for the first time.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Discussion",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 141.73333740234375,
+            "y0": 548.8682861328125,
+            "x1": 504.00311279296875,
+            "y1": 558.8308715820312
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We suspect that other models with DCGs will have quite a bit of \u201chead room\u201d as well, due to simply having less work done tuning them compared with more mainstream architectures.",
+      "anchorText": "We suspect that other models with DCGs will have quite a bit of \"head room\" as well, due to simply having less work done tuning them compared with more mainstream architectures.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We suspect",
+      "section": "Discussion",
+      "sectionKind": "discussion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 163.8603057861328,
+            "y0": 686.352294921875,
+            "x1": 504.0032653808594,
+            "y1": 696.3148803710938
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 697.311279296875,
+            "x1": 493.98095703125,
+            "y1": 707.2738647460938
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 0,
+    "shown": 0,
+    "bare": 4
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.NE",
+    "primaryName": "Neural and Evolutionary Computing",
+    "categories": [
+      "cs.NE",
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2017-02-07",
+    "authors": [
+      "Moshe Looks",
+      "Marcello Herreshoff",
+      "DeLesley Hutchins",
+      "Peter Norvig"
+    ]
+  }
+}

@@ -1,0 +1,5206 @@
+{
+  "id": "1502.03044",
+  "title": "Show, Attend and Tell: Neural Image Caption Generation with Visual Attention",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1502.03044",
+  "numbers": [
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Also, with probability 0.5 for a given image, we set the sampled attention location to its expected value .",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 247.03480529785156,
+            "y0": 659.6844482421875,
+            "x1": 289.43560791015625,
+            "y1": 669.6470336914062
+          },
+          {
+            "x0": 55.44001770019531,
+            "y0": 671.639404296875,
+            "x1": 289.4415588378906,
+            "y1": 681.6019897460938
+          },
+          {
+            "x0": 55.44001770019531,
+            "y0": 683.5944213867188,
+            "x1": 117.8756103515625,
+            "y1": 693.5570068359375
+          }
+        ]
+      }
+    },
+    {
+      "value": "3 days",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "On our largest dataset (MS COCO), our soft attention model took less than 3 days to train on an NVIDIA Titan Black GPU.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 339.2607116699219,
+            "y0": 493.2781066894531,
+            "x1": 541.441650390625,
+            "y1": 503.24072265625
+          },
+          {
+            "x0": 307.44012451171875,
+            "y0": 505.23309326171875,
+            "x1": 541.4415893554688,
+            "y1": 515.1956787109375
+          },
+          {
+            "x0": 307.44012451171875,
+            "y0": 517.1890869140625,
+            "x1": 378.76239013671875,
+            "y1": 527.1516723632812
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "",
+      "label": "",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "#2",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "BLEU-1,2,3,4/METEOR metrics compared to other methods, indicates a different split, (---) indicates an unknown metric, indicates the authors kindly provided missing metrics by personal communication, indicates an ensemble, indicates using AlexNet",
+      "label": "table:results",
+      "numericCells": 61,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Dataset",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BLEU-1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BLEU-2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BLEU-3",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BLEU-4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "METEOR",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Flickr8k",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Google NIC",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Log Bilinear",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Soft-Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Hard-Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "63",
+            "value": "63",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "65.6",
+            "value": "65.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "67",
+            "value": "67",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "67",
+            "value": "67",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "41",
+            "value": "41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "42.4",
+            "value": "42.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "44.8",
+            "value": "44.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "45.7",
+            "value": "45.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "27",
+            "value": "27",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "27.7",
+            "value": "27.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "29.9",
+            "value": "29.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "31.4",
+            "value": "31.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "17.7",
+            "value": "17.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "19.5",
+            "value": "19.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "21.3",
+            "value": "21.3",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "c| ---",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "17.31",
+            "value": "17.31",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "18.93",
+            "value": "18.93",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "20.30",
+            "value": "20.30",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Flickr30k",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Google NIC",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Log Bilinear",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Soft-Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Hard-Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "66.3",
+            "value": "66.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "60.0",
+            "value": "60.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "66.7",
+            "value": "66.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "66.9",
+            "value": "66.9",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "42.3",
+            "value": "42.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "38",
+            "value": "38",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "43.4",
+            "value": "43.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "43.9",
+            "value": "43.9",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "27.7",
+            "value": "27.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "25.4",
+            "value": "25.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "28.8",
+            "value": "28.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "29.6",
+            "value": "29.6",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "18.3",
+            "value": "18.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "17.1",
+            "value": "17.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "19.1",
+            "value": "19.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "19.9",
+            "value": "19.9",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "c| ---",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "16.88",
+            "value": "16.88",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "18.49",
+            "value": "18.49",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "18.46",
+            "value": "18.46",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "COCO",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "CMU/MS Research",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MS Research",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BRNN",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Google NIC",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Log Bilinear",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Soft-Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Hard-Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "64.2",
+            "value": "64.2",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "66.6",
+            "value": "66.6",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "70.8",
+            "value": "70.8",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "70.7",
+            "value": "70.7",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "71.8",
+            "value": "71.8",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "45.1",
+            "value": "45.1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "46.1",
+            "value": "46.1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "48.9",
+            "value": "48.9",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "49.2",
+            "value": "49.2",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "50.4",
+            "value": "50.4",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "30.4",
+            "value": "30.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "32.9",
+            "value": "32.9",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "34.4",
+            "value": "34.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "34.4",
+            "value": "34.4",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "35.7",
+            "value": "35.7",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "20.3",
+            "value": "20.3",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "24.6",
+            "value": "24.6",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "24.3",
+            "value": "24.3",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "24.3",
+            "value": "24.3",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "25.0",
+            "value": "25.0",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "c| 20.41",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "20.71",
+            "value": "20.71",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "---",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "20.03",
+            "value": "20.03",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "23.90",
+            "value": "23.90",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "23.04",
+            "value": "23.04",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\theHalgorithm": "\\arabic{algorithm}",
+    "\\obs": "\\text{obs}",
+    "\\mis": "\\text{mis}",
+    "\\qt": "\\left<#1\\right>",
+    "\\ql": "\\left[#1\\right]",
+    "\\hess": "\\mathbf{H}",
+    "\\jacob": "\\mathbf{J}",
+    "\\hl": "HL",
+    "\\cost": "\\mathcal{L}",
+    "\\lout": "\\mathbf{r}",
+    "\\louti": "r",
+    "\\outi": "y",
+    "\\out": "\\mathbf{y}",
+    "\\gauss": "\\mathbf{G_N}",
+    "\\eye": "\\mathbf{I}",
+    "\\softmax": "\\phi",
+    "\\targ": "\\mathbf{t}",
+    "\\metric": "\\mathbf{G}",
+    "\\sample": "\\mathbf{z}",
+    "\\bmx": "\\begin{bmatrix}",
+    "\\emx": "\\end{bmatrix}",
+    "\\qexp": "\\left<#1\\right>",
+    "\\vect": "\\mathbf{#1}",
+    "\\vects": "\\boldsymbol{#1}",
+    "\\matr": "\\mathbf{#1}",
+    "\\var": "\\operatorname{Var}",
+    "\\std": "\\operatorname{std}",
+    "\\cov": "\\operatorname{Cov}",
+    "\\diag": "\\operatorname{diag}",
+    "\\matrs": "\\boldsymbol{#1}",
+    "\\va": "\\vect{a}",
+    "\\vb": "\\vect{b}",
+    "\\vc": "\\vect{c}",
+    "\\ve": "\\vect{e}",
+    "\\vh": "\\vect{h}",
+    "\\vv": "\\vect{v}",
+    "\\vx": "\\vect{x}",
+    "\\vn": "\\vect{n}",
+    "\\vz": "\\vect{z}",
+    "\\vw": "\\vect{w}",
+    "\\vs": "\\vect{s}",
+    "\\vf": "\\vect{f}",
+    "\\vi": "\\vect{i}",
+    "\\vo": "\\vect{o}",
+    "\\vy": "\\vect{y}",
+    "\\vg": "\\vect{g}",
+    "\\vm": "\\vect{m}",
+    "\\vu": "\\vect{u}",
+    "\\vL": "\\vect{L}",
+    "\\vr": "\\vect{r}",
+    "\\mW": "\\matr{W}",
+    "\\mG": "\\matr{G}",
+    "\\mX": "\\matr{X}",
+    "\\mQ": "\\matr{Q}",
+    "\\mU": "\\matr{U}",
+    "\\mV": "\\matr{V}",
+    "\\vE": "\\matr{E}",
+    "\\mA": "\\matr{A}",
+    "\\mD": "\\matr{D}",
+    "\\mS": "\\matr{S}",
+    "\\mI": "\\matr{I}",
+    "\\td": "\\text{d}",
+    "\\TT": "\\vects{\\theta}",
+    "\\vsig": "\\vects{\\sigma}",
+    "\\valpha": "\\vects{\\alpha}",
+    "\\vmu": "\\vects{\\mu}",
+    "\\vzero": "\\vect{0}",
+    "\\tf": "\\text{m}",
+    "\\tdf": "\\text{dm}",
+    "\\grad": "\\nabla",
+    "\\alert": "\\textcolor{red}{#1}",
+    "\\N": "\\mathcal{N}",
+    "\\LL": "\\mathcal{L}",
+    "\\HH": "\\mathcal{H}",
+    "\\RR": "\\mathbb{R}",
+    "\\II": "\\mathbb{I}",
+    "\\Scal": "\\mathcal{S}",
+    "\\sigmoid": "\\sigma",
+    "\\E": "\\mathbb{E}",
+    "\\enabla": "\\ensuremath{\n    \\overset{\\raisebox{-0.3ex}[0.5ex][0ex]{\n    \\ensuremath{\\scriptscriptstyle e}}}{\\nabla}}",
+    "\\enhnabla": "\\nabla_{\\hspace{-0.5mm}e}\\,",
+    "\\tred": "\\textcolor{red}{#1}",
+    "\\tgreen": "\\textcolor{green}{#1}",
+    "\\tblue": "\\textcolor{blue}{#1}",
+    "\\todo": "{\\Large\\textcolor{red}{#1}}",
+    "\\done": "{\\Large\\textcolor{green}{#1}}",
+    "\\dd": "\\ensuremath{\\mbox{d}#1}",
+    "\\newln": "\\\\&\\quad\\quad{}",
+    "\\Ax": "\\mathcal{A}_x",
+    "\\Ay": "\\mathcal{A}_y",
+    "\\ola": "\\overleftarrow",
+    "\\ora": "\\overrightarrow",
+    "\\ov": "\\overline",
+    "\\ts": "\\rule{0pt}{2.6ex}",
+    "\\ms": "\\rule{0pt}{0ex}",
+    "\\bs": "\\rule[-1.2ex]{0pt}{0pt}",
+    "\\bx": "\\textbf{x}",
+    "\\by": "\\textbf{y}",
+    "\\bW": "\\textbf{W}"
+  },
+  "references": [
+    {
+      "key": "Ba2014",
+      "raw": "Ba, Jimmy Lei, Mnih, Volodymyr, and Kavukcuoglu, Koray. Multiple object recognition with visual attention. arXiv: 1412.7755, December 2014",
+      "authors": "Ba, Jimmy Lei, Mnih, Volodymyr, and Kavukcuoglu, Koray",
+      "title": "Multiple object recognition with visual attention",
+      "venue": "December 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bahdanau2014",
+      "raw": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua. Neural machine translation by jointly learning to align and translate. arXiv: 1409.0473, September 2014",
+      "authors": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "September 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "baldi2014dropout",
+      "raw": "Baldi, Pierre and Sadowski, Peter. The dropout learning algorithm. Artificial intelligence, 210: 0 78--122, 2014",
+      "authors": "Baldi, Pierre and Sadowski, Peter",
+      "title": "The dropout learning algorithm",
+      "venue": "Artificial intelligence, 210: 0 78--122, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bastien2012",
+      "raw": "Bastien, Frederic, Lamblin, Pascal, Pascanu, Razvan, Bergstra, James, Goodfellow, Ian, Bergeron, Arnaud, Bouchard, Nicolas, Warde-Farley, David, and Bengio, Yoshua. Theano: new features and speed improvements. Submited to the Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop, 2012",
+      "authors": "Bastien, Frederic, Lamblin, Pascal, Pascanu, Razvan, Bergstra, James, Goodfellow, Ian, Bergeron, Arnaud, Bouchard, Nicolas, Warde-Farley, David, and Bengio, Yoshua",
+      "title": "Theano: new features and speed improvements",
+      "venue": "Submited to the Deep Learning and Unsupervised Feature Learning NIPS 2012 Workshop, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Bergstra2010",
+      "raw": "Bergstra, James, Breuleux, Olivier, Bastien, Fr\\'ed\\'eric, Lamblin, Pascal, Pascanu, Razvan, Desjardins, Guillaume, Turian, Joseph, Warde-Farley, David, and Bengio, Yoshua. Theano: a CPU and GPU math expression compiler. In Proceedings of the Python for Scientific Computing Conference (SciPy), 2010",
+      "authors": "Bergstra, James, Breuleux, Olivier, Bastien, Fr\\'ed\\'eric, Lamblin, Pascal, Pascanu, Razvan, Desjardins, Guillaume, Turian, Joseph, Warde-Farley, David, and Bengio, Yoshua",
+      "title": "Theano: a CPU and GPU math expression compiler",
+      "venue": "In Proceedings of the Python for Scientific Computing Conference (SciPy), 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Chen2014",
+      "raw": "Chen, Xinlei and Zitnick, C Lawrence. Learning a recurrent visual representation for image caption generation. arXiv preprint arXiv:1411.5654, 2014",
+      "authors": "Chen, Xinlei and Zitnick, C Lawrence",
+      "title": "Learning a recurrent visual representation for image caption generation",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1411.5654",
+      "doi": null
+    },
+    {
+      "key": "Cho2014",
+      "raw": "Cho, Kyunghyun, van Merrienboer, Bart, Gulcehre, Caglar, Bougares, Fethi, Schwenk, Holger, and Bengio, Yoshua. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In EMNLP, October 2014",
+      "authors": "Cho, Kyunghyun, van Merrienboer, Bart, Gulcehre, Caglar, Bougares, Fethi, Schwenk, Holger, and Bengio, Yoshua",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "venue": "In EMNLP, October 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Corbetta2002",
+      "raw": "Corbetta, Maurizio and Shulman, Gordon L. Control of goal-directed and stimulus-driven attention in the brain. Nature reviews neuroscience, 3 0 (3): 0 201--215, 2002",
+      "authors": "Corbetta, Maurizio and Shulman, Gordon L",
+      "title": "Control of goal-directed and stimulus-driven attention in the brain",
+      "venue": "Nature reviews neuroscience, 3 0 (3): 0 201--215, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Denil2012",
+      "raw": "Denil, Misha, Bazzani, Loris, Larochelle, Hugo, and de Freitas, Nando. Learning where to attend with deep architectures for image tracking. Neural Computation, 2012",
+      "authors": "Denil, Misha, Bazzani, Loris, Larochelle, Hugo, and de Freitas, Nando",
+      "title": "Learning where to attend with deep architectures for image tracking",
+      "venue": "Neural Computation, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Denkowski2014",
+      "raw": "Denkowski, Michael and Lavie, Alon. Meteor universal: Language specific translation evaluation for any target language. In Proceedings of the EACL 2014 Workshop on Statistical Machine Translation, 2014",
+      "authors": "Denkowski, Michael and Lavie, Alon",
+      "title": "Meteor universal: Language specific translation evaluation for any target language",
+      "venue": "In Proceedings of the EACL 2014 Workshop on Statistical Machine Translation, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Donahue2014",
+      "raw": "Donahue, Jeff, Hendrikcs, Lisa Anne, Guadarrama, Segio, Rohrbach, Marcus, Venugopalan, Subhashini, Saenko, Kate, and Darrell, Trevor. Long-term recurrent convolutional networks for visual recognition and description. arXiv: 1411.4389v2, November 2014",
+      "authors": "Donahue, Jeff, Hendrikcs, Lisa Anne, Guadarrama, Segio, Rohrbach, Marcus, Venugopalan, Subhashini, Saenko, Kate, and Darrell, Trevor",
+      "title": "Long-term recurrent convolutional networks for visual recognition and description",
+      "venue": "November 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Elliott2013",
+      "raw": "Elliott, Desmond and Keller, Frank. Image description using visual dependency representations. In EMNLP, 2013",
+      "authors": "Elliott, Desmond and Keller, Frank",
+      "title": "Image description using visual dependency representations",
+      "venue": "In EMNLP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Fang2014",
+      "raw": "Fang, Hao, Gupta, Saurabh, Iandola, Forrest, Srivastava, Rupesh, Deng, Li, Doll\\'ar, Piotr, Gao, Jianfeng, He, Xiaodong, Mitchell, Margaret, Platt, John, et al. From captions to visual concepts and back. arXiv: 1411.4952, November 2014",
+      "authors": "Fang, Hao, Gupta, Saurabh, Iandola, Forrest, Srivastava, Rupesh, Deng, Li, Doll\\'ar, Piotr, Gao, Jianfeng, He, Xiaodong, Mitchell, Margaret, Platt, John, et al",
+      "title": "From captions to visual concepts and back",
+      "venue": "November 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter+Schmidhuber-1997",
+      "raw": "Hochreiter, S. and Schmidhuber, J. Long short-term memory. Neural Computation, 9 0 (8): 0 1735--1780, 1997",
+      "authors": "Hochreiter, S. and Schmidhuber, J",
+      "title": "Long short-term memory",
+      "venue": "Neural Computation, 9 0 (8): 0 1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hodosh2013",
+      "raw": "Hodosh, Micah, Young, Peter, and Hockenmaier, Julia. Framing image description as a ranking task: Data, models and evaluation metrics. Journal of Artificial Intelligence Research, pp.\\ 853--899, 2013",
+      "authors": "Hodosh, Micah, Young, Peter, and Hockenmaier, Julia",
+      "title": "Framing image description as a ranking task: Data, models and evaluation metrics",
+      "venue": "Journal of Artificial Intelligence Research, pp.\\ 853--899, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Karpathy2014",
+      "raw": "Karpathy, Andrej and Li, Fei-Fei. Deep visual-semantic alignments for generating image descriptions. arXiv: 1412.2306, December 2014",
+      "authors": "Karpathy, Andrej and Li, Fei-Fei",
+      "title": "Deep visual-semantic alignments for generating image descriptions",
+      "venue": "December 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kingma2014",
+      "raw": "Kingma, Diederik P. and Ba, Jimmy. Adam: A Method for Stochastic Optimization. arXiv: 1412.6980, December 2014",
+      "authors": "Kingma, Diederik P. and Ba, Jimmy",
+      "title": "Adam: A Method for Stochastic Optimization",
+      "venue": "December 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kiros2014a",
+      "raw": "Kiros, Ryan, Salahutdinov, Ruslan, and Zemel, Richard. Multimodal neural language models. In International Conference on Machine Learning, pp.\\ 595--603, 2014",
+      "authors": "Kiros, Ryan, Salahutdinov, Ruslan, and Zemel, Richard",
+      "title": "Multimodal neural language models",
+      "venue": "In International Conference on Machine Learning, pp.\\ 595--603, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kiros2014b",
+      "raw": "Kiros, Ryan, Salakhutdinov, Ruslan, and Zemel, Richard. Unifying visual-semantic embeddings with multimodal neural language models. arXiv: 1411.2539, November 2014",
+      "authors": "Kiros, Ryan, Salakhutdinov, Ruslan, and Zemel, Richard",
+      "title": "Unifying visual-semantic embeddings with multimodal neural language models",
+      "venue": "November 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Krizhevsky2012",
+      "raw": "Krizhevsky, Alex, Sutskever, Ilya, and Hinton, Geoffrey. ImageNet classification with deep convolutional neural networks. In NIPS. 2012",
+      "authors": "Krizhevsky, Alex, Sutskever, Ilya, and Hinton, Geoffrey",
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "venue": "In NIPS. 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kulkarni2013",
+      "raw": "Kulkarni, Girish, Premraj, Visruth, Ordonez, Vicente, Dhar, Sagnik, Li, Siming, Choi, Yejin, Berg, Alexander C, and Berg, Tamara L. Babytalk: Understanding and generating simple image descriptions. PAMI, IEEE Transactions on, 35 0 (12): 0 2891--2903, 2013",
+      "authors": "Kulkarni, Girish, Premraj, Visruth, Ordonez, Vicente, Dhar, Sagnik, Li, Siming, Choi, Yejin, Berg, Alexander C, and Berg, Tamara L",
+      "title": "Babytalk: Understanding and generating simple image descriptions",
+      "venue": "PAMI, IEEE Transactions on, 35 0 (12): 0 2891--2903, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kuznetsova2012",
+      "raw": "Kuznetsova, Polina, Ordonez, Vicente, Berg, Alexander C, Berg, Tamara L, and Choi, Yejin. Collective generation of natural image descriptions. In Association for Computational Linguistics. ACL, 2012",
+      "authors": "Kuznetsova, Polina, Ordonez, Vicente, Berg, Alexander C, Berg, Tamara L, and Choi, Yejin",
+      "title": "Collective generation of natural image descriptions",
+      "venue": "In Association for Computational Linguistics. ACL, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Kuznetsova2014",
+      "raw": "Kuznetsova, Polina, Ordonez, Vicente, Berg, Tamara L, and Choi, Yejin. Treetalk: Composition and compression of trees for image descriptions. TACL, 2 0 (10): 0 351--362, 2014",
+      "authors": "Kuznetsova, Polina, Ordonez, Vicente, Berg, Tamara L, and Choi, Yejin",
+      "title": "Treetalk: Composition and compression of trees for image descriptions",
+      "venue": "TACL, 2 0 (10): 0 351--362, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Larochelle2010",
+      "raw": "Larochelle, Hugo and Hinton, Geoffrey E. Learning to combine foveal glimpses with a third-order boltzmann machine. In NIPS, pp.\\ 1243--1251, 2010",
+      "authors": "Larochelle, Hugo and Hinton, Geoffrey E",
+      "title": "Learning to combine foveal glimpses with a third-order boltzmann machine",
+      "venue": "In NIPS, pp.\\ 1243--1251, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Li2011",
+      "raw": "Li, Siming, Kulkarni, Girish, Berg, Tamara L, Berg, Alexander C, and Choi, Yejin. Composing simple image descriptions using web-scale n-grams. In Computational Natural Language Learning. ACL, 2011",
+      "authors": "Li, Siming, Kulkarni, Girish, Berg, Tamara L, Berg, Alexander C, and Choi, Yejin",
+      "title": "Composing simple image descriptions using web-scale n-grams",
+      "venue": "In Computational Natural Language Learning. ACL, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Lin2014",
+      "raw": "Lin, Tsung-Yi, Maire, Michael, Belongie, Serge, Hays, James, Perona, Pietro, Ramanan, Deva, Doll\\'ar, Piotr, and Zitnick, C Lawrence. Microsoft coco: Common objects in context. In ECCV, pp.\\ 740--755. 2014",
+      "authors": "Lin, Tsung-Yi, Maire, Michael, Belongie, Serge, Hays, James, Perona, Pietro, Ramanan, Deva, Doll\\'ar, Piotr, and Zitnick, C Lawrence",
+      "title": "Microsoft coco: Common objects in context",
+      "venue": "In ECCV, pp.\\ 740--755. 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mao2014",
+      "raw": "Mao, Junhua, Xu, Wei, Yang, Yi, Wang, Jiang, and Yuille, Alan. Deep captioning with multimodal recurrent neural networks (m-rnn). arXiv: 1412.6632, December 2014",
+      "authors": "Mao, Junhua, Xu, Wei, Yang, Yi, Wang, Jiang, and Yuille, Alan",
+      "title": "Deep captioning with multimodal recurrent neural networks (m-rnn)",
+      "venue": "December 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mitchell2012",
+      "raw": "Mitchell, Margaret, Han, Xufeng, Dodge, Jesse, Mensch, Alyssa, Goyal, Amit, Berg, Alex, Yamaguchi, Kota, Berg, Tamara, Stratos, Karl, and Daum\\'e III, Hal. Midge: Generating image descriptions from computer vision detections. In European Chapter of the Association for Computational Linguistics, pp.\\ 747--756. ACL, 2012",
+      "authors": "Mitchell, Margaret, Han, Xufeng, Dodge, Jesse, Mensch, Alyssa, Goyal, Amit, Berg, Alex, Yamaguchi, Kota, Berg, Tamara, Stratos, Karl, and Daum\\'e III, Hal",
+      "title": "Midge: Generating image descriptions from computer vision detections",
+      "venue": "In European Chapter of the Association for Computational Linguistics, pp.\\ 747--756. ACL, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Mnih2014",
+      "raw": "Mnih, Volodymyr, Hees, Nicolas, Graves, Alex, and Kavukcuoglu, Koray. Recurrent models of visual attention. In NIPS, 2014",
+      "authors": "Mnih, Volodymyr, Hees, Nicolas, Graves, Alex, and Kavukcuoglu, Koray",
+      "title": "Recurrent models of visual attention",
+      "venue": "In NIPS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Pascanu2014",
+      "raw": "Pascanu, Razvan, Gulcehre, Caglar, Cho, Kyunghyun, and Bengio, Yoshua. How to construct deep recurrent neural networks. In ICLR, 2014",
+      "authors": "Pascanu, Razvan, Gulcehre, Caglar, Cho, Kyunghyun, and Bengio, Yoshua",
+      "title": "How to construct deep recurrent neural networks",
+      "venue": "In ICLR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Rensink2000",
+      "raw": "Rensink, Ronald A. The dynamic representation of scenes. Visual cognition, 7 0 (1-3): 0 17--42, 2000",
+      "authors": "Rensink, Ronald A",
+      "title": "The dynamic representation of scenes",
+      "venue": "Visual cognition, 7 0 (1-3): 0 17--42, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Imagenet14",
+      "raw": "Russakovsky, Olga, Deng, Jia, Su, Hao, Krause, Jonathan, Satheesh, Sanjeev, Ma, Sean, Huang, Zhiheng, Karpathy, Andrej, Khosla, Aditya, Bernstein, Michael, Berg, Alexander C., and Fei-Fei, Li. ImageNet Large Scale Visual Recognition Challenge, 2014",
+      "authors": "Russakovsky, Olga, Deng, Jia, Su, Hao, Krause, Jonathan, Satheesh, Sanjeev, Ma, Sean, Huang, Zhiheng, Karpathy, Andrej, Khosla, Aditya, Bernstein, Michael, Berg, Alexander C., and Fei-Fei, Li",
+      "title": "ImageNet Large Scale Visual Recognition Challenge, 2014",
+      "venue": "",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Simonyan14",
+      "raw": "Simonyan, K. and Zisserman, A. Very deep convolutional networks for large-scale image recognition. CoRR, abs/1409.1556, 2014",
+      "authors": "Simonyan, K. and Zisserman, A",
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "venue": "CoRR, abs/1409.1556, 2014",
+      "year": 2014,
+      "arxivId": "1409.1556",
+      "doi": null
+    },
+    {
+      "key": "Snoek2012",
+      "raw": "Snoek, Jasper, Larochelle, Hugo, and Adams, Ryan P. Practical bayesian optimization of machine learning algorithms. In NIPS, pp.\\ 2951--2959, 2012",
+      "authors": "Snoek, Jasper, Larochelle, Hugo, and Adams, Ryan P",
+      "title": "Practical bayesian optimization of machine learning algorithms",
+      "venue": "In NIPS, pp.\\ 2951--2959, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Snoek2014",
+      "raw": "Snoek, Jasper, Swersky, Kevin, Zemel, Richard S, and Adams, Ryan P. Input warping for bayesian optimization of non-stationary functions. arXiv preprint arXiv:1402.0929, 2014",
+      "authors": "Snoek, Jasper, Swersky, Kevin, Zemel, Richard S, and Adams, Ryan P",
+      "title": "Input warping for bayesian optimization of non-stationary functions",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1402.0929",
+      "doi": null
+    },
+    {
+      "key": "Srivastava14",
+      "raw": "Srivastava, Nitish, Hinton, Geoffrey, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan. Dropout: A simple way to prevent neural networks from overfitting. JMLR, 15, 2014",
+      "authors": "Srivastava, Nitish, Hinton, Geoffrey, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan",
+      "title": "Dropout: A simple way to prevent neural networks from overfitting",
+      "venue": "JMLR, 15, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Sutskever2014",
+      "raw": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc VV. Sequence to sequence learning with neural networks. In NIPS, pp.\\ 3104--3112, 2014",
+      "authors": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc VV",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In NIPS, pp.\\ 3104--3112, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Szegedy2014",
+      "raw": "Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet, Pierre, Reed, Scott, Anguelov, Dragomir, Erhan, Dumitru, Vanhoucke, Vincent, and Rabinovich, Andrew. Going deeper with convolutions. arXiv preprint arXiv:1409.4842, 2014",
+      "authors": "Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet, Pierre, Reed, Scott, Anguelov, Dragomir, Erhan, Dumitru, Vanhoucke, Vincent, and Rabinovich, Andrew",
+      "title": "Going deeper with convolutions",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.4842",
+      "doi": null
+    },
+    {
+      "key": "Tang2014",
+      "raw": "Tang, Yichuan, Srivastava, Nitish, and Salakhutdinov, Ruslan R. Learning generative models with visual attention. In NIPS, pp.\\ 1808--1816, 2014",
+      "authors": "Tang, Yichuan, Srivastava, Nitish, and Salakhutdinov, Ruslan R",
+      "title": "Learning generative models with visual attention",
+      "venue": "In NIPS, pp.\\ 1808--1816, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Tieleman2012",
+      "raw": "Tieleman, Tijmen and Hinton, Geoffrey. Lecture 6.5 - rmsprop. Technical report, 2012",
+      "authors": "Tieleman, Tijmen and Hinton, Geoffrey",
+      "title": "Lecture 6.5 - rmsprop",
+      "venue": "Technical report, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Vinyals2014",
+      "raw": "Vinyals, Oriol, Toshev, Alexander, Bengio, Samy, and Erhan, Dumitru. Show and tell: A neural image caption generator. arXiv: 1411.4555, November 2014",
+      "authors": "Vinyals, Oriol, Toshev, Alexander, Bengio, Samy, and Erhan, Dumitru",
+      "title": "Show and tell: A neural image caption generator",
+      "venue": "November 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Weaver+Tao-UAI2001",
+      "raw": "Weaver, Lex and Tao, Nigel. The optimal reward baseline for gradient-based reinforcement learning. In Proc. UAI'2001, pp.\\ 538--545, 2001",
+      "authors": "Weaver, Lex and Tao, Nigel",
+      "title": "The optimal reward baseline for gradient-based reinforcement learning",
+      "venue": "In Proc. UAI'2001, pp.\\ 538--545, 2001",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Williams92",
+      "raw": "Williams, Ronald J. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine learning, 8 0 (3-4): 0 229--256, 1992",
+      "authors": "Williams, Ronald J",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "venue": "Machine learning, 8 0 (3-4): 0 229--256, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Yang2011",
+      "raw": "Yang, Yezhou, Teo, Ching Lik, Daum\\'e III, Hal, and Aloimonos, Yiannis. Corpus-guided sentence generation of natural images. In EMNLP, pp.\\ 444--454. ACL, 2011",
+      "authors": "Yang, Yezhou, Teo, Ching Lik, Daum\\'e III, Hal, and Aloimonos, Yiannis",
+      "title": "Corpus-guided sentence generation of natural images",
+      "venue": "In EMNLP, pp.\\ 444--454. ACL, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Young2014",
+      "raw": "Young, Peter, Lai, Alice, Hodosh, Micah, and Hockenmaier, Julia. From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions. TACL, 2: 0 67--78, 2014",
+      "authors": "Young, Peter, Lai, Alice, Hodosh, Micah, and Hockenmaier, Julia",
+      "title": "From image descriptions to visual denotations: New similarity metrics for semantic inference over event descriptions",
+      "venue": "TACL, 2: 0 67--78, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Zaremba2014",
+      "raw": "Zaremba, Wojciech, Sutskever, Ilya, and Vinyals, Oriol. Recurrent neural network regularization. arXiv preprint arXiv:1409.2329, September 2014",
+      "authors": "Zaremba, Wojciech, Sutskever, Ilya, and Vinyals, Oriol",
+      "title": "Recurrent neural network regularization",
+      "venue": "arXiv preprint September 2014",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "a = \\left\\{\\va_1, \\ldots, \\va_L \\right\\},\\mbox{ } \\va_i \\in \\RR^{D}",
+      "environment": "align*",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\begin{pmatrix}\n\\vi_t \\\\\n\\vf_t \\\\ \n\\vo_t \\\\\n\\vg_t \\\\\n\\end{pmatrix} =\n&\n\\begin{pmatrix}\n\\sigmoid \\\\\n\\sigmoid \\\\ \n\\sigmoid \\\\\n\\tanh \\\\\n\\end{pmatrix}\nT_{D+m+n, n}\n\\begin{pmatrix}\n\\vE\\vy_{t-1}\\\\\n\\vh_{t-1}\\\\\n\\hat{\\vz_t}\\\\\n\\end{pmatrix}\n\\\\\n\n\\vc_t &= \\vf_t \\odot \\vc_{t-1} + \\vi_t \\odot \\vg_t \\\\\n\n\\vh_t &= \\vo_t \\odot \\tanh (\\vc_{t}).",
+      "environment": "align",
+      "labels": [
+        "eq:lstm_gates",
+        "eq:lstm_memory",
+        "eq:lstm_hidden"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "e_{ti} =& f_{\\mbox{att}} (\\va_i, \\vh_{t-1}) \\\\\n    \n    \\alpha_{ti} =& \\frac{\\exp(e_{ti})}{\\sum_{k=1}^L \\exp(e_{tk})}.",
+      "environment": "align",
+      "labels": [
+        "eq:alpha"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "\\hat{\\vz}_t = \\phi\\left( \\left\\{ \\va_i \\right\\}, \\left\\{ \\alpha_i \\right\\}\n    \\right),",
+      "environment": "align",
+      "labels": [
+        "eq:context"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\vc_0 = f_{\\text{init,c}} (\\frac{1}{L} \\sum_i^L \\va_i) \\nonumber \\\\\n    \\vh_0 = f_{\\text{init,h}} (\\frac{1}{L} \\sum_i^L \\va_i) \\nonumber",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "p(\\vy_t | \\va, \\vy_1^{t-1}) \\propto \\exp(\\vL_o(\\vE\\vy_{t-1} + \\vL_h\\vh_t+ \\vL_z \\hat{\\vz}_t))",
+      "environment": "gather",
+      "labels": [
+        "eq:p-out"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "p(&s_{t,i} = 1 \\mid s_{j<t}, \\va ) = \\alpha_{t,i} \\\\\n\n    \\hat{\\vz}_t &= \\sum_i {s}_{t,i}\\va_{i}.",
+      "environment": "align",
+      "labels": [
+        "eq:s_dist",
+        "eq:hard_context"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "L_s  = & \\sum_s p(s \\mid \\va) \\log p(\\vy \\mid s, \\va) \\nonumber \\\\\n   \n     \\leq & \\log \\sum_{s}p(s \\mid \\va)p( \\vy \\mid s, \\va) \\nonumber \\\\\n     = & \\log p( \\vy \\mid \\va)",
+      "environment": "align",
+      "labels": [
+        "eq:mll"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\frac{\\partial L_s}{\\partial W} =  \\sum_s p(s \\mid \\va) \\bigg[ \\frac{\\partial \\log p(\\vy \\mid s, \\va)}{\\partial W} + \\\\\n                                \\log p(\\vy \\mid s, \\va) \\frac{\\partial \\log p(s \\mid \\va)}{\\partial W} \\bigg].",
+      "environment": "multline",
+      "labels": [
+        "eq:lb_gradient"
+      ]
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\tilde{s_t} \\sim \\text{Multinoulli}_L(\\{\\alpha_i\\}) \\nonumber",
+      "environment": "gather",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\frac{\\partial L_s}{\\partial W} \\approx \\frac{1}{N} \\sum_{n=1}^{N} \\bigg[ \\frac{\\partial \\log p(\\vy \\mid \\tilde{s}^n, \\va)}{\\partial W} +  \\\\\n                                \\log p(\\vy \\mid \\tilde{s}^n, \\va) \\frac{\\partial \\log p(\\tilde{s}^n \\mid \\va)}{\\partial W} \\bigg]",
+      "environment": "multline",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "b_k = 0.9 \\times b_{k-1} + 0.1 \\times \\log p(\\vy \\mid \\tilde{s}_k , \\va) \\nonumber",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\frac{\\partial L_s}{\\partial W} \\approx \\frac{1}{N} \\sum_{n=1}^{N} \\bigg[ \\frac{\\partial \\log p(\\vy \\mid \\tilde{s}^n, \\va)}{\\partial W} +  \\\\\n                               \\lambda_r( \\log p(\\vy \\mid \\tilde{s}^n, \\va) -  b) \\frac{\\partial \\log p(\\tilde{s}^n \\mid \\va)}{\\partial W} + \\lambda_e\\frac{\\partial H[\\tilde{s}^n]}{\\partial W} \\bigg]\n\\nonumber",
+      "environment": "multline",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\mathbb{E}_{p(s_t|a)}[\\hat{\\vz}_t] =  \\sum_{i=1}^L \\alpha_{t,i} \\va_{i}",
+      "environment": "align",
+      "labels": [
+        "eq:s_dist_soft"
+      ]
+    },
+    {
+      "ordinal": 14,
+      "latex": "NWGM[p(y_t=k \\mid \\va)] &= {\\prod_i \\exp(n_{t,k,i})^{p(s_{t,i}=1|a)} \\over \\sum_j \\prod_i \\exp(n_{t,j,i})^{p(s_{t,i}=1|a)}} \\nonumber \\\\\n               &= {\\exp(\\mathbb{E}_{p(s_{t}|a)}[n_{t,k}]) \\over \\sum_j \\exp(\\mathbb{E}_{p(s_t|a)}[n_{t,j}])} \\nonumber",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 15,
+      "latex": "L_d =  -\\log(P(\\textbf{y}|\\textbf{x})) + \\lambda \\sum_i^{L}(1 - \\sum_t^C \\alpha_{ti})^2",
+      "environment": "gather",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 644,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 75.36639404296875,
+            "y0": 295.16253662109375,
+            "x1": 269.5175476074219,
+            "y1": 305.1251525878906
+          },
+          {
+            "x0": 75.36639404296875,
+            "y0": 307.1175231933594,
+            "x1": 269.5175476074219,
+            "y1": 317.08013916015625
+          },
+          {
+            "x0": 75.36639404296875,
+            "y0": 319.0735168457031,
+            "x1": 269.5176086425781,
+            "y1": 329.0361328125
+          },
+          {
+            "x0": 75.36639404296875,
+            "y0": 331.02850341796875,
+            "x1": 170.30996704101562,
+            "y1": 340.9911193847656
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3826,
+      "numbers": 2,
+      "citations": 11,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.440391540527344,
+            "y0": 510.245361328125,
+            "x1": 289.44195556640625,
+            "y1": 520.2079467773438
+          },
+          {
+            "x0": 55.440391540527344,
+            "y0": 522.2003173828125,
+            "x1": 289.44189453125,
+            "y1": 532.1629028320312
+          },
+          {
+            "x0": 55.440391540527344,
+            "y0": 534.1553344726562,
+            "x1": 193.46221923828125,
+            "y1": 544.117919921875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 3040,
+      "numbers": 0,
+      "citations": 28,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 418.3533935546875,
+            "x1": 541.44140625,
+            "y1": 428.3160095214844
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 430.3083801269531,
+            "x1": 500.7939453125,
+            "y1": 440.27099609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Image Caption Generation with Attention Mechanism",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Model Details",
+      "chars": 349,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.43999481201172,
+            "y0": 634.1904296875,
+            "x1": 289.4415283203125,
+            "y1": 644.1530151367188
+          },
+          {
+            "x0": 55.43999481201172,
+            "y0": 646.1454467773438,
+            "x1": 289.4415283203125,
+            "y1": 656.1080322265625
+          },
+          {
+            "x0": 55.43999481201172,
+            "y0": 658.1004638671875,
+            "x1": 101.28787994384766,
+            "y1": 668.0630493164062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Encoder: Convolutional Features",
+      "chars": 1170,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.43994140625,
+            "y0": 375.1614074707031,
+            "x1": 541.4415283203125,
+            "y1": 385.1240234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Decoder: Long Short-Term Memory Network",
+      "chars": 2616,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.4399719238281,
+            "y0": 659.684326171875,
+            "x1": 320.4710693359375,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 329.3477478027344,
+            "y0": 659.684326171875,
+            "x1": 342.6278991699219,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 351.50457763671875,
+            "y0": 659.684326171875,
+            "x1": 355.927978515625,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 364.8146057128906,
+            "y0": 659.684326171875,
+            "x1": 382.528076171875,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 391.4047546386719,
+            "y0": 659.684326171875,
+            "x1": 432.9089050292969,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 441.78558349609375,
+            "y0": 659.684326171875,
+            "x1": 474.9909362792969,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 483.86761474609375,
+            "y0": 659.684326171875,
+            "x1": 517.072998046875,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 525.9496459960938,
+            "y0": 659.684326171875,
+            "x1": 541.4415283203125,
+            "y1": 669.6469116210938
+          },
+          {
+            "x0": 307.4399719238281,
+            "y0": 671.6392822265625,
+            "x1": 327.8134460449219,
+            "y1": 681.6018676757812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Learning Stochastic \"Hard\" vs Deterministic \"Soft\" Attention",
+      "chars": 226,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.4400634765625,
+            "y0": 308.09857177734375,
+            "x1": 541.4415893554688,
+            "y1": 318.0611877441406
+          },
+          {
+            "x0": 307.4400634765625,
+            "y0": 320.0535583496094,
+            "x1": 383.9527587890625,
+            "y1": 330.01617431640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Stochastic \"Hard\" Attention",
+      "chars": 2294,
+      "numbers": 2,
+      "citations": 6,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.4400634765625,
+            "y0": 375.7935485839844,
+            "x1": 446.62750244140625,
+            "y1": 385.75616455078125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Deterministic \"Soft\" Attention",
+      "chars": 1909,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.43994140625,
+            "y0": 589.703369140625,
+            "x1": 541.4413452148438,
+            "y1": 599.6659545898438
+          },
+          {
+            "x0": 307.43994140625,
+            "y0": 601.6583862304688,
+            "x1": 357.4222412109375,
+            "y1": 611.6209716796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Doubly Stochastic Attention",
+      "chars": 1931,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 180.21705627441406,
+            "y0": 550.947265625,
+            "x1": 289.4369812011719,
+            "y1": 560.9098510742188
+          },
+          {
+            "x0": 55.44005584716797,
+            "y0": 562.9022827148438,
+            "x1": 90.03018951416016,
+            "y1": 572.8648681640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Training Procedure",
+      "chars": 2099,
+      "numbers": 7,
+      "citations": 7,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.4400634765625,
+            "y0": 182.44422912597656,
+            "x1": 541.44140625,
+            "y1": 192.40682983398438
+          },
+          {
+            "x0": 307.4400634765625,
+            "y0": 194.3992462158203,
+            "x1": 541.4415283203125,
+            "y1": 204.36184692382812
+          },
+          {
+            "x0": 307.4400634765625,
+            "y0": 206.35426330566406,
+            "x1": 345.3576965332031,
+            "y1": 216.31686401367188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 135,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 386.56744384765625,
+            "x1": 289.4414367675781,
+            "y1": 396.5300598144531
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 398.5224304199219,
+            "x1": 289.4415588378906,
+            "y1": 408.48504638671875
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 410.4784240722656,
+            "x1": 145.91033935546875,
+            "y1": 420.4410400390625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Data",
+      "chars": 1230,
+      "numbers": 8,
+      "citations": 4,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 454.263427734375,
+            "x1": 289.44146728515625,
+            "y1": 464.2260437011719
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 466.2184143066406,
+            "x1": 289.4414978027344,
+            "y1": 476.1810302734375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 478.17340087890625,
+            "x1": 289.4415588378906,
+            "y1": 488.1360168457031
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 490.12939453125,
+            "x1": 160.2565155029297,
+            "y1": 500.0920104980469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation Procedures",
+      "chars": 1129,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 406.3254089355469,
+            "x1": 541.4414672851562,
+            "y1": 416.28802490234375
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 418.2803955078125,
+            "x1": 327.0762939453125,
+            "y1": 428.2430114746094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Quantitative Analysis",
+      "chars": 541,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 96.45602416992188,
+            "y0": 113.25343322753906,
+            "x1": 289.4415283203125,
+            "y1": 123.21603393554688
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 125.20845031738281,
+            "x1": 289.4415588378906,
+            "y1": 135.17105102539062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Qualitative Analysis: Learning to attend",
+      "chars": 1365,
+      "numbers": 11,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.439998626708984,
+            "y0": 264.635498046875,
+            "x1": 289.4415283203125,
+            "y1": 274.5981140136719
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 276.5904846191406,
+            "x1": 289.4415283203125,
+            "y1": 286.5531005859375
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 288.54547119140625,
+            "x1": 227.6833953857422,
+            "y1": 298.5080871582031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 577,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 55.43999481201172,
+            "y0": 611.4522705078125,
+            "x1": 289.4415283203125,
+            "y1": 621.4148559570312
+          },
+          {
+            "x0": 55.43999481201172,
+            "y0": 623.4072875976562,
+            "x1": 289.4415283203125,
+            "y1": 633.369873046875
+          },
+          {
+            "x0": 55.43999481201172,
+            "y0": 635.36328125,
+            "x1": 206.65234375,
+            "y1": 645.3258666992188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 496,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 129.36134338378906,
+            "x1": 541.4414672851562,
+            "y1": 139.32394409179688
+          },
+          {
+            "x0": 307.44000244140625,
+            "y0": 141.3163604736328,
+            "x1": 337.3178405761719,
+            "y1": 151.27896118164062
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 5,
+      "extends": 3,
+      "contests": 0,
+      "compares": 0,
+      "background": 37,
+      "traversable": 4
+    },
+    "foundation": {
+      "key": "Pascanu2014",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "The initial memory state and hidden state of the LSTM are predicted by an average of the annotation vectors fed through two separate MLPs (init,c and init,h): In this work, we use a deep output layer [Pascanu et al. 2014] to compute the output word probability given the LSTM state, the context vector and the previous word: Where _o\u2208^K\u00d7 m, _h\u2208^m\u00d7 n, _z\u2208^m\u00d7 D, and are learned parameters initialized randomly.",
+      "section": "Decoder: Long Short-Term Memory Network",
+      "sectionKind": "method",
+      "ordinal": 34,
+      "title": "How to construct deep recurrent neural networks",
+      "authors": "Pascanu, Razvan, Gulcehre, Caglar, Cho, Kyunghyun, and Bengio, Yoshua",
+      "year": 2014,
+      "arxivId": "1312.6026",
+      "inCorpus": true,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.44000244140625,
+            "y0": 69.46742248535156,
+            "x1": 443.7582092285156,
+            "y1": 79.43002319335938
+          },
+          {
+            "x0": 55.44000244140625,
+            "y0": 695.5504150390625,
+            "x1": 289.44158935546875,
+            "y1": 705.5130004882812
+          },
+          {
+            "x0": 55.44000244140625,
+            "y0": 707.5054321289062,
+            "x1": 289.4415283203125,
+            "y1": 717.468017578125
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Ba2014",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Encouraged by recent advances in caption generation and inspired by recent success in employing attention in machine translation [Bahdanau et al. 2014] and object recognition [Ba et al. 2014; Mnih et al. 2014], we investigate models that can attend to salient part of an image while generating its caption.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 5,
+        "title": "Multiple object recognition with visual attention",
+        "authors": "Ba, Jimmy Lei, Mnih, Volodymyr, and Kavukcuoglu, Koray",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 87.43986511230469,
+              "y0": 434.8454284667969,
+              "x1": 289.4415283203125,
+              "y1": 444.80804443359375
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 446.8014221191406,
+              "x1": 289.4414978027344,
+              "y1": 456.7640380859375
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 458.75640869140625,
+              "x1": 145.49192810058594,
+              "y1": 468.7190246582031
+            }
+          ]
+        }
+      },
+      {
+        "key": "Bahdanau2014",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Encouraged by recent advances in caption generation and inspired by recent success in employing attention in machine translation [Bahdanau et al. 2014] and object recognition [Ba et al. 2014; Mnih et al. 2014], we investigate models that can attend to salient part of an image while generating its caption.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 4,
+        "title": "Neural machine translation by jointly learning to align and translate",
+        "authors": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua",
+        "year": 2014,
+        "arxivId": "1409.0473",
+        "inCorpus": true,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 87.43986511230469,
+              "y0": 434.8454284667969,
+              "x1": 289.4415283203125,
+              "y1": 444.80804443359375
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 446.8014221191406,
+              "x1": 289.4414978027344,
+              "y1": 456.7640380859375
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 458.75640869140625,
+              "x1": 145.49192810058594,
+              "y1": 468.7190246582031
+            }
+          ]
+        }
+      },
+      {
+        "key": "Hochreiter+Schmidhuber-1997",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use a long short-term memory (LSTM) network [Hochreiter et al. 1997] that produces a caption by generating one word at every time step conditioned on a context vector, the previous hidden state and the previously generated words.",
+        "section": "Decoder: Long Short-Term Memory Network",
+        "sectionKind": "method",
+        "ordinal": 31,
+        "title": "Long short-term memory",
+        "authors": "Hochreiter, S. and Schmidhuber, J",
+        "year": 1997,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 478.74676513671875,
+              "y0": 671.6392822265625,
+              "x1": 541.44140625,
+              "y1": 681.6018676757812
+            },
+            {
+              "x0": 307.4399719238281,
+              "y0": 683.5942993164062,
+              "x1": 541.4414672851562,
+              "y1": 693.556884765625
+            },
+            {
+              "x0": 307.4399719238281,
+              "y0": 695.55029296875,
+              "x1": 541.44140625,
+              "y1": 705.5128784179688
+            },
+            {
+              "x0": 307.4399719238281,
+              "y0": 707.5053100585938,
+              "x1": 419.0509033203125,
+              "y1": 717.4678955078125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Kingma2014",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "For the Flickr8k dataset, we found that RMSProp [Tieleman et al. 2012] worked best, while for Flickr30k/MS COCO dataset we used the recently proposed Adam algorithm [Kingma et al. 2014].",
+        "section": "Training Procedure",
+        "sectionKind": "method",
+        "ordinal": 44,
+        "title": "Adam: A Method for Stochastic Optimization",
+        "authors": "Kingma, Diederik P. and Ba, Jimmy",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 449.6361999511719,
+              "y0": 218.3092803955078,
+              "x1": 541.4415283203125,
+              "y1": 228.27188110351562
+            },
+            {
+              "x0": 307.4400634765625,
+              "y0": 230.26429748535156,
+              "x1": 541.4417114257812,
+              "y1": 240.22689819335938
+            },
+            {
+              "x0": 307.4400634765625,
+              "y0": 242.2202911376953,
+              "x1": 398.7572326660156,
+              "y1": 252.18289184570312
+            }
+          ]
+        }
+      },
+      {
+        "key": "Mnih2014",
+        "stance": "extends",
+        "cue": "inspired by",
+        "sentence": "Encouraged by recent advances in caption generation and inspired by recent success in employing attention in machine translation [Bahdanau et al. 2014] and object recognition [Ba et al. 2014; Mnih et al. 2014], we investigate models that can attend to salient part of an image while generating its caption.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 5,
+        "title": "Recurrent models of visual attention",
+        "authors": "Mnih, Volodymyr, Hees, Nicolas, Graves, Alex, and Kavukcuoglu, Koray",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 87.43986511230469,
+              "y0": 434.8454284667969,
+              "x1": 289.4415283203125,
+              "y1": 444.80804443359375
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 446.8014221191406,
+              "x1": 289.4414978027344,
+              "y1": 456.7640380859375
+            },
+            {
+              "x0": 55.439998626708984,
+              "y0": 458.75640869140625,
+              "x1": 145.49192810058594,
+              "y1": 468.7190246582031
+            }
+          ]
+        }
+      },
+      {
+        "key": "Pascanu2014",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "The initial memory state and hidden state of the LSTM are predicted by an average of the annotation vectors fed through two separate MLPs (init,c and init,h): In this work, we use a deep output layer [Pascanu et al. 2014] to compute the output word probability given the LSTM state, the context vector and the previous word: Where _o\u2208^K\u00d7 m, _h\u2208^m\u00d7 n, _z\u2208^m\u00d7 D, and are learned parameters initialized randomly.",
+        "section": "Decoder: Long Short-Term Memory Network",
+        "sectionKind": "method",
+        "ordinal": 34,
+        "title": "How to construct deep recurrent neural networks",
+        "authors": "Pascanu, Razvan, Gulcehre, Caglar, Cho, Kyunghyun, and Bengio, Yoshua",
+        "year": 2014,
+        "arxivId": "1312.6026",
+        "inCorpus": true,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 307.44000244140625,
+              "y0": 69.46742248535156,
+              "x1": 443.7582092285156,
+              "y1": 79.43002319335938
+            },
+            {
+              "x0": 55.44000244140625,
+              "y0": 695.5504150390625,
+              "x1": 289.44158935546875,
+              "y1": 705.5130004882812
+            },
+            {
+              "x0": 55.44000244140625,
+              "y0": 707.5054321289062,
+              "x1": 289.4415283203125,
+              "y1": 717.468017578125
+            }
+          ]
+        }
+      },
+      {
+        "key": "Simonyan14",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "To create the annotations a_i used by our decoder, we used the Oxford VGGnet [Simonyan et al. 2014] pre-trained on ImageNet without finetuning.",
+        "section": "Training Procedure",
+        "sectionKind": "method",
+        "ordinal": 45,
+        "title": "Very deep convolutional networks for large-scale image recognition",
+        "authors": "Simonyan, K. and Zisserman, A",
+        "year": 2014,
+        "arxivId": "1409.1556",
+        "inCorpus": true,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 422.2700500488281,
+              "y0": 260.15228271484375,
+              "x1": 541.4426879882812,
+              "y1": 270.1148986816406
+            },
+            {
+              "x0": 307.4400634765625,
+              "y0": 272.1072998046875,
+              "x1": 389.09344482421875,
+              "y1": 282.0699157714844
+            }
+          ]
+        }
+      },
+      {
+        "key": "Zaremba2014",
+        "stance": "inherits",
+        "cue": "implementation of",
+        "sentence": "Our implementation of LSTM closely follows the one used in [Zaremba et al. 2014] (see Fig. [ref]).",
+        "section": "Decoder: Long Short-Term Memory Network",
+        "sectionKind": "method",
+        "ordinal": 32,
+        "title": "Recurrent neural network regularization",
+        "authors": "Zaremba, Wojciech, Sutskever, Ilya, and Vinyals, Oriol",
+        "year": 2014,
+        "arxivId": "1409.2329",
+        "inCorpus": true,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "In addition, we note that in our experiments we are able to significantly improve the state of the art performance METEOR on MS COCO that we speculate is connected to some of the regularization techniques we used [ref] and our lower level representation.",
+      "anchorText": "In addition, we note that in our experiments we are able to significantly improve the state of the art performance METEOR on MS COCO that we speculate is connected to some of the regularization techniques we used",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we speculate",
+      "section": "Quantitative Analysis",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [
+        "section:ds_attn"
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 164.35110473632812,
+            "y0": 149.1184844970703,
+            "x1": 289.4414367675781,
+            "y1": 159.08108520507812
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 161.07447814941406,
+            "x1": 289.4415588378906,
+            "y1": 171.03707885742188
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 173.0294952392578,
+            "x1": 289.4414367675781,
+            "y1": 182.99209594726562
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 184.98451232910156,
+            "x1": 289.4415588378906,
+            "y1": 194.94711303710938
+          },
+          {
+            "x0": 55.439998626708984,
+            "y0": 196.9395294189453,
+            "x1": 118.87187194824219,
+            "y1": 206.90213012695312
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 1,
+    "cited": 0,
+    "shown": 0,
+    "bare": 1
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "published": "2015-02-10",
+    "authors": [
+      "Kelvin Xu",
+      "Jimmy Ba",
+      "Ryan Kiros",
+      "Kyunghyun Cho",
+      "Aaron Courville",
+      "Ruslan Salakhutdinov",
+      "Richard Zemel",
+      "Yoshua Bengio"
+    ]
+  }
+}

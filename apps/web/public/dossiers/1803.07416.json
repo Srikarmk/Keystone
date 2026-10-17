@@ -1,0 +1,1285 @@
+{
+  "id": "1803.07416",
+  "title": "Tensor2Tensor for Neural Machine Translation",
+  "keystone": null,
+  "codeUrl": "https://github.com/tensorflow/tensor2tensor",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1803.07416",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. is the sequence length, is the representation dimension, is the kernel size of convolutions and the size of the neighborhood in restricted self-attention.",
+      "label": "tab:op_complexities",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Layer Type",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Complexity per Layer",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Sequential",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Maximum Path Length",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Operations",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Self-Attention",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Recurrent",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Convolutional",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Self-Attention (restricted)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.",
+      "label": "tab:wmt-results",
+      "numericCells": 29,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Training Cost",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "(in FLOPS * )",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EN-DE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EN-FR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EN-DE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EN-FR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "ByteNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23.75",
+            "value": "23.75",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Deep-Att + PosUnk",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "39.2",
+            "value": "39.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GNMT + RL",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24.6",
+            "value": "24.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "39.92",
+            "value": "39.92",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "23",
+            "value": "23",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "140",
+            "value": "140",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ConvS2S",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.16",
+            "value": "25.16",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.46",
+            "value": "40.46",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "9.6",
+            "value": "9.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "150",
+            "value": "150",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MoE",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.03",
+            "value": "26.03",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.56",
+            "value": "40.56",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "120",
+            "value": "120",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "GNMT + RL Ensemble",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.30",
+            "value": "26.30",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41.16",
+            "value": "41.16",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "180",
+            "value": "180",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1100",
+            "value": "1100",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ConvS2S Ensemble",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.36",
+            "value": "26.36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "41.29",
+            "value": "41.29",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "77",
+            "value": "77",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1200",
+            "value": "1200",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer (base model)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27.3",
+            "value": "27.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "38.1",
+            "value": "38.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "3.3",
+            "value": "3.3",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Transformer (big)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.4",
+            "value": "28.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "41.8",
+            "value": "41.8",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "23",
+            "value": "23",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 163.39959716796875,
+            "y0": 117.20149230957031,
+            "x1": 504.00091552734375,
+            "y1": 127.16409301757812
+          },
+          {
+            "x0": 126.0,
+            "y0": 129.15650939941406,
+            "x1": 504.000732421875,
+            "y1": 139.11911010742188
+          },
+          {
+            "x0": 126.0,
+            "y0": 141.1115264892578,
+            "x1": 144.5404052734375,
+            "y1": 151.07412719726562
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\confname": "MT Summit 2015",
+    "\\website": "\\protect\\url{http://www.amtaweb.org/}",
+    "\\contactname": "research track co-chair Yaser Al-Onaizan",
+    "\\contactemail": "onaizan@us.ibm.com",
+    "\\conffilename": "mtsummit2015",
+    "\\downloadsite": "\\protect\\url{http://www.amtaweb.org/}",
+    "\\paperlength": "$12$ (twelve)",
+    "\\shortpaperlength": "$6$ (six)"
+  },
+  "references": [
+    {
+      "key": "45381",
+      "raw": "Abadi, M., Barham, P., Chen, J., Chen, Z., Davis, A., Dean, J., Devin, M., Ghemawat, S., Irving, G., Isard, M., Kudlur, M., Levenberg, J., Monga, R., Moore, S., Murray, D. G., Steiner, B., Tucker, P., Vasudevan, V., Warden, P., Wicke, M., Yu, Y., and Zheng, X. (2016). Tensorflow: A system for large-scale machine learning. In 12th USENIX Symposium on Operating Systems Design and Implementation (OSDI 16), pages 265--283",
+      "authors": "Abadi, M., Barham, P., Chen, J., Chen, Z., Davis, A., Dean, J., Devin, M., Ghemawat, S., Irving, G., Isard, M., Kudlur, M., Levenberg, J., Monga, R., Moore, S., Murray, D. G., Steiner, B., Tucker, P., Vasudevan, V., Warden, P., Wicke, M., Yu, Y., and Zheng, X. (2016)",
+      "title": "Tensorflow: A system for large-scale machine learning",
+      "venue": "In 12th USENIX Symposium on Operating Systems Design and Implementation (OSDI 16), pages 265--283",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Bahdanau, D., Cho, K., and Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. CoRR, abs/1409.0473",
+      "authors": "Bahdanau, D., Cho, K., and Bengio, Y. (2014)",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "CoRR, abs/1409.0473",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "cho2014learning",
+      "raw": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014). Learning phrase representations using RNN encoder-decoder for statistical machine translation. CoRR, abs/1406.1078",
+      "authors": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014)",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "venue": "CoRR, abs/1406.1078",
+      "year": 2014,
+      "arxivId": "1406.1078",
+      "doi": null
+    },
+    {
+      "key": "xception2016",
+      "raw": "Chollet, F. (2016). Xception: Deep learning with depthwise separable convolutions. arXiv preprint arXiv:1610.02357",
+      "authors": "Chollet, F. (2016)",
+      "title": "Xception: Deep learning with depthwise separable convolutions",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1610.02357",
+      "doi": null
+    },
+    {
+      "key": "JonasFaceNet2017",
+      "raw": "Gehring, J., Auli, M., Grangier, D., Yarats, D., and Dauphin, Y. N. (2017). Convolutional sequence to sequence learning. CoRR, abs/1705.03122",
+      "authors": "Gehring, J., Auli, M., Grangier, D., Yarats, D., and Dauphin, Y. N. (2017)",
+      "title": "Convolutional sequence to sequence learning",
+      "venue": "CoRR, abs/1705.03122",
+      "year": 2017,
+      "arxivId": "1705.03122",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/GomezRUG17",
+      "raw": "Gomez, A. N., Ren, M., Urtasun, R., and Grosse, R. B. (2017). The reversible residual network: Backpropagation without storing activations. CoRR, abs/1707.04585",
+      "authors": "Gomez, A. N., Ren, M., Urtasun, R., and Grosse, R. B. (2017)",
+      "title": "The reversible residual network: Backpropagation without storing activations",
+      "venue": "CoRR, abs/1707.04585",
+      "year": 2017,
+      "arxivId": "1707.04585",
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997",
+      "raw": "Hochreiter, S. and Schmidhuber, J. (1997). Long short-term memory. Neural computation, 9(8):1735--1780",
+      "authors": "Hochreiter, S. and Schmidhuber, J. (1997)",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9(8):1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "extendedngpu",
+      "raw": "Kaiser, . and Bengio, S. (2016). Can active memory replace attention? In Advances in Neural Information Processing Systems, pages 3781--3789",
+      "authors": "Kaiser, . and Bengio, S. (2016)",
+      "title": "Can active memory replace attention?",
+      "venue": "In Advances in Neural Information Processing Systems, pages 3781--3789",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "slicenet",
+      "raw": "Kaiser, L., Gomez, A. N., and Chollet, F. (2017). Depthwise separable convolutions for neural machine translation. CoRR, abs/1706.03059",
+      "authors": "Kaiser, L., Gomez, A. N., and Chollet, F. (2017)",
+      "title": "Depthwise separable convolutions for neural machine translation",
+      "venue": "CoRR, abs/1706.03059",
+      "year": 2017,
+      "arxivId": "1706.03059",
+      "doi": null
+    },
+    {
+      "key": "KalchbrennerB13",
+      "raw": "Kalchbrenner, N. and Blunsom, P. (2013). Recurrent continuous translation models. In Proceedings EMNLP 2013, pages 1700--1709",
+      "authors": "Kalchbrenner, N. and Blunsom, P. (2013)",
+      "title": "Recurrent continuous translation models",
+      "venue": "In Proceedings EMNLP 2013, pages 1700--1709",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "NalBytenet2017",
+      "raw": "Kalchbrenner, N., Espeholt, L., Simonyan, K., van den Oord, A., Graves, A., and Kavukcuoglu, K. (2016). Neural machine translation in linear time. CoRR, abs/1610.10099",
+      "authors": "Kalchbrenner, N., Espeholt, L., Simonyan, K., van den Oord, A., Graves, A., and Kavukcuoglu, K. (2016)",
+      "title": "Neural machine translation in linear time",
+      "venue": "CoRR, abs/1610.10099",
+      "year": 2016,
+      "arxivId": "1610.10099",
+      "doi": null
+    },
+    {
+      "key": "MengLWLJL15",
+      "raw": "Meng, F., Lu, Z., Wang, M., Li, H., Jiang, W., and Liu, Q. (2015). Encoding source language with convolutional neural network for machine translation. In ACL, pages 20--30",
+      "authors": "Meng, F., Lu, Z., Wang, M., Li, H., Jiang, W., and Liu, Q. (2015)",
+      "title": "Encoding source language with convolutional neural network for machine translation",
+      "venue": "In ACL, pages 20--30",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "2018arXiv180205751P",
+      "raw": "Parmar, N., Vaswani, A., Uszkoreit, J., Kaiser, ., Shazeer, N., and Ku, A. (2018). Image Transformer. ArXiv e-prints",
+      "authors": "Parmar, N., Vaswani, A., Uszkoreit, J., Kaiser, ., Shazeer, N., and Ku, A. (2018)",
+      "title": "Image Transformer",
+      "venue": "ArXiv e-prints",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sennrich2015neural",
+      "raw": "Sennrich, R., Haddow, B., and Birch, A. (2015). Neural machine translation of rare words with subword units. arXiv preprint arXiv:1508.07909",
+      "authors": "Sennrich, R., Haddow, B., and Birch, A. (2015)",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "arXiv preprint",
+      "year": 2015,
+      "arxivId": "1508.07909",
+      "doi": null
+    },
+    {
+      "key": "shazeer2017outrageously",
+      "raw": "Shazeer, N., Mirhoseini, A., Maziarz, K., Davis, A., Le, Q., Hinton, G., and Dean, J. (2017). Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. CoRR, abs/1701.06538",
+      "authors": "Shazeer, N., Mirhoseini, A., Maziarz, K., Davis, A., Le, Q., Hinton, G., and Dean, J. (2017)",
+      "title": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer",
+      "venue": "CoRR, abs/1701.06538",
+      "year": 2017,
+      "arxivId": "1701.06538",
+      "doi": null
+    },
+    {
+      "key": "sutskever14",
+      "raw": "Sutskever, I., Vinyals, O., and Le, Q. V. (2014). Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pages 3104--3112",
+      "authors": "Sutskever, I., Vinyals, O., and Le, Q. V. (2014)",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pages 3104--3112",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wavenet",
+      "raw": "van den Oord, A., Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A., Kalchbrenner, N., Senior, A., and Kavukcuoglu, K. (2016). WaveNet: A generative model for raw audio. CoRR, abs/1609.03499",
+      "authors": "van den Oord, A., Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A., Kalchbrenner, N., Senior, A., and Kavukcuoglu, K. (2016)",
+      "title": "WaveNet: A generative model for raw audio",
+      "venue": "CoRR, abs/1609.03499",
+      "year": 2016,
+      "arxivId": "1609.03499",
+      "doi": null
+    },
+    {
+      "key": "transformer",
+      "raw": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., and Polosukhin, I. (2017). Attention is all you need. CoRR",
+      "authors": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., and Polosukhin, I. (2017)",
+      "title": "Attention is all you need",
+      "venue": "CoRR",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wu2016google",
+      "raw": "Wu, Y., Schuster, M., Chen, Z., Le, Q. V., Norouzi, M., Macherey, W., Krikun, M., Cao, Y., Gao, Q., Macherey, K., et al. (2016). Google's neural machine translation system: Bridging the gap between human and machine translation. CoRR, abs/1609.08144",
+      "authors": "Wu, Y., Schuster, M., Chen, Z., Le, Q. V., Norouzi, M., Macherey, W., Krikun, M., Cao, Y., Gao, Q., Macherey, K., et al. (2016)",
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "venue": "CoRR, abs/1609.08144",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "doi": null
+    },
+    {
+      "key": "DBLP:journals/corr/ZhouCWLX16",
+      "raw": "Zhou, J., Cao, Y., Wang, X., Li, P., and Xu, W. (2016). Deep recurrent models with fast-forward connections for neural machine translation. CoRR, abs/1606.04199",
+      "authors": "Zhou, J., Cao, Y., Wang, X., Li, P., and Xu, W. (2016)",
+      "title": "Deep recurrent models with fast-forward connections for neural machine translation",
+      "venue": "CoRR, abs/1606.04199",
+      "year": 2016,
+      "arxivId": "1606.04199",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 187,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 145.9250030517578,
+            "y0": 317.82098388671875,
+            "x1": 484.0744934082031,
+            "y1": 326.7873840332031
+          },
+          {
+            "x0": 145.9250030517578,
+            "y0": 329.7759704589844,
+            "x1": 473.05499267578125,
+            "y1": 338.74237060546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Neural Machine Translation Background",
+      "chars": 1568,
+      "numbers": 0,
+      "citations": 16,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 126.0,
+            "y0": 378.0484619140625,
+            "x1": 504.0009765625,
+            "y1": 388.0110778808594
+          },
+          {
+            "x0": 126.0,
+            "y0": 390.0034484863281,
+            "x1": 193.2077178955078,
+            "y1": 399.966064453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Self-Attention",
+      "chars": 1827,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 126.0,
+            "y0": 670.5343017578125,
+            "x1": 391.2641296386719,
+            "y1": 680.4968872070312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Computational Performance",
+      "chars": 1992,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 203.6684112548828,
+            "y0": 308.439453125,
+            "x1": 504.0007629394531,
+            "y1": 318.4020690917969
+          },
+          {
+            "x0": 126.0,
+            "y0": 320.3944396972656,
+            "x1": 392.11102294921875,
+            "y1": 330.3570556640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Machine Translation",
+      "chars": 1782,
+      "numbers": 3,
+      "citations": 2,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 126.00006103515625,
+            "y0": 562.937255859375,
+            "x1": 338.74139404296875,
+            "y1": 572.8998413085938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Tensor2Tensor",
+      "chars": 1259,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 126.0,
+            "y0": 390.9074401855469,
+            "x1": 504.0010070800781,
+            "y1": 400.87005615234375
+          },
+          {
+            "x0": 126.0,
+            "y0": 402.8624267578125,
+            "x1": 301.34185791015625,
+            "y1": 412.8250427246094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "System Overview",
+      "chars": 2110,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 126.0,
+            "y0": 612.9613037109375,
+            "x1": 427.4781188964844,
+            "y1": 622.9238891601562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Library of research components",
+      "chars": 1350,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 125.99998474121094,
+            "y0": 424.4593811035156,
+            "x1": 468.3146667480469,
+            "y1": 434.4219970703125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Reproducibility and Continuing Development",
+      "chars": 1026,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 126.0,
+            "y0": 129.33949279785156,
+            "x1": 504.0007019042969,
+            "y1": 139.30209350585938
+          },
+          {
+            "x0": 126.0,
+            "y0": 141.2945098876953,
+            "x1": 454.7458801269531,
+            "y1": 151.25711059570312
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 2,
+      "compares": 0,
+      "background": 15,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "wu2016google",
+      "stance": "inherits",
+      "cue": "We used",
+      "sentence": "We used beam search with a beam size of 4 and length penalty \u03b1=0.6 [Wu et al. 2016].",
+      "section": "Machine Translation",
+      "sectionKind": "method",
+      "ordinal": 20,
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "authors": "Wu, Y., Schuster, M., Chen, Z., Le, Q. V., Norouzi, M., Macherey, W., Krikun, M., Cao, Y., Gao, Q., Macherey, K., et al. (2016)",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "inCorpus": true,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 158.5478973388672,
+            "y0": 694.4442749023438,
+            "x1": 331.2695007324219,
+            "y1": 704.4068603515625
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "cho2014learning",
+        "stance": "contests",
+        "cue": ", it suffers from",
+        "sentence": "While a pure sequence-to-sequence recurrent neural network can already obtain good translation results [Sutskever et al. 2014; Cho et al. 2014], it suffers from the fact that the whole input sentence needs to be encoded into a single fixed-size vector.",
+        "section": "Neural Machine Translation Background",
+        "sectionKind": "related",
+        "ordinal": 3,
+        "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+        "authors": "Cho, K., van Merrienboer, B., Gulcehre, C., Bougares, F., Schwenk, H., and Bengio, Y. (2014)",
+        "year": 2014,
+        "arxivId": "1406.1078",
+        "inCorpus": true,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 346.771240234375,
+              "y0": 461.734375,
+              "x1": 504.0008544921875,
+              "y1": 471.6969909667969
+            },
+            {
+              "x0": 126.0,
+              "y0": 473.6893615722656,
+              "x1": 413.211669921875,
+              "y1": 483.6519775390625
+            }
+          ]
+        }
+      },
+      {
+        "key": "sutskever14",
+        "stance": "contests",
+        "cue": ", it suffers from",
+        "sentence": "While a pure sequence-to-sequence recurrent neural network can already obtain good translation results [Sutskever et al. 2014; Cho et al. 2014], it suffers from the fact that the whole input sentence needs to be encoded into a single fixed-size vector.",
+        "section": "Neural Machine Translation Background",
+        "sectionKind": "related",
+        "ordinal": 3,
+        "title": "Sequence to sequence learning with neural networks",
+        "authors": "Sutskever, I., Vinyals, O., and Le, Q. V. (2014)",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 346.771240234375,
+              "y0": 461.734375,
+              "x1": 504.0008544921875,
+              "y1": 471.6969909667969
+            },
+            {
+              "x0": 126.0,
+              "y0": 473.6893615722656,
+              "x1": 413.211669921875,
+              "y1": 483.6519775390625
+            }
+          ]
+        }
+      },
+      {
+        "key": "wu2016google",
+        "stance": "inherits",
+        "cue": "We used",
+        "sentence": "We used beam search with a beam size of 4 and length penalty \u03b1=0.6 [Wu et al. 2016].",
+        "section": "Machine Translation",
+        "sectionKind": "method",
+        "ordinal": 20,
+        "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+        "authors": "Wu, Y., Schuster, M., Chen, Z., Le, Q. V., Norouzi, M., Macherey, W., Krikun, M., Cao, Y., Gao, Q., Macherey, K., et al. (2016)",
+        "year": 2016,
+        "arxivId": "1609.08144",
+        "inCorpus": true,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 158.5478973388672,
+              "y0": 694.4442749023438,
+              "x1": 331.2695007324219,
+              "y1": 704.4068603515625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [],
+  "assumptionTally": {
+    "total": 0,
+    "cited": 0,
+    "shown": 0,
+    "bare": 0
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "stat.ML"
+    ],
+    "published": "2018-03-16",
+    "authors": [
+      "Ashish Vaswani",
+      "Samy Bengio",
+      "Eugene Brevdo",
+      "Francois Chollet",
+      "Aidan N. Gomez",
+      "Stephan Gouws",
+      "Llion Jones",
+      "\u0141ukasz Kaiser",
+      "Nal Kalchbrenner",
+      "Niki Parmar",
+      "Ryan Sepassi",
+      "Noam Shazeer",
+      "Jakob Uszkoreit"
+    ]
+  }
+}

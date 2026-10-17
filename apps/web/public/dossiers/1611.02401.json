@@ -1,0 +1,2551 @@
+{
+  "id": "1611.02401",
+  "title": "Divide and conquer with neural networks",
+  "keystone": null,
+  "codeUrl": "https://github.com/alexnowakvila/DiCoNet",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1611.02401",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "ConvHull test accuracy results with the baseline PtrNet and different setups of the . The scale has been set to 3 for n=100 and 4 for n=200. At row 2 we observe that when the split block is not trained we get worse performance than the baseline, however, the generalization error shrinks faster on the baseline. When both blocks are trained jointly, we clearly outperform the baseline. In Row 3 the split is only trained with REINFORCE, and row 4 when we add the computational regularization term (See Supplementary) enforcing shallower trees.",
+      "label": "convexhull_results",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=25",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=50",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=100",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=200",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "81.3",
+            "value": "81.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.6",
+            "value": "65.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.5",
+            "value": "41.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "13.5",
+            "value": "13.5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Random Split",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "59.8",
+            "value": "59.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37.0",
+            "value": "37.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.5",
+            "value": "23.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.29",
+            "value": "10.29",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "88.1",
+            "value": "88.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "83.7",
+            "value": "83.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "73.7",
+            "value": "73.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "52.0",
+            "value": "52.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "+ Split Reg",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "89.8",
+            "value": "89.8",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "87.0",
+            "value": "87.0",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "80.0",
+            "value": "80.0",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "67.2",
+            "value": "67.2",
+            "emphasised": true,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "We have used points for the Gaussian dataset and for the CIFAR-10 patches. The baseline performs better than the when the number of clusters is small but scales better with the number of clusters. When Lloyd's performs much better than its recursive version (\"Gaussian\" with ), we observe that performance is between the two. This shows that although having a recursive structure, is acting like a mixture of both algorithms, in other words, it is doing better than applying binary clustering at each scale. achieves the best results in the CIFAR-10 patches dataset, where Lloyd's and its recursive version perform similarly with respect to the k-means cost.",
+      "label": "multiprogram",
+      "numericCells": 36,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Gaussian (d=2)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Gaussian (d=10)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CIFAR-10 patches",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "k=4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=8",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=16",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=8",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=16",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=8",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "k=16",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Baseline / Lloyd",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.8",
+            "value": "1.8",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "3.1",
+            "value": "3.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.5",
+            "value": "3.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.14",
+            "value": "1.14",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "5.7",
+            "value": "5.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "12.5",
+            "value": "12.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.02",
+            "value": "1.02",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.07",
+            "value": "1.07",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.41",
+            "value": "1.41",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "/ Lloyd",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.3",
+            "value": "2.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.1",
+            "value": "2.1",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2.1",
+            "value": "2.1",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.6",
+            "value": "1.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.3",
+            "value": "6.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.5",
+            "value": "8.5",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.04",
+            "value": "1.04",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.05",
+            "value": "1.05",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.2",
+            "value": "1.2",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Baseline / Rec. Lloyd",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.7",
+            "value": "0.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.5",
+            "value": "1.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.7",
+            "value": "1.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.15",
+            "value": "0.15",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "0.65",
+            "value": "0.65",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.25",
+            "value": "1.25",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.01",
+            "value": "1.01",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.04",
+            "value": "1.04",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.21",
+            "value": "1.21",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "/ Rec. Lloyd",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.9",
+            "value": "0.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.01",
+            "value": "1.01",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.02",
+            "value": "1.02",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "0.21",
+            "value": "0.21",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.72",
+            "value": "0.72",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.85",
+            "value": "0.85",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.02",
+            "value": "1.02",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.02",
+            "value": "1.02",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.07",
+            "value": "1.07",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Performance Ratios of different models trained with (and using 3 splits in the ) and tested for (and different number of splits). We report the number of splits that give better performances at each for the . Note that for the model does best with 3 splits, the same as in training, but with larger more splits give better solutions, as would be desired. Observe that even for , the architecture significatively outperforms the non-recursive model, highlighting the highly constrained nature of the problem, in which decisions over an element are highly dependent on previously chosen elements. Although the clearly outperforms the baseline and the Dantzig algorithm for , its performance eventually degrades at ; see text.",
+      "label": "multiprogram",
+      "numericCells": 30,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=50",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=100",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=200",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "splits",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "splits",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "splits",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.82",
+            "value": "19.82",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.0063",
+            "value": "1.0063",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "38.79",
+            "value": "38.79",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.0435",
+            "value": "1.0435",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "74.71",
+            "value": "74.71",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.0962",
+            "value": "1.0962",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0",
+            "value": "0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "19.85",
+            "value": "19.85",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.0052",
+            "value": "1.0052",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.23",
+            "value": "40.23",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.0048",
+            "value": "1.0048",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "81.09",
+            "value": "81.09",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.0046",
+            "value": "1.0046",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Greedy",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.73",
+            "value": "19.73",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.0110",
+            "value": "1.0110",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.19",
+            "value": "40.19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.0057",
+            "value": "1.0057",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "81.19",
+            "value": "81.19",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.0028",
+            "value": "1.0028",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Optimum",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "19.95",
+            "value": "19.95",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "40.42",
+            "value": "40.42",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "81.41",
+            "value": "81.41",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "has been trained for nodes and only one scale ( ). We used the pre-trained baseline for as model on both leaves. BS1 and BS2 correspond to the baseline trained for and nodes respectively. Although for small , both baselines outperform the , the scale invariance prior of the is leveraged at larger scales resulting in better results and scalability.",
+      "label": "multiprogram",
+      "numericCells": 36,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=10",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=20",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=40",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "n=80",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "acc",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "acc",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "cost",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "ratio",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BS1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "78.71",
+            "value": "78.71",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "2.89",
+            "value": "2.89",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.01",
+            "value": "1.01",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "27.36",
+            "value": "27.36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.74",
+            "value": "4.74",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.24",
+            "value": "1.24",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.06",
+            "value": "15.06",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.12",
+            "value": "9.12",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.77",
+            "value": "1.77",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.76",
+            "value": "13.76",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.07",
+            "value": "15.07",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.15",
+            "value": "2.15",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "BS2",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.45",
+            "value": "19.45",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.68",
+            "value": "3.68",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.29",
+            "value": "1.29",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "54.34",
+            "value": "54.34",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "4.04",
+            "value": "4.04",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.05",
+            "value": "1.05",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "28.42",
+            "value": "28.42",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.29",
+            "value": "6.29",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.22",
+            "value": "1.22",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.72",
+            "value": "15.72",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.23",
+            "value": "11.23",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.60",
+            "value": "1.60",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "41.82",
+            "value": "41.82",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.15",
+            "value": "3.15",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.11",
+            "value": "1.11",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "43.86",
+            "value": "43.86",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.06",
+            "value": "4.06",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1.06",
+            "value": "1.06",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "35.46",
+            "value": "35.46",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "6.01",
+            "value": "6.01",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.18",
+            "value": "1.18",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "29.44",
+            "value": "29.44",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "9.01",
+            "value": "9.01",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "1.28",
+            "value": "1.28",
+            "emphasised": true,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\E": "{\\mathbb{E}}",
+    "\\Lo": "{\\mathcal{L}}",
+    "\\R": "{\\mathbb{R}}",
+    "\\Rc": "{\\mathcal{R}}",
+    "\\HH": "{\\mathbb{H}}",
+    "\\M": "{\\mathcal{M}}",
+    "\\Sp": "{\\mathcal{S}}",
+    "\\PP": "{\\mathcal{P}}",
+    "\\ba": "{\\mathcal A}",
+    "\\DCN": "DiCoNet ",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "andrychowicz2016learning",
+      "raw": "Andrychowicz, Marcin and Kurach, Karol. Learning efficient algorithms with hierarchical attentive memory. arXiv preprint arXiv:1602.03218, 2016",
+      "authors": "Andrychowicz, Marcin and Kurach, Karol",
+      "title": "Learning efficient algorithms with hierarchical attentive memory",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1602.03218",
+      "doi": null
+    },
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua. Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473, 2014",
+      "authors": "Bahdanau, Dzmitry, Cho, Kyunghyun, and Bengio, Yoshua",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "bello2016neural",
+      "raw": "Bello, Irwan, Pham, Hieu, Le, Quoc V, Norouzi, Mohammad, and Bengio, Samy. Neural combinatorial optimization with reinforcement learning. arXiv preprint arXiv:1611.09940, 2016",
+      "authors": "Bello, Irwan, Pham, Hieu, Le, Quoc V, Norouzi, Mohammad, and Bengio, Samy",
+      "title": "Neural combinatorial optimization with reinforcement learning",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.09940",
+      "doi": null
+    },
+    {
+      "key": "bronstein2016geometric",
+      "raw": "Bronstein, Michael M, Bruna, Joan, LeCun, Yann, Szlam, Arthur, and Vandergheynst, Pierre. Geometric deep learning: going beyond euclidean data. arXiv preprint arXiv:1611.08097, 2016",
+      "authors": "Bronstein, Michael M, Bruna, Joan, LeCun, Yann, Szlam, Arthur, and Vandergheynst, Pierre",
+      "title": "Geometric deep learning: going beyond euclidean data",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.08097",
+      "doi": null
+    },
+    {
+      "key": "iclr2017recursive",
+      "raw": "Cai, Jonathon, Shin, Richard, and Dawn, Song. Making neural programming architectures generalize via recursion. ICLR, 2017",
+      "authors": "Cai, Jonathon, Shin, Richard, and Dawn, Song",
+      "title": "Making neural programming architectures generalize via recursion",
+      "venue": "ICLR, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dai2017learning",
+      "raw": "Dai, Hanjun, Khalil, Elias B, Zhang, Yuyu, Dilkina, Bistra, and Song, Le. Learning combinatorial optimization algorithms over graphs. arXiv preprint arXiv:1704.01665, 2017",
+      "authors": "Dai, Hanjun, Khalil, Elias B, Zhang, Yuyu, Dilkina, Bistra, and Song, Le",
+      "title": "Learning combinatorial optimization algorithms over graphs",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1704.01665",
+      "doi": null
+    },
+    {
+      "key": "duvenaud2015convolutional",
+      "raw": "Duvenaud, David, Maclaurin, Dougal, Aguilera-Iparraguirre, Jorge, G\\'omez-Bombarelli, Rafael, Hirzel, Timothy, Aspuru-Guzik, Al\\'an, and Adams, Ryan P. Convolutional networks on graphs for learning molecular fingerprints. In Neural Information Processing Systems, 2015",
+      "authors": "Duvenaud, David, Maclaurin, Dougal, Aguilera-Iparraguirre, Jorge, G\\'omez-Bombarelli, Rafael, Hirzel, Timothy, Aspuru-Guzik, Al\\'an, and Adams, Ryan P",
+      "title": "Convolutional networks on graphs for learning molecular fingerprints",
+      "venue": "In Neural Information Processing Systems, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dwyer1988convex",
+      "raw": "Dwyer, Rex A. On the convex hull of random points in a polytope. Journal of Applied Probability, 25 0 (04): 0 688--699, 1988",
+      "authors": "Dwyer, Rex A",
+      "title": "On the convex hull of random points in a polytope",
+      "venue": "Journal of Applied Probability, 25 0 (04): 0 688--699, 1988",
+      "year": 1988,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fanty1994context",
+      "raw": "Fanty, Mark. Context-free parsing in connectionist networks. Parallel natural language processing, pp.\\ 211--237, 1994",
+      "authors": "Fanty, Mark",
+      "title": "Context-free parsing in connectionist networks",
+      "venue": "Parallel natural language processing, pp.\\ 211--237, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gilmer2017neural",
+      "raw": "Gilmer, Justin, Schoenholz, Samuel S, Riley, Patrick F, Vinyals, Oriol, and Dahl, George E. Neural message passing for quantum chemistry. arXiv preprint arXiv:1704.01212, 2017",
+      "authors": "Gilmer, Justin, Schoenholz, Samuel S, Riley, Patrick F, Vinyals, Oriol, and Dahl, George E",
+      "title": "Neural message passing for quantum chemistry",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1704.01212",
+      "doi": null
+    },
+    {
+      "key": "graves2014neural",
+      "raw": "Graves, Alex, Wayne, Greg, and Danihelka, Ivo. Neural turing machines. arXiv preprint arXiv:1410.5401, 2014",
+      "authors": "Graves, Alex, Wayne, Greg, and Danihelka, Ivo",
+      "title": "Neural turing machines",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.5401",
+      "doi": null
+    },
+    {
+      "key": "grefenstette2015learning",
+      "raw": "Grefenstette, Edward, Hermann, Karl Moritz, Suleyman, Mustafa, and Blunsom, Phil. Learning to transduce with unbounded memory. In Advances in Neural Information Processing Systems, pp.\\ 1828--1836, 2015",
+      "authors": "Grefenstette, Edward, Hermann, Karl Moritz, Suleyman, Mustafa, and Blunsom, Phil",
+      "title": "Learning to transduce with unbounded memory",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 1828--1836, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "helsgaun2006effective",
+      "raw": "Helsgaun, Keld. An effective implementation of K-opt moves for the Lin-Kernighan TSP heuristic. PhD thesis, Roskilde University. Department of Computer Science, 2006",
+      "authors": "Helsgaun, Keld",
+      "title": "An effective implementation of K-opt moves for the Lin-Kernighan TSP heuristic",
+      "venue": "PhD thesis, Roskilde University. Department of Computer Science, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen. Long short-term memory. Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "authors": "Hochreiter, Sepp and Schmidhuber, J\\\"urgen",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "joulin2015inferring",
+      "raw": "Joulin, Armand and Mikolov, Tomas. Inferring algorithmic patterns with stack-augmented recurrent nets. In Advances in Neural Information Processing Systems, pp.\\ 190--198, 2015",
+      "authors": "Joulin, Armand and Mikolov, Tomas",
+      "title": "Inferring algorithmic patterns with stack-augmented recurrent nets",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 190--198, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kaiser2015neural",
+      "raw": "Kaiser, ukasz and Sutskever, Ilya. Neural gpus learn algorithms. arXiv preprint arXiv:1511.08228, 2015",
+      "authors": "Kaiser, ukasz and Sutskever, Ilya",
+      "title": "Neural gpus learn algorithms",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.08228",
+      "doi": null
+    },
+    {
+      "key": "kearnes2016molecular",
+      "raw": "Kearnes, Steven, McCloskey, Kevin, Berndl, Marc, Pande, Vijay, and Riley, Patrick. Molecular graph convolutions: moving beyond fingerprints. Journal of computer-aided molecular design, 30 0 (8): 0 595--608, 2016",
+      "authors": "Kearnes, Steven, McCloskey, Kevin, Berndl, Marc, Pande, Vijay, and Riley, Patrick",
+      "title": "Molecular graph convolutions: moving beyond fingerprints",
+      "venue": "Journal of computer-aided molecular design, 30 0 (8): 0 595--608, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lovasz1989line",
+      "raw": "Lov\\'asz, L\\'aszl\\'o, Saks, Michael, and Trotter, William T. An on-line graph coloring algorithm with sublinear performance ratio. Discrete Mathematics, 75 0 (1-3): 0 319--325, 1989",
+      "authors": "Lov\\'asz, L\\'aszl\\'o, Saks, Michael, and Trotter, William T",
+      "title": "An on-line graph coloring algorithm with sublinear performance ratio",
+      "venue": "Discrete Mathematics, 75 0 (1-3): 0 319--325, 1989",
+      "year": 1989,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "martello1999dynamic",
+      "raw": "Martello, Silvano, Pisinger, David, and Toth, Paolo. Dynamic programming and strong bounds for the 0-1 knapsack problem. Management Science, 45 0 (3): 0 414--424, 1999",
+      "authors": "Martello, Silvano, Pisinger, David, and Toth, Paolo",
+      "title": "Dynamic programming and strong bounds for the 0-1 knapsack problem",
+      "venue": "Management Science, 45 0 (3): 0 414--424, 1999",
+      "year": 1999,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nowak2017note",
+      "raw": "Nowak, Alex, Villar, Soledad, Bandeira, Afonso S, and Bruna, Joan. A note on learning algorithms for quadratic assignment with graph neural networks. arXiv preprint arXiv:1706.07450, 2017",
+      "authors": "Nowak, Alex, Villar, Soledad, Bandeira, Afonso S, and Bruna, Joan",
+      "title": "A note on learning algorithms for quadratic assignment with graph neural networks",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1706.07450",
+      "doi": null
+    },
+    {
+      "key": "pollack1991induction",
+      "raw": "Pollack, Jordan B. The induction of dynamical recognizers. Machine Learning, 7 0 (2-3): 0 227--252, 1991",
+      "authors": "Pollack, Jordan B",
+      "title": "The induction of dynamical recognizers",
+      "venue": "Machine Learning, 7 0 (2-3): 0 227--252, 1991",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "reed2015neural",
+      "raw": "Reed, Scott and de Freitas, Nando. Neural programmer-interpreters. arXiv preprint arXiv:1511.06279, 2015",
+      "authors": "Reed, Scott and de Freitas, Nando",
+      "title": "Neural programmer-interpreters",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.06279",
+      "doi": null
+    },
+    {
+      "key": "scarselli2009graph",
+      "raw": "Scarselli, Franco, Gori, Marco, Tsoi, Ah Chung, Hagenbuchner, Markus, and Monfardini, Gabriele. The graph neural network model. IEEE Transactions on Neural Networks, 20 0 (1): 0 61--80, 2009",
+      "authors": "Scarselli, Franco, Gori, Marco, Tsoi, Ah Chung, Hagenbuchner, Markus, and Monfardini, Gabriele",
+      "title": "The graph neural network model",
+      "venue": "IEEE Transactions on Neural Networks, 20 0 (1): 0 61--80, 2009",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sukhbaatar2015end",
+      "raw": "Sukhbaatar, Sainbayar, Szlam, Arthur, Weston, Jason, and Fergus, Rob. End-to-end memory networks. In Advances in Neural Information Processing Systems, pp.\\ 2431--2439, 2015",
+      "authors": "Sukhbaatar, Sainbayar, Szlam, Arthur, Weston, Jason, and Fergus, Rob",
+      "title": "End-to-end memory networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2431--2439, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc V. Sequence to sequence learning with neural networks. In Advances in neural information processing systems, pp.\\ 3104--3112, 2014",
+      "authors": "Sutskever, Ilya, Vinyals, Oriol, and Le, Quoc V",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in neural information processing systems, pp.\\ 3104--3112, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tabor2000fractal",
+      "raw": "Tabor, Whitney. Fractal encoding of context-free grammars in connectionist networks. Expert Systems, 17 0 (1): 0 41--56, 2000",
+      "authors": "Tabor, Whitney",
+      "title": "Fractal encoding of context-free grammars in connectionist networks",
+      "venue": "Expert Systems, 17 0 (1): 0 41--56, 2000",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vinyals2015order",
+      "raw": "Vinyals, Oriol, Bengio, Samy, and Kudlur, Manjunath. Order matters: Sequence to sequence for sets. arXiv preprint arXiv:1511.06391, 2015",
+      "authors": "Vinyals, Oriol, Bengio, Samy, and Kudlur, Manjunath",
+      "title": "Order matters: Sequence to sequence for sets",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1511.06391",
+      "doi": null
+    },
+    {
+      "key": "vinyals2015pointer",
+      "raw": "Vinyals, Oriol, Fortunato, Meire, and Jaitly, Navdeep. Pointer networks. In Advances in Neural Information Processing Systems, pp.\\ 2692--2700, 2015",
+      "authors": "Vinyals, Oriol, Fortunato, Meire, and Jaitly, Navdeep",
+      "title": "Pointer networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2692--2700, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "weston2014memory",
+      "raw": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine. Memory networks. arXiv preprint arXiv:1410.3916, 2014",
+      "authors": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine",
+      "title": "Memory networks",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.3916",
+      "doi": null
+    },
+    {
+      "key": "zaremba2014learning",
+      "raw": "Zaremba, Wojciech and Sutskever, Ilya. Learning to execute. arXiv preprint arXiv:1410.4615, 2014",
+      "authors": "Zaremba, Wojciech and Sutskever, Ilya",
+      "title": "Learning to execute",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1410.4615",
+      "doi": null
+    },
+    {
+      "key": "zaremba2015reinforcement",
+      "raw": "Zaremba, Wojciech and Sutskever, Ilya. Reinforcement learning neural turing machines-revised. arXiv preprint arXiv:1505.00521, 2015",
+      "authors": "Zaremba, Wojciech and Sutskever, Ilya",
+      "title": "Reinforcement learning neural turing machines-revised",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1505.00521",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\forall~n~,\\forall X~,|X|=n~,~\\mathcal{T}(X) &=& \\mathcal{M}( \\mathcal{T}(\\mathcal{S}_1(X)), \\dots, \\mathcal{T}(\\mathcal{S}_s(X)))\\,, \\nonumber \\\\\n~ |\\mathcal{S}_j(X)| &<& n\\,,~\\cup_{j \\leq s} \\mathcal{S}_j(X) = X~,",
+      "environment": "eqnarray",
+      "labels": [
+        "basicrec"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\PP(X) = \\{X_{j,k}~;0 \\leq j < J; 0 \\leq k < n_j \\}~,~\\text{with } X_{j,k} = X_{j+1,2k} \\sqcup X_{j+1,2k+1}~,",
+      "environment": "equation",
+      "labels": [
+        "partidef"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\{ X_{1,0} , X_{1,1} \\} &=& \\Sp_\\theta(X)~,~\\text{with } X = X_{1,0} \\sqcup X_{1,1}~,  \\\\ \\nonumber\n\\{ X_{j+1,2k} , X_{j+1,2k+1} \\} &=& \\Sp_\\theta(X_{j,k})~,~\\text{with } X_{j,k} = X_{j+1,2k} \\sqcup X_{j+1,2k+1}~,~(j < J, k \\leq 2^j)~.",
+      "environment": "eqnarray",
+      "labels": [
+        "gu1"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "Y_{J,k} &=& \\tilde{\\M}_{\\phi}( X_{J,k}) ~~,~(1 \\leq k \\leq 2^J)~,\\\\\n Y_{j,k} &=& \\M_\\phi(Y_{j+1,2k}, Y_{j+1,2k+1})~~,~(1 \\leq k \\leq 2^j, j < J)~,\\text{and}\\, \\hat{Y} = \\M_\\phi(Y_{1,0}, Y_{1,1}) ~.\\nonumber",
+      "environment": "eqnarray",
+      "labels": [
+        "gu2"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "latex": "h_m^{(1)} = \\rho \\left( B_{1,0} x_m + B_{2,0} \\mu(X) \\right) ~,~ h_m^{(r+1)} = \\rho \\left( B_{1,r} h_m^{(r)} + n^{-1} B_{2,r} \\sum_{m'\\leq n } h_{m'}^{(r)} \\right)~,",
+      "environment": "equation",
+      "labels": [
+        "fr2"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "h_m^{(1)} = \\rho \\left( B_{1,0} x_m + B_{2,0} \\mu(X) \\right) ~,~ h_m^{(r+1)} = \\rho \\left( B_{1,r} h_m^{(r)} + n^{-1} B_{2,r} \\sum_{m'\\leq n } A_{m,m'}^{(r)} h_{m'}^{(r)} \\right)~,",
+      "environment": "equation",
+      "labels": [
+        "fr3"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "O = \\M_\\phi(Y_0,Y_1) = \\bar{\\Gamma} \\left( \n\\begin{array}{c}\nY_0 \\\\\nY_1\n\\end{array}\\right)~, \\text{ with }\n~\\bar{\\Gamma}_{s,i} = \\left\\{ \n\\begin{array}{rl}\n1 & \\text{if } i = \\arg\\max_{i'} p_s(i')~.\\\\\n0 & \\text{otherwise.}\n\\end{array} \\right. ~",
+      "environment": "equation",
+      "labels": [
+        "gat4"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "V^{(k+1)}_m &=& \\rho\\left(\\beta_1 V^{(k)}_m + \\sum_{m'} A^{(k)}_{m,m'} V^{(k)}_{m'}\\right) \\\\  \nA^{(k+1)}_{m,m'} &=& \\varphi( V^{(k+1)}_m, V^{(k+1)}_{m'}) ~,",
+      "environment": "eqnarray",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\hat{Y} = \\left( \\prod_{j=0}^{J} \\widetilde{\\Gamma}_j \\right)  \n\\begin{bmatrix}\nY_{J,0} \\\\\n\\vdots \\\\\nY_{J,n_J}\n\\end{bmatrix}~, \\text{with }\n\n    \\widetilde{\\Gamma}_0 = \\bar{\\Gamma}_{0, 0}~, \n    \\widetilde{\\Gamma}_1 = \\left( \\begin{array}{cc}\n    \\bar{\\Gamma}_{1, 0} & 0  \\\\\n    0 & \\bar{\\Gamma}_{1, 1} \\\\\n    \\end{array}\n    \\right), \n   \\widetilde{\\Gamma}_J = \\left( \\begin{array}{ccc}\n    \\bar{\\Gamma}_{J, 0} & 0 & \\cdots   \\\\\n    0 & \\bar{\\Gamma}_{J, 1} & \\ddots   \\\\\n \n    0 & \\cdots & \\bar{\\Gamma}_{J, n_J} \\\\\n    \\end{array}\\right)~.",
+      "environment": "equation",
+      "labels": [
+        "mergefinaleq"
+      ]
+    },
+    {
+      "ordinal": 9,
+      "latex": "\\Lo(\\theta, \\phi) = \\frac{1}{L} \\sum_{l \\leq L} \\E_{\\PP(X) \\sim \\mathbf{S}_\\theta(X) } \\log p_{\\phi}( \\hat{Y}=Y^l~|~\\PP(X^l))~,\\text{with}~~ p_{\\phi}(Y~|~\\PP(X)) = \\mathbf{M}_\\phi(\\PP(X))~.",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\nabla_\\phi \\log p_{\\theta, \\phi}(Y~|~X)  = \\E_{\\PP(X) \\sim \\mathbf{S}_\\theta(X) } \\nabla_\\phi \\log \\mathbf{M}_\\phi( \\PP(X) )",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\nabla_\\theta \\E_{\\PP(X) \\sim \\mathbf{S}_\\theta(X) } F(\\PP(X)) &=& \\sum_{\\mathcal{X}} F(\\mathcal{X}) \\nabla_\\theta f_\\theta(\\mathcal{X}) = \\sum_{\\mathcal{X}} F(\\mathcal{X}) f_\\theta(\\mathcal{X}) \\nabla_\\theta \\log f_\\theta(\\mathcal{X})= \\E_{\\mathcal{X} \\sim \\mathbf{S}_\\theta(X) } F(\\mathcal{X}) \\nabla_\\theta\\log f_\\theta(\\mathcal{X}) \\nonumber\\\\ \n    &\\approx & \\frac{1}{S} \\sum_{\\tilde{X}^{(s)} \\sim \\mathbf{S}_\\theta(X) } F(\\mathcal{X}^{(s)})\\nabla_\\theta \\log f_\\theta(\\mathcal{X}^{(s)})~.",
+      "environment": "eqnarray",
+      "labels": [
+        "saq1"
+      ]
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\Lo(\\theta) = \\frac{-1}{L} \\sum_{l \\leq L} \\E_{\\PP(X) \\sim \\mathbf{S}_\\theta(X) } R(\\PP(X))~,",
+      "environment": "equation",
+      "labels": [
+        "sqq2"
+      ]
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\min_{\\mathcal{P}(X)}-R(\\mathcal{P}(X))=\\min_{\\mathcal{P}(X)}\\sum_{i\\in \\mathcal{P}(X)}n_i\\sigma_i^2~,",
+      "environment": "equation",
+      "labels": [
+        "kmeans_reward"
+      ]
+    },
+    {
+      "ordinal": 14,
+      "latex": "\\begin{array}{ll} \n\\text{maximize}_{x_i} & \\sum_i x_i v_i \\\\\n\\text{subject to} & x_i \\in \\{0,1\\},~ \\sum_i x_i w_i \\leq W~.\n\\end{array}",
+      "environment": "equation",
+      "labels": [
+        "eq:knapsack"
+      ]
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\mathbb{E} C_{\\Sp}(n) = \\mathbb{E}\\{ C_{\\Sp}(\\alpha_s n) + C_{\\Sp}((1 - \\alpha_s) n) \\} + \\Theta( n)~,",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 16,
+      "latex": "\\Rc(\\Sp) = - \\left[M^{-1} \\sum_{m \\leq M} p_\\theta(z ~|~X)^2 - M^{-2} \\left(\\sum_{m} p_\\theta(z ~|~X) \\right)^2 \\right]~.",
+      "environment": "equation",
+      "labels": [
+        "split_reg"
+      ]
+    },
+    {
+      "ordinal": 17,
+      "latex": "\\left\\{\\begin{array}{ll} \n    e_{q,i} = f_{\\text{enc}}(e_{q,i - 1}, y_{q,i}) & i=1,\\ldots, n_q~,q=0,1~, \\\\\n    d_s = f_{\\text{dec}}(d_{s-1}, t_{s-1}) & s=1,\\ldots, S \\\\\n\\end{array}\\right.",
+      "environment": "equation",
+      "labels": [
+        "encoder"
+      ]
+    },
+    {
+      "ordinal": 18,
+      "latex": "\\left\\{\n\\begin{array}{ll} \n    u_{q,i}^s = \\phi_V^T \\text{tanh}\\left( \\phi_{e} e_{q,i} + \\phi_d d_s \\right) & s=0,\\ldots S~,q=0,1~,i \\leq n_q~, \\\\\n    p_s= \\text{softmax}(u_{\\cdot}^s) ~.& \n    \n\\end{array}\\right. ~,",
+      "environment": "equation",
+      "labels": [
+        "ptrnetatt"
+      ]
+    },
+    {
+      "ordinal": 19,
+      "latex": ",~O = \\M_\\phi(Y_0,Y_1) = \\bar{\\Gamma} \\left( \n\\begin{array}{c}\nY_0 \\\\\nY_1\n\\end{array}\\right)~, \\text{ with }\n~\\bar{\\Gamma}_{s,i} = \\left\\{ \n\\begin{array}{rl}\n1 & \\text{if } i = \\arg\\max_{i'} p_s(i')~.\\\\\n0 & \\text{otherwise.}\n\\end{array} \\right. ~",
+      "environment": "equation",
+      "labels": [
+        "gat4"
+      ]
+    },
+    {
+      "ordinal": 20,
+      "latex": "\\left\\{\\begin{array}{ll} \n    e_{q,i} = f_{\\text{enc}}(e_{q,i - 1}, y_{q,i}) & i=1,\\ldots, n_q~,q=0,1~, \\\\\n    d_s = f_{\\text{dec}}(d_{s-1}, y_{o_{s-1}}) & s=1,\\ldots, S \\\\\n\\end{array}\\right.",
+      "environment": "equation",
+      "labels": [
+        "encoder2"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1352,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.78863525390625,
+            "y0": 310.9684143066406,
+            "x1": 468.207763671875,
+            "y1": 322.97900390625
+          },
+          {
+            "x0": 143.78863525390625,
+            "y0": 321.93157958984375,
+            "x1": 166.09420776367188,
+            "y1": 333.9421691894531
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3633,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.54759979248047,
+            "y0": 561.3320922851562,
+            "x1": 504.09716796875,
+            "y1": 573.3426513671875
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 572.2952270507812,
+            "x1": 504.0897216796875,
+            "y1": 584.3057861328125
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 583.2593383789062,
+            "x1": 322.6353759765625,
+            "y1": 595.2698974609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 1523,
+      "numbers": 0,
+      "citations": 21,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.90676879882812,
+            "y0": 594.2235107421875,
+            "x1": 504.0943298339844,
+            "y1": 606.2340698242188
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 605.1876831054688,
+            "x1": 284.8792724609375,
+            "y1": 617.1982421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Problem Setup",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "Scale Invariant Tasks",
+      "chars": 1242,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.43854522705078,
+            "y0": 252.7991485595703,
+            "x1": 276.7524108886719,
+            "y1": 264.8097229003906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Weakly Supervised Recursion",
+      "chars": 1852,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.90676879882812,
+            "y0": 477.9488830566406,
+            "x1": 268.9313659667969,
+            "y1": 489.95947265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Learning from non-differentiable Rewards",
+      "chars": 1589,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.54759979248047,
+            "y0": 161.1930694580078,
+            "x1": 256.8407287597656,
+            "y1": 173.20364379882812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Computational Complexity as Regularization",
+      "chars": 833,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.90676879882812,
+            "y0": 419.6815185546875,
+            "x1": 346.6156005859375,
+            "y1": 431.6921081542969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Neural Models for and",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Split",
+      "chars": 1639,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.21109008789062,
+            "y0": 579.90576171875,
+            "x1": 334.0099182128906,
+            "y1": 591.9163208007812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Merge",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Merge Module",
+      "chars": 2473,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 197.47584533691406,
+            "y0": 294.9359130859375,
+            "x1": 330.7510681152344,
+            "y1": 306.9465026855469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Recursive Merge over Partition Tree",
+      "chars": 456,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 235.80487060546875,
+            "y0": 102.24237823486328,
+            "x1": 457.6085510253906,
+            "y1": 114.2529525756836
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Bootstrapping the Merge Partition Tree",
+      "chars": 1543,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.59762573242188,
+            "y0": 208.1011505126953,
+            "x1": 261.716796875,
+            "y1": 220.11172485351562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Training",
+      "chars": 1569,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.59762573242188,
+            "y0": 487.19921875,
+            "x1": 305.1514587402344,
+            "y1": 499.2098083496094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 268,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.43854522705078,
+            "y0": 306.7864685058594,
+            "x1": 504.0896301269531,
+            "y1": 318.79705810546875
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 317.7506408691406,
+            "x1": 146.69525146484375,
+            "y1": 329.76123046875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Convex Hull",
+      "chars": 2957,
+      "numbers": 9,
+      "citations": 2,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.59762573242188,
+            "y0": 376.42919921875,
+            "x1": 212.54637145996094,
+            "y1": 388.4397888183594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "K-means Clustering",
+      "chars": 2828,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.43854522705078,
+            "y0": 375.8409118652344,
+            "x1": 265.58551025390625,
+            "y1": 387.85150146484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Knapsack",
+      "chars": 4878,
+      "numbers": 2,
+      "citations": 4,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 370.5671691894531,
+            "y0": 661.7842407226562,
+            "x1": 504.0957946777344,
+            "y1": 673.7947998046875
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 672.7484130859375,
+            "x1": 504.093505859375,
+            "y1": 684.7589721679688
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 683.7125854492188,
+            "x1": 226.67689514160156,
+            "y1": 695.72314453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions",
+      "chars": 1186,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.43854522705078,
+            "y0": 566.3153686523438,
+            "x1": 504.089599609375,
+            "y1": 578.325927734375
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 577.279541015625,
+            "x1": 382.42071533203125,
+            "y1": 589.2901000976562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgments",
+      "chars": 102,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 10,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.59762573242188,
+            "y0": 101.77515411376953,
+            "x1": 504.0964050292969,
+            "y1": 113.78572845458984
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 112.73932647705078,
+            "x1": 147.7659454345703,
+            "y1": 124.7499008178711
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 27,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "lovasz1989line",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "In future work, we plan to extend the results of the TSP by increasing the number of splits J, by refining the supervised DiCoNet model with the non-differentiable TSP cost, and by exploring higher-order interactions using Graph Neural Networks defined over graph hierarchies [Lov\u00e1sz et al. 1989].",
+      "section": "Conclusions",
+      "sectionKind": "conclusion",
+      "ordinal": 30,
+      "title": "An on-line graph coloring algorithm with sublinear performance ratio",
+      "authors": "Lov\\'asz, L\\'aszl\\'o, Saks, Michael, and Trotter, William T",
+      "year": 1989,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 482.3106689453125,
+            "y0": 687.9165649414062,
+            "x1": 504.44317626953125,
+            "y1": 699.9271240234375
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 698.8806762695312,
+            "x1": 504.0902099609375,
+            "y1": 710.8912353515625
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 709.8448486328125,
+            "x1": 447.288330078125,
+            "y1": 721.8554077148438
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "lovasz1989line",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "In future work, we plan to extend the results of the TSP by increasing the number of splits J, by refining the supervised DiCoNet model with the non-differentiable TSP cost, and by exploring higher-order interactions using Graph Neural Networks defined over graph hierarchies [Lov\u00e1sz et al. 1989].",
+        "section": "Conclusions",
+        "sectionKind": "conclusion",
+        "ordinal": 30,
+        "title": "An on-line graph coloring algorithm with sublinear performance ratio",
+        "authors": "Lov\\'asz, L\\'aszl\\'o, Saks, Michael, and Trotter, William T",
+        "year": 1989,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 482.3106689453125,
+              "y0": 687.9165649414062,
+              "x1": 504.44317626953125,
+              "y1": 699.9271240234375
+            },
+            {
+              "x0": 107.90676879882812,
+              "y0": 698.8806762695312,
+              "x1": 504.0902099609375,
+              "y1": 710.8912353515625
+            },
+            {
+              "x0": 107.90676879882812,
+              "y0": 709.8448486328125,
+              "x1": 447.288330078125,
+              "y1": 721.8554077148438
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "A particularly simple and illustrative case is the binary setup with s=2 and \ud835\udcae_1(X) \u2229\ud835\udcae_2(X) = \u2205, that we will adopt in the following for simplicity.",
+      "anchorText": "A particularly simple and illustrative case is the binary setup with",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "for simplicity",
+      "section": "Scale Invariant Tasks",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 193.4793243408203,
+            "y0": 422.1636657714844,
+            "x1": 460.8414001464844,
+            "y1": 434.17425537109375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity, we use the notation p_\u03d5(Y | \ud835\udcab(X))=\u220f_j=0^J\u0393_j=\ud835\udc0c_\u03d5(\ud835\udcab(X)), where now the matrices \u0393\u0303_j are not binarized.",
+      "anchorText": "For simplicity, we use the notation",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "For simplicity",
+      "section": "Bootstrapping the Merge Partition Tree",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 133.1875762939453,
+            "y0": 417.765625,
+            "x1": 269.5580139160156,
+            "y1": 429.7762145996094
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "For simplicity, instead of defining the depth of the tree dynamically depending on the average size of the partition, we fix it to 0 for 6-12, 1 for 12-25 and 2 for 25-50; see Figure [ref] and Table [ref].",
+      "anchorText": "For simplicity, instead of defining the depth of the tree dynamically depending on the average size of the partition, we fix it to 0 for 6-12, 1 for 12-25 and 2 for 25-50; see Figure",
+      "kind": "simplifying",
+      "support": "shown",
+      "cue": "For simplicity",
+      "section": "Convex Hull",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [
+        "convexhull_examples",
+        "convexhull_results"
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 415.87310791015625,
+            "y0": 148.25599670410156,
+            "x1": 504.0888671875,
+            "y1": 160.26657104492188
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 159.2201690673828,
+            "x1": 504.09039306640625,
+            "y1": 171.23074340820312
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 170.1842803955078,
+            "x1": 318.56512451171875,
+            "y1": 182.19485473632812
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe that it would also be interesting for future work to combine the strengths of both aproaches.",
+      "anchorText": "We believe that it would also be interesting for future work to combine the strengths of both aproaches.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Knapsack",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 209.01260375976562,
+            "y0": 709.8448486328125,
+            "x1": 504.096923828125,
+            "y1": 721.8554077148438
+          },
+          {
+            "x0": 107.90676879882812,
+            "y0": 720.8089599609375,
+            "x1": 219.7396697998047,
+            "y1": 732.8195190429688
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 0,
+    "shown": 1,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2016-11-08",
+    "authors": [
+      "Alex Nowak-Vila",
+      "David Folqu\u00e9",
+      "Joan Bruna"
+    ]
+  }
+}

@@ -9,6 +9,8 @@ from keystone.ingest.latex import (
     document_body,
     expand_inputs,
     expand_macros,
+    extract_tables,
+    numeric_macros,
     split_sentences,
     strip_comments,
     strip_markup,
@@ -381,3 +383,22 @@ def test_a_run_in_heading_is_not_a_lead_in() -> None:
         "All layers work in the forward direction.",
         "In our experiments we use LSTMs.",
     ]
+
+
+def test_a_number_kept_in_a_macro_reaches_the_table_cell() -> None:
+    """1410.8206 writes its headline 37.5 as \\bestbleuunk in prose and table alike.
+
+    The table read it as a macro name, held no number for the paper's own row, and the
+    abstract was set against the 37.2 one row up — a different paper's system.
+    """
+    source = r"""\newcommand{\bestbleuunk}{37.5} % after unk translation
+\newcommand{\ours}{\textsc{Ours}}
+\begin{tabular}{l|c}
+System & BLEU\\
+Ensemble + PosUnk & \bestbleuunk{}\\
+\ours & 36.9\\
+\end{tabular}"""
+    rows = extract_tables(source, numeric_macros(source))[0].rows
+    assert rows[1] == ("Ensemble + PosUnk", "37.5")
+    # A formatting macro is not a number and stays exactly as the author wrote it.
+    assert rows[2][0] == r"\ours"

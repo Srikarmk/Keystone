@@ -1,0 +1,1617 @@
+{
+  "id": "1608.07076",
+  "title": "context-aware natural language generator for dialogue systems",
+  "keystone": null,
+  "codeUrl": "https://github.com/UFAL-DSG/alex_context_nlg_dataset",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1608.07076",
+  "numbers": [
+    {
+      "value": "0.0005",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Same as dusek_sequence--sequence_2016, we train the seq2seq models by minimizing cross-entropy on the training set using the Adam optimizer , and we measure BLEU on the development set after each pass over the training data, selecting the best-performing parameters. Based on our preliminary experiments on development data, we use embedding size 50, LSTM cell size 128, learning rate 0.0005, and batch size 20.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "2.8 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We can see that while the -gram match reranker brings a BLEU score improvement, using context prepending or separate encoder results in scores lower than the baseline. However, using the -gram match reranker together with context prepending or separate encoder brings significant improvements of about 2.8 BLEU points in both cases, better than using the -gram match reranker alone. . We believe that adding the context information into the decoder does increase the chances of contextually appropriate outputs appearing on the decoder -best lists, but it also introduces a lot more uncertainty and therefore, the appropriate outputs may not end on top of the list based on decoder scores alone.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "3%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "For all our setups, ERR stayed around 3%.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 96.29459381103516,
+            "y0": 585.657958984375,
+            "x1": 282.4801940917969,
+            "y1": 596.5670166015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "52.5%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The judges preferred the context-aware system output in 52.5% cases, significantly more than the baseline.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 453.9705810546875,
+            "y0": 160.33871459960938,
+            "x1": 525.5452270507812,
+            "y1": 171.24781799316406
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 173.88772583007812,
+            "x1": 525.5451049804688,
+            "y1": 184.7968292236328
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 187.43673706054688,
+            "x1": 501.58111572265625,
+            "y1": 198.34584045410156
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "BLEU and NIST scores of different generator setups on the test data.",
+      "label": "tab:results",
+      "numericCells": 12,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Setup",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "NIST",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Baseline (context not used)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.41",
+            "value": "66.41",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.037",
+            "value": "7.037",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "-gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.68",
+            "value": "68.68",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.577",
+            "value": "7.577",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Prepending context",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.87",
+            "value": "63.87",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.456",
+            "value": "6.456",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.26",
+            "value": "69.26",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.772",
+            "value": "7.772",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Context encoder",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.08",
+            "value": "63.08",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.818",
+            "value": "6.818",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.17",
+            "value": "69.17",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7.596",
+            "value": "7.596",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 111.17457580566406,
+            "y0": 335.0066833496094,
+            "x1": 290.2693176269531,
+            "y1": 345.915771484375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 348.5556945800781,
+            "x1": 198.64373779296875,
+            "y1": 359.46478271484375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Example outputs of the different setups of our generator (with entrainment highlighted)",
+      "label": "tab:outputs",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Context",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "is there a later option",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Input DA",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "iconfirm(alternative=next)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Next connection.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "-gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "You want a later connection.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Prepending context + -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "You want a later connection.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Context encoder + -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "You want a later option.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Context",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "i need to find a bus connection",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Input DA",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "inform_no_match(vehicle=bus)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "No bus found, sorry.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "-gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I did not find a bus route.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Prepending context + -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I'm sorry, I cannot find a bus connection.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Context encoder + -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I'm sorry, I cannot find a bus connection.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Context",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "i rather take the bus",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Input DA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "inform(vehicle=bus, departure_time=8:01am, direction=Cathedral Parkway, from_stop=Bowling Green, to 0.37cmline=M15)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "At 8:01am by bus line M15 from Bowling Green to Cathedral Parkway.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "-gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "At 8:01am by bus line M15 from Bowling Green to Cathedral Parkway.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Prepending context + -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "You can take the M15 bus from Bowling Green to Cathedral Parkway at 8:01am.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Context encoder + -gram match reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "At 8:01am by bus line M15 from Bowling Green to Cathedral Parkway.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 127.46266174316406,
+            "y0": 222.53262329101562,
+            "x1": 508.6482238769531,
+            "y1": 233.4417266845703
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\ttdefault": "aett",
+    "\\@BIBLABEL": "\\@emptybiblabel",
+    "\\@emptybiblabel": "",
+    "\\Tstrut": "\\rule{0pt}{2.3ex}",
+    "\\Bstrut": "\\rule[-0.9ex]{0pt}{0pt}"
+  },
+  "references": [
+    {
+      "key": "tensorflow2015-whitepaper",
+      "raw": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng. 2015. TensorFlow: Large-scale machine learning on heterogeneous systems. Software available from tensorflow.org",
+      "authors": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng",
+      "title": "2015",
+      "venue": "TensorFlow: Large-scale machine learning on heterogeneous systems Software available from tensorflow.org",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau_neural_2014",
+      "raw": "D. Bahdanau, K. Cho, and Y. Bengio. 2015. Neural machine translation by jointly learning to align and translate. In International Conference on Learning Representations. arXiv:1409.0473",
+      "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+      "title": "2015",
+      "venue": "Neural machine translation by jointly learning to align and translate In International Conference on Learning Representations",
+      "year": 2015,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "bengio_neural_2003",
+      "raw": "Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin. 2003. A neural probabilistic language model. Journal of Machine Learning Research, 3:1137--1155",
+      "authors": "Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin",
+      "title": "2003",
+      "venue": "A neural probabilistic language model Journal of Machine Learning Research, 3:1137--1155",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "brockmann_modelling_2005",
+      "raw": "C. Brockmann, A. Isard, J. Oberlander, and M. White. 2005. Modelling alignment for affective dialogue. In Workshop on Adapting the Interaction Style to Affective Factors at the 10th International Conference on User Modeling",
+      "authors": "C. Brockmann, A. Isard, J. Oberlander, and M. White",
+      "title": "2005",
+      "venue": "Modelling alignment for affective dialogue In Workshop on Adapting the Interaction Style to Affective Factors at the 10th International Conference on User Modeling",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "buschmeier_modelling_2010",
+      "raw": "H. Buschmeier, K. Bergmann, and S. Kopp. 2010. Modelling and evaluation of lexical and syntactic alignment with a priming-based microplanner. In Empirical Methods in Natural Language Generation, number 5790 in Lecture Notes in Computer Science, pages 85--104. Springer",
+      "authors": "H. Buschmeier, K. Bergmann, and S. Kopp",
+      "title": "2010",
+      "venue": "Modelling and evaluation of lexical and syntactic alignment with a priming-based microplanner In Empirical Methods in Natural Language Generation, number 5790 in Lecture Notes in Computer Science, pages 85--104. Springer",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "doddington_automatic_2002",
+      "raw": "G. Doddington. 2002. Automatic evaluation of machine translation quality using N-gram co-occurrence statistics. In Proceedings of the Second International Conference on Human Language Technology Research, pages 138--145",
+      "authors": "G. Doddington",
+      "title": "2002",
+      "venue": "Automatic evaluation of machine translation quality using N-gram co-occurrence statistics In Proceedings of the Second International Conference on Human Language Technology Research, pages 138--145",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dusek_context-aware_2016",
+      "raw": "O. Du\u0161ek and F. Jur\u010d\u00ed\u010dek. 2016a. A context-aware natural language generation dataset for dialogue systems. In Workshop on Collecting and Generating Resources for Chatbots and Conversational Agents - Development and Evaluation, pages 6--9",
+      "authors": "O. Du\u0161ek and F. Jur\u010d\u00ed\u010dek",
+      "title": "2016a",
+      "venue": "A context-aware natural language generation dataset for dialogue systems In Workshop on Collecting and Generating Resources for Chatbots and Conversational Agents - Development and Evaluation, pages 6--9",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dusek_sequence--sequence_2016",
+      "raw": "O. Du\u0161ek and F. Jur\u010d\u00ed\u010dek. 2016b. Sequence-to-sequence generation for spoken dialogue via deep syntax trees and strings. arXiv:1606.05491. To appear in Proceedings of ACL",
+      "authors": "O. Du\u0161ek and F. Jur\u010d\u00ed\u010dek",
+      "title": "2016b",
+      "venue": "Sequence-to-sequence generation for spoken dialogue via deep syntax trees and strings To appear in Proceedings of ACL",
+      "year": null,
+      "arxivId": "1606.05491",
+      "doi": null
+    },
+    {
+      "key": "friedberg_lexical_2012",
+      "raw": "H. Friedberg, D. Litman, and S. B. F. Paletz. 2012. Lexical entrainment and success in student engineering groups. In Proc. of SLT, pages 404--409",
+      "authors": "H. Friedberg, D. Litman, and S. B. F. Paletz",
+      "title": "2012",
+      "venue": "Lexical entrainment and success in student engineering groups In Proc. of SLT, pages 404--409",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves_generating_2013",
+      "raw": "A. Graves. 2013. Generating sequences with recurrent neural networks. arXiv:1308.0850",
+      "authors": "A. Graves",
+      "title": "2013",
+      "venue": "Generating sequences with recurrent neural networks",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "hochreiter_long_1997",
+      "raw": "S. Hochreiter and J. Schmidhuber. 1997. Long short-term memory. Neural computation, 9(8):1735--1780",
+      "authors": "S. Hochreiter and J. Schmidhuber",
+      "title": "1997",
+      "venue": "Long short-term memory Neural computation, 9(8):1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hu_entrainment_2014",
+      "raw": "Z. Hu, G. Halberg, C. Jimenez, and M. Walker. 2014. Entrainment in pedestrian direction giving: How many kinds of entrainment. In Proc. of IWSDS, pages 90--101",
+      "authors": "Z. Hu, G. Halberg, C. Jimenez, and M. Walker",
+      "title": "2014",
+      "venue": "Entrainment in pedestrian direction giving: How many kinds of entrainment In Proc. of IWSDS, pages 90--101",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jurcicek_alex_2014",
+      "raw": "F. Jur\u010d\u00ed\u010dek, O. Du\u0161ek, O. Pl\u00e1tek, and L. \u017dilka. 2014. Alex: A statistical dialogue systems framework. In Proc. of Text, Speech and Dialogue, pages 587--594",
+      "authors": "F. Jur\u010d\u00ed\u010dek, O. Du\u0161ek, O. Pl\u00e1tek, and L. \u017dilka",
+      "title": "2014",
+      "venue": "Alex: A statistical dialogue systems framework In Proc. of Text, Speech and Dialogue, pages 587--594",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kingma_adam:_2015",
+      "raw": "D. Kingma and J. Ba. 2015. Adam: A method for stochastic optimization. In International Conference on Learning Representations. arXiv:1412.6980",
+      "authors": "D. Kingma and J. Ba",
+      "title": "2015",
+      "venue": "Adam: A method for stochastic optimization In International Conference on Learning Representations",
+      "year": 2015,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "koehn_statistical_2004",
+      "raw": "P. Koehn. 2004. Statistical significance tests for machine translation evaluation. In Proceedings of EMNLP, pages 388--395",
+      "authors": "P. Koehn",
+      "title": "2004",
+      "venue": "Statistical significance tests for machine translation evaluation In Proceedings of EMNLP, pages 388--395",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lopes_automated_2013",
+      "raw": "J. Lopes, M. Eskenazi, and I. Trancoso. 2013. Automated two-way entrainment to improve spoken dialog system performance. In Proc. of ICASSP, pages 8372--8376",
+      "authors": "J. Lopes, M. Eskenazi, and I. Trancoso",
+      "title": "2013",
+      "venue": "Automated two-way entrainment to improve spoken dialog system performance In Proc. of ICASSP, pages 8372--8376",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lopes_rule-based_2015",
+      "raw": "J. Lopes, M. Eskenazi, and I. Trancoso. 2015. From rule-based to data-driven lexical entrainment models in spoken dialog systems. Computer Speech \\& Language, 31(1):87--112",
+      "authors": "J. Lopes, M. Eskenazi, and I. Trancoso",
+      "title": "2015",
+      "venue": "From rule-based to data-driven lexical entrainment models in spoken dialog systems Computer Speech \\& Language, 31(1):87--112",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mei_what_2015",
+      "raw": "H. Mei, M. Bansal, and M. R. Walter. 2015. What to talk about and how? selective generation using LSTMs with coarse-to-fine alignment. arXiv:1509.00838",
+      "authors": "H. Mei, M. Bansal, and M. R. Walter",
+      "title": "2015",
+      "venue": "What to talk about and how? selective generation using LSTMs with coarse-to-fine alignment",
+      "year": 2015,
+      "arxivId": "1509.00838",
+      "doi": null
+    },
+    {
+      "key": "nenkova_high_2008",
+      "raw": "A. Nenkova, A. Gravano, and J. Hirschberg. 2008. High frequency word entrainment in spoken dialogue. In Proc. of ACL-HLT, pages 169--172",
+      "authors": "A. Nenkova, A. Gravano, and J. Hirschberg",
+      "title": "2008",
+      "venue": "High frequency word entrainment in spoken dialogue In Proc. of ACL-HLT, pages 169--172",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "papineni_bleu:_2002",
+      "raw": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu. 2002. BLEU: A method for automatic evaluation of machine translation. In Proc. of ACL, pages 311--318",
+      "authors": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu",
+      "title": "2002",
+      "venue": "BLEU: A method for automatic evaluation of machine translation In Proc. of ACL, pages 311--318",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "parent_lexical_2010",
+      "raw": "G. Parent and M. Eskenazi. 2010. Lexical entrainment of real users in the Let\u2019s Go spoken dialog system. In Proc. of Interspeech, pages 3018--3021",
+      "authors": "G. Parent and M. Eskenazi",
+      "title": "2010",
+      "venue": "Lexical entrainment of real users in the Let\u2019s Go spoken dialog system In Proc. of Interspeech, pages 3018--3021",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "reitter_computational_2006",
+      "raw": "D. Reitter, F. Keller, and J. D. Moore. 2006. Computational modelling of structural priming in dialogue. In Proc. of NAACL-HLT: Short Papers, pages 121--124",
+      "authors": "D. Reitter, F. Keller, and J. D. Moore",
+      "title": "2006",
+      "venue": "Computational modelling of structural priming in dialogue In Proc. of NAACL-HLT: Short Papers, pages 121--124",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "stoyanchev_lexical_2009",
+      "raw": "S. Stoyanchev and A. Stent. 2009. Lexical and syntactic priming and their impact in deployed spoken dialog systems. In Proc. of NAACL-HLT, pages 189--192",
+      "authors": "S. Stoyanchev and A. Stent",
+      "title": "2009",
+      "venue": "Lexical and syntactic priming and their impact in deployed spoken dialog systems In Proc. of NAACL-HLT, pages 189--192",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever_sequence_2014",
+      "raw": "I. Sutskever, O. Vinyals, and Q. VV Le. 2014. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pages 3104--3112. arXiv:1409.3215",
+      "authors": "I. Sutskever, O. Vinyals, and Q. VV Le",
+      "title": "2014",
+      "venue": "Sequence to sequence learning with neural networks In Advances in Neural Information Processing Systems, pages 3104--3112",
+      "year": 2014,
+      "arxivId": "1409.3215",
+      "doi": null
+    },
+    {
+      "key": "wen_stochastic_2015",
+      "raw": "T.-H. Wen, M. Gasic, D. Kim, N. Mrksic, P.-H. Su, D. Vandyke, and S. Young. 2015a. Stochastic language generation in dialogue using recurrent neural networks with convolutional sentence reranking. In Proc. of SIGDIAL, pages 275--284",
+      "authors": "T.-H. Wen, M. Gasic, D. Kim, N. Mrksic, P.-H. Su, D. Vandyke, and S. Young",
+      "title": "2015a",
+      "venue": "Stochastic language generation in dialogue using recurrent neural networks with convolutional sentence reranking In Proc. of SIGDIAL, pages 275--284",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wen_semantically_2015",
+      "raw": "T.-H. Wen, M. Gasic, N. Mrk\u0161i\u0107, P.-H. Su, D. Vandyke, and S. Young. 2015b. Semantically conditioned LSTM-based natural language generation for spoken dialogue systems. In Proc. of EMNLP, pages 1711--1721",
+      "authors": "T.-H. Wen, M. Gasic, N. Mrk\u0161i\u0107, P.-H. Su, D. Vandyke, and S. Young",
+      "title": "2015b",
+      "venue": "Semantically conditioned LSTM-based natural language generation for spoken dialogue systems In Proc. of EMNLP, pages 1711--1721",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wen_network-based_2016",
+      "raw": "T.-H. Wen, M. Ga\u0161i\u0107, N. Mrk\u0161i\u0107, L. M. Rojas-Barahona, P.-H. Su, S. Ultes, D. Vandyke, and S. Young. 2016. A network-based end-to-end trainable task-oriented dialogue system. arXiv:1604.04562",
+      "authors": "T.-H. Wen, M. Ga\u0161i\u0107, N. Mrk\u0161i\u0107, L. M. Rojas-Barahona, P.-H. Su, S. Ultes, D. Vandyke, and S. Young",
+      "title": "2016",
+      "venue": "A network-based end-to-end trainable task-oriented dialogue system",
+      "year": 2016,
+      "arxivId": "1604.04562",
+      "doi": null
+    },
+    {
+      "key": "young_hidden_2010",
+      "raw": "S. Young, M. Ga\u0161i\u0107, S. Keizer, F. Mairesse, J. Schatzmann, B. Thomson, and K. Yu. 2010. The hidden information state model: A practical framework for POMDP-based spoken dialogue management. Computer Speech \\& Language, 24(2):150--174",
+      "authors": "S. Young, M. Ga\u0161i\u0107, S. Keizer, F. Mairesse, J. Schatzmann, B. Thomson, and K. Yu",
+      "title": "2010",
+      "venue": "The hidden information state model: A practical framework for POMDP-based spoken dialogue management Computer Speech \\& Language, 24(2):150--174",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "h_t = \\mathrm{lstm}(x_t, h_{t-1})",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "s_t    = \\mbox{lstm}((y_{t-1}\\circ c_t)W_S,s_{t-1})",
+      "environment": "equation",
+      "labels": [
+        "eq:s_t"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "p(y_t|y_{t-1}\\dots,\\mathbf{x}) = \\mbox{softmax}((s_t\\circ c_t)W_Y)",
+      "environment": "equation",
+      "labels": [
+        "eq:y_t"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "latex": "l = l + w\\cdot\\sqrt{p_1p_2}",
+      "environment": "equation",
+      "labels": [
+        "eq:context"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 535,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.0080337524414,
+            "y0": 248.90365600585938,
+            "x1": 273.2627258300781,
+            "y1": 259.812744140625
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 262.4526672363281,
+            "x1": 273.2627258300781,
+            "y1": 273.36175537109375
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 276.0016784667969,
+            "x1": 273.2626953125,
+            "y1": 286.9107666015625
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 289.5506896972656,
+            "x1": 273.2626647949219,
+            "y1": 300.45977783203125
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 303.1006774902344,
+            "x1": 215.24815368652344,
+            "y1": 314.009765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2507,
+      "numbers": 0,
+      "citations": 10,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00003051757812,
+            "y0": 470.12274169921875,
+            "x1": 290.269287109375,
+            "y1": 481.0318298339844
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 483.6717529296875,
+            "x1": 290.269287109375,
+            "y1": 494.5808410644531
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 497.22076416015625,
+            "x1": 290.2692565917969,
+            "y1": 508.1298522949219
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 510.7697448730469,
+            "x1": 290.2692565917969,
+            "y1": 521.6788330078125
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 524.31982421875,
+            "x1": 110.17097473144531,
+            "y1": 535.2288818359375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Our generator",
+      "chars": 346,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 249.34921264648438,
+            "y0": 217.96774291992188,
+            "x1": 290.2691955566406,
+            "y1": 228.87684631347656
+          },
+          {
+            "x0": 72.00000762939453,
+            "y0": 231.51773071289062,
+            "x1": 243.09837341308594,
+            "y1": 242.4268341064453
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Baseline Seq2seq NLG with Attention",
+      "chars": 1939,
+      "numbers": 1,
+      "citations": 6,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 311.7277526855469,
+            "x1": 290.2682189941406,
+            "y1": 322.6368408203125
+          },
+          {
+            "x0": 72.0,
+            "y0": 325.2767639160156,
+            "x1": 290.2668762207031,
+            "y1": 336.18585205078125
+          },
+          {
+            "x0": 72.0,
+            "y0": 338.8267517089844,
+            "x1": 290.2692565917969,
+            "y1": 349.73583984375
+          },
+          {
+            "x0": 72.0,
+            "y0": 352.3757629394531,
+            "x1": 91.99638366699219,
+            "y1": 363.28485107421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Making the Generator Context-aware",
+      "chars": 1841,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 327.0517578125,
+            "x1": 525.5449829101562,
+            "y1": 337.9608459472656
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 340.60076904296875,
+            "x1": 525.5450439453125,
+            "y1": 351.5098571777344
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 354.1497802734375,
+            "x1": 404.0614318847656,
+            "y1": 365.0588684082031
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 2293,
+      "numbers": 19,
+      "citations": 2,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 496.01422119140625,
+            "y0": 257.6156921386719,
+            "x1": 525.5451049804688,
+            "y1": 268.5247802734375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 271.1647033691406,
+            "x1": 525.545166015625,
+            "y1": 282.07379150390625
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 284.7137145996094,
+            "x1": 525.5451049804688,
+            "y1": 295.622802734375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 298.2637023925781,
+            "x1": 451.01422119140625,
+            "y1": 309.17279052734375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Evaluation Using Automatic Metrics",
+      "chars": 2718,
+      "numbers": 2,
+      "citations": 4,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.01458740234375,
+            "y0": 178.36575317382812,
+            "x1": 290.2692565917969,
+            "y1": 189.2748565673828
+          },
+          {
+            "x0": 72.00000762939453,
+            "y0": 191.91476440429688,
+            "x1": 215.25830078125,
+            "y1": 202.82386779785156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Human Evaluation",
+      "chars": 1406,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00003051757812,
+            "y0": 629.9669189453125,
+            "x1": 290.2693176269531,
+            "y1": 640.8759765625
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 643.5159301757812,
+            "x1": 290.269287109375,
+            "y1": 654.4249877929688
+          },
+          {
+            "x0": 72.00003051757812,
+            "y0": 657.06591796875,
+            "x1": 91.39641571044922,
+            "y1": 667.9749755859375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 1506,
+      "numbers": 0,
+      "citations": 5,
+      "anchor": null
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions and Further Work",
+      "chars": 1305,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99998474121094,
+            "y0": 457.4006652832031,
+            "x1": 290.2691650390625,
+            "y1": 468.30975341796875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 470.9496765136719,
+            "x1": 290.2691955566406,
+            "y1": 481.8587646484375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 484.4986877441406,
+            "x1": 155.5855255126953,
+            "y1": 495.40777587890625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 485,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 386.9227600097656,
+            "x1": 525.5452270507812,
+            "y1": 397.83184814453125
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 400.4717712402344,
+            "x1": 525.5452270507812,
+            "y1": 411.380859375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 414.0207824707031,
+            "x1": 525.5452270507812,
+            "y1": 424.92987060546875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 427.5697937011719,
+            "x1": 525.5452880859375,
+            "y1": 438.4788818359375
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 441.1197814941406,
+            "x1": 514.9307250976562,
+            "y1": 452.02886962890625
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 6,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 19,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "papineni_bleu:_2002",
+      "stance": "inherits",
+      "cue": "We use",
+      "sentence": "We use geometric mean of modified n-gram precisions (with n\u2208{1,2}) as a measure of context overlap, i.e., BLEU-2 [Papineni et al. 2002] without brevity penalty.",
+      "section": "Making the Generator Context-aware",
+      "sectionKind": "method",
+      "ordinal": 17,
+      "title": "2002",
+      "authors": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu",
+      "year": 2002,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 345.11297607421875,
+            "y0": 600.9359130859375,
+            "x1": 525.5394287109375,
+            "y1": 611.844970703125
+          },
+          {
+            "x0": 307.27593994140625,
+            "y0": 614.48486328125,
+            "x1": 344.8468933105469,
+            "y1": 625.3939208984375
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "bahdanau_neural_2014",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "Our system is an extension of dusek_sequence\u2013sequence_2016's generator based on sequence-to-sequence (seq2seq) models with attention [Bahdanau et al. 2015].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 8,
+        "title": "2015",
+        "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+        "year": 2015,
+        "arxivId": "1409.0473",
+        "inCorpus": true,
+        "anchor": null
+      },
+      {
+        "key": "dusek_sequence--sequence_2016",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "We presented an improvement to our natural language generator based on the sequence-to-sequence approach [Du\u0161ek et al.], allowing it to exploit preceding context user utterances to adapt (entrain) to the user's way of speaking and provide more contextually accurate and less repetitive responses.",
+        "section": "Conclusions and Further Work",
+        "sectionKind": "conclusion",
+        "ordinal": 26,
+        "title": "2016b",
+        "authors": "O. Du\u0161ek and F. Jur\u010d\u00ed\u010dek",
+        "year": null,
+        "arxivId": "1606.05491",
+        "inCorpus": true,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 256.6390075683594,
+              "y0": 484.4986877441406,
+              "x1": 290.27178955078125,
+              "y1": 495.40777587890625
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 498.0476989746094,
+              "x1": 290.2691650390625,
+              "y1": 508.956787109375
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 511.5967102050781,
+              "x1": 290.2693176269531,
+              "y1": 522.5057983398438
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 525.146728515625,
+              "x1": 290.26922607421875,
+              "y1": 536.0557861328125
+            },
+            {
+              "x0": 71.99998474121094,
+              "y0": 538.6957397460938,
+              "x1": 182.52008056640625,
+              "y1": 549.6047973632812
+            }
+          ]
+        }
+      },
+      {
+        "key": "kingma_adam:_2015",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Same as dusek_sequence\u2013sequence_2016, we train the seq2seq models by minimizing cross-entropy on the training set using the Adam optimizer [Kingma et al. 2015], and we measure BLEU on the development set after each pass over the training data, selecting the best-performing parameters.[Based on our preliminary experiments on development data, we use embedding size 50, LSTM cell size 128, learning rate 0.0005, and batch size 20.]",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 19,
+        "title": "2015",
+        "authors": "D. Kingma and J. Ba",
+        "year": 2015,
+        "arxivId": "1412.6980",
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "koehn_statistical_2004",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We can see that while the n-gram match reranker brings a BLEU score improvement, using context prepending or separate encoder results in scores lower than the baseline.[In our experiments on development data, all three methods brought a mild BLEU improvement.] However, using the n-gram match reranker together with context prepending or separate encoder brings significant improvements of about 2.8 BLEU points in both cases, better than using the n-gram match reranker alone.[Statistical significance at 99% level has been assessed using pairwise bootstrap resampling [Koehn 2004].] We believe that adding the context information into the decoder does increase the chances of contextually appropriate outputs appearing on the decoder k-best lists, but it also introduces a lot more uncertainty and therefore, the appropriate outputs may not end on top of the list based on decoder scores alone.",
+        "section": "Evaluation Using Automatic Metrics",
+        "sectionKind": "experiments",
+        "ordinal": 21,
+        "title": "2004",
+        "authors": "P. Koehn",
+        "year": 2004,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 189.45401000976562,
+              "y0": 259.6607971191406,
+              "x1": 290.2674865722656,
+              "y1": 270.56988525390625
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 273.2098083496094,
+              "x1": 290.2691955566406,
+              "y1": 284.118896484375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 286.7588195800781,
+              "x1": 290.2692565917969,
+              "y1": 297.66790771484375
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 300.3088073730469,
+              "x1": 290.269287109375,
+              "y1": 311.2178955078125
+            },
+            {
+              "x0": 72.00001525878906,
+              "y0": 313.8578186035156,
+              "x1": 85.33094024658203,
+              "y1": 324.76690673828125
+            }
+          ]
+        }
+      },
+      {
+        "key": "papineni_bleu:_2002",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use geometric mean of modified n-gram precisions (with n\u2208{1,2}) as a measure of context overlap, i.e., BLEU-2 [Papineni et al. 2002] without brevity penalty.",
+        "section": "Making the Generator Context-aware",
+        "sectionKind": "method",
+        "ordinal": 17,
+        "title": "2002",
+        "authors": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu",
+        "year": 2002,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 345.11297607421875,
+              "y0": 600.9359130859375,
+              "x1": 525.5394287109375,
+              "y1": 611.844970703125
+            },
+            {
+              "x0": 307.27593994140625,
+              "y0": 614.48486328125,
+              "x1": 344.8468933105469,
+              "y1": 625.3939208984375
+            }
+          ]
+        }
+      },
+      {
+        "key": "tensorflow2015-whitepaper",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "Our seq2seq generator is an improved version of dusek_sequence\u2013sequence_2016's generator, which itself is based on the seq2seq model with attention [Bahdanau et al. 2015] as implemented in the TensorFlow framework [Abadi et al. 2015].[See [Du\u0161ek et al.] and [Bahdanau et al. 2015] for a more formal description of the base model.] We first describe the base model in Section [ref], then list our context-aware improvements in Section [ref].",
+        "section": "Our generator",
+        "sectionKind": "method",
+        "ordinal": 10,
+        "title": "2015",
+        "authors": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We believe that any reasonable measure of contextual match would be viable here, and we opted for modified n-gram precisions because of simple computation, well-defined range, and the relation to the de facto standard BLEU metric.[We do not use brevity penalty as we do not want to demote shorter output sequences.]",
+      "anchorText": "-gram precisions because of simple computation, well-defined range, and the relation to the de facto standard BLEU metric. We do not use brevity penalty as we do not want to demote shorter output sequences.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Making the Generator Context-aware",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "We can see that while the n-gram match reranker brings a BLEU score improvement, using context prepending or separate encoder results in scores lower than the baseline.[In our experiments on development data, all three methods brought a mild BLEU improvement.] However, using the n-gram match reranker together with context prepending or separate encoder brings significant improvements of about 2.8 BLEU points in both cases, better than using the n-gram match reranker alone.[Statistical significance at 99% level has been assessed using pairwise bootstrap resampling [Koehn 2004].] We believe that adding the context information into the decoder does increase the chances of contextually appropriate outputs appearing on the decoder k-best lists, but it also introduces a lot more uncertainty and therefore, the appropriate outputs may not end on top of the list based on decoder scores alone.",
+      "anchorText": "-gram match reranker together with context prepending or separate encoder brings significant improvements of about 2.8 BLEU points in both cases, better than using the",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "We believe",
+      "section": "Evaluation Using Automatic Metrics",
+      "sectionKind": "experiments",
+      "cites": [
+        "koehn_statistical_2004"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 189.45401000976562,
+            "y0": 259.6607971191406,
+            "x1": 290.2674865722656,
+            "y1": 270.56988525390625
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 273.2098083496094,
+            "x1": 290.2691955566406,
+            "y1": 284.118896484375
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 286.7588195800781,
+            "x1": 290.2692565917969,
+            "y1": 297.66790771484375
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 300.3088073730469,
+            "x1": 290.269287109375,
+            "y1": 311.2178955078125
+          },
+          {
+            "x0": 72.00001525878906,
+            "y0": 313.8578186035156,
+            "x1": 85.33094024658203,
+            "y1": 324.76690673828125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "A direct comparison with previous entrainment-capable NLG systems for SDS is not possible in our stand-alone setting since their rules involve the history of the whole dialogue whereas we focus on the preceding utterance in our experiments.",
+      "anchorText": "A direct comparison with previous entrainment-capable NLG systems for SDS is not possible in our stand-alone setting since their rules involve the history of the whole dialogue whereas we focus on the preceding utterance in our experiments.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Related Work",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 131.1491241455078,
+            "y0": 339.2846374511719,
+            "x1": 290.2692565917969,
+            "y1": 350.1937255859375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 352.8336486816406,
+            "x1": 290.2692565917969,
+            "y1": 363.74273681640625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 366.3826599121094,
+            "x1": 290.2691955566406,
+            "y1": 377.291748046875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 379.9316711425781,
+            "x1": 290.26922607421875,
+            "y1": 390.84075927734375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 393.4816589355469,
+            "x1": 290.2691955566406,
+            "y1": 404.3907470703125
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 407.0306701660156,
+            "x1": 100.78910064697266,
+            "y1": 417.93975830078125
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 3,
+    "cited": 1,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 36,
+    "rate": 0.9
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2016-08-25",
+    "authors": [
+      "Ond\u0159ej Du\u0161ek",
+      "Filip Jur\u010d\u00ed\u010dek"
+    ]
+  }
+}

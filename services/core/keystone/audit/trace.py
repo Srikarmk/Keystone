@@ -467,7 +467,7 @@ def _trace_one(
     if rounded:
         table, cell = rounded[0]
         return Trace(mention=mention, status="rounded", table=table, cell=cell)
-    if near:
+    if near and not _written_in_a_cell(mention.number, tables):
         # Strongest contextual link first, then the closest value: the cell the
         # sentence is most plausibly talking about.
         score, _relative, table, cell = max(near, key=lambda item: (item[0], -item[1]))
@@ -525,6 +525,23 @@ def _drop_accounted_mismatches(traces: tuple[Trace, ...]) -> tuple[Trace, ...]:
         else t
         for t in traces
     )
+
+
+def _written_in_a_cell(stated: Number, tables: tuple[Table, ...]) -> bool:
+    """Whether the stated number is written, digit for digit, in some cell of a table.
+
+    A cell the number parser refuses is still text the reader can see. 1410.8206's
+    own row reads "37.5 (+1.9)" — a result and its gain, two numbers, so not parsed as
+    either — and with that row invisible, the abstract's 37.5 was set against the 37.2
+    a row above, which is another paper's system. If the number is there to be read,
+    the paper has not contradicted itself, whatever else the table holds.
+    """
+    # The digits as written, without the unit the mention carries ("37.5 BLEU").
+    written = re.search(r"\d[\d,]*(?:\.\d+)?", stated.raw)
+    if written is None:
+        return False
+    token = re.compile(rf"(?<![\d.]){re.escape(written.group(0))}(?![\d]|\.\d)")
+    return any(token.search(cell.raw) for table in tables for cell in table.cells)
 
 
 def _is_bound(mention: NumericMention) -> bool:

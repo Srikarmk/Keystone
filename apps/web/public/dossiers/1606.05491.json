@@ -1,0 +1,1879 @@
+{
+  "id": "1606.05491",
+  "title": "generation for spoken dialogue via deep syntax trees and strings",
+  "keystone": null,
+  "codeUrl": "https://github.com/UFAL-DSG/tgen",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1606.05491",
+  "numbers": [
+    {
+      "value": "0.001",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "To train our seq2seq generator, we use the Adam optimizer to minimize unweighted sequence cross-entropy. Based on a few preliminary experiments, the learning rate is set to 0.001, embedding size 50, LSTM cell size 128, and batch size 20.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.9280090332031,
+            "y0": 693.7379760742188,
+            "x1": 525.54443359375,
+            "y1": 702.7044067382812
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 703.7009887695312,
+            "x1": 525.5450439453125,
+            "y1": 712.6674194335938
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 713.6629638671875,
+            "x1": 371.5202331542969,
+            "y1": 722.62939453125
+          }
+        ]
+      }
+    },
+    {
+      "value": "36 tokens",
+      "kind": "configuration",
+      "section": "results",
+      "sentence": "The average output length is around 36 tokens in the generated sequence or 9 tree nodes; surface realizer outputs have a similar length as the sentences produced in direct string generation. The surface realizer works almost flawlessly on this limited domain , leaving the seq2seq generator as the major error source.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 262.0517578125,
+            "y0": 726.2779541015625,
+            "x1": 290.2690124511719,
+            "y1": 735.244384765625
+          },
+          {
+            "x0": 72.0,
+            "y0": 736.240966796875,
+            "x1": 290.26904296875,
+            "y1": 745.2073974609375
+          },
+          {
+            "x0": 72.0,
+            "y0": 746.2030029296875,
+            "x1": 290.26898193359375,
+            "y1": 755.16943359375
+          },
+          {
+            "x0": 72.0,
+            "y0": 756.1659545898438,
+            "x1": 286.4045715332031,
+            "y1": 765.1323852539062
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Results on the BAGEL data set",
+      "label": "tab:results",
+      "numericCells": 35,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Setup",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "BLEU",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "NIST",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "ERR",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "mairesse_phrase-based_2010",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67",
+            "value": "67",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "00",
+            "value": "0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "dusek_training_2015",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "59.89",
+            "value": "59.89",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5.231",
+            "value": "5.231",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30",
+            "value": "30",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Greedy with trees",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "55.29",
+            "value": "55.29",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.144",
+            "value": "5.144",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search (b. size 100)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "58.59",
+            "value": "58.59",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.293",
+            "value": "5.293",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28",
+            "value": "28",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker (beam size 5)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "60.77",
+            "value": "60.77",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.487",
+            "value": "5.487",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24",
+            "value": "24",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker (beam size 10)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "60.93",
+            "value": "60.93",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.510",
+            "value": "5.510",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25",
+            "value": "25",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker (beam size 100)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "60.44",
+            "value": "60.44",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.514",
+            "value": "5.514",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Greedy into strings",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "52.54",
+            "value": "52.54",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.052",
+            "value": "5.052",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "37",
+            "value": "37",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search (b. size 100)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "55.84",
+            "value": "55.84",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.228",
+            "value": "5.228",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker (beam size 5)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "61.18",
+            "value": "61.18",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.507",
+            "value": "5.507",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27",
+            "value": "27",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker (beam size 10)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "62.40",
+            "value": "62.40",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.614",
+            "value": "5.614",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "21",
+            "value": "21",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker (beam size 100)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "62.76",
+            "value": "62.76",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.669",
+            "value": "5.669",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 132.49667358398438,
+            "y0": 244.64071655273438,
+            "x1": 268.3367614746094,
+            "y1": 255.54981994628906
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Example outputs of different generator setups (beam size 100 is used). Errors are marked in color ( missing, superfluous, repeated information, disfluency).",
+      "label": "tab:outputs",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Input DA",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "inform(name=X-name, type=placetoeat, eattype=restaurant, area=citycentre, near=X-near,",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "inform(food=\"Chinese takeaway\", food=Japanese)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "X is a Chinese takeaway and Japanese restaurant in the city centre near X.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Greedy with trees",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "X is a restaurant offering chinese takeaway in the centre of town near X. [ Japanese]",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "X is a restaurant and japanese food and chinese takeaway.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "X is a restaurant serving japanese food in the centre of the city that offers chinese takeaway.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Greedy into strings",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "X is a restaurant offering italian and indian takeaway in the city centre area near X. to 0cm[ Japanese, Chinese]",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "X is a restaurant that serves fusion chinese takeaway in the riverside area near X. to 0cm[ Japanese, citycentre]",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "X is a japanese restaurant in the city centre near X providing chinese food. [ takeaway]",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Input DA",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "inform(name=X-name, type=placetoeat, eattype=restaurant, area=riverside, food=French)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "X is a French restaurant on the riverside.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Greedy with trees",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "X is a restaurant providing french and continental and by the river.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "X is a restaurant that serves french takeaway. [ riverside]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "X is a french restaurant in the riverside area.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Greedy into strings",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "X is a restaurant in the riverside that serves italian food. [ French]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "X is a restaurant in the riverside that serves italian food. [ French]",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "X is a restaurant in the riverside area that serves french food.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Input DA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "inform(name=X-name, type=placetoeat, eattype=restaurant, near=X-near, food=Continental, to 0.95cmfood=French)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Reference",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "X is a French and Continental restaurant near X.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Greedy with trees",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "X is a french restaurant that serves french food and near X. [ Continental]",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "X is a french restaurant that serves french food and near X. [ Continental]",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "X is a restaurant serving french and continental food near X.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Greedy into strings",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "X is a french and continental style restaurant near X.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Beam search",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "X is a french and continental style restaurant near X.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "+ Reranker",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "X is a restaurant providing french and continental food, near X.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 112.8545913696289,
+            "y0": 329.002685546875,
+            "x1": 525.5455932617188,
+            "y1": 339.9117736816406
+          },
+          {
+            "x0": 72.0,
+            "y0": 342.55169677734375,
+            "x1": 343.6256103515625,
+            "y1": 353.4607849121094
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\ttdefault": "aett",
+    "\\@BIBLABEL": "\\@emptybiblabel",
+    "\\@emptybiblabel": "",
+    "\\xmark": "\\ding{55}",
+    "\\Tstrut": "\\rule{0pt}{2.3ex}",
+    "\\Bstrut": "\\rule[-0.9ex]{0pt}{0pt}"
+  },
+  "references": [
+    {
+      "key": "tensorflow2015-whitepaper",
+      "raw": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng. 2015. TensorFlow: Large-scale machine learning on heterogeneous systems. Software available from tensorflow.org",
+      "authors": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng",
+      "title": "2015",
+      "venue": "TensorFlow: Large-scale machine learning on heterogeneous systems Software available from tensorflow.org",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "angeli_simple_2010",
+      "raw": "G. Angeli, P. Liang, and D. Klein. 2010. A simple domain-independent probabilistic approach to generation. In Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing, pages 502--512",
+      "authors": "G. Angeli, P. Liang, and D. Klein",
+      "title": "2010",
+      "venue": "A simple domain-independent probabilistic approach to generation In Proceedings of the 2010 Conference on Empirical Methods in Natural Language Processing, pages 502--512",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau_neural_2014",
+      "raw": "D. Bahdanau, K. Cho, and Y. Bengio. 2015. Neural Machine Translation by Jointly Learning to Align and Translate. arXiv:1409.0473",
+      "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+      "title": "2015",
+      "venue": "Neural Machine Translation by Jointly Learning to Align and Translate",
+      "year": 2015,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "bengio_neural_2003",
+      "raw": "Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin. 2003. A Neural Probabilistic Language Model. Journal of Machine Learning Research, 3:1137--1155",
+      "authors": "Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin",
+      "title": "2003",
+      "venue": "A Neural Probabilistic Language Model Journal of Machine Learning Research, 3:1137--1155",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cho_learning_2014",
+      "raw": "K. Cho, B. van Merrienboer, C. Gulcehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio. 2014. Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1724--1734, Doha, Qatar. arXiv:1406.1078",
+      "authors": "K. Cho, B. van Merrienboer, C. Gulcehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio",
+      "title": "2014",
+      "venue": "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1724--1734, Doha, Qatar",
+      "year": 2014,
+      "arxivId": "1406.1078",
+      "doi": null
+    },
+    {
+      "key": "dethlefs_conditional_2013",
+      "raw": "N. Dethlefs, H. Hastie, H. Cuay\u00e1huitl, and O. Lemon. 2013. Conditional Random Fields for Responsive Surface Realisation using Global Features. In Proceedings of ACL, Sofia",
+      "authors": "N. Dethlefs, H. Hastie, H. Cuay\u00e1huitl, and O. Lemon",
+      "title": "2013",
+      "venue": "Conditional Random Fields for Responsive Surface Realisation using Global Features In Proceedings of ACL, Sofia",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "doddington_automatic_2002",
+      "raw": "G. Doddington. 2002. Automatic Evaluation of Machine Translation Quality Using N-gram Co-occurrence Statistics. In Proceedings of the Second International Conference on Human Language Technology Research, pages 138--145, San Francisco, CA, USA. Morgan Kaufmann Publishers Inc",
+      "authors": "G. Doddington",
+      "title": "2002",
+      "venue": "Automatic Evaluation of Machine Translation Quality Using N-gram Co-occurrence Statistics In Proceedings of the Second International Conference on Human Language Technology Research, pages 138--145, San Francisco, CA, USA. Morgan Kaufmann Publishers Inc",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dusek_training_2015",
+      "raw": "O. Du\u0161ek and F. Jur\u010d\u00ed\u010dek. 2015. Training a Natural Language Generator From Unaligned Data. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing, pages 451--461, Beijing, China. Association for Computational Linguistics",
+      "authors": "O. Du\u0161ek and F. Jur\u010d\u00ed\u010dek",
+      "title": "2015",
+      "venue": "Training a Natural Language Generator From Unaligned Data In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing, pages 451--461, Beijing, China. Association for Computational Linguistics",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dusek_formemes_2012",
+      "raw": "Ond\u0159ej Du\u0161ek, Zden\u011bk \u017dabokrtsk\u00fd, Martin Popel, Martin Majli\u0161, Michal Nov\u00e1k, and David Mare\u010dek. 2012. Formemes in English-Czech Deep Syntactic MT. In Proceedings of the Seventh Workshop on Statistical Machine Translation, pages 267--274, Montr\u00e9al, Canada. Association for Computational Linguistics",
+      "authors": "Ond\u0159ej Du\u0161ek, Zden\u011bk \u017dabokrtsk\u00fd, Martin Popel, Martin Majli\u0161, Michal Nov\u00e1k, and David Mare\u010dek",
+      "title": "2012",
+      "venue": "Formemes in English-Czech Deep Syntactic MT In Proceedings of the Seventh Workshop on Statistical Machine Translation, pages 267--274, Montr\u00e9al, Canada. Association for Computational Linguistics",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dusek_new_2015",
+      "raw": "O. Du\u0161ek, L. Gomes, M. Nov\u00e1k, M. Popel, and R. Rosa. 2015. New Language Pairs in TectoMT. In Proceedings of the 10th Workshop on Machine Translation, pages 98--104, Lisbon, Portugal. Association for Computational Linguistics",
+      "authors": "O. Du\u0161ek, L. Gomes, M. Nov\u00e1k, M. Popel, and R. Rosa",
+      "title": "2015",
+      "venue": "New Language Pairs in TectoMT In Proceedings of the 10th Workshop on Machine Translation, pages 98--104, Lisbon, Portugal. Association for Computational Linguistics",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves_generating_2013",
+      "raw": "A. Graves. 2013. Generating Sequences With Recurrent Neural Networks. arXiv:1308.0850 [cs], August",
+      "authors": "A. Graves",
+      "title": "2013",
+      "venue": "Generating Sequences With Recurrent Neural Networks [cs], August",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "jean_using_2015",
+      "raw": "S. Jean, K. Cho, R. Memisevic, and Y. Bengio. 2015. On Using Very Large Target Vocabulary for Neural Machine Translation. In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1--10, Beijing, China. Association for Computational Linguistics",
+      "authors": "S. Jean, K. Cho, R. Memisevic, and Y. Bengio",
+      "title": "2015",
+      "venue": "On Using Very Large Target Vocabulary for Neural Machine Translation In Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 1--10, Beijing, China. Association for Computational Linguistics",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kingma_adam:_2015",
+      "raw": "D. Kingma and J. Ba. 2015. Adam: A Method for Stochastic Optimization. In International Conference on Learning Representations. arXiv:1412.6980",
+      "authors": "D. Kingma and J. Ba",
+      "title": "2015",
+      "venue": "Adam: A Method for Stochastic Optimization In International Conference on Learning Representations",
+      "year": 2015,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "koehn_statistical_2004",
+      "raw": "P. Koehn. 2004. Statistical significance tests for machine translation evaluation. In Proceedings of EMNLP, pages 388--395",
+      "authors": "P. Koehn",
+      "title": "2004",
+      "venue": "Statistical significance tests for machine translation evaluation In Proceedings of EMNLP, pages 388--395",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "konstas_global_2013",
+      "raw": "I. Konstas and M. Lapata. 2013. A Global Model for Concept-to-Text Generation. Journal of Artificial Intelligence Research, 48:305--346",
+      "authors": "I. Konstas and M. Lapata",
+      "title": "2013",
+      "venue": "A Global Model for Concept-to-Text Generation Journal of Artificial Intelligence Research, 48:305--346",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mairesse_phrase-based_2010",
+      "raw": "F. Mairesse, M. Ga\u0161i\u0107, F. Jur\u010d\u00ed\u010dek, S. Keizer, B. Thomson, K. Yu, and S. Young. 2010. Phrase-based statistical language generation using graphical models and active learning. In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, pages 1552--1561",
+      "authors": "F. Mairesse, M. Ga\u0161i\u0107, F. Jur\u010d\u00ed\u010dek, S. Keizer, B. Thomson, K. Yu, and S. Young",
+      "title": "2010",
+      "venue": "Phrase-based statistical language generation using graphical models and active learning In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, pages 1552--1561",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mei_what_2015",
+      "raw": "H. Mei, M. Bansal, and M. R. Walter. 2015. What to talk about and how? Selective Generation using LSTMs with Coarse-to-Fine Alignment. arXiv:1509.00838 [cs], September",
+      "authors": "H. Mei, M. Bansal, and M. R. Walter",
+      "title": "2015",
+      "venue": "What to talk about and how? Selective Generation using LSTMs with Coarse-to-Fine Alignment [cs], September",
+      "year": 2015,
+      "arxivId": "1509.00838",
+      "doi": null
+    },
+    {
+      "key": "paiva_empirically-based_2005",
+      "raw": "D. S. Paiva and R. Evans. 2005. Empirically-based control of natural language generation. In Proceedings of the 43rd Annual Meeting on Association for Computational Linguistics, ACL '05, pages 58--65, Stroudsburg, PA, USA. Association for Computational Linguistics",
+      "authors": "D. S. Paiva and R. Evans",
+      "title": "2005",
+      "venue": "Empirically-based control of natural language generation In Proceedings of the 43rd Annual Meeting on Association for Computational Linguistics, ACL '05, pages 58--65, Stroudsburg, PA, USA. Association for Computational Linguistics",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "papineni_bleu:_2002",
+      "raw": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu. 2002. BLEU: a method for automatic evaluation of machine translation. In Proceedings of the 40th annual meeting of the Association for Computational Linguistics, pages 311--318",
+      "authors": "K. Papineni, S. Roukos, T. Ward, and W.-J. Zhu",
+      "title": "2002",
+      "venue": "BLEU: a method for automatic evaluation of machine translation In Proceedings of the 40th annual meeting of the Association for Computational Linguistics, pages 311--318",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "popel_tectomt:_2010",
+      "raw": "M. Popel and Z. \u017dabokrtsk\u00fd. 2010. TectoMT: modular NLP framework. In Proceedings of IceTAL, 7th International Conference on Natural Language Processing,, pages 293--304, Reykjav\u00edk",
+      "authors": "M. Popel and Z. \u017dabokrtsk\u00fd",
+      "title": "2010",
+      "venue": "TectoMT: modular NLP framework In Proceedings of IceTAL, 7th International Conference on Natural Language Processing,, pages 293--304, Reykjav\u00edk",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ranzato_sequence_2015",
+      "raw": "M. Ranzato, S. Chopra, M. Auli, and W. Zaremba. 2015. Sequence Level Training with Recurrent Neural Networks. arXiv:1511.06732 [cs], November",
+      "authors": "M. Ranzato, S. Chopra, M. Auli, and W. Zaremba",
+      "title": "2015",
+      "venue": "Sequence Level Training with Recurrent Neural Networks [cs], November",
+      "year": 2015,
+      "arxivId": "1511.06732",
+      "doi": null
+    },
+    {
+      "key": "raux_lets_2005",
+      "raw": "A. Raux, B. Langner, D. Bohus, A. W. Black, and M. Eskenazi. 2005. Let\u2019s go public! taking a spoken dialog system to the real world. In in Proc. of Interspeech 2005. Citeseer",
+      "authors": "A. Raux, B. Langner, D. Bohus, A. W. Black, and M. Eskenazi",
+      "title": "2005",
+      "venue": "Let\u2019s go public! taking a spoken dialog system to the real world In in Proc. of Interspeech 2005. Citeseer",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "reiter_building_2000",
+      "raw": "E. Reiter and R. Dale. 2000. Building Natural Language Generation Systems. Cambridge University Press, studies in natural language processing edition",
+      "authors": "E. Reiter and R. Dale",
+      "title": "2000",
+      "venue": "Building Natural Language Generation Systems Cambridge University Press, studies in natural language processing edition",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rieser_optimising_2010",
+      "raw": "V. Rieser, O. Lemon, and X. Liu. 2010. Optimising information presentation for spoken dialogue systems. In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, pages 1009--1018",
+      "authors": "V. Rieser, O. Lemon, and X. Liu",
+      "title": "2010",
+      "venue": "Optimising information presentation for spoken dialogue systems In Proceedings of the 48th Annual Meeting of the Association for Computational Linguistics, pages 1009--1018",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "stent_trainable_2004",
+      "raw": "A. Stent, R. Prasad, and M. Walker. 2004. Trainable sentence planning for complex information presentation in spoken dialog systems. In Proceedings of the 42nd Annual Meeting on Association for Computational Linguistics, pages 79--86",
+      "authors": "A. Stent, R. Prasad, and M. Walker",
+      "title": "2004",
+      "venue": "Trainable sentence planning for complex information presentation in spoken dialog systems In Proceedings of the 42nd Annual Meeting on Association for Computational Linguistics, pages 79--86",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever_sequence_2014",
+      "raw": "I. Sutskever, O. Vinyals, and Q. VV Le. 2014. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pages 3104--3112. arXiv:1409.3215",
+      "authors": "I. Sutskever, O. Vinyals, and Q. VV Le",
+      "title": "2014",
+      "venue": "Sequence to sequence learning with neural networks In Advances in Neural Information Processing Systems, pages 3104--3112",
+      "year": 2014,
+      "arxivId": "1409.3215",
+      "doi": null
+    },
+    {
+      "key": "vinyals_grammar_2015",
+      "raw": "O. Vinyals, \u0141. Kaiser, T. Koo, S. Petrov, I. Sutskever, and G. Hinton. 2015. Grammar as a Foreign Language. In C. Cortes, N. D. Lawrence, D. D. Lee, M. Sugiyama, R. Garnett, and R. Garnett, editors, Advances in Neural Information Processing Systems 28, pages 2755--2763",
+      "authors": "O. Vinyals, \u0141. Kaiser, T. Koo, S. Petrov, I. Sutskever, and G. Hinton",
+      "title": "2015",
+      "venue": "Grammar as a Foreign Language In C. Cortes, N. D. Lawrence, D. D. Lee, M. Sugiyama, R. Garnett, and R. Garnett, editors, Advances in Neural Information Processing Systems 28, pages 2755--2763",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "walker_spot:_2001",
+      "raw": "M. A. Walker, O. Rambow, and M. Rogati. 2001. SPoT: a trainable sentence planner. In Proceedings of the second meeting of the North American Chapter of the Association for Computational Linguistics on Language technologies, pages 1--8, Stroudsburg, PA, USA. Association for Computational Linguistics",
+      "authors": "M. A. Walker, O. Rambow, and M. Rogati",
+      "title": "2001",
+      "venue": "SPoT: a trainable sentence planner In Proceedings of the second meeting of the North American Chapter of the Association for Computational Linguistics on Language technologies, pages 1--8, Stroudsburg, PA, USA. Association for Computational Linguistics",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wen_stochastic_2015",
+      "raw": "T.-H. Wen, M. Gasic, D. Kim, N. Mrksic, P.-H. Su, D. Vandyke, and S. Young. 2015a. Stochastic Language Generation in Dialogue using Recurrent Neural Networks with Convolutional Sentence Reranking. In Proceedings of the 16th Annual Meeting of the Special Interest Group on Discourse and Dialogue, pages 275--284, Prague, Czech Republic, September. Association for Computational Linguistics",
+      "authors": "T.-H. Wen, M. Gasic, D. Kim, N. Mrksic, P.-H. Su, D. Vandyke, and S. Young",
+      "title": "2015a",
+      "venue": "Stochastic Language Generation in Dialogue using Recurrent Neural Networks with Convolutional Sentence Reranking In Proceedings of the 16th Annual Meeting of the Special Interest Group on Discourse and Dialogue, pages 275--284, Prague, Czech Republic, September. Association for Computational Linguistics",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wen_semantically_2015",
+      "raw": "T.-H. Wen, M. Gasic, N. Mrk\u0161i\u0107, P.-H. Su, D. Vandyke, and S. Young. 2015b. Semantically Conditioned LSTM-based Natural Language Generation for Spoken Dialogue Systems. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 1711--1721, Lisbon, Portugal. Association for Computational Linguistics",
+      "authors": "T.-H. Wen, M. Gasic, N. Mrk\u0161i\u0107, P.-H. Su, D. Vandyke, and S. Young",
+      "title": "2015b",
+      "venue": "Semantically Conditioned LSTM-based Natural Language Generation for Spoken Dialogue Systems In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 1711--1721, Lisbon, Portugal. Association for Computational Linguistics",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wong_generation_2007",
+      "raw": "Y. W. Wong and R. J. Mooney. 2007. Generation by inverting a semantic parser that uses statistical machine translation. In Proceedings of Human Language Technologies: The Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT-07), pages 172--179",
+      "authors": "Y. W. Wong and R. J. Mooney",
+      "title": "2007",
+      "venue": "Generation by inverting a semantic parser that uses statistical machine translation In Proceedings of Human Language Technologies: The Conference of the North American Chapter of the Association for Computational Linguistics (NAACL-HLT-07), pages 172--179",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "young_hidden_2010",
+      "raw": "S. Young, M. Ga\u0161i\u0107, S. Keizer, F. Mairesse, J. Schatzmann, B. Thomson, and K. Yu. 2010. The Hidden Information State model: A practical framework for POMDP-based spoken dialogue management. Computer Speech \\& Language, 24(2):150--174, April",
+      "authors": "S. Young, M. Ga\u0161i\u0107, S. Keizer, F. Mairesse, J. Schatzmann, B. Thomson, and K. Yu",
+      "title": "2010",
+      "venue": "The Hidden Information State model: A practical framework for POMDP-based spoken dialogue management Computer Speech \\& Language, 24(2):150--174, April",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 577,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.0080337524414,
+            "y0": 247.03372192382812,
+            "x1": 273.2626953125,
+            "y1": 257.94281005859375
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 260.5827331542969,
+            "x1": 273.2626647949219,
+            "y1": 271.4918212890625
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 274.1317443847656,
+            "x1": 273.2627258300781,
+            "y1": 285.04083251953125
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 287.6807556152344,
+            "x1": 273.2626647949219,
+            "y1": 298.58984375
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 301.2307434082031,
+            "x1": 273.2626953125,
+            "y1": 312.13983154296875
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 314.7797546386719,
+            "x1": 273.2627258300781,
+            "y1": 325.6888427734375
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 328.3287658691406,
+            "x1": 273.2627258300781,
+            "y1": 339.23785400390625
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 341.8777770996094,
+            "x1": 273.2627258300781,
+            "y1": 352.786865234375
+          },
+          {
+            "x0": 89.0080337524414,
+            "y0": 355.4267883300781,
+            "x1": 196.86630249023438,
+            "y1": 366.33587646484375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 1883,
+      "numbers": 0,
+      "citations": 15,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.00004577636719,
+            "y0": 483.70880126953125,
+            "x1": 290.2692565917969,
+            "y1": 494.6178894042969
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 497.2578125,
+            "x1": 290.2693176269531,
+            "y1": 508.1669006347656
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 510.8068542480469,
+            "x1": 290.2692565917969,
+            "y1": 521.7159423828125
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 524.3558349609375,
+            "x1": 290.2692565917969,
+            "y1": 535.264892578125
+          },
+          {
+            "x0": 72.00004577636719,
+            "y0": 537.9058837890625,
+            "x1": 148.64739990234375,
+            "y1": 548.81494140625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Generator Setting",
+      "chars": 1216,
+      "numbers": 0,
+      "citations": 5,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760925292969,
+            "y0": 605.6509399414062,
+            "x1": 525.5439453125,
+            "y1": 616.5599975585938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "The Seq2seq Generation Model",
+      "chars": 364,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99998474121094,
+            "y0": 483.2427673339844,
+            "x1": 290.2692565917969,
+            "y1": 494.15185546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Sequence Representation of DA, Trees, and Sentences",
+      "chars": 802,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99998474121094,
+            "y0": 645.6658325195312,
+            "x1": 290.2691955566406,
+            "y1": 656.5748901367188
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 659.21484375,
+            "x1": 290.26922607421875,
+            "y1": 670.1239013671875
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 672.7637939453125,
+            "x1": 290.2691955566406,
+            "y1": 683.6728515625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 686.3128051757812,
+            "x1": 145.24366760253906,
+            "y1": 697.2218627929688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Seq2seq Generator",
+      "chars": 1110,
+      "numbers": 1,
+      "citations": 5,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 185.25784301757812,
+            "x1": 466.123291015625,
+            "y1": 196.1669464111328
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Reranker",
+      "chars": 1240,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2762145996094,
+            "y0": 616.06494140625,
+            "x1": 525.5453491210938,
+            "y1": 626.9739990234375
+          },
+          {
+            "x0": 307.2762145996094,
+            "y0": 629.6138916015625,
+            "x1": 525.5452270507812,
+            "y1": 640.52294921875
+          },
+          {
+            "x0": 307.2762145996094,
+            "y0": 643.1629028320312,
+            "x1": 403.6361999511719,
+            "y1": 654.0719604492188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 1756,
+      "numbers": 13,
+      "citations": 4,
+      "anchor": null
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 5945,
+      "numbers": 3,
+      "citations": 3,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 340.9497985839844,
+            "x1": 290.26922607421875,
+            "y1": 351.85888671875
+          },
+          {
+            "x0": 72.0,
+            "y0": 354.4988098144531,
+            "x1": 290.2692565917969,
+            "y1": 365.40789794921875
+          },
+          {
+            "x0": 72.0,
+            "y0": 368.0478210449219,
+            "x1": 85.33092498779297,
+            "y1": 378.9569091796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 1139,
+      "numbers": 0,
+      "citations": 8,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2759704589844,
+            "y0": 519.8449096679688,
+            "x1": 525.5451049804688,
+            "y1": 530.7539672851562
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 533.3939208984375,
+            "x1": 525.5450439453125,
+            "y1": 544.302978515625
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 546.9429321289062,
+            "x1": 525.5451049804688,
+            "y1": 557.8519897460938
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 560.491943359375,
+            "x1": 525.5451049804688,
+            "y1": 571.4010009765625
+          },
+          {
+            "x0": 307.2759704589844,
+            "y0": 574.0419311523438,
+            "x1": 392.1923522949219,
+            "y1": 584.9509887695312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusions and Future Work",
+      "chars": 1265,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 578.05078125,
+            "x1": 290.26922607421875,
+            "y1": 588.9598388671875
+          },
+          {
+            "x0": 72.0,
+            "y0": 591.5997924804688,
+            "x1": 290.2691955566406,
+            "y1": 602.5088500976562
+          },
+          {
+            "x0": 72.0,
+            "y0": 605.1488037109375,
+            "x1": 290.269287109375,
+            "y1": 616.057861328125
+          },
+          {
+            "x0": 72.0,
+            "y0": 618.6978149414062,
+            "x1": 233.7601318359375,
+            "y1": 629.6068725585938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 470,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760009765625,
+            "y0": 619.2008666992188,
+            "x1": 525.5452270507812,
+            "y1": 630.1099243164062
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 632.7498779296875,
+            "x1": 525.5452270507812,
+            "y1": 643.658935546875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 646.298828125,
+            "x1": 525.5452270507812,
+            "y1": 657.2078857421875
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 659.8478393554688,
+            "x1": 525.5452880859375,
+            "y1": 670.7568969726562
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 673.3968505859375,
+            "x1": 525.5452270507812,
+            "y1": 684.305908203125
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 7,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 23,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "tensorflow2015-whitepaper",
+      "stance": "inherits",
+      "cue": "We use",
+      "sentence": "Our seq2seq generator with attention [Bahdanau et al. 2015][We use the implementation in the TensorFlow framework [Abadi et al. 2015].] starts with the encoder stage, which uses an RNN to encode an input sequence \ud835\udc31 = {x_1,\u2026,x_n} into a sequence of encoder outputs and hidden states \ud835\udc21 = {h_1,\u2026,h_n}, where h_t = (x_t,h_t-1), a non-linear function represented by the long-short-term memory (LSTM) cell [Graves 2013].",
+      "section": "Seq2seq Generator",
+      "sectionKind": "method",
+      "ordinal": 17,
+      "title": "2015",
+      "authors": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng",
+      "year": 2015,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": null
+    },
+    "edges": [
+      {
+        "key": "cho_learning_2014",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "Our generator is based on the sequence-to-sequence (seq2seq) generation technique [Cho et al. 2014; Sutskever et al. 2014], combined with beam search and an n-best list reranker to suppress irrelevant information in the outputs.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 5,
+        "title": "2014",
+        "authors": "K. Cho, B. van Merrienboer, C. Gulcehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio",
+        "year": 2014,
+        "arxivId": "1406.1078",
+        "inCorpus": true,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 318.18505859375,
+              "y0": 253.65481567382812,
+              "x1": 525.545166015625,
+              "y1": 264.56390380859375
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 267.2038269042969,
+              "x1": 488.5198059082031,
+              "y1": 278.1129150390625
+            }
+          ]
+        }
+      },
+      {
+        "key": "kingma_adam:_2015",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "In addition, we reserve 10 DA from the training set for validation.[We treat the two paraphrases for the same DA as separate instances in the training set but use them together as two references to measure BLEU and NIST scores [Papineni et al. 2002; Doddington 2002] on the validation and test sets.] To train our seq2seq generator, we use the Adam optimizer [Kingma et al. 2015] to minimize unweighted sequence cross-entropy.[Based on a few preliminary experiments, the learning rate is set to 0.001, embedding size 50, LSTM cell size 128, and batch size 20.]",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 22,
+        "title": "2015",
+        "authors": "D. Kingma and J. Ba",
+        "year": 2015,
+        "arxivId": "1412.6980",
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "mei_what_2015",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We experiment with using much less training data than recent systems based on recurrent neural networks (RNN) [Wen et al. 2015; Mei et al. 2015], and we find that our generator learns successfully to produce both strings and deep syntax trees on the BAGEL restaurant information dataset [Mairesse et al. 2010].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 7,
+        "title": "2015",
+        "authors": "H. Mei, M. Bansal, and M. R. Walter",
+        "year": 2015,
+        "arxivId": "1509.00838",
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 360.294189453125,
+              "y0": 402.6958923339844,
+              "x1": 525.5453491210938,
+              "y1": 413.60498046875
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 416.2458801269531,
+              "x1": 525.5452270507812,
+              "y1": 427.15496826171875
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 429.7948913574219,
+              "x1": 525.5452270507812,
+              "y1": 440.7039794921875
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 443.3439025878906,
+              "x1": 370.5378723144531,
+              "y1": 454.25299072265625
+            }
+          ]
+        }
+      },
+      {
+        "key": "popel_tectomt:_2010",
+        "stance": "inherits",
+        "cue": "we apply",
+        "sentence": "We lowercase the data and treat plural as separate tokens for generating into strings, and we apply automatic analysis from the Treex NLP toolkit [Popel et al. 2010] to obtain deep syntax trees for training tree-based generator setups.[The input vocabulary size is around 45 (DA types, slots, and values added up) and output vocabulary sizes are around 170 for string generation and 180 for tree generation (45 formemes and 135 lemmas).] Same as mairesse_phrase-based_2010, we apply 10-fold cross-validation, with 181 training DA and 21 testing DA.",
+        "section": "Experiments",
+        "sectionKind": "experiments",
+        "ordinal": 20,
+        "title": "2010",
+        "authors": "M. Popel and Z. \u017dabokrtsk\u00fd",
+        "year": 2010,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 346.91961669921875,
+              "y0": 267.1396789550781,
+              "x1": 525.544921875,
+              "y1": 278.04876708984375
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 280.6886901855469,
+              "x1": 525.5450439453125,
+              "y1": 291.5977783203125
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 294.2377014160156,
+              "x1": 525.545166015625,
+              "y1": 305.14678955078125
+            },
+            {
+              "x0": 307.2760009765625,
+              "y0": 307.7867126464844,
+              "x1": 359.7814636230469,
+              "y1": 318.69580078125
+            }
+          ]
+        }
+      },
+      {
+        "key": "sutskever_sequence_2014",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "Our generator is based on the sequence-to-sequence (seq2seq) generation technique [Cho et al. 2014; Sutskever et al. 2014], combined with beam search and an n-best list reranker to suppress irrelevant information in the outputs.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 5,
+        "title": "2014",
+        "authors": "I. Sutskever, O. Vinyals, and Q. VV Le",
+        "year": 2014,
+        "arxivId": "1409.3215",
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 318.18505859375,
+              "y0": 253.65481567382812,
+              "x1": 525.545166015625,
+              "y1": 264.56390380859375
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 267.2038269042969,
+              "x1": 488.5198059082031,
+              "y1": 278.1129150390625
+            }
+          ]
+        }
+      },
+      {
+        "key": "tensorflow2015-whitepaper",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "Our seq2seq generator with attention [Bahdanau et al. 2015][We use the implementation in the TensorFlow framework [Abadi et al. 2015].] starts with the encoder stage, which uses an RNN to encode an input sequence \ud835\udc31 = {x_1,\u2026,x_n} into a sequence of encoder outputs and hidden states \ud835\udc21 = {h_1,\u2026,h_n}, where h_t = (x_t,h_t-1), a non-linear function represented by the long-short-term memory (LSTM) cell [Graves 2013].",
+        "section": "Seq2seq Generator",
+        "sectionKind": "method",
+        "ordinal": 17,
+        "title": "2015",
+        "authors": "M. Abadi, A. Agarwal, P. Barham, E. Brevdo, Z. Chen, C. Citro, G. S. Corrado, A. Davis, J. Dean, M. Devin, S. Ghemawat, I. Goodfellow, A. Harp, G. Irving, M. Isard, Y. Jia, R. Jozefowicz, L. Kaiser, M. Kudlur, J. Levenberg, D. Man\\'e, R. Monga, S. Moore, D. Murray, C. Olah, M. Schuster, J. Shlens, B. Steiner, I. Sutskever, K. Talwar, P. Tucker, V. Vanhoucke, V. Vasudevan, F. Vi\\'egas, O. Vinyals, P. Warden, M. Wattenberg, M. Wicke, Y. Yu, and X. Zheng",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      },
+      {
+        "key": "wen_semantically_2015",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We experiment with using much less training data than recent systems based on recurrent neural networks (RNN) [Wen et al. 2015; Mei et al. 2015], and we find that our generator learns successfully to produce both strings and deep syntax trees on the BAGEL restaurant information dataset [Mairesse et al. 2010].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 7,
+        "title": "2015b",
+        "authors": "T.-H. Wen, M. Gasic, N. Mrk\u0161i\u0107, P.-H. Su, D. Vandyke, and S. Young",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 360.294189453125,
+              "y0": 402.6958923339844,
+              "x1": 525.5453491210938,
+              "y1": 413.60498046875
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 416.2458801269531,
+              "x1": 525.5452270507812,
+              "y1": 427.15496826171875
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 429.7948913574219,
+              "x1": 525.5452270507812,
+              "y1": 440.7039794921875
+            },
+            {
+              "x0": 307.27606201171875,
+              "y0": 443.3439025878906,
+              "x1": 370.5378723144531,
+              "y1": 454.25299072265625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [],
+  "assumptionTally": {
+    "total": 0,
+    "cited": 0,
+    "shown": 0,
+    "bare": 0
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 35,
+    "rate": 0.875
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2016-06-17",
+    "authors": [
+      "Ond\u0159ej Du\u0161ek",
+      "Filip Jur\u010d\u00ed\u010dek"
+    ]
+  }
+}

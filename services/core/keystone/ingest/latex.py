@@ -163,11 +163,12 @@ class TexDocument:
             # paper's own — and it cost a table on two of nine papers when applied
             # here as well. Narrower is better: the guard inside extract_equations
             # catches parameter markers regardless.
-            tables=extract_tables(raw),
+            tables=extract_tables(raw, numeric_macros(raw)),
             # Body only, with macros expanded: a preamble holds no citations, and a
             # claim reading "We propose , which improves on" has lost the very word
             # the citation is attached to. Equations and tables above are left
-            # unexpanded on purpose — those must stay exactly as the author wrote them.
+            # unexpanded on purpose — those must stay exactly as the author wrote them,
+            # with one exception for tables, below.
             citations=extract_citations(
                 expand_macros(document_body(body), user_macros(raw))
             ),
@@ -408,8 +409,34 @@ def extract_equations(text: str) -> list[Equation]:
     return out
 
 
-def extract_tables(text: str) -> list[TableSource]:
-    """Tabular bodies split into rows and cells, plus the enclosing caption."""
+#: A macro body that is nothing but a number, as a table cell would print it.
+_NUMERIC_BODY = re.compile(r"^\s*[-+]?\d+(?:\.\d+)?\s*(?:\\?%)?\s*$")
+
+
+def numeric_macros(text: str) -> dict[str, str]:
+    """The paper's argument-less macros that stand for a number, and nothing else.
+
+    Some papers keep their headline results in macros so prose and table cannot drift:
+    1410.8206 defines ``\\bestbleuunk`` as 37.5 and writes it in both places. Prose
+    expands it, so the abstract read 37.5; the table did not, so its own row held no
+    number, and the tracer set the abstract against the 37.2 in the row above — another
+    paper's system — and published that as a mismatch. A number-valued macro in a cell
+    *is* the number the PDF prints there, so this is the one expansion tables get;
+    formatting macros stay exactly as written.
+    """
+    return {
+        name: body.strip()
+        for name, body in user_macros(text).items()
+        if _NUMERIC_BODY.match(body)
+    }
+
+
+def extract_tables(text: str, numbers: dict[str, str] | None = None) -> list[TableSource]:
+    """Tabular bodies split into rows and cells, plus the enclosing caption.
+
+    ``numbers`` are number-valued macros (see :func:`numeric_macros`), expanded cell
+    by cell — after the split on ``&``, so no expansion can move a column.
+    """
     out: list[TableSource] = []
     # Captions belong to the enclosing float, and a tabular's caption may sit either
     # above or below it. Scanning a window around the tabular and taking the first
@@ -434,7 +461,10 @@ def extract_tables(text: str) -> list[TableSource]:
             if (has_rule or pending_rule) and rows:
                 block_starts.append(len(rows))
             pending_rule = False
-            cells = tuple(cell.strip() for cell in cleaned.split("&"))
+            cells = tuple(
+                expand_macros(cell, numbers).strip() if numbers else cell.strip()
+                for cell in cleaned.split("&")
+            )
             rows.append(cells)
 
         # Caption and label live on the enclosing float, not on the tabular itself.

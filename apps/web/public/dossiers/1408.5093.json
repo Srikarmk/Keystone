@@ -1,0 +1,1383 @@
+{
+  "id": "1408.5093",
+  "title": "Caffe: Convolutional architecture for fast feature embedding",
+  "keystone": null,
+  "codeUrl": "https://github.com/BVLC/caffe",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1408.5093",
+  "numbers": [
+    {
+      "value": "2.5 ms",
+      "kind": "configuration",
+      "section": "abstract",
+      "sentence": "Caffe fits industry and internet-scale media needs by CUDA GPU computation, processing over 40 million images a day on a single K40 or Titan GPU ( 2.5 ms per image).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 228.76824951171875,
+            "y0": 286.3924865722656,
+            "x1": 292.94964599609375,
+            "y1": 295.35888671875
+          },
+          {
+            "x0": 53.79796600341797,
+            "y0": 296.8534851074219,
+            "x1": 292.9407653808594,
+            "y1": 305.81988525390625
+          },
+          {
+            "x0": 53.79796600341797,
+            "y0": 307.3134765625,
+            "x1": 292.9497985839844,
+            "y1": 316.2798767089844
+          },
+          {
+            "x0": 53.79796600341797,
+            "y0": 317.77447509765625,
+            "x1": 140.55784606933594,
+            "y1": 326.7408752441406
+          }
+        ]
+      }
+    },
+    {
+      "value": "150MB",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "In our test program, LevelDB and Protocol Buffers provide a throughput of 150MB/s on commodity machines with minimal CPU impact.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 267.9454345703125,
+            "y0": 228.42149353027344,
+            "x1": 292.90789794921875,
+            "y1": 237.3878936767578
+          },
+          {
+            "x0": 53.7979736328125,
+            "y0": 238.8815155029297,
+            "x1": 302.6603088378906,
+            "y1": 247.84791564941406
+          },
+          {
+            "x0": 53.7979736328125,
+            "y0": 249.34251403808594,
+            "x1": 292.9587097167969,
+            "y1": 258.30889892578125
+          },
+          {
+            "x0": 53.7979736328125,
+            "y0": 259.8034973144531,
+            "x1": 83.98784637451172,
+            "y1": 268.7698974609375
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Comparison of popular deep learning frameworks. Core language is the main library language, while bindings have an officially supported library interface for feature extraction, training, etc. CPU indicates availability of host-only computation, no GPU usage (e.g., for cluster deployment); GPU indicates the GPU computation capability essential for training modern CNNs.",
+      "label": "tab:software",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Core",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Open",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Pretrained",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Framework",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "License",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "language",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Binding(s)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "CPU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "GPU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "source",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "models",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Development",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Caffe",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BSD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "C++",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Python,",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "distributed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "MATLAB",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "cuda-convnet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "unspecified",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "C++",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Python",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "discontinued",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Decaf",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BSD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Python",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "discontinued",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "OverFeat",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "unspecified",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Lua",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "C++,Python",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "centralized",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Theano/Pylearn2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BSD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Python",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "distributed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Torch7",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "BSD",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Lua",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "distributed",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 94.8729248046875,
+            "y0": 162.9664764404297,
+            "x1": 555.9317626953125,
+            "y1": 171.93287658691406
+          },
+          {
+            "x0": 53.7978515625,
+            "y0": 173.42649841308594,
+            "x1": 555.9164428710938,
+            "y1": 182.3928985595703
+          },
+          {
+            "x0": 53.7978515625,
+            "y0": 183.8874969482422,
+            "x1": 555.9203491210938,
+            "y1": 192.85389709472656
+          },
+          {
+            "x0": 53.797821044921875,
+            "y0": 194.34849548339844,
+            "x1": 333.3701477050781,
+            "y1": 203.3148956298828
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Features extracted from a deep network, visualized in a 2-dimensional space. Note the clear separation between categories, indicative of a successful embedding.",
+      "label": "fig:embedding",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "90 Minimal",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "90 Melancholy",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "90 HDR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "90 Ethereal",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 104.65542602539062,
+            "y0": 190.78648376464844,
+            "x1": 292.9139404296875,
+            "y1": 199.7528839111328
+          },
+          {
+            "x0": 53.79800033569336,
+            "y0": 201.2474822998047,
+            "x1": 292.8959655761719,
+            "y1": 210.21388244628906
+          },
+          {
+            "x0": 53.79800033569336,
+            "y0": 211.70750427246094,
+            "x1": 292.90496826171875,
+            "y1": 220.6739044189453
+          },
+          {
+            "x0": 53.79800033569336,
+            "y0": 222.1685028076172,
+            "x1": 140.63758850097656,
+            "y1": 231.13490295410156
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Top five most-confident positive predictions on the Flickr Style dataset, using a Caffe-trained classifier.",
+      "label": "fig:style",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Ethereal",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "HDR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Melancholy",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Minimal",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\todo": "{\\color{red} TODO: #1}",
+    "\\note": "{\\color{blue} NOTE: #1}",
+    "\\chk": "\\checkmark",
+    "\\rr": "\\multirow{2}{*}{#1}",
+    "\\chr": "\\rr{\\checkmark}",
+    "\\hide": "",
+    "\\fgap": ".5in"
+  },
+  "references": [
+    {
+      "key": "collobert2011torch7",
+      "raw": "R. Collobert, K. Kavukcuoglu, and C. Farabet. Torch7: A MATLAB-like environment for machine learning. In BigLearn, NIPS Workshop, 2011",
+      "authors": "R. Collobert, K. Kavukcuoglu, and C. Farabet",
+      "title": "Torch7: A MATLAB-like environment for machine learning",
+      "venue": "In BigLearn, NIPS Workshop, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "DonahueJVHZTD13",
+      "raw": "J. Donahue, Y. Jia, O. Vinyals, J. Hoffman, N. Zhang, E. Tzeng, and T. Darrell. Decaf: A deep convolutional activation feature for generic visual recognition. In ICML, 2014",
+      "authors": "J. Donahue, Y. Jia, O. Vinyals, J. Hoffman, N. Zhang, E. Tzeng, and T. Darrell",
+      "title": "Decaf: A deep convolutional activation feature for generic visual recognition",
+      "venue": "In ICML, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "girshick2014rcnn",
+      "raw": "R. Girshick, J. Donahue, T. Darrell, and J. Malik. Rich feature hierarchies for accurate object detection and semantic segmentation. In CVPR, 2014",
+      "authors": "R. Girshick, J. Donahue, T. Darrell, and J. Malik",
+      "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+      "venue": "In CVPR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goodfellow013pylearn2",
+      "raw": "I. Goodfellow, D. Warde-Farley, P. Lamblin, V. Dumoulin, M. Mirza, R. Pascanu, J. Bergstra, F. Bastien, and Y. Bengio. Pylearn2: a machine learning research library. arXiv preprint 1308.4214, 2013",
+      "authors": "I. Goodfellow, D. Warde-Farley, P. Lamblin, V. Dumoulin, M. Mirza, R. Pascanu, J. Bergstra, F. Bastien, and Y. Bengio",
+      "title": "Pylearn2: a machine learning research library",
+      "venue": "arXiv preprint 1308.4214, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "GuadarramaSEKNRJT14",
+      "raw": "S. Guadarrama, E. Rodner, K. Saenko, N. Zhang, R. Farrell, J. Donahue, and T. Darrell. Open-vocabulary object retrieval. In RSS, 2014",
+      "authors": "S. Guadarrama, E. Rodner, K. Saenko, N. Zhang, R. Farrell, J. Donahue, and T. Darrell",
+      "title": "Open-vocabulary object retrieval",
+      "venue": "In RSS, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "KarayevHWAD13",
+      "raw": "S. Karayev, M. Trentacoste, H. Han, A. Agarwala, T. Darrell, A. Hertzmann, and H. Winnemoeller. Recognizing image style. arXiv preprint 1311.3715, 2013",
+      "authors": "S. Karayev, M. Trentacoste, H. Han, A. Agarwala, T. Darrell, A. Hertzmann, and H. Winnemoeller",
+      "title": "Recognizing image style",
+      "venue": "arXiv preprint 1311.3715, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012cuda-convnet",
+      "raw": "A. Krizhevsky. cuda-convnet. https://code.google.com/p/cuda-convnet/, 2012",
+      "authors": "A. Krizhevsky",
+      "title": "cuda-convnet",
+      "venue": "2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "A. Krizhevsky, I. Sutskever, and G. Hinton. ImageNet classification with deep convolutional neural networks. In NIPS, 2012",
+      "authors": "A. Krizhevsky, I. Sutskever, and G. Hinton",
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "venue": "In NIPS, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sermanet2014overfeat",
+      "raw": "P. Sermanet, D. Eigen, X. Zhang, M. Mathieu, R. Fergus, and Y. LeCun. Overfeat: Integrated recognition, localization and detection using convolutional networks. In ICLR, 2014",
+      "authors": "P. Sermanet, D. Eigen, X. Zhang, M. Mathieu, R. Fergus, and Y. LeCun",
+      "title": "Overfeat: Integrated recognition, localization and detection using convolutional networks",
+      "venue": "In ICLR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "UijlingsIJCV2013",
+      "raw": "J. Uijlings, K. van de Sande, T. Gevers, and A. Smeulders. Selective search for object recognition. IJCV, 2013",
+      "authors": "J. Uijlings, K. van de Sande, T. Gevers, and A. Smeulders",
+      "title": "Selective search for object recognition",
+      "venue": "IJCV, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ZhangPRDB13",
+      "raw": "N. Zhang, M. Paluri, M. Ranzato, T. Darrell, and L. Bourdev. Panda: Pose aligned networks for deep attribute modeling. In CVPR, 2014",
+      "authors": "N. Zhang, M. Paluri, M. Ranzato, T. Darrell, and L. Bourdev",
+      "title": "Panda: Pose aligned networks for deep attribute modeling",
+      "venue": "In CVPR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1052,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.79796600341797,
+            "y0": 223.6274871826172,
+            "x1": 292.9496765136719,
+            "y1": 232.59388732910156
+          },
+          {
+            "x0": 53.79796600341797,
+            "y0": 234.08848571777344,
+            "x1": 292.9407043457031,
+            "y1": 243.0548858642578
+          },
+          {
+            "x0": 53.79796600341797,
+            "y0": 244.5494842529297,
+            "x1": 292.95867919921875,
+            "y1": 253.51588439941406
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4309,
+      "numbers": 2,
+      "citations": 1,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 325.77801513671875,
+            "y0": 222.13352966308594,
+            "x1": 555.9454956054688,
+            "y1": 231.0999298095703
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 232.5935516357422,
+            "x1": 555.9277954101562,
+            "y1": 241.55995178222656
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 243.05455017089844,
+            "x1": 398.5586242675781,
+            "y1": 252.0209503173828
+          },
+          {
+            "x0": 407.9195556640625,
+            "y0": 243.05455017089844,
+            "x1": 555.954833984375,
+            "y1": 252.0209503173828
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 253.5155487060547,
+            "x1": 555.927978515625,
+            "y1": 262.48193359375
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 263.9765319824219,
+            "x1": 555.94580078125,
+            "y1": 272.94293212890625
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 274.4375305175781,
+            "x1": 419.60284423828125,
+            "y1": 283.4039306640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Highlights of Caffe",
+      "chars": 2219,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.76482009887695,
+            "y0": 406.94049072265625,
+            "x1": 292.9590759277344,
+            "y1": 415.9068908691406
+          },
+          {
+            "x0": 53.797821044921875,
+            "y0": 417.4014892578125,
+            "x1": 292.94964599609375,
+            "y1": 426.3678894042969
+          },
+          {
+            "x0": 53.797821044921875,
+            "y0": 427.8614807128906,
+            "x1": 169.15057373046875,
+            "y1": 436.827880859375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Comparison to related software",
+      "chars": 1079,
+      "numbers": 2,
+      "citations": 1,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 325.7778015136719,
+            "y0": 362.4994201660156,
+            "x1": 555.9541625976562,
+            "y1": 371.4658203125
+          },
+          {
+            "x0": 316.8117980957031,
+            "y0": 372.9604187011719,
+            "x1": 518.0714111328125,
+            "y1": 381.92681884765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Architecture",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Data Storage",
+      "chars": 1327,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 325.7778015136719,
+            "y0": 595.2344360351562,
+            "x1": 555.9630737304688,
+            "y1": 604.2008056640625
+          },
+          {
+            "x0": 316.8117980957031,
+            "y0": 605.6953735351562,
+            "x1": 384.2281799316406,
+            "y1": 614.6617431640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Layers",
+      "chars": 876,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.76497268676758,
+            "y0": 323.7734680175781,
+            "x1": 292.9144592285156,
+            "y1": 332.7398681640625
+          },
+          {
+            "x0": 53.7979736328125,
+            "y0": 334.2344665527344,
+            "x1": 292.9138488769531,
+            "y1": 343.20086669921875
+          },
+          {
+            "x0": 53.7979736328125,
+            "y0": 344.6954650878906,
+            "x1": 117.97948455810547,
+            "y1": 353.661865234375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Networks and Run Mode",
+      "chars": 597,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.764957427978516,
+            "y0": 513.2734375,
+            "x1": 292.9234619140625,
+            "y1": 522.2398071289062
+          },
+          {
+            "x0": 53.79795837402344,
+            "y0": 523.7334594726562,
+            "x1": 292.9137878417969,
+            "y1": 532.6998291015625
+          },
+          {
+            "x0": 53.79795837402344,
+            "y0": 534.1943969726562,
+            "x1": 121.21631622314453,
+            "y1": 543.1607666015625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Training A Network",
+      "chars": 1176,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 62.764957427978516,
+            "y0": 650.4684448242188,
+            "x1": 292.9233703613281,
+            "y1": 659.434814453125
+          },
+          {
+            "x0": 53.79795837402344,
+            "y0": 660.929443359375,
+            "x1": 166.2635040283203,
+            "y1": 669.8958129882812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Applications and Examples",
+      "chars": 3039,
+      "numbers": 2,
+      "citations": 8,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 325.77801513671875,
+            "y0": 517.1674194335938,
+            "x1": 555.9451904296875,
+            "y1": 526.1337890625
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 527.6284790039062,
+            "x1": 555.9188842773438,
+            "y1": 536.5948486328125
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 538.0884399414062,
+            "x1": 555.9457397460938,
+            "y1": 547.0548095703125
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 548.5494384765625,
+            "x1": 468.4607238769531,
+            "y1": 557.5158081054688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Availability",
+      "chars": 260,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 325.77801513671875,
+            "y0": 234.13450622558594,
+            "x1": 526.767333984375,
+            "y1": 243.1009063720703
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Acknowledgements",
+      "chars": 131,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 325.77801513671875,
+            "y0": 312.8395080566406,
+            "x1": 555.9544067382812,
+            "y1": 321.805908203125
+          },
+          {
+            "x0": 316.81201171875,
+            "y0": 323.29949951171875,
+            "x1": 555.9364624023438,
+            "y1": 332.2658996582031
+          },
+          {
+            "x0": 316.81195068359375,
+            "y0": 333.760498046875,
+            "x1": 430.1920471191406,
+            "y1": 342.7268981933594
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 6,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "KarayevHWAD13",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "For example, Karayev et al. have shown promising results finding images of different styles such as \u201cVintage\u201d and \u201cRomantic\u201d using Caffe features (Figure [ref]) [Karayev et al. 2013]. Object Detection Most notably, Caffe has enabled us to obtain by far the best performance on object detection, evaluated on the hardest academic datasets: the PASCAL VOC 2007-2012 and the ImageNet 2013 Detection challenge [Girshick et al. 2014].",
+      "section": "Applications and Examples",
+      "sectionKind": "method",
+      "ordinal": 12,
+      "title": "Recognizing image style",
+      "authors": "S. Karayev, M. Trentacoste, H. Han, A. Agarwala, T. Darrell, A. Hertzmann, and H. Winnemoeller",
+      "year": 2013,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": null
+    },
+    "edges": [
+      {
+        "key": "KarayevHWAD13",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "For example, Karayev et al. have shown promising results finding images of different styles such as \u201cVintage\u201d and \u201cRomantic\u201d using Caffe features (Figure [ref]) [Karayev et al. 2013]. Object Detection Most notably, Caffe has enabled us to obtain by far the best performance on object detection, evaluated on the hardest academic datasets: the PASCAL VOC 2007-2012 and the ImageNet 2013 Detection challenge [Girshick et al. 2014].",
+        "section": "Applications and Examples",
+        "sectionKind": "method",
+        "ordinal": 12,
+        "title": "Recognizing image style",
+        "authors": "S. Karayev, M. Trentacoste, H. Han, A. Agarwala, T. Darrell, A. Hertzmann, and H. Winnemoeller",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": null
+      }
+    ]
+  },
+  "assumptions": [],
+  "assumptionTally": {
+    "total": 0,
+    "cited": 0,
+    "shown": 0,
+    "bare": 0
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.CV",
+    "primaryName": "Computer Vision",
+    "categories": [
+      "cs.CV",
+      "cs.LG",
+      "cs.NE"
+    ],
+    "published": "2014-06-20",
+    "authors": [
+      "Yangqing Jia",
+      "Evan Shelhamer",
+      "Jeff Donahue",
+      "Sergey Karayev",
+      "Jonathan Long",
+      "Ross Girshick",
+      "Sergio Guadarrama",
+      "Trevor Darrell"
+    ]
+  }
+}

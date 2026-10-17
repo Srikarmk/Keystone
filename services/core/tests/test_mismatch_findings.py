@@ -118,3 +118,19 @@ def test_a_bound_is_never_set_against_a_cell() -> None:
         "SNLI entailment accuracy is greater than 99.10% on most cases.", "99.40%", "Accuracy"
     ) != "mismatch"
     assert _traced("SNLI entailment accuracy is 99.10% on most cases.", "99.40%", "Accuracy") == "mismatch"
+
+
+def test_a_number_written_in_an_unparsed_cell_is_not_contradicted() -> None:
+    """1410.8206: the paper's own row reads "37.5 (+1.9)", which parses as no number."""
+    sentence = "With 37.5 BLEU points on WMT'14, our system surpasses the best result."
+    number = find_numbers(sentence)[0]
+    mention = NumericMention(number=number, sentence=sentence, section=SectionKind.ABSTRACT)
+    def cell(row: int, raw: str, header: str) -> TableCell:
+        return TableCell(row=row, column=3, raw=raw, number=cell_number(raw),
+                         row_header=header, column_header="BLEU")
+    theirs = cell(1, "37.2", "Jean et al. -- 8 gated RNNs with search")
+    ours = cell(2, "37.5 (+1.9)", "Ensemble of 8 LSTMs + PosUnk")
+    table = Table(ordinal=1, caption="Tokenized BLEU on WMT'14 newstest2014", cells=(theirs,))
+    assert trace_all((mention,), (table,)).traces[0].status == "mismatch"  # the control
+    table = Table(ordinal=1, caption="Tokenized BLEU on WMT'14 newstest2014", cells=(theirs, ours))
+    assert trace_all((mention,), (table,)).traces[0].status != "mismatch"
