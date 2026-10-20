@@ -1,5 +1,7 @@
 # Keystone
 
+<a href="https://keystone-research.vercel.app"><img alt="Live site" src="https://img.shields.io/badge/live-keystone--research.vercel.app-5b4fc9" /></a> <a href="https://www.srikarmk.dev/projects/keystone"><img alt="Case study" src="https://img.shields.io/badge/case%20study-srikarmk.dev-5b4fc9" /></a> <a href="https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Srikarmk/keystone"><img alt="MCP registry" src="https://img.shields.io/badge/MCP%20registry-io.github.Srikarmk%2Fkeystone-5b4fc9" /></a> <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue" /></a>
+
 **What is this paper standing on?**
 
 **Live:** https://keystone-research.vercel.app
