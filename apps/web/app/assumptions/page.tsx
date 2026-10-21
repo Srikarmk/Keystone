@@ -80,11 +80,11 @@ export default function Assumptions() {
   );
 
   return (
-    <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
+    <main id="main" className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
       <SiteHeader />
 
       <section className="pt-10">
-        <h1 className="pressed max-w-3xl text-[2.5rem] leading-[1.1] tracking-[-0.02em]">
+        <h1 className="pressed display max-w-4xl">
           What the library takes on faith
         </h1>
         <p className="mt-5 max-w-2xl text-[1.02rem] leading-relaxed text-ink-soft">
@@ -125,7 +125,7 @@ export default function Assumptions() {
 
       {sections.top.length > 0 ? (
         <section className="mt-9 border-t border-paper-edge pt-6">
-          <h2 className="text-[0.7rem] uppercase tracking-[0.18em] text-ink-faint">
+          <h2 className="text-[1.15rem] leading-snug text-ink">
             The commonest places they are said
           </h2>
           <ul className="mt-4 space-y-2">
@@ -162,7 +162,7 @@ export default function Assumptions() {
       ) : null}
 
       <section className="mt-10 border-t border-paper-edge pt-8">
-        <h2 className="text-[0.7rem] uppercase tracking-[0.18em] text-ink-faint">
+        <h2 className="text-[1.15rem] leading-snug text-ink">
           By the phrase that announced it
         </h2>
 

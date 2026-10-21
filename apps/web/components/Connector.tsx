@@ -63,17 +63,18 @@ export function Connector({
   if (options.length < 4) return null;
 
   return (
-    <section className="mt-16 border-t border-paper-edge pt-10">
-      <h2 className="text-[0.72rem] uppercase tracking-[0.18em] text-ink-faint">
-        How two papers relate
-      </h2>
-      <p className="mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft">
+    <section className="mt-28">
+      <div className="grid gap-x-16 gap-y-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-end">
+      <div>
+      <h2 className="heading">How two papers relate</h2>
+      <p className="mt-4 max-w-[38rem] text-[1rem] leading-relaxed text-ink-soft">
         Every arrow in this library came out of a sentence, so a chain of them is a
         chain of things papers said about each other. Pick two and the shortest one is
         below, with the words that placed each link.
       </p>
+      </div>
 
-      <div className="mt-6 flex flex-wrap items-baseline gap-x-4 gap-y-3 text-[0.95rem]">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-3 text-[0.95rem] lg:flex-col lg:items-stretch lg:[&>span]:max-w-none">
         <Picker
           label="from"
           value={from}
@@ -96,6 +97,7 @@ export function Connector({
               : undefined
           }
         />
+      </div>
       </div>
 
       {from && to ? (
@@ -139,7 +141,7 @@ function Picker({
         value={value}
         disabled={disabled}
         onChange={(e) => onChange(e.target.value)}
-        className="max-w-[22rem] truncate border-b border-ink/25 bg-transparent pb-0.5 text-[0.95rem] text-ink outline-none transition-colors hover:border-brass focus:border-brass disabled:border-paper-edge disabled:text-ink-faint"
+        className="w-full max-w-[22rem] truncate border-b lg:max-w-none border-ink/25 bg-paper pb-1 text-[1rem] text-ink outline-none transition-colors hover:border-brass focus:border-brass disabled:border-paper-edge disabled:text-ink-faint"
       >
         <option value="">{disabled ? "pick a paper first" : `a paper…`}</option>
         {options.map((p) => (

@@ -16,6 +16,7 @@ import { Connector } from "@/components/Connector";
 import { Footer } from "@/components/Footer";
 import { LibraryGraph } from "@/components/LibraryGraph";
 import { SiteHeader } from "@/components/SiteHeader";
+import { Specimen } from "@/components/Specimen";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -136,89 +137,93 @@ export default function Home() {
   }, [graph]);
 
   return (
-    <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
+    <main id="main" className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
       <SiteHeader />
 
-      <section className="pt-10">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: EASE }}
-          className="max-w-3xl"
-        >
-          <h1 className="pressed text-[2.9rem] leading-[1.08] tracking-[-0.02em]">
-            What is this paper standing on?
-          </h1>
+      <section className="pt-14 sm:pt-20">
+        {/* The hero enters on the CSS `settle` animation rather than motion/react: it
+            runs on the clock, not on script, so the first screen is never left at
+            opacity 0 waiting for hydration, and it already honours reduced motion. */}
+        <h1 className="settle pressed display-hero max-w-[15ch] lg:max-w-none">
+          What is this paper standing on?
+        </h1>
 
-          <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft">
-            No paper stands by itself. Each one adopts a method from somebody, argues
-            with somebody else, and takes a handful of things on faith without saying
-            so. Keystone reads all three out of the paper&rsquo;s own sentences.
-          </p>
-
-          <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-ink-faint">
-            Not a summary and not a guess. Every relationship below is quoted from the
-            LaTeX, shown with the words that placed it, and pinned to the pixels on the
-            page where the paper admits it.
-          </p>
-
-          {/* The error rate stays above the fold, but as one sentence with a way in
-              rather than the five-line statistical paragraph that used to sit here.
-              A reader deciding whether to trust the page needs the headline figure
-              and a door; a reader who wants the Wilson interval will walk through it. */}
-          {external ? (
-            <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-ink-faint">
-              It is also often silent, and sometimes wrong: on{" "}
-              <span className="numeral">{external.instances.toLocaleString()}</span>{" "}
-              citations labelled by other people it reported a stance for{" "}
-              <span className="numeral text-ink-soft">
-                {Math.round(external.coverage * 100)}%
-              </span>{" "}
-              of them and got{" "}
-              <span className="numeral text-ink-soft">
-                {Math.round(external.spokenPrecision * 100)}%
-              </span>{" "}
-              of those right.{" "}
-              <Link
-                href="/method"
-                className="text-brass underline decoration-brass/40 underline-offset-2 transition-colors hover:decoration-brass"
-              >
-                How it reads, and how often it is wrong &rarr;
-              </Link>
+        <div className="mt-10 grid items-start gap-12 lg:mt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
+          <div className="settle" style={{ animationDelay: "80ms" }}>
+            <p className="lead max-w-[36rem] text-ink">
+              No paper stands by itself. Each one adopts a method from somebody, argues
+              with somebody else, and takes a handful of things on faith without saying
+              so. Keystone reads all three out of the paper&rsquo;s own sentences.
             </p>
-          ) : null}
 
-          <div className="mt-7 flex flex-wrap items-center gap-6">
-            <Link
-              href={`/paper/${index[0]?.id ?? "1706.03762"}`}
-              className="border-b border-brass pb-1 text-[1rem] text-brass transition-colors hover:text-ink"
-            >
-              Open a paper &rarr;
-            </Link>
-            {totals.papers > 0 ? (
-              <p className="numeral text-[0.82rem] text-ink-faint">
-                {totals.stands} dependencies and {totals.bare} bare assumptions across{" "}
-                {totals.papers} papers
+            <p className="mt-4 max-w-[36rem] text-[1.02rem] leading-relaxed text-ink-soft">
+              Not a summary and not a guess. Every relationship below is quoted from the
+              LaTeX, shown with the words that placed it, and pinned to the pixels on the
+              page where the paper admits it.
+            </p>
+
+            {/* The error rate stays above the fold, but as one sentence with a way in
+                rather than the five-line statistical paragraph that used to sit here.
+                A reader deciding whether to trust the page needs the headline figure
+                and a door; a reader who wants the Wilson interval will walk through it. */}
+            {external ? (
+              <p className="mt-4 max-w-[36rem] text-[1.02rem] leading-relaxed text-ink-soft">
+                It is also often silent, and sometimes wrong: on{" "}
+                <span className="figures">{external.instances.toLocaleString()}</span>{" "}
+                citations labelled by other people it reported a stance for{" "}
+                <span className="figures text-ink">
+                  {Math.round(external.coverage * 100)}%
+                </span>{" "}
+                of them and got{" "}
+                <span className="figures text-ink">
+                  {Math.round(external.spokenPrecision * 100)}%
+                </span>{" "}
+                of those right.{" "}
+                <Link
+                  href="/method"
+                  className="text-brass underline decoration-brass/40 underline-offset-4 transition-colors hover:decoration-brass"
+                >
+                  How it reads, and how often it is wrong &rarr;
+                </Link>
               </p>
             ) : null}
-          </div>
 
-          {/* The library is a demonstration; this is the tool. Put where the reader
-              is already deciding what to open, rather than on a page of its own that
-              nobody would think to look for. */}
-          <div className="mt-8 border-t border-paper-edge pt-6">
-            <h2 className="text-[0.7rem] uppercase tracking-[0.18em] text-ink-faint">
-              Or read your own
-            </h2>
-            <div className="mt-3">
-              <AddPaper />
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+              <Link
+                href={`/paper/${index[0]?.id ?? "1706.03762"}`}
+                className="inline-flex min-h-12 items-center bg-ink px-6 text-[1rem] text-paper transition-colors hover:bg-brass active:translate-y-px"
+              >
+                Open a paper &rarr;
+              </Link>
+              {totals.papers > 0 ? (
+                <p className="figures text-[0.95rem] text-ink-soft">
+                  {totals.stands.toLocaleString()} dependencies and{" "}
+                  {totals.bare.toLocaleString()} bare assumptions across {totals.papers}{" "}
+                  papers
+                </p>
+              ) : null}
             </div>
           </div>
-        </motion.div>
+
+          {/* The claim above, demonstrated with one real sentence from the library. */}
+          <div className="settle" style={{ animationDelay: "160ms" }}>
+            {graph ? <Specimen graph={graph} titleOf={titleOf} /> : <div className="min-h-[19rem]" />}
+
+            {/* The library is a demonstration; this is the tool. Put where the reader
+                is already deciding what to open, rather than on a page of its own that
+                nobody would think to look for. */}
+            <div className="mt-12">
+              <h2 className="text-[1.25rem] leading-snug">Or read your own</h2>
+              <div className="mt-4">
+                <AddPaper />
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* The library, drawn as what it is: a chain of papers leaning on each other.
             Every edge came out of a sentence, and hovering one shows the sentence. */}
-        <div className="mt-9">
+        <div className="mt-20">
           {graph ? <LibraryGraph data={graph} /> : <div className="h-[22rem]" />}
         </div>
       </section>
@@ -230,7 +235,7 @@ export default function Home() {
         <Connector graph={graph} index={index} />
       ) : null}
 
-      <section className="mt-16 grid gap-8 border-t border-paper-edge pt-10 sm:grid-cols-3">
+      <section aria-label="What Keystone reads" className="mt-28 grid gap-x-12 gap-y-10 sm:grid-cols-3">
         {[
           {
             n: "i",
@@ -255,40 +260,37 @@ export default function Home() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ delay: i * 0.08, duration: 0.5, ease: EASE }}
           >
-            <span className="numeral text-[0.72rem] uppercase tracking-[0.2em] text-brass">
-              {step.n}
-            </span>
-            <h2 className="mt-2 text-[1.12rem] leading-snug">{step.title}</h2>
-            <p className="mt-2 text-[0.92rem] leading-relaxed text-ink-soft">{step.body}</p>
+            <h2 className="text-[1.3rem] leading-snug tracking-[-0.01em]">{step.title}</h2>
+            <p className="mt-3 text-[1rem] leading-relaxed text-ink-soft">{step.body}</p>
           </motion.div>
         ))}
       </section>
 
       {foundations.length > 0 ? (
-        <section className="mt-16 border-t border-paper-edge pt-10">
+        <section className="mt-28">
           <div className="flex flex-wrap items-baseline justify-between gap-4">
-            <h2 className="text-[1.35rem] leading-snug">What the library rests on</h2>
+            <h2 className="heading">What the library rests on</h2>
             <Link
               href="/contested"
-              className="text-[0.88rem] text-ink-faint transition-colors hover:text-brass"
+              className="text-[0.95rem] text-ink-soft transition-colors hover:text-brass"
             >
               and where it argues with itself &rarr;
             </Link>
           </div>
-          <p className="mt-3 max-w-2xl text-[0.93rem] leading-relaxed text-ink-soft">
+          <p className="mt-4 max-w-[38rem] text-[1rem] leading-relaxed text-ink-soft">
             The works other papers here take a method or a setup from, counted by how
             many of them do it. Adoption only &mdash; a paper that is argued with a
             great deal is not one the library is standing on.
           </p>
 
-          <ul className="mt-6 space-y-1">
+          <ul className="mt-8">
             {foundations.map((row) => (
               <li key={row.id}>
                 <Link
                   href={`/paper/${row.id}`}
-                  className="group flex items-center gap-4 border-b border-paper-edge/60 py-2.5"
+                  className="group flex items-center gap-4 border-b border-paper-edge/60 py-3.5"
                 >
-                  <span className="min-w-0 flex-1 truncate text-[0.98rem] transition-colors group-hover:text-brass">
+                  <span className="min-w-0 flex-1 truncate text-[1.05rem] transition-colors group-hover:text-brass">
                     {titleOf[row.id] ?? row.id}
                   </span>
                   <span className="hidden w-32 shrink-0 sm:block">
@@ -297,7 +299,7 @@ export default function Home() {
                       style={{ width: `${(row.n / foundations[0].n) * 100}%` }}
                     />
                   </span>
-                  <span className="numeral w-20 shrink-0 text-right text-[0.8rem] text-ink-faint">
+                  <span className="figures w-20 shrink-0 text-right text-[0.92rem] text-ink-soft">
                     {row.n} papers
                   </span>
                 </Link>
@@ -307,34 +309,42 @@ export default function Home() {
         </section>
       ) : null}
 
-      <section className="mt-16 border-t border-paper-edge pt-8">
-        <div className="flex flex-wrap items-baseline justify-between gap-4">
-          <h2 className="text-[0.72rem] uppercase tracking-[0.18em] text-ink-faint">
-            Analysed papers
+      <section className="mt-28">
+        <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
+          <h2 className="heading">
+            Analysed papers{" "}
+            {index.length > 0 ? (
+              <span className="figures text-ink-faint">{index.length}</span>
+            ) : null}
           </h2>
           <input
+            type="search"
+            name="q"
+            autoComplete="off"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="search titles and quoted sentences…"
-            className="w-72 border-b border-ink/20 bg-transparent pb-1 text-[0.9rem] text-ink outline-none transition-colors placeholder:text-ink-faint/70 focus:border-brass"
+            aria-label="Search titles and quoted sentences"
+            placeholder="Search titles and quoted sentences…"
+            className="w-full border-b border-ink/25 bg-transparent pb-1.5 text-[1rem] text-ink outline-none transition-colors placeholder:text-ink-faint sm:w-80 focus:border-brass"
           />
         </div>
 
         {/* Filters rather than tabs: the default is the whole library, because a
             reader who does not already know the field cannot pick a category first. */}
         {groups.length > 1 ? (
-          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2.5">
             <button
               type="button"
               onClick={() => setCategory(null)}
-              className={`text-[0.82rem] transition-colors ${
+              aria-pressed={category === null}
+              className={`py-1 text-[0.9rem] underline-offset-[6px] transition-colors ${
                 category === null
-                  ? "border-b border-brass pb-0.5 text-brass"
-                  : "text-ink-faint hover:text-ink"
+                  ? "text-ink underline decoration-brass"
+                  : "text-ink-soft hover:text-ink"
               }`}
             >
               everything{" "}
-              <span className="numeral">{filtered.length}</span>
+              <span className="figures text-ink-faint">{filtered.length}</span>
             </button>
             {groups.map((group) => (
               <button
@@ -344,30 +354,34 @@ export default function Home() {
                   setCategory(category === group.code ? null : group.code)
                 }
                 title={group.code}
-                className={`text-[0.82rem] transition-colors ${
+                aria-pressed={category === group.code}
+                className={`py-1 text-[0.9rem] underline-offset-[6px] transition-colors ${
                   category === group.code
-                    ? "border-b border-brass pb-0.5 text-brass"
-                    : "text-ink-faint hover:text-ink"
+                    ? "text-ink underline decoration-brass"
+                    : "text-ink-soft hover:text-ink"
                 }`}
               >
                 {group.label}{" "}
-                <span className="numeral">{group.papers.length}</span>
+                <span className="figures text-ink-faint">{group.papers.length}</span>
               </button>
             ))}
           </div>
         ) : null}
 
         {shown.map((group) => (
-          <div key={group.code} className="mt-7">
+          <div key={group.code} className="mt-12">
             {/* The code is shown next to the name so the grouping is checkable: a
                 reader can put cs.CL into arxiv.org and see the same paper there. */}
-            <h3 className="flex items-baseline gap-2.5 border-b border-paper-edge pb-1.5">
-              <span className="text-[0.95rem]">{group.label}</span>
-              <span className="numeral text-[0.72rem] text-ink-faint">
+            <h3 className="flex items-baseline gap-3 border-b border-paper-edge pb-2">
+              <span className="text-[1.15rem]">{group.label}</span>
+              <span className="numeral text-[0.78rem] text-ink-faint">
                 {group.code} · {group.papers.length}
               </span>
             </h3>
-            <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2">
+            {/* minmax(0, 1fr), not the default auto: a grid column sized by content
+                grows to fit its longest truncated title, and on a phone that pushed the
+                list past the right edge of the screen and the counts out of sight. */}
+            <ul className="grid grid-cols-[minmax(0,1fr)] gap-x-10 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
               {group.papers.map((paper, i) => (
                 <motion.li
                   key={paper.id}
@@ -381,13 +395,13 @@ export default function Home() {
                 >
                   <Link
                     href={`/paper/${paper.id}`}
-                    className="group flex items-baseline gap-4 border-b border-paper-edge/60 py-3 transition-colors hover:bg-paper-deep/40"
+                    className="group flex items-baseline gap-4 border-b border-paper-edge/60 py-3.5 transition-colors hover:bg-paper-deep/40"
                   >
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-[1rem] leading-snug transition-colors group-hover:text-brass">
+                      <span className="block truncate text-[1.03rem] leading-snug transition-colors group-hover:text-brass">
                         {paper.title}
                       </span>
-                      <span className="mt-0.5 block text-[0.8rem] text-ink-faint">
+                      <span className="mt-1 block text-[0.86rem] text-ink-soft">
                         {describe(paper)}
                       </span>
                     </span>
@@ -402,7 +416,7 @@ export default function Home() {
 
         {matchedEdges.length > 0 ? (
           <div className="mt-7 border-t border-paper-edge pt-5">
-            <h3 className="text-[0.72rem] uppercase tracking-[0.18em] text-ink-faint">
+            <h3 className="text-[1.15rem]">
               {matchedEdges.length} quoted sentence
               {matchedEdges.length === 1 ? "" : "s"} mention this
             </h3>

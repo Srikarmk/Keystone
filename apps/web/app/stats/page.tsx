@@ -62,14 +62,14 @@ export default async function Stats() {
   const people = days.reduce((sum, day) => sum + day.people, 0);
 
   return (
-    <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
+    <main id="main" className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
       <header className="flex items-baseline justify-between border-b border-paper-edge py-5">
         <span className="pressed text-[1.4rem] leading-none">Traffic</span>
         <span className="text-[0.8rem] italic text-ink-faint">{user.name}</span>
       </header>
 
       <section className="pt-9">
-        <h1 className="pressed text-[2.2rem] leading-[1.12] tracking-[-0.02em]">
+        <h1 className="pressed display">
           What the site saw
         </h1>
         <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-ink-soft">
@@ -255,7 +255,7 @@ function Locked({
   available: boolean;
 }) {
   return (
-    <main className="mx-auto flex min-h-screen max-w-xl flex-col justify-center px-6">
+    <main id="main" className="mx-auto flex min-h-screen max-w-xl flex-col justify-center px-6">
       <h1 className="pressed text-[1.8rem] leading-tight">Traffic</h1>
       <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-soft">
         {!configured ? (

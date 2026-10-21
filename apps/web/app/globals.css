@@ -13,10 +13,15 @@
   --color-paper-edge: #ddd6c6;
   --color-ink: #1c1a17;
   --color-ink-soft: #5b554b;
-  --color-ink-faint: #8d8578;
+  /* Darkened from #8d8578, which measured 3.2:1 on paper: the nav, the hints and the
+     counts were all set in it, and none of them passed AA. Now 5.3:1 on paper and
+     4.7:1 on the deeper stock. */
+  --color-ink-faint: #6b6357;
 
-  /* Brass: the keystone. Reserved — nothing else in the interface uses it. */
-  --color-brass: #a97f3d;
+  /* Brass: the keystone. Reserved — nothing else in the interface uses it.
+     Deepened from #a97f3d, which is 3.2:1 on paper and is set as link text across the
+     site; #86622a is the same pigment at 4.9:1. */
+  --color-brass: #86622a;
   --color-brass-bright: #d0a45c;
 
   /* Evidence states. Muted mineral tones rather than traffic-light signalling. */
@@ -45,7 +50,7 @@
   --color-paper-edge: #322e28;
   --color-ink: #ece7dc;
   --color-ink-soft: #a8a094;
-  --color-ink-faint: #746e62;
+  --color-ink-faint: #8f887b; /* was #746e62, 3.6:1 on the dark stock; now 5.2:1 */
 
   --color-brass: #d3a660;
   --color-brass-bright: #e6c188;
@@ -74,6 +79,82 @@ body {
   font-synthesis-weight: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Headings break where a reader would, not where the measure happens to run out. */
+h1, h2, h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+a, button, input, select, textarea, summary {
+  touch-action: manipulation;
+}
+
+/*
+ * One focus mark for the whole site, in the accent, offset so it never sits on the
+ * glyphs. Keyboard only: a ring on every mouse click reads as a fault. Several inputs
+ * here set `outline: none` and mark focus with their underline instead; this does not
+ * override those, because the underline turning brass already is the focus state.
+ */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-brass) 28%, transparent);
+}
+
+/* For keyboard readers: straight past the masthead to the page. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 60;
+  padding: 0.6rem 1rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 0.95rem;
+}
+.skip-link:focus-visible {
+  top: 1rem;
+}
+
+/*
+ * The type scale. Two display sizes and a fixed ladder below them, where every page
+ * used to pick its own headline size between 2rem and 2.9rem. A front page that sets
+ * its question at 46px on a 1440px screen is whispering it; a printed title page
+ * would not.
+ */
+.display-hero {
+  font-size: clamp(2.75rem, 1.6rem + 4.4vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.032em;
+}
+.display {
+  font-size: clamp(2.4rem, 1.7rem + 2.6vw, 3.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+}
+.heading {
+  font-size: clamp(1.55rem, 1.3rem + 0.9vw, 2.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+}
+.lead {
+  font-size: clamp(1.1rem, 1.02rem + 0.35vw, 1.28rem);
+  line-height: 1.55;
+}
+
+/* Counts set in the text face with lining, tabular figures: the same digit-for-digit
+   alignment the mono gives a table, without a whole sentence reading as code. */
+.figures {
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 /*

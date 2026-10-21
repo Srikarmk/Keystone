@@ -276,7 +276,7 @@ export function Reader({ id }: { id: string }) {
   }, []);
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-[1880px] flex-col px-5 pb-4 pt-4 sm:px-6 lg:h-screen lg:px-10">
+    <main id="main" className="mx-auto flex min-h-screen max-w-[1880px] flex-col px-5 pb-4 pt-4 sm:px-6 lg:h-screen lg:px-10">
       <Masthead
         index={index}
         current={current}

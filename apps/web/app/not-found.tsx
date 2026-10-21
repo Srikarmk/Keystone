@@ -14,7 +14,7 @@ export const metadata = { title: "Not found", robots: { index: false } };
  */
 export default function NotFound() {
   return (
-    <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
+    <main id="main" className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
       <header className="flex items-center justify-between border-b border-paper-edge py-5">
         <Link href="/" className="pressed text-[1.4rem] leading-none">
           Keystone
@@ -23,7 +23,7 @@ export default function NotFound() {
       </header>
 
       <section className="mx-auto max-w-lg pt-16">
-        <h1 className="pressed text-[2rem] leading-[1.1] tracking-[-0.02em]">
+        <h1 className="pressed display">
           Nothing here
         </h1>
         <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-soft">

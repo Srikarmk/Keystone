@@ -47,22 +47,25 @@ export function AddPaper({ compact = false }: { compact?: boolean }) {
           onKeyDown={(event) => {
             if (event.key === "Enter") go();
           }}
+          name="arxiv"
+          autoComplete="off"
+          inputMode="url"
           placeholder="arXiv id or link — 1706.03762"
           aria-label="Read a paper by arXiv id"
           spellCheck={false}
-          className="min-w-0 flex-1 bg-transparent text-[0.95rem] text-ink outline-none placeholder:text-ink-faint/70"
+          className="min-w-0 flex-1 bg-transparent py-1 text-[1.05rem] text-ink outline-none placeholder:text-ink-faint"
         />
         <button
           type="button"
           onClick={go}
           disabled={!text.trim()}
-          className="shrink-0 text-[0.9rem] text-brass transition-colors hover:text-ink disabled:text-ink-faint/50"
+          className="shrink-0 text-[1rem] text-brass transition-colors hover:text-ink disabled:text-ink-faint"
         >
-          read it &rarr;
+          Read it &rarr;
         </button>
       </div>
 
-      <p className="mt-2 text-[0.8rem] leading-relaxed text-ink-faint">
+      <p aria-live="polite" className="mt-2.5 text-[0.9rem] leading-relaxed text-ink-faint">
         {complaint ?? (
           <>
             Any paper on arXiv that ships LaTeX source &mdash; about nine in ten. It is

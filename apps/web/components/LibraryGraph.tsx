@@ -183,9 +183,12 @@ export function LibraryGraph({ data }: { data: GraphData }) {
 
   return (
     <div>
+      {/* At phone width the 940-unit drawing scaled its labels to four pixels. It keeps
+          a readable minimum width instead and scrolls sideways inside its own box. */}
+      <div className="-mx-6 overflow-x-auto px-6 [scrollbar-width:thin] lg:mx-0 lg:px-0">
       <svg
         viewBox={`0 0 ${WIDTH} ${height}`}
-        className="w-full"
+        className="w-full min-w-[720px]"
         role="img"
         aria-label={`${nodes.length} papers and ${edges.length} relationships between them, read from their own prose`}
       >
@@ -299,9 +302,10 @@ export function LibraryGraph({ data }: { data: GraphData }) {
           );
         })}
       </svg>
+      </div>
 
       {/* The sentence. An edge the reader cannot check is a diagram, not evidence. */}
-      <div className="mt-2 min-h-[4.5rem] border-t border-paper-edge pt-3">
+      <div className="mt-3 min-h-[4.5rem] border-t border-paper-edge pt-4">
         {shown ? (
           <motion.div
             key={active}
@@ -309,19 +313,19 @@ export function LibraryGraph({ data }: { data: GraphData }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <p className="text-[0.84rem]">
+            <p className="text-[0.95rem]">
               <span style={{ color: TONE[shown.stance] }}>
                 {byId.get(shown.from)?.short} {VERB[shown.stance]}{" "}
                 {byId.get(shown.to)?.short}
               </span>
               <span className="text-ink-faint"> &middot; {shown.section}</span>
             </p>
-            <p className="mt-1 text-[0.88rem] italic leading-relaxed text-ink-soft">
+            <p className="mt-1.5 max-w-[48rem] text-[1rem] italic leading-relaxed text-ink-soft">
               &ldquo;{shown.sentence}&rdquo;
             </p>
           </motion.div>
         ) : (
-          <p className="text-[0.84rem] leading-relaxed text-ink-faint">
+          <p className="max-w-[38rem] text-[0.95rem] leading-relaxed text-ink-soft">
             {data.edges.length} relationships run between papers in this library, in
             the order they were posted, so every arrow points back at what it took.
             Hover one to read the sentence that put it there.

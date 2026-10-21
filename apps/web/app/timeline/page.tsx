@@ -31,11 +31,11 @@ export default function TimelinePage() {
   const busiest = spread.reduce((best, row) => (row[1] > best[1] ? row : best), ["", 0]);
 
   return (
-    <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
+    <main id="main" className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
       <SiteHeader />
 
       <section className="pt-10">
-        <h1 className="pressed max-w-3xl text-[2.5rem] leading-[1.1] tracking-[-0.02em]">
+        <h1 className="pressed display max-w-4xl">
           The library, in the order it happened
         </h1>
         <p className="mt-5 max-w-2xl text-[1.02rem] leading-relaxed text-ink-soft">
@@ -60,7 +60,7 @@ export default function TimelinePage() {
       </section>
 
       <section className="mt-14 border-t border-paper-edge pt-8">
-        <h2 className="text-[0.7rem] uppercase tracking-[0.18em] text-ink-faint">
+        <h2 className="text-[1.15rem] leading-snug text-ink">
           Papers per year
         </h2>
         <ul className="mt-4 space-y-2">

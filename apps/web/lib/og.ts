@@ -11,8 +11,8 @@ export const OG = {
   edge: "#ddd6c6",
   ink: "#1c1a17",
   soft: "#5b554b",
-  faint: "#8d8578",
-  brass: "#a97f3d",
+  faint: "#6b6357",
+  brass: "#86622a",
   size: { width: 1200, height: 630 },
 } as const;
 

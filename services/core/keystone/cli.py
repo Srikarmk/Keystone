@@ -772,6 +772,9 @@ def _write_lineage_index(out: Path) -> int:
             edges.append({
                 "from": payload["id"],
                 "to": target,
+                # The citation key, so a link can land on this reading in the citing
+                # paper's reader (`lib/rows.ts` builds the row id from it).
+                "key": edge.get("key", ""),
                 "stance": edge["stance"],
                 "cue": edge["cue"],
                 "sentence": edge["sentence"],

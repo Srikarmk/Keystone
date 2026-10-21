@@ -32,11 +32,11 @@ export default function Method() {
   );
 
   return (
-    <main className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
+    <main id="main" className="mx-auto max-w-[1180px] px-6 pb-24 lg:px-10">
       <SiteHeader />
 
       <section className="pt-10">
-        <h1 className="pressed max-w-3xl text-[2.5rem] leading-[1.1] tracking-[-0.02em]">
+        <h1 className="pressed display max-w-4xl">
           How it reads, and how often it is wrong
         </h1>
         <p className="mt-5 max-w-2xl text-[1.02rem] leading-relaxed text-ink-soft">
@@ -181,11 +181,10 @@ function Step({
 }) {
   return (
     <div>
-      <span className="numeral text-[0.72rem] uppercase tracking-[0.2em] text-brass">
-        {n}
-      </span>
-      <h3 className="mt-2 text-[1.08rem] leading-snug">{title}</h3>
-      <p className="mt-2 text-[0.92rem] leading-relaxed text-ink-soft">{children}</p>
+      {/* The three are parallel, not a sequence, so they are not numbered on the
+          page; `n` stays as the key. */}
+      <h3 className="text-[1.3rem] leading-snug tracking-[-0.01em]">{title}</h3>
+      <p className="mt-3 text-[1rem] leading-relaxed text-ink-soft">{children}</p>
     </div>
   );
 }

@@ -243,6 +243,8 @@ export interface LibraryGraph {
   edges: {
     from: string;
     to: string;
+    /** The citation key in the citing paper; with `edgeId` it addresses the row. */
+    key?: string;
     stance: Stance;
     cue: string;
     sentence: string;

@@ -36,16 +36,16 @@ const ABOUT: { href: string; label: string; hint: string; external?: boolean }[]
 
 export function Footer({ papers }: { papers?: number }) {
   return (
-    <footer className="mt-20 border-t border-paper-edge pt-9">
-      <div className="grid gap-9 sm:grid-cols-[1.4fr_1fr_1fr]">
+    <footer className="mt-32 border-t border-paper-edge pt-12">
+      <div className="grid gap-10 sm:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <span className="pressed text-[1.25rem] leading-none">Keystone</span>
-          <p className="mt-3 max-w-xs text-[0.86rem] leading-relaxed text-ink-soft">
+          <span className="pressed display block leading-none">Keystone</span>
+          <p className="mt-4 max-w-xs text-[0.98rem] leading-relaxed text-ink-soft">
             What a paper adopts, what it argues with, and what it takes on faith &mdash;
             read out of its own LaTeX and pinned to the page that says it.
           </p>
           {papers ? (
-            <p className="numeral mt-3 text-[0.76rem] text-ink-faint">
+            <p className="figures mt-3 text-[0.9rem] text-ink-faint">
               {papers} papers analysed
             </p>
           ) : null}
@@ -55,7 +55,7 @@ export function Footer({ papers }: { papers?: number }) {
         <Column title="About" links={ABOUT} />
       </div>
 
-      <div className="mt-10 max-w-2xl space-y-3 border-t border-paper-edge pt-6 text-[0.8rem] leading-relaxed text-ink-faint">
+      <div className="mt-14 max-w-[36rem] space-y-3 text-[0.9rem] leading-relaxed text-ink-faint">
         <p>
           Keystone reports what a paper says about other papers and about its own
           assumptions, in the paper&rsquo;s own words. It does not judge whether the
@@ -87,10 +87,8 @@ function Column({
 }) {
   return (
     <div>
-      <h2 className="text-[0.7rem] uppercase tracking-[0.18em] text-ink-faint">
-        {title}
-      </h2>
-      <ul className="mt-3 space-y-2.5">
+      <h2 className="text-[1rem] italic text-ink-faint">{title}</h2>
+      <ul className="mt-4 space-y-3">
         {links.map((link) => (
           <li key={link.href}>
             {link.external ? (
@@ -117,10 +115,10 @@ function Column({
 function Label({ label, hint }: { label: string; hint: string }) {
   return (
     <>
-      <span className="block text-[0.92rem] leading-snug transition-colors group-hover:text-brass">
+      <span className="block text-[1rem] leading-snug transition-colors group-hover:text-brass">
         {label}
       </span>
-      <span className="block text-[0.78rem] leading-snug text-ink-faint">{hint}</span>
+      <span className="block text-[0.86rem] leading-snug text-ink-faint">{hint}</span>
     </>
   );
 }
