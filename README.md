@@ -27,7 +27,7 @@ Three things, all quoted rather than inferred:
   its own evidence, or nothing at all.
 - **The graph.** Where a cited paper is also in the library the edge is walkable in
   both directions, so a paper shows both what it stands on and who stands on it. Across
-  42 papers that is **46 relationships**, each carrying the sentence that placed it, and
+  197 papers that is **437 links**, each carrying the sentence that placed it, and
   the chain is the real one: VGG → ResNet → Transformer → BERT / ViT / LLaMA, with batch
   and layer normalisation feeding in.
 
@@ -76,7 +76,6 @@ its best possible output was a blank page. The numeric analysis is still here �
 traced to table cells, every number indexed, baselines checked against the papers they
 cite — but below the lineage, where a detail belongs. See `RELEASE.md` for the pivot.
 
-Full design and roadmap: `~/.claude/plans/rosy-humming-avalanche.md`.
 
 ## Landscape
 
