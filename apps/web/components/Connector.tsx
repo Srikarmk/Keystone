@@ -101,6 +101,17 @@ export function Connector({
       </div>
 
       {from && to ? (
+        <p className="mt-6 text-[0.95rem]">
+          <Link
+            href={`/compare?a=${from}&b=${to}`}
+            className="text-brass underline decoration-brass/40 underline-offset-4 transition-colors hover:decoration-brass"
+          >
+            Set these two side by side &rarr;
+          </Link>
+        </p>
+      ) : null}
+
+      {from && to ? (
         path ? (
           <ol className="mt-7 space-y-3">
             {path.map((step, i) => (

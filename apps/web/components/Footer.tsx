@@ -21,6 +21,7 @@ const READING: { href: string; label: string; hint: string }[] = [
   { href: "/news", label: "What's new", hint: "papers and writing, as they are published" },
   { href: "/contested", label: "Disagreements", hint: "where papers say prior work is wrong" },
   { href: "/assumptions", label: "Taken on faith", hint: "what is asserted with nothing behind it" },
+  { href: "/compare", label: "Side by side", hint: "two papers, what they share and where they part" },
 ];
 
 const ABOUT: { href: string; label: string; hint: string; external?: boolean }[] = [

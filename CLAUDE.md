@@ -26,7 +26,7 @@ services/core/          Python engine (parser, anchors, cue rules). 272 tests.
   keystone/ingest/      arXiv source, PDF, anchors, metadata
   keystone/lineage/     stance + assumption cue rules
   keystone/audit/       numeric tracing and the deterministic checks
-apps/web/               Next 15 App Router site. 44 JS tests.
+apps/web/               Next 15 App Router site. 49 JS tests.
   app/api/ingest.py     Python serverless function: analyse any arXiv paper on demand
   public/dossiers/      the built library — 197 papers, committed
 eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in the repo.
@@ -40,7 +40,7 @@ cd services/core && uv run pytest -q              # 272 tests (needs `brew insta
 cd services/core && uv run keystone --help        # the CLI
 
 # Site
-cd apps/web && npm test                           # 44 tests (node --test)
+cd apps/web && npm test                           # 49 tests (node --test)
 cd apps/web && npx tsc --noEmit -p .              # typecheck
 cd apps/web && npm run build
 
@@ -223,9 +223,11 @@ Nothing is broken or half-finished. These are the open directions, roughly by va
    blind on a claude.ai page, <https://claude.ai/artifact/796x9V3VLo3LRf5XAtZ3cK>, whose
    database holds the labels (`labels/<row>`, rows `r01`–`r60` in file order of the
    unlabelled rows). Copy them into the file, then `stance-refresh` and `stance-eval`.
-3. **Compare two papers** — a view for what two papers share, where they disagree, and
-   which assumptions they both make. All the data exists; `lib/paths.ts` already walks
-   between papers.
+3. **Compare two papers** — shipped as `/compare?a=…&b=…` (`lib/compare.ts`): what each
+   says about the other, what both stand on, where they part ways, what both argue
+   with, and what else both cite. References match on arXiv id or folded title, the
+   engine's own rule. Shared *assumptions* are deliberately not compared — that would
+   need a similarity judgement, which nothing on the site makes. Library papers only.
 4. **Return visits in analytics.** Deliberately impossible now: the visitor hash
    re-salts daily. Changing it would need a cookie, a banner, and different promises in
    the footer. Do not do it quietly.
