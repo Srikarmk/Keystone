@@ -377,18 +377,31 @@ export function Reader({ id }: { id: string }) {
               />
             </>
           ) : (
-            <div className="flex h-full items-center justify-center px-8 text-center">
-              {problem ? (
-                <p className="max-w-sm text-[0.95rem] leading-relaxed text-ink-soft">
-                  {problem}
-                </p>
-              ) : (
-                <p className="text-[0.95rem] italic text-ink-faint">
-                  {analysing
-                    ? "Reading this paper for the first time — downloading its source and anchoring every sentence. A few seconds."
-                    : "Fetching the paper\u2026"}
-                </p>
-              )}
+            <div className="flex h-full items-center justify-center px-4 py-6">
+              {/* A sheet where the page will be, at a letter page's proportions, so
+                  the wait has the shape of what is coming instead of an empty pane.
+                  Up to sixteen seconds for a paper read on demand is long enough to
+                  look broken without it. */}
+              <div
+                className={`flex aspect-[8.5/11] h-full max-h-[46rem] max-w-full items-center justify-center bg-paper-deep/70 px-8 text-center ${
+                  problem ? "" : "sheet-waiting"
+                }`}
+              >
+                {problem ? (
+                  <p className="max-w-xs text-[1rem] leading-relaxed text-ink-soft">
+                    {problem}
+                  </p>
+                ) : (
+                  <p
+                    aria-live="polite"
+                    className="max-w-xs text-[1rem] italic leading-relaxed text-ink-soft"
+                  >
+                    {analysing
+                      ? "Reading this paper for the first time \u2014 downloading its source and anchoring every sentence. A few seconds\u2026"
+                      : "Fetching the paper\u2026"}
+                  </p>
+                )}
+              </div>
             </div>
           )}
         </section>
@@ -625,7 +638,7 @@ function Summary({
           <Foundation edge={lineage.foundation} onJump={onJump} />
           <Authors names={dossier.arxiv?.authors ?? []} published={dossier.arxiv?.published} />
           {dossier.onDemand ? (
-            <p className="mt-2 max-w-xl text-[0.8rem] leading-relaxed text-ink-faint">
+            <p className="mt-2 max-w-xl text-[0.9rem] leading-relaxed text-ink-faint">
               Not in the library &mdash; read just now, by the same parser. Its
               citations are not matched against the other papers here, so nothing is
               shown standing on it.
@@ -646,13 +659,13 @@ function Summary({
         </button>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-baseline gap-x-6 gap-y-1.5 border-t border-paper-edge pt-3">
+      <div className="mt-5 flex flex-wrap items-baseline gap-x-7 gap-y-2 border-t border-paper-edge pt-4">
         {/* arXiv's own filing, shown with its code so it can be checked against the
             abstract page rather than taken on trust like everything else here. */}
         {dossier.arxiv?.primary ? (
           <a
             href={`https://arxiv.org/abs/${dossier.id}`}
-            className="text-[0.82rem] text-ink-faint transition-colors hover:text-brass"
+            className="text-[0.9rem] text-ink-soft transition-colors hover:text-brass"
             title={`arXiv primary category ${dossier.arxiv.primary}`}
           >
             {dossier.arxiv.primaryName}{" "}
@@ -685,12 +698,12 @@ function Stat({ n, label, tone }: { n: number; label: string; tone?: string }) {
         initial={{ opacity: 0, y: 4 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: EASE }}
-        className="numeral text-[1.1rem]"
+        className="numeral text-[1.3rem] leading-none"
         style={{ color: tone ?? "var(--color-ink)" }}
       >
         {n}
       </motion.span>
-      <span className="text-[0.82rem] text-ink-soft">{label}</span>
+      <span className="text-[0.92rem] text-ink-soft">{label}</span>
     </span>
   );
 }

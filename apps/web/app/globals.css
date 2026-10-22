@@ -223,7 +223,20 @@ a, button, input, select, textarea, summary {
   animation: draw-ribbon 0.62s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* The waiting sheet breathes rather than spins: a page is on its way, not a process
+   that might be stuck. */
+@keyframes sheet-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.62; }
+}
+.sheet-waiting {
+  animation: sheet-breathe 2.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .sheet-waiting {
+    animation: none;
+  }
   .ribbon {
     animation: none;
     stroke-dashoffset: 0 !important;
