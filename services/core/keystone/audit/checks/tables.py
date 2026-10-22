@@ -388,7 +388,7 @@ def aggregate_mismatch(paper: Paper) -> Iterator[Finding]:
         for row_index in sorted({c.row for c in table.cells}):
             label = _row_label(table, row_index)
             match = _AGGREGATE_LABEL.match(label.strip())
-            if match is None:
+            if match is None or not _labelled_from_the_left(table, row_index, label):
                 continue
             kind = "sum" if match.group("kind").lower() in _SUM_KINDS else "mean"
             yield from _check_aggregate(table, row_index, label, kind)
@@ -513,6 +513,20 @@ def _is_folded(table: Table) -> bool:
         ):
             return True
     return False
+
+
+def _labelled_from_the_left(table: Table, row_index: int, label: str) -> bool:
+    """Whether the row's label is its first cell, where a row's name is written.
+
+    A row's label is taken from its first non-numeric cell, wherever that is. In
+    Universal Transformers' Table 3 the second header row reads "0 1 2 3 4 5 Total" —
+    attractor counts and a column heading — and, being mostly numbers, it was read as
+    data, labelled "Total" from its last cell, and accused of five wrong sums. One
+    column agreed by coincidence (the 5-attractor column sums to about 5), which is
+    what got it past the agreement guard. A total row says so on the left.
+    """
+    cells = sorted(table.row(row_index), key=lambda c: c.column)
+    return bool(cells) and not cells[0].is_numeric and label.strip() in cells[0].raw
 
 
 def _is_aggregate_row(table: Table, row_index: int) -> bool:

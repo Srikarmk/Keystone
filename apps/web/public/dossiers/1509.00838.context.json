@@ -1,0 +1,21 @@
+{
+  "id": "1509.00838",
+  "title": "to talk about and how? Selective generation using LSTMs with coarse-to-fine alignment",
+  "sections": [
+    {
+      "kind": "other",
+      "title": "Overview",
+      "text": "The following provides further evaluations of our model as a supplement to our original manuscript."
+    },
+    {
+      "kind": "other",
+      "title": "Beam Filter with -Nearest Neighbors",
+      "text": "We perform greedy search as an approximation to full inference over the set of decision variables (Eqn. 1). We considered beam search as an alternative, but as with previous work on this dataset , we found that greedy search still yields better BLEU performance (Table ). [!ht] Effect of beam width 0.94 l c c c c Beam width & & & & dev sBLEU & & & & dev cBLEU & & & & test sBLEU & & & & test cBLEU & & & & As an alternative, we consider a beam filter based on a -nearest neighborhood. First, we generate the -best description candidates (i.e., a beam width of ) for a given input record set (database) using standard beam search. Next, we find the nearest neighbor database-description pairs from the training data, based on the cosine similarity of each neighbor database with the given input record. We then compute the BLEU score for each of the description candidates relative to the nearest neighbor descriptions (as references) and select the candidate with the highest BLEU score. We tune and on the development set and report the results in Table . Table presents the test results with this tuned setting ( , ), where we achieve BLEU scores better than our primary greedy results. [!th] -NN beam filter (dev set) 0.75 l c c c sBLEU & & & & & & & & & & & & & & & cBLEU & & & & & & & & & & & & & & & [!ht] -NN beam filter (test set) 0.85 l c c & Primary & -NN ( , ) sBLEU & & cBLEU & &"
+    },
+    {
+      "kind": "other",
+      "title": "Word Embeddings (Trained & Pre-trained)",
+      "text": "Training our decoder has the effect of learning embeddings for the words in the training set (via the embedding matrix in Eqn. 4). Here, we explore the extent to which these learned embeddings capture semantic relationships among the training words. Table presents nearest neighbor words for some of the common words from the WeatherGov dataset (according to cosine similarity in the embedding space). [!ht] Nearest neighbor word for example words 0.59 c c Word & Nearest neighbor gusts & gust clear & sunny isolated & scattered southeast & northeast storms & winds decreasing & falling We also consider different ways of using pre-trained word embeddings to bootstrap the quality of our learned embeddings. One approach initializes our embedding matrix with the pre-trained vectors and then refines the embedding based on our training corpus. The second concatenates our learned embedding matrix with the pre-trained vectors in an effort to simultaneously exploit general similarities as well as those learned for the domain. As shown previously for other tasks , we find that the use of pre-trained embeddings results in negligible improvements (on the development set)."
+    }
+  ]
+}

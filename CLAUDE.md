@@ -22,13 +22,13 @@ change that trades that away is the wrong change, however much it improves a num
 ## Where things are
 
 ```
-services/core/          Python engine (parser, anchors, cue rules). 272 tests.
+services/core/          Python engine (parser, anchors, cue rules). 274 tests.
   keystone/ingest/      arXiv source, PDF, anchors, metadata
   keystone/lineage/     stance + assumption cue rules
   keystone/audit/       numeric tracing and the deterministic checks
 apps/web/               Next 15 App Router site. 49 JS tests.
   app/api/ingest.py     Python serverless function: analyse any arXiv paper on demand
-  public/dossiers/      the built library — 197 papers, committed
+  public/dossiers/      the built library — 234 papers, committed
 eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in the repo.
 ```
 
@@ -36,7 +36,7 @@ eval/corpus/            e-print + PDF cache, metadata.json. Gitignored, not in t
 
 ```bash
 # Python engine
-cd services/core && uv run pytest -q              # 272 tests (needs `brew install uv`)
+cd services/core && uv run pytest -q              # 274 tests (needs `brew install uv`)
 cd services/core && uv run keystone --help        # the CLI
 
 # Site
@@ -48,8 +48,8 @@ cd apps/web && npm run build
 cd apps/web && npx vercel --prod --yes
 ```
 
-On a fresh clone 26 of the 272 skip: they read PDFs from `eval/corpus/pdf/`, which is
-gitignored. "246 passed, 26 skipped" is a clean run without the corpus, not a failure. Fetch the
+On a fresh clone 26 of the 274 skip: they read PDFs from `eval/corpus/pdf/`, which is
+gitignored. "248 passed, 26 skipped" is a clean run without the corpus, not a failure. Fetch the
 corpus with `eval/fetch_library.sh` (about 45 minutes; arXiv refused nothing at ~4s).
 
 ## Traps that have actually cost time here
@@ -129,7 +129,7 @@ every empty search long after the library reached 101. Count it off the JSON.
 **An equation body has no environment.** The parser stores what is inside `align` or
 `eqnarray` and the environment beside it, so the body alone has bare `&`s that KaTeX
 rejects. `lib/equation.ts` puts the environment back; without it 164 of 524 equations
-rendered as error-coloured source. 37 of 1058 still do, each for a paper-specific reason (an uncaptured
+rendered as error-coloured source. 38 of 1249 still do, each for a paper-specific reason (an uncaptured
 macro, `\resizebox`).
 
 **Growing the corpus is a test of the checks.** Going 74 → 101 papers produced five false
@@ -147,6 +147,10 @@ At 160 → 197, 1410.8206 keeps its headline 37.5 in a macro (`\bestbleuunk`) us
 prose and table alike; the table cell was never expanded, so the abstract was set against
 another system's 37.2. Number-valued macros now expand in table cells (formatting macros
 still do not), and a number written verbatim in any cell is never accused of mismatching.
+At 197 → 234, Universal Transformers' second header row ("0 1 2 3 4 5 Total") was read as
+data and labelled "Total" from its *last* cell; a total row must now say so in its first.
+**Never run pytest while a build is running** — both unpack into `cache/unpacked/` and
+the race fails tests that are not broken.
 
 **Rebuild the whole library when you grow it, not only the new papers.** A citation
 becomes a walkable edge only when the *citing* paper is built with the cited one already
@@ -162,7 +166,8 @@ first build after adding papers has not seen the new papers' bibliographies. At
 125 → 160 the second pass changed three titles and added an edge; the third changed
 nothing. Stop when two consecutive builds are byte-identical (`diff -rq`).
 
-**Ten candidates so far are refused, correctly — skip them.** FractalNet (1605.07648),
+**Thirteen candidates so far are refused, correctly — skip them.** 1604.01696,
+1801.03622 and 1803.05573 ship only an `\includepdf`. FractalNet (1605.07648),
 ConvS2S (1705.03122) and 1707.06990 yield no prose from their source; 1406.7806 is
 excluded by hand, because a library bibliography attaches that id to the dropout paper's
 title, so ingesting it would draw a false edge. **Six more:** PALMS (2106.10328)
@@ -198,11 +203,11 @@ trap above).
 | `ANTHROPIC_API_KEY` | Ask, and the library guide |
 | `KEYSTONE_OWNER` | email(s) allowed to read `/stats`; unset = nobody |
 
-## State, as of 2026-10-17
+## State, as of 2026-10-22
 
-197 papers · 437 walkable edges · 1279 citation readings (90.9% anchored) · 839
-assumptions · 2118 searchable rows · 1021 of 1058 equations typeset. 272 Python tests,
-44 JS tests, all green. Three findings, all verified real: EfficientNet ×2, Gillick ×1.
+234 papers · 548 walkable edges · 1524 citation readings (90.7% anchored) · 973
+assumptions · 2497 searchable rows · 1211 of 1249 equations typeset. 274 Python tests,
+49 JS tests, all green. Three findings, all verified real: EfficientNet ×2, Gillick ×1.
 
 Shipped and verified on production: the reader with pixel anchors, full-screen page,
 highlights and notes (sign-in required, stored in the PDF's coordinate space so they can
@@ -215,7 +220,7 @@ at `/api/mcp`, and cookieless analytics at `/stats`.
 
 Nothing is broken or half-finished. These are the open directions, roughly by value:
 
-1. **Grow the library further.** 197 papers; the ranking in `keystone expand --dry-run`
+1. **Grow the library further.** 234 papers; the ranking in `keystone expand --dry-run`
    has plenty of good candidates left. Fetch with the curl workaround above. Watch for
    new findings each time — see the corpus trap.
 2. **Hand-label more stance rows.** In progress: 60 more rows were drawn on 2026-10-16

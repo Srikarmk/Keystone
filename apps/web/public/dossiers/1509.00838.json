@@ -1,0 +1,1261 @@
+{
+  "id": "1509.00838",
+  "title": "to talk about and how? Selective generation using LSTMs with coarse-to-fine alignment",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1509.00838",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Effect of beam width",
+      "label": "beamsearch",
+      "numericCells": 20,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Beam width",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "dev sBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.58",
+            "value": "65.58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "64.70",
+            "value": "64.70",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "57.02",
+            "value": "57.02",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "47.07",
+            "value": "47.07",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "dev cBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "75.78",
+            "value": "75.78",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.91",
+            "value": "74.91",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.83",
+            "value": "65.83",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "54.19",
+            "value": "54.19",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "test sBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "61.01",
+            "value": "61.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "60.15",
+            "value": "60.15",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "53.70",
+            "value": "53.70",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "44.32",
+            "value": "44.32",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "test cBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.39",
+            "value": "70.39",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "69.42",
+            "value": "69.42",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "61.95",
+            "value": "61.95",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51.01",
+            "value": "51.01",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 160.9417724609375,
+            "y0": 488.30157470703125,
+            "x1": 245.075927734375,
+            "y1": 498.2641906738281
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "-NN beam filter (dev set)",
+      "label": "knndev",
+      "numericCells": 22,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "sBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "65.88",
+            "value": "65.88",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.65",
+            "value": "65.65",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "65.89",
+            "value": "65.89",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.98",
+            "value": "65.98",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.83",
+            "value": "65.83",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "65.64",
+            "value": "65.64",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.45",
+            "value": "65.45",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.41",
+            "value": "65.41",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "65.91",
+            "value": "65.91",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.89",
+            "value": "65.89",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.12",
+            "value": "65.12",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "cBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "76.13",
+            "value": "76.13",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "75.98",
+            "value": "75.98",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "75.99",
+            "value": "75.99",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "76.03",
+            "value": "76.03",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "75.82",
+            "value": "75.82",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "75.90",
+            "value": "75.90",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "75.63",
+            "value": "75.63",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "75.41",
+            "value": "75.41",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "75.95",
+            "value": "75.95",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "75.87",
+            "value": "75.87",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "75.23",
+            "value": "75.23",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 391.5069885253906,
+            "y0": 178.4214630126953,
+            "x1": 496.9119567871094,
+            "y1": 188.38406372070312
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "-NN beam filter (test set)",
+      "label": "knntest",
+      "numericCells": 2,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Primary",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-NN ( , )",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "sBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "61.01",
+            "value": "61.01",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "cBLEU",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.39",
+            "value": "70.39",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 150.4559326171875,
+            "y0": 504.49456787109375,
+            "x1": 255.5620574951172,
+            "y1": 514.4571533203125
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Nearest neighbor word for example words",
+      "label": "nntable",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Word",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Nearest neighbor",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "gusts",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "gust",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "clear",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "sunny",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "isolated",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "scattered",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "southeast",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "northeast",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "storms",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "winds",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "decreasing",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "falling",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 118.93984985351562,
+            "y0": 433.6415100097656,
+            "x1": 287.07861328125,
+            "y1": 443.6041259765625
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\@BIBLABEL": "\\@emptybiblabel",
+    "\\@emptybiblabel": "",
+    "\\hyperlinkcite": "",
+    "\\revise": "\\textcolor{red}{#1}",
+    "\\mbcomment": "\\textcolor{blue}{\\bf \\small [ #1 --MB]}",
+    "\\mwcomment": "\\textcolor{red}{\\bf \\small [ #1 --MW]}",
+    "\\hmcomment": "\\textcolor{green}{\\bf \\small [ #1 --HM]}",
+    "\\finalversion": "",
+    "\\vect": "\\mbox{\\boldmath $#1$}",
+    "\\indic": "\\mathbb{I}\\left[#1\\right]",
+    "\\firstn": "[{#1}]",
+    "\\figsquish": "\\vspace{-1.1em}",
+    "\\examp": "{\\small\\textit{#1}}",
+    "\\todomw": "\\todo[fancyline,color=green!40]{MW: #1}",
+    "\\todoinmw": "\\todo[inline,color=green!40]{MW: #1}",
+    "\\todomb": "\\todo[fancyline,color=blue!40]{MB: #1}",
+    "\\todoinmb": "\\todo[inline,color=blue!40]{MB: #1}",
+    "\\todohm": "\\todo[fancyline,color=red!40]{HM: #1}",
+    "\\todoinhm": "\\todo[inline,color=red!40]{HM: #1}",
+    "\\mwadd": "\\added[id=MW]{#1}",
+    "\\mwdel": "\\deleted[id=MW]{#1}",
+    "\\mbadd": "\\added[id=MB]{#1}",
+    "\\mbdel": "\\deleted[id=MB]{#1}",
+    "\\hmadd": "\\added[id=HM]{#1}",
+    "\\hmdel": "\\deleted[id=HM]{#1}",
+    "\\myciteauthoryear": "\\citeauthor*{#1} (\\citeyear{#1})",
+    "\\parens": "\\left(#1\\right)",
+    "\\brackets": "\\left[#1\\right]",
+    "\\expectsub": "\\mathrm{E}_{#1}\\left[{#2}\\right]",
+    "\\ignore": "",
+    "\\argmax": "\\underset{#1}{\\textrm{arg max }}\\xspace #2",
+    "\\brown": "\\textsc{Brown}\\xspace",
+    "\\senna": "\\textsc{Senna}\\xspace",
+    "\\turian": "\\textsc{Turian}\\xspace",
+    "\\huang": "\\textsc{Huang}\\xspace",
+    "\\polyglot": "\\textsc{Polyglot}\\xspace",
+    "\\cbow": "\\textsc{CBOW}\\xspace",
+    "\\skipgram": "\\textsc{Skip}\\xspace",
+    "\\cbowone": "\\textsc{CBOW}\\xspace",
+    "\\skipgramone": "\\textsc{Skip}\\xspace",
+    "\\skipgramdep": "\\textsc{Skip}$_{\\textsc{dep}}$\\xspace",
+    "\\web": "\\textsc{Web}\\xspace"
+  },
+  "references": [
+    {
+      "key": "angeli-10",
+      "raw": "Gabor Angeli, Percy Liang, and Dan Klein. 2010. A simple domain-independent probabilistic approach to generation. In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 502--512",
+      "authors": "Gabor Angeli, Percy Liang, and Dan Klein",
+      "title": "2010",
+      "venue": "A simple domain-independent probabilistic approach to generation In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 502--512",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau-14",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2014. Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "2014",
+      "venue": "Neural machine translation by jointly learning to align and translate arXiv preprint",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "barzilay-05",
+      "raw": "Regina Barzilay and Mirella Lapata. 2005. Collective content selection for concept-to-text generation. In Proceedings of the Human Language Technology Conference and the Conference on Empirical Methods in Natural Language Processing (HLT/EMNLP), pages 331--338",
+      "authors": "Regina Barzilay and Mirella Lapata",
+      "title": "2005",
+      "venue": "Collective content selection for concept-to-text generation In Proceedings of the Human Language Technology Conference and the Conference on Empirical Methods in Natural Language Processing (HLT/EMNLP), pages 331--338",
+      "year": 2005,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "barzilay-04",
+      "raw": "Regina Barzilay and Lillian Lee. 2004. Catching the drift: Probabilistic content models, with applications to generation and summarization. In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics \u2013 Human Language Technologies (NAACL HLT), pages 113--120",
+      "authors": "Regina Barzilay and Lillian Lee",
+      "title": "2004",
+      "venue": "Catching the drift: Probabilistic content models, with applications to generation and summarization In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics \u2013 Human Language Technologies (NAACL HLT), pages 113--120",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "theano-12",
+      "raw": "Fr\\'ed\\'eric Bastien, Pascal Lamblin, Razvan Pascanu, James Bergstra, Ian J. Goodfellow, Arnaud Bergeron, Nicolas Bouchard, and Yoshua Bengio. 2012. Theano: new features and speed improvements. NIPS Workshop on Deep Learning and Unsupervised Feature Learning",
+      "authors": "Fr\\'ed\\'eric Bastien, Pascal Lamblin, Razvan Pascanu, James Bergstra, Ian J. Goodfellow, Arnaud Bergeron, Nicolas Bouchard, and Yoshua Bengio",
+      "title": "2012",
+      "venue": "Theano: new features and speed improvements NIPS Workshop on Deep Learning and Unsupervised Feature Learning",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "belz-08",
+      "raw": "Anja Belz. 2008. Automatic generation of weather forecast texts using comprehensive probabilistic generation-space models. Natural Language Engineering, 14(04):431--455",
+      "authors": "Anja Belz",
+      "title": "2008",
+      "venue": "Automatic generation of weather forecast texts using comprehensive probabilistic generation-space models Natural Language Engineering, 14(04):431--455",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "theano-10",
+      "raw": "James Bergstra, Olivier Breuleux, Fr\\'ed\\'eric Bastien, Pascal Lamblin, Razvan Pascanu, Guillaume Desjardins, Joseph Turian, David Warde-Farley, and Yoshua Bengio. 2010. Theano: a CPU and GPU math expression compiler. In Proceedings of the Scientific Computing with Python Conference (SciPy)",
+      "authors": "James Bergstra, Olivier Breuleux, Fr\\'ed\\'eric Bastien, Pascal Lamblin, Razvan Pascanu, Guillaume Desjardins, Joseph Turian, David Warde-Farley, and Yoshua Bengio",
+      "title": "2010",
+      "venue": "Theano: a CPU and GPU math expression compiler In Proceedings of the Scientific Computing with Python Conference (SciPy)",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chen-08",
+      "raw": "David L. Chen and Raymond J. Mooney. 2008. Learning to sportscast: a test of grounded language acquisition. In Proceedings of the International Conference on Machine Learning (ICML), pages 128--135",
+      "authors": "David L. Chen and Raymond J. Mooney",
+      "title": "2008",
+      "venue": "Learning to sportscast: a test of grounded language acquisition In Proceedings of the International Conference on Machine Learning (ICML), pages 128--135",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chen-10",
+      "raw": "David L. Chen, Joohyun Kim, and Raymond J. Mooney. 2010. Training a multilingual sportscaster: Using perceptual context to learn language. Journal of Artificial Intelligence Research, 37:397--435",
+      "authors": "David L. Chen, Joohyun Kim, and Raymond J. Mooney",
+      "title": "2010",
+      "venue": "Training a multilingual sportscaster: Using perceptual context to learn language Journal of Artificial Intelligence Research, 37:397--435",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves-13",
+      "raw": "Alex Graves, Mohamed Abdel-rahman, and Geoffrey Hinton. 2013. Speech recognition with deep recurrent neural networks. In Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6645--6649",
+      "authors": "Alex Graves, Mohamed Abdel-rahman, and Geoffrey Hinton",
+      "title": "2013",
+      "venue": "Speech recognition with deep recurrent neural networks In Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6645--6649",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter-97",
+      "raw": "Sepp Hochreiter and J\\\"urgen Schmidhuber. 1997. Long short-term memory. Neural Computation, 9(8):1735--1780",
+      "authors": "Sepp Hochreiter and J\\\"urgen Schmidhuber",
+      "title": "1997",
+      "venue": "Long short-term memory Neural Computation, 9(8):1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "karpathy-15",
+      "raw": "Andrej Karpathy and Li Fei-Fei. 2015. Deep visual-semantic alignments for generating image descriptions. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 3128--3137",
+      "authors": "Andrej Karpathy and Li Fei-Fei",
+      "title": "2015",
+      "venue": "Deep visual-semantic alignments for generating image descriptions In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 3128--3137",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kim-10",
+      "raw": "Joohyun Kim and Raymond J Mooney. 2010. Generative alignment and semantic parsing for learning from ambiguous supervision. In Proceedings of the International Conference on Computational Linguistics (COLING), pages 543--551",
+      "authors": "Joohyun Kim and Raymond J Mooney",
+      "title": "2010",
+      "venue": "Generative alignment and semantic parsing for learning from ambiguous supervision In Proceedings of the International Conference on Computational Linguistics (COLING), pages 543--551",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kingma-15",
+      "raw": "Diederik Kingma and Jimmy Ba. 2015. Adam: A method for stochastic optimization. In Proceedings of the International Conference on Learning Representations (ICLR)",
+      "authors": "Diederik Kingma and Jimmy Ba",
+      "title": "2015",
+      "venue": "Adam: A method for stochastic optimization In Proceedings of the International Conference on Learning Representations (ICLR)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "konstas-12",
+      "raw": "Ioannis Konstas and Mirella Lapata. 2012. Unsupervised concept-to-text generation with hypergraphs. In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics \u2013 Human Language Technologies (NAACL HLT), pages 752--761",
+      "authors": "Ioannis Konstas and Mirella Lapata",
+      "title": "2012",
+      "venue": "Unsupervised concept-to-text generation with hypergraphs In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics \u2013 Human Language Technologies (NAACL HLT), pages 752--761",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "konstas-13",
+      "raw": "Ioannis Konstas and Mirella Lapata. 2013. Inducing document plans for concept-to-text generation. In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1503--1514",
+      "authors": "Ioannis Konstas and Mirella Lapata",
+      "title": "2013",
+      "venue": "Inducing document plans for concept-to-text generation In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1503--1514",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "liang-09",
+      "raw": "Percy Liang, Michael I. Jordan, and Dan Klein. 2009. Learning semantic correspondences with less supervision. In Proceedings of the Joint Conference of the Annual Meeting of the Association for Computational Linguistics and the International Joint Conference on Natural Language Processing (ACL/IJCNLP), pages 91--99",
+      "authors": "Percy Liang, Michael I. Jordan, and Dan Klein",
+      "title": "2009",
+      "venue": "Learning semantic correspondences with less supervision In Proceedings of the Joint Conference of the Annual Meeting of the Association for Computational Linguistics and the International Joint Conference on Natural Language Processing (ACL/IJCNLP), pages 91--99",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lu-11",
+      "raw": "Wei Lu and Hwee Tou Ng. 2011. A probabilistic forest-to-string model for language generation from typed lambda calculus expressions. In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1611--1622",
+      "authors": "Wei Lu and Hwee Tou Ng",
+      "title": "2011",
+      "venue": "A probabilistic forest-to-string model for language generation from typed lambda calculus expressions In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1611--1622",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lu-08",
+      "raw": "Wei Lu, Hwee Tou Ng, Wee Sun Lee, and Luke S Zettlemoyer. 2008. A generative model for parsing natural language to meaning representations. In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 783--792",
+      "authors": "Wei Lu, Hwee Tou Ng, Wee Sun Lee, and Luke S Zettlemoyer",
+      "title": "2008",
+      "venue": "A generative model for parsing natural language to meaning representations In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 783--792",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lu-09",
+      "raw": "Wei Lu, Hwee Tou Ng, and Wee Sun Lee. 2009. Natural language generation with tree conditional random fields. In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 400--409",
+      "authors": "Wei Lu, Hwee Tou Ng, and Wee Sun Lee",
+      "title": "2009",
+      "venue": "Natural language generation with tree conditional random fields In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 400--409",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mei-15",
+      "raw": "Hongyuan Mei, Mohit Bansal, and Matthew R. Walter. 2015. Listen, attend, and walk: Neural mapping of navigational instructions to action sequences. arXiv preprint arXiv:1506.04089",
+      "authors": "Hongyuan Mei, Mohit Bansal, and Matthew R. Walter",
+      "title": "2015",
+      "venue": "Listen, attend, and walk: Neural mapping of navigational instructions to action sequences arXiv preprint",
+      "year": 2015,
+      "arxivId": "1506.04089",
+      "doi": null
+    },
+    {
+      "key": "mikolov-13",
+      "raw": "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. Efficient estimation of word representations in vector space. In Proceedings of the International Conference on Learning Representations (ICLR)",
+      "authors": "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean",
+      "title": "2013",
+      "venue": "Efficient estimation of word representations in vector space In Proceedings of the International Conference on Learning Representations (ICLR)",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "papineni-01",
+      "raw": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2001. BLEU: a method for automatic evaluation of machine translation. In Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL), pages 311--318",
+      "authors": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu",
+      "title": "2001",
+      "venue": "BLEU: a method for automatic evaluation of machine translation In Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL), pages 311--318",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pascanu-14",
+      "raw": "Razvan Pascanu, Caglar Gulcehre, Kyunghyun Cho, and Yoshua Bengio. 2014. How to construct deep recurrent neural networks. In Proceedings of the International Conference on Learning Representations (ICLR)",
+      "authors": "Razvan Pascanu, Caglar Gulcehre, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "2014",
+      "venue": "How to construct deep recurrent neural networks In Proceedings of the International Conference on Learning Representations (ICLR)",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "soricut-06",
+      "raw": "Radu Soricut and Daniel Marcu. 2006. Stochastic language generation using WIDL-expressions and its application in machine translation and summarization. In Proceedings of the International Conference on Computational Linguistics and the Annual Meeting of the Association for Computational Linguistics (COLING/ACL), pages 1105--1112",
+      "authors": "Radu Soricut and Daniel Marcu",
+      "title": "2006",
+      "venue": "Stochastic language generation using WIDL-expressions and its application in machine translation and summarization In Proceedings of the International Conference on Computational Linguistics and the Annual Meeting of the Association for Computational Linguistics (COLING/ACL), pages 1105--1112",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever-14",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc V. Lee. 2014. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems (NIPS)",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc V. Lee",
+      "title": "2014",
+      "venue": "Sequence to sequence learning with neural networks In Advances in Neural Information Processing Systems (NIPS)",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vinyals-14b",
+      "raw": "Oriol Vinyals, Lukasz Kaiser, Terry Koo, Slav Petrov, Ilya Sutskever, and Geoffrey Hinton. 2014. Grammar as a foreign language. arXiv preprint arXiv:1412.7449",
+      "authors": "Oriol Vinyals, Lukasz Kaiser, Terry Koo, Slav Petrov, Ilya Sutskever, and Geoffrey Hinton",
+      "title": "2014",
+      "venue": "Grammar as a foreign language arXiv preprint",
+      "year": 2014,
+      "arxivId": "1412.7449",
+      "doi": null
+    },
+    {
+      "key": "vinyals-15",
+      "raw": "Oriol Vinyals, Samy Bengio, and Manjunath Kudlur. 2015a. Order matters: Sequence to sequence for sets. arXiv preprint arXiv:1511.06391",
+      "authors": "Oriol Vinyals, Samy Bengio, and Manjunath Kudlur",
+      "title": "2015a",
+      "venue": "Order matters: Sequence to sequence for sets arXiv preprint",
+      "year": null,
+      "arxivId": "1511.06391",
+      "doi": null
+    },
+    {
+      "key": "vinyals-14",
+      "raw": "Oriol Vinyals, Alexander Toshev, Samy Bengio, and Dumitru Erhan. 2015b. Show and tell: A neural image caption generator. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 3156--3164",
+      "authors": "Oriol Vinyals, Alexander Toshev, Samy Bengio, and Dumitru Erhan",
+      "title": "2015b",
+      "venue": "Show and tell: A neural image caption generator In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 3156--3164",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wong-07",
+      "raw": "Yuk Wah Wong and Raymond J Mooney. 2007. Generation by inverting a semantic parser that uses statistical machine translation. In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics \u2013 Human Language Technologies (NAACL HLT), pages 172--179",
+      "authors": "Yuk Wah Wong and Raymond J Mooney",
+      "title": "2007",
+      "venue": "Generation by inverting a semantic parser that uses statistical machine translation In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics \u2013 Human Language Technologies (NAACL HLT), pages 172--179",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "xu-15",
+      "raw": "Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhutdinov, Richard Zemel, and Yoshua Bengio. 2015. Show, attend and tell: Neural image caption generation with visual attention. In Proceedings of the International Conference on Machine Learning (ICML)",
+      "authors": "Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhutdinov, Richard Zemel, and Yoshua Bengio",
+      "title": "2015",
+      "venue": "Show, attend and tell: Neural image caption generation with visual attention In Proceedings of the International Conference on Machine Learning (ICML)",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zaremba-14",
+      "raw": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals. 2014. Recurrent neural network regularization. arXiv preprint arXiv:1409.2329",
+      "authors": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals",
+      "title": "2014",
+      "venue": "Recurrent neural network regularization arXiv preprint",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "other",
+      "title": "Overview",
+      "chars": 99,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99999237060547,
+            "y0": 342.36968994140625,
+            "x1": 298.8002014160156,
+            "y1": 353.2787780761719
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 355.918701171875,
+            "x1": 290.7710266113281,
+            "y1": 366.8277893066406
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Beam Filter with -Nearest Neighbors",
+      "chars": 1392,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 71.99998474121094,
+            "y0": 396.7837219238281,
+            "x1": 298.80010986328125,
+            "y1": 407.69281005859375
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 410.3327331542969,
+            "x1": 298.8000793457031,
+            "y1": 421.2418212890625
+          },
+          {
+            "x0": 71.99998474121094,
+            "y0": 423.8827209472656,
+            "x1": 110.760009765625,
+            "y1": 434.79180908203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Word Embeddings (Trained & Pre-trained)",
+      "chars": 1172,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 412.1840515136719,
+            "y0": 671.0786743164062,
+            "x1": 539.9949951171875,
+            "y1": 681.9877319335938
+          },
+          {
+            "x0": 313.2000427246094,
+            "y0": 684.628662109375,
+            "x1": 540.0000610351562,
+            "y1": 695.5377197265625
+          },
+          {
+            "x0": 313.2000427246094,
+            "y0": 698.1776733398438,
+            "x1": 479.95635986328125,
+            "y1": 709.0867309570312
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 3,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "mikolov-13",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We also consider different ways of using pre-trained word embeddings [Mikolov et al. 2013] to bootstrap the quality of our learned embeddings.",
+      "section": "Word Embeddings (Trained & Pre-trained)",
+      "sectionKind": "other",
+      "ordinal": 2,
+      "title": "2013",
+      "authors": "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean",
+      "year": 2013,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 82.90899658203125,
+            "y0": 74.68563842773438,
+            "x1": 298.8000793457031,
+            "y1": 85.59474182128906
+          },
+          {
+            "x0": 72.0,
+            "y0": 88.23464965820312,
+            "x1": 184.5164337158203,
+            "y1": 99.14375305175781
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "mikolov-13",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We also consider different ways of using pre-trained word embeddings [Mikolov et al. 2013] to bootstrap the quality of our learned embeddings.",
+        "section": "Word Embeddings (Trained & Pre-trained)",
+        "sectionKind": "other",
+        "ordinal": 2,
+        "title": "2013",
+        "authors": "Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 9,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.90899658203125,
+              "y0": 74.68563842773438,
+              "x1": 298.8000793457031,
+              "y1": 85.59474182128906
+            },
+            {
+              "x0": 72.0,
+              "y0": 88.23464965820312,
+              "x1": 184.5164337158203,
+              "y1": 99.14375305175781
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [],
+  "assumptionTally": {
+    "total": 0,
+    "cited": 0,
+    "shown": 0,
+    "bare": 0
+  },
+  "alignment": {
+    "sampled": 26,
+    "located": 24,
+    "rate": 0.923
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG",
+      "cs.NE"
+    ],
+    "published": "2015-09-02",
+    "authors": [
+      "Hongyuan Mei",
+      "Mohit Bansal",
+      "Matthew R. Walter"
+    ]
+  }
+}

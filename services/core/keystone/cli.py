@@ -722,6 +722,14 @@ def _attested_choice(votes: Counter[str], own: str | None = None) -> str:
     A tie between genuinely different wordings goes to the one the paper itself uses:
     one bibliography's "COCO Captions" against another's "Microsoft COCO Captions" is
     settled by the paper's own title page, not by which bibliography was read first.
+
+    And the paper's own wording wins outright whenever any bibliography attests it.
+    Attestation exists to catch a paper mis-stating its own title — 1909.08593's stale
+    GPT-2 template, which no bibliography prints for that id. A renamed paper is the
+    other case: SGDR is "…with Warm Restarts" on its own title page and in some
+    bibliographies, and "…with Restarts", its first title, in others. Counting votes
+    flipped it back and forth as papers were added; one independent confirmation of
+    the paper's own words is enough.
     """
     from keystone.lineage.graph import fold
 
@@ -729,9 +737,10 @@ def _attested_choice(votes: Counter[str], own: str | None = None) -> str:
     for title, count in votes.items():
         groups.setdefault(fold(title), Counter())[title] += count
     mine = fold(own) if own else None
-    best = max(
-        groups.items(), key=lambda item: (sum(item[1].values()), item[0] == mine)
-    )[1]
+    if mine in groups:
+        best = groups[mine]
+    else:
+        best = max(groups.values(), key=lambda group: sum(group.values()))
     return max(best, key=lambda title: (sum(c.isupper() for c in title), best[title]))
 
 

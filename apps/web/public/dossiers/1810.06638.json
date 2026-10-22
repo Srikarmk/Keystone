@@ -1,0 +1,4473 @@
+{
+  "id": "1810.06638",
+  "title": "U-Net: Machine Reading Comprehension with Unanswerable Questions",
+  "keystone": {
+    "table": "Table 2",
+    "caption": "Evaluation results on the SQuAD 2.0 (extracted on Sep 9, 2018). means the BiDAF with No Answer.",
+    "supported": 2,
+    "share": 0.2,
+    "summary": "2 of the paper's headline numbers trace to Table 2"
+  },
+  "codeUrl": "",
+  "coverage": {
+    "claims": 10,
+    "supported": 2,
+    "declared": 7,
+    "unsupported": 1,
+    "mismatched": 0,
+    "rate": 0.2
+  },
+  "claims": [
+    {
+      "value": "2.0",
+      "section": "abstract",
+      "sentence": "The experimental results on the SQuAD 2.0 dataset show that U-Net can effectively predict the unanswerability of questions and achieves an F1 score of 71.7 on SQuAD 2.0.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "squad2.0",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.14813995361328,
+            "y0": 365.2348937988281,
+            "x1": 282.536865234375,
+            "y1": 374.2012939453125
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 375.1979064941406,
+            "x1": 282.536865234375,
+            "y1": 384.164306640625
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 385.159912109375,
+            "x1": 282.5369567871094,
+            "y1": 394.1263122558594
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "71.7",
+      "section": "abstract",
+      "sentence": "The experimental results on the SQuAD 2.0 dataset show that U-Net can effectively predict the unanswerability of questions and achieves an F1 score of 71.7 on SQuAD 2.0.",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Evaluation results on the SQuAD 2.0 (extracted on Sep 9, 2018). means the BiDAF with No Answer.",
+      "row": "RMR+ELMo+Verifier",
+      "column": "Test EM",
+      "cell": "71.7",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.14813995361328,
+            "y0": 365.2348937988281,
+            "x1": 282.536865234375,
+            "y1": 374.2012939453125
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 375.1979064941406,
+            "x1": 282.536865234375,
+            "y1": 384.164306640625
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 385.159912109375,
+            "x1": 282.5369567871094,
+            "y1": 394.1263122558594
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "2.0",
+      "section": "abstract",
+      "sentence": "The experimental results on the SQuAD 2.0 dataset show that U-Net can effectively predict the unanswerability of questions and achieves an F1 score of 71.7 on SQuAD 2.0.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "squad2.0",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.14813995361328,
+            "y0": 365.2348937988281,
+            "x1": 282.536865234375,
+            "y1": 374.2012939453125
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 375.1979064941406,
+            "x1": 282.536865234375,
+            "y1": 384.164306640625
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 385.159912109375,
+            "x1": 282.5369567871094,
+            "y1": 394.1263122558594
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "2.0",
+      "section": "introduction",
+      "sentence": "To remedy the deficiency of SQuAD, developed SQuAD 2.0 that combines SQuAD with new unanswerable questions.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "squad2.0",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.05332946777344,
+            "y0": 622.4032592773438,
+            "x1": 292.50457763671875,
+            "y1": 632.3658447265625
+          },
+          {
+            "x0": 54.0,
+            "y0": 633.3622436523438,
+            "x1": 194.43283081054688,
+            "y1": 643.3248291015625
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "1.1",
+      "section": "introduction",
+      "sentence": "Since extensive work has been done on how to correctly predict the answer span when the question is answerable (e.g., SQuAD 1.1), the main challenge of this task lies in how to reliably determine whether a question is not answerable from the passage.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 365.7165222167969,
+            "y0": 405.1144714355469,
+            "x1": 558.0046997070312,
+            "y1": 415.07708740234375
+          },
+          {
+            "x0": 319.5,
+            "y0": 416.073486328125,
+            "x1": 558.0045166015625,
+            "y1": 426.0361022949219
+          },
+          {
+            "x0": 319.5,
+            "y0": 427.032470703125,
+            "x1": 558.0046997070312,
+            "y1": 436.9950866699219
+          },
+          {
+            "x0": 319.5,
+            "y0": 437.991455078125,
+            "x1": 558.0045166015625,
+            "y1": 447.9540710449219
+          },
+          {
+            "x0": 319.5,
+            "y0": 448.950439453125,
+            "x1": 436.7996826171875,
+            "y1": 458.9130554199219
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "2.0",
+      "section": "introduction",
+      "sentence": "Our experimental results on the SQuAD 2.0 dataset show that U-Net effectively predicts the unanswerability of questions and achieves an F1 score of 72.6.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "squad2.0",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 192.3406524658203,
+            "y0": 165.99635314941406,
+            "x1": 292.5046081542969,
+            "y1": 175.95895385742188
+          },
+          {
+            "x0": 54.0,
+            "y0": 176.95533752441406,
+            "x1": 292.5046691894531,
+            "y1": 186.91793823242188
+          },
+          {
+            "x0": 54.0,
+            "y0": 187.91334533691406,
+            "x1": 292.50469970703125,
+            "y1": 197.87594604492188
+          },
+          {
+            "x0": 54.0,
+            "y0": 198.87232971191406,
+            "x1": 108.22640991210938,
+            "y1": 208.83493041992188
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "72.6",
+      "section": "introduction",
+      "sentence": "Our experimental results on the SQuAD 2.0 dataset show that U-Net effectively predicts the unanswerability of questions and achieves an F1 score of 72.6.",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Evaluation results on the SQuAD 2.0 (extracted on Sep 9, 2018). means the BiDAF with No Answer.",
+      "row": "U-Net",
+      "column": "F1",
+      "cell": "72.6",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 192.3406524658203,
+            "y0": 165.99635314941406,
+            "x1": 292.5046081542969,
+            "y1": 175.95895385742188
+          },
+          {
+            "x0": 54.0,
+            "y0": 176.95533752441406,
+            "x1": 292.5046691894531,
+            "y1": 186.91793823242188
+          },
+          {
+            "x0": 54.0,
+            "y0": 187.91334533691406,
+            "x1": 292.50469970703125,
+            "y1": 197.87594604492188
+          },
+          {
+            "x0": 54.0,
+            "y0": 198.87232971191406,
+            "x1": 108.22640991210938,
+            "y1": 208.83493041992188
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "2.0",
+      "section": "conclusion",
+      "sentence": "U-Net has good performance on SQuAD 2.0.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "squad2.0",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 516.9486694335938,
+            "y0": 639.6490478515625,
+            "x1": 558.0045776367188,
+            "y1": 649.6116333007812
+          },
+          {
+            "x0": 319.5,
+            "y0": 650.6080322265625,
+            "x1": 459.1058349609375,
+            "y1": 660.5706176757812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "2.0",
+      "section": "conclusion",
+      "sentence": "Our model has very simple structure yet achieves good results on SQuAD 2.0 test.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "squad2.0",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 75.38969421386719,
+            "y0": 100.24244689941406,
+            "x1": 292.5046691894531,
+            "y1": 110.20504760742188
+          },
+          {
+            "x0": 54.0,
+            "y0": 111.20143127441406,
+            "x1": 160.81900024414062,
+            "y1": 121.16403198242188
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "2.0",
+      "section": "conclusion",
+      "sentence": "Since our model actually does not achieve very competitive performance in the boundary detection task yet still has a good overall performance on SQuAD 2.0 test, we are optimistic that our U-Net model is potentially capable of achieving better performance.",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "squad2.0",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 199.10731506347656,
+            "x1": 292.504638671875,
+            "y1": 209.06991577148438
+          },
+          {
+            "x0": 54.0,
+            "y0": 210.06629943847656,
+            "x1": 292.50457763671875,
+            "y1": 220.02890014648438
+          },
+          {
+            "x0": 54.0,
+            "y0": 221.02528381347656,
+            "x1": 292.5045471191406,
+            "y1": 230.98788452148438
+          },
+          {
+            "x0": 54.0,
+            "y0": 231.98426818847656,
+            "x1": 292.5046691894531,
+            "y1": 241.94686889648438
+          },
+          {
+            "x0": 54.0,
+            "y0": 242.94325256347656,
+            "x1": 146.1241455078125,
+            "y1": 252.90585327148438
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1810.06638",
+  "numbers": [
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "The experimental results on the SQuAD 2.0 dataset show that U-Net can effectively predict the unanswerability of questions and achieves an F1 score of 71.7 on SQuAD 2.0.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.14813995361328,
+            "y0": 365.2348937988281,
+            "x1": 282.536865234375,
+            "y1": 374.2012939453125
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 375.1979064941406,
+            "x1": 282.536865234375,
+            "y1": 384.164306640625
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 385.159912109375,
+            "x1": 282.5369567871094,
+            "y1": 394.1263122558594
+          }
+        ]
+      }
+    },
+    {
+      "value": "71.7",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "The experimental results on the SQuAD 2.0 dataset show that U-Net can effectively predict the unanswerability of questions and achieves an F1 score of 71.7 on SQuAD 2.0.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "RMR+ELMo+Verifier",
+      "cell": "71.7",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.14813995361328,
+            "y0": 365.2348937988281,
+            "x1": 282.536865234375,
+            "y1": 374.2012939453125
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 375.1979064941406,
+            "x1": 282.536865234375,
+            "y1": 384.164306640625
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 385.159912109375,
+            "x1": 282.5369567871094,
+            "y1": 394.1263122558594
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "The experimental results on the SQuAD 2.0 dataset show that U-Net can effectively predict the unanswerability of questions and achieves an F1 score of 71.7 on SQuAD 2.0.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.14813995361328,
+            "y0": 365.2348937988281,
+            "x1": 282.536865234375,
+            "y1": 374.2012939453125
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 375.1979064941406,
+            "x1": 282.536865234375,
+            "y1": 384.164306640625
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 385.159912109375,
+            "x1": 282.5369567871094,
+            "y1": 394.1263122558594
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "To remedy the deficiency of SQuAD, developed SQuAD 2.0 that combines SQuAD with new unanswerable questions.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 109.05332946777344,
+            "y0": 622.4032592773438,
+            "x1": 292.50457763671875,
+            "y1": 632.3658447265625
+          },
+          {
+            "x0": 54.0,
+            "y0": 633.3622436523438,
+            "x1": 194.43283081054688,
+            "y1": 643.3248291015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.1",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Since extensive work has been done on how to correctly predict the answer span when the question is answerable (e.g., SQuAD 1.1), the main challenge of this task lies in how to reliably determine whether a question is not answerable from the passage.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 365.7165222167969,
+            "y0": 405.1144714355469,
+            "x1": 558.0046997070312,
+            "y1": 415.07708740234375
+          },
+          {
+            "x0": 319.5,
+            "y0": 416.073486328125,
+            "x1": 558.0045166015625,
+            "y1": 426.0361022949219
+          },
+          {
+            "x0": 319.5,
+            "y0": 427.032470703125,
+            "x1": 558.0046997070312,
+            "y1": 436.9950866699219
+          },
+          {
+            "x0": 319.5,
+            "y0": 437.991455078125,
+            "x1": 558.0045166015625,
+            "y1": 447.9540710449219
+          },
+          {
+            "x0": 319.5,
+            "y0": 448.950439453125,
+            "x1": 436.7996826171875,
+            "y1": 458.9130554199219
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Our experimental results on the SQuAD 2.0 dataset show that U-Net effectively predicts the unanswerability of questions and achieves an F1 score of 72.6.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 192.3406524658203,
+            "y0": 165.99635314941406,
+            "x1": 292.5046081542969,
+            "y1": 175.95895385742188
+          },
+          {
+            "x0": 54.0,
+            "y0": 176.95533752441406,
+            "x1": 292.5046691894531,
+            "y1": 186.91793823242188
+          },
+          {
+            "x0": 54.0,
+            "y0": 187.91334533691406,
+            "x1": 292.50469970703125,
+            "y1": 197.87594604492188
+          },
+          {
+            "x0": 54.0,
+            "y0": 198.87232971191406,
+            "x1": 108.22640991210938,
+            "y1": 208.83493041992188
+          }
+        ]
+      }
+    },
+    {
+      "value": "72.6",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Our experimental results on the SQuAD 2.0 dataset show that U-Net effectively predicts the unanswerability of questions and achieves an F1 score of 72.6.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "U-Net",
+      "cell": "72.6",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 192.3406524658203,
+            "y0": 165.99635314941406,
+            "x1": 292.5046081542969,
+            "y1": 175.95895385742188
+          },
+          {
+            "x0": 54.0,
+            "y0": 176.95533752441406,
+            "x1": 292.5046691894531,
+            "y1": 186.91793823242188
+          },
+          {
+            "x0": 54.0,
+            "y0": 187.91334533691406,
+            "x1": 292.50469970703125,
+            "y1": 197.87594604492188
+          },
+          {
+            "x0": 54.0,
+            "y0": 198.87232971191406,
+            "x1": 108.22640991210938,
+            "y1": 208.83493041992188
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.1",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Embedding Following the successful models on SQuAD 1.1, we first embed both the question and the passage with the following features.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.999935150146484,
+            "y0": 595.72314453125,
+            "x1": 103.27495574951172,
+            "y1": 605.6857299804688
+          },
+          {
+            "x0": 113.2369384765625,
+            "y0": 595.8140869140625,
+            "x1": 292.50396728515625,
+            "y1": 605.7766723632812
+          },
+          {
+            "x0": 53.99993896484375,
+            "y0": 606.7730712890625,
+            "x1": 292.50457763671875,
+            "y1": 616.7356567382812
+          },
+          {
+            "x0": 53.99993896484375,
+            "y0": 617.7320556640625,
+            "x1": 164.69439697265625,
+            "y1": 627.6946411132812
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "method",
+      "sentence": "Additionally, since there exits a plausible answer for each unanswerable question in SQuAD 2.0, we introduce an auxiliary plausible answer pointer to predict the boundaries of the plausible answers.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 329.46295166015625,
+            "y0": 89.28334045410156,
+            "x1": 557.9950561523438,
+            "y1": 99.24594116210938
+          },
+          {
+            "x0": 319.49993896484375,
+            "y0": 100.24232482910156,
+            "x1": 558.0045776367188,
+            "y1": 110.20492553710938
+          },
+          {
+            "x0": 319.49993896484375,
+            "y0": 111.20130920410156,
+            "x1": 557.9968872070312,
+            "y1": 121.16390991210938
+          },
+          {
+            "x0": 319.49993896484375,
+            "y0": 122.16029357910156,
+            "x1": 407.8283386230469,
+            "y1": 132.12289428710938
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Now new research efforts have been devoted to the newly released answer extraction test with unanswerable questions, SQuAD 2.0 .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 92.76448822021484,
+            "y0": 460.647216796875,
+            "x1": 292.5046691894531,
+            "y1": 470.6098327636719
+          },
+          {
+            "x0": 54.0,
+            "y0": 471.606201171875,
+            "x1": 292.5046691894531,
+            "y1": 481.5688171386719
+          },
+          {
+            "x0": 54.0,
+            "y0": 482.565185546875,
+            "x1": 145.068115234375,
+            "y1": 492.5278015136719
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "It is constructed by combining question-answer pairs selected from SQuAD 1.0 and newly crafted unanswerable questions.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 286.41748046875,
+            "y0": 482.565185546875,
+            "x1": 292.5046081542969,
+            "y1": 492.5278015136719
+          },
+          {
+            "x0": 54.0,
+            "y0": 493.524169921875,
+            "x1": 292.504638671875,
+            "y1": 503.4867858886719
+          },
+          {
+            "x0": 54.0,
+            "y0": 504.483154296875,
+            "x1": 292.504638671875,
+            "y1": 514.4457397460938
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.3",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We added a dropout layer over all the modeling layers, including the embedding layer, at a dropout rate of 0.3 .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 386.1597595214844,
+            "y0": 67.36518859863281,
+            "x1": 558.0046997070312,
+            "y1": 77.32778930664062
+          },
+          {
+            "x0": 319.5,
+            "y0": 78.32417297363281,
+            "x1": 558.0047607421875,
+            "y1": 88.28677368164062
+          },
+          {
+            "x0": 319.5,
+            "y0": 89.28315734863281,
+            "x1": 342.7228088378906,
+            "y1": 99.24575805664062
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.002",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We use Adam optimizer with a learning rate of 0.002 .",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 441.5617980957031,
+            "y0": 89.28315734863281,
+            "x1": 558.0046997070312,
+            "y1": 99.24575805664062
+          },
+          {
+            "x0": 319.5,
+            "y0": 100.24214172363281,
+            "x1": 412.1820373535156,
+            "y1": 110.20474243164062
+          }
+        ]
+      }
+    },
+    {
+      "value": "74.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our model achieves an F1 score of 74.0 and an EM score of 70.3 on the development set, and an F1 score of 72.6 and an EM score of 69.2 on Test set , as shown in Table .",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "U-Net",
+      "cell": "74.0",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 179.66908264160156,
+            "x1": 558.0045776367188,
+            "y1": 189.63168334960938
+          },
+          {
+            "x0": 319.5,
+            "y0": 190.62806701660156,
+            "x1": 558.004638671875,
+            "y1": 200.59066772460938
+          },
+          {
+            "x0": 319.5,
+            "y0": 201.58705139160156,
+            "x1": 479.18365478515625,
+            "y1": 211.54965209960938
+          }
+        ]
+      }
+    },
+    {
+      "value": "70.3",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our model achieves an F1 score of 74.0 and an EM score of 70.3 on the development set, and an F1 score of 72.6 and an EM score of 69.2 on Test set , as shown in Table .",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "U-Net",
+      "cell": "70.3",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 179.66908264160156,
+            "x1": 558.0045776367188,
+            "y1": 189.63168334960938
+          },
+          {
+            "x0": 319.5,
+            "y0": 190.62806701660156,
+            "x1": 558.004638671875,
+            "y1": 200.59066772460938
+          },
+          {
+            "x0": 319.5,
+            "y0": 201.58705139160156,
+            "x1": 479.18365478515625,
+            "y1": 211.54965209960938
+          }
+        ]
+      }
+    },
+    {
+      "value": "72.6",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our model achieves an F1 score of 74.0 and an EM score of 70.3 on the development set, and an F1 score of 72.6 and an EM score of 69.2 on Test set , as shown in Table .",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "U-Net",
+      "cell": "72.6",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 179.66908264160156,
+            "x1": 558.0045776367188,
+            "y1": 189.63168334960938
+          },
+          {
+            "x0": 319.5,
+            "y0": 190.62806701660156,
+            "x1": 558.004638671875,
+            "y1": 200.59066772460938
+          },
+          {
+            "x0": 319.5,
+            "y0": 201.58705139160156,
+            "x1": 479.18365478515625,
+            "y1": 211.54965209960938
+          }
+        ]
+      }
+    },
+    {
+      "value": "69.2",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Our model achieves an F1 score of 74.0 and an EM score of 70.3 on the development set, and an F1 score of 72.6 and an EM score of 69.2 on Test set , as shown in Table .",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "U-Net",
+      "cell": "69.2",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 179.66908264160156,
+            "x1": 558.0045776367188,
+            "y1": 189.63168334960938
+          },
+          {
+            "x0": 319.5,
+            "y0": 190.62806701660156,
+            "x1": 558.004638671875,
+            "y1": 200.59066772460938
+          },
+          {
+            "x0": 319.5,
+            "y0": 201.58705139160156,
+            "x1": 479.18365478515625,
+            "y1": 211.54965209960938
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We also do an ablation study on the SQuAD 2.0 development set to further test the effectiveness of different components in our model.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 313.79095458984375,
+            "x1": 558.004638671875,
+            "y1": 323.7535705566406
+          },
+          {
+            "x0": 319.5,
+            "y0": 324.74993896484375,
+            "x1": 558.0047607421875,
+            "y1": 334.7125549316406
+          },
+          {
+            "x0": 319.5,
+            "y0": 335.70892333984375,
+            "x1": 410.4285888671875,
+            "y1": 345.6715393066406
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.6%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "This results in a loss of 2.6% F1 score on the development set, showing that the universal node indeed learns information about whether the question is answerable.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 473.3341979980469,
+            "y0": 379.6439208984375,
+            "x1": 557.996337890625,
+            "y1": 389.6065368652344
+          },
+          {
+            "x0": 319.5,
+            "y0": 390.6029052734375,
+            "x1": 558.0047607421875,
+            "y1": 400.5655212402344
+          },
+          {
+            "x0": 319.5,
+            "y0": 401.5618896484375,
+            "x1": 378.3490295410156,
+            "y1": 411.5245056152344
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.5%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Compared to the bi-attention model, the F1-score decreases 0.5%.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.77316284179688,
+            "y0": 481.76141357421875,
+            "x1": 292.5046081542969,
+            "y1": 491.7240295410156
+          },
+          {
+            "x0": 54.0,
+            "y0": 492.72039794921875,
+            "x1": 117.90009307861328,
+            "y1": 502.6830139160156
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Here we use and to represent the EM and F1 score when the classification is not part of the task, which makes it very much like the task in SQuAD 1.1.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.99998474121094,
+            "y0": 582.8244018554688,
+            "x1": 292.4971008300781,
+            "y1": 592.7869873046875
+          },
+          {
+            "x0": 53.99999237060547,
+            "y0": 593.7833862304688,
+            "x1": 292.5046081542969,
+            "y1": 603.7459716796875
+          },
+          {
+            "x0": 53.99999237060547,
+            "y0": 604.7423706054688,
+            "x1": 146.9809112548828,
+            "y1": 614.7049560546875
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We also run the test over SQuAD 1.1 development test to evaluate the performance.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 329.4629821777344,
+            "y0": 566.3292236328125,
+            "x1": 558.0050659179688,
+            "y1": 576.2918090820312
+          },
+          {
+            "x0": 319.4999694824219,
+            "y0": 577.2882690429688,
+            "x1": 434.2790832519531,
+            "y1": 587.2508544921875
+          }
+        ]
+      }
+    },
+    {
+      "value": "86%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Due to a condensed structure, our model achieves an score of less than 86%, which is not a very competitive score on SQuAD 1.1 test.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.24798583984375,
+            "y0": 588.2472534179688,
+            "x1": 558.0009765625,
+            "y1": 598.2098388671875
+          },
+          {
+            "x0": 319.5,
+            "y0": 599.2062377929688,
+            "x1": 528.7742309570312,
+            "y1": 609.1688232421875
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.1",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "Due to a condensed structure, our model achieves an score of less than 86%, which is not a very competitive score on SQuAD 1.1 test.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.24798583984375,
+            "y0": 588.2472534179688,
+            "x1": 558.0009765625,
+            "y1": 598.2098388671875
+          },
+          {
+            "x0": 319.5,
+            "y0": 599.2062377929688,
+            "x1": 528.7742309570312,
+            "y1": 609.1688232421875
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "But as shown above, our model achieves a good score in SQuAD 2.0 test, which shows this model has the potential to achieve higher performance by making progress on both the answer detection and classification tasks.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 532.0419921875,
+            "y0": 599.2062377929688,
+            "x1": 558.0045776367188,
+            "y1": 609.1688232421875
+          },
+          {
+            "x0": 319.5,
+            "y0": 610.165283203125,
+            "x1": 558.004638671875,
+            "y1": 620.1278686523438
+          },
+          {
+            "x0": 319.5,
+            "y0": 621.124267578125,
+            "x1": 558.0045166015625,
+            "y1": 631.0868530273438
+          },
+          {
+            "x0": 319.5,
+            "y0": 632.082275390625,
+            "x1": 558.0045776367188,
+            "y1": 642.0448608398438
+          },
+          {
+            "x0": 319.5,
+            "y0": 643.041259765625,
+            "x1": 452.3213806152344,
+            "y1": 653.0038452148438
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "In SQuAD 2.0, the proportions of unanswerable questions are different in the training and test sets.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 231.22470092773438,
+            "y0": 105.38746643066406,
+            "x1": 292.504638671875,
+            "y1": 115.35006713867188
+          },
+          {
+            "x0": 53.99999237060547,
+            "y0": 116.34645080566406,
+            "x1": 292.5046081542969,
+            "y1": 126.30905151367188
+          },
+          {
+            "x0": 53.99999237060547,
+            "y0": 127.30543518066406,
+            "x1": 155.35951232910156,
+            "y1": 137.26803588867188
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "As mentioned in SQuAD 2.0 paper , different thresholds for answerability prediction result in fluctuated scores between answerable and unanswerable questions.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 80.73963928222656,
+            "y0": 182.4864044189453,
+            "x1": 292.5046691894531,
+            "y1": 192.44900512695312
+          },
+          {
+            "x0": 54.00001525878906,
+            "y0": 193.4453887939453,
+            "x1": 292.5046691894531,
+            "y1": 203.40798950195312
+          },
+          {
+            "x0": 54.00001525878906,
+            "y0": 204.4043731689453,
+            "x1": 151.90248107910156,
+            "y1": 214.36697387695312
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "As we can see, when the threshold is set to 0.5, F1 score of answerable questions is similar to that of unanswerable questions.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 63.9630012512207,
+            "y0": 496.2114562988281,
+            "x1": 292.5050354003906,
+            "y1": 506.174072265625
+          },
+          {
+            "x0": 54.0,
+            "y0": 507.17047119140625,
+            "x1": 292.504638671875,
+            "y1": 517.133056640625
+          },
+          {
+            "x0": 54.0,
+            "y0": 518.1294555664062,
+            "x1": 94.12934112548828,
+            "y1": 528.092041015625
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We can see that the overall score is slightly better, which is consistent with the idea from SQuAD 2.0.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 83.27300262451172,
+            "y0": 561.9644775390625,
+            "x1": 292.4975280761719,
+            "y1": 571.9270629882812
+          },
+          {
+            "x0": 54.0,
+            "y0": 572.9234619140625,
+            "x1": 147.59861755371094,
+            "y1": 582.8860473632812
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "related",
+      "sentence": "In our model, we learn from previous work and develop a condensed end-to-end model for the SQuAD 2.0 task.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 329.4630126953125,
+            "y0": 220.9803009033203,
+            "x1": 558.0050048828125,
+            "y1": 230.94290161132812
+          },
+          {
+            "x0": 319.5,
+            "y0": 231.9392852783203,
+            "x1": 538.28857421875,
+            "y1": 241.90188598632812
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "conclusion",
+      "sentence": "U-Net has good performance on SQuAD 2.0.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 516.9486694335938,
+            "y0": 639.6490478515625,
+            "x1": 558.0045776367188,
+            "y1": 649.6116333007812
+          },
+          {
+            "x0": 319.5,
+            "y0": 650.6080322265625,
+            "x1": 459.1058349609375,
+            "y1": 660.5706176757812
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "conclusion",
+      "sentence": "Our model has very simple structure yet achieves good results on SQuAD 2.0 test.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 75.38969421386719,
+            "y0": 100.24244689941406,
+            "x1": 292.5046691894531,
+            "y1": 110.20504760742188
+          },
+          {
+            "x0": 54.0,
+            "y0": 111.20143127441406,
+            "x1": 160.81900024414062,
+            "y1": 121.16403198242188
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "conclusion",
+      "sentence": "Since our model actually does not achieve very competitive performance in the boundary detection task yet still has a good overall performance on SQuAD 2.0 test, we are optimistic that our U-Net model is potentially capable of achieving better performance.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 199.10731506347656,
+            "x1": 292.504638671875,
+            "y1": 209.06991577148438
+          },
+          {
+            "x0": 54.0,
+            "y0": 210.06629943847656,
+            "x1": 292.50457763671875,
+            "y1": 220.02890014648438
+          },
+          {
+            "x0": 54.0,
+            "y0": 221.02528381347656,
+            "x1": 292.5045471191406,
+            "y1": 230.98788452148438
+          },
+          {
+            "x0": 54.0,
+            "y0": 231.98426818847656,
+            "x1": 292.5046691894531,
+            "y1": 241.94686889648438
+          },
+          {
+            "x0": 54.0,
+            "y0": 242.94325256347656,
+            "x1": 146.1241455078125,
+            "y1": 252.90585327148438
+          }
+        ]
+      }
+    },
+    {
+      "value": "2.0",
+      "kind": "result",
+      "section": "other",
+      "sentence": "We would like to thank Robin Jia, Pranav Rajpurkar for their help with SQuAD 2.0 submissions.",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 303.19122314453125,
+            "x1": 292.5045471191406,
+            "y1": 313.1538391113281
+          },
+          {
+            "x0": 54.0,
+            "y0": 314.15020751953125,
+            "x1": 194.59219360351562,
+            "y1": 324.1128234863281
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Unanswerable Questions from SQUAD 2.0 .",
+      "label": "tab:example",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Article: Endangered Species Act",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "[t]0.9 Paragraph: \"... Other legislation followed, including the Migratory Bird Conservation Act of 1929, a 0.00,0.07,1.001937 treaty prohibiting the hunting of right and gray whales, and the 1.00,0.00,0.00Bald Eagle Protection Act of 1940. These 1.00,0.00,0.00later laws had a low cost to society\u2014the species were relatively rare\u2014and little 0.00,0.07,1.00opposition was raised.\u201d Question 1: \u201cWhich laws faced significant 0.00,0.07,1.00opposition?\u201d",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Plausible Answer: 1.00,0.00,0.00later laws",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Question 2: \u201cWhat was the name of the 0.00,0.07,1.001937 treaty?\u201d",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Plausible Answer: 1.00,0.00,0.00Bald Eagle Protection Act",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Evaluation results on the SQuAD 2.0 (extracted on Sep 9, 2018). means the BiDAF with No Answer.",
+      "label": "tab:main",
+      "numericCells": 32,
+      "supports": 2,
+      "rows": [
+        [
+          {
+            "text": "2* Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Dev",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "End-to-end Model",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BNA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "59.8",
+            "value": "59.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "62.6",
+            "value": "62.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "59.2",
+            "value": "59.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "62.1",
+            "value": "62.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DocQA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "65.1",
+            "value": "65.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67.6",
+            "value": "67.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "63.4",
+            "value": "63.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "66.3",
+            "value": "66.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "FusionNet++",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "66.6",
+            "value": "66.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "69.6",
+            "value": "69.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "SAN",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.6",
+            "value": "68.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "71.4",
+            "value": "71.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "VS -Net",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.4",
+            "value": "68.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "71.3",
+            "value": "71.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "U-Net",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "70.3",
+            "value": "70.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "74.0",
+            "value": "74.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "69.2",
+            "value": "69.2",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "72.6",
+            "value": "72.6",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Ensemble Model",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "FusionNet++ (ensemble)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "70.3",
+            "value": "70.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "72.6",
+            "value": "72.6",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "SAN (ensemble)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "71.3",
+            "value": "71.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "73.7",
+            "value": "73.7",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "U-Net (ensemble)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "71.5",
+            "value": "71.5",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "75.0",
+            "value": "75.0",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Pipeline Model",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "RMR+ELMo+Verifier",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "72.3",
+            "value": "72.3",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "74.8",
+            "value": "74.8",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "71.7",
+            "value": "71.7",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "74.2",
+            "value": "74.2",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Human",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "86.3",
+            "value": "86.3",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "89.0",
+            "value": "89.0",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "86.9",
+            "value": "86.9",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "89.5",
+            "value": "89.5",
+            "emphasised": false,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Comparison of different configurations for our U-Net model.",
+      "label": "tab:configuration",
+      "numericCells": 26,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Configuration",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "U-Net",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.3",
+            "value": "70.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "74.0",
+            "value": "74.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "no node U",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "67.9",
+            "value": "67.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "71.4",
+            "value": "71.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-2.4",
+            "value": "-2.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-2.6",
+            "value": "-2.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "no share U",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "69.7",
+            "value": "69.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "73.5",
+            "value": "73.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-0.6",
+            "value": "-0.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-0.5",
+            "value": "-0.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "no concatenate P \\",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "Q",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "69.0",
+            "value": "69.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "72.8",
+            "value": "72.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-1.3",
+            "value": "-1.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-1.2",
+            "value": "-1.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "no plausible answer pointer",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "69.6",
+            "value": "69.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "72.9",
+            "value": "72.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-0.7",
+            "value": "-0.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-1.1",
+            "value": "-1.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "no classification",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "63.5",
+            "value": "63.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "68.5",
+            "value": "68.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-6.8",
+            "value": "-6.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-5.5",
+            "value": "-5.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Self-Attn Only",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "69.7",
+            "value": "69.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "73.5",
+            "value": "73.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-0.5",
+            "value": "-0.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-0.5",
+            "value": "-0.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.98490142822266,
+            "y0": 415.58746337890625,
+            "x1": 292.50457763671875,
+            "y1": 425.5500793457031
+          },
+          {
+            "x0": 54.0,
+            "y0": 426.54644775390625,
+            "x1": 98.2737808227539,
+            "y1": 436.5090637207031
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Multi-task performance on the development set.",
+      "label": "tab:multi-task",
+      "numericCells": 6,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Loss",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "EM",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Classification Acc.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "75.3",
+            "value": "75.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "84.8",
+            "value": "84.8",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "80.2",
+            "value": "80.2",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "67.1",
+            "value": "67.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "77.2",
+            "value": "77.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "85.1",
+            "value": "85.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 95.0240249633789,
+            "y0": 691.1564331054688,
+            "x1": 286.0967102050781,
+            "y1": 701.1190185546875
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\citep": "\\cite"
+  },
+  "references": [
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Bahdanau, D.; Cho, K.; and Bengio, Y. 2014. Neural machine translation by jointly learning to align and translate. ArXiv e-prints",
+      "authors": "Bahdanau, D.; Cho, K.; and Bengio, Y",
+      "title": "2014",
+      "venue": "Neural machine translation by jointly learning to align and translate ArXiv e-prints",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "multiDBLP:journals/ml/Caruana97",
+      "raw": "Caruana, R. 1997. Multitask learning. Machine Learning 28(1):41--75",
+      "authors": "Caruana, R",
+      "title": "1997",
+      "venue": "Multitask learning Machine Learning 28(1):41--75",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "drqa",
+      "raw": "Chen, D.; Fisch, A.; Weston, J.; and Bordes, A. 2017. Reading wikipedia to answer open-domain questions. CoRR abs/1704.00051",
+      "authors": "Chen, D.; Fisch, A.; Weston, J.; and Bordes, A",
+      "title": "2017",
+      "venue": "Reading wikipedia to answer open-domain questions CoRR abs/1704.00051",
+      "year": 2017,
+      "arxivId": "1704.00051",
+      "doi": null
+    },
+    {
+      "key": "clark2017simple",
+      "raw": "Clark, C., and Gardner, M. 2017. Simple and effective multi-paragraph reading comprehension. arXiv preprint arXiv:1710.10723",
+      "authors": "Clark, C., and Gardner, M",
+      "title": "2017",
+      "venue": "Simple and effective multi-paragraph reading comprehension arXiv preprint",
+      "year": 2017,
+      "arxivId": "1710.10723",
+      "doi": null
+    },
+    {
+      "key": "cui2016attention",
+      "raw": "Cui, Y.; Chen, Z.; Wei, S.; Wang, S.; Liu, T.; and Hu, G. 2016. Attention-over-attention neural networks for reading comprehension. arXiv preprint arXiv:1607.04423",
+      "authors": "Cui, Y.; Chen, Z.; Wei, S.; Wang, S.; Liu, T.; and Hu, G",
+      "title": "2016",
+      "venue": "Attention-over-attention neural networks for reading comprehension arXiv preprint",
+      "year": 2016,
+      "arxivId": "1607.04423",
+      "doi": null
+    },
+    {
+      "key": "dhingra2016gated",
+      "raw": "Dhingra, B.; Liu, H.; Cohen, W. W.; and Salakhutdinov, R. 2016. Gated-attention readers for text comprehension. arXiv preprint arXiv:1606.01549",
+      "authors": "Dhingra, B.; Liu, H.; Cohen, W. W.; and Salakhutdinov, R",
+      "title": "2016",
+      "venue": "Gated-attention readers for text comprehension arXiv preprint",
+      "year": 2016,
+      "arxivId": "1606.01549",
+      "doi": null
+    },
+    {
+      "key": "hermann2015teaching",
+      "raw": "Hermann, K. M.; Kocisky, T.; Grefenstette, E.; Espeholt, L.; Kay, W.; Suleyman, M.; and Blunsom, P. 2015. Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems, 1684--1692",
+      "authors": "Hermann, K. M.; Kocisky, T.; Grefenstette, E.; Espeholt, L.; Kay, W.; Suleyman, M.; and Blunsom, P",
+      "title": "2015",
+      "venue": "Teaching machines to read and comprehend In Advances in Neural Information Processing Systems, 1684--1692",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hill2015goldilocks",
+      "raw": "Hill, F.; Bordes, A.; Chopra, S.; and Weston, J. 2015. The goldilocks principle: Reading children's books with explicit memory representations. arXiv preprint arXiv:1511.02301",
+      "authors": "Hill, F.; Bordes, A.; Chopra, S.; and Weston, J",
+      "title": "2015",
+      "venue": "The goldilocks principle: Reading children's books with explicit memory representations arXiv preprint",
+      "year": 2015,
+      "arxivId": "1511.02301",
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Hochreiter, S., and Schmidhuber, J. 1997. Long short-term memory. Neural computation 9(8):1735--1780",
+      "authors": "Hochreiter, S., and Schmidhuber, J",
+      "title": "1997",
+      "venue": "Long short-term memory Neural computation 9(8):1735--1780",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hu2017reinforced",
+      "raw": "Hu, M.; Peng, Y.; Huang, Z.; Qiu, X.; Wei, F.; and Zhou, M. 2017. Reinforced mnemonic reader for machine reading comprehension. arXiv preprint arXiv:1705.02798",
+      "authors": "Hu, M.; Peng, Y.; Huang, Z.; Qiu, X.; Wei, F.; and Zhou, M",
+      "title": "2017",
+      "venue": "Reinforced mnemonic reader for machine reading comprehension arXiv preprint",
+      "year": 2017,
+      "arxivId": "1705.02798",
+      "doi": null
+    },
+    {
+      "key": "hu2018read",
+      "raw": "Hu, M.; Peng, Y.; Huang, Z.; Yang, N.; Zhou, M.; et al. 2018. Read+ verify: Machine reading comprehension with unanswerable questions. arXiv preprint arXiv:1808.05759",
+      "authors": "Hu, M.; Peng, Y.; Huang, Z.; Yang, N.; Zhou, M.; et al",
+      "title": "2018",
+      "venue": "Read+ verify: Machine reading comprehension with unanswerable questions arXiv preprint",
+      "year": 2018,
+      "arxivId": "1808.05759",
+      "doi": null
+    },
+    {
+      "key": "fusionnet",
+      "raw": "Huang, H.; Zhu, C.; Shen, Y.; and Chen, W. 2017. Fusionnet: Fusing via fully-aware attention with application to machine comprehension. CoRR abs/1711.07341",
+      "authors": "Huang, H.; Zhu, C.; Shen, Y.; and Chen, W",
+      "title": "2017",
+      "venue": "Fusionnet: Fusing via fully-aware attention with application to machine comprehension CoRR abs/1711.07341",
+      "year": 2017,
+      "arxivId": "1711.07341",
+      "doi": null
+    },
+    {
+      "key": "densenetDBLP:journals/corr/HuangLW16a",
+      "raw": "Huang, G.; Liu, Z.; and Weinberger, K. Q. 2016. Densely connected convolutional networks. CoRR abs/1608.06993",
+      "authors": "Huang, G.; Liu, Z.; and Weinberger, K. Q",
+      "title": "2016",
+      "venue": "Densely connected convolutional networks CoRR abs/1608.06993",
+      "year": 2016,
+      "arxivId": "1608.06993",
+      "doi": null
+    },
+    {
+      "key": "admaDBLP:journals/corr/KingmaB14",
+      "raw": "Kingma, D. P., and Ba, J. 2014. Adam: A method for stochastic optimization. CoRR abs/1412.6980",
+      "authors": "Kingma, D. P., and Ba, J",
+      "title": "2014",
+      "venue": "Adam: A method for stochastic optimization CoRR abs/1412.6980",
+      "year": 2014,
+      "arxivId": "1412.6980",
+      "doi": null
+    },
+    {
+      "key": "kumar2015ask",
+      "raw": "Kumar, A.; Irsoy, O.; Su, J.; Bradbury, J.; English, R.; Pierce, B.; Ondruska, P.; Gulrajani, I.; and Socher, R. 2015. Ask me anything: Dynamic memory networks for natural language processing. arXiv preprint arXiv:1506.07285",
+      "authors": "Kumar, A.; Irsoy, O.; Su, J.; Bradbury, J.; English, R.; Pierce, B.; Ondruska, P.; Gulrajani, I.; and Socher, R",
+      "title": "2015",
+      "venue": "Ask me anything: Dynamic memory networks for natural language processing arXiv preprint",
+      "year": 2015,
+      "arxivId": "1506.07285",
+      "doi": null
+    },
+    {
+      "key": "featDBLP:journals/corr/LeeKP016",
+      "raw": "Lee, K.; Kwiatkowski, T.; Parikh, A. P.; and Das, D. 2016. Learning recurrent span representations for extractive question answering. CoRR abs/1611.01436",
+      "authors": "Lee, K.; Kwiatkowski, T.; Parikh, A. P.; and Das, D",
+      "title": "2016",
+      "venue": "Learning recurrent span representations for extractive question answering CoRR abs/1611.01436",
+      "year": 2016,
+      "arxivId": "1611.01436",
+      "doi": null
+    },
+    {
+      "key": "levy2017zero",
+      "raw": "Levy, O.; Seo, M.; Choi, E.; and Zettlemoyer, L. 2017. Zero-shot relation extraction via reading comprehension. arXiv preprint arXiv:1706.04115",
+      "authors": "Levy, O.; Seo, M.; Choi, E.; and Zettlemoyer, L",
+      "title": "2017",
+      "venue": "Zero-shot relation extraction via reading comprehension arXiv preprint",
+      "year": 2017,
+      "arxivId": "1706.04115",
+      "doi": null
+    },
+    {
+      "key": "sanDBLP:journals/corr/abs-1712-03556",
+      "raw": "Liu, X.; Shen, Y.; Duh, K.; and Gao, J. 2017. Stochastic answer networks for machine reading comprehension. CoRR abs/1712.03556",
+      "authors": "Liu, X.; Shen, Y.; Duh, K.; and Gao, J",
+      "title": "2017",
+      "venue": "Stochastic answer networks for machine reading comprehension CoRR abs/1712.03556",
+      "year": 2017,
+      "arxivId": "1712.03556",
+      "doi": null
+    },
+    {
+      "key": "pennington2014glove",
+      "raw": "Pennington, J.; Socher, R.; and Manning, C. D. 2014. Glove: Global vectors for word representation. Proceedings of the Empiricial Methods in Natural Language Processing (EMNLP 2014) 12:1532--1543",
+      "authors": "Pennington, J.; Socher, R.; and Manning, C. D",
+      "title": "2014",
+      "venue": "Glove: Global vectors for word representation Proceedings of the Empiricial Methods in Natural Language Processing (EMNLP 2014) 12:1532--1543",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "elmo_",
+      "raw": "Peters, M. E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and Zettlemoyer, L. 2018. Deep contextualized word representations. In Proc. of NAACL",
+      "authors": "Peters, M. E.; Neumann, M.; Iyyer, M.; Gardner, M.; Clark, C.; Lee, K.; and Zettlemoyer, L",
+      "title": "2018",
+      "venue": "Deep contextualized word representations In Proc. of NAACL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rajpurkar2016squad",
+      "raw": "Rajpurkar, P.; Zhang, J.; Lopyrev, K.; and Liang, P. 2016. SQuAD: 100,000+ questions for machine comprehension of text. arXiv preprint arXiv:1606.05250",
+      "authors": "Rajpurkar, P.; Zhang, J.; Lopyrev, K.; and Liang, P",
+      "title": "2016",
+      "venue": "SQuAD: 100,000+ questions for machine comprehension of text arXiv preprint",
+      "year": 2016,
+      "arxivId": "1606.05250",
+      "doi": null
+    },
+    {
+      "key": "squad2.0",
+      "raw": "Rajpurkar, P.; Jia, R.; and Liang, P. 2018. Know What You Don't Know: Unanswerable Questions for SQuAD. ArXiv e-prints",
+      "authors": "Rajpurkar, P.; Jia, R.; and Liang, P",
+      "title": "2018",
+      "venue": "Know What You Don't Know: Unanswerable Questions for SQuAD ArXiv e-prints",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "seo2016bidirectional",
+      "raw": "Seo, M.; Kembhavi, A.; Farhadi, A.; and Hajishirzi, H. 2016. Bidirectional attention flow for machine comprehension. arXiv preprint arXiv:1611.01603",
+      "authors": "Seo, M.; Kembhavi, A.; Farhadi, A.; and Hajishirzi, H",
+      "title": "2016",
+      "venue": "Bidirectional attention flow for machine comprehension arXiv preprint",
+      "year": 2016,
+      "arxivId": "1611.01603",
+      "doi": null
+    },
+    {
+      "key": "shen2016reasonet",
+      "raw": "Shen, Y.; Huang, P.-S.; Gao, J.; and Chen, W. 2016. Reasonet: Learning to stop reading in machine comprehension. arXiv preprint arXiv:1609.05284",
+      "authors": "Shen, Y.; Huang, P.-S.; Gao, J.; and Chen, W",
+      "title": "2016",
+      "venue": "Reasonet: Learning to stop reading in machine comprehension arXiv preprint",
+      "year": 2016,
+      "arxivId": "1609.05284",
+      "doi": null
+    },
+    {
+      "key": "dropoutDBLP:journals/jmlr/SrivastavaHKSS14",
+      "raw": "Srivastava, N.; Hinton, G. E.; Krizhevsky, A.; Sutskever, I.; and Salakhutdinov, R. 2014. Dropout: a simple way to prevent neural networks from overfitting. Journal of Machine Learning Research 15(1):1929--1958",
+      "authors": "Srivastava, N.; Hinton, G. E.; Krizhevsky, A.; Sutskever, I.; and Salakhutdinov, R",
+      "title": "2014",
+      "venue": "Dropout: a simple way to prevent neural networks from overfitting Journal of Machine Learning Research 15(1):1929--1958",
+      "year": 1958,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sukhbaatar2015end",
+      "raw": "Sukhbaatar, S.; Weston, J.; Fergus, R.; et al. 2015. End-to-end memory networks. In Advances in Neural Information Processing Systems, 2431--2439",
+      "authors": "Sukhbaatar, S.; Weston, J.; Fergus, R.; et al",
+      "title": "2015",
+      "venue": "End-to-end memory networks In Advances in Neural Information Processing Systems, 2431--2439",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tan2018know",
+      "raw": "Tan, C.; Wei, F.; Zhou, Q.; Yang, N.; Lv, W.; and Zhou, M. 2018. I know there is no answer: Modeling answer validation for machine reading comprehension. In CCF International Conference on Natural Language Processing and Chinese Computing, 85--97. Springer",
+      "authors": "Tan, C.; Wei, F.; Zhou, Q.; Yang, N.; Lv, W.; and Zhou, M",
+      "title": "2018",
+      "venue": "I know there is no answer: Modeling answer validation for machine reading comprehension In CCF International Conference on Natural Language Processing and Chinese Computing, 85--97 Springer",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "attentionisallyouneed",
+      "raw": "Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A. N.; Kaiser, L.; and Polosukhin, I. 2017. Attention is all you need. CoRR abs/1706.03762",
+      "authors": "Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A. N.; Kaiser, L.; and Polosukhin, I",
+      "title": "2017",
+      "venue": "Attention is all you need CoRR abs/1706.03762",
+      "year": 2017,
+      "arxivId": "1706.03762",
+      "doi": null
+    },
+    {
+      "key": "pointernet",
+      "raw": "Vinyals, O.; Fortunato, M.; and Jaitly, N. 2015. Pointer Networks. ArXiv e-prints",
+      "authors": "Vinyals, O.; Fortunato, M.; and Jaitly, N",
+      "title": "2015",
+      "venue": "Pointer Networks ArXiv e-prints",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "matchDBLP:journals/corr/WangJ16a",
+      "raw": "Wang, S., and Jiang, J. 2016. Machine comprehension using match-lstm and answer pointer. CoRR abs/1608.07905",
+      "authors": "Wang, S., and Jiang, J",
+      "title": "2016",
+      "venue": "Machine comprehension using match-lstm and answer pointer CoRR abs/1608.07905",
+      "year": 2016,
+      "arxivId": "1608.07905",
+      "doi": null
+    },
+    {
+      "key": "selfmatchDBLP:conf/acl/WangYWCZ17",
+      "raw": "Wang, W.; Yang, N.; Wei, F.; Chang, B.; and Zhou, M. 2017. Gated self-matching networks for reading comprehension and question answering. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, ACL 2017, Vancouver, Canada, July 30 - August 4, Volume 1: Long Papers, 189--198",
+      "authors": "Wang, W.; Yang, N.; Wei, F.; Chang, B.; and Zhou, M",
+      "title": "2017",
+      "venue": "Gated self-matching networks for reading comprehension and question answering In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, ACL 2017, Vancouver, Canada, July 30 - August 4, Volume 1: Long Papers, 189--198",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wang2018multi",
+      "raw": "Wang, W.; Yan, M.; and Wu, C. 2018. Multi-granularity hierarchical attention fusion networks for reading comprehension and question answering. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), volume 1, 1705--1714",
+      "authors": "Wang, W.; Yan, M.; and Wu, C",
+      "title": "2018",
+      "venue": "Multi-granularity hierarchical attention fusion networks for reading comprehension and question answering In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), volume 1, 1705--1714",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "xiong2016dynamic",
+      "raw": "Xiong, C.; Zhong, V.; and Socher, R. 2016. Dynamic coattention networks for question answering. arXiv preprint arXiv:1611.01604",
+      "authors": "Xiong, C.; Zhong, V.; and Socher, R",
+      "title": "2016",
+      "venue": "Dynamic coattention networks for question answering arXiv preprint",
+      "year": 2016,
+      "arxivId": "1611.01604",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "V=[Q,\\bu, P] &= [\\bq_1, \\bq_2 \\dots \\bq_m, \\bu, \\bp_1, \\bp_2, \\cdots, \\bp_n],",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "H^l &= \\mathrm{BiLSTM}(V),\\\\\n    H^h &= \\mathrm{BiLSTM}(H^l),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 2,
+      "latex": "H^f &= \\mathrm{BiLSTM}([H^l;H^h]).",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "H_q &= [\\bh_1, \\bh_2, \\cdots, \\bh_{m+1}],\\\\\n    H_p &= [\\bh_{m+1}, \\bh_{m+2}, \\cdots, \\bh_{m+n+1}],",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "S &= \\Big(\\mathrm{ReLU}(W_1 H_q^l)\\Big)\\tran \\mathrm{ReLU}(W_2 H^l_p),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\widehat{H_q^l} &=  H^l_p \\times \\mathrm{softmax}(S\\tran),\\\\\n    \\widehat{H_p^l} &=  H^l_q \\times \\mathrm{softmax}(S),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 6,
+      "latex": "H^A &= \\mathrm{BiLSTM}\\Big([H^l; H^h; H^f; \\widehat{H^l}; \\widehat{H^h}; \\widehat{H^f}]\\Big),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 7,
+      "latex": "A &= [V; H^A].",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 8,
+      "latex": "\\widehat{A} = A \\times \\mathrm{softmax}(A\\tran A),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "O=\\mathrm{BiLSTM}[H^A; \\widehat{A}].",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 10,
+      "latex": "O^P &= [\\bo_1, \\bo_2, \\cdots, \\bo_{m}],\\\\\n    O^Q &= [\\bo_{m+1}, \\bo_{m+2}, \\cdots, \\bo_{m+n+1}],",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\bc_q &= \\sum_i \\frac{\\exp(W_q^\\top o^Q_i)}{\\sum_j \\exp(W^\\top o^Q_j)} o^Q_i,",
+      "environment": "align",
+      "labels": [
+        "eq:c_q"
+      ]
+    },
+    {
+      "ordinal": 12,
+      "latex": "\\alpha_i &\\propto \\exp(\\bc_q W_s o^P_i), \\\\\n    \\beta_i &\\propto \\exp(\\bc_q W_eo^P_i),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 13,
+      "latex": "\\mathcal{L}_{A} = -\\big(\\log \\alpha_a +\\log \\beta_b \\big),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 14,
+      "latex": "\\mathcal{L}_{NA} = -\\big(\\log \\alpha_0 +\\log \\beta_0 \\big),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 15,
+      "latex": "\\mathcal{L}_{NA} = -\\big(\\log \\alpha_0 +\\log \\beta_0 \\big) -\\big(\\log \\alpha'_{a^*} +\\log \\beta'_{b^*} \\big),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 16,
+      "latex": "\\bc_s &= \\sum_i \\alpha_i \\cdot o^P_i\\\\\n    \\bc_e &= \\sum_i \\beta_i \\cdot o^P_i",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 17,
+      "latex": "F= [\\bc_q ;  \\bo_{m+1} ;  \\bc_s ;  \\bc_e].",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 18,
+      "latex": "p^{c} = \\sigma(W_f\\tran F)",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 19,
+      "latex": "\\mathcal{L}_{AV} = -\\Big(\\delta \\cdot\\log {p^c} + (1-\\delta)\\cdot(\\log{(1-p^c)})\\Big),",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 20,
+      "latex": "\\mathcal{L} = \\delta\\mathcal{L}_{A}+ (1-\\delta) \\mathcal{L}_{NA} + \\mathcal{L}_{AV},",
+      "environment": "align",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 945,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 63.96299743652344,
+            "y0": 235.72079467773438,
+            "x1": 282.5368957519531,
+            "y1": 244.68719482421875
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 245.68276977539062,
+            "x1": 282.5368347167969,
+            "y1": 254.649169921875
+          },
+          {
+            "x0": 63.96299743652344,
+            "y0": 255.64578247070312,
+            "x1": 77.66365814208984,
+            "y1": 264.6121826171875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4620,
+      "numbers": 7,
+      "citations": 15,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 425.14337158203125,
+            "x1": 292.5046081542969,
+            "y1": 435.1059875488281
+          },
+          {
+            "x0": 54.0,
+            "y0": 436.10235595703125,
+            "x1": 292.5046081542969,
+            "y1": 446.0649719238281
+          },
+          {
+            "x0": 54.0,
+            "y0": 447.06134033203125,
+            "x1": 292.5046081542969,
+            "y1": 457.0239562988281
+          },
+          {
+            "x0": 54.0,
+            "y0": 458.02032470703125,
+            "x1": 71.28510284423828,
+            "y1": 467.9829406738281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Proposed Model",
+      "chars": 929,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.00000762939453,
+            "y0": 375.7522277832031,
+            "x1": 292.5046081542969,
+            "y1": 385.71484375
+          },
+          {
+            "x0": 54.00000762939453,
+            "y0": 386.71124267578125,
+            "x1": 103.38459777832031,
+            "y1": 396.6738586425781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "(A) Unified Encoding",
+      "chars": 2682,
+      "numbers": 1,
+      "citations": 4,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.999935150146484,
+            "y0": 595.72314453125,
+            "x1": 103.27495574951172,
+            "y1": 605.6857299804688
+          },
+          {
+            "x0": 113.2369384765625,
+            "y0": 595.8140869140625,
+            "x1": 292.50396728515625,
+            "y1": 605.7766723632812
+          },
+          {
+            "x0": 53.99993896484375,
+            "y0": 606.7730712890625,
+            "x1": 292.50457763671875,
+            "y1": 616.7356567382812
+          },
+          {
+            "x0": 53.99993896484375,
+            "y0": 617.7320556640625,
+            "x1": 164.69439697265625,
+            "y1": 627.6946411132812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "(B) Multi-Level Attention",
+      "chars": 1991,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 53.999977111816406,
+            "y0": 415.4721374511719,
+            "x1": 292.5046081542969,
+            "y1": 425.43475341796875
+          },
+          {
+            "x0": 53.999977111816406,
+            "y0": 426.43115234375,
+            "x1": 221.1923370361328,
+            "y1": 436.3937683105469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "(C) Final Fusion",
+      "chars": 1705,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5001525878906,
+            "y0": 353.3030700683594,
+            "x1": 558.0046997070312,
+            "y1": 363.26568603515625
+          },
+          {
+            "x0": 319.5001525878906,
+            "y0": 364.2610778808594,
+            "x1": 522.4780883789062,
+            "y1": 374.22369384765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "(D) Prediction",
+      "chars": 4225,
+      "numbers": 4,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.000030517578125,
+            "y0": 222.2084503173828,
+            "x1": 292.50469970703125,
+            "y1": 232.17105102539062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Training",
+      "chars": 1355,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 182.6073760986328,
+            "x1": 292.5046081542969,
+            "y1": 192.56997680664062
+          },
+          {
+            "x0": 54.0,
+            "y0": 193.5663604736328,
+            "x1": 93.5714340209961,
+            "y1": 203.52896118164062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiment",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "experiments",
+      "title": "Datasets",
+      "chars": 797,
+      "numbers": 4,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 427.771240234375,
+            "x1": 292.50457763671875,
+            "y1": 437.7338562011719
+          },
+          {
+            "x0": 54.0,
+            "y0": 438.729248046875,
+            "x1": 292.5046081542969,
+            "y1": 448.6918640136719
+          },
+          {
+            "x0": 54.0,
+            "y0": 449.688232421875,
+            "x1": 292.5046691894531,
+            "y1": 459.6508483886719
+          },
+          {
+            "x0": 54.0,
+            "y0": 460.647216796875,
+            "x1": 88.59015655517578,
+            "y1": 470.6098327636719
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Implementation Details",
+      "chars": 888,
+      "numbers": 13,
+      "citations": 4,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 617.7321166992188,
+            "x1": 292.5046081542969,
+            "y1": 627.6947021484375
+          },
+          {
+            "x0": 54.0,
+            "y0": 628.691162109375,
+            "x1": 292.5046691894531,
+            "y1": 638.6537475585938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Main Results",
+      "chars": 547,
+      "numbers": 4,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 179.66908264160156,
+            "x1": 558.0045776367188,
+            "y1": 189.63168334960938
+          },
+          {
+            "x0": 319.5,
+            "y0": 190.62806701660156,
+            "x1": 558.004638671875,
+            "y1": 200.59066772460938
+          },
+          {
+            "x0": 319.5,
+            "y0": 201.58705139160156,
+            "x1": 479.18365478515625,
+            "y1": 211.54965209960938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Ablation Study",
+      "chars": 2354,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 313.79095458984375,
+            "x1": 558.004638671875,
+            "y1": 323.7535705566406
+          },
+          {
+            "x0": 319.5,
+            "y0": 324.74993896484375,
+            "x1": 558.0047607421875,
+            "y1": 334.7125549316406
+          },
+          {
+            "x0": 319.5,
+            "y0": 335.70892333984375,
+            "x1": 410.4285888671875,
+            "y1": 345.6715393066406
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Multi-task Study",
+      "chars": 2482,
+      "numbers": 5,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 527.9693603515625,
+            "x1": 292.504638671875,
+            "y1": 537.9319458007812
+          },
+          {
+            "x0": 54.0,
+            "y0": 538.9284057617188,
+            "x1": 124.68461608886719,
+            "y1": 548.8909912109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Study on the Different Thresholds of Unanswerability Classification",
+      "chars": 2015,
+      "numbers": 4,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 110.32999420166016,
+            "y0": 83.46949768066406,
+            "x1": 292.49609375,
+            "y1": 93.43209838867188
+          },
+          {
+            "x0": 53.99999237060547,
+            "y0": 94.42848205566406,
+            "x1": 175.22491455078125,
+            "y1": 104.39108276367188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "related",
+      "title": "End-to-end Models for MRC",
+      "chars": 1091,
+      "numbers": 1,
+      "citations": 11,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.00001525878906,
+            "y0": 683.4854736328125,
+            "x1": 292.5046081542969,
+            "y1": 693.4480590820312
+          },
+          {
+            "x0": 54.00001525878906,
+            "y0": 694.4444580078125,
+            "x1": 261.6604309082031,
+            "y1": 704.4070434570312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "MRC with Unanswerable Questions",
+      "chars": 1153,
+      "numbers": 0,
+      "citations": 5,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 322.7872009277344,
+            "x1": 558.0046997070312,
+            "y1": 332.74981689453125
+          },
+          {
+            "x0": 319.5,
+            "y0": 333.7462158203125,
+            "x1": 338.0404052734375,
+            "y1": 343.7088317871094
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion and Future Work",
+      "chars": 1614,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 319.5,
+            "y0": 617.7320556640625,
+            "x1": 558.0046997070312,
+            "y1": 627.6946411132812
+          },
+          {
+            "x0": 319.5,
+            "y0": 628.6910400390625,
+            "x1": 558.0044555664062,
+            "y1": 638.6536254882812
+          },
+          {
+            "x0": 319.5,
+            "y0": 639.6490478515625,
+            "x1": 514.0794677734375,
+            "y1": 649.6116333007812
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgement",
+      "chars": 93,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 303.19122314453125,
+            "x1": 292.5045471191406,
+            "y1": 313.1538391113281
+          },
+          {
+            "x0": 54.0,
+            "y0": 314.15020751953125,
+            "x1": 194.59219360351562,
+            "y1": 324.1128234863281
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 7,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 25,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "densenetDBLP:journals/corr/HuangLW16a",
+      "stance": "inherits",
+      "cue": "Following",
+      "sentence": "Following the success of DenseNet [Huang et al. 2016], we concatenate the input and output of each layer as the input of the next layer.",
+      "section": "(C) Final Fusion",
+      "sectionKind": "method",
+      "ordinal": 16,
+      "title": "2016",
+      "authors": "Huang, G.; Liu, Z.; and Weinberger, K. Q",
+      "year": 2016,
+      "arxivId": "1608.06993",
+      "inCorpus": true,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 368.95452880859375,
+            "y0": 444.072021484375,
+            "x1": 558.0048828125,
+            "y1": 454.0346374511719
+          },
+          {
+            "x0": 319.5002136230469,
+            "y0": 455.031005859375,
+            "x1": 477.8856201171875,
+            "y1": 464.9936218261719
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "admaDBLP:journals/corr/KingmaB14",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use Adam optimizer with a learning rate of 0.002 [Kingma et al. 2014].",
+        "section": "Implementation Details",
+        "sectionKind": "experiments",
+        "ordinal": 24,
+        "title": "2014",
+        "authors": "Kingma, D. P., and Ba, J",
+        "year": 2014,
+        "arxivId": "1412.6980",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 441.5617980957031,
+              "y0": 89.28315734863281,
+              "x1": 558.0046997070312,
+              "y1": 99.24575805664062
+            },
+            {
+              "x0": 319.5,
+              "y0": 100.24214172363281,
+              "x1": 412.1820373535156,
+              "y1": 110.20474243164062
+            }
+          ]
+        }
+      },
+      {
+        "key": "bahdanau2014neural",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "To fully fuse the semantic representation of the question and passage, we use the attention mechanism [Bahdanau et al. 2014] to capture their interactions on different levels.",
+        "section": "(B) Multi-Level Attention",
+        "sectionKind": "method",
+        "ordinal": 12,
+        "title": "2014",
+        "authors": "Bahdanau, D.; Cho, K.; and Bengio, Y",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 53.999977111816406,
+              "y0": 415.4721374511719,
+              "x1": 292.5046081542969,
+              "y1": 425.43475341796875
+            },
+            {
+              "x0": 53.999977111816406,
+              "y0": 426.43115234375,
+              "x1": 221.1923370361328,
+              "y1": 436.3937683105469
+            }
+          ]
+        }
+      },
+      {
+        "key": "densenetDBLP:journals/corr/HuangLW16a",
+        "stance": "inherits",
+        "cue": "Following",
+        "sentence": "Following the success of DenseNet [Huang et al. 2016], we concatenate the input and output of each layer as the input of the next layer.",
+        "section": "(C) Final Fusion",
+        "sectionKind": "method",
+        "ordinal": 16,
+        "title": "2016",
+        "authors": "Huang, G.; Liu, Z.; and Weinberger, K. Q",
+        "year": 2016,
+        "arxivId": "1608.06993",
+        "inCorpus": true,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 368.95452880859375,
+              "y0": 444.072021484375,
+              "x1": 558.0048828125,
+              "y1": 454.0346374511719
+            },
+            {
+              "x0": 319.5002136230469,
+              "y0": 455.031005859375,
+              "x1": 477.8856201171875,
+              "y1": 464.9936218261719
+            }
+          ]
+        }
+      },
+      {
+        "key": "drqa",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use 12 dimensions to embed POS tags, 8 for NER tags [Chen et al. 2017].",
+        "section": "Implementation Details",
+        "sectionKind": "experiments",
+        "ordinal": 21,
+        "title": "2017",
+        "authors": "Chen, D.; Fisch, A.; Weston, J.; and Bordes, A",
+        "year": 2017,
+        "arxivId": "1704.00051",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 54.0,
+              "y0": 639.649169921875,
+              "x1": 292.5046081542969,
+              "y1": 649.6117553710938
+            }
+          ]
+        }
+      },
+      {
+        "key": "featDBLP:journals/corr/LeeKP016",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use 3 binary features: exact match, lower-case match and lemma match between the question and passage [Lee et al. 2016].",
+        "section": "Implementation Details",
+        "sectionKind": "experiments",
+        "ordinal": 22,
+        "title": "2016",
+        "authors": "Lee, K.; Kwiatkowski, T.; Parikh, A. P.; and Das, D",
+        "year": 2016,
+        "arxivId": "1611.01436",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 134.06939697265625,
+              "y0": 650.608154296875,
+              "x1": 292.5046691894531,
+              "y1": 660.5707397460938
+            },
+            {
+              "x0": 54.0,
+              "y0": 661.567138671875,
+              "x1": 292.50457763671875,
+              "y1": 671.5297241210938
+            },
+            {
+              "x0": 54.0,
+              "y0": 672.526123046875,
+              "x1": 102.57762908935547,
+              "y1": 682.4887084960938
+            }
+          ]
+        }
+      },
+      {
+        "key": "fusionnet",
+        "stance": "inherits",
+        "cue": "we followed",
+        "sentence": "Since both H_q=[H^l_q;H^h_q;H^f_q] and H_p=[H^l_p;H^h_p;H^f_p] are concatenated by three-level representations, we followed previous work FusionNet [Huang et al. 2017] to construct their iterations on three levels.",
+        "section": "(B) Multi-Level Attention",
+        "sectionKind": "method",
+        "ordinal": 15,
+        "title": "2017",
+        "authors": "Huang, H.; Zhu, C.; Shen, Y.; and Chen, W",
+        "year": 2017,
+        "arxivId": "1711.07341",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 319.4999694824219,
+              "y0": 56.40711975097656,
+              "x1": 422.5231018066406,
+              "y1": 66.36972045898438
+            },
+            {
+              "x0": 53.999969482421875,
+              "y0": 694.444091796875,
+              "x1": 292.504638671875,
+              "y1": 704.4066772460938
+            }
+          ]
+        }
+      },
+      {
+        "key": "hu2018read",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We believe that the performance of the U-Net can be boosted with an additional post-processing step to verify answers using approaches such as [Hu et al. 2018].",
+        "section": "Main Results",
+        "sectionKind": "experiments",
+        "ordinal": 25,
+        "title": "2018",
+        "authors": "Hu, M.; Peng, Y.; Huang, Z.; Yang, N.; Zhou, M.; et al",
+        "year": 2018,
+        "arxivId": "1808.05759",
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 350.56341552734375,
+              "y0": 256.3819580078125,
+              "x1": 558.004638671875,
+              "y1": 266.3445739746094
+            },
+            {
+              "x0": 319.5,
+              "y0": 267.3399658203125,
+              "x1": 558.0045166015625,
+              "y1": 277.3025817871094
+            },
+            {
+              "x0": 319.5,
+              "y0": 278.2989501953125,
+              "x1": 454.51318359375,
+              "y1": 288.2615661621094
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Machine reading comprehension (MRC) is a challenging task in natural language processing, which requires that machine can read, understand, and answer questions about a text.",
+      "anchorText": "Machine reading comprehension (MRC) is a challenging task in natural language processing, which requires that machine can read, understand, and answer questions about a text.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "requires that",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 54.0,
+            "y0": 425.14337158203125,
+            "x1": 292.5046081542969,
+            "y1": 435.1059875488281
+          },
+          {
+            "x0": 54.0,
+            "y0": 436.10235595703125,
+            "x1": 292.5046081542969,
+            "y1": 446.0649719238281
+          },
+          {
+            "x0": 54.0,
+            "y0": 447.06134033203125,
+            "x1": 292.5046081542969,
+            "y1": 457.0239562988281
+          },
+          {
+            "x0": 54.0,
+            "y0": 458.02032470703125,
+            "x1": 71.28510284423828,
+            "y1": 467.9829406738281
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, it is unnecessary since the underlying comprehension and reasoning of language for these components is the same.",
+      "anchorText": "Intuitively, it is unnecessary since the underlying comprehension and reasoning of language for these components is the same.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 394.10986328125,
+            "y0": 581.92333984375,
+            "x1": 558.004638671875,
+            "y1": 591.8859252929688
+          },
+          {
+            "x0": 319.5,
+            "y0": 592.88232421875,
+            "x1": 558.0045776367188,
+            "y1": 602.8449096679688
+          },
+          {
+            "x0": 319.5,
+            "y0": 603.8413696289062,
+            "x1": 416.9043884277344,
+            "y1": 613.803955078125
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We expect this node to learn universal information from both passage and question.",
+      "anchorText": "We expect this node to learn universal information from both passage and question.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We expect",
+      "section": "(A) Unified Encoding",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 329.4630126953125,
+            "y0": 502.762451171875,
+            "x1": 558.0049438476562,
+            "y1": 512.7250366210938
+          },
+          {
+            "x0": 319.5,
+            "y0": 513.720458984375,
+            "x1": 425.8805847167969,
+            "y1": 523.6830444335938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Note here when the question is answerable, we do not consider the universal node in answer boundary detection, so we have i >0 (i=0 is the universal node in the passage representation).",
+      "anchorText": "Note here when the question is answerable, we do not consider the universal node in answer boundary detection, so we have",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we do not consider",
+      "section": "(D) Prediction",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 63.962982177734375,
+            "y0": 533.540283203125,
+            "x1": 292.5050048828125,
+            "y1": 543.5028686523438
+          },
+          {
+            "x0": 53.99998092651367,
+            "y0": 544.4993286132812,
+            "x1": 292.50457763671875,
+            "y1": 554.4619140625
+          },
+          {
+            "x0": 53.99998092651367,
+            "y0": 555.4583129882812,
+            "x1": 99.49917602539062,
+            "y1": 565.4208984375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Since these representations are highly summarized specially for classification, we believe that this passage-question pair contains information to distinguish whether this question is answerable.",
+      "anchorText": "Since these representations are highly summarized specially for classification, we believe that this passage-question pair contains information to distinguish whether this question is answerable.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "(D) Prediction",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 405.8260803222656,
+            "y0": 465.3551025390625,
+            "x1": 558.0048217773438,
+            "y1": 475.3177185058594
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 476.3140869140625,
+            "x1": 558.0048217773438,
+            "y1": 486.2767028808594
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 487.2730712890625,
+            "x1": 558.0046997070312,
+            "y1": 497.2356872558594
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 498.2320556640625,
+            "x1": 463.64898681640625,
+            "y1": 508.1946716308594
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Since the universal node is pointed at when the question is unanswerable and this node itself already contains information collected from both the passage and question during encoding and information interaction, we believe that this node is important in distinguishing whether the question is answerable.",
+      "anchorText": "Since the universal node is pointed at when the question is unanswerable and this node itself already contains information collected from both the passage and question during encoding and information interaction, we believe that this node is important in distinguishing whether the question is answerable.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "(D) Prediction",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 461.5668029785156,
+            "y0": 509.1910400390625,
+            "x1": 558.0048217773438,
+            "y1": 519.1536254882812
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 520.1500244140625,
+            "x1": 558.0047607421875,
+            "y1": 530.1126098632812
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 531.1090087890625,
+            "x1": 558.0047607421875,
+            "y1": 541.0715942382812
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 542.0679931640625,
+            "x1": 558.0047607421875,
+            "y1": 552.0305786132812
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 553.0260009765625,
+            "x1": 558.004638671875,
+            "y1": 562.9885864257812
+          },
+          {
+            "x0": 319.50018310546875,
+            "y0": 563.9850463867188,
+            "x1": 498.24908447265625,
+            "y1": 573.9476318359375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "During training, we omit passage with over 400 words and question with more than 50 words.",
+      "anchorText": "During training, we omit passage with over 400 words and question with more than 50 words.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we omit",
+      "section": "Implementation Details",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 329.4630126953125,
+            "y0": 111.30116271972656,
+            "x1": 557.9949951171875,
+            "y1": 121.26376342773438
+          },
+          {
+            "x0": 319.5,
+            "y0": 122.26014709472656,
+            "x1": 482.3484802246094,
+            "y1": 132.22274780273438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We believe that the performance of the U-Net can be boosted with an additional post-processing step to verify answers using approaches such as [Hu et al. 2018].",
+      "anchorText": "We believe that the performance of the U-Net can be boosted with an additional post-processing step to verify answers using approaches such as",
+      "kind": "conjectural",
+      "support": "cited",
+      "cue": "We believe",
+      "section": "Main Results",
+      "sectionKind": "experiments",
+      "cites": [
+        "hu2018read"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 350.56341552734375,
+            "y0": 256.3819580078125,
+            "x1": 558.004638671875,
+            "y1": 266.3445739746094
+          },
+          {
+            "x0": 319.5,
+            "y0": 267.3399658203125,
+            "x1": 558.0045166015625,
+            "y1": 277.3025817871094
+          },
+          {
+            "x0": 319.5,
+            "y0": 278.2989501953125,
+            "x1": 454.51318359375,
+            "y1": 288.2615661621094
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Intuitively, answer prediction and answer verification are related tasks since the underlying comprehension and reasoning of language for these components is the same.",
+      "anchorText": "Intuitively, answer prediction and answer verification are related tasks since the underlying comprehension and reasoning of language for these components is the same.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "MRC with Unanswerable Questions",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 368.7451171875,
+            "y0": 524.8910522460938,
+            "x1": 558.0045776367188,
+            "y1": 534.8536376953125
+          },
+          {
+            "x0": 319.5,
+            "y0": 535.8500366210938,
+            "x1": 558.0047607421875,
+            "y1": 545.8126220703125
+          },
+          {
+            "x0": 319.5,
+            "y0": 546.80908203125,
+            "x1": 558.0045776367188,
+            "y1": 556.7716674804688
+          },
+          {
+            "x0": 319.5,
+            "y0": 557.76708984375,
+            "x1": 342.4638366699219,
+            "y1": 567.7296752929688
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Our future work is to reconstruct the structure of U-Net by replacing the current multi-level attention block with a simpler self-attention mechanism, which we believe can capture the question and passage information, and intuitively is also coherent with the rest of our U-Net model.",
+      "anchorText": "Our future work is to reconstruct the structure of U-Net by replacing the current multi-level attention block with a simpler self-attention mechanism, which we believe can capture the question and passage information, and intuitively is also coherent with the rest of our U-Net model.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Conclusion and Future Work",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 63.9630012512207,
+            "y0": 122.39540100097656,
+            "x1": 292.4951171875,
+            "y1": 132.35800170898438
+          },
+          {
+            "x0": 54.0,
+            "y0": 133.35438537597656,
+            "x1": 292.5046081542969,
+            "y1": 143.31698608398438
+          },
+          {
+            "x0": 54.0,
+            "y0": 144.31336975097656,
+            "x1": 292.5046081542969,
+            "y1": 154.27597045898438
+          },
+          {
+            "x0": 54.0,
+            "y0": 155.27235412597656,
+            "x1": 292.5045471191406,
+            "y1": 165.23495483398438
+          },
+          {
+            "x0": 54.0,
+            "y0": 166.23133850097656,
+            "x1": 257.436279296875,
+            "y1": 176.19393920898438
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Furthermore, our model has a simple structure and is easy to implement, therefore we believe that our model can be easily modified for various datasets.",
+      "anchorText": "Furthermore, our model has a simple structure and is easy to implement, therefore we believe that our model can be easily modified for various datasets.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Conclusion and Future Work",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 148.056884765625,
+            "y0": 242.94325256347656,
+            "x1": 292.5046081542969,
+            "y1": 252.90585327148438
+          },
+          {
+            "x0": 54.0,
+            "y0": 253.90223693847656,
+            "x1": 292.504638671875,
+            "y1": 263.8648376464844
+          },
+          {
+            "x0": 54.0,
+            "y0": 264.8612060546875,
+            "x1": 268.74383544921875,
+            "y1": 274.8238220214844
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 11,
+    "cited": 1,
+    "shown": 0,
+    "bare": 10
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "published": "2018-10-12",
+    "authors": [
+      "Fu Sun",
+      "Linyang Li",
+      "Xipeng Qiu",
+      "Yang Liu"
+    ]
+  }
+}

@@ -1,0 +1,857 @@
+{
+  "id": "1808.04888",
+  "title": "Skill Rating for Generative Models",
+  "keystone": null,
+  "codeUrl": "https://github.com/openai/pixel-cnn",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1808.04888",
+  "numbers": [
+    {
+      "value": "0.5",
+      "kind": "result",
+      "section": "method",
+      "sentence": "A match win rate of 0.5 for means that 's performance against is no better than random chance.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    }
+  ],
+  "tables": [],
+  "macros": {
+    "\\todo": "(\\textcolor{red}{#1})",
+    "\\dcgan": "\\texttt{1}",
+    "\\wgan": "\\texttt{3}",
+    "\\feature": "\\texttt{2}",
+    "\\conditional": "\\texttt{4-cond}",
+    "\\eleven": "\\texttt{5-cond}",
+    "\\pixelcnn": "\\texttt{6-auto}"
+  },
+  "references": [
+    {
+      "key": "arora2018do",
+      "raw": "Sanjeev Arora, Andrej Risteski, and Yi Zhang. Do GANs learn the distribution? some theory and empirics. In International Conference on Learning Representations, 2018. URL https://openreview.net/forum?id=BJehNfW0-",
+      "authors": "Sanjeev Arora, Andrej Risteski, and Yi Zhang",
+      "title": "Do GANs learn the distribution? some theory and empirics",
+      "venue": "In International Conference on Learning Representations, 2018 URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Borji2018",
+      "raw": "A. Borji. Pros and cons of gan evaluation measure. arXiv:1802.03446, Feb 2018. URL https://arxiv.org/pdf/1802.03446",
+      "authors": "A. Borji",
+      "title": "Pros and cons of gan evaluation measure",
+      "venue": "Feb 2018 URL",
+      "year": 2018,
+      "arxivId": "1802.03446",
+      "doi": null
+    },
+    {
+      "key": "Breuleux+al-TR-2010",
+      "raw": "Olivier Breuleux, Yoshua Bengio, and Pascal Vincent. Unlearning for better mixing. Technical Report 1349, Universit\\'e de Montr\\'eal/DIRO, 2010",
+      "authors": "Olivier Breuleux, Yoshua Bengio, and Pascal Vincent",
+      "title": "Unlearning for better mixing",
+      "venue": "Technical Report 1349, Universit\\'e de Montr\\'eal/DIRO, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "denton2015deep",
+      "raw": "Emily Denton, Soumith Chintala, Arthur Szlam, and Rob Fergus. Deep generative image models using a Laplacian pyramid of adversarial networks. NIPS, 2015",
+      "authors": "Emily Denton, Soumith Chintala, Arthur Szlam, and Rob Fergus",
+      "title": "Deep generative image models using a Laplacian pyramid of adversarial networks",
+      "venue": "NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Durugkar2017",
+      "raw": "Ishan Durugkar, Ian Gemp, and Sridhar Mahadevan. Generative multi-adversarial networks. ICLR, 2017. URL https://arxiv.org/pdf/1611.01673.pdf. arXiv:1611.01673",
+      "authors": "Ishan Durugkar, Ian Gemp, and Sridhar Mahadevan",
+      "title": "Generative multi-adversarial networks",
+      "venue": "ICLR, 2017 URL",
+      "year": 2017,
+      "arxivId": "1611.01673",
+      "doi": null
+    },
+    {
+      "key": "Elo1978",
+      "raw": "A. Elo. The rating of chessplayers, past and present. Arco Pub., New York, 1978. ISBN 0668047216 9780668047210",
+      "authors": "A. Elo",
+      "title": "The rating of chessplayers, past and present",
+      "venue": "Arco Pub., New York, 1978 ISBN 0668047216 9780668047210",
+      "year": 1978,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Glickman1995",
+      "raw": "M. Glickman. A comprehensive guide to chess ratings. 1995. URL http://www.glicko.net/research/acjpaper.pdf",
+      "authors": "M. Glickman",
+      "title": "A comprehensive guide to chess ratings",
+      "venue": "1995 URL",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Glickman2013",
+      "raw": "M. Glickman. Example of the glicko-2 system. Nov 2013. URL http://www.glicko.net/glicko/glicko2.pdf",
+      "authors": "M. Glickman",
+      "title": "Example of the glicko-2 system",
+      "venue": "Nov 2013 URL",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow-ICLR2015",
+      "raw": "Ian J. Goodfellow. On distinguishability criteria for estimating generative models. In International Conference on Learning Representations, Workshops Track, 2014",
+      "authors": "Ian J. Goodfellow",
+      "title": "On distinguishability criteria for estimating generative models",
+      "venue": "In International Conference on Learning Representations, Workshops Track, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Goodfellow-et-al-NIPS2014-small",
+      "raw": "Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. Generative adversarial networks. In NIPS'2014, 2014",
+      "authors": "Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio",
+      "title": "Generative adversarial networks",
+      "venue": "In NIPS'2014, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Grnarova2017",
+      "raw": "P. Grnarova, K. Levy, A. Lucchi, T. Hofmann, and A. Krause. An online learning approach to generative adversarial networks. arXiv:1706.03269, Jun 2017. URL https://arxiv.org/abs/1706.03269",
+      "authors": "P. Grnarova, K. Levy, A. Lucchi, T. Hofmann, and A. Krause",
+      "title": "An online learning approach to generative adversarial networks",
+      "venue": "Jun 2017 URL",
+      "year": 2017,
+      "arxivId": "1706.03269",
+      "doi": null
+    },
+    {
+      "key": "Gulrajani2017",
+      "raw": "I. Gulrajani. Improved training of wasserstein gans. https://github.com/igul222/improved_wgan_training, 2017. fa66c574a54c4916d27c55441d33753dcc78f6bc",
+      "authors": "I. Gulrajani",
+      "title": "Improved training of wasserstein gans",
+      "venue": "2017 fa66c574a54c4916d27c55441d33753dcc78f6bc",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Gutmann+Hyvarinen-2010",
+      "raw": "M. Gutmann and A. Hyvarinen. Noise-contrastive estimation: A new estimation principle for unnormalized statistical models. In aistats10, 2010",
+      "authors": "M. Gutmann and A. Hyvarinen",
+      "title": "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models",
+      "venue": "In aistats10, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Ha2017",
+      "raw": "D. Ha and D. Eck. A neural representation of sketch drawings. arXiv:1704.03477, Apr 2017. URL https://arxiv.org/abs/1704.03477",
+      "authors": "D. Ha and D. Eck",
+      "title": "A neural representation of sketch drawings",
+      "venue": "Apr 2017 URL",
+      "year": 2017,
+      "arxivId": "1704.03477",
+      "doi": null
+    },
+    {
+      "key": "Herbrich2007",
+      "raw": "Ralf Herbrich, Tom Minka, and Thore Graepel. Trueskill: a bayesian skill rating system. In Advances in neural information processing systems, pages 569--576, 2007",
+      "authors": "Ralf Herbrich, Tom Minka, and Thore Graepel",
+      "title": "Trueskill: a bayesian skill rating system",
+      "venue": "In Advances in neural information processing systems, pages 569--576, 2007",
+      "year": 2007,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Heusel2017",
+      "raw": "M. Heusel, H. Ramsauer, T. Unterthiner, B. Nessler, and S. Hochreiter. Gans trained by a two time-scale update rule converge to a local nash equilibrium. In Advances in Neural Information Processing Systems 30. 2017. URL http://papers.nips.cc/paper/7240-gans-trained-by-a-two-time-scale-update-rule-converge-to-a-local-nash-equilibrium.pdf",
+      "authors": "M. Heusel, H. Ramsauer, T. Unterthiner, B. Nessler, and S. Hochreiter",
+      "title": "Gans trained by a two time-scale update rule converge to a local nash equilibrium",
+      "venue": "In Advances in Neural Information Processing Systems 30. 2017 URL",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "im2016generating",
+      "raw": "Daniel Jiwoong Im, Chris Dongjoo Kim, Hui Jiang, and Roland Memisevic. Generating images with recurrent adversarial networks. arXiv preprint arXiv:1602.05110, 2016",
+      "authors": "Daniel Jiwoong Im, Chris Dongjoo Kim, Hui Jiang, and Roland Memisevic",
+      "title": "Generating images with recurrent adversarial networks",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1602.05110",
+      "doi": null
+    },
+    {
+      "key": "Karras2017",
+      "raw": "Tero Karras, Timo Aila, Samuli Laine, and Jaakko Lehtinen. Progressive growing of gans for improved quality, stability, and variation. CoRR, abs/1710.10196, 2017. URL http://arxiv.org/abs/1710.10196",
+      "authors": "Tero Karras, Timo Aila, Samuli Laine, and Jaakko Lehtinen",
+      "title": "Progressive growing of gans for improved quality, stability, and variation",
+      "venue": "CoRR, abs/1710.10196, 2017 URL",
+      "year": 2017,
+      "arxivId": "1710.10196",
+      "doi": null
+    },
+    {
+      "key": "Netzer2011",
+      "raw": "Y. Netzer, T. Wang, A. Coates, A. Bissacco, B. Wu, and A. Ng. Reading digits in natural images with unsupervised feature learning. In NIPS Workshop on Deep Learning and Unsupervised Feature Learning. 2011. URL http://ufldl.stanford.edu/housenumbers/",
+      "authors": "Y. Netzer, T. Wang, A. Coates, A. Bissacco, B. Wu, and A. Ng",
+      "title": "Reading digits in natural images with unsupervised feature learning",
+      "venue": "In NIPS Workshop on Deep Learning and Unsupervised Feature Learning. 2011 URL",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Openai2017",
+      "raw": "OpenAI. More on dota 2. https://blog.openai.com/more-on-dota-2/, Aug 2017",
+      "authors": "OpenAI",
+      "title": "More on dota 2",
+      "venue": "Aug 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Radford2015",
+      "raw": "A. Radford, L. Metz, and S. Chintala. Unsupervised representation learning with deep convolutional generative adversarial networks. arXiv:1511.06434, Nov 2015. URL https://arxiv.org/abs/1511.06434",
+      "authors": "A. Radford, L. Metz, and S. Chintala",
+      "title": "Unsupervised representation learning with deep convolutional generative adversarial networks",
+      "venue": "Nov 2015 URL",
+      "year": 2015,
+      "arxivId": "1511.06434",
+      "doi": null
+    },
+    {
+      "key": "Salimans2016",
+      "raw": "T. Salimans, I. Goodfellow, W. Zaremba, V. Cheung, A. Radford, and X. Chen. Improved techniques for training gans. In Advances in Neural Information Processing Systems 29. 2016. URL http://papers.nips.cc/paper/6125-improved-techniques-for-training-gans.pdf",
+      "authors": "T. Salimans, I. Goodfellow, W. Zaremba, V. Cheung, A. Radford, and X. Chen",
+      "title": "Improved techniques for training gans",
+      "venue": "In Advances in Neural Information Processing Systems 29. 2016 URL",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Salimans2017",
+      "raw": "T. Salimans, A. Karpathy, X. Chen, and D. Kingma. Pixelcnn++: Improving the pixelcnn with discretized logistic mixture likelihood and other modifications. arXiv:1701.05517, Jan 2017. URL https://arxiv.org/abs/1701.05517",
+      "authors": "T. Salimans, A. Karpathy, X. Chen, and D. Kingma",
+      "title": "Pixelcnn++: Improving the pixelcnn with discretized logistic mixture likelihood and other modifications",
+      "venue": "Jan 2017 URL",
+      "year": 2017,
+      "arxivId": "1701.05517",
+      "doi": null
+    },
+    {
+      "key": "santurkar2018a",
+      "raw": "Shibani Santurkar, Ludwig Schmidt, and Aleksander Madry. A classification-based perspective on GAN distributions, 2018. URL https://openreview.net/forum?id=S1FQEfZA-",
+      "authors": "Shibani Santurkar, Ludwig Schmidt, and Aleksander Madry",
+      "title": "A classification-based perspective on GAN distributions, 2018",
+      "venue": "URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Silberman2015",
+      "raw": "S. Silberman, K. Milland, R. LaPlante, J. Ross, and L. Irani. Stop citing ross et al. 2010, ``who are the crowdworkers''? https://medium.com/@silberman/stop-citing-ross-et-al-2010-who-are-the-crowdworkers-b3b9b1e8d300, Mar 2015",
+      "authors": "S. Silberman, K. Milland, R. LaPlante, J. Ross, and L. Irani",
+      "title": "Stop citing ross et al. 2010, ``who are the crowdworkers''?",
+      "venue": "Mar 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Silver2016",
+      "raw": "David Silver, Aja Huang, Chris J Maddison, Arthur Guez, Laurent Sifre, George Van Den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda Panneershelvam, Marc Lanctot, et al. Mastering the game of go with deep neural networks and tree search. nature, 529 0 (7587): 0 484, 2016",
+      "authors": "David Silver, Aja Huang, Chris J Maddison, Arthur Guez, Laurent Sifre, George Van Den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda Panneershelvam, Marc Lanctot, et al",
+      "title": "Mastering the game of go with deep neural networks and tree search",
+      "venue": "nature, 529 0 (7587): 0 484, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Szegedy-et-al-2015",
+      "raw": "C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna. Rethinking the Inception Architecture for Computer Vision. ArXiv e-prints, December 2015",
+      "authors": "C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, and Z. Wojna",
+      "title": "Rethinking the Inception Architecture for Computer Vision",
+      "venue": "ArXiv e-prints, December 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Theis2015d",
+      "raw": "L. Theis, A. van den Oord, and M. Bethge. A note on the evaluation of generative models. arXiv:1511.01844, 2016. URL http://arxiv.org/abs/1511.01844",
+      "authors": "L. Theis, A. van den Oord, and M. Bethge",
+      "title": "A note on the evaluation of generative models",
+      "venue": "2016 URL",
+      "year": 2016,
+      "arxivId": "1511.01844",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1097,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86599731445312,
+            "y0": 249.34353637695312,
+            "x1": 469.79095458984375,
+            "y1": 259.3904724121094
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 260.27880859375,
+            "x1": 348.10906982421875,
+            "y1": 270.29107666015625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3587,
+      "numbers": 0,
+      "citations": 7,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 452.8872985839844,
+            "x1": 313.63525390625,
+            "y1": 462.94903564453125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Context and Related Work",
+      "chars": 6281,
+      "numbers": 1,
+      "citations": 18,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.64099884033203,
+            "y0": 346.8403015136719,
+            "x1": 504.0042724609375,
+            "y1": 356.90203857421875
+          },
+          {
+            "x0": 108.0,
+            "y0": 357.9004211425781,
+            "x1": 138.6471710205078,
+            "y1": 367.76287841796875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Methods",
+      "chars": 1104,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Tournament win rate",
+      "chars": 1090,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.64099884033203,
+            "y0": 586.8902587890625,
+            "x1": 279.7015075683594,
+            "y1": 596.9520263671875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Skill rating",
+      "chars": 1983,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 515.956298828125,
+            "x1": 449.1295166015625,
+            "y1": 526.01806640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "results",
+      "title": "Within-trajectory tournaments to monitor GAN training",
+      "chars": 4625,
+      "numbers": 7,
+      "citations": 6,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 175.45675659179688,
+            "x1": 503.9975891113281,
+            "y1": 185.37942504882812
+          },
+          {
+            "x0": 108.0,
+            "y0": 186.41139221191406,
+            "x1": 185.60888671875,
+            "y1": 196.27386474609375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Tournaments to compare GANs",
+      "chars": 6614,
+      "numbers": 23,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 401.5445861816406,
+            "x1": 504.0010986328125,
+            "y1": 411.5320739746094
+          },
+          {
+            "x0": 108.0,
+            "y0": 412.3973083496094,
+            "x1": 136.50399780273438,
+            "y1": 422.45904541015625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Toy problem: evaluating near-perfect generators",
+      "chars": 3092,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 668.748291015625,
+            "x1": 504.0031433105469,
+            "y1": 678.790283203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 679.6422729492188,
+            "x1": 215.10595703125,
+            "y1": 689.7040405273438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Future work",
+      "chars": 3154,
+      "numbers": 6,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 679.7174682617188,
+            "x1": 450.2650146484375,
+            "y1": 689.6800537109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgments",
+      "chars": 220,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 296.02069091796875,
+            "y0": 92.96231079101562,
+            "x1": 504.003662109375,
+            "y1": 103.02404022216797
+          },
+          {
+            "x0": 108.0,
+            "y0": 103.87130737304688,
+            "x1": 505.7454833984375,
+            "y1": 113.93303680419922
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 1,
+      "compares": 0,
+      "background": 24,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "Glickman2013",
+      "stance": "inherits",
+      "cue": "we use",
+      "sentence": "Throughout this paper, we use the Glicko2 system [Glickman 2013].",
+      "section": "Skill rating",
+      "sectionKind": "method",
+      "ordinal": 21,
+      "title": "Example of the glicko-2 system",
+      "authors": "M. Glickman",
+      "year": 2013,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 641.4352416992188,
+            "x1": 311.8020324707031,
+            "y1": 651.4970092773438
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Glickman2013",
+        "stance": "inherits",
+        "cue": "we use",
+        "sentence": "Throughout this paper, we use the Glicko2 system [Glickman 2013].",
+        "section": "Skill rating",
+        "sectionKind": "method",
+        "ordinal": 21,
+        "title": "Example of the glicko-2 system",
+        "authors": "M. Glickman",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.69100189208984,
+              "y0": 641.4352416992188,
+              "x1": 311.8020324707031,
+              "y1": 651.4970092773438
+            }
+          ]
+        }
+      },
+      {
+        "key": "Salimans2016",
+        "stance": "contests",
+        "cue": "but ignores",
+        "sentence": "For example, Inception Score assesses the ability of a model to generate a wide variety of recognizable classes [Salimans et al. 2016] but ignores all other aspects of the generated samples.",
+        "section": "Context and Related Work",
+        "sectionKind": "related",
+        "ordinal": 11,
+        "title": "Improved techniques for training gans",
+        "authors": "T. Salimans, I. Goodfellow, W. Zaremba, V. Cheung, A. Radford, and X. Chen",
+        "year": 2016,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 248.46726989746094,
+              "y0": 548.7332763671875,
+              "x1": 503.9974060058594,
+              "y1": 558.7950439453125
+            },
+            {
+              "x0": 108.0,
+              "y0": 559.7933959960938,
+              "x1": 291.238525390625,
+              "y1": 569.6558837890625
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We provide evidence that GAN discriminators can successfully judge samples from generators other than the one they trained against; however, this is an empirical claim that our method works in practice, and we do not attempt a theoretical explanation for when and why out-of-distribution discrimination should be expected to work.",
+      "anchorText": "We provide evidence that GAN discriminators can successfully judge samples from generators other than the one they trained against; however, this is an empirical claim that our method works in practice, and we do not attempt a theoretical explanation for when and why out-of-distribution discrimination should be expected to work.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we do not attempt",
+      "section": "Context and Related Work",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.86013793945312,
+            "y0": 259.8362731933594,
+            "x1": 503.99749755859375,
+            "y1": 269.89801025390625
+          },
+          {
+            "x0": 108.0,
+            "y0": 270.7452697753906,
+            "x1": 503.997314453125,
+            "y1": 280.8070068359375
+          },
+          {
+            "x0": 108.0,
+            "y0": 281.654296875,
+            "x1": 504.3531494140625,
+            "y1": 291.7160339355469
+          },
+          {
+            "x0": 108.0,
+            "y0": 292.5707702636719,
+            "x1": 359.9255065917969,
+            "y1": 302.6226501464844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Overall, we believe that our new conceptual approach of latent skill estimation holds promise as a complementary evaluation technique.",
+      "anchorText": "Overall, we believe that our new conceptual approach of latent skill estimation holds promise as a complementary evaluation technique.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Context and Related Work",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 488.98101806640625,
+            "x1": 503.99530029296875,
+            "y1": 499.037841796875
+          },
+          {
+            "x0": 108.0,
+            "y0": 499.9614562988281,
+            "x1": 257.18994140625,
+            "y1": 509.924072265625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We run the same within-trajectory tournament as in Figure [ref](a), but we omit matchups between checkpoints from far-apart iterations.",
+      "anchorText": "(a), but we omit matchups between checkpoints from far-apart iterations.",
+      "kind": "simplifying",
+      "support": "shown",
+      "cue": "we omit",
+      "section": "Within-trajectory tournaments to monitor GAN training",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [
+        "fig-monitor"
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 353.2558288574219,
+            "y0": 393.2572937011719,
+            "x1": 503.996826171875,
+            "y1": 403.31903076171875
+          },
+          {
+            "x0": 108.0,
+            "y0": 404.20001220703125,
+            "x1": 257.5315246582031,
+            "y1": 414.21728515625
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In our anecdotal judgment, we believe that our method's ranking agrees most with our subjective visual assessment of sample quality.",
+      "anchorText": "In our anecdotal judgment, we believe that our method's ranking agrees most with our subjective visual assessment of sample quality.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Tournaments to compare GANs",
+      "sectionKind": "results",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 334.05059814453125,
+            "y0": 434.6466979980469,
+            "x1": 504.0028381347656,
+            "y1": 444.6142578125
+          },
+          {
+            "x0": 108.0,
+            "y0": 445.5604553222656,
+            "x1": 468.0682678222656,
+            "y1": 455.5230712890625
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 4,
+    "cited": 0,
+    "shown": 1,
+    "bare": 3
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "stat.ML",
+    "primaryName": "Machine Learning (Statistics)",
+    "categories": [
+      "stat.ML",
+      "cs.LG"
+    ],
+    "published": "2018-08-14",
+    "authors": [
+      "Catherine Olsson",
+      "Surya Bhupatiraju",
+      "Tom Brown",
+      "Augustus Odena",
+      "Ian Goodfellow"
+    ]
+  }
+}

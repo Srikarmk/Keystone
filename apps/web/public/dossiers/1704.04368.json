@@ -1,0 +1,2709 @@
+{
+  "id": "1704.04368",
+  "title": "Get To The Point: Summarization with Pointer-Generator Networks",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "ROUGE F and METEOR scores on the test set. Models and baselines in the top half are abstractive, while those in the bottom half are extractive. Those marked with * were trained and evaluated on the anonymized dataset, and so are not strictly comparable to our results on the original text. All our ROUGE scores have a 95% confidence interval of at most as reported by the official ROUGE script. The METEOR improvement from the 50k baseline to the pointer-generator model, and from the pointer-generator to the pointer-generator+coverage model, were both found to be statistically significant using an approximate randomization test with .",
+    "supported": 4,
+    "share": 0.235,
+    "summary": "4 of the paper's headline numbers trace to Table 1"
+  },
+  "codeUrl": "https://github.com/abisee/pointer-generator",
+  "coverage": {
+    "claims": 17,
+    "supported": 4,
+    "declared": 4,
+    "unsupported": 9,
+    "mismatched": 0,
+    "rate": 0.235
+  },
+  "claims": [
+    {
+      "value": "2 ROUGE",
+      "section": "abstract",
+      "sentence": "We apply our model to the CNN / Daily Mail summarization task, outperforming the current abstractive state-of-the-art by at least 2 ROUGE points.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "ROUGE F and METEOR scores on the test set. Models and baselines in the top half are abstractive, while those in the bottom half are extractive. Those marked with * were trained and evaluated on the anonymized dataset, and so are not strictly comparable to our results on the original text. All our ROUGE scores have a 95% confidence interval of at most as reported by the official ROUGE script. The METEOR improvement from the 50k baseline to the pointer-generator model, and from the pointer-generator to the pointer-generator+coverage model, were both found to be statistically significant using an approximate randomization test with .",
+      "row": "L",
+      "column": "2",
+      "cell": "2",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 230.10626220703125,
+            "y0": 507.5248107910156,
+            "x1": 273.2626647949219,
+            "y1": 518.4338989257812
+          },
+          {
+            "x0": 89.00796508789062,
+            "y0": 521.0748291015625,
+            "x1": 273.2601623535156,
+            "y1": 531.98388671875
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 534.6238403320312,
+            "x1": 273.26263427734375,
+            "y1": 545.5328979492188
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 548.1728515625,
+            "x1": 273.2626953125,
+            "y1": 559.0819091796875
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 561.7218627929688,
+            "x1": 158.2698516845703,
+            "y1": 572.6309204101562
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "+1.1 ROUGE",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "+2.0 ROUGE",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "ROUGE F and METEOR scores on the test set. Models and baselines in the top half are abstractive, while those in the bottom half are extractive. Those marked with * were trained and evaluated on the anonymized dataset, and so are not strictly comparable to our results on the original text. All our ROUGE scores have a 95% confidence interval of at most as reported by the official ROUGE script. The METEOR improvement from the 50k baseline to the pointer-generator model, and from the pointer-generator to the pointer-generator+coverage model, were both found to be statistically significant using an approximate randomization test with .",
+      "row": "L",
+      "column": "2",
+      "cell": "2",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "+1.1 ROUGE",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "+4.07 ROUGE",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "+3.98 ROUGE",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "+3.73 ROUGE",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "2 ROUGE",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "ROUGE F and METEOR scores on the test set. Models and baselines in the top half are abstractive, while those in the bottom half are extractive. Those marked with * were trained and evaluated on the anonymized dataset, and so are not strictly comparable to our results on the original text. All our ROUGE scores have a 95% confidence interval of at most as reported by the official ROUGE script. The METEOR improvement from the 50k baseline to the pointer-generator model, and from the pointer-generator to the pointer-generator+coverage model, were both found to be statistically significant using an approximate randomization test with .",
+      "row": "L",
+      "column": "2",
+      "cell": "2",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "1%",
+      "section": "abstract",
+      "sentence": "Despite the brevity of the coverage training phase (about 1% of the total training time), the repetition problem is almost completely eliminated, which can be seen both qualitatively (Figure ) and quantitatively (Figure ).",
+      "status": "declared_figure",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "fig_firstpage",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.02911376953125,
+            "y0": 268.1726379394531,
+            "x1": 290.2691955566406,
+            "y1": 279.08172607421875
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 281.7216491699219,
+            "x1": 290.2691955566406,
+            "y1": 292.6307373046875
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 295.2706604003906,
+            "x1": 290.2691650390625,
+            "y1": 306.17974853515625
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 308.8196716308594,
+            "x1": 290.26922607421875,
+            "y1": 319.728759765625
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0 ROUGE",
+      "section": "abstract",
+      "sentence": "For example, smugglers profit from desperate migrants is a valid alternative abstractive summary for the first example in Figure , but it scores 0 ROUGE with respect to the reference summary.",
+      "status": "declared_figure",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "fig_abs_ref_exs",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 340.9959716796875,
+            "y0": 78.85236358642578,
+            "x1": 525.5438842773438,
+            "y1": 89.76145935058594
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 92.59274291992188,
+            "x1": 525.5474853515625,
+            "y1": 103.50184631347656
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 106.14175415039062,
+            "x1": 493.50518798828125,
+            "y1": 117.05085754394531
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "1 METEOR",
+      "section": "abstract",
+      "sentence": "We observe that all our models receive over 1 METEOR point boost by the inclusion of stem, synonym and paraphrase matching, indicating that they may be performing some abstraction.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "ROUGE F and METEOR scores on the test set. Models and baselines in the top half are abstractive, while those in the bottom half are extractive. Those marked with * were trained and evaluated on the anonymized dataset, and so are not strictly comparable to our results on the original text. All our ROUGE scores have a 95% confidence interval of at most as reported by the official ROUGE script. The METEOR improvement from the 50k baseline to the pointer-generator model, and from the pointer-generator to the pointer-generator+coverage model, were both found to be statistically significant using an approximate randomization test with .",
+      "row": "L",
+      "column": "ROUGE 1",
+      "cell": "1",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 369.4032897949219,
+            "y0": 420.7378845214844,
+            "x1": 525.545166015625,
+            "y1": 431.64697265625
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 434.2868957519531,
+            "x1": 525.5452270507812,
+            "y1": 445.19598388671875
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 447.8359069824219,
+            "x1": 525.5452880859375,
+            "y1": 458.7449951171875
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 461.3849182128906,
+            "x1": 525.5452270507812,
+            "y1": 472.29400634765625
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 474.9349060058594,
+            "x1": 347.5741882324219,
+            "y1": 485.843994140625
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "35%",
+      "section": "abstract",
+      "sentence": "In particular, Figure shows that our final model copies whole article sentences 35% of the time; by comparison the reference summaries do so only 1.3% of the time.",
+      "status": "declared_figure",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "fig_abstractiveness",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 194.91372680664062,
+            "y0": 509.0026550292969,
+            "x1": 290.2701416015625,
+            "y1": 519.9117431640625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 522.5516967773438,
+            "x1": 290.270263671875,
+            "y1": 533.4607543945312
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 536.1007080078125,
+            "x1": 290.2702941894531,
+            "y1": 547.009765625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 549.6497192382812,
+            "x1": 184.7029266357422,
+            "y1": 560.5587768554688
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "1.3%",
+      "section": "abstract",
+      "sentence": "In particular, Figure shows that our final model copies whole article sentences 35% of the time; by comparison the reference summaries do so only 1.3% of the time.",
+      "status": "declared_figure",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "fig_abstractiveness",
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 194.91372680664062,
+            "y0": 509.0026550292969,
+            "x1": 290.2701416015625,
+            "y1": 519.9117431640625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 522.5516967773438,
+            "x1": 290.270263671875,
+            "y1": 533.4607543945312
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 536.1007080078125,
+            "x1": 290.2702941894531,
+            "y1": 547.009765625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 549.6497192382812,
+            "x1": 184.7029266357422,
+            "y1": 560.5587768554688
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "65%",
+      "section": "abstract",
+      "sentence": "However, we observe that the other 65% encompasses a range of abstractive techniques.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 232.408447265625,
+            "y0": 576.7487182617188,
+            "x1": 290.270263671875,
+            "y1": 587.6577758789062
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 590.2977294921875,
+            "x1": 290.270263671875,
+            "y1": 601.206787109375
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 603.8466796875,
+            "x1": 171.0992889404297,
+            "y1": 614.7557373046875
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0.30",
+      "section": "abstract",
+      "sentence": "During training, starts with a value of about 0.30 then increases, converging to about 0.53 by the end of training.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 442.83099365234375,
+            "y0": 160.33871459960938,
+            "x1": 525.5436401367188,
+            "y1": 171.24781799316406
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 173.88772583007812,
+            "x1": 525.5462036132812,
+            "y1": 184.7968292236328
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 187.43673706054688,
+            "x1": 433.9534606933594,
+            "y1": 198.34584045410156
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0.53",
+      "section": "abstract",
+      "sentence": "During training, starts with a value of about 0.30 then increases, converging to about 0.53 by the end of training.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 442.83099365234375,
+            "y0": 160.33871459960938,
+            "x1": 525.5436401367188,
+            "y1": 171.24781799316406
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 173.88772583007812,
+            "x1": 525.5462036132812,
+            "y1": 184.7968292236328
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 187.43673706054688,
+            "x1": 433.9534606933594,
+            "y1": 198.34584045410156
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "0.17",
+      "section": "abstract",
+      "sentence": "However at test time, is heavily skewed towards copying, with a mean value of 0.17.",
+      "status": "untraced",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 352.0290222167969,
+            "y0": 228.08474731445312,
+            "x1": 525.5490112304688,
+            "y1": 238.9938507080078
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 241.63375854492188,
+            "x1": 411.2843322753906,
+            "y1": 252.54286193847656
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1704.04368",
+  "numbers": [
+    {
+      "value": "2 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "We apply our model to the CNN / Daily Mail summarization task, outperforming the current abstractive state-of-the-art by at least 2 ROUGE points.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "L",
+      "cell": "2",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 230.10626220703125,
+            "y0": 507.5248107910156,
+            "x1": 273.2626647949219,
+            "y1": 518.4338989257812
+          },
+          {
+            "x0": 89.00796508789062,
+            "y0": 521.0748291015625,
+            "x1": 273.2601623535156,
+            "y1": 531.98388671875
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 534.6238403320312,
+            "x1": 273.26263427734375,
+            "y1": 545.5328979492188
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 548.1728515625,
+            "x1": 273.2626953125,
+            "y1": 559.0819091796875
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 561.7218627929688,
+            "x1": 158.2698516845703,
+            "y1": 572.6309204101562
+          }
+        ]
+      }
+    },
+    {
+      "value": "+1.1 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "+2.0 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "L",
+      "cell": "2",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "+1.1 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "+4.07 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "+3.98 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "+3.73 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "2 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Nevertheless, given that the disparity in the lead-3 scores is (+1.1 ROUGE-1, +2.0 ROUGE-2, +1.1 ROUGE-L) points respectively, and our best model scores exceed nallapati2016abstractive nallapati2016abstractive by (+4.07 ROUGE-1, +3.98 ROUGE-2, +3.73 ROUGE-L) points, we may estimate that we outperform the only previous abstractive system by at least 2 ROUGE points all-round.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "L",
+      "cell": "2",
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 204.19647216796875,
+            "y0": 659.864013671875,
+            "x1": 290.2692565917969,
+            "y1": 670.7730712890625
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 673.4140014648438,
+            "x1": 290.26922607421875,
+            "y1": 684.3230590820312
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 686.9630126953125,
+            "x1": 290.26922607421875,
+            "y1": 697.8720703125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 700.511962890625,
+            "x1": 290.2691650390625,
+            "y1": 711.4210205078125
+          },
+          {
+            "x0": 71.99996948242188,
+            "y0": 714.0609741210938,
+            "x1": 100.17817687988281,
+            "y1": 724.9700317382812
+          }
+        ]
+      }
+    },
+    {
+      "value": "1%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Despite the brevity of the coverage training phase (about 1% of the total training time), the repetition problem is almost completely eliminated, which can be seen both qualitatively (Figure ) and quantitatively (Figure ).",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.02911376953125,
+            "y0": 268.1726379394531,
+            "x1": 290.2691955566406,
+            "y1": 279.08172607421875
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 281.7216491699219,
+            "x1": 290.2691955566406,
+            "y1": 292.6307373046875
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 295.2706604003906,
+            "x1": 290.2691650390625,
+            "y1": 306.17974853515625
+          },
+          {
+            "x0": 71.99999237060547,
+            "y0": 308.8196716308594,
+            "x1": 290.26922607421875,
+            "y1": 319.728759765625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0 ROUGE",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "For example, smugglers profit from desperate migrants is a valid alternative abstractive summary for the first example in Figure , but it scores 0 ROUGE with respect to the reference summary.",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 340.9959716796875,
+            "y0": 78.85236358642578,
+            "x1": 525.5438842773438,
+            "y1": 89.76145935058594
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 92.59274291992188,
+            "x1": 525.5474853515625,
+            "y1": 103.50184631347656
+          },
+          {
+            "x0": 307.2760009765625,
+            "y0": 106.14175415039062,
+            "x1": 493.50518798828125,
+            "y1": 117.05085754394531
+          }
+        ]
+      }
+    },
+    {
+      "value": "1 METEOR",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "We observe that all our models receive over 1 METEOR point boost by the inclusion of stem, synonym and paraphrase matching, indicating that they may be performing some abstraction.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "L",
+      "cell": "1",
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 369.4032897949219,
+            "y0": 420.7378845214844,
+            "x1": 525.545166015625,
+            "y1": 431.64697265625
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 434.2868957519531,
+            "x1": 525.5452270507812,
+            "y1": 445.19598388671875
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 447.8359069824219,
+            "x1": 525.5452880859375,
+            "y1": 458.7449951171875
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 461.3849182128906,
+            "x1": 525.5452270507812,
+            "y1": 472.29400634765625
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 474.9349060058594,
+            "x1": 347.5741882324219,
+            "y1": 485.843994140625
+          }
+        ]
+      }
+    },
+    {
+      "value": "35%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "In particular, Figure shows that our final model copies whole article sentences 35% of the time; by comparison the reference summaries do so only 1.3% of the time.",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 194.91372680664062,
+            "y0": 509.0026550292969,
+            "x1": 290.2701416015625,
+            "y1": 519.9117431640625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 522.5516967773438,
+            "x1": 290.270263671875,
+            "y1": 533.4607543945312
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 536.1007080078125,
+            "x1": 290.2702941894531,
+            "y1": 547.009765625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 549.6497192382812,
+            "x1": 184.7029266357422,
+            "y1": 560.5587768554688
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.3%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "In particular, Figure shows that our final model copies whole article sentences 35% of the time; by comparison the reference summaries do so only 1.3% of the time.",
+      "status": "declared_figure",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 194.91372680664062,
+            "y0": 509.0026550292969,
+            "x1": 290.2701416015625,
+            "y1": 519.9117431640625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 522.5516967773438,
+            "x1": 290.270263671875,
+            "y1": 533.4607543945312
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 536.1007080078125,
+            "x1": 290.2702941894531,
+            "y1": 547.009765625
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 549.6497192382812,
+            "x1": 184.7029266357422,
+            "y1": 560.5587768554688
+          }
+        ]
+      }
+    },
+    {
+      "value": "65%",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "However, we observe that the other 65% encompasses a range of abstractive techniques.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 232.408447265625,
+            "y0": 576.7487182617188,
+            "x1": 290.270263671875,
+            "y1": 587.6577758789062
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 590.2977294921875,
+            "x1": 290.270263671875,
+            "y1": 601.206787109375
+          },
+          {
+            "x0": 72.00101470947266,
+            "y0": 603.8466796875,
+            "x1": 171.0992889404297,
+            "y1": 614.7557373046875
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.30",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "During training, starts with a value of about 0.30 then increases, converging to about 0.53 by the end of training.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 442.83099365234375,
+            "y0": 160.33871459960938,
+            "x1": 525.5436401367188,
+            "y1": 171.24781799316406
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 173.88772583007812,
+            "x1": 525.5462036132812,
+            "y1": 184.7968292236328
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 187.43673706054688,
+            "x1": 433.9534606933594,
+            "y1": 198.34584045410156
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.53",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "During training, starts with a value of about 0.30 then increases, converging to about 0.53 by the end of training.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 442.83099365234375,
+            "y0": 160.33871459960938,
+            "x1": 525.5436401367188,
+            "y1": 171.24781799316406
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 173.88772583007812,
+            "x1": 525.5462036132812,
+            "y1": 184.7968292236328
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 187.43673706054688,
+            "x1": 433.9534606933594,
+            "y1": 198.34584045410156
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.17",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "However at test time, is heavily skewed towards copying, with a mean value of 0.17.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 352.0290222167969,
+            "y0": 228.08474731445312,
+            "x1": 525.5490112304688,
+            "y1": 238.9938507080078
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 241.63375854492188,
+            "x1": 411.2843322753906,
+            "y1": 252.54286193847656
+          }
+        ]
+      }
+    },
+    {
+      "value": "400 tokens",
+      "kind": "configuration",
+      "section": "abstract",
+      "sentence": "Indeed, we found that using only the first 400 tokens (about 20 sentences) of the article yielded significantly higher ROUGE scores than using the first 800 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 94.36365509033203,
+            "y0": 564.5667724609375,
+            "x1": 290.2692565917969,
+            "y1": 575.475830078125
+          },
+          {
+            "x0": 72.0,
+            "y0": 578.1157836914062,
+            "x1": 290.2692565917969,
+            "y1": 589.0248413085938
+          },
+          {
+            "x0": 72.0,
+            "y0": 591.664794921875,
+            "x1": 290.269287109375,
+            "y1": 602.5738525390625
+          },
+          {
+            "x0": 72.0,
+            "y0": 605.2137451171875,
+            "x1": 141.89459228515625,
+            "y1": 616.122802734375
+          }
+        ]
+      }
+    },
+    {
+      "value": "800 tokens",
+      "kind": "configuration",
+      "section": "abstract",
+      "sentence": "Indeed, we found that using only the first 400 tokens (about 20 sentences) of the article yielded significantly higher ROUGE scores than using the first 800 tokens.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 94.36365509033203,
+            "y0": 564.5667724609375,
+            "x1": 290.2692565917969,
+            "y1": 575.475830078125
+          },
+          {
+            "x0": 72.0,
+            "y0": 578.1157836914062,
+            "x1": 290.2692565917969,
+            "y1": 589.0248413085938
+          },
+          {
+            "x0": 72.0,
+            "y0": 591.664794921875,
+            "x1": 290.269287109375,
+            "y1": 602.5738525390625
+          },
+          {
+            "x0": 72.0,
+            "y0": 605.2137451171875,
+            "x1": 141.89459228515625,
+            "y1": 616.122802734375
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "ROUGE F and METEOR scores on the test set. Models and baselines in the top half are abstractive, while those in the bottom half are extractive. Those marked with * were trained and evaluated on the anonymized dataset, and so are not strictly comparable to our results on the original text. All our ROUGE scores have a 95% confidence interval of at most as reported by the official ROUGE script. The METEOR improvement from the 50k baseline to the pointer-generator model, and from the pointer-generator to the pointer-generator+coverage model, were both found to be statistically significant using an approximate randomization test with .",
+      "label": "tab_results",
+      "numericCells": 36,
+      "supports": 4,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ROUGE",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "METEOR",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "L",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "exact match",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "+ stem/syn/para",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "abstractive model *",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "35.46",
+            "value": "35.46",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.30",
+            "value": "13.30",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "32.65",
+            "value": "32.65",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "seq-to-seq + attn baseline (150k vocab)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.49",
+            "value": "30.49",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.17",
+            "value": "11.17",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.08",
+            "value": "28.08",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.65",
+            "value": "11.65",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.86",
+            "value": "12.86",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "seq-to-seq + attn baseline (50k vocab)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "31.33",
+            "value": "31.33",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.81",
+            "value": "11.81",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "28.83",
+            "value": "28.83",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.03",
+            "value": "12.03",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.20",
+            "value": "13.20",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "pointer-generator",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.44",
+            "value": "36.44",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.66",
+            "value": "15.66",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33.42",
+            "value": "33.42",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.35",
+            "value": "15.35",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.65",
+            "value": "16.65",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "pointer-generator + coverage",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "39.53",
+            "value": "39.53",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "17.28",
+            "value": "17.28",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "36.38",
+            "value": "36.38",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "17.32",
+            "value": "17.32",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "18.72",
+            "value": "18.72",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "lead-3 baseline (ours)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "40.34",
+            "value": "40.34",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "17.70",
+            "value": "17.70",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36.57",
+            "value": "36.57",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "20.48",
+            "value": "20.48",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "22.21",
+            "value": "22.21",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "lead-3 baseline *",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "39.2",
+            "value": "39.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.7",
+            "value": "15.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "35.5",
+            "value": "35.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "extractive model *",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "39.6",
+            "value": "39.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "16.2",
+            "value": "16.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "35.3",
+            "value": "35.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\hlpgen": "\\fboxsep1pt \\colorbox{ggreen!#2}{\\strut #1}",
+    "\\hlcov": "\\fboxsep1pt \\colorbox{gyellow!#2}{\\strut #1}",
+    "\\error": "\\textcolor{gred}{\\textbf{#1}}",
+    "\\fph": "\\textcolor{gblue}{\\textbf{#1}}",
+    "\\reph": "\\textcolor{ggreen}{\\textbf{#1}}",
+    "\\novelh": "\\textcolor{gblue}{\\textbf{#1}}",
+    "\\comment": "\\textcolor{red}{#1}",
+    "\\pgen": "p_{\\text{gen}}",
+    "\\pvocab": "P_{\\text{vocab}}"
+  },
+  "references": [
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015. Neural machine translation by jointly learning to align and translate. In International Conference on Learning Representations\\/",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. 2015",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "In International Conference on Learning Representations\\/",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chen2016distraction",
+      "raw": "Qian Chen, Xiaodan Zhu, Zhenhua Ling, Si Wei, and Hui Jiang. 2016. Distraction-based neural networks for modeling documents. In International Joint Conference on Artificial Intelligence\\/",
+      "authors": "Qian Chen, Xiaodan Zhu, Zhenhua Ling, Si Wei, and Hui Jiang. 2016",
+      "title": "Distraction-based neural networks for modeling documents",
+      "venue": "In International Joint Conference on Artificial Intelligence\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cheung2014unsupervised",
+      "raw": "Jackie Chi Kit Cheung and Gerald Penn. 2014. Unsupervised sentence enhancement for automatic summarization. In Empirical Methods in Natural Language Processing\\/",
+      "authors": "Jackie Chi Kit Cheung and Gerald Penn. 2014",
+      "title": "Unsupervised sentence enhancement for automatic summarization",
+      "venue": "In Empirical Methods in Natural Language Processing\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chopraabstractive",
+      "raw": "Sumit Chopra, Michael Auli, and Alexander M Rush. 2016. Abstractive sentence summarization with attentive recurrent neural networks. In North American Chapter of the Association for Computational Linguistics\\/",
+      "authors": "Sumit Chopra, Michael Auli, and Alexander M Rush. 2016",
+      "title": "Abstractive sentence summarization with attentive recurrent neural networks",
+      "venue": "In North American Chapter of the Association for Computational Linguistics\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "denkowski:lavie:meteor-wmt:2014",
+      "raw": "Michael Denkowski and Alon Lavie. 2014. Meteor universal: Language specific translation evaluation for any target language. In EACL 2014 Workshop on Statistical Machine Translation\\/",
+      "authors": "Michael Denkowski and Alon Lavie. 2014",
+      "title": "Meteor universal: Language specific translation evaluation for any target language",
+      "venue": "In EACL 2014 Workshop on Statistical Machine Translation\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "duchi2011adaptive",
+      "raw": "John Duchi, Elad Hazan, and Yoram Singer. 2011. Adaptive subgradient methods for online learning and stochastic optimization. Journal of Machine Learning Research\\/ 12:2121--2159",
+      "authors": "John Duchi, Elad Hazan, and Yoram Singer. 2011",
+      "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+      "venue": "Journal of Machine Learning Research\\/ 12:2121--2159",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gu2016incorporating",
+      "raw": "Jiatao Gu, Zhengdong Lu, Hang Li, and Victor OK Li. 2016. Incorporating copying mechanism in sequence-to-sequence learning. In Association for Computational Linguistics\\/",
+      "authors": "Jiatao Gu, Zhengdong Lu, Hang Li, and Victor OK Li. 2016",
+      "title": "Incorporating copying mechanism in sequence-to-sequence learning",
+      "venue": "In Association for Computational Linguistics\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "gulcehre2016pointing",
+      "raw": "Caglar Gulcehre, Sungjin Ahn, Ramesh Nallapati, Bowen Zhou, and Yoshua Bengio. 2016. Pointing the unknown words. In Association for Computational Linguistics\\/",
+      "authors": "Caglar Gulcehre, Sungjin Ahn, Ramesh Nallapati, Bowen Zhou, and Yoshua Bengio. 2016",
+      "title": "Pointing the unknown words",
+      "venue": "In Association for Computational Linguistics\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hermann2015teaching",
+      "raw": "Karl Moritz Hermann, Tomas Kocisky, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015. Teaching machines to read and comprehend. In Neural Information Processing Systems\\/",
+      "authors": "Karl Moritz Hermann, Tomas Kocisky, Edward Grefenstette, Lasse Espeholt, Will Kay, Mustafa Suleyman, and Phil Blunsom. 2015",
+      "title": "Teaching machines to read and comprehend",
+      "venue": "In Neural Information Processing Systems\\/",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jing2000sentence",
+      "raw": "Hongyan Jing. 2000. Sentence reduction for automatic text summarization. In Applied natural language processing\\/",
+      "authors": "Hongyan Jing. 2000",
+      "title": "Sentence reduction for automatic text summarization",
+      "venue": "In Applied natural language processing\\/",
+      "year": 2000,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "koehn2009statistical",
+      "raw": "Philipp Koehn. 2009. Statistical machine translation\\/. Cambridge University Press",
+      "authors": "Philipp Koehn. 2009",
+      "title": "Statistical machine translation\\/",
+      "venue": "Cambridge University Press",
+      "year": 2009,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kupiec1995trainable",
+      "raw": "Julian Kupiec, Jan Pedersen, and Francine Chen. 1995. A trainable document summarizer. In International ACM SIGIR conference on Research and development in information retrieval\\/",
+      "authors": "Julian Kupiec, Jan Pedersen, and Francine Chen. 1995",
+      "title": "A trainable document summarizer",
+      "venue": "In International ACM SIGIR conference on Research and development in information retrieval\\/",
+      "year": 1995,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2004looking",
+      "raw": "Chin-Yew Lin. 2004. Looking for a few good metrics: Automatic summarization evaluation-how many samples are enough? In NACSIS/NII Test Collection for Information Retrieval (NTCIR) Workshop\\/",
+      "authors": "Chin-Yew Lin. 2004",
+      "title": "Looking for a few good metrics: Automatic summarization evaluation-how many samples are enough?",
+      "venue": "In NACSIS/NII Test Collection for Information Retrieval (NTCIR) Workshop\\/",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lin2004rouge",
+      "raw": "Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. In Text summarization branches out: ACL workshop\\/",
+      "authors": "Chin-Yew Lin. 2004",
+      "title": "Rouge: A package for automatic evaluation of summaries",
+      "venue": "In Text summarization branches out: ACL workshop\\/",
+      "year": 2004,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "merity2016pointer",
+      "raw": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. 2016. Pointer sentinel mixture models. In NIPS 2016 Workshop on Multi-class and Multi-label Learning in Extremely Large Label Spaces\\/",
+      "authors": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. 2016",
+      "title": "Pointer sentinel mixture models",
+      "venue": "In NIPS 2016 Workshop on Multi-class and Multi-label Learning in Extremely Large Label Spaces\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mi2016coverage",
+      "raw": "Haitao Mi, Baskaran Sankaran, Zhiguo Wang, and Abe Ittycheriah. 2016. Coverage embedding models for neural machine translation. In Empirical Methods in Natural Language Processing\\/",
+      "authors": "Haitao Mi, Baskaran Sankaran, Zhiguo Wang, and Abe Ittycheriah. 2016",
+      "title": "Coverage embedding models for neural machine translation",
+      "venue": "In Empirical Methods in Natural Language Processing\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "miao2016language",
+      "raw": "Yishu Miao and Phil Blunsom. 2016. Language as a latent variable: Discrete generative models for sentence compression. In Empirical Methods in Natural Language Processing\\/",
+      "authors": "Yishu Miao and Phil Blunsom. 2016",
+      "title": "Language as a latent variable: Discrete generative models for sentence compression",
+      "venue": "In Empirical Methods in Natural Language Processing\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nallapati2016summarunner",
+      "raw": "Ramesh Nallapati, Feifei Zhai, and Bowen Zhou. 2017. SummaRuNNer: A recurrent neural network based sequence model for extractive summarization of documents. In Association for the Advancement of Artificial Intelligence\\/",
+      "authors": "Ramesh Nallapati, Feifei Zhai, and Bowen Zhou. 2017",
+      "title": "SummaRuNNer: A recurrent neural network based sequence model for extractive summarization of documents",
+      "venue": "In Association for the Advancement of Artificial Intelligence\\/",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nallapati2016abstractive",
+      "raw": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gul cehre, and Bing Xiang. 2016. Abstractive text summarization using sequence-to-sequence RNNs and beyond. In Computational Natural Language Learning\\/",
+      "authors": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gul cehre, and Bing Xiang. 2016",
+      "title": "Abstractive text summarization using sequence-to-sequence RNNs and beyond",
+      "venue": "In Computational Natural Language Learning\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "paice1990constructing",
+      "raw": "Chris D Paice. 1990. Constructing literature abstracts by computer: techniques and prospects. Information Processing \\& Management\\/ 26(1):171--186",
+      "authors": "Chris D Paice. 1990",
+      "title": "Constructing literature abstracts by computer: techniques and prospects",
+      "venue": "Information Processing \\& Management\\/ 26(1):171--186",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ranzato2015sequence",
+      "raw": "Marc'Aurelio Ranzato, Sumit Chopra, Michael Auli, and Wojciech Zaremba. 2016. Sequence level training with recurrent neural networks. In International Conference on Learning Representations\\/",
+      "authors": "Marc'Aurelio Ranzato, Sumit Chopra, Michael Auli, and Wojciech Zaremba. 2016",
+      "title": "Sequence level training with recurrent neural networks",
+      "venue": "In International Conference on Learning Representations\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rush2015neural",
+      "raw": "Alexander M Rush, Sumit Chopra, and Jason Weston. 2015. A neural attention model for abstractive sentence summarization. In Empirical Methods in Natural Language Processing\\/",
+      "authors": "Alexander M Rush, Sumit Chopra, and Jason Weston. 2015",
+      "title": "A neural attention model for abstractive sentence summarization",
+      "venue": "In Empirical Methods in Natural Language Processing\\/",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "saggion2013automatic",
+      "raw": "Horacio Saggion and Thierry Poibeau. 2013. Automatic text summarization: Past, present and future. In Multi-source, Multilingual Information Extraction and Summarization\\/, Springer, pages 3--21",
+      "authors": "Horacio Saggion and Thierry Poibeau. 2013",
+      "title": "Automatic text summarization: Past, present and future",
+      "venue": "In Multi-source, Multilingual Information Extraction and Summarization\\/, Springer, pages 3--21",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sankaran2016temporal",
+      "raw": "Baskaran Sankaran, Haitao Mi, Yaser Al-Onaizan, and Abe Ittycheriah. 2016. Temporal attention model for neural machine translation. arXiv preprint arXiv:1608.02927\\/",
+      "authors": "Baskaran Sankaran, Haitao Mi, Yaser Al-Onaizan, and Abe Ittycheriah. 2016",
+      "title": "Temporal attention model for neural machine translation",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1608.02927",
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. 2014. Sequence to sequence learning with neural networks. In Neural Information Processing Systems\\/",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. 2014",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Neural Information Processing Systems\\/",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "suzuki2016rnn",
+      "raw": "Jun Suzuki and Masaaki Nagata. 2016. RNN-based encoder-decoder approach with word frequency estimation. arXiv preprint arXiv:1701.00138\\/",
+      "authors": "Jun Suzuki and Masaaki Nagata. 2016",
+      "title": "RNN-based encoder-decoder approach with word frequency estimation",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1701.00138",
+      "doi": null
+    },
+    {
+      "key": "takase2016neural",
+      "raw": "Sho Takase, Jun Suzuki, Naoaki Okazaki, Tsutomu Hirao, and Masaaki Nagata. 2016. Neural headline generation on abstract meaning representation. In Empirical Methods in Natural Language Processing\\/",
+      "authors": "Sho Takase, Jun Suzuki, Naoaki Okazaki, Tsutomu Hirao, and Masaaki Nagata. 2016",
+      "title": "Neural headline generation on abstract meaning representation",
+      "venue": "In Empirical Methods in Natural Language Processing\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "tu2016modeling",
+      "raw": "Zhaopeng Tu, Zhengdong Lu, Yang Liu, Xiaohua Liu, and Hang Li. 2016. Modeling coverage for neural machine translation. In Association for Computational Linguistics\\/",
+      "authors": "Zhaopeng Tu, Zhengdong Lu, Yang Liu, Xiaohua Liu, and Hang Li. 2016",
+      "title": "Modeling coverage for neural machine translation",
+      "venue": "In Association for Computational Linguistics\\/",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vinyals2015pointer",
+      "raw": "Oriol Vinyals, Meire Fortunato, and Navdeep Jaitly. 2015. Pointer networks. In Neural Information Processing Systems\\/",
+      "authors": "Oriol Vinyals, Meire Fortunato, and Navdeep Jaitly. 2015",
+      "title": "Pointer networks",
+      "venue": "In Neural Information Processing Systems\\/",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "xu2015show",
+      "raw": "Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron C Courville, Ruslan Salakhutdinov, Richard S Zemel, and Yoshua Bengio. 2015. Show, attend and tell: Neural image caption generation with visual attention. In International Conference on Machine Learning\\/",
+      "authors": "Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron C Courville, Ruslan Salakhutdinov, Richard S Zemel, and Yoshua Bengio. 2015",
+      "title": "Show, attend and tell: Neural image caption generation with visual attention",
+      "venue": "In International Conference on Machine Learning\\/",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zeng2016efficient",
+      "raw": "Wenyuan Zeng, Wenjie Luo, Sanja Fidler, and Raquel Urtasun. 2016. Efficient summarization with read-again and copy mechanism. arXiv preprint arXiv:1611.03382\\/",
+      "authors": "Wenyuan Zeng, Wenjie Luo, Sanja Fidler, and Raquel Urtasun. 2016",
+      "title": "Efficient summarization with read-again and copy mechanism",
+      "venue": "arXiv preprint",
+      "year": 2016,
+      "arxivId": "1611.03382",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "e_i^t &= v^T \\tanh(W_h h_i + W_s s_t + b_\\text{attn})   \\\\\na^t &= \\text{softmax}(e^t)",
+      "environment": "align",
+      "labels": [
+        "eqn_vanilla_attn_scores",
+        "eqn_vanilla_attn_dist"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "h^*_t = \\sum\\nolimits_i a_i^t h_i",
+      "environment": "equation",
+      "labels": [
+        "eqn_context_vec"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\pvocab &= \\text{softmax}(V' (V [s_t, h^*_t] + b) + b')",
+      "environment": "align",
+      "labels": []
+    },
+    {
+      "ordinal": 3,
+      "latex": "P(w) = \\pvocab(w)",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 4,
+      "latex": "\\text{loss}_t = -\\log P(w^*_t)",
+      "environment": "equation",
+      "labels": [
+        "eqn_vanilla_losst"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "latex": "\\text{loss} = \\frac{1}{T}\\sum\\nolimits_{t=0}^T \\text{loss}_t",
+      "environment": "equation",
+      "labels": [
+        "eqn_vanilla_loss"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "latex": "\\pgen = \\sigma(w_{h^*}^T h^*_t + w_s^T s_t + w_x^T x_t + b_\\text{ptr})",
+      "environment": "equation",
+      "labels": [
+        "eqn_pgen_calc"
+      ]
+    },
+    {
+      "ordinal": 7,
+      "latex": "P(w) = \\pgen \\pvocab(w) + (1-\\pgen)\\sum\\nolimits_{i: w_i = w} a^t_i",
+      "environment": "equation",
+      "labels": [
+        "eqn_pg_dist"
+      ]
+    },
+    {
+      "ordinal": 8,
+      "latex": "c^t = \\sum\\nolimits_{t'=0}^{t-1} a^{t'}",
+      "environment": "equation",
+      "labels": []
+    },
+    {
+      "ordinal": 9,
+      "latex": "e_i^t = v^T \\tanh(W_h h_i + W_s s_t + w_c c^t_i + b_\\text{attn})",
+      "environment": "equation",
+      "labels": [
+        "eqn_coverage_attn_scores"
+      ]
+    },
+    {
+      "ordinal": 10,
+      "latex": "\\text{covloss}_t = \\sum\\nolimits_i \\min(a_i^t,c_i^t)",
+      "environment": "equation",
+      "labels": [
+        "eqn_covloss"
+      ]
+    },
+    {
+      "ordinal": 11,
+      "latex": "\\text{loss}_t = -\\log P(w^*_t) + \\lambda \\sum\\nolimits_i \\min(a_i^t,c_i^t)",
+      "environment": "equation",
+      "labels": [
+        "eqn_coverage_totalloss"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 953,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 89.00797271728516,
+            "y0": 250.09066772460938,
+            "x1": 273.2626647949219,
+            "y1": 260.999755859375
+          },
+          {
+            "x0": 89.00797271728516,
+            "y0": 263.6396789550781,
+            "x1": 273.25982666015625,
+            "y1": 274.54876708984375
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 277.1886901855469,
+            "x1": 273.2577209472656,
+            "y1": 288.0977783203125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 290.7377014160156,
+            "x1": 273.2626953125,
+            "y1": 301.64678955078125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 304.2867126464844,
+            "x1": 273.2626037597656,
+            "y1": 315.19580078125
+          },
+          {
+            "x0": 89.00798034667969,
+            "y0": 317.8367004394531,
+            "x1": 127.5062026977539,
+            "y1": 328.74578857421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "abstract",
+      "title": "Preliminaries",
+      "chars": 2382,
+      "numbers": 7,
+      "citations": 4,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 72.0,
+            "y0": 171.32876586914062,
+            "x1": 216.45831298828125,
+            "y1": 182.2378692626953
+          }
+        ]
+      }
+    },
+    {
+      "kind": "abstract",
+      "title": "Observations",
+      "chars": 10416,
+      "numbers": 17,
+      "citations": 2,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2770080566406,
+            "y0": 345.7256774902344,
+            "x1": 525.5462646484375,
+            "y1": 356.634765625
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 359.2756652832031,
+            "x1": 525.5462036132812,
+            "y1": 370.18475341796875
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 372.8246765136719,
+            "x1": 525.546142578125,
+            "y1": 383.7337646484375
+          },
+          {
+            "x0": 307.2770080566406,
+            "y0": 386.3736877441406,
+            "x1": 365.193359375,
+            "y1": 397.28277587890625
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 0,
+      "extends": 0,
+      "contests": 0,
+      "compares": 2,
+      "background": 3,
+      "traversable": 1
+    },
+    "foundation": null,
+    "edges": [
+      {
+        "key": "nallapati2016abstractive",
+        "stance": "compares",
+        "cue": "compare to",
+        "sentence": "We obtain our ROUGE scores using the package.[<pypi.python.org/pypi/pyrouge/0.1.3>] We also evaluate with the METEOR metric [Denkowski et al. 2014], both in exact match mode (rewarding only exact matches between words) and full mode (which additionally rewards matching stems, synonyms and paraphrases).[<www.cs.cmu.edu/ alavie/METEOR>] In addition to our own models, we also report the lead-3 baseline (which uses the first three sentences of the article as a summary), and compare to the only existing abstractive [Nallapati et al. 2016] and extractive [Nallapati et al. 2017] models on the full dataset.",
+        "section": "Preliminaries",
+        "sectionKind": "abstract",
+        "ordinal": 3,
+        "title": "Abstractive text summarization using sequence-to-sequence RNNs and beyond",
+        "authors": "Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Caglar Gul cehre, and Bing Xiang. 2016",
+        "year": 2016,
+        "arxivId": "1602.06023",
+        "inCorpus": true,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.90897369384766,
+              "y0": 361.3998718261719,
+              "x1": 290.26910400390625,
+              "y1": 372.3089599609375
+            },
+            {
+              "x0": 71.99996948242188,
+              "y0": 374.9488830566406,
+              "x1": 290.2691955566406,
+              "y1": 385.85797119140625
+            },
+            {
+              "x0": 71.99996948242188,
+              "y0": 388.4978942871094,
+              "x1": 290.26922607421875,
+              "y1": 399.406982421875
+            },
+            {
+              "x0": 71.99996948242188,
+              "y0": 402.0469055175781,
+              "x1": 212.149169921875,
+              "y1": 412.95599365234375
+            }
+          ]
+        }
+      },
+      {
+        "key": "nallapati2016summarunner",
+        "stance": "compares",
+        "cue": "compare to",
+        "sentence": "We obtain our ROUGE scores using the package.[<pypi.python.org/pypi/pyrouge/0.1.3>] We also evaluate with the METEOR metric [Denkowski et al. 2014], both in exact match mode (rewarding only exact matches between words) and full mode (which additionally rewards matching stems, synonyms and paraphrases).[<www.cs.cmu.edu/ alavie/METEOR>] In addition to our own models, we also report the lead-3 baseline (which uses the first three sentences of the article as a summary), and compare to the only existing abstractive [Nallapati et al. 2016] and extractive [Nallapati et al. 2017] models on the full dataset.",
+        "section": "Preliminaries",
+        "sectionKind": "abstract",
+        "ordinal": 4,
+        "title": "SummaRuNNer: A recurrent neural network based sequence model for extractive summarization of documents",
+        "authors": "Ramesh Nallapati, Feifei Zhai, and Bowen Zhou. 2017",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 6,
+          "pageWidth": 595.2760009765625,
+          "pageHeight": 841.8900146484375,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 82.90897369384766,
+              "y0": 361.3998718261719,
+              "x1": 290.26910400390625,
+              "y1": 372.3089599609375
+            },
+            {
+              "x0": 71.99996948242188,
+              "y0": 374.9488830566406,
+              "x1": 290.2691955566406,
+              "y1": 385.85797119140625
+            },
+            {
+              "x0": 71.99996948242188,
+              "y0": 388.4978942871094,
+              "x1": 290.26922607421875,
+              "y1": 399.406982421875
+            },
+            {
+              "x0": 71.99996948242188,
+              "y0": 402.0469055175781,
+              "x1": 212.149169921875,
+              "y1": 412.95599365234375
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "We believe that investigating this issue further is an important direction for future work.",
+      "anchorText": "We believe that investigating this issue further is an important direction for future work.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We believe",
+      "section": "Observations",
+      "sectionKind": "abstract",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 595.2760009765625,
+        "pageHeight": 841.8900146484375,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 307.2760314941406,
+            "y0": 529.1309814453125,
+            "x1": 525.5450439453125,
+            "y1": 540.0400390625
+          },
+          {
+            "x0": 307.2760314941406,
+            "y0": 542.6809692382812,
+            "x1": 476.2250671386719,
+            "y1": 553.5900268554688
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 1,
+    "cited": 0,
+    "shown": 0,
+    "bare": 1
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2017-04-14",
+    "authors": [
+      "Abigail See",
+      "Peter J. Liu",
+      "Christopher D. Manning"
+    ]
+  }
+}

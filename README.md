@@ -27,7 +27,7 @@ Three things, all quoted rather than inferred:
   its own evidence, or nothing at all.
 - **The graph.** Where a cited paper is also in the library the edge is walkable in
   both directions, so a paper shows both what it stands on and who stands on it. Across
-  197 papers that is **437 links**, each carrying the sentence that placed it, and
+  234 papers that is **548 links**, each carrying the sentence that placed it, and
   the chain is the real one: VGG → ResNet → Transformer → BERT / ViT / LLaMA, with batch
   and layer normalisation feeding in.
 
@@ -110,11 +110,11 @@ generated JSON the build writes, so they cannot drift from the run that produced
 
 | | |
 |---|---|
-| Papers analysed | **197** |
-| Citation readings | **1279**, 90.9% anchored to the page |
-| Assumptions | **839**, of which 722 state nothing in support |
-| Walkable paper-to-paper edges | **437** |
-| Tests | 272 Python, 44 JavaScript |
+| Papers analysed | **234** |
+| Citation readings | **1524**, 90.7% anchored to the page |
+| Assumptions | **973**, of which 838 state nothing in support |
+| Walkable paper-to-paper edges | **548** |
+| Tests | 274 Python, 49 JavaScript |
 
 **The anchor layer.** Tight anchors survive an independent geometric round-trip through
 MuPDF rather than through the matcher's own index; the gate is ≥99% and the suite

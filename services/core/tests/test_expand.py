@@ -316,6 +316,18 @@ def test_a_tie_between_attested_wordings_goes_to_the_papers_own() -> None:
     assert resolved["1504.00325"].startswith("Microsoft")
 
 
+def test_a_renamed_papers_own_title_wins_once_any_bibliography_prints_it() -> None:
+    """SGDR flipped between its first and final titles as the library grew."""
+    final = "SGDR: Stochastic Gradient Descent with Warm Restarts"
+    first = "SGDR: Stochastic gradient descent with restarts"
+    resolved = resolve_titles(
+        library={"1608.03983"},
+        own={"1608.03983": final},
+        attested={"1608.03983": Counter({first: 3, final: 1})},
+    )
+    assert resolved["1608.03983"] == final
+
+
 def test_an_unattested_paper_still_resolves_by_its_own_title() -> None:
     """Requiring attestation outright cost nine real edges.
 

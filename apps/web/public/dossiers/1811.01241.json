@@ -1,0 +1,6618 @@
+{
+  "id": "1811.01241",
+  "title": "Wizard of wikipedia: Knowledge-powered conversational agents",
+  "keystone": null,
+  "codeUrl": "",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1811.01241",
+  "numbers": [],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Dataset statistics of the Wizard of Wikipedia task.",
+      "label": "tablestats",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Wizard of Wikipedia Task",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Train",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Valid",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Number of Utterances",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "166,787",
+            "value": "166787",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17,715",
+            "value": "17715",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8,715",
+            "value": "8715",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8,782",
+            "value": "8782",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Number of Dialogues",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "18,430",
+            "value": "18430",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1,948",
+            "value": "1948",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "965",
+            "value": "965",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "968",
+            "value": "968",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Number of Topics",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1,247",
+            "value": "1247",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "599",
+            "value": "599",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "533",
+            "value": "533",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58",
+            "value": "58",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Average Turns per Dialogue",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.0",
+            "value": "9.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.1",
+            "value": "9.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.0",
+            "value": "9.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "9.1",
+            "value": "9.1",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Knowledge Database",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.4M articles",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "93M sentences",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 222.5787811279297,
+            "y0": 91.06349182128906,
+            "x1": 421.55181884765625,
+            "y1": 101.02609252929688
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Test performance of various methods on the Knowledge Selection Task. The models must select the gold knowledge sentences chosen by humans given the dialogue context.",
+      "label": "tab:knowsel",
+      "numericCells": 24,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Seen Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Unseen Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Random",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.7",
+            "value": "2.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.5",
+            "value": "13.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.3",
+            "value": "2.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.1",
+            "value": "13.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "IR baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.8",
+            "value": "5.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "21.8",
+            "value": "21.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.6",
+            "value": "7.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.5",
+            "value": "23.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "BoW MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.0",
+            "value": "23.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.3",
+            "value": "36.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.9",
+            "value": "8.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "22.9",
+            "value": "22.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "22.5",
+            "value": "22.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33.2",
+            "value": "33.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.2",
+            "value": "12.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.8",
+            "value": "19.8",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer (+Reddit pretraining)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24.5",
+            "value": "24.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.4",
+            "value": "36.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "23.7",
+            "value": "23.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "35.8",
+            "value": "35.8",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer (+Reddit pretraining, +SQuAD training)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "36.2",
+            "value": "36.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "22.9",
+            "value": "22.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.2",
+            "value": "34.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.87100219726562,
+            "y0": 91.04253387451172,
+            "x1": 503.9974060058594,
+            "y1": 101.00513458251953
+          },
+          {
+            "x0": 108.0,
+            "y0": 102.09248352050781,
+            "x1": 459.9985656738281,
+            "y1": 112.05508422851562
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "Retrieval methods on the full Wizard task. Models must select relevant knowledge and retrieve a response from the training set as a dialogue response. Using knowledge always helps, and the Transformer Memory Network with pretraining performs best.",
+      "label": "tab:retrievalresults",
+      "numericCells": 48,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Predicted Knowledge",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Gold Knowledge",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Random",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.4",
+            "value": "7.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.3",
+            "value": "7.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "IR baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "17.8",
+            "value": "17.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.7",
+            "value": "12.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.2",
+            "value": "14.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.6",
+            "value": "11.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "73.5",
+            "value": "73.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "67.5",
+            "value": "67.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "BoW MemNet (no knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "56.1",
+            "value": "56.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.2",
+            "value": "14.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.8",
+            "value": "28.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.6",
+            "value": "11.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "56.1",
+            "value": "56.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.8",
+            "value": "28.8",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "BoW MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "71.3",
+            "value": "71.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.6",
+            "value": "15.6",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "33.1",
+            "value": "33.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.3",
+            "value": "12.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "84.5",
+            "value": "84.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "66.7",
+            "value": "66.7",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer (no knowledge, w/o Reddit)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "60.8",
+            "value": "60.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.3",
+            "value": "13.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.7",
+            "value": "9.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "60.8",
+            "value": "60.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer (no knowledge, w/ Reddit)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "79.0",
+            "value": "79.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.0",
+            "value": "15.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "54.0",
+            "value": "54.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.6",
+            "value": "11.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "79.0",
+            "value": "79.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "54.0",
+            "value": "54.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer MemNet (w/ Reddit)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "86.8",
+            "value": "86.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.4",
+            "value": "15.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "69.8",
+            "value": "69.8",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "12.4",
+            "value": "12.4",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "91.6",
+            "value": "91.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "82.3",
+            "value": "82.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer MemNet (w/ Reddit+SQuAD)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "87.4",
+            "value": "87.4",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "15.4",
+            "value": "15.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "69.8",
+            "value": "69.8",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "12.4",
+            "value": "12.4",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "83.1",
+            "value": "83.1",
+            "emphasised": true,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8489990234375,
+            "y0": 91.04253387451172,
+            "x1": 503.995361328125,
+            "y1": 101.00513458251953
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 102.09248352050781,
+            "x1": 504.0032653808594,
+            "y1": 112.05508422851562
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 113.05049133300781,
+            "x1": 372.0586242675781,
+            "y1": 123.01309204101562
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Retrieval methods on the full Wizard task. Models must select relevant knowledge and retrieve a response from the training set as a dialogue response. Using knowledge always helps, and the Transformer Memory Network with pretraining performs best.",
+      "label": "tab:retrievalresults",
+      "numericCells": 40,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Predicted Knowledge",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Gold Knowledge",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "PPL",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Repeat last utterance",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.8",
+            "value": "13.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.7",
+            "value": "13.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.8",
+            "value": "13.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.7",
+            "value": "13.7",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer (no knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "41.8",
+            "value": "41.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "17.8",
+            "value": "17.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "87.0",
+            "value": "87.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.0",
+            "value": "14.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "E2E Transformer MemNet (no auxiliary loss)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "66.5",
+            "value": "66.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.9",
+            "value": "15.9",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "103.6",
+            "value": "103.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.3",
+            "value": "14.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "24.2",
+            "value": "24.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "33.6",
+            "value": "33.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "35.5",
+            "value": "35.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "29.5",
+            "value": "29.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "E2E Transformer MemNet (w/ auxiliary loss)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "63.5",
+            "value": "63.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "16.9",
+            "value": "16.9",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "97.3",
+            "value": "97.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.4",
+            "value": "14.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "23.1",
+            "value": "23.1",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "35.5",
+            "value": "35.5",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "32.8",
+            "value": "32.8",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "32.2",
+            "value": "32.2",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Two-Stage Transformer MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "54.8",
+            "value": "54.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "18.6",
+            "value": "18.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "88.5",
+            "value": "88.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "17.4",
+            "value": "17.4",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "30.0",
+            "value": "30.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "30.7",
+            "value": "30.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "42.7",
+            "value": "42.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.6",
+            "value": "28.6",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Two-Stage Transformer MemNet (w/ K.D.)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "46.5",
+            "value": "46.5",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "18.9",
+            "value": "18.9",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "84.8",
+            "value": "84.8",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "17.3",
+            "value": "17.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.6",
+            "value": "28.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "30.6",
+            "value": "30.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "43.7",
+            "value": "43.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.0",
+            "value": "28.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8489990234375,
+            "y0": 91.04253387451172,
+            "x1": 503.995361328125,
+            "y1": 101.00513458251953
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 102.09248352050781,
+            "x1": 504.0032653808594,
+            "y1": 112.05508422851562
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 113.05049133300781,
+            "x1": 372.0586242675781,
+            "y1": 123.01309204101562
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 5",
+      "caption": "Human Experiments. Evaluations of the best generative and retrieval models on full dialogues with humans. Human ratings are reported as mean (stddev). Wiki F1 measures unigram overlap with the Wikipedia entry for the chosen topic, a measure of knowledge used in conversations.",
+      "label": "humaneval",
+      "numericCells": 10,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Rating",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Wiki F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Rating",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Wiki F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Human Performance",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.13 (1.08)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.1",
+            "value": "11.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.34 (0.98)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.6",
+            "value": "10.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Retrieval Transformer (no knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.33 (1.30)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.8",
+            "value": "19.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.12 (1.34)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.7",
+            "value": "13.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Generative Transformer (no knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.11 (1.11)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.3",
+            "value": "15.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.54 (1.38)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.1",
+            "value": "10.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Retrieval Transformer MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.43 (1.10)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.4",
+            "value": "23.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.14 (1.31)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.3",
+            "value": "16.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Two-Stage Generative Transformer MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.92 (1.33)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.0",
+            "value": "30.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.93 (1.30)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.2",
+            "value": "26.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 146.94400024414062,
+            "y0": 458.8984680175781,
+            "x1": 504.0004577636719,
+            "y1": 468.861083984375
+          },
+          {
+            "x0": 108.0,
+            "y0": 469.85748291015625,
+            "x1": 504.0032958984375,
+            "y1": 479.8200988769531
+          },
+          {
+            "x0": 108.0,
+            "y0": 480.81646728515625,
+            "x1": 504.00335693359375,
+            "y1": 490.7790832519531
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 6",
+      "caption": "Selected conversations between humans and models.",
+      "label": "sec:humaneval",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model: Retrieval Transformer MemNet",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "E-book (seen)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i do not know why, but I have never gotten into E-books",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Same here. I have a kindle, but I don't use it for books. It's nicer to hold a real book and turn pages.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "yes, i like the physical feel and smell of a real book",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I actually had a Nook e-book where you had to download the e-book after selecting it online. I grew",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "out of it, I prefer paper books also.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i tried e-books but I do not like reading on a screen, its disorientated for me",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yes, reading a book on a tablet just isn't the same!",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "plus I like owning the physical copy of a real book, I feel like I own it",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I prefer print and newsreels.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Toga party (seen)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I love toga parties! I usually make my toga out of a bed sheet and wear my sandals.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Me too!!! I usually use some flip flops and my blanket!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Toga parties typically have games involving kegs and excessive drinking!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yeah! And getting to wear funny outfits and a crown of leaves!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I love me some Toga Parties!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I love me some too!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Toga parties are so much fun with the Roman or Greek theme.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yeah! I especially like Greek themes",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Model: Two-Stage Generative Transformer MemNet",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Shower (unseen)",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "So I've been looking for a better showerhead with more water pressure for my shower.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I love pressure-versed water at nearly constant temperature to a shower",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "That sounds pretty great! Love those rainshower showers!",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "the ancient greeks were the first people to have showers.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Well I knew they were good for something.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "the original showers were neither indoor structures nor man made but were common.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ah that sounds intimidating!",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "it is required manual transport of both fresh and waste water.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 220.52630615234375,
+            "y0": 391.7164611816406,
+            "x1": 430.81689453125,
+            "y1": 401.6790771484375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 7",
+      "caption": "The Wizard of Wikipedia dataset. Examples of collected conversations from the dataset, where both wizard and apprentice are humans. The wizard has access to an information retrieval system over Wikipedia, so that they can ask and answer questions, and make statements relevant to the discussion. For each utterance, knowledge retrieval is performed based on dialogue history, giving 61 knowledge candidates per turn, with wizards clicking no sentence used 6.2% of the time. Assuming that a question contains a question mark or begins with 'how', 'why', 'who', 'where', 'what' or 'when', in the dataset Apprentices ask questions in 13.9% of training set utterances, and answer questions (i.e., the Wizard has asked a question) 39.5% of the time, while saying new or follow-on statements (neither asking nor answering a question) 49.3% of the time. Hence, the wizard and apprentice conduct conversations with a variety of dialogue acts.",
+      "label": "sec:mechturkui",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "black Topic:",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "blackLifeguard",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Apprentice:",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "So I am a lifeguard. Know anything about saving lives in water?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "I'm impressed! It's a big responsibility to supervise other people's safety in the water! Tell me more.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Apprentice:",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Well, I help make sure people do not drown or get injured while in or near the water!",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Knowledge:",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "A lifeguard is a rescuer who supervises the safety and rescue of swimmers, surfers, ...",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Lifeguards are strong swimmers and trained in CPR/AED first aid, certified in water ...",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "In some areas, the lifeguard service also carries out mountain rescues, or may function as the primary EMS provider.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "I've heard that in some places, lifeguards also help with other sorts of emergencies, like mountain rescues!",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Is that part of your job too?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Apprentice:",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "I have! I feel like you know much about this! What brings you to know so much?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "Oh, that's about the extent of my knowledge. I've just been around beaches and I've always admired lifeguards. I'm not a super strong swimmer myself.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Topic:",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "Armadillo",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "I love animals and think armadillos are awesome with their leathery shell.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Apprentice:",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "I don't think I've ever seen an armadillo in real life!",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "I've seen them at the zoo. Armadillo means little armored one in Spanish.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Apprentice:",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "Are they native to a Spanish-speaking part of the world?",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Knowledge:",
+            "value": null,
+            "emphasised": true,
+            "block": 6
+          },
+          {
+            "text": "Armadillos are New World placental mammals in the order Cingulata ...",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "The word \"armadillo\" means \"little armoured one\" in Spanish.",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "The nine-banded armadillo (\"Dasypus novemcinctus\"), or the nine-banded, long-nosed armadillo, is a medium-sized mammal found in North, Central, and South America.",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "Yes, they are most commonly found in North, Central, and South America",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "Topic:",
+            "value": null,
+            "emphasised": true,
+            "block": 8
+          },
+          {
+            "text": "Ice cream",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "I just love ice cream. I love the types with fruits and flavours. Do you like ice cream?",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          }
+        ],
+        [
+          {
+            "text": "Apprentice:",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          },
+          {
+            "text": "I love Ice cream as much as any one. I especially like Gelato, foreign ice cream!",
+            "value": null,
+            "emphasised": false,
+            "block": 9
+          }
+        ],
+        [
+          {
+            "text": "Knowledge",
+            "value": null,
+            "emphasised": true,
+            "block": 10
+          },
+          {
+            "text": "Ice cream is a sweetened frozen food typically eaten as a snack or dessert....",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "It is usually made from dairy products, such as milk and cream, and ...",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Bacon ice cream (or bacon-and-egg ice cream) is an ice cream generally created by adding bacon to egg custard and freezing the mixture.",
+            "value": null,
+            "emphasised": false,
+            "block": 10
+          }
+        ],
+        [
+          {
+            "text": "Wizard:",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "Me too. There are some strange combinations though, have you heard of bacon ice cream? where they add bacon and even egg custard to the freezing mixture!",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          }
+        ],
+        [
+          {
+            "text": "Apprentice:",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          },
+          {
+            "text": "Surprisingly bacon ice cream doesn't surprise me. That doesn't sound appealing to me,",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "but perhaps it could be delicious...",
+            "value": null,
+            "emphasised": false,
+            "block": 11
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "Test performance of the Knowledge Selection Tasks. We also tested the performance of our models trained to do the full dialogue task (see Section ) on the knowledge selection task. For our retrieval system, this refers to the performance of the knowledge attention. The results show that our retrieval system could be improved, and the auxiliary loss clearly helps the generative models.",
+      "label": "",
+      "numericCells": 36,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Seen Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Unseen Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Random",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.7",
+            "value": "2.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.5",
+            "value": "13.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.3",
+            "value": "2.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.1",
+            "value": "13.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "IR baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.8",
+            "value": "5.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "21.8",
+            "value": "21.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.6",
+            "value": "7.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.5",
+            "value": "23.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "BoW MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.0",
+            "value": "23.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.3",
+            "value": "36.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.9",
+            "value": "8.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "22.9",
+            "value": "22.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "22.5",
+            "value": "22.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33.2",
+            "value": "33.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "12.2",
+            "value": "12.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.8",
+            "value": "19.8",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer (+Reddit pretraining)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24.5",
+            "value": "24.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36.4",
+            "value": "36.4",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "23.7",
+            "value": "23.7",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "35.8",
+            "value": "35.8",
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Transformer (+Reddit pretraining, +SQuAD training)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "36.2",
+            "value": "36.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "22.9",
+            "value": "22.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.2",
+            "value": "34.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Retrieval Transformer MemNet (no auxiliary loss)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.9",
+            "value": "12.9",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "24.6",
+            "value": "24.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.6",
+            "value": "14.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "26.3",
+            "value": "26.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Generative E2E Transformer MemNet (no auxiliary loss)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.4",
+            "value": "13.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.3",
+            "value": "28.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.8",
+            "value": "11.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.9",
+            "value": "25.9",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Generative E2E Transformer MemNet (w/ auxiliary loss)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "21.1",
+            "value": "21.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "32.8",
+            "value": "32.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.3",
+            "value": "14.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "22.8",
+            "value": "22.8",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Retrieval methods on the full Wizard task. In addition to the models we tested in the paper, we also tested a two-stage retrieval system in which we used our best-performing model on the knowledge selection task to choose a single knowledge sentence to condition on for the dialogue retrieval task. This outperformed our best retrieval method in terms of F1 but not not in terms of Recall@1. Furthermore, we compared these results to a two-stage retrieval system in which the dialogue retrieval module is optimized for seeing the gold chosen knowledge sentence. The performance of this system on the gold knowledge task suggests that the retrieval system could be improved by increasing performance on the knowledge selection subtask.",
+      "label": "",
+      "numericCells": 60,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Predicted Knowledge",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Gold Knowledge",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "F1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "R@1",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Random",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.4",
+            "value": "7.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "7.3",
+            "value": "7.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.0",
+            "value": "1.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "IR baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "17.8",
+            "value": "17.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.7",
+            "value": "12.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.2",
+            "value": "14.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.6",
+            "value": "11.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "73.5",
+            "value": "73.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "67.5",
+            "value": "67.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "BoW MemNet (no knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "56.1",
+            "value": "56.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.2",
+            "value": "14.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.8",
+            "value": "28.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.6",
+            "value": "11.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "56.1",
+            "value": "56.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.8",
+            "value": "28.8",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "BoW MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "71.3",
+            "value": "71.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.6",
+            "value": "15.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "33.1",
+            "value": "33.1",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "12.3",
+            "value": "12.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "84.5",
+            "value": "84.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "66.7",
+            "value": "66.7",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer (no knowledge, w/o Reddit)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "60.8",
+            "value": "60.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "13.3",
+            "value": "13.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "9.7",
+            "value": "9.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "60.8",
+            "value": "60.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer (no knowledge, w/ Reddit)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "79.0",
+            "value": "79.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.0",
+            "value": "15.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "54.0",
+            "value": "54.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.6",
+            "value": "11.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "79.0",
+            "value": "79.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "54.0",
+            "value": "54.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer MemNet (w/ Reddit)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "86.8",
+            "value": "86.8",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.4",
+            "value": "15.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "69.8",
+            "value": "69.8",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "12.4",
+            "value": "12.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "91.6",
+            "value": "91.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "82.3",
+            "value": "82.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Transformer MemNet (w/ Reddit+SQuAD)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "87.4",
+            "value": "87.4",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "15.4",
+            "value": "15.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "69.8",
+            "value": "69.8",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "12.4",
+            "value": "12.4",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "83.1",
+            "value": "83.1",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Two-stage Transformer (optimized for predicted knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "84.2",
+            "value": "84.2",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "16.2",
+            "value": "16.2",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "63.1",
+            "value": "63.1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "13.2",
+            "value": "13.2",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "92.3",
+            "value": "92.3",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "83.1",
+            "value": "83.1",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Two-stage Transformer (optimized for gold knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "79.6",
+            "value": "79.6",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "16.6",
+            "value": "16.6",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "60.1",
+            "value": "60.1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "13.1",
+            "value": "13.1",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "96.3",
+            "value": "96.3",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "88.3",
+            "value": "88.3",
+            "emphasised": true,
+            "block": 4
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 145.1750030517578,
+            "y0": 91.13349914550781,
+            "x1": 504.00128173828125,
+            "y1": 101.09609985351562
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 102.09248352050781,
+            "x1": 504.0033874511719,
+            "y1": 112.05508422851562
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 113.05049133300781,
+            "x1": 504.00323486328125,
+            "y1": 123.01309204101562
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 124.00947570800781,
+            "x1": 504.0032043457031,
+            "y1": 133.97207641601562
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 134.9684600830078,
+            "x1": 504.0032958984375,
+            "y1": 144.93106079101562
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 145.9274444580078,
+            "x1": 504.0033264160156,
+            "y1": 155.89004516601562
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 156.8864288330078,
+            "x1": 504.0032653808594,
+            "y1": 166.84902954101562
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 167.8454132080078,
+            "x1": 400.4620666503906,
+            "y1": 177.80801391601562
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 10",
+      "caption": "Human Experiments. We calculate the Wiki F1 score for the wizard and apprentice as they appear in the dataset for the sake of comparison to our human evaluations. Note that this differed from the human-human evaluation set-up in the sense that the wizard had direct access to Wikipedia passages in the UI, which explains the higher values of Wiki F1 both for the wizard (who uses Wikipedia) and for the apprentice (who would likely reference that use).",
+      "label": "",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Seen",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Unseen",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Rating",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Wiki F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Rating",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "Wiki F1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Human Performance",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.13 (1.08)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "11.1",
+            "value": "11.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.34 (0.98)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.6",
+            "value": "10.6",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Wizard Performance (in dataset)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "43.3",
+            "value": "43.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "43.1",
+            "value": "43.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Apprentice Performance (in dataset)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.2",
+            "value": "23.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.7",
+            "value": "23.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Retrieval Transformer (no knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.33 (1.30)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.8",
+            "value": "19.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.12 (1.34)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.7",
+            "value": "13.7",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Generative Transformer (no knowledge)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.11 (1.11)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.3",
+            "value": "15.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.54 (1.38)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10.1",
+            "value": "10.1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Retrieval Transformer MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.43 (1.10)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23.4",
+            "value": "23.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.14 (1.31)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.3",
+            "value": "16.3",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Two-Stage Generative Transformer MemNet",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.92 (1.33)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "30.0",
+            "value": "30.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.93 (1.30)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.2",
+            "value": "26.2",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 14,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 145.25299072265625,
+            "y0": 384.2874450683594,
+            "x1": 503.9998779296875,
+            "y1": 394.25006103515625
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 395.2454528808594,
+            "x1": 504.00335693359375,
+            "y1": 405.20806884765625
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 406.2044677734375,
+            "x1": 504.0033264160156,
+            "y1": 416.1670837402344
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 417.1634521484375,
+            "x1": 504.003173828125,
+            "y1": 427.1260681152344
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 428.1224365234375,
+            "x1": 415.6051330566406,
+            "y1": 438.0850524902344
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 11",
+      "caption": "Retriever with Knowledge conversations. Selected conversations with a human. indicates clear factual mistakes by the model.",
+      "label": "fig:exretrieverknowledge",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model: Retrieval Transformer MemNet",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Arnold Schwarzenegger (seen)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Hey are you into the movie The Running Man",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yeah! That's one of my favorite movies! I can't believe that Team America: World Police was made in 2004 - 14 years ago!",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Another one of Arnies movies I like is Terminator 2 JUDGMENT DAY",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "The Terminator is probably his most iconic role, but he got his start from the movie \"Conan the Barbarian\", which came out a couple years earlier. I actually haven't seen that one.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Which one? Conan or \"Da Terminata\"",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I like Arnold Schwarzeneggar as well! I thought he was a fantastic governator, serving from 2003-2011.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "HAha Governator! Yeah, it's pretty crazy they he held higher office.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yes, he won the LIFETIME ACHIEVEMENT AWARD! Interestingly, he joined the U.S. Army in 1961 and was a paratrooper!",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Steak (seen)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Hello, it's lunch time here, and I'm in the mood for a great steak",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Wow that sounds delicious I wish I could say the same hahah, When the word \"steak\" is used without qualification, it normally refers to a Beefsteak",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Interesting, I don't really have a favorite steak, how about you?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I like rib eye it is really good specially medium rare, When the word \"steak\" is used without qualification, it generally refers to a beefsteak",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I like rib eye too! What is it about a rib eye that you enjoy?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Most steak cuts are very tender meat but I think rib eye can be quite tender",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "They really are. How do you choose a good steak?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "When it comes to steak and other cuts of meat you have rare, medium rare, medium, well done and so on",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "How do you prefer your steak prepared?",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I like that you can prepare it many different ways. You can fried it, grill it, or even broil the steak",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Ireland (unseen)",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Hi, have you ever been to Dublin? It is the capital and largest city in Ireland.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "No, I haven't but would love to",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "It is the largest city in Northern Ireland.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I've always found Ireland to be fascinating and would love to visit sometime",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Same here! It is the capital of Ireland too!",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "What is the most popular place to visit in Ireland?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I would recommend the Thrace, Crete, and the Ionian Islands as must see places.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I don't know anything about the Ionian Islands",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "It was once referred to as the Hellenic Republic!",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "American football (unseen)",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "American football can be traced back to Britain in the mid-19th century. The rules were very similar!",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I did not know that. Did they wear equipment back then?",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Am not really certain about it but American football resulted from several major divergences from association football and rugby football",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "The Philadelphia eagles actually have a rugby player on their team this year. he never played football until this year.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Philadelphia is one of a few cities to have all four teams, but they love the Eagles more than anything else by a long shot!",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "As a life long Philadelphia sports fan I have to agree with you.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I've always been more of a fan of the American Football team from Pittsburgh, The Steelers!",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Being from Philadelphia I am not much of a pittsburgh fan.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Are the Pittsburgh Steelers in the AFC?",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yes they are. the AFC north to be exact.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "List of national parks of the United States (unseen)",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I have never visited a national park in the United States, but I would really like to!",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Me too. I'd love to live in a national park",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Which one do you think is the best to visit first?",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "The United Nations is an important place to visit, the Statue of Liberty, Central park is great also",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Is the Statue of Liberty considered a National Park?",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yes, the statue of Liberty is there on an island - The Liberty Island.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I had no idea that that was a National Park. I have heard Zion National Park is really nice!",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yes, it links the shenandoah national park and the great smoky mountains together!",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 12",
+      "caption": "Retriever with Knowledge conversations. Selected conversations with a human. indicates clear factual mistakes by the model.",
+      "label": "fig:exretrieverknowledge",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model: Two-Stage Generative Transformer MemNet",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Circus (seen)",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "have you ever been to a circus? it is a company of performers who put on diverse entertainment shows.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I went to the circus once when I was a child actually.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "that's great! entertainment is a form of activity that holds the attention and interest of an audience.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "That's true. Have you ever been to a circus?",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I have not, but I know they were built with various types of seating ring, and sometimes a stage.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I went to one held in a stadium, so we had box seats.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "that's awesome! i'm sure you'll have to go to the circus, with appropriate music.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yes, circuses usually have their own kind of music.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "circuses can be done by circuses.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Granny Smith (seen)",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I really love Granny Smith apples, they're my favorite type of apple.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I love granny smith apples. they have hard, light green skin and a crisp flesh.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Yes, I really enjoy them. I also like Honeycrisp apples but they're so expensive!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "they've been grown for thousands of years in asia and europe, and were brought to north america by european colonists",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Oh really? They've been around way longer than I thought!",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "they're also consumed raw, it's one of the most popular cooking apples.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I always eat them raw, I hate cooked apples for some reason, even in pie.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i'm not sure if it's cooked, but I do know that they can be cooked raw.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Culture of Chicago (seen)",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "hi do you like chicago",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I love chicago. it's the third most populous city in the us.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "how many people live there?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "about 2. 7 million residents, it is also the most populous city in the state of illinois.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "do you like chicago deep dish pizza?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "chicago-style pizza may be made in deep dish style and as a stuffed pizza.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "what is the name of the baseball team?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "dano's pizzeria specializes in chicago style stuffed pizza.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Is Dano's pizzaria open everyday?",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "yes it is. it is an american style pizza chain headquartered in midtown brook, illinois.",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Animals in sport (unseen)",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i love to watch animals. it's the most popular form of animal-related sport.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "horse racing is the most awesome animal sport!",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "horse racing is an equestrian performance sport, typically involving two or more horses ridden by jockeys or driven over a set distance for competition.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "yes, the Kentucky Derby and the triple crown is something I look forward to every year!",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "the horse has evolved over the past 45 to 55 million years from a small multi toed creature",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "that is very interesting, how did people come to domesticate horses for sport?",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i'm not sure but the domestication is believed to have been widespread by 3000 bc",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "very interesting! I wonder how long people used horses to hunt before deciding to race them.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i'm not sure but I do know that horses have been domesticated for thousands of years.",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Dairy farming (unseen)",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "hi there i was wondering how you felt about farming",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I do not like dairy farming but I do know that in developed countries, dairy farms typically consist of high dairy products.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "oh yes they have alot of cows and push out alot of dairy every hour",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "other species used in commercial dairy farming include goats, sheep, and camels",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i did not know you could get milk a camel",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "camel milk has supported bedouin",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "oh wow thats very interesting",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "in italy they are growing in popularity to produce an alternative milk source for humans",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "i have had goat milk before",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "the earliest evidence of using domesticated cows for dairy production is the seventh millennium bc-the neolithic era -",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "thats so neat. i would say cow milk is my favorite",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "I love cow milk, especially since the iphone is used in the iphone.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "iphone and cow milk",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "the iphone was first released in 2007.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "oh ok well thanks for the talk have a great day",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "no problem! the iphone was first released in 2007.",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\figleft": "{\\em (Left)}",
+    "\\figcenter": "{\\em (Center)}",
+    "\\figright": "{\\em (Right)}",
+    "\\figtop": "{\\em (Top)}",
+    "\\figbottom": "{\\em (Bottom)}",
+    "\\captiona": "{\\em (a)}",
+    "\\captionb": "{\\em (b)}",
+    "\\captionc": "{\\em (c)}",
+    "\\captiond": "{\\em (d)}",
+    "\\newterm": "{\\bf #1}",
+    "\\train": "\\mathcal{D}",
+    "\\valid": "\\mathcal{D_{\\mathrm{valid}}}",
+    "\\test": "\\mathcal{D_{\\mathrm{test}}}",
+    "\\tens": "\\bm{\\mathsfit{#1}}",
+    "\\etens": "\\mathsfit{#1}",
+    "\\pdata": "p_{\\rm{data}}",
+    "\\ptrain": "\\hat{p}_{\\rm{data}}",
+    "\\Ptrain": "\\hat{P}_{\\rm{data}}",
+    "\\pmodel": "p_{\\rm{model}}",
+    "\\Pmodel": "P_{\\rm{model}}",
+    "\\ptildemodel": "\\tilde{p}_{\\rm{model}}",
+    "\\pencode": "p_{\\rm{encoder}}",
+    "\\pdecode": "p_{\\rm{decoder}}",
+    "\\precons": "p_{\\rm{reconstruct}}",
+    "\\laplace": "\\mathrm{Laplace}",
+    "\\E": "\\mathbb{E}",
+    "\\Ls": "\\mathcal{L}",
+    "\\R": "\\mathbb{R}",
+    "\\emp": "\\tilde{p}",
+    "\\lr": "\\alpha",
+    "\\reg": "\\lambda",
+    "\\rect": "\\mathrm{rectifier}",
+    "\\softmax": "\\mathrm{softmax}",
+    "\\sigmoid": "\\sigma",
+    "\\softplus": "\\zeta",
+    "\\KL": "D_{\\mathrm{KL}}",
+    "\\Var": "\\mathrm{Var}",
+    "\\standarderror": "\\mathrm{SE}",
+    "\\Cov": "\\mathrm{Cov}",
+    "\\normlzero": "L^0",
+    "\\normlone": "L^1",
+    "\\normltwo": "L^2",
+    "\\normlp": "L^p",
+    "\\normmax": "L^\\infty",
+    "\\parents": "Pa",
+    "\\ttdefault": "lmvtt",
+    "\\human": "\\fontsize{8}{8}\\textcolor{humancol}{\\textnormal{#1}}",
+    "\\robot": "\\fontsize{8}{8}\\textcolor{robotcol}{\\textnormal{#1}}",
+    "\\topic": "\\fontsize{8}{8}\\textcolor{topiccol}{\\textnormal{#1}}",
+    "\\knowledge": "\\textcolor{knolcol}{#1}",
+    "\\humanname": "\\human{Human:}",
+    "\\robotname": "\\robot{Model:}",
+    "\\topicname": "\\topic{\\textbf{Topic:}}",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "bernsen2012designing",
+      "raw": "Niels O Bernsen, Hans Dybkj r, and Laila Dybkj r. Designing interactive speech systems: From first ideas to user testing. Springer Science \\& Business Media, 2012",
+      "authors": "Niels O Bernsen, Hans Dybkj r, and Laila Dybkj r",
+      "title": "Designing interactive speech systems: From first ideas to user testing",
+      "venue": "Springer Science \\& Business Media, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bordes2016learning",
+      "raw": "Antoine Bordes, Y-Lan Boureau, and Jason Weston. Learning end-to-end goal-oriented dialog. In Proceedings of the International Conference on Learning Representations (ICLR), 2017",
+      "authors": "Antoine Bordes, Y-Lan Boureau, and Jason Weston",
+      "title": "Learning end-to-end goal-oriented dialog",
+      "venue": "In Proceedings of the International Conference on Learning Representations (ICLR), 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cer2018universal",
+      "raw": "Daniel Cer, Yinfei Yang, Sheng yi Kong, Nan Hua, Nicole Limtiaco, Rhomni St. John, Noah Constant, Mario Guajardo-Cespedes, Steve Yuan, Chris Tar, Yun-Hsuan Sung, Brian Strope, and Ray Kurzweil. Universal sentence encoder. arXiv preprint arXiv:1803.11175, 2018",
+      "authors": "Daniel Cer, Yinfei Yang, Sheng yi Kong, Nan Hua, Nicole Limtiaco, Rhomni St. John, Noah Constant, Mario Guajardo-Cespedes, Steve Yuan, Chris Tar, Yun-Hsuan Sung, Brian Strope, and Ray Kurzweil",
+      "title": "Universal sentence encoder",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1803.11175",
+      "doi": null
+    },
+    {
+      "key": "chen2017reading",
+      "raw": "Danqi Chen, Adam Fisch, Jason Weston, and Antoine Bordes. Reading wikipedia to answer open-domain questions. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, pp.\\ 1870--1879. Association for Computational Linguistics, 2017",
+      "authors": "Danqi Chen, Adam Fisch, Jason Weston, and Antoine Bordes",
+      "title": "Reading wikipedia to answer open-domain questions",
+      "venue": "In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics, pp.\\ 1870--1879. Association for Computational Linguistics, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "choi2018quac",
+      "raw": "Eunsol Choi, He He, Mohit Iyyer, Mark Yatskar, Wen-tau Yih, Yejin Choi, Percy Liang, and Luke Zettlemoyer. QuAC: Question answering in context. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, Brussels, Belgium, October 2018",
+      "authors": "Eunsol Choi, He He, Mohit Iyyer, Mark Yatskar, Wen-tau Yih, Yejin Choi, Percy Liang, and Luke Zettlemoyer",
+      "title": "QuAC: Question answering in context",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, Brussels, Belgium, October 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dodge2015evaluating",
+      "raw": "Jesse Dodge, Andreea Gane, Xiang Zhang, Antoine Bordes, Sumit Chopra, Alexander Miller, Arthur Szlam, and Jason Weston. Evaluating prerequisite qualities for learning end-to-end dialog systems. In Proceedings of the International Conference on Learning Representations (ICLR), 2016",
+      "authors": "Jesse Dodge, Andreea Gane, Xiang Zhang, Antoine Bordes, Sumit Chopra, Alexander Miller, Arthur Szlam, and Jason Weston",
+      "title": "Evaluating prerequisite qualities for learning end-to-end dialog systems",
+      "venue": "In Proceedings of the International Conference on Learning Representations (ICLR), 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "asri2017frames",
+      "raw": "Layla El Asri, Hannes Schulz, Shikhar Sharma, Jeremie Zumer, Justin Harris, Emery Fine, Rahul Mehrotra, and Kaheer Suleman. Frames: a corpus for adding memory to goal-oriented dialogue systems. In Proceedings of the 18th Annual SIGdial Meeting on Discourse and Dialogue, pp.\\ 207--219, Saarbr\\\"ucken, Germany, August 2017. Association for Computational Linguistics",
+      "authors": "Layla El Asri, Hannes Schulz, Shikhar Sharma, Jeremie Zumer, Justin Harris, Emery Fine, Rahul Mehrotra, and Kaheer Suleman",
+      "title": "Frames: a corpus for adding memory to goal-oriented dialogue systems",
+      "venue": "In Proceedings of the 18th Annual SIGdial Meeting on Discourse and Dialogue, pp.\\ 207--219, Saarbr\\\"ucken, Germany, August 2017. Association for Computational Linguistics",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "fan17",
+      "raw": "Angela Fan, David Grangier, and Michael Auli. Controllable abstractive summarization. In Proceedings of the 2nd Workshop on Neural Machine Translation and Generation, pp.\\ 45--54. Association for Computational Linguistics, 2018",
+      "authors": "Angela Fan, David Grangier, and Michael Auli",
+      "title": "Controllable abstractive summarization",
+      "venue": "In Proceedings of the 2nd Workshop on Neural Machine Translation and Generation, pp.\\ 45--54. Association for Computational Linguistics, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ghazvininejad2017knowledge",
+      "raw": "Marjan Ghazvininejad, Chris Brockett, Ming-Wei Chang, Bill Dolan, Jianfeng Gao, Wen-tau Yih, and Michel Galley. A knowledge-grounded neural conversation model. In Proceedings of the Conference on Association for the Advancement of Artificial Intelligence (AAAI), 2018",
+      "authors": "Marjan Ghazvininejad, Chris Brockett, Ming-Wei Chang, Bill Dolan, Jianfeng Gao, Wen-tau Yih, and Michel Galley",
+      "title": "A knowledge-grounded neural conversation model",
+      "venue": "In Proceedings of the Conference on Association for the Advancement of Artificial Intelligence (AAAI), 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "henderson2014second",
+      "raw": "Matthew Henderson, Blaise Thomson, and Jason D Williams. The second dialog state tracking challenge. In Proceedings of the 15th Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL), pp.\\ 263--272, 2014",
+      "authors": "Matthew Henderson, Blaise Thomson, and Jason D Williams",
+      "title": "The second dialog state tracking challenge",
+      "venue": "In Proceedings of the 15th Annual Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL), pp.\\ 263--272, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "henderson2017",
+      "raw": "Matthew Henderson, Rami Al-Rfou, Brian Strope, Yun-hsuan Sung, L'aszl'o Luk'acs, Ruiqi Guo, Sanjiv Kumar, Balint Miklos, and Ray Kurzweil. Efficient Natural Language Response Suggestion for Smart Reply. arXiv preprint arXiv:1705.00652, 2017",
+      "authors": "Matthew Henderson, Rami Al-Rfou, Brian Strope, Yun-hsuan Sung, L'aszl'o Luk'acs, Ruiqi Guo, Sanjiv Kumar, Balint Miklos, and Ray Kurzweil",
+      "title": "Efficient Natural Language Response Suggestion for Smart Reply",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1705.00652",
+      "doi": null
+    },
+    {
+      "key": "li2016arxiv",
+      "raw": "Jiwei Li, Will Monroe, and Daniel Jurafsky. A simple, fast diverse decoding algorithm for neural generation. arXiv preprint arXiv:1611.08562, 2016",
+      "authors": "Jiwei Li, Will Monroe, and Daniel Jurafsky",
+      "title": "A simple, fast diverse decoding algorithm for neural generation",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.08562",
+      "doi": null
+    },
+    {
+      "key": "mazare2018reddit",
+      "raw": "Pierre-Emmanuel Mazar\\'e, Samuel Humeau, Martin Raison, and Antoine Bordes. Training millions of personalized dialogue agents. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, Brussels, Belgium, October 2018. Association for Computational Linguistics",
+      "authors": "Pierre-Emmanuel Mazar\\'e, Samuel Humeau, Martin Raison, and Antoine Bordes",
+      "title": "Training millions of personalized dialogue agents",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, Brussels, Belgium, October 2018. Association for Computational Linguistics",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "D18-1255",
+      "raw": "Nikita Moghe, Siddhartha Arora, Suman Banerjee, and Mitesh M. Khapra. Towards exploiting background knowledge for building conversation systems. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pp.\\ 2322--2332. Association for Computational Linguistics, 2018. URL http://aclweb.org/anthology/D18-1255",
+      "authors": "Nikita Moghe, Siddhartha Arora, Suman Banerjee, and Mitesh M. Khapra",
+      "title": "Towards exploiting background knowledge for building conversation systems",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pp.\\ 2322--2332. Association for Computational Linguistics, 2018 URL",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "parthasarathi2018extending",
+      "raw": "Prasanna Parthasarathi and Joelle Pineau. Extending neural generative conversational model using external knowledge sources. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, Brussels, Belgium, October 2018",
+      "authors": "Prasanna Parthasarathi and Joelle Pineau",
+      "title": "Extending neural generative conversational model using external knowledge sources",
+      "venue": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, Brussels, Belgium, October 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rajpurkar2016squad",
+      "raw": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. SQuAD: 100,000+ questions for machine comprehension of text. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pp.\\ 2383--2392, Austin, Texas, November 2016. Association for Computational Linguistics",
+      "authors": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang",
+      "title": "SQuAD: 100,000+ questions for machine comprehension of text",
+      "venue": "In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pp.\\ 2383--2392, Austin, Texas, November 2016. Association for Computational Linguistics",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sennrich2016bpe",
+      "raw": "Rico Sennrich, Barry Haddow, and Alexandra Birch. Neural machine translation of rare words with subword units. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics, pp.\\ 1715--1725, Berlin, Germany, August 2016. Association for Computational Linguistics",
+      "authors": "Rico Sennrich, Barry Haddow, and Alexandra Birch",
+      "title": "Neural machine translation of rare words with subword units",
+      "venue": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics, pp.\\ 1715--1725, Berlin, Germany, August 2016. Association for Computational Linguistics",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "serban2016generative",
+      "raw": "Iulian Vlad Serban, Ryan Lowe, Laurent Charlin, and Joelle Pineau. Generative deep neural networks for dialogue: A short review. arXiv preprint arXiv:1611.06216, 2016",
+      "authors": "Iulian Vlad Serban, Ryan Lowe, Laurent Charlin, and Joelle Pineau",
+      "title": "Generative deep neural networks for dialogue: A short review",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.06216",
+      "doi": null
+    },
+    {
+      "key": "sordoni2015neural",
+      "raw": "Alessandro Sordoni, Michel Galley, Michael Auli, Chris Brockett, Yangfeng Ji, Margaret Mitchell, Jian-Yun Nie, Jianfeng Gao, and Bill Dolan. A neural network approach to context-sensitive generation of conversational responses. arXiv preprint arXiv:1506.06714, 2015",
+      "authors": "Alessandro Sordoni, Michel Galley, Michael Auli, Chris Brockett, Yangfeng Ji, Margaret Mitchell, Jian-Yun Nie, Jianfeng Gao, and Bill Dolan",
+      "title": "A neural network approach to context-sensitive generation of conversational responses",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1506.06714",
+      "doi": null
+    },
+    {
+      "key": "sukhbaatar2015end",
+      "raw": "Sainbayar Sukhbaatar, Jason Weston, Rob Fergus, et al. End-to-end memory networks. In Advances in Neural Information Processing Systems, pp.\\ 2440--2448, 2015",
+      "authors": "Sainbayar Sukhbaatar, Jason Weston, Rob Fergus, et al",
+      "title": "End-to-end memory networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2440--2448, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sutskever2014sequence",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. Sequence to sequence learning with neural networks. In Advances in Neural Information Processing Systems, pp.\\ 3104--3112, 2014",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 3104--3112, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vaswani2017attention",
+      "raw": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in Neural Information Processing Systems, pp.\\ 5998--6008, 2017",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, ukasz Kaiser, and Illia Polosukhin",
+      "title": "Attention is all you need",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 5998--6008, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vijayakumar2016diverse",
+      "raw": "Ashwin K. Vijayakumar, Michael Cogswell, Ramprasaath R. Selvaraju, Qing Sun, Stefan Lee, David J. Crandall, and Dhruv Batra. Diverse beam search: Decoding diverse solutions from neural sequence models. arXiv preprint arXiv:1610.02424, 2016",
+      "authors": "Ashwin K. Vijayakumar, Michael Cogswell, Ramprasaath R. Selvaraju, Qing Sun, Stefan Lee, David J. Crandall, and Dhruv Batra",
+      "title": "Diverse beam search: Decoding diverse solutions from neural sequence models",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1610.02424",
+      "doi": null
+    },
+    {
+      "key": "vinyals2015neural",
+      "raw": "Oriol Vinyals and Quoc Le. A neural conversational model. In Proceedings of the 31st International Conference on Machine Learning, Deep Learning Workshop, Lille, France, 2015",
+      "authors": "Oriol Vinyals and Quoc Le",
+      "title": "A neural conversational model",
+      "venue": "In Proceedings of the 31st International Conference on Machine Learning, Deep Learning Workshop, Lille, France, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wen2016network",
+      "raw": "Tsung-Hsien Wen, David Vandyke, Nikola Mrksic, Milica Gasic, Lina M Rojas-Barahona, Pei-Hao Su, Stefan Ultes, and Steve Young. A network-based end-to-end trainable task-oriented dialogue system. arXiv preprint arXiv:1604.04562, 2016",
+      "authors": "Tsung-Hsien Wen, David Vandyke, Nikola Mrksic, Milica Gasic, Lina M Rojas-Barahona, Pei-Hao Su, Stefan Ultes, and Steve Young",
+      "title": "A network-based end-to-end trainable task-oriented dialogue system",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1604.04562",
+      "doi": null
+    },
+    {
+      "key": "wu2017starspace",
+      "raw": "Ledell Wu, Adam Fisch, Sumit Chopra, Keith Adams, Antoine Bordes, and Jason Weston. Starspace: Embed all the things! arXiv preprint arXiv:1709.03856, 2017",
+      "authors": "Ledell Wu, Adam Fisch, Sumit Chopra, Keith Adams, Antoine Bordes, and Jason Weston",
+      "title": "Starspace: Embed all the things!",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1709.03856",
+      "doi": null
+    },
+    {
+      "key": "zhang2018personalizing",
+      "raw": "Saizheng Zhang, Emily Dinan, Jack Urbanek, Arthur Szlam, Douwe Kiela, and Jason Weston. Personalizing dialogue agents: I have a dog, do you have pets too? In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, pp.\\ 2204--2213, Melbourne, Australia, July 2018. Association for Computational Linguistics",
+      "authors": "Saizheng Zhang, Emily Dinan, Jack Urbanek, Arthur Szlam, Douwe Kiela, and Jason Weston",
+      "title": "Personalizing dialogue agents: I have a dog, do you have pets too?",
+      "venue": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics, pp.\\ 2204--2213, Melbourne, Australia, July 2018. Association for Computational Linguistics",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zhou2018commonsense",
+      "raw": "Hao Zhou, Tom Young, Minlie Huang, Haizhou Zhao, Jingfang Xu, and Xiaoyan Zhu. Commonsense knowledge aware conversation generation with graph attention. In Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence (IJCAI), pp.\\ 4623--4629. International Joint Conferences on Artificial Intelligence Organization, 7 2018",
+      "authors": "Hao Zhou, Tom Young, Minlie Huang, Haizhou Zhao, Jingfang Xu, and Xiaoyan Zhu",
+      "title": "Commonsense knowledge aware conversation generation with graph attention",
+      "venue": "In Proceedings of the Twenty-Seventh International Joint Conference on Artificial Intelligence (IJCAI), pp.\\ 4623--4629. International Joint Conferences on Artificial Intelligence Organization, 7 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\ell = \\argmax_{i \\in \\{1, ..., L\\}} \\frac{\\text{rep}_{\\text{LHS}}(m_{c_1}, \\cdots, m_{c_K}, x)}{\\|\\text{rep}_{\\text{LHS}}(m_{c_1}, \\dots, m_{c_K}, x)\\|_2} \\bullet \\frac{\\text{rep}_{\\text{RHS}}(r_i)}{\\|\\text{rep}_{\\text{RHS}}(r_i)\\|_2}.",
+      "environment": "equation*",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\mathcal{L} = (1 - \\lambda)\\mathcal{L}_{\\text{NLL}} + \\lambda\\mathcal{L}_{\\text{knowledge}}.",
+      "environment": "equation*",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1098,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8660125732422,
+            "y0": 231.21144104003906,
+            "x1": 468.13848876953125,
+            "y1": 241.17404174804688
+          },
+          {
+            "x0": 143.8660125732422,
+            "y0": 242.16944885253906,
+            "x1": 401.6083679199219,
+            "y1": 252.13204956054688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 3177,
+      "numbers": 1,
+      "citations": 6,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 430.103271484375,
+            "x1": 504.0032043457031,
+            "y1": 440.0658874511719
+          },
+          {
+            "x0": 108.0,
+            "y0": 441.062255859375,
+            "x1": 279.84490966796875,
+            "y1": 451.0248718261719
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2924,
+      "numbers": 0,
+      "citations": 18,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 254.84449768066406,
+            "x1": 412.23773193359375,
+            "y1": 264.8070983886719
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Wizard of Wikipedia",
+      "chars": 5518,
+      "numbers": 12,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 711.3472900390625,
+            "x1": 504.00311279296875,
+            "y1": 721.3098754882812
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 722.3062744140625,
+            "x1": 504.0031433105469,
+            "y1": 732.2688598632812
+          },
+          {
+            "x0": 303.5090026855469,
+            "y0": 752.1943359375,
+            "x1": 308.49029541015625,
+            "y1": 762.1569213867188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Models",
+      "chars": 3242,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 345.30438232421875,
+            "x1": 504.00164794921875,
+            "y1": 355.2669982910156
+          },
+          {
+            "x0": 108.0,
+            "y0": 356.26336669921875,
+            "x1": 202.34585571289062,
+            "y1": 366.2259826660156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Retrieval Transformer Memory Network",
+      "chars": 653,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 362.8185119628906,
+            "x1": 297.66796875,
+            "y1": 372.7811279296875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Generative Transformer Memory Network",
+      "chars": 2459,
+      "numbers": 1,
+      "citations": 4,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99993896484375,
+            "y0": 509.564453125,
+            "x1": 377.159423828125,
+            "y1": 519.5270385742188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 198,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 352.369384765625,
+            "x1": 332.85589599609375,
+            "y1": 362.3320007324219
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Knowledge Selection Task",
+      "chars": 1895,
+      "numbers": 1,
+      "citations": 3,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 409.2713623046875,
+            "x1": 504.00335693359375,
+            "y1": 419.2339782714844
+          },
+          {
+            "x0": 108.0,
+            "y0": 420.2303466796875,
+            "x1": 399.087158203125,
+            "y1": 430.1929626464844
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Full Task: Dialogue with Knowledge",
+      "chars": 4965,
+      "numbers": 8,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99995422363281,
+            "y0": 553.84423828125,
+            "x1": 504.003173828125,
+            "y1": 563.8068237304688
+          },
+          {
+            "x0": 107.99995422363281,
+            "y0": 564.80322265625,
+            "x1": 504.0032958984375,
+            "y1": 574.7658081054688
+          },
+          {
+            "x0": 107.99995422363281,
+            "y0": 575.7622680664062,
+            "x1": 179.9697723388672,
+            "y1": 585.724853515625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Human Evaluation",
+      "chars": 4068,
+      "numbers": 11,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 481.866455078125,
+            "x1": 406.3996887207031,
+            "y1": 491.8290710449219
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1389,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 199.8284454345703,
+            "x1": 504.00335693359375,
+            "y1": 209.79104614257812
+          },
+          {
+            "x0": 108.0,
+            "y0": 210.7874298095703,
+            "x1": 488.0331115722656,
+            "y1": 220.75003051757812
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 1,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 25,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "ghazvininejad2017knowledge",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "Both [Parthasarathi et al. 2018] and [Ghazvininejad et al. 2018] use unstructured text instead, as we do: the former to discuss news articles using Wikipedia summaries as knowledge, and the latter to discuss local businesses in two-turn dialogues using Foursquare tips as knowledge. [Ghazvininejad et al. 2018] uses an extended Encoder-Decoder where the decoder is provided with an encoding of the context along with the external knowledge encoding.",
+      "section": "Related Work",
+      "sectionKind": "related",
+      "ordinal": 16,
+      "title": "A knowledge-grounded neural conversation model",
+      "authors": "Marjan Ghazvininejad, Chris Brockett, Ming-Wei Chang, Bill Dolan, Jianfeng Gao, Wen-tau Yih, and Michel Galley",
+      "year": 2018,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 304.0639343261719,
+            "y0": 524.831298828125,
+            "x1": 504.0032653808594,
+            "y1": 534.7938842773438
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 535.790283203125,
+            "x1": 504.0033874511719,
+            "y1": 545.7528686523438
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 546.749267578125,
+            "x1": 388.87554931640625,
+            "y1": 556.7118530273438
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "ghazvininejad2017knowledge",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Both [Parthasarathi et al. 2018] and [Ghazvininejad et al. 2018] use unstructured text instead, as we do: the former to discuss news articles using Wikipedia summaries as knowledge, and the latter to discuss local businesses in two-turn dialogues using Foursquare tips as knowledge. [Ghazvininejad et al. 2018] uses an extended Encoder-Decoder where the decoder is provided with an encoding of the context along with the external knowledge encoding.",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 16,
+        "title": "A knowledge-grounded neural conversation model",
+        "authors": "Marjan Ghazvininejad, Chris Brockett, Ming-Wei Chang, Bill Dolan, Jianfeng Gao, Wen-tau Yih, and Michel Galley",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 304.0639343261719,
+              "y0": 524.831298828125,
+              "x1": 504.0032653808594,
+              "y1": 534.7938842773438
+            },
+            {
+              "x0": 107.99999237060547,
+              "y0": 535.790283203125,
+              "x1": 504.0033874511719,
+              "y1": 545.7528686523438
+            },
+            {
+              "x0": 107.99999237060547,
+              "y0": 546.749267578125,
+              "x1": 388.87554931640625,
+              "y1": 556.7118530273438
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "In this work we do not address question answering, but focus on natural human dialogues which contain a diverse set of utterances, not just questions and answers.",
+      "anchorText": "In this work we do not address question answering, but focus on natural human dialogues which contain a diverse set of utterances, not just questions and answers.",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we do not address",
+      "section": "Related Work",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 453.100341796875,
+            "x1": 504.00323486328125,
+            "y1": 463.0629577636719
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 464.059326171875,
+            "x1": 371.01263427734375,
+            "y1": 474.0219421386719
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Note that while this system is used to build the dataset, a superior method can in principle be learned and used by a model at test time. Knowledge Selection and Response Generation During data collection, the wizard can click on any of the retrieved article titles in the dialogue UI to expand that article, at which point they can click on a sentence that is most relevant to the response they want to make (only one article, and one sentence can be selected on any turn, for simplicity).",
+      "anchorText": "Note that while this system is used to build the dataset, a superior method can in principle be learned and used by a model at test time. Knowledge Selection and Response Generation During data collection, the wizard can click on any of the retrieved article titles in the dialogue UI to expand that article, at which point they can click on a sentence that is most relevant to the response they want to make (only one article, and one sentence can be selected on any turn, for simplicity).",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "for simplicity",
+      "section": "Wizard of Wikipedia",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 631.038330078125,
+            "x1": 504.00323486328125,
+            "y1": 641.0009155273438
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 641.997314453125,
+            "x1": 238.60968017578125,
+            "y1": 651.9598999023438
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 667.4203491210938,
+            "x1": 307.6505126953125,
+            "y1": 677.3829345703125
+          },
+          {
+            "x0": 317.6159973144531,
+            "y0": 667.5112915039062,
+            "x1": 503.9961853027344,
+            "y1": 677.473876953125
+          },
+          {
+            "x0": 108.0,
+            "y0": 678.4703369140625,
+            "x1": 504.0032958984375,
+            "y1": 688.4329223632812
+          },
+          {
+            "x0": 108.0,
+            "y0": 689.4293212890625,
+            "x1": 504.0033264160156,
+            "y1": 699.3919067382812
+          },
+          {
+            "x0": 108.0,
+            "y0": 700.3883056640625,
+            "x1": 318.0016174316406,
+            "y1": 710.3508911132812
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "The goal at each stage is to output the next utterance x_t+1. Knowledge Retrieval We assume a large knowledge base (memory) m_1, \u2026, m_N which is hierarchically organized into documents consisting of paragraphs and sentences.",
+      "anchorText": "which is hierarchically organized into documents consisting of paragraphs and sentences.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We assume",
+      "section": "Models",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 448.8129577636719,
+            "y0": 525.8352661132812,
+            "x1": 503.9957275390625,
+            "y1": 535.7978515625
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 536.7942504882812,
+            "x1": 415.03729248046875,
+            "y1": 546.7568359375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Transformers work best, as long as they are pretrained on a large dataset (Reddit), while multi-tasking additionally on SQuAD provides marginal impact.",
+      "anchorText": "Transformers work best, as long as they are pretrained on a large dataset (Reddit), while multi-tasking additionally on SQuAD provides marginal impact.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Knowledge Selection Task",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "Transformers work best, as long as they are pretrained on a large dataset (Reddit), while multi-tasking on SQuAD provides marginal impact.",
+      "anchorText": "Transformers work best, as long as they are pretrained on a large dataset (Reddit), while multi-tasking on SQuAD provides marginal impact.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "as long as",
+      "section": "Knowledge Selection Task",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 277.90216064453125,
+            "y0": 475.0242919921875,
+            "x1": 504.003173828125,
+            "y1": 484.9869079589844
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 485.9832763671875,
+            "x1": 436.93511962890625,
+            "y1": 495.9458923339844
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Our new publicly available benchmark aims to encourage further model exploration, and we expect such efforts will result in significant advances in this important research direction.",
+      "anchorText": "Our new publicly available benchmark aims to encourage further model exploration, and we expect such efforts will result in significant advances in this important research direction.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we expect",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 313.9966735839844,
+            "y0": 265.58135986328125,
+            "x1": 504.0032653808594,
+            "y1": 275.5439758300781
+          },
+          {
+            "x0": 108.0,
+            "y0": 276.54034423828125,
+            "x1": 504.00323486328125,
+            "y1": 286.5029602050781
+          },
+          {
+            "x0": 108.0,
+            "y0": 287.49932861328125,
+            "x1": 249.94715881347656,
+            "y1": 297.4619445800781
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 6,
+    "cited": 0,
+    "shown": 0,
+    "bare": 6
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 37,
+    "rate": 0.925
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2018-11-03",
+    "authors": [
+      "Emily Dinan",
+      "Stephen Roller",
+      "Kurt Shuster",
+      "Angela Fan",
+      "Michael Auli",
+      "Jason Weston"
+    ]
+  }
+}

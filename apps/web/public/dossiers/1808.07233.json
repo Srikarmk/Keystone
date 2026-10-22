@@ -1,0 +1,4832 @@
+{
+  "id": "1808.07233",
+  "title": "Gpipe: Efficient training of giant neural networks using pipeline parallelism",
+  "keystone": null,
+  "codeUrl": "https://github.com/renqianluo/NAO",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1808.07233",
+  "numbers": [
+    {
+      "value": "1 GPU",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "Furthermore, we show that equipped with the recent proposed weight sharing mechanism in ENAS to reduce the large complexity in the parameter space of child models, we can achieve improved efficiency in discovering powerful convolutional and recurrent architectures, e.g., both take less than hours on 1 GPU.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": null
+    },
+    {
+      "value": "1 day",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We use 200 V100 GPU cards to complete all the process within 1 day.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 381.3212890625,
+            "y0": 441.4422912597656,
+            "x1": 503.99530029296875,
+            "y1": 451.5040283203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 452.3512878417969,
+            "x1": 276.1075744628906,
+            "y1": 462.41302490234375
+          }
+        ]
+      }
+    },
+    {
+      "value": "150 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "For the second setting, we exactly follow the setup of ENAS and the search process includes running 150 epochs on 1 V100 GPU for hours.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 281.27996826171875,
+            "y0": 452.3512878417969,
+            "x1": 503.9974365234375,
+            "y1": 462.41302490234375
+          },
+          {
+            "x0": 108.0,
+            "y0": 463.33544921875,
+            "x1": 133.6636505126953,
+            "y1": 473.2980651855469
+          }
+        ]
+      }
+    },
+    {
+      "value": "1.5 days",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We use P100 GPU cards to complete all the process within 1.5 days.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 212.3939971923828,
+            "y0": 513.4952392578125,
+            "x1": 459.85565185546875,
+            "y1": 523.5570068359375
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Performances of different CNN models on CIFAR-10 dataset. `B' is the number of nodes within a cell introduced in subsection . `N' is the number of times the discovered normal cell is unrolled to form the final CNN architecture. `F' represents the filter size. `#op' is the number of different operation for one branch in the cell, which is an indicator of the scale of architecture space for automatic architecture design algorithm. `M' is the total number of network architectures that are trained to obtain the claimed performance. `/' denotes that the criteria is meaningless for a particular algorithm. `NAONet-WS' represents the architecture discovered by NAO and the weight sharing method as described in subsection . `Random-WS' represents the random search baseline, conducted in the weight sharing setting of ENAS .",
+      "label": "tbl:cifar10",
+      "numericCells": 151,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "#op",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Error(%)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "#params",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "M",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "GPU Days",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DenseNet-BC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40",
+            "value": "40",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.46",
+            "value": "3.46",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.6M",
+            "value": "25600000.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ResNeXt-29",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "3.58",
+            "value": "3.58",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.1M",
+            "value": "68100000.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NASNet-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.41",
+            "value": "3.41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.3M",
+            "value": "3300000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20000",
+            "value": "20000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2000",
+            "value": "2000",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NASNet-B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "N/A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.73",
+            "value": "3.73",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.6M",
+            "value": "2600000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20000",
+            "value": "20000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2000",
+            "value": "2000",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NASNet-C",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "N/A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.59",
+            "value": "3.59",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.1M",
+            "value": "3100000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20000",
+            "value": "20000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2000",
+            "value": "2000",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Hier-EA",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2",
+            "value": "2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.75",
+            "value": "3.75",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.7M",
+            "value": "15700000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7000",
+            "value": "7000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.34",
+            "value": "3.34",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.2M",
+            "value": "3200000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "20000",
+            "value": "20000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3150",
+            "value": "3150",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.37",
+            "value": "3.37",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.8M",
+            "value": "2800000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27000",
+            "value": "27000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3150",
+            "value": "3150",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "80",
+            "value": "80",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.04",
+            "value": "3.04",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13.7M",
+            "value": "13700000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27000",
+            "value": "27000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3150",
+            "value": "3150",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.98",
+            "value": "2.98",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.9M",
+            "value": "34900000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27000",
+            "value": "27000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3150",
+            "value": "3150",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-B + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.13",
+            "value": "2.13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.9M",
+            "value": "34900000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27000",
+            "value": "27000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3150",
+            "value": "3150",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "PNAS",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.41",
+            "value": "3.41",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.2M",
+            "value": "3200000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1280",
+            "value": "1280",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "225",
+            "value": "225",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ENAS",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.54",
+            "value": "3.54",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.6M",
+            "value": "4600000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.45",
+            "value": "0.45",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Random-WS",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.92",
+            "value": "3.92",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.9M",
+            "value": "3900000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.25",
+            "value": "0.25",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DARTS + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "2.83",
+            "value": "2.83",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.6M",
+            "value": "4600000.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4",
+            "value": "4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NAONet",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.18",
+            "value": "3.18",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.6M",
+            "value": "10600000.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "NAONet",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "64",
+            "value": "64",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.98",
+            "value": "2.98",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "28.6M",
+            "value": "28600000.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "NAONet + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.48",
+            "value": "2.48",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.6M",
+            "value": "10600000.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "NAONet + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1.93",
+            "value": "1.93",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "144.6M",
+            "value": "144600000.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "1000",
+            "value": "1000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "200",
+            "value": "200",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "NAONet-WS",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "3.53",
+            "value": "3.53",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.5M",
+            "value": "2500000.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.3",
+            "value": "0.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "NAONet-WS + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.93",
+            "value": "2.93",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "2.5M",
+            "value": "2500000.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.3",
+            "value": "0.3",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 2",
+      "caption": "Performances of different CNN models on CIFAR-100 dataset. `NAONet' represents the best architecture discovered by NAO on CIFAR-10.",
+      "label": "tbl:cifar100",
+      "numericCells": 86,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "B",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "N",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "F",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "#op",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Error (%)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "#params",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "DenseNet-BC",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "100",
+            "value": "100",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40",
+            "value": "40",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "17.18",
+            "value": "17.18",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "25.6M",
+            "value": "25600000.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Shake-shake",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.85",
+            "value": "15.85",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.4M",
+            "value": "34400000.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Shake-shake + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "15.20",
+            "value": "15.20",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "34.4M",
+            "value": "34400000.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NASNet-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.70",
+            "value": "19.70",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.3M",
+            "value": "3300000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NASNet-A + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "32",
+            "value": "32",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.58",
+            "value": "16.58",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.3M",
+            "value": "3300000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NASNet-A + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.03",
+            "value": "16.03",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "50.9M",
+            "value": "50900000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "PNAS",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.53",
+            "value": "19.53",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.2M",
+            "value": "3200000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "PNAS + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3",
+            "value": "3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "48",
+            "value": "48",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17.63",
+            "value": "17.63",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "3.2M",
+            "value": "3200000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "PNAS + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.70",
+            "value": "16.70",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "53.0M",
+            "value": "53000000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ENAS",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19.43",
+            "value": "19.43",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.6M",
+            "value": "4600000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ENAS + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17.27",
+            "value": "17.27",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.6M",
+            "value": "4600000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ENAS + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "16.44",
+            "value": "16.44",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "52.7M",
+            "value": "52700000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "17.66",
+            "value": "17.66",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.9M",
+            "value": "34900000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-B + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "15.80",
+            "value": "15.80",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.9M",
+            "value": "34900000.0",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NAONet + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "15.67",
+            "value": "15.67",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "10.8M",
+            "value": "10800000.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "NAONet + Cutout",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "6",
+            "value": "6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "128",
+            "value": "128",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "14.75",
+            "value": "14.75",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "128M",
+            "value": "128000000",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 3",
+      "caption": "Performances of different CNN models on ImageNet dataset. `NAONet' represents the best architecture discovered by NAO on CIFAR-10.",
+      "label": "tbl:imagenet",
+      "numericCells": 51,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Top-1(%)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Top-5(%)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Params(M)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Mult-Adds (M)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Inception-v1",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "30.2",
+            "value": "30.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.1",
+            "value": "10.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "6.6",
+            "value": "6.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1448",
+            "value": "1448",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MobileNet",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.4",
+            "value": "29.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.5",
+            "value": "10.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "4.2",
+            "value": "4.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "569",
+            "value": "569",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ShuffleNet 2 (v1)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29.1",
+            "value": "29.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10.2",
+            "value": "10.2",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "524",
+            "value": "524",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ShuffleNet 2 (v2)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "26.3",
+            "value": "26.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "524",
+            "value": "524",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NASNet-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.0",
+            "value": "26.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.4",
+            "value": "8.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.3",
+            "value": "5.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "564",
+            "value": "564",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NASNet-B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27.2",
+            "value": "27.2",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.7",
+            "value": "8.7",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.3",
+            "value": "5.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "488",
+            "value": "488",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NASNet-C",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27.5",
+            "value": "27.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.0",
+            "value": "9.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.9",
+            "value": "4.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "558",
+            "value": "558",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-A",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25.5",
+            "value": "25.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.0",
+            "value": "8.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.1",
+            "value": "5.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "555",
+            "value": "555",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-B",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.0",
+            "value": "26.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.5",
+            "value": "8.5",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.3",
+            "value": "5.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "555",
+            "value": "555",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "AmoebaNet-C",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24.3",
+            "value": "24.3",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "7.6",
+            "value": "7.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "6.4",
+            "value": "6.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "570",
+            "value": "570",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "PNAS",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "25.8",
+            "value": "25.8",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "8.1",
+            "value": "8.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "5.1",
+            "value": "5.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "588",
+            "value": "588",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DARTS",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "26.9",
+            "value": "26.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "9.0",
+            "value": "9.0",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "4.9",
+            "value": "4.9",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "595",
+            "value": "595",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NAONet",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "25.7",
+            "value": "25.7",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "8.2",
+            "value": "8.2",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "11.35",
+            "value": "11.35",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "584",
+            "value": "584",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 4",
+      "caption": "Performance of different models and techniques on PTB dataset. Similar to CIFAR-10 experiment, `NAONet-WS' represents NAO accompanied with weight sharing,and `Random-WS' is the corresponding random search baseline.",
+      "label": "tbl:ptb",
+      "numericCells": 33,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Models and Techniques",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "#params",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "GPU Days",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Vanilla LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66M",
+            "value": "66000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "78.4",
+            "value": "78.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM + Zoneout",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66M",
+            "value": "66000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "77.4",
+            "value": "77.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Variational LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "19M",
+            "value": "19000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "73.4",
+            "value": "73.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Pointer Sentinel-LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51M",
+            "value": "51000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "70.9",
+            "value": "70.9",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Variational LSTM + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "51M",
+            "value": "51000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.5",
+            "value": "68.5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Variational Recurrent Highway Network + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "23M",
+            "value": "23000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.4",
+            "value": "65.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "[c]@l@4-layer LSTM + skip connection + averaged",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "weight drop + weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58.3",
+            "value": "58.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "[c]@l@LSTM + averaged weight drop + Mixture of Softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "22M",
+            "value": "22000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56.0",
+            "value": "56.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "/",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "NAS + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "54M",
+            "value": "54000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "62.4",
+            "value": "62.4",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1e4 CPU days",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "ENAS + weight tying + weight penalty",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "58.6 \\",
+            "value": "58.6",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.5",
+            "value": "0.5",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Random-WS + weight tying + weight penalty",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "27M",
+            "value": "27000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "58.81",
+            "value": "58.81",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.4",
+            "value": "0.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DARTS+ weight tying + weight penalty",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "23M",
+            "value": "23000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "56.1",
+            "value": "56.1",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "1",
+            "value": "1",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NAONet + weight tying + weight penalty",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "27M",
+            "value": "27000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "56.0",
+            "value": "56.0",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "300",
+            "value": "300",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "NAONet-WS + weight tying + weight penalty",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "27M",
+            "value": "27000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "56.6",
+            "value": "56.6",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.4",
+            "value": "0.4",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "Performance of different models and techniques on PTB dataset. Similar to CIFAR-10 experiment, `NAONet-WS' represents NAO accompanied with weight sharing,and `Random-WS' is the corresponding random search baseline.",
+      "label": "tbl:ptb",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "4-layer LSTM + skip connection + averaged",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "weight drop + weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "Performance of different models and techniques on PTB dataset. Similar to CIFAR-10 experiment, `NAONet-WS' represents NAO accompanied with weight sharing,and `Random-WS' is the corresponding random search baseline.",
+      "label": "tbl:ptb",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "LSTM + averaged weight drop + Mixture of Softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "Performance of different models and techniques on WT2 dataset. `NAONet' represents the best architecture discovered by NAO on PTB.",
+      "label": "tbl:wt2",
+      "numericCells": 15,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Models and Techniques",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "#params",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test Perplexity",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Variational LSTM + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28M",
+            "value": "28000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "87.0",
+            "value": "87.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM + continuos cache pointer",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "-",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "68.9",
+            "value": "68.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33",
+            "value": "33",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "66.0",
+            "value": "66.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "[c]@l@4-layer LSTM + skip connection + averaged",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "weight drop + weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "24M",
+            "value": "24000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "65.9",
+            "value": "65.9",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "[c]@l@LSTM + averaged weight drop + Mixture of Softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33M",
+            "value": "33000000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "63.3",
+            "value": "63.3",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ENAS + weight tying + weight penalty (searched on PTB)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33M",
+            "value": "33000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "70.4",
+            "value": "70.4",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "DARTS + weight tying + weight penalty (searched on PTB)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33M",
+            "value": "33000000",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "66.9",
+            "value": "66.9",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "NAONet + weight tying + weight penalty (searched on PTB)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "36M",
+            "value": "36000000",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "67.0",
+            "value": "67.0",
+            "emphasised": false,
+            "block": 3
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "Performance of different models and techniques on WT2 dataset. `NAONet' represents the best architecture discovered by NAO on PTB.",
+      "label": "tbl:wt2",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "4-layer LSTM + skip connection + averaged",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "weight drop + weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 9",
+      "caption": "Performance of different models and techniques on WT2 dataset. `NAONet' represents the best architecture discovered by NAO on PTB.",
+      "label": "tbl:wt2",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "LSTM + averaged weight drop + Mixture of Softmax",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "+ weight penalty + weight tying",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {},
+  "references": [
+    {
+      "key": "unsupervised_nmt",
+      "raw": "Mikel Artetxe, Gorka Labaka, Eneko Agirre, and Kyunghyun Cho. Unsupervised neural machine translation. In International Conference on Learning Representations, 2018",
+      "authors": "Mikel Artetxe, Gorka Labaka, Eneko Agirre, and Kyunghyun Cho",
+      "title": "Unsupervised neural machine translation",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bahdanau2014neural",
+      "raw": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio. Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473, 2014",
+      "authors": "Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "baker_rl",
+      "raw": "Bowen Baker, Otkrist Gupta, Nikhil Naik, and Ramesh Raskar. Designing neural network architectures using reinforcement learning. In International Conference on Learning Representations, 2017",
+      "authors": "Bowen Baker, Otkrist Gupta, Nikhil Naik, and Ramesh Raskar",
+      "title": "Designing neural network architectures using reinforcement learning",
+      "venue": "In International Conference on Learning Representations, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "2018accelerating_perf_pred",
+      "raw": "Bowen Baker, Otkrist Gupta, Ramesh Raskar, and Nikhil Naik. Accelerating neural architecture search using performance prediction. In International Conference on Learning Representations, Workshop Track, 2018",
+      "authors": "Bowen Baker, Otkrist Gupta, Ramesh Raskar, and Nikhil Naik",
+      "title": "Accelerating neural architecture search using performance prediction",
+      "venue": "In International Conference on Learning Representations, Workshop Track, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "oneshot",
+      "raw": "Gabriel Bender, Pieter-Jan Kindermans, Barret Zoph, Vijay Vasudevan, and Quoc Le. Understanding and simplifying one-shot architecture search. In International Conference on Machine Learning, pages 549--558, 2018",
+      "authors": "Gabriel Bender, Pieter-Jan Kindermans, Barret Zoph, Vijay Vasudevan, and Quoc Le",
+      "title": "Understanding and simplifying one-shot architecture search",
+      "venue": "In International Conference on Machine Learning, pages 549--558, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "smash",
+      "raw": "Andrew Brock, Theo Lim, J.M. Ritchie, and Nick Weston. SMASH: One-shot model architecture search through hypernetworks. In International Conference on Learning Representations, 2018",
+      "authors": "Andrew Brock, Theo Lim, J.M. Ritchie, and Nick Weston",
+      "title": "SMASH: One-shot model architecture search through hypernetworks",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "weinan",
+      "raw": "Han Cai, Tianyao Chen, Weinan Zhang, Yong Yu, and Jun Wang. Reinforcement learning for architecture search by network transformation. arXiv preprint arXiv:1707.04873, 2017",
+      "authors": "Han Cai, Tianyao Chen, Weinan Zhang, Yong Yu, and Jun Wang",
+      "title": "Reinforcement learning for architecture search by network transformation",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1707.04873",
+      "doi": null
+    },
+    {
+      "key": "cai2018path",
+      "raw": "Han Cai, Jiacheng Yang, Weinan Zhang, Song Han, and Yong Yu. Path-level network transformation for efficient architecture search. arXiv preprint arXiv:1806.02639, 2018",
+      "authors": "Han Cai, Jiacheng Yang, Weinan Zhang, Song Han, and Yong Yu",
+      "title": "Path-level network transformation for efficient architecture search",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.02639",
+      "doi": null
+    },
+    {
+      "key": "s2s_emnlp",
+      "raw": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio. Learning phrase representations using rnn encoder--decoder for statistical machine translation. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1724--1734, Doha, Qatar, October 2014. Association for Computational Linguistics",
+      "authors": "Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, and Yoshua Bengio",
+      "title": "Learning phrase representations using rnn encoder--decoder for statistical machine translation",
+      "venue": "In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 1724--1734, Doha, Qatar, October 2014. Association for Computational Linguistics",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "peephole",
+      "raw": "Boyang Deng, Junjie Yan, and Dahua Lin. Peephole: Predicting network performance before training. arXiv preprint arXiv:1712.03351, 2017",
+      "authors": "Boyang Deng, Junjie Yan, and Dahua Lin",
+      "title": "Peephole: Predicting network performance before training",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1712.03351",
+      "doi": null
+    },
+    {
+      "key": "cutout",
+      "raw": "Terrance DeVries and Graham W Taylor. Improved regularization of convolutional neural networks with cutout. arXiv preprint arXiv:1708.04552, 2017",
+      "authors": "Terrance DeVries and Graham W Taylor",
+      "title": "Improved regularization of convolutional neural networks with cutout",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1708.04552",
+      "doi": null
+    },
+    {
+      "key": "cascade_corr",
+      "raw": "Scott E Fahlman and Christian Lebiere. The cascade-correlation learning architecture. In Advances in neural information processing systems, pages 524--532, 1990",
+      "authors": "Scott E Fahlman and Christian Lebiere",
+      "title": "The cascade-correlation learning architecture",
+      "venue": "In Advances in neural information processing systems, pages 524--532, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "l2t_iclr",
+      "raw": "Yang Fan, Fei Tian, Tao Qin, Xiang-Yang Li, and Tie-Yan Liu. Learning to teach. In International Conference on Learning Representations, 2018",
+      "authors": "Yang Fan, Fei Tian, Tao Qin, Xiang-Yang Li, and Tie-Yan Liu",
+      "title": "Learning to teach",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "vd_lstm",
+      "raw": "Yarin Gal and Zoubin Ghahramani. A theoretically grounded application of dropout in recurrent neural networks. In Advances in neural information processing systems, pages 1019--1027, 2016",
+      "authors": "Yarin Gal and Zoubin Ghahramani",
+      "title": "A theoretically grounded application of dropout in recurrent neural networks",
+      "venue": "In Advances in neural information processing systems, pages 1019--1027, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shakeshake",
+      "raw": "Xavier Gastaldi. Shake-shake regularization. CoRR, abs/1705.07485, 2017",
+      "authors": "Xavier Gastaldi",
+      "title": "Shake-shake regularization",
+      "venue": "CoRR, abs/1705.07485, 2017",
+      "year": 2017,
+      "arxivId": "1705.07485",
+      "doi": null
+    },
+    {
+      "key": "cachepointer",
+      "raw": "Edouard Grave, Armand Joulin, and Nicolas Usunier. Improving neural language models with a continuous cache. CoRR, abs/1612.04426, 2016",
+      "authors": "Edouard Grave, Armand Joulin, and Nicolas Usunier",
+      "title": "Improving neural language models with a continuous cache",
+      "venue": "CoRR, abs/1612.04426, 2016",
+      "year": 2016,
+      "arxivId": "1612.04426",
+      "doi": null
+    },
+    {
+      "key": "LargeSpaceOfNN",
+      "raw": "Roger B. Grosse, Ruslan Salakhutdinov, William T. Freeman, and Joshua B. Tenenbaum. Exploiting compositionality to explore a large space of model structures. In Proceedings of the Twenty-Eighth Conference on Uncertainty in Artificial Intelligence, UAI'12, pages 306--315, Arlington, Virginia, United States, 2012. AUAI Press",
+      "authors": "Roger B. Grosse, Ruslan Salakhutdinov, William T. Freeman, and Joshua B. Tenenbaum",
+      "title": "Exploiting compositionality to explore a large space of model structures",
+      "venue": "In Proceedings of the Twenty-Eighth Conference on Uncertainty in Artificial Intelligence, UAI'12, pages 306--315, Arlington, Virginia, United States, 2012. AUAI Press",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mobilenet",
+      "raw": "Andrew G Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam. Mobilenets: Efficient convolutional neural networks for mobile vision applications. arXiv preprint arXiv:1704.04861, 2017",
+      "authors": "Andrew G Howard, Menglong Zhu, Bo Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam",
+      "title": "Mobilenets: Efficient convolutional neural networks for mobile vision applications",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1704.04861",
+      "doi": null
+    },
+    {
+      "key": "NASBoosting",
+      "raw": "Furong Huang, Jordan Ash, John Langford, and Robert Schapire. Learning deep resnet blocks sequentially using boosting theory. arXiv preprint arXiv:1706.04964, 2017",
+      "authors": "Furong Huang, Jordan Ash, John Langford, and Robert Schapire",
+      "title": "Learning deep resnet blocks sequentially using boosting theory",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1706.04964",
+      "doi": null
+    },
+    {
+      "key": "densenet",
+      "raw": "Gao Huang, Zhuang Liu, Laurens van der Maaten, and Kilian Q Weinberger. Densely connected convolutional networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 4700--4708, 2017",
+      "authors": "Gao Huang, Zhuang Liu, Laurens van der Maaten, and Kilian Q Weinberger",
+      "title": "Densely connected convolutional networks",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 4700--4708, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "weight_tying",
+      "raw": "Hakan Inan, Khashayar Khosravi, and Richard Socher. Tying word vectors and word classifiers: A loss framework for language modeling. arXiv preprint arXiv:1611.01462, 2016",
+      "authors": "Hakan Inan, Khashayar Khosravi, and Richard Socher",
+      "title": "Tying word vectors and word classifiers: A loss framework for language modeling",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.01462",
+      "doi": null
+    },
+    {
+      "key": "BO4NAS",
+      "raw": "Kirthevasan Kandasamy, Willie Neiswanger, Jeff Schneider, Barnabas Poczos, and Eric Xing. Neural architecture search with bayesian optimisation and optimal transport. arXiv preprint arXiv:1802.07191, 2018",
+      "authors": "Kirthevasan Kandasamy, Willie Neiswanger, Jeff Schneider, Barnabas Poczos, and Eric Xing",
+      "title": "Neural architecture search with bayesian optimisation and optimal transport",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1802.07191",
+      "doi": null
+    },
+    {
+      "key": "GA_old",
+      "raw": "Hiroaki Kitano. Designing neural networks using genetic algorithms with graph generation system. Complex Systems Journal, 4:461--476, 1990",
+      "authors": "Hiroaki Kitano",
+      "title": "Designing neural networks using genetic algorithms with graph generation system",
+      "venue": "Complex Systems Journal, 4:461--476, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "zoneout",
+      "raw": "David Krueger, Tegan Maharaj, J\\'anos Kram\\'ar, Mohammad Pezeshki, Nicolas Ballas, Nan Rosemary Ke, Anirudh Goyal, Yoshua Bengio, Aaron Courville, and Chris Pal. Zoneout: Regularizing rnns by randomly preserving hidden activations. arXiv preprint arXiv:1606.01305, 2016",
+      "authors": "David Krueger, Tegan Maharaj, J\\'anos Kram\\'ar, Mohammad Pezeshki, Nicolas Ballas, Nan Rosemary Ke, Anirudh Goyal, Yoshua Bengio, Aaron Courville, and Chris Pal",
+      "title": "Zoneout: Regularizing rnns by randomly preserving hidden activations",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1606.01305",
+      "doi": null
+    },
+    {
+      "key": "lample2018unsupervised",
+      "raw": "Guillaume Lample, Alexis Conneau, Ludovic Denoyer, and Marc'Aurelio Ranzato. Unsupervised machine translation using monolingual corpora only. In International Conference on Learning Representations, 2018",
+      "authors": "Guillaume Lample, Alexis Conneau, Ludovic Denoyer, and Marc'Aurelio Ranzato",
+      "title": "Unsupervised machine translation using monolingual corpora only",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "doc2vec",
+      "raw": "Quoc Le and Tomas Mikolov. Distributed representations of sentences and documents. In Eric P. Xing and Tony Jebara, editors, Proceedings of the 31st International Conference on Machine Learning, volume 32 of Proceedings of Machine Learning Research, pages 1188--1196, Bejing, China, 22--24 Jun 2014. PMLR",
+      "authors": "Quoc Le and Tomas Mikolov",
+      "title": "Distributed representations of sentences and documents",
+      "venue": "In Eric P. Xing and Tony Jebara, editors, Proceedings of the 31st International Conference on Machine Learning, volume 32 of Proceedings of Machine Learning Research, pages 1188--1196, Bejing, China, 22--24 Jun 2014. PMLR",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "PNAS",
+      "raw": "Chenxi Liu, Barret Zoph, Jonathon Shlens, Wei Hua, Li-Jia Li, Li Fei-Fei, Alan Yuille, Jonathan Huang, and Kevin Murphy. Progressive neural architecture search. arXiv preprint arXiv:1712.00559, 2017",
+      "authors": "Chenxi Liu, Barret Zoph, Jonathon Shlens, Wei Hua, Li-Jia Li, Li Fei-Fei, Alan Yuille, Jonathan Huang, and Kevin Murphy",
+      "title": "Progressive neural architecture search",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1712.00559",
+      "doi": null
+    },
+    {
+      "key": "hanxiao",
+      "raw": "Hanxiao Liu, Karen Simonyan, Oriol Vinyals, Chrisantha Fernando, and Koray Kavukcuoglu. Hierarchical representations for efficient architecture search. In International Conference on Learning Representations, 2018",
+      "authors": "Hanxiao Liu, Karen Simonyan, Oriol Vinyals, Chrisantha Fernando, and Koray Kavukcuoglu",
+      "title": "Hierarchical representations for efficient architecture search",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "darts",
+      "raw": "Hanxiao Liu, Karen Simonyan, and Yiming Yang. Darts: Differentiable architecture search. arXiv preprint arXiv:1806.09055, 2018",
+      "authors": "Hanxiao Liu, Karen Simonyan, and Yiming Yang",
+      "title": "Darts: Differentiable architecture search",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1806.09055",
+      "doi": null
+    },
+    {
+      "key": "sgdr",
+      "raw": "Ilya Loshchilov and Frank Hutter. SGDR: stochastic gradient descent with restarts. CoRR, abs/1608.03983, 2016",
+      "authors": "Ilya Loshchilov and Frank Hutter",
+      "title": "SGDR: stochastic gradient descent with restarts",
+      "venue": "CoRR, abs/1608.03983, 2016",
+      "year": 2016,
+      "arxivId": "1608.03983",
+      "doi": null
+    },
+    {
+      "key": "ptb",
+      "raw": "Mitchell Marcus, Grace Kim, Mary Ann Marcinkiewicz, Robert MacIntyre, Ann Bies, Mark Ferguson, Karen Katz, and Britta Schasberger. The penn treebank: annotating predicate argument structure. In Proceedings of the workshop on Human Language Technology, pages 114--119. Association for Computational Linguistics, 1994",
+      "authors": "Mitchell Marcus, Grace Kim, Mary Ann Marcinkiewicz, Robert MacIntyre, Ann Bies, Mark Ferguson, Karen Katz, and Britta Schasberger",
+      "title": "The penn treebank: annotating predicate argument structure",
+      "venue": "In Proceedings of the workshop on Human Language Technology, pages 114--119. Association for Computational Linguistics, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sota_lm",
+      "raw": "G\u00e1bor Melis, Chris Dyer, and Phil Blunsom. On the state of the art of evaluation in neural language models. In International Conference on Learning Representations, 2018",
+      "authors": "G\u00e1bor Melis, Chris Dyer, and Phil Blunsom",
+      "title": "On the state of the art of evaluation in neural language models",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "regulstm",
+      "raw": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher. Regularizing and optimizing LSTM language models. CoRR, abs/1708.02182, 2017",
+      "authors": "Stephen Merity, Nitish Shirish Keskar, and Richard Socher",
+      "title": "Regularizing and optimizing LSTM language models",
+      "venue": "CoRR, abs/1708.02182, 2017",
+      "year": 2017,
+      "arxivId": "1708.02182",
+      "doi": null
+    },
+    {
+      "key": "merity2016pointer",
+      "raw": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher. Pointer sentinel mixture models. arXiv preprint arXiv:1609.07843, 2016",
+      "authors": "Stephen Merity, Caiming Xiong, James Bradbury, and Richard Socher",
+      "title": "Pointer sentinel mixture models",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1609.07843",
+      "doi": null
+    },
+    {
+      "key": "evolvingNN",
+      "raw": "Risto Miikkulainen, Jason Liang, Elliot Meyerson, Aditya Rawal, Dan Fink, Olivier Francon, Bala Raju, Hormoz Shahrzad, Arshak Navruzyan, Nigel Duffy, et al. Evolving deep neural networks. arXiv preprint arXiv:1703.00548, 2017",
+      "authors": "Risto Miikkulainen, Jason Liang, Elliot Meyerson, Aditya Rawal, Dan Fink, Olivier Francon, Bala Raju, Hormoz Shahrzad, Arshak Navruzyan, Nigel Duffy, et al",
+      "title": "Evolving deep neural networks",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1703.00548",
+      "doi": null
+    },
+    {
+      "key": "w2v",
+      "raw": "Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean. Distributed representations of words and phrases and their compositionality. In Advances in neural information processing systems, pages 3111--3119, 2013",
+      "authors": "Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean",
+      "title": "Distributed representations of words and phrases and their compositionality",
+      "venue": "In Advances in neural information processing systems, pages 3111--3119, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "ENAS",
+      "raw": "Hieu Pham, Melody Y Guan, Barret Zoph, Quoc V Le, and Jeff Dean. Efficient neural architecture search via parameter sharing. arXiv preprint arXiv:1802.03268, 2018",
+      "authors": "Hieu Pham, Melody Y Guan, Barret Zoph, Quoc V Le, and Jeff Dean",
+      "title": "Efficient neural architecture search via parameter sharing",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1802.03268",
+      "doi": null
+    },
+    {
+      "key": "typingEmbedding",
+      "raw": "Ofir Press and Lior Wolf. Using the output embedding to improve language models. In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 2, Short Papers, pages 157--163. Association for Computational Linguistics, 2017",
+      "authors": "Ofir Press and Lior Wolf",
+      "title": "Using the output embedding to improve language models",
+      "venue": "In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 2, Short Papers, pages 157--163. Association for Computational Linguistics, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "amobanet",
+      "raw": "Esteban Real, Alok Aggarwal, Yanping Huang, and Quoc V Le. Regularized evolution for image classifier architecture search. arXiv preprint arXiv:1802.01548, 2018",
+      "authors": "Esteban Real, Alok Aggarwal, Yanping Huang, and Quoc V Le",
+      "title": "Regularized evolution for image classifier architecture search",
+      "venue": "arXiv preprint 2018",
+      "year": 2018,
+      "arxivId": "1802.01548",
+      "doi": null
+    },
+    {
+      "key": "EA_2017",
+      "raw": "Esteban Real, Sherry Moore, Andrew Selle, Saurabh Saxena, Yutaka Leon Suematsu, Jie Tan, Quoc V Le, and Alexey Kurakin. Large-scale evolution of image classifiers. In International Conference on Machine Learning, pages 2902--2911, 2017",
+      "authors": "Esteban Real, Sherry Moore, Andrew Selle, Saurabh Saxena, Yutaka Leon Suematsu, Jie Tan, Quoc V Le, and Alexey Kurakin",
+      "title": "Large-scale evolution of image classifiers",
+      "venue": "In International Conference on Machine Learning, pages 2902--2911, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "practicalBO",
+      "raw": "Jasper Snoek, Hugo Larochelle, and Ryan P Adams. Practical bayesian optimization of machine learning algorithms. In Advances in neural information processing systems, pages 2951--2959, 2012",
+      "authors": "Jasper Snoek, Hugo Larochelle, and Ryan P Adams",
+      "title": "Practical bayesian optimization of machine learning algorithms",
+      "venue": "In Advances in neural information processing systems, pages 2951--2959, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "s2s",
+      "raw": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le. Sequence to sequence learning with neural networks. In Advances in neural information processing systems, pages 3104--3112, 2014",
+      "authors": "Ilya Sutskever, Oriol Vinyals, and Quoc V Le",
+      "title": "Sequence to sequence learning with neural networks",
+      "venue": "In Advances in neural information processing systems, pages 3104--3112, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "inceptionv1",
+      "raw": "Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich. Going deeper with convolutions. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 1--9, 2015",
+      "authors": "Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich",
+      "title": "Going deeper with convolutions",
+      "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 1--9, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wu2018learning",
+      "raw": "Lijun Wu, Fei Tian, Yingce Xia, Yang Fan, Tao Qin, Lai Jian-Huang, and Tie-Yan Liu. Learning to teach with dynamic loss functions. In Advances in Neural Information Processing Systems, pages 6465--6476, 2018",
+      "authors": "Lijun Wu, Fei Tian, Yingce Xia, Yang Fan, Tao Qin, Lai Jian-Huang, and Tie-Yan Liu",
+      "title": "Learning to teach with dynamic loss functions",
+      "venue": "In Advances in Neural Information Processing Systems, pages 6465--6476, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "genetic_cnn",
+      "raw": "L. Xie and A. Yuille. Genetic cnn. In 2017 IEEE International Conference on Computer Vision (ICCV), pages 1388--1397, Oct. 2017",
+      "authors": "L. Xie and A. Yuille",
+      "title": "Genetic cnn",
+      "venue": "In 2017 IEEE International Conference on Computer Vision (ICCV), pages 1388--1397, Oct. 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "resNext",
+      "raw": "Saining Xie, Ross Girshick, Piotr Doll\\'ar, Zhuowen Tu, and Kaiming He. Aggregated residual transformations for deep neural networks. In Computer Vision and Pattern Recognition (CVPR), 2017 IEEE Conference on, pages 5987--5995. IEEE, 2017",
+      "authors": "Saining Xie, Ross Girshick, Piotr Doll\\'ar, Zhuowen Tu, and Kaiming He",
+      "title": "Aggregated residual transformations for deep neural networks",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2017 IEEE Conference on, pages 5987--5995. IEEE, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "MOS",
+      "raw": "Zhilin Yang, Zihang Dai, Ruslan Salakhutdinov, and William W. Cohen. Breaking the softmax bottleneck: A high-rank RNN language model. In International Conference on Learning Representations, 2018",
+      "authors": "Zhilin Yang, Zihang Dai, Ruslan Salakhutdinov, and William W. Cohen",
+      "title": "Breaking the softmax bottleneck: A high-rank RNN language model",
+      "venue": "In International Conference on Learning Representations, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rnn_dp",
+      "raw": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals. Recurrent neural network regularization. arXiv preprint arXiv:1409.2329, 2014",
+      "authors": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals",
+      "title": "Recurrent neural network regularization",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    },
+    {
+      "key": "shufflenet",
+      "raw": "Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, and Jian Sun. Shufflenet: An extremely efficient convolutional neural network for mobile devices. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 6848--6856, 2018",
+      "authors": "Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, and Jian Sun",
+      "title": "Shufflenet: An extremely efficient convolutional neural network for mobile devices",
+      "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 6848--6856, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rhn",
+      "raw": "Julian Georg Zilly, Rupesh Kumar Srivastava, Jan Koutn\u00edk, and J\u00fcrgen Schmidhuber. Recurrent highway networks. In International Conference on Machine Learning, pages 4189--4198, 2017",
+      "authors": "Julian Georg Zilly, Rupesh Kumar Srivastava, Jan Koutn\u00edk, and J\u00fcrgen Schmidhuber",
+      "title": "Recurrent highway networks",
+      "venue": "In International Conference on Machine Learning, pages 4189--4198, 2017",
+      "year": 2017,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nas",
+      "raw": "Barret Zoph and Quoc V Le. Neural architecture search with reinforcement learning. arXiv preprint arXiv:1611.01578, 2016",
+      "authors": "Barret Zoph and Quoc V Le",
+      "title": "Neural architecture search with reinforcement learning",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1611.01578",
+      "doi": null
+    },
+    {
+      "key": "nasnet",
+      "raw": "Barret Zoph, Vijay Vasudevan, Jonathon Shlens, and Quoc V Le. Learning transferable architectures for scalable image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, 2018",
+      "authors": "Barret Zoph, Vijay Vasudevan, Jonathon Shlens, and Quoc V Le",
+      "title": "Learning transferable architectures for scalable image recognition",
+      "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition, 2018",
+      "year": 2018,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\small\n\nL=\\lambda L_{pp} + (1-\\lambda) L_{rec} = \\lambda \\sum_{x\\in X} (s_x-f(E(x))^2 - (1-\\lambda)\\sum_{x\\in X} \\log P_D(x|E(x)),",
+      "environment": "equation",
+      "labels": [
+        "eqn:total_loss"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\small\n\nh'_t = h_t + \\eta \\frac{\\partial f}{\\partial h_t}, \\quad e_{x'}=\\{h'_1,\\cdots, h'_T\\},",
+      "environment": "equation",
+      "labels": [
+        "eqn:gd"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1977,
+      "numbers": 3,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86599731445312,
+            "y0": 272.6217346191406,
+            "x1": 469.78363037109375,
+            "y1": 282.5193786621094
+          },
+          {
+            "x0": 143.86599731445312,
+            "y0": 283.4598388671875,
+            "x1": 273.9464111328125,
+            "y1": 293.4522705078125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 4385,
+      "numbers": 1,
+      "citations": 28,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.64099884033203,
+            "y0": 594.349365234375,
+            "x1": 504.0036315917969,
+            "y1": 604.2118530273438
+          },
+          {
+            "x0": 108.0,
+            "y0": 605.254638671875,
+            "x1": 238.4932861328125,
+            "y1": 615.1221313476562
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related Work",
+      "chars": 2679,
+      "numbers": 0,
+      "citations": 37,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 565.0712890625,
+            "x1": 503.99737548828125,
+            "y1": 575.133056640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 576.0064697265625,
+            "x1": 486.9183654785156,
+            "y1": 586.0336303710938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Approach",
+      "chars": 420,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 518.5614624023438,
+            "x1": 434.5442810058594,
+            "y1": 528.5240478515625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Architecture Space",
+      "chars": 2818,
+      "numbers": 6,
+      "citations": 12,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 565.0712890625,
+            "x1": 451.5520935058594,
+            "y1": 575.133056640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Components of Neural Architecture Optimization",
+      "chars": 3176,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 324.8973083496094,
+            "x1": 302.1583251953125,
+            "y1": 334.95904541015625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Training and Inference",
+      "chars": 1566,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 196.63357543945312,
+            "x1": 217.59547424316406,
+            "y1": 206.55123901367188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Combination with Weight Sharing",
+      "chars": 830,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 671.4663696289062,
+            "x1": 284.7264404296875,
+            "y1": 681.328857421875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 193,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 195.46231079101562,
+            "x1": 503.9974060058594,
+            "y1": 205.5240478515625
+          },
+          {
+            "x0": 108.0,
+            "y0": 206.46160888671875,
+            "x1": 505.693603515625,
+            "y1": 216.40426635742188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Results on CIFAR-10 Classification",
+      "chars": 7219,
+      "numbers": 9,
+      "citations": 4,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 254.60340881347656,
+            "x1": 437.8846740722656,
+            "y1": 264.46588134765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Transferring the discovered architecture to CIFAR-100",
+      "chars": 1526,
+      "numbers": 0,
+      "citations": 4,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.69100189208984,
+            "y0": 200.99429321289062,
+            "x1": 436.8132019042969,
+            "y1": 211.0560302734375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Transferring the discovered architecture to ImageNet",
+      "chars": 1068,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 528.8460083007812,
+            "x1": 346.5730895996094,
+            "y1": 538.7235717773438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Results of Language Modeling on PTB",
+      "chars": 2814,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 120.65299987792969,
+            "y0": 713.199951171875,
+            "x1": 246.1816864013672,
+            "y1": 722.1663818359375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Transferring the discovered architecture to WikiText-2",
+      "chars": 971,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 690.55126953125,
+            "x1": 504.2508239746094,
+            "y1": 700.613037109375
+          },
+          {
+            "x0": 108.0,
+            "y0": 701.6113891601562,
+            "x1": 406.9146728515625,
+            "y1": 711.473876953125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 862,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 258.36895751953125,
+            "x1": 504.0032043457031,
+            "y1": 268.296630859375
+          },
+          {
+            "x0": 107.6709976196289,
+            "y0": 269.1763000488281,
+            "x1": 504.6641845703125,
+            "y1": 279.238037109375
+          },
+          {
+            "x0": 108.0,
+            "y0": 280.1077575683594,
+            "x1": 269.158447265625,
+            "y1": 290.1398620605469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgement",
+      "chars": 226,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.53199768066406,
+            "y0": 398.7756042480469,
+            "x1": 503.9952087402344,
+            "y1": 408.71826171875
+          },
+          {
+            "x0": 108.0,
+            "y0": 409.66192626953125,
+            "x1": 328.4042053222656,
+            "y1": 419.6344909667969
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 10,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 24,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "EA_2017",
+      "stance": "inherits",
+      "cue": "we adopt",
+      "sentence": "For fair comparison with previous NAS algorithms, we adopt the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017; Real et al. 2017; Real et al. 2018]. For searching CNN architecture, we assume that the CNN architecture is hierarchical in that a cell is stacked for a certain number of times (denoted as N) to form the final CNN architecture.",
+      "section": "Architecture Space",
+      "sectionKind": "method",
+      "ordinal": 22,
+      "title": "Large-scale evolution of image classifiers",
+      "authors": "Esteban Real, Sherry Moore, Andrew Selle, Saurabh Saxena, Yutaka Leon Suematsu, Jie Tan, Quoc V Le, and Alexey Kurakin",
+      "year": 2017,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 249.32931518554688,
+            "y0": 586.9654541015625,
+            "x1": 265.10009765625,
+            "y1": 596.9280395507812
+          },
+          {
+            "x0": 108.0,
+            "y0": 603.4255981445312,
+            "x1": 504.00421142578125,
+            "y1": 613.2930908203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 614.187255859375,
+            "x1": 320.90106201171875,
+            "y1": 624.2490234375
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "BO4NAS",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Another line of work with similar motivation to our research is using bayesian optimization (BO) to perform automatic architecture design [Snoek et al. 2012; Kandasamy et al. 2018].",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 20,
+        "title": "Neural architecture search with bayesian optimisation and optimal transport",
+        "authors": "Kirthevasan Kandasamy, Willie Neiswanger, Jeff Schneider, Barnabas Poczos, and Eric Xing",
+        "year": 2018,
+        "arxivId": "1802.07191",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.64099884033203,
+              "y0": 366.4248046875,
+              "x1": 503.99615478515625,
+              "y1": 376.3724670410156
+            },
+            {
+              "x0": 108.0,
+              "y0": 377.37933349609375,
+              "x1": 257.7488098144531,
+              "y1": 387.2669372558594
+            }
+          ]
+        }
+      },
+      {
+        "key": "EA_2017",
+        "stance": "inherits",
+        "cue": "we adopt",
+        "sentence": "For fair comparison with previous NAS algorithms, we adopt the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017; Real et al. 2017; Real et al. 2018]. For searching CNN architecture, we assume that the CNN architecture is hierarchical in that a cell is stacked for a certain number of times (denoted as N) to form the final CNN architecture.",
+        "section": "Architecture Space",
+        "sectionKind": "method",
+        "ordinal": 22,
+        "title": "Large-scale evolution of image classifiers",
+        "authors": "Esteban Real, Sherry Moore, Andrew Selle, Saurabh Saxena, Yutaka Leon Suematsu, Jie Tan, Quoc V Le, and Alexey Kurakin",
+        "year": 2017,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 249.32931518554688,
+              "y0": 586.9654541015625,
+              "x1": 265.10009765625,
+              "y1": 596.9280395507812
+            },
+            {
+              "x0": 108.0,
+              "y0": 603.4255981445312,
+              "x1": 504.00421142578125,
+              "y1": 613.2930908203125
+            },
+            {
+              "x0": 108.0,
+              "y0": 614.187255859375,
+              "x1": 320.90106201171875,
+              "y1": 624.2490234375
+            }
+          ]
+        }
+      },
+      {
+        "key": "ENAS",
+        "stance": "inherits",
+        "cue": "Using",
+        "sentence": "Using the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017], the architecture found via NAO achieves 1.93% test set error rate (with cutout [DeVries et al. 2017]) on CIFAR-10.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 8,
+        "title": "Efficient neural architecture search via parameter sharing",
+        "authors": "Hieu Pham, Melody Y Guan, Barret Zoph, Quoc V Le, and Jeff Dean",
+        "year": 2018,
+        "arxivId": "1802.03268",
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 239.7585906982422,
+              "y0": 412.56329345703125,
+              "x1": 503.99749755859375,
+              "y1": 422.6250305175781
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 423.4722900390625,
+              "x1": 132.3749542236328,
+              "y1": 433.5340270996094
+            }
+          ]
+        }
+      },
+      {
+        "key": "PNAS",
+        "stance": "inherits",
+        "cue": "Using",
+        "sentence": "Using the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017], the architecture found via NAO achieves 1.93% test set error rate (with cutout [DeVries et al. 2017]) on CIFAR-10.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 8,
+        "title": "Progressive neural architecture search",
+        "authors": "Chenxi Liu, Barret Zoph, Jonathon Shlens, Wei Hua, Li-Jia Li, Li Fei-Fei, Alan Yuille, Jonathan Huang, and Kevin Murphy",
+        "year": 2017,
+        "arxivId": "1712.00559",
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 239.7585906982422,
+              "y0": 412.56329345703125,
+              "x1": 503.99749755859375,
+              "y1": 422.6250305175781
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 423.4722900390625,
+              "x1": 132.3749542236328,
+              "y1": 433.5340270996094
+            }
+          ]
+        }
+      },
+      {
+        "key": "amobanet",
+        "stance": "inherits",
+        "cue": "we adopt",
+        "sentence": "For fair comparison with previous NAS algorithms, we adopt the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017; Real et al. 2017; Real et al. 2018]. For searching CNN architecture, we assume that the CNN architecture is hierarchical in that a cell is stacked for a certain number of times (denoted as N) to form the final CNN architecture.",
+        "section": "Architecture Space",
+        "sectionKind": "method",
+        "ordinal": 22,
+        "title": "Regularized evolution for image classifier architecture search",
+        "authors": "Esteban Real, Alok Aggarwal, Yanping Huang, and Quoc V Le",
+        "year": 2018,
+        "arxivId": "1802.01548",
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 249.32931518554688,
+              "y0": 586.9654541015625,
+              "x1": 265.10009765625,
+              "y1": 596.9280395507812
+            },
+            {
+              "x0": 108.0,
+              "y0": 603.4255981445312,
+              "x1": 504.00421142578125,
+              "y1": 613.2930908203125
+            },
+            {
+              "x0": 108.0,
+              "y0": 614.187255859375,
+              "x1": 320.90106201171875,
+              "y1": 624.2490234375
+            }
+          ]
+        }
+      },
+      {
+        "key": "cutout",
+        "stance": "inherits",
+        "cue": "Using",
+        "sentence": "Using the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017], the architecture found via NAO achieves 1.93% test set error rate (with cutout [DeVries et al. 2017]) on CIFAR-10.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 9,
+        "title": "Improved regularization of convolutional neural networks with cutout",
+        "authors": "Terrance DeVries and Graham W Taylor",
+        "year": 2017,
+        "arxivId": "1708.04552",
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 239.7585906982422,
+              "y0": 412.56329345703125,
+              "x1": 503.99749755859375,
+              "y1": 422.6250305175781
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 423.4722900390625,
+              "x1": 132.3749542236328,
+              "y1": 433.5340270996094
+            }
+          ]
+        }
+      },
+      {
+        "key": "darts",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the best architecture discovered on CIFAR-10 and follow the same training setting as in related works [Liu et al. 2018].",
+        "section": "Transferring the discovered architecture to ImageNet",
+        "sectionKind": "experiments",
+        "ordinal": 37,
+        "title": "Darts: Differentiable architecture search",
+        "authors": "Hanxiao Liu, Karen Simonyan, and Yiming Yang",
+        "year": 2018,
+        "arxivId": "1806.09055",
+        "inCorpus": false,
+        "anchor": {
+          "page": 7,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 349.657958984375,
+              "y0": 528.8460083007812,
+              "x1": 503.99945068359375,
+              "y1": 538.7235717773438
+            },
+            {
+              "x0": 108.0,
+              "y0": 539.645263671875,
+              "x1": 388.03173828125,
+              "y1": 549.6674194335938
+            }
+          ]
+        }
+      },
+      {
+        "key": "nas",
+        "stance": "inherits",
+        "cue": "Using",
+        "sentence": "Using the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017], the architecture found via NAO achieves 1.93% test set error rate (with cutout [DeVries et al. 2017]) on CIFAR-10.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 8,
+        "title": "Neural architecture search with reinforcement learning",
+        "authors": "Barret Zoph and Quoc V Le",
+        "year": 2016,
+        "arxivId": "1611.01578",
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 239.7585906982422,
+              "y0": 412.56329345703125,
+              "x1": 503.99749755859375,
+              "y1": 422.6250305175781
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 423.4722900390625,
+              "x1": 132.3749542236328,
+              "y1": 433.5340270996094
+            }
+          ]
+        }
+      },
+      {
+        "key": "nasnet",
+        "stance": "inherits",
+        "cue": "Using",
+        "sentence": "Using the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017], the architecture found via NAO achieves 1.93% test set error rate (with cutout [DeVries et al. 2017]) on CIFAR-10.",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 8,
+        "title": "Learning transferable architectures for scalable image recognition",
+        "authors": "Barret Zoph, Vijay Vasudevan, Jonathon Shlens, and Quoc V Le",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 239.7585906982422,
+              "y0": 412.56329345703125,
+              "x1": 503.99749755859375,
+              "y1": 422.6250305175781
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 423.4722900390625,
+              "x1": 132.3749542236328,
+              "y1": 433.5340270996094
+            }
+          ]
+        }
+      },
+      {
+        "key": "practicalBO",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "Another line of work with similar motivation to our research is using bayesian optimization (BO) to perform automatic architecture design [Snoek et al. 2012; Kandasamy et al. 2018].",
+        "section": "Related Work",
+        "sectionKind": "related",
+        "ordinal": 20,
+        "title": "Practical bayesian optimization of machine learning algorithms",
+        "authors": "Jasper Snoek, Hugo Larochelle, and Ryan P Adams",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.64099884033203,
+              "y0": 366.4248046875,
+              "x1": 503.99615478515625,
+              "y1": 376.3724670410156
+            },
+            {
+              "x0": 108.0,
+              "y0": 377.37933349609375,
+              "x1": 257.7488098144531,
+              "y1": 387.2669372558594
+            }
+          ]
+        }
+      },
+      {
+        "key": "sota_lm",
+        "stance": "compares",
+        "cue": "on par with",
+        "sentence": "As can be observed, NAO successfully discovered an architecture that achieves quite competitive perplexity 56.0, surpassing previous NAS methods and is on par with the best performance from LSTM method with advanced manually designed techniques such as averaged weight drop [Melis et al. 2018].",
+        "section": "Results of Language Modeling on PTB",
+        "sectionKind": "experiments",
+        "ordinal": 39,
+        "title": "On the state of the art of evaluation in neural language models",
+        "authors": "G\u00e1bor Melis, Chris Dyer, and Phil Blunsom",
+        "year": 2018,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 8,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 282.302001953125,
+              "y0": 584.4292602539062,
+              "x1": 504.16583251953125,
+              "y1": 594.4910278320312
+            },
+            {
+              "x0": 107.64099884033203,
+              "y0": 595.353271484375,
+              "x1": 503.9983215332031,
+              "y1": 605.395263671875
+            },
+            {
+              "x0": 108.0,
+              "y0": 606.2472534179688,
+              "x1": 207.4134063720703,
+              "y1": 616.3090209960938
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "For fair comparison with previous NAS algorithms, we adopt the same architecture space commonly used in previous works [Zoph et al. 2016; Zoph et al. 2018; Pham et al. 2018; Liu et al. 2017; Real et al. 2017; Real et al. 2018]. For searching CNN architecture, we assume that the CNN architecture is hierarchical in that a cell is stacked for a certain number of times (denoted as N) to form the final CNN architecture.",
+      "anchorText": ". For searching CNN architecture, we assume that the CNN architecture is hierarchical in that a cell is stacked for a certain number of times (denoted as",
+      "kind": "stated",
+      "support": "cited",
+      "cue": "we assume",
+      "section": "Architecture Space",
+      "sectionKind": "method",
+      "cites": [
+        "nas",
+        "nasnet",
+        "ENAS",
+        "PNAS",
+        "EA_2017",
+        "amobanet"
+      ],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 249.32931518554688,
+            "y0": 586.9654541015625,
+            "x1": 265.10009765625,
+            "y1": 596.9280395507812
+          },
+          {
+            "x0": 108.0,
+            "y0": 603.4255981445312,
+            "x1": 504.00421142578125,
+            "y1": 613.2930908203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 614.187255859375,
+            "x1": 320.90106201171875,
+            "y1": 624.2490234375
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Such optimization step is represented via the green arrow in Fig. [ref]. e_x' corresponds to a new architecture x' which is probably better than x since we have f(e_x')\u2265 f(e_x), as long as \u03b7 is within a reasonable range (e.g., small enough).",
+      "anchorText": "Such optimization step is represented via the green arrow in Fig.",
+      "kind": "conditional",
+      "support": "shown",
+      "cue": "as long as",
+      "section": "Training and Inference",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [
+        "fig:frame"
+      ],
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 210.78038024902344,
+            "y0": 393.7543029785156,
+            "x1": 476.675537109375,
+            "y1": 403.8160400390625
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 1,
+    "shown": 1,
+    "bare": 0
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 40,
+    "rate": 1.0
+  },
+  "arxiv": {
+    "primary": "cs.LG",
+    "primaryName": "Machine Learning",
+    "categories": [
+      "cs.LG",
+      "stat.ML"
+    ],
+    "published": "2018-08-22",
+    "authors": [
+      "Renqian Luo",
+      "Fei Tian",
+      "Tao Qin",
+      "Enhong Chen",
+      "Tie-Yan Liu"
+    ]
+  }
+}

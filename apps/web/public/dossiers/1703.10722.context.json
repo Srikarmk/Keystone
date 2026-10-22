@@ -1,0 +1,46 @@
+{
+  "id": "1703.10722",
+  "title": "Factorization tricks for LSTM networks",
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "text": "We present two simple ways of reducing the number of parameters and accelerating the training of large Long Short-Term Memory (LSTM) networks: the first one is \"matrix factorization by design\" of LSTM matrix into the product of two smaller matrices, and the second one is partitioning of LSTM matrix, its inputs and states into the independent groups. Both approaches allow us to train large LSTM networks significantly faster to the near state-of the art perplexity while using significantly less RNN parameters."
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "text": "LSTM networks have been successfully used in language modeling , speech recognition , machine translation , and many other tasks. However, these networks have millions of parameters, and require weeks of training on multi-GPU systems. We introduce two modifications of LSTM cell with projection, LSTMP , to reduce the number of parameters and speed-up training. The first method, factorized LSTM (F-LSTM) approximates big LSTM matrix with a product of two smaller matrices. The second method, group LSTM (G-LSTM) partitions LSTM cell into the independent groups. We test F-LSTM and G-LSTM architectures on the task of language modeling using One Billion Word Benchmark . As a baseline, we used BIGLSTM model without CNN inputs described by . We train all networks for 1 week on a DGX Station system with 4 Tesla V100 GPUs, after which BIGLSTM's evaluation perplexity was 35.1. Our G-LSTM based model got 36 and F-LSTM based model got 36.3 while using two to three times less RNN parameters."
+    },
+    {
+      "kind": "introduction",
+      "title": "Long Short-Term Memory overview",
+      "text": "Learning long-range dependencies with Recurrent Neural Networks (RNN) is challenging due to the vanishing and exploding gradient problems . To address this issue, the LSTM cell has been introduced by , with the following recurrent computations: LSTM: h_t-1, c_t-1, x_t h_t, c_t. where is input, is cell's state, and is cell's memory. We consider LSTM cell with projection of size , LSTMP, where Equation is computed as follows . First, cell gates are computed: i f o g = sigm sigm sigm tanh T x_t h_t-1 where , , and is an affine transform . Next state and memory are computed using following equations: c_t = f c_t-1 + i g ; h_t = P (o tanh(c_t)) where is a linear projection. The major part of LSTMP cell computation is in computing affine transform because it involves multiplication with matrix . Thus we focus on reducing the number of parameters in ."
+    },
+    {
+      "kind": "introduction",
+      "title": "Related Work",
+      "text": "The partition of layer into parallel groups have been introduced by in AlexNet, where some convolutional layers have been divided into two groups to split the model between two GPUs. Multi-group convnets have been widely used to reduce network weights and required compute, for example by . This multi-group approach was extended to the extreme in Xception architecture by . The idea of factorization of large convolutinal layer into the stack of layers with smaller filters was used, for example, in VGG networks , and in ResNet \"bottleneck design\" . have shown that it is possible to train several different deep architectures by learning only a small number of weights and predicting the rest. In case of LSTM networks, ConvLSTM , has been introduced to better exploit possible spatiotemporal correlations, which is conceptually similar to grouping."
+    },
+    {
+      "kind": "method",
+      "title": "Factorized LSTM cell",
+      "text": "Factorized LSTM (F-LSTM) replaces matrix by the product of two smaller matrices that essentially try to approximate as , where is of size , is , and (\"factorization by design\"). The key assumption here is that can be well approximated by the matrix of rank . Such approximation contains less LSTMP parameters than original model - versus and, therefore, can be computed faster and synchronized faster in the case of distributed training. [h] Language model using: (a) 2 regular LSTM layers, (b) 2 F-LSTM layers, and (c) 2 G-LSTM layers with 2 group in each layer. Equations inside cells show what kind of affine transforms are computed by those cells at each time step. Here for models without groups and , for model with two groups; and time index dropped for clarity."
+    },
+    {
+      "kind": "method",
+      "title": "Group LSTM cell",
+      "text": "This approach is inspired by groups in Alexnet . We postulate that some parts of the input and hidden state can be thought of as independent feature groups. For example, if we use two groups, then both and are effectively split into two vectors concatenated together and , with only dependent on , and cell's memory state. Therefore, for groups Equation changes to: i f o g = sigm sigm sigm tanh T^1 x^1_t h^1_t-1 , ... , sigm sigm sigm tanh T^k x^k_t h^k_t-1 where, is a group 's affine transform from to . The partitioned will now have parameters. This cell architecture is well suited for model parallelism since every group computation is independent. An alternative interpretation of G-LSTM layers is demonstrated in the Figure (c). While this might look similar to ensemble or multi-tower models, the key differences are: (1) input to different groups is different and assumed independent, and (2) instead of computing ensemble output, it is concatenated into independent pieces."
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments and Results",
+      "text": "For testing we used the task of learning the joint probabilities over word sequences of arbitrary lengths : , such that \"real\" sentences have high probabilities compared to the random sequences of words. Figure (a) shows the typical LSTM-based model, where first the words are embedded into the low dimensional dense input for RNN, then the \"context\" is learned using RNNs via number of steps and, finally, the softmax layer converts RNN output into the probability distribution . We test the following models: BIGLSTM - model with projections but without CNN inputs from BIG F-LSTM F512 - with intermediate rank of 512 for LSTM matrix , BIG G-LSTM G-4, with 4 groups in both layers BIG G-LSTM G-16, with 16 groups in both layers. We train all models on DGX Station with 4 GV100 GPUs for one ween using Adagrad optimizer, projection size of 1024, cell size of 8192, mini-batch of 256 per GPU, sampled softmax with 8192 samples and 0.2 learning rate. Note that the use of projection is crucial as it helps to keep down embedding and softmax layer sizes. Table summarizes our experiments. Judging from the training loss Plots in Appendix, it is clearly visible that at the same step count, model with more parameters wins. However, given the same amount of time, factorized models train faster. While the difference between BIGLSTM and BIG G-LSTM-G2 is clearly visible, BIG G-LSTM-G2 contains almost 2 times less RNN parameters than BIGLSTM, trains faster and, as a results, achieves similar evaluation perplexity within the same training time budget (1 week). Our code is available at https://github.com/okuchaiev/f-lm [t] One Billion Words benchmark evaluation results after 1 week of training using one DGX Station with 4 Tesla V100 GPUs. lllll 1c Model & 1c Perplexity & 1c Step & 1c Num of RNN parameters & 1c Words/sec BIGLSTM baseline & 35.1 & 0.99M & 151,060,480 & 33.8K BIG F-LSTM F512 & 36.3 & 1.67 M & 52,494,336 & 56.5K BIG G-LSTM G-2 & 36 & 1.37M & 83,951,616 & 41.7K BIG G-LSTM G-4 & 40.6 & 1.128M & 50,397,184 & 56K BIG G-LSTM G-8 & 39.4 & 850.4K & 33,619,968 & 58.5K"
+    },
+    {
+      "kind": "experiments",
+      "title": "Future research",
+      "text": "While one might go further and try to approximate transform using arbitrary feed forward neural network with inputs and outputs, during our initial experiments we did not see immediate benefits of doing so. Hence, it remains a topic of future research. It might be possible to reduce the number of RNN parameters even further by stacking G-LSTM layers with increasing group counts on top of each other. In our second, smaller experiment, we replace the second layer of BIG G-LSTM-G4 network by the layer with 8 groups instead of 4, and call it BIG G-LSTM-G4-G8. We let both BIG G-LSTM-G4 and BIG G-LSTM-G4-G8 ran for 1 week on 4 GPUs each and achieved very similar perplexities. Hence, the model with \"hierarchical\" groups did not lose much accuracy, ran faster and got better perplexity. Such \"hierarchical\" group layers look intriguing as they might provide a way for learning different levels of abstractions but this remains a topic of future research. Acknowledgements We are grateful to Scott Gray and Ciprian Chelba for helping us identify and correct issues with earlier versions of this work."
+    }
+  ]
+}

@@ -1,0 +1,3112 @@
+{
+  "id": "1409.3215",
+  "title": "Sequence to Sequence Learning with Neural Networks",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "The performance of the LSTM on WMT'14 English to French test set (ntst14). Note that an ensemble of 5 LSTMs with a beam of size 2 is cheaper than of a single LSTM with a beam of size 12.",
+    "supported": 5,
+    "share": 0.556,
+    "summary": "5 of the paper's headline numbers trace to Table 1"
+  },
+  "codeUrl": "",
+  "coverage": {
+    "claims": 9,
+    "supported": 8,
+    "declared": 1,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.889
+  },
+  "claims": [
+    {
+      "value": "34.8",
+      "section": "abstract",
+      "sentence": "Our main result is that on an English to French translation task from the WMT'14 dataset, the translations produced by the LSTM achieve a BLEU score of 34.8 on the entire test set, where the LSTM's BLEU score was penalized on out-of-vocabulary words.",
+      "status": "rounded",
+      "table": "Table 1",
+      "caption": "The performance of the LSTM on WMT'14 English to French test set (ntst14). Note that an ensemble of 5 LSTMs with a beam of size 2 is cheaper than of a single LSTM with a beam of size 12.",
+      "row": "Ensemble of 5 reversed LSTMs, beam size 12",
+      "column": "test BLEU score (ntst14)",
+      "cell": "34.81",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 277.31964111328125,
+            "y0": 351.42864990234375,
+            "x1": 468.30157470703125,
+            "y1": 364.71881103515625
+          },
+          {
+            "x0": 143.8800506591797,
+            "y0": 362.46844482421875,
+            "x1": 468.2168273925781,
+            "y1": 375.75860595703125
+          },
+          {
+            "x0": 143.8800506591797,
+            "y0": 373.38873291015625,
+            "x1": 468.1129455566406,
+            "y1": 386.67889404296875
+          },
+          {
+            "x0": 143.88003540039062,
+            "y0": 384.3086242675781,
+            "x1": 338.9709777832031,
+            "y1": 397.5987854003906
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 168.47999572753906,
+            "y0": 164.6783905029297,
+            "x1": 333.40301513671875,
+            "y1": 176.63954162597656
+          },
+          {
+            "x0": 383.2799987792969,
+            "y0": 164.75909423828125,
+            "x1": 403.36322021484375,
+            "y1": 177.1775360107422
+          }
+        ]
+      }
+    },
+    {
+      "value": "33.3",
+      "section": "abstract",
+      "sentence": "For comparison, a phrase-based SMT system achieves a BLEU score of 33.3 on the same dataset.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "The performance of the LSTM on WMT'14 English to French test set (ntst14). Note that an ensemble of 5 LSTMs with a beam of size 2 is cheaper than of a single LSTM with a beam of size 12.",
+      "row": "Baseline System",
+      "column": "test BLEU score (ntst14)",
+      "cell": "33.30",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 284.7596435546875,
+            "y0": 395.3484191894531,
+            "x1": 468.07073974609375,
+            "y1": 408.6385803222656
+          },
+          {
+            "x0": 143.88002014160156,
+            "y0": 406.2687072753906,
+            "x1": 357.2108459472656,
+            "y1": 419.5588684082031
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.23983764648438,
+            "y0": 184.74932861328125,
+            "x1": 504.0099182128906,
+            "y1": 198.03948974609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 195.66961669921875,
+            "x1": 504.0787353515625,
+            "y1": 208.95977783203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 206.70941162109375,
+            "x1": 138.5706787109375,
+            "y1": 219.99957275390625
+          }
+        ]
+      }
+    },
+    {
+      "value": "36.5",
+      "section": "abstract",
+      "sentence": "When we used the LSTM to rerank the 1000 hypotheses produced by the aforementioned SMT system, its BLEU score increases to 36.5, which is close to the previous best result on this task.",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Methods that use neural networks together with an SMT system on the WMT'14 English to French test set (ntst14).",
+      "row": "Rescoring the baseline 1000-best with an ensemble of 5 reversed LSTMs",
+      "column": "test BLEU score (ntst14)",
+      "cell": "36.5",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 362.6400451660156,
+            "y0": 406.2687072753906,
+            "x1": 468.2169189453125,
+            "y1": 419.5588684082031
+          },
+          {
+            "x0": 143.8800048828125,
+            "y0": 417.1885986328125,
+            "x1": 468.1555480957031,
+            "y1": 430.478759765625
+          },
+          {
+            "x0": 143.8800048828125,
+            "y0": 428.2283935546875,
+            "x1": 468.15545654296875,
+            "y1": 441.5185546875
+          },
+          {
+            "x0": 143.8800048828125,
+            "y0": 439.1482849121094,
+            "x1": 162.45066833496094,
+            "y1": 452.4384460449219
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 119.87999725341797,
+            "y0": 291.6383972167969,
+            "x1": 382.0877685546875,
+            "y1": 303.59954833984375
+          },
+          {
+            "x0": 434.03900146484375,
+            "y0": 291.7190856933594,
+            "x1": 449.6821594238281,
+            "y1": 304.13751220703125
+          }
+        ]
+      }
+    },
+    {
+      "value": "34.81",
+      "section": "introduction",
+      "sentence": "On the WMT'14 English to French translation task, we obtained a BLEU score of 34.81 by directly extracting translations from an ensemble of 5 deep LSTMs (with 384M parameters and 8,000 dimensional state each) using a simple left-to-right beam-search decoder.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "The performance of the LSTM on WMT'14 English to French test set (ntst14). Note that an ensemble of 5 LSTMs with a beam of size 2 is cheaper than of a single LSTM with a beam of size 12.",
+      "row": "Ensemble of 5 reversed LSTMs, beam size 12",
+      "column": "test BLEU score (ntst14)",
+      "cell": "34.81",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 295.5604553222656,
+            "y0": 460.3896789550781,
+            "x1": 503.9716796875,
+            "y1": 473.6798400878906
+          },
+          {
+            "x0": 107.999755859375,
+            "y0": 471.3095703125,
+            "x1": 504.06011962890625,
+            "y1": 484.5997314453125
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 482.2294616699219,
+            "x1": 504.19683837890625,
+            "y1": 495.5196228027344
+          },
+          {
+            "x0": 107.99873352050781,
+            "y0": 493.2692565917969,
+            "x1": 170.36949157714844,
+            "y1": 506.5594177246094
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 168.47999572753906,
+            "y0": 164.6783905029297,
+            "x1": 333.40301513671875,
+            "y1": 176.63954162597656
+          },
+          {
+            "x0": 383.2799987792969,
+            "y0": 164.75909423828125,
+            "x1": 403.36322021484375,
+            "y1": 177.1775360107422
+          }
+        ]
+      }
+    },
+    {
+      "value": "33.30",
+      "section": "introduction",
+      "sentence": "For comparison, the BLEU score of an SMT baseline on this dataset is 33.30 .",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "The performance of the LSTM on WMT'14 English to French test set (ntst14). Note that an ensemble of 5 LSTMs with a beam of size 2 is cheaper than of a single LSTM with a beam of size 12.",
+      "row": "Baseline System",
+      "column": "test BLEU score (ntst14)",
+      "cell": "33.30",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.7589111328125,
+            "y0": 504.18951416015625,
+            "x1": 439.8605041503906,
+            "y1": 517.4796752929688
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.23983764648438,
+            "y0": 184.74932861328125,
+            "x1": 504.0099182128906,
+            "y1": 198.03948974609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 195.66961669921875,
+            "x1": 504.0787353515625,
+            "y1": 208.95977783203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 206.70941162109375,
+            "x1": 138.5706787109375,
+            "y1": 219.99957275390625
+          }
+        ]
+      }
+    },
+    {
+      "value": "34.81 BLEU",
+      "section": "introduction",
+      "sentence": "The 34.81 BLEU score was achieved by an LSTM with a vocabulary of 80k words, so the score was penalized whenever the reference translation contained a word not covered by these 80k.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "The performance of the LSTM on WMT'14 English to French test set (ntst14). Note that an ensemble of 5 LSTMs with a beam of size 2 is cheaper than of a single LSTM with a beam of size 12.",
+      "row": "Ensemble of 5 reversed LSTMs, beam size 12",
+      "column": "test BLEU score (ntst14)",
+      "cell": "34.81",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 463.91925048828125,
+            "y0": 504.18951416015625,
+            "x1": 504.1805114746094,
+            "y1": 517.4796752929688
+          },
+          {
+            "x0": 107.99874877929688,
+            "y0": 515.1094360351562,
+            "x1": 504.18035888671875,
+            "y1": 528.3995971679688
+          },
+          {
+            "x0": 107.99874877929688,
+            "y0": 526.1492309570312,
+            "x1": 428.12908935546875,
+            "y1": 539.4393920898438
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 168.47999572753906,
+            "y0": 164.6783905029297,
+            "x1": 333.40301513671875,
+            "y1": 176.63954162597656
+          },
+          {
+            "x0": 383.2799987792969,
+            "y0": 164.75909423828125,
+            "x1": 403.36322021484375,
+            "y1": 177.1775360107422
+          }
+        ]
+      }
+    },
+    {
+      "value": "36.5",
+      "section": "introduction",
+      "sentence": "By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 ).",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Methods that use neural networks together with an SMT system on the WMT'14 English to French test set (ntst14).",
+      "row": "Rescoring the baseline 1000-best with an ensemble of 5 reversed LSTMs",
+      "column": "test BLEU score (ntst14)",
+      "cell": "36.5",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.51901245117188,
+            "y0": 575.9491577148438,
+            "x1": 504.0610656738281,
+            "y1": 589.2393188476562
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 586.8690795898438,
+            "x1": 477.9000549316406,
+            "y1": 600.1592407226562
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 119.87999725341797,
+            "y0": 291.6383972167969,
+            "x1": 382.0877685546875,
+            "y1": 303.59954833984375
+          },
+          {
+            "x0": 434.03900146484375,
+            "y0": 291.7190856933594,
+            "x1": 449.6821594238281,
+            "y1": 304.13751220703125
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.2 BLEU",
+      "section": "introduction",
+      "sentence": "By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 ).",
+      "status": "citation",
+      "table": null,
+      "caption": null,
+      "row": null,
+      "column": null,
+      "cell": null,
+      "evidenceLabel": "durrani-EtAl:2014:W14-33",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.51901245117188,
+            "y0": 575.9491577148438,
+            "x1": 504.0610656738281,
+            "y1": 589.2393188476562
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 586.8690795898438,
+            "x1": 477.9000549316406,
+            "y1": 600.1592407226562
+          }
+        ]
+      },
+      "evidenceAnchor": null
+    },
+    {
+      "value": "37.0",
+      "section": "introduction",
+      "sentence": "By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 ).",
+      "status": "exact",
+      "table": "Table 2",
+      "caption": "Methods that use neural networks together with an SMT system on the WMT'14 English to French test set (ntst14).",
+      "row": "Best WMT'14 result",
+      "column": "test BLEU score (ntst14)",
+      "cell": "37.0",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.51901245117188,
+            "y0": 575.9491577148438,
+            "x1": 504.0610656738281,
+            "y1": 589.2393188476562
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 586.8690795898438,
+            "x1": 477.9000549316406,
+            "y1": 600.1592407226562
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 434.0400085449219,
+            "y0": 258.59912109375,
+            "x1": 449.68316650390625,
+            "y1": 271.0175476074219
+          }
+        ]
+      }
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1409.3215",
+  "numbers": [
+    {
+      "value": "34.8",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "Our main result is that on an English to French translation task from the WMT'14 dataset, the translations produced by the LSTM achieve a BLEU score of 34.8 on the entire test set, where the LSTM's BLEU score was penalized on out-of-vocabulary words.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "Ensemble of 5 reversed LSTMs, beam size 12",
+      "cell": "34.81",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 277.31964111328125,
+            "y0": 351.42864990234375,
+            "x1": 468.30157470703125,
+            "y1": 364.71881103515625
+          },
+          {
+            "x0": 143.8800506591797,
+            "y0": 362.46844482421875,
+            "x1": 468.2168273925781,
+            "y1": 375.75860595703125
+          },
+          {
+            "x0": 143.8800506591797,
+            "y0": 373.38873291015625,
+            "x1": 468.1129455566406,
+            "y1": 386.67889404296875
+          },
+          {
+            "x0": 143.88003540039062,
+            "y0": 384.3086242675781,
+            "x1": 338.9709777832031,
+            "y1": 397.5987854003906
+          }
+        ]
+      }
+    },
+    {
+      "value": "33.3",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "For comparison, a phrase-based SMT system achieves a BLEU score of 33.3 on the same dataset.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Baseline System",
+      "cell": "33.30",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 284.7596435546875,
+            "y0": 395.3484191894531,
+            "x1": 468.07073974609375,
+            "y1": 408.6385803222656
+          },
+          {
+            "x0": 143.88002014160156,
+            "y0": 406.2687072753906,
+            "x1": 357.2108459472656,
+            "y1": 419.5588684082031
+          }
+        ]
+      }
+    },
+    {
+      "value": "36.5",
+      "kind": "result",
+      "section": "abstract",
+      "sentence": "When we used the LSTM to rerank the 1000 hypotheses produced by the aforementioned SMT system, its BLEU score increases to 36.5, which is close to the previous best result on this task.",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "Rescoring the baseline 1000-best with an ensemble of 5 reversed LSTMs",
+      "cell": "36.5",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 362.6400451660156,
+            "y0": 406.2687072753906,
+            "x1": 468.2169189453125,
+            "y1": 419.5588684082031
+          },
+          {
+            "x0": 143.8800048828125,
+            "y0": 417.1885986328125,
+            "x1": 468.1555480957031,
+            "y1": 430.478759765625
+          },
+          {
+            "x0": 143.8800048828125,
+            "y0": 428.2283935546875,
+            "x1": 468.15545654296875,
+            "y1": 441.5185546875
+          },
+          {
+            "x0": 143.8800048828125,
+            "y0": 439.1482849121094,
+            "x1": 162.45066833496094,
+            "y1": 452.4384460449219
+          }
+        ]
+      }
+    },
+    {
+      "value": "34.81",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "On the WMT'14 English to French translation task, we obtained a BLEU score of 34.81 by directly extracting translations from an ensemble of 5 deep LSTMs (with 384M parameters and 8,000 dimensional state each) using a simple left-to-right beam-search decoder.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Ensemble of 5 reversed LSTMs, beam size 12",
+      "cell": "34.81",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 295.5604553222656,
+            "y0": 460.3896789550781,
+            "x1": 503.9716796875,
+            "y1": 473.6798400878906
+          },
+          {
+            "x0": 107.999755859375,
+            "y0": 471.3095703125,
+            "x1": 504.06011962890625,
+            "y1": 484.5997314453125
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 482.2294616699219,
+            "x1": 504.19683837890625,
+            "y1": 495.5196228027344
+          },
+          {
+            "x0": 107.99873352050781,
+            "y0": 493.2692565917969,
+            "x1": 170.36949157714844,
+            "y1": 506.5594177246094
+          }
+        ]
+      }
+    },
+    {
+      "value": "33.30",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "For comparison, the BLEU score of an SMT baseline on this dataset is 33.30 .",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Baseline System",
+      "cell": "33.30",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 137.7589111328125,
+            "y0": 504.18951416015625,
+            "x1": 439.8605041503906,
+            "y1": 517.4796752929688
+          }
+        ]
+      }
+    },
+    {
+      "value": "34.81 BLEU",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "The 34.81 BLEU score was achieved by an LSTM with a vocabulary of 80k words, so the score was penalized whenever the reference translation contained a word not covered by these 80k.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Ensemble of 5 reversed LSTMs, beam size 12",
+      "cell": "34.81",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 463.91925048828125,
+            "y0": 504.18951416015625,
+            "x1": 504.1805114746094,
+            "y1": 517.4796752929688
+          },
+          {
+            "x0": 107.99874877929688,
+            "y0": 515.1094360351562,
+            "x1": 504.18035888671875,
+            "y1": 528.3995971679688
+          },
+          {
+            "x0": 107.99874877929688,
+            "y0": 526.1492309570312,
+            "x1": 428.12908935546875,
+            "y1": 539.4393920898438
+          }
+        ]
+      }
+    },
+    {
+      "value": "36.5",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 ).",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "Rescoring the baseline 1000-best with an ensemble of 5 reversed LSTMs",
+      "cell": "36.5",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.51901245117188,
+            "y0": 575.9491577148438,
+            "x1": 504.0610656738281,
+            "y1": 589.2393188476562
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 586.8690795898438,
+            "x1": 477.9000549316406,
+            "y1": 600.1592407226562
+          }
+        ]
+      }
+    },
+    {
+      "value": "3.2 BLEU",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 ).",
+      "status": "citation",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.51901245117188,
+            "y0": 575.9491577148438,
+            "x1": 504.0610656738281,
+            "y1": 589.2393188476562
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 586.8690795898438,
+            "x1": 477.9000549316406,
+            "y1": 600.1592407226562
+          }
+        ]
+      }
+    },
+    {
+      "value": "37.0",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 ).",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "Best WMT'14 result",
+      "cell": "37.0",
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 185.51901245117188,
+            "y0": 575.9491577148438,
+            "x1": 504.0610656738281,
+            "y1": 589.2393188476562
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 586.8690795898438,
+            "x1": 477.9000549316406,
+            "y1": 600.1592407226562
+          }
+        ]
+      }
+    },
+    {
+      "value": "5.8",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "By doing so, the LSTM's test perplexity dropped from 5.8 to 4.7, and the test BLEU scores of its decoded translations increased from 25.9 to 30.6.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 153.1189727783203,
+            "y0": 553.9888916015625,
+            "x1": 503.99261474609375,
+            "y1": 567.279052734375
+          },
+          {
+            "x0": 107.99900817871094,
+            "y0": 564.9087524414062,
+            "x1": 354.44964599609375,
+            "y1": 578.1989135742188
+          }
+        ]
+      }
+    },
+    {
+      "value": "4.7",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "By doing so, the LSTM's test perplexity dropped from 5.8 to 4.7, and the test BLEU scores of its decoded translations increased from 25.9 to 30.6.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 153.1189727783203,
+            "y0": 553.9888916015625,
+            "x1": 503.99261474609375,
+            "y1": 567.279052734375
+          },
+          {
+            "x0": 107.99900817871094,
+            "y0": 564.9087524414062,
+            "x1": 354.44964599609375,
+            "y1": 578.1989135742188
+          }
+        ]
+      }
+    },
+    {
+      "value": "25.9",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "By doing so, the LSTM's test perplexity dropped from 5.8 to 4.7, and the test BLEU scores of its decoded translations increased from 25.9 to 30.6.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 153.1189727783203,
+            "y0": 553.9888916015625,
+            "x1": 503.99261474609375,
+            "y1": 567.279052734375
+          },
+          {
+            "x0": 107.99900817871094,
+            "y0": 564.9087524414062,
+            "x1": 354.44964599609375,
+            "y1": 578.1989135742188
+          }
+        ]
+      }
+    },
+    {
+      "value": "30.6",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "By doing so, the LSTM's test perplexity dropped from 5.8 to 4.7, and the test BLEU scores of its decoded translations increased from 25.9 to 30.6.",
+      "status": "rounded",
+      "table": "Table 1",
+      "row": "Single reversed LSTM, beam size 12",
+      "cell": "30.59",
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 153.1189727783203,
+            "y0": 553.9888916015625,
+            "x1": 503.99261474609375,
+            "y1": 567.279052734375
+          },
+          {
+            "x0": 107.99900817871094,
+            "y0": 564.9087524414062,
+            "x1": 354.44964599609375,
+            "y1": 578.1989135742188
+          }
+        ]
+      }
+    },
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We found deep LSTMs to significantly outperform shallow LSTMs, where each additional layer reduced perplexity by nearly 10%, possibly due to their much larger hidden state.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 198.11993408203125,
+            "y0": 170.70928955078125,
+            "x1": 504.10321044921875,
+            "y1": 183.99945068359375
+          },
+          {
+            "x0": 108.0,
+            "y0": 181.62921142578125,
+            "x1": 504.18218994140625,
+            "y1": 194.91937255859375
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 192.66943359375,
+            "x1": 128.7306671142578,
+            "y1": 205.9595947265625
+          }
+        ]
+      }
+    },
+    {
+      "value": "-0.08",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The complete training details are given below: We initialized all of the LSTM's parameters with the uniform distribution between -0.08 and 0.08",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.88018798828125,
+            "y0": 235.50927734375,
+            "x1": 504.1826477050781,
+            "y1": 248.7994384765625
+          },
+          {
+            "x0": 143.8802032470703,
+            "y0": 246.42919921875,
+            "x1": 178.38145446777344,
+            "y1": 259.7193603515625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.08",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The complete training details are given below: We initialized all of the LSTM's parameters with the uniform distribution between -0.08 and 0.08",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.88018798828125,
+            "y0": 235.50927734375,
+            "x1": 504.1826477050781,
+            "y1": 248.7994384765625
+          },
+          {
+            "x0": 143.8802032470703,
+            "y0": 246.42919921875,
+            "x1": 178.38145446777344,
+            "y1": 259.7193603515625
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.7",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We used stochastic gradient descent without momentum, with a fixed learning rate of 0.7.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8802032470703,
+            "y0": 261.42919921875,
+            "x1": 504.0894775390625,
+            "y1": 274.7193603515625
+          }
+        ]
+      }
+    },
+    {
+      "value": "33.3",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "This way of evaluating the BELU score is consistent with and , and reproduces the 33.3 score of .",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "Baseline System",
+      "cell": "33.30",
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 466.6810607910156,
+            "y0": 606.6688232421875,
+            "x1": 504.0625305175781,
+            "y1": 619.958984375
+          },
+          {
+            "x0": 108.00105285644531,
+            "y0": 617.7090454101562,
+            "x1": 300.0626525878906,
+            "y1": 630.9992065429688
+          }
+        ]
+      }
+    },
+    {
+      "value": "37.0",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "However, if we evaluate the best WMT'14 system (whose predictions can be downloaded from statmt.org ) in this manner, we get 37.0, which is greater than the 35.8 reported by statmt.org .",
+      "status": "exact",
+      "table": "Table 2",
+      "row": "Best WMT'14 result",
+      "cell": "37.0",
+      "anchor": null
+    },
+    {
+      "value": "35.8",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "However, if we evaluate the best WMT'14 system (whose predictions can be downloaded from statmt.org ) in this manner, we get 37.0, which is greater than the 35.8 reported by statmt.org .",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "Rescoring the baseline 1000-best with a single reversed LSTM",
+      "cell": "35.85",
+      "anchor": null
+    },
+    {
+      "value": "0.5 BLEU",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "The LSTM is within 0.5 BLEU points of the best WMT'14 result if it is used to rescore the 1000-best list of the baseline system.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 448.4402160644531,
+            "y0": 367.0294189453125,
+            "x1": 504.0359191894531,
+            "y1": 380.319580078125
+          },
+          {
+            "x0": 108.0,
+            "y0": 377.9493103027344,
+            "x1": 504.1037902832031,
+            "y1": 391.2394714355469
+          },
+          {
+            "x0": 108.0,
+            "y0": 388.989501953125,
+            "x1": 173.37081909179688,
+            "y1": 402.2796630859375
+          }
+        ]
+      }
+    },
+    {
+      "value": "384M parameters",
+      "kind": "configuration",
+      "section": "introduction",
+      "sentence": "On the WMT'14 English to French translation task, we obtained a BLEU score of 34.81 by directly extracting translations from an ensemble of 5 deep LSTMs (with 384M parameters and 8,000 dimensional state each) using a simple left-to-right beam-search decoder.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 295.5604553222656,
+            "y0": 460.3896789550781,
+            "x1": 503.9716796875,
+            "y1": 473.6798400878906
+          },
+          {
+            "x0": 107.999755859375,
+            "y0": 471.3095703125,
+            "x1": 504.06011962890625,
+            "y1": 484.5997314453125
+          },
+          {
+            "x0": 107.99871826171875,
+            "y0": 482.2294616699219,
+            "x1": 504.19683837890625,
+            "y1": 495.5196228027344
+          },
+          {
+            "x0": 107.99873352050781,
+            "y0": 493.2692565917969,
+            "x1": 170.36949157714844,
+            "y1": 506.5594177246094
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 layers",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We used deep LSTMs with 4 layers, with 1000 cells at each layer and 1000 dimensional word embeddings, with an input vocabulary of 160,000 and an output vocabulary of 80,000.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 351.60015869140625,
+            "y0": 137.8292236328125,
+            "x1": 504.0909729003906,
+            "y1": 151.119384765625
+          },
+          {
+            "x0": 108.0,
+            "y0": 148.7491455078125,
+            "x1": 504.1817321777344,
+            "y1": 162.039306640625
+          },
+          {
+            "x0": 108.0,
+            "y0": 159.78936767578125,
+            "x1": 302.3705139160156,
+            "y1": 173.07952880859375
+          }
+        ]
+      }
+    },
+    {
+      "value": "384M parameters",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "The resulting LSTM has 384M parameters of which 64M are pure recurrent connections (32M for the \"encoder\" LSTM and 32M for the \"decoder\" LSTM).",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 378.2391357421875,
+            "y0": 192.66943359375,
+            "x1": 504.216064453125,
+            "y1": 205.9595947265625
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 203.58935546875,
+            "x1": 504.09661865234375,
+            "y1": 216.8795166015625
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 214.50927734375,
+            "x1": 212.1305694580078,
+            "y1": 227.7994384765625
+          }
+        ]
+      }
+    },
+    {
+      "value": "5 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "After 5 epochs, we begun halving the learning rate every half epoch.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8802032470703,
+            "y0": 272.3490905761719,
+            "x1": 412.29083251953125,
+            "y1": 285.6392517089844
+          }
+        ]
+      }
+    },
+    {
+      "value": "7.5 epochs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We trained our models for a total of 7.5 epochs.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 414.9603271484375,
+            "y0": 272.3490905761719,
+            "x1": 504.1560974121094,
+            "y1": 285.6392517089844
+          },
+          {
+            "x0": 143.8802032470703,
+            "y0": 283.26898193359375,
+            "x1": 241.17108154296875,
+            "y1": 296.55914306640625
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 layers",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "Our models have 4 layers of LSTMs, each of which resides on a separate GPU.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 199.44027709960938,
+            "y0": 506.3489990234375,
+            "x1": 504.1038513183594,
+            "y1": 519.63916015625
+          },
+          {
+            "x0": 108.00039672851562,
+            "y0": 517.2688598632812,
+            "x1": 130.41104125976562,
+            "y1": 530.5590209960938
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 GPUs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "The remaining 4 GPUs were used to parallelize the softmax, so each GPU was responsible for multiplying by a matrix.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 133.560546875,
+            "y0": 517.2688598632812,
+            "x1": 504.22357177734375,
+            "y1": 530.5590209960938
+          },
+          {
+            "x0": 108.00039672851562,
+            "y0": 528.30908203125,
+            "x1": 187.9039306640625,
+            "y1": 541.5992431640625
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "The performance of the LSTM on WMT'14 English to French test set (ntst14). Note that an ensemble of 5 LSTMs with a beam of size 2 is cheaper than of a single LSTM with a beam of size 12.",
+      "label": "tab:blue_fr",
+      "numericCells": 8,
+      "supports": 5,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "test BLEU score (ntst14)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Bahdanau et al.",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "28.45",
+            "value": "28.45",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Baseline System",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "33.30",
+            "value": "33.30",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Single forward LSTM, beam size 12",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "26.17",
+            "value": "26.17",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Single reversed LSTM, beam size 12",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "30.59",
+            "value": "30.59",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Ensemble of 5 reversed LSTMs, beam size 1",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "33.00",
+            "value": "33.00",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Ensemble of 2 reversed LSTMs, beam size 12",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "33.27",
+            "value": "33.27",
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Ensemble of 5 reversed LSTMs, beam size 2",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "34.50",
+            "value": "34.50",
+            "emphasised": false,
+            "block": 7
+          }
+        ],
+        [
+          {
+            "text": "Ensemble of 5 reversed LSTMs, beam size 12",
+            "value": null,
+            "emphasised": false,
+            "block": 8
+          },
+          {
+            "text": "34.81",
+            "value": "34.81",
+            "emphasised": true,
+            "block": 8
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.23983764648438,
+            "y0": 184.74932861328125,
+            "x1": 504.0099182128906,
+            "y1": 198.03948974609375
+          },
+          {
+            "x0": 108.0,
+            "y0": 195.66961669921875,
+            "x1": 504.0787353515625,
+            "y1": 208.95977783203125
+          },
+          {
+            "x0": 108.0,
+            "y0": 206.70941162109375,
+            "x1": 138.5706787109375,
+            "y1": 219.99957275390625
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Methods that use neural networks together with an SMT system on the WMT'14 English to French test set (ntst14).",
+      "label": "tab:blue_fr_rescore",
+      "numericCells": 7,
+      "supports": 3,
+      "rows": [
+        [
+          {
+            "text": "Method",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "test BLEU score (ntst14)",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Baseline System",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.30",
+            "value": "33.30",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Cho et al.",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "34.54",
+            "value": "34.54",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Best WMT'14 result",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "37.0",
+            "value": "37.0",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Rescoring the baseline 1000-best with a single forward LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "35.61",
+            "value": "35.61",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Rescoring the baseline 1000-best with a single reversed LSTM",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "35.85",
+            "value": "35.85",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Rescoring the baseline 1000-best with an ensemble of 5 reversed LSTMs",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          },
+          {
+            "text": "36.5",
+            "value": "36.5",
+            "emphasised": true,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "Oracle Rescoring of the Baseline 1000-best lists",
+            "value": null,
+            "emphasised": false,
+            "block": 7
+          },
+          {
+            "text": "45",
+            "value": "45",
+            "emphasised": false,
+            "block": 7
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.35975646972656,
+            "y0": 324.0693359375,
+            "x1": 504.0601806640625,
+            "y1": 337.3594970703125
+          },
+          {
+            "x0": 108.0,
+            "y0": 334.9896240234375,
+            "x1": 212.0106201171875,
+            "y1": 348.27978515625
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "A few examples of long translations produced by the LSTM alongside the ground truth translations. The reader can verify that the translations are sensible using Google translate.",
+      "label": "tab:examples",
+      "numericCells": 0,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Type",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Sentence",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Our model",
+            "value": null,
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "Ulrich UNK , membre du conseil d' administration du constructeur automobile Audi ,",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "affirme qu' il s' agit d' une pratique courante depuis des ann\\'ees pour que les t\\'el\\'ephones",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "portables puissent \\^etre collect\\'es avant les r\\'eunions du conseil d' administration afin qu' ils",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ne soient pas utilis\\'es comme appareils d' \\'ecoute \\`a distance .",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Truth",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "Ulrich Hackenberg , membre du conseil d' administration du constructeur automobile Audi ,",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "d\\'eclare que la collecte des t\\'el\\'ephones portables avant les r\\'eunions du conseil , afin qu' ils",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "ne puissent pas \\^etre utilis\\'es comme appareils d' \\'ecoute \\`a distance , est une pratique courante",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "depuis des ann\\'ees .",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Our model",
+            "value": null,
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "\" Les t\\'el\\'ephones cellulaires , qui sont vraiment une question , non seulement parce qu' ils",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "pourraient potentiellement causer des interf\\'erences avec les appareils de navigation , mais",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "nous savons , selon la FCC , qu' ils pourraient interf\\'erer avec les tours de t\\'el\\'ephone cellulaire",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "lorsqu' ils sont dans l' air \" , dit UNK .",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Truth",
+            "value": null,
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "\" Les t\\'el\\'ephones portables sont v\\'eritablement un probl\\`eme , non seulement parce qu' ils",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "pourraient \\'eventuellement cr\\'eer des interf\\'erences avec les instruments de navigation , mais",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "parce que nous savons , d' apr\\`es la FCC , qu' ils pourraient perturber les antennes-relais de",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "t\\'el\\'ephonie mobile s' ils sont utilis\\'es \\`a bord \" , a d\\'eclar\\'e Rosenker .",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Our model",
+            "value": null,
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "Avec la cr\\'emation , il y a un \" sentiment de violence contre le corps d' un \\^etre cher \" ,",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "qui sera \" r\\'eduit \\`a une pile de cendres \" en tr\\`es peu de temps au lieu d' un processus de",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "d\\'ecomposition \" qui accompagnera les \\'etapes du deuil \" .",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "Truth",
+            "value": null,
+            "emphasised": true,
+            "block": 6
+          },
+          {
+            "text": "Il y a , avec la cr\\'emation , \" une violence faite au corps aim\\'e \" ,",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "qui va \\^etre \" r\\'eduit \\`a un tas de cendres \" en tr\\`es peu de temps , et non apr\\`es un processus de",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ],
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "d\\'ecomposition , qui \" accompagnerait les phases du deuil \" .",
+            "value": null,
+            "emphasised": false,
+            "block": 6
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 145.8000030517578,
+            "y0": 331.62933349609375,
+            "x1": 504.06146240234375,
+            "y1": 344.91949462890625
+          },
+          {
+            "x0": 108.0,
+            "y0": 342.5492248535156,
+            "x1": 469.2906494140625,
+            "y1": 355.8393859863281
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "auli13",
+      "raw": "M. Auli, M. Galley, C. Quirk, and G. Zweig. Joint language and translation modeling with recurrent neural networks. In EMNLP, 2013",
+      "authors": "M. Auli, M. Galley, C. Quirk, and G. Zweig",
+      "title": "Joint language and translation modeling with recurrent neural networks",
+      "venue": "In EMNLP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bog14",
+      "raw": "D. Bahdanau, K. Cho, and Y. Bengio. Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473, 2014",
+      "authors": "D. Bahdanau, K. Cho, and Y. Bengio",
+      "title": "Neural machine translation by jointly learning to align and translate",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.0473",
+      "doi": null
+    },
+    {
+      "key": "bengio",
+      "raw": "Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin. A neural probabilistic language model. In Journal of Machine Learning Research, pages 1137--1155, 2003",
+      "authors": "Y. Bengio, R. Ducharme, P. Vincent, and C. Jauvin",
+      "title": "A neural probabilistic language model",
+      "venue": "In Journal of Machine Learning Research, pages 1137--1155, 2003",
+      "year": 2003,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio_long_term",
+      "raw": "Y. Bengio, P. Simard, and P. Frasconi. Learning long-term dependencies with gradient descent is difficult. IEEE Transactions on Neural Networks, 5(2):157--166, 1994",
+      "authors": "Y. Bengio, P. Simard, and P. Frasconi",
+      "title": "Learning long-term dependencies with gradient descent is difficult",
+      "venue": "IEEE Transactions on Neural Networks, 5(2):157--166, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "cho14",
+      "raw": "K. Cho, B. Merrienboer, C. Gulcehre, F. Bougares, H. Schwenk, and Y. Bengio. Learning phrase representations using RNN encoder-decoder for statistical machine translation. In Arxiv preprint arXiv:1406.1078, 2014",
+      "authors": "K. Cho, B. Merrienboer, C. Gulcehre, F. Bougares, H. Schwenk, and Y. Bengio",
+      "title": "Learning phrase representations using RNN encoder-decoder for statistical machine translation",
+      "venue": "In Arxiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1406.1078",
+      "doi": null
+    },
+    {
+      "key": "ciresan12",
+      "raw": "D. Ciresan, U. Meier, and J. Schmidhuber. Multi-column deep neural networks for image classification. In CVPR, 2012",
+      "authors": "D. Ciresan, U. Meier, and J. Schmidhuber",
+      "title": "Multi-column deep neural networks for image classification",
+      "venue": "In CVPR, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "dahl12b",
+      "raw": "G. E. Dahl, D. Yu, L. Deng, and A. Acero. Context-dependent pre-trained deep neural networks for large vocabulary speech recognition. IEEE Transactions on Audio, Speech, and Language Processing - Special Issue on Deep Learning for Speech and Language Processing, 2012",
+      "authors": "G. E. Dahl, D. Yu, L. Deng, and A. Acero",
+      "title": "Context-dependent pre-trained deep neural networks for large vocabulary speech recognition",
+      "venue": "IEEE Transactions on Audio, Speech, and Language Processing - Special Issue on Deep Learning for Speech and Language Processing, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "devlin14",
+      "raw": "J. Devlin, R. Zbib, Z. Huang, T. Lamar, R. Schwartz, and J. Makhoul. Fast and robust neural network joint models for statistical machine translation. In ACL, 2014",
+      "authors": "J. Devlin, R. Zbib, Z. Huang, T. Lamar, R. Schwartz, and J. Makhoul",
+      "title": "Fast and robust neural network joint models for statistical machine translation",
+      "venue": "In ACL, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "durrani-EtAl:2014:W14-33",
+      "raw": "Nadir Durrani, Barry Haddow, Philipp Koehn, and Kenneth Heafield. Edinburgh's phrase-based machine translation systems for wmt-14. In WMT, 2014",
+      "authors": "Nadir Durrani, Barry Haddow, Philipp Koehn, and Kenneth Heafield",
+      "title": "Edinburgh's phrase-based machine translation systems for wmt-14",
+      "venue": "In WMT, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves13c",
+      "raw": "A. Graves. Generating sequences with recurrent neural networks. In Arxiv preprint arXiv:1308.0850, 2013",
+      "authors": "A. Graves",
+      "title": "Generating sequences with recurrent neural networks",
+      "venue": "In Arxiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "doi": null
+    },
+    {
+      "key": "graves1",
+      "raw": "A. Graves, S. Fern\\'andez, F. Gomez, and J. Schmidhuber. Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks. In ICML, 2006",
+      "authors": "A. Graves, S. Fern\\'andez, F. Gomez, and J. Schmidhuber",
+      "title": "Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks",
+      "venue": "In ICML, 2006",
+      "year": 2006,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hermann14",
+      "raw": "K. M. Hermann and P. Blunsom. Multilingual distributed representations without word alignment. In ICLR, 2014",
+      "authors": "K. M. Hermann and P. Blunsom",
+      "title": "Multilingual distributed representations without word alignment",
+      "venue": "In ICLR, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hinton12",
+      "raw": "G. Hinton, L. Deng, D. Yu, G. Dahl, A. Mohamed, N. Jaitly, A. Senior, V. Vanhoucke, P. Nguyen, T. Sainath, and B. Kingsbury. Deep neural networks for acoustic modeling in speech recognition. IEEE Signal Processing Magazine, 2012",
+      "authors": "G. Hinton, L. Deng, D. Yu, G. Dahl, A. Mohamed, N. Jaitly, A. Senior, V. Vanhoucke, P. Nguyen, T. Sainath, and B. Kingsbury",
+      "title": "Deep neural networks for acoustic modeling in speech recognition",
+      "venue": "IEEE Signal Processing Magazine, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter_long_term",
+      "raw": "S. Hochreiter. Untersuchungen zu dynamischen neuronalen netzen. Master's thesis, Institut fur Informatik, Technische Universitat, Munchen, 1991",
+      "authors": "S. Hochreiter",
+      "title": "Untersuchungen zu dynamischen neuronalen netzen",
+      "venue": "Master's thesis, Institut fur Informatik, Technische Universitat, Munchen, 1991",
+      "year": 1991,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Hochreiter01gradientflow",
+      "raw": "S. Hochreiter, Y. Bengio, P. Frasconi, and J. Schmidhuber. Gradient flow in recurrent nets: the difficulty of learning long-term dependencies, 2001",
+      "authors": "S. Hochreiter, Y. Bengio, P. Frasconi, and J. Schmidhuber",
+      "title": "Gradient flow in recurrent nets: the difficulty of learning long-term dependencies, 2001",
+      "venue": "",
+      "year": 2001,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter97",
+      "raw": "S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural Computation, 1997",
+      "authors": "S. Hochreiter and J. Schmidhuber",
+      "title": "Long short-term memory",
+      "venue": "Neural Computation, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "minimal_time_lag",
+      "raw": "S. Hochreiter and J. Schmidhuber. LSTM can solve hard long time lag problems. 1997",
+      "authors": "S. Hochreiter and J. Schmidhuber",
+      "title": "LSTM can solve hard long time lag problems",
+      "venue": "1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kal13",
+      "raw": "N. Kalchbrenner and P. Blunsom. Recurrent continuous translation models. In EMNLP, 2013",
+      "authors": "N. Kalchbrenner and P. Blunsom",
+      "title": "Recurrent continuous translation models",
+      "venue": "In EMNLP, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kriz12",
+      "raw": "A. Krizhevsky, I. Sutskever, and G. E. Hinton. ImageNet classification with deep convolutional neural networks. In NIPS, 2012",
+      "authors": "A. Krizhevsky, I. Sutskever, and G. E. Hinton",
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "venue": "In NIPS, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "le12",
+      "raw": "Q.V. Le, M.A. Ranzato, R. Monga, M. Devin, K. Chen, G.S. Corrado, J. Dean, and A.Y. Ng. Building high-level features using large scale unsupervised learning. In ICML, 2012",
+      "authors": "Q.V. Le, M.A. Ranzato, R. Monga, M. Devin, K. Chen, G.S. Corrado, J. Dean, and A.Y. Ng",
+      "title": "Building high-level features using large scale unsupervised learning",
+      "venue": "In ICML, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "lecun98",
+      "raw": "Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 1998",
+      "authors": "Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner",
+      "title": "Gradient-based learning applied to document recognition",
+      "venue": "Proceedings of the IEEE, 1998",
+      "year": 1998,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2012",
+      "raw": "T. Mikolov. Statistical Language Models based on Neural Networks. PhD thesis, Brno University of Technology, 2012",
+      "authors": "T. Mikolov",
+      "title": "Statistical Language Models based on Neural Networks",
+      "venue": "PhD thesis, Brno University of Technology, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2010recurrent",
+      "raw": "T. Mikolov, M. Karafi\\'at, L. Burget, J. Cernock\\`y, and S. Khudanpur. Recurrent neural network based language model. In INTERSPEECH, pages 1045--1048, 2010",
+      "authors": "T. Mikolov, M. Karafi\\'at, L. Burget, J. Cernock\\`y, and S. Khudanpur",
+      "title": "Recurrent neural network based language model",
+      "venue": "In INTERSPEECH, pages 1045--1048, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bleu",
+      "raw": "K. Papineni, S. Roukos, T. Ward, and W. J. Zhu. BLEU: a method for automatic evaluation of machine translation. In ACL, 2002",
+      "authors": "K. Papineni, S. Roukos, T. Ward, and W. J. Zhu",
+      "title": "BLEU: a method for automatic evaluation of machine translation",
+      "venue": "In ACL, 2002",
+      "year": 2002,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "razvan",
+      "raw": "R. Pascanu, T. Mikolov, and Y. Bengio. On the difficulty of training recurrent neural networks. arXiv preprint arXiv:1211.5063, 2012",
+      "authors": "R. Pascanu, T. Mikolov, and Y. Bengio",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "arXiv preprint 2012",
+      "year": 2012,
+      "arxivId": "1211.5063",
+      "doi": null
+    },
+    {
+      "key": "curse",
+      "raw": "J. Pouget-Abadie, D. Bahdanau, B. van Merrienboer, K. Cho, and Y. Bengio. Overcoming the curse of sentence length for neural machine translation using automatic segmentation. arXiv preprint arXiv:1409.1257, 2014",
+      "authors": "J. Pouget-Abadie, D. Bahdanau, B. van Merrienboer, K. Cho, and Y. Bengio",
+      "title": "Overcoming the curse of sentence length for neural machine translation using automatic segmentation",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.1257",
+      "doi": null
+    },
+    {
+      "key": "razborov",
+      "raw": "A. Razborov. On small depth threshold circuits. In Proc. 3rd Scandinavian Workshop on Algorithm Theory, 1992",
+      "authors": "A. Razborov",
+      "title": "On small depth threshold circuits",
+      "venue": "In Proc. 3rd Scandinavian Workshop on Algorithm Theory, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rumelhart1986learning",
+      "raw": "D. Rumelhart, G. E. Hinton, and R. J. Williams. Learning representations by back-propagating errors. Nature, 323(6088):533--536, 1986",
+      "authors": "D. Rumelhart, G. E. Hinton, and R. J. Williams",
+      "title": "Learning representations by back-propagating errors",
+      "venue": "Nature, 323(6088):533--536, 1986",
+      "year": 1986,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wmt14_en_fr",
+      "raw": "H. Schwenk. University le mans. http://www-lium.univ-lemans.fr/ schwenk/cslm_joint_paper/, 2014. [Online; accessed 03-September-2014]",
+      "authors": "H. Schwenk",
+      "title": "University le mans",
+      "venue": "schwenk/cslm_joint_paper/, 2014 [Online; accessed 03-September-2014]",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sundermeyer12",
+      "raw": "M. Sundermeyer, R. Schluter, and H. Ney. LSTM neural networks for language modeling. In INTERSPEECH, 2010",
+      "authors": "M. Sundermeyer, R. Schluter, and H. Ney",
+      "title": "LSTM neural networks for language modeling",
+      "venue": "In INTERSPEECH, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "werbos",
+      "raw": "P. Werbos. Backpropagation through time: what it does and how to do it. Proceedings of IEEE, 1990",
+      "authors": "P. Werbos",
+      "title": "Backpropagation through time: what it does and how to do it",
+      "venue": "Proceedings of IEEE, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "h_t &=& \\mathrm{sigm}\\left(W^{\\mathrm{hx}} x_t + W^{\\mathrm{hh}} h_{t-1}\\right) \\\\\ny_t &=& W^{\\mathrm{yh}}h_t",
+      "environment": "eqnarray*",
+      "labels": []
+    },
+    {
+      "ordinal": 1,
+      "latex": "p(y_1,\\ldots,y_{T'} | x_1,\\ldots,x_T) = \\prod_{t=1}^{T'} p(y_t | v, y_1, \\ldots, y_{t-1})",
+      "environment": "equation",
+      "labels": [
+        "eqn:keyequation"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\hat{T} = \\arg\\max_T p(T|S)",
+      "environment": "equation",
+      "labels": [
+        "eqn:decode"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1634,
+      "numbers": 5,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8800506591797,
+            "y0": 274.7488098144531,
+            "x1": 468.3175354003906,
+            "y1": 288.0389709472656
+          },
+          {
+            "x0": 143.88006591796875,
+            "y0": 285.668701171875,
+            "x1": 317.0107727050781,
+            "y1": 298.9588623046875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 5886,
+      "numbers": 14,
+      "citations": 20,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 559.9883422851562,
+            "x1": 504.0777587890625,
+            "y1": 573.2785034179688
+          },
+          {
+            "x0": 107.99996948242188,
+            "y0": 570.9082641601562,
+            "x1": 379.5003662109375,
+            "y1": 584.1984252929688
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "The model",
+      "chars": 3155,
+      "numbers": 0,
+      "citations": 10,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 144.66943359375,
+            "x1": 266.357666015625,
+            "y1": 157.9595947265625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments",
+      "chars": 356,
+      "numbers": 1,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00057983398438,
+            "y0": 686.468017578125,
+            "x1": 442.6523132324219,
+            "y1": 699.7581787109375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Dataset details",
+      "chars": 717,
+      "numbers": 7,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 102.06951904296875,
+            "x1": 306.33074951171875,
+            "y1": 115.35968017578125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Decoding and Rescoring",
+      "chars": 1434,
+      "numbers": 4,
+      "citations": 1,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 241.9893798828125,
+            "x1": 484.53082275390625,
+            "y1": 255.279541015625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Reversing the Source Sentences",
+      "chars": 1684,
+      "numbers": 4,
+      "citations": 1,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99900817871094,
+            "y0": 532.0287475585938,
+            "x1": 504.00848388671875,
+            "y1": 545.3189086914062
+          },
+          {
+            "x0": 107.99899291992188,
+            "y0": 543.0685424804688,
+            "x1": 504.12890625,
+            "y1": 556.3587036132812
+          },
+          {
+            "x0": 107.99899291992188,
+            "y0": 553.9888916015625,
+            "x1": 147.4497833251953,
+            "y1": 567.279052734375
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Training details",
+      "chars": 1879,
+      "numbers": 24,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 137.8292236328125,
+            "x1": 344.73089599609375,
+            "y1": 151.119384765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Parallelization",
+      "chars": 766,
+      "numbers": 6,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00039672851562,
+            "y0": 462.54913330078125,
+            "x1": 503.9581604003906,
+            "y1": 475.83929443359375
+          },
+          {
+            "x0": 108.00039672851562,
+            "y0": 473.4690246582031,
+            "x1": 393.33099365234375,
+            "y1": 486.7591857910156
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experimental Results",
+      "chars": 2119,
+      "numbers": 8,
+      "citations": 5,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00053405761719,
+            "y0": 595.7489013671875,
+            "x1": 236.02407836914062,
+            "y1": 609.0390625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Performance on long sentences",
+      "chars": 2351,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 434.9491882324219,
+            "x1": 504.1977233886719,
+            "y1": 448.2393493652344
+          },
+          {
+            "x0": 108.0,
+            "y0": 445.8694763183594,
+            "x1": 166.42327880859375,
+            "y1": 459.1596374511719
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Model Analysis",
+      "chars": 1301,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00006103515625,
+            "y0": 697.5096435546875,
+            "x1": 504.1976013183594,
+            "y1": 710.7998046875
+          },
+          {
+            "x0": 108.00006103515625,
+            "y0": 708.4295043945312,
+            "x1": 202.8903350830078,
+            "y1": 721.7196655273438
+          }
+        ]
+      }
+    },
+    {
+      "kind": "related",
+      "title": "Related work",
+      "chars": 2311,
+      "numbers": 0,
+      "citations": 12,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99981689453125,
+            "y0": 708.4293823242188,
+            "x1": 471.57073974609375,
+            "y1": 721.7195434570312
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1643,
+      "numbers": 0,
+      "citations": 3,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99989318847656,
+            "y0": 414.0690002441406,
+            "x1": 504.155517578125,
+            "y1": 427.3591613769531
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 425.1087951660156,
+            "x1": 504.1033020019531,
+            "y1": 438.3989562988281
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 436.0286865234375,
+            "x1": 304.170654296875,
+            "y1": 449.31884765625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "other",
+      "title": "Acknowledgments",
+      "chars": 237,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99990844726562,
+            "y0": 700.4768676757812,
+            "x1": 504.1043701171875,
+            "y1": 712.43798828125
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 710.43701171875,
+            "x1": 504.01605224609375,
+            "y1": 722.3981323242188
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 720.3967895507812,
+            "x1": 242.1212615966797,
+            "y1": 732.35791015625
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 0,
+      "compares": 1,
+      "background": 27,
+      "traversable": 1
+    },
+    "foundation": {
+      "key": "graves13c",
+      "stance": "inherits",
+      "cue": "We use",
+      "sentence": "We use the LSTM formulation from Graves [Graves 2013].",
+      "section": "The model",
+      "sectionKind": "method",
+      "ordinal": 19,
+      "title": "Generating sequences with recurrent neural networks",
+      "authors": "A. Graves",
+      "year": 2013,
+      "arxivId": "1308.0850",
+      "inCorpus": true,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 207.83981323242188,
+            "y0": 474.6684265136719,
+            "x1": 381.2742614746094,
+            "y1": 487.9585876464844
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "bleu",
+        "stance": "inherits",
+        "cue": "We used",
+        "sentence": "We used the cased BLEU score [Papineni et al. 2002] to evaluate the quality of our translations.",
+        "section": "Experimental Results",
+        "sectionKind": "experiments",
+        "ordinal": 26,
+        "title": "BLEU: a method for automatic evaluation of machine translation",
+        "authors": "K. Papineni, S. Roukos, T. Ward, and W. J. Zhu",
+        "year": 2002,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 4,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 258.7206115722656,
+              "y0": 595.7489013671875,
+              "x1": 427.5311584472656,
+              "y1": 609.0390625
+            }
+          ]
+        }
+      },
+      {
+        "key": "durrani-EtAl:2014:W14-33",
+        "stance": "compares",
+        "cue": "baseline",
+        "sentence": "By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 [Durrani et al. 2014]).",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 13,
+        "title": "Edinburgh's phrase-based machine translation systems for wmt-14",
+        "authors": "Nadir Durrani, Barry Haddow, Philipp Koehn, and Kenneth Heafield",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 185.51901245117188,
+              "y0": 575.9491577148438,
+              "x1": 504.0610656738281,
+              "y1": 589.2393188476562
+            },
+            {
+              "x0": 107.99871826171875,
+              "y0": 586.8690795898438,
+              "x1": 477.9000549316406,
+              "y1": 600.1592407226562
+            }
+          ]
+        }
+      },
+      {
+        "key": "graves13c",
+        "stance": "inherits",
+        "cue": "We use",
+        "sentence": "We use the LSTM formulation from Graves [Graves 2013].",
+        "section": "The model",
+        "sectionKind": "method",
+        "ordinal": 19,
+        "title": "Generating sequences with recurrent neural networks",
+        "authors": "A. Graves",
+        "year": 2013,
+        "arxivId": "1308.0850",
+        "inCorpus": true,
+        "anchor": {
+          "page": 2,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 207.83981323242188,
+              "y0": 474.6684265136719,
+              "x1": 381.2742614746094,
+              "y1": 487.9585876464844
+            }
+          ]
+        }
+      },
+      {
+        "key": "wmt14_en_fr",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "Finally, we used the LSTM to rescore the publicly available 1000-best lists of the SMT baseline on the same task [Schwenk 2014].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 12,
+        "title": "University le mans",
+        "authors": "H. Schwenk",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99874877929688,
+              "y0": 564.9093627929688,
+              "x1": 504.0612487792969,
+              "y1": 578.1995239257812
+            },
+            {
+              "x0": 107.99873352050781,
+              "y0": 575.9491577148438,
+              "x1": 161.10012817382812,
+              "y1": 589.2393188476562
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Sequences pose a challenge for DNNs because they require that the dimensionality of the inputs and outputs is known and fixed.",
+      "anchorText": "Sequences pose a challenge for DNNs because they require that the dimensionality of the inputs and outputs is known and fixed.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "require that",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 109.2694091796875,
+            "x1": 504.06146240234375,
+            "y1": 122.5595703125
+          },
+          {
+            "x0": 107.99998474121094,
+            "y0": 120.1893310546875,
+            "x1": 219.81051635742188,
+            "y1": 133.4794921875
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Note that we require that each sentence ends with a special end-of-sentence symbol \u201c<EOS>\u201d, which enables the model to define a distribution over sequences of all possible lengths.",
+      "anchorText": "\", which enables the model to define a distribution over sequences of all possible lengths.",
+      "kind": "conditional",
+      "support": "bare",
+      "cue": "require that",
+      "section": "The model",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 344.7596435546875,
+            "y0": 485.5887145996094,
+            "x1": 503.9410095214844,
+            "y1": 498.8788757324219
+          },
+          {
+            "x0": 108.00067138671875,
+            "y0": 496.6285095214844,
+            "x1": 342.81134033203125,
+            "y1": 509.9186706542969
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "While we do not have a complete explanation to this phenomenon, we believe that it is caused by the introduction of many short term dependencies to the dataset.",
+      "anchorText": "While we do not have a complete explanation to this phenomenon, we believe that it is caused by the introduction of many short term dependencies to the dataset.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "we believe",
+      "section": "Reversing the Source Sentences",
+      "sectionKind": "experiments",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99899291992188,
+            "y0": 581.8286743164062,
+            "x1": 504.0600280761719,
+            "y1": 595.1188354492188
+          },
+          {
+            "x0": 107.99899291992188,
+            "y0": 592.8684692382812,
+            "x1": 365.1296691894531,
+            "y1": 606.1586303710938
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We suspect that they could achieve similar improvements by simply training their networks on reversed source sentences.",
+      "anchorText": "We suspect that they could achieve similar improvements by simply training their networks on reversed source sentences.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "We suspect",
+      "section": "Related work",
+      "sectionKind": "related",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 262.1999816894531,
+            "y0": 290.58905029296875,
+            "x1": 504.0613098144531,
+            "y1": 303.87921142578125
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 301.5089416503906,
+            "x1": 348.3315734863281,
+            "y1": 314.7991027832031
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "In particular, while we were unable to train a standard RNN on the non-reversed translation problem (shown in fig. [ref]), we believe that a standard RNN should be easily trainable when the source sentences are reversed (although we did not verify it experimentally).",
+      "anchorText": "), we believe that a standard RNN should be easily trainable when the source sentences are reversed (although we did not verify it experimentally).",
+      "kind": "conjectural",
+      "support": "shown",
+      "cue": "we believe",
+      "section": "Conclusion",
+      "sectionKind": "conclusion",
+      "cites": [],
+      "refs": [
+        "fig:translation-model2"
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 493.1999816894531,
+            "y0": 507.78863525390625,
+            "x1": 504.09063720703125,
+            "y1": 521.0787963867188
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 518.7085571289062,
+            "x1": 504.1812438964844,
+            "y1": 531.9987182617188
+          },
+          {
+            "x0": 107.99990844726562,
+            "y0": 529.62841796875,
+            "x1": 293.25018310546875,
+            "y1": 542.9185791015625
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 5,
+    "cited": 0,
+    "shown": 1,
+    "bare": 4
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 39,
+    "rate": 0.975
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "published": "2014-09-10",
+    "authors": [
+      "Ilya Sutskever",
+      "Oriol Vinyals",
+      "Quoc V. Le"
+    ]
+  }
+}

@@ -211,6 +211,36 @@ def test_a_trailing_text_column_alone_is_not_a_fold():
     assert _findings(_table(rows), "table.aggregate_mismatch")
 
 
+def test_a_heading_cell_named_total_does_not_make_a_total_row():
+    """Universal Transformers (1807.03819), Table 3, cut down.
+
+    The second header row is attractor counts with "Total" as the last column's
+    heading. Read as data, it was labelled "Total" and its counts "summed" the
+    accuracies below — and the 5 column agreed by accident.
+    """
+    rows = [
+        ["Model", "", "", "", ""],
+        ["", "0", "1", "5", "Total"],
+        ["Stack-RNN", "0.994", "0.979", "0.880", "0.992"],
+        ["LSTM", "0.993", "0.972", "0.842", "0.991"],
+        ["Attention", "0.994", "0.977", "0.842", "0.992"],
+        ["Transformer", "0.973", "0.941", "0.883", "0.962"],
+        ["UT", "0.993", "0.971", "0.892", "0.992"],
+        ["UT w/ ACT", "0.994", "0.969", "0.907", "0.992"],
+    ]
+    table = _table(rows)
+    # The fixture labels rows from column 0 only; label this one as the parser did.
+    cells = tuple(
+        TableCell(
+            row=c.row, column=c.column, raw=c.raw, number=c.number,
+            row_header="Total" if c.row == 1 else c.row_header,
+            column_header=c.column_header, is_emphasised=c.is_emphasised,
+        )
+        for c in table.cells
+    )
+    assert not _findings(Table(ordinal=0, caption="Results", cells=cells), "table.aggregate_mismatch")
+
+
 def test_tolerates_rounding_in_the_parts():
     """Summing values that were each rounded for display must not be a finding."""
     rows = [

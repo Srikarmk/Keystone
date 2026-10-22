@@ -1,0 +1,3851 @@
+{
+  "id": "1511.02301",
+  "title": "The Goldilocks Principle: Reading Children's Books with Explicit Memory Representations",
+  "keystone": null,
+  "codeUrl": "https://github.com/facebook/MemNN",
+  "coverage": {
+    "claims": 0,
+    "supported": 0,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 0.0
+  },
+  "claims": [],
+  "pdfUrl": "https://arxiv.org/pdf/1511.02301",
+  "numbers": [
+    {
+      "value": "5.5M",
+      "kind": "result",
+      "section": "results",
+      "sentence": "We trained probabilistic RNN language models with LSTM activation units on the training stories (5.5M words of text) using minibatch SGD to maximise the negative log-likelihood of the next word.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 470.8912353515625,
+            "x1": 504.0032958984375,
+            "y1": 480.8538513183594
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 481.8502197265625,
+            "x1": 504.0032043457031,
+            "y1": 491.8128356933594
+          }
+        ]
+      }
+    },
+    {
+      "value": "10%",
+      "kind": "result",
+      "section": "results",
+      "sentence": "We recruited 15 native English speakers to attempt a randomly-selected 10% from each question type of the CBT, in two modes either with question only or with question+context (shown to different annotators), giving 2000 answers in total.",
+      "status": "rounded",
+      "table": "Table 2",
+      "row": "Sliding window",
+      "cell": "0.101",
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 711.34716796875,
+            "x1": 504.00323486328125,
+            "y1": 721.3097534179688
+          },
+          {
+            "x0": 108.00000762939453,
+            "y0": 722.30615234375,
+            "x1": 504.0030517578125,
+            "y1": 732.2687377929688
+          }
+        ]
+      }
+    },
+    {
+      "value": "300 examples",
+      "kind": "configuration",
+      "section": "method",
+      "sentence": "However, it is very difficult to train statistical models only on MCTest because its training set consists of only 300 examples.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 320.8608703613281,
+            "y0": 500.25323486328125,
+            "x1": 504.00323486328125,
+            "y1": 510.2158508300781
+          },
+          {
+            "x0": 108.0,
+            "y0": 511.21221923828125,
+            "x1": 421.7919921875,
+            "y1": 521.1748046875
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "Breakdown by question class is provided with the data set files.",
+      "label": "tab:cbt_stat",
+      "numericCells": 16,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Training",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Number of books",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "98",
+            "value": "98",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5",
+            "value": "5",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Number of questions (context+query)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "669,343",
+            "value": "669343",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "8,000",
+            "value": "8000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "10,000",
+            "value": "10000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Average words in contexts",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "465",
+            "value": "465",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "435",
+            "value": "435",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "445",
+            "value": "445",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Average words in queries",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "31",
+            "value": "31",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "27",
+            "value": "27",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "29",
+            "value": "29",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Distinct candidates",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "37,242",
+            "value": "37242",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "5,485",
+            "value": "5485",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "7,108",
+            "value": "7108",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Vocabulary size",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "53,628",
+            "value": "53628",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 244.635986328125,
+            "y0": 247.9414825439453,
+            "x1": 496.8790283203125,
+            "y1": 257.9040832519531
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 2",
+      "caption": "Human results were collected on 10% of the test set.",
+      "label": "tab:cbt_res",
+      "numericCells": 76,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Named Entities",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Common Nouns",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Verbs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Prepositions",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Humans (query)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.520",
+            "value": "0.520",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.644",
+            "value": "0.644",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.716",
+            "value": "0.716",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.676",
+            "value": "0.676",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Humans (context+query)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.816",
+            "value": "0.816",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.816",
+            "value": "0.816",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.828",
+            "value": "0.828",
+            "emphasised": true,
+            "block": 1
+          },
+          {
+            "text": "0.708",
+            "value": "0.708",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Maximum frequency (corpus)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.120",
+            "value": "0.120",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.158",
+            "value": "0.158",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.373",
+            "value": "0.373",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.315",
+            "value": "0.315",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Maximum frequency (context)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.335",
+            "value": "0.335",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.281",
+            "value": "0.281",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.285",
+            "value": "0.285",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.275",
+            "value": "0.275",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Sliding window",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.168",
+            "value": "0.168",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.196",
+            "value": "0.196",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.182",
+            "value": "0.182",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.101",
+            "value": "0.101",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Word distance model",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.398",
+            "value": "0.398",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.364",
+            "value": "0.364",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.380",
+            "value": "0.380",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.237",
+            "value": "0.237",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Kneser-Ney language model",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.390",
+            "value": "0.390",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.544",
+            "value": "0.544",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.778",
+            "value": "0.778",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.768",
+            "value": "0.768",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Kneser-Ney language model + cache",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.439",
+            "value": "0.439",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.577",
+            "value": "0.577",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.772",
+            "value": "0.772",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.679",
+            "value": "0.679",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(context+query)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.253",
+            "value": "0.253",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.259",
+            "value": "0.259",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.421",
+            "value": "0.421",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.315",
+            "value": "0.315",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(query)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.351",
+            "value": "0.351",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.400",
+            "value": "0.400",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.614",
+            "value": "0.614",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.535",
+            "value": "0.535",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(window)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.362",
+            "value": "0.362",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.415",
+            "value": "0.415",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.637",
+            "value": "0.637",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.589",
+            "value": "0.589",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "(window+position)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.402",
+            "value": "0.402",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.506",
+            "value": "0.506",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.736",
+            "value": "0.736",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.670",
+            "value": "0.670",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "LSTMs (query)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.408",
+            "value": "0.408",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.541",
+            "value": "0.541",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.813",
+            "value": "0.813",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.802",
+            "value": "0.802",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "LSTMs (context+query)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.418",
+            "value": "0.418",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.560",
+            "value": "0.560",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.818",
+            "value": "0.818",
+            "emphasised": true,
+            "block": 4
+          },
+          {
+            "text": "0.791",
+            "value": "0.791",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "Contextual LSTMs (window context)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.436",
+            "value": "0.436",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.582",
+            "value": "0.582",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.805",
+            "value": "0.805",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.806",
+            "value": "0.806",
+            "emphasised": true,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (lexical memory)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.431",
+            "value": "0.431",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.562",
+            "value": "0.562",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.798",
+            "value": "0.798",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.764",
+            "value": "0.764",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.493",
+            "value": "0.493",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.554",
+            "value": "0.554",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.692",
+            "value": "0.692",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.674",
+            "value": "0.674",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (sentential memory + PE)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.318",
+            "value": "0.318",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.305",
+            "value": "0.305",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.502",
+            "value": "0.502",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.326",
+            "value": "0.326",
+            "emphasised": false,
+            "block": 5
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.666",
+            "value": "0.666",
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "0.630",
+            "value": "0.630",
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "0.690",
+            "value": "0.690",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.703",
+            "value": "0.703",
+            "emphasised": false,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 266.90802001953125,
+            "y0": 276.6984558105469,
+            "x1": 486.8898010253906,
+            "y1": 286.66107177734375
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 3",
+      "caption": "on Named Entity (left) and Verb (right). Circled phrases indicate all considered windows; red ones are the ones corresponding to the returned (correct) answer; the blue windows represent the queries.",
+      "label": "tab:ex_pred_cbt",
+      "numericCells": 14,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "7",
+            "value": "7",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` I can tell you more than that, if you like, ' said the Gryphon.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "8",
+            "value": "8",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` Do you know why it's called a whiting? '",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "9",
+            "value": "9",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` I never thought about it, ' said Alice .",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "10",
+            "value": "10",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` Why? '",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "11",
+            "value": "11",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` IT DOES THE BOOTS AND SHOES. '",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "12",
+            "value": "12",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "the Gryphon replied very solemnly.",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "13",
+            "value": "13",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Alice was thoroughly puzzled.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "14",
+            "value": "14",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` Does the boots and shoes! '",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "15",
+            "value": "15",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "she repeated in a wondering tone.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "16",
+            "value": "16",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` Why , what are YOUR shoes done with? '",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "17",
+            "value": "17",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "said the Gryphon.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "18",
+            "value": "18",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` I mean , what makes them so shiny? '",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "19",
+            "value": "19",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Alice looked down at them , and considered a little before she gave her answer.",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "20",
+            "value": "20",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "` They're done with blacking, I believe. '",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Query: ` Boots and shoes under the sea, ' the went on in a deep voice , ` are done with a whiting.'",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Candidates: Alice, boots, Gryphon, shoes, answer, fall, mouths, tone, way, whiting",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (salient memory): Gryphon",
+            "value": null,
+            "emphasised": true,
+            "block": 2
+          },
+          {
+            "text": "",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 494.0370178222656,
+            "y0": 481.7564697265625,
+            "x1": 503.9996032714844,
+            "y1": 491.7190856933594
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 492.7144775390625,
+            "x1": 504.0033264160156,
+            "y1": 502.6770935058594
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 503.6734619140625,
+            "x1": 491.21136474609375,
+            "y1": 513.6360473632812
+          }
+        ]
+      }
+    },
+    {
+      "name": "Table 4",
+      "caption": "Results taken from .",
+      "label": "tab:qacnn_res",
+      "numericCells": 22,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maximum frequency (article)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.305",
+            "value": "0.305",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.332",
+            "value": "0.332",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Sliding window",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.005",
+            "value": "0.005",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.006",
+            "value": "0.006",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Word distance model",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.505",
+            "value": "0.505",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.509",
+            "value": "0.509",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Deep LSTMs (article+query)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.550",
+            "value": "0.550",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.570",
+            "value": "0.570",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Contextual LSTMs (\"Attentive reader\")",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.616",
+            "value": "0.616",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.630",
+            "value": "0.630",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "Contextual LSTMs (\"Impatient reader\")",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.618",
+            "value": "0.618",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.638",
+            "value": "0.638",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.580",
+            "value": "0.580",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.606",
+            "value": "0.606",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.634",
+            "value": "0.634",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.668",
+            "value": "0.668",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + ensemble)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.612",
+            "value": "0.612",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.638",
+            "value": "0.638",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + self-sup. + ensemble)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.649",
+            "value": "0.649",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.684",
+            "value": "0.684",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window + self-sup. + ensemble + exclud. coocurrences)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.662",
+            "value": "0.662",
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "0.694",
+            "value": "0.694",
+            "emphasised": true,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 5",
+      "caption": "",
+      "label": "ap:res_val",
+      "numericCells": 68,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Named Entities",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Common Nouns",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Verbs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Prepositions",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "Maximum frequency (corpus)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.052",
+            "value": "0.052",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.192",
+            "value": "0.192",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.301",
+            "value": "0.301",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.346",
+            "value": "0.346",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Maximum frequency (context)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.299",
+            "value": "0.299",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.273",
+            "value": "0.273",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.219",
+            "value": "0.219",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.312",
+            "value": "0.312",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Sliding window",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.178",
+            "value": "0.178",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.199",
+            "value": "0.199",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.200",
+            "value": "0.200",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.091",
+            "value": "0.091",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Word distance model",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.436",
+            "value": "0.436",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.371",
+            "value": "0.371",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.332",
+            "value": "0.332",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.259",
+            "value": "0.259",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Kneser-Ney language model",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.481",
+            "value": "0.481",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.577",
+            "value": "0.577",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.762",
+            "value": "0.762",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.791",
+            "value": "0.791",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "Kneser-Ney language model + cache",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.500",
+            "value": "0.500",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.612",
+            "value": "0.612",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.755",
+            "value": "0.755",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.693",
+            "value": "0.693",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "(context+query)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.235",
+            "value": "0.235",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.297",
+            "value": "0.297",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.368",
+            "value": "0.368",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.356",
+            "value": "0.356",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(query)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.418",
+            "value": "0.418",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.462",
+            "value": "0.462",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.575",
+            "value": "0.575",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.560",
+            "value": "0.560",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(window)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.457",
+            "value": "0.457",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.486",
+            "value": "0.486",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.622",
+            "value": "0.622",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.619",
+            "value": "0.619",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "(window+position)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.488",
+            "value": "0.488",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.555",
+            "value": "0.555",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.722",
+            "value": "0.722",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.683",
+            "value": "0.683",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "LSTMs (query)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.500",
+            "value": "0.500",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.613",
+            "value": "0.613",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.811",
+            "value": "0.811",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.819",
+            "value": "0.819",
+            "emphasised": true,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "LSTMs (context+query)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.512",
+            "value": "0.512",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.626",
+            "value": "0.626",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.820",
+            "value": "0.820",
+            "emphasised": true,
+            "block": 3
+          },
+          {
+            "text": "0.812",
+            "value": "0.812",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "Contextual LSTMs (window context)",
+            "value": null,
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.535",
+            "value": "0.535",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.628",
+            "value": "0.628",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.803",
+            "value": "0.803",
+            "emphasised": false,
+            "block": 3
+          },
+          {
+            "text": "0.798",
+            "value": "0.798",
+            "emphasised": false,
+            "block": 3
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (lexical memory)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.519",
+            "value": "0.519",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.647",
+            "value": "0.647",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.818",
+            "value": "0.818",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.785",
+            "value": "0.785",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.542",
+            "value": "0.542",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.591",
+            "value": "0.591",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.693",
+            "value": "0.693",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.704",
+            "value": "0.704",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (sentential memory + PE)",
+            "value": null,
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.297",
+            "value": "0.297",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.342",
+            "value": "0.342",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.451",
+            "value": "0.451",
+            "emphasised": false,
+            "block": 4
+          },
+          {
+            "text": "0.360",
+            "value": "0.360",
+            "emphasised": false,
+            "block": 4
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.704",
+            "value": "0.704",
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "0.642",
+            "value": "0.642",
+            "emphasised": true,
+            "block": 5
+          },
+          {
+            "text": "0.688",
+            "value": "0.688",
+            "emphasised": false,
+            "block": 5
+          },
+          {
+            "text": "0.696",
+            "value": "0.696",
+            "emphasised": false,
+            "block": 5
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 6",
+      "caption": "",
+      "label": "ap:qa_cnn_ab_study",
+      "numericCells": 18,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Validation",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Test",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + self-sup. + exclud. coocurrences)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.635",
+            "value": "0.635",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.684",
+            "value": "0.684",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.634",
+            "value": "0.634",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.668",
+            "value": "0.668",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window mem. + self-sup.) -time",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.625",
+            "value": "0.625",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.659",
+            "value": "0.659",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window mem. + self-sup.) -soft memory weighting",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.604",
+            "value": "0.604",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.620",
+            "value": "0.620",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window mem. + self-sup.) -time -soft memory weighting",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.592",
+            "value": "0.592",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.613",
+            "value": "0.613",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window mem. + self-sup. + ensemble)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.649",
+            "value": "0.649",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.684",
+            "value": "0.684",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window mem. + self-sup. + ensemble) -time",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.642",
+            "value": "0.642",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.679",
+            "value": "0.679",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window mem. + self-sup. + ensemble) -soft memory weighting",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.612",
+            "value": "0.612",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.641",
+            "value": "0.641",
+            "emphasised": false,
+            "block": 2
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window mem. + self-sup. + ensemble) -time -soft memory weighting",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.600",
+            "value": "0.600",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.640",
+            "value": "0.640",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 7",
+      "caption": "",
+      "label": "ap:qa_cnn_ab_study",
+      "numericCells": 20,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Named Entities",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Common Nouns",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Verbs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Prepositions",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (word mem.)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.431",
+            "value": "0.431",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.562",
+            "value": "0.562",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.798",
+            "value": "0.798",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.764",
+            "value": "0.764",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs ( mem.)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.493",
+            "value": "0.493",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.554",
+            "value": "0.554",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.692",
+            "value": "0.692",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.674",
+            "value": "0.674",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (sentence mem.+PE)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.318",
+            "value": "0.318",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.305",
+            "value": "0.305",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.502",
+            "value": "0.502",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.326",
+            "value": "0.326",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs ( mem.+self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.666",
+            "value": "0.666",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.630",
+            "value": "0.630",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.690",
+            "value": "0.690",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.703",
+            "value": "0.703",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "ANONYMIZED MemNNs ( +self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.581",
+            "value": "0.581",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.473",
+            "value": "0.473",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.474",
+            "value": "0.474",
+            "emphasised": false,
+            "block": 2
+          },
+          {
+            "text": "0.522",
+            "value": "0.522",
+            "emphasised": false,
+            "block": 2
+          }
+        ]
+      ],
+      "anchor": null
+    },
+    {
+      "name": "Table 8",
+      "caption": "",
+      "label": "ap:windoze",
+      "numericCells": 28,
+      "supports": 0,
+      "rows": [
+        [
+          {
+            "text": "Methods",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Named Entities",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Common Nouns",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Verbs",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "Prepositions",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (lexical memory)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.431",
+            "value": "0.431",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.562",
+            "value": "0.562",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.798",
+            "value": "0.798",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.764",
+            "value": "0.764",
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.493",
+            "value": "0.493",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.554",
+            "value": "0.554",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.692",
+            "value": "0.692",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.674",
+            "value": "0.674",
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (sentential memory + PE)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.318",
+            "value": "0.318",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.305",
+            "value": "0.305",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.502",
+            "value": "0.502",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.326",
+            "value": "0.326",
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (window memory + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.666",
+            "value": "0.666",
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "0.630",
+            "value": "0.630",
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "0.690",
+            "value": "0.690",
+            "emphasised": false,
+            "block": 0
+          },
+          {
+            "text": "0.703",
+            "value": "0.703",
+            "emphasised": false,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (all windows + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.648",
+            "value": "0.648",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.604",
+            "value": "0.604",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.711",
+            "value": "0.711",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.693",
+            "value": "0.693",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (all windows + all targets + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.639",
+            "value": "0.639",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.602",
+            "value": "0.602",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.698",
+            "value": "0.698",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.667",
+            "value": "0.667",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "MemNNs (LM + self-sup.)",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.638",
+            "value": "0.638",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.605",
+            "value": "0.605",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.692",
+            "value": "0.692",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.647",
+            "value": "0.647",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": null
+    }
+  ],
+  "macros": {
+    "\\todo": "\\textcolor{red}{TODO: #1}",
+    "\\starspace": "{\\sc Embedding Model}\\xspace",
+    "\\window": "{\\sc window}\\xspace",
+    "\\bW": "{\\bf W}",
+    "\\bA": "{\\bf A}",
+    "\\bB": "{\\bf B}",
+    "\\bC": "{\\bf C}",
+    "\\bH": "{\\bf H}",
+    "\\bU": "{\\bf U}",
+    "\\bm": "{\\bf m}",
+    "\\bc": "{\\bf c}",
+    "\\bq": "{\\bf q}",
+    "\\ba": "{\\bf a}",
+    "\\Re": "\\mathbb{R}",
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}",
+    "\\mc": "\\multicolumn{1}{l|}{#1}"
+  },
+  "references": [
+    {
+      "key": "altmann1988interaction",
+      "raw": "Altmann, Gerry and Steedman, Mark. Interaction with context during human sentence processing. Cognition, 30 0 (3): 0 191--238, 1988",
+      "authors": "Altmann, Gerry and Steedman, Mark",
+      "title": "Interaction with context during human sentence processing",
+      "venue": "Cognition, 30 0 (3): 0 191--238, 1988",
+      "year": 1988,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "baayen1996word",
+      "raw": "Baayen, R Harald and Lieber, Rochelle. Word frequency distributions and lexical semantics. Computers and the Humanities, 30 0 (4): 0 281--291, 1996",
+      "authors": "Baayen, R Harald and Lieber, Rochelle",
+      "title": "Word frequency distributions and lexical semantics",
+      "venue": "Computers and the Humanities, 30 0 (4): 0 281--291, 1996",
+      "year": 1996,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bengio1994learning",
+      "raw": "Bengio, Yoshua, Simard, Patrice, and Frasconi, Paolo. Learning long-term dependencies with gradient descent is difficult. Neural Networks, IEEE Transactions on, 5 0 (2): 0 157--166, 1994",
+      "authors": "Bengio, Yoshua, Simard, Patrice, and Frasconi, Paolo",
+      "title": "Learning long-term dependencies with gradient descent is difficult",
+      "venue": "Neural Networks, IEEE Transactions on, 5 0 (2): 0 157--166, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "binder2011neurobiology",
+      "raw": "Binder, Jeffrey R and Desai, Rutvik H. The neurobiology of semantic memory. Trends in cognitive sciences, 15 0 (11): 0 527--536, 2011",
+      "authors": "Binder, Jeffrey R and Desai, Rutvik H",
+      "title": "The neurobiology of semantic memory",
+      "venue": "Trends in cognitive sciences, 15 0 (11): 0 527--536, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "bordes2015large",
+      "raw": "Bordes, Antoine, Usunier, Nicolas, Chopra, Sumit, and Weston, Jason. Large-scale simple question answering with memory networks. arXiv preprint arXiv:1506.02075, 2015",
+      "authors": "Bordes, Antoine, Usunier, Nicolas, Chopra, Sumit, and Weston, Jason",
+      "title": "Large-scale simple question answering with memory networks",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1506.02075",
+      "doi": null
+    },
+    {
+      "key": "dyer2015transition",
+      "raw": "Dyer, Chris, Ballesteros, Miguel, Ling, Wang, Matthews, Austin, and Smith, Noah A. Transition-based dependency parsing with stack long short-term memory. In Proceedings of the Annual Meeting of the Association for Computational Linguistics, 2015",
+      "authors": "Dyer, Chris, Ballesteros, Miguel, Ling, Wang, Matthews, Austin, and Smith, Noah A",
+      "title": "Transition-based dependency parsing with stack long short-term memory",
+      "venue": "In Proceedings of the Annual Meeting of the Association for Computational Linguistics, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "graves2008unconstrained",
+      "raw": "Graves, Alex, Liwicki, Marcus, Bunke, Horst, Schmidhuber, J\\\"urgen, and Fern\\'andez, Santiago. Unconstrained on-line handwriting recognition with recurrent neural networks. In Advances in Neural Information Processing Systems, pp.\\ 577--584, 2008",
+      "authors": "Graves, Alex, Liwicki, Marcus, Bunke, Horst, Schmidhuber, J\\\"urgen, and Fern\\'andez, Santiago",
+      "title": "Unconstrained on-line handwriting recognition with recurrent neural networks",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 577--584, 2008",
+      "year": 2008,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "grefenstette2015learning",
+      "raw": "Grefenstette, Edward, Hermann, Karl Moritz, Suleyman, Mustafa, and Blunsom, Phil. Learning to transduce with unbounded memory. NIPS, 2015",
+      "authors": "Grefenstette, Edward, Hermann, Karl Moritz, Suleyman, Mustafa, and Blunsom, Phil",
+      "title": "Learning to transduce with unbounded memory",
+      "venue": "NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "goldilocks",
+      "raw": "Hassall, John. Goldilocks and the three bears. In The Old Nursery Stories and Rhymes. Blackie \\& Son: London, 1904",
+      "authors": "Hassall, John",
+      "title": "Goldilocks and the three bears",
+      "venue": "In The Old Nursery Stories and Rhymes. Blackie \\& Son: London, 1904",
+      "year": null,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "Heafield-estimate",
+      "raw": "Heafield, Kenneth, Pouzyrevsky, Ivan, Clark, Jonathan H., and Koehn, Philipp. Scalable modified Kneser-Ney language model estimation. In Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics, pp.\\ 690--696, Sofia, Bulgaria, August 2013",
+      "authors": "Heafield, Kenneth, Pouzyrevsky, Ivan, Clark, Jonathan H., and Koehn, Philipp",
+      "title": "Scalable modified Kneser-Ney language model estimation",
+      "venue": "In Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics, pp.\\ 690--696, Sofia, Bulgaria, August 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "nips15_hermann",
+      "raw": "Hermann, Karl Moritz, Ko cisk\\'y, Tom\\'a s, Grefenstette, Edward, Espeholt, Lasse, Kay, Will, Suleyman, Mustafa, and Blunsom, Phil. Teaching machines to read and comprehend. In Advances in Neural Information Processing Systems (NIPS), 2015. URL http://arxiv.org/abs/1506.03340",
+      "authors": "Hermann, Karl Moritz, Ko cisk\\'y, Tom\\'a s, Grefenstette, Edward, Espeholt, Lasse, Kay, Will, Suleyman, Mustafa, and Blunsom, Phil",
+      "title": "Teaching machines to read and comprehend",
+      "venue": "In Advances in Neural Information Processing Systems (NIPS), 2015 URL",
+      "year": 2015,
+      "arxivId": "1506.03340",
+      "doi": null
+    },
+    {
+      "key": "hinton2012improving",
+      "raw": "Hinton, Geoffrey E, Srivastava, Nitish, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan R. Improving neural networks by preventing co-adaptation of feature detectors. arXiv preprint arXiv:1207.0580, 2012",
+      "authors": "Hinton, Geoffrey E, Srivastava, Nitish, Krizhevsky, Alex, Sutskever, Ilya, and Salakhutdinov, Ruslan R",
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "venue": "arXiv preprint 2012",
+      "year": 2012,
+      "arxivId": "1207.0580",
+      "doi": null
+    },
+    {
+      "key": "huang2012improving",
+      "raw": "Huang, Eric H, Socher, Richard, Manning, Christopher D, and Ng, Andrew Y. Improving word representations via global context and multiple word prototypes. In Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics: Long Papers-Volume 1, pp.\\ 873--882. Association for Computational Linguistics, 2012",
+      "authors": "Huang, Eric H, Socher, Richard, Manning, Christopher D, and Ng, Andrew Y",
+      "title": "Improving word representations via global context and multiple word prototypes",
+      "venue": "In Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics: Long Papers-Volume 1, pp.\\ 873--882. Association for Computational Linguistics, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "joulin2015inferring",
+      "raw": "Joulin, Armand and Mikolov, Tomas. Inferring algorithmic patterns with stack-augmented recurrent nets. NIPS, 2015",
+      "authors": "Joulin, Armand and Mikolov, Tomas",
+      "title": "Inferring algorithmic patterns with stack-augmented recurrent nets",
+      "venue": "NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kuhn1990cache",
+      "raw": "Kuhn, Roland and De Mori, Renato. A cache-based natural language model for speech recognition. Pattern Analysis and Machine Intelligence, IEEE Transactions on, 12 0 (6): 0 570--583, 1990",
+      "authors": "Kuhn, Roland and De Mori, Renato",
+      "title": "A cache-based natural language model for speech recognition",
+      "venue": "Pattern Analysis and Machine Intelligence, IEEE Transactions on, 12 0 (6): 0 570--583, 1990",
+      "year": 1990,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "kumar2015ask",
+      "raw": "Kumar, Ankit, Irsoy, Ozan, Su, Jonathan, Bradbury, James, English, Robert, Pierce, Brian, Ondruska, Peter, Gulrajani, Ishaan, and Socher, Richard. Ask me anything: Dynamic memory networks for natural language processing. http://arxiv.org/abs/1506.07285, 2015",
+      "authors": "Kumar, Ankit, Irsoy, Ozan, Su, Jonathan, Bradbury, James, English, Robert, Pierce, Brian, Ondruska, Peter, Gulrajani, Ishaan, and Socher, Richard",
+      "title": "Ask me anything: Dynamic memory networks for natural language processing",
+      "venue": "2015",
+      "year": 2015,
+      "arxivId": "1506.07285",
+      "doi": null
+    },
+    {
+      "key": "luong2015effective",
+      "raw": "Luong, Minh-Thang, Pham, Hieu, and Manning, Christopher D. Effective approaches to attention-based neural machine translation. Proceedings of EMNLP, 2015",
+      "authors": "Luong, Minh-Thang, Pham, Hieu, and Manning, Christopher D",
+      "title": "Effective approaches to attention-based neural machine translation",
+      "venue": "Proceedings of EMNLP, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "manning2014stanford",
+      "raw": "Manning, Christopher D, Surdeanu, Mihai, Bauer, John, Finkel, Jenny, Bethard, Steven J, and McClosky, David. The stanford corenlp natural language processing toolkit. In Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pp.\\ 55--60, 2014",
+      "authors": "Manning, Christopher D, Surdeanu, Mihai, Bauer, John, Finkel, Jenny, Bethard, Steven J, and McClosky, David",
+      "title": "The stanford corenlp natural language processing toolkit",
+      "venue": "In Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pp.\\ 55--60, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "mikolov2012context",
+      "raw": "Mikolov, Tomas and Zweig, Geoffrey. Context dependent recurrent neural network language model. In SLT, pp.\\ 234--239, 2012",
+      "authors": "Mikolov, Tomas and Zweig, Geoffrey",
+      "title": "Context dependent recurrent neural network language model",
+      "venue": "In SLT, pp.\\ 234--239, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "richardson2013mctest",
+      "raw": "Richardson, Matthew, Burges, Christopher JC, and Renshaw, Erin. Mctest: A challenge dataset for the open-domain machine comprehension of text. In EMNLP, volume 1, pp.\\ 2, 2013",
+      "authors": "Richardson, Matthew, Burges, Christopher JC, and Renshaw, Erin",
+      "title": "Mctest: A challenge dataset for the open-domain machine comprehension of text",
+      "venue": "In EMNLP, volume 1, pp.\\ 2, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "rush2015neural",
+      "raw": "Rush, Alexander M, Chopra, Sumit, and Weston, Jason. A neural attention model for abstractive sentence summarization. Proceedings of EMNLP, 2015",
+      "authors": "Rush, Alexander M, Chopra, Sumit, and Weston, Jason",
+      "title": "A neural attention model for abstractive sentence summarization",
+      "venue": "Proceedings of EMNLP, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sukhbaatar2015end",
+      "raw": "Sukhbaatar, Sainbayar, Szlam, Arthur, Weston, Jason, and Fergus, Rob. End-to-end memory networks. Proceedings of NIPS, 2015",
+      "authors": "Sukhbaatar, Sainbayar, Szlam, Arthur, Weston, Jason, and Fergus, Rob",
+      "title": "End-to-end memory networks",
+      "venue": "Proceedings of NIPS, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "wan2013regularization",
+      "raw": "Wan, Li, Zeiler, Matthew, Zhang, Sixin, Cun, Yann L, and Fergus, Rob. Regularization of neural networks using dropconnect. In Proceedings of the 30th International Conference on Machine Learning (ICML-13), pp.\\ 1058--1066, 2013",
+      "authors": "Wan, Li, Zeiler, Matthew, Zhang, Sixin, Cun, Yann L, and Fergus, Rob",
+      "title": "Regularization of neural networks using dropconnect",
+      "venue": "In Proceedings of the 30th International Conference on Machine Learning (ICML-13), pp.\\ 1058--1066, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "weston2010large",
+      "raw": "Weston, Jason, Bengio, Samy, and Usunier, Nicolas. Large scale image annotation: learning to rank with joint word-image embeddings. Machine learning, 81 0 (1): 0 21--35, 2010",
+      "authors": "Weston, Jason, Bengio, Samy, and Usunier, Nicolas",
+      "title": "Large scale image annotation: learning to rank with joint word-image embeddings",
+      "venue": "Machine learning, 81 0 (1): 0 21--35, 2010",
+      "year": 2010,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "weston2015towards",
+      "raw": "Weston, Jason, Bordes, Antoine, Chopra, Sumit, and Mikolov, Tomas. Towards ai-complete question answering: a set of prerequisite toy tasks. arXiv preprint arXiv:1502.05698, 2015",
+      "authors": "Weston, Jason, Bordes, Antoine, Chopra, Sumit, and Mikolov, Tomas",
+      "title": "Towards ai-complete question answering: a set of prerequisite toy tasks",
+      "venue": "arXiv preprint 2015",
+      "year": 2015,
+      "arxivId": "1502.05698",
+      "doi": null
+    },
+    {
+      "key": "weston2014memory",
+      "raw": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine. Memory networks. Proceedings of ICLR, 2015",
+      "authors": "Weston, Jason, Chopra, Sumit, and Bordes, Antoine",
+      "title": "Memory networks",
+      "venue": "Proceedings of ICLR, 2015",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "williams1992simple",
+      "raw": "Williams, Ronald J. Simple statistical gradient-following algorithms for connectionist reinforcement learning. Machine learning, 8 0 (3-4): 0 229--256, 1992",
+      "authors": "Williams, Ronald J",
+      "title": "Simple statistical gradient-following algorithms for connectionist reinforcement learning",
+      "venue": "Machine learning, 8 0 (3-4): 0 229--256, 1992",
+      "year": 1992,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "xu2015show",
+      "raw": "Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Courville, Aaron, Salakhutdinov, Ruslan, Zemel, Richard, and Bengio, Yoshua. Show, attend and tell: Neural image caption generation with visual attention. In Proceedings of the International Conference on Machine Learning (ICML'15), 2015. URL http://arxiv.org/abs/1502.03044",
+      "authors": "Xu, Kelvin, Ba, Jimmy, Kiros, Ryan, Courville, Aaron, Salakhutdinov, Ruslan, Zemel, Richard, and Bengio, Yoshua",
+      "title": "Show, attend and tell: Neural image caption generation with visual attention",
+      "venue": "In Proceedings of the International Conference on Machine Learning (ICML'15), 2015 URL",
+      "year": 2015,
+      "arxivId": "1502.03044",
+      "doi": null
+    },
+    {
+      "key": "zweig2011microsoft",
+      "raw": "Zweig, Geoffrey and Burges, Christopher JC. The microsoft research sentence completion challenge. Technical report, Technical Report MSR-TR-2011-129, Microsoft, 2011",
+      "authors": "Zweig, Geoffrey and Burges, Christopher JC",
+      "title": "The microsoft research sentence completion challenge",
+      "venue": "Technical report, Technical Report MSR-TR-2011-129, Microsoft, 2011",
+      "year": 2011,
+      "arxivId": null,
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "\\bm_{o1} = \\sum_{i=1 \\dots n} \\alpha_{i} \\bm_i \\,,",
+      "environment": "equation",
+      "labels": [
+        "eq:eq_o"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\bm_{o1} = \\sum_{i=1 \\dots n} \\alpha_{i} \\bm_i\\,, \\mbox{~~~~~~}\\text{with~~~~~}\\alpha_i =  \\frac{e^{\\bc_i^\\top\\bq}}{\\sum_j e^{\\bc_j^\\top\\bq}}, \\, i=1,\\dots n,",
+      "environment": "equation",
+      "labels": [
+        "eq:eq_o"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "m_{o1} = \\argmax_{i=1,\\dots n} \\bc_i^\\top\\bq \\, .",
+      "environment": "equation",
+      "labels": [
+        "eq:salient"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 1282,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.86497497558594,
+            "y0": 244.92140197753906,
+            "x1": 468.1375427246094,
+            "y1": 254.88400268554688
+          },
+          {
+            "x0": 143.86497497558594,
+            "y0": 255.88038635253906,
+            "x1": 197.75265502929688,
+            "y1": 265.8429870605469
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 2848,
+      "numbers": 0,
+      "citations": 5,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99996948242188,
+            "y0": 464.5341796875,
+            "x1": 296.2432556152344,
+            "y1": 474.4967956542969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "The Children's Book Test",
+      "chars": 2960,
+      "numbers": 5,
+      "citations": 2,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 236.04432678222656,
+            "x1": 504.0032958984375,
+            "y1": 246.00692749023438
+          },
+          {
+            "x0": 108.0,
+            "y0": 247.00331115722656,
+            "x1": 431.7146301269531,
+            "y1": 256.9659118652344
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Related Resources",
+      "chars": 1960,
+      "numbers": 5,
+      "citations": 3,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 286.05645751953125,
+            "x1": 504.00341796875,
+            "y1": 296.0190734863281
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 297.01544189453125,
+            "x1": 173.47418212890625,
+            "y1": 306.9780578613281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Studying Memory Representation with Memory Networks",
+      "chars": 746,
+      "numbers": 2,
+      "citations": 3,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Encoding Memories and Queries",
+      "chars": 2375,
+      "numbers": 2,
+      "citations": 2,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 202.65103149414062,
+            "y0": 640.7072143554688,
+            "x1": 346.9393310546875,
+            "y1": 650.6697998046875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "End-to-end Memory Networks",
+      "chars": 2481,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 3,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00003051757812,
+            "y0": 373.19122314453125,
+            "x1": 278.4700927734375,
+            "y1": 383.1538391113281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Self-supervision for Window Memories",
+      "chars": 3238,
+      "numbers": 1,
+      "citations": 4,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 163.8354034423828,
+            "x1": 504.00323486328125,
+            "y1": 173.79800415039062
+          },
+          {
+            "x0": 108.0,
+            "y0": 174.7943878173828,
+            "x1": 325.01531982421875,
+            "y1": 184.75698852539062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Baseline and Comparison Models",
+      "chars": 144,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00004577636719,
+            "y0": 572.443115234375,
+            "x1": 504.0032958984375,
+            "y1": 582.4057006835938
+          },
+          {
+            "x0": 108.00004577636719,
+            "y0": 583.402099609375,
+            "x1": 292.9159240722656,
+            "y1": 593.3646850585938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Non-Learning Baselines",
+      "chars": 1416,
+      "numbers": 0,
+      "citations": 2,
+      "anchor": {
+        "page": 4,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00004577636719,
+            "y0": 630.0921020507812,
+            "x1": 369.2393493652344,
+            "y1": 640.0546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "N-gram Language Models",
+      "chars": 335,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 226.09437561035156,
+            "x1": 368.5218505859375,
+            "y1": 236.05697631835938
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Supervised Embedding Models",
+      "chars": 975,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 307.1483154296875,
+            "x1": 504.0032043457031,
+            "y1": 317.1109313964844
+          },
+          {
+            "x0": 108.0,
+            "y0": 318.1072998046875,
+            "x1": 443.779296875,
+            "y1": 328.0699157714844
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Recurrent Language Models",
+      "chars": 1563,
+      "numbers": 1,
+      "citations": 2,
+      "anchor": {
+        "page": 5,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 470.8912353515625,
+            "x1": 504.0032958984375,
+            "y1": 480.8538513183594
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 481.8502197265625,
+            "x1": 504.0032043457031,
+            "y1": 491.8128356933594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Human Performance",
+      "chars": 396,
+      "numbers": 2,
+      "citations": 0,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 273.1500244140625,
+            "y0": 295.45245361328125,
+            "x1": 504.0033264160156,
+            "y1": 305.4150695800781
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 306.41143798828125,
+            "x1": 504.00323486328125,
+            "y1": 316.3740539550781
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Other Related Approaches",
+      "chars": 1543,
+      "numbers": 0,
+      "citations": 11,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00003051757812,
+            "y0": 351.6104431152344,
+            "x1": 453.50286865234375,
+            "y1": 361.57305908203125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "Results",
+      "chars": 3679,
+      "numbers": 0,
+      "citations": 1,
+      "anchor": {
+        "page": 6,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00003051757812,
+            "y0": 623.5853881835938,
+            "x1": 212.19888305664062,
+            "y1": 633.5479736328125
+          },
+          {
+            "x0": 222.15902709960938,
+            "y0": 623.6763305664062,
+            "x1": 504.00091552734375,
+            "y1": 633.638916015625
+          },
+          {
+            "x0": 108.00003051757812,
+            "y0": 634.6343383789062,
+            "x1": 247.0878448486328,
+            "y1": 644.596923828125
+          }
+        ]
+      }
+    },
+    {
+      "kind": "results",
+      "title": "News Article Question Answering",
+      "chars": 2428,
+      "numbers": 1,
+      "citations": 7,
+      "anchor": {
+        "page": 7,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 619.8104248046875,
+            "x1": 504.00323486328125,
+            "y1": 629.7730102539062
+          },
+          {
+            "x0": 108.0,
+            "y0": 630.7694702148438,
+            "x1": 436.7955627441406,
+            "y1": 640.7320556640625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Conclusion",
+      "chars": 1676,
+      "numbers": 1,
+      "citations": 1,
+      "anchor": {
+        "page": 8,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 554.8682250976562,
+            "x1": 484.5663757324219,
+            "y1": 564.830810546875
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conclusion",
+      "title": "Acknowledgments",
+      "chars": 166,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 9,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 103.49446105957031,
+            "x1": 504.00323486328125,
+            "y1": 113.45706176757812
+          },
+          {
+            "x0": 108.0,
+            "y0": 114.45344543457031,
+            "x1": 409.4682312011719,
+            "y1": 124.41604614257812
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 3,
+      "extends": 0,
+      "contests": 1,
+      "compares": 1,
+      "background": 24,
+      "traversable": 0
+    },
+    "foundation": {
+      "key": "manning2014stanford",
+      "stance": "inherits",
+      "cue": "based on",
+      "sentence": "For finer-grained analyses, we evaluated four classes of question by removing distinct types of word: Named Entities, (Common) Nouns, Verbs and Prepositions (based on output from the POS tagger and named-entity-recogniser in the Stanford Core NLP Toolkit [Manning et al. 2014]).",
+      "section": "The Children's Book Test",
+      "sectionKind": "method",
+      "ordinal": 5,
+      "title": "The stanford corenlp natural language processing toolkit",
+      "authors": "Manning, Christopher D, Surdeanu, Mihai, Bauer, John, Finkel, Jenny, Bethard, Steven J, and McClosky, David",
+      "year": 2014,
+      "arxivId": null,
+      "inCorpus": false,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0,
+            "y0": 626.010498046875,
+            "x1": 504.0030822753906,
+            "y1": 635.9730834960938
+          },
+          {
+            "x0": 108.0,
+            "y0": 636.969482421875,
+            "x1": 504.0032043457031,
+            "y1": 646.9320678710938
+          },
+          {
+            "x0": 108.0,
+            "y0": 647.928466796875,
+            "x1": 358.27044677734375,
+            "y1": 657.8910522460938
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "Heafield-estimate",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We trained an n-gram language model using the KenLM toolkit [Heafield et al. 2013].",
+        "section": "N-gram Language Models",
+        "sectionKind": "results",
+        "ordinal": 23,
+        "title": "Scalable modified Kneser-Ney language model estimation",
+        "authors": "Heafield, Kenneth, Pouzyrevsky, Ivan, Clark, Jonathan H., and Koehn, Philipp",
+        "year": 2013,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 107.99999237060547,
+              "y0": 226.09437561035156,
+              "x1": 368.5218505859375,
+              "y1": 236.05697631835938
+            }
+          ]
+        }
+      },
+      {
+        "key": "kuhn1990cache",
+        "stance": "compares",
+        "cue": "compare with",
+        "sentence": "We also compare with a variant of language model with cache [Kuhn et al. 1990], where we linearly interpolate the n-gram model probabilities with unigram probabilities computed on the context.",
+        "section": "N-gram Language Models",
+        "sectionKind": "results",
+        "ordinal": 24,
+        "title": "A cache-based natural language model for speech recognition",
+        "authors": "Kuhn, Roland and De Mori, Renato",
+        "year": 1990,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 403.69989013671875,
+              "y0": 248.01234436035156,
+              "x1": 504.0032958984375,
+              "y1": 257.9749450683594
+            },
+            {
+              "x0": 107.99999237060547,
+              "y0": 258.9713134765625,
+              "x1": 487.505126953125,
+              "y1": 268.9339294433594
+            }
+          ]
+        }
+      },
+      {
+        "key": "manning2014stanford",
+        "stance": "inherits",
+        "cue": "based on",
+        "sentence": "For finer-grained analyses, we evaluated four classes of question by removing distinct types of word: Named Entities, (Common) Nouns, Verbs and Prepositions (based on output from the POS tagger and named-entity-recogniser in the Stanford Core NLP Toolkit [Manning et al. 2014]).",
+        "section": "The Children's Book Test",
+        "sectionKind": "method",
+        "ordinal": 5,
+        "title": "The stanford corenlp natural language processing toolkit",
+        "authors": "Manning, Christopher D, Surdeanu, Mihai, Bauer, John, Finkel, Jenny, Bethard, Steven J, and McClosky, David",
+        "year": 2014,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 1,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 108.0,
+              "y0": 626.010498046875,
+              "x1": 504.0030822753906,
+              "y1": 635.9730834960938
+            },
+            {
+              "x0": 108.0,
+              "y0": 636.969482421875,
+              "x1": 504.0032043457031,
+              "y1": 646.9320678710938
+            },
+            {
+              "x0": 108.0,
+              "y0": 647.928466796875,
+              "x1": 358.27044677734375,
+              "y1": 657.8910522460938
+            }
+          ]
+        }
+      },
+      {
+        "key": "mikolov2012context",
+        "stance": "contests",
+        "cue": "rather than",
+        "sentence": "Unlike the canonical language-modelling task, all models have access to the query words after the missing word (i.e if k is the position of the missing word, we rank candidate c based on p(q_1 \u2026 q_k-1, c, q_k+1\u2026 q_l) rather than simply p(q_1 \u2026 q_k-1,c)). [Mikolov et al. 2012] previously observed performance boosts for recurrent language models by adding the capacity to jointly learn a document-level representation.",
+        "section": "Recurrent Language Models",
+        "sectionKind": "results",
+        "ordinal": 26,
+        "title": "Context dependent recurrent neural network language model",
+        "authors": "Mikolov, Tomas and Zweig, Geoffrey",
+        "year": 2012,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 5,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 210.65460205078125,
+              "y0": 575.4991455078125,
+              "x1": 504.0031433105469,
+              "y1": 585.4617309570312
+            },
+            {
+              "x0": 108.00001525878906,
+              "y0": 586.4581298828125,
+              "x1": 381.3836975097656,
+              "y1": 596.4207153320312
+            }
+          ]
+        }
+      },
+      {
+        "key": "sukhbaatar2015end",
+        "stance": "inherits",
+        "cue": "as introduced by",
+        "sentence": "We also use Positional Encoding (PE) as introduced by [Sukhbaatar et al. 2015] to encode the word positions.",
+        "section": "Encoding Memories and Queries",
+        "sectionKind": "method",
+        "ordinal": 14,
+        "title": "End-to-end memory networks",
+        "authors": "Sukhbaatar, Sainbayar, Szlam, Arthur, Weston, Jason, and Fergus, Rob",
+        "year": 2015,
+        "arxivId": null,
+        "inCorpus": false,
+        "anchor": {
+          "page": 3,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 338.9091491699219,
+              "y0": 189.59535217285156,
+              "x1": 503.9993896484375,
+              "y1": 199.55795288085938
+            },
+            {
+              "x0": 116.5040283203125,
+              "y0": 200.55433654785156,
+              "x1": 171.56727600097656,
+              "y1": 210.51693725585938
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Intuitively, this can help to overcome the difficult optimization inherent in training a single network jointly to access information and use it effectively.",
+      "anchorText": "Intuitively, this can help to overcome the difficult optimization inherent in training a single network jointly to access information and use it effectively.",
+      "kind": "conjectural",
+      "support": "bare",
+      "cue": "Intuitively",
+      "section": "Self-supervision for Window Memories",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    },
+    {
+      "sentence": "In the common case where more than one memory contains the correct answer, the heuristic picks the single memory m\u0303 that is scored highest by the query in the embedding space defined by A.[TF-IDF similarity worked almost as well in our experiments, but a random choice over positives did not.] The model incorporates this information by taking a gradient step using SGD to force its memory retrieval network, for each example, to give a higher score to the supporting memory m\u0303 than other memories. Memory supervision (knowing which memories to attend to) is not provided at training time but is inferred automatically using the following procedure: since we know the correct answer during training, we hypothesize the correct supporting memory to be among the window memories whose corresponding candidate is the correct answer.",
+      "anchorText": "than other memories. Memory supervision (knowing which memories to attend to) is not provided at training time but is inferred automatically using the following procedure: since we know the correct answer during training, we hypothesize the correct supporting memory to be among the window memories whose corresponding candidate is the correct answer.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "we hypothesize",
+      "section": "Self-supervision for Window Memories",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": null
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 0,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 36,
+    "rate": 0.9
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL"
+    ],
+    "published": "2015-11-07",
+    "authors": [
+      "Felix Hill",
+      "Antoine Bordes",
+      "Sumit Chopra",
+      "Jason Weston"
+    ]
+  }
+}

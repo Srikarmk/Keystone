@@ -1,0 +1,1101 @@
+{
+  "id": "1703.10722",
+  "title": "Factorization tricks for LSTM networks",
+  "keystone": {
+    "table": "Table 1",
+    "caption": "One Billion Words benchmark evaluation results after 1 week of training using one DGX Station with 4 Tesla V100 GPUs.",
+    "supported": 2,
+    "share": 1.0,
+    "summary": "2 of the paper's headline numbers trace to Table 1"
+  },
+  "codeUrl": "https://github.com/okuchaiev/f-lm",
+  "coverage": {
+    "claims": 2,
+    "supported": 2,
+    "declared": 0,
+    "unsupported": 0,
+    "mismatched": 0,
+    "rate": 1.0
+  },
+  "claims": [
+    {
+      "value": "35.1",
+      "section": "introduction",
+      "sentence": "We train all networks for 1 week on a DGX Station system with 4 Tesla V100 GPUs, after which BIGLSTM's evaluation perplexity was 35.1.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "One Billion Words benchmark evaluation results after 1 week of training using one DGX Station with 4 Tesla V100 GPUs.",
+      "row": "BIGLSTM baseline",
+      "column": "Perplexity",
+      "cell": "35.1",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 140.74705505371094,
+            "y0": 438.9132080078125,
+            "x1": 504.0033264160156,
+            "y1": 448.8758239746094
+          },
+          {
+            "x0": 108.0,
+            "y0": 449.8721923828125,
+            "x1": 311.3664855957031,
+            "y1": 459.8348083496094
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 130.01600646972656,
+            "y0": 138.12648010253906,
+            "x1": 208.87994384765625,
+            "y1": 148.08908081054688
+          },
+          {
+            "x0": 220.83506774902344,
+            "y0": 138.12648010253906,
+            "x1": 238.26959228515625,
+            "y1": 148.08908081054688
+          }
+        ]
+      }
+    },
+    {
+      "value": "36.3",
+      "section": "introduction",
+      "sentence": "Our G-LSTM based model got 36 and F-LSTM based model got 36.3 while using two to three times less RNN parameters.",
+      "status": "exact",
+      "table": "Table 1",
+      "caption": "One Billion Words benchmark evaluation results after 1 week of training using one DGX Station with 4 Tesla V100 GPUs.",
+      "row": "BIG F-LSTM F512",
+      "column": "Perplexity",
+      "cell": "36.3",
+      "evidenceLabel": null,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 314.4250183105469,
+            "y0": 449.8721923828125,
+            "x1": 504.0032653808594,
+            "y1": 459.8348083496094
+          },
+          {
+            "x0": 108.0,
+            "y0": 460.8311767578125,
+            "x1": 405.6426086425781,
+            "y1": 470.7937927246094
+          }
+        ]
+      },
+      "evidenceAnchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "approximate",
+        "rects": [
+          {
+            "x0": 130.01600646972656,
+            "y0": 149.08546447753906,
+            "x1": 208.06295776367188,
+            "y1": 159.04806518554688
+          },
+          {
+            "x0": 220.8350067138672,
+            "y0": 149.08546447753906,
+            "x1": 238.26953125,
+            "y1": 159.04806518554688
+          }
+        ]
+      }
+    }
+  ],
+  "pdfUrl": "https://arxiv.org/pdf/1703.10722",
+  "numbers": [
+    {
+      "value": "35.1",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "We train all networks for 1 week on a DGX Station system with 4 Tesla V100 GPUs, after which BIGLSTM's evaluation perplexity was 35.1.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "BIGLSTM baseline",
+      "cell": "35.1",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 140.74705505371094,
+            "y0": 438.9132080078125,
+            "x1": 504.0033264160156,
+            "y1": 448.8758239746094
+          },
+          {
+            "x0": 108.0,
+            "y0": 449.8721923828125,
+            "x1": 311.3664855957031,
+            "y1": 459.8348083496094
+          }
+        ]
+      }
+    },
+    {
+      "value": "36.3",
+      "kind": "result",
+      "section": "introduction",
+      "sentence": "Our G-LSTM based model got 36 and F-LSTM based model got 36.3 while using two to three times less RNN parameters.",
+      "status": "exact",
+      "table": "Table 1",
+      "row": "BIG F-LSTM F512",
+      "cell": "36.3",
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 314.4250183105469,
+            "y0": 449.8721923828125,
+            "x1": 504.0032653808594,
+            "y1": 459.8348083496094
+          },
+          {
+            "x0": 108.0,
+            "y0": 460.8311767578125,
+            "x1": 405.6426086425781,
+            "y1": 470.7937927246094
+          }
+        ]
+      }
+    },
+    {
+      "value": "0.2",
+      "kind": "result",
+      "section": "experiments",
+      "sentence": "We train all models on DGX Station with 4 GV100 GPUs for one ween using Adagrad optimizer, projection size of 1024, cell size of 8192, mini-batch of 256 per GPU, sampled softmax with 8192 samples and 0.2 learning rate.",
+      "status": "untraced",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99992370605469,
+            "y0": 449.94622802734375,
+            "x1": 504.0032653808594,
+            "y1": 459.9088439941406
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 460.90521240234375,
+            "x1": 504.00323486328125,
+            "y1": 470.8678283691406
+          },
+          {
+            "x0": 107.99992370605469,
+            "y0": 471.86419677734375,
+            "x1": 230.20118713378906,
+            "y1": 481.8268127441406
+          }
+        ]
+      }
+    },
+    {
+      "value": "4 GPUs",
+      "kind": "configuration",
+      "section": "experiments",
+      "sentence": "We let both BIG G-LSTM-G4 and BIG G-LSTM-G4-G8 ran for 1 week on 4 GPUs each and achieved very similar perplexities.",
+      "status": "configuration",
+      "table": null,
+      "row": null,
+      "cell": null,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 231.26715087890625,
+            "y0": 678.47021484375,
+            "x1": 504.0030822753906,
+            "y1": 688.4328002929688
+          },
+          {
+            "x0": 107.99993896484375,
+            "y0": 689.42919921875,
+            "x1": 352.143310546875,
+            "y1": 699.3917846679688
+          }
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "name": "Table 1",
+      "caption": "One Billion Words benchmark evaluation results after 1 week of training using one DGX Station with 4 Tesla V100 GPUs.",
+      "label": "1bwbm-1week",
+      "numericCells": 19,
+      "supports": 2,
+      "rows": [
+        [
+          {
+            "text": "Model",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Perplexity",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Step",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Num of RNN parameters",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          },
+          {
+            "text": "Words/sec",
+            "value": null,
+            "emphasised": true,
+            "block": 0
+          }
+        ],
+        [
+          {
+            "text": "BIGLSTM baseline",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "35.1",
+            "value": "35.1",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "0.99M",
+            "value": "990000.00",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "151,060,480",
+            "value": "151060480",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33.8K",
+            "value": "33800.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BIG F-LSTM F512",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36.3",
+            "value": "36.3",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.67 M",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "52,494,336",
+            "value": "52494336",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56.5K",
+            "value": "56500.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BIG G-LSTM G-2",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "36",
+            "value": "36",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.37M",
+            "value": "1370000.00",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "83,951,616",
+            "value": "83951616",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "41.7K",
+            "value": "41700.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BIG G-LSTM G-4",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "40.6",
+            "value": "40.6",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "1.128M",
+            "value": "1128000.000",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "50,397,184",
+            "value": "50397184",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "56K",
+            "value": "56000",
+            "emphasised": false,
+            "block": 1
+          }
+        ],
+        [
+          {
+            "text": "BIG G-LSTM G-8",
+            "value": null,
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "39.4",
+            "value": "39.4",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "850.4K",
+            "value": "850400.0",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "33,619,968",
+            "value": "33619968",
+            "emphasised": false,
+            "block": 1
+          },
+          {
+            "text": "58.5K",
+            "value": "58500.0",
+            "emphasised": false,
+            "block": 1
+          }
+        ]
+      ],
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 144.33360290527344,
+            "y0": 91.06349182128906,
+            "x1": 504.00311279296875,
+            "y1": 101.02609252929688
+          },
+          {
+            "x0": 108.0,
+            "y0": 102.02247619628906,
+            "x1": 240.69180297851562,
+            "y1": 111.98507690429688
+          }
+        ]
+      }
+    }
+  ],
+  "macros": {
+    "\\fix": "\\marginpar{FIX}",
+    "\\new": "\\marginpar{NEW}"
+  },
+  "references": [
+    {
+      "key": "bengio1994learning",
+      "raw": "Yoshua Bengio, Patrice Simard, and Paolo Frasconi. Learning long-term dependencies with gradient descent is difficult. IEEE transactions on neural networks, 5 0 (2): 0 157--166, 1994",
+      "authors": "Yoshua Bengio, Patrice Simard, and Paolo Frasconi",
+      "title": "Learning long-term dependencies with gradient descent is difficult",
+      "venue": "IEEE transactions on neural networks, 5 0 (2): 0 157--166, 1994",
+      "year": 1994,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "chelba2013one",
+      "raw": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson. One billion word benchmark for measuring progress in statistical language modeling. arXiv preprint arXiv:1312.3005, 2013",
+      "authors": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson",
+      "title": "One billion word benchmark for measuring progress in statistical language modeling",
+      "venue": "arXiv preprint 2013",
+      "year": 2013,
+      "arxivId": "1312.3005",
+      "doi": null
+    },
+    {
+      "key": "chollet2016xception",
+      "raw": "Fran cois Chollet. Xception: Deep learning with depthwise separable convolutions. arXiv preprint arXiv:1610.02357, 2016",
+      "authors": "Fran cois Chollet",
+      "title": "Xception: Deep learning with depthwise separable convolutions",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1610.02357",
+      "doi": null
+    },
+    {
+      "key": "ciregan2012multi",
+      "raw": "Dan Ciregan, Ueli Meier, and J\\\"urgen Schmidhuber. Multi-column deep neural networks for image classification. In Computer Vision and Pattern Recognition (CVPR), 2012 IEEE Conference on, pp.\\ 3642--3649. IEEE, 2012",
+      "authors": "Dan Ciregan, Ueli Meier, and J\\\"urgen Schmidhuber",
+      "title": "Multi-column deep neural networks for image classification",
+      "venue": "In Computer Vision and Pattern Recognition (CVPR), 2012 IEEE Conference on, pp.\\ 3642--3649. IEEE, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "denil2013predicting",
+      "raw": "Misha Denil, Babak Shakibi, Laurent Dinh, Nando de Freitas, et al. Predicting parameters in deep learning. In Advances in Neural Information Processing Systems, pp.\\ 2148--2156, 2013",
+      "authors": "Misha Denil, Babak Shakibi, Laurent Dinh, Nando de Freitas, et al",
+      "title": "Predicting parameters in deep learning",
+      "venue": "In Advances in Neural Information Processing Systems, pp.\\ 2148--2156, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "esser2016convolutional",
+      "raw": "Steven K Esser, Paul A Merolla, John V Arthur, Andrew S Cassidy, Rathinakumar Appuswamy, Alexander Andreopoulos, David J Berg, Jeffrey L McKinstry, Timothy Melano, Davis R Barch, et al. Convolutional networks for fast, energy-efficient neuromorphic computing. Proceedings of the National Academy of Sciences, pp.\\ 201604850, 2016",
+      "authors": "Steven K Esser, Paul A Merolla, John V Arthur, Andrew S Cassidy, Rathinakumar Appuswamy, Alexander Andreopoulos, David J Berg, Jeffrey L McKinstry, Timothy Melano, Davis R Barch, et al",
+      "title": "Convolutional networks for fast, energy-efficient neuromorphic computing",
+      "venue": "Proceedings of the National Academy of Sciences, pp.\\ 201604850, 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "He_2016_CVPR",
+      "raw": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016",
+      "authors": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun",
+      "title": "Deep residual learning for image recognition",
+      "venue": "In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016",
+      "year": 2016,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "hochreiter1997long",
+      "raw": "Sepp Hochreiter and J\\\"urgen Schmidhuber. Long short-term memory. Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "authors": "Sepp Hochreiter and J\\\"urgen Schmidhuber",
+      "title": "Long short-term memory",
+      "venue": "Neural computation, 9 0 (8): 0 1735--1780, 1997",
+      "year": 1997,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "jozefowicz2016exploring",
+      "raw": "Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu. Exploring the limits of language modeling. arXiv preprint arXiv:1602.02410, 2016",
+      "authors": "Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu",
+      "title": "Exploring the limits of language modeling",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1602.02410",
+      "doi": null
+    },
+    {
+      "key": "krizhevsky2012imagenet",
+      "raw": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton. Imagenet classification with deep convolutional neural networks. In Advances in neural information processing systems, pp.\\ 1097--1105, 2012",
+      "authors": "Alex Krizhevsky, Ilya Sutskever, and Geoffrey E Hinton",
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "venue": "In Advances in neural information processing systems, pp.\\ 1097--1105, 2012",
+      "year": 2012,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "pascanu2013difficulty",
+      "raw": "Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio. On the difficulty of training recurrent neural networks. ICML (3), 28: 0 1310--1318, 2013",
+      "authors": "Razvan Pascanu, Tomas Mikolov, and Yoshua Bengio",
+      "title": "On the difficulty of training recurrent neural networks",
+      "venue": "ICML (3), 28: 0 1310--1318, 2013",
+      "year": 2013,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "sak2014long",
+      "raw": "Hasim Sak, Andrew W Senior, and Fran coise Beaufays. Long short-term memory recurrent neural network architectures for large scale acoustic modeling. In Interspeech, pp.\\ 338--342, 2014",
+      "authors": "Hasim Sak, Andrew W Senior, and Fran coise Beaufays",
+      "title": "Long short-term memory recurrent neural network architectures for large scale acoustic modeling",
+      "venue": "In Interspeech, pp.\\ 338--342, 2014",
+      "year": 2014,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "shazeer2017outrageously",
+      "raw": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. arXiv preprint arXiv:1701.06538, 2017",
+      "authors": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean",
+      "title": "Outrageously large neural networks: The sparsely-gated mixture-of-experts layer",
+      "venue": "arXiv preprint 2017",
+      "year": 2017,
+      "arxivId": "1701.06538",
+      "doi": null
+    },
+    {
+      "key": "Shi:2015:CLN:2969239.2969329",
+      "raw": "Xingjian Shi, Zhourong Chen, Hao Wang, Dit-Yan Yeung, Wai-kin Wong, and Wang-chun Woo. Convolutional lstm network: A machine learning approach for precipitation nowcasting. In Proceedings of the 28th International Conference on Neural Information Processing Systems, NIPS'15, pp.\\ 802--810, Cambridge, MA, USA, 2015. MIT Press. URL http://dl.acm.org/citation.cfm?id=2969239.2969329",
+      "authors": "Xingjian Shi, Zhourong Chen, Hao Wang, Dit-Yan Yeung, Wai-kin Wong, and Wang-chun Woo",
+      "title": "Convolutional lstm network: A machine learning approach for precipitation nowcasting",
+      "venue": "In Proceedings of the 28th International Conference on Neural Information Processing Systems, NIPS'15, pp.\\ 802--810, Cambridge, MA, USA, 2015. MIT Press URL",
+      "year": 2015,
+      "arxivId": null,
+      "doi": null
+    },
+    {
+      "key": "simonyan2014very",
+      "raw": "Karen Simonyan and Andrew Zisserman. Very deep convolutional networks for large-scale image recognition. arXiv preprint arXiv:1409.1556, 2014",
+      "authors": "Karen Simonyan and Andrew Zisserman",
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.1556",
+      "doi": null
+    },
+    {
+      "key": "wu2016google",
+      "raw": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al. Google's neural machine translation system: Bridging the gap between human and machine translation. arXiv preprint arXiv:1609.08144, 2016",
+      "authors": "Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc V Le, Mohammad Norouzi, Wolfgang Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, et al",
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1609.08144",
+      "doi": null
+    },
+    {
+      "key": "xiong2016achieving",
+      "raw": "Wayne Xiong, Jasha Droppo, Xuedong Huang, Frank Seide, Mike Seltzer, Andreas Stolcke, Dong Yu, and Geoffrey Zweig. Achieving human parity in conversational speech recognition. arXiv preprint arXiv:1610.05256, 2016",
+      "authors": "Wayne Xiong, Jasha Droppo, Xuedong Huang, Frank Seide, Mike Seltzer, Andreas Stolcke, Dong Yu, and Geoffrey Zweig",
+      "title": "Achieving human parity in conversational speech recognition",
+      "venue": "arXiv preprint 2016",
+      "year": 2016,
+      "arxivId": "1610.05256",
+      "doi": null
+    },
+    {
+      "key": "zaremba2014recurrent",
+      "raw": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals. Recurrent neural network regularization. arXiv preprint arXiv:1409.2329, 2014",
+      "authors": "Wojciech Zaremba, Ilya Sutskever, and Oriol Vinyals",
+      "title": "Recurrent neural network regularization",
+      "venue": "arXiv preprint 2014",
+      "year": 2014,
+      "arxivId": "1409.2329",
+      "doi": null
+    }
+  ],
+  "baselines": [],
+  "equations": [
+    {
+      "ordinal": 0,
+      "latex": "LSTM:  h_{t-1}, c_{t-1}, x_{t}  \\rightarrow h_t, c_t.",
+      "environment": "equation",
+      "labels": [
+        "eq:1"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "latex": "\\begin{pmatrix} i \\\\ f \\\\ o \\\\ g  \\end{pmatrix} = \\begin{pmatrix} sigm \\\\ sigm \\\\ sigm \\\\ tanh  \\end{pmatrix} T \\begin{pmatrix} x_t \\\\ h_{t-1} \\end{pmatrix}",
+      "environment": "equation",
+      "labels": [
+        "eq:2"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "latex": "\\begin{pmatrix} i \\\\ f \\\\ o \\\\ g  \\end{pmatrix} = \\begin{pmatrix} \\begin{pmatrix} sigm \\\\ sigm \\\\ sigm \\\\ tanh  \\end{pmatrix} T^1 \\begin{pmatrix} x^1_t \\\\ h^1_{t-1} \\end{pmatrix}, ... , \\begin{pmatrix} sigm \\\\ sigm \\\\ sigm \\\\ tanh  \\end{pmatrix} T^k\\begin{pmatrix} x^k_t \\\\ h^k_{t-1} \\end{pmatrix} \\end{pmatrix}",
+      "environment": "equation",
+      "labels": []
+    }
+  ],
+  "sections": [
+    {
+      "kind": "abstract",
+      "title": "Abstract",
+      "chars": 513,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 143.8660125732422,
+            "y0": 202.81544494628906,
+            "x1": 468.1385803222656,
+            "y1": 212.77804565429688
+          },
+          {
+            "x0": 143.8660125732422,
+            "y0": 213.77442932128906,
+            "x1": 468.1386413574219,
+            "y1": 223.73703002929688
+          },
+          {
+            "x0": 143.8660125732422,
+            "y0": 224.73341369628906,
+            "x1": 468.138427734375,
+            "y1": 234.69601440429688
+          },
+          {
+            "x0": 143.8660125732422,
+            "y0": 235.69239807128906,
+            "x1": 468.13861083984375,
+            "y1": 245.65499877929688
+          },
+          {
+            "x0": 143.8660125732422,
+            "y0": 246.65138244628906,
+            "x1": 302.61004638671875,
+            "y1": 256.6139831542969
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Introduction",
+      "chars": 990,
+      "numbers": 5,
+      "citations": 8,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 315.6803283691406,
+            "y0": 323.3463134765625,
+            "x1": 504.0032653808594,
+            "y1": 333.3089294433594
+          },
+          {
+            "x0": 108.0,
+            "y0": 334.3052978515625,
+            "x1": 120.7322006225586,
+            "y1": 344.2679138183594
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Long Short-Term Memory overview",
+      "chars": 856,
+      "numbers": 0,
+      "citations": 5,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 505.783203125,
+            "x1": 504.00311279296875,
+            "y1": 515.7457885742188
+          },
+          {
+            "x0": 107.99999237060547,
+            "y0": 516.7421875,
+            "x1": 297.52838134765625,
+            "y1": 526.7047729492188
+          }
+        ]
+      }
+    },
+    {
+      "kind": "introduction",
+      "title": "Related Work",
+      "chars": 852,
+      "numbers": 0,
+      "citations": 7,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00000762939453,
+            "y0": 104.79145812988281,
+            "x1": 387.46087646484375,
+            "y1": 114.75405883789062
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Models",
+      "chars": 0,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": null
+    },
+    {
+      "kind": "method",
+      "title": "Factorized LSTM cell",
+      "chars": 769,
+      "numbers": 0,
+      "citations": 0,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99999237060547,
+            "y0": 287.27325439453125,
+            "x1": 287.8647766113281,
+            "y1": 297.2358703613281
+          }
+        ]
+      }
+    },
+    {
+      "kind": "method",
+      "title": "Group LSTM cell",
+      "chars": 985,
+      "numbers": 2,
+      "citations": 3,
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.0000228881836,
+            "y0": 585.6624145507812,
+            "x1": 298.7139892578125,
+            "y1": 595.625
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Experiments and Results",
+      "chars": 2080,
+      "numbers": 11,
+      "citations": 1,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 108.00001525878906,
+            "y0": 306.75433349609375,
+            "x1": 504.0032043457031,
+            "y1": 316.7169494628906
+          },
+          {
+            "x0": 108.00001525878906,
+            "y0": 317.71331787109375,
+            "x1": 136.78196716308594,
+            "y1": 327.6759338378906
+          }
+        ]
+      }
+    },
+    {
+      "kind": "experiments",
+      "title": "Future research",
+      "chars": 1101,
+      "numbers": 4,
+      "citations": 0,
+      "anchor": {
+        "page": 2,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 107.99991607666016,
+            "y0": 606.7391967773438,
+            "x1": 351.9739685058594,
+            "y1": 616.7017822265625
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "lineage": {
+    "tally": {
+      "inherits": 2,
+      "extends": 0,
+      "contests": 0,
+      "compares": 0,
+      "background": 16,
+      "traversable": 2
+    },
+    "foundation": {
+      "key": "chelba2013one",
+      "stance": "inherits",
+      "cue": "using",
+      "sentence": "We test F-LSTM and G-LSTM architectures on the task of language modeling using One Billion Word Benchmark [Chelba et al. 2013].",
+      "section": "Introduction",
+      "sectionKind": "introduction",
+      "ordinal": 6,
+      "title": "One billion word benchmark for measuring progress in statistical language modeling",
+      "authors": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson",
+      "year": 2013,
+      "arxivId": "1312.3005",
+      "inCorpus": true,
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 381.5042724609375,
+            "y0": 406.0362548828125,
+            "x1": 504.0044860839844,
+            "y1": 415.9988708496094
+          },
+          {
+            "x0": 108.0,
+            "y0": 416.9952392578125,
+            "x1": 444.42694091796875,
+            "y1": 426.9578552246094
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "key": "chelba2013one",
+        "stance": "inherits",
+        "cue": "using",
+        "sentence": "We test F-LSTM and G-LSTM architectures on the task of language modeling using One Billion Word Benchmark [Chelba et al. 2013].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 6,
+        "title": "One billion word benchmark for measuring progress in statistical language modeling",
+        "authors": "Ciprian Chelba, Tomas Mikolov, Mike Schuster, Qi Ge, Thorsten Brants, Phillipp Koehn, and Tony Robinson",
+        "year": 2013,
+        "arxivId": "1312.3005",
+        "inCorpus": true,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 381.5042724609375,
+              "y0": 406.0362548828125,
+              "x1": 504.0044860839844,
+              "y1": 415.9988708496094
+            },
+            {
+              "x0": 108.0,
+              "y0": 416.9952392578125,
+              "x1": 444.42694091796875,
+              "y1": 426.9578552246094
+            }
+          ]
+        }
+      },
+      {
+        "key": "jozefowicz2016exploring",
+        "stance": "inherits",
+        "cue": "we used",
+        "sentence": "As a baseline, we used BIGLSTM model without CNN inputs described by [Jozefowicz et al. 2016].",
+        "section": "Introduction",
+        "sectionKind": "introduction",
+        "ordinal": 7,
+        "title": "Exploring the limits of language modeling",
+        "authors": "Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer, and Yonghui Wu",
+        "year": 2016,
+        "arxivId": "1602.02410",
+        "inCorpus": true,
+        "anchor": {
+          "page": 0,
+          "pageWidth": 612.0,
+          "pageHeight": 792.0,
+          "precision": "tight",
+          "rects": [
+            {
+              "x0": 136.77198791503906,
+              "y0": 427.9542236328125,
+              "x1": 435.5601501464844,
+              "y1": 437.9168395996094
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "assumptions": [
+    {
+      "sentence": "Thus we focus on reducing the number of parameters in W.",
+      "anchorText": "Thus we focus on reducing the number of parameters in",
+      "kind": "simplifying",
+      "support": "bare",
+      "cue": "we focus on",
+      "section": "Long Short-Term Memory overview",
+      "sectionKind": "introduction",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 0,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 469.6989440917969,
+            "y0": 711.34716796875,
+            "x1": 504.00018310546875,
+            "y1": 721.3097534179688
+          },
+          {
+            "x0": 107.99981689453125,
+            "y0": 722.30615234375,
+            "x1": 294.2007751464844,
+            "y1": 732.2687377929688
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "We postulate that some parts of the input x_t and hidden state h_t can be thought of as independent feature groups.",
+      "anchorText": "can be thought of as independent feature groups.",
+      "kind": "stated",
+      "support": "bare",
+      "cue": "We postulate",
+      "section": "Group LSTM cell",
+      "sectionKind": "method",
+      "cites": [],
+      "refs": [],
+      "anchor": {
+        "page": 1,
+        "pageWidth": 612.0,
+        "pageHeight": 792.0,
+        "precision": "tight",
+        "rects": [
+          {
+            "x0": 280.6050109863281,
+            "y0": 596.6214599609375,
+            "x1": 483.3438415527344,
+            "y1": 606.5840454101562
+          }
+        ]
+      }
+    }
+  ],
+  "assumptionTally": {
+    "total": 2,
+    "cited": 0,
+    "shown": 0,
+    "bare": 2
+  },
+  "alignment": {
+    "sampled": 40,
+    "located": 38,
+    "rate": 0.95
+  },
+  "arxiv": {
+    "primary": "cs.CL",
+    "primaryName": "Computation and Language",
+    "categories": [
+      "cs.CL",
+      "cs.NE",
+      "stat.ML"
+    ],
+    "published": "2017-03-31",
+    "authors": [
+      "Oleksii Kuchaiev",
+      "Boris Ginsburg"
+    ]
+  }
+}
